@@ -3,6 +3,27 @@ import {spawnSync} from 'node:child_process'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
+
+test('Inglés HLM cuarto conserva188 registros y46 exclusiones en su ámbito propio',()=>{
+ const matrix='docs/curriculum/cobertura-secundaria/optative-hlm-ing-4-matriz.json'
+ const run=spawnSync(process.execPath,[script,'OPT-HLM-ING-4','4',matrix,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr)
+ const m=JSON.parse(run.stdout)
+ assert.equal(m.project,'eolgunypmtgrsyrjzcld')
+ assert.equal(m.code,'MINERD_SECUNDARIA_2023_OPT_HLM_ING_4_V1')
+ assert.equal(m.elements,188);assert.equal(m.excludedFromAssessment,46)
+ assert.equal(m.metadata.commonOnly,false)
+ assert.deepEqual(m.metadata.grades,[4])
+ assert.deepEqual(m.metadata.optativeExitNames,['Humanidades y Lenguas Modernas'])
+ for(const args of [['OPT-HLM-ING-4','5',matrix,'--optative'],['OPT-HLM-ING-5','5',matrix,'--optative'],['OPT-HLM-ING-4','4',matrix]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
+test('todas las consignas inglesas seleccionan únicamente anclas adaptables de su fuente',()=>{
+ const fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hlm-ing-four-contracts.json','utf8'))
+ const matrix=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/optative-hlm-ing-4-matriz.json','utf8'))
+ const ids=new Set(matrix.officialRecords.map(r=>r.id)),excluded=new Set(matrix.explicitExclusions.map(r=>r.id))
+ for(const task of fixture.cases)for(const id of task.sourceRecordIds){assert(ids.has(id),task.id);assert(!excluded.has(id),task.id)}
+})
 test('las consignas de sexto seleccionan contenidos evaluables y no encabezados excluidos',()=>{
  const fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hlm-len-six-contracts.json','utf8'))
  const matrix=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/optative-hlm-len-6-matriz.json','utf8'))

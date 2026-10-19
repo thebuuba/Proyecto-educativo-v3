@@ -7,7 +7,7 @@ import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
-import { scientificTaskType,resolveEvaluationTask,resolveCommonEnglishTask,commonEnglishSelections } from '@aula/shared'
+import { scientificTaskType,resolveEvaluationTask,resolveCommonEnglishTask,commonEnglishSelections,resolveOptativeEnglishTask } from '@aula/shared'
 import type { InstrumentAcademicContext } from '@aula/shared'
 import { automaticInstrumentType } from './automaticInstrumentType'
 
@@ -31,7 +31,7 @@ export function activityDefaultSuggestions(title: string, description: string, c
   if(math)return {activityType:math.activityType,technique:math.technique,instrument:commonMathSelections(math,description).suggestedInstrumentType}
   const french=resolveCommonFrenchTask(title,description,context)
   if(french)return {activityType:french.activityType,technique:french.technique,instrument:commonFrenchSelections(french,description).suggestedInstrumentType}
-  const english=resolveCommonEnglishTask(title,description,context)
+  const english=resolveOptativeEnglishTask(title,description,context)??resolveCommonEnglishTask(title,description,context)
   if(english)return {activityType:english.activityType,technique:english.technique,instrument:commonEnglishSelections(english,description).suggestedInstrumentType}
   const result=detectActivityDefaults(title,description)
   return result ? {...result,instrument:automaticInstrumentType(result.activityType,context,maxScore,description)} : null

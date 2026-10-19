@@ -6,10 +6,11 @@ import {developmentEnvironment,developmentProjectRef as project} from '../cloudf
 
 // Reuse the existing fictitious academic course; never change a personal course or an account.
 const subjectCode=process.argv[2]
-const grade={'OPT-HLM-LEN-4':4,'OPT-HLM-LEN-5':5,'OPT-HLM-LEN-6':6}[subjectCode]
-assert(grade,'Solo se admiten las tres optativas HLM de Lengua revisadas')
+const grade={'OPT-HLM-LEN-4':4,'OPT-HLM-LEN-5':5,'OPT-HLM-LEN-6':6,'OPT-HLM-ING-4':4}[subjectCode]
+assert(grade,'Solo se admiten las optativas HLM revisadas explícitamente')
+const family=subjectCode==='OPT-HLM-ING-4'?'optative-hlm-ing':'optative-hlm-len'
 const read=p=>JSON.parse(readFileSync(p,'utf8')),qa=read(`.wrangler/secondary-completion/social-${grade}-context.json`)
-const matrix=read(`docs/curriculum/cobertura-secundaria/optative-hlm-len-${grade}-matriz.json`)
+const matrix=read(`docs/curriculum/cobertura-secundaria/${family}-${grade}-matriz.json`)
 assert.equal(qa.project,project);assert.equal(matrix.subjectCode,subjectCode);assert.equal(matrix.sourceVisualReview.status,'REVIEWED')
 assert.equal(matrix.verification.fullReview.pending,0)
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
@@ -29,6 +30,6 @@ try{
   else await tx.sectionCurriculumContext.create({data:{sectionSubjectId:row.id,optativeExitName:matrix.optativeExitName}})
   return row
  })
- writeFileSync(`.wrangler/secondary-completion/optative-hlm-len-${grade}-context.json`,JSON.stringify({...qa,grade,subjectCode,sectionSubjectId:assignment.id,modalityCode:'academic',optativeExitName:matrix.optativeExitName},null,2)+'\n')
+ writeFileSync(`.wrangler/secondary-completion/${family}-${grade}-context.json`,JSON.stringify({...qa,grade,subjectCode,sectionSubjectId:assignment.id,modalityCode:'academic',optativeExitName:matrix.optativeExitName},null,2)+'\n')
  console.log(JSON.stringify({project,subjectCode,grade,existingCourseUnchanged:true,newAccounts:0,qaContextReady:true}))
 }finally{await prisma.$disconnect()}

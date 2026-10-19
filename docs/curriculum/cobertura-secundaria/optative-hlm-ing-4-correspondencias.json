@@ -1,0 +1,3301 @@
+{
+  "scopeId": "b2d7a388-b852-52a5-adf5-d78642f21f96",
+  "grade": 4,
+  "subjectCode": "OPT-HLM-ING-4",
+  "subjectName": "Manejo de la información en inglés",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      445,
+      446,
+      447,
+      448,
+      449
+    ],
+    "imageEvidence": [
+      {
+        "number": 445,
+        "printed": 444,
+        "imageSha256": "b87b0787a54fafab662e3e5b488bfeff2adc5b7f9708504f24bafd092c482511"
+      },
+      {
+        "number": 446,
+        "printed": 445,
+        "imageSha256": "1e7913a410bce3db8331cfbeec225f1aa2a6ade53509bfba8af03f05b6b3c941"
+      },
+      {
+        "number": 447,
+        "printed": 446,
+        "imageSha256": "2cbf1ea56faf48272db7a4b1f95b08ef4575e7aaeabcbc818093a89e4a3d8172"
+      },
+      {
+        "number": 448,
+        "printed": 447,
+        "imageSha256": "9806d191f9e8f93c9eccca49714d8022c978e5c4a7f4d869faf21dd38ec040eb"
+      },
+      {
+        "number": 449,
+        "printed": 448,
+        "imageSha256": "b9e42098cc08b9669cbe72d5bddfe63ba843235812dfbfe3927ec6bf269833a1"
+      }
+    ],
+    "method": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS"
+  },
+  "classification": [
+    {
+      "id": "26eb5937-3c85-5a5e-8c5e-3f5758830e7d",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Relaciones humanas y sociales",
+      "sourceOrdinal": 1,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "f8fde7dc-a7b1-5485-8279-0ff3f4592fe4",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Vivienda, entorno y ciudad",
+      "sourceOrdinal": 2,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "ad8f02fe-f6e0-5441-b739-715affacbe98",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Escuela y educación",
+      "sourceOrdinal": 3,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "9d8423c6-f49e-5db5-a492-c5b4170e9741",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Actividades de la vida diaria",
+      "sourceOrdinal": 4,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "84838744-36fd-566f-bcb5-940a5981e806",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Deporte, tiempo libre y recreación",
+      "sourceOrdinal": 5,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "10cdd7d1-efbc-5cac-9bdd-d4af6602c8f9",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Alimentación",
+      "sourceOrdinal": 6,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "4302d507-2250-5834-8a74-ce7897df3f20",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Salud y cuidados físicos",
+      "sourceOrdinal": 7,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "2aa11dd1-a55c-5617-b21d-6ce353e0b12b",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Bienes y servicios",
+      "sourceOrdinal": 8,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "2186e58e-a302-503d-a4d4-84a3f8d3d63f",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Lengua y comunicación",
+      "sourceOrdinal": 9,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "4fc695d5-9e2b-5beb-8dc6-8c27550276e7",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Ciencia y tecnología",
+      "sourceOrdinal": 10,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "d299efd0-91e5-50f8-9139-ecc5a295db71",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Viajes y turismo",
+      "sourceOrdinal": 11,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Fenómenos naturales y medioambiente\nVocabulario",
+      "sourceOrdinal": 12,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "THEMATIC_CONTEXT",
+      "reason": "Dominio de comunicación para una función y medio expresamente solicitados; no un producto obligatorio por cada tema ni exigencia de experiencia personal."
+    },
+    {
+      "id": "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Acontecimientos y celebraciones: have\na baby…",
+      "sourceOrdinal": 13,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "27d35bf8-d7c0-5980-9f99-182bed2ef10e",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Comunicación: on line, video conference,\nsocial media…",
+      "sourceOrdinal": 14,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "4808a078-41c2-5c83-a4b4-922fb3692bcc",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Deportes: hockey, cycling, ping•pong,\nbowling…",
+      "sourceOrdinal": 15,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "ce0f2f1f-ddec-54b3-b086-7458a6579842",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• Educación: high school, scholarship…",
+      "sourceOrdinal": 16,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "c6289760-41ce-5d89-924b-8817993fc84c",
+      "type": "CONCEPT",
+      "pdfPage": 445,
+      "literal": "• • Equipos y utensilios de cocina: food\nprocessor, stove…",
+      "sourceOrdinal": 17,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "e068f75f-ec00-56f0-ba45-4cdbd4cf267e",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "Funcionales",
+      "sourceOrdinal": 18,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "09aad7dc-3ee9-5145-8a9f-c41e249a200a",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Solicitar y ofrecer información.",
+      "sourceOrdinal": 19,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "information"
+      ]
+    },
+    {
+      "id": "b4d743ec-1efc-5992-b0d4-696aa2bc2394",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Comunicar noticias.",
+      "sourceOrdinal": 20,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "news"
+      ]
+    },
+    {
+      "id": "10e7d2ee-adf3-52db-ad28-c4b7a42feddc",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Hacer predicciones y anuncios.",
+      "sourceOrdinal": 21,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "prediction",
+        "announcement"
+      ]
+    },
+    {
+      "id": "aa9d8e63-3be7-55c7-8fee-a78ff5e4fdad",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Expresar opiniones.",
+      "sourceOrdinal": 22,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "opinion"
+      ]
+    },
+    {
+      "id": "26591c13-3944-5908-bdc6-e7383477e595",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Relatar experiencias.",
+      "sourceOrdinal": 23,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "experience"
+      ]
+    },
+    {
+      "id": "a8a8d0e0-719b-5841-8f65-0a62c6f70a9a",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Explicar problemas y sus motivos.",
+      "sourceOrdinal": 24,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "problem-causes"
+      ]
+    },
+    {
+      "id": "9283fcb0-23df-5e71-8921-1987a885797e",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Dar y pedir instrucciones.",
+      "sourceOrdinal": 25,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "instructions-request",
+        "instructions-delivery"
+      ]
+    },
+    {
+      "id": "916b983d-7881-58e5-9479-3699c6ae52cc",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Expresar deseos y planes futuros.",
+      "sourceOrdinal": 26,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "wishes",
+        "plans"
+      ]
+    },
+    {
+      "id": "deb81d5e-7e0f-52ed-8fe1-205bc0a31277",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Discursivos",
+      "sourceOrdinal": 27,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "66ebe329-576c-5d2b-ab09-6cba5eed737c",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Comprensión de discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "sourceOrdinal": 28,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_COMPREHENSION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "9cb5a70f-9b72-517f-8942-d83e34293d91",
+      "type": "PROCEDURE",
+      "pdfPage": 445,
+      "literal": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "sourceOrdinal": 29,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "c81e3648-c28f-51ec-be48-29cb786bc6f3",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Motivación para aprender inglés.",
+      "sourceOrdinal": 30,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "423b6904-54e4-5e34-a9cd-53e69a0f8463",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Respeto por las normas éticas de la\ninteracción a través de las TIC.",
+      "sourceOrdinal": 31,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "32d344f9-edf6-5bc6-a36b-5c3211e238d0",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Uso juicioso del tiempo que se\ndedica a la interacción a través de\nlas TIC.",
+      "sourceOrdinal": 32,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "3b411751-7381-5d9b-af05-0a37cc2cdd85",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Cortesía y asertividad en la\ncomunicación.",
+      "sourceOrdinal": 33,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "62b600da-36a5-5b34-8196-8812217f447e",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Empatía y solidaridad ante las\nsituaciones que afectan a las demás\npersonas.",
+      "sourceOrdinal": 34,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "e4bff53a-dcc0-5613-9fc6-c3391318973b",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 445,
+      "literal": "• Dominio propio y autocontrol.",
+      "sourceOrdinal": 35,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "1b615530-a86c-592d-a22d-5621352b18d2",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• hurt…",
+      "sourceOrdinal": 36,
+      "status": "FRAGMENT_NOT_STANDALONE",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "«hurt…» continúa el vocabulario de eventualidades que termina en «get»; conservar el fragmento sin criterio autónomo."
+    },
+    {
+      "id": "6c308852-f419-5dca-8bea-e2c5dc9f910f",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Experiencias personales: vacation, trip…",
+      "sourceOrdinal": 37,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "4ac27288-1574-5b05-b269-726fbcbcefa1",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Eventualidades: lose a key, miss a class, get",
+      "sourceOrdinal": 38,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "contextSourceRecordIds": [
+        "1b615530-a86c-592d-a22d-5621352b18d2"
+      ]
+    },
+    {
+      "id": "8f1837c2-890e-5b7d-a227-8264d91f55d4",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Fenómenos naturales: hurricane, storm,\nearthquake…",
+      "sourceOrdinal": 39,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "638e0fc9-014c-5a00-85dd-488a21ee3dbc",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Herramientas: drill, hammer, scissors,\nsaw, screwdriver…",
+      "sourceOrdinal": 40,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "48e6c260-cf70-5ad8-9efa-05065edef9c8",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Lugares: countryside, amusement park,\nsummer camp…",
+      "sourceOrdinal": 41,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "91edb9f5-d908-5c1a-8ff4-80bd08213e78",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Medios de transporte: ship, subway,\nairplane, helicopter…",
+      "sourceOrdinal": 42,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "40840eff-4996-5792-b7ea-73eb4054cb9d",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Preparación de alimentos: boil, chop, cut,\nfry, grill, mix…",
+      "sourceOrdinal": 43,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "e23bccd6-7e86-58d0-832d-8d60f79ddd5e",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Recreación: theater, concert, picnic…",
+      "sourceOrdinal": 44,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "87005bed-a302-513a-b9e0-2f785a8c893e",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Tecnología: hologram, 3D printer, live\nstream…",
+      "sourceOrdinal": 45,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "69f82611-7d6b-56e2-84ca-8f13d5bdd32d",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Viaje: travel, luggage, travel agency,\nboard a plane …",
+      "sourceOrdinal": 46,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEXICON",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "76090fad-a53b-533e-875b-7681b1c7ee1d",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "Expresiones",
+      "sourceOrdinal": 47,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "f21aded8-3303-5304-9dfe-2158ebf6e334",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Atraer la atención de alguien: Excuse me,\nsir! Pardon me!",
+      "sourceOrdinal": 48,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "1bb61ec6-e75a-5586-94bf-b637d626dff9",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Animar a alguien: Well done! Good job!\nCongratulations!",
+      "sourceOrdinal": 49,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "8280e82b-3c0d-5e19-b604-bb1dee129316",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Expresar interés y asombro: Wow! Really?\nThat sounds nice! . .",
+      "sourceOrdinal": 50,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "9aafc7d9-912f-5c80-b9ef-d96a7c218afb",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Mostrar empatía: Too bad!, How awful!..",
+      "sourceOrdinal": 51,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "33e52a3e-872e-5c7e-aa03-056bc845ac7b",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Pedir y dar opiniones: I think…, In my\nopinion…, I believe …",
+      "sourceOrdinal": 52,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "cbcabdc8-2134-599d-9ec0-d6013919e4d4",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Expresar acuerdo y desacuerdo: I agree, I\ndon’t think so…",
+      "sourceOrdinal": 53,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• • Coincidir y discrepar: Me too, neither do\nI, I do too, so am I…",
+      "sourceOrdinal": 54,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "9ec435b9-7dbe-5221-8f67-5f8d9354647f",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Pedir repetición o aclaración: Pardon me?\nExcuse me? .",
+      "sourceOrdinal": 55,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "7a102b7c-c765-5b79-bbbd-aa59101fe562",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Cambiar de tema: By the way, anyway",
+      "sourceOrdinal": 56,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "70d4b458-1168-53f4-8cd6-aa584bb9885e",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Concluir una conversación: Nice talking\nto you!",
+      "sourceOrdinal": 57,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "3646755e-ae05-5a13-8825-07a7db7b14a0",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Dar una noticia: Guess what? Did I tell you?",
+      "sourceOrdinal": 58,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "040e6442-1b1b-50a8-852a-5af3177d847e",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Excusarse: I’m sorry, I apologize…",
+      "sourceOrdinal": 59,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "dcb700f7-a202-51a6-b584-9677dc6d489a",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Felicitar: Congratulations! Happy\nanniversary!\nGramática\nOraciones enunciativas (afirmativas y\nnegativas), interrogativas y exclamativas.\nPresente simple para pedir y dar opiniones\ne información:\nWhat do you think?",
+      "sourceOrdinal": 60,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "congratulation",
+        "sentence-types",
+        "present-simple"
+      ],
+      "sourceCaveat": "Incluye felicitación, encabezado Gramática, tipos de oración y presente simple en una sola extracción. Mantener literal y separar objetivos de adaptación."
+    },
+    {
+      "id": "57bcecd5-2b07-5f6e-b6be-ff110150c192",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• I think Helen is a very nice person.",
+      "sourceOrdinal": 61,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "d17667f9-0934-5637-b37d-ee7abdc08c6f",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• Presente continuo para expresar planes\nfuturos:",
+      "sourceOrdinal": 62,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "present-continuous-plans"
+      ]
+    },
+    {
+      "id": "176c4de7-477e-5c12-bb90-d1e491d66904",
+      "type": "CONCEPT",
+      "pdfPage": 446,
+      "literal": "• • Margaret is visiting her parents in\nPanama next month.",
+      "sourceOrdinal": 63,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "36c50dbe-64f7-539e-8a4e-b8b51883dbfb",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Comprensión de textos escritos en formato físico, digital y\nvirtual, tales como tarjetas, listas, catálogos, diccionarios,\nfacturas, anuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, instrucciones, currículum\nvitae, cartas, formularios, noticias, horarios, agendas,\nmenús, croquis, cuestionarios, folletos, canciones,\npoesías, historietas, guías turísticas, descripciones,\nbiografías y narraciones.",
+      "sourceOrdinal": 64,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_COMPREHENSION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "83128863-2825-5090-8272-e05b89228544",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Producción de textos escritos en formato físico, digital y\nvirtual, tales como mensajes, correos electrónicos, cartas,\ncurríc ulum vitae, avisos, afiches, letreros, formularios,\nrecetas, instrucciones, cuestionarios, biografías,\nnarraciones y descripciones.",
+      "sourceOrdinal": 65,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_PRODUCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "b06a753d-3823-5062-b558-cb685a73ba5f",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "Estratégicos Comprensión oral",
+      "sourceOrdinal": 66,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "5d7b1928-5532-5288-ace0-6c4322ca5f74",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Anticipación del contenido del mensaje.",
+      "sourceOrdinal": 67,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "f897c147-b8ff-55ba-a6b4-f8d8fc371331",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Escucha atenta.",
+      "sourceOrdinal": 68,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "94bc5651-cf36-5f2b-9f9a-a1a8c3f23c2a",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaje.",
+      "sourceOrdinal": 69,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "1569863e-050b-5386-af68-d8f9d663e20b",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos",
+      "sourceOrdinal": 70,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "29cf020d-03a1-579a-acf4-173ba4d46469",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Solicitud de repetición",
+      "sourceOrdinal": 71,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "a9d38a67-aef5-5af4-a3d6-f125ff25153b",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Indicación de que se comprende o no.",
+      "sourceOrdinal": 72,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LISTENING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "e7fdccd6-3b09-5f67-bb32-9fe4a66adee7",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Producción oral",
+      "sourceOrdinal": 73,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "ef273e24-d95c-549b-bc87-e234d5149518",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Reproducción y ensayo de palabras, expresiones y pautas\nde entonación.",
+      "sourceOrdinal": 74,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "ea258771-4a3f-5cf1-9586-0258ae28a11c",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Identificación de la situación de comunicación.",
+      "sourceOrdinal": 75,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "6810b974-d18a-56ba-8bd5-cb0c5dd81ec4",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Establecimiento de la intención comunicativ",
+      "sourceOrdinal": 76,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "ddf1316e-7cc7-59f6-bb8f-7815b801cb4a",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Planificación del mensaje.",
+      "sourceOrdinal": 77,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "f7856251-98f2-5ea8-baa8-47edae10be4a",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Ensayo de nuevas combinaciones y expresiones y\nsolicitud de retroalimentación.",
+      "sourceOrdinal": 78,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "a4e2a060-3827-56bd-8fec-b70a76584690",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Uso del lenguaje no verbal para comunicarse.",
+      "sourceOrdinal": 79,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "48a4d9e0-2f19-5f46-8dcf-9c32b4c4f674",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Comprensión escrita.",
+      "sourceOrdinal": 80,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "9e708f99-cdfc-5a2e-b48c-3f81f5441da6",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Establecimiento del propósito de la lectura.",
+      "sourceOrdinal": 81,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "f8179f9f-7319-5c7c-a8d3-75c4633d56fd",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "sourceOrdinal": 82,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "8ac047be-c006-5e2d-83d0-8bbadf17cb15",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Identificación de la correspondencia entre la grafía y el\nsonido de las palabras.",
+      "sourceOrdinal": 83,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "af8a71f1-0518-5c34-9855-f86f3e473f40",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Inferencia del significado de palabras y expresiones a\npartir de las pistas textuales y los conocimientos previos.",
+      "sourceOrdinal": 84,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "sourceOrdinal": 85,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "3e416a0b-a656-54e4-8190-e1c63a3a47c5",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Identificación de la idea principal y detalles específicos\ndel texto.",
+      "sourceOrdinal": 86,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "32803242-e31f-5c30-a2fc-323d7669f2a2",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Identificación de la intención comunicativa del texto.",
+      "sourceOrdinal": 87,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "READING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "7e6c8cf7-757c-5ffe-9b31-88115c97a547",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Producción escrita.",
+      "sourceOrdinal": 88,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "8f3ea3b4-866d-539f-8553-e79e0df68849",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "sourceOrdinal": 89,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_PROCESS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "b62848ab-0aa3-5249-9777-545dac724d4d",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Planificación y organización del mensaje.",
+      "sourceOrdinal": 90,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_PROCESS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "8df046d6-61b1-5955-a2b6-a300064818d6",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Uso del diccionario y otras herramientas de consulta.",
+      "sourceOrdinal": 91,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_PROCESS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "8d41728f-a330-533d-9d07-db90b94cdf0e",
+      "type": "PROCEDURE",
+      "pdfPage": 446,
+      "literal": "• Revisión del sentido y la corrección del mensaje.",
+      "sourceOrdinal": 92,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "WRITTEN_PROCESS",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "ab760f4f-29bb-55c6-9aff-94596c828325",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Asertividad al expresar opiniones.",
+      "sourceOrdinal": 93,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "f2d2d7aa-ca17-585d-b5e3-6f30e4809d9a",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Respeto al escuchar y expresar\nopiniones.",
+      "sourceOrdinal": 94,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "a53b6802-a05f-54ea-a97e-4591281c07e8",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Honestidad al interactuar con las\ndemás personas.",
+      "sourceOrdinal": 95,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "2ed77206-8064-55a9-b995-dee658c8dbf8",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Cortesía al dar y pedir indicaciones\ne instrucciones.",
+      "sourceOrdinal": 96,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "29a0190d-e1cf-5b12-8e3d-0d0fa4fb0fa2",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Colaboración para resolver los\nproblemas de la comunidad.",
+      "sourceOrdinal": 97,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "92cf4377-a665-5ea0-9954-cc19d1233cc4",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Cuidado del medioambiente y de\nlos recursos naturales.",
+      "sourceOrdinal": 98,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "01b58fa5-3355-5705-8097-48b66fc55037",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Sentido crítico ante los anuncios y\npredicciones.",
+      "sourceOrdinal": 99,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CRITICAL_COMPREHENSION",
+      "reason": "Evaluar indicios, contenido y grado de certeza de anuncios o predicciones si se solicita; no calificar criticidad como rasgo ni exigir una opinión privada correcta."
+    },
+    {
+      "id": "b7121fd4-5064-5e9d-81c4-75eec45e28a0",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Humildad al relatar sus experiencias.",
+      "sourceOrdinal": 100,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "6faeac42-3641-5b5a-8fa0-b4f390f99bb1",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Respeto por las costumbres y\ntradiciones propias y las de los\ndemás países.",
+      "sourceOrdinal": 101,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "f27c0bac-aafb-57e9-a44d-a3e4ec2ff047",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Respeto por las diferencias relativas\na género, edad, ocupación,\nnacionalidad, capacidades de las\npersonas, entre otras.",
+      "sourceOrdinal": 102,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "82768031-b21b-5d8e-8ddc-0790d9d8f2ab",
+      "type": "ATTITUDE_VALUE",
+      "pdfPage": 446,
+      "literal": "• Planificación de las actividades que\nllevará a cabo.",
+      "sourceOrdinal": 103,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "47732fbd-e297-5e68-aa0a-8082ffaf0d79",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "Pasado simple para comunicar noticias y\nrelatar experiencias:",
+      "sourceOrdinal": 104,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "past-simple"
+      ]
+    },
+    {
+      "id": "7b7a229d-4946-5127-9fc9-535ddd67370e",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• Alex has just gotten a better job.\nUsed to:",
+      "sourceOrdinal": 105,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "used-to"
+      ],
+      "sourceCaveat": "El ejemplo «has just gotten» es presente perfecto y no ejemplifica el rótulo de pasado simple. Conservar el literal; el contenido nuevo de esta ancla es Used to. No enseñar esa correspondencia falsa."
+    },
+    {
+      "id": "21e7c0d6-6c7f-5caa-88dd-698e03e687d1",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I used to attend English classes every\nafternoon when I lived in my hometown.\nImperativo para dar instrucciones:\nWalk for three blocks and turn right.",
+      "sourceOrdinal": 106,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "imperative"
+      ]
+    },
+    {
+      "id": "04c8ce41-8a30-5f70-a256-c63e5622e5ce",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• Plug in the PC, and turn it on.\nPasado simple y pasado continuo para\nexplicar problemas y sus motivos:",
+      "sourceOrdinal": 107,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "past-simple-and-continuous"
+      ]
+    },
+    {
+      "id": "03ec5860-ec5d-5755-8c19-32c9a86b2851",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• The accident happened because the driver\ngot distracted as he was talking on his cell\nphone.\nFuturo continuo para expresar planes\nfuturos:",
+      "sourceOrdinal": 108,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "future-continuous"
+      ]
+    },
+    {
+      "id": "603c93c8-889d-5106-9514-452ab02a7de4",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I’ll be traveling to Canada next summe Be\n+ going to para hacer predicciones y\n.anuncios, y expresar planes futuros:",
+      "sourceOrdinal": 109,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "going-to"
+      ],
+      "sourceCaveat": "El ejemplo de futuro continuo está cortado antes del encabezado Be+going to. No convertirlos en una estructura única."
+    },
+    {
+      "id": "5a0ec870-f373-501d-8c97-48820893e74c",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• It’s going to rain a lot because there are\nvery dark clouds.",
+      "sourceOrdinal": 110,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "c30966c1-24ce-5601-b76d-bada2c7862a0",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I’m going to get married next month.\nWill para hacer predicciones:\nHope, wish y would like… para expresar\ndeseos:",
+      "sourceOrdinal": 111,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "will",
+        "wishes"
+      ]
+    },
+    {
+      "id": "4a41f41b-e4af-5c5c-ac70-4572f07001ef",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I would like to travel to Spain this year.\nVerbos seguidos por infinitivo, gerundio o\npor cualquiera de ellos:",
+      "sourceOrdinal": 112,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "verb-complements"
+      ]
+    },
+    {
+      "id": "31b99d2b-d763-52aa-903d-2b1ed2fda30e",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I decided to study medicine.",
+      "sourceOrdinal": 113,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "feeb4efd-1c13-576c-b6f0-d1ff7178ceba",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I really enjoyed traveling around the\nisland.",
+      "sourceOrdinal": 114,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "15b5fd13-5d02-58cb-92ab-3f2f34eed76d",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• I began playing to play baseball when I\nwas ten years old.\nPhrasal verbs (turn up, fill out, get along\nwith, look after…):",
+      "sourceOrdinal": 115,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "phrasal-verbs"
+      ]
+    },
+    {
+      "id": "86fa81e0-c4c9-5fd5-a21e-7ba3f8f89e66",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• Turn the volume up. / Turn it up.",
+      "sourceOrdinal": 116,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "d94524ee-75ca-5cc2-a4da-95d97185f971",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• They get along well.\nThere + be para hacer anuncios, comunicar\nnoticias, y explicar problemas y sus motivos:",
+      "sourceOrdinal": 117,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "there-be"
+      ]
+    },
+    {
+      "id": "f66b4fef-39c9-55d3-9420-109e934bd65a",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "•There is going to be an open•house\nexhibition in the mall this weekend.",
+      "sourceOrdinal": 118,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "efd6a70b-c26c-55f3-9fcc-79cb1d28a4ce",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• There were forest fires in the National Park\nthis morning.",
+      "sourceOrdinal": 119,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "c3f4e45b-24f7-56b0-b05f-02b24f62466a",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• The traflc is slow because there has been a\nterrible accident on the highway.\nCondicional para dar instrucciones, hacer\npredicciones y explicar problemas y sus\nmotivos (If/When + presente simple en la\ncláusula condicional + presente simple en\nla cláusula principal):",
+      "sourceOrdinal": 120,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "conditional-zero"
+      ]
+    },
+    {
+      "id": "67a2c20a-d2b0-5d82-970b-c240e2798870",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "•If you press that key, the computer restarts.",
+      "sourceOrdinal": 121,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c",
+      "type": "CONCEPT",
+      "pdfPage": 447,
+      "literal": "• When you don’t study, you get bad grades.\nCondicional para expresar deseos y planes\nfuturos (If / When + presente simple en la\ncláusula condicional+ futuro con will en la\ncláusula principal):",
+      "sourceOrdinal": 122,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "conditional-first"
+      ]
+    },
+    {
+      "id": "b34ac7ae-c741-5495-980c-dd0327f92b23",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "Otros:",
+      "sourceOrdinal": 123,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "8e21387e-f63c-5c1f-aa91-f51062530acb",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Utilización de asociaciones mentales y de la acción.",
+      "sourceOrdinal": 124,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "LEARNING_STRATEGY",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "c5cee1f5-8d04-58a7-8209-b14d24bd9e6e",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Automotivación y control del nivel de ansiedad.",
+      "sourceOrdinal": 125,
+      "status": "EXCLUDED_PRIVATE_DISPOSITION",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "62e5f895-b55d-5f4f-891e-0f3acd9f0bad",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Búsqueda de oportunidades de uso de la lengua.",
+      "sourceOrdinal": 126,
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "2d11e654-157a-53df-b16a-3bcd2e76eee3",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Sociolingüísticos y socioculturales",
+      "sourceOrdinal": 127,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "37b0e5d1-6452-53ca-92b1-1f37816e73ce",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Utilización de las normas de cortesía más importantes.",
+      "sourceOrdinal": 128,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "SOCIOLINGUISTIC",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "4a06e885-b595-5085-a9a8-5edb8d9b2514",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "sourceOrdinal": 129,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "SOCIOLINGUISTIC",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo."
+    },
+    {
+      "id": "027e77d9-c196-594f-8676-448ed77e192f",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Comparación entrel os siguientes aspectos de la\nRepública Dominicana y de otros países:",
+      "sourceOrdinal": 130,
+      "status": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "03bb3059-23ff-599e-ae08-0de4f9f2c8bc",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Medios de comunicación.",
+      "sourceOrdinal": 131,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "5c803522-4a7c-51f0-b8c5-58818d0984ac",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Valores, tradiciones y creencias.",
+      "sourceOrdinal": 132,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "94d4d448-7246-5fda-ace3-2d354c6476c3",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Normas de cortesía",
+      "sourceOrdinal": 133,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "ece8f6bf-1e99-5b30-aac8-08f9bb583e0d",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Actividades de tiempo libre.",
+      "sourceOrdinal": 134,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "a01f92a8-790c-5259-aaa5-bd34ddbf92ec",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Atractivos turísticos.",
+      "sourceOrdinal": 135,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "2e2dcbf4-21f5-52f5-a38f-d27fcd046262",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "sourceOrdinal": 136,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "485991d7-9d65-5361-8c2c-37ada749c307",
+      "type": "PROCEDURE",
+      "pdfPage": 447,
+      "literal": "• Cuidado del medioambiente",
+      "sourceOrdinal": 137,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "CULTURAL_COMPARISON",
+      "reason": "Comparar los aspectos indicados a partir de información proporcionada; hereda el encabezado de comparación sin exigir adhesión ni investigación o contacto externo.",
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ]
+    },
+    {
+      "id": "a4303a52-bb51-5c30-a64e-310ff220454b",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• If I get that job, I will buy a new apartment.\nConectores y marcadores de:",
+      "sourceOrdinal": 138,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "74ae6175-63c2-55ca-9d62-1924425fdf72",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Causa y consecuencia: so, because, since…",
+      "sourceOrdinal": 139,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "cause-and-consequence"
+      ]
+    },
+    {
+      "id": "3a467550-0211-5b20-bef5-5220295b7521",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Contraste y oposición: but, however…",
+      "sourceOrdinal": 140,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "contrast"
+      ]
+    },
+    {
+      "id": "2f317563-623f-5d18-9c41-c1ae36738e81",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Concesión: even so, nevertheless…\nFinalidad: in order to, so that, to…",
+      "sourceOrdinal": 141,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "concession",
+        "purpose"
+      ]
+    },
+    {
+      "id": "9e897fe3-48bd-5807-b82e-685ac2e71810",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Secuencia: first, second, then…",
+      "sourceOrdinal": 142,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "sequence"
+      ]
+    },
+    {
+      "id": "84b1c00a-7d3d-555d-acb2-72d10b756e93",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Tiempo: after, once, when, while, as soon\nas…\nVoz pasiva para pedir y dar información,\ncomunicar noticias, hacer predicciones y\nanuncios:",
+      "sourceOrdinal": 143,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "time-connectors",
+        "passive"
+      ]
+    },
+    {
+      "id": "f4f3bd1f-c6c6-5eb5-98bb-d3b1f7d1e990",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• A few endemic species are endangered.",
+      "sourceOrdinal": 144,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "3c8130a6-509a-51fb-b388-c2deb9503315",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "•Many houses were destroyed by the\ntornado that hit our neighborhood.",
+      "sourceOrdinal": 145,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "88ebefe0-259c-5a6d-a63d-f165ed01ba3d",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• That man will be fined because he broke\nthe law.\nQuestion tags:",
+      "sourceOrdinal": 146,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "question-tags"
+      ]
+    },
+    {
+      "id": "88ff395e-61cd-530d-a6da-a1e80bd0b858",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• We know each other, don’t we?",
+      "sourceOrdinal": 147,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "d41287be-1ab6-5b3f-a16a-b70e61662338",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• You are Eric, aren´t you?\nPreguntas indirectas y embedded questions:",
+      "sourceOrdinal": 148,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "indirect-questions"
+      ]
+    },
+    {
+      "id": "400a4e92-f1e2-581b-8605-6ae10abd3b37",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Can you show me how to fix it?",
+      "sourceOrdinal": 149,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "81c14b14-c70d-55f4-aebb-0585fdbe3965",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• I want to know why the Wi•Fi connection\nisn’t working.\nGerundios en función sustantiva:\nDancing is a very good activity for you to\nstay healthy.\nOmisión del artículo:",
+      "sourceOrdinal": 150,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "gerund-noun",
+        "zero-article"
+      ]
+    },
+    {
+      "id": "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Love is a wonderful thing.\nGrados comparativo y superlativo del adjetivo:",
+      "sourceOrdinal": 151,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "reason": "Adaptar únicamente la función, medio, forma, vocabulario o procedimiento pedido, con evidencia observable y alternativas conservadas; no imponer todas las listas ni dominio nativo.",
+      "adaptationTargets": [
+        "comparative-and-superlative"
+      ]
+    },
+    {
+      "id": "86067d49-c824-517c-9151-e4461928376a",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• Which is more popular, soccer or baseball?",
+      "sourceOrdinal": 152,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "ecbb4d0c-022c-51de-bdac-7b868e45c3f0",
+      "type": "CONCEPT",
+      "pdfPage": 448,
+      "literal": "• I think baseball is the most popular sport\nin the Dominican Republic.",
+      "sourceOrdinal": 153,
+      "status": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "family": "NOT_A_SEPARATE_TASK",
+      "reason": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    }
+  ],
+  "contents": [
+    {
+      "id": "concept-26eb5937",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Relaciones humanas y sociales",
+      "sourceRecordIds": [
+        "26eb5937-3c85-5a5e-8c5e-3f5758830e7d"
+      ],
+      "caseIds": [
+        "theme-1"
+      ]
+    },
+    {
+      "id": "concept-f8fde7dc",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Vivienda, entorno y ciudad",
+      "sourceRecordIds": [
+        "f8fde7dc-a7b1-5485-8279-0ff3f4592fe4"
+      ],
+      "caseIds": [
+        "theme-2"
+      ]
+    },
+    {
+      "id": "concept-ad8f02fe",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Escuela y educación",
+      "sourceRecordIds": [
+        "ad8f02fe-f6e0-5441-b739-715affacbe98"
+      ],
+      "caseIds": [
+        "theme-3"
+      ]
+    },
+    {
+      "id": "concept-9d8423c6",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Actividades de la vida diaria",
+      "sourceRecordIds": [
+        "9d8423c6-f49e-5db5-a492-c5b4170e9741"
+      ],
+      "caseIds": [
+        "theme-4"
+      ]
+    },
+    {
+      "id": "concept-84838744",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Deporte, tiempo libre y recreación",
+      "sourceRecordIds": [
+        "84838744-36fd-566f-bcb5-940a5981e806"
+      ],
+      "caseIds": [
+        "theme-5"
+      ]
+    },
+    {
+      "id": "concept-10cdd7d1",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Alimentación",
+      "sourceRecordIds": [
+        "10cdd7d1-efbc-5cac-9bdd-d4af6602c8f9"
+      ],
+      "caseIds": [
+        "theme-6"
+      ]
+    },
+    {
+      "id": "concept-4302d507",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Salud y cuidados físicos",
+      "sourceRecordIds": [
+        "4302d507-2250-5834-8a74-ce7897df3f20"
+      ],
+      "caseIds": [
+        "theme-7",
+        "care-health-reading"
+      ]
+    },
+    {
+      "id": "concept-2aa11dd1",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Bienes y servicios",
+      "sourceRecordIds": [
+        "2aa11dd1-a55c-5617-b21d-6ce353e0b12b"
+      ],
+      "caseIds": [
+        "theme-8"
+      ]
+    },
+    {
+      "id": "concept-2186e58e",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Lengua y comunicación",
+      "sourceRecordIds": [
+        "2186e58e-a302-503d-a4d4-84a3f8d3d63f"
+      ],
+      "caseIds": [
+        "theme-9"
+      ]
+    },
+    {
+      "id": "concept-4fc695d5",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Ciencia y tecnología",
+      "sourceRecordIds": [
+        "4fc695d5-9e2b-5beb-8dc6-8c27550276e7"
+      ],
+      "caseIds": [
+        "theme-10"
+      ]
+    },
+    {
+      "id": "concept-d299efd0",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Viajes y turismo",
+      "sourceRecordIds": [
+        "d299efd0-91e5-50f8-9139-ecc5a295db71"
+      ],
+      "caseIds": [
+        "theme-11"
+      ]
+    },
+    {
+      "id": "concept-0f3016c5",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Fenómenos naturales y medioambiente\nVocabulario",
+      "sourceRecordIds": [
+        "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1"
+      ],
+      "caseIds": [
+        "theme-12",
+        "care-environment-reading"
+      ]
+    },
+    {
+      "id": "concept-6ea8042d",
+      "family": "LEXICON",
+      "label": "• Acontecimientos y celebraciones: have\na baby…",
+      "sourceRecordIds": [
+        "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7"
+      ],
+      "caseIds": [
+        "vocabulary-events-celebrations-reading",
+        "vocabulary-events-celebrations-writing"
+      ]
+    },
+    {
+      "id": "concept-27d35bf8",
+      "family": "LEXICON",
+      "label": "• Comunicación: on line, video conference,\nsocial media…",
+      "sourceRecordIds": [
+        "27d35bf8-d7c0-5980-9f99-182bed2ef10e"
+      ],
+      "caseIds": [
+        "vocabulary-communication-reading",
+        "vocabulary-communication-writing"
+      ]
+    },
+    {
+      "id": "concept-4808a078",
+      "family": "LEXICON",
+      "label": "• Deportes: hockey, cycling, ping•pong,\nbowling…",
+      "sourceRecordIds": [
+        "4808a078-41c2-5c83-a4b4-922fb3692bcc"
+      ],
+      "caseIds": [
+        "vocabulary-sports-reading",
+        "vocabulary-sports-writing"
+      ]
+    },
+    {
+      "id": "concept-ce0f2f1f",
+      "family": "LEXICON",
+      "label": "• Educación: high school, scholarship…",
+      "sourceRecordIds": [
+        "ce0f2f1f-ddec-54b3-b086-7458a6579842"
+      ],
+      "caseIds": [
+        "vocabulary-education-reading",
+        "vocabulary-education-writing"
+      ]
+    },
+    {
+      "id": "concept-c6289760",
+      "family": "LEXICON",
+      "label": "• • Equipos y utensilios de cocina: food\nprocessor, stove…",
+      "sourceRecordIds": [
+        "c6289760-41ce-5d89-924b-8817993fc84c"
+      ],
+      "caseIds": [
+        "vocabulary-kitchen-equipment-reading",
+        "vocabulary-kitchen-equipment-writing"
+      ]
+    },
+    {
+      "id": "procedure-09aad7dc",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Solicitar y ofrecer información.",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "adaptationTargets": [
+        "information"
+      ],
+      "caseIds": [
+        "information-interaction",
+        "information-group",
+        "information-question-only",
+        "information-offer-only",
+        "invoice-then-information",
+        "interaction-then-medium-choice"
+      ]
+    },
+    {
+      "id": "procedure-b4d743ec",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Comunicar noticias.",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "adaptationTargets": [
+        "news"
+      ],
+      "caseIds": [
+        "news-written",
+        "news-oral-and-written",
+        "oral-or-written-news",
+        "oral-and-written-adverbs",
+        "written-or-oral-news",
+        "interaction-then-medium-choice"
+      ]
+    },
+    {
+      "id": "procedure-10e7d2ee",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Hacer predicciones y anuncios.",
+      "sourceRecordIds": [
+        "10e7d2ee-adf3-52db-ad28-c4b7a42feddc"
+      ],
+      "adaptationTargets": [
+        "prediction",
+        "announcement"
+      ],
+      "caseIds": [
+        "prediction-written",
+        "announcement-oral"
+      ]
+    },
+    {
+      "id": "procedure-aa9d8e63",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Expresar opiniones.",
+      "sourceRecordIds": [
+        "aa9d8e63-3be7-55c7-8fee-a78ff5e4fdad"
+      ],
+      "adaptationTargets": [
+        "opinion"
+      ],
+      "caseIds": [
+        "opinion-oral"
+      ]
+    },
+    {
+      "id": "procedure-26591c13",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Relatar experiencias.",
+      "sourceRecordIds": [
+        "26591c13-3944-5908-bdc6-e7383477e595"
+      ],
+      "adaptationTargets": [
+        "experience"
+      ],
+      "caseIds": [
+        "experience-oral"
+      ]
+    },
+    {
+      "id": "procedure-a8a8d0e0",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Explicar problemas y sus motivos.",
+      "sourceRecordIds": [
+        "a8a8d0e0-719b-5841-8f65-0a62c6f70a9a"
+      ],
+      "adaptationTargets": [
+        "problem-causes"
+      ],
+      "caseIds": [
+        "problem-causes-written"
+      ]
+    },
+    {
+      "id": "procedure-9283fcb0",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Dar y pedir instrucciones.",
+      "sourceRecordIds": [
+        "9283fcb0-23df-5e71-8921-1987a885797e"
+      ],
+      "adaptationTargets": [
+        "instructions-request",
+        "instructions-delivery"
+      ],
+      "caseIds": [
+        "instructions-request",
+        "instructions-written"
+      ]
+    },
+    {
+      "id": "procedure-916b983d",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Expresar deseos y planes futuros.",
+      "sourceRecordIds": [
+        "916b983d-7881-58e5-9479-3699c6ae52cc"
+      ],
+      "adaptationTargets": [
+        "wishes",
+        "plans"
+      ],
+      "caseIds": [
+        "wishes-written",
+        "plans-written",
+        "wishes-or-plans"
+      ]
+    },
+    {
+      "id": "procedure-66ebe329",
+      "family": "ORAL_COMPREHENSION",
+      "label": "• Comprensión de discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "caseIds": [
+        "news-listening",
+        "genre-conversation-listening",
+        "genre-advertisement-listening",
+        "genre-notice-listening",
+        "genre-message-listening",
+        "genre-forecast-listening",
+        "genre-news-listening",
+        "genre-song-listening",
+        "genre-poem-listening",
+        "genre-description-listening",
+        "genre-biography-listening",
+        "genre-narrative-listening",
+        "genre-instructions-listening"
+      ]
+    },
+    {
+      "id": "procedure-9cb5a70f",
+      "family": "ORAL_PRODUCTION",
+      "label": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "caseIds": [
+        "genre-conversation-oral",
+        "genre-conversation-interaction",
+        "genre-recipe-oral",
+        "genre-message-oral",
+        "genre-news-oral",
+        "genre-song-oral",
+        "genre-description-oral",
+        "genre-narrative-oral",
+        "genre-monologue-oral",
+        "genre-presentation-oral",
+        "genre-argumentation-oral"
+      ]
+    },
+    {
+      "id": "concept-6c308852",
+      "family": "LEXICON",
+      "label": "• Experiencias personales: vacation, trip…",
+      "sourceRecordIds": [
+        "6c308852-f419-5dca-8bea-e2c5dc9f910f"
+      ],
+      "caseIds": [
+        "vocabulary-experiences-reading",
+        "vocabulary-experiences-writing"
+      ]
+    },
+    {
+      "id": "concept-4ac27288",
+      "family": "LEXICON",
+      "label": "• Eventualidades: lose a key, miss a class, get",
+      "sourceRecordIds": [
+        "4ac27288-1574-5b05-b269-726fbcbcefa1"
+      ],
+      "contextSourceRecordIds": [
+        "1b615530-a86c-592d-a22d-5621352b18d2"
+      ],
+      "caseIds": [
+        "vocabulary-contingencies-reading",
+        "vocabulary-contingencies-writing"
+      ]
+    },
+    {
+      "id": "concept-8f1837c2",
+      "family": "LEXICON",
+      "label": "• Fenómenos naturales: hurricane, storm,\nearthquake…",
+      "sourceRecordIds": [
+        "8f1837c2-890e-5b7d-a227-8264d91f55d4"
+      ],
+      "caseIds": [
+        "vocabulary-natural-phenomena-reading",
+        "vocabulary-natural-phenomena-writing"
+      ]
+    },
+    {
+      "id": "concept-638e0fc9",
+      "family": "LEXICON",
+      "label": "• Herramientas: drill, hammer, scissors,\nsaw, screwdriver…",
+      "sourceRecordIds": [
+        "638e0fc9-014c-5a00-85dd-488a21ee3dbc"
+      ],
+      "caseIds": [
+        "vocabulary-tools-reading",
+        "vocabulary-tools-writing"
+      ]
+    },
+    {
+      "id": "concept-48e6c260",
+      "family": "LEXICON",
+      "label": "• Lugares: countryside, amusement park,\nsummer camp…",
+      "sourceRecordIds": [
+        "48e6c260-cf70-5ad8-9efa-05065edef9c8"
+      ],
+      "caseIds": [
+        "vocabulary-places-reading",
+        "vocabulary-places-writing"
+      ]
+    },
+    {
+      "id": "concept-91edb9f5",
+      "family": "LEXICON",
+      "label": "• Medios de transporte: ship, subway,\nairplane, helicopter…",
+      "sourceRecordIds": [
+        "91edb9f5-d908-5c1a-8ff4-80bd08213e78"
+      ],
+      "caseIds": [
+        "vocabulary-transport-reading",
+        "vocabulary-transport-writing"
+      ]
+    },
+    {
+      "id": "concept-40840eff",
+      "family": "LEXICON",
+      "label": "• Preparación de alimentos: boil, chop, cut,\nfry, grill, mix…",
+      "sourceRecordIds": [
+        "40840eff-4996-5792-b7ea-73eb4054cb9d"
+      ],
+      "caseIds": [
+        "vocabulary-food-preparation-reading",
+        "vocabulary-food-preparation-writing"
+      ]
+    },
+    {
+      "id": "concept-e23bccd6",
+      "family": "LEXICON",
+      "label": "• Recreación: theater, concert, picnic…",
+      "sourceRecordIds": [
+        "e23bccd6-7e86-58d0-832d-8d60f79ddd5e"
+      ],
+      "caseIds": [
+        "vocabulary-recreation-reading",
+        "vocabulary-recreation-writing"
+      ]
+    },
+    {
+      "id": "concept-87005bed",
+      "family": "LEXICON",
+      "label": "• Tecnología: hologram, 3D printer, live\nstream…",
+      "sourceRecordIds": [
+        "87005bed-a302-513a-b9e0-2f785a8c893e"
+      ],
+      "caseIds": [
+        "vocabulary-technology-reading",
+        "vocabulary-technology-writing"
+      ]
+    },
+    {
+      "id": "concept-69f82611",
+      "family": "LEXICON",
+      "label": "• Viaje: travel, luggage, travel agency,\nboard a plane …",
+      "sourceRecordIds": [
+        "69f82611-7d6b-56e2-84ca-8f13d5bdd32d"
+      ],
+      "caseIds": [
+        "vocabulary-travel-reading",
+        "vocabulary-travel-writing"
+      ]
+    },
+    {
+      "id": "concept-f21aded8",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Atraer la atención de alguien: Excuse me,\nsir! Pardon me!",
+      "sourceRecordIds": [
+        "f21aded8-3303-5304-9dfe-2158ebf6e334"
+      ],
+      "caseIds": [
+        "expression-attention-reading",
+        "expression-attention-interaction"
+      ]
+    },
+    {
+      "id": "concept-1bb61ec6",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Animar a alguien: Well done! Good job!\nCongratulations!",
+      "sourceRecordIds": [
+        "1bb61ec6-e75a-5586-94bf-b637d626dff9"
+      ],
+      "caseIds": [
+        "expression-encouragement-reading",
+        "expression-encouragement-interaction"
+      ]
+    },
+    {
+      "id": "concept-8280e82b",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Expresar interés y asombro: Wow! Really?\nThat sounds nice! . .",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "caseIds": [
+        "expression-interest-reading",
+        "expression-interest-interaction",
+        "expression-amazement-reading",
+        "expression-amazement-interaction"
+      ]
+    },
+    {
+      "id": "concept-9aafc7d9",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Mostrar empatía: Too bad!, How awful!..",
+      "sourceRecordIds": [
+        "9aafc7d9-912f-5c80-b9ef-d96a7c218afb"
+      ],
+      "caseIds": [
+        "expression-empathy-reading",
+        "expression-empathy-interaction"
+      ]
+    },
+    {
+      "id": "concept-33e52a3e",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Pedir y dar opiniones: I think…, In my\nopinion…, I believe …",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "caseIds": [
+        "expression-ask-opinion-reading",
+        "expression-ask-opinion-interaction",
+        "expression-opinion-reading",
+        "expression-opinion-interaction"
+      ]
+    },
+    {
+      "id": "concept-cbcabdc8",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Expresar acuerdo y desacuerdo: I agree, I\ndon’t think so…",
+      "sourceRecordIds": [
+        "cbcabdc8-2134-599d-9ec0-d6013919e4d4"
+      ],
+      "caseIds": [
+        "expression-agreement-reading",
+        "expression-agreement-interaction"
+      ]
+    },
+    {
+      "id": "concept-8444fe4c",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• • Coincidir y discrepar: Me too, neither do\nI, I do too, so am I…",
+      "sourceRecordIds": [
+        "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3"
+      ],
+      "caseIds": [
+        "expression-coincidence-reading",
+        "expression-coincidence-interaction"
+      ]
+    },
+    {
+      "id": "concept-9ec435b9",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Pedir repetición o aclaración: Pardon me?\nExcuse me? .",
+      "sourceRecordIds": [
+        "9ec435b9-7dbe-5221-8f67-5f8d9354647f"
+      ],
+      "caseIds": [
+        "expression-clarification-reading",
+        "expression-clarification-interaction"
+      ]
+    },
+    {
+      "id": "concept-7a102b7c",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Cambiar de tema: By the way, anyway",
+      "sourceRecordIds": [
+        "7a102b7c-c765-5b79-bbbd-aa59101fe562"
+      ],
+      "caseIds": [
+        "expression-change-topic-reading",
+        "expression-change-topic-interaction"
+      ]
+    },
+    {
+      "id": "concept-70d4b458",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Concluir una conversación: Nice talking\nto you!",
+      "sourceRecordIds": [
+        "70d4b458-1168-53f4-8cd6-aa584bb9885e"
+      ],
+      "caseIds": [
+        "expression-close-conversation-reading",
+        "expression-close-conversation-interaction"
+      ]
+    },
+    {
+      "id": "concept-3646755e",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Dar una noticia: Guess what? Did I tell you?",
+      "sourceRecordIds": [
+        "3646755e-ae05-5a13-8825-07a7db7b14a0"
+      ],
+      "caseIds": [
+        "expression-news-reading",
+        "expression-news-interaction"
+      ]
+    },
+    {
+      "id": "concept-040e6442",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Excusarse: I’m sorry, I apologize…",
+      "sourceRecordIds": [
+        "040e6442-1b1b-50a8-852a-5af3177d847e"
+      ],
+      "caseIds": [
+        "expression-excuse-reading",
+        "expression-excuse-interaction"
+      ]
+    },
+    {
+      "id": "concept-dcb700f7",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Felicitar: Congratulations! Happy\nanniversary!\nGramática\nOraciones enunciativas (afirmativas y\nnegativas), interrogativas y exclamativas.\nPresente simple para pedir y dar opiniones\ne información:\nWhat do you think?",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "adaptationTargets": [
+        "congratulation",
+        "sentence-types",
+        "present-simple"
+      ],
+      "caseIds": [
+        "expression-congratulations-reading",
+        "expression-congratulations-interaction",
+        "grammar-60-declarative-reading",
+        "grammar-60-declarative-analysis",
+        "grammar-60-declarative-writing",
+        "grammar-60-declarative-comparison",
+        "grammar-60-declarative-research",
+        "grammar-60-interrogative-sentences-reading",
+        "grammar-60-interrogative-sentences-analysis",
+        "grammar-60-interrogative-sentences-writing",
+        "grammar-60-interrogative-sentences-comparison",
+        "grammar-60-interrogative-sentences-research",
+        "grammar-60-exclamation-reading",
+        "grammar-60-exclamation-analysis",
+        "grammar-60-exclamation-writing",
+        "grammar-60-exclamation-comparison",
+        "grammar-60-exclamation-research",
+        "grammar-60-present-simple-reading",
+        "grammar-60-present-simple-analysis",
+        "grammar-60-present-simple-writing",
+        "grammar-60-present-simple-comparison",
+        "grammar-60-present-simple-research",
+        "grammar-affirmative-only",
+        "grammar-negative-only"
+      ]
+    },
+    {
+      "id": "concept-d17667f9",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Presente continuo para expresar planes\nfuturos:",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "adaptationTargets": [
+        "present-continuous-plans"
+      ],
+      "caseIds": [
+        "grammar-62-present-continuous-reading",
+        "grammar-62-present-continuous-analysis",
+        "grammar-62-present-continuous-writing",
+        "grammar-62-present-continuous-comparison",
+        "grammar-62-present-continuous-research"
+      ]
+    },
+    {
+      "id": "procedure-36c50dbe",
+      "family": "WRITTEN_COMPREHENSION",
+      "label": "• Comprensión de textos escritos en formato físico, digital y\nvirtual, tales como tarjetas, listas, catálogos, diccionarios,\nfacturas, anuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, instrucciones, currículum\nvitae, cartas, formularios, noticias, horarios, agendas,\nmenús, croquis, cuestionarios, folletos, canciones,\npoesías, historietas, guías turísticas, descripciones,\nbiografías y narraciones.",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "caseIds": [
+        "news-reading-brief",
+        "genre-business-card-reading",
+        "genre-list-reading",
+        "genre-advertisement-reading",
+        "genre-recipe-reading",
+        "genre-sign-reading",
+        "genre-notice-reading",
+        "genre-poster-reading",
+        "genre-message-reading",
+        "genre-email-reading",
+        "genre-cv-reading",
+        "genre-letter-reading",
+        "genre-form-reading",
+        "genre-news-reading",
+        "genre-schedule-reading",
+        "genre-agenda-reading",
+        "genre-menu-reading",
+        "genre-map-reading",
+        "genre-questionnaire-reading",
+        "genre-brochure-reading",
+        "genre-song-reading",
+        "genre-poem-reading",
+        "genre-comic-reading",
+        "genre-tourist-guide-reading",
+        "genre-description-reading",
+        "genre-biography-reading",
+        "genre-narrative-reading",
+        "genre-catalog-reading",
+        "genre-dictionary-reading",
+        "genre-invoice-reading",
+        "genre-instructions-reading",
+        "invoice-then-information",
+        "names-and-negated-forms"
+      ]
+    },
+    {
+      "id": "procedure-83128863",
+      "family": "WRITTEN_PRODUCTION",
+      "label": "• Producción de textos escritos en formato físico, digital y\nvirtual, tales como mensajes, correos electrónicos, cartas,\ncurríc ulum vitae, avisos, afiches, letreros, formularios,\nrecetas, instrucciones, cuestionarios, biografías,\nnarraciones y descripciones.",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "caseIds": [
+        "genre-recipe-writing",
+        "genre-sign-writing",
+        "genre-notice-writing",
+        "genre-poster-writing",
+        "genre-message-writing",
+        "genre-email-writing",
+        "genre-cv-writing",
+        "genre-letter-writing",
+        "genre-form-writing",
+        "genre-questionnaire-writing",
+        "genre-description-writing",
+        "genre-biography-writing",
+        "genre-narrative-writing",
+        "genre-instructions-writing",
+        "three-written-product-alternatives"
+      ]
+    },
+    {
+      "id": "procedure-5d7b1928",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Anticipación del contenido del mensaje.",
+      "sourceRecordIds": [
+        "5d7b1928-5532-5288-ace0-6c4322ca5f74"
+      ],
+      "caseIds": [
+        "strategy-67-anticipation-15"
+      ]
+    },
+    {
+      "id": "procedure-94bc5651",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaje.",
+      "sourceRecordIds": [
+        "94bc5651-cf36-5f2b-9f9a-a1a8c3f23c2a"
+      ],
+      "caseIds": [
+        "strategy-69-nonverbal-reception-17"
+      ]
+    },
+    {
+      "id": "procedure-1569863e",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos",
+      "sourceRecordIds": [
+        "1569863e-050b-5386-af68-d8f9d663e20b"
+      ],
+      "caseIds": [
+        "strategy-70-inference-18"
+      ]
+    },
+    {
+      "id": "procedure-29cf020d",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Solicitud de repetición",
+      "sourceRecordIds": [
+        "29cf020d-03a1-579a-acf4-173ba4d46469"
+      ],
+      "caseIds": [
+        "strategy-71-help-19"
+      ]
+    },
+    {
+      "id": "procedure-a9d38a67",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Indicación de que se comprende o no.",
+      "sourceRecordIds": [
+        "a9d38a67-aef5-5af4-a3d6-f125ff25153b"
+      ],
+      "caseIds": [
+        "strategy-72-understanding-38"
+      ]
+    },
+    {
+      "id": "procedure-ef273e24",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Reproducción y ensayo de palabras, expresiones y pautas\nde entonación.",
+      "sourceRecordIds": [
+        "ef273e24-d95c-549b-bc87-e234d5149518"
+      ],
+      "caseIds": [
+        "strategy-74-rehearsal-20"
+      ]
+    },
+    {
+      "id": "procedure-ea258771",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Identificación de la situación de comunicación.",
+      "sourceRecordIds": [
+        "ea258771-4a3f-5cf1-9586-0258ae28a11c"
+      ],
+      "caseIds": [
+        "strategy-75-situation-21"
+      ]
+    },
+    {
+      "id": "procedure-6810b974",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Establecimiento de la intención comunicativ",
+      "sourceRecordIds": [
+        "6810b974-d18a-56ba-8bd5-cb0c5dd81ec4"
+      ],
+      "caseIds": [
+        "strategy-76-communicative-purpose-22"
+      ]
+    },
+    {
+      "id": "procedure-ddf1316e",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Planificación del mensaje.",
+      "sourceRecordIds": [
+        "ddf1316e-7cc7-59f6-bb8f-7815b801cb4a"
+      ],
+      "caseIds": [
+        "strategy-77-planning-0"
+      ]
+    },
+    {
+      "id": "procedure-f7856251",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Ensayo de nuevas combinaciones y expresiones y\nsolicitud de retroalimentación.",
+      "sourceRecordIds": [
+        "f7856251-98f2-5ea8-baa8-47edae10be4a"
+      ],
+      "caseIds": [
+        "strategy-78-new-combinations-1",
+        "strategy-78-feedback-2"
+      ]
+    },
+    {
+      "id": "procedure-a4e2a060",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Uso del lenguaje no verbal para comunicarse.",
+      "sourceRecordIds": [
+        "a4e2a060-3827-56bd-8fec-b70a76584690"
+      ],
+      "caseIds": [
+        "strategy-79-nonverbal-production-23"
+      ]
+    },
+    {
+      "id": "procedure-9e708f99",
+      "family": "READING_STRATEGY",
+      "label": "• Establecimiento del propósito de la lectura.",
+      "sourceRecordIds": [
+        "9e708f99-cdfc-5a2e-b48c-3f81f5441da6"
+      ],
+      "caseIds": [
+        "strategy-81-reading-purpose-24"
+      ]
+    },
+    {
+      "id": "procedure-f8179f9f",
+      "family": "READING_STRATEGY",
+      "label": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "sourceRecordIds": [
+        "f8179f9f-7319-5c7c-a8d3-75c4633d56fd"
+      ],
+      "caseIds": [
+        "strategy-82-hypothesis-25"
+      ]
+    },
+    {
+      "id": "procedure-8ac047be",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la correspondencia entre la grafía y el\nsonido de las palabras.",
+      "sourceRecordIds": [
+        "8ac047be-c006-5e2d-83d0-8bbadf17cb15"
+      ],
+      "caseIds": [
+        "strategy-83-grapheme-phoneme-26"
+      ]
+    },
+    {
+      "id": "procedure-af8a71f1",
+      "family": "READING_STRATEGY",
+      "label": "• Inferencia del significado de palabras y expresiones a\npartir de las pistas textuales y los conocimientos previos.",
+      "sourceRecordIds": [
+        "af8a71f1-0518-5c34-9855-f86f3e473f40"
+      ],
+      "caseIds": [
+        "strategy-84-inference-27"
+      ]
+    },
+    {
+      "id": "procedure-1e1191ed",
+      "family": "READING_STRATEGY",
+      "label": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "sourceRecordIds": [
+        "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e"
+      ],
+      "caseIds": [
+        "strategy-85-annotation-28",
+        "strategy-85-dictionary-29"
+      ]
+    },
+    {
+      "id": "procedure-3e416a0b",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la idea principal y detalles específicos\ndel texto.",
+      "sourceRecordIds": [
+        "3e416a0b-a656-54e4-8190-e1c63a3a47c5"
+      ],
+      "caseIds": [
+        "strategy-86-main-details-3",
+        "strategy-86-main-details-4",
+        "strategy-86-main-details-5"
+      ]
+    },
+    {
+      "id": "procedure-32803242",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la intención comunicativa del texto.",
+      "sourceRecordIds": [
+        "32803242-e31f-5c30-a2fc-323d7669f2a2"
+      ],
+      "caseIds": [
+        "strategy-87-text-intention-30"
+      ]
+    },
+    {
+      "id": "procedure-8f3ea3b4",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "sourceRecordIds": [
+        "8f3ea3b4-866d-539f-8553-e79e0df68849"
+      ],
+      "caseIds": [
+        "strategy-89-communicative-purpose-31",
+        "strategy-89-text-type-32"
+      ]
+    },
+    {
+      "id": "procedure-b62848ab",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Planificación y organización del mensaje.",
+      "sourceRecordIds": [
+        "b62848ab-0aa3-5249-9777-545dac724d4d"
+      ],
+      "caseIds": [
+        "strategy-90-planning-33"
+      ]
+    },
+    {
+      "id": "procedure-8df046d6",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Uso del diccionario y otras herramientas de consulta.",
+      "sourceRecordIds": [
+        "8df046d6-61b1-5955-a2b6-a300064818d6"
+      ],
+      "caseIds": [
+        "strategy-91-dictionary-34"
+      ]
+    },
+    {
+      "id": "procedure-8d41728f",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Revisión del sentido y la corrección del mensaje.",
+      "sourceRecordIds": [
+        "8d41728f-a330-533d-9d07-db90b94cdf0e"
+      ],
+      "caseIds": [
+        "strategy-92-revision-35"
+      ]
+    },
+    {
+      "id": "attitude_value-01b58fa5",
+      "family": "CRITICAL_COMPREHENSION",
+      "label": "• Sentido crítico ante los anuncios y\npredicciones.",
+      "sourceRecordIds": [
+        "01b58fa5-3355-5705-8097-48b66fc55037"
+      ],
+      "caseIds": [
+        "critical-announcement",
+        "critical-source-information"
+      ]
+    },
+    {
+      "id": "concept-47732fbd",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "Pasado simple para comunicar noticias y\nrelatar experiencias:",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "adaptationTargets": [
+        "past-simple"
+      ],
+      "caseIds": [
+        "grammar-104-past-simple-reading",
+        "grammar-104-past-simple-analysis",
+        "grammar-104-past-simple-writing",
+        "grammar-104-past-simple-comparison",
+        "grammar-104-past-simple-research"
+      ]
+    },
+    {
+      "id": "concept-7b7a229d",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Alex has just gotten a better job.\nUsed to:",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "adaptationTargets": [
+        "used-to"
+      ],
+      "caseIds": [
+        "past-habits-used-to",
+        "grammar-105-used-to-reading",
+        "grammar-105-used-to-analysis",
+        "grammar-105-used-to-writing",
+        "grammar-105-used-to-comparison",
+        "grammar-105-used-to-research"
+      ]
+    },
+    {
+      "id": "concept-21e7c0d6",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I used to attend English classes every\nafternoon when I lived in my hometown.\nImperativo para dar instrucciones:\nWalk for three blocks and turn right.",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "adaptationTargets": [
+        "imperative"
+      ],
+      "caseIds": [
+        "grammar-106-imperative-reading",
+        "grammar-106-imperative-analysis",
+        "grammar-106-imperative-writing",
+        "grammar-106-imperative-comparison",
+        "grammar-106-imperative-research"
+      ]
+    },
+    {
+      "id": "concept-04c8ce41",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Plug in the PC, and turn it on.\nPasado simple y pasado continuo para\nexplicar problemas y sus motivos:",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "adaptationTargets": [
+        "past-simple-and-continuous"
+      ],
+      "caseIds": [
+        "grammar-107-past-simple-reading",
+        "grammar-107-past-simple-analysis",
+        "grammar-107-past-simple-writing",
+        "grammar-107-past-simple-comparison",
+        "grammar-107-past-simple-research",
+        "grammar-107-past-continuous-reading",
+        "grammar-107-past-continuous-analysis",
+        "grammar-107-past-continuous-writing",
+        "grammar-107-past-continuous-comparison",
+        "grammar-107-past-continuous-research"
+      ]
+    },
+    {
+      "id": "concept-03ec5860",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• The accident happened because the driver\ngot distracted as he was talking on his cell\nphone.\nFuturo continuo para expresar planes\nfuturos:",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "adaptationTargets": [
+        "future-continuous"
+      ],
+      "caseIds": [
+        "grammar-108-future-continuous-reading",
+        "grammar-108-future-continuous-analysis",
+        "grammar-108-future-continuous-writing",
+        "grammar-108-future-continuous-comparison",
+        "grammar-108-future-continuous-research"
+      ]
+    },
+    {
+      "id": "concept-603c93c8",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I’ll be traveling to Canada next summe Be\n+ going to para hacer predicciones y\n.anuncios, y expresar planes futuros:",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "adaptationTargets": [
+        "going-to"
+      ],
+      "caseIds": [
+        "grammar-109-going-to-reading",
+        "grammar-109-going-to-analysis",
+        "grammar-109-going-to-writing",
+        "grammar-109-going-to-comparison",
+        "grammar-109-going-to-research"
+      ]
+    },
+    {
+      "id": "concept-c30966c1",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I’m going to get married next month.\nWill para hacer predicciones:\nHope, wish y would like… para expresar\ndeseos:",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "adaptationTargets": [
+        "will",
+        "wishes"
+      ],
+      "caseIds": [
+        "grammar-111-will-reading",
+        "grammar-111-will-analysis",
+        "grammar-111-will-writing",
+        "grammar-111-will-comparison",
+        "grammar-111-will-research",
+        "grammar-111-hope-reading",
+        "grammar-111-hope-analysis",
+        "grammar-111-hope-writing",
+        "grammar-111-hope-comparison",
+        "grammar-111-hope-research",
+        "grammar-111-wish-reading",
+        "grammar-111-wish-analysis",
+        "grammar-111-wish-writing",
+        "grammar-111-wish-comparison",
+        "grammar-111-wish-research",
+        "grammar-111-would-like-reading",
+        "grammar-111-would-like-analysis",
+        "grammar-111-would-like-writing",
+        "grammar-111-would-like-comparison",
+        "grammar-111-would-like-research",
+        "independent-sentences"
+      ]
+    },
+    {
+      "id": "concept-4a41f41b",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I would like to travel to Spain this year.\nVerbos seguidos por infinitivo, gerundio o\npor cualquiera de ellos:",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "adaptationTargets": [
+        "verb-complements"
+      ],
+      "caseIds": [
+        "grammar-112-verb-complements-reading",
+        "grammar-112-verb-complements-analysis",
+        "grammar-112-verb-complements-writing",
+        "grammar-112-verb-complements-comparison",
+        "grammar-112-verb-complements-research",
+        "grammar-gerund-complement",
+        "grammar-infinitive-or-gerund"
+      ]
+    },
+    {
+      "id": "concept-15b5fd13",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I began playing to play baseball when I\nwas ten years old.\nPhrasal verbs (turn up, fill out, get along\nwith, look after…):",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "adaptationTargets": [
+        "phrasal-verbs"
+      ],
+      "caseIds": [
+        "grammar-115-phrasal-verbs-reading",
+        "grammar-115-phrasal-verbs-analysis",
+        "grammar-115-phrasal-verbs-writing",
+        "grammar-115-phrasal-verbs-comparison",
+        "grammar-115-phrasal-verbs-research"
+      ]
+    },
+    {
+      "id": "concept-d94524ee",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• They get along well.\nThere + be para hacer anuncios, comunicar\nnoticias, y explicar problemas y sus motivos:",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "adaptationTargets": [
+        "there-be"
+      ],
+      "caseIds": [
+        "grammar-117-there-be-reading",
+        "grammar-117-there-be-analysis",
+        "grammar-117-there-be-writing",
+        "grammar-117-there-be-comparison",
+        "grammar-117-there-be-research"
+      ]
+    },
+    {
+      "id": "concept-c3f4e45b",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• The traflc is slow because there has been a\nterrible accident on the highway.\nCondicional para dar instrucciones, hacer\npredicciones y explicar problemas y sus\nmotivos (If/When + presente simple en la\ncláusula condicional + presente simple en\nla cláusula principal):",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "adaptationTargets": [
+        "conditional-zero"
+      ],
+      "caseIds": [
+        "grammar-120-conditional-reading",
+        "grammar-120-conditional-analysis",
+        "grammar-120-conditional-writing",
+        "grammar-120-conditional-comparison",
+        "grammar-120-conditional-research"
+      ]
+    },
+    {
+      "id": "concept-ba3c78f3",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• When you don’t study, you get bad grades.\nCondicional para expresar deseos y planes\nfuturos (If / When + presente simple en la\ncláusula condicional+ futuro con will en la\ncláusula principal):",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "adaptationTargets": [
+        "conditional-first"
+      ],
+      "caseIds": [
+        "grammar-122-conditional-reading",
+        "grammar-122-conditional-analysis",
+        "grammar-122-conditional-writing",
+        "grammar-122-conditional-comparison",
+        "grammar-122-conditional-research"
+      ]
+    },
+    {
+      "id": "procedure-8e21387e",
+      "family": "LEARNING_STRATEGY",
+      "label": "• Utilización de asociaciones mentales y de la acción.",
+      "sourceRecordIds": [
+        "8e21387e-f63c-5c1f-aa91-f51062530acb"
+      ],
+      "caseIds": [
+        "strategy-124-association-36"
+      ]
+    },
+    {
+      "id": "procedure-37b0e5d1",
+      "family": "SOCIOLINGUISTIC",
+      "label": "• Utilización de las normas de cortesía más importantes.",
+      "sourceRecordIds": [
+        "37b0e5d1-6452-53ca-92b1-1f37816e73ce"
+      ],
+      "caseIds": [
+        "strategy-128-courtesy-6"
+      ]
+    },
+    {
+      "id": "procedure-4a06e885",
+      "family": "SOCIOLINGUISTIC",
+      "label": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "sourceRecordIds": [
+        "4a06e885-b595-5085-a9a8-5edb8d9b2514"
+      ],
+      "caseIds": [
+        "strategy-129-neutral-register-7"
+      ]
+    },
+    {
+      "id": "procedure-03bb3059",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Medios de comunicación.",
+      "sourceRecordIds": [
+        "03bb3059-23ff-599e-ae08-0de4f9f2c8bc"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-131-cultural-comparison-8"
+      ]
+    },
+    {
+      "id": "procedure-5c803522",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Valores, tradiciones y creencias.",
+      "sourceRecordIds": [
+        "5c803522-4a7c-51f0-b8c5-58818d0984ac"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-132-cultural-comparison-9"
+      ]
+    },
+    {
+      "id": "procedure-94d4d448",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Normas de cortesía",
+      "sourceRecordIds": [
+        "94d4d448-7246-5fda-ace3-2d354c6476c3"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "cultural-manners-comparison",
+        "strategy-133-cultural-comparison-10"
+      ]
+    },
+    {
+      "id": "procedure-ece8f6bf",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Actividades de tiempo libre.",
+      "sourceRecordIds": [
+        "ece8f6bf-1e99-5b30-aac8-08f9bb583e0d"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-134-cultural-comparison-11"
+      ]
+    },
+    {
+      "id": "procedure-a01f92a8",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Atractivos turísticos.",
+      "sourceRecordIds": [
+        "a01f92a8-790c-5259-aaa5-bd34ddbf92ec"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-135-cultural-comparison-12"
+      ]
+    },
+    {
+      "id": "procedure-2e2dcbf4",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "sourceRecordIds": [
+        "2e2dcbf4-21f5-52f5-a38f-d27fcd046262"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-136-cultural-comparison-13"
+      ]
+    },
+    {
+      "id": "procedure-485991d7",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Cuidado del medioambiente",
+      "sourceRecordIds": [
+        "485991d7-9d65-5361-8c2c-37ada749c307"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-137-cultural-comparison-14"
+      ]
+    },
+    {
+      "id": "concept-74ae6175",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Causa y consecuencia: so, because, since…",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "adaptationTargets": [
+        "cause-and-consequence"
+      ],
+      "caseIds": [
+        "grammar-139-cause-connectors-reading",
+        "grammar-139-cause-connectors-analysis",
+        "grammar-139-cause-connectors-writing",
+        "grammar-139-cause-connectors-comparison",
+        "grammar-139-cause-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-3a467550",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Contraste y oposición: but, however…",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "adaptationTargets": [
+        "contrast"
+      ],
+      "caseIds": [
+        "grammar-140-contrast-connectors-reading",
+        "grammar-140-contrast-connectors-analysis",
+        "grammar-140-contrast-connectors-writing",
+        "grammar-140-contrast-connectors-comparison",
+        "grammar-140-contrast-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-2f317563",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Concesión: even so, nevertheless…\nFinalidad: in order to, so that, to…",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "adaptationTargets": [
+        "concession",
+        "purpose"
+      ],
+      "caseIds": [
+        "grammar-141-concession-connectors-reading",
+        "grammar-141-concession-connectors-analysis",
+        "grammar-141-concession-connectors-writing",
+        "grammar-141-concession-connectors-comparison",
+        "grammar-141-concession-connectors-research",
+        "grammar-141-purpose-connectors-reading",
+        "grammar-141-purpose-connectors-analysis",
+        "grammar-141-purpose-connectors-writing",
+        "grammar-141-purpose-connectors-comparison",
+        "grammar-141-purpose-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-9e897fe3",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Secuencia: first, second, then…",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "adaptationTargets": [
+        "sequence"
+      ],
+      "caseIds": [
+        "grammar-142-sequence-connectors-reading",
+        "grammar-142-sequence-connectors-analysis",
+        "grammar-142-sequence-connectors-writing",
+        "grammar-142-sequence-connectors-comparison",
+        "grammar-142-sequence-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-84b1c00a",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Tiempo: after, once, when, while, as soon\nas…\nVoz pasiva para pedir y dar información,\ncomunicar noticias, hacer predicciones y\nanuncios:",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "adaptationTargets": [
+        "time-connectors",
+        "passive"
+      ],
+      "caseIds": [
+        "passive-notice",
+        "grammar-143-time-connectors-reading",
+        "grammar-143-time-connectors-analysis",
+        "grammar-143-time-connectors-writing",
+        "grammar-143-time-connectors-comparison",
+        "grammar-143-time-connectors-research",
+        "grammar-143-passive-reading",
+        "grammar-143-passive-analysis",
+        "grammar-143-passive-writing",
+        "grammar-143-passive-comparison",
+        "grammar-143-passive-research",
+        "grammar-passive-presente",
+        "grammar-passive-pasado",
+        "grammar-passive-futuro"
+      ]
+    },
+    {
+      "id": "concept-88ebefe0",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• That man will be fined because he broke\nthe law.\nQuestion tags:",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "adaptationTargets": [
+        "question-tags"
+      ],
+      "caseIds": [
+        "grammar-146-question-tags-reading",
+        "grammar-146-question-tags-analysis",
+        "grammar-146-question-tags-writing",
+        "grammar-146-question-tags-comparison",
+        "grammar-146-question-tags-research"
+      ]
+    },
+    {
+      "id": "concept-d41287be",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• You are Eric, aren´t you?\nPreguntas indirectas y embedded questions:",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "adaptationTargets": [
+        "indirect-questions"
+      ],
+      "caseIds": [
+        "grammar-148-indirect-questions-reading",
+        "grammar-148-indirect-questions-analysis",
+        "grammar-148-indirect-questions-writing",
+        "grammar-148-indirect-questions-comparison",
+        "grammar-148-indirect-questions-research"
+      ]
+    },
+    {
+      "id": "concept-81c14b14",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I want to know why the Wi•Fi connection\nisn’t working.\nGerundios en función sustantiva:\nDancing is a very good activity for you to\nstay healthy.\nOmisión del artículo:",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "adaptationTargets": [
+        "gerund-noun",
+        "zero-article"
+      ],
+      "caseIds": [
+        "grammar-150-nominal-gerund-reading",
+        "grammar-150-nominal-gerund-analysis",
+        "grammar-150-nominal-gerund-writing",
+        "grammar-150-nominal-gerund-comparison",
+        "grammar-150-nominal-gerund-research",
+        "grammar-150-zero-article-reading",
+        "grammar-150-zero-article-analysis",
+        "grammar-150-zero-article-writing",
+        "grammar-150-zero-article-comparison",
+        "grammar-150-zero-article-research"
+      ]
+    },
+    {
+      "id": "concept-3fa70b62",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Love is a wonderful thing.\nGrados comparativo y superlativo del adjetivo:",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "adaptationTargets": [
+        "comparative-and-superlative"
+      ],
+      "caseIds": [
+        "grammar-151-comparative-reading",
+        "grammar-151-comparative-analysis",
+        "grammar-151-comparative-writing",
+        "grammar-151-comparative-comparison",
+        "grammar-151-comparative-research",
+        "grammar-comparative-only",
+        "grammar-superlative-only"
+      ]
+    }
+  ],
+  "notes": [
+    "Los107registros adaptables no equivalen a107temas independientes.",
+    "El inventario de medios, géneros, formas, vocabulario y ejemplos no exige toda la lista en cada actividad.",
+    "El nombre del encabezado y el de asignación son variantes documentadas de una sola optativa.",
+    "No calificar disposiciones privadas ni exigir experiencias personales, publicaciones o contacto real con personas extranjeras.",
+    "El proveedor común existente solo se reutilizará tras cotejar su contenido;98de153C/P/A coinciden exactamente por normalización con el ámbito común de4.º, sin inferir implementación.",
+    "Las formas verificadas se vinculan a sus anclas propias; las capacidades adicionales del helper común no se declaran cobertura curricular de esta optativa.",
+    "Los ejemplos de género solo ejercitan medios presentes en las listas de la fuente; formato virtual escrito no implica producir video.",
+    "Los dominios temáticos contextualizan la comunicación y no generan un criterio adicional por nombre de tema."
+  ],
+  "implementationStatus": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED"
+}

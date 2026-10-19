@@ -11,6 +11,8 @@ export function gradeFourContextCriteria(task:UpperEnglishEvidence,existing:Cont
  const shared=new Set(['respect-differences','empathetic-response','faithful-information','care','social-contribution','critical-information','problem-information'])
  const observableText=text.replace(/\b(?:respuesta solidaria|con solidaridad)\b/g,'respuesta empatica')
  let rows=gradeThreeContextCriteria(observableText,receptive).filter(c=>shared.has(c.templateId.replace('ing-3-context-',''))).map(c=>({...c,templateId:c.templateId.replace('ing-3-','ing-4-')}))
+ const careRequested=/\b(?:acciones|medidas|orientaciones|recomendaciones|indicaciones|cuidar(?:an)?|cuiden|cuidan|cuidando)\b/.test(text)
+ if(!careRequested)rows=rows.filter(c=>c.templateId!=='ing-4-context-care')
  if(existing.some(c=>c.templateId==='ing-4-strategy-cultural-comparison'))rows=rows.filter(c=>c.templateId!=='ing-4-context-respect-differences')
  if(existing.some(c=>c.templateId==='ing-4-problem-causes'))rows=rows.filter(c=>c.templateId!=='ing-4-context-problem-information')
  const existingIds=new Set(existing.map(c=>c.templateId))

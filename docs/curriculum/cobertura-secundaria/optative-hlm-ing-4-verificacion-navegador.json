@@ -1,0 +1,73 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "environment": "http://localhost:8787",
+  "accountKind": "PERSONAL_DEVELOPMENT_ACCOUNT_NOT_QA",
+  "frontendCandidate": "evaluation-2026.127",
+  "entryAsset": "/assets/index-Ju5zWYeD.js",
+  "entrySha256": "96df96f5058787ae24e2a0d0e90872fbf7360a867df1bac55814dd0ac095f90c",
+  "normalReloadObserved": true,
+  "registerSwScriptObserved": true,
+  "storageOrServiceWorkerCleared": false,
+  "loginEmailOrCredentialsUsed": false,
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+  "observed": [
+    "La sesión personal está activa y Activities cargó57actividades tras un timeout y un reintento mediante su acción existente.",
+    "El creador vacío de4.º abre sin error en la asignatura personal genérica OPT-HLM.",
+    "Tipo de actividad, estrategia, técnica e instrumento son visibles desde el formulario vacío, con diseño vertical.",
+    "La estrategia muestra Sin estrategia, abre sus opciones manuales y vuelve a ese estado al cancelar.",
+    "Valor en puntos permanece vacío y no aparece un anuncio de preparación.",
+    "En un curso QA separado y claramente identificado de la misma cuenta personal se cargó la asignatura específica OPT-HLM-ING-4 sin modificar la optativa genérica original.",
+    "Título y descripción de una simulación informativa ficticia produjeron Simulación automática, Interacción oral y rúbrica completa de tres criterios; puntos inicialmente vacíos.",
+    "Se prepararon y revisaron visualmente rúbrica, cotejo, escala y ponderada completos; la ponderada conservó100% y los totales17.35→20→17.35.",
+    "Se volvió a rúbrica y se editó manualmente el primer criterio. Guardado y reapertura conservaron el texto y17.35.",
+    "Se cambió únicamente a Estudio de caso manual, se guardó y recargó la edición: estrategia, criterio manual y17.35 visibles. Consulta de solo lectura confirma el mismo instrumento, snapshot, criterios, pesos, puntos y hash exactos."
+  ],
+  "pending": [],
+  "databaseActivityWrites": 2,
+  "draftsDeleted": 0,
+  "originalAcademicContextReadOnlyCheck": {
+    "grade": 4,
+    "subjectCode": "OPT-HLM",
+    "subjectName": "Salida Optativa: Humanidades y Lenguas Modernas",
+    "defaultModality": null,
+    "curriculumContext": null,
+    "specificOptativeAssignmentPresent": false,
+    "coursesChanged": false
+  },
+  "personalQaContext": {
+    "authorization": "Encargo integral, sección10: crear datos QA identificables",
+    "separateClearlyNamedCourse": true,
+    "grade": 4,
+    "cycle": 2,
+    "modality": "academic",
+    "exit": "HLM",
+    "subjectCode": "OPT-HLM-ING-4",
+    "existingPersonalSchool": true,
+    "newUsers": 0,
+    "newStudents": 0,
+    "originalRowsPreserved": true,
+    "idempotenceVerified": true
+  },
+  "persistence": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "5f99fe21-5b06-4683-bf49-c0906e8e25b7",
+    "instrumentId": "dcaed75d-428b-45cd-843d-e26d96ad7a01",
+    "snapshotId": "edfe1d5a-fcad-48d6-af0f-8c664a376842",
+    "instrumentHash": "bbef173cfb8c660cbf8cfbfbc57d3471",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.127",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "activityWrites": 2,
+    "newActivities": 1,
+    "newSnapshots": 1
+  },
+  "limitations": [
+    "El listado Actividades agotó su tiempo de espera al volver desde el guardado y su botón Ver actividad quedó deshabilitado. Se reabrió la misma muestra por su ruta de edición confirmada; no se duplicó.",
+    "El recorrido se comprobó en la cuenta personal dentro del curso QA explícito; su curso original sigue siendo una optativa genérica sin el contexto específico y no hereda cobertura por esta prueba."
+  ]
+}

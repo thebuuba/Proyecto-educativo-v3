@@ -1,7 +1,7 @@
 import { normalizedTask } from './secondary-language-topics'
 import type { ContextualTopicCriterion } from './secondary-topic-criteria'
 
-export type InstrumentAcademicContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string; subjectName?: string; modalityCode?: string | null; optativeExitName?: string | null }
+export type InstrumentAcademicContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; cycle?: number | null; subjectCode: string; subjectName?: string; modalityCode?: string | null; optativeExitName?: string | null }
 export type ScienceTopic = 'cells' | 'ohm'
 
 /** The object and requested purpose take precedence over the medium (drawing, model). */

@@ -7,7 +7,7 @@ import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '
 import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
 import {resolveCommonMathTask,commonMathCriteria,adaptMathScale} from '@aula/shared'
 import type { InstrumentRecommendation } from '@aula/shared'
-import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveCommonEnglishTask,commonEnglishCriteria,englishTaskGrade} from '@aula/shared'
+import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,commonSecondaryLanguageGrade,resolveCommonEnglishTask,commonEnglishCriteria,englishTaskGrade,resolveOptativeEnglishTask,optativeEnglishModules,adaptLanguageScale} from '@aula/shared'
 import { distributeScoreUnits, instrumentEvaluationConfiguration, validateInstrumentDefinition } from '@aula/shared'
 import { editableAuthoredRecommendation, editableSecondaryTopicRecommendation, findSecondaryLanguageTopic, secondGradeNewsCriteria, withoutResources } from '@aula/shared'
 import { findSecondaryScienceTopic, secondaryScienceCriteria, scientificTaskType, type InstrumentAcademicContext } from '@aula/shared'
@@ -75,6 +75,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if(commonMath)return adaptMathScale(editableAuthoredRecommendation(commonMathCriteria(commonMath),input,input.activityType??commonMath.activityType,`matematica-comun-${commonMath.grade}`),input.description??'')
   const french=resolveCommonFrenchTask(input.activityTitle,input.description??'',input.academicContext)
   if(french)return editableAuthoredRecommendation(commonFrenchCriteria(french),input,input.activityType??french.activityType,`frances-comunicacion-${french.grade}`)
+  const optativeEnglish=resolveOptativeEnglishTask(input.activityTitle,input.description??'',input.academicContext)
+  if(optativeEnglish)return adaptLanguageScale(editableAuthoredRecommendation(commonEnglishCriteria(optativeEnglish),input,input.activityType??optativeEnglish.activityType,optativeEnglishModules[0].id),input.description??'')
   const english=resolveCommonEnglishTask(input.activityTitle,input.description??'',input.academicContext)
   if(english)return editableAuthoredRecommendation(commonEnglishCriteria(english),input,input.activityType??english.activityType,`ingles-comunicacion-${englishTaskGrade(english)}`)
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'

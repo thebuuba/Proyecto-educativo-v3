@@ -1,0 +1,3257 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 4,
+  "subjectCode": "OPT-HLM-ING-4",
+  "subjectName": "Manejo de la información en inglés",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "b2d7a388-b852-52a5-adf5-d78642f21f96",
+  "pdfPages": [
+    445,
+    446,
+    447,
+    448,
+    449
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      445,
+      446,
+      447,
+      448,
+      449
+    ],
+    "imageEvidence": [
+      {
+        "number": 445,
+        "printed": 444,
+        "imageSha256": "b87b0787a54fafab662e3e5b488bfeff2adc5b7f9708504f24bafd092c482511"
+      },
+      {
+        "number": 446,
+        "printed": 445,
+        "imageSha256": "1e7913a410bce3db8331cfbeec225f1aa2a6ade53509bfba8af03f05b6b3c941"
+      },
+      {
+        "number": 447,
+        "printed": 446,
+        "imageSha256": "2cbf1ea56faf48272db7a4b1f95b08ef4575e7aaeabcbc818093a89e4a3d8172"
+      },
+      {
+        "number": 448,
+        "printed": 447,
+        "imageSha256": "9806d191f9e8f93c9eccca49714d8022c978e5c4a7f4d869faf21dd38ec040eb"
+      },
+      {
+        "number": 449,
+        "printed": 448,
+        "imageSha256": "b9e42098cc08b9669cbe72d5bddfe63ba843235812dfbfe3927ec6bf269833a1"
+      }
+    ],
+    "method": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS"
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED",
+  "provider": "packages/shared/src/secondary-optative-english.ts",
+  "providerCatalog": "evaluation-2026.127",
+  "officialRecords": [
+    {
+      "id": "c73a1611-6bee-5876-bc1e-1b1c53cd1a99",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Comprende y expresa ideas, sentimientos y valores culturales de forma sostenida y comprensible\nen distintas situaciones de comunicación, utilizando el idioma inglés, con la finalidad de informar,\nopinar, dar instrucciones, comunicar noticias, narrar, expresar planes futuros, predecir y explicar\nproblemas y sus motivos, referente a situaciones de la vida diaria y a temas que le son familiares..",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "9e59231e-8309-5d38-9048-59ace258394f",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "073de7df-38ea-5541-bd7a-69e9f70083fa",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Utiliza el pensamiento lógico-verbal para estructurar y comprender mensajes al interactuar en\nel idioma inglés con el propósito de compartir informaciones, puntos de vista, experiencias,\nrazones y predicciones de forma sostenida, crítica y creativa al exponer en distintas situaciones de\ncomunicación.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "bd1981a6-d7be-50ff-aa66-61139fea7504",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y\nCrítico",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "dd03c1ea-6782-578b-ae0f-897cb7c7ced0",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Interactúa en el idioma inglés con el propósito compartir información, puntos de vista, experiencias,\nplanes, indicaciones e instrucciones sobre problemas de su entorno cotidiano o temas de su interés,\nempleando estrategias de desempeño y aprendizaje, en distintas situaciones de comunicación.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "d994f92b-b10e-5298-9e84-675bf892ac03",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "a4dca1ce-0c75-5b73-a3cd-13a8c60fbd45",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica en inglés con cortesía, asertividad y respeto, tanto de forma oral como escrita,\nreconociendo las diferencias individuales y la identidad social y cultural propia y de otros países.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "65633c8a-3591-5819-bb5f-f88e734762cd",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "f5a263c8-cc1b-5e16-a837-74db8907fdac",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica por medios físicos, digitales o virtuales en el idioma inglés oral y escrito con el\npropósito de compartir información que localiza, sistematiza y presenta de forma comprensible,\ndescribiendo problemas, razonamientos, proyecciones, puntos de vista, e instrucciones sobre\nasuntos científicos, tecnológicos y de otra índole, en distintas situaciones de comunicación.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "0373187c-24ed-5951-9837-52cca614568f",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "bd08daad-b93c-5f90-8da3-236043074768",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica en el idioma inglés con el propósito de localizar y compartir información, puntos de\nvista, razonamientos e indicaciones, prefiriendo opciones favorables al medioambiente y la salud, en\ndistintas situaciones de comunicación.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "8a4f3148-308c-5fc8-ba46-d28efeced6c6",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "2ea13b88-275c-5e4c-b111-433bd03fd2f7",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica en el idioma inglés, con cortesía, asertividad y actitud de respeto, al expresar\ninformación, experiencias, razonamientos, puntos de vista, instrucciones, deseos y planes futuros.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "6c590ebb-47dc-5304-b9d8-d840a05c9208",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "26eb5937-3c85-5a5e-8c5e-3f5758830e7d",
+      "type": "CONCEPT",
+      "text": "• Relaciones humanas y sociales",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "f8fde7dc-a7b1-5485-8279-0ff3f4592fe4",
+      "type": "CONCEPT",
+      "text": "• Vivienda, entorno y ciudad",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "ad8f02fe-f6e0-5441-b739-715affacbe98",
+      "type": "CONCEPT",
+      "text": "• Escuela y educación",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "9d8423c6-f49e-5db5-a492-c5b4170e9741",
+      "type": "CONCEPT",
+      "text": "• Actividades de la vida diaria",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "84838744-36fd-566f-bcb5-940a5981e806",
+      "type": "CONCEPT",
+      "text": "• Deporte, tiempo libre y recreación",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "10cdd7d1-efbc-5cac-9bdd-d4af6602c8f9",
+      "type": "CONCEPT",
+      "text": "• Alimentación",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "4302d507-2250-5834-8a74-ce7897df3f20",
+      "type": "CONCEPT",
+      "text": "• Salud y cuidados físicos",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "2aa11dd1-a55c-5617-b21d-6ce353e0b12b",
+      "type": "CONCEPT",
+      "text": "• Bienes y servicios",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "2186e58e-a302-503d-a4d4-84a3f8d3d63f",
+      "type": "CONCEPT",
+      "text": "• Lengua y comunicación",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "4fc695d5-9e2b-5beb-8dc6-8c27550276e7",
+      "type": "CONCEPT",
+      "text": "• Ciencia y tecnología",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "d299efd0-91e5-50f8-9139-ecc5a295db71",
+      "type": "CONCEPT",
+      "text": "• Viajes y turismo",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1",
+      "type": "CONCEPT",
+      "text": "• Fenómenos naturales y medioambiente\nVocabulario",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7",
+      "type": "CONCEPT",
+      "text": "• Acontecimientos y celebraciones: have\na baby…",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "27d35bf8-d7c0-5980-9f99-182bed2ef10e",
+      "type": "CONCEPT",
+      "text": "• Comunicación: on line, video conference,\nsocial media…",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "4808a078-41c2-5c83-a4b4-922fb3692bcc",
+      "type": "CONCEPT",
+      "text": "• Deportes: hockey, cycling, ping•pong,\nbowling…",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "ce0f2f1f-ddec-54b3-b086-7458a6579842",
+      "type": "CONCEPT",
+      "text": "• Educación: high school, scholarship…",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "c6289760-41ce-5d89-924b-8817993fc84c",
+      "type": "CONCEPT",
+      "text": "• • Equipos y utensilios de cocina: food\nprocessor, stove…",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "e068f75f-ec00-56f0-ba45-4cdbd4cf267e",
+      "type": "PROCEDURE",
+      "text": "Funcionales",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "09aad7dc-3ee9-5145-8a9f-c41e249a200a",
+      "type": "PROCEDURE",
+      "text": "• Solicitar y ofrecer información.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "b4d743ec-1efc-5992-b0d4-696aa2bc2394",
+      "type": "PROCEDURE",
+      "text": "• Comunicar noticias.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "10e7d2ee-adf3-52db-ad28-c4b7a42feddc",
+      "type": "PROCEDURE",
+      "text": "• Hacer predicciones y anuncios.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "aa9d8e63-3be7-55c7-8fee-a78ff5e4fdad",
+      "type": "PROCEDURE",
+      "text": "• Expresar opiniones.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "26591c13-3944-5908-bdc6-e7383477e595",
+      "type": "PROCEDURE",
+      "text": "• Relatar experiencias.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "a8a8d0e0-719b-5841-8f65-0a62c6f70a9a",
+      "type": "PROCEDURE",
+      "text": "• Explicar problemas y sus motivos.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "9283fcb0-23df-5e71-8921-1987a885797e",
+      "type": "PROCEDURE",
+      "text": "• Dar y pedir instrucciones.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "916b983d-7881-58e5-9479-3699c6ae52cc",
+      "type": "PROCEDURE",
+      "text": "• Expresar deseos y planes futuros.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "deb81d5e-7e0f-52ed-8fe1-205bc0a31277",
+      "type": "PROCEDURE",
+      "text": "• Discursivos",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "66ebe329-576c-5d2b-ab09-6cba5eed737c",
+      "type": "PROCEDURE",
+      "text": "• Comprensión de discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "9cb5a70f-9b72-517f-8942-d83e34293d91",
+      "type": "PROCEDURE",
+      "text": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "c81e3648-c28f-51ec-be48-29cb786bc6f3",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Motivación para aprender inglés.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "423b6904-54e4-5e34-a9cd-53e69a0f8463",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto por las normas éticas de la\ninteracción a través de las TIC.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "32d344f9-edf6-5bc6-a36b-5c3211e238d0",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Uso juicioso del tiempo que se\ndedica a la interacción a través de\nlas TIC.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "3b411751-7381-5d9b-af05-0a37cc2cdd85",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Cortesía y asertividad en la\ncomunicación.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "62b600da-36a5-5b34-8196-8812217f447e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Empatía y solidaridad ante las\nsituaciones que afectan a las demás\npersonas.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "e4bff53a-dcc0-5613-9fc6-c3391318973b",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Dominio propio y autocontrol.",
+      "pdfPage": 445,
+      "printedPage": "444"
+    },
+    {
+      "id": "1b615530-a86c-592d-a22d-5621352b18d2",
+      "type": "CONCEPT",
+      "text": "• hurt…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "6c308852-f419-5dca-8bea-e2c5dc9f910f",
+      "type": "CONCEPT",
+      "text": "• Experiencias personales: vacation, trip…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "4ac27288-1574-5b05-b269-726fbcbcefa1",
+      "type": "CONCEPT",
+      "text": "• Eventualidades: lose a key, miss a class, get",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8f1837c2-890e-5b7d-a227-8264d91f55d4",
+      "type": "CONCEPT",
+      "text": "• Fenómenos naturales: hurricane, storm,\nearthquake…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "638e0fc9-014c-5a00-85dd-488a21ee3dbc",
+      "type": "CONCEPT",
+      "text": "• Herramientas: drill, hammer, scissors,\nsaw, screwdriver…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "48e6c260-cf70-5ad8-9efa-05065edef9c8",
+      "type": "CONCEPT",
+      "text": "• Lugares: countryside, amusement park,\nsummer camp…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "91edb9f5-d908-5c1a-8ff4-80bd08213e78",
+      "type": "CONCEPT",
+      "text": "• Medios de transporte: ship, subway,\nairplane, helicopter…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "40840eff-4996-5792-b7ea-73eb4054cb9d",
+      "type": "CONCEPT",
+      "text": "• Preparación de alimentos: boil, chop, cut,\nfry, grill, mix…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "e23bccd6-7e86-58d0-832d-8d60f79ddd5e",
+      "type": "CONCEPT",
+      "text": "• Recreación: theater, concert, picnic…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "87005bed-a302-513a-b9e0-2f785a8c893e",
+      "type": "CONCEPT",
+      "text": "• Tecnología: hologram, 3D printer, live\nstream…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "69f82611-7d6b-56e2-84ca-8f13d5bdd32d",
+      "type": "CONCEPT",
+      "text": "• Viaje: travel, luggage, travel agency,\nboard a plane …",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "76090fad-a53b-533e-875b-7681b1c7ee1d",
+      "type": "CONCEPT",
+      "text": "Expresiones",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f21aded8-3303-5304-9dfe-2158ebf6e334",
+      "type": "CONCEPT",
+      "text": "• Atraer la atención de alguien: Excuse me,\nsir! Pardon me!",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "1bb61ec6-e75a-5586-94bf-b637d626dff9",
+      "type": "CONCEPT",
+      "text": "• Animar a alguien: Well done! Good job!\nCongratulations!",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8280e82b-3c0d-5e19-b604-bb1dee129316",
+      "type": "CONCEPT",
+      "text": "• Expresar interés y asombro: Wow! Really?\nThat sounds nice! . .",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "9aafc7d9-912f-5c80-b9ef-d96a7c218afb",
+      "type": "CONCEPT",
+      "text": "• Mostrar empatía: Too bad!, How awful!..",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "33e52a3e-872e-5c7e-aa03-056bc845ac7b",
+      "type": "CONCEPT",
+      "text": "• Pedir y dar opiniones: I think…, In my\nopinion…, I believe …",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "cbcabdc8-2134-599d-9ec0-d6013919e4d4",
+      "type": "CONCEPT",
+      "text": "• Expresar acuerdo y desacuerdo: I agree, I\ndon’t think so…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3",
+      "type": "CONCEPT",
+      "text": "• • Coincidir y discrepar: Me too, neither do\nI, I do too, so am I…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "9ec435b9-7dbe-5221-8f67-5f8d9354647f",
+      "type": "CONCEPT",
+      "text": "• Pedir repetición o aclaración: Pardon me?\nExcuse me? .",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "7a102b7c-c765-5b79-bbbd-aa59101fe562",
+      "type": "CONCEPT",
+      "text": "• Cambiar de tema: By the way, anyway",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "70d4b458-1168-53f4-8cd6-aa584bb9885e",
+      "type": "CONCEPT",
+      "text": "• Concluir una conversación: Nice talking\nto you!",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "3646755e-ae05-5a13-8825-07a7db7b14a0",
+      "type": "CONCEPT",
+      "text": "• Dar una noticia: Guess what? Did I tell you?",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "040e6442-1b1b-50a8-852a-5af3177d847e",
+      "type": "CONCEPT",
+      "text": "• Excusarse: I’m sorry, I apologize…",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "dcb700f7-a202-51a6-b584-9677dc6d489a",
+      "type": "CONCEPT",
+      "text": "• Felicitar: Congratulations! Happy\nanniversary!\nGramática\nOraciones enunciativas (afirmativas y\nnegativas), interrogativas y exclamativas.\nPresente simple para pedir y dar opiniones\ne información:\nWhat do you think?",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "57bcecd5-2b07-5f6e-b6be-ff110150c192",
+      "type": "CONCEPT",
+      "text": "• I think Helen is a very nice person.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "d17667f9-0934-5637-b37d-ee7abdc08c6f",
+      "type": "CONCEPT",
+      "text": "• Presente continuo para expresar planes\nfuturos:",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "176c4de7-477e-5c12-bb90-d1e491d66904",
+      "type": "CONCEPT",
+      "text": "• • Margaret is visiting her parents in\nPanama next month.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "36c50dbe-64f7-539e-8a4e-b8b51883dbfb",
+      "type": "PROCEDURE",
+      "text": "• Comprensión de textos escritos en formato físico, digital y\nvirtual, tales como tarjetas, listas, catálogos, diccionarios,\nfacturas, anuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, instrucciones, currículum\nvitae, cartas, formularios, noticias, horarios, agendas,\nmenús, croquis, cuestionarios, folletos, canciones,\npoesías, historietas, guías turísticas, descripciones,\nbiografías y narraciones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "83128863-2825-5090-8272-e05b89228544",
+      "type": "PROCEDURE",
+      "text": "• Producción de textos escritos en formato físico, digital y\nvirtual, tales como mensajes, correos electrónicos, cartas,\ncurríc ulum vitae, avisos, afiches, letreros, formularios,\nrecetas, instrucciones, cuestionarios, biografías,\nnarraciones y descripciones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "b06a753d-3823-5062-b558-cb685a73ba5f",
+      "type": "PROCEDURE",
+      "text": "Estratégicos Comprensión oral",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "5d7b1928-5532-5288-ace0-6c4322ca5f74",
+      "type": "PROCEDURE",
+      "text": "• Anticipación del contenido del mensaje.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f897c147-b8ff-55ba-a6b4-f8d8fc371331",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "94bc5651-cf36-5f2b-9f9a-a1a8c3f23c2a",
+      "type": "PROCEDURE",
+      "text": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaje.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "1569863e-050b-5386-af68-d8f9d663e20b",
+      "type": "PROCEDURE",
+      "text": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "29cf020d-03a1-579a-acf4-173ba4d46469",
+      "type": "PROCEDURE",
+      "text": "• Solicitud de repetición",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "a9d38a67-aef5-5af4-a3d6-f125ff25153b",
+      "type": "PROCEDURE",
+      "text": "• Indicación de que se comprende o no.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "e7fdccd6-3b09-5f67-bb32-9fe4a66adee7",
+      "type": "PROCEDURE",
+      "text": "• Producción oral",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "ef273e24-d95c-549b-bc87-e234d5149518",
+      "type": "PROCEDURE",
+      "text": "• Reproducción y ensayo de palabras, expresiones y pautas\nde entonación.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "ea258771-4a3f-5cf1-9586-0258ae28a11c",
+      "type": "PROCEDURE",
+      "text": "• Identificación de la situación de comunicación.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "6810b974-d18a-56ba-8bd5-cb0c5dd81ec4",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativ",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "ddf1316e-7cc7-59f6-bb8f-7815b801cb4a",
+      "type": "PROCEDURE",
+      "text": "• Planificación del mensaje.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f7856251-98f2-5ea8-baa8-47edae10be4a",
+      "type": "PROCEDURE",
+      "text": "• Ensayo de nuevas combinaciones y expresiones y\nsolicitud de retroalimentación.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "a4e2a060-3827-56bd-8fec-b70a76584690",
+      "type": "PROCEDURE",
+      "text": "• Uso del lenguaje no verbal para comunicarse.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "48a4d9e0-2f19-5f46-8dcf-9c32b4c4f674",
+      "type": "PROCEDURE",
+      "text": "• Comprensión escrita.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "9e708f99-cdfc-5a2e-b48c-3f81f5441da6",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento del propósito de la lectura.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f8179f9f-7319-5c7c-a8d3-75c4633d56fd",
+      "type": "PROCEDURE",
+      "text": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8ac047be-c006-5e2d-83d0-8bbadf17cb15",
+      "type": "PROCEDURE",
+      "text": "• Identificación de la correspondencia entre la grafía y el\nsonido de las palabras.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "af8a71f1-0518-5c34-9855-f86f3e473f40",
+      "type": "PROCEDURE",
+      "text": "• Inferencia del significado de palabras y expresiones a\npartir de las pistas textuales y los conocimientos previos.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e",
+      "type": "PROCEDURE",
+      "text": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "3e416a0b-a656-54e4-8190-e1c63a3a47c5",
+      "type": "PROCEDURE",
+      "text": "• Identificación de la idea principal y detalles específicos\ndel texto.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "32803242-e31f-5c30-a2fc-323d7669f2a2",
+      "type": "PROCEDURE",
+      "text": "• Identificación de la intención comunicativa del texto.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "7e6c8cf7-757c-5ffe-9b31-88115c97a547",
+      "type": "PROCEDURE",
+      "text": "• Producción escrita.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8f3ea3b4-866d-539f-8553-e79e0df68849",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "b62848ab-0aa3-5249-9777-545dac724d4d",
+      "type": "PROCEDURE",
+      "text": "• Planificación y organización del mensaje.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8df046d6-61b1-5955-a2b6-a300064818d6",
+      "type": "PROCEDURE",
+      "text": "• Uso del diccionario y otras herramientas de consulta.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "8d41728f-a330-533d-9d07-db90b94cdf0e",
+      "type": "PROCEDURE",
+      "text": "• Revisión del sentido y la corrección del mensaje.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "ab760f4f-29bb-55c6-9aff-94596c828325",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Asertividad al expresar opiniones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f2d2d7aa-ca17-585d-b5e3-6f30e4809d9a",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto al escuchar y expresar\nopiniones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "a53b6802-a05f-54ea-a97e-4591281c07e8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Honestidad al interactuar con las\ndemás personas.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "2ed77206-8064-55a9-b995-dee658c8dbf8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Cortesía al dar y pedir indicaciones\ne instrucciones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "29a0190d-e1cf-5b12-8e3d-0d0fa4fb0fa2",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Colaboración para resolver los\nproblemas de la comunidad.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "92cf4377-a665-5ea0-9954-cc19d1233cc4",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Cuidado del medioambiente y de\nlos recursos naturales.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "01b58fa5-3355-5705-8097-48b66fc55037",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Sentido crítico ante los anuncios y\npredicciones.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "b7121fd4-5064-5e9d-81c4-75eec45e28a0",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Humildad al relatar sus experiencias.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "6faeac42-3641-5b5a-8fa0-b4f390f99bb1",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto por las costumbres y\ntradiciones propias y las de los\ndemás países.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "f27c0bac-aafb-57e9-a44d-a3e4ec2ff047",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto por las diferencias relativas\na género, edad, ocupación,\nnacionalidad, capacidades de las\npersonas, entre otras.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "82768031-b21b-5d8e-8ddc-0790d9d8f2ab",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Planificación de las actividades que\nllevará a cabo.",
+      "pdfPage": 446,
+      "printedPage": "445"
+    },
+    {
+      "id": "47732fbd-e297-5e68-aa0a-8082ffaf0d79",
+      "type": "CONCEPT",
+      "text": "Pasado simple para comunicar noticias y\nrelatar experiencias:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "7b7a229d-4946-5127-9fc9-535ddd67370e",
+      "type": "CONCEPT",
+      "text": "• Alex has just gotten a better job.\nUsed to:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "21e7c0d6-6c7f-5caa-88dd-698e03e687d1",
+      "type": "CONCEPT",
+      "text": "• I used to attend English classes every\nafternoon when I lived in my hometown.\nImperativo para dar instrucciones:\nWalk for three blocks and turn right.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "04c8ce41-8a30-5f70-a256-c63e5622e5ce",
+      "type": "CONCEPT",
+      "text": "• Plug in the PC, and turn it on.\nPasado simple y pasado continuo para\nexplicar problemas y sus motivos:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "03ec5860-ec5d-5755-8c19-32c9a86b2851",
+      "type": "CONCEPT",
+      "text": "• The accident happened because the driver\ngot distracted as he was talking on his cell\nphone.\nFuturo continuo para expresar planes\nfuturos:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "603c93c8-889d-5106-9514-452ab02a7de4",
+      "type": "CONCEPT",
+      "text": "• I’ll be traveling to Canada next summe Be\n+ going to para hacer predicciones y\n.anuncios, y expresar planes futuros:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "5a0ec870-f373-501d-8c97-48820893e74c",
+      "type": "CONCEPT",
+      "text": "• It’s going to rain a lot because there are\nvery dark clouds.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "c30966c1-24ce-5601-b76d-bada2c7862a0",
+      "type": "CONCEPT",
+      "text": "• I’m going to get married next month.\nWill para hacer predicciones:\nHope, wish y would like… para expresar\ndeseos:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "4a41f41b-e4af-5c5c-ac70-4572f07001ef",
+      "type": "CONCEPT",
+      "text": "• I would like to travel to Spain this year.\nVerbos seguidos por infinitivo, gerundio o\npor cualquiera de ellos:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "31b99d2b-d763-52aa-903d-2b1ed2fda30e",
+      "type": "CONCEPT",
+      "text": "• I decided to study medicine.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "feeb4efd-1c13-576c-b6f0-d1ff7178ceba",
+      "type": "CONCEPT",
+      "text": "• I really enjoyed traveling around the\nisland.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "15b5fd13-5d02-58cb-92ab-3f2f34eed76d",
+      "type": "CONCEPT",
+      "text": "• I began playing to play baseball when I\nwas ten years old.\nPhrasal verbs (turn up, fill out, get along\nwith, look after…):",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "86fa81e0-c4c9-5fd5-a21e-7ba3f8f89e66",
+      "type": "CONCEPT",
+      "text": "• Turn the volume up. / Turn it up.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "d94524ee-75ca-5cc2-a4da-95d97185f971",
+      "type": "CONCEPT",
+      "text": "• They get along well.\nThere + be para hacer anuncios, comunicar\nnoticias, y explicar problemas y sus motivos:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "f66b4fef-39c9-55d3-9420-109e934bd65a",
+      "type": "CONCEPT",
+      "text": "•There is going to be an open•house\nexhibition in the mall this weekend.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "efd6a70b-c26c-55f3-9fcc-79cb1d28a4ce",
+      "type": "CONCEPT",
+      "text": "• There were forest fires in the National Park\nthis morning.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "c3f4e45b-24f7-56b0-b05f-02b24f62466a",
+      "type": "CONCEPT",
+      "text": "• The traflc is slow because there has been a\nterrible accident on the highway.\nCondicional para dar instrucciones, hacer\npredicciones y explicar problemas y sus\nmotivos (If/When + presente simple en la\ncláusula condicional + presente simple en\nla cláusula principal):",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "67a2c20a-d2b0-5d82-970b-c240e2798870",
+      "type": "CONCEPT",
+      "text": "•If you press that key, the computer restarts.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c",
+      "type": "CONCEPT",
+      "text": "• When you don’t study, you get bad grades.\nCondicional para expresar deseos y planes\nfuturos (If / When + presente simple en la\ncláusula condicional+ futuro con will en la\ncláusula principal):",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "b34ac7ae-c741-5495-980c-dd0327f92b23",
+      "type": "PROCEDURE",
+      "text": "Otros:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "8e21387e-f63c-5c1f-aa91-f51062530acb",
+      "type": "PROCEDURE",
+      "text": "• Utilización de asociaciones mentales y de la acción.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "c5cee1f5-8d04-58a7-8209-b14d24bd9e6e",
+      "type": "PROCEDURE",
+      "text": "• Automotivación y control del nivel de ansiedad.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "62e5f895-b55d-5f4f-891e-0f3acd9f0bad",
+      "type": "PROCEDURE",
+      "text": "• Búsqueda de oportunidades de uso de la lengua.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "2d11e654-157a-53df-b16a-3bcd2e76eee3",
+      "type": "PROCEDURE",
+      "text": "• Sociolingüísticos y socioculturales",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "37b0e5d1-6452-53ca-92b1-1f37816e73ce",
+      "type": "PROCEDURE",
+      "text": "• Utilización de las normas de cortesía más importantes.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "4a06e885-b595-5085-a9a8-5edb8d9b2514",
+      "type": "PROCEDURE",
+      "text": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "027e77d9-c196-594f-8676-448ed77e192f",
+      "type": "PROCEDURE",
+      "text": "• Comparación entrel os siguientes aspectos de la\nRepública Dominicana y de otros países:",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "03bb3059-23ff-599e-ae08-0de4f9f2c8bc",
+      "type": "PROCEDURE",
+      "text": "• Medios de comunicación.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "5c803522-4a7c-51f0-b8c5-58818d0984ac",
+      "type": "PROCEDURE",
+      "text": "• Valores, tradiciones y creencias.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "94d4d448-7246-5fda-ace3-2d354c6476c3",
+      "type": "PROCEDURE",
+      "text": "• Normas de cortesía",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "ece8f6bf-1e99-5b30-aac8-08f9bb583e0d",
+      "type": "PROCEDURE",
+      "text": "• Actividades de tiempo libre.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "a01f92a8-790c-5259-aaa5-bd34ddbf92ec",
+      "type": "PROCEDURE",
+      "text": "• Atractivos turísticos.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "2e2dcbf4-21f5-52f5-a38f-d27fcd046262",
+      "type": "PROCEDURE",
+      "text": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "485991d7-9d65-5361-8c2c-37ada749c307",
+      "type": "PROCEDURE",
+      "text": "• Cuidado del medioambiente",
+      "pdfPage": 447,
+      "printedPage": "446"
+    },
+    {
+      "id": "a4303a52-bb51-5c30-a64e-310ff220454b",
+      "type": "CONCEPT",
+      "text": "• If I get that job, I will buy a new apartment.\nConectores y marcadores de:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "74ae6175-63c2-55ca-9d62-1924425fdf72",
+      "type": "CONCEPT",
+      "text": "• Causa y consecuencia: so, because, since…",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "3a467550-0211-5b20-bef5-5220295b7521",
+      "type": "CONCEPT",
+      "text": "• Contraste y oposición: but, however…",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "2f317563-623f-5d18-9c41-c1ae36738e81",
+      "type": "CONCEPT",
+      "text": "• Concesión: even so, nevertheless…\nFinalidad: in order to, so that, to…",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "9e897fe3-48bd-5807-b82e-685ac2e71810",
+      "type": "CONCEPT",
+      "text": "• Secuencia: first, second, then…",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "84b1c00a-7d3d-555d-acb2-72d10b756e93",
+      "type": "CONCEPT",
+      "text": "• Tiempo: after, once, when, while, as soon\nas…\nVoz pasiva para pedir y dar información,\ncomunicar noticias, hacer predicciones y\nanuncios:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "f4f3bd1f-c6c6-5eb5-98bb-d3b1f7d1e990",
+      "type": "CONCEPT",
+      "text": "• A few endemic species are endangered.",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "3c8130a6-509a-51fb-b388-c2deb9503315",
+      "type": "CONCEPT",
+      "text": "•Many houses were destroyed by the\ntornado that hit our neighborhood.",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "88ebefe0-259c-5a6d-a63d-f165ed01ba3d",
+      "type": "CONCEPT",
+      "text": "• That man will be fined because he broke\nthe law.\nQuestion tags:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "88ff395e-61cd-530d-a6da-a1e80bd0b858",
+      "type": "CONCEPT",
+      "text": "• We know each other, don’t we?",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "d41287be-1ab6-5b3f-a16a-b70e61662338",
+      "type": "CONCEPT",
+      "text": "• You are Eric, aren´t you?\nPreguntas indirectas y embedded questions:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "400a4e92-f1e2-581b-8605-6ae10abd3b37",
+      "type": "CONCEPT",
+      "text": "• Can you show me how to fix it?",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "81c14b14-c70d-55f4-aebb-0585fdbe3965",
+      "type": "CONCEPT",
+      "text": "• I want to know why the Wi•Fi connection\nisn’t working.\nGerundios en función sustantiva:\nDancing is a very good activity for you to\nstay healthy.\nOmisión del artículo:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263",
+      "type": "CONCEPT",
+      "text": "• Love is a wonderful thing.\nGrados comparativo y superlativo del adjetivo:",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "86067d49-c824-517c-9151-e4461928376a",
+      "type": "CONCEPT",
+      "text": "• Which is more popular, soccer or baseball?",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "ecbb4d0c-022c-51de-bdac-7b868e45c3f0",
+      "type": "CONCEPT",
+      "text": "• I think baseball is the most popular sport\nin the Dominican Republic.",
+      "pdfPage": 448,
+      "printedPage": "447"
+    },
+    {
+      "id": "ed838c07-6e10-535d-93ed-4d8ced11125f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones, a partir del mensaje general, las ideas principales y los detalles específicos\nde textos escritos y discursos orales articulados con claridad y en lengua estándar, cuya finalidad es informar, opinar, dar instrucciones,\ncomunicar noticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, referentes a situaciones de la\nvida diaria y a temas que le son familiares, aunque en ocasiones requiera que le repitan.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "ccc8a42f-b15d-5a14-90cf-4c02a5edee46",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce discursos orales y escritos comprensibles en toda su extensión, cuya finalidad es informar, opinar, dar instrucciones, comunicar\nnoticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, relativos a la vida diaria y a temas que le\nson familiares, con una pronunciación, fluidez y corrección aceptables.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "88f90c51-1fd5-5299-aeb0-d69ac6ef02d2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interactúa de forma sostenida mediante textos orales y escritos relativos a temas cotidianos y de su interés, cuyo propósito es informar,\nopinar, dar instrucciones, comunicar noticias, narrar, expresar planes futuros, inferir, predecir y explicar problemas y sus motivos, con\nsuficiente corrección y fluidez como para que sean comprensibles en toda su extensión.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "538d789a-1c98-5379-ae7f-db3a6704a3ac",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea el pensamiento lógico-verbal, creativo y crítico para responder a preguntas e indicaciones a partir de textos orales o\nescritos donde se comparte informaciones, descripción de problemas, puntos de vista, experiencias, razonamientos, predicciones,\ninstrucciones y planes futuros.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "a9653218-2ecc-5f24-870c-db3e29751368",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos orales y escritos de considerable extensión, utilizando el pensamiento lógico-verbal para dar la estructura adecuada\ny relacionar las ideas de manera comprensible, además del pensamiento creativo para presentarlas de formas variadas y compartir\ninformaciones, descripción de problemas, puntos de vista, experiencias, razonamientos, predicciones, instrucciones y planes futuros.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "7d966d20-a5a0-5423-95c1-4511c09afe52",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interactúa en forma oral o escrita, utilizando el pensamiento lógico-verbal para sostener el intercambio y comprender la relación de\nlas ideas, y el pensamiento creativo y crítico para expresarse en formas variadas al compartir informaciones, descripción de problemas,\npuntos de vista, experiencias, razonamientos, predicciones, instrucciones y planes futuros.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "376317a9-ea1d-54a9-b8c4-3b476237ec0d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Responde de forma comprensible a preguntas, indicaciones y problemas cotidianos o de su área de interés, partiendo de información\ncontenida en textos orales y escritos que describen ideas, razones, puntos de vista y experiencias al detalle de forma sencilla.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "965ff6be-f22a-54ec-9bb0-ea55e9fdca4d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Describe y plantea problemas de su entorno cotidiano al detalle, compartiendo información, ideas, razonamientos, explicaciones y\npuntos de vista para su solución a través de discursos orales y textos escritos sencillos comprensibles en toda su extensión, aunque\ncon probables errores sistemáticos.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "384acb1d-03fd-55e6-9ef1-00345a1e1d75",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interactúa, tanto de manera oral o escrita para describir detalles de problemas que se le presentan y plantear soluciones posibles,\nutilizando un discurso sencillo, pero crecientemente sostenido.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "8e0343e2-6ab8-5c83-a413-1486fc8c800e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Reacciona con actitud de respeto, cortesía y asertividad a los mensajes orales o escritos donde se comparten informaciones,\ndescripciones de problemas, puntos de vista, razonamientos, predicciones, instrucciones y planes futuros.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "252944b9-051f-5260-ac53-0dbcc0a8b4b1",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Muestra una actitud de respeto, cortesía, y asertividad en los textos orales y escritos que produce, tomando en cuenta la identidad\nsocial y cultural propia y de otros países.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "025bed29-10db-5ffc-b949-7b210b1cdc29",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Muestra una actitud de respeto, cortesía y asertividad al interactuar en forma oral y escrita, tomando en cuenta la identidad social y\ncultural propia y de otros países.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "cb330372-c2e0-542d-be65-ce888c95a433",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Responde de forma adecuada a preguntas e indicaciones sobre textos orales o escritos de diversa extensión donde se describen\nsistematizan y presentan de manera comprensible, informaciones, problemas, razonamientos, proyecciones, puntos de vista, e\ninstrucciones sobre asuntos científicos, tecnológicos y de otra índole por medios impresos, digitales o virtuales.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "42d4946a-5477-5bd2-9185-16b8b29bfe27",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos orales o escritos comprensibles donde se describen sistematizan y presentan, de manera comprensible, informaciones,\nproblemas, razonamientos, proyecciones, puntos de vista, e instrucciones sobre asuntos científicos, tecnológicos relativos a su entorno\ninmediato, temas que le son familiares o de su interés, tanto por medios impresos, digitales como virtuales.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "2727493a-cb7c-554f-bda4-e16eacfd29f1",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interactúa de manera sostenida y comprensible por medios físicos, digitales o virtuales, compartiendo información y descripción de\nproblemas, razonamientos, proyecciones, puntos de vista, e instrucciones sobre asuntos científicos, tecnológicos y de otra índole de\nmanera oral o escrita.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "c926118b-869b-517b-8947-dba9d1a2739a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identifica y sistematiza información, acciones y valores sobre el cuidado de la salud y el medioambiente, a partir de la lectura o escucha\nde textos sobre temas que le son familiares o de su interés.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "b394658b-c942-5beb-aa14-a062fd2c346d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Describe situaciones de riesgo que perjudican tanto al ambiente como a la salud en textos orales y escritos de considerable extensión\ndonde provee información y puntos de vista para el cuidado propio, de las demás personas y de su entorno, utilizando un discurso\nsencillo en forma oral o escrita.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "380d3700-23ee-561d-aea4-059719de1c67",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comparte información pertinente, indicaciones y puntos de vista convenientes a la salud y el cuidado del medioambiente,\ninteractuando de forma sostenida con un discurso sencillo y comprensible de forma oral y escrita.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "5cbe6703-4f93-560d-a612-586f17358a7b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Muestra comprensión apreciativa y valoración asertiva y honesta de los deseos, aspiraciones, planes y experiencias personales propias\ny de otras personas.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "96750c83-204c-5edd-a50a-d24ea916a9a4",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra una conducta cortés, respetuosa y una actitud asertiva, al expresar información, puntos de vista, sugerencias, consejos e\ninstrucciones tanto en forma oral como escrita.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    },
+    {
+      "id": "b23919cf-dce5-547c-92a2-2f249881dd66",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interactúa de forma cortés, asertiva, honesta y respetuosa al tratar informaciones, detalles de costumbres y experiencias pasadas,\nproblemas, puntos de vista, consejos, planes futuros e instrucciones en forma oral o escrita.",
+      "pdfPage": 449,
+      "printedPage": "448"
+    }
+  ],
+  "coverageFamilies": [
+    "THEMATIC_CONTEXT",
+    "LEXICON",
+    "COMMUNICATIVE_FUNCTION",
+    "ORAL_COMPREHENSION",
+    "ORAL_PRODUCTION",
+    "COMMUNICATIVE_EXPRESSIONS",
+    "GRAMMAR_AND_FUNCTION",
+    "WRITTEN_COMPREHENSION",
+    "WRITTEN_PRODUCTION",
+    "LISTENING_STRATEGY",
+    "ORAL_PRODUCTION_STRATEGY",
+    "READING_STRATEGY",
+    "WRITTEN_PROCESS",
+    "CRITICAL_COMPREHENSION",
+    "LEARNING_STRATEGY",
+    "SOCIOLINGUISTIC",
+    "CULTURAL_COMPARISON"
+  ],
+  "contents": [
+    {
+      "id": "concept-26eb5937",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Relaciones humanas y sociales",
+      "sourceRecordIds": [
+        "26eb5937-3c85-5a5e-8c5e-3f5758830e7d"
+      ],
+      "caseIds": [
+        "theme-1"
+      ]
+    },
+    {
+      "id": "concept-f8fde7dc",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Vivienda, entorno y ciudad",
+      "sourceRecordIds": [
+        "f8fde7dc-a7b1-5485-8279-0ff3f4592fe4"
+      ],
+      "caseIds": [
+        "theme-2"
+      ]
+    },
+    {
+      "id": "concept-ad8f02fe",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Escuela y educación",
+      "sourceRecordIds": [
+        "ad8f02fe-f6e0-5441-b739-715affacbe98"
+      ],
+      "caseIds": [
+        "theme-3"
+      ]
+    },
+    {
+      "id": "concept-9d8423c6",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Actividades de la vida diaria",
+      "sourceRecordIds": [
+        "9d8423c6-f49e-5db5-a492-c5b4170e9741"
+      ],
+      "caseIds": [
+        "theme-4"
+      ]
+    },
+    {
+      "id": "concept-84838744",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Deporte, tiempo libre y recreación",
+      "sourceRecordIds": [
+        "84838744-36fd-566f-bcb5-940a5981e806"
+      ],
+      "caseIds": [
+        "theme-5"
+      ]
+    },
+    {
+      "id": "concept-10cdd7d1",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Alimentación",
+      "sourceRecordIds": [
+        "10cdd7d1-efbc-5cac-9bdd-d4af6602c8f9"
+      ],
+      "caseIds": [
+        "theme-6"
+      ]
+    },
+    {
+      "id": "concept-4302d507",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Salud y cuidados físicos",
+      "sourceRecordIds": [
+        "4302d507-2250-5834-8a74-ce7897df3f20"
+      ],
+      "caseIds": [
+        "theme-7",
+        "care-health-reading"
+      ]
+    },
+    {
+      "id": "concept-2aa11dd1",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Bienes y servicios",
+      "sourceRecordIds": [
+        "2aa11dd1-a55c-5617-b21d-6ce353e0b12b"
+      ],
+      "caseIds": [
+        "theme-8"
+      ]
+    },
+    {
+      "id": "concept-2186e58e",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Lengua y comunicación",
+      "sourceRecordIds": [
+        "2186e58e-a302-503d-a4d4-84a3f8d3d63f"
+      ],
+      "caseIds": [
+        "theme-9"
+      ]
+    },
+    {
+      "id": "concept-4fc695d5",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Ciencia y tecnología",
+      "sourceRecordIds": [
+        "4fc695d5-9e2b-5beb-8dc6-8c27550276e7"
+      ],
+      "caseIds": [
+        "theme-10"
+      ]
+    },
+    {
+      "id": "concept-d299efd0",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Viajes y turismo",
+      "sourceRecordIds": [
+        "d299efd0-91e5-50f8-9139-ecc5a295db71"
+      ],
+      "caseIds": [
+        "theme-11"
+      ]
+    },
+    {
+      "id": "concept-0f3016c5",
+      "family": "THEMATIC_CONTEXT",
+      "label": "• Fenómenos naturales y medioambiente\nVocabulario",
+      "sourceRecordIds": [
+        "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1"
+      ],
+      "caseIds": [
+        "theme-12",
+        "care-environment-reading"
+      ]
+    },
+    {
+      "id": "concept-6ea8042d",
+      "family": "LEXICON",
+      "label": "• Acontecimientos y celebraciones: have\na baby…",
+      "sourceRecordIds": [
+        "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7"
+      ],
+      "caseIds": [
+        "vocabulary-events-celebrations-reading",
+        "vocabulary-events-celebrations-writing"
+      ]
+    },
+    {
+      "id": "concept-27d35bf8",
+      "family": "LEXICON",
+      "label": "• Comunicación: on line, video conference,\nsocial media…",
+      "sourceRecordIds": [
+        "27d35bf8-d7c0-5980-9f99-182bed2ef10e"
+      ],
+      "caseIds": [
+        "vocabulary-communication-reading",
+        "vocabulary-communication-writing"
+      ]
+    },
+    {
+      "id": "concept-4808a078",
+      "family": "LEXICON",
+      "label": "• Deportes: hockey, cycling, ping•pong,\nbowling…",
+      "sourceRecordIds": [
+        "4808a078-41c2-5c83-a4b4-922fb3692bcc"
+      ],
+      "caseIds": [
+        "vocabulary-sports-reading",
+        "vocabulary-sports-writing"
+      ]
+    },
+    {
+      "id": "concept-ce0f2f1f",
+      "family": "LEXICON",
+      "label": "• Educación: high school, scholarship…",
+      "sourceRecordIds": [
+        "ce0f2f1f-ddec-54b3-b086-7458a6579842"
+      ],
+      "caseIds": [
+        "vocabulary-education-reading",
+        "vocabulary-education-writing"
+      ]
+    },
+    {
+      "id": "concept-c6289760",
+      "family": "LEXICON",
+      "label": "• • Equipos y utensilios de cocina: food\nprocessor, stove…",
+      "sourceRecordIds": [
+        "c6289760-41ce-5d89-924b-8817993fc84c"
+      ],
+      "caseIds": [
+        "vocabulary-kitchen-equipment-reading",
+        "vocabulary-kitchen-equipment-writing"
+      ]
+    },
+    {
+      "id": "procedure-09aad7dc",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Solicitar y ofrecer información.",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "adaptationTargets": [
+        "information"
+      ],
+      "caseIds": [
+        "information-interaction",
+        "information-group",
+        "information-question-only",
+        "information-offer-only",
+        "invoice-then-information",
+        "interaction-then-medium-choice"
+      ]
+    },
+    {
+      "id": "procedure-b4d743ec",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Comunicar noticias.",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "adaptationTargets": [
+        "news"
+      ],
+      "caseIds": [
+        "news-written",
+        "news-oral-and-written",
+        "oral-or-written-news",
+        "oral-and-written-adverbs",
+        "written-or-oral-news",
+        "interaction-then-medium-choice"
+      ]
+    },
+    {
+      "id": "procedure-10e7d2ee",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Hacer predicciones y anuncios.",
+      "sourceRecordIds": [
+        "10e7d2ee-adf3-52db-ad28-c4b7a42feddc"
+      ],
+      "adaptationTargets": [
+        "prediction",
+        "announcement"
+      ],
+      "caseIds": [
+        "prediction-written",
+        "announcement-oral"
+      ]
+    },
+    {
+      "id": "procedure-aa9d8e63",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Expresar opiniones.",
+      "sourceRecordIds": [
+        "aa9d8e63-3be7-55c7-8fee-a78ff5e4fdad"
+      ],
+      "adaptationTargets": [
+        "opinion"
+      ],
+      "caseIds": [
+        "opinion-oral"
+      ]
+    },
+    {
+      "id": "procedure-26591c13",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Relatar experiencias.",
+      "sourceRecordIds": [
+        "26591c13-3944-5908-bdc6-e7383477e595"
+      ],
+      "adaptationTargets": [
+        "experience"
+      ],
+      "caseIds": [
+        "experience-oral"
+      ]
+    },
+    {
+      "id": "procedure-a8a8d0e0",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Explicar problemas y sus motivos.",
+      "sourceRecordIds": [
+        "a8a8d0e0-719b-5841-8f65-0a62c6f70a9a"
+      ],
+      "adaptationTargets": [
+        "problem-causes"
+      ],
+      "caseIds": [
+        "problem-causes-written"
+      ]
+    },
+    {
+      "id": "procedure-9283fcb0",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Dar y pedir instrucciones.",
+      "sourceRecordIds": [
+        "9283fcb0-23df-5e71-8921-1987a885797e"
+      ],
+      "adaptationTargets": [
+        "instructions-request",
+        "instructions-delivery"
+      ],
+      "caseIds": [
+        "instructions-request",
+        "instructions-written"
+      ]
+    },
+    {
+      "id": "procedure-916b983d",
+      "family": "COMMUNICATIVE_FUNCTION",
+      "label": "• Expresar deseos y planes futuros.",
+      "sourceRecordIds": [
+        "916b983d-7881-58e5-9479-3699c6ae52cc"
+      ],
+      "adaptationTargets": [
+        "wishes",
+        "plans"
+      ],
+      "caseIds": [
+        "wishes-written",
+        "plans-written",
+        "wishes-or-plans"
+      ]
+    },
+    {
+      "id": "procedure-66ebe329",
+      "family": "ORAL_COMPREHENSION",
+      "label": "• Comprensión de discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "caseIds": [
+        "news-listening",
+        "genre-conversation-listening",
+        "genre-advertisement-listening",
+        "genre-notice-listening",
+        "genre-message-listening",
+        "genre-forecast-listening",
+        "genre-news-listening",
+        "genre-song-listening",
+        "genre-poem-listening",
+        "genre-description-listening",
+        "genre-biography-listening",
+        "genre-narrative-listening",
+        "genre-instructions-listening"
+      ]
+    },
+    {
+      "id": "procedure-9cb5a70f",
+      "family": "ORAL_PRODUCTION",
+      "label": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "caseIds": [
+        "genre-conversation-oral",
+        "genre-conversation-interaction",
+        "genre-recipe-oral",
+        "genre-message-oral",
+        "genre-news-oral",
+        "genre-song-oral",
+        "genre-description-oral",
+        "genre-narrative-oral",
+        "genre-monologue-oral",
+        "genre-presentation-oral",
+        "genre-argumentation-oral"
+      ]
+    },
+    {
+      "id": "concept-6c308852",
+      "family": "LEXICON",
+      "label": "• Experiencias personales: vacation, trip…",
+      "sourceRecordIds": [
+        "6c308852-f419-5dca-8bea-e2c5dc9f910f"
+      ],
+      "caseIds": [
+        "vocabulary-experiences-reading",
+        "vocabulary-experiences-writing"
+      ]
+    },
+    {
+      "id": "concept-4ac27288",
+      "family": "LEXICON",
+      "label": "• Eventualidades: lose a key, miss a class, get",
+      "sourceRecordIds": [
+        "4ac27288-1574-5b05-b269-726fbcbcefa1"
+      ],
+      "contextSourceRecordIds": [
+        "1b615530-a86c-592d-a22d-5621352b18d2"
+      ],
+      "caseIds": [
+        "vocabulary-contingencies-reading",
+        "vocabulary-contingencies-writing"
+      ]
+    },
+    {
+      "id": "concept-8f1837c2",
+      "family": "LEXICON",
+      "label": "• Fenómenos naturales: hurricane, storm,\nearthquake…",
+      "sourceRecordIds": [
+        "8f1837c2-890e-5b7d-a227-8264d91f55d4"
+      ],
+      "caseIds": [
+        "vocabulary-natural-phenomena-reading",
+        "vocabulary-natural-phenomena-writing"
+      ]
+    },
+    {
+      "id": "concept-638e0fc9",
+      "family": "LEXICON",
+      "label": "• Herramientas: drill, hammer, scissors,\nsaw, screwdriver…",
+      "sourceRecordIds": [
+        "638e0fc9-014c-5a00-85dd-488a21ee3dbc"
+      ],
+      "caseIds": [
+        "vocabulary-tools-reading",
+        "vocabulary-tools-writing"
+      ]
+    },
+    {
+      "id": "concept-48e6c260",
+      "family": "LEXICON",
+      "label": "• Lugares: countryside, amusement park,\nsummer camp…",
+      "sourceRecordIds": [
+        "48e6c260-cf70-5ad8-9efa-05065edef9c8"
+      ],
+      "caseIds": [
+        "vocabulary-places-reading",
+        "vocabulary-places-writing"
+      ]
+    },
+    {
+      "id": "concept-91edb9f5",
+      "family": "LEXICON",
+      "label": "• Medios de transporte: ship, subway,\nairplane, helicopter…",
+      "sourceRecordIds": [
+        "91edb9f5-d908-5c1a-8ff4-80bd08213e78"
+      ],
+      "caseIds": [
+        "vocabulary-transport-reading",
+        "vocabulary-transport-writing"
+      ]
+    },
+    {
+      "id": "concept-40840eff",
+      "family": "LEXICON",
+      "label": "• Preparación de alimentos: boil, chop, cut,\nfry, grill, mix…",
+      "sourceRecordIds": [
+        "40840eff-4996-5792-b7ea-73eb4054cb9d"
+      ],
+      "caseIds": [
+        "vocabulary-food-preparation-reading",
+        "vocabulary-food-preparation-writing"
+      ]
+    },
+    {
+      "id": "concept-e23bccd6",
+      "family": "LEXICON",
+      "label": "• Recreación: theater, concert, picnic…",
+      "sourceRecordIds": [
+        "e23bccd6-7e86-58d0-832d-8d60f79ddd5e"
+      ],
+      "caseIds": [
+        "vocabulary-recreation-reading",
+        "vocabulary-recreation-writing"
+      ]
+    },
+    {
+      "id": "concept-87005bed",
+      "family": "LEXICON",
+      "label": "• Tecnología: hologram, 3D printer, live\nstream…",
+      "sourceRecordIds": [
+        "87005bed-a302-513a-b9e0-2f785a8c893e"
+      ],
+      "caseIds": [
+        "vocabulary-technology-reading",
+        "vocabulary-technology-writing"
+      ]
+    },
+    {
+      "id": "concept-69f82611",
+      "family": "LEXICON",
+      "label": "• Viaje: travel, luggage, travel agency,\nboard a plane …",
+      "sourceRecordIds": [
+        "69f82611-7d6b-56e2-84ca-8f13d5bdd32d"
+      ],
+      "caseIds": [
+        "vocabulary-travel-reading",
+        "vocabulary-travel-writing"
+      ]
+    },
+    {
+      "id": "concept-f21aded8",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Atraer la atención de alguien: Excuse me,\nsir! Pardon me!",
+      "sourceRecordIds": [
+        "f21aded8-3303-5304-9dfe-2158ebf6e334"
+      ],
+      "caseIds": [
+        "expression-attention-reading",
+        "expression-attention-interaction"
+      ]
+    },
+    {
+      "id": "concept-1bb61ec6",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Animar a alguien: Well done! Good job!\nCongratulations!",
+      "sourceRecordIds": [
+        "1bb61ec6-e75a-5586-94bf-b637d626dff9"
+      ],
+      "caseIds": [
+        "expression-encouragement-reading",
+        "expression-encouragement-interaction"
+      ]
+    },
+    {
+      "id": "concept-8280e82b",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Expresar interés y asombro: Wow! Really?\nThat sounds nice! . .",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "caseIds": [
+        "expression-interest-reading",
+        "expression-interest-interaction",
+        "expression-amazement-reading",
+        "expression-amazement-interaction"
+      ]
+    },
+    {
+      "id": "concept-9aafc7d9",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Mostrar empatía: Too bad!, How awful!..",
+      "sourceRecordIds": [
+        "9aafc7d9-912f-5c80-b9ef-d96a7c218afb"
+      ],
+      "caseIds": [
+        "expression-empathy-reading",
+        "expression-empathy-interaction"
+      ]
+    },
+    {
+      "id": "concept-33e52a3e",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Pedir y dar opiniones: I think…, In my\nopinion…, I believe …",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "caseIds": [
+        "expression-ask-opinion-reading",
+        "expression-ask-opinion-interaction",
+        "expression-opinion-reading",
+        "expression-opinion-interaction"
+      ]
+    },
+    {
+      "id": "concept-cbcabdc8",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Expresar acuerdo y desacuerdo: I agree, I\ndon’t think so…",
+      "sourceRecordIds": [
+        "cbcabdc8-2134-599d-9ec0-d6013919e4d4"
+      ],
+      "caseIds": [
+        "expression-agreement-reading",
+        "expression-agreement-interaction"
+      ]
+    },
+    {
+      "id": "concept-8444fe4c",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• • Coincidir y discrepar: Me too, neither do\nI, I do too, so am I…",
+      "sourceRecordIds": [
+        "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3"
+      ],
+      "caseIds": [
+        "expression-coincidence-reading",
+        "expression-coincidence-interaction"
+      ]
+    },
+    {
+      "id": "concept-9ec435b9",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Pedir repetición o aclaración: Pardon me?\nExcuse me? .",
+      "sourceRecordIds": [
+        "9ec435b9-7dbe-5221-8f67-5f8d9354647f"
+      ],
+      "caseIds": [
+        "expression-clarification-reading",
+        "expression-clarification-interaction"
+      ]
+    },
+    {
+      "id": "concept-7a102b7c",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Cambiar de tema: By the way, anyway",
+      "sourceRecordIds": [
+        "7a102b7c-c765-5b79-bbbd-aa59101fe562"
+      ],
+      "caseIds": [
+        "expression-change-topic-reading",
+        "expression-change-topic-interaction"
+      ]
+    },
+    {
+      "id": "concept-70d4b458",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Concluir una conversación: Nice talking\nto you!",
+      "sourceRecordIds": [
+        "70d4b458-1168-53f4-8cd6-aa584bb9885e"
+      ],
+      "caseIds": [
+        "expression-close-conversation-reading",
+        "expression-close-conversation-interaction"
+      ]
+    },
+    {
+      "id": "concept-3646755e",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Dar una noticia: Guess what? Did I tell you?",
+      "sourceRecordIds": [
+        "3646755e-ae05-5a13-8825-07a7db7b14a0"
+      ],
+      "caseIds": [
+        "expression-news-reading",
+        "expression-news-interaction"
+      ]
+    },
+    {
+      "id": "concept-040e6442",
+      "family": "COMMUNICATIVE_EXPRESSIONS",
+      "label": "• Excusarse: I’m sorry, I apologize…",
+      "sourceRecordIds": [
+        "040e6442-1b1b-50a8-852a-5af3177d847e"
+      ],
+      "caseIds": [
+        "expression-excuse-reading",
+        "expression-excuse-interaction"
+      ]
+    },
+    {
+      "id": "concept-dcb700f7",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Felicitar: Congratulations! Happy\nanniversary!\nGramática\nOraciones enunciativas (afirmativas y\nnegativas), interrogativas y exclamativas.\nPresente simple para pedir y dar opiniones\ne información:\nWhat do you think?",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "adaptationTargets": [
+        "congratulation",
+        "sentence-types",
+        "present-simple"
+      ],
+      "caseIds": [
+        "expression-congratulations-reading",
+        "expression-congratulations-interaction",
+        "grammar-60-declarative-reading",
+        "grammar-60-declarative-analysis",
+        "grammar-60-declarative-writing",
+        "grammar-60-declarative-comparison",
+        "grammar-60-declarative-research",
+        "grammar-60-interrogative-sentences-reading",
+        "grammar-60-interrogative-sentences-analysis",
+        "grammar-60-interrogative-sentences-writing",
+        "grammar-60-interrogative-sentences-comparison",
+        "grammar-60-interrogative-sentences-research",
+        "grammar-60-exclamation-reading",
+        "grammar-60-exclamation-analysis",
+        "grammar-60-exclamation-writing",
+        "grammar-60-exclamation-comparison",
+        "grammar-60-exclamation-research",
+        "grammar-60-present-simple-reading",
+        "grammar-60-present-simple-analysis",
+        "grammar-60-present-simple-writing",
+        "grammar-60-present-simple-comparison",
+        "grammar-60-present-simple-research",
+        "grammar-affirmative-only",
+        "grammar-negative-only"
+      ]
+    },
+    {
+      "id": "concept-d17667f9",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Presente continuo para expresar planes\nfuturos:",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "adaptationTargets": [
+        "present-continuous-plans"
+      ],
+      "caseIds": [
+        "grammar-62-present-continuous-reading",
+        "grammar-62-present-continuous-analysis",
+        "grammar-62-present-continuous-writing",
+        "grammar-62-present-continuous-comparison",
+        "grammar-62-present-continuous-research"
+      ]
+    },
+    {
+      "id": "procedure-36c50dbe",
+      "family": "WRITTEN_COMPREHENSION",
+      "label": "• Comprensión de textos escritos en formato físico, digital y\nvirtual, tales como tarjetas, listas, catálogos, diccionarios,\nfacturas, anuncios, recetas, letreros, avisos, afiches,\nmensajes, correos electrónicos, instrucciones, currículum\nvitae, cartas, formularios, noticias, horarios, agendas,\nmenús, croquis, cuestionarios, folletos, canciones,\npoesías, historietas, guías turísticas, descripciones,\nbiografías y narraciones.",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "caseIds": [
+        "news-reading-brief",
+        "genre-business-card-reading",
+        "genre-list-reading",
+        "genre-advertisement-reading",
+        "genre-recipe-reading",
+        "genre-sign-reading",
+        "genre-notice-reading",
+        "genre-poster-reading",
+        "genre-message-reading",
+        "genre-email-reading",
+        "genre-cv-reading",
+        "genre-letter-reading",
+        "genre-form-reading",
+        "genre-news-reading",
+        "genre-schedule-reading",
+        "genre-agenda-reading",
+        "genre-menu-reading",
+        "genre-map-reading",
+        "genre-questionnaire-reading",
+        "genre-brochure-reading",
+        "genre-song-reading",
+        "genre-poem-reading",
+        "genre-comic-reading",
+        "genre-tourist-guide-reading",
+        "genre-description-reading",
+        "genre-biography-reading",
+        "genre-narrative-reading",
+        "genre-catalog-reading",
+        "genre-dictionary-reading",
+        "genre-invoice-reading",
+        "genre-instructions-reading",
+        "invoice-then-information",
+        "names-and-negated-forms"
+      ]
+    },
+    {
+      "id": "procedure-83128863",
+      "family": "WRITTEN_PRODUCTION",
+      "label": "• Producción de textos escritos en formato físico, digital y\nvirtual, tales como mensajes, correos electrónicos, cartas,\ncurríc ulum vitae, avisos, afiches, letreros, formularios,\nrecetas, instrucciones, cuestionarios, biografías,\nnarraciones y descripciones.",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "caseIds": [
+        "genre-recipe-writing",
+        "genre-sign-writing",
+        "genre-notice-writing",
+        "genre-poster-writing",
+        "genre-message-writing",
+        "genre-email-writing",
+        "genre-cv-writing",
+        "genre-letter-writing",
+        "genre-form-writing",
+        "genre-questionnaire-writing",
+        "genre-description-writing",
+        "genre-biography-writing",
+        "genre-narrative-writing",
+        "genre-instructions-writing",
+        "three-written-product-alternatives"
+      ]
+    },
+    {
+      "id": "procedure-5d7b1928",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Anticipación del contenido del mensaje.",
+      "sourceRecordIds": [
+        "5d7b1928-5532-5288-ace0-6c4322ca5f74"
+      ],
+      "caseIds": [
+        "strategy-67-anticipation-15"
+      ]
+    },
+    {
+      "id": "procedure-94bc5651",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaje.",
+      "sourceRecordIds": [
+        "94bc5651-cf36-5f2b-9f9a-a1a8c3f23c2a"
+      ],
+      "caseIds": [
+        "strategy-69-nonverbal-reception-17"
+      ]
+    },
+    {
+      "id": "procedure-1569863e",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos",
+      "sourceRecordIds": [
+        "1569863e-050b-5386-af68-d8f9d663e20b"
+      ],
+      "caseIds": [
+        "strategy-70-inference-18"
+      ]
+    },
+    {
+      "id": "procedure-29cf020d",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Solicitud de repetición",
+      "sourceRecordIds": [
+        "29cf020d-03a1-579a-acf4-173ba4d46469"
+      ],
+      "caseIds": [
+        "strategy-71-help-19"
+      ]
+    },
+    {
+      "id": "procedure-a9d38a67",
+      "family": "LISTENING_STRATEGY",
+      "label": "• Indicación de que se comprende o no.",
+      "sourceRecordIds": [
+        "a9d38a67-aef5-5af4-a3d6-f125ff25153b"
+      ],
+      "caseIds": [
+        "strategy-72-understanding-38"
+      ]
+    },
+    {
+      "id": "procedure-ef273e24",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Reproducción y ensayo de palabras, expresiones y pautas\nde entonación.",
+      "sourceRecordIds": [
+        "ef273e24-d95c-549b-bc87-e234d5149518"
+      ],
+      "caseIds": [
+        "strategy-74-rehearsal-20"
+      ]
+    },
+    {
+      "id": "procedure-ea258771",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Identificación de la situación de comunicación.",
+      "sourceRecordIds": [
+        "ea258771-4a3f-5cf1-9586-0258ae28a11c"
+      ],
+      "caseIds": [
+        "strategy-75-situation-21"
+      ]
+    },
+    {
+      "id": "procedure-6810b974",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Establecimiento de la intención comunicativ",
+      "sourceRecordIds": [
+        "6810b974-d18a-56ba-8bd5-cb0c5dd81ec4"
+      ],
+      "caseIds": [
+        "strategy-76-communicative-purpose-22"
+      ]
+    },
+    {
+      "id": "procedure-ddf1316e",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Planificación del mensaje.",
+      "sourceRecordIds": [
+        "ddf1316e-7cc7-59f6-bb8f-7815b801cb4a"
+      ],
+      "caseIds": [
+        "strategy-77-planning-0"
+      ]
+    },
+    {
+      "id": "procedure-f7856251",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Ensayo de nuevas combinaciones y expresiones y\nsolicitud de retroalimentación.",
+      "sourceRecordIds": [
+        "f7856251-98f2-5ea8-baa8-47edae10be4a"
+      ],
+      "caseIds": [
+        "strategy-78-new-combinations-1",
+        "strategy-78-feedback-2"
+      ]
+    },
+    {
+      "id": "procedure-a4e2a060",
+      "family": "ORAL_PRODUCTION_STRATEGY",
+      "label": "• Uso del lenguaje no verbal para comunicarse.",
+      "sourceRecordIds": [
+        "a4e2a060-3827-56bd-8fec-b70a76584690"
+      ],
+      "caseIds": [
+        "strategy-79-nonverbal-production-23"
+      ]
+    },
+    {
+      "id": "procedure-9e708f99",
+      "family": "READING_STRATEGY",
+      "label": "• Establecimiento del propósito de la lectura.",
+      "sourceRecordIds": [
+        "9e708f99-cdfc-5a2e-b48c-3f81f5441da6"
+      ],
+      "caseIds": [
+        "strategy-81-reading-purpose-24"
+      ]
+    },
+    {
+      "id": "procedure-f8179f9f",
+      "family": "READING_STRATEGY",
+      "label": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "sourceRecordIds": [
+        "f8179f9f-7319-5c7c-a8d3-75c4633d56fd"
+      ],
+      "caseIds": [
+        "strategy-82-hypothesis-25"
+      ]
+    },
+    {
+      "id": "procedure-8ac047be",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la correspondencia entre la grafía y el\nsonido de las palabras.",
+      "sourceRecordIds": [
+        "8ac047be-c006-5e2d-83d0-8bbadf17cb15"
+      ],
+      "caseIds": [
+        "strategy-83-grapheme-phoneme-26"
+      ]
+    },
+    {
+      "id": "procedure-af8a71f1",
+      "family": "READING_STRATEGY",
+      "label": "• Inferencia del significado de palabras y expresiones a\npartir de las pistas textuales y los conocimientos previos.",
+      "sourceRecordIds": [
+        "af8a71f1-0518-5c34-9855-f86f3e473f40"
+      ],
+      "caseIds": [
+        "strategy-84-inference-27"
+      ]
+    },
+    {
+      "id": "procedure-1e1191ed",
+      "family": "READING_STRATEGY",
+      "label": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "sourceRecordIds": [
+        "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e"
+      ],
+      "caseIds": [
+        "strategy-85-annotation-28",
+        "strategy-85-dictionary-29"
+      ]
+    },
+    {
+      "id": "procedure-3e416a0b",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la idea principal y detalles específicos\ndel texto.",
+      "sourceRecordIds": [
+        "3e416a0b-a656-54e4-8190-e1c63a3a47c5"
+      ],
+      "caseIds": [
+        "strategy-86-main-details-3",
+        "strategy-86-main-details-4",
+        "strategy-86-main-details-5"
+      ]
+    },
+    {
+      "id": "procedure-32803242",
+      "family": "READING_STRATEGY",
+      "label": "• Identificación de la intención comunicativa del texto.",
+      "sourceRecordIds": [
+        "32803242-e31f-5c30-a2fc-323d7669f2a2"
+      ],
+      "caseIds": [
+        "strategy-87-text-intention-30"
+      ]
+    },
+    {
+      "id": "procedure-8f3ea3b4",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "sourceRecordIds": [
+        "8f3ea3b4-866d-539f-8553-e79e0df68849"
+      ],
+      "caseIds": [
+        "strategy-89-communicative-purpose-31",
+        "strategy-89-text-type-32"
+      ]
+    },
+    {
+      "id": "procedure-b62848ab",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Planificación y organización del mensaje.",
+      "sourceRecordIds": [
+        "b62848ab-0aa3-5249-9777-545dac724d4d"
+      ],
+      "caseIds": [
+        "strategy-90-planning-33"
+      ]
+    },
+    {
+      "id": "procedure-8df046d6",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Uso del diccionario y otras herramientas de consulta.",
+      "sourceRecordIds": [
+        "8df046d6-61b1-5955-a2b6-a300064818d6"
+      ],
+      "caseIds": [
+        "strategy-91-dictionary-34"
+      ]
+    },
+    {
+      "id": "procedure-8d41728f",
+      "family": "WRITTEN_PROCESS",
+      "label": "• Revisión del sentido y la corrección del mensaje.",
+      "sourceRecordIds": [
+        "8d41728f-a330-533d-9d07-db90b94cdf0e"
+      ],
+      "caseIds": [
+        "strategy-92-revision-35"
+      ]
+    },
+    {
+      "id": "attitude_value-01b58fa5",
+      "family": "CRITICAL_COMPREHENSION",
+      "label": "• Sentido crítico ante los anuncios y\npredicciones.",
+      "sourceRecordIds": [
+        "01b58fa5-3355-5705-8097-48b66fc55037"
+      ],
+      "caseIds": [
+        "critical-announcement",
+        "critical-source-information"
+      ]
+    },
+    {
+      "id": "concept-47732fbd",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "Pasado simple para comunicar noticias y\nrelatar experiencias:",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "adaptationTargets": [
+        "past-simple"
+      ],
+      "caseIds": [
+        "grammar-104-past-simple-reading",
+        "grammar-104-past-simple-analysis",
+        "grammar-104-past-simple-writing",
+        "grammar-104-past-simple-comparison",
+        "grammar-104-past-simple-research"
+      ]
+    },
+    {
+      "id": "concept-7b7a229d",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Alex has just gotten a better job.\nUsed to:",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "adaptationTargets": [
+        "used-to"
+      ],
+      "caseIds": [
+        "past-habits-used-to",
+        "grammar-105-used-to-reading",
+        "grammar-105-used-to-analysis",
+        "grammar-105-used-to-writing",
+        "grammar-105-used-to-comparison",
+        "grammar-105-used-to-research"
+      ]
+    },
+    {
+      "id": "concept-21e7c0d6",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I used to attend English classes every\nafternoon when I lived in my hometown.\nImperativo para dar instrucciones:\nWalk for three blocks and turn right.",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "adaptationTargets": [
+        "imperative"
+      ],
+      "caseIds": [
+        "grammar-106-imperative-reading",
+        "grammar-106-imperative-analysis",
+        "grammar-106-imperative-writing",
+        "grammar-106-imperative-comparison",
+        "grammar-106-imperative-research"
+      ]
+    },
+    {
+      "id": "concept-04c8ce41",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Plug in the PC, and turn it on.\nPasado simple y pasado continuo para\nexplicar problemas y sus motivos:",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "adaptationTargets": [
+        "past-simple-and-continuous"
+      ],
+      "caseIds": [
+        "grammar-107-past-simple-reading",
+        "grammar-107-past-simple-analysis",
+        "grammar-107-past-simple-writing",
+        "grammar-107-past-simple-comparison",
+        "grammar-107-past-simple-research",
+        "grammar-107-past-continuous-reading",
+        "grammar-107-past-continuous-analysis",
+        "grammar-107-past-continuous-writing",
+        "grammar-107-past-continuous-comparison",
+        "grammar-107-past-continuous-research"
+      ]
+    },
+    {
+      "id": "concept-03ec5860",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• The accident happened because the driver\ngot distracted as he was talking on his cell\nphone.\nFuturo continuo para expresar planes\nfuturos:",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "adaptationTargets": [
+        "future-continuous"
+      ],
+      "caseIds": [
+        "grammar-108-future-continuous-reading",
+        "grammar-108-future-continuous-analysis",
+        "grammar-108-future-continuous-writing",
+        "grammar-108-future-continuous-comparison",
+        "grammar-108-future-continuous-research"
+      ]
+    },
+    {
+      "id": "concept-603c93c8",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I’ll be traveling to Canada next summe Be\n+ going to para hacer predicciones y\n.anuncios, y expresar planes futuros:",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "adaptationTargets": [
+        "going-to"
+      ],
+      "caseIds": [
+        "grammar-109-going-to-reading",
+        "grammar-109-going-to-analysis",
+        "grammar-109-going-to-writing",
+        "grammar-109-going-to-comparison",
+        "grammar-109-going-to-research"
+      ]
+    },
+    {
+      "id": "concept-c30966c1",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I’m going to get married next month.\nWill para hacer predicciones:\nHope, wish y would like… para expresar\ndeseos:",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "adaptationTargets": [
+        "will",
+        "wishes"
+      ],
+      "caseIds": [
+        "grammar-111-will-reading",
+        "grammar-111-will-analysis",
+        "grammar-111-will-writing",
+        "grammar-111-will-comparison",
+        "grammar-111-will-research",
+        "grammar-111-hope-reading",
+        "grammar-111-hope-analysis",
+        "grammar-111-hope-writing",
+        "grammar-111-hope-comparison",
+        "grammar-111-hope-research",
+        "grammar-111-wish-reading",
+        "grammar-111-wish-analysis",
+        "grammar-111-wish-writing",
+        "grammar-111-wish-comparison",
+        "grammar-111-wish-research",
+        "grammar-111-would-like-reading",
+        "grammar-111-would-like-analysis",
+        "grammar-111-would-like-writing",
+        "grammar-111-would-like-comparison",
+        "grammar-111-would-like-research",
+        "independent-sentences"
+      ]
+    },
+    {
+      "id": "concept-4a41f41b",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I would like to travel to Spain this year.\nVerbos seguidos por infinitivo, gerundio o\npor cualquiera de ellos:",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "adaptationTargets": [
+        "verb-complements"
+      ],
+      "caseIds": [
+        "grammar-112-verb-complements-reading",
+        "grammar-112-verb-complements-analysis",
+        "grammar-112-verb-complements-writing",
+        "grammar-112-verb-complements-comparison",
+        "grammar-112-verb-complements-research",
+        "grammar-gerund-complement",
+        "grammar-infinitive-or-gerund"
+      ]
+    },
+    {
+      "id": "concept-15b5fd13",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I began playing to play baseball when I\nwas ten years old.\nPhrasal verbs (turn up, fill out, get along\nwith, look after…):",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "adaptationTargets": [
+        "phrasal-verbs"
+      ],
+      "caseIds": [
+        "grammar-115-phrasal-verbs-reading",
+        "grammar-115-phrasal-verbs-analysis",
+        "grammar-115-phrasal-verbs-writing",
+        "grammar-115-phrasal-verbs-comparison",
+        "grammar-115-phrasal-verbs-research"
+      ]
+    },
+    {
+      "id": "concept-d94524ee",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• They get along well.\nThere + be para hacer anuncios, comunicar\nnoticias, y explicar problemas y sus motivos:",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "adaptationTargets": [
+        "there-be"
+      ],
+      "caseIds": [
+        "grammar-117-there-be-reading",
+        "grammar-117-there-be-analysis",
+        "grammar-117-there-be-writing",
+        "grammar-117-there-be-comparison",
+        "grammar-117-there-be-research"
+      ]
+    },
+    {
+      "id": "concept-c3f4e45b",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• The traflc is slow because there has been a\nterrible accident on the highway.\nCondicional para dar instrucciones, hacer\npredicciones y explicar problemas y sus\nmotivos (If/When + presente simple en la\ncláusula condicional + presente simple en\nla cláusula principal):",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "adaptationTargets": [
+        "conditional-zero"
+      ],
+      "caseIds": [
+        "grammar-120-conditional-reading",
+        "grammar-120-conditional-analysis",
+        "grammar-120-conditional-writing",
+        "grammar-120-conditional-comparison",
+        "grammar-120-conditional-research"
+      ]
+    },
+    {
+      "id": "concept-ba3c78f3",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• When you don’t study, you get bad grades.\nCondicional para expresar deseos y planes\nfuturos (If / When + presente simple en la\ncláusula condicional+ futuro con will en la\ncláusula principal):",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "adaptationTargets": [
+        "conditional-first"
+      ],
+      "caseIds": [
+        "grammar-122-conditional-reading",
+        "grammar-122-conditional-analysis",
+        "grammar-122-conditional-writing",
+        "grammar-122-conditional-comparison",
+        "grammar-122-conditional-research"
+      ]
+    },
+    {
+      "id": "procedure-8e21387e",
+      "family": "LEARNING_STRATEGY",
+      "label": "• Utilización de asociaciones mentales y de la acción.",
+      "sourceRecordIds": [
+        "8e21387e-f63c-5c1f-aa91-f51062530acb"
+      ],
+      "caseIds": [
+        "strategy-124-association-36"
+      ]
+    },
+    {
+      "id": "procedure-37b0e5d1",
+      "family": "SOCIOLINGUISTIC",
+      "label": "• Utilización de las normas de cortesía más importantes.",
+      "sourceRecordIds": [
+        "37b0e5d1-6452-53ca-92b1-1f37816e73ce"
+      ],
+      "caseIds": [
+        "strategy-128-courtesy-6"
+      ]
+    },
+    {
+      "id": "procedure-4a06e885",
+      "family": "SOCIOLINGUISTIC",
+      "label": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "sourceRecordIds": [
+        "4a06e885-b595-5085-a9a8-5edb8d9b2514"
+      ],
+      "caseIds": [
+        "strategy-129-neutral-register-7"
+      ]
+    },
+    {
+      "id": "procedure-03bb3059",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Medios de comunicación.",
+      "sourceRecordIds": [
+        "03bb3059-23ff-599e-ae08-0de4f9f2c8bc"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-131-cultural-comparison-8"
+      ]
+    },
+    {
+      "id": "procedure-5c803522",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Valores, tradiciones y creencias.",
+      "sourceRecordIds": [
+        "5c803522-4a7c-51f0-b8c5-58818d0984ac"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-132-cultural-comparison-9"
+      ]
+    },
+    {
+      "id": "procedure-94d4d448",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Normas de cortesía",
+      "sourceRecordIds": [
+        "94d4d448-7246-5fda-ace3-2d354c6476c3"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "cultural-manners-comparison",
+        "strategy-133-cultural-comparison-10"
+      ]
+    },
+    {
+      "id": "procedure-ece8f6bf",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Actividades de tiempo libre.",
+      "sourceRecordIds": [
+        "ece8f6bf-1e99-5b30-aac8-08f9bb583e0d"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-134-cultural-comparison-11"
+      ]
+    },
+    {
+      "id": "procedure-a01f92a8",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Atractivos turísticos.",
+      "sourceRecordIds": [
+        "a01f92a8-790c-5259-aaa5-bd34ddbf92ec"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-135-cultural-comparison-12"
+      ]
+    },
+    {
+      "id": "procedure-2e2dcbf4",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "sourceRecordIds": [
+        "2e2dcbf4-21f5-52f5-a38f-d27fcd046262"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-136-cultural-comparison-13"
+      ]
+    },
+    {
+      "id": "procedure-485991d7",
+      "family": "CULTURAL_COMPARISON",
+      "label": "• Cuidado del medioambiente",
+      "sourceRecordIds": [
+        "485991d7-9d65-5361-8c2c-37ada749c307"
+      ],
+      "contextSourceRecordIds": [
+        "027e77d9-c196-594f-8676-448ed77e192f"
+      ],
+      "caseIds": [
+        "strategy-137-cultural-comparison-14"
+      ]
+    },
+    {
+      "id": "concept-74ae6175",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Causa y consecuencia: so, because, since…",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "adaptationTargets": [
+        "cause-and-consequence"
+      ],
+      "caseIds": [
+        "grammar-139-cause-connectors-reading",
+        "grammar-139-cause-connectors-analysis",
+        "grammar-139-cause-connectors-writing",
+        "grammar-139-cause-connectors-comparison",
+        "grammar-139-cause-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-3a467550",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Contraste y oposición: but, however…",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "adaptationTargets": [
+        "contrast"
+      ],
+      "caseIds": [
+        "grammar-140-contrast-connectors-reading",
+        "grammar-140-contrast-connectors-analysis",
+        "grammar-140-contrast-connectors-writing",
+        "grammar-140-contrast-connectors-comparison",
+        "grammar-140-contrast-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-2f317563",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Concesión: even so, nevertheless…\nFinalidad: in order to, so that, to…",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "adaptationTargets": [
+        "concession",
+        "purpose"
+      ],
+      "caseIds": [
+        "grammar-141-concession-connectors-reading",
+        "grammar-141-concession-connectors-analysis",
+        "grammar-141-concession-connectors-writing",
+        "grammar-141-concession-connectors-comparison",
+        "grammar-141-concession-connectors-research",
+        "grammar-141-purpose-connectors-reading",
+        "grammar-141-purpose-connectors-analysis",
+        "grammar-141-purpose-connectors-writing",
+        "grammar-141-purpose-connectors-comparison",
+        "grammar-141-purpose-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-9e897fe3",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Secuencia: first, second, then…",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "adaptationTargets": [
+        "sequence"
+      ],
+      "caseIds": [
+        "grammar-142-sequence-connectors-reading",
+        "grammar-142-sequence-connectors-analysis",
+        "grammar-142-sequence-connectors-writing",
+        "grammar-142-sequence-connectors-comparison",
+        "grammar-142-sequence-connectors-research"
+      ]
+    },
+    {
+      "id": "concept-84b1c00a",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Tiempo: after, once, when, while, as soon\nas…\nVoz pasiva para pedir y dar información,\ncomunicar noticias, hacer predicciones y\nanuncios:",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "adaptationTargets": [
+        "time-connectors",
+        "passive"
+      ],
+      "caseIds": [
+        "passive-notice",
+        "grammar-143-time-connectors-reading",
+        "grammar-143-time-connectors-analysis",
+        "grammar-143-time-connectors-writing",
+        "grammar-143-time-connectors-comparison",
+        "grammar-143-time-connectors-research",
+        "grammar-143-passive-reading",
+        "grammar-143-passive-analysis",
+        "grammar-143-passive-writing",
+        "grammar-143-passive-comparison",
+        "grammar-143-passive-research",
+        "grammar-passive-presente",
+        "grammar-passive-pasado",
+        "grammar-passive-futuro"
+      ]
+    },
+    {
+      "id": "concept-88ebefe0",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• That man will be fined because he broke\nthe law.\nQuestion tags:",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "adaptationTargets": [
+        "question-tags"
+      ],
+      "caseIds": [
+        "grammar-146-question-tags-reading",
+        "grammar-146-question-tags-analysis",
+        "grammar-146-question-tags-writing",
+        "grammar-146-question-tags-comparison",
+        "grammar-146-question-tags-research"
+      ]
+    },
+    {
+      "id": "concept-d41287be",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• You are Eric, aren´t you?\nPreguntas indirectas y embedded questions:",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "adaptationTargets": [
+        "indirect-questions"
+      ],
+      "caseIds": [
+        "grammar-148-indirect-questions-reading",
+        "grammar-148-indirect-questions-analysis",
+        "grammar-148-indirect-questions-writing",
+        "grammar-148-indirect-questions-comparison",
+        "grammar-148-indirect-questions-research"
+      ]
+    },
+    {
+      "id": "concept-81c14b14",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• I want to know why the Wi•Fi connection\nisn’t working.\nGerundios en función sustantiva:\nDancing is a very good activity for you to\nstay healthy.\nOmisión del artículo:",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "adaptationTargets": [
+        "gerund-noun",
+        "zero-article"
+      ],
+      "caseIds": [
+        "grammar-150-nominal-gerund-reading",
+        "grammar-150-nominal-gerund-analysis",
+        "grammar-150-nominal-gerund-writing",
+        "grammar-150-nominal-gerund-comparison",
+        "grammar-150-nominal-gerund-research",
+        "grammar-150-zero-article-reading",
+        "grammar-150-zero-article-analysis",
+        "grammar-150-zero-article-writing",
+        "grammar-150-zero-article-comparison",
+        "grammar-150-zero-article-research"
+      ]
+    },
+    {
+      "id": "concept-3fa70b62",
+      "family": "GRAMMAR_AND_FUNCTION",
+      "label": "• Love is a wonderful thing.\nGrados comparativo y superlativo del adjetivo:",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "adaptationTargets": [
+        "comparative-and-superlative"
+      ],
+      "caseIds": [
+        "grammar-151-comparative-reading",
+        "grammar-151-comparative-analysis",
+        "grammar-151-comparative-writing",
+        "grammar-151-comparative-comparison",
+        "grammar-151-comparative-research",
+        "grammar-comparative-only",
+        "grammar-superlative-only"
+      ]
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "e068f75f-ec00-56f0-ba45-4cdbd4cf267e",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "deb81d5e-7e0f-52ed-8fe1-205bc0a31277",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "c81e3648-c28f-51ec-be48-29cb786bc6f3",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "423b6904-54e4-5e34-a9cd-53e69a0f8463",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "32d344f9-edf6-5bc6-a36b-5c3211e238d0",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "3b411751-7381-5d9b-af05-0a37cc2cdd85",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "62b600da-36a5-5b34-8196-8812217f447e",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "e4bff53a-dcc0-5613-9fc6-c3391318973b",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "1b615530-a86c-592d-a22d-5621352b18d2",
+      "reason": "FRAGMENT_NOT_STANDALONE",
+      "explanation": "«hurt…» continúa el vocabulario de eventualidades que termina en «get»; conservar el fragmento sin criterio autónomo."
+    },
+    {
+      "id": "76090fad-a53b-533e-875b-7681b1c7ee1d",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "57bcecd5-2b07-5f6e-b6be-ff110150c192",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "176c4de7-477e-5c12-bb90-d1e491d66904",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "b06a753d-3823-5062-b558-cb685a73ba5f",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "f897c147-b8ff-55ba-a6b4-f8d8fc371331",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "e7fdccd6-3b09-5f67-bb32-9fe4a66adee7",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "48a4d9e0-2f19-5f46-8dcf-9c32b4c4f674",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "7e6c8cf7-757c-5ffe-9b31-88115c97a547",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "ab760f4f-29bb-55c6-9aff-94596c828325",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "f2d2d7aa-ca17-585d-b5e3-6f30e4809d9a",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "a53b6802-a05f-54ea-a97e-4591281c07e8",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "2ed77206-8064-55a9-b995-dee658c8dbf8",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "29a0190d-e1cf-5b12-8e3d-0d0fa4fb0fa2",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "92cf4377-a665-5ea0-9954-cc19d1233cc4",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "b7121fd4-5064-5e9d-81c4-75eec45e28a0",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "6faeac42-3641-5b5a-8fa0-b4f390f99bb1",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "f27c0bac-aafb-57e9-a44d-a3e4ec2ff047",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "82768031-b21b-5d8e-8ddc-0790d9d8f2ab",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "5a0ec870-f373-501d-8c97-48820893e74c",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "31b99d2b-d763-52aa-903d-2b1ed2fda30e",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "feeb4efd-1c13-576c-b6f0-d1ff7178ceba",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "86fa81e0-c4c9-5fd5-a21e-7ba3f8f89e66",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "f66b4fef-39c9-55d3-9420-109e934bd65a",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "efd6a70b-c26c-55f3-9fcc-79cb1d28a4ce",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "67a2c20a-d2b0-5d82-970b-c240e2798870",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "b34ac7ae-c741-5495-980c-dd0327f92b23",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "c5cee1f5-8d04-58a7-8209-b14d24bd9e6e",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Motivación, control de ansiedad, hábitos de uso del tiempo, empatía íntima, autocontrol, honestidad o humildad no se infieren ni califican como personalidad. Los mensajes observables pedidos se evalúan con sus anclas funcionales."
+    },
+    {
+      "id": "62e5f895-b55d-5f4f-891e-0f3acd9f0bad",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza acciones observables expresamente pedidas. No inferir atención mental, adhesión cultural, hábitos privados o colaboración por personalidad; no exigir contacto externo."
+    },
+    {
+      "id": "2d11e654-157a-53df-b16a-3bcd2e76eee3",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "027e77d9-c196-594f-8676-448ed77e192f",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de categoría o lista subordinada; conservarlo como contexto sin crear tarea ni criterio autónomos."
+    },
+    {
+      "id": "a4303a52-bb51-5c30-a64e-310ff220454b",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "f4f3bd1f-c6c6-5eb5-98bb-d3b1f7d1e990",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "3c8130a6-509a-51fb-b388-c2deb9503315",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "88ff395e-61cd-530d-a6da-a1e80bd0b858",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "400a4e92-f1e2-581b-8605-6ae10abd3b37",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "86067d49-c824-517c-9151-e4461928376a",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    },
+    {
+      "id": "ecbb4d0c-022c-51de-bdac-7b868e45c3f0",
+      "reason": "REFERENCE_EXAMPLE_NOT_SEPARATE_TASK",
+      "explanation": "Ejemplo ilustrativo de una forma ya rotulada; no exigir reproducir la frase literal ni inventar otra tarea por su separación en la extracción."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 383,
+    "fullInstrumentsGenerated": 1532,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 1532,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_24_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+    "testCounts": {
+      "backend": 67094,
+      "backendFiles": 165,
+      "frontendActivities": 67929,
+      "frontendFiles": 102,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 6492,
+      "recommend": 6242,
+      "writes": 3753
+    },
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hlm-ingles-4.md"
+  },
+  "limits": [
+    "Los registros adaptables y los dominios temáticos no equivalen a proveedores ni temas independientes.",
+    "Las adaptaciones de AulaBase no son transcripciones de criterios oficiales.",
+    "Las muestras verificadas no acreditan todas las combinaciones posibles ni toda capacidad adicional del helper común.",
+    "El formato virtual escrito no impone producir un video."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HLM_ING_4_V1",
+    "versionId": "668dbb19-9b88-5c0a-aeea-7b970ab8ee61",
+    "scopeId": "d5a6a39c-3f52-5dcd-bba1-620e737fc340",
+    "result": "UNCHANGED",
+    "elements": 188,
+    "excludedFromAssessment": 46,
+    "sourceRowsAndSpansMatched": true
+  }
+}

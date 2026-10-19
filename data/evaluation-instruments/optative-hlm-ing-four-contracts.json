@@ -1,0 +1,4600 @@
+{
+  "grade": 4,
+  "subjectCode": "OPT-HLM-ING-4",
+  "subjectName": "Manejo de la información en inglés",
+  "modalityCode": "academic",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "status": "SOURCE_ANCHORS_MAPPED_FULL_INSTRUMENT_REVIEW_AND_RUNTIME_PENDING",
+  "cases": [
+    {
+      "id": "information-interaction",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre el horario proporcionado de un centro ficticio.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ]
+    },
+    {
+      "id": "news-written",
+      "description": "Redacta en inglés una noticia breve sobre el acontecimiento ficticio y los datos proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ]
+    },
+    {
+      "id": "prediction-written",
+      "description": "Escribe en inglés una predicción sobre el tiempo a partir de los indicios proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "10e7d2ee-adf3-52db-ad28-c4b7a42feddc"
+      ]
+    },
+    {
+      "id": "announcement-oral",
+      "description": "Presenta oralmente en inglés un anuncio del evento ficticio con día, hora y lugar dados.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "10e7d2ee-adf3-52db-ad28-c4b7a42feddc"
+      ]
+    },
+    {
+      "id": "opinion-oral",
+      "description": "Expresa oralmente en inglés una opinión sobre la situación ficticia y justifica la razón.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "aa9d8e63-3be7-55c7-8fee-a78ff5e4fdad"
+      ]
+    },
+    {
+      "id": "experience-oral",
+      "description": "Narra oralmente en inglés una experiencia de un personaje ficticio, relacionando los sucesos proporcionados.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "26591c13-3944-5908-bdc6-e7383477e595"
+      ]
+    },
+    {
+      "id": "problem-causes-written",
+      "description": "Redacta en inglés la explicación de un problema ficticio y sus motivos a partir de los datos dados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "a8a8d0e0-719b-5841-8f65-0a62c6f70a9a"
+      ]
+    },
+    {
+      "id": "instructions-request",
+      "description": "Dialoguen en inglés para pedir instrucciones sobre una tarea ficticia, precisando qué necesitan aclarar.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "9283fcb0-23df-5e71-8921-1987a885797e"
+      ]
+    },
+    {
+      "id": "instructions-written",
+      "description": "Redacta en inglés las instrucciones para armar una figura con las piezas dadas.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "9283fcb0-23df-5e71-8921-1987a885797e"
+      ]
+    },
+    {
+      "id": "wishes-written",
+      "description": "Escribe en inglés los deseos del personaje ficticio, distinguiéndolos de hechos ya confirmados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "916b983d-7881-58e5-9479-3699c6ae52cc"
+      ]
+    },
+    {
+      "id": "plans-written",
+      "description": "Redacta en inglés los planes futuros del personaje, con la fecha y el lugar proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "916b983d-7881-58e5-9479-3699c6ae52cc"
+      ]
+    },
+    {
+      "id": "news-listening",
+      "description": "Escuchen una noticia en inglés e identifiquen el acontecimiento y los datos solicitados.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ]
+    },
+    {
+      "id": "news-reading-brief",
+      "description": "Lee la noticia proporcionada en inglés.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ]
+    },
+    {
+      "id": "passive-notice",
+      "description": "Redacta en inglés un aviso usando voz pasiva, con los datos del caso ficticio.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ]
+    },
+    {
+      "id": "wishes-or-plans",
+      "description": "Escribe en inglés un deseo o un plan futuro para un personaje ficticio. No se requiere producir ambos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "916b983d-7881-58e5-9479-3699c6ae52cc"
+      ]
+    },
+    {
+      "id": "information-group",
+      "description": "En parejas, dialoguen en inglés para solicitar y ofrecer información sobre el horario proporcionado de un centro ficticio.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "participationMode": "GROUP"
+    },
+    {
+      "id": "news-oral-and-written",
+      "description": "Presenten una noticia en inglés de forma oral y escrita, con los datos suministrados.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ]
+    },
+    {
+      "id": "past-habits-used-to",
+      "description": "Escribe en inglés un mensaje sobre hábitos anteriores del personaje usando used to.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ]
+    },
+    {
+      "id": "critical-announcement",
+      "description": "Analiza en inglés un anuncio proporcionado y distingue los datos verificados de una predicción, justificando con indicios. No se pide compartir una opinión personal.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "01b58fa5-3355-5705-8097-48b66fc55037"
+      ]
+    },
+    {
+      "id": "cultural-manners-comparison",
+      "description": "Comparen en inglés las normas de cortesía descritas en dos textos proporcionados, uno de República Dominicana y otro de un país ficticio.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "94d4d448-7246-5fda-ace3-2d354c6476c3"
+      ]
+    },
+    {
+      "id": "theme-1",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre las relaciones humanas y sociales, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "26eb5937-3c85-5a5e-8c5e-3f5758830e7d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-2",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la vivienda, el entorno y la ciudad, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "f8fde7dc-a7b1-5485-8279-0ff3f4592fe4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-3",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la escuela y la educación, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "ad8f02fe-f6e0-5441-b739-715affacbe98"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-4",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre las actividades de la vida diaria, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "9d8423c6-f49e-5db5-a492-c5b4170e9741"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-5",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre el deporte, el tiempo libre y la recreación, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "84838744-36fd-566f-bcb5-940a5981e806"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-6",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la alimentación, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "10cdd7d1-efbc-5cac-9bdd-d4af6602c8f9"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-7",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la salud y los cuidados físicos, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "4302d507-2250-5834-8a74-ce7897df3f20"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-8",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre los bienes y servicios, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "2aa11dd1-a55c-5617-b21d-6ce353e0b12b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-9",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la lengua y la comunicación, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "2186e58e-a302-503d-a4d4-84a3f8d3d63f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-10",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre la ciencia y la tecnología, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "4fc695d5-9e2b-5beb-8dc6-8c27550276e7"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-11",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre los viajes y el turismo, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "d299efd0-91e5-50f8-9139-ecc5a295db71"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "theme-12",
+      "description": "Dialoguen en inglés para solicitar y ofrecer información sobre los fenómenos naturales y el medioambiente, usando los datos proporcionados de personajes o situaciones ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "coverageRole": "THEMATIC_CONTEXT_NOT_INDEPENDENT_TOPIC"
+    },
+    {
+      "id": "vocabulary-events-celebrations-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de acontecimientos y celebraciones que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-events-celebrations"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-events-celebrations-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de acontecimientos y celebraciones solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6ea8042d-6a46-578d-bc6a-7c976fcfa3c7"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-events-celebrations"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-communication-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de comunicación que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "27d35bf8-d7c0-5980-9f99-182bed2ef10e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-communication"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-communication-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de comunicación solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "27d35bf8-d7c0-5980-9f99-182bed2ef10e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-communication"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-sports-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de deportes que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "4808a078-41c2-5c83-a4b4-922fb3692bcc"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-sports"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-sports-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de deportes solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4808a078-41c2-5c83-a4b4-922fb3692bcc"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-sports"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-education-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de educación que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "ce0f2f1f-ddec-54b3-b086-7458a6579842"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-education"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-education-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de educación solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "ce0f2f1f-ddec-54b3-b086-7458a6579842"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-education"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-kitchen-equipment-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de equipos y utensilios de cocina que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c6289760-41ce-5d89-924b-8817993fc84c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-kitchen-equipment"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-kitchen-equipment-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de equipos y utensilios de cocina solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c6289760-41ce-5d89-924b-8817993fc84c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-kitchen-equipment"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-experiences-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de experiencias personales que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "6c308852-f419-5dca-8bea-e2c5dc9f910f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-experiences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-experiences-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de experiencias personales solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6c308852-f419-5dca-8bea-e2c5dc9f910f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-experiences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-contingencies-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de eventualidades que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "4ac27288-1574-5b05-b269-726fbcbcefa1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-contingencies"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-contingencies-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de eventualidades solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4ac27288-1574-5b05-b269-726fbcbcefa1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-contingencies"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-natural-phenomena-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de fenómenos naturales que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8f1837c2-890e-5b7d-a227-8264d91f55d4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-natural-phenomena"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-natural-phenomena-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de fenómenos naturales solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8f1837c2-890e-5b7d-a227-8264d91f55d4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-natural-phenomena"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-tools-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de herramientas que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "638e0fc9-014c-5a00-85dd-488a21ee3dbc"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-tools"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-tools-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de herramientas solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "638e0fc9-014c-5a00-85dd-488a21ee3dbc"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-tools"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-places-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de lugares que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "48e6c260-cf70-5ad8-9efa-05065edef9c8"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-places"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-places-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de lugares solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "48e6c260-cf70-5ad8-9efa-05065edef9c8"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-places"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-transport-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de medios de transporte que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "91edb9f5-d908-5c1a-8ff4-80bd08213e78"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-transport"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-transport-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de medios de transporte solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "91edb9f5-d908-5c1a-8ff4-80bd08213e78"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-transport"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-food-preparation-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de preparación de alimentos que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "40840eff-4996-5792-b7ea-73eb4054cb9d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-food-preparation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-food-preparation-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de preparación de alimentos solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "40840eff-4996-5792-b7ea-73eb4054cb9d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-food-preparation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-recreation-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de recreación que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "e23bccd6-7e86-58d0-832d-8d60f79ddd5e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-recreation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-recreation-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de recreación solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e23bccd6-7e86-58d0-832d-8d60f79ddd5e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-recreation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-technology-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de tecnología que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "87005bed-a302-513a-b9e0-2f785a8c893e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-technology"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-technology-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de tecnología solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "87005bed-a302-513a-b9e0-2f785a8c893e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-technology"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-travel-reading",
+      "description": "Leerán un mensaje en inglés e identificarán el vocabulario de viaje que se solicita en los ejemplos proporcionados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "69f82611-7d6b-56e2-84ca-8f13d5bdd32d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-travel"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "vocabulary-travel-writing",
+      "description": "Escribirán un mensaje en inglés utilizando el vocabulario de viaje solicitado para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "69f82611-7d6b-56e2-84ca-8f13d5bdd32d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-travel"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-attention-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para atraer la atención, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "f21aded8-3303-5304-9dfe-2158ebf6e334"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-attention"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-attention-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para atraer la atención, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "f21aded8-3303-5304-9dfe-2158ebf6e334"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-attention"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-encouragement-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para animar a alguien, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "1bb61ec6-e75a-5586-94bf-b637d626dff9"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-encouragement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-encouragement-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para animar a alguien, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "1bb61ec6-e75a-5586-94bf-b637d626dff9"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-encouragement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-interest-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para expresar interés, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-interest"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-interest-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para expresar interés, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-interest"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-amazement-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para expresar asombro, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-amazement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-amazement-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para expresar asombro, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "8280e82b-3c0d-5e19-b604-bb1dee129316"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-amazement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-empathy-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para mostrar empatía, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "9aafc7d9-912f-5c80-b9ef-d96a7c218afb"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-empathy"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-empathy-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para mostrar empatía, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "9aafc7d9-912f-5c80-b9ef-d96a7c218afb"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-empathy"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-ask-opinion-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para pedir opiniones, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-ask-opinion"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-ask-opinion-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para pedir opiniones, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-ask-opinion"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-opinion-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para dar opiniones, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-opinion"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-opinion-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para dar opiniones, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "33e52a3e-872e-5c7e-aa03-056bc845ac7b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-opinion"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-agreement-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para expresar acuerdo y desacuerdo, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "cbcabdc8-2134-599d-9ec0-d6013919e4d4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-agreement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-agreement-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para expresar acuerdo y desacuerdo, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "cbcabdc8-2134-599d-9ec0-d6013919e4d4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-agreement"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-coincidence-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para coincidir y discrepar, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-coincidence"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-coincidence-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para coincidir y discrepar, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "8444fe4c-6d0e-57b5-80bf-e4b33b593cf3"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-coincidence"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-clarification-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para pedir repetición o aclaración, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "9ec435b9-7dbe-5221-8f67-5f8d9354647f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-clarification"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-clarification-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para pedir repetición o aclaración, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "9ec435b9-7dbe-5221-8f67-5f8d9354647f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-clarification"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-change-topic-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para cambiar de tema, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "7a102b7c-c765-5b79-bbbd-aa59101fe562"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-change-topic"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-change-topic-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para cambiar de tema, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "7a102b7c-c765-5b79-bbbd-aa59101fe562"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-change-topic"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-close-conversation-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para concluir una conversación, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "70d4b458-1168-53f4-8cd6-aa584bb9885e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-close-conversation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-close-conversation-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para concluir una conversación, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "70d4b458-1168-53f4-8cd6-aa584bb9885e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-close-conversation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-news-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para dar una noticia, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3646755e-ae05-5a13-8825-07a7db7b14a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-news"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-news-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para dar una noticia, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "3646755e-ae05-5a13-8825-07a7db7b14a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-news"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-excuse-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para excusarse, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "040e6442-1b1b-50a8-852a-5af3177d847e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-excuse"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-excuse-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para excusarse, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "040e6442-1b1b-50a8-852a-5af3177d847e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-excuse"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-congratulations-reading",
+      "description": "Leerán un diálogo en inglés e identificarán las expresiones para felicitar, según la intención del mensaje proporcionado.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-congratulations"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "expression-congratulations-interaction",
+      "description": "Dialogarán en inglés utilizando expresiones para felicitar, según la situación ficticia proporcionada.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-lexicon-congratulations"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-declarative-reading",
+      "description": "Leerán un texto en inglés e identificarán oraciones enunciativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-declarative-analysis",
+      "description": "Explicarán en inglés la función de oraciones enunciativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-declarative-writing",
+      "description": "Escribirán un mensaje en inglés utilizando oraciones enunciativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-declarative-comparison",
+      "description": "Compararán en inglés la función de oraciones enunciativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-declarative-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de oraciones enunciativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-interrogative-sentences-reading",
+      "description": "Leerán un texto en inglés e identificarán oraciones interrogativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-interrogative-sentences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-interrogative-sentences-analysis",
+      "description": "Explicarán en inglés la función de oraciones interrogativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-interrogative-sentences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-interrogative-sentences-writing",
+      "description": "Escribirán un mensaje en inglés utilizando oraciones interrogativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-interrogative-sentences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-interrogative-sentences-comparison",
+      "description": "Compararán en inglés la función de oraciones interrogativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-interrogative-sentences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-interrogative-sentences-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de oraciones interrogativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-interrogative-sentences"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-exclamation-reading",
+      "description": "Leerán un texto en inglés e identificarán oraciones exclamativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-exclamation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-exclamation-analysis",
+      "description": "Explicarán en inglés la función de oraciones exclamativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-exclamation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-exclamation-writing",
+      "description": "Escribirán un mensaje en inglés utilizando oraciones exclamativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-exclamation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-exclamation-comparison",
+      "description": "Compararán en inglés la función de oraciones exclamativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-exclamation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-exclamation-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de oraciones exclamativas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-exclamation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-present-simple-reading",
+      "description": "Leerán un texto en inglés e identificarán presente simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-present-simple-analysis",
+      "description": "Explicarán en inglés la función de presente simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-present-simple-writing",
+      "description": "Escribirán un mensaje en inglés utilizando presente simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-present-simple-comparison",
+      "description": "Compararán en inglés la función de presente simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-60-present-simple-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de presente simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-62-present-continuous-reading",
+      "description": "Leerán un texto en inglés e identificarán presente continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-62-present-continuous-analysis",
+      "description": "Explicarán en inglés la función de presente continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-62-present-continuous-writing",
+      "description": "Escribirán un mensaje en inglés utilizando presente continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-62-present-continuous-comparison",
+      "description": "Compararán en inglés la función de presente continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-62-present-continuous-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de presente continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "d17667f9-0934-5637-b37d-ee7abdc08c6f"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-present-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-104-past-simple-reading",
+      "description": "Leerán un texto en inglés e identificarán pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-104-past-simple-analysis",
+      "description": "Explicarán en inglés la función de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-104-past-simple-writing",
+      "description": "Escribirán un mensaje en inglés utilizando pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-104-past-simple-comparison",
+      "description": "Compararán en inglés la función de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-104-past-simple-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "47732fbd-e297-5e68-aa0a-8082ffaf0d79"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-105-used-to-reading",
+      "description": "Leerán un texto en inglés e identificarán used to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-used-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-105-used-to-analysis",
+      "description": "Explicarán en inglés la función de used to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-used-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-105-used-to-writing",
+      "description": "Escribirán un mensaje en inglés utilizando used to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-used-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-105-used-to-comparison",
+      "description": "Compararán en inglés la función de used to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-used-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-105-used-to-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de used to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "7b7a229d-4946-5127-9fc9-535ddd67370e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-used-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-106-imperative-reading",
+      "description": "Leerán un texto en inglés e identificarán imperativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-imperative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-106-imperative-analysis",
+      "description": "Explicarán en inglés la función de imperativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-imperative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-106-imperative-writing",
+      "description": "Escribirán un mensaje en inglés utilizando imperativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-imperative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-106-imperative-comparison",
+      "description": "Compararán en inglés la función de imperativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-imperative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-106-imperative-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de imperativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "21e7c0d6-6c7f-5caa-88dd-698e03e687d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-imperative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-simple-reading",
+      "description": "Leerán un texto en inglés e identificarán pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-simple-analysis",
+      "description": "Explicarán en inglés la función de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-simple-writing",
+      "description": "Escribirán un mensaje en inglés utilizando pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-simple-comparison",
+      "description": "Compararán en inglés la función de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-simple-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de pasado simple con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-simple"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-continuous-reading",
+      "description": "Leerán un texto en inglés e identificarán pasado continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-continuous-analysis",
+      "description": "Explicarán en inglés la función de pasado continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-continuous-writing",
+      "description": "Escribirán un mensaje en inglés utilizando pasado continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-continuous-comparison",
+      "description": "Compararán en inglés la función de pasado continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-107-past-continuous-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de pasado continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "04c8ce41-8a30-5f70-a256-c63e5622e5ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-past-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-108-future-continuous-reading",
+      "description": "Leerán un texto en inglés e identificarán futuro continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-future-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-108-future-continuous-analysis",
+      "description": "Explicarán en inglés la función de futuro continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-future-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-108-future-continuous-writing",
+      "description": "Escribirán un mensaje en inglés utilizando futuro continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-future-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-108-future-continuous-comparison",
+      "description": "Compararán en inglés la función de futuro continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-future-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-108-future-continuous-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de futuro continuo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "03ec5860-ec5d-5755-8c19-32c9a86b2851"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-future-continuous"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-109-going-to-reading",
+      "description": "Leerán un texto en inglés e identificarán going to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-going-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-109-going-to-analysis",
+      "description": "Explicarán en inglés la función de going to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-going-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-109-going-to-writing",
+      "description": "Escribirán un mensaje en inglés utilizando going to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-going-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-109-going-to-comparison",
+      "description": "Compararán en inglés la función de going to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-going-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-109-going-to-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de going to con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "603c93c8-889d-5106-9514-452ab02a7de4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-going-to"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-will-reading",
+      "description": "Leerán un texto en inglés e identificarán will con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-will-analysis",
+      "description": "Explicarán en inglés la función de will con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-will-writing",
+      "description": "Escribirán un mensaje en inglés utilizando will con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-will-comparison",
+      "description": "Compararán en inglés la función de will con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-will-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de will con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-hope-reading",
+      "description": "Leerán un texto en inglés e identificarán hope con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-hope"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-hope-analysis",
+      "description": "Explicarán en inglés la función de hope con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-hope"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-hope-writing",
+      "description": "Escribirán un mensaje en inglés utilizando hope con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-hope"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-hope-comparison",
+      "description": "Compararán en inglés la función de hope con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-hope"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-hope-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de hope con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-hope"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-wish-reading",
+      "description": "Leerán un texto en inglés e identificarán wish con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-wish"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-wish-analysis",
+      "description": "Explicarán en inglés la función de wish con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-wish"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-wish-writing",
+      "description": "Escribirán un mensaje en inglés utilizando wish con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-wish"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-wish-comparison",
+      "description": "Compararán en inglés la función de wish con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-wish"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-wish-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de wish con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-wish"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-would-like-reading",
+      "description": "Leerán un texto en inglés e identificarán would like con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-would-like"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-would-like-analysis",
+      "description": "Explicarán en inglés la función de would like con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-would-like"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-would-like-writing",
+      "description": "Escribirán un mensaje en inglés utilizando would like con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-would-like"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-would-like-comparison",
+      "description": "Compararán en inglés la función de would like con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-would-like"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-111-would-like-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de would like con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-would-like"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-112-verb-complements-reading",
+      "description": "Leerán un texto en inglés e identificarán verbos seguidos de infinitivo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-112-verb-complements-analysis",
+      "description": "Explicarán en inglés la función de verbos seguidos de infinitivo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-112-verb-complements-writing",
+      "description": "Escribirán un mensaje en inglés utilizando verbos seguidos de infinitivo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-112-verb-complements-comparison",
+      "description": "Compararán en inglés la función de verbos seguidos de infinitivo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-112-verb-complements-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de verbos seguidos de infinitivo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-115-phrasal-verbs-reading",
+      "description": "Leerán un texto en inglés e identificarán phrasal verbs con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-phrasal-verbs"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-115-phrasal-verbs-analysis",
+      "description": "Explicarán en inglés la función de phrasal verbs con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-phrasal-verbs"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-115-phrasal-verbs-writing",
+      "description": "Escribirán un mensaje en inglés utilizando phrasal verbs con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-phrasal-verbs"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-115-phrasal-verbs-comparison",
+      "description": "Compararán en inglés la función de phrasal verbs con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-phrasal-verbs"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-115-phrasal-verbs-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de phrasal verbs con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "15b5fd13-5d02-58cb-92ab-3f2f34eed76d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-phrasal-verbs"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-117-there-be-reading",
+      "description": "Leerán un texto en inglés e identificarán there be con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-there-be"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-117-there-be-analysis",
+      "description": "Explicarán en inglés la función de there be con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-there-be"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-117-there-be-writing",
+      "description": "Escribirán un mensaje en inglés utilizando there be con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-there-be"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-117-there-be-comparison",
+      "description": "Compararán en inglés la función de there be con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-there-be"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-117-there-be-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de there be con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "d94524ee-75ca-5cc2-a4da-95d97185f971"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-there-be"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-120-conditional-reading",
+      "description": "Leerán un texto en inglés e identificarán condicional cero con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-120-conditional-analysis",
+      "description": "Explicarán en inglés la función de condicional cero con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-120-conditional-writing",
+      "description": "Escribirán un mensaje en inglés utilizando condicional cero con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-120-conditional-comparison",
+      "description": "Compararán en inglés la función de condicional cero con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-120-conditional-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de condicional cero con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c3f4e45b-24f7-56b0-b05f-02b24f62466a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-122-conditional-reading",
+      "description": "Leerán un texto en inglés e identificarán primer condicional con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-122-conditional-analysis",
+      "description": "Explicarán en inglés la función de primer condicional con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-122-conditional-writing",
+      "description": "Escribirán un mensaje en inglés utilizando primer condicional con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-122-conditional-comparison",
+      "description": "Compararán en inglés la función de primer condicional con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-122-conditional-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de primer condicional con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "ba3c78f3-e14d-5d13-8da4-31012ccb6d3c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-conditional"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-139-cause-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de causa y consecuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-cause-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-139-cause-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de causa y consecuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-cause-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-139-cause-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de causa y consecuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-cause-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-139-cause-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de causa y consecuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-cause-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-139-cause-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de causa y consecuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "74ae6175-63c2-55ca-9d62-1924425fdf72"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-cause-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-140-contrast-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de contraste con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-contrast-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-140-contrast-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de contraste con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-contrast-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-140-contrast-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de contraste con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-contrast-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-140-contrast-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de contraste con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-contrast-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-140-contrast-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de contraste con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "3a467550-0211-5b20-bef5-5220295b7521"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-contrast-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-concession-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de concesión con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-concession-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-concession-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de concesión con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-concession-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-concession-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de concesión con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-concession-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-concession-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de concesión con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-concession-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-concession-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de concesión con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-concession-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-purpose-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de finalidad con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-purpose-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-purpose-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de finalidad con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-purpose-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-purpose-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de finalidad con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-purpose-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-purpose-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de finalidad con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-purpose-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-141-purpose-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de finalidad con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "2f317563-623f-5d18-9c41-c1ae36738e81"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-purpose-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-142-sequence-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de secuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-sequence-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-142-sequence-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de secuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-sequence-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-142-sequence-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de secuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-sequence-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-142-sequence-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de secuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-sequence-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-142-sequence-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de secuencia con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "9e897fe3-48bd-5807-b82e-685ac2e71810"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-sequence-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-time-connectors-reading",
+      "description": "Leerán un texto en inglés e identificarán conectores de tiempo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-time-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-time-connectors-analysis",
+      "description": "Explicarán en inglés la función de conectores de tiempo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-time-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-time-connectors-writing",
+      "description": "Escribirán un mensaje en inglés utilizando conectores de tiempo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-time-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-time-connectors-comparison",
+      "description": "Compararán en inglés la función de conectores de tiempo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-time-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-time-connectors-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de conectores de tiempo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-time-connectors"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-passive-reading",
+      "description": "Leerán un texto en inglés e identificarán voz pasiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-passive-analysis",
+      "description": "Explicarán en inglés la función de voz pasiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-passive-writing",
+      "description": "Escribirán un mensaje en inglés utilizando voz pasiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-passive-comparison",
+      "description": "Compararán en inglés la función de voz pasiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-143-passive-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de voz pasiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-146-question-tags-reading",
+      "description": "Leerán un texto en inglés e identificarán question tags con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-question-tags"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-146-question-tags-analysis",
+      "description": "Explicarán en inglés la función de question tags con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-question-tags"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-146-question-tags-writing",
+      "description": "Escribirán un mensaje en inglés utilizando question tags con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-question-tags"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-146-question-tags-comparison",
+      "description": "Compararán en inglés la función de question tags con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-question-tags"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-146-question-tags-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de question tags con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "88ebefe0-259c-5a6d-a63d-f165ed01ba3d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-question-tags"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-148-indirect-questions-reading",
+      "description": "Leerán un texto en inglés e identificarán preguntas indirectas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-indirect-questions"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-148-indirect-questions-analysis",
+      "description": "Explicarán en inglés la función de preguntas indirectas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-indirect-questions"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-148-indirect-questions-writing",
+      "description": "Escribirán un mensaje en inglés utilizando preguntas indirectas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-indirect-questions"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-148-indirect-questions-comparison",
+      "description": "Compararán en inglés la función de preguntas indirectas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-indirect-questions"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-148-indirect-questions-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de preguntas indirectas con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "d41287be-1ab6-5b3f-a16a-b70e61662338"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-indirect-questions"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-nominal-gerund-reading",
+      "description": "Leerán un texto en inglés e identificarán gerundio en función sustantiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-nominal-gerund"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-nominal-gerund-analysis",
+      "description": "Explicarán en inglés la función de gerundio en función sustantiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-nominal-gerund"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-nominal-gerund-writing",
+      "description": "Escribirán un mensaje en inglés utilizando gerundio en función sustantiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-nominal-gerund"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-nominal-gerund-comparison",
+      "description": "Compararán en inglés la función de gerundio en función sustantiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-nominal-gerund"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-nominal-gerund-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de gerundio en función sustantiva con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-nominal-gerund"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-zero-article-reading",
+      "description": "Leerán un texto en inglés e identificarán omisión del artículo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-zero-article"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-zero-article-analysis",
+      "description": "Explicarán en inglés la función de omisión del artículo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-zero-article"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-zero-article-writing",
+      "description": "Escribirán un mensaje en inglés utilizando omisión del artículo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-zero-article"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-zero-article-comparison",
+      "description": "Compararán en inglés la función de omisión del artículo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-zero-article"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-150-zero-article-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de omisión del artículo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "81c14b14-c70d-55f4-aebb-0585fdbe3965"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-zero-article"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-151-comparative-reading",
+      "description": "Leerán un texto en inglés e identificarán grado comparativo y superlativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-151-comparative-analysis",
+      "description": "Explicarán en inglés la función de grado comparativo y superlativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-151-comparative-writing",
+      "description": "Escribirán un mensaje en inglés utilizando grado comparativo y superlativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-151-comparative-comparison",
+      "description": "Compararán en inglés la función de grado comparativo y superlativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "grammar-151-comparative-research",
+      "description": "Investigarán en textos en inglés proporcionados el uso de grado comparativo y superlativo con ejemplos de la situación ficticia proporcionada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-67-anticipation-15",
+      "description": "Escucharán en inglés un mensaje y anticiparán su contenido a partir de las pistas disponibles.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "5d7b1928-5532-5288-ace0-6c4322ca5f74"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-anticipation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-69-nonverbal-reception-17",
+      "description": "Escucharán una conversación en inglés e interpretarán el lenguaje no verbal del interlocutor para comprender el mensaje.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "94bc5651-cf36-5f2b-9f9a-a1a8c3f23c2a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-nonverbal-reception"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-70-inference-18",
+      "description": "Escucharán en inglés un mensaje e inferirán el significado de una palabra desconocida mediante el contexto.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "1569863e-050b-5386-af68-d8f9d663e20b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-inference"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-71-help-19",
+      "description": "Escucharán un mensaje en inglés y solicitarán repetición de la parte que necesitan comprender.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "29cf020d-03a1-579a-acf4-173ba4d46469"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-help"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-72-understanding-38",
+      "description": "Escucharán un mensaje en inglés e indicarán qué comprendieron y qué necesitan aclarar.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "a9d38a67-aef5-5af4-a3d6-f125ff25153b"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-understanding"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-74-rehearsal-20",
+      "description": "Ensayarán en inglés las palabras y pautas de entonación acordadas.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "ef273e24-d95c-549b-bc87-e234d5149518"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-rehearsal"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-75-situation-21",
+      "description": "Presentarán oralmente en inglés un mensaje e identificarán la situación de comunicación.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "ea258771-4a3f-5cf1-9586-0258ae28a11c"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-situation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-76-communicative-purpose-22",
+      "description": "Presentarán oralmente un mensaje en inglés y establecerán la intención comunicativa.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "6810b974-d18a-56ba-8bd5-cb0c5dd81ec4"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-communicative-purpose"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-77-planning-0",
+      "description": "Planificarán en inglés el mensaje oral para el propósito y destinatario proporcionados.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "ddf1316e-7cc7-59f6-bb8f-7815b801cb4a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-planning"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-78-new-combinations-1",
+      "description": "Ensayarán oralmente en inglés nuevas combinaciones de expresiones para comunicar un mensaje pertinente.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "f7856251-98f2-5ea8-baa8-47edae10be4a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-new-combinations"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-78-feedback-2",
+      "description": "Ensayarán un mensaje oral en inglés y solicitarán retroalimentación sobre una parte que necesitan comprobar.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "f7856251-98f2-5ea8-baa8-47edae10be4a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-feedback"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-79-nonverbal-production-23",
+      "description": "Presentarán oralmente en inglés un mensaje utilizando los gestos acordados para comunicarlo.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "a4e2a060-3827-56bd-8fec-b70a76584690"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-nonverbal-production"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-81-reading-purpose-24",
+      "description": "Leerán en inglés un texto y establecerán el propósito de la lectura.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "9e708f99-cdfc-5a2e-b48c-3f81f5441da6"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-reading-purpose"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-82-hypothesis-25",
+      "description": "Leerán en inglés un texto y formularán hipótesis a partir de los elementos paratextuales y conocimientos previos.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "f8179f9f-7319-5c7c-a8d3-75c4633d56fd"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-hypothesis"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-83-grapheme-phoneme-26",
+      "description": "Leerán palabras en inglés e identificarán la correspondencia entre la grafía y el sonido.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8ac047be-c006-5e2d-83d0-8bbadf17cb15"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-grapheme-phoneme"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-84-inference-27",
+      "description": "Leerán en inglés un texto e inferirán el significado de una expresión mediante las pistas textuales.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "af8a71f1-0518-5c34-9855-f86f3e473f40"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-inference"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-85-annotation-28",
+      "description": "Leerán en inglés un texto y subrayarán y anotarán la información relevante.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-annotation"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-85-dictionary-29",
+      "description": "Leerán en inglés un texto y consultarán el diccionario para elegir el significado pertinente de una palabra.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "1e1191ed-3306-51e5-b56a-dd8e7ff6d51e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-dictionary"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-86-main-details-3",
+      "description": "Leerán en inglés un texto e identificarán la idea principal y los detalles específicos solicitados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3e416a0b-a656-54e4-8190-e1c63a3a47c5"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-main-details"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-86-main-details-4",
+      "description": "Leerán en inglés un texto e identificarán únicamente la idea principal.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3e416a0b-a656-54e4-8190-e1c63a3a47c5"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-main-details"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-86-main-details-5",
+      "description": "Escucharán un texto en inglés e identificarán únicamente los detalles específicos solicitados.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "3e416a0b-a656-54e4-8190-e1c63a3a47c5"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-main-details"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-87-text-intention-30",
+      "description": "Leerán en inglés un texto e identificarán la intención comunicativa del texto.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "32803242-e31f-5c30-a2fc-323d7669f2a2"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-text-intention"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-89-communicative-purpose-31",
+      "description": "Escribirán en inglés un mensaje y establecerán el propósito del mensaje.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8f3ea3b4-866d-539f-8553-e79e0df68849"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-communicative-purpose"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-89-text-type-32",
+      "description": "Escribirán en inglés un mensaje y seleccionarán el tipo de texto según el propósito indicado.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8f3ea3b4-866d-539f-8553-e79e0df68849"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-text-type"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-90-planning-33",
+      "description": "Planificarán en inglés el mensaje escrito y organizarán sus ideas según el propósito y destinatario proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "b62848ab-0aa3-5249-9777-545dac724d4d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-planning"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-91-dictionary-34",
+      "description": "Escribirán en inglés un mensaje y consultarán un diccionario para elegir una palabra pertinente.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8df046d6-61b1-5955-a2b6-a300064818d6"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-dictionary"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-92-revision-35",
+      "description": "Escribirán en inglés un mensaje y revisarán el sentido y la corrección del mensaje.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8d41728f-a330-533d-9d07-db90b94cdf0e"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-revision"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-124-association-36",
+      "description": "Leerán palabras en inglés y establecerán asociaciones mentales y con acciones para comprender sus significados.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "8e21387e-f63c-5c1f-aa91-f51062530acb"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-association"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-128-courtesy-6",
+      "description": "Dialogarán en inglés para solicitar información aplicando las normas de cortesía más importantes de la situación.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "37b0e5d1-6452-53ca-92b1-1f37816e73ce"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-courtesy"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-129-neutral-register-7",
+      "description": "Dialogarán en inglés para comunicar una opinión utilizando un registro neutro.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "4a06e885-b595-5085-a9a8-5edb8d9b2514"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-neutral-register"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-131-cultural-comparison-8",
+      "description": "Compararán en inglés los medios de comunicación en los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "03bb3059-23ff-599e-ae08-0de4f9f2c8bc"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-132-cultural-comparison-9",
+      "description": "Compararán en inglés los valores, tradiciones y creencias de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "5c803522-4a7c-51f0-b8c5-58818d0984ac"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-133-cultural-comparison-10",
+      "description": "Compararán en inglés las normas de cortesía de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "94d4d448-7246-5fda-ace3-2d354c6476c3"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-134-cultural-comparison-11",
+      "description": "Compararán en inglés las actividades de tiempo libre de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "ece8f6bf-1e99-5b30-aac8-08f9bb583e0d"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-135-cultural-comparison-12",
+      "description": "Compararán en inglés los atractivos turísticos de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "a01f92a8-790c-5259-aaa5-bd34ddbf92ec"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-136-cultural-comparison-13",
+      "description": "Compararán en inglés las situaciones problemáticas que afectan a jóvenes de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "2e2dcbf4-21f5-52f5-a38f-d27fcd046262"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "strategy-137-cultural-comparison-14",
+      "description": "Compararán en inglés el cuidado del medioambiente de los ejemplos proporcionados de República Dominicana y otros países.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "485991d7-9d65-5361-8c2c-37ada749c307"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-strategy-cultural-comparison"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "genre-conversation-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un conversación, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-conversation"
+      ]
+    },
+    {
+      "id": "genre-conversation-oral",
+      "description": "Presentarán oralmente en inglés un conversación, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-conversation"
+      ]
+    },
+    {
+      "id": "genre-conversation-interaction",
+      "description": "Dialogarán en inglés en un conversación, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-conversation"
+      ]
+    },
+    {
+      "id": "genre-business-card-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un tarjeta de presentación, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-business-card"
+      ]
+    },
+    {
+      "id": "genre-list-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un lista de productos, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-list"
+      ]
+    },
+    {
+      "id": "genre-advertisement-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un anuncio, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-advertisement",
+        "opt-hlm-ing-4-announcement"
+      ]
+    },
+    {
+      "id": "genre-advertisement-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un anuncio, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-advertisement",
+        "opt-hlm-ing-4-announcement"
+      ]
+    },
+    {
+      "id": "genre-recipe-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un receta, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-recipe"
+      ]
+    },
+    {
+      "id": "genre-recipe-oral",
+      "description": "Presentarán oralmente en inglés un receta, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-recipe"
+      ]
+    },
+    {
+      "id": "genre-recipe-writing",
+      "description": "Escribirán en inglés un receta, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-recipe"
+      ]
+    },
+    {
+      "id": "genre-sign-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un letrero, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-sign"
+      ]
+    },
+    {
+      "id": "genre-sign-writing",
+      "description": "Escribirán en inglés un letrero, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-sign"
+      ]
+    },
+    {
+      "id": "genre-notice-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un aviso, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-notice"
+      ]
+    },
+    {
+      "id": "genre-notice-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un aviso, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-notice"
+      ]
+    },
+    {
+      "id": "genre-notice-writing",
+      "description": "Escribirán en inglés un aviso, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-notice"
+      ]
+    },
+    {
+      "id": "genre-poster-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un afiche, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-poster"
+      ]
+    },
+    {
+      "id": "genre-poster-writing",
+      "description": "Escribirán en inglés un afiche, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-poster"
+      ]
+    },
+    {
+      "id": "genre-message-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un mensaje, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-message"
+      ]
+    },
+    {
+      "id": "genre-message-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un mensaje, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-message"
+      ]
+    },
+    {
+      "id": "genre-message-oral",
+      "description": "Presentarán oralmente en inglés un mensaje, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-message"
+      ]
+    },
+    {
+      "id": "genre-message-writing",
+      "description": "Escribirán en inglés un mensaje, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-message"
+      ]
+    },
+    {
+      "id": "genre-email-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un correo electrónico, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-email"
+      ]
+    },
+    {
+      "id": "genre-email-writing",
+      "description": "Escribirán en inglés un correo electrónico, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-email"
+      ]
+    },
+    {
+      "id": "genre-cv-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un currículum vitae de un personaje ficticio, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-cv"
+      ]
+    },
+    {
+      "id": "genre-cv-writing",
+      "description": "Escribirán en inglés un currículum vitae de un personaje ficticio, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-cv"
+      ]
+    },
+    {
+      "id": "genre-letter-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un carta, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-letter"
+      ]
+    },
+    {
+      "id": "genre-letter-writing",
+      "description": "Escribirán en inglés un carta, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-letter"
+      ]
+    },
+    {
+      "id": "genre-form-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un formulario con datos ficticios, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-form"
+      ]
+    },
+    {
+      "id": "genre-form-writing",
+      "description": "Escribirán en inglés un formulario con datos ficticios, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-form"
+      ]
+    },
+    {
+      "id": "genre-forecast-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un pronóstico del tiempo, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-forecast"
+      ]
+    },
+    {
+      "id": "genre-news-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un noticia, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-news",
+        "opt-hlm-ing-4-news"
+      ]
+    },
+    {
+      "id": "genre-news-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un noticia, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-news",
+        "opt-hlm-ing-4-news"
+      ]
+    },
+    {
+      "id": "genre-news-oral",
+      "description": "Presentarán oralmente en inglés un noticia, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-news",
+        "opt-hlm-ing-4-news"
+      ]
+    },
+    {
+      "id": "genre-schedule-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un horario, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-schedule"
+      ]
+    },
+    {
+      "id": "genre-agenda-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un agenda, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-agenda"
+      ]
+    },
+    {
+      "id": "genre-menu-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un menú, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-menu"
+      ]
+    },
+    {
+      "id": "genre-map-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un croquis, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-map"
+      ]
+    },
+    {
+      "id": "genre-questionnaire-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un cuestionario, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-questionnaire"
+      ]
+    },
+    {
+      "id": "genre-questionnaire-writing",
+      "description": "Escribirán en inglés un cuestionario, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-questionnaire"
+      ]
+    },
+    {
+      "id": "genre-brochure-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un folleto, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-brochure"
+      ]
+    },
+    {
+      "id": "genre-song-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un canción, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-song"
+      ]
+    },
+    {
+      "id": "genre-song-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un canción, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-song"
+      ]
+    },
+    {
+      "id": "genre-song-oral",
+      "description": "Presentarán oralmente en inglés un canción, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-song"
+      ]
+    },
+    {
+      "id": "genre-poem-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un poesía, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-poem"
+      ]
+    },
+    {
+      "id": "genre-poem-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un poesía, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-poem"
+      ]
+    },
+    {
+      "id": "genre-comic-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un historieta, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-comic"
+      ]
+    },
+    {
+      "id": "genre-tourist-guide-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un guía turística, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-tourist-guide"
+      ]
+    },
+    {
+      "id": "genre-description-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un descripción, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-description"
+      ]
+    },
+    {
+      "id": "genre-description-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un descripción, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-description"
+      ]
+    },
+    {
+      "id": "genre-description-oral",
+      "description": "Presentarán oralmente en inglés un descripción, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-description"
+      ]
+    },
+    {
+      "id": "genre-description-writing",
+      "description": "Escribirán en inglés un descripción, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-description"
+      ]
+    },
+    {
+      "id": "genre-biography-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un biografía, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-biography"
+      ]
+    },
+    {
+      "id": "genre-biography-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un biografía, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-biography"
+      ]
+    },
+    {
+      "id": "genre-biography-writing",
+      "description": "Escribirán en inglés un biografía, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-biography"
+      ]
+    },
+    {
+      "id": "genre-narrative-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un narración, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-narrative",
+        "opt-hlm-ing-4-experience"
+      ]
+    },
+    {
+      "id": "genre-narrative-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un narración, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-narrative",
+        "opt-hlm-ing-4-experience"
+      ]
+    },
+    {
+      "id": "genre-narrative-oral",
+      "description": "Presentarán oralmente en inglés un narración, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-narrative",
+        "opt-hlm-ing-4-experience"
+      ]
+    },
+    {
+      "id": "genre-narrative-writing",
+      "description": "Escribirán en inglés un narración, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-narrative",
+        "opt-hlm-ing-4-experience"
+      ]
+    },
+    {
+      "id": "genre-monologue-oral",
+      "description": "Presentarán oralmente en inglés un monólogo, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-monologue"
+      ]
+    },
+    {
+      "id": "genre-catalog-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un catálogo, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-catalog"
+      ]
+    },
+    {
+      "id": "genre-dictionary-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un diccionario, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-dictionary"
+      ]
+    },
+    {
+      "id": "genre-invoice-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un factura, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-invoice"
+      ]
+    },
+    {
+      "id": "genre-instructions-reading",
+      "description": "Leerán en inglés e identificarán los datos solicitados de un texto de instrucciones, con información proporcionada y referentes ficticios.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-instructions",
+        "opt-hlm-ing-4-instructions"
+      ]
+    },
+    {
+      "id": "genre-instructions-listening",
+      "description": "Escucharán en inglés e identificarán los datos solicitados de un texto de instrucciones, con información proporcionada y referentes ficticios.",
+      "activityType": "LISTENING_COMPREHENSION",
+      "sourceRecordIds": [
+        "66ebe329-576c-5d2b-ab09-6cba5eed737c"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-instructions",
+        "opt-hlm-ing-4-instructions"
+      ]
+    },
+    {
+      "id": "genre-instructions-writing",
+      "description": "Escribirán en inglés un texto de instrucciones, con información proporcionada y referentes ficticios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-instructions",
+        "opt-hlm-ing-4-instructions"
+      ]
+    },
+    {
+      "id": "genre-presentation-oral",
+      "description": "Presentarán oralmente en inglés un presentación, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-presentation"
+      ]
+    },
+    {
+      "id": "genre-argumentation-oral",
+      "description": "Presentarán oralmente en inglés un argumentación, con información proporcionada y referentes ficticios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "9cb5a70f-9b72-517f-8942-d83e34293d91"
+      ],
+      "expectedAll": [],
+      "expectedAny": [
+        "opt-hlm-ing-4-genre-argumentation"
+      ]
+    },
+    {
+      "id": "critical-source-information",
+      "description": "Escribirán en inglés una predicción sobre una noticia proporcionada, distinguiendo los hechos confirmados de las posibilidades e inferencias.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "01b58fa5-3355-5705-8097-48b66fc55037"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-context-critical-information"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "independent-sentences",
+      "description": "Escribe oraciones independientes en inglés utilizando will.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c30966c1-24ce-5601-b76d-bada2c7862a0"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-will"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "care-health-reading",
+      "description": "Leerán en inglés un mensaje e identificarán las acciones indicadas para cuidar la salud en la situación proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "4302d507-2250-5834-8a74-ce7897df3f20"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-context-care"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "care-environment-reading",
+      "description": "Leerán en inglés un mensaje e identificarán las acciones indicadas para cuidar el medioambiente en la situación proporcionada.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "0f3016c5-d05a-5c73-a7eb-65d9ffda03d1"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-context-care"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "information-question-only",
+      "description": "Escriban en inglés una pregunta para solicitar información sobre el horario proporcionado.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "forbiddenTemplateIds": [
+        "opt-hlm-ing-4-written",
+        "opt-hlm-ing-4-interaction"
+      ],
+      "forbidden": "respuesta|ofrece"
+    },
+    {
+      "id": "information-offer-only",
+      "description": "Escriban un mensaje en inglés para ofrecer información sobre el horario proporcionado.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information"
+      ],
+      "expectedAny": [],
+      "forbidden": "\\bpregunta\\b|\\bsolicita\\b"
+    },
+    {
+      "id": "grammar-gerund-complement",
+      "description": "Escriban un mensaje en inglés utilizando verbos seguidos de gerundio para la situación ficticia proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": [],
+      "required": "complemento en gerundio",
+      "forbidden": "complemento en infinitivo"
+    },
+    {
+      "id": "grammar-infinitive-or-gerund",
+      "description": "Escriban un mensaje en inglés utilizando verbos que admiten infinitivo o gerundio, según la alternativa elegida.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4a41f41b-e4af-5c5c-ac70-4572f07001ef"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-verb-complements"
+      ],
+      "expectedAny": [],
+      "required": "alternativa elegida"
+    },
+    {
+      "id": "grammar-comparative-only",
+      "description": "Escriban un mensaje en inglés utilizando comparative para los referentes proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": [],
+      "required": "grado comparativo",
+      "forbidden": "superlativ"
+    },
+    {
+      "id": "grammar-superlative-only",
+      "description": "Escriban un mensaje en inglés utilizando superlative para los referentes proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "3fa70b62-ad6a-52f7-bc28-c7c2fcf51263"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-comparative"
+      ],
+      "expectedAny": [],
+      "required": "grado superlativo",
+      "forbidden": "comparativ"
+    },
+    {
+      "id": "grammar-affirmative-only",
+      "description": "Escriban un mensaje en inglés utilizando oraciones afirmativas para la situación proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": [],
+      "required": "oraciones afirmativas",
+      "forbidden": "oraciones negativas"
+    },
+    {
+      "id": "grammar-negative-only",
+      "description": "Escriban un mensaje en inglés utilizando oraciones negativas para la situación proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dcb700f7-a202-51a6-b584-9677dc6d489a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-declarative"
+      ],
+      "expectedAny": [],
+      "required": "oraciones negativas",
+      "forbidden": "oraciones afirmativas"
+    },
+    {
+      "id": "grammar-passive-presente",
+      "description": "Escriban un mensaje en inglés utilizando voz pasiva en presente para la situación proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": [],
+      "required": "voz pasiva en presente",
+      "forbidden": "voz pasiva en (?:pasado|futuro)"
+    },
+    {
+      "id": "grammar-passive-pasado",
+      "description": "Escriban un mensaje en inglés utilizando voz pasiva en pasado para la situación proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": [],
+      "required": "voz pasiva en pasado",
+      "forbidden": "voz pasiva en (?:presente|futuro)"
+    },
+    {
+      "id": "grammar-passive-futuro",
+      "description": "Escriban un mensaje en inglés utilizando voz pasiva en futuro para la situación proporcionada.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "84b1c00a-7d3d-555d-acb2-72d10b756e93"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-feature-passive"
+      ],
+      "expectedAny": [],
+      "required": "voz pasiva en futuro",
+      "forbidden": "voz pasiva en (?:presente|pasado)"
+    },
+    {
+      "id": "invoice-then-information",
+      "description": "Leerán una factura en inglés e identificarán el emisor, la fecha y el total. Luego dialogarán en inglés para solicitar y ofrecer información sobre los datos de la factura.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb",
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-genre-invoice",
+        "opt-hlm-ing-4-information",
+        "opt-hlm-ing-4-interaction",
+        "opt-hlm-ing-4-intelligibility"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "three-written-product-alternatives",
+      "description": "Escribirán en inglés un correo o una carta o un aviso para comunicar la información solicitada, eligiendo uno de los tres productos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83128863-2825-5090-8272-e05b89228544"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-genre-email-or-letter-or-notice"
+      ],
+      "expectedAny": [],
+      "singleGenreChoice": true
+    },
+    {
+      "id": "names-and-negated-forms",
+      "description": "Leerán una noticia en inglés: Will publica \"Hope, May 4: Look after the dog\". Identificarán el acontecimiento. No se exigirá futuro continuo ni voz pasiva.",
+      "activityType": "READING_COMPREHENSION",
+      "sourceRecordIds": [
+        "36c50dbe-64f7-539e-8a4e-b8b51883dbfb"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-news"
+      ],
+      "expectedAny": [],
+      "forbiddenTemplatePrefix": "opt-hlm-ing-4-feature-"
+    },
+    {
+      "id": "oral-or-written-news",
+      "description": "Presenten una noticia en inglés de forma oral o escrita, eligiendo uno de los dos medios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-news",
+        "opt-hlm-ing-4-medium-choice"
+      ],
+      "expectedAny": [],
+      "required": "alternativa elegida",
+      "forbiddenTemplateIds": [
+        "opt-hlm-ing-4-intelligibility",
+        "opt-hlm-ing-4-written"
+      ]
+    },
+    {
+      "id": "oral-and-written-adverbs",
+      "description": "Presenten una noticia en inglés oralmente y por escrito con los datos proporcionados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-news",
+        "opt-hlm-ing-4-intelligibility",
+        "opt-hlm-ing-4-written"
+      ],
+      "expectedAny": []
+    },
+    {
+      "id": "written-or-oral-news",
+      "description": "Presenten una noticia en inglés por escrito u oralmente, eligiendo uno de los dos medios.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-news",
+        "opt-hlm-ing-4-medium-choice"
+      ],
+      "expectedAny": [],
+      "required": "alternativa elegida",
+      "forbiddenTemplateIds": [
+        "opt-hlm-ing-4-intelligibility",
+        "opt-hlm-ing-4-written"
+      ]
+    },
+    {
+      "id": "interaction-then-medium-choice",
+      "description": "Dialogarán en inglés para solicitar y ofrecer información del caso ficticio. Luego presentarán una noticia en inglés de forma oral o escrita, eligiendo uno de los dos medios.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "09aad7dc-3ee9-5145-8a9f-c41e249a200a",
+        "b4d743ec-1efc-5992-b0d4-696aa2bc2394"
+      ],
+      "expectedAll": [
+        "opt-hlm-ing-4-information",
+        "opt-hlm-ing-4-interaction",
+        "opt-hlm-ing-4-intelligibility",
+        "opt-hlm-ing-4-news",
+        "opt-hlm-ing-4-medium-choice"
+      ],
+      "expectedAny": [],
+      "required": "alternativa elegida"
+    }
+  ]
+}

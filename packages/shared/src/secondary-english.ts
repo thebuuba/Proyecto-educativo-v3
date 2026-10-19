@@ -14,10 +14,14 @@ export const commonSecondaryEnglish=(context?:InstrumentAcademicContext|null)=>c
 export const englishTaskGrade=(task:CommonEnglishTask)=>'grade' in task?task.grade:1
 export function resolveCommonEnglishTask(title:string,description:string,context?:InstrumentAcademicContext|null):CommonEnglishTask|null{
  const resolve=(text:string)=>resolveFirstGradeEnglishTask(title,text,context)??resolveSecondGradeEnglishTask(title,text,context)??resolveThirdGradeEnglishTask(title,text,context)??resolveFourthGradeEnglishTask(title,text,context)??resolveFifthGradeEnglishTask(title,text,context)??resolveSixthGradeEnglishTask(title,text,context)
+ return resolveEnglishTaskMedia(description,resolve)
+}
+/** Shared mixed-medium resolution; eligibility remains owned by each provider. */
+export function resolveEnglishTaskMedia(description:string,resolve:(text:string)=>CommonEnglishTask|null):CommonEnglishTask|null{
  const task=resolve(englishRequirementSource(description))
  if(!task)return null
  const text=affirmativeScopedEnglishTask(description)
- const mixed=/\b(?:oral(?:es)? y escrit[ao]s?|escrit[ao]s? y oral(?:es)?)\b/
+ const mixed=/\b(?:oral(?:es|mente)? y (?:por )?escrit[ao]s?|(?:por )?escrit[ao]s? y oral(?:es|mente)?)\b/
  if(!mixed.test(text))return task
  const oral=resolve(text.replace(mixed,'oral')),written=resolve(text.replace(mixed,'por escrito'))
  const additionalCriteria=[...(oral?baseEnglishCriteria(oral):[]),...(written?baseEnglishCriteria(written):[])].filter(c=>/-(?:written|intelligibility)$/.test(c.templateId))

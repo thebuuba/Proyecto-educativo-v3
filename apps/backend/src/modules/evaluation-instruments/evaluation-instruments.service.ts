@@ -13,7 +13,7 @@ import { evaluationCatalogCurrent } from './catalog-current'
 import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
 import { assertValidRecommendation, detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
-import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions} from '@aula/shared'
+import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions,resolveOptativeEnglishTask} from '@aula/shared'
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -26,7 +26,7 @@ export class EvaluationInstrumentsService {
     const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
     const mathTask=resolveCommonMathTask(input.activityTitle,input.description??'',resolved.context)
     const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',resolved.context)
-    const englishTask=resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
+    const englishTask=resolveOptativeEnglishTask(input.activityTitle,input.description??'',resolved.context)??resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
     const socialTask=resolveCommonSocialTask(input.activityTitle,input.description??'',resolved.context)
     const physicalTask=resolveCommonPhysicalTask(input.activityTitle,input.description??'',resolved.context)
     const optativeTask=resolveOptativeLanguageTask(input.activityTitle,input.description??'',resolved.context)

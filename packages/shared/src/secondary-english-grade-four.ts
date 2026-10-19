@@ -47,6 +47,20 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
   switch(id){
    case 'information':{
     const ask=asks.test(text),offer=offers.test(text)
+    if(!receptive&&ask&&!offer)return row(id,'Solicitud de información',[
+     'Solicita en inglés la información de la situación proporcionada mediante una pregunta que precisa qué dato necesita conocer.',
+     'La pregunta permite reconocer la información solicitada; una referencia al dato necesita precisión.',
+     'Formula una pregunta general, pero deja imprecisa parte de la información que necesita conocer.',
+     'La pregunta solicita otro dato o se refiere a una situación incompatible con la proporcionada.',
+     'No se reconoce una pregunta pertinente para solicitar la información indicada.',
+    ])
+    if(!receptive&&offer&&!ask)return row(id,'Información ofrecida pertinente',[
+     'Ofrece en inglés la información solicitada de la situación proporcionada, relacionando los datos que permiten comprender lo comunicado.',
+     'La información responde a la situación; una referencia a los datos necesita precisión.',
+     'Ofrece datos aislados y deja sin comunicar parte de la información solicitada.',
+     'Ofrece información de otro asunto o atribuye a la situación datos incompatibles con los proporcionados.',
+     'No se reconoce información ofrecida pertinente para la situación solicitada.',
+    ])
     const action=ask&&offer?'Solicita y ofrece':ask?'Solicita':'Ofrece'
     return row(id,'Información vinculada con la pregunta',[
      receptive?`Relaciona la pregunta y la información solicitada u ofrecida en el ${source} en inglés con la situación indicada.`:`${action} en inglés la información de la situación proporcionada, relacionando la pregunta y la respuesta con los datos necesarios para continuar el intercambio.`,
@@ -163,7 +177,9 @@ export function fourthGradeEnglishContent(task:UpperEnglishEvidence){
   'No se reconoce una respuesta pertinente que permita continuar el intercambio.',
  ],3))
  const preparationOnly=/\b(?:planific\w*|ensay\w*)\b/.test(task.requirementText)&&!/\b(?:present(?:ar|aran|an|en)|expon\w*|comunic\w*|escrib\w*|redact\w*)\b/.test(task.requirementText)
- if(!receptive&&mode!=='audiovisual'&&!preparationOnly)rows.push(mode==='writing'?row('written','Mensaje escrito estructurado y comprensible',[
+ const messageRequested=/\b(?:mensaje|texto|parrafo|discurso)\b/.test(task.requirementText)||rows.some(c=>c.templateId.includes('-genre-'))
+ const standaloneItem=!messageRequested&&(/\b(?:oraciones|frases|enunciados) independientes\b/.test(task.requirementText)||mode==='writing'&&/\bpreguntas?\b/.test(task.requirementText))
+ if(!receptive&&mode!=='audiovisual'&&!preparationOnly&&!standaloneItem)rows.push(mode==='writing'?row('written','Mensaje escrito estructurado y comprensible',[
   'Organiza en inglés las ideas del mensaje escrito con una estructura y conectores que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.',
   'El mensaje escrito se comprende; una relación entre ideas necesita revisión.',
   'Comunica ideas aisladas sin establecer varias relaciones necesarias para seguir el mensaje.',

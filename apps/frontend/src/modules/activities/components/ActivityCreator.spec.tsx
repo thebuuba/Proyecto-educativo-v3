@@ -41,10 +41,12 @@ describe('ActivityCreator', () => {
 
   it('solicita solo contexto y carga las actividades una vez por su asignatura y período', async () => {
     vi.mocked(getActivityCenter).mockClear()
+    vi.mocked(getActivities).mockClear()
     mountCreator()
     await screen.findByRole('textbox', { name: 'Nombre' })
     expect(getActivityCenter).toHaveBeenCalledWith({ contextOnly: true })
-    expect(getActivities).toHaveBeenCalledWith({ sectionSubjectId: 'ss-1', academicPeriodId: 'period-1' })
+    await waitFor(() => expect(getActivities).toHaveBeenCalledWith({ sectionSubjectId: 'ss-1', academicPeriodId: 'period-1' }))
+    expect(getActivities).toHaveBeenCalledTimes(1)
   })
 
   it('preserves editor values after failed save and reuses creation ID only until success', async () => {

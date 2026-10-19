@@ -12,11 +12,12 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-const optative=['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6'].includes(subjectCode)
-assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade),'Solo se admiten ámbitos revisados explícitamente')
+const optativeEnglish=subjectCode==='OPT-HLM-ING-4'
+const optative=['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6'].includes(subjectCode)||optativeEnglish
+assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&(optativeEnglish?grade===4:subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade)),'Solo se admiten ámbitos revisados explícitamente')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 assert(subjectCode!=='FHR'||[1,2,3,4,5,6].includes(grade),'FHR requiere grado y contratos revisados')
-const family=optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optative?(grade===6?'Optativa HLM Periodismo':'Optativa HLM Literatura'):subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optative?(grade===6?'Análisis y Producción de Textos Periodísticos y Publicitarios':'Apreciación y Producción Literarias'):subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
+const family=optativeEnglish?'optative-hlm-ing':optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optativeEnglish?'Optativa HLM Inglés':optative?(grade===6?'Optativa HLM Periodismo':'Optativa HLM Literatura'):subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optativeEnglish?'Manejo de la información en inglés':optative?(grade===6?'Análisis y Producción de Textos Periodísticos y Publicitarios':'Apreciación y Producción Literarias'):subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optativeEnglish?'opt-hlm-ing':optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -38,7 +39,7 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=optative?`data/evaluation-instruments/optative-hlm-len-${gradeName}-contracts.json`:subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=optative?`data/evaluation-instruments/${family}-${gradeName}-contracts.json`:subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
@@ -48,7 +49,7 @@ if(selectedIds){
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
 if(subjectCode!=='SOC')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'El área requiere fuente publicada y muestras explícitas de contratos revisados')
-const sourceCode=optative?`MINERD_SECUNDARIA_2023_OPT_HLM_LEN_${grade}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
+const sourceCode=optative?`MINERD_SECUNDARIA_2023_${subjectCode.replaceAll('-','_')}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
 const source=sourceMode?JSON.parse(readFileSync(path+sourceCode+'-source.json','utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,sourceCode)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
@@ -119,6 +120,11 @@ try{
     const automatic=(await request('/evaluation-instruments/recommend',automaticInput)).data
     assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,2)
     assert(automatic.criteria.every(r=>!/explica|función/.test(r.description)))
+   }
+   if(optativeEnglish&&procedural[i]?.id==='news-reading-brief'){
+    const {preferredInstrumentType,...automaticInput}=input
+    const automatic=(await request('/evaluation-instruments/recommend',automaticInput)).data
+    assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,1)
    }
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
    assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(`${templatePrefix}-${grade}-`)))
