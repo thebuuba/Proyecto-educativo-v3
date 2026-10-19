@@ -23,7 +23,7 @@ try{
  const checkpoint=directory+'history-before-'+requestedVersion+'.json'
  if(!existsSync(checkpoint))writeFileSync(checkpoint,JSON.stringify({project,...await fingerprint()},null,2)+'\n')
  const baseline=JSON.parse(readFileSync(checkpoint,'utf8'));assert.equal(baseline.project,project)
- for(const version of ['evaluation-2026.94','evaluation-2026.95','evaluation-2026.96','evaluation-2026.97','evaluation-2026.98','evaluation-2026.99','evaluation-2026.100','evaluation-2026.101','evaluation-2026.102','evaluation-2026.103','evaluation-2026.104','evaluation-2026.105','evaluation-2026.106','evaluation-2026.107','evaluation-2026.108','evaluation-2026.109','evaluation-2026.110','evaluation-2026.111','evaluation-2026.112','evaluation-2026.113','evaluation-2026.114','evaluation-2026.115','evaluation-2026.116','evaluation-2026.117','evaluation-2026.118','evaluation-2026.119']){
+ for(const version of ['evaluation-2026.94','evaluation-2026.95','evaluation-2026.96','evaluation-2026.97','evaluation-2026.98','evaluation-2026.99','evaluation-2026.100','evaluation-2026.101','evaluation-2026.102','evaluation-2026.103','evaluation-2026.104','evaluation-2026.105','evaluation-2026.106','evaluation-2026.107','evaluation-2026.108','evaluation-2026.109','evaluation-2026.110','evaluation-2026.111','evaluation-2026.112','evaluation-2026.113','evaluation-2026.114','evaluation-2026.115','evaluation-2026.116','evaluation-2026.117','evaluation-2026.118','evaluation-2026.119','evaluation-2026.120']){
   const old=await prisma.evaluationCatalogRelease.findUniqueOrThrow({where:{version}})
   assert(isDeepStrictEqual(old.payload,JSON.parse(JSON.stringify(evaluationCatalogForVersion(version)))),'No coincide el catálogo histórico congelado')
  }

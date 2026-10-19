@@ -16,8 +16,8 @@ const physical=subjectCode==='EFI',fhr=subjectCode==='FHR',family=physical?'phys
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
 assert([1,2,3,4,5,6].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-assert(!fhr||[1,2,3].includes(grade),'FHR solo admite grados con fuente y exclusiones explícitamente revisadas')
-const pdfPages = fhr ? grade===1?[392,393,394,395,396]:grade===2?[397,398,399,400]:[401,402,403,404] : physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:grade===5?[377,378,379]:[380,381,382] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+assert(!fhr||[1,2,3,4].includes(grade),'FHR solo admite grados con fuente y exclusiones explícitamente revisadas')
+const pdfPages = fhr ? grade===1?[392,393,394,395,396]:grade===2?[397,398,399,400]:grade===3?[401,402,403,404]:[413,414,415,416] : physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:grade===5?[377,378,379]:[380,381,382] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
 const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
 const module = (physical?commonPhysicalModules:fhr?commonFhrModules:commonArtModules).find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')

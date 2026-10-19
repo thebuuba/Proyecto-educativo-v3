@@ -57,7 +57,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Formación Integral Humana y Religiosa | 1 | Común | 392, 393, 394, 395, 396 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_PERSONAL_BROWSER_VERIFIED |
 | Formación Integral Humana y Religiosa | 2 | Común | 397, 398, 399, 400 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 3 | Común | 401, 402, 403, 404 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
-| Formación Integral Humana y Religiosa | 4 | Común | 413, 414, 415, 416 | PENDING |
+| Formación Integral Humana y Religiosa | 4 | Común | 413, 414, 415, 416 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 5 | Común | 417, 418, 419, 420 | PENDING |
 | Formación Integral Humana y Religiosa | 6 | Común | 421, 422, 423, 424 | PENDING |
 | Apreciación y Producción Literarias | 4 | Humanidades y Lenguas Modernas | 427, 428, 429, 430, 431 | PENDING |

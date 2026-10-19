@@ -1,0 +1,447 @@
+{
+  "grade": 4,
+  "scopeId": "3431ca5e-6382-512c-92de-ffbe18460796",
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "usefulConceptualProceduralRows": 91,
+  "topicRecords": {
+    "family-situations": [
+      "9ea82ee0-4d48-5757-9c23-33568cc35bcd",
+      "10708868-a531-56bb-851e-5ff84ef67346"
+    ],
+    "family-survey": [
+      "b40c01a3-8b38-523b-b832-f33ce83cdf2a"
+    ],
+    "family-difficulties": [
+      "b353c183-7c26-53e7-bfef-dc2639814d26"
+    ],
+    "family-foundation": [
+      "37ee569d-5a28-5d07-9bfa-60c4105f43fe"
+    ],
+    "peace-scene": [
+      "932d0db9-334d-5c0e-b3f0-9c8fd1455bcf",
+      "a648cd4f-fda1-528c-a58f-d98fca19af92",
+      "1b98296c-8bba-5c45-8b63-7ab94123fcc0"
+    ],
+    "family-role": [
+      "f8fa71c5-0eff-5019-949c-c8f659acc60d"
+    ],
+    "marriage-texts": [
+      "b380d335-fba5-5c1b-97b9-adcb850e6cd4"
+    ],
+    "family-faith-panel": [
+      "1fd37a54-5f21-5009-847d-c85cd6bc5ec9"
+    ],
+    "family-values-campaign": [
+      "5cac7fcd-84c3-5d9c-b21f-bcdd76aeea50",
+      "22ea8719-933a-5449-8351-bf7119c142b4"
+    ],
+    "adolescent-questions": [
+      "82ce7c11-c2c6-53e8-b467-3904ab1f942b"
+    ],
+    "life-questions": [
+      "c18b55e3-6513-5de0-8b94-d6a7c841b9f6",
+      "6ff1fd02-fe30-505c-9c81-67fce7ef7713"
+    ],
+    "life-elements": [
+      "97d7ae27-d76f-57c9-9aee-b1ee06ca4c7b",
+      "23d63b06-da22-5b4c-b95c-835c070a3768"
+    ],
+    "life-situations": [
+      "d31c6994-5615-5fce-b6a9-d19c28094d7c"
+    ],
+    "life-biblical-arguments": [
+      "77c805b3-a91e-5a66-b0e2-af68727d264f"
+    ],
+    "vocation-scene": [
+      "7d520a41-bbbc-5e0f-bba6-3322e4a7c0d2"
+    ],
+    "identity-drama": [
+      "d8ac5392-bb3b-5b4c-bd04-c87370c444a4",
+      "26cda666-d1ff-58e4-a1a3-4f78ea2c0a9f"
+    ],
+    "identity-panel": [
+      "a9605253-3ccc-5874-95e8-d3d615e20ab8"
+    ],
+    "decision-process": [
+      "8edfccf6-3ea5-5ed2-ba51-d2df8953e0bf"
+    ],
+    "christian-life-proposal": [
+      "e843f26b-9d27-5347-aa5e-fc5735961a50",
+      "f23e3d16-2274-599f-a253-10d6388f768a"
+    ],
+    "life-project": [
+      "46c9f95e-a37e-5915-adcd-3a670b6c79d8",
+      "7f7cc29b-04eb-5e6b-928d-430099f931b6"
+    ],
+    "adolescent-situations": [
+      "3e286390-bcc1-578d-b0b0-7ecce0d4fa85"
+    ],
+    "realization-case": [
+      "8f0ad721-479e-5cf7-9f20-cf50747447fa"
+    ],
+    "conflict-biblical-analysis": [
+      "cf29ab71-7bbb-5251-8d2e-53fde8206eab",
+      "600b42c4-198a-54e8-887e-4ec05b586bf8"
+    ],
+    "jesus-conflict-values": [
+      "17ca14a2-d646-5d7b-9140-a32a54348b3f",
+      "823b9bc3-d8b7-57fa-acda-6f36b4408cb3",
+      "78fd7239-7d03-5d9b-8688-e78cdc79abf4"
+    ],
+    "relationship-catalog": [
+      "ba09050e-0bb8-587d-90bb-28aeed2caaa0",
+      "18834f9e-b967-558f-a181-2e9284a5bb48"
+    ],
+    "relationship-scene": [
+      "d91fc7d6-1abe-561e-927c-9c0914941bf9"
+    ],
+    "relationship-actions": [
+      "1eb8d028-64c0-5e30-b864-14682cbd7942"
+    ],
+    "conflict-campaign": [
+      "51b9c94a-78f1-50cc-8d88-25fd638a476d"
+    ],
+    "work-diversity": [
+      "ce8554cf-431e-5a06-a594-6ee816d5a528"
+    ],
+    "work-difficulties": [
+      "9c669dd7-fddf-5486-8295-a8087ab36bb7"
+    ],
+    "work-contributions": [
+      "73f9cfdc-223a-527f-8804-25e115f8dce0",
+      "eae478c8-08eb-5e06-bfc3-820810b6a1ab"
+    ],
+    "work-spiritual": [
+      "4f131009-d7a3-5090-bd66-e4144243f2b9",
+      "8aef0cce-3ea2-5f70-856f-1b442e414955"
+    ],
+    "work-dignity-panel": [
+      "b1a64c81-7028-5b9c-86a6-d60319519970"
+    ],
+    "work-rest-right": [
+      "5f16fa68-c4d9-5af4-b0a8-73d3c341d991"
+    ],
+    "rest-genesis": [
+      "fe03ef3c-3e85-555f-8d7e-62e4d645944a"
+    ],
+    "work-creation": [
+      "2d0847a2-f7ef-565f-98ba-4005bd432b6f",
+      "c83cc17d-4537-568e-9615-7348d67d0834"
+    ],
+    "creation-commitments": [
+      "24b483be-a76e-56c7-9c43-ed61a996b079"
+    ],
+    "work-creation-celebration": [
+      "297b539b-8c97-5651-b9ef-e4b483a5aa00"
+    ],
+    "tic-influence": [
+      "d4979795-71ab-58ac-831a-a8b94f577c57",
+      "269930de-593a-5847-81c8-a85f6ed17e70"
+    ],
+    "tic-development": [
+      "c282f32e-cfbe-5c49-b51f-20cc7b4517f4"
+    ],
+    "tic-regulation": [
+      "5bc80c78-713a-5255-bb52-d34fc035db37",
+      "5b0c799a-701b-50af-8515-55589dbc6a95",
+      "91308f9c-b6f7-55d9-884b-3153225c2707",
+      "a8455d82-e061-5d2f-bc5f-bd053e14625b",
+      "67615911-4725-5134-a21e-fa338752d44d",
+      "bafcb06d-62b3-587f-9d79-30c84019527e"
+    ],
+    "tic-biblical-ethics": [
+      "56f64bee-3478-5c10-8320-6c7d8c948abd",
+      "166d9684-3621-5036-937a-1a017b90b12d"
+    ],
+    "tic-youth-panel": [
+      "3d433f11-ea46-5755-946d-d7f417ce5224",
+      "f86505e0-0990-5758-ab2f-924e8f57c46a"
+    ],
+    "tic-mural": [
+      "bd7f4901-ed42-5114-8ab2-2db08cf3cac0",
+      "5f4d04ec-d7fd-5773-b4cc-e9d8ad62090d",
+      "f7ee0a47-c587-5e54-b1f3-771471b33af6"
+    ],
+    "environment-deterioration": [
+      "d5d00881-afd0-5997-abee-9b94b39a5e0e",
+      "e0f46f16-f37c-54c9-b1e0-4313b83b98af",
+      "5efaf409-a8c4-5deb-81d4-48deaaa40d9a"
+    ],
+    "laudato-discard": [
+      "9dd10a31-ca87-5f80-80a5-6f6fbab8655d",
+      "66081786-8eb4-5c5e-a9e5-f819b11acfaa",
+      "a1cdbd4d-1579-5405-8f78-fc8570d430e9",
+      "fbf23ea7-6ee5-5139-b10c-4d4662cdf023"
+    ],
+    "ecosystem-project": [
+      "b42937a2-63cf-5c3d-842b-7857e39179f9"
+    ],
+    "environment-celebration": [
+      "b4892bdd-271f-5511-a0c9-d9577343a553"
+    ],
+    "religious-elements": [
+      "421e8006-bade-5cc5-aac8-d7f20473a1d6"
+    ],
+    "religious-manifestations": [
+      "1d20f87a-ae5d-5a42-95d2-a985244d8993"
+    ],
+    "religious-diversity": [
+      "f90ed0af-dcf1-57a1-882c-4190fc52ed24",
+      "a2252a7f-1839-5a91-8c50-0802f42585d6"
+    ],
+    "religious-sense-panel": [
+      "800c8d5b-8ff7-5a2c-a2ba-51b2e2adf9f5"
+    ],
+    "religious-labels": [
+      "059a77e1-e8d2-5b13-a5a1-b47c7de789ca"
+    ],
+    "religion-culture": [
+      "7395ef61-81ea-5e57-b977-d0967a484f6d",
+      "476c50da-8df5-54e9-81a0-df60b17ac782"
+    ],
+    "religious-person-scene": [
+      "05328a5e-2e9b-559f-a80c-b503b87b3cac"
+    ],
+    "james-religious-behavior": [
+      "6a28111a-ecf5-5611-85f8-9d58f687195f"
+    ],
+    "religion-growth-project": [
+      "22a0972b-12bd-5055-8999-1069a9d18abf",
+      "654d98ab-4212-5c69-91da-1d2641c30edb"
+    ],
+    "religious-diversity-celebration": [
+      "c7b919b8-ed62-5dde-8245-53960a8e8ca4"
+    ],
+    "concept-5cac7fcd": [
+      "5cac7fcd-84c3-5d9c-b21f-bcdd76aeea50"
+    ],
+    "concept-9ea82ee0": [
+      "9ea82ee0-4d48-5757-9c23-33568cc35bcd"
+    ],
+    "concept-ba09050e": [
+      "ba09050e-0bb8-587d-90bb-28aeed2caaa0"
+    ],
+    "concept-932d0db9": [
+      "932d0db9-334d-5c0e-b3f0-9c8fd1455bcf"
+    ],
+    "concept-a648cd4f": [
+      "a648cd4f-fda1-528c-a58f-d98fca19af92"
+    ],
+    "concept-97d7ae27": [
+      "97d7ae27-d76f-57c9-9aee-b1ee06ca4c7b"
+    ],
+    "concept-c18b55e3": [
+      "c18b55e3-6513-5de0-8b94-d6a7c841b9f6"
+    ],
+    "concept-e843f26b": [
+      "e843f26b-9d27-5347-aa5e-fc5735961a50"
+    ],
+    "concept-d8ac5392": [
+      "d8ac5392-bb3b-5b4c-bd04-c87370c444a4"
+    ],
+    "concept-46c9f95e": [
+      "46c9f95e-a37e-5915-adcd-3a670b6c79d8"
+    ],
+    "concept-cf29ab71": [
+      "cf29ab71-7bbb-5251-8d2e-53fde8206eab"
+    ],
+    "concept-17ca14a2": [
+      "17ca14a2-d646-5d7b-9140-a32a54348b3f"
+    ],
+    "concept-823b9bc3": [
+      "823b9bc3-d8b7-57fa-acda-6f36b4408cb3"
+    ],
+    "concept-73f9cfdc": [
+      "73f9cfdc-223a-527f-8804-25e115f8dce0"
+    ],
+    "concept-2d0847a2": [
+      "2d0847a2-f7ef-565f-98ba-4005bd432b6f"
+    ],
+    "concept-4f131009": [
+      "4f131009-d7a3-5090-bd66-e4144243f2b9"
+    ],
+    "concept-5bc80c78": [
+      "5bc80c78-713a-5255-bb52-d34fc035db37"
+    ],
+    "concept-d4979795": [
+      "d4979795-71ab-58ac-831a-a8b94f577c57"
+    ],
+    "concept-bd7f4901": [
+      "bd7f4901-ed42-5114-8ab2-2db08cf3cac0"
+    ],
+    "concept-9dd10a31": [
+      "9dd10a31-ca87-5f80-80a5-6f6fbab8655d"
+    ],
+    "concept-66081786": [
+      "66081786-8eb4-5c5e-a9e5-f819b11acfaa"
+    ],
+    "concept-d5d00881": [
+      "d5d00881-afd0-5997-abee-9b94b39a5e0e"
+    ],
+    "concept-a1cdbd4d": [
+      "a1cdbd4d-1579-5405-8f78-fc8570d430e9"
+    ],
+    "concept-07d87677": [
+      "07d87677-7db4-5c57-8d8f-b4188798296b"
+    ],
+    "concept-22a0972b": [
+      "22a0972b-12bd-5055-8999-1069a9d18abf"
+    ],
+    "concept-f90ed0af": [
+      "f90ed0af-dcf1-57a1-882c-4190fc52ed24"
+    ],
+    "concept-7395ef61": [
+      "7395ef61-81ea-5e57-b977-d0967a484f6d"
+    ]
+  },
+  "privateDispositionExclusions": [
+    "d7361dc9-878d-512b-a034-c6e0f90299af",
+    "a8873261-f3c5-5816-a59a-7e26d9ffdbdf",
+    "287932bf-01b0-5708-b3d8-a625f287f0f4",
+    "d0f2ef60-1c5b-596f-a071-e86fd71ebb84",
+    "2d649e46-e360-5109-95d0-84e49fcc0bd1",
+    "afe92d61-c173-53c9-8345-83addedba630",
+    "b6fce2ed-feca-55a6-b60f-22c15d50d582",
+    "28259faf-eded-5337-a6d1-a55fce1f3764",
+    "554a19cc-fd81-5715-9000-07ed3bc2466b",
+    "9501c133-2bdd-5065-a58f-ca061f138e00",
+    "715f2f87-fcfc-56e1-999e-093db0899eab",
+    "b42e5ba1-7fbd-5b07-8b37-06671bdb4f1d",
+    "9e7a02dc-1348-54b3-9cea-d2046551c8af",
+    "bf20fe4a-d5a2-58ac-bb31-d6eb8160c7b3",
+    "2782bffe-e3d6-58d1-8674-922aa885e5d0",
+    "91deae79-e746-5105-9b51-8453143d4213",
+    "8c064c69-9122-54a8-9ff7-acbd929c2d3a",
+    "a7134f9c-9745-5aa7-8f03-8c3ba4b778cf",
+    "7e34cc21-1713-552e-8245-8049691b4cbd",
+    "caddf6f8-2fb2-5895-9c28-abf681abbc02",
+    "04bba804-93fd-5334-a0a4-9a464d136352",
+    "3b9868ac-73fb-5579-848a-14564e9ef4e9"
+  ],
+  "reviewedAttitudes": [
+    {
+      "id": "d7361dc9-878d-512b-a034-c6e0f90299af",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Interés interno en cultivar valores; no inferirlo de un producto."
+    },
+    {
+      "id": "a8873261-f3c5-5816-a59a-7e26d9ffdbdf",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Aprecio privado por una forma familiar; no calificar adhesión."
+    },
+    {
+      "id": "287932bf-01b0-5708-b3d8-a625f287f0f4",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Disposición general al diálogo; las intervenciones se evalúan solo si están expresamente pedidas."
+    },
+    {
+      "id": "d0f2ef60-1c5b-596f-a071-e86fd71ebb84",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Sensibilidad privada ante problemáticas; no exigir revelaciones ni reacciones afectivas."
+    },
+    {
+      "id": "2d649e46-e360-5109-95d0-84e49fcc0bd1",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Interés interno por sentido de vida; se analiza la fuente, no la intimidad."
+    },
+    {
+      "id": "afe92d61-c173-53c9-8345-83addedba630",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Valoración como disposición privada; no asignar moralidad al estudiante."
+    },
+    {
+      "id": "b6fce2ed-feca-55a6-b60f-22c15d50d582",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Disposición privada de respeto a perspectivas vitales; no deducir creencias ni adhesión."
+    },
+    {
+      "id": "28259faf-eded-5337-a6d1-a55fce1f3764",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Cuidado general sin actuación concreta solicitada; no imponer conducta fuera del aula."
+    },
+    {
+      "id": "554a19cc-fd81-5715-9000-07ed3bc2466b",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Acogida como rasgo general; no puntuar personalidad ni conducta privada."
+    },
+    {
+      "id": "9501c133-2bdd-5065-a58f-ca061f138e00",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Aprecio por Jesús como adhesión afectiva o religiosa; se estudian textos sin exigirla."
+    },
+    {
+      "id": "715f2f87-fcfc-56e1-999e-093db0899eab",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Acogida y respeto generales; no inferir disposición interna."
+    },
+    {
+      "id": "b42e5ba1-7fbd-5b07-8b37-06671bdb4f1d",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Aprecio de trabajos como disposición privada; se argumentan aportes documentados, no preferencias personales."
+    },
+    {
+      "id": "9e7a02dc-1348-54b3-9cea-d2046551c8af",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Valoración interna del trabajo; no transformar entusiasmo o dedicación en un criterio automático."
+    },
+    {
+      "id": "bf20fe4a-d5a2-58ac-bb31-d6eb8160c7b3",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Alegría y gozo espiritual privados; no calificables."
+    },
+    {
+      "id": "2782bffe-e3d6-58d1-8674-922aa885e5d0",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Agradecimiento religioso privado; no exigir oración ni adhesión."
+    },
+    {
+      "id": "91deae79-e746-5105-9b51-8453143d4213",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Valoración interna de TIC; no calificar preferencias tecnológicas."
+    },
+    {
+      "id": "bafcb06d-62b3-587f-9d79-30c84019527e",
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "reason": "Normas éticas solo como referencia documental expresamente trabajada; no prueba de moralidad o hábitos privados."
+    },
+    {
+      "id": "8c064c69-9122-54a8-9ff7-acbd929c2d3a",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Responsabilidad como atributo privado; no observar cuentas ni rutinas personales."
+    },
+    {
+      "id": "a7134f9c-9745-5aa7-8f03-8c3ba4b778cf",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Cuidado general de naturaleza; solo se observa una actuación concreta si la consigna la pide, no disposición privada."
+    },
+    {
+      "id": "5efaf409-a8c4-5deb-81d4-48deaaa40d9a",
+      "status": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "reason": "Juicio crítico sustentado en evidencias de los referentes pedidos; no inferir conciencia o sensibilidad privada."
+    },
+    {
+      "id": "7e34cc21-1713-552e-8245-8049691b4cbd",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Responsabilidad privada respecto de recursos; no imponer hábitos domésticos o disponibilidad económica."
+    },
+    {
+      "id": "caddf6f8-2fb2-5895-9c28-abf681abbc02",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Disposición privada hacia diversidad religiosa; no exigir identidad ni acuerdos doctrinales."
+    },
+    {
+      "id": "04bba804-93fd-5334-a0a4-9a464d136352",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Identidad espiritual y religiosa íntima; no pedirla ni valorarla."
+    },
+    {
+      "id": "3b9868ac-73fb-5579-848a-14564e9ef4e9",
+      "status": "EXCLUDED_FROM_ASSESSMENT",
+      "reason": "Interés por vida espiritual y relación con Dios privados; no calificables."
+    }
+  ],
+  "notes": [
+    "Las continuaciones TIC se agrupan conservando todas sus anclas.",
+    "Ecología y Biblia tiene adaptación conceptual propia; no impone proyecto."
+  ]
+}
