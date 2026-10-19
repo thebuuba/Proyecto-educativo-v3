@@ -6,6 +6,7 @@ import {requestedGradeSixLexicon,gradeSixLexicalCriterion,withoutGradeSixLexical
 import {gradeSixStrategyCriteria} from './secondary-english-grade-six-strategies'
 import {gradeSixGenreCriteria} from './secondary-english-grade-six-genres'
 import {gradeSixContextCriteria} from './secondary-english-grade-six-context'
+import {englishReceptiveLanguageExercise} from './secondary-english-task-text'
 export const englishGradeSixModule={id:'ingles-comunicacion-6',grade:6,subjectCode:'ING',pdfPages:[169,170,171,172,173,174],policy:'COMMON_SIXTH_GRADE_DEFINED_FAMILIES_REVIEW_PENDING_V2'}
 const row=(id:string,title:string,levels:Parameters<typeof upperEnglishRow>[3])=>upperEnglishRow('ing-6',id,title,levels)
 const asks=/\b(?:solicit(?:ar(?:an)?|an|en|ando)|pedir(?:an)?|pid(?:an|en))\b/
@@ -26,14 +27,14 @@ export function requestedGradeSixFunctions(raw:string){
  if(/\b(?:acostumbrad\w*|familiarizad\w*|familiaridad|costumbres?)\b/.test(text)&&(!adaptation||/\bcostumbres? y (?:la )?adaptacion\b|\badaptacion y (?:la )?costumbres?\b/.test(text)))ids.push('habitual-state')
  if(/\b(?:hipotesis|hipotetiz\w*)\b/.test(text)&&/\b(?:pasad\w*|habria|no cumplid\w*)\b/.test(text))ids.push('past-hypothesis')
  if(/\bentrevistas? (?:de trabajo|laborales?)\b/.test(text))ids.push('job-interview')
- if(/\b(?:narracion(?:es)?|narrar(?:an)?|relatos?|relatar(?:an)?)\b/.test(text))ids.push('detailed-narrative')
+ if(/\b(?:narracion(?:es)?|narrar(?:an)?|relatos?|relatar(?:an)?)\b/.test(text)&&!englishReceptiveLanguageExercise(raw,/\b(?:vocabulario|lexico|expresiones para)\b/.test(raw)||requestedGradeSixGrammar(raw).length>0))ids.push('detailed-narrative')
  const studyingLanguage=/\b(?:vocabulario|lexico|expresiones para)\b/.test(raw)||/\b(?:funcion|significado|uso)\b/.test(raw)&&requestedGradeSixGrammar(raw).length>0
- if(!studyingLanguage&&/\bexplic(?:ar(?:an)?|an|en|ando)\b/.test(text)&&!ids.includes('explanations'))ids.push('explanations')
+ if(!studyingLanguage&&/\b(?:explic(?:ar(?:an)?|an|ando)|expliquen)\b/.test(text)&&!ids.includes('explanations'))ids.push('explanations')
  if(!studyingLanguage&&/\brazon(?:ar(?:an)?|an|en|ando)\b/.test(text)&&!ids.includes('reasoning'))ids.push('reasoning')
  return ids
 }
 export function sixthGradeEnglishContent(task:UpperEnglishEvidence){
- const {mode}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto disponible'
+ const {mode}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode)&&!(/\b(?:explic(?:ar(?:an)?|an|ando)|expliquen|razon(?:ar(?:an)?|an|en|ando))\b/.test(task.requirementText)&&!['reading','listening','comparison','research'].includes(mode)),source=mode==='listening'?'mensaje escuchado':'texto disponible'
  const cultural=gradeSixStrategyCriteria(task.requirementText,mode).some(c=>c.templateId.endsWith('cultural-comparison'))
  const rows=(cultural?[]:task.functions).map(id=>{
   switch(id){
@@ -133,7 +134,7 @@ export function sixthGradeEnglishContent(task:UpperEnglishEvidence){
  combined.push(...gradeSixStrategyCriteria(task.requirementText,mode))
  combined.push(...gradeSixContextCriteria(task,combined))
  combined.push(...gradeSixGenreCriteria(task.requirementText,mode,combined))
- if(combined.length)combined.push(...upperEnglishCommunication(task,'ing-6'))
+ if(combined.length)combined.push(...upperEnglishCommunication(task,'ing-6').filter(r=>!(r.templateId==='ing-6-interaction'&&combined.some(c=>c.templateId==='ing-6-genre-conversation'))))
  return combined
 }
 const provider=createUpperEnglishProvider({grade:6,functions:requestedGradeSixFunctions,criteria:sixthGradeEnglishContent})

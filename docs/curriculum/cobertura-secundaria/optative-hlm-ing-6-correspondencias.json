@@ -1,0 +1,3311 @@
+{
+  "scopeId": "7e02a1ba-12f8-5862-81ff-0ad9bb34f8cc",
+  "subjectCode": "OPT-HLM-ING-6",
+  "subjectName": "Análisis Crítico y Evaluación de Textos en Inglés",
+  "grade": 6,
+  "modalityCode": "academic",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      456,
+      457,
+      458,
+      459,
+      460
+    ],
+    "pageEvidence": [
+      {
+        "number": 456,
+        "printed": 455,
+        "imageSha256": "a8520235300f6c1b5d81ce6fd9752ef7de1b4002f5bf1503e5dd100d7ccb4968"
+      },
+      {
+        "number": 457,
+        "printed": 456,
+        "imageSha256": "bd146c76261eeadb2713bf5f1bba8fc9c34fcbdcad1d9ff278953630a7cdf5d5"
+      },
+      {
+        "number": 458,
+        "printed": 457,
+        "imageSha256": "16896aca7ff367f128aa033ce6ef31fa970105de8cd6c5ac6bd735d8824c3cf2"
+      },
+      {
+        "number": 459,
+        "printed": 458,
+        "imageSha256": "b1163823f84392e1343d385239653a8b17f8e70daaab310ccf63869a75f23770"
+      },
+      {
+        "number": 460,
+        "printed": 459,
+        "imageSha256": "217168470c484434a9e6f836c4f63a6b7f147d0d2a466a72eff458c4b99649e9"
+      }
+    ]
+  },
+  "implementationStatus": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED",
+  "classification": [
+    {
+      "id": "59b103c5-9060-5008-9ae2-a08f66d77502",
+      "type": "CONCEPT",
+      "literal": "Temas",
+      "pdfPage": 456,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 15
+    },
+    {
+      "id": "73863ad0-7c77-5d35-9226-329171091cd7",
+      "type": "CONCEPT",
+      "literal": "• Relaciones humanas y sociales",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 16
+    },
+    {
+      "id": "f0ebe28a-270b-5c0d-9fcc-0b270f0a8b04",
+      "type": "CONCEPT",
+      "literal": "• Vivienda, entorno y ciudad",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 17
+    },
+    {
+      "id": "7d6b8544-cd73-5f5b-b64b-e66239653b2f",
+      "type": "CONCEPT",
+      "literal": "• Escuela y educación",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 18
+    },
+    {
+      "id": "3d2bec96-5f2a-5039-a082-f3d7df80f2c6",
+      "type": "CONCEPT",
+      "literal": "• Actividades de la vida diaria",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 19
+    },
+    {
+      "id": "bceb6483-29f5-596b-b634-6fc07ac3cd2f",
+      "type": "CONCEPT",
+      "literal": "• Deporte, tiempo libre y recreación",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 20
+    },
+    {
+      "id": "9ca9ef48-884e-5315-9b56-97ff0c327399",
+      "type": "CONCEPT",
+      "literal": "• Manifestaciones artísticas y culturales",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 21
+    },
+    {
+      "id": "0cef5b7e-f900-5328-a936-d6b116371188",
+      "type": "CONCEPT",
+      "literal": "• Alimentación",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 22
+    },
+    {
+      "id": "c4c080f3-ba48-5c25-b33f-0bb6bb158fd1",
+      "type": "CONCEPT",
+      "literal": "• Salud y cuidados físicos",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 23
+    },
+    {
+      "id": "42422e0e-1173-5556-97b4-90618e58c22b",
+      "type": "CONCEPT",
+      "literal": "• Bienes y servicios",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 24
+    },
+    {
+      "id": "4535ae71-a4f0-501f-9b52-c6976edb908b",
+      "type": "CONCEPT",
+      "literal": "• Lengua y comunicación",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 25
+    },
+    {
+      "id": "1dd00c44-7b62-5183-97b4-f3eb6d6b1ab6",
+      "type": "CONCEPT",
+      "literal": "• Ciencia y tecnología",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 26
+    },
+    {
+      "id": "453ffca1-6667-5d08-8e08-f21a5f07f626",
+      "type": "CONCEPT",
+      "literal": "• Viajes y turismo",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 27
+    },
+    {
+      "id": "f0ee3feb-f5b3-57df-9a78-4a8431fb2bd2",
+      "type": "CONCEPT",
+      "literal": "• Fenómenos naturales y medioambiente\nFenómenos naturales: hurricane, flood,\nearthquake…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 28
+    },
+    {
+      "id": "b1ca17b6-a424-5393-be38-8610061657ab",
+      "type": "CONCEPT",
+      "literal": "• Elementos de una narración: main character, plot,\nsetting…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 29
+    },
+    {
+      "id": "8d97227c-88c4-5686-90ee-f50854eddd5a",
+      "type": "CONCEPT",
+      "literal": "• Eventualidad: robbery, be fined, plane cras…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 30
+    },
+    {
+      "id": "5ccaa1a0-a19e-57ed-9794-4c304b3fcec0",
+      "type": "CONCEPT",
+      "literal": "• Géneros literarios: fable, drama, short story,\nhumor, fiction...",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 31
+    },
+    {
+      "id": "1d21cbb6-f016-55e0-8089-d9f70313d0a9",
+      "type": "CONCEPT",
+      "literal": "• Medioambiente: global warming, pollution…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 32
+    },
+    {
+      "id": "8ef50379-bcb9-52e2-99eb-8f1509fbca5b",
+      "type": "CONCEPT",
+      "literal": "• Ocupaciones: sales assistant, operator…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 33
+    },
+    {
+      "id": "0261f594-88a7-55c7-b4ab-a1e9e159ecdd",
+      "type": "CONCEPT",
+      "literal": "• Reacciones: shocked, amazed, relieved,\nembarrassed…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 34
+    },
+    {
+      "id": "d1262173-62c9-5b6e-9cd8-8991ec1ced7e",
+      "type": "CONCEPT",
+      "literal": "• Relaciones: colleague, employee, partner…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 35
+    },
+    {
+      "id": "34a0ede4-a4c7-562c-a589-b167b48ef974",
+      "type": "CONCEPT",
+      "literal": "• Trabajo: application, résumé, interview,\npromotion…",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 36
+    },
+    {
+      "id": "0e604eee-3993-5d62-ac33-057164fdac67",
+      "type": "PROCEDURE",
+      "literal": "Funcionales",
+      "pdfPage": 456,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 37
+    },
+    {
+      "id": "edab90a2-5c06-542a-bcaf-6c6126eb893a",
+      "type": "PROCEDURE",
+      "literal": "• Comparar el pasado con el presente.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 38
+    },
+    {
+      "id": "025a874a-ebfc-5b5c-8f10-eb84d05523a0",
+      "type": "PROCEDURE",
+      "literal": "• Expresar ideas sobre temas abstractos o culturales.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 39
+    },
+    {
+      "id": "e659933e-2866-510b-9a67-356c911a8e2c",
+      "type": "PROCEDURE",
+      "literal": "• Solicitar y ofrecer razonamientos y explicaciones.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 40
+    },
+    {
+      "id": "e50a92e2-99be-5989-ade0-690b96746fce",
+      "type": "PROCEDURE",
+      "literal": "• Expresar costumbre, familiaridad o adaptación a algo o\na alguien.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 41
+    },
+    {
+      "id": "73256e22-29a0-52fb-9bb2-a55e84d1af40",
+      "type": "PROCEDURE",
+      "literal": "• Justificar acciones y puntos de vista.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 42
+    },
+    {
+      "id": "48b47825-f22f-5789-9a25-8dd373989f9a",
+      "type": "PROCEDURE",
+      "literal": "• Hipotetizar sobre situaciones pasadas.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 43
+    },
+    {
+      "id": "c7119129-0c0a-5b58-95c2-11ce5a993d39",
+      "type": "PROCEDURE",
+      "literal": "• Interactuar en entrevistas de trabajo.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 44
+    },
+    {
+      "id": "23a866a8-122d-57b6-a70b-51c73ddbd620",
+      "type": "PROCEDURE",
+      "literal": "• Narrar acontecimientos y experiencias de forma\ndetallada.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 45
+    },
+    {
+      "id": "5bab88de-2079-591a-9efa-20203f407d95",
+      "type": "PROCEDURE",
+      "literal": "• Comprensión discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 46
+    },
+    {
+      "id": "5fdaba69-a900-5e28-9dcd-d384ec97998a",
+      "type": "PROCEDURE",
+      "literal": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "pdfPage": 456,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 47
+    },
+    {
+      "id": "d49b6886-fc38-59ce-8103-9f5dcc92e941",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Motivación para aprender inglés.",
+      "pdfPage": 456,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 48
+    },
+    {
+      "id": "639f51d2-d7ef-583e-b79d-c6abcacf7940",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Uso de las TIC de manera\nresponsable en las actividades\ninformativas, formativas y\nrecreativas que se realizan.",
+      "pdfPage": 456,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 49
+    },
+    {
+      "id": "e2a49daf-047d-5802-8123-af8951b16b9f",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Cortesía, asertividad y\nhonestidad al interactuar con las\ndemás personas.",
+      "pdfPage": 456,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 50
+    },
+    {
+      "id": "9ae2e556-d58f-5859-b955-2269d6c81b4a",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Flexibilidad ante los cambios.",
+      "pdfPage": 456,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 51
+    },
+    {
+      "id": "a4a843bb-e114-5e37-9ee2-53a88132adfc",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Respeto por las costumbres y\ntradiciones propias y las de los\ndemás países.",
+      "pdfPage": 456,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 52
+    },
+    {
+      "id": "a3c17693-d7e2-5dd0-9ea3-30ebe3b4d1cb",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Respeto por las diferencias\nrelativas a género, edad,\nocupación, nacionalidad y\ncapacidades personales.",
+      "pdfPage": 456,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 53
+    },
+    {
+      "id": "30abef40-6b70-5cd1-a43a-ec5516238e90",
+      "type": "CONCEPT",
+      "literal": "Expresiones",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 54
+    },
+    {
+      "id": "8f5ebb4f-e006-5168-aeb1-466c216436b0",
+      "type": "CONCEPT",
+      "literal": "• Opinar: I think…, I consider…, In my view…",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 55
+    },
+    {
+      "id": "981a821f-88a0-548d-aecb-7538c8388ee2",
+      "type": "CONCEPT",
+      "literal": "• Expresar acuerdo y desacuerdo: I agree; I disagree;\nYou’re right…",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 56
+    },
+    {
+      "id": "72b363f4-7cac-5910-876e-d44ea021cfc2",
+      "type": "CONCEPT",
+      "literal": "• Excusarse: I´m really sorry! I apologize…",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 57
+    },
+    {
+      "id": "b1dc92a8-68ab-518e-b56b-638f5a80f5bf",
+      "type": "CONCEPT",
+      "literal": "• Cambiar de tema: By the way…",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 58
+    },
+    {
+      "id": "6c3af315-79f0-52be-bf24-058fda2f6362",
+      "type": "CONCEPT",
+      "literal": "Gramática",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 59
+    },
+    {
+      "id": "b0cb82b4-9047-5bba-9b59-b422d52d0109",
+      "type": "CONCEPT",
+      "literal": "• Oraciones enunciativas (afirmativas y negativas),\ninterrogativas y exclamativas.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 60
+    },
+    {
+      "id": "d86f94fa-9a25-5566-941a-a233dfca5e3c",
+      "type": "CONCEPT",
+      "literal": "• Presente simple para expresar ideas sobre temas\nabstractos o culturales:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 61
+    },
+    {
+      "id": "2b1ba682-0859-5552-9485-516c1abd7f04",
+      "type": "CONCEPT",
+      "literal": "• This movie portrays the lack of respect for\ntraditional values in today’s society.",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 62
+    },
+    {
+      "id": "9de7eb92-90b7-594e-9f9a-d464254d2f99",
+      "type": "CONCEPT",
+      "literal": "• Why do people celebrate Thanksgiving?\nVerbos causativos get, have, make:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 63
+    },
+    {
+      "id": "1e6a726f-de2e-58f0-b43f-d156cccb0adc",
+      "type": "CONCEPT",
+      "literal": "• You should get your car serviced at a garage.",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 64
+    },
+    {
+      "id": "00d516cb-9fcc-5903-894e-d8bd8f2e3991",
+      "type": "CONCEPT",
+      "literal": "• I had her send the homework",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 65
+    },
+    {
+      "id": "0e688047-c92a-5fda-99ea-d0dc064b2901",
+      "type": "CONCEPT",
+      "literal": "Pasado simple para narrar acontecimientos y\nexperiencias:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 66
+    },
+    {
+      "id": "2fb329d2-5cc8-572e-b61c-9bb1959b554b",
+      "type": "CONCEPT",
+      "literal": "• I was so embarrassed because I spilled water on the\ncarpet.\nPresente perfecto para interactuar en una entrevista\nde trabajo:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 67
+    },
+    {
+      "id": "afbd0973-e1e6-545b-8517-8fa25f8c02bc",
+      "type": "CONCEPT",
+      "literal": "• I’ve worked as a manager for ten years.\nPresente perfecto continuo para interactuar en\nentrevista de trabajo:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 68
+    },
+    {
+      "id": "8ace0474-fa9d-50f6-ba32-25f0d7afbcdf",
+      "type": "CONCEPT",
+      "literal": "• What have you been doing lately?",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 69
+    },
+    {
+      "id": "5c71a6b5-5294-5589-a3d0-6af5542310ab",
+      "type": "CONCEPT",
+      "literal": "• I’ve been working as a receptionist in a hotel in\nSanto Domingo.\nUsed to para comparar el pasado con el presente:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 70
+    },
+    {
+      "id": "22c46c1c-baeb-5640-8f56-e4d4e9ae408a",
+      "type": "CONCEPT",
+      "literal": "• I used to go to the school library every morning.\nBe used to, get used to para expresar costumbre,\nfamiliaridad o adaptación a algo o a alguien:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 71
+    },
+    {
+      "id": "c505e362-02ec-5975-829e-38d223a6c332",
+      "type": "CONCEPT",
+      "literal": "• I’m used to exercising every day.\nMy parents are getting used to new technologies.",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 72
+    },
+    {
+      "id": "ceaf43b4-a2e0-5057-b5c8-6f6b3a2a17bb",
+      "type": "CONCEPT",
+      "literal": "Presente perfecto y pasado simple para narrar\nacontecimientos y experiencias:\nI’ve just seen an accident. A car went through a red\nlight and ran into a bus.\nPasado simple y pasado continuo para narrar\nacontecimientos y experiencias:\nA very loud noise scared Mr. Jackson while he was\nwatching TV.\nPresente perfecto y presente perfecto continuo:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 73
+    },
+    {
+      "id": "81600b32-3e13-514e-b6c9-8e1caf5074aa",
+      "type": "CONCEPT",
+      "literal": "• I have improved my performance because I’ve been\npracticing all week long.\nI have been studying very hard, so I have learned a\nlot.\nPasado simple y pasado perfecto para narrar\nacontecimientos y experiencias:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 74
+    },
+    {
+      "id": "0f282a88-bf8d-50c7-a2a0-abc0bc2c6ed0",
+      "type": "CONCEPT",
+      "literal": "• My father was very surprised by the Sears Tower\nin Chicago because he had never seen such a tall\nbuilding.\nPasado simple y pasado perfecto en voz pasiva para\nnarrar acontecimientos y experiencias:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 75
+    },
+    {
+      "id": "76ac4d4f-9b67-52e9-87a8-07b70667c6b2",
+      "type": "CONCEPT",
+      "literal": "• The old Yankee Stadium had already been\ndemolished when I got to New York.",
+      "pdfPage": 457,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 76
+    },
+    {
+      "id": "f5c61b1c-b236-53f5-aebd-3a187654d2fc",
+      "type": "PROCEDURE",
+      "literal": "• Comprensión de textos escritos en formato físico,\ndigital y virtual, tales como tarjetas, listas, catálogos,\ndiccionarios, facturas, anuncios, recetas, letreros, avisos,\nafiches, mensajes, correos electrónicos, instrucciones,\ncurrículum vitae, cartas, formularios, noticias, horarios,\nagendas, menús, croquis, cuestionarios, folletos,\ncanciones, poesías, historietas, guías turísticas,\ndescripciones, biografías y narraciones.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 77
+    },
+    {
+      "id": "35f45d5f-faab-5160-9de1-9db908b75400",
+      "type": "PROCEDURE",
+      "literal": "• Producción de textos escritos en formato físico, digital\ny virtual, tales como mensajes, correos electrónicos,\ncartas, currículum vitae, avisos, afiches, letreros,\nformularios, recetas, instrucciones, cuestionarios,\nbiografías, narraciones y descripciones.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 78
+    },
+    {
+      "id": "6124364b-d365-591b-88f1-b81af9bb5b37",
+      "type": "PROCEDURE",
+      "literal": "Estratégicos Comprensión oral",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 79
+    },
+    {
+      "id": "bbd9924b-435d-5dcd-a3d5-79f527cbcd01",
+      "type": "PROCEDURE",
+      "literal": "• Anticipación del contenido del mensaje.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 80
+    },
+    {
+      "id": "154996a8-d766-5b68-bd1e-b2f1635fb4d7",
+      "type": "PROCEDURE",
+      "literal": "• Escucha atenta.",
+      "pdfPage": 457,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 81
+    },
+    {
+      "id": "ea5d90d6-6af7-5343-92ad-7cb96de07612",
+      "type": "PROCEDURE",
+      "literal": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaj",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 82
+    },
+    {
+      "id": "c7d087eb-5cf0-5bb0-b7da-1efc7fcb9903",
+      "type": "PROCEDURE",
+      "literal": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 83
+    },
+    {
+      "id": "a9e1353e-ebe1-57d7-adc6-66b96e031e4c",
+      "type": "PROCEDURE",
+      "literal": "• Solicitud de ayuda y repetición.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 84
+    },
+    {
+      "id": "2d83d06c-77cc-504d-8ad5-50d2cd67dfee",
+      "type": "PROCEDURE",
+      "literal": "• Indicación de que se comprende o no.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 85
+    },
+    {
+      "id": "dc923b6f-2d1a-5e99-bbb3-9e298ea85a4f",
+      "type": "PROCEDURE",
+      "literal": "Producción oral",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 86
+    },
+    {
+      "id": "fa4c24e5-feb6-53df-b9d5-1bfc3ce7263a",
+      "type": "PROCEDURE",
+      "literal": "• Reproducción y ensayo de palabras, expresiones y\npautas de entonación.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 87
+    },
+    {
+      "id": "0cb98cc7-adf6-5e8f-af2e-c8c73785d161",
+      "type": "PROCEDURE",
+      "literal": "• Identificación de la situación de comunicación.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 88
+    },
+    {
+      "id": "b4e0bfab-ec6a-51bf-b4be-6a9d3e76e31f",
+      "type": "PROCEDURE",
+      "literal": "• Establecimiento de la intención comunicativa.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 89
+    },
+    {
+      "id": "d69404b0-9cf9-5df5-ad92-20ea2630d052",
+      "type": "PROCEDURE",
+      "literal": "• Planificación del mensaje.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 90
+    },
+    {
+      "id": "767065fc-e4fa-515a-a37c-d30e44eb2617",
+      "type": "PROCEDURE",
+      "literal": "• Uso del lenguaje no verbal para comunicarse.\nComprensión escrita",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 91
+    },
+    {
+      "id": "03406e96-5761-5e8f-9cb6-8371bd6ffc85",
+      "type": "PROCEDURE",
+      "literal": "• Establecimiento del propósito de la lectura.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 92
+    },
+    {
+      "id": "1cf0a4ca-7961-5838-82e6-42dcc61a2f74",
+      "type": "PROCEDURE",
+      "literal": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 93
+    },
+    {
+      "id": "7e68b560-c75b-5803-9a61-b146c605ae01",
+      "type": "PROCEDURE",
+      "literal": "• Inferencia del significado de palabras y expresiones, a\npartir de las pistas textuales y los conocimientos previos.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 94
+    },
+    {
+      "id": "683d8d3e-99bd-5e74-a6e5-fbb6865782b2",
+      "type": "PROCEDURE",
+      "literal": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 95
+    },
+    {
+      "id": "0399d4bb-edc6-5201-a5c6-b2d26a267cea",
+      "type": "PROCEDURE",
+      "literal": "• Identificación de las ideas principales y secundarias del\ntexto.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 96
+    },
+    {
+      "id": "2ae5c4f9-6daa-5d2b-8ba5-ba24afd33d5a",
+      "type": "PROCEDURE",
+      "literal": "Producción escrita",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 97
+    },
+    {
+      "id": "f3725876-d7ac-50f7-bcde-82e002774cc3",
+      "type": "PROCEDURE",
+      "literal": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 98
+    },
+    {
+      "id": "32414264-fa9f-5b4c-9f9e-97adf518a0f8",
+      "type": "PROCEDURE",
+      "literal": "• Planificación y organización del mensaje.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 99
+    },
+    {
+      "id": "76ceb495-bc06-59fb-9425-9f8ef6380ecc",
+      "type": "PROCEDURE",
+      "literal": "• Utilización de estrategias compensatorias, tales como\nuso de sinónimos y comodines.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 100
+    },
+    {
+      "id": "9104fa30-ac30-5d5d-84df-650dccbd2b1d",
+      "type": "PROCEDURE",
+      "literal": "• Uso del diccionario y otras herramientas de consulta.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 101
+    },
+    {
+      "id": "ed0fdd0f-2a2c-5961-9b8d-a2c85f745641",
+      "type": "PROCEDURE",
+      "literal": "• Revisión del sentido y de la corrección del mensaje.\nOtros:",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 102
+    },
+    {
+      "id": "4e643c8c-5cba-5e4a-8a7a-2b8180e8daac",
+      "type": "PROCEDURE",
+      "literal": "• Utilización de asociaciones mentales y de la acción.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 103
+    },
+    {
+      "id": "20eaa259-973f-5d4f-a7d1-48c036a75077",
+      "type": "PROCEDURE",
+      "literal": "• Automotivación y control del nivel de ansiedad.",
+      "pdfPage": 457,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 104
+    },
+    {
+      "id": "4609ea46-2d32-5b79-b75d-7ead7415dfed",
+      "type": "PROCEDURE",
+      "literal": "• Búsqueda de oportunidades de uso de la lengua.",
+      "pdfPage": 457,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 105
+    },
+    {
+      "id": "4399bc90-23e5-50c9-85de-918c4f0321e1",
+      "type": "PROCEDURE",
+      "literal": "• Sociolingüísticos y socioculturales",
+      "pdfPage": 457,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 106
+    },
+    {
+      "id": "2f8b8a98-1e86-5731-ad1d-cc7c0983a9dc",
+      "type": "PROCEDURE",
+      "literal": "• Utilización de las normas de cortesía más importantes.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 107
+    },
+    {
+      "id": "9a4b5fa0-bf16-5cc4-843f-b1ed5c051506",
+      "type": "PROCEDURE",
+      "literal": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 108
+    },
+    {
+      "id": "00400007-dd36-5c19-b514-97f73d1e2e5a",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Iniciativa, creatividad y\ncapacidad de innovación en los\námbitos personal y académico.",
+      "pdfPage": 457,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 109
+    },
+    {
+      "id": "8d26ed36-d971-5163-b804-4b5c82353bca",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Humildad al narrar sus\nexperiencias.",
+      "pdfPage": 457,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 110
+    },
+    {
+      "id": "a5367f3b-82d9-58fc-a3f9-7ceef9f6d7d8",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Cuidado del medioambiente y\nde los recursos naturales.",
+      "pdfPage": 457,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 111
+    },
+    {
+      "id": "267acb5d-8375-5417-a61d-d6e581bf72e9",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Trabajo en equipo de forma\neficaz.",
+      "pdfPage": 457,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 112
+    },
+    {
+      "id": "558718d6-ffb4-518a-98a8-7c53f54d031b",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Respeto a las normas de\nconvivencia y de organización\nestablecidas en los diferentes\nespacios en que se desenvuelve.",
+      "pdfPage": 457,
+      "status": "CONDITIONAL_COMMUNICATION_CONTEXT",
+      "reason": "Contextualizar únicamente acciones comunicativas pedidas.50mezcla cortesía observable con honestidad como rasgo; la cortesía ya tiene evidencia explícita en107, sin duplicar ni puntuar personalidad.",
+      "sourceOrdinal": 113
+    },
+    {
+      "id": "1cb7b41c-283f-5226-9c24-eec1ee49d12f",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Sentido crítico ante las\ninformaciones que recibe.",
+      "pdfPage": 457,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 114
+    },
+    {
+      "id": "8026051a-e355-58df-933a-ffd5293b6468",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Definición de proyecto personal\nde vida.",
+      "pdfPage": 457,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "No puntuar motivación, flexibilidad, atención interna, ansiedad, creatividad, humildad o proyecto privado; las tareas se acreditan con evidencias solicitadas.",
+      "sourceOrdinal": 115
+    },
+    {
+      "id": "b2286b30-8d67-51fa-ac4e-74e16a1280c3",
+      "type": "CONCEPT",
+      "literal": "Presente simple con valor futuro para justificar\nacciones:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 116
+    },
+    {
+      "id": "946a92a8-9b88-58b1-bb98-51fd8d112169",
+      "type": "CONCEPT",
+      "literal": "• I have an English class at 3:00, so I can’t attend the\nmeeting tomorrow.\nMust, may, could y might… para justificar acciones y\nofrecer explicaciones:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 117
+    },
+    {
+      "id": "0db6403e-c8da-5752-af28-626a2d61fb2b",
+      "type": "CONCEPT",
+      "literal": "• Maria didn’t come to the meeting. She could have\nhad a problem.\nVerbos seguidos del gerundio, infinitivo por\ncualquiera de ellos:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 118
+    },
+    {
+      "id": "cd09e6f7-78d9-5ea1-96c1-f46032377745",
+      "type": "CONCEPT",
+      "literal": "• I remember locking the door as I left.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 119
+    },
+    {
+      "id": "966a48a2-f8f2-57fa-a702-2dcaf85be1a8",
+      "type": "CONCEPT",
+      "literal": "•I remembered to lock the door as I left. I need to\ndrink some coffee.\nPhrasal verbs:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 120
+    },
+    {
+      "id": "d6211dc4-55fd-59b8-94d5-fae7dcf02ad1",
+      "type": "CONCEPT",
+      "literal": "• Fill out this application form, please.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 121
+    },
+    {
+      "id": "67529797-1716-58c1-a1c0-631ada5e6574",
+      "type": "CONCEPT",
+      "literal": "• My business is picking up.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 122
+    },
+    {
+      "id": "f97f4327-dda2-5388-a44c-0e4f5286977b",
+      "type": "CONCEPT",
+      "literal": "Me too; not me; neither do I; so do I; I do too",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 123
+    },
+    {
+      "id": "71b91c58-ea1d-5b4b-9d87-0a1ca4ae4799",
+      "type": "CONCEPT",
+      "literal": "• I really liked that movie!",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 124
+    },
+    {
+      "id": "dd27a9a7-0aa0-59ae-845f-8baabb7fa4ad",
+      "type": "CONCEPT",
+      "literal": "•So did I\nThere + modal + be:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 125
+    },
+    {
+      "id": "c6415af1-39b3-5d10-b2f7-f2e316ceaa2d",
+      "type": "CONCEPT",
+      "literal": "• There might be many interesting people there.\nCondicional cero (If /when + presente simple en\nla cláusula condicional, y presente simple en la\ncláusula principal):",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 126
+    },
+    {
+      "id": "691b3f36-fdc9-5c35-a081-32f9ba7e900e",
+      "type": "CONCEPT",
+      "literal": "• When the presentation is simple, people learn\nbetter.\nSegundo condicional (If + pasado simple en la\ncláusula condicional y would / could/ might + forma\nbase del verbo en la cláusula principal):\nIf I had the tools, I would help you.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 127
+    },
+    {
+      "id": "9b490dcc-a0e9-5efe-8616-606bade425d2",
+      "type": "CONCEPT",
+      "literal": "Tercer condicional (If + pasado perfecto en la\ncláusula condicional y would/could/might + have\nen la claúsula principal):",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 128
+    },
+    {
+      "id": "cfc29c59-0b78-5f51-9a83-90aaca8385ca",
+      "type": "CONCEPT",
+      "literal": "• If I had known, I would have dressed up for this\nparty.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 129
+    },
+    {
+      "id": "61ed1a14-196e-546c-95dd-7cc13d36b5d6",
+      "type": "CONCEPT",
+      "literal": "• If I had taken the other road, I would have reached\nmy destination on time.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 130
+    },
+    {
+      "id": "c08cd2f7-497e-5c03-8ca2-210453a7921b",
+      "type": "CONCEPT",
+      "literal": "• Voz pasiva:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 131
+    },
+    {
+      "id": "74d5ae15-b9bd-5be4-890c-52acd5039f28",
+      "type": "CONCEPT",
+      "literal": "• The Statue of Liberty is considered a symbol of\ndemocracy and freedom.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 132
+    },
+    {
+      "id": "924e2e66-647b-5441-b39f-e2d90160e3df",
+      "type": "CONCEPT",
+      "literal": "• The game was put off because of rain.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 133
+    },
+    {
+      "id": "17ff5a4e-44b1-5560-abec-8749fa4834d3",
+      "type": "CONCEPT",
+      "literal": "• Wearing a helmet while riding a motorcycle is\nadvised.\nQuestion tags:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 134
+    },
+    {
+      "id": "75c0d6ac-3cdd-5e72-845d-9494509e12fd",
+      "type": "CONCEPT",
+      "literal": "• You spoke to the manager, didn´t you?",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 135
+    },
+    {
+      "id": "8d451996-4cb4-5aef-a5b6-98793648b10a",
+      "type": "CONCEPT",
+      "literal": "• I think I should fill out this form, shouldn’t I?\nReported speech para relatar acontecimientos y\nexperiencias de forma detallada:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 136
+    },
+    {
+      "id": "9a05a6c3-bfcb-5502-bae1-6e658d529811",
+      "type": "CONCEPT",
+      "literal": "• Estela asked the man to throw away the broken\nglass.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 137
+    },
+    {
+      "id": "0af0f179-af3c-5cdc-a22c-98a7340f2137",
+      "type": "CONCEPT",
+      "literal": "• “Let’s go ahead!” He said enthusiastically.",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 138
+    },
+    {
+      "id": "ecdff6f6-37a6-5c85-bcf5-87fe2875288b",
+      "type": "CONCEPT",
+      "literal": "• The specialist confirmed that the picture was\nauthentic.\nPreguntas indirectas y embedded questions:",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 139
+    },
+    {
+      "id": "284779fc-2695-524e-bc35-8a9f5a051ae3",
+      "type": "CONCEPT",
+      "literal": "•Can you explain what the main character did in the\nforest?",
+      "pdfPage": 458,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 140
+    },
+    {
+      "id": "d259a8aa-6b98-562b-ba84-082aa091711d",
+      "type": "PROCEDURE",
+      "literal": "• Comparación entre los siguientes aspectos de la\nRepública Dominicana y de otros países:",
+      "pdfPage": 458,
+      "status": "ORGANIZATIONAL_HEADING",
+      "reason": "Organiza el contenido; los hijos142–146 heredan el contexto de comparación de141, no un criterio adicional.",
+      "sourceOrdinal": 141
+    },
+    {
+      "id": "9d311bdd-a80a-5a0e-bb4a-1b2436f9a1e2",
+      "type": "PROCEDURE",
+      "literal": "• Costumbres y tradiciones.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 142
+    },
+    {
+      "id": "3468575e-a9f2-5ab7-b493-e4180c6c9be7",
+      "type": "PROCEDURE",
+      "literal": "• Creencias y valores.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 143
+    },
+    {
+      "id": "772e80d4-6833-55ed-a71f-82fc14c127bf",
+      "type": "PROCEDURE",
+      "literal": "• Manifestaciones artísticas.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 144
+    },
+    {
+      "id": "be6c93b1-dda1-50fd-8e78-990b767b35dd",
+      "type": "PROCEDURE",
+      "literal": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 145
+    },
+    {
+      "id": "dae5d696-33c0-57b0-9f5f-b739126085d9",
+      "type": "PROCEDURE",
+      "literal": "• Cuidado del medioambiente.",
+      "pdfPage": 458,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 146
+    },
+    {
+      "id": "b4d22433-b9aa-50a2-a44a-68259bf8d2d7",
+      "type": "CONCEPT",
+      "literal": "• I wonder why my skateboard isn’t rolling\nsmoothly.\nOraciones enfáticas con it y wh• clefts:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 147
+    },
+    {
+      "id": "cf02f521-6260-5692-b2de-fc45dd213c09",
+      "type": "CONCEPT",
+      "literal": "• It was the English teacher who assigned\nhomework, not the math teacher.",
+      "pdfPage": 459,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 148
+    },
+    {
+      "id": "e9718c94-ec36-5d0f-ae8c-4a99acebff24",
+      "type": "CONCEPT",
+      "literal": "•What the volunteers will do is to plant trees along\nthe river.\nGerundio en función de sustantivo:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 149
+    },
+    {
+      "id": "d9962eaf-dd66-59b5-b9d7-58ec58ff215a",
+      "type": "CONCEPT",
+      "literal": "•Reading will help your kids grow smarter.\nOmisión del artículo:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 150
+    },
+    {
+      "id": "44c2ddd4-0e51-5667-90b4-94269cd85a1e",
+      "type": "CONCEPT",
+      "literal": "• Curiosity is the mother of invention.\nGrados comparativo y superlativo del adjetivo:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 151
+    },
+    {
+      "id": "f678ba7c-1eeb-5e5f-9374-2987aba6a59e",
+      "type": "CONCEPT",
+      "literal": "• I think younger people are usually more active\nthan older ones. Which is the highest peak in the\nCaribbean?\nAdverbios y frases adverbiales de tiempo (now,\nyesterday morning, until, before, after, as soon as\n…), de probabilidad (maybe, perhaps, probably…),\nde frecuencia (never, sometimes, always; twice a\nweek…), de modo (quickly, properly, carefully…)\ny de intensidad (very, pretty, enough, too…):",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 152
+    },
+    {
+      "id": "2277c877-d1b3-5823-9184-b50fb78ad765",
+      "type": "CONCEPT",
+      "literal": "• While I was talking to them, I kept myself calm and\nfriendly. Maybe you should explain it more slowly.\nUso de preposiciones:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 153
+    },
+    {
+      "id": "80b58933-26d4-5006-85e6-cba160cbfa68",
+      "type": "CONCEPT",
+      "literal": "• What is the reason for the new changes?",
+      "pdfPage": 459,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 154
+    },
+    {
+      "id": "732888ad-e505-5ca0-8535-c13a7de76ab7",
+      "type": "CONCEPT",
+      "literal": "• They applied for Dominican citizenship. We need\nto be good at teamwork.\nPreposición al final de la oración:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 155
+    },
+    {
+      "id": "2c7b2e0e-ee58-5fbd-85db-39d87a918cce",
+      "type": "CONCEPT",
+      "literal": "• Those were the results we were waiting for. What’s\nthe movie about?\nPreposiciones de lugar (in, under, up, into, outside,\ninside, past, through…) y de tiempo (at, before,\nfor, since, from, to, until, till…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 156
+    },
+    {
+      "id": "eaeac844-ddc6-5e0c-8621-e3b989eb4e11",
+      "type": "CONCEPT",
+      "literal": "• The two men jumped into a dark hidden pit.",
+      "pdfPage": 459,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 157
+    },
+    {
+      "id": "c46a38ff-b859-55c6-8235-25598bfe0ed5",
+      "type": "CONCEPT",
+      "literal": "• At sunset, they arrived in a small isolated village.\nPronombres relativos (who, which, that…):",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 158
+    },
+    {
+      "id": "8203dbef-7b3b-54c7-a618-4ffe41b51ff2",
+      "type": "CONCEPT",
+      "literal": "• Ernest Hemingway, who is one of my favorite\nAmerican writers, lived in Cuba for many years.\nOmisión del pronombre relativo:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 159
+    },
+    {
+      "id": "03d1fdc2-9ac3-5380-99a3-8e5462a1bb96",
+      "type": "CONCEPT",
+      "literal": "• The pictures (that) we are going to see were taken\nby a famous photographer.\nUso enfático de los pronombres reflexivos:",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 160
+    },
+    {
+      "id": "86c8f8cc-5c58-5332-8e2d-939d40e89158",
+      "type": "CONCEPT",
+      "literal": "• He took the picture himself.\nConectores y marcadores de:",
+      "pdfPage": 459,
+      "status": "REFERENCE_EXAMPLE",
+      "reason": "Ejemplo ilustrativo no obligatorio. La cola de161 introduce el encabezado general de los recursos concretos162–172, sin otro contenido evaluable.",
+      "sourceOrdinal": 161
+    },
+    {
+      "id": "80bba817-2cc8-5e99-a52d-378aacd0f3a7",
+      "type": "CONCEPT",
+      "literal": "• Adición (and, besides, moreover, in addition…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 162
+    },
+    {
+      "id": "f88468ac-c766-5377-a08e-5739f0509826",
+      "type": "CONCEPT",
+      "literal": "• Causa y efecto (so, because, since, as, for…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 163
+    },
+    {
+      "id": "578fe6bc-0dc5-5a09-9b25-7ed60bf56e13",
+      "type": "CONCEPT",
+      "literal": "• Concesión (although, in spite of, even though,\ndespite…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 164
+    },
+    {
+      "id": "d2f084eb-94e0-58c4-9118-c3959a190f54",
+      "type": "CONCEPT",
+      "literal": "• Contraste (but, while, on the contrary, in\ncontrast…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 165
+    },
+    {
+      "id": "fffcc3b5-21a0-5080-9f34-a013b219e1a0",
+      "type": "CONCEPT",
+      "literal": "•Correlación (either…or, neither…nor, not only…\nbut also…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 166
+    },
+    {
+      "id": "7907400b-e5c0-5036-a0a0-351cd65c9080",
+      "type": "CONCEPT",
+      "literal": "• Exclusión (except, except for, apart from, but…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 167
+    },
+    {
+      "id": "a9fb21fb-7347-53c2-b08d-7f7dd7b83d5e",
+      "type": "CONCEPT",
+      "literal": "• Finalidad (to, in order to, so that…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 168
+    },
+    {
+      "id": "a516a554-4334-56d0-9b03-44ee9612c4e4",
+      "type": "CONCEPT",
+      "literal": "• Ilustración (for example, for instance, such as…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 169
+    },
+    {
+      "id": "ee55e8d0-f8ab-57d0-b6dd-42c1ccddf7e7",
+      "type": "CONCEPT",
+      "literal": "• Secuenciación (first, second, next, finally…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 170
+    },
+    {
+      "id": "92d536e7-0092-5e3e-bcd3-c9535b3d706a",
+      "type": "CONCEPT",
+      "literal": "• Síntesis (in brief, in short…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 171
+    },
+    {
+      "id": "365ebd01-b77c-5406-aee3-75dc6a79302b",
+      "type": "CONCEPT",
+      "literal": "• Tiempo (when, while, until, before, after, as soon\nas…)",
+      "pdfPage": 459,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar a evidencia solicitada sin imponer toda la lista ni exigir identidad, experiencia laboral, vocación, opinión o creencia privada.",
+      "sourceOrdinal": 172
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-16",
+      "sourceRecordIds": [
+        "73863ad0-7c77-5d35-9226-329171091cd7"
+      ],
+      "literal": "• Relaciones humanas y sociales",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-1"
+      ]
+    },
+    {
+      "id": "source-17",
+      "sourceRecordIds": [
+        "f0ebe28a-270b-5c0d-9fcc-0b270f0a8b04"
+      ],
+      "literal": "• Vivienda, entorno y ciudad",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-2"
+      ]
+    },
+    {
+      "id": "source-18",
+      "sourceRecordIds": [
+        "7d6b8544-cd73-5f5b-b64b-e66239653b2f"
+      ],
+      "literal": "• Escuela y educación",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-3"
+      ]
+    },
+    {
+      "id": "source-19",
+      "sourceRecordIds": [
+        "3d2bec96-5f2a-5039-a082-f3d7df80f2c6"
+      ],
+      "literal": "• Actividades de la vida diaria",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-4"
+      ]
+    },
+    {
+      "id": "source-20",
+      "sourceRecordIds": [
+        "bceb6483-29f5-596b-b634-6fc07ac3cd2f"
+      ],
+      "literal": "• Deporte, tiempo libre y recreación",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-5"
+      ]
+    },
+    {
+      "id": "source-21",
+      "sourceRecordIds": [
+        "9ca9ef48-884e-5315-9b56-97ff0c327399"
+      ],
+      "literal": "• Manifestaciones artísticas y culturales",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-6"
+      ]
+    },
+    {
+      "id": "source-22",
+      "sourceRecordIds": [
+        "0cef5b7e-f900-5328-a936-d6b116371188"
+      ],
+      "literal": "• Alimentación",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-7"
+      ]
+    },
+    {
+      "id": "source-23",
+      "sourceRecordIds": [
+        "c4c080f3-ba48-5c25-b33f-0bb6bb158fd1"
+      ],
+      "literal": "• Salud y cuidados físicos",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-8"
+      ]
+    },
+    {
+      "id": "source-24",
+      "sourceRecordIds": [
+        "42422e0e-1173-5556-97b4-90618e58c22b"
+      ],
+      "literal": "• Bienes y servicios",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-9"
+      ]
+    },
+    {
+      "id": "source-25",
+      "sourceRecordIds": [
+        "4535ae71-a4f0-501f-9b52-c6976edb908b"
+      ],
+      "literal": "• Lengua y comunicación",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-10"
+      ]
+    },
+    {
+      "id": "source-26",
+      "sourceRecordIds": [
+        "1dd00c44-7b62-5183-97b4-f3eb6d6b1ab6"
+      ],
+      "literal": "• Ciencia y tecnología",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-11"
+      ]
+    },
+    {
+      "id": "source-27",
+      "sourceRecordIds": [
+        "453ffca1-6667-5d08-8e08-f21a5f07f626"
+      ],
+      "literal": "• Viajes y turismo",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-12"
+      ]
+    },
+    {
+      "id": "source-28",
+      "sourceRecordIds": [
+        "f0ee3feb-f5b3-57df-9a78-4a8431fb2bd2"
+      ],
+      "literal": "• Fenómenos naturales y medioambiente\nFenómenos naturales: hurricane, flood,\nearthquake…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "theme-13",
+        "lexicon-natural-phenomena-reading",
+        "lexicon-natural-phenomena-writing"
+      ]
+    },
+    {
+      "id": "source-29",
+      "sourceRecordIds": [
+        "b1ca17b6-a424-5393-be38-8610061657ab"
+      ],
+      "literal": "• Elementos de una narración: main character, plot,\nsetting…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-narrative-elements-reading",
+        "lexicon-narrative-elements-writing",
+        "lexical-narrative-resource"
+      ]
+    },
+    {
+      "id": "source-30",
+      "sourceRecordIds": [
+        "8d97227c-88c4-5686-90ee-f50854eddd5a"
+      ],
+      "literal": "• Eventualidad: robbery, be fined, plane cras…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-contingencies-reading",
+        "lexicon-contingencies-writing"
+      ]
+    },
+    {
+      "id": "source-31",
+      "sourceRecordIds": [
+        "5ccaa1a0-a19e-57ed-9794-4c304b3fcec0"
+      ],
+      "literal": "• Géneros literarios: fable, drama, short story,\nhumor, fiction...",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-literary-genres-reading",
+        "lexicon-literary-genres-writing"
+      ]
+    },
+    {
+      "id": "source-32",
+      "sourceRecordIds": [
+        "1d21cbb6-f016-55e0-8089-d9f70313d0a9"
+      ],
+      "literal": "• Medioambiente: global warming, pollution…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-environment-reading",
+        "lexicon-environment-writing"
+      ]
+    },
+    {
+      "id": "source-33",
+      "sourceRecordIds": [
+        "8ef50379-bcb9-52e2-99eb-8f1509fbca5b"
+      ],
+      "literal": "• Ocupaciones: sales assistant, operator…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-occupations-reading",
+        "lexicon-occupations-writing"
+      ]
+    },
+    {
+      "id": "source-34",
+      "sourceRecordIds": [
+        "0261f594-88a7-55c7-b4ab-a1e9e159ecdd"
+      ],
+      "literal": "• Reacciones: shocked, amazed, relieved,\nembarrassed…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-reactions-reading",
+        "lexicon-reactions-writing"
+      ]
+    },
+    {
+      "id": "source-35",
+      "sourceRecordIds": [
+        "d1262173-62c9-5b6e-9cd8-8991ec1ced7e"
+      ],
+      "literal": "• Relaciones: colleague, employee, partner…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-relationships-reading",
+        "lexicon-relationships-writing"
+      ]
+    },
+    {
+      "id": "source-36",
+      "sourceRecordIds": [
+        "34a0ede4-a4c7-562c-a589-b167b48ef974"
+      ],
+      "literal": "• Trabajo: application, résumé, interview,\npromotion…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-work-reading",
+        "lexicon-work-writing"
+      ]
+    },
+    {
+      "id": "source-38",
+      "sourceRecordIds": [
+        "edab90a2-5c06-542a-bcaf-6c6126eb893a"
+      ],
+      "literal": "• Comparar el pasado con el presente.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "past-present"
+      ]
+    },
+    {
+      "id": "source-39",
+      "sourceRecordIds": [
+        "025a874a-ebfc-5b5c-8f10-eb84d05523a0"
+      ],
+      "literal": "• Expresar ideas sobre temas abstractos o culturales.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "cultural-ideas"
+      ]
+    },
+    {
+      "id": "source-40",
+      "sourceRecordIds": [
+        "e659933e-2866-510b-9a67-356c911a8e2c"
+      ],
+      "literal": "• Solicitar y ofrecer razonamientos y explicaciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "request-reasoning",
+        "request-explanation",
+        "provide-explanation",
+        "read-explanation"
+      ]
+    },
+    {
+      "id": "source-41",
+      "sourceRecordIds": [
+        "e50a92e2-99be-5989-ade0-690b96746fce"
+      ],
+      "literal": "• Expresar costumbre, familiaridad o adaptación a algo o\na alguien.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "habitual-state",
+        "adaptation"
+      ]
+    },
+    {
+      "id": "source-42",
+      "sourceRecordIds": [
+        "73256e22-29a0-52fb-9bb2-a55e84d1af40"
+      ],
+      "literal": "• Justificar acciones y puntos de vista.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "provide-reasoning",
+        "care-not-requested"
+      ]
+    },
+    {
+      "id": "source-43",
+      "sourceRecordIds": [
+        "48b47825-f22f-5789-9a25-8dd373989f9a"
+      ],
+      "literal": "• Hipotetizar sobre situaciones pasadas.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "past-hypothesis"
+      ]
+    },
+    {
+      "id": "source-44",
+      "sourceRecordIds": [
+        "c7119129-0c0a-5b58-95c2-11ce5a993d39"
+      ],
+      "literal": "• Interactuar en entrevistas de trabajo.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "job-interview"
+      ]
+    },
+    {
+      "id": "source-45",
+      "sourceRecordIds": [
+        "23a866a8-122d-57b6-a70b-51c73ddbd620"
+      ],
+      "literal": "• Narrar acontecimientos y experiencias de forma\ndetallada.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "detailed-narrative"
+      ]
+    },
+    {
+      "id": "source-46",
+      "sourceRecordIds": [
+        "5bab88de-2079-591a-9efa-20203f407d95"
+      ],
+      "literal": "• Comprensión discursos orales, tales como\nconversaciones, anuncios, avisos, mensajes,\ninstrucciones, pronósticos del tiempo, noticias,\ncanciones, poesías, descripciones, biografías y\nnarraciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "source-title-not-task",
+        "genre-conversation-listening",
+        "genre-advertisement-listening",
+        "genre-notice-listening",
+        "genre-message-listening",
+        "genre-forecast-listening",
+        "genre-news-listening",
+        "genre-song-listening",
+        "genre-poem-listening",
+        "genre-description-listening",
+        "genre-biography-listening",
+        "genre-narrative-listening",
+        "genre-instructions-listening",
+        "critical-negated"
+      ]
+    },
+    {
+      "id": "source-47",
+      "sourceRecordIds": [
+        "5fdaba69-a900-5e28-9dcd-d384ec97998a"
+      ],
+      "literal": "• Producción de discursos orales, tales como\nconversaciones, monólogos, canciones, recetas,\nmensajes, noticias, presentaciones, argumentaciones,\ndescripciones y narraciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "genre-conversation-oral",
+        "genre-conversation-interaction",
+        "genre-recipe-oral",
+        "genre-message-oral",
+        "genre-news-oral",
+        "genre-song-oral",
+        "genre-description-oral",
+        "genre-narrative-oral",
+        "genre-monologue-oral",
+        "genre-presentation-oral",
+        "genre-argumentation-oral"
+      ]
+    },
+    {
+      "id": "source-55",
+      "sourceRecordIds": [
+        "8f5ebb4f-e006-5168-aeb1-466c216436b0"
+      ],
+      "literal": "• Opinar: I think…, I consider…, In my view…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-opinion-reading",
+        "lexicon-opinion-writing"
+      ]
+    },
+    {
+      "id": "source-56",
+      "sourceRecordIds": [
+        "981a821f-88a0-548d-aecb-7538c8388ee2"
+      ],
+      "literal": "• Expresar acuerdo y desacuerdo: I agree; I disagree;\nYou’re right…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-agreement-reading",
+        "lexicon-agreement-writing"
+      ]
+    },
+    {
+      "id": "source-57",
+      "sourceRecordIds": [
+        "72b363f4-7cac-5910-876e-d44ea021cfc2"
+      ],
+      "literal": "• Excusarse: I´m really sorry! I apologize…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-excuse-reading",
+        "lexicon-excuse-writing"
+      ]
+    },
+    {
+      "id": "source-58",
+      "sourceRecordIds": [
+        "b1dc92a8-68ab-518e-b56b-638f5a80f5bf"
+      ],
+      "literal": "• Cambiar de tema: By the way…",
+      "family": "CONCEPT",
+      "caseIds": [
+        "lexicon-change-topic-reading",
+        "lexicon-change-topic-writing"
+      ]
+    },
+    {
+      "id": "source-60",
+      "sourceRecordIds": [
+        "b0cb82b4-9047-5bba-9b59-b422d52d0109"
+      ],
+      "literal": "• Oraciones enunciativas (afirmativas y negativas),\ninterrogativas y exclamativas.",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-60-declarative-reading",
+        "grammar-60-declarative-analysis",
+        "grammar-60-declarative-writing",
+        "grammar-60-declarative-comparison",
+        "grammar-60-declarative-research",
+        "grammar-60-interrogative-sentences-reading",
+        "grammar-60-interrogative-sentences-analysis",
+        "grammar-60-interrogative-sentences-writing",
+        "grammar-60-interrogative-sentences-comparison",
+        "grammar-60-interrogative-sentences-research",
+        "grammar-60-exclamation-reading",
+        "grammar-60-exclamation-analysis",
+        "grammar-60-exclamation-writing",
+        "grammar-60-exclamation-comparison",
+        "grammar-60-exclamation-research"
+      ]
+    },
+    {
+      "id": "source-61",
+      "sourceRecordIds": [
+        "d86f94fa-9a25-5566-941a-a233dfca5e3c"
+      ],
+      "literal": "• Presente simple para expresar ideas sobre temas\nabstractos o culturales:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-61-present-simple-reading",
+        "grammar-61-present-simple-analysis",
+        "grammar-61-present-simple-writing",
+        "grammar-61-present-simple-comparison",
+        "grammar-61-present-simple-research",
+        "context-neutral-present-simple"
+      ]
+    },
+    {
+      "id": "source-63",
+      "sourceRecordIds": [
+        "9de7eb92-90b7-594e-9f9a-d464254d2f99"
+      ],
+      "literal": "• Why do people celebrate Thanksgiving?\nVerbos causativos get, have, make:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-63-causatives-reading",
+        "grammar-63-causatives-analysis",
+        "grammar-63-causatives-writing",
+        "grammar-63-causatives-comparison",
+        "grammar-63-causatives-research"
+      ]
+    },
+    {
+      "id": "source-66",
+      "sourceRecordIds": [
+        "0e688047-c92a-5fda-99ea-d0dc064b2901"
+      ],
+      "literal": "Pasado simple para narrar acontecimientos y\nexperiencias:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-66-past-simple-reading",
+        "grammar-66-past-simple-analysis",
+        "grammar-66-past-simple-writing",
+        "grammar-66-past-simple-comparison",
+        "grammar-66-past-simple-research",
+        "grammar-narrative-resource"
+      ]
+    },
+    {
+      "id": "source-67",
+      "sourceRecordIds": [
+        "2fb329d2-5cc8-572e-b61c-9bb1959b554b"
+      ],
+      "literal": "• I was so embarrassed because I spilled water on the\ncarpet.\nPresente perfecto para interactuar en una entrevista\nde trabajo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-67-present-perfect-reading",
+        "grammar-67-present-perfect-analysis",
+        "grammar-67-present-perfect-writing",
+        "grammar-67-present-perfect-comparison",
+        "grammar-67-present-perfect-research",
+        "context-neutral-present-perfect"
+      ]
+    },
+    {
+      "id": "source-68",
+      "sourceRecordIds": [
+        "afbd0973-e1e6-545b-8517-8fa25f8c02bc"
+      ],
+      "literal": "• I’ve worked as a manager for ten years.\nPresente perfecto continuo para interactuar en\nentrevista de trabajo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-68-present-perfect-continuous-reading",
+        "grammar-68-present-perfect-continuous-analysis",
+        "grammar-68-present-perfect-continuous-writing",
+        "grammar-68-present-perfect-continuous-comparison",
+        "grammar-68-present-perfect-continuous-research",
+        "context-neutral-present-perfect-continuous"
+      ]
+    },
+    {
+      "id": "source-70",
+      "sourceRecordIds": [
+        "5c71a6b5-5294-5589-a3d0-6af5542310ab"
+      ],
+      "literal": "• I’ve been working as a receptionist in a hotel in\nSanto Domingo.\nUsed to para comparar el pasado con el presente:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-70-used-to-reading",
+        "grammar-70-used-to-analysis",
+        "grammar-70-used-to-writing",
+        "grammar-70-used-to-comparison",
+        "grammar-70-used-to-research"
+      ]
+    },
+    {
+      "id": "source-71",
+      "sourceRecordIds": [
+        "22c46c1c-baeb-5640-8f56-e4d4e9ae408a"
+      ],
+      "literal": "• I used to go to the school library every morning.\nBe used to, get used to para expresar costumbre,\nfamiliaridad o adaptación a algo o a alguien:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-71-be-used-to-reading",
+        "grammar-71-be-used-to-analysis",
+        "grammar-71-be-used-to-writing",
+        "grammar-71-be-used-to-comparison",
+        "grammar-71-be-used-to-research",
+        "grammar-71-get-used-to-reading",
+        "grammar-71-get-used-to-analysis",
+        "grammar-71-get-used-to-writing",
+        "grammar-71-get-used-to-comparison",
+        "grammar-71-get-used-to-research",
+        "be-get-used-to-or",
+        "be-get-used-to-and"
+      ]
+    },
+    {
+      "id": "source-73",
+      "sourceRecordIds": [
+        "ceaf43b4-a2e0-5057-b5c8-6f6b3a2a17bb"
+      ],
+      "literal": "Presente perfecto y pasado simple para narrar\nacontecimientos y experiencias:\nI’ve just seen an accident. A car went through a red\nlight and ran into a bus.\nPasado simple y pasado continuo para narrar\nacontecimientos y experiencias:\nA very loud noise scared Mr. Jackson while he was\nwatching TV.\nPresente perfecto y presente perfecto continuo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-73-present-perfect-reading",
+        "grammar-73-present-perfect-analysis",
+        "grammar-73-present-perfect-writing",
+        "grammar-73-present-perfect-comparison",
+        "grammar-73-present-perfect-research",
+        "grammar-73-past-simple-reading",
+        "grammar-73-past-simple-analysis",
+        "grammar-73-past-simple-writing",
+        "grammar-73-past-simple-comparison",
+        "grammar-73-past-simple-research",
+        "grammar-73-past-continuous-reading",
+        "grammar-73-past-continuous-analysis",
+        "grammar-73-past-continuous-writing",
+        "grammar-73-past-continuous-comparison",
+        "grammar-73-past-continuous-research",
+        "grammar-73-present-perfect-continuous-reading",
+        "grammar-73-present-perfect-continuous-analysis",
+        "grammar-73-present-perfect-continuous-writing",
+        "grammar-73-present-perfect-continuous-comparison",
+        "grammar-73-present-perfect-continuous-research"
+      ]
+    },
+    {
+      "id": "source-74",
+      "sourceRecordIds": [
+        "81600b32-3e13-514e-b6c9-8e1caf5074aa"
+      ],
+      "literal": "• I have improved my performance because I’ve been\npracticing all week long.\nI have been studying very hard, so I have learned a\nlot.\nPasado simple y pasado perfecto para narrar\nacontecimientos y experiencias:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-74-past-simple-reading",
+        "grammar-74-past-simple-analysis",
+        "grammar-74-past-simple-writing",
+        "grammar-74-past-simple-comparison",
+        "grammar-74-past-simple-research",
+        "grammar-74-past-perfect-reading",
+        "grammar-74-past-perfect-analysis",
+        "grammar-74-past-perfect-writing",
+        "grammar-74-past-perfect-comparison",
+        "grammar-74-past-perfect-research"
+      ]
+    },
+    {
+      "id": "source-75",
+      "sourceRecordIds": [
+        "0f282a88-bf8d-50c7-a2a0-abc0bc2c6ed0"
+      ],
+      "literal": "• My father was very surprised by the Sears Tower\nin Chicago because he had never seen such a tall\nbuilding.\nPasado simple y pasado perfecto en voz pasiva para\nnarrar acontecimientos y experiencias:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-75-passive-reading",
+        "grammar-75-passive-analysis",
+        "grammar-75-passive-writing",
+        "grammar-75-passive-comparison",
+        "grammar-75-passive-research",
+        "grammar-75-passive-past-perfect-reading",
+        "grammar-75-passive-past-perfect-analysis",
+        "grammar-75-passive-past-perfect-writing",
+        "grammar-75-passive-past-perfect-comparison",
+        "grammar-75-passive-past-perfect-research",
+        "passive-perfect-distinction"
+      ]
+    },
+    {
+      "id": "source-77",
+      "sourceRecordIds": [
+        "f5c61b1c-b236-53f5-aebd-3a187654d2fc"
+      ],
+      "literal": "• Comprensión de textos escritos en formato físico,\ndigital y virtual, tales como tarjetas, listas, catálogos,\ndiccionarios, facturas, anuncios, recetas, letreros, avisos,\nafiches, mensajes, correos electrónicos, instrucciones,\ncurrículum vitae, cartas, formularios, noticias, horarios,\nagendas, menús, croquis, cuestionarios, folletos,\ncanciones, poesías, historietas, guías turísticas,\ndescripciones, biografías y narraciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "genre-business-card-reading",
+        "genre-list-reading",
+        "genre-advertisement-reading",
+        "genre-recipe-reading",
+        "genre-sign-reading",
+        "genre-notice-reading",
+        "genre-poster-reading",
+        "genre-message-reading",
+        "genre-email-reading",
+        "genre-cv-reading",
+        "genre-letter-reading",
+        "genre-form-reading",
+        "genre-news-reading",
+        "genre-schedule-reading",
+        "genre-agenda-reading",
+        "genre-menu-reading",
+        "genre-map-reading",
+        "genre-questionnaire-reading",
+        "genre-brochure-reading",
+        "genre-song-reading",
+        "genre-poem-reading",
+        "genre-comic-reading",
+        "genre-tourist-guide-reading",
+        "genre-description-reading",
+        "genre-biography-reading",
+        "genre-narrative-reading",
+        "genre-catalog-reading",
+        "genre-dictionary-reading",
+        "genre-invoice-reading",
+        "genre-instructions-reading"
+      ]
+    },
+    {
+      "id": "source-78",
+      "sourceRecordIds": [
+        "35f45d5f-faab-5160-9de1-9db908b75400"
+      ],
+      "literal": "• Producción de textos escritos en formato físico, digital\ny virtual, tales como mensajes, correos electrónicos,\ncartas, currículum vitae, avisos, afiches, letreros,\nformularios, recetas, instrucciones, cuestionarios,\nbiografías, narraciones y descripciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "genre-recipe-writing",
+        "genre-sign-writing",
+        "genre-notice-writing",
+        "genre-poster-writing",
+        "genre-message-writing",
+        "genre-email-writing",
+        "genre-cv-writing",
+        "genre-letter-writing",
+        "genre-form-writing",
+        "genre-questionnaire-writing",
+        "genre-description-writing",
+        "genre-biography-writing",
+        "genre-narrative-writing",
+        "genre-instructions-writing"
+      ]
+    },
+    {
+      "id": "source-80",
+      "sourceRecordIds": [
+        "bbd9924b-435d-5dcd-a3d5-79f527cbcd01"
+      ],
+      "literal": "• Anticipación del contenido del mensaje.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-80-anticipation-3"
+      ]
+    },
+    {
+      "id": "source-82",
+      "sourceRecordIds": [
+        "ea5d90d6-6af7-5343-92ad-7cb96de07612"
+      ],
+      "literal": "• Uso del lenguaje no verbal de su interlocutor para\ncomprender el mensaj",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-82-nonverbal-reception-4"
+      ]
+    },
+    {
+      "id": "source-83",
+      "sourceRecordIds": [
+        "c7d087eb-5cf0-5bb0-b7da-1efc7fcb9903"
+      ],
+      "literal": "• Inferencia del significado de palabras y expresiones a\npartir del contexto y los conocimientos previos.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-83-inference-5"
+      ]
+    },
+    {
+      "id": "source-84",
+      "sourceRecordIds": [
+        "a9e1353e-ebe1-57d7-adc6-66b96e031e4c"
+      ],
+      "literal": "• Solicitud de ayuda y repetición.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-84-help-6"
+      ]
+    },
+    {
+      "id": "source-85",
+      "sourceRecordIds": [
+        "2d83d06c-77cc-504d-8ad5-50d2cd67dfee"
+      ],
+      "literal": "• Indicación de que se comprende o no.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-85-understanding-23"
+      ]
+    },
+    {
+      "id": "source-87",
+      "sourceRecordIds": [
+        "fa4c24e5-feb6-53df-b9d5-1bfc3ce7263a"
+      ],
+      "literal": "• Reproducción y ensayo de palabras, expresiones y\npautas de entonación.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-87-rehearsal-7"
+      ]
+    },
+    {
+      "id": "source-88",
+      "sourceRecordIds": [
+        "0cb98cc7-adf6-5e8f-af2e-c8c73785d161"
+      ],
+      "literal": "• Identificación de la situación de comunicación.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-88-situation-8"
+      ]
+    },
+    {
+      "id": "source-89",
+      "sourceRecordIds": [
+        "b4e0bfab-ec6a-51bf-b4be-6a9d3e76e31f"
+      ],
+      "literal": "• Establecimiento de la intención comunicativa.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-89-communicative-purpose-9"
+      ]
+    },
+    {
+      "id": "source-90",
+      "sourceRecordIds": [
+        "d69404b0-9cf9-5df5-ad92-20ea2630d052"
+      ],
+      "literal": "• Planificación del mensaje.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-90-planning-0"
+      ]
+    },
+    {
+      "id": "source-91",
+      "sourceRecordIds": [
+        "767065fc-e4fa-515a-a37c-d30e44eb2617"
+      ],
+      "literal": "• Uso del lenguaje no verbal para comunicarse.\nComprensión escrita",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-91-nonverbal-production-10"
+      ]
+    },
+    {
+      "id": "source-92",
+      "sourceRecordIds": [
+        "03406e96-5761-5e8f-9cb6-8371bd6ffc85"
+      ],
+      "literal": "• Establecimiento del propósito de la lectura.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-92-reading-purpose-11"
+      ]
+    },
+    {
+      "id": "source-93",
+      "sourceRecordIds": [
+        "1cf0a4ca-7961-5838-82e6-42dcc61a2f74"
+      ],
+      "literal": "• Formulación de hipótesis a partir de los conocimientos\nprevios y los elementos paratextuales.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-93-hypothesis-12"
+      ]
+    },
+    {
+      "id": "source-94",
+      "sourceRecordIds": [
+        "7e68b560-c75b-5803-9a61-b146c605ae01"
+      ],
+      "literal": "• Inferencia del significado de palabras y expresiones, a\npartir de las pistas textuales y los conocimientos previos.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-94-inference-13"
+      ]
+    },
+    {
+      "id": "source-95",
+      "sourceRecordIds": [
+        "683d8d3e-99bd-5e74-a6e5-fbb6865782b2"
+      ],
+      "literal": "• Subrayado, anotación y búsqueda de palabras en el\ndiccionario y otras herramientas de consulta.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-95-annotation-14",
+        "strategy-95-dictionary-15"
+      ]
+    },
+    {
+      "id": "source-96",
+      "sourceRecordIds": [
+        "0399d4bb-edc6-5201-a5c6-b2d26a267cea"
+      ],
+      "literal": "• Identificación de las ideas principales y secundarias del\ntexto.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "main-and-secondary",
+        "main-or-secondary",
+        "secondary-and-main",
+        "strategy-96-main-secondary-24",
+        "strategy-96-main-secondary-25",
+        "strategy-96-main-secondary-26"
+      ]
+    },
+    {
+      "id": "source-98",
+      "sourceRecordIds": [
+        "f3725876-d7ac-50f7-bcde-82e002774cc3"
+      ],
+      "literal": "• Establecimiento del propósito del mensaje y del tipo de\ntexto que se va a producir.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-98-communicative-purpose-16",
+        "strategy-98-text-type-17"
+      ]
+    },
+    {
+      "id": "source-99",
+      "sourceRecordIds": [
+        "32414264-fa9f-5b4c-9f9e-97adf518a0f8"
+      ],
+      "literal": "• Planificación y organización del mensaje.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-99-planning-18"
+      ]
+    },
+    {
+      "id": "source-100",
+      "sourceRecordIds": [
+        "76ceb495-bc06-59fb-9425-9f8ef6380ecc"
+      ],
+      "literal": "• Utilización de estrategias compensatorias, tales como\nuso de sinónimos y comodines.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-100-compensation-27",
+        "strategy-100-compensation-28",
+        "strategy-100-compensation-29",
+        "compensation-both"
+      ]
+    },
+    {
+      "id": "source-101",
+      "sourceRecordIds": [
+        "9104fa30-ac30-5d5d-84df-650dccbd2b1d"
+      ],
+      "literal": "• Uso del diccionario y otras herramientas de consulta.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-101-dictionary-19"
+      ]
+    },
+    {
+      "id": "source-102",
+      "sourceRecordIds": [
+        "ed0fdd0f-2a2c-5961-9b8d-a2c85f745641"
+      ],
+      "literal": "• Revisión del sentido y de la corrección del mensaje.\nOtros:",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-102-revision-20"
+      ]
+    },
+    {
+      "id": "source-103",
+      "sourceRecordIds": [
+        "4e643c8c-5cba-5e4a-8a7a-2b8180e8daac"
+      ],
+      "literal": "• Utilización de asociaciones mentales y de la acción.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-103-association-21"
+      ]
+    },
+    {
+      "id": "source-107",
+      "sourceRecordIds": [
+        "2f8b8a98-1e86-5731-ad1d-cc7c0983a9dc"
+      ],
+      "literal": "• Utilización de las normas de cortesía más importantes.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-107-courtesy-1"
+      ]
+    },
+    {
+      "id": "source-108",
+      "sourceRecordIds": [
+        "9a4b5fa0-bf16-5cc4-843f-b1ed5c051506"
+      ],
+      "literal": "• Empleo de un registro neutro en la realización de las\ndiversas funciones comunicativas.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-108-neutral-register-2"
+      ]
+    },
+    {
+      "id": "source-114",
+      "sourceRecordIds": [
+        "1cb7b41c-283f-5226-9c24-eec1ee49d12f"
+      ],
+      "literal": "• Sentido crítico ante las\ninformaciones que recibe.",
+      "family": "ATTITUDE_VALUE",
+      "caseIds": [
+        "critical-facts-opinions"
+      ]
+    },
+    {
+      "id": "source-116",
+      "sourceRecordIds": [
+        "b2286b30-8d67-51fa-ac4e-74e16a1280c3"
+      ],
+      "literal": "Presente simple con valor futuro para justificar\nacciones:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-116-present-simple-future-reading",
+        "grammar-116-present-simple-future-analysis",
+        "grammar-116-present-simple-future-writing",
+        "grammar-116-present-simple-future-comparison",
+        "grammar-116-present-simple-future-research",
+        "context-neutral-present-simple-future"
+      ]
+    },
+    {
+      "id": "source-117",
+      "sourceRecordIds": [
+        "946a92a8-9b88-58b1-bb98-51fd8d112169"
+      ],
+      "literal": "• I have an English class at 3:00, so I can’t attend the\nmeeting tomorrow.\nMust, may, could y might… para justificar acciones y\nofrecer explicaciones:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-117-modal-must-reading",
+        "grammar-117-modal-must-analysis",
+        "grammar-117-modal-must-writing",
+        "grammar-117-modal-must-comparison",
+        "grammar-117-modal-must-research",
+        "grammar-117-modal-may-reading",
+        "grammar-117-modal-may-analysis",
+        "grammar-117-modal-may-writing",
+        "grammar-117-modal-may-comparison",
+        "grammar-117-modal-may-research",
+        "grammar-117-modal-could-reading",
+        "grammar-117-modal-could-analysis",
+        "grammar-117-modal-could-writing",
+        "grammar-117-modal-could-comparison",
+        "grammar-117-modal-could-research",
+        "grammar-117-modal-might-reading",
+        "grammar-117-modal-might-analysis",
+        "grammar-117-modal-might-writing",
+        "grammar-117-modal-might-comparison",
+        "grammar-117-modal-might-research"
+      ]
+    },
+    {
+      "id": "source-118",
+      "sourceRecordIds": [
+        "0db6403e-c8da-5752-af28-626a2d61fb2b"
+      ],
+      "literal": "• Maria didn’t come to the meeting. She could have\nhad a problem.\nVerbos seguidos del gerundio, infinitivo por\ncualquiera de ellos:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-118-verb-complements-reading",
+        "grammar-118-verb-complements-analysis",
+        "grammar-118-verb-complements-writing",
+        "grammar-118-verb-complements-comparison",
+        "grammar-118-verb-complements-research"
+      ]
+    },
+    {
+      "id": "source-120",
+      "sourceRecordIds": [
+        "966a48a2-f8f2-57fa-a702-2dcaf85be1a8"
+      ],
+      "literal": "•I remembered to lock the door as I left. I need to\ndrink some coffee.\nPhrasal verbs:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-120-phrasal-verbs-reading",
+        "grammar-120-phrasal-verbs-analysis",
+        "grammar-120-phrasal-verbs-writing",
+        "grammar-120-phrasal-verbs-comparison",
+        "grammar-120-phrasal-verbs-research"
+      ]
+    },
+    {
+      "id": "source-123",
+      "sourceRecordIds": [
+        "f97f4327-dda2-5388-a44c-0e4f5286977b"
+      ],
+      "literal": "Me too; not me; neither do I; so do I; I do too",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-123-agreement-responses-reading",
+        "grammar-123-agreement-responses-analysis",
+        "grammar-123-agreement-responses-writing",
+        "grammar-123-agreement-responses-comparison",
+        "grammar-123-agreement-responses-research"
+      ]
+    },
+    {
+      "id": "source-125",
+      "sourceRecordIds": [
+        "dd27a9a7-0aa0-59ae-845f-8baabb7fa4ad"
+      ],
+      "literal": "•So did I\nThere + modal + be:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-125-there-modal-be-reading",
+        "grammar-125-there-modal-be-analysis",
+        "grammar-125-there-modal-be-writing",
+        "grammar-125-there-modal-be-comparison",
+        "grammar-125-there-modal-be-research",
+        "there-source-punctuation"
+      ]
+    },
+    {
+      "id": "source-126",
+      "sourceRecordIds": [
+        "c6415af1-39b3-5d10-b2f7-f2e316ceaa2d"
+      ],
+      "literal": "• There might be many interesting people there.\nCondicional cero (If /when + presente simple en\nla cláusula condicional, y presente simple en la\ncláusula principal):",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-126-zero-conditional-reading",
+        "grammar-126-zero-conditional-analysis",
+        "grammar-126-zero-conditional-writing",
+        "grammar-126-zero-conditional-comparison",
+        "grammar-126-zero-conditional-research"
+      ]
+    },
+    {
+      "id": "source-127",
+      "sourceRecordIds": [
+        "691b3f36-fdc9-5c35-a081-32f9ba7e900e"
+      ],
+      "literal": "• When the presentation is simple, people learn\nbetter.\nSegundo condicional (If + pasado simple en la\ncláusula condicional y would / could/ might + forma\nbase del verbo en la cláusula principal):\nIf I had the tools, I would help you.",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-127-second-conditional-reading",
+        "grammar-127-second-conditional-analysis",
+        "grammar-127-second-conditional-writing",
+        "grammar-127-second-conditional-comparison",
+        "grammar-127-second-conditional-research"
+      ]
+    },
+    {
+      "id": "source-128",
+      "sourceRecordIds": [
+        "9b490dcc-a0e9-5efe-8616-606bade425d2"
+      ],
+      "literal": "Tercer condicional (If + pasado perfecto en la\ncláusula condicional y would/could/might + have\nen la claúsula principal):",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-128-third-conditional-reading",
+        "grammar-128-third-conditional-analysis",
+        "grammar-128-third-conditional-writing",
+        "grammar-128-third-conditional-comparison",
+        "grammar-128-third-conditional-research"
+      ]
+    },
+    {
+      "id": "source-131",
+      "sourceRecordIds": [
+        "c08cd2f7-497e-5c03-8ca2-210453a7921b"
+      ],
+      "literal": "• Voz pasiva:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-131-passive-reading",
+        "grammar-131-passive-analysis",
+        "grammar-131-passive-writing",
+        "grammar-131-passive-comparison",
+        "grammar-131-passive-research"
+      ]
+    },
+    {
+      "id": "source-134",
+      "sourceRecordIds": [
+        "17ff5a4e-44b1-5560-abec-8749fa4834d3"
+      ],
+      "literal": "• Wearing a helmet while riding a motorcycle is\nadvised.\nQuestion tags:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-134-question-tags-reading",
+        "grammar-134-question-tags-analysis",
+        "grammar-134-question-tags-writing",
+        "grammar-134-question-tags-comparison",
+        "grammar-134-question-tags-research"
+      ]
+    },
+    {
+      "id": "source-136",
+      "sourceRecordIds": [
+        "8d451996-4cb4-5aef-a5b6-98793648b10a"
+      ],
+      "literal": "• I think I should fill out this form, shouldn’t I?\nReported speech para relatar acontecimientos y\nexperiencias de forma detallada:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-136-reported-speech-reading",
+        "grammar-136-reported-speech-analysis",
+        "grammar-136-reported-speech-writing",
+        "grammar-136-reported-speech-comparison",
+        "grammar-136-reported-speech-research"
+      ]
+    },
+    {
+      "id": "source-139",
+      "sourceRecordIds": [
+        "ecdff6f6-37a6-5c85-bcf5-87fe2875288b"
+      ],
+      "literal": "• The specialist confirmed that the picture was\nauthentic.\nPreguntas indirectas y embedded questions:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-139-indirect-questions-reading",
+        "grammar-139-indirect-questions-analysis",
+        "grammar-139-indirect-questions-writing",
+        "grammar-139-indirect-questions-comparison",
+        "grammar-139-indirect-questions-research"
+      ]
+    },
+    {
+      "id": "source-142",
+      "sourceRecordIds": [
+        "9d311bdd-a80a-5a0e-bb4a-1b2436f9a1e2"
+      ],
+      "literal": "• Costumbres y tradiciones.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-142-cultural-comparison-30"
+      ]
+    },
+    {
+      "id": "source-143",
+      "sourceRecordIds": [
+        "3468575e-a9f2-5ab7-b493-e4180c6c9be7"
+      ],
+      "literal": "• Creencias y valores.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-143-cultural-comparison-31"
+      ]
+    },
+    {
+      "id": "source-144",
+      "sourceRecordIds": [
+        "772e80d4-6833-55ed-a71f-82fc14c127bf"
+      ],
+      "literal": "• Manifestaciones artísticas.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-144-cultural-comparison-32"
+      ]
+    },
+    {
+      "id": "source-145",
+      "sourceRecordIds": [
+        "be6c93b1-dda1-50fd-8e78-990b767b35dd"
+      ],
+      "literal": "• Situaciones problemáticas que afectan a los jóvenes.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-145-cultural-comparison-33"
+      ]
+    },
+    {
+      "id": "source-146",
+      "sourceRecordIds": [
+        "dae5d696-33c0-57b0-9f5f-b739126085d9"
+      ],
+      "literal": "• Cuidado del medioambiente.",
+      "family": "PROCEDURE",
+      "caseIds": [
+        "strategy-146-cultural-comparison-34"
+      ]
+    },
+    {
+      "id": "source-147",
+      "sourceRecordIds": [
+        "b4d22433-b9aa-50a2-a44a-68259bf8d2d7"
+      ],
+      "literal": "• I wonder why my skateboard isn’t rolling\nsmoothly.\nOraciones enfáticas con it y wh• clefts:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-147-it-cleft-reading",
+        "grammar-147-it-cleft-analysis",
+        "grammar-147-it-cleft-writing",
+        "grammar-147-it-cleft-comparison",
+        "grammar-147-it-cleft-research",
+        "grammar-147-wh-cleft-reading",
+        "grammar-147-wh-cleft-analysis",
+        "grammar-147-wh-cleft-writing",
+        "grammar-147-wh-cleft-comparison",
+        "grammar-147-wh-cleft-research"
+      ]
+    },
+    {
+      "id": "source-149",
+      "sourceRecordIds": [
+        "e9718c94-ec36-5d0f-ae8c-4a99acebff24"
+      ],
+      "literal": "•What the volunteers will do is to plant trees along\nthe river.\nGerundio en función de sustantivo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-149-nominal-gerund-reading",
+        "grammar-149-nominal-gerund-analysis",
+        "grammar-149-nominal-gerund-writing",
+        "grammar-149-nominal-gerund-comparison",
+        "grammar-149-nominal-gerund-research"
+      ]
+    },
+    {
+      "id": "source-150",
+      "sourceRecordIds": [
+        "d9962eaf-dd66-59b5-b9d7-58ec58ff215a"
+      ],
+      "literal": "•Reading will help your kids grow smarter.\nOmisión del artículo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-150-zero-article-reading",
+        "grammar-150-zero-article-analysis",
+        "grammar-150-zero-article-writing",
+        "grammar-150-zero-article-comparison",
+        "grammar-150-zero-article-research"
+      ]
+    },
+    {
+      "id": "source-151",
+      "sourceRecordIds": [
+        "44c2ddd4-0e51-5667-90b4-94269cd85a1e"
+      ],
+      "literal": "• Curiosity is the mother of invention.\nGrados comparativo y superlativo del adjetivo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-151-comparative-reading",
+        "grammar-151-comparative-analysis",
+        "grammar-151-comparative-writing",
+        "grammar-151-comparative-comparison",
+        "grammar-151-comparative-research"
+      ]
+    },
+    {
+      "id": "source-152",
+      "sourceRecordIds": [
+        "f678ba7c-1eeb-5e5f-9374-2987aba6a59e"
+      ],
+      "literal": "• I think younger people are usually more active\nthan older ones. Which is the highest peak in the\nCaribbean?\nAdverbios y frases adverbiales de tiempo (now,\nyesterday morning, until, before, after, as soon as\n…), de probabilidad (maybe, perhaps, probably…),\nde frecuencia (never, sometimes, always; twice a\nweek…), de modo (quickly, properly, carefully…)\ny de intensidad (very, pretty, enough, too…):",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-frequency-degree",
+        "grammar-152-time-adverbs-reading",
+        "grammar-152-time-adverbs-analysis",
+        "grammar-152-time-adverbs-writing",
+        "grammar-152-time-adverbs-comparison",
+        "grammar-152-time-adverbs-research",
+        "grammar-152-probability-adverbs-reading",
+        "grammar-152-probability-adverbs-analysis",
+        "grammar-152-probability-adverbs-writing",
+        "grammar-152-probability-adverbs-comparison",
+        "grammar-152-probability-adverbs-research",
+        "grammar-152-frequency-adverbs-reading",
+        "grammar-152-frequency-adverbs-analysis",
+        "grammar-152-frequency-adverbs-writing",
+        "grammar-152-frequency-adverbs-comparison",
+        "grammar-152-frequency-adverbs-research",
+        "grammar-152-manner-adverbs-reading",
+        "grammar-152-manner-adverbs-analysis",
+        "grammar-152-manner-adverbs-writing",
+        "grammar-152-manner-adverbs-comparison",
+        "grammar-152-manner-adverbs-research",
+        "grammar-152-intensity-adverbs-reading",
+        "grammar-152-intensity-adverbs-analysis",
+        "grammar-152-intensity-adverbs-writing",
+        "grammar-152-intensity-adverbs-comparison",
+        "grammar-152-intensity-adverbs-research"
+      ]
+    },
+    {
+      "id": "source-153",
+      "sourceRecordIds": [
+        "2277c877-d1b3-5823-9184-b50fb78ad765"
+      ],
+      "literal": "• While I was talking to them, I kept myself calm and\nfriendly. Maybe you should explain it more slowly.\nUso de preposiciones:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-153-preposition-use-reading",
+        "grammar-153-preposition-use-analysis",
+        "grammar-153-preposition-use-writing",
+        "grammar-153-preposition-use-comparison",
+        "grammar-153-preposition-use-research"
+      ]
+    },
+    {
+      "id": "source-155",
+      "sourceRecordIds": [
+        "732888ad-e505-5ca0-8535-c13a7de76ab7"
+      ],
+      "literal": "• They applied for Dominican citizenship. We need\nto be good at teamwork.\nPreposición al final de la oración:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-155-sentence-final-preposition-reading",
+        "grammar-155-sentence-final-preposition-analysis",
+        "grammar-155-sentence-final-preposition-writing",
+        "grammar-155-sentence-final-preposition-comparison",
+        "grammar-155-sentence-final-preposition-research"
+      ]
+    },
+    {
+      "id": "source-156",
+      "sourceRecordIds": [
+        "2c7b2e0e-ee58-5fbd-85db-39d87a918cce"
+      ],
+      "literal": "• Those were the results we were waiting for. What’s\nthe movie about?\nPreposiciones de lugar (in, under, up, into, outside,\ninside, past, through…) y de tiempo (at, before,\nfor, since, from, to, until, till…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-156-place-prepositions-reading",
+        "grammar-156-place-prepositions-analysis",
+        "grammar-156-place-prepositions-writing",
+        "grammar-156-place-prepositions-comparison",
+        "grammar-156-place-prepositions-research",
+        "grammar-156-time-prepositions-reading",
+        "grammar-156-time-prepositions-analysis",
+        "grammar-156-time-prepositions-writing",
+        "grammar-156-time-prepositions-comparison",
+        "grammar-156-time-prepositions-research"
+      ]
+    },
+    {
+      "id": "source-158",
+      "sourceRecordIds": [
+        "c46a38ff-b859-55c6-8235-25598bfe0ed5"
+      ],
+      "literal": "• At sunset, they arrived in a small isolated village.\nPronombres relativos (who, which, that…):",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-158-relative-pronouns-reading",
+        "grammar-158-relative-pronouns-analysis",
+        "grammar-158-relative-pronouns-writing",
+        "grammar-158-relative-pronouns-comparison",
+        "grammar-158-relative-pronouns-research"
+      ]
+    },
+    {
+      "id": "source-159",
+      "sourceRecordIds": [
+        "8203dbef-7b3b-54c7-a618-4ffe41b51ff2"
+      ],
+      "literal": "• Ernest Hemingway, who is one of my favorite\nAmerican writers, lived in Cuba for many years.\nOmisión del pronombre relativo:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-159-relative-omission-reading",
+        "grammar-159-relative-omission-analysis",
+        "grammar-159-relative-omission-writing",
+        "grammar-159-relative-omission-comparison",
+        "grammar-159-relative-omission-research"
+      ]
+    },
+    {
+      "id": "source-160",
+      "sourceRecordIds": [
+        "03d1fdc2-9ac3-5380-99a3-8e5462a1bb96"
+      ],
+      "literal": "• The pictures (that) we are going to see were taken\nby a famous photographer.\nUso enfático de los pronombres reflexivos:",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-160-emphatic-reflexives-reading",
+        "grammar-160-emphatic-reflexives-analysis",
+        "grammar-160-emphatic-reflexives-writing",
+        "grammar-160-emphatic-reflexives-comparison",
+        "grammar-160-emphatic-reflexives-research",
+        "emphatic-source-name"
+      ]
+    },
+    {
+      "id": "source-162",
+      "sourceRecordIds": [
+        "80bba817-2cc8-5e99-a52d-378aacd0f3a7"
+      ],
+      "literal": "• Adición (and, besides, moreover, in addition…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-162-addition-connectors-reading",
+        "grammar-162-addition-connectors-analysis",
+        "grammar-162-addition-connectors-writing",
+        "grammar-162-addition-connectors-comparison",
+        "grammar-162-addition-connectors-research"
+      ]
+    },
+    {
+      "id": "source-163",
+      "sourceRecordIds": [
+        "f88468ac-c766-5377-a08e-5739f0509826"
+      ],
+      "literal": "• Causa y efecto (so, because, since, as, for…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-163-cause-connectors-reading",
+        "grammar-163-cause-connectors-analysis",
+        "grammar-163-cause-connectors-writing",
+        "grammar-163-cause-connectors-comparison",
+        "grammar-163-cause-connectors-research"
+      ]
+    },
+    {
+      "id": "source-164",
+      "sourceRecordIds": [
+        "578fe6bc-0dc5-5a09-9b25-7ed60bf56e13"
+      ],
+      "literal": "• Concesión (although, in spite of, even though,\ndespite…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-164-concession-connectors-reading",
+        "grammar-164-concession-connectors-analysis",
+        "grammar-164-concession-connectors-writing",
+        "grammar-164-concession-connectors-comparison",
+        "grammar-164-concession-connectors-research"
+      ]
+    },
+    {
+      "id": "source-165",
+      "sourceRecordIds": [
+        "d2f084eb-94e0-58c4-9118-c3959a190f54"
+      ],
+      "literal": "• Contraste (but, while, on the contrary, in\ncontrast…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-165-contrast-connectors-reading",
+        "grammar-165-contrast-connectors-analysis",
+        "grammar-165-contrast-connectors-writing",
+        "grammar-165-contrast-connectors-comparison",
+        "grammar-165-contrast-connectors-research"
+      ]
+    },
+    {
+      "id": "source-166",
+      "sourceRecordIds": [
+        "fffcc3b5-21a0-5080-9f34-a013b219e1a0"
+      ],
+      "literal": "•Correlación (either…or, neither…nor, not only…\nbut also…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-166-correlative-connectors-reading",
+        "grammar-166-correlative-connectors-analysis",
+        "grammar-166-correlative-connectors-writing",
+        "grammar-166-correlative-connectors-comparison",
+        "grammar-166-correlative-connectors-research"
+      ]
+    },
+    {
+      "id": "source-167",
+      "sourceRecordIds": [
+        "7907400b-e5c0-5036-a0a0-351cd65c9080"
+      ],
+      "literal": "• Exclusión (except, except for, apart from, but…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-167-exclusion-connectors-reading",
+        "grammar-167-exclusion-connectors-analysis",
+        "grammar-167-exclusion-connectors-writing",
+        "grammar-167-exclusion-connectors-comparison",
+        "grammar-167-exclusion-connectors-research"
+      ]
+    },
+    {
+      "id": "source-168",
+      "sourceRecordIds": [
+        "a9fb21fb-7347-53c2-b08d-7f7dd7b83d5e"
+      ],
+      "literal": "• Finalidad (to, in order to, so that…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-168-purpose-connectors-reading",
+        "grammar-168-purpose-connectors-analysis",
+        "grammar-168-purpose-connectors-writing",
+        "grammar-168-purpose-connectors-comparison",
+        "grammar-168-purpose-connectors-research"
+      ]
+    },
+    {
+      "id": "source-169",
+      "sourceRecordIds": [
+        "a516a554-4334-56d0-9b03-44ee9612c4e4"
+      ],
+      "literal": "• Ilustración (for example, for instance, such as…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-169-illustration-connectors-reading",
+        "grammar-169-illustration-connectors-analysis",
+        "grammar-169-illustration-connectors-writing",
+        "grammar-169-illustration-connectors-comparison",
+        "grammar-169-illustration-connectors-research"
+      ]
+    },
+    {
+      "id": "source-170",
+      "sourceRecordIds": [
+        "ee55e8d0-f8ab-57d0-b6dd-42c1ccddf7e7"
+      ],
+      "literal": "• Secuenciación (first, second, next, finally…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-170-sequence-connectors-reading",
+        "grammar-170-sequence-connectors-analysis",
+        "grammar-170-sequence-connectors-writing",
+        "grammar-170-sequence-connectors-comparison",
+        "grammar-170-sequence-connectors-research"
+      ]
+    },
+    {
+      "id": "source-171",
+      "sourceRecordIds": [
+        "92d536e7-0092-5e3e-bcd3-c9535b3d706a"
+      ],
+      "literal": "• Síntesis (in brief, in short…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-171-summary-connectors-reading",
+        "grammar-171-summary-connectors-analysis",
+        "grammar-171-summary-connectors-writing",
+        "grammar-171-summary-connectors-comparison",
+        "grammar-171-summary-connectors-research"
+      ]
+    },
+    {
+      "id": "source-172",
+      "sourceRecordIds": [
+        "365ebd01-b77c-5406-aee3-75dc6a79302b"
+      ],
+      "literal": "• Tiempo (when, while, until, before, after, as soon\nas…)",
+      "family": "CONCEPT",
+      "caseIds": [
+        "grammar-172-time-connectors-reading",
+        "grammar-172-time-connectors-analysis",
+        "grammar-172-time-connectors-writing",
+        "grammar-172-time-connectors-comparison",
+        "grammar-172-time-connectors-research"
+      ]
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "b87abe95-1f35-5ec1-ba3e-e703d11f9dd7",
+      "sourceOrdinal": 173,
+      "literal": "• Responde de forma adecuada a preguntas e indicaciones, a partir del mensaje general, las ideas principales y los detalles específicos de textos\norales y escritos articulados con claridad y en lengua estándar, donde se presenta información, se narran hechos y experiencias, se expresan y\njustifican razonamientos y planes referentes a situaciones de la vida diaria y a temas abstractos, culturales o aquellos de su interés, aunque en\nocasiones requiera releer o que le repitan.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-173-main"
+      ]
+    },
+    {
+      "id": "cb2ab23f-4c2c-562b-87a3-2bac8b4a7c98",
+      "sourceOrdinal": 174,
+      "literal": "• Produce discursos orales y escritos comprensibles en toda su extensión para informar, dar explicaciones, narrar hechos y experiencias, justificar\nrazonamientos, hipótesis y planes referentes a situaciones de la vida diaria y a temas que le son familiares o de su interés, con pronunciación, fluidez\ny corrección aceptables.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-174-production"
+      ]
+    },
+    {
+      "id": "c851619e-dacd-5125-ad04-42b901303d25",
+      "sourceOrdinal": 175,
+      "literal": "• Interactúa de forma sostenida mediante textos orales y escritos relativos a temas cotidianos, cuyo propósito es presentar información, dar\nexplicaciones, narrar hechos y experiencias, expresar razonamientos, hipótesis y planes referentes a situaciones de la vida diaria y a temas culturales\nque le son familiares o de su interés, con suficiente corrección y fluidez para que sean comprensibles en toda su extensión.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-175-interaction"
+      ]
+    },
+    {
+      "id": "7ec6c3cd-7191-5935-a71f-e8cf099e8039",
+      "sourceOrdinal": 176,
+      "literal": "• Emplea el pensamiento lógico para localizar información apropiada y responder a preguntas e indicaciones, a partir del análisis crítico de textos\norales o escritos donde se comparten, ideas, puntos de vista, experiencias, razonamientos, hipótesis, explicaciones y predicciones referentes a\ntemas cotidianos culturales de su interés.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "critical-locate",
+        "critical-select",
+        "critical-argument-relations",
+        "indicator-176-location"
+      ]
+    },
+    {
+      "id": "e53948e5-f074-5dc8-9e5e-4011f494ec3a",
+      "sourceOrdinal": 177,
+      "literal": "• Produce textos orales y escritos comprensibles de considerable extensión, utilizando el pensamiento lógico-verbal, creativo y crítico para dar la\nestructura adecuada y relacionar las ideas de manera comprensible, presentándolas de formas variadas para compartir informaciones, puntos de\nvista, experiencias, razonamientos, hipótesis, explicaciones, predicciones, instrucciones y planes futuros.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-177-structure"
+      ]
+    },
+    {
+      "id": "d3ee8a68-ba9d-5171-bc27-81643511e200",
+      "sourceOrdinal": 178,
+      "literal": "• Interactúa de manera comprensible en forma oral o escrita, utilizando el pensamiento crítico para sostener el intercambio y comprender la relación\nde las ideas, y el pensamiento creativo para expresarse en situaciones diversas, al compartir información, hipótesis, explicaciones, razonamientos y\npredicciones, referentes a su entorno cotidiano y temas que son de su interés.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-178-reasoning-dialogue"
+      ]
+    },
+    {
+      "id": "bf15763c-aad9-59fb-84fe-8260b6403495",
+      "sourceOrdinal": 179,
+      "literal": "• Localiza y sistematiza información para responder a preguntas, indicaciones y problemas cotidianos o de su área de interés, partiendo de las ideas\ngenerales y detalles específicos contenidos en textos orales y escritos confiables sobre experiencias, razonamientos, hipótesis, proyecciones, planes\ne instrucciones.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "critical-reliability",
+        "critical-reliability-one-feature",
+        "critical-systematization",
+        "critical-independent-action",
+        "indicator-179-systematization",
+        "reliability-spoken",
+        "reliability-medium-or",
+        "reliability-medium-and",
+        "reliability-inverse-medium-or",
+        "critical-and-independent",
+        "reliability-not-understanding-another-reason"
+      ]
+    },
+    {
+      "id": "ec7d15e1-1d86-5457-8072-2326f1b6e56a",
+      "sourceOrdinal": 180,
+      "literal": "• Describe y plantea problemas de su entorno cotidiano al detalle, compartiendo información confiable y sistematizada, experiencias, puntos de\nvista, razonamientos, hipótesis, proyecciones, planes e instrucciones, para su resolución o abordaje, a través de discursos orales y textos escritos\nsencillos comprensibles en toda su extensión, aunque con algunos errores sistemáticos.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-180-problem-description"
+      ]
+    },
+    {
+      "id": "205c9a9e-a9b8-5a98-86a7-443ad85e7f70",
+      "sourceOrdinal": 181,
+      "literal": "• Interactúa de forma sostenida y comprensible en inglés oral y escrito para describir detalles de problemas que se le presentan y plantear soluciones\nposibles, utilizando un discurso sencillo y sistematizado para informar, describir y sopesar experiencias, explicaciones, razonamientos, hipótesis y\nproyecciones factibles.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-181-problem-solution"
+      ]
+    },
+    {
+      "id": "e0f029ad-9d96-5823-a6fc-6a94fc62a467",
+      "sourceOrdinal": 182,
+      "literal": "• Responde de forma adecuada a preguntas e indicaciones, a partir de textos orales y escritos de diversa extensión por medios impresos, digitales\no virtuales en los que se describen sistematizan y presentan informaciones, experiencias, razonamientos, hipótesis, proyecciones e instrucciones\nsobre asuntos científicos, tecnológicos y de otra índole.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-182-science-reading"
+      ]
+    },
+    {
+      "id": "9fdf8140-d46b-587d-ab06-23a14830d794",
+      "sourceOrdinal": 183,
+      "literal": "• Produce textos orales o escritos comprensibles por medios impresos, digitales como virtuales, donde se describen, sistematizan y presentan, de\nmanera comprensible, informaciones, experiencias, razonamientos, hipótesis, proyecciones e instrucciones sobre asuntos científicos, tecnológicos\nrelativos a su entorno inmediato y temas que son de su interés.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-183-science-writing"
+      ]
+    },
+    {
+      "id": "36d02765-6a29-5f5b-ae6d-5c9e0220bd25",
+      "sourceOrdinal": 184,
+      "literal": "• Interactúa de manera sostenida y comprensible por medios físicos, digitales o virtuales, compartiendo información y descripción de experiencias,\nrazonamientos, hipótesis, proyecciones, puntos de vista, e instrucciones sobre asuntos científicos, tecnológicos y de otra índole de manera\ncomprensible de forma oral o escrita.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-184-science-dialogue"
+      ]
+    },
+    {
+      "id": "de2773e7-e0b8-5c42-be91-b6b0a4fcec40",
+      "sourceOrdinal": 185,
+      "literal": "• Reacciona con actitud de respeto, cortesía y asertividad al contestar preguntas e indicaciones a partir de detalles e ideas generales contenidas en\ntextos orales o escritos donde se comparten informaciones, puntos de vista, experiencias, razonamientos, hipótesis y predicciones sobre temas\nabstractos o culturales.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-185-courtesy-reception"
+      ]
+    },
+    {
+      "id": "6f63d98c-6d9e-51fc-8600-5948e4fcb61c",
+      "sourceOrdinal": 186,
+      "literal": "• Muestra una actitud de respeto, cortesía, y asertividad en los textos orales y escritos que produce, tomando en cuenta la identidad social y cultural\npropia y de otros países al exponer informaciones y puntos de vista propios y de las demás personas con honestidad y proceder ético.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-186-courtesy-writing"
+      ]
+    },
+    {
+      "id": "b97a12bc-1a2b-58ab-87f2-c6b1dbf7e79c",
+      "sourceOrdinal": 187,
+      "literal": "• Demuestra honestidad y una actitud de respeto, cortesía, y asertividad al interactuar en forma oral y escrita sobre informaciones, ideas, experiencias,\nrazonamientos, tomando en cuenta la identidad social y cultural propia y de otros países.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-187-courtesy-dialogue"
+      ]
+    },
+    {
+      "id": "ffed529b-e847-5520-9447-01f1f16a7b6f",
+      "sourceOrdinal": 188,
+      "literal": "• Identifica y sistematiza información, acciones y valores sobre el cuidado de la salud y el medioambiente, a partir de textos orales o escritos donde\nse comparte información, experiencias, puntos de vista, razonamientos e hipótesis, proyecciones, planes e instrucciones sobre situaciones y temas\nde interés general, abstratctos o culturales.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-188-care-systematization",
+        "risk-reading"
+      ]
+    },
+    {
+      "id": "0552fd39-f45b-5b97-8fec-3a7d82d50350",
+      "sourceOrdinal": 189,
+      "literal": "• Describe situaciones de riesgo que perjudican tanto al ambiente como a la salud y sus posibles medidas de prevención, en textos orales y escritos\nde considerable extensión, donde se presenta información, experiencias, puntos de vista, razonamientos, hipótesis, proyecciones, planes e\ninstrucciones, mostrando preferencias por las opciones que impactan positivamente a su persona, su comunicad y al mundo.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-189-risk-prevention",
+        "risk-only"
+      ]
+    },
+    {
+      "id": "845dd7b2-aeb0-5178-ba83-a21390a6b138",
+      "sourceOrdinal": 190,
+      "literal": "• Comparte información, experiencias, razonamientos y puntos de vista pertinentes para la conservación del medioambiente y la salud, al interactuar\nde manera sostenida y comprensible en diversas situaciones de comunicación oral o escrita.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-190-care-dialogue"
+      ]
+    },
+    {
+      "id": "9b46fa77-d362-5a2c-91af-3609de7f089c",
+      "sourceOrdinal": 191,
+      "literal": "• Muestra valoración crítica, cortés y asertiva ante los deseos aspiraciones, razonamientos, hipótesis, planes y experiencias propios y de otras personas",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-191-plans-reading"
+      ]
+    },
+    {
+      "id": "9b286d97-1a7c-5e8b-b845-f2595f08c3b2",
+      "sourceOrdinal": 192,
+      "literal": "• Demuestra una conducta cortés y respetuosa, y una actitud asertiva, al expresar información, razonamientos, hipótesis, proyecciones, sugerencias,\nconsejos e instrucciones tanto en forma oral como escrita.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-192-courtesy-explanation"
+      ]
+    },
+    {
+      "id": "66e955ad-d7ea-5b71-b90e-681e453d5c9b",
+      "sourceOrdinal": 193,
+      "literal": "• Interactúa de forma cortés, asertiva, honesta y respetuosa al tratar informaciones, detalles de costumbres y experiencias pasadas, problemas,\nrazonamientos, hipótesis y proyecciones propias y de las demás personas, compartiendo, recomendaciones, planes futuros e instrucciones\npertinentes en forma oral o escrita.",
+      "pdfPage": 460,
+      "adaptation": "Solo comunicación y selección/análisis/sistematización observables solicitados, con datos dados o ficticios; no disposiciones privadas.",
+      "caseIds": [
+        "indicator-193-courtesy-interview"
+      ]
+    }
+  ],
+  "notes": [
+    "La fiabilidad y sistematización se activan cuando se solicitan; el título crítico no exige todos los procesos.",
+    "No canon, experiencias reales obligatorias, búsqueda externa, adhesión ni verdad clínica."
+  ]
+}

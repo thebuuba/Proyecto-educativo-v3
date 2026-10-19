@@ -13,22 +13,12 @@ export const englishGradeSixStrategies:Strategy[]=englishGradeFiveStrategies.fil
 export function gradeSixStrategyCriteria(raw:string,mode:string){
  const text=withoutGradeSixLexicalTargets(raw),resolved=['analysis','comparison','research'].includes(mode)?'reading':mode
  return englishStrategyCriteria(text,resolved,'ing-6',englishGradeSixStrategies).map(c=>{
-  let levels=c.progressionLevels!,title=c.title
+  let levels=c.progressionLevels!
   if(c.templateId.endsWith('help')&&/ayuda y repeticion|repeticion y ayuda/.test(text))levels=levels.map(l=>l.replace('la ayuda o repetición pertinente','la ayuda y repetición pertinentes')) as Strategy['levels']
-  if(c.templateId.endsWith('main-secondary')){
-   const main=/ideas? principal(?:es)?/.test(text),secondary=/ideas? secundarias?/.test(text)
-   const target=main&&secondary?'las ideas principales y secundarias solicitadas':main?'las ideas principales solicitadas':'las ideas secundarias solicitadas'
-   levels=levels.map(l=>l.replace('{target}',target)) as Strategy['levels'];title=main&&secondary?'Ideas principales y secundarias del texto':main?'Ideas principales del texto':'Ideas secundarias del texto'
-  }
-  if(c.templateId.endsWith('compensation')){
-   const synonyms=/sinonimos/.test(text),placeholders=/comodines/.test(text)
-   const target=synonyms&&placeholders?'los sinónimos y comodines solicitados':synonyms?'el sinónimo solicitado':placeholders?'el comodín solicitado':'la expresión compensatoria solicitada'
-   levels=levels.map(l=>l.replace('{target}',target)) as Strategy['levels']
-  }
   if(c.templateId.endsWith('cultural-comparison')){
    const aspects=[['costumbres','las costumbres de los ejemplos'],['tradiciones','las tradiciones de los ejemplos'],['creencias','las creencias de los ejemplos'],['valores','los valores de los ejemplos'],['manifestaciones artisticas','las manifestaciones artísticas de los ejemplos'],['situaciones problematicas|problemas.*jovenes','las situaciones problemáticas de los jóvenes de los ejemplos'],['medioambiente|medio ambiente','el cuidado del medioambiente de los ejemplos']].filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
    if(aspects.length)levels=levels.map(l=>l.replace('los aspectos solicitados',aspects.join(' y '))) as Strategy['levels']
   }
-  return {...c,title,observable:levels[0],progressionLevels:levels}
+  return {...c,observable:levels[0],progressionLevels:levels}
  })
 }

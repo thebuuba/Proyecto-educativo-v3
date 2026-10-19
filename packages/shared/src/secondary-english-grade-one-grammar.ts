@@ -59,7 +59,7 @@ export function requestedEnglishGrammar(text:string){
 export function englishGrammarCriterion(feature:LanguageFeature,text:string,mode:string,scope='ing-1'):ContextualTopicCriterion{
  const receptive=mode==='reading'||mode==='listening'
  const source=mode==='listening'?'mensaje escuchado':'texto disponible'
- const explain=/\b(?:explic\w*|justific\w*|funcion|relacion\w*)\b/.test(text)
+ const explain=/\b(?:explic\w*|expliqu\w*|justific\w*|funcion|relacion\w*)\b/.test(text.replace(new RegExp(feature.match,'g'),' '))
  const target=feature.name,purpose=feature.function
  const ofTarget=target.startsWith('el ')?`del ${target.slice(3)}`:`de ${target}`
  const levels:ContextualTopicCriterion['progressionLevels']=receptive?[

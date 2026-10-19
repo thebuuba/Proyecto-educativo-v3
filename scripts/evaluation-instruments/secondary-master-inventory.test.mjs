@@ -7,12 +7,18 @@ test('el inventario distingue Inglés HLM cuarto del inglés común y de las opt
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider)
  assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===4&&s.subject==='Inglés'&&s.character==='COMMON').evidence)
- assert.equal(inventory.scopes.find(s=>s.grade===6&&s.exit===matrix.optativeExitName&&s.area===row.area).status,'PENDING')
+ const sixth=read('optative-hlm-ing-6-matriz.json');assert.equal(inventory.scopes.find(s=>s.id===sixth.scopeId).status,sixth.status)
 })
-test('Literatura Anglófona quinto distingue conexión de lectura y runtime pendientes',()=>{
+test('Literatura Anglófona quinto conserva su estado de conexión verificado',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hlm-ing-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===5&&s.subject==='Inglés'&&s.character==='COMMON').evidence)
+})
+test('Análisis crítico sexto mantiene ámbito propio y no hereda la verificación de quinto',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hlm-ing-6-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===6&&s.subject==='Inglés'&&s.character==='COMMON').evidence)
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.id===read('optative-hlm-ing-5-matriz.json').scopeId).evidence)
 })
 for(const grade of [4,5,6])test(`el inventario maestro conserva el ámbito y el estado real de HLM de ${grade}.º`,()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read(`optative-hlm-len-${grade}-matriz.json`)

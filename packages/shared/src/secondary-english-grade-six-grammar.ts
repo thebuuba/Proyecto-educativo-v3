@@ -25,7 +25,7 @@ export const englishGradeSixGrammar:LanguageFeature[]=[
  {"id": "there-modal-be", "match": "\\b(?:there modal be|there might be|there could be|there must be|there may be)\\b", "name": "there + modal + be", "function": "relacionar la existencia de un referente con el grado de posibilidad o certeza indicado", "error": "presenta como confirmada una existencia solo posible o cambia el referente"},
  {"id": "zero-conditional", "match": "\\b(?:condicional cero|zero conditional)\\b", "name": "el condicional cero", "function": "relacionar la condición con el resultado habitual o general indicado", "error": "presenta como excepcional un resultado general o invierte la relación de la condición con el resultado"},
  {"id": "third-conditional", "match": "\\b(?:tercer condicional|third conditional)\\b", "name": "el tercer condicional", "function": "relacionar una condición pasada no cumplida con el resultado alternativo que habría sido posible", "error": "presenta como ocurrido el resultado hipotético o cambia la relación con la condición pasada"},
- {"id": "passive", "match": "\\b(?:(?<!en )voz pasiva|passive voice)\\b", "name": "la voz pasiva solicitada", "function": "relacionar el hecho narrado o explicado con el referente que recibe la acción", "error": "atribuye al receptor la realización de la acción o cambia la referencia temporal solicitada"},
+ {"id": "passive", "match": "\\b(?:(?<!\\ben )voz pasiva|passive voice)\\b", "name": "la voz pasiva solicitada", "function": "relacionar el hecho narrado o explicado con el referente que recibe la acción", "error": "atribuye al receptor la realización de la acción o cambia la referencia temporal solicitada"},
  {"id": "passive-past-perfect", "match": "\\b(?:pasado perfecto en voz pasiva|past perfect passive)\\b", "name": "la voz pasiva del pasado perfecto", "function": "relacionar la acción recibida por el referente con su anterioridad a otro acontecimiento pasado", "error": "atribuye al receptor la realización de la acción o invierte la anterioridad de los hechos"},
  {"id": "reported-speech", "match": "\\b(?:reported speech|estilo indirecto|discurso indirecto)\\b", "name": "el estilo indirecto solicitado", "function": "relatar de forma detallada lo comunicado conservando sus referentes, información y relaciones temporales", "error": "atribuye lo dicho a otra persona o cambia los referentes y la relación temporal de la información"},
  {"id": "it-cleft", "match": "\\b(?:oraciones enfaticas con it|it clefts|it cleft)\\b", "name": "la oración enfática con it", "function": "destacar el elemento indicado de la afirmación sin cambiar el acontecimiento comunicado", "error": "el énfasis destaca otro referente o altera la afirmación"},
@@ -43,9 +43,20 @@ export const englishGradeSixGrammar:LanguageFeature[]=[
 ]
 export function requestedGradeSixGrammar(text:string){
  const scoped=text.replace(/omision del pronombre relativo|omission of relative pronouns/g,'relative omission')
- return requestedScopedEnglishGrammar(scoped,englishGradeSixGrammar,['be-used-to','get-used-to','causatives','phrasal-verbs','agreement-responses','there-modal-be'])
+ const selected=requestedScopedEnglishGrammar(scoped,englishGradeSixGrammar,['be-used-to','get-used-to','causatives','phrasal-verbs','agreement-responses','there-modal-be'])
+ return selected.filter(f=>f.id!=='preposition-use'||!selected.some(s=>/^(?:place|time)-prepositions$/.test(s.id)))
 }
 export function gradeSixGrammarCriterion(feature:LanguageFeature,text:string,mode:string){
+ const abstract=/\b(?:abstract\w*|cultural\w*)\b/.test(text),profile=/\b(?:perfil|narracion|entrevista|experiencia)\b/.test(text),justify=/\bjustific\w*\b/.test(text)
+ const neutral:Record<string,Partial<LanguageFeature>>={
+  ...(!abstract?{'present-simple':{function:'comunicar la información presente indicada en la situación',error:'cambia el referente o el sentido de la información presente'}}:{}),
+  ...(!profile?{
+   'present-perfect':{function:'relacionar un antecedente con su referencia presente'},
+   'present-perfect-continuous':{function:'comunicar la continuidad de la actividad indicada y su relación con el presente'},
+  }:{}),
+  ...(!justify?{'present-simple-future':{function:'comunicar el hecho programado y su referencia futura indicada'}}:{}),
+ }
+ const contextual=neutral[feature.id]?{...feature,...neutral[feature.id]}:feature
  const explains=new RegExp(`\\b(?:funcion|significado|uso) (?:de|del|de la) (?:(?:el|la|los|las)\\s+)*(?:${feature.match})`).test(text)&&/\b(?:explic\w*|analiz\w*|investig\w*)\b/.test(text)
- return scopedEnglishGrammarCriterion(feature,text,mode!=='comparison'&&explains?'analysis':mode,'ing-6')
+ return scopedEnglishGrammarCriterion(contextual,text,mode!=='comparison'&&explains?'analysis':mode,'ing-6')
 }

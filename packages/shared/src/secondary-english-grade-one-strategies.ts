@@ -166,8 +166,23 @@ export function requestedEnglishStrategies(text:string,mode?:string,strategies=e
 
 export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',strategies=englishGradeOneStrategies):ContextualTopicCriterion[]{
  return requestedEnglishStrategies(text,mode,strategies).map(f=>{
-  let levels=f.levels
+  let levels=f.levels,title=f.title
   let checklistParts:ContextualTopicCriterion['checklistParts']
+  if(f.id==='main-secondary'){
+   const main=/ideas? principal(?:es)?|ideas? secundarias? (?:y|o) principal(?:es)?/.test(text),secondary=/ideas? secundarias?|ideas? principal(?:es)? (?:y|o) secundarias?/.test(text)
+   const choice=main&&secondary&&/ideas? (?:principal(?:es)?|secundarias?) o (?:principal(?:es)?|secundarias?)/.test(text)
+   const target=choice?'las ideas principales o secundarias de la alternativa elegida':main&&secondary?'las ideas principales y secundarias solicitadas':main?'las ideas principales solicitadas':'las ideas secundarias solicitadas'
+   levels=levels.map(l=>l.replace('{target}',target)+(choice?' Se valora únicamente la alternativa elegida.':'')) as Strategy['levels'];title=choice?'Ideas de la alternativa elegida':main&&secondary?'Ideas principales y secundarias del texto':main?'Ideas principales del texto':'Ideas secundarias del texto'
+   if(main&&secondary&&!choice)checklistParts=[['main','las ideas principales solicitadas'],['secondary','las ideas secundarias solicitadas']].map(([key,target])=>{
+    const progression=f.levels.map(l=>l.replace('{target}',target)) as Strategy['levels']
+    return {key,observable:progression[0],progressionLevels:progression}
+   })
+  }
+  if(f.id==='compensation'){
+   const synonyms=/sinonimos/.test(text),placeholders=/comodines/.test(text)
+   const target=synonyms&&placeholders?'los sinónimos y comodines solicitados':synonyms?'el sinónimo solicitado':placeholders?'el comodín solicitado':'la expresión compensatoria solicitada'
+   levels=levels.map(l=>l.replace('{target}',target).replace('los sinónimos y comodines solicitados que permite','los sinónimos y comodines solicitados que permiten')) as Strategy['levels']
+  }
   if(f.id==='revision')checklistParts=[['sense','el sentido previsto'],['correctness','la corrección de la escritura']].map(([key,target])=>{
    const progressionLevels:Strategy['levels']=[
     `En la revisión observable, comprueba ${target} del mensaje en inglés; mantiene lo correcto y, cuando aparecen problemas en ese aspecto, los identifica y corrige.`,
@@ -193,6 +208,6 @@ export function englishStrategyCriteria(text:string,mode:string,scope='ing-1',st
     return {key,observable:progressionLevels[0],progressionLevels}
    })
   }
-  return {templateId:`${scope}-strategy-${f.id}`,title:f.title,observable:levels[0],weight:3,progressionLevels:levels,...(checklistParts?{checklistParts}:{})}
+  return {templateId:`${scope}-strategy-${f.id}`,title,observable:levels[0],weight:3,progressionLevels:levels,...(checklistParts?{checklistParts}:{})}
  })
 }

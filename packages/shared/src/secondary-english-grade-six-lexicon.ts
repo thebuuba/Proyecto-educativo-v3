@@ -32,7 +32,7 @@ export function withoutGradeSixLexicalTargets(raw:string){
  for(const category of ['vocabulary','expression']){
   const cue=category==='vocabulary'?'(?:vocabulario|lexico|palabras|terminos) de':'expresiones para'
   const forms=englishGradeSixLexicon.filter(f=>f.category===category).map(f=>f.match).join('|')
-  text=text.replace(new RegExp(`\\b${cue} (?:${forms})(?:\\s+(?:y|o)\\s+(?:${forms}))*`,'g'),' ')
+  text=text.replace(new RegExp(`\\b${cue} (?:(?:el|la|los|las)\\s+)?(?:${forms})(?:\\s+(?:y|o)\\s+(?:${forms}))*`,'g'),' ')
  }
  return text
 }

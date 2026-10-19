@@ -17,7 +17,7 @@ export function gradeSixContextCriteria(task:UpperEnglishEvidence,existing:Retur
   'No se reconoce un mensaje ajustado a las condiciones nuevas de la tarea.',
  ]))
  if(/\b(?:juicios?|valoracion(?:es)?)\b/.test(text)&&/\b(?:injusticia|discriminacion|inequidad)\b/.test(text))rows.push(row('critical-judgment','Juicio relacionado con los hechos y perspectivas del caso',[
-  'Expresa en inglés un juicio sobre el hecho de injusticia, discriminación o inequidad del caso proporcionado, relacionando su valoración con los datos y perspectivas disponibles.',
+  receptive?'Relaciona en inglés la valoración del texto sobre el hecho de injusticia, discriminación o inequidad con los datos y perspectivas disponibles del caso proporcionado.':'Expresa en inglés un juicio sobre el hecho de injusticia, discriminación o inequidad del caso proporcionado, relacionando su valoración con los datos y perspectivas disponibles.',
   'La valoración se relaciona con los hechos principales; una relación con los datos necesita precisión.',
   'Menciona una valoración general sin aclarar cómo se relaciona con los hechos del caso.',
   'La valoración atribuye a los personajes hechos incompatibles con la información proporcionada.',
@@ -31,7 +31,7 @@ export function gradeSixContextCriteria(task:UpperEnglishEvidence,existing:Retur
   'No se reconocen términos pertinentes relacionados con el significado indicado en la información proporcionada.',
  ]))
  const health=/\b(?:salud|saludables?)\b/.test(text),environment=/\b(?:medioambiente|medio ambiente|recursos naturales)\b/.test(text)
- if((health||environment)&&/\b(?:razonamientos?|justific\w*|explicacion(?:es)?)\b/.test(text)){
+ if((health||environment)&&/\b(?:cuidado|cuidar\w*|cuiden|prevencion|prevenir\w*|proteccion|proteger\w*)\b/.test(text)&&/\b(?:razonamientos?|justific\w*|explicacion(?:es)?)\b/.test(text)&&!existing.some(c=>c.templateId==='ing-6-strategy-cultural-comparison')){
   const target=[health?'la salud':'',environment?'el medioambiente':''].filter(Boolean).join(' y ')
   rows.push(row('care-reasons','Razones relacionadas con los efectos de cuidado indicados',[
    `Relaciona en inglés las acciones o puntos de vista comunicados con sus efectos indicados para el cuidado de ${target}, utilizando los datos de los ejemplos proporcionados.`,

@@ -54,7 +54,9 @@ describe('Calidad Inglés común1–6: evidencia independiente y revisión obser
  })
  it('separa dos procedimientos pedidos sin dividir una relación de ideas',()=>{
   expect(propose(6,'Leerán un texto en inglés. Subrayarán y anotarán las expresiones solicitadas.').criteria.filter(c=>c.templateId.includes('strategy-annotation'))).toHaveLength(2)
-  expect(propose(6,'Leerán en inglés un texto e identificarán las ideas principales y secundarias, relacionándolas con el asunto.').criteria.filter(c=>c.templateId.includes('strategy-main-secondary'))).toHaveLength(1)
+  const ideas=propose(6,'Leerán en inglés un texto e identificarán las ideas principales y secundarias, relacionándolas con el asunto.').criteria.filter(c=>c.templateId.includes('strategy-main-secondary'))
+  expect(ideas.map(c=>c.templateId)).toEqual(['ing-6-strategy-main-secondary:main','ing-6-strategy-main-secondary:secondary'])
+  expect(ideas[0].description).toContain('ideas principales');expect(ideas[1].description).toContain('ideas secundarias')
   for(const alternative of ['subrayarán o anotarán','anotarán o subrayarán'])expect(propose(6,`Leerán un texto en inglés y ${alternative} las expresiones solicitadas.`).criteria.filter(c=>c.templateId.includes('strategy-annotation'))).toHaveLength(1)
  })
  for(const grade of [1,2,3,4,5,6])it(`cotejo de datos independientes en un CV escrito ${grade}`,()=>{

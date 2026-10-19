@@ -6,6 +6,7 @@ import {requestedGradeFiveLexicon,gradeFiveLexicalCriterion,withoutGradeFiveLexi
 import {gradeFiveStrategyCriteria} from './secondary-english-grade-five-strategies'
 import {gradeFiveGenreCriteria} from './secondary-english-grade-five-genres'
 import {gradeFiveContextCriteria} from './secondary-english-grade-five-context'
+import {englishReceptiveLanguageExercise} from './secondary-english-task-text'
 export const englishGradeFiveModule={id:'ingles-comunicacion-5',grade:5,subjectCode:'ING',pdfPages:[163,164,165,166,167,168],policy:'COMMON_FIFTH_GRADE_DEFINED_FAMILIES_REVIEW_PENDING_V1'}
 const row=(id:string,title:string,levels:Parameters<typeof upperEnglishRow>[3])=>upperEnglishRow('ing-5',id,title,levels)
 export function requestedGradeFiveFunctions(raw:string){
@@ -21,7 +22,7 @@ export function requestedGradeFiveFunctions(raw:string){
  if(/\b(?:prohibicion(?:es)?|prohibir\w*|no esta permitid\w*)\b/.test(text))ids.push('prohibition')
  if(/\b(?:obligacion(?:es)?|debe hacer|deben hacer)\b/.test(text))ids.push('obligation')
  if(/\bconsultas? medicas?\b/.test(text))ids.push('medical-interaction')
- if(/\b(?:narr\w*|relatos?)\b/.test(text)&&!/\belementos de (?:una |la )?narracion\b/.test(text))ids.push('narrative')
+ if(/\b(?:narr\w*|relatos?)\b/.test(text)&&!/\belementos de (?:una |la )?narracion\b/.test(text)&&!englishReceptiveLanguageExercise(raw,/\b(?:vocabulario|lexico|expresiones para)\b/.test(raw)||requestedGradeFiveGrammar(raw).length>0))ids.push('narrative')
  if(/\bconsejos?\b/.test(text))ids.push('advice')
  if(/\b(?:sugerencias?|sugerir\w*)\b/.test(text))ids.push('suggestion')
  return ids

@@ -11,7 +11,8 @@ describe('Sexto: formas y propositos de PDF170-173',()=>{
   expect(omission.criteria.map(c=>c.templateId)).not.toContain('ing-6-feature-relative-pronouns')
  })
  for(const f of fixtures)for(const form of f.forms)for(const action of ['Leerán un texto en inglés e identificarán','Explicarán la función de','Escribirán un mensaje en inglés utilizando','Compararán la función de','Investigarán en textos en inglés el uso de'])for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`${f.id} ${form} ${action} ${format} ${total}`,()=>{
-  const description=`${action} ${form} con ejemplos de los textos proporcionados.`
+  const scenario=f.id==='present-simple'?' sobre el tema abstracto o cultural indicado':f.id==='present-perfect'||f.id==='present-perfect-continuous'?' del perfil ficticio proporcionado':f.id==='present-simple-future'?' para justificar la acción futura indicada':''
+  const description=`${action} ${form} con ejemplos de los textos proporcionados${scenario}.`
   const p=propose(description,format,total),c=p.criteria.find(c=>c.templateId===`ing-6-feature-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   if(action.startsWith('Escribirán'))expect(c!.description.toLowerCase()).toContain(f.purpose.toLowerCase())
