@@ -1,0 +1,1516 @@
+{
+  "grade": 5,
+  "scopeId": "4afe978a-b3d6-547d-a4fe-588ff505ff5e",
+  "sourcePdfPages": [
+    417,
+    418,
+    419,
+    420
+  ],
+  "policy": "OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH",
+  "cases": [
+    {
+      "id": "religious-data",
+      "topicIds": [
+        "religious-data"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Recopila los datos de manifestaciones religiosas descritos en los registros escolares y comunitarios proporcionados. No se pide contactar personas ni declarar creencias privadas.",
+      "sourceRecordIds": [
+        "90e2273b"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-diversity",
+      "topicIds": [
+        "religious-diversity"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la diversidad religiosa presente en la sociedad dominicana según las fuentes proporcionadas. No se pide entrevistar vecinos ni participar en ritos.",
+      "sourceRecordIds": [
+        "661e787d"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-social-work",
+      "topicIds": [
+        "religious-social-work"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa la labor social de grupos religiosos descrita en los registros proporcionados. No se califica adhesión ni se pide realizar esa labor.",
+      "sourceRecordIds": [
+        "fdffc779"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-conversation",
+      "topicIds": [
+        "religious-conversation"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el conversatorio sobre las características, creencias, cultos y doctrinas de iglesias documentadas en los testimonios proporcionados. No se pide contactar líderes ni realizarlo ni revelar creencias propias.",
+      "sourceRecordIds": [
+        "505ca049"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecumenism-media",
+      "topicIds": [
+        "ecumenism-media"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los textos y videos proporcionados que promueven el ecumenismo en la sociedad dominicana. No se pide producir otros materiales ni aceptar una doctrina.",
+      "sourceRecordIds": [
+        "d7c46474"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "christian-dignity",
+      "topicIds": [
+        "christian-dignity"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los aportes del cristianismo a la dignidad humana según Juan8:1–11 yLucas19:1–10 proporcionados. No se exige adhesión.",
+      "sourceRecordIds": [
+        "9f534a55"
+      ],
+      "criterionCount": 1,
+      "required": "Indaga.*Juan.*Lucas",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-fair",
+      "topicIds": [
+        "religious-fair"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la feria religiosa para presentar los carteles proporcionados de expresiones religiosas documentadas. No se piden esculturas, vestuarios, maquetas, murales, libros ni otros productos ni compras ni realizar la feria.",
+      "sourceRecordIds": [
+        "4e84558d"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-knowledge",
+      "topicIds": [
+        "biblical-knowledge"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa los saberes sobre personajes bíblicos documentados en los referentes proporcionados. No se califica experiencia religiosa propia.",
+      "sourceRecordIds": [
+        "3cc1ba84"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-characters-books",
+      "topicIds": [
+        "biblical-characters-books"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los personajes del Antiguo y Nuevo Testamento y los libros que los describen según los referentes proporcionados. No se piden otras fuentes.",
+      "sourceRecordIds": [
+        "3f46d2b4"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "old-testament-context",
+      "topicIds": [
+        "old-testament-context"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga el contexto sociocultural y religioso de Abraham, Isaac, Jacob y Moisés y sus mensajes según los textos proporcionados. No se califica fe propia.",
+      "sourceRecordIds": [
+        "a2c78319"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-interview",
+      "topicIds": [
+        "biblical-interview"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza una entrevista a los personajes del Antiguo y Nuevo Testamento sobre su misión según el caso proporcionado. No se pide contactar personas ni profesar una fe.",
+      "sourceRecordIds": [
+        "235cb8ee"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "new-testament-message",
+      "topicIds": [
+        "new-testament-message"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los mensajes de Juan Bautista, Jesús, los Apóstoles y Pablo según los textos proporcionados. No se exige adhesión.",
+      "sourceRecordIds": [
+        "dcf8bf9e"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-teachings",
+      "topicIds": [
+        "biblical-teachings"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre lo que enseñan los personajes bíblicos a los cristianos de hoy según los referentes proporcionados. No se pide identificarse como cristiano ni aceptar la postura.",
+      "sourceRecordIds": [
+        "f08e8e3b"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "biblical-teachings-panel",
+      "topicIds": [
+        "biblical-teachings-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre las enseñanzas de personajes bíblicos del Antiguo y Nuevo Testamento en la vida cotidiana descrita en los casos proporcionados. No se piden experiencias propias.",
+      "sourceRecordIds": [
+        "813f2cb6"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "biblical-celebration",
+      "topicIds": [
+        "biblical-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre personajes bíblicos y sus enseñanzas en los casos proporcionados. No se pide realizarla ni participar en ritos.",
+      "sourceRecordIds": [
+        "28a01447"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "conflict-techniques",
+      "topicIds": [
+        "conflict-techniques"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Realiza las técnicas de manejo de conflictos previstas en el caso proporcionado, registrando las decisiones tomadas. No se piden conflictos íntimos ni historias de violencia propias.",
+      "sourceRecordIds": [
+        "f6a8c2b9"
+      ],
+      "criterionCount": 1,
+      "required": "Realiza.*técnicas",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-violence-scene",
+      "topicIds": [
+        "biblical-violence-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza el caso proporcionado de personajes bíblicos que enfrentaron violencia personal, familiar, social y religiosa. No se piden testimonios propios ni se evalúa fe.",
+      "sourceRecordIds": [
+        "11b3371d"
+      ],
+      "criterionCount": 1,
+      "required": "Dramatiza.*violencia personal, familiar, social y religiosa",
+      "forbidden": "social o religiosa|^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "family-violence-debate",
+      "topicIds": [
+        "family-violence-debate"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate las situaciones documentadas de violencia familiar y complementariedad entre hombre y mujer de los casos proporcionados. No se exigen experiencias privadas ni aceptar estereotipos.",
+      "sourceRecordIds": [
+        "721c9519"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "support-institutions",
+      "topicIds": [
+        "support-institutions"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las instituciones sociales que ayudan en la resolución de problemáticas sociales, religiosas y familiares según los referentes proporcionados. No se pide contactar instituciones ni solicitar ayuda real.",
+      "sourceRecordIds": [
+        "15089835"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "women-contributions",
+      "topicIds": [
+        "women-contributions"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expón los roles y aportes de mujeres al desarrollo de la familia y la sociedad dominicana según las fuentes proporcionadas. No se califica identidad ni se impone un rol.",
+      "sourceRecordIds": [
+        "c201957e"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-conflict-solutions",
+      "topicIds": [
+        "jesus-conflict-solutions"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las enseñanzas de Jesús para resolver situaciones familiares, sociales y religiosas según los textos proporcionados. No se pide revelar problemas privados ni aceptar la perspectiva.",
+      "sourceRecordIds": [
+        "dbea6882"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-situation-solutions",
+      "topicIds": [
+        "life-situation-solutions"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora alternativas de solución para las situaciones que afectan la vida de las personas en los ámbitos escolares, familiares y sociales descritos en los casos proporcionados. No se pide ejecutarlas ni revelar intimidad.",
+      "sourceRecordIds": [
+        "7cbba03b"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "relationships-panel",
+      "topicIds": [
+        "relationships-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre sexualidad, noviazgo y matrimonio según los referentes educativos proporcionados, contrastando sus argumentos. No se piden experiencias, orientación ni relaciones privadas.",
+      "sourceRecordIds": [
+        "021aa18d"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "gender-relationship-texts",
+      "topicIds": [
+        "gender-relationship-texts"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre la relación hombre mujer según Génesis1:26–28,Marcos10:2–12 y1Corintios13:1–8 proporcionados. No se exige adhesión ni se juzga la identidad de personas.",
+      "sourceRecordIds": [
+        "7dd65701"
+      ],
+      "criterionCount": 1,
+      "required": "Argumenta.*Génesis.*Marcos.*1 Corintios",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "healthy-relationships-campaign",
+      "topicIds": [
+        "healthy-relationships-campaign"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el prototipo de campaña escrita sobre relaciones sanas en noviazgo, matrimonio y familia según los casos proporcionados. No se pide publicarla en redes ni crear cuentas ni usar otros medios.",
+      "sourceRecordIds": [
+        "e785729f"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "relationship-solutions-art",
+      "topicIds": [
+        "relationship-solutions-art"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa artísticamente las soluciones a situaciones de noviazgo, matrimonio y familia del caso proporcionado. No se piden testimonios íntimos ni se exige talento avanzado.",
+      "sourceRecordIds": [
+        "7c58feea"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza",
+      "forbidden": "Representa la representación|^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "abortion-life-documents",
+      "topicIds": [
+        "abortion-life-documents"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las perspectivas sobre aborto y defensa de la vida según los documentos proporcionados. No se pide asesoría médica o jurídica vigente ni adhesión ni experiencias personales.",
+      "sourceRecordIds": [
+        "8338062f"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "harmonious-relationships-celebration",
+      "topicIds": [
+        "harmonious-relationships-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre relaciones armoniosas en familia, escuela y sociedad. No se pide realizarla ni demostrar compromisos privados.",
+      "sourceRecordIds": [
+        "a302a693"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-development",
+      "topicIds": [
+        "work-development"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga el trabajo y su relación con el desarrollo de los pueblos según las fuentes proporcionadas. No se pide el historial laboral familiar.",
+      "sourceRecordIds": [
+        "4ba1c014"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-spiritual",
+      "topicIds": [
+        "work-spiritual"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga el sentido espiritual del trabajo según los textos bíblicos y otros textos proporcionados. No se califica espiritualidad ni satisfacción privada.",
+      "sourceRecordIds": [
+        "378ad572"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-creation-panel",
+      "topicIds": [
+        "work-creation-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel sobre importancia del trabajo en la obra creadora de Dios y el desarrollo social según los textos proporcionados. No se pide realizarlo ni expresar fe propia.",
+      "sourceRecordIds": [
+        "17299d7c"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-contributions-project",
+      "topicIds": [
+        "work-contributions-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto que explica aportes del trabajo a la persona, la naturaleza y los pueblos según los referentes proporcionados. No se pide ejecutarlo ni revelar empleo familiar.",
+      "sourceRecordIds": [
+        "74c9017c"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ethical-principles",
+      "topicIds": [
+        "ethical-principles"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los principios éticos y morales descritos en los casos educativos proporcionados. No se califica tu moralidad ni se piden prácticas privadas.",
+      "sourceRecordIds": [
+        "e3b93a85"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-experiences",
+      "topicIds": [
+        "technology-experiences"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa las experiencias con avances tecnológicos descritas en los registros proporcionados. No se piden hábitos digitales propios ni datos de cuentas.",
+      "sourceRecordIds": [
+        "0f626cc4"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-effects",
+      "topicIds": [
+        "technology-effects"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los efectos de la tecnología en la economía, el trabajo y las personas según las fuentes proporcionadas. No se piden datos privados ni acceder a cuentas.",
+      "sourceRecordIds": [
+        "a4811d5f"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-panel",
+      "topicIds": [
+        "technology-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel de beneficios y perjuicios de la tecnología en naturaleza, medioambiente y vida de las personas según los referentes proporcionados. No se pide realizarlo ni revelar hábitos propios.",
+      "sourceRecordIds": [
+        "fe2f112c"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-critical-scene",
+      "topicIds": [
+        "science-critical-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza el caso proporcionado de juicios críticos sobre ciencia y tecnología en los ámbitos personal, cultural y religioso. No se califica identidad ni adhesión ni se piden experiencias propias.",
+      "sourceRecordIds": [
+        "3cddc7e1"
+      ],
+      "criterionCount": 1,
+      "required": "Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "technology-celebration",
+      "topicIds": [
+        "technology-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre beneficios de avances científicos y tecnológicos para ambiente, trabajo, salud, transporte, comunicación y personas. No se pide realizarla ni expresar gratitud.",
+      "sourceRecordIds": [
+        "476786cd"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecological-problems",
+      "topicIds": [
+        "ecological-problems"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe las problemáticas ecológicas y su impacto en la calidad de vida según los referentes proporcionados. No se pide recolectar datos nuevos ni asumir riesgos.",
+      "sourceRecordIds": [
+        "7bb067c2"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environmental-laws",
+      "topicIds": [
+        "environmental-laws"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las leyes de protección ambiental según los documentos proporcionados. No se pide comprobar su vigencia ni asesoría jurídica actual.",
+      "sourceRecordIds": [
+        "15b25ba8"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecological-ethics-common-good",
+      "topicIds": [
+        "ecological-ethics-common-good"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la relación entre ética ecológica y bien común según Laudato Si156–162 proporcionado. No se exige adhesión religiosa.",
+      "sourceRecordIds": [
+        "667d40a1"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "dignity-ecology-proclamation",
+      "topicIds": [
+        "dignity-ecology-proclamation"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora una proclama sobre las situaciones que afectan dignidad humana y equilibrio ecológico de los casos proporcionados. No se pide publicación real ni demostrar disposición privada.",
+      "sourceRecordIds": [
+        "70dad033"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecology-celebration",
+      "topicIds": [
+        "ecology-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre cuidado y protección del medioambiente como casa común. No se pide realizarla ni demostrar conciencia o fe privadas.",
+      "sourceRecordIds": [
+        "7536afac"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-lifestyle",
+      "topicIds": [
+        "jesus-lifestyle"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa el estilo de vida de Jesús descrito en los textos proporcionados. No se pide practicarlo ni aceptar una doctrina.",
+      "sourceRecordIds": [
+        "023a2317"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-conflict-factors",
+      "topicIds": [
+        "adolescent-conflict-factors"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre los factores generadores de conflictos adolescentes descritos en los referentes educativos proporcionados. No se piden historias propias ni se juzga personalidad.",
+      "sourceRecordIds": [
+        "9f75bc4e"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "jesus-decisions-panel",
+      "topicIds": [
+        "jesus-decisions-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre las decisiones que se atribuyen a Jesús ante las situaciones sociales de los casos proporcionados, fundamentando con los textos dados. No se exige aceptar esa perspectiva.",
+      "sourceRecordIds": [
+        "03252c7b"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "jesus-graphic-description",
+      "topicIds": [
+        "jesus-graphic-description"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora una descripción gráfica de los rasgos de la propuesta de Jesús como estilo de vida según los textos proporcionados. No se pide adhesión ni ilustraciones adicionales ni talento avanzado.",
+      "sourceRecordIds": [
+        "f1256796"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "youth-life-options",
+      "topicIds": [
+        "youth-life-options"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las opciones de vida que se presentan a jóvenes según los referentes educativos proporcionados. No se pide declarar tu opción ni entrevistar compañeros.",
+      "sourceRecordIds": [
+        "8882dd61"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "youth-lifestyles",
+      "topicIds": [
+        "youth-lifestyles"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los estilos de vida juveniles descritos en las fuentes proporcionadas, relacionando intereses, proyectos, causas y efectos personales, familiares y sociales. No se juzga tu personalidad ni se piden datos privados.",
+      "sourceRecordIds": [
+        "e5d2a2ee"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "youth-challenges",
+      "topicIds": [
+        "youth-challenges"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe los retos y desafíos de jóvenes dominicanos documentados por las fuentes proporcionadas. No se piden experiencias privadas ni demostrar optimismo.",
+      "sourceRecordIds": [
+        "e3b049d8"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "propuestas|^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "jesus-social-lifestyles",
+      "topicIds": [
+        "jesus-social-lifestyles"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate el estilo de vida de Jesús y las propuestas sociales juveniles según los referentes proporcionados, contrastando sus argumentos. No se exige elegir una perspectiva ni profesar una fe.",
+      "sourceRecordIds": [
+        "0bf8eb9c"
+      ],
+      "criterionCount": 1,
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre"
+    },
+    {
+      "id": "jesus-learning-celebration",
+      "topicIds": [
+        "jesus-learning-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos y aprendizajes dados sobre la propuesta y estilo de vida de Jesús. No se pide realizarla ni participar en ritos ni profesar una fe.",
+      "sourceRecordIds": [
+        "9bd7616a"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-data-presentation",
+      "topicIds": [
+        "religious-data"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa los datos sobre manifestaciones religiosas de los registros escolares y comunitarios proporcionados. No se pide recopilar otros datos ni revelar creencias.",
+      "sourceRecordIds": [
+        "90e2273b"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*datos",
+      "forbidden": "Recopila|Investiga|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "religious-conversation-execution",
+      "topicIds": [
+        "religious-conversation"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el conversatorio sobre características, creencias, cultos y doctrinas de iglesias documentadas en los testimonios proporcionados, contrastando sus argumentos. No se pide planificarlo ni contactar personas.",
+      "sourceRecordIds": [
+        "505ca049"
+      ],
+      "criterionCount": 1,
+      "required": "Realiza el conversatorio.*argumentos",
+      "forbidden": "Planifica|^Profesa|sobre (?:el panel|la mesa redonda|el conversatorio) sobre",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "ecumenism-texts-only",
+      "topicIds": [
+        "ecumenism-media"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los textos proporcionados que promueven el ecumenismo en la sociedad dominicana. No se piden videos ni otros medios.",
+      "sourceRecordIds": [
+        "d7c46474"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*textos",
+      "forbidden": "videos|audiovisuales|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "christian-dignity-juan-only",
+      "topicIds": [
+        "christian-dignity"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los aportes del cristianismo a la dignidad humana según Juan8:1–11 proporcionado. No se pide Lucas ni otros textos ni adhesión.",
+      "sourceRecordIds": [
+        "9f534a55"
+      ],
+      "criterionCount": 1,
+      "required": "Indaga.*Juan",
+      "forbidden": "Lucas|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "religious-fair-maps-only",
+      "topicIds": [
+        "religious-fair"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la feria religiosa para presentar los mapas proporcionados de difusión de las religiones. No se piden carteles, esculturas, maquetas, vestuarios, murales ni otros productos ni realizarla.",
+      "sourceRecordIds": [
+        "4e84558d"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*mapas",
+      "forbidden": "carteles|esculturas|maquetas|vestuarios|murales|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "biblical-new-testament-only",
+      "topicIds": [
+        "biblical-characters-books"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los personajes del Nuevo Testamento y los libros que los describen según los referentes proporcionados. No se pide el Antiguo Testamento ni otras fuentes.",
+      "sourceRecordIds": [
+        "3f46d2b4"
+      ],
+      "criterionCount": 1,
+      "required": "Identifica.*Nuevo Testamento",
+      "forbidden": "Antiguo Testamento|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "old-context-abraham-only",
+      "topicIds": [
+        "old-testament-context"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga el contexto sociocultural y religioso de Abraham y su mensaje según los textos proporcionados. No se piden Isaac, Jacob ni Moisés ni otros personajes.",
+      "sourceRecordIds": [
+        "a2c78319"
+      ],
+      "criterionCount": 1,
+      "required": "Investiga.*Abraham",
+      "forbidden": "Isaac|Jacob|Moisés|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "new-message-pablo-only",
+      "topicIds": [
+        "new-testament-message"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga el mensaje de Pablo según los textos proporcionados. No se piden Juan Bautista, Jesús ni los Apóstoles ni otros personajes.",
+      "sourceRecordIds": [
+        "dcf8bf9e"
+      ],
+      "criterionCount": 1,
+      "required": "Indaga.*Pablo",
+      "forbidden": "Juan|Jesús|Apóstoles|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "conflict-techniques-analysis",
+      "topicIds": [
+        "conflict-techniques"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las técnicas de manejo de conflictos previstas en el caso proporcionado, relacionando sus acciones y decisiones. No se pide realizarlas ni revelar conflictos privados.",
+      "sourceRecordIds": [
+        "f6a8c2b9"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza.*técnicas",
+      "forbidden": "Realiza|Dramatiza|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "jesus-conflict-presentation",
+      "topicIds": [
+        "jesus-conflict-solutions"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa las enseñanzas de Jesús para resolver situaciones familiares, sociales y religiosas según los textos proporcionados. No se pide investigar nuevas fuentes ni revelar problemas privados.",
+      "sourceRecordIds": [
+        "dbea6882"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*enseñanzas.*Jesús",
+      "forbidden": "Investiga|Indaga|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "relationships-sexuality-only",
+      "topicIds": [
+        "relationships-panel"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Realiza el panel sobre sexualidad según los referentes educativos proporcionados, contrastando sus argumentos. No se pide noviazgo ni matrimonio ni experiencias propias.",
+      "sourceRecordIds": [
+        "021aa18d"
+      ],
+      "criterionCount": 1,
+      "required": "Realiza el panel.*sexualidad",
+      "forbidden": "noviazgo|matrimonio|sobre el panel sobre|^Revela|sobre (?:el panel|la mesa redonda|el conversatorio) sobre",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "gender-marcos-only",
+      "topicIds": [
+        "gender-relationship-texts"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre la relación hombre mujer según Marcos10:2–12 proporcionado. No se pide Génesis ni Corintios ni revelar identidad o relaciones privadas.",
+      "sourceRecordIds": [
+        "7dd65701"
+      ],
+      "criterionCount": 1,
+      "required": "Argumenta.*Marcos",
+      "forbidden": "Génesis|Corintios|^Profesa|sobre (?:el panel|la mesa redonda|el conversatorio) sobre",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "campaign-marriage-only",
+      "topicIds": [
+        "healthy-relationships-campaign"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora el prototipo de campaña escrita sobre relaciones sanas en matrimonio según los casos proporcionados. No se pide noviazgo ni familia ni publicación en redes ni otros medios.",
+      "sourceRecordIds": [
+        "e785729f"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*matrimonio",
+      "forbidden": "noviazgo|familia|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "work-development-presentation",
+      "topicIds": [
+        "work-development"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expón el trabajo y su relación con el desarrollo de los pueblos según las fuentes proporcionadas. No se pide investigar fuentes nuevas ni el historial laboral familiar.",
+      "sourceRecordIds": [
+        "4ba1c014"
+      ],
+      "criterionCount": 1,
+      "required": "Presenta.*trabajo.*desarrollo",
+      "forbidden": "Investiga|Indaga|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "work-project-nature-only",
+      "topicIds": [
+        "work-contributions-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto sobre aportes del trabajo a la naturaleza según los referentes proporcionados. No se piden aportes a la persona ni a los pueblos ni ejecución.",
+      "sourceRecordIds": [
+        "74c9017c"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*naturaleza",
+      "forbidden": "persona|pueblos|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "technology-economy-only",
+      "topicIds": [
+        "technology-effects"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los efectos de la tecnología en la economía según las fuentes proporcionadas. No se piden efectos en el trabajo ni las personas ni hábitos privados.",
+      "sourceRecordIds": [
+        "a4811d5f"
+      ],
+      "criterionCount": 1,
+      "required": "Investiga.*economía",
+      "forbidden": "trabajo|personas|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "technology-person-panel-only",
+      "topicIds": [
+        "technology-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel de beneficios y perjuicios de tecnología en la vida de las personas según los referentes proporcionados. No se pide naturaleza ni medioambiente ni realizarlo.",
+      "sourceRecordIds": [
+        "fe2f112c"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*personas",
+      "forbidden": "naturaleza|medioambiente|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "technology-health-celebration-only",
+      "topicIds": [
+        "technology-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los productos dados sobre beneficios de avances científicos y tecnológicos para la salud. No se pide ambiente, trabajo, transporte, comunicación ni otros ámbitos ni realizarla.",
+      "sourceRecordIds": [
+        "476786cd"
+      ],
+      "criterionCount": 1,
+      "required": "Planifica.*salud",
+      "forbidden": "ambiente|trabajo|transporte|comunicación|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "youth-challenges-proposals",
+      "topicIds": [
+        "youth-challenges"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora propuestas para enfrentar los retos y desafíos de jóvenes dominicanos descritos en los casos proporcionados. No se pide ejecutarlas ni revelar problemas personales.",
+      "sourceRecordIds": [
+        "e3b049d8"
+      ],
+      "criterionCount": 1,
+      "required": "Elabora.*propuestas",
+      "forbidden": "^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "youth-jesus-comparison",
+      "topicIds": [
+        "jesus-social-lifestyles"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara el estilo de vida de Jesús y las propuestas sociales juveniles según los referentes proporcionados. No se pide debatir ni escoger una perspectiva ni profesar fe.",
+      "sourceRecordIds": [
+        "0bf8eb9c"
+      ],
+      "criterionCount": 1,
+      "required": "Compara.*Jesús.*sociales",
+      "forbidden": "Debate|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "biblical-violence-family-only",
+      "topicIds": [
+        "biblical-violence-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza el caso proporcionado de personajes bíblicos ante violencia familiar según los textos dados. No se pide violencia personal, social ni religiosa ni experiencias propias.",
+      "sourceRecordIds": [
+        "11b3371d"
+      ],
+      "criterionCount": 1,
+      "required": "Dramatiza.*violencia familiar",
+      "forbidden": "personal|social|religiosa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-e8c8e4a2",
+      "topicIds": [
+        "concept-e8c8e4a2"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El hecho o fenómeno religioso.",
+      "sourceRecordIds": [
+        "e8c8e4a2"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-ca10c90f",
+      "topicIds": [
+        "concept-ca10c90f"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Diversidad religiosa dominicana.",
+      "sourceRecordIds": [
+        "ca10c90f"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-b277c300",
+      "topicIds": [
+        "concept-b277c300"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Cristianismo y dignidad humana.",
+      "sourceRecordIds": [
+        "b277c300"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-cad22d39",
+      "topicIds": [
+        "concept-cad22d39"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ecumenismo, diálogo y comunión.",
+      "sourceRecordIds": [
+        "cad22d39"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-35db4e49",
+      "topicIds": [
+        "concept-35db4e49"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Personajes bíblicos destacados en el Antiguo Testamento: Abraham, Moisés, Isaac, Jacob y profetas.",
+      "sourceRecordIds": [
+        "35db4e49"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-9ae021d6",
+      "topicIds": [
+        "concept-9ae021d6"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Personajes bíblicos destacados en el Nuevo Testamento: Juan el Bautista, María, Jesús, Apóstoles y Pablo.",
+      "sourceRecordIds": [
+        "9ae021d6"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-d3d4ea02",
+      "topicIds": [
+        "concept-d3d4ea02"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Mensaje bíblico y práctica de vida.",
+      "sourceRecordIds": [
+        "d3d4ea02"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-037341e6",
+      "topicIds": [
+        "concept-037341e6"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Situaciones sociales y personales.",
+      "sourceRecordIds": [
+        "037341e6"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c619f64b",
+      "topicIds": [
+        "concept-c619f64b"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Escuela y contexto social.",
+      "sourceRecordIds": [
+        "c619f64b"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-bfd887c0",
+      "topicIds": [
+        "concept-bfd887c0"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Familia y comunidad.",
+      "sourceRecordIds": [
+        "bfd887c0"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-b1c028e8",
+      "topicIds": [
+        "concept-b1c028e8"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Noviazgo, matrimonio y sexualidad.",
+      "sourceRecordIds": [
+        "b1c028e8"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-577d1d0b",
+      "topicIds": [
+        "concept-577d1d0b"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Las enseñanzas de Jesús a situaciones familiares y sociales.",
+      "sourceRecordIds": [
+        "577d1d0b"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-69b9a21c",
+      "topicIds": [
+        "concept-69b9a21c"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El trabajo en el desarrollo de los pueblos.",
+      "sourceRecordIds": [
+        "69b9a21c"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-871ea4f6",
+      "topicIds": [
+        "concept-871ea4f6"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El sentido espiritual del trabajo.",
+      "sourceRecordIds": [
+        "871ea4f6"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-61384904",
+      "topicIds": [
+        "concept-61384904"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Trabajo y creación de Dios.",
+      "sourceRecordIds": [
+        "61384904"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-89511bfd",
+      "topicIds": [
+        "concept-89511bfd"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Importancia del trabajo en la vida y la sociedad.",
+      "sourceRecordIds": [
+        "89511bfd"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-98d77692",
+      "topicIds": [
+        "concept-98d77692"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ciencia y tecnología: persona, familia, cultura y religión.",
+      "sourceRecordIds": [
+        "98d77692"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-a4aafa14",
+      "topicIds": [
+        "concept-a4aafa14"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Juicios éticos sobre las ciencias y las tecnologías.",
+      "sourceRecordIds": [
+        "a4aafa14"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-96224cd3",
+      "topicIds": [
+        "concept-98d77692"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ciencia y tecnología: persona, familia, cultura y religión.",
+      "sourceRecordIds": [
+        "96224cd3"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-93261729",
+      "topicIds": [
+        "concept-a4aafa14"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Juicios éticos sobre las ciencias y las tecnologías.",
+      "sourceRecordIds": [
+        "93261729"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-be5ff37a",
+      "topicIds": [
+        "concept-be5ff37a"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Entorno natural y relaciones interpersonales.",
+      "sourceRecordIds": [
+        "be5ff37a"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-fc0cd10b",
+      "topicIds": [
+        "concept-fc0cd10b"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Estilo de vida de Jesús.",
+      "sourceRecordIds": [
+        "fc0cd10b"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-8a49ca3f",
+      "topicIds": [
+        "concept-8a49ca3f"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Juventud y estilo de vida.",
+      "sourceRecordIds": [
+        "8a49ca3f"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-089d81bc",
+      "topicIds": [
+        "concept-089d81bc"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Cristianismo y testimonio.",
+      "sourceRecordIds": [
+        "089d81bc"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|^Profesa|^Revela",
+      "narrowedEvidence": true
+    }
+  ]
+}

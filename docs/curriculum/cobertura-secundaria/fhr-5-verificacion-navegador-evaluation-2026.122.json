@@ -1,0 +1,29 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.122",
+  "grade": 5,
+  "status": "BLOCKED_PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "servedAsset": "/assets/index-kp465zVw.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "La recarga normal de login recibió el entry final de 122 y registerSW.js.",
+    "Continuar como Alexauris solicita contraseña. No se ingresaron credenciales."
+  ],
+  "notVerified": [
+    "Formulario vacío personal de 5.º/FHR",
+    "Estrategia automática y manual e instrumento completo en ese contexto personal",
+    "Guardado y reapertura personal de 5.º",
+    "Huella personal de 5.º tras cambiar únicamente estrategia"
+  ],
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con una cuenta propia de Development en localhost:8787.",
+    "Abrir Cursos, 5.º de secundaria, Formación Integral Humana y Religiosa, Bloque 1 y crear actividad; comprobar estrategia visible y puntos inicialmente vacíos.",
+    "Introducir «Realiza el conversatorio sobre características, creencias, cultos y doctrinas de iglesias documentadas en los testimonios proporcionados, contrastando sus argumentos. No se pide planificarlo ni contactar personas.»; comprobar el propósito debate y el instrumento completo.",
+    "Elegir manualmente rúbrica, asignar 17.35 puntos explícitos, editar un criterio, guardar y reabrir desde esa misma asignatura.",
+    "Cambiar exclusivamente la estrategia, guardar y reabrir; comparar identificadores, criterios, niveles, pesos y puntos sin generar otro instrumento.",
+    "En una actividad nueva probar «Dramatiza el caso proporcionado de personajes bíblicos ante violencia familiar según los textos dados. No se pide violencia personal, social ni religiosa ni experiencias propias.»; comprobar que conserva solo el ámbito familiar."
+  ]
+}

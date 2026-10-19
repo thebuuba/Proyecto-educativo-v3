@@ -6,12 +6,13 @@ import {fhrGradeOneTopics} from './secondary-fhr-grade-1'
 import {fhrGradeTwoTopics} from './secondary-fhr-grade-2'
 import {fhrGradeThreeTopics} from './secondary-fhr-grade-3'
 import {fhrGradeFourTopics} from './secondary-fhr-grade-4'
+import {fhrGradeFiveTopics} from './secondary-fhr-grade-5'
 
 type FhrPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'DEBATE'|'PRESENTATION'|'PRODUCTION'|'PLAN'|'PERFORMANCE'|'VERIFICATION'|'OBSERVATION'
 export type FhrTopic={id:string;grade:number;label:string;match:string;object:string;relation:string;sourceRecordIds:string[];pdfPages:number[];choices?:string[][];choiceDefault?:string;productChoices?:string[][];productChoiceDefault?:string;excludeWhen?:string;productType?:string;objects?:Partial<Record<FhrPurpose,string>>;planReferenceOnly?:boolean;conceptBrief?:boolean}
 type FhrAction={text:string;topics:FhrTopic[];purpose:FhrPurpose}
 export type CommonFhrTask={grade:number;text:string;actions:FhrAction[];activityType:string;technique:string}
-export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-3',grade:3,topics:fhrGradeThreeTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-4',grade:4,topics:fhrGradeFourTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
+export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-3',grade:3,topics:fhrGradeThreeTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-4',grade:4,topics:fhrGradeFourTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-5',grade:5,topics:fhrGradeFiveTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const action='(?!(?:creacion|crecimiento|realizacion)\\b)(?:analiz|explic|describ|relat|narr|reflexion|identific|clasific|interpret|compar|contrast|investig|indag|recopil|debat|argument|justific|sustent|present|expon|socializ|elabor|cre|constru|redact|compon|disen|formul|organiz|prepar|planific|propon|represent|dramatiz|escenific|realiz|registr|verific|comprueb)[a-z]*'
 const affirmative=(value:string)=>normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' '))).replace(/\b(?:no(?!\s+sentido\b)|sin(?!\s+(?:acceso|sentido)\b))\b[^.;\n]*/g,'').trim()
@@ -31,7 +32,7 @@ function purposeFor(text:string):FhrPurpose{
  if(/^verific|^comprueb/.test(first))return'VERIFICATION'
  if(/^compar|^contrast/.test(first))return'COMPARISON'
  if(/^investig|^indag|^recopil/.test(first))return'RESEARCH'
- if(/^debat|^argument/.test(first)||/^(?:realiz|organiz|prepar)/.test(first)&&/panel|mesa redonda|debate/.test(text))return'DEBATE'
+ if(/^debat|^argument/.test(first)||/^(?:realiz|organiz|prepar)/.test(first)&&/panel|mesa redonda|conversatorio|debate/.test(text))return'DEBATE'
  if(/^present|^expon|^socializ/.test(first))return'PRESENTATION'
  if(/^planific|^propon/.test(first)||/^(?:elabor|cre|constru|organiz|disen|formul)/.test(first)&&/\bplan\b/.test(text))return'PLAN'
  if(/^elabor|^cre|^constru|^redact|^compon|^disen|^formul/.test(first))return'PRODUCTION'
@@ -68,7 +69,7 @@ function topicObject(topic:FhrTopic,text:string,purpose:FhrPurpose){
 function requestedEvidence(topic:FhrTopic,purpose:FhrPurpose,text:string):ContextualTopicCriterion{
  const selected=topicObject(topic,text,purpose),choice=selected.choice,object=purpose==='PLAN'&&/panel/.test(text)&&!selected.object.includes('panel')?'el panel sobre '+selected.object:selected.object,reference=topic.relation.replaceAll('{choice}',choice)
  const first=text.match(new RegExp(`\\b${action}\\b`))?.[0]??'',analysisVerb=/^clasific/.test(first)?'Clasifica':/^identific/.test(first)?'Identifica':/^interpret/.test(first)?'Interpreta':/^analiz/.test(first)?'Analiza':/^describ/.test(first)?'Describe':/^relat/.test(first)?'Relata':/^narr/.test(first)?'Narra':/^reflexion/.test(first)?'Reflexiona':'Explica'
- const forum=/mesa redonda/.test(text)?'Realiza la mesa redonda':/panel/.test(text)?'Realiza el panel':/^argument/.test(first)?'Argumenta':'Debate'
+ const forum=/mesa redonda/.test(text)?'Realiza la mesa redonda':/panel/.test(text)?'Realiza el panel':/conversatorio/.test(text)?'Realiza el conversatorio':/^argument/.test(first)?'Argumenta':'Debate'
  const performanceVerb=/^represent/.test(first)?'Representa':/^dramatiz/.test(first)?'Dramatiza':/^escenific/.test(first)?'Escenifica':'Realiza'
  const success:Record<FhrPurpose,string>={
   ANALYSIS:`${analysisVerb}${analysisVerb==='Reflexiona'?' sobre':''} ${object} sustentando sus relaciones mediante ${reference}.`,
