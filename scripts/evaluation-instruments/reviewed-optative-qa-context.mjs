@@ -6,9 +6,10 @@ import {developmentEnvironment,developmentProjectRef as project} from '../cloudf
 
 // Reuse the existing fictitious academic course; never change a personal course or an account.
 const subjectCode=process.argv[2]
-assert.equal(subjectCode,'OPT-HLM-LEN-4','Solo se admite la optativa revisada de cuarto')
-const read=p=>JSON.parse(readFileSync(p,'utf8')),qa=read('.wrangler/secondary-completion/social-4-context.json')
-const matrix=read('docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json')
+const grade={'OPT-HLM-LEN-4':4,'OPT-HLM-LEN-5':5}[subjectCode]
+assert(grade,'Solo se admiten las optativas HLM revisadas de cuarto y quinto')
+const read=p=>JSON.parse(readFileSync(p,'utf8')),qa=read(`.wrangler/secondary-completion/social-${grade}-context.json`)
+const matrix=read(`docs/curriculum/cobertura-secundaria/optative-hlm-len-${grade}-matriz.json`)
 assert.equal(qa.project,project);assert.equal(matrix.subjectCode,subjectCode);assert.equal(matrix.sourceVisualReview.status,'REVIEWED')
 assert.equal(matrix.verification.fullReview.pending,0)
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
@@ -16,7 +17,7 @@ const {prisma}=createRequire(new URL('../../apps/backend/package.json',import.me
 try{
  const original=await prisma.sectionSubject.findUniqueOrThrow({where:{id:qa.sectionSubjectId},include:{school:true,grade:{include:{academicLevel:true,defaultModality:true}},section:true}})
  assert.equal(original.schoolId,qa.schoolId);assert.match(original.school.name,/ficticio QA Development/)
- assert.equal(original.grade.sequence,4);assert.equal(original.grade.academicLevel.code,'secundario');assert.equal(original.grade.defaultModality.code,'academic')
+ assert.equal(original.grade.sequence,grade);assert.equal(original.grade.academicLevel.code,'secundario');assert.equal(original.grade.defaultModality.code,'academic')
  assert.equal(original.grade.schoolId,qa.schoolId);assert.equal(original.section.schoolId,qa.schoolId)
  const assignment=await prisma.$transaction(async tx=>{
   const subject=await tx.subject.findFirst({where:{schoolId:qa.schoolId,code:subjectCode}})??await tx.subject.create({data:{schoolId:qa.schoolId,code:subjectCode,name:matrix.subjectName}})
@@ -28,6 +29,6 @@ try{
   else await tx.sectionCurriculumContext.create({data:{sectionSubjectId:row.id,optativeExitName:matrix.optativeExitName}})
   return row
  })
- writeFileSync('.wrangler/secondary-completion/optative-hlm-len-4-context.json',JSON.stringify({...qa,grade:4,subjectCode,sectionSubjectId:assignment.id,modalityCode:'academic',optativeExitName:matrix.optativeExitName},null,2)+'\n')
- console.log(JSON.stringify({project,subjectCode,grade:4,existingCourseUnchanged:true,newAccounts:0,qaContextReady:true}))
+ writeFileSync(`.wrangler/secondary-completion/optative-hlm-len-${grade}-context.json`,JSON.stringify({...qa,grade,subjectCode,sectionSubjectId:assignment.id,modalityCode:'academic',optativeExitName:matrix.optativeExitName},null,2)+'\n')
+ console.log(JSON.stringify({project,subjectCode,grade,existingCourseUnchanged:true,newAccounts:0,qaContextReady:true}))
 }finally{await prisma.$disconnect()}

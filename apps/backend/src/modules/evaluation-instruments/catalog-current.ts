@@ -1,4 +1,5 @@
 import {optativeLanguageModules} from '@aula/shared'
+import {evaluationCatalogV124} from './catalog-v124'
 import {evaluationCatalogV123} from './catalog-v123'
 import {commonPhysicalModules} from '@aula/shared'
 import {commonFhrModules} from '@aula/shared'
@@ -150,7 +151,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.124',
+  version: 'evaluation-2026.125',
   optativeLanguageModules,
   fhrCommonModules:commonFhrModules,
   physicalCommonModules:commonPhysicalModules,
@@ -248,6 +249,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { optativeLanguageModules?:typeof optativeLanguageModules; fhrCommonModules?:typeof commonFhrModules; physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV124.version)return evaluationCatalogV124
   if(version===evaluationCatalogV123.version)return evaluationCatalogV123
   if(version===evaluationCatalogV122.version)return evaluationCatalogV122
   if(version===evaluationCatalogV121.version)return evaluationCatalogV121

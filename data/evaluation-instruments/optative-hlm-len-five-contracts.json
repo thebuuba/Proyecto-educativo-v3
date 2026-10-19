@@ -1,0 +1,647 @@
+{
+  "grade": 5,
+  "subjectCode": "OPT-HLM-LEN-5",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+  "cases": [
+    {
+      "id": "epopeya-epic-structure",
+      "genre": "epopeya",
+      "description": "Analiza únicamente la función, forma y estructura en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e03d029b-546e-5032-8edf-f93258cb502d"
+      ]
+    },
+    {
+      "id": "epopeya-public-deed",
+      "genre": "epopeya",
+      "description": "Analiza únicamente la hazaña pública en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f18d7917-6191-5213-8cf5-8a9bad944338"
+      ]
+    },
+    {
+      "id": "epopeya-protagonist-values",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los valores representados por el protagonista en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "481fed69-65ae-53ba-9406-013d1af214c9"
+      ]
+    },
+    {
+      "id": "epopeya-fantastic",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los seres y hechos fantásticos en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c31d069-24fc-5b43-864f-be72392382d4"
+      ]
+    },
+    {
+      "id": "epopeya-epic-themes",
+      "genre": "epopeya",
+      "description": "Analiza únicamente el tema expresamente trabajado en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "10335de6-6a2b-57d2-9f9f-3a95d98bccb6"
+      ]
+    },
+    {
+      "id": "epopeya-epic-sequences",
+      "genre": "epopeya",
+      "description": "Analiza únicamente las secuencias narrativas en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6fe23900-0f70-51f7-b7f2-3cc119832ed5"
+      ]
+    },
+    {
+      "id": "epopeya-epic-connectors",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los conectores en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "93caec2b-8e21-55d7-be4f-a79f9bdb653e"
+      ]
+    },
+    {
+      "id": "epopeya-markers",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los marcadores en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f2090cd9-0102-53d8-96d9-5316a686dadc"
+      ]
+    },
+    {
+      "id": "epopeya-narrative-tenses",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los tiempos verbales en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7fc4e967-decd-5f75-83f9-8ce1cfbfaeeb"
+      ]
+    },
+    {
+      "id": "epopeya-epic-adjectives",
+      "genre": "epopeya",
+      "description": "Analiza únicamente la adjetivación en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4f93c201-5c91-5d3b-9890-740ddc4f1479"
+      ]
+    },
+    {
+      "id": "epopeya-narrator",
+      "genre": "epopeya",
+      "description": "Analiza únicamente el narrador y las voces en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bd966b33-300b-5596-8e74-c6591577389e"
+      ]
+    },
+    {
+      "id": "epopeya-omniscient",
+      "genre": "epopeya",
+      "description": "Analiza únicamente el narrador omnisciente en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3909045f-fa90-5f9d-a9b3-b6e9734b0571"
+      ]
+    },
+    {
+      "id": "epopeya-novel-characters",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los personajes en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bcaefb96-ef3c-5319-a9f2-996a9961cc2b"
+      ]
+    },
+    {
+      "id": "epopeya-epic-actants",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los papeles actanciales en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c42e936a-7697-5a98-95b7-0ac1b1477d9d"
+      ]
+    },
+    {
+      "id": "epopeya-epic-figures",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los recursos literarios en la epopeya proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a072e834-726a-5a63-bc12-13c5e0abde3b"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-structure",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente la función y estructura en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ]
+    },
+    {
+      "id": "novela-policiaca-detective-characteristics",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente las características de la novela policíaca en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "31f434e5-cada-5f2a-9d09-31320f0bf6a6"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-sequences",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente las secuencias en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f52d3715-a015-5851-b676-4a0c71130a9e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-connectors",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente los conectores en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f9ac3b8a-a2bf-5929-88f4-3643ff567d7c"
+      ]
+    },
+    {
+      "id": "novela-policiaca-narrative-tenses",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente los tiempos verbales en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6209300-ab39-5ddd-b994-5b1f19ff658e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-adjectives",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente la adjetivación en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b92b30e9-f04b-5562-b7d7-30dd6956004e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-narrator",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente el narrador y las voces en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0b9cea32-cfde-55da-a966-5906872c65f4"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-characters",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente los personajes en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "82c81dbf-51d8-5a27-8e80-f6a89bd6a065"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-actants",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente los papeles actanciales en la novela policíaca proporcionada. No se pide escribir otro relato ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "85350eb6-20be-519b-b87d-f5f72e5f2e78"
+      ]
+    },
+    {
+      "id": "epic-listening",
+      "genre": "epopeya",
+      "description": "Escucha la epopeya proporcionada y distingue únicamente quién narra y qué personajes hablan en los pasajes señalados. No se pide escribir otra historia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3a72cead-417e-58a8-abca-0614e70e53cb"
+      ],
+      "required": "narrador|voces"
+    },
+    {
+      "id": "epic-listening-vocabulary",
+      "genre": "epopeya",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la epopeya escuchada a partir del contexto proporcionado. No se pide narrar ni escribir otra epopeya.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "df5d873a-1d88-5a8f-82b1-240a5af12f79"
+      ],
+      "required": "contexto|significado"
+    },
+    {
+      "id": "epic-listening-causes",
+      "genre": "epopeya",
+      "description": "Infiere las motivaciones y las relaciones causales entre las acciones de los personajes de la epopeya escuchada, a partir de los pasajes dados. No se pide crear otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cb31435d-6c4d-5f3d-9d5c-1854e12d082b"
+      ],
+      "required": "motiv|causal"
+    },
+    {
+      "id": "epic-oral-narration",
+      "genre": "epopeya",
+      "description": "Narra oralmente la epopeya ficticia según el plan dado, enlazando sus sucesos y describiendo a los personajes. No se pide un análisis escrito.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "7ecc93b3-eb74-566f-b70a-cfe0ab21296c"
+      ],
+      "required": "acciones|sucesos"
+    },
+    {
+      "id": "epic-oral-connectors",
+      "genre": "epopeya",
+      "description": "Narra oralmente la epopeya ficticia utilizando conectores causales y de orden para relacionar sus episodios. No se pide escribir otra versión.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "50823c61-59f4-5d91-bba2-13c53b45cd9a"
+      ],
+      "required": "conectores"
+    },
+    {
+      "id": "epic-reading-prediction",
+      "genre": "epopeya",
+      "description": "Anticipa el contenido de la epopeya a partir del título dado y comprueba la predicción después de leerla. No se pide componer otra epopeya.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1d78e5b7-a6ab-53f7-a7ec-a0b9ee31f750"
+      ],
+      "required": "predicción"
+    },
+    {
+      "id": "epic-reading-motives",
+      "genre": "epopeya",
+      "description": "Infiere únicamente las motivaciones de los personajes de la epopeya proporcionada con apoyo en sus acciones. No se pide crear otro relato.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e57c4f2a-fc4a-5eba-8d60-a2f39285638e"
+      ],
+      "required": "motiv"
+    },
+    {
+      "id": "epic-reading-summary",
+      "genre": "epopeya",
+      "description": "Resume por escrito las acciones principales de la epopeya leída con tus propias palabras. No se pide inventar hechos ni copiar el texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b2048c1d-4492-53e0-a205-73e83de6987e"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "epic-writing-plan",
+      "genre": "epopeya",
+      "description": "Planifica una epopeya ficticia: sucesos, personajes, lugar y tiempo, en verso o prosa a tu elección. No se pide redactarla ni publicarla todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+      ],
+      "required": "plan|previst"
+    },
+    {
+      "id": "epic-draft-revision",
+      "genre": "epopeya",
+      "description": "Revisa el borrador de epopeya proporcionado y muestra los cambios que resuelven los problemas de secuencia y puntuación señalados. No se pide ilustración ni publicación.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "668a2105-b546-58e6-ac45-912364da9dbc"
+      ],
+      "required": "borrador|revisión"
+    },
+    {
+      "id": "novel-listening",
+      "genre": "novela-policiaca",
+      "description": "Escucha el fragmento de novela policíaca y distingue únicamente quién narra y qué personajes hablan en los pasajes señalados. No se pide escribir ni narrar otra historia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e7bb387b-cee5-5699-96b5-369e91e793ab"
+      ],
+      "required": "narrador|voces"
+    },
+    {
+      "id": "novel-listening-inference",
+      "genre": "novela-policiaca",
+      "description": "Infiere el tema y las motivaciones de los personajes de la novela policíaca escuchada, apoyándote en los pasajes dados. No se pide escribir otra novela.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d131306f-9eb7-5ab4-b089-fe559054249e"
+      ],
+      "required": "tema|motiv"
+    },
+    {
+      "id": "novel-oral-hypotheses",
+      "genre": "novela-policiaca",
+      "description": "Narra oralmente una novela policíaca ficticia con hipótesis falsas y una verdadera, distribuyendo las pistas según el plan proporcionado. No se pide investigar un delito real.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+      ],
+      "required": "hipótesis|pistas"
+    },
+    {
+      "id": "novel-oral-actants",
+      "genre": "novela-policiaca",
+      "description": "Narra oralmente la novela policíaca ficticia, diferenciando los papeles actanciales de sus personajes y enlazando los sucesos con conectores causales. No se pide un análisis escrito.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "727a6345-5b84-5576-b04d-0978c7d6c362"
+      ],
+      "required": "actancial|actancia"
+    },
+    {
+      "id": "novel-reading-prediction",
+      "genre": "novela-policiaca",
+      "description": "Anticipa el contenido de la novela policíaca únicamente a partir del título dado y explica los indicios de tu predicción. No se pide comprobarla todavía.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1d44c6cf-b825-5ff2-b79d-8e5c811ccd54"
+      ],
+      "required": "predicción|indicio"
+    },
+    {
+      "id": "novel-reading-paraphrase",
+      "genre": "novela-policiaca",
+      "description": "Parafrasea las acciones principales de la novela policíaca leída con tus propias palabras. No se pide crear otro relato.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "aa9eec50-3ced-5b01-b1c5-84de073cc8c2"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "novel-writing-plan",
+      "genre": "novela-policiaca",
+      "description": "Planifica una novela policíaca ficticia: sucesos, personajes, lugar y tiempo del caso dado. No se pide redactar los capítulos ni publicarlos todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6473e9cf-3620-50d8-a895-fddae392cb09"
+      ],
+      "required": "plan|previst"
+    },
+    {
+      "id": "novel-writing-voices",
+      "genre": "novela-policiaca",
+      "description": "Escribe el fragmento de novela policíaca solicitado, con diálogos en estilo directo y voces diferenciadas. No se pide plan, ilustración ni publicación.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "1db2098b-8093-5813-bf63-cff6e98caaf2"
+      ],
+      "required": "diálogo|voces"
+    },
+    {
+      "id": "novel-writing-suspense",
+      "genre": "novela-policiaca",
+      "description": "Escribe el fragmento de novela policíaca solicitado, utilizando descripciones para crear suspense y pasado en la narración. No se pide publicación ni ilustración.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f53be5d9-b6ec-5457-8b96-bad71568bc34"
+      ],
+      "required": "suspense|suspenso"
+    },
+    {
+      "id": "novel-draft-revision",
+      "genre": "novela-policiaca",
+      "description": "Revisa el borrador de novela policíaca proporcionado y muestra los cambios de secuencia y puntuación pedidos. No se pide publicar ni ilustrar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "af47bf5b-1031-51c0-85e3-c7c2641e0016"
+      ],
+      "required": "borrador|revisión"
+    },
+    {
+      "id": "epic-brief",
+      "genre": "epopeya",
+      "description": "Analiza la epopeya proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a814598d-fedf-527e-82b8-a2f4de48967a"
+      ]
+    },
+    {
+      "id": "novel-brief",
+      "genre": "novela-policiaca",
+      "description": "Analiza la novela policíaca proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "99d05567-92a8-5657-89d1-51adcd59def4"
+      ]
+    },
+    {
+      "id": "epic-prose-or-verse",
+      "genre": "epopeya",
+      "description": "Escribe una epopeya breve en verso o prosa, a tu elección, sobre el caso ficticio dado. No se piden ambas formas, rima ni métrica concreta.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+      ],
+      "required": "verso.*o.*prosa",
+      "forbidden": "rima|métrica"
+    },
+    {
+      "id": "epic-figures-only",
+      "genre": "epopeya",
+      "description": "Identifica únicamente la prosopografía y la exageración en la epopeya proporcionada. No se piden otros recursos ni explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a072e834-726a-5a63-bc12-13c5e0abde3b"
+      ],
+      "required": "prosopografía|exageración",
+      "forbidden": "[Ee]xplica|función"
+    },
+    {
+      "id": "epic-omniscient-only",
+      "genre": "epopeya",
+      "description": "Analiza únicamente el narrador omnisciente de la epopeya proporcionada. No se pide estudiar personajes, tema ni otras voces.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3909045f-fa90-5f9d-a9b3-b6e9734b0571"
+      ],
+      "required": "omnisciente"
+    },
+    {
+      "id": "epic-negative-positive",
+      "genre": "epopeya",
+      "description": "Sin recitar ni publicar, pero analiza únicamente la prosopografía en la epopeya dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a072e834-726a-5a63-bc12-13c5e0abde3b"
+      ],
+      "required": "prosopografía"
+    },
+    {
+      "id": "epic-values-no-adherence",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los valores representados por el protagonista de la epopeya proporcionada. No se evalúan tus creencias ni tu adhesión a esos valores.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "481fed69-65ae-53ba-9406-013d1af214c9"
+      ],
+      "required": "valores",
+      "forbidden": "demuestra fe|valores personales"
+    },
+    {
+      "id": "epic-revision-spelling-only",
+      "genre": "epopeya",
+      "description": "Corrige únicamente la ortografía del borrador de epopeya proporcionado y presenta los cambios. No se pide publicar ni recitar ni analizar figuras.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "668a2105-b546-58e6-ac45-912364da9dbc"
+      ],
+      "required": "ortogr",
+      "forbidden": "contenido|organización"
+    },
+    {
+      "id": "epic-group-natural",
+      "genre": "epopeya",
+      "description": "En parejas, los estudiantes narrarán oralmente la epopeya ficticia según el plan proporcionado. No se pide recitar versos ni memorizar.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "7ecc93b3-eb74-566f-b70a-cfe0ab21296c"
+      ]
+    },
+    {
+      "id": "epic-individual-natural",
+      "genre": "epopeya",
+      "description": "De manera individual, el estudiante escribirá una epopeya breve del caso ficticio dado. No se pide trabajar en grupo ni ilustrarla ni publicarla.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+      ]
+    },
+    {
+      "id": "epic-comparison",
+      "genre": "epopeya",
+      "description": "Compara únicamente la estructura de las dos epopeyas proporcionadas, apoyándote en sus episodios. No se pide escribir otra epopeya.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "e03d029b-546e-5032-8edf-f93258cb502d"
+      ],
+      "required": "estructura"
+    },
+    {
+      "id": "novel-comparison",
+      "genre": "novela-policiaca",
+      "description": "Compara únicamente los narradores de las dos novelas policíacas proporcionadas. No se pide comparar trama, personajes ni ambiente.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "0b9cea32-cfde-55da-a966-5906872c65f4"
+      ],
+      "required": "narrador"
+    },
+    {
+      "id": "novel-clues-only",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente cómo las pistas orientan las decisiones del investigador en el fragmento de novela policíaca proporcionado. No se pide escribir otra novela ni inventar hipótesis.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+      ],
+      "required": "pistas|investigador"
+    },
+    {
+      "id": "novel-hypotheses-only",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente las hipótesis del investigador en la novela policíaca proporcionada, distinguiendo las que se descartan y la que respaldan los hechos disponibles. No se pide una novela nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+      ],
+      "required": "hipótesis"
+    },
+    {
+      "id": "novel-sequences-alternative",
+      "genre": "novela-policiaca",
+      "description": "Identifica únicamente una secuencia narrativa o argumentativa en la novela policíaca, a tu elección. No se piden las dos ni una secuencia descriptiva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f52d3715-a015-5851-b676-4a0c71130a9e"
+      ],
+      "required": "narrativa.*o.*argumentativa",
+      "forbidden": "descriptiva"
+    },
+    {
+      "id": "novel-suspense-no-new-case",
+      "genre": "novela-policiaca",
+      "description": "Analiza únicamente los recursos descriptivos de suspense en el fragmento de novela policíaca proporcionado. No se pide resolver el crimen ni escribir otro relato.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f53be5d9-b6ec-5457-8b96-bad71568bc34"
+      ],
+      "required": "suspense|suspenso"
+    },
+    {
+      "id": "novel-writing-result",
+      "genre": "novela-policiaca",
+      "description": "Escribe una novela policíaca breve del caso ficticio dado, enlazando los sucesos y las acciones de los personajes. No se pide plan ni ilustración ni publicación.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6473e9cf-3620-50d8-a895-fddae392cb09"
+      ]
+    },
+    {
+      "id": "novel-telling-cuenta",
+      "genre": "novela-policiaca",
+      "description": "Cuenta oralmente la novela policíaca ficticia según el plan dado. No se pide un análisis escrito.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+      ]
+    },
+    {
+      "id": "novel-revision-spelling-only",
+      "genre": "novela-policiaca",
+      "description": "Corrige únicamente la ortografía del borrador de novela policíaca y presenta los cambios. No se pide escribir otro relato.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "af47bf5b-1031-51c0-85e3-c7c2641e0016"
+      ],
+      "required": "ortogr",
+      "forbidden": "contenido|organización"
+    },
+    {
+      "id": "novel-independent-products",
+      "genre": "novela-policiaca",
+      "description": "Analiza los personajes de la novela policíaca dada. Luego escribe otra novela policíaca breve del caso ficticio dado. No se pide publicación.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "82c81dbf-51d8-5a27-8e80-f6a89bd6a065"
+      ]
+    },
+    {
+      "id": "epic-protagonist-only",
+      "genre": "epopeya",
+      "description": "Analiza únicamente el protagonista de la epopeya proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "481fed69-65ae-53ba-9406-013d1af214c9"
+      ],
+      "required": "protagonista",
+      "forbidden": "valores"
+    },
+    {
+      "id": "epic-fantastic-beings-only",
+      "genre": "epopeya",
+      "description": "Analiza únicamente los seres fantásticos de la epopeya proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c31d069-24fc-5b43-864f-be72392382d4"
+      ],
+      "required": "seres fantásticos",
+      "forbidden": "hechos fantásticos"
+    }
+  ]
+}

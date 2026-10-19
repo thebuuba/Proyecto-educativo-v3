@@ -1,0 +1,2036 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 5,
+  "subjectCode": "OPT-HLM-LEN-5",
+  "subjectName": "Apreciación y Producción Literarias",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+  "pdfPages": [
+    432,
+    433,
+    434,
+    435,
+    436
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pdfPages": [
+      432,
+      433,
+      434,
+      435,
+      436
+    ],
+    "evidence": {
+      "scopeId": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+      "pages": [
+        {
+          "number": 432,
+          "printed": 431,
+          "imageSha256": "2b129e878fdb51b0b8ce9ffd67927c0c93fbaa6c7978667422bb59fd3fbc7e52"
+        },
+        {
+          "number": 433,
+          "printed": 432,
+          "imageSha256": "58be1487354c811b787f6b561db56fba6fab4e6450718c67a436fa94089630e8"
+        },
+        {
+          "number": 434,
+          "printed": 433,
+          "imageSha256": "d8f59609a8f6f7879372b318409f74f0f3c0ed2af980ed31eb8f696d70f507bb"
+        },
+        {
+          "number": 435,
+          "printed": 434,
+          "imageSha256": "ad7521c00455933f77eb6a1081a7564f1b1aa5ab720ddee3ff408654bf7895c1"
+        },
+        {
+          "number": 436,
+          "printed": 435,
+          "imageSha256": "22b4b3bff5e1332a331ec5a797cd8d83d652709222d7dea842285f0171e15110"
+        }
+      ],
+      "counts": {
+        "SPECIFIC_COMPETENCY": 7,
+        "FUNDAMENTAL_COMPETENCY": 7,
+        "CONCEPT": 27,
+        "PROCEDURE": 27,
+        "ATTITUDE_VALUE": 13,
+        "ACHIEVEMENT_INDICATOR": 21
+      },
+      "fragment": [
+        {
+          "id": "1f02f58e-0d62-52af-b579-ab38d1028341",
+          "text": "• fantásticos."
+        }
+      ],
+      "visualReview": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS",
+      "implemented": false,
+      "remoteWrites": false
+    },
+    "pages": [
+      432,
+      433,
+      434,
+      435,
+      436
+    ]
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+  "provider": "packages/shared/src/secondary-optative-language.ts",
+  "providerCatalog": "evaluation-2026.125",
+  "officialRecords": [
+    {
+      "id": "f660c6b7-2df7-54c2-a5ee-b2e774c08b95",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica a través de producciones literarias especiales, en situaciones diversas, demostrando\nconocimiento y uso creativo de esos modelos textuales, así como de los autores que los produjeron,\nmediante el uso de recursos tecnológicos variados, entre otros.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "7832900c-c7a8-5365-bd89-191f7f1dd8bc",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "27c4a70c-8190-539a-aec6-a6b4a6d7e855",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Utiliza textos narrativos y poéticos específicos en la apreciación y producción literarias, para abordar\ntemas sociales de la realidad, creando nuevos conocimientos a través de la imaginación.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "07d27576-a77f-503a-8104-e544291ec930",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y\nCrítico",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "49777c94-e936-5dcb-9ef4-4238838ddb11",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Define temas y problemas de su vida estudiantil, familiar y social, a través de una producción literaria\ndeterminada, como punto de partida para aportar posibles soluciones.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "22173aa6-e8ff-5e52-bf68-44ff6507ea61",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "341b8a4e-d49d-586d-8e64-8b57145bd4e9",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Crea nuevas relaciones sociales en entornos diversos, mediante producciones literarias específicas,\nvalorando hechos y tradiciones históricas.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "1012b8c4-5466-5778-8e3f-f8933b34eb78",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "690a4e26-aedc-59d9-922f-abda31042879",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Muestra conocimientos de procesos investigativos científicos y del uso de tecnologías, a partir de textos\nliterarios seleccionados, según necesidades contextuales.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "08ed2447-264a-565d-8d57-728cf8b41747",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "b199beda-6cec-544f-8318-3678777bdbb8",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Evidencia experiencias sobre situaciones de salud, medioambiente y comunidad, mediante la apreciación\ny producción de géneros literarios especiales, tales como epopeyas y novelas policíacas.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "109ccc6c-9238-56bb-8d32-b8e64d279e3d",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "12f7c867-9c76-561e-a8b7-2566d41a1f36",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Promueve valores universales a través de producciones literarias, tales como epopeyas y novelas\npolicíacas, para la comprensión de su persona y la de los demás, expresando su percepción de la realidad.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "5efb2402-2b4e-5fb1-a027-40afdac5b4a8",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "a814598d-fedf-527e-82b8-a2f4de48967a",
+      "type": "CONCEPT",
+      "text": "La epopeya",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "e03d029b-546e-5032-8edf-f93258cb502d",
+      "type": "CONCEPT",
+      "text": "• Función, forma, estructura, división",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "b18e2599-0520-55b9-9006-121e5641f07f",
+      "type": "CONCEPT",
+      "text": "• Componentes",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "f18d7917-6191-5213-8cf5-8a9bad944338",
+      "type": "CONCEPT",
+      "text": "• Hazaña pública",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "481fed69-65ae-53ba-9406-013d1af214c9",
+      "type": "CONCEPT",
+      "text": "• El protagonista: los valores",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "6c31d069-24fc-5b43-864f-be72392382d4",
+      "type": "CONCEPT",
+      "text": "• Seres fantásticos y hechos",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "10335de6-6a2b-57d2-9f9f-3a95d98bccb6",
+      "type": "CONCEPT",
+      "text": "• Temáticas: viajes o guerras",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "6fe23900-0f70-51f7-b7f2-3cc119832ed5",
+      "type": "CONCEPT",
+      "text": "• Secuencias narrativas",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "93caec2b-8e21-55d7-be4f-a79f9bdb653e",
+      "type": "CONCEPT",
+      "text": "• Conectores temporales, causales,\nconsecutivos, de orden",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "f2090cd9-0102-53d8-96d9-5316a686dadc",
+      "type": "CONCEPT",
+      "text": "• Marcadores espaciales, interactivos",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "7fc4e967-decd-5f75-83f9-8ce1cfbfaeeb",
+      "type": "CONCEPT",
+      "text": "• Verbos en pasado y presente",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "4f93c201-5c91-5d3b-9890-740ddc4f1479",
+      "type": "CONCEPT",
+      "text": "• Adjetivos",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "bd966b33-300b-5596-8e74-c6591577389e",
+      "type": "CONCEPT",
+      "text": "• Narrador y personajes",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "3909045f-fa90-5f9d-a9b3-b6e9734b0571",
+      "type": "CONCEPT",
+      "text": "• Narrador omnisciente",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "bcaefb96-ef3c-5319-a9f2-996a9961cc2b",
+      "type": "CONCEPT",
+      "text": "• Los personajes: principal,\nsecundarios, protagonista,\nantagonista.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "c42e936a-7697-5a98-95b7-0ac1b1477d9d",
+      "type": "CONCEPT",
+      "text": "• Los actantes: tipos",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "a072e834-726a-5a63-bc12-13c5e0abde3b",
+      "type": "CONCEPT",
+      "text": "• Figuras literarias: prosopografía,\nretrato, exageración",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "99d05567-92a8-5657-89d1-51adcd59def4",
+      "type": "CONCEPT",
+      "text": "• La novela policíaca",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "0a5e85ad-f6b6-5f78-bbef-775511302be0",
+      "type": "CONCEPT",
+      "text": "• Función y estructura",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "91196b94-790b-5064-8a0e-0a8ff1d7bf46",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "3a72cead-417e-58a8-abca-0614e70e53cb",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de epopeyas clásicas acordes\ncon sus intereses; anticipación del contenido\nde la epopeya a partir del título y otras marcas\ntextuales: utilización de la estructura de la epopeya\n(invocación a las musas, exposición, desarrollo,\nepisodios y desenlace), de los verbos en pasado\ny presente, de los adjetivos, de la distinción entre\nnarrador y personajes, la clasificación de los\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "df5d873a-1d88-5a8f-82b1-240a5af12f79",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la epopeya\nque escucha, el significado de las palabras cuyo\nsignificado desconoce, a partir del contexto.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "cb31435d-6c4d-5f3d-9d5c-1854e12d082b",
+      "type": "PROCEDURE",
+      "text": "• Identificación de las acciones realizadas por los\npersonajes de la epopeya e inferencias sobre la\nrelación de causalidad entre ellas, las motivaciones\ne intenciones de las acciones de los personajes;\nparáfrasis de las acciones principales de la epopeya,\nusando el vocabulario apropiado mediante\nsinónimos y otros recursos, resumen el contenido\nglobal de la epopeya.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "1c36c55d-3069-56b9-b8df-b947d4f3ef0d",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "7ecc93b3-eb74-566f-b70a-cfe0ab21296c",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla epopeya; selección del o los sucesos, el lugar y\nel tiempo adecuados a la intención de la historia\nque va a narrar; descripción de los personajes de la\nepopeya, utilizando adjetivos que los caractericen;\norganización cronológica de los sucesos en la\nepopeya.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "97855ab8-88f0-5c4d-9b39-5e9d9ab41498",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al escuchar epopeyas.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "00341161-5a25-5d06-b60c-a41f5075b8e0",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la\nlengua.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "978a3180-77e4-5f30-8117-3b2ee43ed502",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés y curiosidad por realizar predicciones de\nepopeyas que escucha.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "70ee210c-e938-528a-b8b7-5d3155be09e7",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la importancia de reconocer los\nsentimiento y motivaciones de los personajes.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "6db3bc88-6c47-526b-b377-c3cc6270efc5",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al leer epopeyas de diversos autores.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "7554c8e9-0bc6-5612-839e-59f8918f5944",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Creatividad e imaginación al escribir epopeyas con\npersonajes y hechos.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "1f02f58e-0d62-52af-b579-ab38d1028341",
+      "type": "ATTITUDE_VALUE",
+      "text": "• fantásticos.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "9bf08b9a-b037-5c97-bd1d-d758248f7f50",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la función lúdica y estética de la\nlengua.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "c6958a3b-ce75-512b-907c-245d3bf774b0",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés y curiosidad por realizar predicciones de\nnovelas policíacas que escucha.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "a5fcec8f-9f59-57ad-8210-3489cd2a465f",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la importancia de reconocer los\nsentimientos y motivaciones de los personajes.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "541adde7-e30d-5591-92de-f8abbfa215ca",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración del sentido de justicia expresado en la\nnovela policíaca.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "cb9b1e40-136d-5cc4-a035-36ab22f54eb1",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al leer novelas policíacas de diversos\nautores.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "800803d7-7c3d-565b-b368-d0dfcdf82681",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Creatividad e imaginación al escribir novelas e\nilustrarlas.",
+      "pdfPage": 432,
+      "printedPage": "431"
+    },
+    {
+      "id": "31f434e5-cada-5f2a-9d09-31320f0bf6a6",
+      "type": "CONCEPT",
+      "text": "• Características",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "f52d3715-a015-5851-b676-4a0c71130a9e",
+      "type": "CONCEPT",
+      "text": "• Secuencias narrativas, descriptivas y\nargumentativas.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "f9ac3b8a-a2bf-5929-88f4-3643ff567d7c",
+      "type": "CONCEPT",
+      "text": "• Conectores temporales,\ncausales, espaciales, contrastivos,\ndistributivos, causales y\nconsecutivos.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "f6209300-ab39-5ddd-b994-5b1f19ff658e",
+      "type": "CONCEPT",
+      "text": "• Verbos en pasado y en presente",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "b92b30e9-f04b-5562-b7d7-30dd6956004e",
+      "type": "CONCEPT",
+      "text": "• Los adjetivos",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "0b9cea32-cfde-55da-a966-5906872c65f4",
+      "type": "CONCEPT",
+      "text": "• El narrador: tipos",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "82c81dbf-51d8-5a27-8e80-f6a89bd6a065",
+      "type": "CONCEPT",
+      "text": "• Los personajes",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "85350eb6-20be-519b-b87d-f5f72e5f2e78",
+      "type": "CONCEPT",
+      "text": "• Los actantes",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "50823c61-59f4-5d91-bba2-13c53b45cd9a",
+      "type": "PROCEDURE",
+      "text": "• Utilización y clasificación de los personajes para dar\nvida a estos; uso de conectores causales, de orden\ny continuidad para dar coherencia y cohesión al\nesquema, vocabulario apropiado en función de\nla intención comunicativa y de los interlocutores,\nmarcas de inicio, progresión y cierre en el esquema\nde la epopeya.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "176e9070-d943-5f25-bf69-30537d48ff8e",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "1d78e5b7-a6ab-53f7-a7ec-a0b9ee31f750",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura\nde la epopeya; anticipación del contenido de la\nepopeya a partir del título, las imágenes y otras\nmarcas textuales; utilización de la estructura de\nla epopeya (invocación a las musas, exposición,\ndesarrollo, episodios y desenlace), de los verbos en\npasado y presente, de los adjetivos, de la distinción\nentre narrador y personajes y de las fórmulas de\ninicio y de cierre, para comprender su contenido:\nidentificación de las distintas voces (narrador y\npersonajes) que intervienen en la epopeya, para su\ncomprensión; identificación y clasificación de los\npersonajes para la comprensión de sus acciones.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "e57c4f2a-fc4a-5eba-8d60-a2f39285638e",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido de la epopeya que lee; el\nsignificado de las palabras que desconoce, a partir\ndel contexto, de las motivaciones e intenciones de\nlas acciones de los personajes.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "b2048c1d-4492-53e0-a205-73e83de6987e",
+      "type": "PROCEDURE",
+      "text": "• Paráfrasis de las acciones principales de la\nepopeya, usando el vocabulario apropiado y\nmediante sinónimos y otros recursos; resumen del\ncontenido global de la epopeya",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "6ce926db-58dd-52e9-8a42-a65c65e0aa29",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa\nde la epopeya que se escribirá colectivamente;\nselección de la forma que se usará: verso o prosa;\nselección del o los sucesos, los personajes, el\nlugar, las acciones y el tiempo; descripción de\nlos personajes y ambiente en los diferentes\nmomentos; utilización de fórmulas de inicio y de\ncierre de los capítulos, adjetivos para describir a los\npersonajes de la epopeya que produce; inclusión\nde diálogos en estilo directo; vocabulario en\nfunción de la intención comunicativa de los\ninterlocutores; organización cronológica de los\nsucesos del capítulo y utilización del tiempo\nverbal pasado para narrar las acciones de los\npersonajes y el presente para escribir los diálogos;\nelementos descriptivos para caracterizar los\npersonajes, los ambientes y las acciones en la\nnarración; signos de puntuación (coma, punto,\ndos puntos, raya) para segmentar y organizar el\nescrito.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "668a2105-b546-58e6-ac45-912364da9dbc",
+      "type": "PROCEDURE",
+      "text": "• Escritura del o los borradores del capítulo\najustándose a la intención, los elementos\nseleccionados y la estructura (inicio, nudo\ny desenlace); revisión y corrección del o\nlos borradores con ayuda del docente y los\ncompañeros; edición, ilustración y publicación de\nla epopeya.",
+      "pdfPage": 433,
+      "printedPage": "432"
+    },
+    {
+      "id": "da24f17d-86b5-5578-843b-34eaa0cad199",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "e7bb387b-cee5-5699-96b5-369e91e793ab",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de novelas policíacas acordes con\nla edad e intereses; anticipación del contenido\nde la novela policíaca a partir del título y otras\nmarcas textuales; utilización de la estructura de la\nnovela (inicio, nudo y desenlace), de los verbos en\npasado y presente, de los adjetivos, de la distinción\nentre narrador y personajes, la clasificación de los\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido.",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "d131306f-9eb7-5ab4-b089-fe559054249e",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela que\nescucha; el significado de las palabras desconocidas,\na partir del contexto; las motivaciones e intenciones\nde las acciones de los personajes y la relación de\ncausalidad entre ellas; los temas tratados en la\nnovela. Paráfrasis de las acciones principales de la\nnovela, usando el vocabulario apropiado mediante\nsinónimos y otros recursos.",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "d9e1c80a-041c-5748-89c0-3d8b7f1e5780",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "e5e0a1fc-b960-5f09-a7a1-963de926a531",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla novela policíaca; selección del o los sucesos,\nlos personajes, el lugar y el tiempo adecuados a\nla intención de la historia que va a narrar, el punto\nde vista o voz narrativa en la novela; estudio\ndel crimen y elaboración de varias hipótesis\nfalsas y una verdadera que explique lo sucedido;\norganización de las hipótesis en la trama de la\nnovela y distribución cronológica de los sucesos;\ndescripción de los personajes con vocabulario\napropiado, utilizando adjetivos que los caractericen.",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "727a6345-5b84-5576-b04d-0978c7d6c362",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la clasificación y actancia de los\npersonajes para dar vida a estos, conectores\ncausales, de orden y continuidad para dar\ncoherencia y cohesión al esquema de la novela;\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores; marcas de\ninicio, progresión y cierre en la trama de la novela\npolicíaca.",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "ac0e375a-1ea4-5699-8347-c25254a3dcd6",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "1d44c6cf-b825-5ff2-b79d-8e5c811ccd54",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura\nde la novela policíaca; anticipación del contenido\nde la novela a partir del título, las Imágenes y otras\nmarcas textuales; utilización de la estructura de la\nnovela policíaca (inicio, nudo y desenlace), de los\nconectores, de los verbos en pasado y presente,\nde los adjetivos, de la distinción entre narrador y\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido; caracterización\ny clasificación de los personajes y su actancia\npara comprender sus acciones; identificación de\nlas distintas voces (narrador y personajes) que\nintervienen, para su comprensión.",
+      "pdfPage": 434,
+      "printedPage": "433"
+    },
+    {
+      "id": "aa9eec50-3ced-5b01-b1c5-84de073cc8c2",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido de la novela policíaca\nque lee; así como, sobre el significado de las\npalabras desconocidas, a partir del contexto, las\nmotivaciones e intenciones de las acciones de\nlos personajes, los temas tratados en la novela;\nparáfrasis de las acciones principales de la novela,\nusando el vocabulario mediante sinónimos y\notros recursos.\nProducción escrita (escribir)",
+      "pdfPage": 435,
+      "printedPage": "434"
+    },
+    {
+      "id": "6473e9cf-3620-50d8-a895-fddae392cb09",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa\nde la novela policíaca que se escribirá\ncolectivamente; selección del o los sucesos, los\npersonajes, el lugar, las acciones y el tiempo;\ndescripción del ambiente de la novela en los\ndiferentes momentos y con el vocabulario\napropiado.",
+      "pdfPage": 435,
+      "printedPage": "434"
+    },
+    {
+      "id": "1db2098b-8093-5813-bf63-cff6e98caaf2",
+      "type": "PROCEDURE",
+      "text": "• Utilización de fórmulas de inicio y de cierre de los\ncapítulos, adjetivos para describir a los personajes\nde la novela policíaca que produce, inclusión\nde diálogos de los personajes que escribe en\nestilo directo, utilización de distintas voces\n(narrador y personajes) en la novela que escribe,\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores.",
+      "pdfPage": 435,
+      "printedPage": "434"
+    },
+    {
+      "id": "f53be5d9-b6ec-5457-8b96-bad71568bc34",
+      "type": "PROCEDURE",
+      "text": "• Organización cronológica de los sucesos y\nutilización del tiempo verbal pasado para narrar\nlas acciones y el tiempo verbal presente para\nescribir los diálogos; elementos descriptivos para\ncrear suspenso en la narración, los signos de\npuntuación (coma, punto, dos puntos, raya) para\nsegmentar y organizar el escrito.",
+      "pdfPage": 435,
+      "printedPage": "434"
+    },
+    {
+      "id": "af47bf5b-1031-51c0-85e3-c7c2641e0016",
+      "type": "PROCEDURE",
+      "text": "• Escritura de borradores de la novela ajustándose\na la intención, los elementos seleccionados y la\nestructura (inicio, nudo y desenlace); revisión y\ncorrección del o los borradores con apoyo del\ndocente y compañeros; edición, ilustración y\npublicación de la novela policíaca.",
+      "pdfPage": 435,
+      "printedPage": "434"
+    },
+    {
+      "id": "99ae990c-3836-52fc-be22-df8a2051dae5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra habilidades comunicativas a partir de textos literarios seleccionados y sus intencionalidades, para el\ndesenvolvimiento en situaciones de comunicación, haciendo uso de tecnologías, así como otros medios y recursos.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "4b4ac0d4-fe88-5d55-af08-c606537f204f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea producciones literarias dirigidas, en la comunicación entre compañeros de clase, familiares y sociedad en general,\nusando de manera responsable variadas herramientas tecnológicas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "5368e9c4-432f-5e3f-ac86-22cebcb285c3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios seleccionados, para comunicarse en situaciones locales, nacionales y del mundo, evidenciando sus\npensamientos, sentimientos, propuestas y acciones.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "e71be88a-6eeb-5c02-a5e4-adb6820ffd13",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa producciones narrativas y poéticas específicas, sobre temas sociales del contexto local y nacional, demostrando dominio\ninferencial en sus manifestaciones.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "29ae44f0-7c19-5a4d-9660-06589363aa2f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Evidencia habilidades inferenciales, derivadas de la apreciación y producción de textos literarios específicos, tomando en\ncuenta temas del entorno escolar, familiar, comunitario, nacional y del mundo, para promover nuevos conocimientos.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "21df7de6-cf09-501f-91db-5b7838cb876a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Maneja informaciones de textos narrativos y poéticos específicos que apoyan los juicios y puntos de vista del pensamiento\nestructurado, según las conclusiones y respetando las posiciones ajenas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "05c6c8a3-97a3-58b1-a294-e92fe6d728cc",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Conoce problemas relacionados con su vida social, a través de textos literarios determinados, para su comprensión y búsqueda\nde posibles soluciones.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "49a9edc7-23e1-5798-818c-967b276984ff",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios definidos con informaciones que apoyan la solución de problemas de su entorno comunitario y fuera\nde mismo.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "27df5d3c-cd82-5d5c-bd51-0523b6f1161d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa textos como epopeyas y novelas policíacas, para la presentación de conclusiones y recomendaciones de estudios\nrealizados, que proponen posibles soluciones de problemas de la comunidad.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "ac6e71b4-b031-58fd-9f8c-31d0c3749a56",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Define nuevas relaciones culturales en ámbitos diversos, mediante textos literarios, tales como epopeyas y novelas policíacas,\nen valoración de lo natural y social.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "521db538-7075-533f-a1c0-b40d1098782b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve prácticas de ciudadanía con mayor profundidad en el entorno local, nacional e internacional, comparándolas con\nvalores universales, a través producciones literarias especificadas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "44c4f072-db36-5554-a21f-01d5d69530c5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza textos literarios seleccionados en la elaboración de proyectos que apoyan y valoran las prácticas ciudadanas y la\nsolución de los problemas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "2727b74b-e427-5607-a520-752209e767fb",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Caracteriza investigaciones sobre temas comunitarios, haciendo uso de textos literarios como epopeyas y novelas policíacas y a\ntravés de herramientas tecnológicas, en demostración de conocimientos y destrezas lingüísticas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "6cf6566d-4ffa-506e-8957-741e6bb67fa6",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presenta, mediante textos literarios seleccionados, hallazgos científicos, sociales y tecnológicos, evidenciando conocimiento\ninvestigativo.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "c9d5c1a8-7cd6-51f0-b7e3-0798d3c72390",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza textos literarios sugeridos para la publicación de investigaciones del ámbito escolar y comunitario, apoyándose en\nmedios y recursos variados, en demostración de conocimiento investigativo y habilidades en el uso de la lengua.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "d4201d91-dfbe-5cf9-8229-d36e2355388d",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea textos literarios como epopeyas y novelas policíacas, para caracterizar temas o problemas sobre salud, medioambiente,\nalimentación, entre otros que afectan la comunidad, proponiendo soluciones.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "834ad3bd-5d2f-5fb8-b77e-3d0f9204f873",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos literarios especiales para promover temas y problemas de salud, ambiente, alimentación, aportando soluciones\npertinentes.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "b0690584-fa3a-5284-b69c-15703ed13e9e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Valora el buen comportamiento, para la puesta en práctica de acciones sobre preservación de la salud, el cuidado de recursos\nnaturales, mediante textos literarios seleccionados.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "786bac97-a056-5d7e-8003-f9c816bc4cbb",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Manifiesta compromiso a través de producciones literarias sugeridas, para una mejor comprensión de sí mismo y de la\nsociedad.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "58162d8e-2f03-5f81-acfb-65f3f88863a9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa los textos literarios indicados para el cultivo de valores universales y refuerzo de la dimensión humanista, así como el\nfortalecimiento físico y espiritual.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    },
+    {
+      "id": "a7266083-0c24-5340-8b79-9d586b3e0646",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve, a través de los textos literarios específicos, emociones, sentimientos y valores espirituales, como elementos claves\nque apoyan el respeto, la dignidad y las relaciones humanas.",
+      "pdfPage": 436,
+      "printedPage": "435"
+    }
+  ],
+  "genres": [
+    {
+      "id": "epopeya",
+      "label": "epopeya",
+      "match": "epopeyas?",
+      "sourceRecordIds": [
+        "a814598d-fedf-527e-82b8-a2f4de48967a"
+      ],
+      "pdfPages": [
+        432,
+        433
+      ],
+      "profile": {
+        "genre": "epopeya",
+        "target": "los episodios, las acciones de los personajes y la voz narrativa de la epopeya solicitada",
+        "plan": "la relación entre sucesos, personajes, lugar y tiempo expresamente pedidos"
+      },
+      "features": [
+        {
+          "id": "epic-structure",
+          "match": "funcion|forma|estructura|division",
+          "name": "la función, forma y estructura expresamente trabajadas",
+          "function": "relacionar la organización de los episodios con el propósito de la epopeya",
+          "error": "se atribuye a una parte una función que contradice el texto",
+          "sourceRecordIds": [
+            "e03d029b-546e-5032-8edf-f93258cb502d"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función"
+            ],
+            [
+              "forma",
+              "la forma"
+            ],
+            [
+              "estructura",
+              "la estructura"
+            ],
+            [
+              "division",
+              "la división"
+            ]
+          ]
+        },
+        {
+          "id": "public-deed",
+          "match": "hazana",
+          "name": "la hazaña pública",
+          "function": "relacionar la acción extraordinaria con su alcance colectivo dentro del mundo narrado",
+          "error": "se confunde una acción privada secundaria con la hazaña que articula el relato",
+          "sourceRecordIds": [
+            "f18d7917-6191-5213-8cf5-8a9bad944338"
+          ]
+        },
+        {
+          "id": "protagonist-values",
+          "match": "valores",
+          "name": "los valores representados por el protagonista",
+          "function": "relacionar sus decisiones con los valores que el texto representa, sin exigir adhesión personal",
+          "error": "se atribuye al personaje un valor incompatible con sus decisiones en el texto",
+          "sourceRecordIds": [
+            "481fed69-65ae-53ba-9406-013d1af214c9"
+          ]
+        },
+        {
+          "id": "fantastic",
+          "match": "fantastic",
+          "name": "los seres y hechos fantásticos solicitados",
+          "function": "relacionar sus acciones con los acontecimientos del mundo narrado",
+          "error": "se presenta un hecho fantástico como un hecho histórico comprobado",
+          "sourceRecordIds": [
+            "6c31d069-24fc-5b43-864f-be72392382d4"
+          ],
+          "terms": [
+            [
+              "seres?",
+              "los seres fantásticos"
+            ],
+            [
+              "hechos?",
+              "los hechos fantásticos"
+            ]
+          ]
+        },
+        {
+          "id": "epic-themes",
+          "match": "tema|viajes|guerras",
+          "name": "el tema expresamente trabajado",
+          "function": "relacionar los viajes o conflictos narrados con el sentido de la epopeya",
+          "error": "se atribuye al texto un tema ajeno a sus episodios",
+          "sourceRecordIds": [
+            "10335de6-6a2b-57d2-9f9f-3a95d98bccb6"
+          ]
+        },
+        {
+          "id": "epic-sequences",
+          "match": "secuencias?",
+          "name": "las secuencias narrativas",
+          "function": "ordenar las acciones y conservar las relaciones entre los episodios",
+          "error": "se invierte una acción y se altera su relación con los episodios",
+          "sourceRecordIds": [
+            "6fe23900-0f70-51f7-b7f2-3cc119832ed5"
+          ]
+        },
+        {
+          "id": "epic-connectors",
+          "match": "conectores",
+          "name": "los conectores expresamente pedidos",
+          "function": "enlazar las acciones conservando sus relaciones temporales y causales",
+          "error": "el conector invierte una causa o una relación temporal",
+          "sourceRecordIds": [
+            "93caec2b-8e21-55d7-be4f-a79f9bdb653e"
+          ],
+          "terms": [
+            [
+              "temporales?",
+              "los conectores temporales"
+            ],
+            [
+              "causales?",
+              "los conectores causales"
+            ],
+            [
+              "consecutivos?",
+              "los conectores consecutivos"
+            ],
+            [
+              "de orden",
+              "los conectores de orden"
+            ]
+          ]
+        },
+        {
+          "id": "markers",
+          "match": "marcadores",
+          "name": "los marcadores expresamente pedidos",
+          "function": "situar las acciones y organizar la relación con el interlocutor según el pasaje",
+          "error": "se atribuye a un marcador una relación incompatible con el pasaje",
+          "sourceRecordIds": [
+            "f2090cd9-0102-53d8-96d9-5316a686dadc"
+          ],
+          "terms": [
+            [
+              "espaciales?",
+              "los marcadores espaciales"
+            ],
+            [
+              "interactivos?",
+              "los marcadores interactivos"
+            ]
+          ]
+        },
+        {
+          "id": "narrative-tenses",
+          "match": "tiempos? verbales|pasado|presente",
+          "name": "los tiempos verbales expresamente pedidos",
+          "function": "distinguir el tiempo de las acciones y del diálogo solicitado",
+          "error": "un cambio temporal contradice la relación entre los sucesos",
+          "sourceRecordIds": [
+            "7fc4e967-decd-5f75-83f9-8ce1cfbfaeeb"
+          ],
+          "terms": [
+            [
+              "pasado",
+              "el pasado narrativo"
+            ],
+            [
+              "presente",
+              "el presente del diálogo"
+            ]
+          ]
+        },
+        {
+          "id": "epic-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación",
+          "function": "caracterizar los personajes y lugares del pasaje solicitado",
+          "error": "se atribuye un rasgo incompatible con el personaje o lugar",
+          "sourceRecordIds": [
+            "4f93c201-5c91-5d3b-9890-740ddc4f1479"
+          ]
+        },
+        {
+          "id": "narrator",
+          "match": "narrador(?! omnisciente)|voces|quien narra|quien cuenta",
+          "name": "el narrador y las voces solicitadas",
+          "function": "distinguir quién cuenta los hechos de las intervenciones de los personajes",
+          "error": "se atribuye al narrador la intervención de un personaje",
+          "sourceRecordIds": [
+            "bd966b33-300b-5596-8e74-c6591577389e"
+          ]
+        },
+        {
+          "id": "omniscient",
+          "match": "omnisciente",
+          "name": "el narrador omnisciente",
+          "function": "relacionar el conocimiento del narrador con la información que presenta sobre los personajes",
+          "error": "se atribuye omnisciencia sin evidencias de ese conocimiento en el pasaje",
+          "sourceRecordIds": [
+            "3909045f-fa90-5f9d-a9b3-b6e9734b0571"
+          ]
+        },
+        {
+          "id": "novel-characters",
+          "match": "(?<!de los )(?<!de )personajes",
+          "name": "los personajes expresamente trabajados",
+          "function": "relacionar sus acciones y sus papeles en la epopeya",
+          "error": "se atribuye una acción o un papel al personaje equivocado",
+          "sourceRecordIds": [
+            "bcaefb96-ef3c-5319-a9f2-996a9961cc2b"
+          ],
+          "terms": [
+            [
+              "principal",
+              "el personaje principal"
+            ],
+            [
+              "secundarios?",
+              "los personajes secundarios"
+            ],
+            [
+              "antagonista",
+              "el antagonista"
+            ]
+          ]
+        },
+        {
+          "id": "epic-actants",
+          "match": "actan",
+          "name": "los papeles actanciales solicitados",
+          "function": "explicar la función de las acciones de los personajes en sus relaciones",
+          "error": "se confunde el papel actancial con el nombre del personaje",
+          "sourceRecordIds": [
+            "c42e936a-7697-5a98-95b7-0ac1b1477d9d"
+          ]
+        },
+        {
+          "id": "epic-figures",
+          "match": "figuras|recursos literarios|prosopografia|retrato|exageracion",
+          "name": "los recursos literarios expresamente pedidos",
+          "function": "relacionar la caracterización y la intensidad de las imágenes con el sentido del pasaje",
+          "error": "se atribuye al texto un recurso inexistente",
+          "sourceRecordIds": [
+            "a072e834-726a-5a63-bc12-13c5e0abde3b"
+          ],
+          "terms": [
+            [
+              "prosopografia",
+              "la prosopografía"
+            ],
+            [
+              "retrato",
+              "el retrato"
+            ],
+            [
+              "exageracion",
+              "la exageración"
+            ]
+          ]
+        },
+        {
+          "id": "epic-protagonist",
+          "match": "^(?!.*valores).*protagonista",
+          "name": "el protagonista",
+          "function": "relacionar sus acciones con los episodios de la epopeya",
+          "error": "se atribuye al protagonista una acción de otro personaje",
+          "sourceRecordIds": [
+            "481fed69-65ae-53ba-9406-013d1af214c9"
+          ]
+        },
+        {
+          "id": "epic-form",
+          "match": "\\bverso\\b|\\bprosa\\b",
+          "name": "la forma elegida",
+          "function": "mantener la forma de verso o prosa elegida para el relato solicitado",
+          "error": "se alternan formas incompatibles con la opción elegida",
+          "sourceRecordIds": [
+            "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+          ],
+          "terms": [
+            [
+              "verso",
+              "el verso"
+            ],
+            [
+              "prosa",
+              "la prosa"
+            ]
+          ]
+        },
+        {
+          "id": "motivations",
+          "match": "motivaciones|intenciones de (?:los )?personajes",
+          "name": "las motivaciones de los personajes",
+          "function": "inferir las razones de sus acciones con los pasajes proporcionados",
+          "error": "se atribuye al personaje una intención sin apoyo en el pasaje",
+          "sourceRecordIds": [
+            "e57c4f2a-fc4a-5eba-8d60-a2f39285638e"
+          ]
+        },
+        {
+          "id": "causality",
+          "match": "causalidad|relacion(?:es)? causal(?:es)?",
+          "name": "las relaciones causales de las acciones",
+          "function": "explicar cómo un suceso contribuye a otro según el relato",
+          "error": "se presenta como causa una acción posterior o ajena al suceso",
+          "sourceRecordIds": [
+            "cb31435d-6c4d-5f3d-9d5c-1854e12d082b"
+          ]
+        },
+        {
+          "id": "dialogue",
+          "match": "dialogos?|estilo directo",
+          "name": "el diálogo en estilo directo solicitado",
+          "function": "distinguir las intervenciones de los personajes y conservar su sentido",
+          "error": "se atribuye una intervención al personaje equivocado",
+          "sourceRecordIds": [
+            "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+          ]
+        },
+        {
+          "id": "punctuation",
+          "match": "puntuacion|\\bcoma\\b|dos puntos|\\braya\\b",
+          "name": "la puntuación expresamente pedida",
+          "function": "delimitar las acciones y las intervenciones sin cambiar su sentido",
+          "error": "el signo cambia quién habla o la relación entre las acciones",
+          "sourceRecordIds": [
+            "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "plot",
+          "title": "Hazaña y desarrollo de los episodios",
+          "production": "Enlaza los episodios de la epopeya solicitada para que pueda seguirse la acción extraordinaria y su alcance en el mundo narrado.",
+          "analysis": "Explica cómo los episodios de la epopeya contribuyen a la hazaña y a su alcance en el mundo narrado, con apoyo en el texto dado.",
+          "comparison": "Compara las relaciones entre los episodios y la hazaña en las epopeyas dadas, con evidencias de ambos textos.",
+          "evidence": [
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "characters",
+          "title": "Personajes y acciones",
+          "production": "Hace reconocibles los personajes mediante sus acciones y relaciones en el relato ficticio solicitado.",
+          "analysis": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "comparison": "Contrasta acciones y motivaciones de los personajes con episodios de ambos relatos.",
+          "evidence": [
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "narrator",
+          "title": "Voz narrativa",
+          "production": "Emplea una voz narrativa que permite reconocer quién cuenta los sucesos y conserva su perspectiva.",
+          "analysis": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "comparison": "Contrasta las voces narrativas y sus perspectivas mediante evidencias de los relatos.",
+          "evidence": [
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "novela-policiaca",
+      "label": "novela policíaca",
+      "match": "novelas?(?: breves?)? (?:policiacas?|policiales?|detectivescas?)",
+      "sourceRecordIds": [
+        "99d05567-92a8-5657-89d1-51adcd59def4"
+      ],
+      "pdfPages": [
+        432,
+        433,
+        434,
+        435
+      ],
+      "profile": {
+        "genre": "novela policíaca",
+        "target": "los hechos del caso ficticio, las acciones de los personajes y la voz narrativa del pasaje solicitado",
+        "plan": "la relación entre sucesos, personajes, lugar y tiempo expresamente pedidos"
+      },
+      "features": [
+        {
+          "id": "novel-structure",
+          "match": "funcion|estructura",
+          "name": "la función y estructura solicitadas",
+          "function": "relacionar la organización de los sucesos con el desarrollo del misterio",
+          "error": "se atribuye a una parte una función incompatible con los sucesos",
+          "sourceRecordIds": [
+            "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función"
+            ],
+            [
+              "estructura",
+              "la estructura"
+            ]
+          ]
+        },
+        {
+          "id": "detective-characteristics",
+          "match": "caracteristicas",
+          "name": "las características de la novela policíaca solicitadas",
+          "function": "relacionar los rasgos del género con los hechos y la investigación del caso ficticio",
+          "error": "se atribuye al texto un rasgo que no aparece en el pasaje",
+          "sourceRecordIds": [
+            "31f434e5-cada-5f2a-9d09-31320f0bf6a6"
+          ]
+        },
+        {
+          "id": "novel-sequences",
+          "match": "secuencias?",
+          "name": "las secuencias expresamente pedidas",
+          "function": "relacionar narración, descripción o argumentación con su función en el pasaje",
+          "error": "se clasifica una secuencia por un rasgo que no contiene",
+          "sourceRecordIds": [
+            "f52d3715-a015-5851-b676-4a0c71130a9e"
+          ],
+          "terms": [
+            [
+              "narrativas?",
+              "la secuencia narrativa"
+            ],
+            [
+              "descriptivas?",
+              "la secuencia descriptiva"
+            ],
+            [
+              "argumentativas?",
+              "la secuencia argumentativa"
+            ]
+          ]
+        },
+        {
+          "id": "novel-connectors",
+          "match": "conectores",
+          "name": "los conectores expresamente pedidos",
+          "function": "enlazar los hechos y las hipótesis sin invertir sus relaciones",
+          "error": "el conector cambia la relación entre los hechos o las hipótesis",
+          "sourceRecordIds": [
+            "f9ac3b8a-a2bf-5929-88f4-3643ff567d7c"
+          ],
+          "terms": [
+            [
+              "temporales?",
+              "los conectores temporales"
+            ],
+            [
+              "causales?",
+              "los conectores causales"
+            ],
+            [
+              "espaciales?",
+              "los conectores espaciales"
+            ],
+            [
+              "contrastivos?",
+              "los conectores contrastivos"
+            ],
+            [
+              "distributivos?",
+              "los conectores distributivos"
+            ],
+            [
+              "consecutivos?",
+              "los conectores consecutivos"
+            ]
+          ]
+        },
+        {
+          "id": "narrative-tenses",
+          "match": "tiempos? verbales|pasado|presente",
+          "name": "los tiempos verbales expresamente pedidos",
+          "function": "distinguir el tiempo de las acciones y del diálogo solicitado",
+          "error": "un cambio temporal contradice la relación entre los sucesos",
+          "sourceRecordIds": [
+            "f6209300-ab39-5ddd-b994-5b1f19ff658e"
+          ],
+          "terms": [
+            [
+              "pasado",
+              "el pasado narrativo"
+            ],
+            [
+              "presente",
+              "el presente del diálogo"
+            ]
+          ]
+        },
+        {
+          "id": "novel-adjectives",
+          "match": "adjetiv",
+          "name": "la adjetivación",
+          "function": "caracterizar personajes o espacios según el pasaje solicitado",
+          "error": "se atribuye un rasgo incompatible con el personaje o espacio",
+          "sourceRecordIds": [
+            "b92b30e9-f04b-5562-b7d7-30dd6956004e"
+          ]
+        },
+        {
+          "id": "narrator",
+          "match": "narrador|voces|quien narra|quien cuenta",
+          "name": "el narrador y las voces solicitadas",
+          "function": "distinguir quién cuenta los hechos y qué información permite su perspectiva",
+          "error": "se atribuye al narrador información inaccesible desde su perspectiva",
+          "sourceRecordIds": [
+            "0b9cea32-cfde-55da-a966-5906872c65f4"
+          ]
+        },
+        {
+          "id": "novel-characters",
+          "match": "(?<!de los )(?<!de )personajes",
+          "name": "los personajes expresamente trabajados",
+          "function": "relacionar sus acciones y motivos con el desarrollo del caso ficticio",
+          "error": "se atribuye una acción o una motivación al personaje equivocado",
+          "sourceRecordIds": [
+            "82c81dbf-51d8-5a27-8e80-f6a89bd6a065"
+          ]
+        },
+        {
+          "id": "novel-actants",
+          "match": "actan",
+          "name": "los papeles actanciales solicitados",
+          "function": "explicar la función de las acciones de los personajes en sus relaciones",
+          "error": "se confunde el papel actancial con el nombre del personaje",
+          "sourceRecordIds": [
+            "85350eb6-20be-519b-b87d-f5f72e5f2e78"
+          ]
+        },
+        {
+          "id": "clues",
+          "match": "pistas|decisiones del investigador",
+          "name": "las pistas y las decisiones del investigador",
+          "function": "relacionar las evidencias del caso ficticio con las decisiones de la investigación",
+          "error": "se atribuye a una pista un efecto incompatible con los hechos disponibles",
+          "sourceRecordIds": [
+            "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+          ]
+        },
+        {
+          "id": "hypotheses",
+          "match": "hipotesis",
+          "name": "las hipótesis expresamente trabajadas",
+          "function": "distinguir las explicaciones descartadas de la que respaldan los hechos disponibles en el caso ficticio",
+          "error": "se presenta como comprobada una hipótesis que los hechos disponibles no respaldan",
+          "sourceRecordIds": [
+            "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+          ]
+        },
+        {
+          "id": "motivations",
+          "match": "motivaciones|intenciones de (?:los )?personajes",
+          "name": "las motivaciones de los personajes",
+          "function": "inferir las razones de sus acciones con los pasajes proporcionados",
+          "error": "se atribuye al personaje una intención sin apoyo en el pasaje",
+          "sourceRecordIds": [
+            "aa9eec50-3ced-5b01-b1c5-84de073cc8c2"
+          ]
+        },
+        {
+          "id": "novel-themes",
+          "match": "temas?",
+          "name": "el tema",
+          "function": "relacionar las acciones con las ideas del relato",
+          "error": "se atribuye un tema sin apoyo en los episodios",
+          "sourceRecordIds": [
+            "aa9eec50-3ced-5b01-b1c5-84de073cc8c2"
+          ]
+        },
+        {
+          "id": "causality",
+          "match": "causalidad|relacion(?:es)? causal(?:es)?",
+          "name": "las relaciones causales de las acciones",
+          "function": "explicar cómo un suceso contribuye a otro según el relato",
+          "error": "se presenta como causa una acción posterior o ajena al suceso",
+          "sourceRecordIds": [
+            "d131306f-9eb7-5ab4-b089-fe559054249e"
+          ]
+        },
+        {
+          "id": "dialogue",
+          "match": "dialogos?|estilo directo",
+          "name": "el diálogo en estilo directo solicitado",
+          "function": "distinguir las intervenciones de los personajes y conservar su sentido",
+          "error": "se atribuye una intervención al personaje equivocado",
+          "sourceRecordIds": [
+            "1db2098b-8093-5813-bf63-cff6e98caaf2"
+          ]
+        },
+        {
+          "id": "suspense",
+          "match": "suspens",
+          "name": "los recursos descriptivos de suspense solicitados",
+          "function": "administrar la información y la expectativa del pasaje",
+          "error": "se atribuye suspense a información que contradice la escena",
+          "sourceRecordIds": [
+            "f53be5d9-b6ec-5457-8b96-bad71568bc34"
+          ]
+        },
+        {
+          "id": "punctuation",
+          "match": "puntuacion|\\bcoma\\b|dos puntos|\\braya\\b",
+          "name": "la puntuación expresamente pedida",
+          "function": "delimitar las acciones y las intervenciones sin cambiar su sentido",
+          "error": "el signo cambia quién habla o la relación entre las acciones",
+          "sourceRecordIds": [
+            "f53be5d9-b6ec-5457-8b96-bad71568bc34"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "plot",
+          "title": "Desarrollo del misterio",
+          "production": "Enlaza los sucesos de la novela policíaca solicitada de modo que pueda seguirse el desarrollo del misterio sin contradicciones entre los hechos del caso ficticio.",
+          "analysis": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "comparison": "Compara el desarrollo del misterio en las novelas policíacas dadas, apoyándose en los hechos disponibles de ambos textos.",
+          "evidence": [
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "characters",
+          "title": "Personajes y acciones",
+          "production": "Hace reconocibles los personajes mediante sus acciones y relaciones en el relato ficticio solicitado.",
+          "analysis": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "comparison": "Contrasta acciones y motivaciones de los personajes con episodios de ambos relatos.",
+          "evidence": [
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "narrator",
+          "title": "Voz narrativa",
+          "production": "Emplea una voz narrativa que permite reconocer quién cuenta los sucesos y conserva su perspectiva.",
+          "analysis": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "comparison": "Contrasta las voces narrativas y sus perspectivas mediante evidencias de los relatos.",
+          "evidence": [
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "epopeya-epic-structure",
+      "genre": "epopeya",
+      "label": "• Función, forma, estructura, división",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "e03d029b-546e-5032-8edf-f93258cb502d"
+      ]
+    },
+    {
+      "id": "epopeya-public-deed",
+      "genre": "epopeya",
+      "label": "• Hazaña pública",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f18d7917-6191-5213-8cf5-8a9bad944338"
+      ]
+    },
+    {
+      "id": "epopeya-protagonist-values",
+      "genre": "epopeya",
+      "label": "• El protagonista: los valores",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "481fed69-65ae-53ba-9406-013d1af214c9"
+      ]
+    },
+    {
+      "id": "epopeya-fantastic",
+      "genre": "epopeya",
+      "label": "• Seres fantásticos y hechos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c31d069-24fc-5b43-864f-be72392382d4"
+      ]
+    },
+    {
+      "id": "epopeya-epic-themes",
+      "genre": "epopeya",
+      "label": "• Temáticas: viajes o guerras",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "10335de6-6a2b-57d2-9f9f-3a95d98bccb6"
+      ]
+    },
+    {
+      "id": "epopeya-epic-sequences",
+      "genre": "epopeya",
+      "label": "• Secuencias narrativas",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "6fe23900-0f70-51f7-b7f2-3cc119832ed5"
+      ]
+    },
+    {
+      "id": "epopeya-epic-connectors",
+      "genre": "epopeya",
+      "label": "• Conectores temporales, causales,\nconsecutivos, de orden",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "93caec2b-8e21-55d7-be4f-a79f9bdb653e"
+      ]
+    },
+    {
+      "id": "epopeya-markers",
+      "genre": "epopeya",
+      "label": "• Marcadores espaciales, interactivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f2090cd9-0102-53d8-96d9-5316a686dadc"
+      ]
+    },
+    {
+      "id": "epopeya-narrative-tenses",
+      "genre": "epopeya",
+      "label": "• Verbos en pasado y presente",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "7fc4e967-decd-5f75-83f9-8ce1cfbfaeeb"
+      ]
+    },
+    {
+      "id": "epopeya-epic-adjectives",
+      "genre": "epopeya",
+      "label": "• Adjetivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "4f93c201-5c91-5d3b-9890-740ddc4f1479"
+      ]
+    },
+    {
+      "id": "epopeya-narrator",
+      "genre": "epopeya",
+      "label": "• Narrador y personajes",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "bd966b33-300b-5596-8e74-c6591577389e"
+      ]
+    },
+    {
+      "id": "epopeya-omniscient",
+      "genre": "epopeya",
+      "label": "• Narrador omnisciente",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "3909045f-fa90-5f9d-a9b3-b6e9734b0571"
+      ]
+    },
+    {
+      "id": "epopeya-novel-characters",
+      "genre": "epopeya",
+      "label": "• Los personajes: principal,\nsecundarios, protagonista,\nantagonista.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "bcaefb96-ef3c-5319-a9f2-996a9961cc2b"
+      ]
+    },
+    {
+      "id": "epopeya-epic-actants",
+      "genre": "epopeya",
+      "label": "• Los actantes: tipos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "c42e936a-7697-5a98-95b7-0ac1b1477d9d"
+      ]
+    },
+    {
+      "id": "epopeya-epic-figures",
+      "genre": "epopeya",
+      "label": "• Figuras literarias: prosopografía,\nretrato, exageración",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "a072e834-726a-5a63-bc12-13c5e0abde3b"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-structure",
+      "genre": "novela-policiaca",
+      "label": "• Función y estructura",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ]
+    },
+    {
+      "id": "novela-policiaca-detective-characteristics",
+      "genre": "novela-policiaca",
+      "label": "• Características",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "31f434e5-cada-5f2a-9d09-31320f0bf6a6"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-sequences",
+      "genre": "novela-policiaca",
+      "label": "• Secuencias narrativas, descriptivas y\nargumentativas.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f52d3715-a015-5851-b676-4a0c71130a9e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-connectors",
+      "genre": "novela-policiaca",
+      "label": "• Conectores temporales,\ncausales, espaciales, contrastivos,\ndistributivos, causales y\nconsecutivos.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f9ac3b8a-a2bf-5929-88f4-3643ff567d7c"
+      ]
+    },
+    {
+      "id": "novela-policiaca-narrative-tenses",
+      "genre": "novela-policiaca",
+      "label": "• Verbos en pasado y en presente",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f6209300-ab39-5ddd-b994-5b1f19ff658e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-adjectives",
+      "genre": "novela-policiaca",
+      "label": "• Los adjetivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "b92b30e9-f04b-5562-b7d7-30dd6956004e"
+      ]
+    },
+    {
+      "id": "novela-policiaca-narrator",
+      "genre": "novela-policiaca",
+      "label": "• El narrador: tipos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "0b9cea32-cfde-55da-a966-5906872c65f4"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-characters",
+      "genre": "novela-policiaca",
+      "label": "• Los personajes",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "82c81dbf-51d8-5a27-8e80-f6a89bd6a065"
+      ]
+    },
+    {
+      "id": "novela-policiaca-novel-actants",
+      "genre": "novela-policiaca",
+      "label": "• Los actantes",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "85350eb6-20be-519b-b87d-f5f72e5f2e78"
+      ]
+    },
+    {
+      "id": "epic-listening",
+      "genre": "epopeya",
+      "label": "• Escucha atenta de epopeyas clásicas acordes\ncon sus intereses; anticipación del contenido\nde la epopeya a partir del título y otras marcas\ntextuales: utilización de la estructura de la epopeya\n(invocación a las musas, exposición, desarrollo,\nepisodios y desenlace), de los verbos en pasado\ny presente, de los adjetivos, de la distinción entre\nnarrador y personajes, la clasificación de los\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "3a72cead-417e-58a8-abca-0614e70e53cb"
+      ]
+    },
+    {
+      "id": "epic-listening-vocabulary",
+      "genre": "epopeya",
+      "label": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la epopeya\nque escucha, el significado de las palabras cuyo\nsignificado desconoce, a partir del contexto.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "df5d873a-1d88-5a8f-82b1-240a5af12f79"
+      ]
+    },
+    {
+      "id": "epic-listening-causes",
+      "genre": "epopeya",
+      "label": "• Identificación de las acciones realizadas por los\npersonajes de la epopeya e inferencias sobre la\nrelación de causalidad entre ellas, las motivaciones\ne intenciones de las acciones de los personajes;\nparáfrasis de las acciones principales de la epopeya,\nusando el vocabulario apropiado mediante\nsinónimos y otros recursos, resumen el contenido\nglobal de la epopeya.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "cb31435d-6c4d-5f3d-9d5c-1854e12d082b"
+      ]
+    },
+    {
+      "id": "epic-oral-narration",
+      "genre": "epopeya",
+      "label": "• Establecimiento de la intención comunicativa de\nla epopeya; selección del o los sucesos, el lugar y\nel tiempo adecuados a la intención de la historia\nque va a narrar; descripción de los personajes de la\nepopeya, utilizando adjetivos que los caractericen;\norganización cronológica de los sucesos en la\nepopeya.",
+      "family": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "7ecc93b3-eb74-566f-b70a-cfe0ab21296c"
+      ]
+    },
+    {
+      "id": "epic-oral-connectors",
+      "genre": "epopeya",
+      "label": "• Utilización y clasificación de los personajes para dar\nvida a estos; uso de conectores causales, de orden\ny continuidad para dar coherencia y cohesión al\nesquema, vocabulario apropiado en función de\nla intención comunicativa y de los interlocutores,\nmarcas de inicio, progresión y cierre en el esquema\nde la epopeya.",
+      "family": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "50823c61-59f4-5d91-bba2-13c53b45cd9a"
+      ]
+    },
+    {
+      "id": "epic-reading-prediction",
+      "genre": "epopeya",
+      "label": "• Establecimiento de un propósito para la lectura\nde la epopeya; anticipación del contenido de la\nepopeya a partir del título, las imágenes y otras\nmarcas textuales; utilización de la estructura de\nla epopeya (invocación a las musas, exposición,\ndesarrollo, episodios y desenlace), de los verbos en\npasado y presente, de los adjetivos, de la distinción\nentre narrador y personajes y de las fórmulas de\ninicio y de cierre, para comprender su contenido:\nidentificación de las distintas voces (narrador y\npersonajes) que intervienen en la epopeya, para su\ncomprensión; identificación y clasificación de los\npersonajes para la comprensión de sus acciones.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "1d78e5b7-a6ab-53f7-a7ec-a0b9ee31f750"
+      ]
+    },
+    {
+      "id": "epic-reading-motives",
+      "genre": "epopeya",
+      "label": "• Realización de las inferencias necesarias para\ncomprender el sentido de la epopeya que lee; el\nsignificado de las palabras que desconoce, a partir\ndel contexto, de las motivaciones e intenciones de\nlas acciones de los personajes.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "e57c4f2a-fc4a-5eba-8d60-a2f39285638e"
+      ]
+    },
+    {
+      "id": "epic-reading-summary",
+      "genre": "epopeya",
+      "label": "• Paráfrasis de las acciones principales de la\nepopeya, usando el vocabulario apropiado y\nmediante sinónimos y otros recursos; resumen del\ncontenido global de la epopeya",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "b2048c1d-4492-53e0-a205-73e83de6987e"
+      ]
+    },
+    {
+      "id": "epic-writing-plan",
+      "genre": "epopeya",
+      "label": "• Establecimiento de la intención comunicativa\nde la epopeya que se escribirá colectivamente;\nselección de la forma que se usará: verso o prosa;\nselección del o los sucesos, los personajes, el\nlugar, las acciones y el tiempo; descripción de\nlos personajes y ambiente en los diferentes\nmomentos; utilización de fórmulas de inicio y de\ncierre de los capítulos, adjetivos para describir a los\npersonajes de la epopeya que produce; inclusión\nde diálogos en estilo directo; vocabulario en\nfunción de la intención comunicativa de los\ninterlocutores; organización cronológica de los\nsucesos del capítulo y utilización del tiempo\nverbal pasado para narrar las acciones de los\npersonajes y el presente para escribir los diálogos;\nelementos descriptivos para caracterizar los\npersonajes, los ambientes y las acciones en la\nnarración; signos de puntuación (coma, punto,\ndos puntos, raya) para segmentar y organizar el\nescrito.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c358fc67-3da7-5ac8-bd2f-5d6e2a7466a0"
+      ]
+    },
+    {
+      "id": "epic-draft-revision",
+      "genre": "epopeya",
+      "label": "• Escritura del o los borradores del capítulo\najustándose a la intención, los elementos\nseleccionados y la estructura (inicio, nudo\ny desenlace); revisión y corrección del o\nlos borradores con ayuda del docente y los\ncompañeros; edición, ilustración y publicación de\nla epopeya.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "668a2105-b546-58e6-ac45-912364da9dbc"
+      ]
+    },
+    {
+      "id": "novel-listening",
+      "genre": "novela-policiaca",
+      "label": "• Escucha atenta de novelas policíacas acordes con\nla edad e intereses; anticipación del contenido\nde la novela policíaca a partir del título y otras\nmarcas textuales; utilización de la estructura de la\nnovela (inicio, nudo y desenlace), de los verbos en\npasado y presente, de los adjetivos, de la distinción\nentre narrador y personajes, la clasificación de los\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "e7bb387b-cee5-5699-96b5-369e91e793ab"
+      ]
+    },
+    {
+      "id": "novel-listening-inference",
+      "genre": "novela-policiaca",
+      "label": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la novela que\nescucha; el significado de las palabras desconocidas,\na partir del contexto; las motivaciones e intenciones\nde las acciones de los personajes y la relación de\ncausalidad entre ellas; los temas tratados en la\nnovela. Paráfrasis de las acciones principales de la\nnovela, usando el vocabulario apropiado mediante\nsinónimos y otros recursos.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "d131306f-9eb7-5ab4-b089-fe559054249e"
+      ]
+    },
+    {
+      "id": "novel-oral-hypotheses",
+      "genre": "novela-policiaca",
+      "label": "• Establecimiento de la intención comunicativa de\nla novela policíaca; selección del o los sucesos,\nlos personajes, el lugar y el tiempo adecuados a\nla intención de la historia que va a narrar, el punto\nde vista o voz narrativa en la novela; estudio\ndel crimen y elaboración de varias hipótesis\nfalsas y una verdadera que explique lo sucedido;\norganización de las hipótesis en la trama de la\nnovela y distribución cronológica de los sucesos;\ndescripción de los personajes con vocabulario\napropiado, utilizando adjetivos que los caractericen.",
+      "family": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "e5e0a1fc-b960-5f09-a7a1-963de926a531"
+      ]
+    },
+    {
+      "id": "novel-oral-actants",
+      "genre": "novela-policiaca",
+      "label": "• Utilización de la clasificación y actancia de los\npersonajes para dar vida a estos, conectores\ncausales, de orden y continuidad para dar\ncoherencia y cohesión al esquema de la novela;\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores; marcas de\ninicio, progresión y cierre en la trama de la novela\npolicíaca.",
+      "family": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "727a6345-5b84-5576-b04d-0978c7d6c362"
+      ]
+    },
+    {
+      "id": "novel-reading-prediction",
+      "genre": "novela-policiaca",
+      "label": "• Establecimiento de un propósito para la lectura\nde la novela policíaca; anticipación del contenido\nde la novela a partir del título, las Imágenes y otras\nmarcas textuales; utilización de la estructura de la\nnovela policíaca (inicio, nudo y desenlace), de los\nconectores, de los verbos en pasado y presente,\nde los adjetivos, de la distinción entre narrador y\npersonajes y de las fórmulas de inicio y de cierre,\npara comprender su contenido; caracterización\ny clasificación de los personajes y su actancia\npara comprender sus acciones; identificación de\nlas distintas voces (narrador y personajes) que\nintervienen, para su comprensión.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "1d44c6cf-b825-5ff2-b79d-8e5c811ccd54"
+      ]
+    },
+    {
+      "id": "novel-reading-paraphrase",
+      "genre": "novela-policiaca",
+      "label": "• Realización de las inferencias necesarias para\ncomprender el sentido de la novela policíaca\nque lee; así como, sobre el significado de las\npalabras desconocidas, a partir del contexto, las\nmotivaciones e intenciones de las acciones de\nlos personajes, los temas tratados en la novela;\nparáfrasis de las acciones principales de la novela,\nusando el vocabulario mediante sinónimos y\notros recursos.\nProducción escrita (escribir)",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "aa9eec50-3ced-5b01-b1c5-84de073cc8c2"
+      ]
+    },
+    {
+      "id": "novel-writing-plan",
+      "genre": "novela-policiaca",
+      "label": "• Establecimiento de la intención comunicativa\nde la novela policíaca que se escribirá\ncolectivamente; selección del o los sucesos, los\npersonajes, el lugar, las acciones y el tiempo;\ndescripción del ambiente de la novela en los\ndiferentes momentos y con el vocabulario\napropiado.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6473e9cf-3620-50d8-a895-fddae392cb09"
+      ]
+    },
+    {
+      "id": "novel-writing-voices",
+      "genre": "novela-policiaca",
+      "label": "• Utilización de fórmulas de inicio y de cierre de los\ncapítulos, adjetivos para describir a los personajes\nde la novela policíaca que produce, inclusión\nde diálogos de los personajes que escribe en\nestilo directo, utilización de distintas voces\n(narrador y personajes) en la novela que escribe,\nvocabulario apropiado en función de la intención\ncomunicativa y de los interlocutores.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "1db2098b-8093-5813-bf63-cff6e98caaf2"
+      ]
+    },
+    {
+      "id": "novel-writing-suspense",
+      "genre": "novela-policiaca",
+      "label": "• Organización cronológica de los sucesos y\nutilización del tiempo verbal pasado para narrar\nlas acciones y el tiempo verbal presente para\nescribir los diálogos; elementos descriptivos para\ncrear suspenso en la narración, los signos de\npuntuación (coma, punto, dos puntos, raya) para\nsegmentar y organizar el escrito.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f53be5d9-b6ec-5457-8b96-bad71568bc34"
+      ]
+    },
+    {
+      "id": "novel-draft-revision",
+      "genre": "novela-policiaca",
+      "label": "• Escritura de borradores de la novela ajustándose\na la intención, los elementos seleccionados y la\nestructura (inicio, nudo y desenlace); revisión y\ncorrección del o los borradores con apoyo del\ndocente y compañeros; edición, ilustración y\npublicación de la novela policíaca.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "af47bf5b-1031-51c0-85e3-c7c2641e0016"
+      ]
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "a814598d-fedf-527e-82b8-a2f4de48967a",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "b18e2599-0520-55b9-9006-121e5641f07f",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "99d05567-92a8-5657-89d1-51adcd59def4",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "91196b94-790b-5064-8a0e-0a8ff1d7bf46",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "1c36c55d-3069-56b9-b8df-b947d4f3ef0d",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "97855ab8-88f0-5c4d-9b39-5e9d9ab41498",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "00341161-5a25-5d06-b60c-a41f5075b8e0",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "978a3180-77e4-5f30-8117-3b2ee43ed502",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "70ee210c-e938-528a-b8b7-5d3155be09e7",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "6db3bc88-6c47-526b-b377-c3cc6270efc5",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "7554c8e9-0bc6-5612-839e-59f8918f5944",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "1f02f58e-0d62-52af-b579-ab38d1028341",
+      "reason": "FRAGMENT_CONTINUATION_NOT_SEPARATE_TASK",
+      "explanation": "«fantásticos.» continúa la disposición anterior sobre personajes y hechos; conservar ambas anclas sin inventar otro criterio."
+    },
+    {
+      "id": "9bf08b9a-b037-5c97-bd1d-d758248f7f50",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "c6958a3b-ce75-512b-907c-245d3bf774b0",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "a5fcec8f-9f59-57ad-8210-3489cd2a465f",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "541adde7-e30d-5591-92de-f8abbfa215ca",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "cb9b1e40-136d-5cc4-a035-36ab22f54eb1",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "800803d7-7c3d-565b-b368-d0dfcdf82681",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "No calificar disfrute, curiosidad, gusto estético, creatividad como rasgo, justicia privada ni sentimientos personales. Las decisiones textuales se evalúan solo cuando se piden."
+    },
+    {
+      "id": "176e9070-d943-5f25-bf69-30537d48ff8e",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "6ce926db-58dd-52e9-8a42-a65c65e0aa29",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "da24f17d-86b5-5578-843b-34eaa0cad199",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "d9e1c80a-041c-5748-89c0-3d8b7f1e5780",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    },
+    {
+      "id": "ac0e375a-1ea4-5699-8347-c25254a3dcd6",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no es una tarea independiente."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 68,
+    "fullInstrumentsGenerated": 272,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 272,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_12_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+    "testCounts": {
+      "backend": 62662,
+      "backendFiles": 163,
+      "frontendActivities": 63998,
+      "frontendFiles": 100,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 6004,
+      "recommend": 6118,
+      "writes": 3827
+    },
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hlm-literatura-5.md"
+  },
+  "limits": [
+    "2 géneros, con 44 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Autores y obras son referencias opcionales, no requisitos simultáneos.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HLM_LEN_5_V1",
+    "versionId": "a728f522-32bc-5808-b5b7-dcf222abe077",
+    "scopeId": "e14d19a7-6496-5a01-9bf9-8107dc70fb47",
+    "result": "UNCHANGED",
+    "elements": 102,
+    "excludedFromAssessment": 23,
+    "sourceRowsAndSpansMatched": true
+  }
+}

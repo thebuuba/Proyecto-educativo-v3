@@ -1,0 +1,31 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalogCandidate": "evaluation-2026.125",
+  "grade": 5,
+  "subjectCode": "OPT-HLM-LEN-5",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "status": "BLOCKED_PERSONAL_LOGIN_REQUIRED",
+  "servedAsset": "/assets/index-_ShUdYGi.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "La recarga normal recibió el entry compilado y registerSW.js.",
+    "La cuenta personal recordada aparece en el login; al continuar solicita contraseña."
+  ],
+  "notVerified": [
+    "Creador vacío personal con esta optativa.",
+    "Estrategia automática y manual e instrumento completo con el contexto personal.",
+    "Guardado y reapertura personales.",
+    "Instrumento personal exactamente conservado al cambiar únicamente la estrategia."
+  ],
+  "qaDoesNotSubstitutePersonalBrowser": true,
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con la cuenta propia de Development en localhost:8787.",
+    "Abrir5.º de secundaria, modalidad Académica, salida Humanidades y Lenguas Modernas y OPT-HLM-LEN-5.",
+    "Comprobar los cuatro controles y puntos vacíos antes de introducir una consigna.",
+    "Identificar únicamente prosopografía y exageración en una epopeya proporcionada: cotejo automático con dos evidencias, sin explicación no solicitada; permitir rúbrica manual.",
+    "Narrar una novela policíaca ficticia según un plan dado: comprobar que aparece el instrumento completo.",
+    "Asignar17.35, editar una fila, guardar y reabrir; cambiar únicamente la estrategia y comprobar que instrumento, snapshot, criterios, pesos y puntos permanecen idénticos."
+  ]
+}

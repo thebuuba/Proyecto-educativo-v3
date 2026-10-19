@@ -61,7 +61,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Formación Integral Humana y Religiosa | 5 | Común | 417, 418, 419, 420 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Formación Integral Humana y Religiosa | 6 | Común | 421, 422, 423, 424 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Apreciación y Producción Literarias | 4 | Humanidades y Lenguas Modernas | 427, 428, 429, 430, 431 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
-| Apreciación y Producción Literarias | 5 | Humanidades y Lenguas Modernas | 432, 433, 434, 435, 436 | PENDING |
+| Apreciación y Producción Literarias | 5 | Humanidades y Lenguas Modernas | 432, 433, 434, 435, 436 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Análisis y Producción de Textos Periodísticos y Publicitarios | 6 | Humanidades y Lenguas Modernas | 437, 438, 439, 440, 441, 442, 443, 444 | PENDING |
 | Manejo de la información en inglés | 4 | Humanidades y Lenguas Modernas | 445, 446, 447, 448, 449 | PENDING |
 | Apreciación de la Literatura Anglófona | 5 | Humanidades y Lenguas Modernas | 450, 451, 452, 453, 454, 455 | PENDING |

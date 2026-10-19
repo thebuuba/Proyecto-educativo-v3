@@ -60,3 +60,5 @@ Revisar las tablas PDF427,461,490,498 y sus 18 ámbitos por grado antes de imple
 ### 5. Cierre consolidado
 
 Revisar la matriz de estado, instrumentos completos y evidencias de cada área. Ejecutar `pnpm --filter backend test`, `pnpm --filter backend build`, `pnpm --filter frontend build`, `pnpm cloudflare:build` y las regresiones frontend afectadas. Verificar integridad de releases/snapshots, configuración efectiva, último commit/upstream y árbol. Enumerar cualquier pendiente real sin presentar cierre parcial como finalización del encargo.
+
+HLM5: epopeya y novela policíaca conectadas/verificadas mediante272instrumentos y12muestrasHTTP/DB enDevelopment125. Navegadorpersonalpendientedeautenticación. Dosoptativasacadémicasconectadas,demás16pendientes;no cerrar elpaso global. SiguienteHLM6periodismo/publicidadyregresióndelaliaspolicialsingularen126,pushretenido.

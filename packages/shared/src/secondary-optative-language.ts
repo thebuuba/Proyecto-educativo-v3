@@ -9,13 +9,14 @@ import {withoutResources} from './evaluation-task-text'
 import {adaptLanguageScale} from './language-scale'
 import type {InstrumentRecommendation} from './instrument-recommendation'
 import {optativeHlmLenFour} from './secondary-optative-hlm-len-4'
+import {optativeHlmLenFive} from './secondary-optative-hlm-len-5'
 
 type OptativeFeature=LanguageFeature&{sourceRecordIds:string[]}
 export type OptativeLanguageGenre={id:string;label:string;match:string;sourceRecordIds:string[];pdfPages:number[];profile:{genre:string;target:string;plan:string};features:OptativeFeature[];dimensions:TopicDimension[]}
 export type OptativeLanguageModule={id:string;grade:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];topics:OptativeLanguageGenre[]}
 type OptativeAction={text:string;genre:OptativeLanguageGenre;activityType:string;plan:boolean;revision:boolean}
 export type OptativeLanguageTask={module:OptativeLanguageModule;actions:OptativeAction[];activityType:string;technique:string}
-export const optativeLanguageModules=[optativeHlmLenFour]
+export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const verbs='(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon)[a-z]*'
 function requestedText(value:string){
@@ -52,9 +53,10 @@ function selectedFeatures(genre:OptativeLanguageGenre,text:string,separate=false
  return genre.features.filter(f=>new RegExp(f.match).test(text)&&!(f.id==='novel-characters'&&/qu(?:e|ien(?:es)?) personajes hablan/.test(text))).flatMap(f=>{
   const selected=(f.terms??[]).flatMap(([pattern,name])=>{const m=new RegExp(pattern).exec(text);return m?[{name,index:m.index,end:m.index+m[0].length}]:[]}).sort((a,b)=>a.index-b.index)
   const span=selected.length>1?text.slice(selected[0].index,selected.at(-1)!.end):''
-  const name=selected.length>1&&/\bo\b/.test(span)?'la opción elegida entre '+selected.map(s=>s.name).join(' o '):selected.length?selected.map(s=>s.name).join(' y '):f.name
+  const alternative=selected.length>1&&/\bo\b/.test(span)
+  const name=alternative?'la opción elegida entre '+selected.map(s=>s.name).join(' o '):selected.length?selected.map(s=>s.name).join(' y '):f.name
   // La composición existente recibe los términos ya delimitados por esta consigna optativa.
-  return separate&&selected.length?selected.map(s=>({...f,id:f.id+'-'+normalize(s.name).replaceAll(' ','-'),name:s.name,terms:undefined})):[{...f,name,terms:undefined}]
+  return separate&&selected.length&&!alternative?selected.map(s=>({...f,id:f.id+'-'+normalize(s.name).replaceAll(' ','-'),name:s.name,terms:undefined})):[{...f,name,terms:undefined}]
  })
 }
 export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTopicCriterion[]{
@@ -70,6 +72,7 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
   ]}))
   if(action.plan){
    const components=(genre.id==='poesia-romantica'?[['intencion','la intención'],['tema','el tema'],['estrofa|forma','la forma elegida']]:[['sucesos|acciones','los sucesos'],['personajes','los personajes'],['lugar','el lugar'],['tiempo','el tiempo']]).filter(([pattern])=>new RegExp(pattern).test(text)).map(([,label])=>label)
+   if(genre.id==='epopeya'&&/\b(?:verso|prosa)\b/.test(text))components.push(/\bverso\b/.test(text)&&/\bprosa\b/.test(text)?'la forma elegida entre verso o prosa':/\bverso\b/.test(text)?'la forma en verso':'la forma en prosa')
    const plan=components.length?'la relación entre '+components.join(' y '):'los componentes expresamente pedidos y sus relaciones'
    return languageWritingProcedures(text,base,genre.profile.genre,plan).map(r=>({...r,templateId:r.templateId.replace(base,prefix)}))
   }

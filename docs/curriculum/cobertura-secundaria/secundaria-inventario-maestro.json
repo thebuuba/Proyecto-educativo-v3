@@ -1627,16 +1627,16 @@
         434,
         435
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+      "provider": "packages/shared/src/secondary-optative-language.ts",
+      "evidence": "optative-hlm-len-5-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_12_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
       "nonApplicable": [
         1,
         2,
         3
       ],
-      "notes": null
+      "notes": "Epopeya y novela policíaca HLM;272instrumentos leídos y12muestrasHTTP/DB. Navegador personal pendiente por autenticación; no acredita HCS."
     },
     {
       "id": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",

@@ -12,8 +12,8 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-const optative=subjectCode==='OPT-HLM-LEN-4'
-assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&grade===4,'Solo se admiten ámbitos revisados explícitamente')
+const optative=['OPT-HLM-LEN-4','OPT-HLM-LEN-5'].includes(subjectCode)
+assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5].includes(grade),'Solo se admiten ámbitos revisados explícitamente')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 assert(subjectCode!=='FHR'||[1,2,3,4,5,6].includes(grade),'FHR requiere grado y contratos revisados')
 const family=optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optative?'Optativa HLM Literatura':subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optative?'Apreciación y Producción Literarias':subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
@@ -38,7 +38,7 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=optative?'data/evaluation-instruments/optative-hlm-len-four-contracts.json':subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=optative?`data/evaluation-instruments/optative-hlm-len-${gradeName}-contracts.json`:subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
@@ -48,7 +48,7 @@ if(selectedIds){
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
 if(subjectCode!=='SOC')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'El área requiere fuente publicada y muestras explícitas de contratos revisados')
-const sourceCode=optative?'MINERD_SECUNDARIA_2023_OPT_HLM_LEN_4_V1':`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
+const sourceCode=optative?`MINERD_SECUNDARIA_2023_OPT_HLM_LEN_${grade}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
 const source=sourceMode?JSON.parse(readFileSync(path+sourceCode+'-source.json','utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,sourceCode)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
@@ -113,7 +113,7 @@ try{
     const importedId=source.elementIdMap[record.id];assert(importedId)
     Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
    }
-   if(optative&&procedural[i]?.id==='poetry-figures-only'){
+   if(optative&&['poetry-figures-only','epic-figures-only'].includes(procedural[i]?.id)){
     const {preferredInstrumentType,...automaticInput}=input
     const automatic=(await request('/evaluation-instruments/recommend',automaticInput)).data
     assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,2)

@@ -1,0 +1,1379 @@
+{
+  "catalog": "evaluation-2026.125",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "method": "Lectura de75 textos únicos con cinco niveles,26 paquetes de los cuatro formatos con unidades exactas y68 correspondencias de consignas. Reconstrucción exacta de272 instrumentos por read-optative-hlm-five.mjs. Relectura de textos, paquetes y correspondencias afectados después de las regresiones.",
+  "findingsFixed": [
+    "Reconocimiento alternativo que imponía ambas secuencias",
+    "Duplicación del narrador omnisciente y del narrador genérico",
+    "Comparación de estructura que imponía forma y otras partes",
+    "Plan que omitía la elección entre verso o prosa",
+    "Análisis del protagonista que imponía valores no pedidos",
+    "Seres fantásticos que arrastraban otros hechos fantásticos",
+    "Inferencia de motivaciones que añadía un estudio general de personajes"
+  ],
+  "minorDeferred": [
+    "Repetición de artículos o de la palabra función en algunas descripciones compuestas; no añade contenidos ni modifica alternativas."
+  ],
+  "items": [
+    {
+      "caseId": "brief:epopeya",
+      "instrumentType": "rubrica",
+      "sha256": "ad28df954b55560b632deca3b9b3000de5d6e27522b6805678965c76469f3aa3"
+    },
+    {
+      "caseId": "brief:epopeya",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c5c76fd6ae5f5fc313443e82252a0c15a2a59dff91e8a1597c7c464eb034963c"
+    },
+    {
+      "caseId": "brief:epopeya",
+      "instrumentType": "escala",
+      "sha256": "7c7c6b8265744f2d7bf56916e97a68bf0251dc74f2968a9dd9767e8d50571bda"
+    },
+    {
+      "caseId": "brief:epopeya",
+      "instrumentType": "lista-ponderada",
+      "sha256": "723875a2dce5737d7a4b03dd5d8a393af9dbaf19ccc2793f6c9b04d9bfe81c4b"
+    },
+    {
+      "caseId": "brief:novela-policiaca",
+      "instrumentType": "rubrica",
+      "sha256": "bc38e4588de1f8d1ba3395a33e7206300d17dd5b29b60dadfdc2335ceb3a9da1"
+    },
+    {
+      "caseId": "brief:novela-policiaca",
+      "instrumentType": "lista-cotejo",
+      "sha256": "62a26fd531d3e1b1eeb6a88869475d781a9bdb65de58e17f2aa003635b73f970"
+    },
+    {
+      "caseId": "brief:novela-policiaca",
+      "instrumentType": "escala",
+      "sha256": "88cf1c8efa7a7340e204d688e13fe926437e4380974601e37a1c363cf3620a68"
+    },
+    {
+      "caseId": "brief:novela-policiaca",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e92e8958d395b61cc03c8d1939087efda753121ef9e447924431be5f32a72aa0"
+    },
+    {
+      "caseId": "epopeya-epic-structure",
+      "instrumentType": "rubrica",
+      "sha256": "649159c52bd4e0b005f3e314a6ff95ce67748f8aa9a1e1d4391d1ceea6269c60"
+    },
+    {
+      "caseId": "epopeya-epic-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f009a43537942521e5746bb71886f08e183371c175fe981de6305909e54f271c"
+    },
+    {
+      "caseId": "epopeya-epic-structure",
+      "instrumentType": "escala",
+      "sha256": "c459b3356f69334e83e498d8f47e21e6a9e820719f5f4b6d18fde5b396197104"
+    },
+    {
+      "caseId": "epopeya-epic-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32cd83e1dd8677aa708a6200c2f2119af9fda3746fb93ca47a42b80f5d05d861"
+    },
+    {
+      "caseId": "epopeya-public-deed",
+      "instrumentType": "rubrica",
+      "sha256": "2852267da7570d968d2af0c6281c953dfd1160ba7e367201166eaf0e9c0d2d67"
+    },
+    {
+      "caseId": "epopeya-public-deed",
+      "instrumentType": "lista-cotejo",
+      "sha256": "30b4c1b9777b8929205c663355cbd38c8d80510e9782d06effcee49dac099c08"
+    },
+    {
+      "caseId": "epopeya-public-deed",
+      "instrumentType": "escala",
+      "sha256": "fe219d08a3093daf288b9054e65f97d4779e65038657967f99d6ddc2cd170083"
+    },
+    {
+      "caseId": "epopeya-public-deed",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1c100907e8b969511ff3579426c2fd6c2df67d221b5097d65d3f28c5ec5bd7d4"
+    },
+    {
+      "caseId": "epopeya-protagonist-values",
+      "instrumentType": "rubrica",
+      "sha256": "2a2f84827f67c519c3569d0cdf9bee1d4e3960a7bdbee72b0047b4ad94a7f0c5"
+    },
+    {
+      "caseId": "epopeya-protagonist-values",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8fb9bf8b129e8cb777f2266dbab3a1680faaa1ae1048c6d2ab00674d63f66302"
+    },
+    {
+      "caseId": "epopeya-protagonist-values",
+      "instrumentType": "escala",
+      "sha256": "d304e9393d6f39e1bb836351832f9f2e0ca338dfc108e250044874d67877fc1f"
+    },
+    {
+      "caseId": "epopeya-protagonist-values",
+      "instrumentType": "lista-ponderada",
+      "sha256": "50a70f55be62553c3b6b9fa162ad38fd2582af8dd64e1dccb0fdd2570f750374"
+    },
+    {
+      "caseId": "epopeya-fantastic",
+      "instrumentType": "rubrica",
+      "sha256": "cfbf50bdf218290c2e36000ab0799a7b15f437fc911d1b8455a761b093a2a815"
+    },
+    {
+      "caseId": "epopeya-fantastic",
+      "instrumentType": "lista-cotejo",
+      "sha256": "77c84fbdfdef42cdc1a4f1131808b070205b780bde6c7e7e2b78b498037e450f"
+    },
+    {
+      "caseId": "epopeya-fantastic",
+      "instrumentType": "escala",
+      "sha256": "3ec8fa37241a3ecd93bc37128c303fe34ed24594def19874cdfb4f87981d626d"
+    },
+    {
+      "caseId": "epopeya-fantastic",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c70eaf2de6ef91dcae5cb85986a0c0da86c007a53d0aa865fe9095260bb8846d"
+    },
+    {
+      "caseId": "epopeya-epic-themes",
+      "instrumentType": "rubrica",
+      "sha256": "d5cd0d135a239d53f40f283f076ffe2954e96b4e1125decc13d3091394b79536"
+    },
+    {
+      "caseId": "epopeya-epic-themes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "58ebb4d54477c78137eedc9f53df513dd6a396d3f51754b06d731ef98b59c2bd"
+    },
+    {
+      "caseId": "epopeya-epic-themes",
+      "instrumentType": "escala",
+      "sha256": "81a928702fa4cf9e475c5e2ce8ce42dbbf940bf4a6cde54c3b6a256328b5883e"
+    },
+    {
+      "caseId": "epopeya-epic-themes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23d5062d09378bc65d0489cd15f5a20e7675a7475aabf7bf4f513b671f17bdc8"
+    },
+    {
+      "caseId": "epopeya-epic-sequences",
+      "instrumentType": "rubrica",
+      "sha256": "9c969cce02268d701757f3d7d6d8f0e0db4e90fce023103add8b809e6d8c526e"
+    },
+    {
+      "caseId": "epopeya-epic-sequences",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e48fb161bc03d42e573ba1e0cfbb85e7213ffeb175873f076ca885a743b69cff"
+    },
+    {
+      "caseId": "epopeya-epic-sequences",
+      "instrumentType": "escala",
+      "sha256": "e91495677b67de5d91a290d3915313969738ac855ea58471f56e55c0838ace7e"
+    },
+    {
+      "caseId": "epopeya-epic-sequences",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a71d05aef9666a712afaaa10a49b92d3831d5b3b91fd19b79e9383f7ffe3a8d"
+    },
+    {
+      "caseId": "epopeya-epic-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "5dfa9850bba1e33d7ae4f7a24d69d6b92be7fcb0e09e68f5e0236f3f8325b11e"
+    },
+    {
+      "caseId": "epopeya-epic-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6e918917064cac251c4224a52f621abff79328dbda76236133cf5d3bd1098dda"
+    },
+    {
+      "caseId": "epopeya-epic-connectors",
+      "instrumentType": "escala",
+      "sha256": "a10f58a69a70c1c1967fe46f0cbf959dc4d4896bf937e4b7a359d0213d428c79"
+    },
+    {
+      "caseId": "epopeya-epic-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c0ccf7cc38a0460514a1d8215e87286e7ca9f169f55d248d51e4c715d59d8850"
+    },
+    {
+      "caseId": "epopeya-markers",
+      "instrumentType": "rubrica",
+      "sha256": "6720989b35cef94859fff1f0864fdafb19f1124a0497769ea73d1e57d8589603"
+    },
+    {
+      "caseId": "epopeya-markers",
+      "instrumentType": "lista-cotejo",
+      "sha256": "86d41c2e072f68e39226f59e7426267938f4fb3243ff91480b0acc311929b806"
+    },
+    {
+      "caseId": "epopeya-markers",
+      "instrumentType": "escala",
+      "sha256": "4bbcd58789d461a82744a9270c7f890860a8d11719f429fe4cdfad100fbf4bf3"
+    },
+    {
+      "caseId": "epopeya-markers",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b60726f62fbee077e30a754170b8365309de96fc50553d1f01b8cb2cbea01e15"
+    },
+    {
+      "caseId": "epopeya-narrative-tenses",
+      "instrumentType": "rubrica",
+      "sha256": "9e0cf8ff2a21f10696641ac8a3e6a019eaa50fbbc610de454895634fbd389c9c"
+    },
+    {
+      "caseId": "epopeya-narrative-tenses",
+      "instrumentType": "lista-cotejo",
+      "sha256": "28c44dd99a4678ef9bc10e65674a00cc17d2fa2387a988913180082856e4e8d3"
+    },
+    {
+      "caseId": "epopeya-narrative-tenses",
+      "instrumentType": "escala",
+      "sha256": "f1c5b9b964c4688555059fac02ee16a96309b85c75580f3b37bf59fb572c6b09"
+    },
+    {
+      "caseId": "epopeya-narrative-tenses",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b9322a2dc14b88d9b5caf24b92de556799159e7fdc025e50f61485b80c321de9"
+    },
+    {
+      "caseId": "epopeya-epic-adjectives",
+      "instrumentType": "rubrica",
+      "sha256": "58d4ad1d5490b9767e1d37388b9da9f2d8dd8169fc9089ba38c4037a4f81d6e8"
+    },
+    {
+      "caseId": "epopeya-epic-adjectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3a35c498fb738607e2c6d56f21d648827052668b074b3749b6107a20fa0619a"
+    },
+    {
+      "caseId": "epopeya-epic-adjectives",
+      "instrumentType": "escala",
+      "sha256": "ea837363d18d8727c9ea441899d37c81db59e6b1c49f6905d998410c13c8aafb"
+    },
+    {
+      "caseId": "epopeya-epic-adjectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ba6027627b29fe8d346c46213bc5b838e196cd5df477f0c50faf736cb4dc2494"
+    },
+    {
+      "caseId": "epopeya-narrator",
+      "instrumentType": "rubrica",
+      "sha256": "91c083db2d2914bae9eaf6a6c8cd56bc1f39117be4e5b93b72c067d4f96654f7"
+    },
+    {
+      "caseId": "epopeya-narrator",
+      "instrumentType": "lista-cotejo",
+      "sha256": "76dcbbac11f3280c29d64c62107dc9955a7c203f5eba89799b8834dd6a0fea5b"
+    },
+    {
+      "caseId": "epopeya-narrator",
+      "instrumentType": "escala",
+      "sha256": "48b396282cc608c0dc3ebb2835434f3fe5d62032eba6e5d4f1e5a3bfb22674b2"
+    },
+    {
+      "caseId": "epopeya-narrator",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b00519311fb5d46cbd70ff30d3f2320f2e6bdaa7392ef5977d45a73a1598cc2"
+    },
+    {
+      "caseId": "epopeya-omniscient",
+      "instrumentType": "rubrica",
+      "sha256": "0c69bfed9e274a8a8e8325b82400f04219d647356ba9c65cf5f35178492e49f9"
+    },
+    {
+      "caseId": "epopeya-omniscient",
+      "instrumentType": "lista-cotejo",
+      "sha256": "598c57b7cdbe099860b14e1fbd024fefcf55c50d1d24824b23b96109a59d99ae"
+    },
+    {
+      "caseId": "epopeya-omniscient",
+      "instrumentType": "escala",
+      "sha256": "2a09baadb7e75045ad3fa521c17d4ec68d835e9ef30726497720313f20a07e24"
+    },
+    {
+      "caseId": "epopeya-omniscient",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ff758dabd5c9ea8e0500f1fc9ec0d5b81e4bbc305188f748f56de6e2a6e527cc"
+    },
+    {
+      "caseId": "epopeya-novel-characters",
+      "instrumentType": "rubrica",
+      "sha256": "8d3a0f10ca4c07af27a4013cfd544e7e8b97451da2c1c3d466fe06d609418e11"
+    },
+    {
+      "caseId": "epopeya-novel-characters",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c117ef4d141b35e0971f53fd57cc6d249b04a074ee5c57dfff3149302420e46"
+    },
+    {
+      "caseId": "epopeya-novel-characters",
+      "instrumentType": "escala",
+      "sha256": "3e1c4af883c9cd678077244798fd23bf0970992ca4fea1547c326ad5e9ca2cde"
+    },
+    {
+      "caseId": "epopeya-novel-characters",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6a712338d31fa3478ae4005fb474d5b43a049303074de994b3122fc4fa21832d"
+    },
+    {
+      "caseId": "epopeya-epic-actants",
+      "instrumentType": "rubrica",
+      "sha256": "d3062a735c433ec99b8208d632466e830bbf4b8cac40b7ce0fa20fe9e90e5763"
+    },
+    {
+      "caseId": "epopeya-epic-actants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3043aa465eb681995fda30726d37127a0f7b0226885b791be53ac4586b63cc1f"
+    },
+    {
+      "caseId": "epopeya-epic-actants",
+      "instrumentType": "escala",
+      "sha256": "315146f37e235be83c3ddca8c1e133ee868b3a26664d156f84a29532335bb777"
+    },
+    {
+      "caseId": "epopeya-epic-actants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4e7d1b2a407d190ffee20d0a9da8644fa00eaadcb9503d4c71abf0d4aff1f362"
+    },
+    {
+      "caseId": "epopeya-epic-figures",
+      "instrumentType": "rubrica",
+      "sha256": "b847c1562581e8a4e75b504dc04738c248fc140eb1950f6eac7b76106dec5cad"
+    },
+    {
+      "caseId": "epopeya-epic-figures",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a96b42faab664019fc884b258f4bb76be31e635c40335fa59a7ee418cdb0ee4b"
+    },
+    {
+      "caseId": "epopeya-epic-figures",
+      "instrumentType": "escala",
+      "sha256": "f803560089599683f74d3c01731216996ca8cc176424edc1bac4c33d91cc9f00"
+    },
+    {
+      "caseId": "epopeya-epic-figures",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2bcefa73ea45c84b0af6f8c16a1b949865597adffe83f288fba281fc0d10a76"
+    },
+    {
+      "caseId": "novela-policiaca-novel-structure",
+      "instrumentType": "rubrica",
+      "sha256": "fa7d8f95d819b7eaeff8661f66eee322ac4096714bb11083829060f46a4b5dbf"
+    },
+    {
+      "caseId": "novela-policiaca-novel-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "32cbb57355e3db0c9a870310586249063ab57c055157b0cbd74c021bade17c21"
+    },
+    {
+      "caseId": "novela-policiaca-novel-structure",
+      "instrumentType": "escala",
+      "sha256": "6db3e787bb8d732ebfdbc76da0dc42f9d126a089006ea9d6d50230da8c65c181"
+    },
+    {
+      "caseId": "novela-policiaca-novel-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "940b2bad7f843e00759aecdd4b014ec284bc9ea1c0a8b6750b6d12a0b061ff46"
+    },
+    {
+      "caseId": "novela-policiaca-detective-characteristics",
+      "instrumentType": "rubrica",
+      "sha256": "02388aad85a4f35d65049206d94f69e4af809ec322ab8931033c7bf66abec430"
+    },
+    {
+      "caseId": "novela-policiaca-detective-characteristics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f29a4e9a539a05fd40022c66b90beaf00f7a6039f8ddfcad305663ff148b5968"
+    },
+    {
+      "caseId": "novela-policiaca-detective-characteristics",
+      "instrumentType": "escala",
+      "sha256": "093a3725af32701460bd12489b050f3f39813c1c31e535112bd65d90327e09d7"
+    },
+    {
+      "caseId": "novela-policiaca-detective-characteristics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fad5e1e1910535d3b98bc9b8f513e3a1ca12d95af7b0f36d83a99239b77fc98f"
+    },
+    {
+      "caseId": "novela-policiaca-novel-sequences",
+      "instrumentType": "rubrica",
+      "sha256": "8317610ae1771ce0d742628e3fc419ea27adb491793922ddb2eaafdbdbd5d1b3"
+    },
+    {
+      "caseId": "novela-policiaca-novel-sequences",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ba16efe8f27c3dde08e8ad99e0f8753a5070772c75f674be6b48398454a70b6"
+    },
+    {
+      "caseId": "novela-policiaca-novel-sequences",
+      "instrumentType": "escala",
+      "sha256": "63bfa6e5d06eb49c25928d04f265bb463531afa46e1f7bd8f060ed18619d9eb4"
+    },
+    {
+      "caseId": "novela-policiaca-novel-sequences",
+      "instrumentType": "lista-ponderada",
+      "sha256": "34d0346a84be3a8aa8d1fc7f303236ba0852473c136e216776fc4635a73c4950"
+    },
+    {
+      "caseId": "novela-policiaca-novel-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "180bf7c41fcbadd47b7e61c2318a1dace52e9ed306337775df13f067ab80a309"
+    },
+    {
+      "caseId": "novela-policiaca-novel-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "99a4930a26907f079d3075d32ce63d1ad0b01157c226aafe64baac345d7ded2c"
+    },
+    {
+      "caseId": "novela-policiaca-novel-connectors",
+      "instrumentType": "escala",
+      "sha256": "3255f2c6446e9297723f4f5bc658fc477baf1bd903dda2c3ef67642e3cfc4c8e"
+    },
+    {
+      "caseId": "novela-policiaca-novel-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c916c76343fdacab28dea5cf9be35242e31e33ba104eceb4a670ed333237f360"
+    },
+    {
+      "caseId": "novela-policiaca-narrative-tenses",
+      "instrumentType": "rubrica",
+      "sha256": "257966e20ebb4a3486c087e799dad4f5f3a9ef57bcda2199db2b33d5bd9c9bc9"
+    },
+    {
+      "caseId": "novela-policiaca-narrative-tenses",
+      "instrumentType": "lista-cotejo",
+      "sha256": "80c5ef023276007a93c6af54a1d8fb9456b72a899ef6b38f24b2dfec17341034"
+    },
+    {
+      "caseId": "novela-policiaca-narrative-tenses",
+      "instrumentType": "escala",
+      "sha256": "3150385846a51da430778fe255c872a5880bd7ebe734a2c968addee8c23229d2"
+    },
+    {
+      "caseId": "novela-policiaca-narrative-tenses",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fb774d474f6002742cabbd5462731e6258fe4fd61f340c0d0e22e0391fbaa826"
+    },
+    {
+      "caseId": "novela-policiaca-novel-adjectives",
+      "instrumentType": "rubrica",
+      "sha256": "71b300ff01a2d8070ead5ef6f252f65cd9eb57da6c2a0ef08f35e157d5d41eba"
+    },
+    {
+      "caseId": "novela-policiaca-novel-adjectives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a5f1fd05069a59e278d1b6fb9d5ce01be92719884685f5d03a2ded8fc5229692"
+    },
+    {
+      "caseId": "novela-policiaca-novel-adjectives",
+      "instrumentType": "escala",
+      "sha256": "dc32bcb71782982a11b40c3a38a157c63d1f130437a251425088e5c26245f249"
+    },
+    {
+      "caseId": "novela-policiaca-novel-adjectives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "802bc30d5dda95f38681f1f31ef0c7de5c9b3fa9736a85acc5529befd966f896"
+    },
+    {
+      "caseId": "novela-policiaca-narrator",
+      "instrumentType": "rubrica",
+      "sha256": "049d571da09a03d5a98701116713fa9dc663a04e0afd8977112deb33a1ce9059"
+    },
+    {
+      "caseId": "novela-policiaca-narrator",
+      "instrumentType": "lista-cotejo",
+      "sha256": "03f02df4bb3465ca6a03de5249f859808e4bc54a180c6b6eda722d8543047e62"
+    },
+    {
+      "caseId": "novela-policiaca-narrator",
+      "instrumentType": "escala",
+      "sha256": "911806b22e8b7e996399aa1cf03cddd4502d906bcee352cb053a4da8e6670a6f"
+    },
+    {
+      "caseId": "novela-policiaca-narrator",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d625b98436059c538db5d81b5e8c593a092f03cc9e081e04605c0f4c544ee04"
+    },
+    {
+      "caseId": "novela-policiaca-novel-characters",
+      "instrumentType": "rubrica",
+      "sha256": "5c54442a92801a7674a94d6669b1741276aaa6d5c259cc7337ddfa96b9471343"
+    },
+    {
+      "caseId": "novela-policiaca-novel-characters",
+      "instrumentType": "lista-cotejo",
+      "sha256": "82b8856446ff66f14ea8954ac640a1f611a27e378114301607456c52924691bd"
+    },
+    {
+      "caseId": "novela-policiaca-novel-characters",
+      "instrumentType": "escala",
+      "sha256": "00191f2410876d939a524090c14b260db66ea4d2d308954167699299dc7dd9a1"
+    },
+    {
+      "caseId": "novela-policiaca-novel-characters",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c44610a69f586fab9fd48dc486604f395be08c44ad058ecd357468d7437befc3"
+    },
+    {
+      "caseId": "novela-policiaca-novel-actants",
+      "instrumentType": "rubrica",
+      "sha256": "14935a639233117b0f139b8aa2946ab94d73997f6055a04604d2a422a55d335d"
+    },
+    {
+      "caseId": "novela-policiaca-novel-actants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a37607d30c0caf0d94a2b7f1b6cf878d4e6909eb20f9938c9fbd3d028b9c63e1"
+    },
+    {
+      "caseId": "novela-policiaca-novel-actants",
+      "instrumentType": "escala",
+      "sha256": "b020646509fc652394151b329692307ef6a273f71f0c404665e2147f5028aa02"
+    },
+    {
+      "caseId": "novela-policiaca-novel-actants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3a2a0c163484053a34ca192da9bb0f8a56a5c4ede7996c46cb9db3a2e65e132b"
+    },
+    {
+      "caseId": "epic-listening",
+      "instrumentType": "rubrica",
+      "sha256": "a4e04630d76bc7a3afaf45035c03c4f74b9aafb5aad5e9cb645d2082d5257a45"
+    },
+    {
+      "caseId": "epic-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "35fe8ebe931ab3d10057b73295d35c3d43d24dfe204297937eaf501f3885e1b8"
+    },
+    {
+      "caseId": "epic-listening",
+      "instrumentType": "escala",
+      "sha256": "20c7b38ac3c7aa7010679f5f6d503ee625465219f3f8f2e4da4c3d92b3a55952"
+    },
+    {
+      "caseId": "epic-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "456e8493aaf77092f6f8cc725e541d194100f7876f1455593a845e0a18be2463"
+    },
+    {
+      "caseId": "epic-listening-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "87ad13d25df5b7e76f6e8b196e3253299014706b3a5a26435ea371478e49de7e"
+    },
+    {
+      "caseId": "epic-listening-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eb0b2dbcf73894dca162234e6b44b24a4f7ee5bc6b7ced530350115e564a93e2"
+    },
+    {
+      "caseId": "epic-listening-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "acfcb2b1240c1ae8c7994965f9b7d3eb6fde377297508cce3d102a743d47d068"
+    },
+    {
+      "caseId": "epic-listening-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9724e6b69821660cb693a070879b964f93af71fb623ae9880599e295d1bad486"
+    },
+    {
+      "caseId": "epic-listening-causes",
+      "instrumentType": "rubrica",
+      "sha256": "1836fed891e8f573b097643974d3fa79a5d51ca7b2b61d799baa0f29117fcf5e"
+    },
+    {
+      "caseId": "epic-listening-causes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "90030d25904d6443127da98712c8457d734256a51e3257b0029b5a9636ecd9e9"
+    },
+    {
+      "caseId": "epic-listening-causes",
+      "instrumentType": "escala",
+      "sha256": "a369e89ebcc804db445954206d6372912c8dac1b1da4043008e8f013c4617ce2"
+    },
+    {
+      "caseId": "epic-listening-causes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "64ba8249c351e0d2a3c8737bac6143ebfc0c0c8685a17c39603b700e5b1f76a6"
+    },
+    {
+      "caseId": "epic-oral-narration",
+      "instrumentType": "rubrica",
+      "sha256": "379a783dc6ce8aa39357e24161f0c1776e98f8b8d1f1cf4833cea4c5d89d6946"
+    },
+    {
+      "caseId": "epic-oral-narration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8cb21eeba159f6f5f7945884cc884169463a464a08395c2b4fd2e9cf77526e04"
+    },
+    {
+      "caseId": "epic-oral-narration",
+      "instrumentType": "escala",
+      "sha256": "de38e360092ee1555973f03ef46f3f2d0945207006d3af750b8fa5257748f08d"
+    },
+    {
+      "caseId": "epic-oral-narration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8ab23c218b5162a49e747c3bcd41467c790332bbda7cdb3180e8042c76acebbf"
+    },
+    {
+      "caseId": "epic-oral-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "6ba153dd2589e6665eec6253cc5be88ccd5bfe3f8c7c3739374a6d1eb6364b0e"
+    },
+    {
+      "caseId": "epic-oral-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f82415d9fdb2b24f405312c3dc2253e5cb65cb841867f19c747b91302b83048c"
+    },
+    {
+      "caseId": "epic-oral-connectors",
+      "instrumentType": "escala",
+      "sha256": "e92d2b1b09ca5c8091f7bc3987d1c648dc5f80f44ddb67213e4e0b1cc61efbeb"
+    },
+    {
+      "caseId": "epic-oral-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "633e915a0505cd5c748387e61f4fef56101ff4fc9df7e52f02abd58d34c679db"
+    },
+    {
+      "caseId": "epic-reading-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "b90a9f6e6030adaff5e660f5d7bdcbc4760c94767940784969b9660ce2718f24"
+    },
+    {
+      "caseId": "epic-reading-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3de921210dbc4cc1b08ac36dabce07b24f4fddae65eb62c8c3e11bc7e34fc35b"
+    },
+    {
+      "caseId": "epic-reading-prediction",
+      "instrumentType": "escala",
+      "sha256": "d29c454ea963c001b03a71dc2c3008b9af44c71b37da7c3c9e8078525034eb9f"
+    },
+    {
+      "caseId": "epic-reading-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "482e328f5f41f38d996e2bc45dd66ed00ec0877799a9f3520e2af0fd5a4d8ca9"
+    },
+    {
+      "caseId": "epic-reading-motives",
+      "instrumentType": "rubrica",
+      "sha256": "93e17200e661e475c255c158404bcc8284fc10f55225d5e96e3cbb3cfceb01a9"
+    },
+    {
+      "caseId": "epic-reading-motives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6b15fbac8403bbbfb34e8dec7c6d3c484f15e1030ce7e878f7d44f2311a122cd"
+    },
+    {
+      "caseId": "epic-reading-motives",
+      "instrumentType": "escala",
+      "sha256": "4364af1bf7598412ca18ee9c2fa8a7265e5c247171cd7dbe2ea5339987e53132"
+    },
+    {
+      "caseId": "epic-reading-motives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "49b5bb016ce01172296cf1dc0eedf04bf0477afe2d67a82941f8ffa7caff4ac2"
+    },
+    {
+      "caseId": "epic-reading-summary",
+      "instrumentType": "rubrica",
+      "sha256": "5f488abd4fb9f9b4020cc076a7ab0887f9319d5023b2d31aa3a0aefe98b8d08b"
+    },
+    {
+      "caseId": "epic-reading-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fb33070f1d8e9a1a6191b7722ec9acb9bfc923931181f8e0bad5bb7d0abf4702"
+    },
+    {
+      "caseId": "epic-reading-summary",
+      "instrumentType": "escala",
+      "sha256": "e02f8343b7b656df84211419bf1548c79c7cc1bdb37f90e261fb469c31499ae4"
+    },
+    {
+      "caseId": "epic-reading-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7edc5ee993d78bea42d4b9210016ad12b85c06a482cd3c7ab42e5a2fa7038dde"
+    },
+    {
+      "caseId": "epic-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "a0e19660cf6d1e2b2998898716a93aed9282e5d5654d74e6a28c5439cd371245"
+    },
+    {
+      "caseId": "epic-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0dd71a3f26060590aef7f87c94eeeb4259cfae074be665dbc74d3ea2addfe69a"
+    },
+    {
+      "caseId": "epic-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "b98d4b9ae5acdf69de8d30cf01a94927a34e39ecbfafec63848dcd8bacbcc89f"
+    },
+    {
+      "caseId": "epic-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ec28907c0c31f6a5b0de30592181736e040b7bee98b44c4e561a372cad7bca9e"
+    },
+    {
+      "caseId": "epic-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "2308bf8093118cb7d0829e5e80594575a0f56d3442b4d742d60733affd3e8d50"
+    },
+    {
+      "caseId": "epic-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "717b8cb6b1ac48818eb400c3eda37b93596b2e9bb97e5c3dc5550ec2032f90b4"
+    },
+    {
+      "caseId": "epic-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "351ebc6edc7f9ffebc63caf5ff5d33b230e154929e593d1c75b6820691d06f94"
+    },
+    {
+      "caseId": "epic-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0d1fe9278c9956f5ea8b735214bc5648ef255e4d16fd9a4a282e2ba6b53eb227"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "rubrica",
+      "sha256": "a401fb0116f00a7abc4c9c76bf4ab5907c532e11de2bc889ee6f320d2a0e5e29"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8c055d3c497b100ae47319cf3d33d2a891e57093ae3861e5f7b1cd3e5af83eb"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "escala",
+      "sha256": "052e08429d54b600d2d9913fbbc6cbb1fd77b82a58ff405ed25e6d6871583409"
+    },
+    {
+      "caseId": "novel-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4c0cddabcafabeb509df3bbe403894edb625aee2681d2889974f7cc3ebd03046"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "rubrica",
+      "sha256": "8159e3484d88e3d9eae2f4f4826cf69573307c1b16ae76c489396ea986f90d8d"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9886d7b93f43110b7e6f4a2d5230fc45fad12e477da56aa4a13020193919ba67"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "escala",
+      "sha256": "e78de172b17f5627c3d529904f3a601e729a6704785899634857a14a72b7422c"
+    },
+    {
+      "caseId": "novel-listening-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3d28b9f8d4cc25d07356c89e974fe6fe7541c09297df373d4f8d29ae07af5e91"
+    },
+    {
+      "caseId": "novel-oral-hypotheses",
+      "instrumentType": "rubrica",
+      "sha256": "a0e289d18f0a0a20627060c8c6622b05bfc9c9887dd492a75231e756821ded41"
+    },
+    {
+      "caseId": "novel-oral-hypotheses",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a99720031ab9736e0e9ed098d4ed15d521c37e43eb4dc034f3177c908195b6ee"
+    },
+    {
+      "caseId": "novel-oral-hypotheses",
+      "instrumentType": "escala",
+      "sha256": "dbdb734b55f6c8eb05a931fc812c663f3df2ca553b6253664259bb7aa69156b5"
+    },
+    {
+      "caseId": "novel-oral-hypotheses",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e99e1abeb7a4111f9d451e2a7eb8eb8915c05afa0817d47de3efcf6c46bb2679"
+    },
+    {
+      "caseId": "novel-oral-actants",
+      "instrumentType": "rubrica",
+      "sha256": "7fdb68db544d32c6afd4a7f2e086ce4c60847e627783e021f39b2dfccf7b94b5"
+    },
+    {
+      "caseId": "novel-oral-actants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bc290b78bfc238fde978d3092fcf75e2b25c62e790c662faa8f3f35dac1348b0"
+    },
+    {
+      "caseId": "novel-oral-actants",
+      "instrumentType": "escala",
+      "sha256": "94d4e23a71e0e5c2cdd76ba2c1286e5c51462e91d58f818d6e20bc2cd62d3974"
+    },
+    {
+      "caseId": "novel-oral-actants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6368f8fa2fe408d99d3a7667be581ff87d5774a7bd76de47786f43df60ae13bc"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "b800b8eda1f3eef41cb2480cafe193038fabe80dc0eee3ebf19783fc36ea51a4"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1b7a266bb6481ef4c1ae0e5cc845c39dfe4148ac728bce8445dfc59aeba9317b"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "escala",
+      "sha256": "6c96150946add45e267a2dedd5d12473be632d4a6097b37707cf2bf63c9e54a3"
+    },
+    {
+      "caseId": "novel-reading-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "352e361e0ed55200b16988d847959770e9a8b3bb996b133c3ffd33368f093266"
+    },
+    {
+      "caseId": "novel-reading-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "5334970f20cf37007eb6130609fe756da3b53d3caa83d72a6bbe7e64efb7ac12"
+    },
+    {
+      "caseId": "novel-reading-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "10476ff2f4c46115b692d0171fede1fe1e1648e9f79be6f8fe5a892bd56763d1"
+    },
+    {
+      "caseId": "novel-reading-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "ff1c55f55546fc0dccf65b3cce274bb2e30666b0f8414f09abf4c1909c1770cb"
+    },
+    {
+      "caseId": "novel-reading-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4bce5f5a29171183006b9ddbadcaa53f8c5b8be5a14c4f4e739e4787671be1fd"
+    },
+    {
+      "caseId": "novel-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "20ab22a172aaa9a8194adbec3c7ccea20d01ccbda1dbf829a6caf89042b37297"
+    },
+    {
+      "caseId": "novel-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8f4bdbbb695bfa15c33bf08dab877da413fc30068a553a36e3deadc141859aba"
+    },
+    {
+      "caseId": "novel-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "78b2b4bfcb500d530d90c5dd3220495bc4d14a32364fc93582fb58e4186bf54e"
+    },
+    {
+      "caseId": "novel-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b7eb13f346acccceb9c1899397b39d6623c7910dac1d3535511bd1de5b9ea9eb"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "rubrica",
+      "sha256": "8effc8fdc7322a3b524d6288f72c3ca7f22a124c701319155d7a8600d0a5375b"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2e1a9793fd63b8ef90f3656e53a6df28d3f0749437076c0ac2a190c26828fdf7"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "escala",
+      "sha256": "72bed16c79ae6573403f3507883d8685f7d00fa94dbb2df1cfe28ee996a902ae"
+    },
+    {
+      "caseId": "novel-writing-voices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "857aca4fbcb19930dae7f7ed0efe328f92acb3138b4b417242a1934db8ecf448"
+    },
+    {
+      "caseId": "novel-writing-suspense",
+      "instrumentType": "rubrica",
+      "sha256": "44f9f5bc28563ce5a481dcfc611450d4cbb56adbbfce5a3bb7055b23545307a0"
+    },
+    {
+      "caseId": "novel-writing-suspense",
+      "instrumentType": "lista-cotejo",
+      "sha256": "61b9315af7f2574e93cc1d2f71e5695c322a4f9a3f7734bab7ad83734abd78a9"
+    },
+    {
+      "caseId": "novel-writing-suspense",
+      "instrumentType": "escala",
+      "sha256": "4795dfafdf543f578ad4e19d1f8a3ff146ede2c3e5ddee0693271605cac39b8d"
+    },
+    {
+      "caseId": "novel-writing-suspense",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fd14aceebef577db0a87ad6cade1c52b54c80ffc45725a44e1f1ec86f85d8379"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "48af816078fa2ca22feddf82dff4e2f2fbb151e503e2e7af47732f4c7e6da329"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "466723cf9f5ec0ae5ca233c1e02b13be4eecde63c985fc5f8cc3688eb68c13f6"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "c2ca03eb510c0d12033857f2b78198fb8454f835efcdec3bc83aadd6a453880f"
+    },
+    {
+      "caseId": "novel-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b6f58c321e3f92db3e39ee9611f2784285bfdfa1636e40682159c1bd4c1728ae"
+    },
+    {
+      "caseId": "epic-brief",
+      "instrumentType": "rubrica",
+      "sha256": "4960231bdc7a13d091854dd5bb349348df76b8841f09fa599483e13ad6f56c31"
+    },
+    {
+      "caseId": "epic-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a90826d640a066846eab34120d401ba126c0f0eddc4cbbb26c99d716a6928f0b"
+    },
+    {
+      "caseId": "epic-brief",
+      "instrumentType": "escala",
+      "sha256": "9020cc9b1068722632be3b9274f3cfad022c653986aa12c220f9032626c9ffdf"
+    },
+    {
+      "caseId": "epic-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "64aa254b6116f30d7a66da5986991052ab576f7d076ec747035be02e5a507927"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "rubrica",
+      "sha256": "5bb450a2252f7279e3cea1a6caf235f8eceecddbae8207c01f2026646f03f9a1"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6bb05b3a66e46214cc82a218f56875aa7d6db94e82a38813950228841284c474"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "escala",
+      "sha256": "69ee983014eb14c7f5f7e375cd9011c7969bc2f324d6fbdad790bc49be8483df"
+    },
+    {
+      "caseId": "novel-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b8f73daf7e7ee7777959b443e7002417c223d13a256d85e69a934d947739fbd"
+    },
+    {
+      "caseId": "epic-prose-or-verse",
+      "instrumentType": "rubrica",
+      "sha256": "95bc8d86be7893e76cacb5991f323b19011847673dec2223925073ab8980f065"
+    },
+    {
+      "caseId": "epic-prose-or-verse",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ccc78058f0fc622832bf5352180492937480836f78babe2c85ad346a6166131"
+    },
+    {
+      "caseId": "epic-prose-or-verse",
+      "instrumentType": "escala",
+      "sha256": "111459863f89e4105fec30136b66152a9bd032ccd90b7d3fa6e06a80e8616a36"
+    },
+    {
+      "caseId": "epic-prose-or-verse",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cef19d254315289ad4a078daa8e232257c38ab43d391a2ac0313d3d84bb0a70e"
+    },
+    {
+      "caseId": "epic-figures-only",
+      "instrumentType": "rubrica",
+      "sha256": "a0bf27f36e68d33c7d1f1769e861afad2719715cdacbb97e6de3e4a243ac6925"
+    },
+    {
+      "caseId": "epic-figures-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a53d62a10efeda21a00e4c622b56fc8aa5cefbc1915a966b3d6cd6917f1af1aa"
+    },
+    {
+      "caseId": "epic-figures-only",
+      "instrumentType": "escala",
+      "sha256": "5ede9e87d5d437a95eda79a424c9e52e7559da65c080eb43419edea1a934eee9"
+    },
+    {
+      "caseId": "epic-figures-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3cd84a1ce5b1dc401b4a209c7276d4cabf3c571769acf725dca1f8fbc85863aa"
+    },
+    {
+      "caseId": "epic-omniscient-only",
+      "instrumentType": "rubrica",
+      "sha256": "d42b3f0d98a3a9f3b07c2ac869450a4f35cfa6ee81377a76e36c7c7ffe309953"
+    },
+    {
+      "caseId": "epic-omniscient-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "044b51e54dc5fb934a3d4343f2f0829bdac08395750277806c08755b58854229"
+    },
+    {
+      "caseId": "epic-omniscient-only",
+      "instrumentType": "escala",
+      "sha256": "0a106f44aa451fc03501529838d79ac95f387bdaba5b26f2a1618c3700333703"
+    },
+    {
+      "caseId": "epic-omniscient-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "87aa817d18bffa20e25564e6b8745310f710ee6a2568f5f3e83b8e040576f90e"
+    },
+    {
+      "caseId": "epic-negative-positive",
+      "instrumentType": "rubrica",
+      "sha256": "c632f36de4ed3cef8caf453f918b0605d84d9f32b0d568b83091f04f8be6405a"
+    },
+    {
+      "caseId": "epic-negative-positive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c3fc6dd47a210b29d98f0a54b1d7bd65c23f316ebcccb23e85c6615df874128c"
+    },
+    {
+      "caseId": "epic-negative-positive",
+      "instrumentType": "escala",
+      "sha256": "1e298e438ce76228c3d15d320765f250aaf2a0ba1cef09241c96c5d7d6c7b8aa"
+    },
+    {
+      "caseId": "epic-negative-positive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b854cb7da31cf51789575145d42e991dcd7c1fbd9ed67da8d4ad7e90b7689fa"
+    },
+    {
+      "caseId": "epic-values-no-adherence",
+      "instrumentType": "rubrica",
+      "sha256": "36de4a12e330830e9a66baeca404a9660e1fc64cd7e5bd799b7710a17ae290c7"
+    },
+    {
+      "caseId": "epic-values-no-adherence",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3806df19658635f2d6cfb554b632defce0dc01516bc9d1a1870bfbf9e0243227"
+    },
+    {
+      "caseId": "epic-values-no-adherence",
+      "instrumentType": "escala",
+      "sha256": "fbdd0004b403d5cec7322c05fa602a3289eeecac1f7a4c2cd30f231ffc3dbfa5"
+    },
+    {
+      "caseId": "epic-values-no-adherence",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f168f40e5e480a17581f92d269e123daf1f7685de880523f45dec8b1c3d731d1"
+    },
+    {
+      "caseId": "epic-revision-spelling-only",
+      "instrumentType": "rubrica",
+      "sha256": "7bd62516c1adeee5e90ef9b3b0dff62ff509fe864cb0ff5d9b079fb9d95ad055"
+    },
+    {
+      "caseId": "epic-revision-spelling-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "65aaae1c1cc867ba28e1420b383026eee4ede35e44d9cc0fb5715d394de3be66"
+    },
+    {
+      "caseId": "epic-revision-spelling-only",
+      "instrumentType": "escala",
+      "sha256": "0edf66faf9580c0a00c603c6266a6ee82744001b0450b862b7b4889564f564ec"
+    },
+    {
+      "caseId": "epic-revision-spelling-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "df4144495f1bae129ca1c9307ea51803395ab461b5d752f84dbbb3fde7254868"
+    },
+    {
+      "caseId": "epic-group-natural",
+      "instrumentType": "rubrica",
+      "sha256": "336b3e80b10cccb3804c9df608072c6789754e4927318728db7760796e683580"
+    },
+    {
+      "caseId": "epic-group-natural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "767c90e3e14319a589ba32fea602e01d6d0a498e9833df81102a32bc6f671b59"
+    },
+    {
+      "caseId": "epic-group-natural",
+      "instrumentType": "escala",
+      "sha256": "8d4f56a418ddad125f8d33570479a4db06b75762431ebfff53a535de84bea317"
+    },
+    {
+      "caseId": "epic-group-natural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1ad9f43db20fc7a59d27777fc2798e8c4f29628cab341eee638a8a0d24c2e0cc"
+    },
+    {
+      "caseId": "epic-individual-natural",
+      "instrumentType": "rubrica",
+      "sha256": "ac5f0b87d72f2dad7a52de57d9adb7ff009af62032a6ebef697053b8cfa9985d"
+    },
+    {
+      "caseId": "epic-individual-natural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a9a233e4d04e814f3ff8b30d616ccc392b7aadc3f7888c38bd56182ffb41d6ce"
+    },
+    {
+      "caseId": "epic-individual-natural",
+      "instrumentType": "escala",
+      "sha256": "324845a4cfe987b6f047fa3427269940bc03aba94269304528be6cfc07cfc134"
+    },
+    {
+      "caseId": "epic-individual-natural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4fb408ec98ce7266812c330d71e1ab97ff467a8b7fb8b919eecf2039e1c9a163"
+    },
+    {
+      "caseId": "epic-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "7b8ab771834bf1232a347b72bde4a4f2d9e81d98be8dbf3d53246eb0bca87a18"
+    },
+    {
+      "caseId": "epic-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bf6090630e52f619c5756b5c561650aeac67c8d491146de35091573251eebff2"
+    },
+    {
+      "caseId": "epic-comparison",
+      "instrumentType": "escala",
+      "sha256": "ce497fe8db35ac20cc05d8aa3d9e26bf3678e4d9fd6e79949534ab08aa499b57"
+    },
+    {
+      "caseId": "epic-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b1ab1f2b7dcd2b71fd5c62c1f848539c2857366642cce8bc99b4098e9629a8c"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "60526ef5c6cbe40de2c0f9de2712e50dfb0c2d00fe95cf28c6218fec5632e7c6"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4f7d4575d69bfc1fcaf8e4ebde02ea1ef58e573330c28871bb58ff357dff4cdf"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "escala",
+      "sha256": "0c0f4389213351e999e69c6b55ce1c7d5a39bc5a84c2402c533ca53244cbb3df"
+    },
+    {
+      "caseId": "novel-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8d296b135df7f8e17b477da7252d48dcb1cdb54b88209149059113af2c599d89"
+    },
+    {
+      "caseId": "novel-clues-only",
+      "instrumentType": "rubrica",
+      "sha256": "59393d97f7f3c4dc29dbff2f31f1072c32ddceee43265c2a4ea2f3acf3322224"
+    },
+    {
+      "caseId": "novel-clues-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d8b8a1df4cf01370cb398a3023a5a60ecf36326436ccf7f82d1628e1bbb97617"
+    },
+    {
+      "caseId": "novel-clues-only",
+      "instrumentType": "escala",
+      "sha256": "f530b6301d45c12c3e2729ff0d81b900422d788664814fee62b25a702b3a225c"
+    },
+    {
+      "caseId": "novel-clues-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "265a50b3164425b32ad341352083d07526c80a5a342517d331b4102012fac46d"
+    },
+    {
+      "caseId": "novel-hypotheses-only",
+      "instrumentType": "rubrica",
+      "sha256": "82df4965d6fb917ac490bbb3615731860267275e11d259834bb31ae9ae3ae1da"
+    },
+    {
+      "caseId": "novel-hypotheses-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e1af4403c5b886831dd34249a13324b4e07143896660267a216fd6edaf37b477"
+    },
+    {
+      "caseId": "novel-hypotheses-only",
+      "instrumentType": "escala",
+      "sha256": "7f9be80ecfce1e7c895802081dfeea7e3e3021340351efb4d2698ad15423a8f1"
+    },
+    {
+      "caseId": "novel-hypotheses-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7075349056f26befd6d9d08204715d22f571daf5b00e982fd49840a174130d77"
+    },
+    {
+      "caseId": "novel-sequences-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "b762a15d5d522e4335b881125a9ce0dd946a4831be8fa0495a7491d8b4f4931d"
+    },
+    {
+      "caseId": "novel-sequences-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0f0ad2d9ab84f6bdaa75fc94acb46e1178a923d5837e5317d1836139cab6150a"
+    },
+    {
+      "caseId": "novel-sequences-alternative",
+      "instrumentType": "escala",
+      "sha256": "c4c7c348b50481f440db204c363a1d30a9536128b79c5148174aefea6d38e8ff"
+    },
+    {
+      "caseId": "novel-sequences-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "55352c8b92b5e78143ec2d7928f734add268240bc81874e71d217627d14a90ee"
+    },
+    {
+      "caseId": "novel-suspense-no-new-case",
+      "instrumentType": "rubrica",
+      "sha256": "2e573af52e4612d089543e347336c5156548211997720da08186f13b5816f8d5"
+    },
+    {
+      "caseId": "novel-suspense-no-new-case",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f16021d61c877b02d8f2ec816bbecd7a931220a18d506d0e2dfadc53a1ef0bbe"
+    },
+    {
+      "caseId": "novel-suspense-no-new-case",
+      "instrumentType": "escala",
+      "sha256": "952d4290a68487166590198416e38d8e840614aded185a684147c2a7e379b7a8"
+    },
+    {
+      "caseId": "novel-suspense-no-new-case",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1a75eada720fbd4b0bbe5f7143dfa7614309ccf5c24dd6a1c56cd4c58a19cc01"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "rubrica",
+      "sha256": "9e5297b4dd69de8d9397c214b25626fff2baf3c07fa33cbd26480786d3bc2f3e"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2947865b0945274257f5c81109d61cff985cb8a794370b57b5b918c3b61aa1ab"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "escala",
+      "sha256": "c47a6317a1005db860a515d5728a04faecbeede7eae88efae36af6d7129457ca"
+    },
+    {
+      "caseId": "novel-writing-result",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bc64156782d10e464cd2a3205006c3934e6f59eee6cca76e72e2e3311475f2ba"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "rubrica",
+      "sha256": "7fce04895784434a3adb48f8bfbc8d7ee5cf3534f16892991ad57d16d749550a"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af6db930cebee6c71907b4857bcc5f26fca7ce828e1f5ca656209c2b6d902679"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "escala",
+      "sha256": "9df5b8b189c6dd1209d609d3a59bb1afc2c7f1d420100cbde73bbdba06fb1330"
+    },
+    {
+      "caseId": "novel-telling-cuenta",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85231c5f9990ec8cfed49c7879d876eda17955d54eeae1b74ad6705a49ab0b22"
+    },
+    {
+      "caseId": "novel-revision-spelling-only",
+      "instrumentType": "rubrica",
+      "sha256": "f2fcdd45970d341beaf3fcac47ce80c76006ae7d83896f9bb1c138a620210651"
+    },
+    {
+      "caseId": "novel-revision-spelling-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "97b01835198919f4610aa468b3a8dd77b4598e7f1839b7b65f9d1ef749207a94"
+    },
+    {
+      "caseId": "novel-revision-spelling-only",
+      "instrumentType": "escala",
+      "sha256": "85c64795eee8f8ee1af21fd67b51939bdf65d161a38ffb9a1e1d601cd0373727"
+    },
+    {
+      "caseId": "novel-revision-spelling-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "026afa9f14660c381374d9d1697bd6934edac4db85c83d33cfe01f4c11064205"
+    },
+    {
+      "caseId": "novel-independent-products",
+      "instrumentType": "rubrica",
+      "sha256": "33000f7d1ebdc1572e7fdb18fcdb938fc927c2b775e2892d1fcd8db103b8c5ed"
+    },
+    {
+      "caseId": "novel-independent-products",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8b427985f51ade050241d9a8b701f7fef049a3a37b8c4eed7000747b700ddc47"
+    },
+    {
+      "caseId": "novel-independent-products",
+      "instrumentType": "escala",
+      "sha256": "d07bcc7b17ff08bb52ae18d2e5b0fd315ebbeb5c74a98e46b17639d9eb2a2592"
+    },
+    {
+      "caseId": "novel-independent-products",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a4f67e07fef5e6f1e73acd3cc309e876311415d6c0bfe216d9b6b0901a85bdc8"
+    },
+    {
+      "caseId": "epic-protagonist-only",
+      "instrumentType": "rubrica",
+      "sha256": "660fd9c87707726c6c95e0340bda86fad7d0e705a13a114dadcb7655571062ba"
+    },
+    {
+      "caseId": "epic-protagonist-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "528a4d2115b7ed2dd4ce675ac4b1468093528a463c081f1bb7bdcbb3a2d1aa2b"
+    },
+    {
+      "caseId": "epic-protagonist-only",
+      "instrumentType": "escala",
+      "sha256": "6b1ff2754ee5d7410d8c2db94f0d9f5d1ac95a93b87f436ee6e6c4e6e2d299b8"
+    },
+    {
+      "caseId": "epic-protagonist-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "369a03f272f619712edbf41a43c8d250954be66da8b1c51d762fbfeecfe936ee"
+    },
+    {
+      "caseId": "epic-fantastic-beings-only",
+      "instrumentType": "rubrica",
+      "sha256": "225d299fb84bdcc69fdd210bfd467cf6122d6a1a7dac1be0a2447e3f0926e199"
+    },
+    {
+      "caseId": "epic-fantastic-beings-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "599c3ee622648c82971ab26f17180dcc6ccb0158fe74dba5b1402490edbc7049"
+    },
+    {
+      "caseId": "epic-fantastic-beings-only",
+      "instrumentType": "escala",
+      "sha256": "b62c9ed986067917e0f42b0be5a4d55308ab78706c30838bd49f96da50a8a6bb"
+    },
+    {
+      "caseId": "epic-fantastic-beings-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "70b0663ba1b4b6fcbe2c3b5a9713361105c4af89ffca01759e69fd48c273a091"
+    }
+  ]
+}
