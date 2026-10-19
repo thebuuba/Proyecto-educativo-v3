@@ -4,6 +4,11 @@ import {recommend} from './recommendation-engine'
 const context={level:'SECONDARY' as const,grade:5,cycle:2,subjectCode:contracts.subjectCode,subjectName:contracts.subjectName,modalityCode:contracts.modalityCode,optativeExitName:contracts.optativeExitName}
 const proposal=(id:string,type:'rubrica'|'lista-cotejo'='rubrica')=>recommend({activityTitle:'Actividad',description:contracts.cases.find(c=>c.id===id)!.description,maxScore:17.35,preferredInstrumentType:type,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
 describe('HLM quinto: epopeya y novela policíaca',()=>{
+ it('reconoce novela policial en singular dentro del mismo ámbito optativo',()=>{
+  const p=recommend({activityTitle:'Actividad',description:'Analiza la novela policial proporcionada.',maxScore:17.35,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
+  expect(p.criteria.length).toBeGreaterThan(0)
+  expect(p.criteria.every(r=>r.templateId.startsWith('opt-hlm-len-5-novela-policiaca-'))).toBe(true)
+ })
  it('comparar solo estructura no exige forma ni división',()=>{
   const p=proposal('epic-comparison')
   expect(p.criteria).toHaveLength(1)

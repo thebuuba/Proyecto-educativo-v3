@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto'
 
 const directory='docs/curriculum/cobertura-secundaria/'
 const prior=JSON.parse(readFileSync(directory+'inventario.json','utf8'))
+const previousMaster=existsSync(directory+'secundaria-inventario-maestro.json')?JSON.parse(readFileSync(directory+'secundaria-inventario-maestro.json','utf8')):null
 const records=readFileSync('data/curriculum/secondary-2023.jsonl','utf8').trim().split('\n').map(JSON.parse)
 const hash=createHash('sha256').update(readFileSync('apps/frontend/public/docs/adecuacion-curricular-nivel-secundario-2023.pdf')).digest('hex')
 assert.equal(hash,prior.source.sha256)
@@ -22,7 +23,7 @@ const socials=new Map([1,2,3,4,5,6].filter(grade=>existsSync(directory+`sociales
 const arts=new Map([1,2,3,4,5,6].filter(grade=>existsSync(directory+`artistica-${grade}-matriz.json`)).map(grade=>[grade,JSON.parse(readFileSync(directory+`artistica-${grade}-matriz.json`,'utf8'))]))
 const physicals=new Map([1,2,3,4,5,6].filter(grade=>existsSync(directory+`physical-${grade}-matriz.json`)).map(grade=>[grade,JSON.parse(readFileSync(directory+`physical-${grade}-matriz.json`,'utf8'))]))
 const fhrs=new Map([1,2,3,4,5,6].filter(grade=>existsSync(directory+`fhr-${grade}-matriz.json`)).map(grade=>[grade,JSON.parse(readFileSync(directory+`fhr-${grade}-matriz.json`,'utf8'))]))
-const optatives=['optative-hlm-len-4'].map(name=>({name,matrix:JSON.parse(readFileSync(directory+name+'-matriz.json','utf8'))}))
+const optatives=['optative-hlm-len-4','optative-hlm-len-5','optative-hlm-len-6'].map(name=>({name,matrix:JSON.parse(readFileSync(directory+name+'-matriz.json','utf8'))}))
 const result={source:prior.source,counts:{sourceScopes:records.filter(r=>r.kind==='scope').length,nonGradeHeaders:17,gradeScopes:72,commonGradeScopes:54,optativeGradeScopes:18},policy:'INVENTORY_IS_NOT_VERIFIED_COVERAGE',reviewedGeneralPdfPages:[48,49,55],reviewedOptativeAssignmentPdfPages:[427,461,490,498],scopes:scopes.map(s=>{
  const old=prior.scopes.find(p=>p.id===s.id);assert(old)
  const common=!s.optativeExitName,implementation=common&&s.subjectName==='Ciencias Sociales'&&socials.has(s.grade)?{module:'secondary-social.ts',report:`sociales-${s.grade}-matriz.json`}:common&&s.subjectName==='Educación Artística'&&arts.has(s.grade)?{module:'secondary-art.ts',report:`artistica-${s.grade}-matriz.json`}:common&&s.subjectName==='Educación Física'&&physicals.has(s.grade)?{module:'secondary-physical.ts',report:`physical-${s.grade}-matriz.json`}:common&&s.subjectName==='Formación Integral Humana y Religiosa'&&fhrs.has(s.grade)?{module:'secondary-fhr.ts',report:`fhr-${s.grade}-matriz.json`}:common?implemented.get(s.subjectName):null
@@ -37,7 +38,7 @@ for(const {name,matrix} of optatives){
  assert.equal(matrix.source.sha256,hash)
  const row=result.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.character,'OPTATIVE');assert.equal(row.grade,matrix.grade);assert.equal(row.exit,matrix.optativeExitName);assert.equal(row.subject,matrix.subjectName)
- Object.assign(row,{status:matrix.status,provider:matrix.provider,evidence:directory+name+'-matriz.json',currentRunVerification:matrix.verification.httpDb})
+ Object.assign(row,{status:matrix.status,provider:matrix.provider,evidence:directory+name+'-matriz.json',currentRunVerification:matrix.verification.httpDb,notes:previousMaster?.scopes.find(s=>s.id===row.id)?.notes??row.notes})
 }
 const complementary=JSON.parse(readFileSync(directory+'fuentes-complementarias.json','utf8'))
 const optativeSourceReview=JSON.parse(readFileSync(directory+'optativas-fuentes-revisadas.json','utf8'))

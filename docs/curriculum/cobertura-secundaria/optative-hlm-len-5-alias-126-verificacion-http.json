@@ -1,0 +1,74 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "grade": 5,
+  "catalog": "evaluation-2026.126",
+  "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "coverage": {
+    "availableContracts": 67,
+    "selectedCaseIds": [
+      "novel-policial-alias"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "sourceScope": "e14d19a7-6496-5a01-9bf9-8107dc70fb47",
+  "curriculumVersionId": "a728f522-32bc-5808-b5b7-dcf222abe077",
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "d8271246-eaf3-4464-8a67-faa2035ca09d",
+      "snapshotId": "093534a0-8278-4687-9c90-0d48b10a7878",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "752b97ccf899b5e8acada042857735b3087d23a133b6a1056b25355a4402208f"
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 1778.8166999999999
+    },
+    {
+      "endpoint": "/activities/center?contextOnly=true",
+      "status": 200,
+      "ms": 2356.2226
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 400,
+      "ms": 5332.069299999999
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6246.626300000002
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6440.803300000003
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4200.068800000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=26aef580-1c6a-4544-a218-cb45b4d25fa6",
+      "status": 200,
+      "ms": 3985.2585
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3165.1463000000003
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=26aef580-1c6a-4544-a218-cb45b4d25fa6",
+      "status": 200,
+      "ms": 4505.814700000003
+    }
+  ],
+  "browser": "PERSONAL_BROWSER_BLOCKED_LOGIN_REQUIRED_NOT_SUBSTITUTED_BY_QA"
+}

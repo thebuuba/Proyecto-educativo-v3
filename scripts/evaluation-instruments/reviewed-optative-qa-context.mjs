@@ -6,8 +6,8 @@ import {developmentEnvironment,developmentProjectRef as project} from '../cloudf
 
 // Reuse the existing fictitious academic course; never change a personal course or an account.
 const subjectCode=process.argv[2]
-const grade={'OPT-HLM-LEN-4':4,'OPT-HLM-LEN-5':5}[subjectCode]
-assert(grade,'Solo se admiten las optativas HLM revisadas de cuarto y quinto')
+const grade={'OPT-HLM-LEN-4':4,'OPT-HLM-LEN-5':5,'OPT-HLM-LEN-6':6}[subjectCode]
+assert(grade,'Solo se admiten las tres optativas HLM de Lengua revisadas')
 const read=p=>JSON.parse(readFileSync(p,'utf8')),qa=read(`.wrangler/secondary-completion/social-${grade}-context.json`)
 const matrix=read(`docs/curriculum/cobertura-secundaria/optative-hlm-len-${grade}-matriz.json`)
 assert.equal(qa.project,project);assert.equal(matrix.subjectCode,subjectCode);assert.equal(matrix.sourceVisualReview.status,'REVIEWED')

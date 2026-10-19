@@ -12,11 +12,11 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-const optative=['OPT-HLM-LEN-4','OPT-HLM-LEN-5'].includes(subjectCode)
-assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5].includes(grade),'Solo se admiten ámbitos revisados explícitamente')
+const optative=['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6'].includes(subjectCode)
+assert(['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade),'Solo se admiten ámbitos revisados explícitamente')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 assert(subjectCode!=='FHR'||[1,2,3,4,5,6].includes(grade),'FHR requiere grado y contratos revisados')
-const family=optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optative?'Optativa HLM Literatura':subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optative?'Apreciación y Producción Literarias':subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
+const family=optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=optative?(grade===6?'Optativa HLM Periodismo':'Optativa HLM Literatura'):subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=optative?(grade===6?'Análisis y Producción de Textos Periodísticos y Publicitarios':'Apreciación y Producción Literarias'):subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -81,6 +81,7 @@ const descriptions=proceduralMode||productMode||mediaMode?procedural.map(c=>c.de
 ]
 const formats=productMode||mediaMode||proceduralMode&&grade>1?procedural.map((_,i)=>['rubrica','lista-cotejo','escala','lista-ponderada'][i%4]):proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
 const matrix=sourceMode?JSON.parse(readFileSync(`docs/curriculum/cobertura-secundaria/${fileStem}-${grade}-matriz.json`,'utf8')):null
+if(optative)assert.equal(subjectName,matrix.subjectName,'El nombre del contexto local debe coincidir con el ámbito efectivo')
 const sourceRecords=matrix?.officialRecords??[]
 const sourcePrefixes=proceduralMode||productMode||mediaMode?procedural.map(c=>c.sourceRecordIds[0]):['03c0f43b','20638a76','055ff3a5','01b7176c']
 const scoreFor=i=>selectedIds?Math.floor(i/4)%2?17.35:20:i%2?17.35:20
@@ -113,7 +114,7 @@ try{
     const importedId=source.elementIdMap[record.id];assert(importedId)
     Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
    }
-   if(optative&&['poetry-figures-only','epic-figures-only'].includes(procedural[i]?.id)){
+   if(optative&&['poetry-figures-only','epic-figures-only','column-underlining'].includes(procedural[i]?.id)){
     const {preferredInstrumentType,...automaticInput}=input
     const automatic=(await request('/evaluation-instruments/recommend',automaticInput)).data
     assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,2)

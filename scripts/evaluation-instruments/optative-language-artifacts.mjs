@@ -31,11 +31,12 @@ assert.equal(new Set(cases.map(c=>c.id)).size,cases.length)
 const context={level:'SECONDARY',grade:module.grade,cycle:2,subjectCode:module.subjectCode,subjectName:module.subjectName,modalityCode:fixture.modalityCode,optativeExitName:module.optativeExitName}
 const examples=[]
 for(const task of cases)for(const instrumentType of ['rubrica','lista-cotejo','escala','lista-ponderada']){
- const proposal=editableFallbackRecommendation({activityTitle:'Un título antiguo sobre células',description:task.description,maxScore:17.35,instrumentType,participationMode:'INDIVIDUAL',academicContext:context})
+ const participationMode=task.participationMode??'INDIVIDUAL';assert(['INDIVIDUAL','GROUP'].includes(participationMode))
+ const proposal=editableFallbackRecommendation({activityTitle:'Un título antiguo sobre células',description:task.description,maxScore:17.35,instrumentType,participationMode,academicContext:context})
  assert(proposal.criteria.length&&proposal.criteria.every(r=>r.templateId.startsWith(module.subjectCode.toLowerCase()+'-')),task.id)
  const fields=scoreInstrumentFields(recommendationToFields(proposal,'Actividad'),instrumentType,17.35,proposal)
  assert.deepEqual(validateInstrumentDefinition(instrumentType,fields,17.35),[])
- examples.push({id:task.id,description:task.description,sourceRecordIds:task.sourceRecordIds,instrumentType,activityType:proposal.activityType,totalScore:17.35,levels:proposal.levels,criteria:proposal.criteria.map(({id,sourceReferences,sourceType,...r})=>r)})
+ examples.push({id:task.id,description:task.description,sourceRecordIds:task.sourceRecordIds,instrumentType,activityType:proposal.activityType,participationMode,totalScore:17.35,levels:proposal.levels,criteria:proposal.criteria.map(({id,sourceReferences,sourceType,...r})=>r)})
 }
 const prefix=mappingPath.replace(/-correspondencias\.json$/,''),reviewPath=prefix+'-revision-instrumentos.json'
 const review=existsSync(reviewPath)?read(reviewPath):{items:[]}

@@ -1,0 +1,3844 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 6,
+  "subjectCode": "OPT-HLM-LEN-6",
+  "subjectName": "Análisis y Producción de Textos Periodísticos y Publicitarios",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+  "pdfPages": [
+    437,
+    438,
+    439,
+    440,
+    441,
+    442,
+    443,
+    444
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      437,
+      438,
+      439,
+      440,
+      441,
+      442,
+      443,
+      444
+    ],
+    "imageEvidence": [
+      {
+        "number": 437,
+        "printed": 436,
+        "imageSha256": "581427c601c3e533780735fa04f85ed3e9a1461d6b7bce40c43a5fd5d1101b8e"
+      },
+      {
+        "number": 438,
+        "printed": 437,
+        "imageSha256": "ed6978b755e0778d674140b9ce79d5ac73d6979ef3364f9eb84053c08d89aa99"
+      },
+      {
+        "number": 439,
+        "printed": 438,
+        "imageSha256": "c5baf90d027b65ca43f0446ad53debc8ae33c1758d8c72e29224ca0c87a965fc"
+      },
+      {
+        "number": 440,
+        "printed": 439,
+        "imageSha256": "9019a9937205ad07734e62165b5e4d6e96ebd2dd8f599da8e879bf40a0803739"
+      },
+      {
+        "number": 441,
+        "printed": 440,
+        "imageSha256": "dd46e1c9cc87fbdc2afb8a1245185b859101bc3d91be46eb111210bf413fc5b8"
+      },
+      {
+        "number": 442,
+        "printed": 441,
+        "imageSha256": "c5239a33024756823934eb16bac7e09a9afa41e06c9531d329622860183b8e82"
+      },
+      {
+        "number": 443,
+        "printed": 442,
+        "imageSha256": "05da9e681c1ba672f3a9a7fc83948cd7f89ca0bcdc7fc0b79f793299b226ebcd"
+      },
+      {
+        "number": 444,
+        "printed": 443,
+        "imageSha256": "cba8b552eafe3fa871ea9350ad2f793f753c9b95b756b8f12aa796b2d90e9641"
+      }
+    ],
+    "method": "COMPLETE_SOURCE_PAGES_CONTENT_COMPETENCIES_INDICATORS"
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING",
+  "provider": "packages/shared/src/secondary-optative-language.ts",
+  "providerCatalog": "evaluation-2026.126",
+  "officialRecords": [
+    {
+      "id": "ac88fea5-b8cf-5fc5-9124-ccd7b9b5e6d4",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica en actos sociales, utilizando textos funcionales periodísticos y publicitarios, en demostración de\nconocimiento y uso de esos géneros, mediante recursos tecnológicos, entre otros.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "9600e038-36f1-5fa1-91eb-ca684520380f",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "e57da351-bf45-5451-9606-c8c45ee48d84",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Explica la validez de las informaciones sostenidas en los juicios, puntos de vista, conclusiones y acciones,\nusando géneros periodísticos y publicitarios sugeridos, respetando la diversidad de opiniones.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "8e5a986a-bbb8-5908-a260-830fa2d15e97",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico,\nCreativo y Crítico",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "72a70351-de4f-508e-bf5c-a8ed802b27e6",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Expone resultados de investigaciones propias o ajenas, a través textos periodísticos y publicitarios\nseleccionados, que evidencian soluciones de problemas, en reconocimiento de la audiencia, postura crítica y\nvalórica, así como el respeto frente a lo que se lee, escucha y escribe.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "0656220a-f9dc-5380-8656-2412f318562a",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "61ce4202-a3a6-56f7-ab26-b8873a2858ef",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Produce los textos periodísticos y publicitarios en la elaboración de proyectos, orientados a la construcción de\nuna ciudadanía responsable, creando lazos de solidaridad, respeto y equidad de género.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "02a6920a-fb3a-5d69-a16b-9fcfc83eea85",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "fa8f8545-2407-5044-a7ad-c98ffa34f946",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Sistematiza resultados de investigaciones, apoyándose en textos periodísticos y publicitarios seleccionados,\npara su presentación en la escuela y contextos diversos, demostrando conocimientos y habilidades lingüísticas,\nasí como uso de herramientas tecnológicas y otros recursos.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "c3b6fa26-aa18-5070-aee5-83a82ae51b26",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "e39e2e26-d317-5b27-ab96-f4d4da6233e7",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Promueve el buen comportamiento y los valores sobre la conservación de la salud, la naturaleza y sus\necosistemas, mediante el uso de textos periodísticos y publicitarios sugeridos, a través de actos de\nintercomunicación comunitarios y apoyándose en recursos diversos.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "34bbc8c5-2c16-59a3-be03-2f6be5d15622",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "198ffe4f-1bd4-58de-8f53-d321c1bb688c",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Demuestra emociones y sentimientos a través de los textos periodísticos y publicitarios sugeridos, para el\nfortalecimiento de las relaciones humanas y el respeto a la dignidad.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "b4e203c7-9c62-53f3-b49c-65bde5d2bc86",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y\nEspiritual",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "effacfee-3177-5b03-bfad-535ca36013f8",
+      "type": "CONCEPT",
+      "text": "El editorial",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "3b8d7bd8-eb24-5835-b020-68e16113c8a0",
+      "type": "CONCEPT",
+      "text": "• Función",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "9d281a3a-b0ec-5d4a-ab3a-dab12dcca2e8",
+      "type": "CONCEPT",
+      "text": "• Estructura: título,\nintroducción, desarrollo y\nconclusión.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "5aab1be2-3982-5f0c-bdb4-860e2acaa398",
+      "type": "CONCEPT",
+      "text": "• Características",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "69daf246-1ebb-505b-adc4-7f6269e17aa6",
+      "type": "CONCEPT",
+      "text": "• Argumentos",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "02d4b068-b7dc-58a8-982c-80c804d5b289",
+      "type": "CONCEPT",
+      "text": "• Conectores de causa, de\nreformulación o explicación.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "92fd5682-a4f0-58ca-89ad-9b24d1faabee",
+      "type": "CONCEPT",
+      "text": "• Nominalización",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "1dd5f258-8db5-5cbf-8b1a-23b28a147888",
+      "type": "CONCEPT",
+      "text": "• Verbos en modo indicativo,\nde opinión en primera\npersona del plural.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "990f5e1a-5599-5e91-b324-63107efcdf13",
+      "type": "CONCEPT",
+      "text": "• Oraciones coordinadas y\nsubordinadas",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "611b2d60-64cd-5530-9e8e-ad7a08c81938",
+      "type": "CONCEPT",
+      "text": "• Marcas textuales",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "9aa38957-8ae6-5284-a3e2-9d0a769279b2",
+      "type": "CONCEPT",
+      "text": "• Recursos retóricos:\n(metáforas, personificaciones,\nparadojas, hipérboles,\neufemismos, perífrasis.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "c08acc3a-8546-52c0-bfb6-c0dc1a685951",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "ccac03d9-f78a-582e-afb7-b71a7704a6ba",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de editoriales sobre temas o\nproblemas de la actualidad (educativos, políticos,\nsociales) del ámbito nacional e internacional;\nanticipación del contenido del editorial a partir del\ntítulo y otras marcas textuales; identificación de la\nintención comunicativa del editorial a partir de\nlas marcas textuales, de los verbos de opinión, los\nrecursos retóricos y los adjetivos.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "c2917caf-b852-5ba4-ad44-eb5ee95617a2",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura del editorial para\ncomprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del editorial que escucha y sobre el\nsignificado de las palabras que desconoce, a partir\ndel contexto; identificación del punto de vista o\npostura del medio periodístico a partir de las marcas\ntextuales, de los verbos de opinión, los recursos\nretóricos, los adjetivos; la tesis y los argumentos\nusados para defenderla. Paráfrasis del contenido\nglobal del editorial que escucha apoyándose en la\npostura y los argumentos del autor.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "c1856923-da68-5b34-b7f3-c17616a3fb4b",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "da77ff02-e66f-5b7e-969d-e2db4527a845",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa\ndel editorial; selección del tema o problema de la\nactualidad (educativo, político, social) del ámbito\nnacional e internacional que tratará en el editorial.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "d019c572-6b3b-5ac0-9577-40b8df92dc05",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Criticidad en torno a las posturas ideológicas del\neditorial, sobre todo, frente a aquellas que atenten\ncontra el bien común, la equidad y la justicia social.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "be3cc7f6-a944-57e4-a70d-c15b77259037",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto hacia las ideas expresadas en el editorial\nque escucha.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "a871f5f0-6ff5-54c4-9e6e-17fb7af1205e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Tolerancia hacia las ideas expresadas en el editorial\nque lee.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "55f5e6da-e959-5175-8afd-98cf2cee7713",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la lengua para dar su opinión sobre\ntemas o problemas de la actualidad (educativos,\npolíticos, sociales,) del ámbito nacional e\ninternacional.",
+      "pdfPage": 437,
+      "printedPage": "436"
+    },
+    {
+      "id": "c16c4b7d-8539-5f94-8578-5fbc05ecd4e0",
+      "type": "PROCEDURE",
+      "text": "• Planificación de la tesis que se defenderá en el editorial\nque producirá oralmente; utilización de argumentos\n(lógicos, de autoridad, de ejemplos) para apoyar su\nopinión sobre temas o problemas de actualidad que\ntratará; uso de verbos y conectores adecuados para\nelaborar los argumentos que sostienen la tesis a\ndefender.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "c845ab02-7b5e-5f15-b30d-11f3474a0cc2",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "80ade1e2-9fb7-5c7c-8bd8-ef52f871fe3e",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura\ndel editorial que tratan temas o problemas de la\nactualidad (educativos, políticos, sociales) del ámbito\nnacional e internacional; lectura atenta (en silencio\no en voz alta), en soporte físico o en la pantalla;\nanticipación del contenido del editorial a partir del\ntítulo y otras marcas textuales; identificación de la\nintención comunicativa del editorial para comprender\nsu sentido global.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "9cd72ad4-c510-5efe-a66b-ccf46e70f20c",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura del editorial para\ncomprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del editorial que lee, del significado de las\npalabras que desconoce, a partir del contexto;\nidentificación del punto de vista y la postura ideológica\ndel medio periodístico; paráfrasis del contenido\nglobal del editorial a partir de la identificación de los\nargumentos, las opiniones y las valoraciones.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "18926e85-7046-585f-8dc4-14d99f7ba5fd",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "6c23d7e9-f181-5800-8d79-5361efb5900b",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa\ndel editorial que producirá; selección del tema o\nproblema de la actualidad (educativo, político, social)\ndel ámbito nacional e internacional que tratará en\ndicho editorial.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "2d2efaeb-d309-5c8a-8131-6a4e78e3e0b3",
+      "type": "PROCEDURE",
+      "text": "• Planificación de la tesis que se defenderá en el editorial\nque producirá por escrito; utilización de argumentos\n(lógicos, de autoridad, de ejemplos) para apoyar su\nopinión sobre temas o problemas de actualidad que\ntratará en el editorial que escribirá; uso de verbos\ny conectores para elaborar los argumentos que\nsostienen la tesis a defender en el editorial; selección\ndel vocabulario en la intención comunicativa, a sus\ninterlocutores y al tema seleccionado; organización\nde la información, utilizando estrategias que permiten\nestructurar coherentemente las ideas.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "46349e2d-5bda-569c-b06e-3070654e7680",
+      "type": "PROCEDURE",
+      "text": "• Escritura de borradores del editorial, manuscritos o\ndigitales, ajustándose a la intención, a la audiencia,\nal tema y a la estructura; revisión y corrección del\neditorial, según sugerencias de los pares, del / de\nla docente e ideas propias, atendiendo al léxico\nempleado y a la ortografía; edición de la versión final;\npublicación del editorial, conteniendo una tesis con al\nmenos tres argumentos que la sustenten, en soporte\nfísico o digital.",
+      "pdfPage": 438,
+      "printedPage": "437"
+    },
+    {
+      "id": "ffcc1271-128f-53c7-b9be-6cf17f2237b5",
+      "type": "CONCEPT",
+      "text": "La columna periodística",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "2a5f26c3-115a-519a-91c1-bdc3a993a100",
+      "type": "CONCEPT",
+      "text": "• Función",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "700b8e7f-58fc-5b55-a00f-18b87075bd25",
+      "type": "CONCEPT",
+      "text": "• Estructura",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "59b74eed-4b78-5ced-a901-5f6865a7f1dd",
+      "type": "CONCEPT",
+      "text": "• Características",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "dc587122-0f3e-51dd-80df-b512c9321715",
+      "type": "CONCEPT",
+      "text": "• La tesis",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "ec1e4f1f-9408-5d94-93fa-bd95f713d586",
+      "type": "CONCEPT",
+      "text": "• Verbos de opinión",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "086c5692-8ea8-5ccf-ac4b-e927b7330ab9",
+      "type": "CONCEPT",
+      "text": "• Marcadores",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "7c3a0dd6-45f0-58c5-b61e-440c4a4c916e",
+      "type": "CONCEPT",
+      "text": "• Conectores de causa, de\nreformulación o explicación",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "bf5d19a1-c561-5f6e-8a5c-2abf265a89b5",
+      "type": "CONCEPT",
+      "text": "• Las nominalización",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "14a0a727-d6bb-5edf-bd69-10c3a9fd804b",
+      "type": "CONCEPT",
+      "text": "• Los adjetivos",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "0518f821-702c-53b1-b552-c98d7dd50132",
+      "type": "CONCEPT",
+      "text": "• Recursos retóricos",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "0b04aa43-0cf3-5ace-8d5f-61aa1c50cf83",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "a744963a-2946-5e13-8b29-68135835ddb2",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de columnas periodísticas sobre\ntemas o problemas escolares y/o comunitarios leídos\npor el docente, los compañeros o procedentes de\notros medios (radio, televisión...); anticipación del\ncontenido de la columna periodística que escucha a\npartir del título y otras marcas textuales; identificación\nde la intención comunicativa de la columna\nperiodística para comprender el sentido global del\nmismo.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "3217f5c0-ad74-57ab-bb5c-4099c808842d",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la columna periodística\nque escucha (punto de partida, tesis, argumentos\ny conclusión) para comprender su contenido;\nrealización de las inferencias necesarias para\ncomprender el sentido global y el significado de las\npalabras que desconoce, a partir del contexto.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "c40c91dd-9b08-599a-8cc1-78d15512af90",
+      "type": "PROCEDURE",
+      "text": "• Identificación de la tesis y los argumentos que la\napoyan para comprender la columna periodística que\nescucha; paráfrasis del contenido global apoyándose\nen la postura y los argumentos del autor.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "93c35153-6832-56de-bd38-4021262a2997",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "3edd5d31-bdd2-5027-9b80-636a8708b16e",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa\nde la columna periodística; selección del tema o\nproblemática que va a comentar.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "83db39f5-b3c4-5fa2-bf61-74cdd6d00118",
+      "type": "PROCEDURE",
+      "text": "• Planificación de los argumentos y la tesis de la\ncolumna periodística que va a producir de modo\noral; formulación de la tesis para expresar su opinión\nfrente al tema seleccionado; estructuración de los\nargumentos para apoyar la tesis, haciendo uso de\nadjetivos, conectores y marcadores adecuados que\ndenotan la postura asumida; organización lógica de\nlos argumentos para defender la tesis acerca de la\nrealidad de la columna, utilizando del vocabulario en\nla intención comunicativa, a la audiencia y al tema\nseleccionado, citas textuales y de ejemplos para\napoyar su opinión sobre temas o problemas escolares\ny/o comunitarios.\nComprensión escrita (leer)",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "b70c6eb5-d7f9-5c80-a973-ebeaf1878f0a",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura\natenta de la columna periodística sobre hechos,\ntemas nacionales e internacionales; anticipación\ndel contenido a partir del título y otras marcas\nparatextuales",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "74032649-fcad-5ea6-b5bb-5b9b30a9e091",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la columna periodística\npara comprender su contenido; identificación de\nla tesis defendida por el autor, los argumentos que\nofrece, utilizando la técnica del subrayado; realización\nde las inferencias necesarias para comprender\nel sentido global; el significado de palabras que\ndesconoce, a partir del contexto en relaciones lógicas\nentre las ideas contenidas en el ensayo académico,\napoyándose en los conectores utilizados.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "9388f38b-c7e9-5824-bdf9-79f1b6f425fa",
+      "type": "PROCEDURE",
+      "text": "• Resumen del contenido de la columna que lee,\nmediante la omisión de información no relevante,\nselección de las ideas principales (argumentos),\ngeneralización y reconstrucción de las ideas que\nrepresentan el sentido del texto; paráfrasis de la\npostura y de los argumentos del autor.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "38e5a98f-b559-5b8d-8920-5996fdf9b198",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto por las opiniones de la columna periodística\nque escucha.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "2566a983-2152-5cc0-8155-c3ec093f4355",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la lengua para dar su opinión sobre\ntemas o problemas escolares y/o comunitarios.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "3e3aec27-7ee3-52e9-a966-86a890c3843a",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto y tolerancia hacia las ideas expresadas por el\nautor de la columna periodística que lee.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "64ef41bc-96da-5090-8c75-eef755e401b7",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la diversidad de opiniones sobre\nhechos, temas o problemas escolares, comunitarios,\nnacionales e internacionales.",
+      "pdfPage": 439,
+      "printedPage": "438"
+    },
+    {
+      "id": "59e46def-4cec-5cd0-809d-a2b5b58d0db2",
+      "type": "CONCEPT",
+      "text": "El anuncio publicitario",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "6c7dd8cf-8ade-5d76-be4d-87b28ad73ea7",
+      "type": "CONCEPT",
+      "text": "• Función",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "f1414995-f54c-5417-bbd3-d454371ffc66",
+      "type": "CONCEPT",
+      "text": "• Estructura",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "8d564e3d-de61-56be-9b20-981cf0baf6ca",
+      "type": "CONCEPT",
+      "text": "• Componentes",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "ea57ff8c-efd9-5ea2-bb7f-a1b35fecfcf8",
+      "type": "CONCEPT",
+      "text": "• Tipos de anuncio",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "b0904fb1-6d01-5ea2-bf5c-26a99024fbf6",
+      "type": "CONCEPT",
+      "text": "• El lenguaje publicitario",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "9d0bf2a0-c734-5453-946a-e38c2d8a29f6",
+      "type": "CONCEPT",
+      "text": "• Lo denotativo e informativo /\nlo connotativo expresivo.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "6269a8f7-0052-5955-9fdd-76752b9b10d4",
+      "type": "CONCEPT",
+      "text": "• El lenguaje persuasivo y\nconnotativo.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "6498dc63-9b25-59cf-b725-9eb46592a690",
+      "type": "CONCEPT",
+      "text": "• Recursos audiovisuales",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "430f12ae-22a9-55a5-8d93-cba407c0b399",
+      "type": "CONCEPT",
+      "text": "• Recursos gráficos, fónicos,\nmorfosintácticos, léxicos y\nsemánticos.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "fa017519-3024-5b4f-a02a-5dd7d58c5a00",
+      "type": "CONCEPT",
+      "text": "• El vocativo y la segunda\npersona",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "2cd98309-f70a-5a2e-9498-ca6fd24f0de4",
+      "type": "CONCEPT",
+      "text": "• Verbos en modo imperativo",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "91546f37-9332-597e-af99-c8b0c659928a",
+      "type": "CONCEPT",
+      "text": "• Los adjetivos",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "82653d65-a22d-557e-855f-f648ab28daac",
+      "type": "CONCEPT",
+      "text": "• las figuras retóricas",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "7659635a-9751-5a98-8700-692f1a334d86",
+      "type": "CONCEPT",
+      "text": "• Los aspectos formales",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "f4723e0b-0d33-592d-92a8-138ca75c3536",
+      "type": "CONCEPT",
+      "text": "• La estética de la publicidad",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "0f3cd471-a939-5766-be4f-a8252589d831",
+      "type": "CONCEPT",
+      "text": "Nota: Debido a que el anuncio\npublicitario es un texto de\nnaturaleza esencialmente\nescrita, la competencia de\nproducción oral servirá solo para\ndesarrollar procedimientos que\nfortalezcan y complementen\nla comprensión y producción\nescrita",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "f8f83896-4bf0-5454-bee2-65b44773de0f",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "8648feb8-0a23-5f7d-b590-ae2edf01f6fd",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla columna periodística que producirá por escrito;\nselección del tema o problemática y del soporte\n(físico y/o digital) que utilizará para escribirla;\nplanificación de los argumentos y de la tesis; uso del\nvocabulario apropiado a la intención comunicativa, a\nsus interlocutores y al tema seleccionado; de citas y\nejemplos para apoyar la tesis de la columna.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "cf26e030-f696-55eb-bc67-dc73e496f4a3",
+      "type": "PROCEDURE",
+      "text": "• Organización de la información, utilizando estrategias\nque permiten estructurar coherentemente las ideas\nde la columna periodística; escritura de borradores\nmanuscritos o digitales, ajustándose a la intención, a\nla audiencia, al tema y a la estructura; asignación de\nun nombre, en función los mensajes que como autor\nquiere presentar y un título al texto que escribirá en\nfunción del texto.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "2ecf6cb2-84de-568a-b904-a51b1cd4b4be",
+      "type": "PROCEDURE",
+      "text": "• Revisión y corrección de borradores de la columna,\nsegún sugerencias de pares, del/de la docente y las\nideas propias, atendiendo a la intención comunicativa,\nal tema, a la audiencia, a la estructura del texto, al\nléxico empleado y a la ortografía; edición de la versión\nfinal; publicación en soporte físico o digital, con una\ntesis y por lo menos tres argumentos que la sustenten.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "10af01fc-dfcb-5891-9984-dc6702cd4c8e",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "409d3bae-9d81-54c5-bc43-99801ef8daac",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de anuncios publicitarios sobre\ncompra de productos, bienes o servicios; anticipación\ndel contenido del anuncio a partir de algunas marcas\ntextuales (imagen, eslogan, marca); identificación de\nla intención comunicativa.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "43cd20a5-64e6-5f70-8984-c70250b5666d",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura del anuncio que escucha y\nde sus componentes para comprender su contenido;\nrealización de las inferencias necesarias para\ncomprender su sentido global y el significado de\npalabras desconocidas, a partir del contexto, los usos\ndiscriminatorios y manipuladores de los anuncios\npublicitarios.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "ae8f2d26-5fd7-5206-b609-ee858ee5bfe5",
+      "type": "PROCEDURE",
+      "text": "• Identificación de las funciones del lenguaje\npublicitario en los anuncios para comprender sus\nmensajes, de los valores (literales o simbólicos) del\nproducto, bien o servicio que se anuncia; paráfrasis\ndel contenido global.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "7ae7d8db-90d1-5fc8-aba1-0a84e33c65d1",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "fc3765a4-4ef2-5984-8187-606c467b67df",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa del\nanuncio que producirá oralmente; selección del tipo\nde anuncio acorde con dicha intención.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "c2b4ec2a-170f-5b6a-a2e1-51d40ceaf128",
+      "type": "PROCEDURE",
+      "text": "• Planificación, selección y organización del contenido\ntextual del anuncio (titular, eslogan, imagen,\ninformaciones complementarias) en función de su\nintención comunicativa, el público destinatario y el\ntipo de anuncio.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "e2b16fe6-9e3e-5525-855e-764d243a9b7f",
+      "type": "PROCEDURE",
+      "text": "• Construcción del contenido del anuncio siguiendo\nsu estructura textual, manteniendo la coherencia,\nclaridad; utilización de figuras retóricas y recursos\nléxicos apropiados a la intención y la audiencia,\nlenguaje persuasivo connotativo al estructurar el\nanuncio oral.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "8bf997b5-60aa-50b8-94ab-8686340869e8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración del lenguaje verbal e iconográfico utilizado\nen el anuncio.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "0c80f338-8aa7-5ff9-967c-a1075075cf20",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por descubrir los efectos éticos e ideológicos\nde los anuncios publicitarios en el lector.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "90d8cabd-f3d8-535c-a29f-518eb0035cf5",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración del lenguaje verbal e iconográfico utilizado\nen el anuncio que lee.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "9080d87a-fb33-5812-afbd-dbee7737fbc3",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Criticidad frente a las estrategias persuasivas y a los\nusos discriminatorios y manipuladores, utilizados\npor la publicidad para la promoción de modelos\nideológicos y culturales y la creación de estereotipos\nsociales.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "8431f28b-d798-52d7-adc6-d768cf03bb2b",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Creatividad e imaginación en la elaboración de los\nanuncios.",
+      "pdfPage": 440,
+      "printedPage": "439"
+    },
+    {
+      "id": "caa2576e-c17e-51b5-ad35-d2d26c1354e3",
+      "type": "CONCEPT",
+      "text": "• La propaganda política",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "d5303c63-6a10-5a84-909d-71bbcbb3d3bb",
+      "type": "CONCEPT",
+      "text": "• Función y estructura",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "09c9772a-3b42-50ec-a705-04cc401878d7",
+      "type": "CONCEPT",
+      "text": "• Códigos verbales e\niconográficos",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "1500a8bb-a221-5623-8509-3ece37ec8790",
+      "type": "CONCEPT",
+      "text": "• Lenguaje persuasivo y\nconnotativo",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "8f428ca7-1d02-584a-8782-a1bbba492475",
+      "type": "CONCEPT",
+      "text": "• Pronombres personales",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "d9fafd89-1bdd-5be9-94d6-7a2b5540ad62",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "2c1afdd7-d7ae-5909-a4b6-416e2e97c978",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura del\nanuncio publicitario de manera silenciosa o en voz\nalta; anticipación del contenido del anuncio a partir\nde las imágenes y las marcas textuales.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "0fa63628-68db-5d8c-8a49-72e345bf03cb",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura y de sus componentes\npara comprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del anuncio que lee, de palabras cuyo\nsignificado desconoce, a partir del contexto, así\ncomo para interpretar los usos discriminatorios y\nmanipuladores de los anuncios publicitarios.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "e76241ba-f77e-5c79-b461-2b8b82914fa4",
+      "type": "PROCEDURE",
+      "text": "• Identificación de las funciones del lenguaje\npublicitario en los anuncios para comprender sus\nmensajes; identificación de los valores (literales o\nsimbólicos) del producto, bien o servicio que se\nanuncia; paráfrasis del contenido global del anuncio.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "6bb862c9-0c18-513b-b83b-f9330f932935",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "36155cab-071c-5984-9783-33b776aef822",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa del\nanuncio que escribirá; selección del tipo de anuncio;\nplanificación y selección del contenido textual del\nanuncio (titular, eslogan, imagen, informaciones\ncomplementarias) en función de su intención y del\npúblico destinatario.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "6aaf3b03-4135-50af-b5e4-039eeb536214",
+      "type": "PROCEDURE",
+      "text": "• Diseño, selección y utilización de las imágenes\ndel anuncio relacionadas coherentemente con el\ncontenido, el destinatario y la intención, el color,\nlos espacios, disposición gráfica, para asegurar la\nlegibilidad y la estética del anuncio;",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "e1028320-c4a0-5e34-ad71-cbe607abe4b9",
+      "type": "PROCEDURE",
+      "text": "• Organización del contenido y las imágenes del\nanuncio de acuerdo a la intención, el tipo de anuncio\ny la audiencia; construcción del contenido siguiendo\nsu estructura textual, manteniendo la coherencia,\nclaridad y de acuerdo a la intención comunicativa.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "0a4b5984-1147-5eb7-a0fb-74431e1674af",
+      "type": "PROCEDURE",
+      "text": "• Escritura de borradores del anuncio en formato físico\no digital, utilizando los aspectos formales (género,\npunto de vista, color, música, registro visual y sonoro,\nespacio, imagen, personas, objetos), figuras retóricas\n(metáfora, hipérbole, metonimia, personificación...),\nrecursos gráficos, fónicos, morfosintácticos, léxicos\ny semánticos; revisión y edición de los borradores,\nsegún las sugerencias de pares, del/de la docente y\nlas ideas propias, atendiendo al léxico empleado y a la\nortografía; edición de la versión final; publicación en\nsoporte físico o digital de la versión final del anuncio.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "73a0d1de-35d6-5fa5-bf55-b45621d4a5b7",
+      "type": "PROCEDURE",
+      "text": "Comprensión oral (escuchar)",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "00c830b8-4081-53a2-b493-49abe5fe7c10",
+      "type": "PROCEDURE",
+      "text": "• Escucha atenta de propagandas políticas; anticipación\ndel contenido, a partir de algunas marcas textuales\n(imagen, eslogan, marca); identificación de la\nintención comunicativa.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "9896583d-fc5b-534a-b5ca-5165ed47c9d6",
+      "type": "PROCEDURE",
+      "text": "• Utilización de la estructura de la propaganda política\npara entender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal, el sentido de las palabras cuyo significado\ndesconoce a partir del contexto; interpretar los usos\nmanipuladores de la propaganda política.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "0e08646c-d5dd-5a7e-8d1f-ed6f6f4da849",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Criticidad frente a las estrategias persuasivas y ante los\nusos manipuladores propios de la propaganda política\npara influir en el pensamiento y en la ideología de las\npersonas.",
+      "pdfPage": 441,
+      "printedPage": "440"
+    },
+    {
+      "id": "93decb7c-099c-5446-9ded-f37960fb2ed4",
+      "type": "CONCEPT",
+      "text": "• Los adverbios temporales y\nespaciales",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "ce50c140-0bb2-5de5-ad76-9067e9c2c4cb",
+      "type": "CONCEPT",
+      "text": "• Los adjetivos",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "a9ee1249-e72c-55bd-80c8-f5b76788dbf7",
+      "type": "CONCEPT",
+      "text": "• Modalizadores de distancia/\ncercanía",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "d997bc04-8a56-5b0d-a7fb-797db2d532c6",
+      "type": "CONCEPT",
+      "text": "• La nominalización",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "8fccb97d-2421-58f6-89b6-1856d8a730d3",
+      "type": "CONCEPT",
+      "text": "• Argumentos emocionales",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "764c8063-b275-5332-a1a7-084b854fafbe",
+      "type": "CONCEPT",
+      "text": "• Recursos audiovisuales",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "ef19c9bd-0536-5fa3-be47-033fe9d5f9ad",
+      "type": "CONCEPT",
+      "text": "• Figuras retóricas",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "16e58e9c-cae4-5568-9b37-baf344a2d970",
+      "type": "PROCEDURE",
+      "text": "• Uso de las modalizaciones discursivas y de los recursos\nretóricos para identificar la ideología presente en la\npropaganda política; paráfrasis del contenido global\nde la propaganda política que escucha.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "cc81149b-7a10-5471-af36-5ea25e19a533",
+      "type": "PROCEDURE",
+      "text": "Producción oral (hablar)",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "fb7066f2-08c8-502a-8532-c9694db36ed8",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla propaganda política que producirá oralmente;\nselección del tipo, según dicha intención.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0",
+      "type": "PROCEDURE",
+      "text": "• Planificación y selección del contenido textual\nde la propaganda política (identificador, eslogan,\ninformaciones complementarias) en función de su\nintención comunicativa y del público destinatario;\nutilización del vocabulario y el registro apropiado a la\nintención, la audiencia y al tema seleccionado.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "a64f69ff-6142-55ca-94e6-1351934b397f",
+      "type": "PROCEDURE",
+      "text": "• Organización lógica de las ideas e informaciones\nde la propaganda política; utilización del lenguaje\npersuasivo y connotativo propio de este tipo de\ntexto; construcción del contenido de la propaganda\npolítica siguiendo su estructura textual, manteniendo\nla coherencia y uso de recursos lingüísticos, figuras\nretóricas y el registro apropiado.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "04992bb6-7204-5617-886a-b7cee4bf92b0",
+      "type": "PROCEDURE",
+      "text": "Comprensión escrita (leer)",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "2ef496b6-cef7-5945-ac8b-a2e0c01a0875",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de un propósito para la lectura de\nla propaganda política; anticipación del contenido\ndel anuncio a partir de las imágenes y otras marcas\ntextuales.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "8f97ce17-7085-5229-9b44-9ecf7203f61b",
+      "type": "PROCEDURE",
+      "text": "• Lectura (silenciosa o en voz alta) en soporte físico o\ndigital de la propaganda política; utilización de su\nestructura, para comprender su contenido.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "ddf5fc74-6a90-5028-b069-22f670b31928",
+      "type": "PROCEDURE",
+      "text": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la propaganda\npolítica, el sentido de las palabras cuyo significado\ndesconoce, a partir del contexto, y para interpretar los\nusos manipuladores; utilización de las modalizaciones\ndiscursivas y de los recursos retóricos para identificar la\nideología presente en este tipo de texto.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "9917593d-daef-5ad1-9839-b708a8744a36",
+      "type": "PROCEDURE",
+      "text": "Producción escrita (escribir)",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "caa16ea1-f27a-5416-8914-3d7a66fa4606",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de la intención comunicativa de\nla propaganda política que escribirá; selección del\ntipo del tipo de propaganda de acuerdo con dicha\nintención.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "c17cbd35-0335-5f78-b47f-0bd492cfbc6d",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por descubrir los efectos de la propaganda\npolítica en el lector.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "715c324f-eb31-534f-b8da-978fcf60b4d4",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Evaluación de la manipulación y la persuasión de la\npropaganda política y sus efectos en el pensamiento\ndel destinatario.",
+      "pdfPage": 442,
+      "printedPage": "441"
+    },
+    {
+      "id": "7cf78e83-7446-580a-9ee0-fde2b12797c8",
+      "type": "PROCEDURE",
+      "text": "• Planificación y selección del contenido textual\nde la propaganda política (identificador, eslogan,\ninformaciones complementarias) en función de su\nintención comunicativa y del público destinatario;\ndiseño y selección de las imágenes en función de la\nintención y el destinatario; utilización de imágenes\nrelacionadas; selección del color, los espacios,\ndisposición gráfica para asegurar la legibilidad y la\nestética; organización de la información, utilizando\nestrategias que permiten estructurar coherentemente\nlas ideas en el texto; construcción del contenido\nsiguiendo su estructura textual.",
+      "pdfPage": 443,
+      "printedPage": "442"
+    },
+    {
+      "id": "533ceac7-9140-5e87-9d7d-a7e0c123c876",
+      "type": "PROCEDURE",
+      "text": "• Escritura de borradores en formato físico o digital,\ntomando en cuenta la función, la estructura, la\nintención comunicativa, y utilizando el lenguaje\npersuasivo y connotativo propio de la propaganda, los\nrecursos lingüísticos, el registro adecuado, las figuras\nretóricas y las convenciones de la lengua escrita;\nrevisión y edición de los borradores, tomando en\ncuenta sugerencias de pares, del/de la docente y las\nideas propias, atendiendo a la intención comunicativa,\nal tema, a la audiencia, a la estructura del texto, al léxico\nempleado y a la ortografía con ayuda del docente y los\nestudiantes; edición de la versión final; publicación\nde la versión final a través de soporte físico o digital y\nmedios tecnológicos o convencionales.",
+      "pdfPage": 443,
+      "printedPage": "442"
+    },
+    {
+      "id": "a184ab1f-a478-5390-9012-369485956e80",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Caracteriza los textos funcionales periodísticos y publicitarios (editorial, columna periodística, anuncios publicitarios y\npropagandas políticas), para comunicarse en variadas situaciones, mediante el uso de medios y recursos diversos, fortaleciendo\nlas relaciones sociales.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "ca3f093b-11d7-5fef-9d2d-424dfdf08907",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa los textos funcionales sugeridos, en sus relaciones comunicativas, demostrando conocimientos lingüísticos y manejo de\ntecnologías.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "7a3cde9a-bddb-5535-9eb3-1702768b1076",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comunica sus ideas de manera efectiva y crítica, mediante los textos indicados, atendiendo a temas sociales del ámbito local,\nnacional e internacional.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "649cc584-c02a-5f89-8af4-99b727f1c829",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra habilidades en la producción y comprensión textos periodísticos y publicitarios indicados, para el abordaje de\ntemas sociales diversos.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "a2e8f74d-5f50-5a96-8c32-c40e25e4a6c9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce informaciones a través del análisis de textos periodísticos y publicitarios sugeridos, para explicar temáticas sociales de\ndiferentes ámbitos.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "84b4c9d1-7b25-5991-8859-ae5ef0474b64",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presenta informaciones de los juicios y puntos de vista en la construcción de un pensamiento estructurado, lo que deriva en\nconclusiones, tomando en cuenta el respeto de las opiniones particulares.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "470b997a-f67c-58ed-a0c5-fd10c709c473",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa sus conocimientos sobre problemas sociales a fin de encontrar soluciones posibles, explicándolas mediante textos como\neditorial, columna periodística, anuncios publicitarios y propagandas políticas.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "37a39371-927c-54ec-9ba4-6d12085ac892",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza los textos sugeridos, para el abordaje de temas o problemas comunitarios relevantes, aportando propuestas de solución.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "bb834124-f9cd-5381-8d18-051dd3866e4a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce textos como los indicados para presentar conclusiones y recomendaciones sobre problemas de diferentes ámbitos\nsociales.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "13d67e32-ec10-57dd-9d8a-021e66aea152",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Usa los textos periodísticos y publicitarios seleccionados, tales como editorial, columna periodística, anuncios publicitarios y\npropagandas políticas para identificar nuevas relaciones socioculturales.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "89b51022-5e40-54d3-82eb-2198e340aca2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve prácticas sociales de ciudadanía y valores universales en ámbitos variados, a través de la producción de textos\nfuncionales sugeridos.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "a830111c-77ad-5fe9-a821-2008a17692ed",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea los textos periodísticos y publicitarios indicados en la elaboración de proyectos sobre prácticas ciudadanas, explicando\nsus conclusiones y recomendaciones como aportes a la solución de problemas.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "24fa8cd5-c31f-5c28-9ee7-5a2f7df4d28b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Desarrolla procesos investigativos con mayor nivel de profundidad sobre temas y problemas de la comunidad y fuera de esta,\npresentándolos en textos periodísticos y publicitarios indicados y haciendo uso de recursos tecnológicos, entre otros.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "db2ecfb6-41ed-5961-868e-5d2c384c241b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea los textos periodísticos y publicitarios producidos, poniendo en conocimiento los hallazgos, conclusiones y\nrecomendaciones de estudios sobre temas sociales.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "b08a25ec-fc1f-5096-af6b-c545233a8218",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Promueve y valora mediante los textos periodísticos y publicitarios seleccionados, procesos de investigación científica y\ntecnológica, sobre temas y problemas que inciden en la escuela, comunidad, a nivel nacional e internacional.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "5033e1ce-9596-5e51-8d70-442c9f328dee",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Caracteriza problemas y situaciones sobre salud, medioambiente y comunitario, haciendo uso de los textos periodísticos y\npublicitarios indicados, apoyándose en herramientas tecnológicas y otros recursos.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "10704701-cc0f-5663-a5bc-01ac48cc178a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Emplea los textos periodísticos y publicitarios sugeridos, en la divulgación y promoción de situaciones relacionadas con salud,\nambiente y comunidad.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "26c56828-cdec-5514-9521-4d2bc098bf3e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza actos de intercomunicación, utilizando los textos periodísticos y publicitarios sugeridos, para la concienciación sobre\ncomportamientos y acciones positivas en beneficio de la salud y la naturaleza en general.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "8f620304-95c6-5c9d-8c11-56fd6e5ffb82",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza los textos periodísticos y publicitarios seleccionados para la comprensión de sí mismo y los demás en procura de buenos\ncomportamientos sociales.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "3d0e51f8-930d-5457-977c-6b8dc28179be",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Produce los textos periodísticos y publicitarios indicados sobre temas relacionados con valores universales y la dimensión\nhumanista, a fin de fortalecer el buen comportamiento de sí y de los demás.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    },
+    {
+      "id": "6864463b-5575-5061-a526-1dc6b890ab26",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Valora informaciones de textos periodísticos y publicitarios sugeridos, relacionadas con temas sociales referidos a emociones,\nsentimientos, valores espirituales, apoyando el respeto, la dignidad y las buenas relaciones entre las personas.",
+      "pdfPage": 444,
+      "printedPage": "443"
+    }
+  ],
+  "genres": [
+    {
+      "id": "editorial",
+      "label": "editorial",
+      "match": "editorial(?:es)?",
+      "sourceRecordIds": [
+        "effacfee-3177-5b03-bfad-535ca36013f8"
+      ],
+      "pdfPages": [
+        437,
+        438
+      ],
+      "profile": {
+        "genre": "editorial",
+        "target": "la tesis, sus argumentos y la postura textual del editorial",
+        "plan": "la relación entre tesis, argumentos,tema y destinatario solicitados"
+      },
+      "planningComponents": [
+        [
+          "tesis",
+          "la tesis"
+        ],
+        [
+          "argumentos",
+          "los argumentos"
+        ],
+        [
+          "tema",
+          "el tema"
+        ],
+        [
+          "destinatario|audiencia",
+          "el destinatario"
+        ],
+        [
+          "intencion",
+          "la intención"
+        ]
+      ],
+      "features": [
+        {
+          "id": "meaning",
+          "match": "intencion|proposito|funcion",
+          "name": "la intención comunicativa solicitada",
+          "function": "relacionar los indicios del mensaje con su propósito comunicativo",
+          "error": "se atribuye al texto un propósito incompatible con sus indicios",
+          "sourceRecordIds": [
+            "3b8d7bd8-eb24-5835-b020-68e16113c8a0"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función comunicativa"
+            ],
+            [
+              "intencion|proposito",
+              "la intención comunicativa"
+            ]
+          ]
+        },
+        {
+          "id": "organization",
+          "match": "estructura|titulo|introduccion|desarrollo|conclusion",
+          "name": "la estructura expresamente trabajada",
+          "function": "relacionar las partes solicitadas con el desarrollo del mensaje",
+          "error": "se atribuye a una parte una función incompatible con el texto",
+          "sourceRecordIds": [
+            "9d281a3a-b0ec-5d4a-ab3a-dab12dcca2e8"
+          ],
+          "terms": [
+            [
+              "titulo",
+              "el título"
+            ],
+            [
+              "introduccion",
+              "la introducción"
+            ],
+            [
+              "desarrollo",
+              "el desarrollo"
+            ],
+            [
+              "conclusion",
+              "la conclusión"
+            ]
+          ]
+        },
+        {
+          "id": "characteristics",
+          "match": "caracteristicas",
+          "name": "las características del editorial solicitadas",
+          "function": "relacionar los rasgos del género con la postura y los apoyos del texto",
+          "error": "se atribuye al editorial un rasgo ausente o contrario a su contenido",
+          "sourceRecordIds": [
+            "5aab1be2-3982-5f0c-bdb4-860e2acaa398"
+          ]
+        },
+        {
+          "id": "argumentation",
+          "match": "argumentos?",
+          "name": "los argumentos solicitados",
+          "function": "relacionar las razones con la tesis y distinguir afirmaciones sustentadas de suposiciones",
+          "error": "se atribuye a una razón un apoyo que no ofrece al planteamiento",
+          "sourceRecordIds": [
+            "69daf246-1ebb-505b-adc4-7f6269e17aa6"
+          ],
+          "terms": [
+            [
+              "logicos",
+              "los argumentos lógicos"
+            ],
+            [
+              "autoridad",
+              "los argumentos de autoridad"
+            ],
+            [
+              "ejemplos",
+              "los argumentos de ejemplos"
+            ]
+          ]
+        },
+        {
+          "id": "connectors",
+          "match": "conectores",
+          "name": "los conectores solicitados",
+          "function": "enlazar las razones y las reformulaciones conservando sus relaciones",
+          "error": "el conector invierte una causa o cambia el sentido de una explicación",
+          "sourceRecordIds": [
+            "02d4b068-b7dc-58a8-982c-80c804d5b289"
+          ],
+          "terms": [
+            [
+              "causa|causales",
+              "los conectores causales"
+            ],
+            [
+              "reformulacion",
+              "los conectores de reformulación"
+            ],
+            [
+              "explicacion",
+              "los conectores de explicación"
+            ]
+          ]
+        },
+        {
+          "id": "nominalization",
+          "match": "nominaliza",
+          "name": "las nominalizaciones solicitadas",
+          "function": "relacionar las expresiones nominales con las acciones o ideas que representan",
+          "error": "se atribuye a la expresión nominal una acción o idea ajena al pasaje",
+          "sourceRecordIds": [
+            "92fd5682-a4f0-58ca-89ad-9b24d1faabee"
+          ]
+        },
+        {
+          "id": "opinion-verbs",
+          "match": "indicativo|verbos.*opinion|primera persona",
+          "name": "los verbos y la persona gramatical solicitados",
+          "function": "relacionar la forma verbal con la afirmación o postura expresada por la voz editorial",
+          "error": "se confunde una afirmación del medio con la voz de otro emisor",
+          "sourceRecordIds": [
+            "1dd5f258-8db5-5cbf-8b1a-23b28a147888"
+          ],
+          "terms": [
+            [
+              "indicativo",
+              "el modo indicativo"
+            ],
+            [
+              "opinion",
+              "los verbos de opinión"
+            ],
+            [
+              "primera persona(?: del)? plural",
+              "la primera persona del plural"
+            ]
+          ]
+        },
+        {
+          "id": "clauses",
+          "match": "oraciones|coordinad|subordinad",
+          "name": "las oraciones expresamente trabajadas",
+          "function": "relacionar las proposiciones y sus enlaces conservando el razonamiento",
+          "error": "se atribuye al enlace una relación distinta de la expresada",
+          "sourceRecordIds": [
+            "990f5e1a-5599-5e91-b324-63107efcdf13"
+          ],
+          "terms": [
+            [
+              "coordinad",
+              "las oraciones coordinadas"
+            ],
+            [
+              "subordinad",
+              "las oraciones subordinadas"
+            ]
+          ]
+        },
+        {
+          "id": "textual-marks",
+          "match": "marcas textuales",
+          "name": "las marcas textuales solicitadas",
+          "function": "reconocer la organización y la postura comunicativa mediante indicios del editorial",
+          "error": "se atribuye a una marca una función incompatible con el pasaje",
+          "sourceRecordIds": [
+            "611b2d60-64cd-5530-9e8e-ad7a08c81938"
+          ]
+        },
+        {
+          "id": "rhetoric",
+          "match": "retoric|figuras|metafora|personificacion|paradoja|hiperbole|eufemismo|perifrasis|metonimia",
+          "name": "los recursos retóricos solicitados",
+          "function": "relacionar los recursos expresivos con el sentido y el efecto del mensaje",
+          "error": "se identifica un recurso inexistente o se atribuye un efecto contrario al pasaje",
+          "sourceRecordIds": [
+            "9aa38957-8ae6-5284-a3e2-9d0a769279b2"
+          ],
+          "terms": [
+            [
+              "metafora",
+              "la metáfora"
+            ],
+            [
+              "personificacion",
+              "la personificación"
+            ],
+            [
+              "paradoja",
+              "la paradoja"
+            ],
+            [
+              "hiperbole",
+              "la hipérbole"
+            ],
+            [
+              "eufemismo",
+              "el eufemismo"
+            ],
+            [
+              "perifrasis",
+              "la perífrasis"
+            ]
+          ]
+        },
+        {
+          "id": "stance",
+          "match": "tesis|postura|punto de vista|ideologi",
+          "name": "la postura textual y la tesis solicitadas",
+          "function": "vincular la posición expresada con las razones del texto, sin exigir adhesión personal",
+          "error": "se atribuye al emisor una postura o tesis que contradice el mensaje",
+          "sourceRecordIds": [
+            "c2917caf-b852-5ba4-ad44-eb5ee95617a2"
+          ],
+          "terms": [
+            [
+              "tesis",
+              "la tesis"
+            ],
+            [
+              "postura|punto de vista|ideologi",
+              "la postura expresada por el emisor"
+            ]
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "stance",
+          "title": "Tesis y postura textual",
+          "production": "Formula una tesis reconocible y una postura textual coherente con el tema solicitado en el editorial, sin que se exija adhesión personal.",
+          "analysis": "Reconoce la tesis y la postura expresadas en el editorial y las fundamenta con indicios del texto disponible.",
+          "comparison": "Contrasta las tesis y las posturas de los textos con evidencias de ambos.",
+          "evidence": [
+            "La tesis y postura se reconocen; una relación con el tema requiere precisión.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Se atribuye al texto una tesis o postura que contradice sus afirmaciones.",
+            "No aporta una tesis reconocible ni evidencia de la postura textual solicitada."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "argumentation",
+          "title": "Relación entre tesis y argumentos",
+          "production": "Relaciona los argumentos solicitados con la tesis y distingue afirmaciones sustentadas de suposiciones.",
+          "analysis": "Explica cómo las razones del texto apoyan su tesis, con los datos y ejemplos disponibles.",
+          "comparison": "Contrasta cómo las razones de ambos textos apoyan sus respectivas tesis.",
+          "evidence": [
+            "Los argumentos principales apoyan la tesis; una conexión necesita precisarse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Una razón contradice la tesis o se atribuye un apoyo que la evidencia no ofrece.",
+            "No relaciona razones reconocibles con la tesis del texto."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "organization",
+          "title": "Organización del razonamiento",
+          "production": "Organiza las partes solicitadas para que pueda seguirse el planteamiento y el desarrollo de sus razones.",
+          "analysis": "Relaciona la organización del texto con el desarrollo de su planteamiento y sus razones.",
+          "comparison": "Compara cómo la organización de cada texto contribuye a desarrollar su planteamiento.",
+          "evidence": [
+            "Se sigue el desarrollo principal; una transición requiere aclararse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "El orden o los enlaces cambian una relación necesaria entre las ideas.",
+            "No presenta una organización reconocible del planteamiento y sus apoyos."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "columna-periodistica",
+      "label": "columna periodística",
+      "match": "columnas? (?:periodisticas?|de opinion)",
+      "sourceRecordIds": [
+        "ffcc1271-128f-53c7-b9be-6cf17f2237b5"
+      ],
+      "pdfPages": [
+        439,
+        440
+      ],
+      "profile": {
+        "genre": "columna periodística",
+        "target": "la tesis, los argumentos y el comentario de autor de la columna",
+        "plan": "la relación entre tesis, argumentos, tema y destinatario solicitados"
+      },
+      "planningComponents": [
+        [
+          "tesis",
+          "la tesis"
+        ],
+        [
+          "argumentos",
+          "los argumentos"
+        ],
+        [
+          "tema",
+          "el tema"
+        ],
+        [
+          "destinatario|audiencia",
+          "el destinatario"
+        ],
+        [
+          "intencion",
+          "la intención"
+        ]
+      ],
+      "features": [
+        {
+          "id": "meaning",
+          "match": "intencion|proposito|funcion",
+          "name": "la intención comunicativa solicitada",
+          "function": "relacionar los indicios del mensaje con su propósito comunicativo",
+          "error": "se atribuye al texto un propósito incompatible con sus indicios",
+          "sourceRecordIds": [
+            "2a5f26c3-115a-519a-91c1-bdc3a993a100"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función comunicativa"
+            ],
+            [
+              "intencion|proposito",
+              "la intención comunicativa"
+            ]
+          ]
+        },
+        {
+          "id": "organization",
+          "match": "estructura|punto de partida|conclusion",
+          "name": "la estructura expresamente trabajada",
+          "function": "relacionar las partes solicitadas con el desarrollo del mensaje",
+          "error": "se atribuye a una parte una función incompatible con el texto",
+          "sourceRecordIds": [
+            "700b8e7f-58fc-5b55-a00f-18b87075bd25"
+          ],
+          "terms": [
+            [
+              "punto de partida",
+              "el punto de partida"
+            ],
+            [
+              "tesis",
+              "la tesis"
+            ],
+            [
+              "argumentos",
+              "los argumentos"
+            ],
+            [
+              "conclusion",
+              "la conclusión"
+            ]
+          ]
+        },
+        {
+          "id": "characteristics",
+          "match": "caracteristicas",
+          "name": "las características de la columna solicitadas",
+          "function": "relacionar el comentario de autor con sus razones y el asunto tratado",
+          "error": "se atribuye a la columna un rasgo que no aparece en el pasaje",
+          "sourceRecordIds": [
+            "59b74eed-4b78-5ced-a901-5f6865a7f1dd"
+          ]
+        },
+        {
+          "id": "stance",
+          "match": "tesis|postura|punto de vista|ideologi",
+          "name": "la postura textual y la tesis solicitadas",
+          "function": "vincular la posición expresada con las razones del texto, sin exigir adhesión personal",
+          "error": "se atribuye al emisor una postura o tesis que contradice el mensaje",
+          "sourceRecordIds": [
+            "dc587122-0f3e-51dd-80df-b512c9321715"
+          ],
+          "terms": [
+            [
+              "tesis",
+              "la tesis"
+            ],
+            [
+              "postura|punto de vista|ideologi",
+              "la postura expresada por el emisor"
+            ]
+          ]
+        },
+        {
+          "id": "opinion-verbs",
+          "match": "verbos.*opinion",
+          "name": "los verbos de opinión",
+          "function": "distinguir la postura del autor de los hechos que comenta",
+          "error": "se atribuye una opinión a quien no la expresa en el texto",
+          "sourceRecordIds": [
+            "ec1e4f1f-9408-5d94-93fa-bd95f713d586"
+          ]
+        },
+        {
+          "id": "markers",
+          "match": "marcadores",
+          "name": "los marcadores solicitados",
+          "function": "organizar el comentario y hacer reconocible la postura expresada",
+          "error": "se atribuye al marcador una relación o postura contraria al pasaje",
+          "sourceRecordIds": [
+            "086c5692-8ea8-5ccf-ac4b-e927b7330ab9"
+          ]
+        },
+        {
+          "id": "connectors",
+          "match": "conectores",
+          "name": "los conectores solicitados",
+          "function": "enlazar las razones y las reformulaciones conservando sus relaciones",
+          "error": "el conector invierte una causa o cambia el sentido de una explicación",
+          "sourceRecordIds": [
+            "7c3a0dd6-45f0-58c5-b61e-440c4a4c916e"
+          ],
+          "terms": [
+            [
+              "causa|causales",
+              "los conectores causales"
+            ],
+            [
+              "reformulacion",
+              "los conectores de reformulación"
+            ],
+            [
+              "explicacion",
+              "los conectores de explicación"
+            ]
+          ]
+        },
+        {
+          "id": "nominalization",
+          "match": "nominaliza",
+          "name": "las nominalizaciones solicitadas",
+          "function": "relacionar las expresiones nominales con las acciones o ideas que representan",
+          "error": "se atribuye a la expresión nominal una acción o idea ajena al pasaje",
+          "sourceRecordIds": [
+            "bf5d19a1-c561-5f6e-8a5c-2abf265a89b5"
+          ]
+        },
+        {
+          "id": "adjectives",
+          "match": "adjetiv",
+          "name": "los adjetivos solicitados",
+          "function": "precisar la caracterización o valoración expresada en el mensaje",
+          "error": "se atribuye al adjetivo una valoración incompatible con el pasaje",
+          "sourceRecordIds": [
+            "14a0a727-d6bb-5edf-bd69-10c3a9fd804b"
+          ]
+        },
+        {
+          "id": "rhetoric",
+          "match": "retoric|figuras|metafora|personificacion|paradoja|hiperbole|eufemismo|perifrasis|metonimia",
+          "name": "los recursos retóricos solicitados",
+          "function": "relacionar los recursos expresivos con el sentido y el efecto del mensaje",
+          "error": "se identifica un recurso inexistente o se atribuye un efecto contrario al pasaje",
+          "sourceRecordIds": [
+            "0518f821-702c-53b1-b552-c98d7dd50132"
+          ]
+        },
+        {
+          "id": "argumentation",
+          "match": "argumentos?",
+          "name": "los argumentos solicitados",
+          "function": "relacionar las razones con la tesis y distinguir afirmaciones sustentadas de suposiciones",
+          "error": "se atribuye a una razón un apoyo que no ofrece al planteamiento",
+          "sourceRecordIds": [
+            "74032649-fcad-5ea6-b5bb-5b9b30a9e091"
+          ],
+          "terms": [
+            [
+              "logicos",
+              "los argumentos lógicos"
+            ],
+            [
+              "autoridad",
+              "los argumentos de autoridad"
+            ],
+            [
+              "ejemplos",
+              "los argumentos de ejemplos"
+            ]
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "stance",
+          "title": "Tesis y postura textual",
+          "production": "Formula una tesis reconocible y una postura textual coherente con el tema solicitado en la columna periodística, sin que se exija adhesión personal.",
+          "analysis": "Reconoce la tesis y la postura expresadas en la columna periodística y las fundamenta con indicios del texto disponible.",
+          "comparison": "Contrasta las tesis y las posturas de los textos con evidencias de ambos.",
+          "evidence": [
+            "La tesis y postura se reconocen; una relación con el tema requiere precisión.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Se atribuye al texto una tesis o postura que contradice sus afirmaciones.",
+            "No aporta una tesis reconocible ni evidencia de la postura textual solicitada."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "argumentation",
+          "title": "Relación entre tesis y argumentos",
+          "production": "Relaciona los argumentos solicitados con la tesis y distingue afirmaciones sustentadas de suposiciones.",
+          "analysis": "Explica cómo las razones del texto apoyan su tesis, con los datos y ejemplos disponibles.",
+          "comparison": "Contrasta cómo las razones de ambos textos apoyan sus respectivas tesis.",
+          "evidence": [
+            "Los argumentos principales apoyan la tesis; una conexión necesita precisarse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Una razón contradice la tesis o se atribuye un apoyo que la evidencia no ofrece.",
+            "No relaciona razones reconocibles con la tesis del texto."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "organization",
+          "title": "Organización del razonamiento",
+          "production": "Organiza las partes solicitadas para que pueda seguirse el planteamiento y el desarrollo de sus razones.",
+          "analysis": "Relaciona la organización del texto con el desarrollo de su planteamiento y sus razones.",
+          "comparison": "Compara cómo la organización de cada texto contribuye a desarrollar su planteamiento.",
+          "evidence": [
+            "Se sigue el desarrollo principal; una transición requiere aclararse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "El orden o los enlaces cambian una relación necesaria entre las ideas.",
+            "No presenta una organización reconocible del planteamiento y sus apoyos."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "anuncio-publicitario",
+      "label": "anuncio publicitario",
+      "match": "anuncios? publicitarios?",
+      "sourceRecordIds": [
+        "59e46def-4cec-5cd0-809d-a2b5b58d0db2"
+      ],
+      "pdfPages": [
+        440,
+        441
+      ],
+      "profile": {
+        "genre": "anuncio publicitario",
+        "target": "el mensaje, su intención y los componentes expresamente pedidos del anuncio",
+        "plan": "la relación entre intención, destinatario y componentes expresamente pedidos"
+      },
+      "planningComponents": [
+        [
+          "titular",
+          "el titular"
+        ],
+        [
+          "eslogan",
+          "el eslogan"
+        ],
+        [
+          "imagen",
+          "la relación con la imagen proporcionada o solicitada"
+        ],
+        [
+          "informacion(?:es)? complementaria",
+          "la información complementaria"
+        ],
+        [
+          "destinatario|audiencia",
+          "el destinatario"
+        ],
+        [
+          "intencion",
+          "la intención"
+        ],
+        [
+          "tipo",
+          "el tipo de anuncio"
+        ]
+      ],
+      "features": [
+        {
+          "id": "meaning",
+          "match": "intencion|proposito|funcion",
+          "name": "la intención comunicativa solicitada",
+          "function": "relacionar los indicios del mensaje con su propósito comunicativo",
+          "error": "se atribuye al texto un propósito incompatible con sus indicios",
+          "sourceRecordIds": [
+            "6c7dd8cf-8ade-5d76-be4d-87b28ad73ea7"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función comunicativa"
+            ],
+            [
+              "intencion|proposito",
+              "la intención comunicativa"
+            ]
+          ]
+        },
+        {
+          "id": "organization",
+          "match": "estructura|titular|informacion(?:es)? complementaria",
+          "name": "la estructura expresamente trabajada",
+          "function": "relacionar las partes solicitadas con el desarrollo del mensaje",
+          "error": "se atribuye a una parte una función incompatible con el texto",
+          "sourceRecordIds": [
+            "f1414995-f54c-5417-bbd3-d454371ffc66"
+          ],
+          "terms": [
+            [
+              "titular",
+              "el titular"
+            ],
+            [
+              "eslogan",
+              "el eslogan"
+            ],
+            [
+              "informacion(?:es)? complementaria",
+              "la información complementaria"
+            ]
+          ]
+        },
+        {
+          "id": "ad-types",
+          "match": "\\btipos? de anuncios?\\b",
+          "name": "el tipo de anuncio solicitado",
+          "function": "relacionar las características del anuncio con su propósito y el destinatario dado",
+          "error": "se clasifica el anuncio por un rasgo ausente o incompatible con su propósito",
+          "sourceRecordIds": [
+            "ea57ff8c-efd9-5ea2-bb7f-a1b35fecfcf8"
+          ]
+        },
+        {
+          "id": "language-values",
+          "match": "denotativ|informativ|expresiv",
+          "name": "los valores del lenguaje expresamente trabajados",
+          "function": "distinguir información literal de asociaciones expresivas mediante indicios del anuncio",
+          "error": "se presenta una asociación simbólica como si fuera información literal",
+          "sourceRecordIds": [
+            "9d0bf2a0-c734-5453-946a-e38c2d8a29f6"
+          ],
+          "terms": [
+            [
+              "denotativ|informativ",
+              "el valor denotativo o informativo"
+            ],
+            [
+              "connotativ|expresiv",
+              "el valor connotativo o expresivo"
+            ]
+          ]
+        },
+        {
+          "id": "persuasion",
+          "match": "persuasiv|^(?!.*(?:denotativ|informativ|expresiv)).*connotativ",
+          "name": "el lenguaje persuasivo y connotativo solicitado",
+          "function": "relacionar las asociaciones y apelaciones del mensaje con su intención",
+          "error": "se atribuye al mensaje una asociación o apelación incompatible con sus recursos",
+          "sourceRecordIds": [
+            "6269a8f7-0052-5955-9fdd-76752b9b10d4"
+          ],
+          "terms": [
+            [
+              "persuasiv",
+              "el lenguaje persuasivo"
+            ],
+            [
+              "connotativ",
+              "el lenguaje connotativo"
+            ]
+          ]
+        },
+        {
+          "id": "audiovisual",
+          "match": "audiovisual",
+          "name": "los recursos audiovisuales expresamente pedidos",
+          "function": "relacionar los apoyos visuales o sonoros disponibles con el mensaje",
+          "error": "el apoyo contradice el contenido o se atribuye un efecto a un recurso inexistente",
+          "sourceRecordIds": [
+            "6498dc63-9b25-59cf-b725-9eb46592a690"
+          ]
+        },
+        {
+          "id": "ad-resources",
+          "match": "recursos (?:graficos|fonicos|morfosintacticos|lexicos|semanticos)",
+          "name": "los recursos expresamente pedidos",
+          "function": "relacionar los recursos del anuncio con su sentido y su propósito",
+          "error": "se identifica un recurso ausente o se le atribuye una función incompatible",
+          "sourceRecordIds": [
+            "430f12ae-22a9-55a5-8d93-cba407c0b399"
+          ],
+          "terms": [
+            [
+              "graficos",
+              "los recursos gráficos"
+            ],
+            [
+              "fonicos",
+              "los recursos fónicos"
+            ],
+            [
+              "morfosintacticos",
+              "los recursos morfosintácticos"
+            ],
+            [
+              "lexicos",
+              "los recursos léxicos"
+            ],
+            [
+              "semanticos",
+              "los recursos semánticos"
+            ]
+          ]
+        },
+        {
+          "id": "address",
+          "match": "vocativo|segunda persona",
+          "name": "la apelación gramatical solicitada",
+          "function": "reconocer cómo el mensaje se dirige a su destinatario",
+          "error": "se confunde el destinatario con quien emite el mensaje",
+          "sourceRecordIds": [
+            "fa017519-3024-5b4f-a02a-5dd7d58c5a00"
+          ],
+          "terms": [
+            [
+              "vocativo",
+              "el vocativo"
+            ],
+            [
+              "segunda persona",
+              "la segunda persona"
+            ]
+          ]
+        },
+        {
+          "id": "imperative",
+          "match": "imperativo",
+          "name": "el modo imperativo",
+          "function": "relacionar la forma verbal con la acción propuesta al destinatario",
+          "error": "se confunde una afirmación o descripción con la acción propuesta",
+          "sourceRecordIds": [
+            "2cd98309-f70a-5a2e-9498-ca6fd24f0de4"
+          ]
+        },
+        {
+          "id": "adjectives",
+          "match": "adjetiv",
+          "name": "los adjetivos solicitados",
+          "function": "precisar la caracterización o valoración expresada en el mensaje",
+          "error": "se atribuye al adjetivo una valoración incompatible con el pasaje",
+          "sourceRecordIds": [
+            "91546f37-9332-597e-af99-c8b0c659928a"
+          ]
+        },
+        {
+          "id": "rhetoric",
+          "match": "retoric|figuras|metafora|personificacion|paradoja|hiperbole|eufemismo|perifrasis|metonimia",
+          "name": "los recursos retóricos solicitados",
+          "function": "relacionar los recursos expresivos con el sentido y el efecto del mensaje",
+          "error": "se identifica un recurso inexistente o se atribuye un efecto contrario al pasaje",
+          "sourceRecordIds": [
+            "82653d65-a22d-557e-855f-f648ab28daac"
+          ]
+        },
+        {
+          "id": "formal-aspects",
+          "match": "aspectos formales|registro visual|registro sonoro",
+          "name": "los aspectos formales expresamente solicitados",
+          "function": "organizar la percepción del mensaje mediante los componentes disponibles",
+          "error": "se atribuye a una elección formal una función que contradice el mensaje",
+          "sourceRecordIds": [
+            "7659635a-9751-5a98-8700-692f1a334d86"
+          ]
+        },
+        {
+          "id": "design",
+          "match": "estetica|legib|diseno|disena|disposicion grafica|color|espacios",
+          "name": "la relación entre diseño, legibilidad e intención",
+          "function": "hacer legible y comprensible el anuncio con los recursos proporcionados, sin imponer gustos o acabado profesional",
+          "error": "la disposición dificulta leer o relacionar los componentes centrales",
+          "sourceRecordIds": [
+            "f4723e0b-0d33-592d-92a8-138ca75c3536"
+          ]
+        },
+        {
+          "id": "slogan",
+          "match": "eslogan",
+          "name": "el eslogan solicitado",
+          "function": "vincular una expresión breve con el mensaje y el propósito del anuncio",
+          "error": "el eslogan comunica una idea contraria al mensaje",
+          "sourceRecordIds": [
+            "36155cab-071c-5984-9783-33b776aef822"
+          ]
+        },
+        {
+          "id": "image",
+          "match": "imagen(?:es)?",
+          "name": "la imagen proporcionada o solicitada",
+          "function": "relacionar la información visual con el contenido y la intención del anuncio",
+          "error": "la imagen contradice el mensaje o se le atribuye información que no contiene",
+          "sourceRecordIds": [
+            "6aaf3b03-4135-50af-b5e4-039eeb536214"
+          ]
+        },
+        {
+          "id": "manipulation",
+          "match": "manipul|discrimin|estereotipo",
+          "name": "la presencia o ausencia de usos manipuladores o discriminatorios",
+          "function": "fundamentar el análisis de los recursos con evidencias del mensaje, sin prejuzgar una postura como correcta",
+          "error": "se atribuye una estrategia al mensaje sin evidencia o se presenta una interpretación como un hecho comprobado",
+          "sourceRecordIds": [
+            "9080d87a-fb33-5812-afbd-dbee7737fbc3"
+          ],
+          "terms": [
+            [
+              "manipul",
+              "la presencia o ausencia de usos manipuladores"
+            ],
+            [
+              "discrimin",
+              "la presencia o ausencia de usos discriminatorios"
+            ],
+            [
+              "estereotipo",
+              "la presencia o ausencia de estereotipos"
+            ]
+          ],
+          "analysisLevels": [
+            "Fundamenta {target} mediante indicios del mensaje y distingue lo que observa de lo que infiere, sin exigir adhesión a una postura.",
+            "La conclusión sobre {target} tiene apoyo en el mensaje; un indicio o inferencia necesita precisarse.",
+            "Menciona indicios pertinentes, pero no muestra cómo respaldan su conclusión sobre los recursos solicitados.",
+            "Atribuye al mensaje una estrategia ausente o descarta una identificable sin apoyo en el texto disponible.",
+            "No sostiene una conclusión verificable sobre la presencia o ausencia de los recursos analizados."
+          ]
+        },
+        {
+          "id": "product-values",
+          "match": "literal|simbolic",
+          "name": "los valores literales o simbólicos expresamente pedidos",
+          "function": "distinguir las características declaradas del producto de las asociaciones simbólicas propuestas",
+          "error": "se presenta una asociación simbólica como una característica literal del producto",
+          "sourceRecordIds": [
+            "e76241ba-f77e-5c79-b461-2b8b82914fa4"
+          ],
+          "terms": [
+            [
+              "literal",
+              "el valor literal"
+            ],
+            [
+              "simbolic",
+              "el valor simbólico"
+            ]
+          ]
+        },
+        {
+          "id": "register",
+          "match": "\\bregistro\\b(?!\\s+(?:visual|sonoro))",
+          "name": "el registro expresamente acordado",
+          "function": "adecuar el vocabulario y las formas de dirigirse al destinatario según las condiciones del ejercicio",
+          "error": "el registro contradice las condiciones comunicativas acordadas",
+          "sourceRecordIds": [
+            "e2b16fe6-9e3e-5525-855e-764d243a9b7f"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "meaning",
+          "title": "Intención y destinatario del mensaje",
+          "production": "Relaciona el mensaje del anuncio ficticio con su propósito y el destinatario dados.",
+          "analysis": "Reconoce el propósito y el destinatario previsto mediante indicios del mensaje, distinguiendo información literal de inferencias.",
+          "comparison": "Contrasta los propósitos y destinatarios previstos con indicios de ambos mensajes.",
+          "evidence": [
+            "El propósito y destinatario se reconocen; una relación con el mensaje necesita aclararse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Se atribuye al mensaje un propósito o destinatario incompatible con sus indicios.",
+            "No aporta evidencia reconocible de la relación entre mensaje, propósito y destinatario."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "organization",
+          "title": "Organización de los componentes",
+          "production": "Organiza únicamente los componentes y recursos solicitados para que el mensaje pueda leerse o comprenderse.",
+          "analysis": "Relaciona los componentes disponibles del mensaje con su organización y su intención.",
+          "comparison": "Contrasta cómo los componentes disponibles de ambos mensajes contribuyen a su organización.",
+          "evidence": [
+            "Los componentes principales se relacionan; una disposición o referencia necesita precisarse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "La disposición cambia una relación central o impide comprender un componente necesario.",
+            "No permite reconocer las relaciones entre los componentes del mensaje solicitado."
+          ],
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "propaganda-politica",
+      "label": "propaganda política",
+      "match": "propagandas? politicas?",
+      "sourceRecordIds": [
+        "caa2576e-c17e-51b5-ad35-d2d26c1354e3"
+      ],
+      "pdfPages": [
+        441,
+        442,
+        443
+      ],
+      "profile": {
+        "genre": "propaganda política ficticia",
+        "target": "el mensaje ficticio y los recursos persuasivos expresamente trabajados",
+        "plan": "la relación entre intención, destinatario y componentes expresamente pedidos"
+      },
+      "planningComponents": [
+        [
+          "identificador",
+          "el identificador ficticio"
+        ],
+        [
+          "eslogan",
+          "el eslogan"
+        ],
+        [
+          "imagen",
+          "la relación con la imagen proporcionada o solicitada"
+        ],
+        [
+          "informacion(?:es)? complementaria",
+          "la información complementaria"
+        ],
+        [
+          "destinatario|audiencia",
+          "el destinatario"
+        ],
+        [
+          "intencion",
+          "la intención"
+        ]
+      ],
+      "features": [
+        {
+          "id": "meaning",
+          "match": "intencion|proposito|funcion",
+          "name": "la intención comunicativa solicitada",
+          "function": "relacionar los indicios del mensaje con su propósito comunicativo",
+          "error": "se atribuye al texto un propósito incompatible con sus indicios",
+          "sourceRecordIds": [
+            "d5303c63-6a10-5a84-909d-71bbcbb3d3bb"
+          ],
+          "terms": [
+            [
+              "funcion",
+              "la función comunicativa"
+            ],
+            [
+              "intencion|proposito",
+              "la intención comunicativa"
+            ]
+          ]
+        },
+        {
+          "id": "organization",
+          "match": "estructura|informacion(?:es)? complementaria",
+          "name": "la estructura expresamente trabajada",
+          "function": "relacionar las partes solicitadas con el desarrollo del mensaje",
+          "error": "se atribuye a una parte una función incompatible con el texto",
+          "sourceRecordIds": [
+            "d5303c63-6a10-5a84-909d-71bbcbb3d3bb"
+          ],
+          "terms": [
+            [
+              "identificador",
+              "el identificador"
+            ],
+            [
+              "eslogan",
+              "el eslogan"
+            ],
+            [
+              "informacion(?:es)? complementaria",
+              "la información complementaria"
+            ]
+          ]
+        },
+        {
+          "id": "codes",
+          "match": "codigos|verbal|iconograf",
+          "name": "los códigos expresamente trabajados",
+          "function": "relacionar el mensaje verbal y los signos visuales disponibles",
+          "error": "se atribuye al signo un sentido contrario al mensaje",
+          "sourceRecordIds": [
+            "09c9772a-3b42-50ec-a705-04cc401878d7"
+          ],
+          "terms": [
+            [
+              "verbal",
+              "el código verbal"
+            ],
+            [
+              "iconograf",
+              "el código iconográfico"
+            ]
+          ]
+        },
+        {
+          "id": "persuasion",
+          "match": "persuasiv|connotativ",
+          "name": "el lenguaje persuasivo y connotativo solicitado",
+          "function": "relacionar asociaciones y apelaciones con la intención del mensaje ficticio, sin exigir adhesión",
+          "error": "se atribuye al mensaje una apelación o asociación que no contiene",
+          "sourceRecordIds": [
+            "1500a8bb-a221-5623-8509-3ece37ec8790"
+          ],
+          "terms": [
+            [
+              "persuasiv",
+              "el lenguaje persuasivo"
+            ],
+            [
+              "connotativ",
+              "el lenguaje connotativo"
+            ]
+          ]
+        },
+        {
+          "id": "pronouns",
+          "match": "pronombres",
+          "name": "los pronombres personales solicitados",
+          "function": "reconocer las referencias al emisor y al destinatario del mensaje",
+          "error": "se atribuye un pronombre a una persona o grupo distinto del indicado por el texto",
+          "sourceRecordIds": [
+            "8f428ca7-1d02-584a-8782-a1bbba492475"
+          ]
+        },
+        {
+          "id": "adverbs",
+          "match": "adverbios",
+          "name": "los adverbios expresamente pedidos",
+          "function": "situar las referencias temporales o espaciales del mensaje",
+          "error": "se invierte una referencia temporal o espacial",
+          "sourceRecordIds": [
+            "93decb7c-099c-5446-9ded-f37960fb2ed4"
+          ],
+          "terms": [
+            [
+              "temporales",
+              "los adverbios temporales"
+            ],
+            [
+              "espaciales",
+              "los adverbios espaciales"
+            ]
+          ]
+        },
+        {
+          "id": "adjectives",
+          "match": "adjetiv",
+          "name": "los adjetivos solicitados",
+          "function": "precisar la caracterización o valoración expresada en el mensaje",
+          "error": "se atribuye al adjetivo una valoración incompatible con el pasaje",
+          "sourceRecordIds": [
+            "ce50c140-0bb2-5de5-ad76-9067e9c2c4cb"
+          ]
+        },
+        {
+          "id": "modality",
+          "match": "modalizador|modalizac|distancia|cercania",
+          "name": "las modalizaciones solicitadas",
+          "function": "relacionar las marcas de distancia o cercanía con la posición expresada en el mensaje",
+          "error": "se atribuye al emisor una posición contraria a sus marcas discursivas",
+          "sourceRecordIds": [
+            "a9ee1249-e72c-55bd-80c8-f5b76788dbf7"
+          ],
+          "terms": [
+            [
+              "distancia",
+              "los modalizadores de distancia"
+            ],
+            [
+              "cercania",
+              "los modalizadores de cercanía"
+            ]
+          ]
+        },
+        {
+          "id": "nominalization",
+          "match": "nominaliza",
+          "name": "las nominalizaciones solicitadas",
+          "function": "relacionar las expresiones nominales con las acciones o ideas que representan",
+          "error": "se atribuye a la expresión nominal una acción o idea ajena al pasaje",
+          "sourceRecordIds": [
+            "d997bc04-8a56-5b0d-a7fb-797db2d532c6"
+          ]
+        },
+        {
+          "id": "emotional-arguments",
+          "match": "argumentos emocionales|apelaciones emocionales",
+          "name": "los argumentos emocionales solicitados",
+          "function": "analizar la apelación propuesta y su relación con el mensaje sin evaluar emociones privadas",
+          "error": "se atribuye al recurso una apelación que no se sostiene en el texto",
+          "sourceRecordIds": [
+            "8fccb97d-2421-58f6-89b6-1856d8a730d3"
+          ]
+        },
+        {
+          "id": "audiovisual",
+          "match": "audiovisual",
+          "name": "los recursos audiovisuales expresamente pedidos",
+          "function": "relacionar los apoyos visuales o sonoros disponibles con el mensaje ficticio",
+          "error": "el apoyo contradice el contenido o se atribuye un efecto a un recurso inexistente",
+          "sourceRecordIds": [
+            "764c8063-b275-5332-a1a7-084b854fafbe"
+          ]
+        },
+        {
+          "id": "rhetoric",
+          "match": "retoric|figuras|metafora|personificacion|paradoja|hiperbole|eufemismo|perifrasis|metonimia",
+          "name": "los recursos retóricos solicitados",
+          "function": "relacionar los recursos expresivos con el sentido y el efecto del mensaje",
+          "error": "se identifica un recurso inexistente o se atribuye un efecto contrario al pasaje",
+          "sourceRecordIds": [
+            "ef19c9bd-0536-5fa3-be47-033fe9d5f9ad"
+          ]
+        },
+        {
+          "id": "identifier",
+          "match": "identificador",
+          "name": "el identificador solicitado",
+          "function": "hacer reconocible la voz o propuesta ficticia presentada en el ejercicio",
+          "error": "se atribuye el mensaje a una voz o propuesta distinta de la indicada",
+          "sourceRecordIds": [
+            "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0"
+          ]
+        },
+        {
+          "id": "slogan",
+          "match": "eslogan",
+          "name": "el eslogan solicitado",
+          "function": "vincular una expresión breve con el mensaje ficticio y su propósito educativo",
+          "error": "el eslogan contradice el mensaje del ejercicio",
+          "sourceRecordIds": [
+            "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0"
+          ]
+        },
+        {
+          "id": "image",
+          "match": "imagen(?:es)?",
+          "name": "la imagen proporcionada o solicitada",
+          "function": "relacionar la información visual con el mensaje ficticio del ejercicio",
+          "error": "la imagen contradice el texto o se le atribuye información que no contiene",
+          "sourceRecordIds": [
+            "7cf78e83-7446-580a-9ee0-fde2b12797c8"
+          ]
+        },
+        {
+          "id": "design",
+          "match": "legib|diseno|disena|disposicion grafica|color|espacios",
+          "name": "la legibilidad y disposición de los componentes solicitados",
+          "function": "hacer comprensible el prototipo ficticio con los recursos proporcionados",
+          "error": "la disposición impide relacionar o leer los componentes centrales",
+          "sourceRecordIds": [
+            "7cf78e83-7446-580a-9ee0-fde2b12797c8"
+          ]
+        },
+        {
+          "id": "manipulation",
+          "match": "manipul|discrimin|estereotipo",
+          "name": "la presencia o ausencia de usos manipuladores o discriminatorios",
+          "function": "fundamentar el análisis de los recursos con evidencias del mensaje, sin prejuzgar una postura como correcta",
+          "error": "se atribuye una estrategia al mensaje sin evidencia o se presenta una interpretación como un hecho comprobado",
+          "sourceRecordIds": [
+            "0e08646c-d5dd-5a7e-8d1f-ed6f6f4da849"
+          ],
+          "terms": [
+            [
+              "manipul",
+              "la presencia o ausencia de usos manipuladores"
+            ],
+            [
+              "discrimin",
+              "la presencia o ausencia de usos discriminatorios"
+            ],
+            [
+              "estereotipo",
+              "la presencia o ausencia de estereotipos"
+            ]
+          ],
+          "analysisLevels": [
+            "Fundamenta {target} mediante indicios del mensaje y distingue lo que observa de lo que infiere, sin exigir adhesión a una postura.",
+            "La conclusión sobre {target} tiene apoyo en el mensaje; un indicio o inferencia necesita precisarse.",
+            "Menciona indicios pertinentes, pero no muestra cómo respaldan su conclusión sobre los recursos solicitados.",
+            "Atribuye al mensaje una estrategia ausente o descarta una identificable sin apoyo en el texto disponible.",
+            "No sostiene una conclusión verificable sobre la presencia o ausencia de los recursos analizados."
+          ]
+        },
+        {
+          "id": "effects",
+          "match": "efectos|pensamiento del destinatario",
+          "name": "los posibles efectos del mensaje",
+          "function": "fundamentar inferencias sobre la recepción con recursos del texto y distinguirlas de efectos realmente observados",
+          "error": "se afirma como comprobada una reacción del destinatario que no se observó",
+          "sourceRecordIds": [
+            "715c324f-eb31-534f-b8da-978fcf60b4d4"
+          ]
+        },
+        {
+          "id": "register",
+          "match": "\\bregistro\\b(?!\\s+(?:visual|sonoro))",
+          "name": "el registro expresamente acordado",
+          "function": "adecuar el vocabulario y las formas de dirigirse al destinatario según las condiciones del ejercicio",
+          "error": "el registro contradice las condiciones comunicativas acordadas",
+          "sourceRecordIds": [
+            "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0"
+          ]
+        }
+      ],
+      "dimensions": [
+        {
+          "id": "meaning",
+          "title": "Intención y destinatario del mensaje",
+          "production": "Construye un mensaje ficticio comprensible para el propósito educativo y el destinatario dados, sin exigir adhesión personal.",
+          "analysis": "Reconoce el propósito y el destinatario previsto mediante indicios del mensaje, distinguiendo información literal de inferencias.",
+          "comparison": "Contrasta los propósitos y destinatarios previstos con indicios de ambos mensajes.",
+          "evidence": [
+            "El propósito y destinatario se reconocen; una relación con el mensaje necesita aclararse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "Se atribuye al mensaje un propósito o destinatario incompatible con sus indicios.",
+            "No aporta evidencia reconocible de la relación entre mensaje, propósito y destinatario."
+          ],
+          "weight": 4
+        },
+        {
+          "id": "organization",
+          "title": "Organización de los componentes",
+          "production": "Organiza únicamente los componentes y recursos solicitados para que el mensaje pueda leerse o comprenderse.",
+          "analysis": "Relaciona los componentes disponibles del mensaje con su organización y su intención.",
+          "comparison": "Contrasta cómo los componentes disponibles de ambos mensajes contribuyen a su organización.",
+          "evidence": [
+            "Los componentes principales se relacionan; una disposición o referencia necesita precisarse.",
+            "Reconoce elementos pertinentes, pero no relaciona suficientemente los componentes de la evidencia solicitada.",
+            "La disposición cambia una relación central o impide comprender un componente necesario.",
+            "No permite reconocer las relaciones entre los componentes del mensaje solicitado."
+          ],
+          "weight": 4
+        }
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "concept-3b8d7bd8",
+      "genre": "editorial",
+      "label": "• Función",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "3b8d7bd8-eb24-5835-b020-68e16113c8a0"
+      ],
+      "caseIds": [
+        "concept-3b8d7bd8"
+      ]
+    },
+    {
+      "id": "concept-9d281a3a",
+      "genre": "editorial",
+      "label": "• Estructura: título,\nintroducción, desarrollo y\nconclusión.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d281a3a-b0ec-5d4a-ab3a-dab12dcca2e8"
+      ],
+      "caseIds": [
+        "concept-9d281a3a"
+      ]
+    },
+    {
+      "id": "concept-5aab1be2",
+      "genre": "editorial",
+      "label": "• Características",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "5aab1be2-3982-5f0c-bdb4-860e2acaa398"
+      ],
+      "caseIds": [
+        "concept-5aab1be2"
+      ]
+    },
+    {
+      "id": "concept-69daf246",
+      "genre": "editorial",
+      "label": "• Argumentos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "69daf246-1ebb-505b-adc4-7f6269e17aa6"
+      ],
+      "caseIds": [
+        "concept-69daf246"
+      ]
+    },
+    {
+      "id": "concept-02d4b068",
+      "genre": "editorial",
+      "label": "• Conectores de causa, de\nreformulación o explicación.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "02d4b068-b7dc-58a8-982c-80c804d5b289"
+      ],
+      "caseIds": [
+        "concept-02d4b068"
+      ]
+    },
+    {
+      "id": "concept-92fd5682",
+      "genre": "editorial",
+      "label": "• Nominalización",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "92fd5682-a4f0-58ca-89ad-9b24d1faabee"
+      ],
+      "caseIds": [
+        "concept-92fd5682"
+      ]
+    },
+    {
+      "id": "concept-1dd5f258",
+      "genre": "editorial",
+      "label": "• Verbos en modo indicativo,\nde opinión en primera\npersona del plural.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "1dd5f258-8db5-5cbf-8b1a-23b28a147888"
+      ],
+      "caseIds": [
+        "concept-1dd5f258"
+      ]
+    },
+    {
+      "id": "concept-990f5e1a",
+      "genre": "editorial",
+      "label": "• Oraciones coordinadas y\nsubordinadas",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "990f5e1a-5599-5e91-b324-63107efcdf13"
+      ],
+      "caseIds": [
+        "concept-990f5e1a"
+      ]
+    },
+    {
+      "id": "concept-611b2d60",
+      "genre": "editorial",
+      "label": "• Marcas textuales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "611b2d60-64cd-5530-9e8e-ad7a08c81938"
+      ],
+      "caseIds": [
+        "concept-611b2d60"
+      ]
+    },
+    {
+      "id": "concept-9aa38957",
+      "genre": "editorial",
+      "label": "• Recursos retóricos:\n(metáforas, personificaciones,\nparadojas, hipérboles,\neufemismos, perífrasis.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "9aa38957-8ae6-5284-a3e2-9d0a769279b2"
+      ],
+      "caseIds": [
+        "concept-9aa38957"
+      ]
+    },
+    {
+      "id": "procedure-ccac03d9",
+      "genre": "editorial",
+      "label": "• Escucha atenta de editoriales sobre temas o\nproblemas de la actualidad (educativos, políticos,\nsociales) del ámbito nacional e internacional;\nanticipación del contenido del editorial a partir del\ntítulo y otras marcas textuales; identificación de la\nintención comunicativa del editorial a partir de\nlas marcas textuales, de los verbos de opinión, los\nrecursos retóricos y los adjetivos.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "ccac03d9-f78a-582e-afb7-b71a7704a6ba"
+      ],
+      "caseIds": [
+        "procedure-ccac03d9"
+      ]
+    },
+    {
+      "id": "procedure-c2917caf",
+      "genre": "editorial",
+      "label": "• Utilización de la estructura del editorial para\ncomprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del editorial que escucha y sobre el\nsignificado de las palabras que desconoce, a partir\ndel contexto; identificación del punto de vista o\npostura del medio periodístico a partir de las marcas\ntextuales, de los verbos de opinión, los recursos\nretóricos, los adjetivos; la tesis y los argumentos\nusados para defenderla. Paráfrasis del contenido\nglobal del editorial que escucha apoyándose en la\npostura y los argumentos del autor.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "c2917caf-b852-5ba4-ad44-eb5ee95617a2"
+      ],
+      "caseIds": [
+        "procedure-c2917caf"
+      ]
+    },
+    {
+      "id": "procedure-da77ff02",
+      "genre": "editorial",
+      "label": "• Establecimiento de la intención comunicativa\ndel editorial; selección del tema o problema de la\nactualidad (educativo, político, social) del ámbito\nnacional e internacional que tratará en el editorial.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "da77ff02-e66f-5b7e-969d-e2db4527a845"
+      ],
+      "caseIds": [
+        "procedure-da77ff02"
+      ]
+    },
+    {
+      "id": "observable-attitude-d019c572",
+      "genre": "editorial",
+      "label": "• Criticidad en torno a las posturas ideológicas del\neditorial, sobre todo, frente a aquellas que atenten\ncontra el bien común, la equidad y la justicia social.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "d019c572-6b3b-5ac0-9577-40b8df92dc05"
+      ],
+      "caseIds": [
+        "editorial-debate"
+      ]
+    },
+    {
+      "id": "procedure-c16c4b7d",
+      "genre": "editorial",
+      "label": "• Planificación de la tesis que se defenderá en el editorial\nque producirá oralmente; utilización de argumentos\n(lógicos, de autoridad, de ejemplos) para apoyar su\nopinión sobre temas o problemas de actualidad que\ntratará; uso de verbos y conectores adecuados para\nelaborar los argumentos que sostienen la tesis a\ndefender.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "c16c4b7d-8539-5f94-8578-5fbc05ecd4e0"
+      ],
+      "caseIds": [
+        "editorial-oral"
+      ]
+    },
+    {
+      "id": "procedure-80ade1e2",
+      "genre": "editorial",
+      "label": "• Establecimiento de un propósito para la lectura\ndel editorial que tratan temas o problemas de la\nactualidad (educativos, políticos, sociales) del ámbito\nnacional e internacional; lectura atenta (en silencio\no en voz alta), en soporte físico o en la pantalla;\nanticipación del contenido del editorial a partir del\ntítulo y otras marcas textuales; identificación de la\nintención comunicativa del editorial para comprender\nsu sentido global.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "80ade1e2-9fb7-5c7c-8bd8-ef52f871fe3e"
+      ],
+      "caseIds": [
+        "procedure-80ade1e2"
+      ]
+    },
+    {
+      "id": "procedure-9cd72ad4",
+      "genre": "editorial",
+      "label": "• Utilización de la estructura del editorial para\ncomprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del editorial que lee, del significado de las\npalabras que desconoce, a partir del contexto;\nidentificación del punto de vista y la postura ideológica\ndel medio periodístico; paráfrasis del contenido\nglobal del editorial a partir de la identificación de los\nargumentos, las opiniones y las valoraciones.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "9cd72ad4-c510-5efe-a66b-ccf46e70f20c"
+      ],
+      "caseIds": [
+        "procedure-9cd72ad4"
+      ]
+    },
+    {
+      "id": "procedure-6c23d7e9",
+      "genre": "editorial",
+      "label": "• Establecimiento de la intención comunicativa\ndel editorial que producirá; selección del tema o\nproblema de la actualidad (educativo, político, social)\ndel ámbito nacional e internacional que tratará en\ndicho editorial.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6c23d7e9-f181-5800-8d79-5361efb5900b"
+      ],
+      "caseIds": [
+        "procedure-6c23d7e9"
+      ]
+    },
+    {
+      "id": "procedure-2d2efaeb",
+      "genre": "editorial",
+      "label": "• Planificación de la tesis que se defenderá en el editorial\nque producirá por escrito; utilización de argumentos\n(lógicos, de autoridad, de ejemplos) para apoyar su\nopinión sobre temas o problemas de actualidad que\ntratará en el editorial que escribirá; uso de verbos\ny conectores para elaborar los argumentos que\nsostienen la tesis a defender en el editorial; selección\ndel vocabulario en la intención comunicativa, a sus\ninterlocutores y al tema seleccionado; organización\nde la información, utilizando estrategias que permiten\nestructurar coherentemente las ideas.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2d2efaeb-d309-5c8a-8131-6a4e78e3e0b3"
+      ],
+      "caseIds": [
+        "editorial-plan",
+        "editorial-two-arguments"
+      ]
+    },
+    {
+      "id": "procedure-46349e2d",
+      "genre": "editorial",
+      "label": "• Escritura de borradores del editorial, manuscritos o\ndigitales, ajustándose a la intención, a la audiencia,\nal tema y a la estructura; revisión y corrección del\neditorial, según sugerencias de los pares, del / de\nla docente e ideas propias, atendiendo al léxico\nempleado y a la ortografía; edición de la versión final;\npublicación del editorial, conteniendo una tesis con al\nmenos tres argumentos que la sustenten, en soporte\nfísico o digital.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "46349e2d-5bda-569c-b06e-3070654e7680"
+      ],
+      "caseIds": [
+        "procedure-46349e2d"
+      ]
+    },
+    {
+      "id": "concept-2a5f26c3",
+      "genre": "columna-periodistica",
+      "label": "• Función",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "2a5f26c3-115a-519a-91c1-bdc3a993a100"
+      ],
+      "caseIds": [
+        "concept-2a5f26c3"
+      ]
+    },
+    {
+      "id": "concept-700b8e7f",
+      "genre": "columna-periodistica",
+      "label": "• Estructura",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "700b8e7f-58fc-5b55-a00f-18b87075bd25"
+      ],
+      "caseIds": [
+        "concept-700b8e7f"
+      ]
+    },
+    {
+      "id": "concept-59b74eed",
+      "genre": "columna-periodistica",
+      "label": "• Características",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "59b74eed-4b78-5ced-a901-5f6865a7f1dd"
+      ],
+      "caseIds": [
+        "concept-59b74eed"
+      ]
+    },
+    {
+      "id": "concept-dc587122",
+      "genre": "columna-periodistica",
+      "label": "• La tesis",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "dc587122-0f3e-51dd-80df-b512c9321715"
+      ],
+      "caseIds": [
+        "concept-dc587122"
+      ]
+    },
+    {
+      "id": "concept-ec1e4f1f",
+      "genre": "columna-periodistica",
+      "label": "• Verbos de opinión",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec1e4f1f-9408-5d94-93fa-bd95f713d586"
+      ],
+      "caseIds": [
+        "concept-ec1e4f1f"
+      ]
+    },
+    {
+      "id": "concept-086c5692",
+      "genre": "columna-periodistica",
+      "label": "• Marcadores",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "086c5692-8ea8-5ccf-ac4b-e927b7330ab9"
+      ],
+      "caseIds": [
+        "concept-086c5692"
+      ]
+    },
+    {
+      "id": "concept-7c3a0dd6",
+      "genre": "columna-periodistica",
+      "label": "• Conectores de causa, de\nreformulación o explicación",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "7c3a0dd6-45f0-58c5-b61e-440c4a4c916e"
+      ],
+      "caseIds": [
+        "concept-7c3a0dd6"
+      ]
+    },
+    {
+      "id": "concept-bf5d19a1",
+      "genre": "columna-periodistica",
+      "label": "• Las nominalización",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "bf5d19a1-c561-5f6e-8a5c-2abf265a89b5"
+      ],
+      "caseIds": [
+        "concept-bf5d19a1"
+      ]
+    },
+    {
+      "id": "concept-14a0a727",
+      "genre": "columna-periodistica",
+      "label": "• Los adjetivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "14a0a727-d6bb-5edf-bd69-10c3a9fd804b"
+      ],
+      "caseIds": [
+        "concept-14a0a727"
+      ]
+    },
+    {
+      "id": "concept-0518f821",
+      "genre": "columna-periodistica",
+      "label": "• Recursos retóricos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "0518f821-702c-53b1-b552-c98d7dd50132"
+      ],
+      "caseIds": [
+        "concept-0518f821"
+      ]
+    },
+    {
+      "id": "procedure-a744963a",
+      "genre": "columna-periodistica",
+      "label": "• Escucha atenta de columnas periodísticas sobre\ntemas o problemas escolares y/o comunitarios leídos\npor el docente, los compañeros o procedentes de\notros medios (radio, televisión...); anticipación del\ncontenido de la columna periodística que escucha a\npartir del título y otras marcas textuales; identificación\nde la intención comunicativa de la columna\nperiodística para comprender el sentido global del\nmismo.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "a744963a-2946-5e13-8b29-68135835ddb2"
+      ],
+      "caseIds": [
+        "procedure-a744963a"
+      ]
+    },
+    {
+      "id": "procedure-3217f5c0",
+      "genre": "columna-periodistica",
+      "label": "• Utilización de la estructura de la columna periodística\nque escucha (punto de partida, tesis, argumentos\ny conclusión) para comprender su contenido;\nrealización de las inferencias necesarias para\ncomprender el sentido global y el significado de las\npalabras que desconoce, a partir del contexto.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "3217f5c0-ad74-57ab-bb5c-4099c808842d"
+      ],
+      "caseIds": [
+        "procedure-3217f5c0"
+      ]
+    },
+    {
+      "id": "procedure-c40c91dd",
+      "genre": "columna-periodistica",
+      "label": "• Identificación de la tesis y los argumentos que la\napoyan para comprender la columna periodística que\nescucha; paráfrasis del contenido global apoyándose\nen la postura y los argumentos del autor.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "c40c91dd-9b08-599a-8cc1-78d15512af90"
+      ],
+      "caseIds": [
+        "procedure-c40c91dd"
+      ]
+    },
+    {
+      "id": "procedure-3edd5d31",
+      "genre": "columna-periodistica",
+      "label": "• Establecimiento de la intención comunicativa\nde la columna periodística; selección del tema o\nproblemática que va a comentar.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "3edd5d31-bdd2-5027-9b80-636a8708b16e"
+      ],
+      "caseIds": [
+        "procedure-3edd5d31"
+      ]
+    },
+    {
+      "id": "procedure-83db39f5",
+      "genre": "columna-periodistica",
+      "label": "• Planificación de los argumentos y la tesis de la\ncolumna periodística que va a producir de modo\noral; formulación de la tesis para expresar su opinión\nfrente al tema seleccionado; estructuración de los\nargumentos para apoyar la tesis, haciendo uso de\nadjetivos, conectores y marcadores adecuados que\ndenotan la postura asumida; organización lógica de\nlos argumentos para defender la tesis acerca de la\nrealidad de la columna, utilizando del vocabulario en\nla intención comunicativa, a la audiencia y al tema\nseleccionado, citas textuales y de ejemplos para\napoyar su opinión sobre temas o problemas escolares\ny/o comunitarios.\nComprensión escrita (leer)",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "83db39f5-b3c4-5fa2-bf61-74cdd6d00118"
+      ],
+      "caseIds": [
+        "procedure-83db39f5"
+      ]
+    },
+    {
+      "id": "procedure-b70c6eb5",
+      "genre": "columna-periodistica",
+      "label": "• Establecimiento de un propósito para la lectura\natenta de la columna periodística sobre hechos,\ntemas nacionales e internacionales; anticipación\ndel contenido a partir del título y otras marcas\nparatextuales",
+      "family": "READING",
+      "sourceRecordIds": [
+        "b70c6eb5-d7f9-5c80-a973-ebeaf1878f0a"
+      ],
+      "caseIds": [
+        "procedure-b70c6eb5"
+      ]
+    },
+    {
+      "id": "procedure-74032649",
+      "genre": "columna-periodistica",
+      "label": "• Utilización de la estructura de la columna periodística\npara comprender su contenido; identificación de\nla tesis defendida por el autor, los argumentos que\nofrece, utilizando la técnica del subrayado; realización\nde las inferencias necesarias para comprender\nel sentido global; el significado de palabras que\ndesconoce, a partir del contexto en relaciones lógicas\nentre las ideas contenidas en el ensayo académico,\napoyándose en los conectores utilizados.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "74032649-fcad-5ea6-b5bb-5b9b30a9e091"
+      ],
+      "caseIds": [
+        "column-underlining"
+      ]
+    },
+    {
+      "id": "procedure-9388f38b",
+      "genre": "columna-periodistica",
+      "label": "• Resumen del contenido de la columna que lee,\nmediante la omisión de información no relevante,\nselección de las ideas principales (argumentos),\ngeneralización y reconstrucción de las ideas que\nrepresentan el sentido del texto; paráfrasis de la\npostura y de los argumentos del autor.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "9388f38b-c7e9-5824-bdf9-79f1b6f425fa"
+      ],
+      "caseIds": [
+        "procedure-9388f38b"
+      ]
+    },
+    {
+      "id": "concept-6c7dd8cf",
+      "genre": "anuncio-publicitario",
+      "label": "• Función",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c7dd8cf-8ade-5d76-be4d-87b28ad73ea7"
+      ],
+      "caseIds": [
+        "concept-6c7dd8cf"
+      ]
+    },
+    {
+      "id": "concept-f1414995",
+      "genre": "anuncio-publicitario",
+      "label": "• Estructura",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f1414995-f54c-5417-bbd3-d454371ffc66"
+      ],
+      "caseIds": [
+        "concept-f1414995"
+      ]
+    },
+    {
+      "id": "concept-ea57ff8c",
+      "genre": "anuncio-publicitario",
+      "label": "• Tipos de anuncio",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "ea57ff8c-efd9-5ea2-bb7f-a1b35fecfcf8"
+      ],
+      "caseIds": [
+        "concept-ea57ff8c"
+      ]
+    },
+    {
+      "id": "concept-9d0bf2a0",
+      "genre": "anuncio-publicitario",
+      "label": "• Lo denotativo e informativo /\nlo connotativo expresivo.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d0bf2a0-c734-5453-946a-e38c2d8a29f6"
+      ],
+      "caseIds": [
+        "concept-9d0bf2a0"
+      ]
+    },
+    {
+      "id": "concept-6269a8f7",
+      "genre": "anuncio-publicitario",
+      "label": "• El lenguaje persuasivo y\nconnotativo.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "6269a8f7-0052-5955-9fdd-76752b9b10d4"
+      ],
+      "caseIds": [
+        "concept-6269a8f7"
+      ]
+    },
+    {
+      "id": "concept-6498dc63",
+      "genre": "anuncio-publicitario",
+      "label": "• Recursos audiovisuales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "6498dc63-9b25-59cf-b725-9eb46592a690"
+      ],
+      "caseIds": [
+        "concept-6498dc63"
+      ]
+    },
+    {
+      "id": "concept-430f12ae",
+      "genre": "anuncio-publicitario",
+      "label": "• Recursos gráficos, fónicos,\nmorfosintácticos, léxicos y\nsemánticos.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "430f12ae-22a9-55a5-8d93-cba407c0b399"
+      ],
+      "caseIds": [
+        "concept-430f12ae"
+      ]
+    },
+    {
+      "id": "concept-fa017519",
+      "genre": "anuncio-publicitario",
+      "label": "• El vocativo y la segunda\npersona",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "fa017519-3024-5b4f-a02a-5dd7d58c5a00"
+      ],
+      "caseIds": [
+        "concept-fa017519"
+      ]
+    },
+    {
+      "id": "concept-2cd98309",
+      "genre": "anuncio-publicitario",
+      "label": "• Verbos en modo imperativo",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "2cd98309-f70a-5a2e-9498-ca6fd24f0de4"
+      ],
+      "caseIds": [
+        "concept-2cd98309"
+      ]
+    },
+    {
+      "id": "concept-91546f37",
+      "genre": "anuncio-publicitario",
+      "label": "• Los adjetivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "91546f37-9332-597e-af99-c8b0c659928a"
+      ],
+      "caseIds": [
+        "concept-91546f37"
+      ]
+    },
+    {
+      "id": "concept-82653d65",
+      "genre": "anuncio-publicitario",
+      "label": "• las figuras retóricas",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "82653d65-a22d-557e-855f-f648ab28daac"
+      ],
+      "caseIds": [
+        "concept-82653d65"
+      ]
+    },
+    {
+      "id": "concept-7659635a",
+      "genre": "anuncio-publicitario",
+      "label": "• Los aspectos formales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "7659635a-9751-5a98-8700-692f1a334d86"
+      ],
+      "caseIds": [
+        "concept-7659635a"
+      ]
+    },
+    {
+      "id": "concept-f4723e0b",
+      "genre": "anuncio-publicitario",
+      "label": "• La estética de la publicidad",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "f4723e0b-0d33-592d-92a8-138ca75c3536"
+      ],
+      "caseIds": [
+        "concept-f4723e0b"
+      ]
+    },
+    {
+      "id": "procedure-8648feb8",
+      "genre": "columna-periodistica",
+      "label": "• Establecimiento de la intención comunicativa de\nla columna periodística que producirá por escrito;\nselección del tema o problemática y del soporte\n(físico y/o digital) que utilizará para escribirla;\nplanificación de los argumentos y de la tesis; uso del\nvocabulario apropiado a la intención comunicativa, a\nsus interlocutores y al tema seleccionado; de citas y\nejemplos para apoyar la tesis de la columna.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8648feb8-0a23-5f7d-b590-ae2edf01f6fd"
+      ],
+      "caseIds": [
+        "procedure-8648feb8"
+      ]
+    },
+    {
+      "id": "procedure-cf26e030",
+      "genre": "columna-periodistica",
+      "label": "• Organización de la información, utilizando estrategias\nque permiten estructurar coherentemente las ideas\nde la columna periodística; escritura de borradores\nmanuscritos o digitales, ajustándose a la intención, a\nla audiencia, al tema y a la estructura; asignación de\nun nombre, en función los mensajes que como autor\nquiere presentar y un título al texto que escribirá en\nfunción del texto.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "cf26e030-f696-55eb-bc67-dc73e496f4a3"
+      ],
+      "caseIds": [
+        "procedure-cf26e030"
+      ]
+    },
+    {
+      "id": "procedure-2ecf6cb2",
+      "genre": "columna-periodistica",
+      "label": "• Revisión y corrección de borradores de la columna,\nsegún sugerencias de pares, del/de la docente y las\nideas propias, atendiendo a la intención comunicativa,\nal tema, a la audiencia, a la estructura del texto, al\nléxico empleado y a la ortografía; edición de la versión\nfinal; publicación en soporte físico o digital, con una\ntesis y por lo menos tres argumentos que la sustenten.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2ecf6cb2-84de-568a-b904-a51b1cd4b4be"
+      ],
+      "caseIds": [
+        "column-revision"
+      ]
+    },
+    {
+      "id": "procedure-409d3bae",
+      "genre": "anuncio-publicitario",
+      "label": "• Escucha atenta de anuncios publicitarios sobre\ncompra de productos, bienes o servicios; anticipación\ndel contenido del anuncio a partir de algunas marcas\ntextuales (imagen, eslogan, marca); identificación de\nla intención comunicativa.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "409d3bae-9d81-54c5-bc43-99801ef8daac"
+      ],
+      "caseIds": [
+        "procedure-409d3bae"
+      ]
+    },
+    {
+      "id": "procedure-43cd20a5",
+      "genre": "anuncio-publicitario",
+      "label": "• Utilización de la estructura del anuncio que escucha y\nde sus componentes para comprender su contenido;\nrealización de las inferencias necesarias para\ncomprender su sentido global y el significado de\npalabras desconocidas, a partir del contexto, los usos\ndiscriminatorios y manipuladores de los anuncios\npublicitarios.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "43cd20a5-64e6-5f70-8984-c70250b5666d"
+      ],
+      "caseIds": [
+        "procedure-43cd20a5"
+      ]
+    },
+    {
+      "id": "procedure-ae8f2d26",
+      "genre": "anuncio-publicitario",
+      "label": "• Identificación de las funciones del lenguaje\npublicitario en los anuncios para comprender sus\nmensajes, de los valores (literales o simbólicos) del\nproducto, bien o servicio que se anuncia; paráfrasis\ndel contenido global.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "ae8f2d26-5fd7-5206-b609-ee858ee5bfe5"
+      ],
+      "caseIds": [
+        "procedure-ae8f2d26"
+      ]
+    },
+    {
+      "id": "procedure-fc3765a4",
+      "genre": "anuncio-publicitario",
+      "label": "• Establecimiento de la intención comunicativa del\nanuncio que producirá oralmente; selección del tipo\nde anuncio acorde con dicha intención.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "fc3765a4-4ef2-5984-8187-606c467b67df"
+      ],
+      "caseIds": [
+        "procedure-fc3765a4"
+      ]
+    },
+    {
+      "id": "procedure-c2b4ec2a",
+      "genre": "anuncio-publicitario",
+      "label": "• Planificación, selección y organización del contenido\ntextual del anuncio (titular, eslogan, imagen,\ninformaciones complementarias) en función de su\nintención comunicativa, el público destinatario y el\ntipo de anuncio.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "c2b4ec2a-170f-5b6a-a2e1-51d40ceaf128"
+      ],
+      "caseIds": [
+        "procedure-c2b4ec2a"
+      ]
+    },
+    {
+      "id": "procedure-e2b16fe6",
+      "genre": "anuncio-publicitario",
+      "label": "• Construcción del contenido del anuncio siguiendo\nsu estructura textual, manteniendo la coherencia,\nclaridad; utilización de figuras retóricas y recursos\nléxicos apropiados a la intención y la audiencia,\nlenguaje persuasivo connotativo al estructurar el\nanuncio oral.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "e2b16fe6-9e3e-5525-855e-764d243a9b7f"
+      ],
+      "caseIds": [
+        "ad-oral"
+      ]
+    },
+    {
+      "id": "observable-attitude-9080d87a",
+      "genre": "anuncio-publicitario",
+      "label": "• Criticidad frente a las estrategias persuasivas y a los\nusos discriminatorios y manipuladores, utilizados\npor la publicidad para la promoción de modelos\nideológicos y culturales y la creación de estereotipos\nsociales.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "9080d87a-fb33-5812-afbd-dbee7737fbc3"
+      ],
+      "caseIds": [
+        "observable-attitude-9080d87a"
+      ]
+    },
+    {
+      "id": "concept-d5303c63",
+      "genre": "propaganda-politica",
+      "label": "• Función y estructura",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "d5303c63-6a10-5a84-909d-71bbcbb3d3bb"
+      ],
+      "caseIds": [
+        "concept-d5303c63"
+      ]
+    },
+    {
+      "id": "concept-09c9772a",
+      "genre": "propaganda-politica",
+      "label": "• Códigos verbales e\niconográficos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "09c9772a-3b42-50ec-a705-04cc401878d7"
+      ],
+      "caseIds": [
+        "concept-09c9772a"
+      ]
+    },
+    {
+      "id": "concept-1500a8bb",
+      "genre": "propaganda-politica",
+      "label": "• Lenguaje persuasivo y\nconnotativo",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "1500a8bb-a221-5623-8509-3ece37ec8790"
+      ],
+      "caseIds": [
+        "concept-1500a8bb"
+      ]
+    },
+    {
+      "id": "concept-8f428ca7",
+      "genre": "propaganda-politica",
+      "label": "• Pronombres personales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "8f428ca7-1d02-584a-8782-a1bbba492475"
+      ],
+      "caseIds": [
+        "concept-8f428ca7"
+      ]
+    },
+    {
+      "id": "procedure-2c1afdd7",
+      "genre": "anuncio-publicitario",
+      "label": "• Establecimiento de un propósito para la lectura del\nanuncio publicitario de manera silenciosa o en voz\nalta; anticipación del contenido del anuncio a partir\nde las imágenes y las marcas textuales.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "2c1afdd7-d7ae-5909-a4b6-416e2e97c978"
+      ],
+      "caseIds": [
+        "procedure-2c1afdd7"
+      ]
+    },
+    {
+      "id": "procedure-0fa63628",
+      "genre": "anuncio-publicitario",
+      "label": "• Utilización de la estructura y de sus componentes\npara comprender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal del anuncio que lee, de palabras cuyo\nsignificado desconoce, a partir del contexto, así\ncomo para interpretar los usos discriminatorios y\nmanipuladores de los anuncios publicitarios.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "0fa63628-68db-5d8c-8a49-72e345bf03cb"
+      ],
+      "caseIds": [
+        "procedure-0fa63628"
+      ]
+    },
+    {
+      "id": "procedure-e76241ba",
+      "genre": "anuncio-publicitario",
+      "label": "• Identificación de las funciones del lenguaje\npublicitario en los anuncios para comprender sus\nmensajes; identificación de los valores (literales o\nsimbólicos) del producto, bien o servicio que se\nanuncia; paráfrasis del contenido global del anuncio.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "e76241ba-f77e-5c79-b461-2b8b82914fa4"
+      ],
+      "caseIds": [
+        "procedure-e76241ba"
+      ]
+    },
+    {
+      "id": "procedure-36155cab",
+      "genre": "anuncio-publicitario",
+      "label": "• Establecimiento de la intención comunicativa del\nanuncio que escribirá; selección del tipo de anuncio;\nplanificación y selección del contenido textual del\nanuncio (titular, eslogan, imagen, informaciones\ncomplementarias) en función de su intención y del\npúblico destinatario.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "36155cab-071c-5984-9783-33b776aef822"
+      ],
+      "caseIds": [
+        "ad-plan"
+      ]
+    },
+    {
+      "id": "procedure-6aaf3b03",
+      "genre": "anuncio-publicitario",
+      "label": "• Diseño, selección y utilización de las imágenes\ndel anuncio relacionadas coherentemente con el\ncontenido, el destinatario y la intención, el color,\nlos espacios, disposición gráfica, para asegurar la\nlegibilidad y la estética del anuncio;",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6aaf3b03-4135-50af-b5e4-039eeb536214"
+      ],
+      "caseIds": [
+        "ad-design"
+      ]
+    },
+    {
+      "id": "procedure-e1028320",
+      "genre": "anuncio-publicitario",
+      "label": "• Organización del contenido y las imágenes del\nanuncio de acuerdo a la intención, el tipo de anuncio\ny la audiencia; construcción del contenido siguiendo\nsu estructura textual, manteniendo la coherencia,\nclaridad y de acuerdo a la intención comunicativa.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e1028320-c4a0-5e34-ad71-cbe607abe4b9"
+      ],
+      "caseIds": [
+        "procedure-e1028320"
+      ]
+    },
+    {
+      "id": "procedure-0a4b5984",
+      "genre": "anuncio-publicitario",
+      "label": "• Escritura de borradores del anuncio en formato físico\no digital, utilizando los aspectos formales (género,\npunto de vista, color, música, registro visual y sonoro,\nespacio, imagen, personas, objetos), figuras retóricas\n(metáfora, hipérbole, metonimia, personificación...),\nrecursos gráficos, fónicos, morfosintácticos, léxicos\ny semánticos; revisión y edición de los borradores,\nsegún las sugerencias de pares, del/de la docente y\nlas ideas propias, atendiendo al léxico empleado y a la\nortografía; edición de la versión final; publicación en\nsoporte físico o digital de la versión final del anuncio.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "0a4b5984-1147-5eb7-a0fb-74431e1674af"
+      ],
+      "caseIds": [
+        "procedure-0a4b5984"
+      ]
+    },
+    {
+      "id": "procedure-00c830b8",
+      "genre": "propaganda-politica",
+      "label": "• Escucha atenta de propagandas políticas; anticipación\ndel contenido, a partir de algunas marcas textuales\n(imagen, eslogan, marca); identificación de la\nintención comunicativa.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "00c830b8-4081-53a2-b493-49abe5fe7c10"
+      ],
+      "caseIds": [
+        "procedure-00c830b8"
+      ]
+    },
+    {
+      "id": "procedure-9896583d",
+      "genre": "propaganda-politica",
+      "label": "• Utilización de la estructura de la propaganda política\npara entender su contenido; realización de las\ninferencias necesarias para comprender el sentido\nglobal, el sentido de las palabras cuyo significado\ndesconoce a partir del contexto; interpretar los usos\nmanipuladores de la propaganda política.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "9896583d-fc5b-534a-b5ca-5165ed47c9d6"
+      ],
+      "caseIds": [
+        "procedure-9896583d"
+      ]
+    },
+    {
+      "id": "observable-attitude-0e08646c",
+      "genre": "propaganda-politica",
+      "label": "• Criticidad frente a las estrategias persuasivas y ante los\nusos manipuladores propios de la propaganda política\npara influir en el pensamiento y en la ideología de las\npersonas.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "0e08646c-d5dd-5a7e-8d1f-ed6f6f4da849"
+      ],
+      "caseIds": [
+        "observable-attitude-0e08646c"
+      ]
+    },
+    {
+      "id": "concept-93decb7c",
+      "genre": "propaganda-politica",
+      "label": "• Los adverbios temporales y\nespaciales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "93decb7c-099c-5446-9ded-f37960fb2ed4"
+      ],
+      "caseIds": [
+        "concept-93decb7c"
+      ]
+    },
+    {
+      "id": "concept-ce50c140",
+      "genre": "propaganda-politica",
+      "label": "• Los adjetivos",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "ce50c140-0bb2-5de5-ad76-9067e9c2c4cb"
+      ],
+      "caseIds": [
+        "concept-ce50c140"
+      ]
+    },
+    {
+      "id": "concept-a9ee1249",
+      "genre": "propaganda-politica",
+      "label": "• Modalizadores de distancia/\ncercanía",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "a9ee1249-e72c-55bd-80c8-f5b76788dbf7"
+      ],
+      "caseIds": [
+        "concept-a9ee1249"
+      ]
+    },
+    {
+      "id": "concept-d997bc04",
+      "genre": "propaganda-politica",
+      "label": "• La nominalización",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "d997bc04-8a56-5b0d-a7fb-797db2d532c6"
+      ],
+      "caseIds": [
+        "concept-d997bc04"
+      ]
+    },
+    {
+      "id": "concept-8fccb97d",
+      "genre": "propaganda-politica",
+      "label": "• Argumentos emocionales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fccb97d-2421-58f6-89b6-1856d8a730d3"
+      ],
+      "caseIds": [
+        "concept-8fccb97d"
+      ]
+    },
+    {
+      "id": "concept-764c8063",
+      "genre": "propaganda-politica",
+      "label": "• Recursos audiovisuales",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "764c8063-b275-5332-a1a7-084b854fafbe"
+      ],
+      "caseIds": [
+        "concept-764c8063"
+      ]
+    },
+    {
+      "id": "concept-ef19c9bd",
+      "genre": "propaganda-politica",
+      "label": "• Figuras retóricas",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "ef19c9bd-0536-5fa3-be47-033fe9d5f9ad"
+      ],
+      "caseIds": [
+        "concept-ef19c9bd"
+      ]
+    },
+    {
+      "id": "procedure-16e58e9c",
+      "genre": "propaganda-politica",
+      "label": "• Uso de las modalizaciones discursivas y de los recursos\nretóricos para identificar la ideología presente en la\npropaganda política; paráfrasis del contenido global\nde la propaganda política que escucha.",
+      "family": "LISTENING",
+      "sourceRecordIds": [
+        "16e58e9c-cae4-5568-9b37-baf344a2d970"
+      ],
+      "caseIds": [
+        "procedure-16e58e9c"
+      ]
+    },
+    {
+      "id": "procedure-fb7066f2",
+      "genre": "propaganda-politica",
+      "label": "• Establecimiento de la intención comunicativa de\nla propaganda política que producirá oralmente;\nselección del tipo, según dicha intención.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "fb7066f2-08c8-502a-8532-c9694db36ed8"
+      ],
+      "caseIds": [
+        "procedure-fb7066f2"
+      ]
+    },
+    {
+      "id": "procedure-1e0ddbf1",
+      "genre": "propaganda-politica",
+      "label": "• Planificación y selección del contenido textual\nde la propaganda política (identificador, eslogan,\ninformaciones complementarias) en función de su\nintención comunicativa y del público destinatario;\nutilización del vocabulario y el registro apropiado a la\nintención, la audiencia y al tema seleccionado.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0"
+      ],
+      "caseIds": [
+        "procedure-1e0ddbf1"
+      ]
+    },
+    {
+      "id": "procedure-a64f69ff",
+      "genre": "propaganda-politica",
+      "label": "• Organización lógica de las ideas e informaciones\nde la propaganda política; utilización del lenguaje\npersuasivo y connotativo propio de este tipo de\ntexto; construcción del contenido de la propaganda\npolítica siguiendo su estructura textual, manteniendo\nla coherencia y uso de recursos lingüísticos, figuras\nretóricas y el registro apropiado.",
+      "family": "ORAL_PRODUCTION",
+      "sourceRecordIds": [
+        "a64f69ff-6142-55ca-94e6-1351934b397f"
+      ],
+      "caseIds": [
+        "procedure-a64f69ff"
+      ]
+    },
+    {
+      "id": "procedure-2ef496b6",
+      "genre": "propaganda-politica",
+      "label": "• Establecimiento de un propósito para la lectura de\nla propaganda política; anticipación del contenido\ndel anuncio a partir de las imágenes y otras marcas\ntextuales.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "2ef496b6-cef7-5945-ac8b-a2e0c01a0875"
+      ],
+      "caseIds": [
+        "procedure-2ef496b6"
+      ]
+    },
+    {
+      "id": "procedure-8f97ce17",
+      "genre": "propaganda-politica",
+      "label": "• Lectura (silenciosa o en voz alta) en soporte físico o\ndigital de la propaganda política; utilización de su\nestructura, para comprender su contenido.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "8f97ce17-7085-5229-9b44-9ecf7203f61b"
+      ],
+      "caseIds": [
+        "procedure-8f97ce17"
+      ]
+    },
+    {
+      "id": "procedure-ddf5fc74",
+      "genre": "propaganda-politica",
+      "label": "• Realización de las inferencias necesarias para\ncomprender el sentido global de la propaganda\npolítica, el sentido de las palabras cuyo significado\ndesconoce, a partir del contexto, y para interpretar los\nusos manipuladores; utilización de las modalizaciones\ndiscursivas y de los recursos retóricos para identificar la\nideología presente en este tipo de texto.",
+      "family": "READING",
+      "sourceRecordIds": [
+        "ddf5fc74-6a90-5028-b069-22f670b31928"
+      ],
+      "caseIds": [
+        "procedure-ddf5fc74"
+      ]
+    },
+    {
+      "id": "procedure-caa16ea1",
+      "genre": "propaganda-politica",
+      "label": "• Establecimiento de la intención comunicativa de\nla propaganda política que escribirá; selección del\ntipo del tipo de propaganda de acuerdo con dicha\nintención.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "caa16ea1-f27a-5416-8914-3d7a66fa4606"
+      ],
+      "caseIds": [
+        "procedure-caa16ea1"
+      ]
+    },
+    {
+      "id": "observable-attitude-715c324f",
+      "genre": "propaganda-politica",
+      "label": "• Evaluación de la manipulación y la persuasión de la\npropaganda política y sus efectos en el pensamiento\ndel destinatario.",
+      "family": "ANALYSIS",
+      "sourceRecordIds": [
+        "715c324f-eb31-534f-b8da-978fcf60b4d4"
+      ],
+      "caseIds": [
+        "propaganda-critique"
+      ]
+    },
+    {
+      "id": "procedure-7cf78e83",
+      "genre": "propaganda-politica",
+      "label": "• Planificación y selección del contenido textual\nde la propaganda política (identificador, eslogan,\ninformaciones complementarias) en función de su\nintención comunicativa y del público destinatario;\ndiseño y selección de las imágenes en función de la\nintención y el destinatario; utilización de imágenes\nrelacionadas; selección del color, los espacios,\ndisposición gráfica para asegurar la legibilidad y la\nestética; organización de la información, utilizando\nestrategias que permiten estructurar coherentemente\nlas ideas en el texto; construcción del contenido\nsiguiendo su estructura textual.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "7cf78e83-7446-580a-9ee0-fde2b12797c8"
+      ],
+      "caseIds": [
+        "propaganda-written"
+      ]
+    },
+    {
+      "id": "procedure-533ceac7",
+      "genre": "propaganda-politica",
+      "label": "• Escritura de borradores en formato físico o digital,\ntomando en cuenta la función, la estructura, la\nintención comunicativa, y utilizando el lenguaje\npersuasivo y connotativo propio de la propaganda, los\nrecursos lingüísticos, el registro adecuado, las figuras\nretóricas y las convenciones de la lengua escrita;\nrevisión y edición de los borradores, tomando en\ncuenta sugerencias de pares, del/de la docente y las\nideas propias, atendiendo a la intención comunicativa,\nal tema, a la audiencia, a la estructura del texto, al léxico\nempleado y a la ortografía con ayuda del docente y los\nestudiantes; edición de la versión final; publicación\nde la versión final a través de soporte físico o digital y\nmedios tecnológicos o convencionales.",
+      "family": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "533ceac7-9140-5e87-9d7d-a7e0c123c876"
+      ],
+      "caseIds": [
+        "procedure-533ceac7"
+      ]
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "effacfee-3177-5b03-bfad-535ca36013f8",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "c08acc3a-8546-52c0-bfb6-c0dc1a685951",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "c1856923-da68-5b34-b7f3-c17616a3fb4b",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "be3cc7f6-a944-57e4-a70d-c15b77259037",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza una respuesta o intercambio respetuoso expresamente solicitado. No calificar tolerancia íntima ni exigir acuerdo con el autor."
+    },
+    {
+      "id": "a871f5f0-6ff5-54c4-9e6e-17fb7af1205e",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza una respuesta o intercambio respetuoso expresamente solicitado. No calificar tolerancia íntima ni exigir acuerdo con el autor."
+    },
+    {
+      "id": "55f5e6da-e959-5175-8afd-98cf2cee7713",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "c845ab02-7b5e-5f15-b30d-11f3474a0cc2",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "18926e85-7046-585f-8dc4-14d99f7ba5fd",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "ffcc1271-128f-53c7-b9be-6cf17f2237b5",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "0b04aa43-0cf3-5ace-8d5f-61aa1c50cf83",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "93c35153-6832-56de-bd38-4021262a2997",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "38e5a98f-b559-5b8d-8920-5996fdf9b198",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza una respuesta o intercambio respetuoso expresamente solicitado. No calificar tolerancia íntima ni exigir acuerdo con el autor."
+    },
+    {
+      "id": "2566a983-2152-5cc0-8155-c3ec093f4355",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "3e3aec27-7ee3-52e9-a966-86a890c3843a",
+      "reason": "CONTEXT_ONLY_WHEN_EXPLICITLY_REQUESTED",
+      "explanation": "Solo contextualiza una respuesta o intercambio respetuoso expresamente solicitado. No calificar tolerancia íntima ni exigir acuerdo con el autor."
+    },
+    {
+      "id": "64ef41bc-96da-5090-8c75-eef755e401b7",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "59e46def-4cec-5cd0-809d-a2b5b58d0db2",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "8d564e3d-de61-56be-9b20-981cf0baf6ca",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "b0904fb1-6d01-5ea2-bf5c-26a99024fbf6",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "0f3cd471-a939-5766-be4f-a8252589d831",
+      "reason": "SCOPE_NOTE_NOT_SEPARATE_TASK",
+      "explanation": "La oralidad del anuncio complementa comprensión y producción escrita; no imponer una actuación a cada consigna."
+    },
+    {
+      "id": "f8f83896-4bf0-5454-bee2-65b44773de0f",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "10af01fc-dfcb-5891-9984-dc6702cd4c8e",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "7ae7d8db-90d1-5fc8-aba1-0a84e33c65d1",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "8bf997b5-60aa-50b8-94ab-8686340869e8",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "0c80f338-8aa7-5ff9-967c-a1075075cf20",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "90d8cabd-f3d8-535c-a29f-518eb0035cf5",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "8431f28b-d798-52d7-adc6-d768cf03bb2b",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    },
+    {
+      "id": "caa2576e-c17e-51b5-ad35-d2d26c1354e3",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "d9fafd89-1bdd-5be9-94d6-7a2b5540ad62",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "6bb862c9-0c18-513b-b83b-f9330f932935",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "73a0d1de-35d6-5fa5-bf55-b45621d4a5b7",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "cc81149b-7a10-5471-af36-5ea25e19a533",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "04992bb6-7204-5617-886a-b7cee4bf92b0",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "9917593d-daef-5ad1-9839-b708a8744a36",
+      "reason": "STRUCTURAL_HEADING_NOT_SEPARATE_TASK",
+      "explanation": "Encabezado de género, componentes o modalidad comunicativa; no generar una tarea ni criterio independiente."
+    },
+    {
+      "id": "c17cbd35-0335-5f78-b47f-0bd492cfbc6d",
+      "reason": "EXCLUDED_PRIVATE_DISPOSITION",
+      "explanation": "Interés, gusto, valoración o creatividad como rasgo no se califican; se evalúan decisiones y efectos textuales observables cuando la consigna los solicita."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 109,
+    "fullInstrumentsGenerated": 436,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 436,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_16_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+    "testCounts": {
+      "backend": 63633,
+      "backendFiles": 164,
+      "frontendActivities": 64855,
+      "frontendFiles": 101,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 6575,
+      "recommend": 6453,
+      "writes": 3815
+    },
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hlm-periodismo-6.md"
+  },
+  "limits": [
+    "4 géneros, con 93 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Autores y obras son referencias opcionales, no requisitos simultáneos.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HLM_LEN_6_V1",
+    "versionId": "08821d8f-d967-597b-9ac5-3524e46fd458",
+    "scopeId": "c394ccab-124f-5d07-a20e-3066af940931",
+    "result": "UNCHANGED",
+    "elements": 162,
+    "excludedFromAssessment": 34,
+    "sourceRowsAndSpansMatched": true
+  }
+}

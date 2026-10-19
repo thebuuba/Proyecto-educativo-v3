@@ -1,0 +1,1032 @@
+{
+  "grade": 6,
+  "subjectCode": "OPT-HLM-LEN-6",
+  "subjectName": "Análisis y Producción de Textos Periodísticos y Publicitarios",
+  "optativeExitName": "Humanidades y Lenguas Modernas",
+  "modalityCode": "academic",
+  "scopeId": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+  "status": "SOURCE_CONTENT_CASES_CONNECTED_REVIEW_AND_RUNTIME_PENDING",
+  "cases": [
+    {
+      "id": "editorial-brief",
+      "genre": "editorial",
+      "description": "Analiza el editorial proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3b8d7bd8-eb24-5835-b020-68e16113c8a0"
+      ]
+    },
+    {
+      "id": "column-brief",
+      "genre": "columna-periodistica",
+      "description": "Analiza la columna periodística proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2a5f26c3-115a-519a-91c1-bdc3a993a100"
+      ]
+    },
+    {
+      "id": "ad-brief",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza el anuncio publicitario proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c7dd8cf-8ade-5d76-be4d-87b28ad73ea7"
+      ]
+    },
+    {
+      "id": "propaganda-brief",
+      "genre": "propaganda-politica",
+      "description": "Analiza la propaganda política ficticia proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d5303c63-6a10-5a84-909d-71bbcbb3d3bb"
+      ]
+    },
+    {
+      "id": "editorial-plan",
+      "genre": "editorial",
+      "description": "Planifica el editorial solicitado: tesis, dos argumentos y destinatario del caso dado. No se pide redactarlo ni publicarlo todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2d2efaeb-d309-5c8a-8131-6a4e78e3e0b3"
+      ],
+      "required": "tesis.*argumentos.*destinatario",
+      "forbidden": "personajes|sucesos|novela"
+    },
+    {
+      "id": "ad-plan",
+      "genre": "anuncio-publicitario",
+      "description": "Planifica el anuncio publicitario ficticio: titular, eslogan y relación con la imagen proporcionada según el destinatario dado. No se pide producir un vídeo ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "36155cab-071c-5984-9783-33b776aef822"
+      ],
+      "required": "titular.*eslogan.*imagen",
+      "forbidden": "personajes|sucesos|novela"
+    },
+    {
+      "id": "editorial-oral",
+      "genre": "editorial",
+      "description": "Presenta oralmente el editorial que has preparado para el caso ficticio, defendiendo la tesis con los argumentos dados. No se pide analizar el editorial de otro autor.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "c16c4b7d-8539-5f94-8578-5fbc05ecd4e0"
+      ],
+      "required": "tesis|argumentos",
+      "forbidden": "personajes|versos"
+    },
+    {
+      "id": "ad-oral",
+      "genre": "anuncio-publicitario",
+      "description": "Presenta oralmente el anuncio publicitario educativo ficticio que has preparado, con el eslogan y el registro acordados. No se pide crear una campaña real ni grabar un vídeo.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "e2b16fe6-9e3e-5525-855e-764d243a9b7f"
+      ],
+      "required": "eslogan",
+      "forbidden": "campaña real|personajes"
+    },
+    {
+      "id": "propaganda-critique",
+      "genre": "propaganda-politica",
+      "description": "Evalúa únicamente la presencia o ausencia de usos manipuladores en la propaganda política proporcionada, con evidencias del texto. No se pide adhesión, rechazo partidario ni una campaña.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "715c324f-eb31-534f-b8da-978fcf60b4d4"
+      ],
+      "required": "manipul",
+      "forbidden": "ideología correcta|adhesión al partido|vota"
+    },
+    {
+      "id": "column-underlining",
+      "genre": "columna-periodistica",
+      "description": "Subraya únicamente la tesis y los argumentos en la columna periodística proporcionada. No se pide explicar su función ni escribir otro texto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "74032649-fcad-5ea6-b5bb-5b9b30a9e091"
+      ],
+      "required": "tesis|argumentos",
+      "forbidden": "[Ee]xplica|función"
+    },
+    {
+      "id": "editorial-debate",
+      "genre": "editorial",
+      "description": "Debate la interpretación del editorial proporcionado, sustentando tu lectura con evidencias y respondiendo a los argumentos de otros participantes. No se pide asumir la ideología del medio.",
+      "activityType": "DEBATE",
+      "sourceRecordIds": [
+        "d019c572-6b3b-5ac0-9577-40b8df92dc05"
+      ],
+      "required": "argumentos|evidencias",
+      "forbidden": "ideología correcta|afiliación"
+    },
+    {
+      "id": "ad-design",
+      "genre": "anuncio-publicitario",
+      "description": "Diseña únicamente un prototipo de anuncio publicitario ficticio con la imagen proporcionada y texto legible. No se pide publicar ni comprar materiales ni producir un vídeo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6aaf3b03-4135-50af-b5e4-039eeb536214"
+      ],
+      "required": "imagen|legib",
+      "forbidden": "compra materiales|publicación real"
+    },
+    {
+      "id": "column-revision",
+      "genre": "columna-periodistica",
+      "description": "Corrige únicamente la ortografía del borrador de columna periodística proporcionado y presenta los cambios. No se pide publicar ni cambiar su tesis.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2ecf6cb2-84de-568a-b904-a51b1cd4b4be"
+      ],
+      "required": "ortogr",
+      "forbidden": "cambia la tesis|publicación"
+    },
+    {
+      "id": "propaganda-written",
+      "genre": "propaganda-politica",
+      "description": "Escribe el prototipo ficticio de propaganda política solicitado para analizar recursos persuasivos, usando el identificador y el eslogan dados. No se pide apoyar un partido ni publicar ni realizar una campaña.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "7cf78e83-7446-580a-9ee0-fde2b12797c8"
+      ],
+      "required": "identificador|eslogan",
+      "forbidden": "ideología correcta|afiliación"
+    },
+    {
+      "id": "editorial-two-arguments",
+      "genre": "editorial",
+      "description": "Escribe el editorial breve solicitado con la tesis y dos argumentos proporcionados. No se pide un tercer argumento ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2d2efaeb-d309-5c8a-8131-6a4e78e3e0b3"
+      ],
+      "required": "argumentos",
+      "forbidden": "tres argumentos|tercer argumento|publicación"
+    },
+    {
+      "id": "concept-3b8d7bd8",
+      "genre": "editorial",
+      "description": "Analiza únicamente la función comunicativa en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3b8d7bd8-eb24-5835-b020-68e16113c8a0"
+      ]
+    },
+    {
+      "id": "concept-9d281a3a",
+      "genre": "editorial",
+      "description": "Analiza únicamente la estructura de título, introducción, desarrollo y conclusión en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d281a3a-b0ec-5d4a-ab3a-dab12dcca2e8"
+      ]
+    },
+    {
+      "id": "concept-5aab1be2",
+      "genre": "editorial",
+      "description": "Analiza únicamente las características en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5aab1be2-3982-5f0c-bdb4-860e2acaa398"
+      ]
+    },
+    {
+      "id": "concept-69daf246",
+      "genre": "editorial",
+      "description": "Analiza únicamente los argumentos en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "69daf246-1ebb-505b-adc4-7f6269e17aa6"
+      ]
+    },
+    {
+      "id": "concept-02d4b068",
+      "genre": "editorial",
+      "description": "Analiza únicamente los conectores de causa, reformulación o explicación en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "02d4b068-b7dc-58a8-982c-80c804d5b289"
+      ]
+    },
+    {
+      "id": "concept-92fd5682",
+      "genre": "editorial",
+      "description": "Analiza únicamente la nominalización en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92fd5682-a4f0-58ca-89ad-9b24d1faabee"
+      ]
+    },
+    {
+      "id": "concept-1dd5f258",
+      "genre": "editorial",
+      "description": "Analiza únicamente los verbos en indicativo y de opinión en primera persona del plural en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1dd5f258-8db5-5cbf-8b1a-23b28a147888"
+      ]
+    },
+    {
+      "id": "concept-990f5e1a",
+      "genre": "editorial",
+      "description": "Analiza únicamente las oraciones coordinadas y subordinadas en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "990f5e1a-5599-5e91-b324-63107efcdf13"
+      ]
+    },
+    {
+      "id": "concept-611b2d60",
+      "genre": "editorial",
+      "description": "Analiza únicamente las marcas textuales en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "611b2d60-64cd-5530-9e8e-ad7a08c81938"
+      ]
+    },
+    {
+      "id": "concept-9aa38957",
+      "genre": "editorial",
+      "description": "Analiza únicamente los recursos retóricos en el editorial proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9aa38957-8ae6-5284-a3e2-9d0a769279b2"
+      ]
+    },
+    {
+      "id": "procedure-ccac03d9",
+      "genre": "editorial",
+      "description": "Escucha el editorial proporcionado e interpreta únicamente su intención comunicativa a partir de los indicios del mensaje. No se pide escribir otro editorial.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ccac03d9-f78a-582e-afb7-b71a7704a6ba"
+      ],
+      "required": "intención"
+    },
+    {
+      "id": "procedure-c2917caf",
+      "genre": "editorial",
+      "description": "Parafrasea el editorial escuchado conservando la postura y los argumentos del medio con tus propias palabras. No se pide asumir esa postura ni escribir un editorial nuevo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c2917caf-b852-5ba4-ad44-eb5ee95617a2"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "procedure-da77ff02",
+      "genre": "editorial",
+      "description": "Planifica la presentación oral de un editorial: tema e intención comunicativa del caso dado. No se pide presentar ni redactar el editorial todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "da77ff02-e66f-5b7e-969d-e2db4527a845"
+      ],
+      "required": "tema|intención"
+    },
+    {
+      "id": "procedure-80ade1e2",
+      "genre": "editorial",
+      "description": "Anticipa el contenido del editorial a partir del título dado y comprueba la predicción después de leerlo. No se pide escribir otro editorial.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "80ade1e2-9fb7-5c7c-8bd8-ef52f871fe3e"
+      ],
+      "required": "predicción"
+    },
+    {
+      "id": "procedure-9cd72ad4",
+      "genre": "editorial",
+      "description": "Infiere únicamente la postura del medio expresada en el editorial proporcionado, sustentándola con indicios del texto. No se pide adhesión a esa postura.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9cd72ad4-c510-5efe-a66b-ccf46e70f20c"
+      ],
+      "required": "postura"
+    },
+    {
+      "id": "procedure-6c23d7e9",
+      "genre": "editorial",
+      "description": "Planifica el editorial solicitado para el caso dado: intención y tema. No se pide redactarlo ni publicarlo todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6c23d7e9-f181-5800-8d79-5361efb5900b"
+      ],
+      "required": "intención|tema"
+    },
+    {
+      "id": "procedure-46349e2d",
+      "genre": "editorial",
+      "description": "Revisa el borrador del editorial proporcionado y muestra los cambios de vocabulario y ortografía pedidos. No se pide publicarlo ni añadir argumentos nuevos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "46349e2d-5bda-569c-b06e-3070654e7680"
+      ],
+      "required": "borrador|revisión"
+    },
+    {
+      "id": "concept-2a5f26c3",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente la función comunicativa en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2a5f26c3-115a-519a-91c1-bdc3a993a100"
+      ]
+    },
+    {
+      "id": "concept-700b8e7f",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente la estructura en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "700b8e7f-58fc-5b55-a00f-18b87075bd25"
+      ]
+    },
+    {
+      "id": "concept-59b74eed",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente las características en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "59b74eed-4b78-5ced-a901-5f6865a7f1dd"
+      ]
+    },
+    {
+      "id": "concept-dc587122",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente la tesis en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dc587122-0f3e-51dd-80df-b512c9321715"
+      ]
+    },
+    {
+      "id": "concept-ec1e4f1f",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente los verbos de opinión en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ec1e4f1f-9408-5d94-93fa-bd95f713d586"
+      ]
+    },
+    {
+      "id": "concept-086c5692",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente los marcadores en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "086c5692-8ea8-5ccf-ac4b-e927b7330ab9"
+      ]
+    },
+    {
+      "id": "concept-7c3a0dd6",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente los conectores de causa, reformulación o explicación en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7c3a0dd6-45f0-58c5-b61e-440c4a4c916e"
+      ]
+    },
+    {
+      "id": "concept-bf5d19a1",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente la nominalización en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bf5d19a1-c561-5f6e-8a5c-2abf265a89b5"
+      ]
+    },
+    {
+      "id": "concept-14a0a727",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente los adjetivos en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "14a0a727-d6bb-5edf-bd69-10c3a9fd804b"
+      ]
+    },
+    {
+      "id": "concept-0518f821",
+      "genre": "columna-periodistica",
+      "description": "Analiza únicamente los recursos retóricos en la columna periodística proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0518f821-702c-53b1-b552-c98d7dd50132"
+      ]
+    },
+    {
+      "id": "procedure-a744963a",
+      "genre": "columna-periodistica",
+      "description": "Escucha la columna periodística proporcionada e interpreta únicamente su intención comunicativa a partir de las marcas textuales. No se pide escribir otra columna.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a744963a-2946-5e13-8b29-68135835ddb2"
+      ],
+      "required": "intención"
+    },
+    {
+      "id": "procedure-3217f5c0",
+      "genre": "columna-periodistica",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la columna periodística escuchada, a partir del contexto dado. No se pide otra composición.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3217f5c0-ad74-57ab-bb5c-4099c808842d"
+      ],
+      "required": "significado|contexto"
+    },
+    {
+      "id": "procedure-c40c91dd",
+      "genre": "columna-periodistica",
+      "description": "Parafrasea la columna periodística escuchada con tus propias palabras, conservando la tesis y los argumentos del autor. No se pide asumir sus opiniones.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c40c91dd-9b08-599a-8cc1-78d15512af90"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "procedure-3edd5d31",
+      "genre": "columna-periodistica",
+      "description": "Planifica la presentación oral de una columna periodística: intención y tema del caso dado. No se pide realizar la presentación todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "3edd5d31-bdd2-5027-9b80-636a8708b16e"
+      ],
+      "required": "intención|tema"
+    },
+    {
+      "id": "procedure-83db39f5",
+      "genre": "columna-periodistica",
+      "description": "Presenta oralmente la columna periodística que has preparado, apoyando la tesis con las citas y los ejemplos proporcionados. No se pide investigar otras fuentes ni escribir un ensayo.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "83db39f5-b3c4-5fa2-bf61-74cdd6d00118"
+      ],
+      "required": "tesis|argumentos"
+    },
+    {
+      "id": "procedure-b70c6eb5",
+      "genre": "columna-periodistica",
+      "description": "Anticipa el contenido de la columna periodística únicamente a partir del título y las marcas dadas, explicando los indicios de tu predicción. No se pide comprobarla todavía.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b70c6eb5-d7f9-5c80-a973-ebeaf1878f0a"
+      ],
+      "required": "predicción|indicios"
+    },
+    {
+      "id": "procedure-9388f38b",
+      "genre": "columna-periodistica",
+      "description": "Resume por escrito la columna periodística proporcionada con tus propias palabras, conservando las ideas principales. No se pide una columna nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9388f38b-c7e9-5824-bdf9-79f1b6f425fa"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "concept-6c7dd8cf",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente la función comunicativa en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6c7dd8cf-8ade-5d76-be4d-87b28ad73ea7"
+      ]
+    },
+    {
+      "id": "concept-f1414995",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente la estructura en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f1414995-f54c-5417-bbd3-d454371ffc66"
+      ]
+    },
+    {
+      "id": "concept-ea57ff8c",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente el tipo de anuncio en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ea57ff8c-efd9-5ea2-bb7f-a1b35fecfcf8"
+      ]
+    },
+    {
+      "id": "concept-9d0bf2a0",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente el valor denotativo e informativo frente al connotativo y expresivo en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9d0bf2a0-c734-5453-946a-e38c2d8a29f6"
+      ]
+    },
+    {
+      "id": "concept-6269a8f7",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente el lenguaje persuasivo y connotativo en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6269a8f7-0052-5955-9fdd-76752b9b10d4"
+      ]
+    },
+    {
+      "id": "concept-6498dc63",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente los recursos audiovisuales en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6498dc63-9b25-59cf-b725-9eb46592a690"
+      ]
+    },
+    {
+      "id": "concept-430f12ae",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente los recursos gráficos, fónicos, morfosintácticos, léxicos y semánticos en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "430f12ae-22a9-55a5-8d93-cba407c0b399"
+      ]
+    },
+    {
+      "id": "concept-fa017519",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente el vocativo y la segunda persona en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "fa017519-3024-5b4f-a02a-5dd7d58c5a00"
+      ]
+    },
+    {
+      "id": "concept-2cd98309",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente el modo imperativo en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2cd98309-f70a-5a2e-9498-ca6fd24f0de4"
+      ]
+    },
+    {
+      "id": "concept-91546f37",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente los adjetivos en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "91546f37-9332-597e-af99-c8b0c659928a"
+      ]
+    },
+    {
+      "id": "concept-82653d65",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente las figuras retóricas en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "82653d65-a22d-557e-855f-f648ab28daac"
+      ]
+    },
+    {
+      "id": "concept-7659635a",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente los aspectos formales en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7659635a-9751-5a98-8700-692f1a334d86"
+      ]
+    },
+    {
+      "id": "concept-f4723e0b",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente la relación entre estética y legibilidad en el anuncio publicitario proporcionado. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f4723e0b-0d33-592d-92a8-138ca75c3536"
+      ]
+    },
+    {
+      "id": "procedure-8648feb8",
+      "genre": "columna-periodistica",
+      "description": "Planifica una columna periodística: tesis, argumentos y destinatario del caso dado, usando las citas proporcionadas. No se pide redactar el texto todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8648feb8-0a23-5f7d-b590-ae2edf01f6fd"
+      ],
+      "required": "tesis|argumentos"
+    },
+    {
+      "id": "procedure-cf26e030",
+      "genre": "columna-periodistica",
+      "description": "Escribe la columna periodística solicitada, con el nombre de columna y el título dados, organizando la tesis y sus argumentos. No se pide publicar ni un ensayo académico.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "cf26e030-f696-55eb-bc67-dc73e496f4a3"
+      ],
+      "required": "tesis|argumentos"
+    },
+    {
+      "id": "procedure-409d3bae",
+      "genre": "anuncio-publicitario",
+      "description": "Anticipa el contenido del anuncio publicitario a partir de la imagen y el eslogan proporcionados, explicando los indicios de la predicción. No se pide crear otro anuncio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "409d3bae-9d81-54c5-bc43-99801ef8daac"
+      ],
+      "required": "predicción|indicios"
+    },
+    {
+      "id": "procedure-43cd20a5",
+      "genre": "anuncio-publicitario",
+      "description": "Infiere únicamente el significado de las palabras desconocidas del anuncio publicitario escuchado a partir del contexto dado. No se pide producir otro anuncio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "43cd20a5-64e6-5f70-8984-c70250b5666d"
+      ],
+      "required": "contexto|significado"
+    },
+    {
+      "id": "procedure-ae8f2d26",
+      "genre": "anuncio-publicitario",
+      "description": "Parafrasea el anuncio publicitario escuchado con tus propias palabras, conservando su mensaje. No se pide crear otro anuncio ni comprar el producto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ae8f2d26-5fd7-5206-b609-ee858ee5bfe5"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "procedure-fc3765a4",
+      "genre": "anuncio-publicitario",
+      "description": "Planifica la presentación complementaria de un anuncio publicitario ficticio: intención y tipo de anuncio del caso dado. No se pide actuar ni grabar un vídeo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "fc3765a4-4ef2-5984-8187-606c467b67df"
+      ],
+      "required": "intención|tipo"
+    },
+    {
+      "id": "procedure-c2b4ec2a",
+      "genre": "anuncio-publicitario",
+      "description": "Planifica el anuncio publicitario ficticio: titular, eslogan, información complementaria y destinatario del caso dado. No se pide un vídeo ni una campaña.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c2b4ec2a-170f-5b6a-a2e1-51d40ceaf128"
+      ],
+      "required": "titular|eslogan"
+    },
+    {
+      "id": "observable-attitude-9080d87a",
+      "genre": "anuncio-publicitario",
+      "description": "Evalúa únicamente la presencia o ausencia de usos manipuladores y estereotipos en el anuncio publicitario dado, con evidencias del mensaje. No se pide compartir sus valores ni comprar el producto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9080d87a-fb33-5812-afbd-dbee7737fbc3"
+      ],
+      "required": "manipul|estereotipo"
+    },
+    {
+      "id": "concept-d5303c63",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente la función y estructura en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d5303c63-6a10-5a84-909d-71bbcbb3d3bb"
+      ]
+    },
+    {
+      "id": "concept-09c9772a",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los códigos verbales e iconográficos en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "09c9772a-3b42-50ec-a705-04cc401878d7"
+      ]
+    },
+    {
+      "id": "concept-1500a8bb",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente el lenguaje persuasivo y connotativo en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1500a8bb-a221-5623-8509-3ece37ec8790"
+      ]
+    },
+    {
+      "id": "concept-8f428ca7",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los pronombres personales en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8f428ca7-1d02-584a-8782-a1bbba492475"
+      ]
+    },
+    {
+      "id": "procedure-2c1afdd7",
+      "genre": "anuncio-publicitario",
+      "description": "Anticipa el contenido del anuncio publicitario a partir de las imágenes dadas y comprueba la predicción tras leerlo. No se pide crear otro anuncio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2c1afdd7-d7ae-5909-a4b6-416e2e97c978"
+      ],
+      "required": "predicción"
+    },
+    {
+      "id": "procedure-0fa63628",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente la presencia o ausencia de usos discriminatorios en el anuncio publicitario proporcionado, con evidencias del texto. No se pide expresar gustos personales ni comprar productos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0fa63628-68db-5d8c-8a49-72e345bf03cb"
+      ],
+      "required": "discrimin"
+    },
+    {
+      "id": "procedure-e76241ba",
+      "genre": "anuncio-publicitario",
+      "description": "Interpreta únicamente la diferencia entre valor literal y simbólico del producto en el anuncio publicitario proporcionado. No se pide crear otro anuncio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e76241ba-f77e-5c79-b461-2b8b82914fa4"
+      ],
+      "required": "literal|simbólico"
+    },
+    {
+      "id": "procedure-e1028320",
+      "genre": "anuncio-publicitario",
+      "description": "Escribe el anuncio publicitario ficticio solicitado, relacionando el texto con la imagen dada y manteniendo la claridad del mensaje. No se pide publicarlo ni producir un vídeo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e1028320-c4a0-5e34-ad71-cbe607abe4b9"
+      ],
+      "required": "imagen|mensaje"
+    },
+    {
+      "id": "procedure-0a4b5984",
+      "genre": "anuncio-publicitario",
+      "description": "Revisa el borrador del anuncio publicitario dado y muestra las correcciones ortográficas señaladas. No se pide publicación ni producir audio o vídeo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "0a4b5984-1147-5eb7-a0fb-74431e1674af"
+      ],
+      "required": "borrador|revisión|ortogr"
+    },
+    {
+      "id": "procedure-00c830b8",
+      "genre": "propaganda-politica",
+      "description": "Escucha la propaganda política ficticia proporcionada e interpreta únicamente su intención comunicativa. No se pide apoyar un partido ni crear una campaña.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "00c830b8-4081-53a2-b493-49abe5fe7c10"
+      ],
+      "required": "intención"
+    },
+    {
+      "id": "procedure-9896583d",
+      "genre": "propaganda-politica",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la propaganda política escuchada, a partir del contexto dado. No se pide adhesión ni otro mensaje.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9896583d-fc5b-534a-b5ca-5165ed47c9d6"
+      ],
+      "required": "contexto|significado"
+    },
+    {
+      "id": "observable-attitude-0e08646c",
+      "genre": "propaganda-politica",
+      "description": "Evalúa únicamente la presencia o ausencia de usos manipuladores en la propaganda política proporcionada, con evidencias del mensaje. No se pide apoyar ni rechazar un partido.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0e08646c-d5dd-5a7e-8d1f-ed6f6f4da849"
+      ],
+      "required": "manipul"
+    },
+    {
+      "id": "concept-93decb7c",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los adverbios temporales y espaciales en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "93decb7c-099c-5446-9ded-f37960fb2ed4"
+      ]
+    },
+    {
+      "id": "concept-ce50c140",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los adjetivos en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ce50c140-0bb2-5de5-ad76-9067e9c2c4cb"
+      ]
+    },
+    {
+      "id": "concept-a9ee1249",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los modalizadores de distancia y cercanía en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a9ee1249-e72c-55bd-80c8-f5b76788dbf7"
+      ]
+    },
+    {
+      "id": "concept-d997bc04",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente la nominalización en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d997bc04-8a56-5b0d-a7fb-797db2d532c6"
+      ]
+    },
+    {
+      "id": "concept-8fccb97d",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los argumentos emocionales en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8fccb97d-2421-58f6-89b6-1856d8a730d3"
+      ]
+    },
+    {
+      "id": "concept-764c8063",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los recursos audiovisuales en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "764c8063-b275-5332-a1a7-084b854fafbe"
+      ]
+    },
+    {
+      "id": "concept-ef19c9bd",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente las figuras retóricas en la propaganda política ficticia proporcionada. No se pide escribir otro texto ni publicarlo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ef19c9bd-0536-5fa3-be47-033fe9d5f9ad"
+      ]
+    },
+    {
+      "id": "procedure-16e58e9c",
+      "genre": "propaganda-politica",
+      "description": "Parafrasea el mensaje de la propaganda política escuchada con tus propias palabras, sin atribuir al emisor una postura que no expresa. No se pide apoyar esa postura ni crear propaganda nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "16e58e9c-cae4-5568-9b37-baf344a2d970"
+      ],
+      "required": "propias palabras|paráfrasis"
+    },
+    {
+      "id": "procedure-fb7066f2",
+      "genre": "propaganda-politica",
+      "description": "Planifica la presentación oral de una propaganda política ficticia del ejercicio: intención y destinatario dados. No se pide actuar ni realizar una campaña.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "fb7066f2-08c8-502a-8532-c9694db36ed8"
+      ],
+      "required": "intención|destinatario"
+    },
+    {
+      "id": "procedure-1e0ddbf1",
+      "genre": "propaganda-politica",
+      "description": "Planifica la propaganda política ficticia: identificador, eslogan, información complementaria y destinatario dados. No se pide una campaña ni publicación real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "1e0ddbf1-df90-5075-8ef4-7d5f7b4d5bb0"
+      ],
+      "required": "identificador|eslogan"
+    },
+    {
+      "id": "procedure-a64f69ff",
+      "genre": "propaganda-politica",
+      "description": "Presenta oralmente la propaganda política ficticia que has preparado con los recursos dados para el ejercicio de análisis de persuasión. No se pide apoyar un partido ni realizar una campaña.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "a64f69ff-6142-55ca-94e6-1351934b397f"
+      ],
+      "required": "mensaje|persuas"
+    },
+    {
+      "id": "procedure-2ef496b6",
+      "genre": "propaganda-politica",
+      "description": "Anticipa el contenido de la propaganda política a partir de las imágenes dadas, explicando los indicios de tu predicción. No se pide crear propaganda ni expresar afiliación.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2ef496b6-cef7-5945-ac8b-a2e0c01a0875"
+      ],
+      "required": "predicción|indicios"
+    },
+    {
+      "id": "procedure-8f97ce17",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente la estructura de la propaganda política ficticia proporcionada en soporte físico o digital, a tu elección. No se piden ambos soportes ni una producción nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8f97ce17-7085-5229-9b44-9ecf7203f61b"
+      ],
+      "required": "estructura"
+    },
+    {
+      "id": "procedure-ddf5fc74",
+      "genre": "propaganda-politica",
+      "description": "Analiza únicamente los modalizadores de distancia y cercanía en la propaganda política proporcionada, con evidencias del texto. No se pide adhesión a la postura expresada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ddf5fc74-6a90-5028-b069-22f670b31928"
+      ],
+      "required": "distancia|cercanía"
+    },
+    {
+      "id": "procedure-caa16ea1",
+      "genre": "propaganda-politica",
+      "description": "Planifica el prototipo ficticio de propaganda política del ejercicio: intención y destinatario dados. No se pide escribirlo ni publicarlo todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "caa16ea1-f27a-5416-8914-3d7a66fa4606"
+      ],
+      "required": "intención|destinatario"
+    },
+    {
+      "id": "procedure-533ceac7",
+      "genre": "propaganda-politica",
+      "description": "Revisa el borrador de propaganda política ficticia dado y muestra los cambios ortográficos señalados, conservando el sentido del mensaje. No se pide apoyar un partido ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "533ceac7-9140-5e87-9d7d-a7e0c123c876"
+      ],
+      "required": "borrador|revisión|ortogr"
+    },
+    {
+      "id": "editorial-comparison",
+      "genre": "editorial",
+      "description": "Compara únicamente las tesis de los dos editoriales proporcionados, apoyándote en los pasajes dados. No se pide escribir otro editorial.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c2917caf-b852-5ba4-ad44-eb5ee95617a2"
+      ],
+      "required": "tesis",
+      "forbidden": "personajes|versos"
+    },
+    {
+      "id": "ad-resources-alternative",
+      "genre": "anuncio-publicitario",
+      "description": "Analiza únicamente los recursos gráficos o fónicos del anuncio publicitario proporcionado, a tu elección. No se piden ambos ni otros tipos de recurso.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "430f12ae-22a9-55a5-8d93-cba407c0b399"
+      ],
+      "required": "gráficos.*o.*fónicos",
+      "forbidden": "morfosintácticos|semánticos"
+    },
+    {
+      "id": "column-group-natural",
+      "genre": "columna-periodistica",
+      "description": "En parejas, los estudiantes escribirán la columna periodística solicitada para el caso ficticio, con la tesis y los argumentos dados. No se pide publicarla ni un tercer argumento.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "8648feb8-0a23-5f7d-b590-ae2edf01f6fd"
+      ],
+      "required": "tesis|argumentos",
+      "forbidden": "tres argumentos|tercer argumento",
+      "participationMode": "GROUP"
+    },
+    {
+      "id": "propaganda-register",
+      "genre": "propaganda-politica",
+      "description": "Escribe el prototipo ficticio de propaganda política solicitado con el registro acordado para el ejercicio educativo. No se pide campaña real ni apoyar a un partido ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "533ceac7-9140-5e87-9d7d-a7e0c123c876"
+      ],
+      "required": "registro",
+      "forbidden": "afiliación|ideología correcta"
+    },
+    {
+      "id": "independent-editorial-and-ad",
+      "genre": "editorial",
+      "description": "Analiza el editorial proporcionado. Luego escribe un anuncio publicitario ficticio para la situación dada. No se pide publicar ni una campaña real.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c2917caf-b852-5ba4-ad44-eb5ee95617a2",
+        "e1028320-c4a0-5e34-ad71-cbe607abe4b9"
+      ],
+      "forbidden": "compra materiales"
+    },
+    {
+      "id": "ad-negative-positive",
+      "genre": "anuncio-publicitario",
+      "description": "Sin diseñar ni publicar, pero analiza únicamente el modo imperativo del anuncio publicitario proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2cd98309-f70a-5a2e-9498-ca6fd24f0de4"
+      ],
+      "required": "imperativo",
+      "forbidden": "compra materiales"
+    },
+    {
+      "id": "editorial-brief-plan",
+      "genre": "editorial",
+      "description": "Planifica el editorial solicitado.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "2d2efaeb-d309-5c8a-8131-6a4e78e3e0b3"
+      ],
+      "required": "tesis.*argumentos",
+      "forbidden": "personajes|sucesos"
+    }
+  ]
+}

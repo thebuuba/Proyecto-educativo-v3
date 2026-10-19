@@ -1,0 +1,2204 @@
+{
+  "catalog": "evaluation-2026.126",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "method": "Lectura de114 textos únicos con cinco niveles,27 paquetes completos de los cuatro formatos/unidades y108 correspondencias de consignas. Reconstrucción exacta por read-optative-hlm-six.mjs; relectura de campos y muestras cambiados después de las regresiones, incluida la presentación oral con registro y las seis variantes finales. Modalidad GROUP comprobada en la muestra de columna en parejas. Lectura adicional del texto115 y correspondencia109: plan breve de editorial en cuatro formatos, paqueteP5 previamente le?do. Las432 huellas previas permanecen id?nticas; total436 instrumentos,115 textos,109 consignas y27 paquetes. Tras HTTP400 de la segunda muestra, se releyeron las anclas observables de funci?n/funci?n y estructura de las cuatro consignas breves:16huellas actualizadas solo por sourceRecordIds;436definiciones, criterios, niveles, pesos y descriptores id?nticos.",
+  "findingsFixed": [
+    "Planificación que arrastraba componentes narrativos ajenos al género",
+    "Subrayado, debate, evaluación y diseño que no activaban el proveedor",
+    "Presentación de un texto preparado evaluada como lectura analítica",
+    "Dimensiones duplicadas con sus rasgos explícitos",
+    "Ausencia justificada de manipulación penalizada por exigir ejemplos inexistentes",
+    "Prototipo confundido con clasificación de tipo de anuncio",
+    "Anticipación que añadía análisis independiente del título, imagen o eslogan usados como apoyos",
+    "Cinco canales de recursos agrupados en una sola evidencia",
+    "Correcciones ortográficas que imponían cambiar contenido u organización",
+    "Registro expresamente acordado omitido en la presentación",
+    "Plan breve de editorial que heredaba personajes y sucesos narrativos al no enumerar componentes",
+    "Cuatro fixtures breves seleccionaban encabezados excluidos como contenido evaluable; se usan sus anclas conceptuales observables sin modificar cat?logo o fuente publicados"
+  ],
+  "minorDeferred": [
+    "Repetición de artículos, conectores o de la palabra función en algunas filas compuestas; no añade requisitos ni altera alternativas."
+  ],
+  "items": [
+    {
+      "caseId": "brief:editorial",
+      "instrumentType": "rubrica",
+      "sha256": "e09a5c49ce502a74cee0e4b95afb8179672b9184857f82bd3a5bcaf6d603e78d"
+    },
+    {
+      "caseId": "brief:editorial",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df96983873877b57b7053e5864a295ec8c092c074f7a524ff22aab8feb0dcea6"
+    },
+    {
+      "caseId": "brief:editorial",
+      "instrumentType": "escala",
+      "sha256": "80e8a7eaff65b81f881efbcbf82cb7a8a6bf6517628bfcb11c4b08228432082a"
+    },
+    {
+      "caseId": "brief:editorial",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c852fb9e23fc3a54c6c0c6d98d8f755978cf60fe3d9a0a15fd1b522b629c00e4"
+    },
+    {
+      "caseId": "brief:columna-periodistica",
+      "instrumentType": "rubrica",
+      "sha256": "804e16a660dacf62566d215a9cd19f7af2e4ba62da0752102511905e8b43ea7d"
+    },
+    {
+      "caseId": "brief:columna-periodistica",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8112cfa718a5ad906a038d3bd6345ba96c0c9ce03b9c1ea7cda46c510abc936"
+    },
+    {
+      "caseId": "brief:columna-periodistica",
+      "instrumentType": "escala",
+      "sha256": "c0e496bee0b945609a2d1ebc600c84ac974bc662954a84903db5afe811702f8a"
+    },
+    {
+      "caseId": "brief:columna-periodistica",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3a39e0965f86084370fef2c67e084a3c8430a8ee407ac9eeb513ce92e7d8e4c5"
+    },
+    {
+      "caseId": "brief:anuncio-publicitario",
+      "instrumentType": "rubrica",
+      "sha256": "58d36a5563f418b20e64dee9dd74fd351ed416ad020d0a070761233c7302c39e"
+    },
+    {
+      "caseId": "brief:anuncio-publicitario",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e870cbae4d85fa2c0a72c87890ad1f5038c25ecced9bbc997f02670fd96fa6aa"
+    },
+    {
+      "caseId": "brief:anuncio-publicitario",
+      "instrumentType": "escala",
+      "sha256": "03b97cadfc131969a76ae026964d310aa7bee57ebf1f6e189178f432e3e8c4f2"
+    },
+    {
+      "caseId": "brief:anuncio-publicitario",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c29525264ad7ff29c3a42fde5f88faf30d4d65e11b946ae13b46e3f0fa8160b9"
+    },
+    {
+      "caseId": "brief:propaganda-politica",
+      "instrumentType": "rubrica",
+      "sha256": "9988d0aaf44729f071fa7b6972ca3df4763c87c3cd8ee16f9dc21a6eb8d83513"
+    },
+    {
+      "caseId": "brief:propaganda-politica",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dd6e294c44f31d31a5a8217a0736bd6310227d8caf2ada418279fd48e6029b28"
+    },
+    {
+      "caseId": "brief:propaganda-politica",
+      "instrumentType": "escala",
+      "sha256": "434dbd5653635d0c7b0941eda0abca5a3b9355eceb758e9766b15781d7ddd6e5"
+    },
+    {
+      "caseId": "brief:propaganda-politica",
+      "instrumentType": "lista-ponderada",
+      "sha256": "51f85ea73156ba5629f854e6de5a44a2cff108b178ba03cc86512b354d51c710"
+    },
+    {
+      "caseId": "editorial-brief",
+      "instrumentType": "rubrica",
+      "sha256": "fc61d8d403f201bab4ab3fa8b13750b50d237c023de2631e239f33207248de17"
+    },
+    {
+      "caseId": "editorial-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1ee07898ffaf30657271023a1222c46573a4c43e012cbb59074a3ba5b451884b"
+    },
+    {
+      "caseId": "editorial-brief",
+      "instrumentType": "escala",
+      "sha256": "b837190ff318ecd4645badc19a644c4994591865428a8142a46665dcaf1fa6e5"
+    },
+    {
+      "caseId": "editorial-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "28bcf58cca4208f7484abbad794a85f00051994902481ef669025b597c33e12e"
+    },
+    {
+      "caseId": "column-brief",
+      "instrumentType": "rubrica",
+      "sha256": "29d1b7699fd1f8b5547ded6d21ad5fd60547977941d49aaa2542f3e324f1aa83"
+    },
+    {
+      "caseId": "column-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8833de95be1deab940cc241f662841eefb5a94c9acff2d655cc180dc74b77962"
+    },
+    {
+      "caseId": "column-brief",
+      "instrumentType": "escala",
+      "sha256": "15bd4866a47c4fbef5716001ae7b193349706062278ca9bf08d7367bd26afefd"
+    },
+    {
+      "caseId": "column-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ba2bd5a65d4f06a5af1bce1ec6b633b720745aff723334495b24fe62a235db9b"
+    },
+    {
+      "caseId": "ad-brief",
+      "instrumentType": "rubrica",
+      "sha256": "c6de6c40864d39f981fbbf1754f4a9dc30a428e9050d644eeded3978d9d39170"
+    },
+    {
+      "caseId": "ad-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4666c81a397e122744035d4a98b75124e84271232e40b22ceda2f663cdf9c014"
+    },
+    {
+      "caseId": "ad-brief",
+      "instrumentType": "escala",
+      "sha256": "8f31c0c814c4081e42aeb0c9d1def872ffcb132578f388278ddcc2a3c2e5934d"
+    },
+    {
+      "caseId": "ad-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3bda255dc82937cd486e97c519ef97825fdadf694a04ec80837cfb46f0bd37d4"
+    },
+    {
+      "caseId": "propaganda-brief",
+      "instrumentType": "rubrica",
+      "sha256": "5fa892422f2f84d6e0c31bf11ec20f1925920534fb5383604315f076ca6ba101"
+    },
+    {
+      "caseId": "propaganda-brief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12cd823b9917bc37540d00e4b6f0914c6a9dc2d83be829f9bfdb99d8aa1be3d0"
+    },
+    {
+      "caseId": "propaganda-brief",
+      "instrumentType": "escala",
+      "sha256": "c83dbb81f0457c91ad703288d33b0dd978057b452b9c87f59361e1b89827db2a"
+    },
+    {
+      "caseId": "propaganda-brief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "91a1ac0bc685281c4a0d2036e1b0af98a6bfbec4d74b6fe32a2c9d1e08db3e52"
+    },
+    {
+      "caseId": "editorial-plan",
+      "instrumentType": "rubrica",
+      "sha256": "e996022ed1ccc5f8e294ff235fa1232947ece7a3f7125b20202d57f6df1025af"
+    },
+    {
+      "caseId": "editorial-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5b31ffe659d84be04df0de620a746209a6ae9a79b1b21a8da30500e0eb993bf0"
+    },
+    {
+      "caseId": "editorial-plan",
+      "instrumentType": "escala",
+      "sha256": "cef883012566e93d920a701dbecbc2b490be88e8e34c15dd7e83ae02e5b7c0d7"
+    },
+    {
+      "caseId": "editorial-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f70522e4284b2b6c7d552fb9e3d5c2f9ce3cb286400575ded8caee3fa753c545"
+    },
+    {
+      "caseId": "ad-plan",
+      "instrumentType": "rubrica",
+      "sha256": "23ccf5e0b5ecbb806a68eb50f930d072a30607588a41ee509e201aface8df336"
+    },
+    {
+      "caseId": "ad-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c8476cdf454920b2b3d636bfba2dc7031e102fe3b6939ba6378484ab97ecf925"
+    },
+    {
+      "caseId": "ad-plan",
+      "instrumentType": "escala",
+      "sha256": "52bcd5111594729dff1daa87679045a8f373b07101fc847e569446bf53d811c1"
+    },
+    {
+      "caseId": "ad-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f4c94519aa284ddddaa8e0d36a5dead31bdf05c4c18ba9206c396407d4bdd049"
+    },
+    {
+      "caseId": "editorial-oral",
+      "instrumentType": "rubrica",
+      "sha256": "a42f9cf76a5efda65e91855e085ae30d9dcc192277afde3ee8973201ff6a2d25"
+    },
+    {
+      "caseId": "editorial-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fed6ef33a249f78f9baef35d5b47317e6618bb6cfa6dd7ab5e023fa944760a4d"
+    },
+    {
+      "caseId": "editorial-oral",
+      "instrumentType": "escala",
+      "sha256": "86c07de82654996f4e16bb8435f6fea4b44fed830208758aba05810329afa858"
+    },
+    {
+      "caseId": "editorial-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6a24aeef1bafe4b52bbf7c404d25772c5319503d995941e92aee76c88cd39299"
+    },
+    {
+      "caseId": "ad-oral",
+      "instrumentType": "rubrica",
+      "sha256": "e9a05b28716d323338af6fef145b66664c8d581b1ff0072f8aad131c328271c2"
+    },
+    {
+      "caseId": "ad-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f4eaba31b36738ee19a924290a636383c84093526812a80cc3efdf86ee44ed3a"
+    },
+    {
+      "caseId": "ad-oral",
+      "instrumentType": "escala",
+      "sha256": "40b5ed2bcac179f882f750e3fe71bc98c39f541d4936b5ed2f744909c6c73367"
+    },
+    {
+      "caseId": "ad-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a739440c0ac64355b04196710d5f5e98975ab62084251aa0b84f6d31cc85f8e6"
+    },
+    {
+      "caseId": "propaganda-critique",
+      "instrumentType": "rubrica",
+      "sha256": "11beab5a4edaa21a7243b17bbb03474b8f517e4f54ba544079e6a1fa075deca8"
+    },
+    {
+      "caseId": "propaganda-critique",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9a60e54dfa20e3778ccdd3e04b3b2ce28705764e73d816e0c6df8ec25048e408"
+    },
+    {
+      "caseId": "propaganda-critique",
+      "instrumentType": "escala",
+      "sha256": "e883d505d8b662f3533202f597a3c5369f0d212030e129873e44a6a589f4be47"
+    },
+    {
+      "caseId": "propaganda-critique",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85f844982991e06ab513e532f139f6792316215d538cd1c59a0cf0948adf0234"
+    },
+    {
+      "caseId": "column-underlining",
+      "instrumentType": "rubrica",
+      "sha256": "74bce38514fb7d8f7a4bab9a9522439cc552bb1fae73237ea80b21b64451b8fe"
+    },
+    {
+      "caseId": "column-underlining",
+      "instrumentType": "lista-cotejo",
+      "sha256": "40b3cff586c0c19694377977291be93565ee531729b2a35f0260158bf71a9e47"
+    },
+    {
+      "caseId": "column-underlining",
+      "instrumentType": "escala",
+      "sha256": "a4ab2410e78c6514451ad86f7072ec5c622d3c583373615170bd30cb48d038cb"
+    },
+    {
+      "caseId": "column-underlining",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6ca9d6370212aa8796d5c5172c73a2e1b5d994726cf2fa857085114b585322c"
+    },
+    {
+      "caseId": "editorial-debate",
+      "instrumentType": "rubrica",
+      "sha256": "069e778e9428b59aa7791ed70193d42ca9a6efbb40f06a2183cc06af2df7c6f7"
+    },
+    {
+      "caseId": "editorial-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "47fadd731ff1f7793b73bce72ccc221f23d75cf057b90a150ae6ceb93944d9e9"
+    },
+    {
+      "caseId": "editorial-debate",
+      "instrumentType": "escala",
+      "sha256": "8f3b2b17465c2ddae8ad95e43ef1305697f42bb1a40f9a980e7b4183357a4283"
+    },
+    {
+      "caseId": "editorial-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "41f590b08389d3c86d07b824b9071c6d0beffda883bfb2b7c9585b97b6c43f11"
+    },
+    {
+      "caseId": "ad-design",
+      "instrumentType": "rubrica",
+      "sha256": "a2962bd394ce0a7dfbfa84a65fc7951c8c9a89acd61b70769f931a3e6b81e232"
+    },
+    {
+      "caseId": "ad-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d95efe886fa9577cb5f1030b195f92f75f49502473dc45a4e02804807ebabc15"
+    },
+    {
+      "caseId": "ad-design",
+      "instrumentType": "escala",
+      "sha256": "2b35c48a8c8fac8325a7edc140bd08cede417cde572704f979c242bad40c8cb0"
+    },
+    {
+      "caseId": "ad-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "def17ecf7a5224bafc3ec5d2829ef40d0fbcc7bdec46b532adbb8050dbe50f43"
+    },
+    {
+      "caseId": "column-revision",
+      "instrumentType": "rubrica",
+      "sha256": "82db8203883b17ee1f32be3ddddaa20f12a9d6d609d2d5f407f0e5414860e530"
+    },
+    {
+      "caseId": "column-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5df0cabe1d72bec8f0d85b9cc2252bc3f1d1573597a1c9a1a08a533c49283969"
+    },
+    {
+      "caseId": "column-revision",
+      "instrumentType": "escala",
+      "sha256": "1e2bd9b45b1cf6495a86f7b1a03d4cc4fd6dd64557591fb096a4d929a06ace36"
+    },
+    {
+      "caseId": "column-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eecfb22c441efe935d2dc3f41e5d75c674a066f29b1f2799a44ff2a806881d7c"
+    },
+    {
+      "caseId": "propaganda-written",
+      "instrumentType": "rubrica",
+      "sha256": "f681403b93add2399e269174beac905f69d8e811f5d0bf8834d66b6550815227"
+    },
+    {
+      "caseId": "propaganda-written",
+      "instrumentType": "lista-cotejo",
+      "sha256": "25412175b4751a0a3eb5b14e44644a508f3609bc8f9e41985d54a19ab744595d"
+    },
+    {
+      "caseId": "propaganda-written",
+      "instrumentType": "escala",
+      "sha256": "55d180dc9096cb8c71c912582fd6905e26316d0ae46d1c44c5dd89a08f06e0f7"
+    },
+    {
+      "caseId": "propaganda-written",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3fa2ed8014f0d8dfa24509a0315d692f5a63e24d0fde8fe0fa571726dc9796c3"
+    },
+    {
+      "caseId": "editorial-two-arguments",
+      "instrumentType": "rubrica",
+      "sha256": "466090678360051d81fab4fc86c2964468e7d3b195c225ba7f13916b29bc8b7d"
+    },
+    {
+      "caseId": "editorial-two-arguments",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1fecd1365a2ca9927773c6a2a0c759231cd672f43ec0755d07fc4a1413f0ddec"
+    },
+    {
+      "caseId": "editorial-two-arguments",
+      "instrumentType": "escala",
+      "sha256": "cd5b3d993a99d260c5dffe0d013df685aabc6f79c718856774d766dbda01b481"
+    },
+    {
+      "caseId": "editorial-two-arguments",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0c5e8b2028ae4be8e2512c5a509059f0ea0a822703dd318f7105dd4b2ea45264"
+    },
+    {
+      "caseId": "concept-3b8d7bd8",
+      "instrumentType": "rubrica",
+      "sha256": "756de76b61bfb6d1bfc403897a3db192138258b97ff8706e7d4315a0ebbab525"
+    },
+    {
+      "caseId": "concept-3b8d7bd8",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e4af9b0f12381c9a78dcd257dabba6b0d0be60e1b7e6af44a8069831cff753b8"
+    },
+    {
+      "caseId": "concept-3b8d7bd8",
+      "instrumentType": "escala",
+      "sha256": "f32f7c7cdb5b5d85c5e3f87d29259bbc820f1eabea09e7bf016a82e4ed3a4927"
+    },
+    {
+      "caseId": "concept-3b8d7bd8",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8184300521fb902776f67c75f2584210267136c9224ad523356096b4d95488c6"
+    },
+    {
+      "caseId": "concept-9d281a3a",
+      "instrumentType": "rubrica",
+      "sha256": "ed0051c462cb6390db93e332e9605c59f3ad6c415e4dc7368584bd8bf01d73e5"
+    },
+    {
+      "caseId": "concept-9d281a3a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3b10e38594b08f720c87fa1b105df4850795a9ba9b3f1bf66c352766aa2ff472"
+    },
+    {
+      "caseId": "concept-9d281a3a",
+      "instrumentType": "escala",
+      "sha256": "ed4800b92b68ba4a1a0e4012341f2c35316f0eeabbf5a7972d2089acd616474e"
+    },
+    {
+      "caseId": "concept-9d281a3a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8c09ce1628fba1710f6421f032da153e5336eb84b5fa77db62c99e1000e2651"
+    },
+    {
+      "caseId": "concept-5aab1be2",
+      "instrumentType": "rubrica",
+      "sha256": "ab79779db652602e258bbbcd26d721a38d7d3c054e5613fecd3f16fbb9de561b"
+    },
+    {
+      "caseId": "concept-5aab1be2",
+      "instrumentType": "lista-cotejo",
+      "sha256": "96b6680d04a85606619724a73d123e9a01e84020ac194d9300bd97d9816928d5"
+    },
+    {
+      "caseId": "concept-5aab1be2",
+      "instrumentType": "escala",
+      "sha256": "c28ecdab42c8c32d62e38a84c03fc81a659f7d5079527032ce2d6a0ea48e41cd"
+    },
+    {
+      "caseId": "concept-5aab1be2",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6f2c4f49b26f1f22a463c2973ca7146abe7d288e8b16228ee2d1dc9e1a7f7d4a"
+    },
+    {
+      "caseId": "concept-69daf246",
+      "instrumentType": "rubrica",
+      "sha256": "67a1a411acc8d864f8c8aea7d3a44c7a092160b7ec4b75a09fe974508dde75d4"
+    },
+    {
+      "caseId": "concept-69daf246",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9f640c938efebd43bb3b567a63eabe46a7a7e6a6b693bbcad0e12160dfa46642"
+    },
+    {
+      "caseId": "concept-69daf246",
+      "instrumentType": "escala",
+      "sha256": "504a94da70ec5b7a96679a107524160df7d01fd7fbf93bfc1443c29c80b4c6f4"
+    },
+    {
+      "caseId": "concept-69daf246",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f474539ba3684683e00171984a8f92006cc01b2bded6f76e35da361f6461da9c"
+    },
+    {
+      "caseId": "concept-02d4b068",
+      "instrumentType": "rubrica",
+      "sha256": "66cc9249248776a2968147766d9215adfb80c968ef98c35c0e0f4665c47f6c2f"
+    },
+    {
+      "caseId": "concept-02d4b068",
+      "instrumentType": "lista-cotejo",
+      "sha256": "708f820d2aa37f4bcc988170a945b3038527937c9c4516cbdae23b2527aaac5c"
+    },
+    {
+      "caseId": "concept-02d4b068",
+      "instrumentType": "escala",
+      "sha256": "ce1dc33e386539c4e005530f330790c1ed70bf5d484e37ffe7b1f8afcd759782"
+    },
+    {
+      "caseId": "concept-02d4b068",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e69cf0c55172fe1cbe676307eb294f397529c31b21ef1970ce87dc06b8d8bcea"
+    },
+    {
+      "caseId": "concept-92fd5682",
+      "instrumentType": "rubrica",
+      "sha256": "ec1003fe489f8750059e6533831ba8bc043ad934cb89fee4433672c327390aee"
+    },
+    {
+      "caseId": "concept-92fd5682",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bb8ab4a608edbe86020f3734d5eb8cfcf6adde61c3927bbd796d6c15e803257b"
+    },
+    {
+      "caseId": "concept-92fd5682",
+      "instrumentType": "escala",
+      "sha256": "f668a9f194854271071ff107785ce5c752af5df21100adb13c1fc34862974caa"
+    },
+    {
+      "caseId": "concept-92fd5682",
+      "instrumentType": "lista-ponderada",
+      "sha256": "15a5e4f69f652f9cba281bbffd3e4268e6251b4b28954f003da2f2757aa3877f"
+    },
+    {
+      "caseId": "concept-1dd5f258",
+      "instrumentType": "rubrica",
+      "sha256": "859f4115ecaf30a5e29777b29e35df1400b7d044aca14457d09e6244b1f5625e"
+    },
+    {
+      "caseId": "concept-1dd5f258",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d2c0a7d78ee6264858b0f0d8c72d0a9aa55d0459fe19a068a37cd5bf9c9c3307"
+    },
+    {
+      "caseId": "concept-1dd5f258",
+      "instrumentType": "escala",
+      "sha256": "b3c41cb268832e9758c7abbc99cfe8902ef7e37312b7eb7385a46d5651c91e8e"
+    },
+    {
+      "caseId": "concept-1dd5f258",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a84a8abcdb342d3d08b7607dddf933d43ea03a17f4449614594bee0493f6d323"
+    },
+    {
+      "caseId": "concept-990f5e1a",
+      "instrumentType": "rubrica",
+      "sha256": "7ad42d1c309684975df8ab4b6e83c4ceea0e28aecd48f86828f29c6d744d3b05"
+    },
+    {
+      "caseId": "concept-990f5e1a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ea9504e707ac863e845ffe42eacbf877f9bc4b9306bf971528ebc59e35ba7e69"
+    },
+    {
+      "caseId": "concept-990f5e1a",
+      "instrumentType": "escala",
+      "sha256": "5e84199269ecabc75e61f1f6c66b79b9ae0399aa552281a37f2d48f10d20645a"
+    },
+    {
+      "caseId": "concept-990f5e1a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5af3d0452a77a4e92b0900967ba45ba02140908ec57dfb26e4035b8155376003"
+    },
+    {
+      "caseId": "concept-611b2d60",
+      "instrumentType": "rubrica",
+      "sha256": "cdaa4bc18bf734467be66cf892bb245b91733e93b089390335b449ae84edd741"
+    },
+    {
+      "caseId": "concept-611b2d60",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5d33d1f19589fc95d7482b3db4a0eb042aebe58be91f3164329b1ba063c8c726"
+    },
+    {
+      "caseId": "concept-611b2d60",
+      "instrumentType": "escala",
+      "sha256": "09596ed55ae242206b74ced1f29abb9fc4113298b8e63ab8ab91f710fcd3f16b"
+    },
+    {
+      "caseId": "concept-611b2d60",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dee1892649c2d30f79ddfdf077b8306b18f9030f2b21c5ea957e6831886cc2c7"
+    },
+    {
+      "caseId": "concept-9aa38957",
+      "instrumentType": "rubrica",
+      "sha256": "c5e6d55caf3ffa56ae39e39938b07d4a6a8866dab660a1a21e4acc2eccbe290b"
+    },
+    {
+      "caseId": "concept-9aa38957",
+      "instrumentType": "lista-cotejo",
+      "sha256": "49120031ce28546b4632db6a5068fbd91ede54513e5121e111d2e2eaa1d8700b"
+    },
+    {
+      "caseId": "concept-9aa38957",
+      "instrumentType": "escala",
+      "sha256": "470a9c58661b358f27d481d50d679db2e58026f7f852fe2e603610782211ad68"
+    },
+    {
+      "caseId": "concept-9aa38957",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3b29077723741be39290b90f32d97756109b84d420935f8473e4628cd1fa7f17"
+    },
+    {
+      "caseId": "procedure-ccac03d9",
+      "instrumentType": "rubrica",
+      "sha256": "103db0b18a5d965c701d454dba3ec8a4dae00ba7f0f8b131d2622667b13ae478"
+    },
+    {
+      "caseId": "procedure-ccac03d9",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4c6d5b40441bf32982fd6a9d6278418c80e8acb6d00de24c4d142f47b1469778"
+    },
+    {
+      "caseId": "procedure-ccac03d9",
+      "instrumentType": "escala",
+      "sha256": "75a82b76f4f7860ed2af0832ea28133a698bd1bb58220d4edafc7bcab5f909c8"
+    },
+    {
+      "caseId": "procedure-ccac03d9",
+      "instrumentType": "lista-ponderada",
+      "sha256": "02575e2e0dfbf860d6b47013b8f394b66f5adf13538f5eee69bc653e68e4b959"
+    },
+    {
+      "caseId": "procedure-c2917caf",
+      "instrumentType": "rubrica",
+      "sha256": "ba861611595b39ca7131b314ba084c016221cc611f0030a2e0ac03a76b9ac6fe"
+    },
+    {
+      "caseId": "procedure-c2917caf",
+      "instrumentType": "lista-cotejo",
+      "sha256": "db6160a13bf4a65ccd9ba9da377c251c1c6bc7aa0e914836235aff74ce69aa8f"
+    },
+    {
+      "caseId": "procedure-c2917caf",
+      "instrumentType": "escala",
+      "sha256": "3b1df77ccdf7f26af38169c964f3b0f4b36acfca6987f68a88cc38d6dc4a947c"
+    },
+    {
+      "caseId": "procedure-c2917caf",
+      "instrumentType": "lista-ponderada",
+      "sha256": "020bd81cca8757f18a0b8c861aa4ed0d13d8efff1d05627fa650af49c7fa936d"
+    },
+    {
+      "caseId": "procedure-da77ff02",
+      "instrumentType": "rubrica",
+      "sha256": "591413a6fd24e7de5338e7ead0021e0f322a50404f5a700aa4007374d928670b"
+    },
+    {
+      "caseId": "procedure-da77ff02",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0cbafbdccc18d73b573b2b76c4fc5cc1427d3b200b5f0200152ba45bd86210c6"
+    },
+    {
+      "caseId": "procedure-da77ff02",
+      "instrumentType": "escala",
+      "sha256": "5b200587cfece1601596fc8c35f83aef36fabfc1f9aa537e2f5ce32d635b8f23"
+    },
+    {
+      "caseId": "procedure-da77ff02",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7955feb22e4d0c2ee35b7d461590ad54a220fa806f8f2387f28072c603c07fd2"
+    },
+    {
+      "caseId": "procedure-80ade1e2",
+      "instrumentType": "rubrica",
+      "sha256": "a1d0b6c9b331c38bf1c11b8964fdfb49acb8fd4776dab8b21cbe8d3ff99cf7e2"
+    },
+    {
+      "caseId": "procedure-80ade1e2",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6131b9dea4b098399aad45a502719e19df10ae827d4db171a111b70830388632"
+    },
+    {
+      "caseId": "procedure-80ade1e2",
+      "instrumentType": "escala",
+      "sha256": "c8a757a10dfed44532ec906fc9400c2ad6e83e393a82d003a04ede62b93d1cac"
+    },
+    {
+      "caseId": "procedure-80ade1e2",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e2f37898a20694707da03a7266dd36e4a239c19f675b3d2b1c0220b737c08bb3"
+    },
+    {
+      "caseId": "procedure-9cd72ad4",
+      "instrumentType": "rubrica",
+      "sha256": "810463a80addb7d2016636d3cc7716488eb59dcf45b6baf312f75b9f165bc68c"
+    },
+    {
+      "caseId": "procedure-9cd72ad4",
+      "instrumentType": "lista-cotejo",
+      "sha256": "544bdc8ceb21ca09b8f430f9df384657fbe6bd37e2da6a0a1dbe35a81a2cb888"
+    },
+    {
+      "caseId": "procedure-9cd72ad4",
+      "instrumentType": "escala",
+      "sha256": "1b31fed84680334bf67b0bd717bfb6819b6a9c0994f73a3f358b0c4a3bdf0d96"
+    },
+    {
+      "caseId": "procedure-9cd72ad4",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d0585359fdb178b24241dc9b5c6994bfbd1febd807ff51dbb4bdaa462676f1cd"
+    },
+    {
+      "caseId": "procedure-6c23d7e9",
+      "instrumentType": "rubrica",
+      "sha256": "a682cfbf02fa05a4415778413878aa9032cfbea5ef6d22e0ca7a03427388bf06"
+    },
+    {
+      "caseId": "procedure-6c23d7e9",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9b2ccc3951c56db37c802760bbc7fddb58840bcd8b80846e85f1cbc5c60efe4d"
+    },
+    {
+      "caseId": "procedure-6c23d7e9",
+      "instrumentType": "escala",
+      "sha256": "59c9b3fafae786a9a6446dfb41427c51960874491c4786986cbb1e6296888afa"
+    },
+    {
+      "caseId": "procedure-6c23d7e9",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85ce1a336e5d8b199ca60557ccd0ede22b7d133fb1684a1536e2ae8ab5d0520a"
+    },
+    {
+      "caseId": "procedure-46349e2d",
+      "instrumentType": "rubrica",
+      "sha256": "17a6de8d2a2450ab9462330b4db771c0f15dad8713d81f54fd3d990b3c094b38"
+    },
+    {
+      "caseId": "procedure-46349e2d",
+      "instrumentType": "lista-cotejo",
+      "sha256": "21c401af7bc2290847f5e987405f844ce34f734db6f6b8dff9b11ecb1f4bb924"
+    },
+    {
+      "caseId": "procedure-46349e2d",
+      "instrumentType": "escala",
+      "sha256": "a1fcc82b5aff16e2248e87d87390f0ea0b26356723cf0c5349664543b95445e2"
+    },
+    {
+      "caseId": "procedure-46349e2d",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f77dfa2a53d67d4618cac7e0462e13d22a774a69ad61f6e4d5721abcfbd8c5e6"
+    },
+    {
+      "caseId": "concept-2a5f26c3",
+      "instrumentType": "rubrica",
+      "sha256": "9127396828c5f53cdb5ea9298cf8cec50f17fe092ce3cc28d7d91afa8b41b402"
+    },
+    {
+      "caseId": "concept-2a5f26c3",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e2eac5ba384a665160b8b437b27e1db3c84ec16400a086470794e2541d1d437b"
+    },
+    {
+      "caseId": "concept-2a5f26c3",
+      "instrumentType": "escala",
+      "sha256": "6bab363e01cebcb241f84ce15b04b4ff077e1ed597bcb3a2f5e8b360b063c27b"
+    },
+    {
+      "caseId": "concept-2a5f26c3",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1fc3e5c57118c700ea30119c84efc9d88dbf5dc5d04f1f8c113dc2808d9989d2"
+    },
+    {
+      "caseId": "concept-700b8e7f",
+      "instrumentType": "rubrica",
+      "sha256": "e73bbdb8231d8c2b46d2843c93b106318f2feaf2ab0224f6b13f001dc046d656"
+    },
+    {
+      "caseId": "concept-700b8e7f",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9e790521fa7da60929f4f0a4b9361a6d8acec0d82084eeee51e195057fa8cb6e"
+    },
+    {
+      "caseId": "concept-700b8e7f",
+      "instrumentType": "escala",
+      "sha256": "186f4bea70317bef41eb42af435dd431b231cafa5efdd1e42836865c009079ba"
+    },
+    {
+      "caseId": "concept-700b8e7f",
+      "instrumentType": "lista-ponderada",
+      "sha256": "556058b78a2160d7e900dbab0f95e0d188e215d765b18c091bdd13d8e9e5764e"
+    },
+    {
+      "caseId": "concept-59b74eed",
+      "instrumentType": "rubrica",
+      "sha256": "7cece87a87b96c43f764e7669a8c5c612d7d6d3533385a22834c01329c8aec4b"
+    },
+    {
+      "caseId": "concept-59b74eed",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5a1bf8a405179e3da9e6c337b9bf904fe11995ae00db409912b8ecd78e957fad"
+    },
+    {
+      "caseId": "concept-59b74eed",
+      "instrumentType": "escala",
+      "sha256": "9f576d4a671540802126912aba793ff440a16fb9144d2d57d876d578a41fe294"
+    },
+    {
+      "caseId": "concept-59b74eed",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ce83329bddd6512ea457935bf1980cb5c330767279cf0e7c8f97b85e44c6952a"
+    },
+    {
+      "caseId": "concept-dc587122",
+      "instrumentType": "rubrica",
+      "sha256": "67c761b7ba9e8837a2ddb79c9ba07d573794a23fae26af26718325c7936663ee"
+    },
+    {
+      "caseId": "concept-dc587122",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4fc000e361111dadb6e7f4ab0138c3c3ef4376bf949f1187e9b57ee2bd58c2fa"
+    },
+    {
+      "caseId": "concept-dc587122",
+      "instrumentType": "escala",
+      "sha256": "9703abd3b238cd7b89cf76ad94d9f6005aafc25c6d601d9b7b291206b38771cd"
+    },
+    {
+      "caseId": "concept-dc587122",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8aee2b1fc3ee3c0610426bb1168fe966d0b72d8a16163d54c1b1e25e94d083a8"
+    },
+    {
+      "caseId": "concept-ec1e4f1f",
+      "instrumentType": "rubrica",
+      "sha256": "0ba31b8bc9291e4e7f93729ed206f5941e0c67a2907eb675f207f144964946a5"
+    },
+    {
+      "caseId": "concept-ec1e4f1f",
+      "instrumentType": "lista-cotejo",
+      "sha256": "91e0f96e681ab2eef8568c93dd4f8f407706933fbffa747aab6e5ca54c77a951"
+    },
+    {
+      "caseId": "concept-ec1e4f1f",
+      "instrumentType": "escala",
+      "sha256": "f6ff9975ee1a74514e800ae7bec8f15c32d9b125b5715ff943e377f0bfe7f69a"
+    },
+    {
+      "caseId": "concept-ec1e4f1f",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6da29d4547d6b4ead90e4aa643ec04a783758a253c30a5ccc6470c6992b77b3"
+    },
+    {
+      "caseId": "concept-086c5692",
+      "instrumentType": "rubrica",
+      "sha256": "a8352a28688a8702f56fe112b2761dcc57e5d1fe049f90519ff2d32f57ecdc30"
+    },
+    {
+      "caseId": "concept-086c5692",
+      "instrumentType": "lista-cotejo",
+      "sha256": "65d5bc9114abee605da4b3d0f8b5e1133fea932923d7f17b87618b780497703a"
+    },
+    {
+      "caseId": "concept-086c5692",
+      "instrumentType": "escala",
+      "sha256": "b757c89613e4c60642c88abf2300692abfe718f54d7c99a4c4fa6d332dbefce6"
+    },
+    {
+      "caseId": "concept-086c5692",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1cfe54979a76748477f7ee5c31c82165308535dd1be8d23312d6399eb16f10da"
+    },
+    {
+      "caseId": "concept-7c3a0dd6",
+      "instrumentType": "rubrica",
+      "sha256": "e5a2041d404e5f7855e2098e6cec2f47c33b1e0cab422c52dbf2fd3b28221ad0"
+    },
+    {
+      "caseId": "concept-7c3a0dd6",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c5e54eab38f5228268ef1d8fb21545e0177f5bc592ad348fcaf74505a7e90546"
+    },
+    {
+      "caseId": "concept-7c3a0dd6",
+      "instrumentType": "escala",
+      "sha256": "e4f7b188427dc08174feb136e0fabbe5586cf52ab4f307b327f66f306794d197"
+    },
+    {
+      "caseId": "concept-7c3a0dd6",
+      "instrumentType": "lista-ponderada",
+      "sha256": "66f65707c25968230ade0a6061a42241e4f0ff53b396deb7c41550ce3c375a88"
+    },
+    {
+      "caseId": "concept-bf5d19a1",
+      "instrumentType": "rubrica",
+      "sha256": "f1599f053b276249a16c654f56eaef755392f673158a8f7d3d495b0d310c64a5"
+    },
+    {
+      "caseId": "concept-bf5d19a1",
+      "instrumentType": "lista-cotejo",
+      "sha256": "caca639b9446786c628a7a7f16e2251dfc5609efb80266573ddceda17b839e39"
+    },
+    {
+      "caseId": "concept-bf5d19a1",
+      "instrumentType": "escala",
+      "sha256": "3121b68ae9f4b7c8ba8a5d1546498681d75c891d206927837889fbc67dafb9e2"
+    },
+    {
+      "caseId": "concept-bf5d19a1",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0cceeac928917df28204ef0dd7f825c41a1526534a19c08ffa438d61390ece57"
+    },
+    {
+      "caseId": "concept-14a0a727",
+      "instrumentType": "rubrica",
+      "sha256": "3b3991d89b867af46b5c16c2b5dcc71808913b93089aa36986fb91f7288c95cd"
+    },
+    {
+      "caseId": "concept-14a0a727",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ef15458585174cedefce41101ea5852f24b2d3677c49ad69b5bd3ea6cf3a2132"
+    },
+    {
+      "caseId": "concept-14a0a727",
+      "instrumentType": "escala",
+      "sha256": "d6b5d94eaedf01a8391dd62703ecd1895374b7692e4cd3d4b10c6cc42dfd9e2f"
+    },
+    {
+      "caseId": "concept-14a0a727",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b96b5e8d33a67e4f41d4ab544e296e062d47f99157a77395f619b00ec4cc2335"
+    },
+    {
+      "caseId": "concept-0518f821",
+      "instrumentType": "rubrica",
+      "sha256": "c3c8025b86646a2d029dd0f076f853a9c3f10bea9584363d5d1f55ec1aededfe"
+    },
+    {
+      "caseId": "concept-0518f821",
+      "instrumentType": "lista-cotejo",
+      "sha256": "63fe37ed516cf35bd1e0a2061cf5426fb989117566e44e513c9ce009b857b5b2"
+    },
+    {
+      "caseId": "concept-0518f821",
+      "instrumentType": "escala",
+      "sha256": "05f7492f6bc20ccb1a76a37e5036beb67a415233f0a82f52db48e48035a34c9d"
+    },
+    {
+      "caseId": "concept-0518f821",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9eb970d3546e86c30e465ba900089d0a0a0b709f91dc513a3fd38cdc4b7a0386"
+    },
+    {
+      "caseId": "procedure-a744963a",
+      "instrumentType": "rubrica",
+      "sha256": "0eb6329b5b5dd4682aee752628c2b9fe422ad3d2d002c26e3c6a73fcb62a6e77"
+    },
+    {
+      "caseId": "procedure-a744963a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2300f485abd26dce8c7fa3c679c87bbee2f1a7ca7fc3d625b82e973d97c46b76"
+    },
+    {
+      "caseId": "procedure-a744963a",
+      "instrumentType": "escala",
+      "sha256": "3121a23db3a25efa21ea93378a6395d6a5fcc774b081d00fec5dfbc60e05c78c"
+    },
+    {
+      "caseId": "procedure-a744963a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "547ab673a40a265cc56bfee7dc79f69b75fc67ca9c3c22838238c79f61c8b12e"
+    },
+    {
+      "caseId": "procedure-3217f5c0",
+      "instrumentType": "rubrica",
+      "sha256": "16d937acc5852f6715f4bbb5f05e82cd7f0d18d34bd8791287015e8b0ce71513"
+    },
+    {
+      "caseId": "procedure-3217f5c0",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b500374b78280f6d1382ef827443c7f4f52cc2332f75b18dec8406051d91bed6"
+    },
+    {
+      "caseId": "procedure-3217f5c0",
+      "instrumentType": "escala",
+      "sha256": "dfb5fdcaed3c948d5547d64a5def9a4ef830229d1ceab56d04ce17b6d2c9c2ce"
+    },
+    {
+      "caseId": "procedure-3217f5c0",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ad40e7a09a7160b28a60143aa937bcde0cbef3dcf79c330dd7062c7c869f728"
+    },
+    {
+      "caseId": "procedure-c40c91dd",
+      "instrumentType": "rubrica",
+      "sha256": "3b5200f1fed202a55c6ae00d25fb73e06161baf96f5283b47ecf2ce0030bd5a4"
+    },
+    {
+      "caseId": "procedure-c40c91dd",
+      "instrumentType": "lista-cotejo",
+      "sha256": "81f631a8804f362fbb9eaebb059ecfa150e1f6932d3993ad91543bcb76fa96ab"
+    },
+    {
+      "caseId": "procedure-c40c91dd",
+      "instrumentType": "escala",
+      "sha256": "ce41d840a45a045c4dcfccfbcff311d8bab5e6b0723116632d6d0426329d7a16"
+    },
+    {
+      "caseId": "procedure-c40c91dd",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4c2694f94d66316f956b54b8c4956f5e92a448341e967022e7ad4d00e4639769"
+    },
+    {
+      "caseId": "procedure-3edd5d31",
+      "instrumentType": "rubrica",
+      "sha256": "e252c96d399b7874378785ddee59617e169acbe8b0c6e118e1605ab6858bc479"
+    },
+    {
+      "caseId": "procedure-3edd5d31",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4536e1bb59c5aa30502bc1185169da51d28e7e567fe38c9b531c0353f42edd4c"
+    },
+    {
+      "caseId": "procedure-3edd5d31",
+      "instrumentType": "escala",
+      "sha256": "4de23b0612b8f8b6f14c190b873ec33c2e720cff9794c3653071997bd84d2964"
+    },
+    {
+      "caseId": "procedure-3edd5d31",
+      "instrumentType": "lista-ponderada",
+      "sha256": "65a72f1530f54a8f73b5d2e2e8623bf8f20287d58d90ec095390f0864e63adb8"
+    },
+    {
+      "caseId": "procedure-83db39f5",
+      "instrumentType": "rubrica",
+      "sha256": "cd8dead92e7b509aaf8f737f9a58a0b34b69466b8b351b8cf20911c11b993a33"
+    },
+    {
+      "caseId": "procedure-83db39f5",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f3eab378616a406462179b6288bed7240875341ec5ba8da97ab278919ff0eee0"
+    },
+    {
+      "caseId": "procedure-83db39f5",
+      "instrumentType": "escala",
+      "sha256": "5498289150afce2e9a6e8b0c9f9657241439660ab6cf5a5339789f469c694728"
+    },
+    {
+      "caseId": "procedure-83db39f5",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d766798c4296c4e31bef59fd6ea3b1a272b587ee450587935bb98a75649bc96"
+    },
+    {
+      "caseId": "procedure-b70c6eb5",
+      "instrumentType": "rubrica",
+      "sha256": "c8c80e230a13d10128b363a994ea5c43b171e3778ab84779477a7e706d8b9441"
+    },
+    {
+      "caseId": "procedure-b70c6eb5",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d1ff127b387a05f91681c7faa7b1c23d69c8b796636bd8406f235a6de8189e0"
+    },
+    {
+      "caseId": "procedure-b70c6eb5",
+      "instrumentType": "escala",
+      "sha256": "f6f91ae11080a2e2305f5421bf3ce8ab892732557575aa02f8e2142108fbe582"
+    },
+    {
+      "caseId": "procedure-b70c6eb5",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8d29893bcae4ad09a5d1067ef10f29c0250bedf98c67a15839fd5801f8f7c9e6"
+    },
+    {
+      "caseId": "procedure-9388f38b",
+      "instrumentType": "rubrica",
+      "sha256": "5e7d6aa6cba624b5e848d41c6b2006cce84f8c1d48f13f8cf8f6ed0f0f68ad83"
+    },
+    {
+      "caseId": "procedure-9388f38b",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4b05c64d51f89393db37e773be3ee32cfb1c8c73bfed04d5e88149fdc91e0ecb"
+    },
+    {
+      "caseId": "procedure-9388f38b",
+      "instrumentType": "escala",
+      "sha256": "408bd738f547cb9b523de569b41f2e80902b66a78fb8502b588912a607552433"
+    },
+    {
+      "caseId": "procedure-9388f38b",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d7d5f0de42f1b9a8959e2bea22b666f2b338e8e6d9dc7ac0a9689fde2a5914d3"
+    },
+    {
+      "caseId": "concept-6c7dd8cf",
+      "instrumentType": "rubrica",
+      "sha256": "91b6becb9746494818f10102dc1facb8bc78f7316e37ef19cae8075195d2bd7d"
+    },
+    {
+      "caseId": "concept-6c7dd8cf",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c5debfe82e76c650f7df8624ae055cdcae32fe9bd3e0155dc8a6c943843aa06"
+    },
+    {
+      "caseId": "concept-6c7dd8cf",
+      "instrumentType": "escala",
+      "sha256": "985dfca65deaea7cead7f74dfdd81d6be8c58707b099ec98ff79712b318b2811"
+    },
+    {
+      "caseId": "concept-6c7dd8cf",
+      "instrumentType": "lista-ponderada",
+      "sha256": "98eb858201a336a1fdae92fc369454f80320c0e3de9035d73cd76341474e5063"
+    },
+    {
+      "caseId": "concept-f1414995",
+      "instrumentType": "rubrica",
+      "sha256": "6cfcd049c0b24d0965ea80770da11c0d19f13d365be85e8302de2320cdd85b23"
+    },
+    {
+      "caseId": "concept-f1414995",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4fc5cde56f7fbbee087551b0380668e2fcaf8acaad0887c604f283130678604"
+    },
+    {
+      "caseId": "concept-f1414995",
+      "instrumentType": "escala",
+      "sha256": "3444380929e5425e902312a7892ca971008c3799d6999a9d42e6be50bde1cf10"
+    },
+    {
+      "caseId": "concept-f1414995",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c971eb1eff07898e6a226ccd236241dc2a0b45aed2a5b6ec59a850163e933db"
+    },
+    {
+      "caseId": "concept-ea57ff8c",
+      "instrumentType": "rubrica",
+      "sha256": "861b36ea4d2cc0bdf1f8e97669e0811f382eea2878e8d208b0825e12b301009a"
+    },
+    {
+      "caseId": "concept-ea57ff8c",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7712ec41941181781187361b8a31b2426a852f87e706aecfa50784c6fa662340"
+    },
+    {
+      "caseId": "concept-ea57ff8c",
+      "instrumentType": "escala",
+      "sha256": "28da0aa0c72a3a33dd3581b6c0c412a52c47b824d13b66915d90712257ecdd2c"
+    },
+    {
+      "caseId": "concept-ea57ff8c",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f651fd7b59a4a5cb9a4457eb845b335e5b241ccf2c48d4686901f75186adb6bc"
+    },
+    {
+      "caseId": "concept-9d0bf2a0",
+      "instrumentType": "rubrica",
+      "sha256": "5e55ac16f0b26b6e8a8ac75ba2c4502033b4970adcb9112d9b6929136c5dae7a"
+    },
+    {
+      "caseId": "concept-9d0bf2a0",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9f73d05db60cd30d4d64ec45ea8b0fd28d9caeda6b4ca5b42b991cc8cf57706b"
+    },
+    {
+      "caseId": "concept-9d0bf2a0",
+      "instrumentType": "escala",
+      "sha256": "cdff8c21be04e68ded86fea0116e1115295e91041931ec7e658299ed3efe8337"
+    },
+    {
+      "caseId": "concept-9d0bf2a0",
+      "instrumentType": "lista-ponderada",
+      "sha256": "efee817f936a0ccd8747bfdcf28335a48c70c461f74b995a387031fb07651757"
+    },
+    {
+      "caseId": "concept-6269a8f7",
+      "instrumentType": "rubrica",
+      "sha256": "828908dcfb89b78b309f3f5978c4c9014677865a440ba25f1b50ef9c6663e734"
+    },
+    {
+      "caseId": "concept-6269a8f7",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6123480ca339db6c171522d33e80afc0c58d3cee9c8d54176750a22e848d7730"
+    },
+    {
+      "caseId": "concept-6269a8f7",
+      "instrumentType": "escala",
+      "sha256": "3dbaae43e88ccbe4130eb5bcfd9726b2a63e071913e6f2860402cc4d432e0e98"
+    },
+    {
+      "caseId": "concept-6269a8f7",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2953253acf10f347ee254623cebd7f4cbb7cbb8b6fc20f184e7785a046f43983"
+    },
+    {
+      "caseId": "concept-6498dc63",
+      "instrumentType": "rubrica",
+      "sha256": "cbfb69d3da2dc75df7653ab22ddb152ed0367c3f27637a0c2e8327d932624877"
+    },
+    {
+      "caseId": "concept-6498dc63",
+      "instrumentType": "lista-cotejo",
+      "sha256": "28ea991a22c1206cd932718a83f9997d6aaf37352fb0fe727b4781cf97466cce"
+    },
+    {
+      "caseId": "concept-6498dc63",
+      "instrumentType": "escala",
+      "sha256": "a74e6ddc5355d4f69c5c68821e51f1b75979edf4906a5641895949a47195cdd3"
+    },
+    {
+      "caseId": "concept-6498dc63",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c976d06115bf90dfd6f752c5d95fc6d576befc4192919bb482f5c573948f617a"
+    },
+    {
+      "caseId": "concept-430f12ae",
+      "instrumentType": "rubrica",
+      "sha256": "fd6381f59e3c544314a8c6d4ef1b0b928ab338ba68232c9751746395286cfa8b"
+    },
+    {
+      "caseId": "concept-430f12ae",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cafe31d1409cd6a2248dc7a315c50d4f3abae096218de70978fa344519a97dd4"
+    },
+    {
+      "caseId": "concept-430f12ae",
+      "instrumentType": "escala",
+      "sha256": "39c7d7a6a42077bec3b6b3027e5fde12110101912450d95cd01e1b1670bc6a7b"
+    },
+    {
+      "caseId": "concept-430f12ae",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9e6517c1b085ccfe8ab20945ad6f20061fb18a0e2e744e111e08b4131d829f19"
+    },
+    {
+      "caseId": "concept-fa017519",
+      "instrumentType": "rubrica",
+      "sha256": "0ce1f4f278b6c3edd39afb9f1e45120afacd60c9b74a521a3c54f2ef99481e7c"
+    },
+    {
+      "caseId": "concept-fa017519",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d606d9e6590274a66772acd4351fcb384cb51385099398b3ded16d0a7b22cf76"
+    },
+    {
+      "caseId": "concept-fa017519",
+      "instrumentType": "escala",
+      "sha256": "a63701cd9db3c7548a121cbb8b0804d09eadd19dfaee67d1365447a6bc220534"
+    },
+    {
+      "caseId": "concept-fa017519",
+      "instrumentType": "lista-ponderada",
+      "sha256": "10c77fd21ede8ac4458aa5f877ca68d3376fdf810c79b931cc19996c81e0fb0d"
+    },
+    {
+      "caseId": "concept-2cd98309",
+      "instrumentType": "rubrica",
+      "sha256": "829c6e6fbc71b849aa45d6f94a527f476fbcc613e5f5de9927b1f2ffe407ced7"
+    },
+    {
+      "caseId": "concept-2cd98309",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7b579f2f865ed6e2b2e39df426995ce9077e13c38bb035b2ed58e887136ed596"
+    },
+    {
+      "caseId": "concept-2cd98309",
+      "instrumentType": "escala",
+      "sha256": "579bd91c853d101ea06552489216d265aea88099546799cf9840f5f88a7596a7"
+    },
+    {
+      "caseId": "concept-2cd98309",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf6c50459b8e575763f179749b293db220cac4dba37e8b17ccd9629ce2bb4c30"
+    },
+    {
+      "caseId": "concept-91546f37",
+      "instrumentType": "rubrica",
+      "sha256": "3e364ece5c93b6d1703be4dc050f0376676a30ec12ad1798ca368acf1ae48aed"
+    },
+    {
+      "caseId": "concept-91546f37",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cbcc4aa24f7750de265b81a034c190e87cfe46b4a0aa0bc308730894596c89fa"
+    },
+    {
+      "caseId": "concept-91546f37",
+      "instrumentType": "escala",
+      "sha256": "47e92dd5a7ba44cbae728ee31615c090524deca0345f885530a1ee48f5a12265"
+    },
+    {
+      "caseId": "concept-91546f37",
+      "instrumentType": "lista-ponderada",
+      "sha256": "493956d5ca89fc5eba70635f76c261783100bf30c5bbbb212d2e5d6f40a28cc9"
+    },
+    {
+      "caseId": "concept-82653d65",
+      "instrumentType": "rubrica",
+      "sha256": "97817eb986e5f02996bed11d6e3760bbf2effcd120d799d1a09073efd4a67aa4"
+    },
+    {
+      "caseId": "concept-82653d65",
+      "instrumentType": "lista-cotejo",
+      "sha256": "81f193c28fea65bbf80d8c28a6a8ada0549215d7def2cb9509a29256a285ce63"
+    },
+    {
+      "caseId": "concept-82653d65",
+      "instrumentType": "escala",
+      "sha256": "28b6778fffd67e2b73ad29800fa23ea29b1620c9c2b91bd320f1e31b1f17a7f0"
+    },
+    {
+      "caseId": "concept-82653d65",
+      "instrumentType": "lista-ponderada",
+      "sha256": "33365b056d6c3ea3f91f7154057fbbf7afc020091fedae328b93308b55982cde"
+    },
+    {
+      "caseId": "concept-7659635a",
+      "instrumentType": "rubrica",
+      "sha256": "e7fc079b950c404040828039e2025ac6ced72559075ce7e413095ca678da3940"
+    },
+    {
+      "caseId": "concept-7659635a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c52f9b4536eb53ddeb7cbc884c2a1c91d8a01f95499a0320918eee1666502afa"
+    },
+    {
+      "caseId": "concept-7659635a",
+      "instrumentType": "escala",
+      "sha256": "fc9af4b29375a9f4381547f4e8600bb3f17712f86f47e43400e09505eebd3610"
+    },
+    {
+      "caseId": "concept-7659635a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d5700edefeb738abf634d697462bfabf4356cc384f5038d3af161035df48e4d0"
+    },
+    {
+      "caseId": "concept-f4723e0b",
+      "instrumentType": "rubrica",
+      "sha256": "2d6a7f9409a66296f4a79a564331d081b814fe93aa7d4e8b4f23a5be67aaf3e8"
+    },
+    {
+      "caseId": "concept-f4723e0b",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ed4a6e0775163b4d34ce0418f4740d6dde2028bcf06deda3d06c1f1fdbd81517"
+    },
+    {
+      "caseId": "concept-f4723e0b",
+      "instrumentType": "escala",
+      "sha256": "ea526b0b84d177cedf986e1452d16f2576b694f412b8b2058e58bb64cff371ae"
+    },
+    {
+      "caseId": "concept-f4723e0b",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4110fe05843b3784a9c9b3135098786d597d8d57bcd371c998311ef7a6bc4b39"
+    },
+    {
+      "caseId": "procedure-8648feb8",
+      "instrumentType": "rubrica",
+      "sha256": "e4b2194511fd056f4d5d19ea66a7ce6d1f9cabf719fb23fbf7055f8682aaea04"
+    },
+    {
+      "caseId": "procedure-8648feb8",
+      "instrumentType": "lista-cotejo",
+      "sha256": "57209e0690324ce3291e8bfc41983fe1ab6868331ff0da4584b8c05463628293"
+    },
+    {
+      "caseId": "procedure-8648feb8",
+      "instrumentType": "escala",
+      "sha256": "18e048e3ca032fe6631f46fc5a7021cd04578d5d99d5286995e17ff7754aa510"
+    },
+    {
+      "caseId": "procedure-8648feb8",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ac26052e7e352890c87da207d9a1359c95e56a68e151dc56e0d9bcf97e4e4c19"
+    },
+    {
+      "caseId": "procedure-cf26e030",
+      "instrumentType": "rubrica",
+      "sha256": "42049292c2e6bd08362b2399b488af9803232d73d1c345e212349ad680a51df2"
+    },
+    {
+      "caseId": "procedure-cf26e030",
+      "instrumentType": "lista-cotejo",
+      "sha256": "594d8b153c7c4085f2601319cefb3f863fe97601e8d66e20f8fd87c4b99c2668"
+    },
+    {
+      "caseId": "procedure-cf26e030",
+      "instrumentType": "escala",
+      "sha256": "5a3b6d22ad12f1da94ba0cb9635e0d81660cf48cfa465457c73868a3b8eff325"
+    },
+    {
+      "caseId": "procedure-cf26e030",
+      "instrumentType": "lista-ponderada",
+      "sha256": "241a57b3617a6d4d457e513a128d1780114536fe66496031bd25c86060921ffc"
+    },
+    {
+      "caseId": "procedure-409d3bae",
+      "instrumentType": "rubrica",
+      "sha256": "bd4448d8a1c1b7d5152a45099c611a2df5cf56a776d718a05840880903f2d8c9"
+    },
+    {
+      "caseId": "procedure-409d3bae",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f3f0c8d844d3ba1fa11c58f8ef9c62d104cebec0a74d7a42db8cb025d12c45f6"
+    },
+    {
+      "caseId": "procedure-409d3bae",
+      "instrumentType": "escala",
+      "sha256": "a0c8f7b25629c07e9cfc7e41a908315b1f2cd31facc339b2941a13d9a06d6bd7"
+    },
+    {
+      "caseId": "procedure-409d3bae",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f34db5227355c37f47d3166759324287d7b239adc73982615d3748392e706c02"
+    },
+    {
+      "caseId": "procedure-43cd20a5",
+      "instrumentType": "rubrica",
+      "sha256": "184317a2211816c2ab2465912f72bb1c184d5b1c52c4ced5629289842cb8a7a8"
+    },
+    {
+      "caseId": "procedure-43cd20a5",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51113791a435b5d090111c654aa0764953f935e1a33675279bfd7366ced74b84"
+    },
+    {
+      "caseId": "procedure-43cd20a5",
+      "instrumentType": "escala",
+      "sha256": "6024ff4c64f208285ef522d93f29ab792352eeda8577735f08bea7c612f1e632"
+    },
+    {
+      "caseId": "procedure-43cd20a5",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0237c0eb78a8a4dd038e9e977a0a4a8515f0d52bdfbb873aa6aa01902fffd1aa"
+    },
+    {
+      "caseId": "procedure-ae8f2d26",
+      "instrumentType": "rubrica",
+      "sha256": "2f58854decf33de4efca1f5258d6fb8e6c4a557657ce217431e35a3d5b5a0c1d"
+    },
+    {
+      "caseId": "procedure-ae8f2d26",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d222846f84db66057d1c6da6c5309305f7e9b25fbd5136ea341f873d5fece43"
+    },
+    {
+      "caseId": "procedure-ae8f2d26",
+      "instrumentType": "escala",
+      "sha256": "f6991e289e81313711a4f8e6e650def37b8940ab10a7e9b7ab239ae5b0b86aa1"
+    },
+    {
+      "caseId": "procedure-ae8f2d26",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a4f83c1bf8e21fd70a1bfb49b497b42eddf4077053a552ae0da0bec379507390"
+    },
+    {
+      "caseId": "procedure-fc3765a4",
+      "instrumentType": "rubrica",
+      "sha256": "06302ac947508d16cea5888d815d542782da07cc64668c425f56877b7b7db2d4"
+    },
+    {
+      "caseId": "procedure-fc3765a4",
+      "instrumentType": "lista-cotejo",
+      "sha256": "651563c8ff99583ef6277323e1e966cf15367f9f59a9cdaa7ea923e5d05dc88d"
+    },
+    {
+      "caseId": "procedure-fc3765a4",
+      "instrumentType": "escala",
+      "sha256": "a41d4305685e933794e1e9de205c6bda79a4ce8987ae0124e7633ffd2a8caa53"
+    },
+    {
+      "caseId": "procedure-fc3765a4",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e057f1b2810646d7d487d25ff2e9089149c46784a18e6092f3af8aa20ef855a5"
+    },
+    {
+      "caseId": "procedure-c2b4ec2a",
+      "instrumentType": "rubrica",
+      "sha256": "932f0c0b85bb57270727a5c8b6c7b0161f4cec8d108157434818494d90f0076f"
+    },
+    {
+      "caseId": "procedure-c2b4ec2a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6de2ab25bc50185afddc2e7f90893a9eed918391fbd66a8a1d38588b14831b61"
+    },
+    {
+      "caseId": "procedure-c2b4ec2a",
+      "instrumentType": "escala",
+      "sha256": "28c3998004a780e70c443e2efa0f5270e9344cb37a464d3cd8fb017a21838901"
+    },
+    {
+      "caseId": "procedure-c2b4ec2a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "788c104a41fc0e86c5df65558a1a7295ad3b334a100d1a2d012ec1788d4865c0"
+    },
+    {
+      "caseId": "observable-attitude-9080d87a",
+      "instrumentType": "rubrica",
+      "sha256": "55a8dc9f7d3b243c1250baf4fd763e3a1c133e83b2ae06f35468bf94742fc356"
+    },
+    {
+      "caseId": "observable-attitude-9080d87a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c87a73229a5deeaf59e5c4795b96d4d23b3771b0daf9af63b306231a3d017f6a"
+    },
+    {
+      "caseId": "observable-attitude-9080d87a",
+      "instrumentType": "escala",
+      "sha256": "25ab6eeb8b3a5034b070fa4c7d0e64433473d31a84059339582499a6a6e8e9cc"
+    },
+    {
+      "caseId": "observable-attitude-9080d87a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "188daabb5a6efbac20397eea1f60c7ce00ab3d468eff3141dabd013040ea312d"
+    },
+    {
+      "caseId": "concept-d5303c63",
+      "instrumentType": "rubrica",
+      "sha256": "d92678f6f0bcba932470baf34809331b56aba2ae31fcd1e966a1f97f446f19b6"
+    },
+    {
+      "caseId": "concept-d5303c63",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b6a579856810d2879561ca0c58fe458dbb1504f59de12b635a7bd19f46c37c4f"
+    },
+    {
+      "caseId": "concept-d5303c63",
+      "instrumentType": "escala",
+      "sha256": "5374c8c0ec7c024b4d5ca08162f7343538466021f823ab63cc4a7c05e8318427"
+    },
+    {
+      "caseId": "concept-d5303c63",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6a8e1998f7a5e7a1069581f7c65ebc33e4e466f88835dcbb60a1c8141cc22293"
+    },
+    {
+      "caseId": "concept-09c9772a",
+      "instrumentType": "rubrica",
+      "sha256": "1f02d83928ee26369f107232ec2f7c57984cc4af19ebadf2e88c590f84483a61"
+    },
+    {
+      "caseId": "concept-09c9772a",
+      "instrumentType": "lista-cotejo",
+      "sha256": "87bc9d178ff778a2ae21fe8e8a752ce1627ecbafd8b386f5ef620f934510deb2"
+    },
+    {
+      "caseId": "concept-09c9772a",
+      "instrumentType": "escala",
+      "sha256": "2e7ea7d2e78132a6784529af6a26de686aea574d7ad620d5d0ad505b429ead83"
+    },
+    {
+      "caseId": "concept-09c9772a",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed105cae5a3eb3a2c2e031374e8395ec71efd80f17000e5d27d00e6808e51eea"
+    },
+    {
+      "caseId": "concept-1500a8bb",
+      "instrumentType": "rubrica",
+      "sha256": "f746d6fbb52b72ccd3f1e2d909ee647409a3a53cbf99f93e46697ae7bf19f12f"
+    },
+    {
+      "caseId": "concept-1500a8bb",
+      "instrumentType": "lista-cotejo",
+      "sha256": "86e12fcc942bf11b70d5d11c1991271a23dcc68a90afa1af428234139a6ea133"
+    },
+    {
+      "caseId": "concept-1500a8bb",
+      "instrumentType": "escala",
+      "sha256": "a2e76820dd752761a966a8ab4873da7deffb1d05a92eda8fe066fb6d69615a16"
+    },
+    {
+      "caseId": "concept-1500a8bb",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b645b0ff49ee0fad779c4ab1b019d181cf53e3ac68be9e8181c5cda5ba483c42"
+    },
+    {
+      "caseId": "concept-8f428ca7",
+      "instrumentType": "rubrica",
+      "sha256": "8bf6744db951b2e72b99d0afd965504a68aeb913ebb8e1e18368d53b4d222e4c"
+    },
+    {
+      "caseId": "concept-8f428ca7",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f95407ff0ea5bfd4e0dde5c4e339fc844efe030af4fdee5733ded254413c1065"
+    },
+    {
+      "caseId": "concept-8f428ca7",
+      "instrumentType": "escala",
+      "sha256": "52332e9fbbc047df1bbc5c52a1775e06637366114bfac21b22c9a75499d26346"
+    },
+    {
+      "caseId": "concept-8f428ca7",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2179ef49bf18f31b8fee29fd48ae9791bb5261852b27e6ed7f97dc2dfd43c2af"
+    },
+    {
+      "caseId": "procedure-2c1afdd7",
+      "instrumentType": "rubrica",
+      "sha256": "39204f151ec553400f4adbdd9b878ad6f4dc85fc78d1e277fec41c8452b5a4c9"
+    },
+    {
+      "caseId": "procedure-2c1afdd7",
+      "instrumentType": "lista-cotejo",
+      "sha256": "16c6362527fb78707dd89ebe727c4da1d824279b2e6f2912390d1ce0c637d2b1"
+    },
+    {
+      "caseId": "procedure-2c1afdd7",
+      "instrumentType": "escala",
+      "sha256": "1d95c20fd8eb1a083950c2689bc43bcbb6165220682c7cf981b0503e2e4bb6a6"
+    },
+    {
+      "caseId": "procedure-2c1afdd7",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0dd01f2350761374cbcfd2531328174885f5ad11d888e2404f63e2c5a1991c56"
+    },
+    {
+      "caseId": "procedure-0fa63628",
+      "instrumentType": "rubrica",
+      "sha256": "809f6cb91349a48517f3ff509c4f468243fccb30948e940691e92e4f6f96706f"
+    },
+    {
+      "caseId": "procedure-0fa63628",
+      "instrumentType": "lista-cotejo",
+      "sha256": "67d4ce290458a201d5bd66d7821139e963d8d139ede18ed5a1efba5b19aa0112"
+    },
+    {
+      "caseId": "procedure-0fa63628",
+      "instrumentType": "escala",
+      "sha256": "78265e3aa0a781afb334ccaa0fb4f45cbbf189129a28e9289c2eb5986d7bcd10"
+    },
+    {
+      "caseId": "procedure-0fa63628",
+      "instrumentType": "lista-ponderada",
+      "sha256": "38f49330c7be200ad9d0535ca27cabd89f4eaed6f15c0d7c4c3ec6e6d19b9396"
+    },
+    {
+      "caseId": "procedure-e76241ba",
+      "instrumentType": "rubrica",
+      "sha256": "fd6accb841d961a7bde4d2c2fe6eed6b01ed33d1f67ac9c8f1b983071cc4f612"
+    },
+    {
+      "caseId": "procedure-e76241ba",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7da78e8a443c0fb72aa135902d842bf2a0bafc08e44f2ad487f5ed5480751993"
+    },
+    {
+      "caseId": "procedure-e76241ba",
+      "instrumentType": "escala",
+      "sha256": "3e3e66a9096967f5774b04f28d56509a9b6cc0a7d44eb9894fd3a80d54d878bf"
+    },
+    {
+      "caseId": "procedure-e76241ba",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3bea3fd6173971ed33bf6bd10eb20df6458712c80d9a507871b9b4b63766e141"
+    },
+    {
+      "caseId": "procedure-e1028320",
+      "instrumentType": "rubrica",
+      "sha256": "3c79877e409fb86ba74185f8a8dc23122092523e883e621cfbae247a7bd73831"
+    },
+    {
+      "caseId": "procedure-e1028320",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2d26b7964bc408d007da5441d5053480574d4ccfd316fbf29d6feeac30f7b569"
+    },
+    {
+      "caseId": "procedure-e1028320",
+      "instrumentType": "escala",
+      "sha256": "fc62225b35ba454d19fcc56e2ad4101f4e4f02c8bee94d5adcb03d602b12eb59"
+    },
+    {
+      "caseId": "procedure-e1028320",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85c5760a9fa0036e2273ba54c6f4f0718d3fa585ea6b481991e661b655abb93b"
+    },
+    {
+      "caseId": "procedure-0a4b5984",
+      "instrumentType": "rubrica",
+      "sha256": "9c11a72431e9ff7f7a19646054dfd52a4ba7c0393d6ce4529a7e0e132aa6d540"
+    },
+    {
+      "caseId": "procedure-0a4b5984",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c0356a57b827f1278f816e60806aa39d22edfba5525d7419aed4111e1969b277"
+    },
+    {
+      "caseId": "procedure-0a4b5984",
+      "instrumentType": "escala",
+      "sha256": "6be6e505abb053e4adfedcc6505aa749a7137ea8cfc0298b47236053a7c1dc65"
+    },
+    {
+      "caseId": "procedure-0a4b5984",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ce97c2362688f4c2c775142244d5d9af89526be29781ff475a7c9534eaebb018"
+    },
+    {
+      "caseId": "procedure-00c830b8",
+      "instrumentType": "rubrica",
+      "sha256": "c423ed6f031720f49fa8838513282b7f40718954130999b1c39ecd06ad6501b8"
+    },
+    {
+      "caseId": "procedure-00c830b8",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6f9d54e74cae82018bfd0c7669af5ee3683f5a42e0f3d9e5fa4ee7a63dadc1b4"
+    },
+    {
+      "caseId": "procedure-00c830b8",
+      "instrumentType": "escala",
+      "sha256": "392e393eb1c03a7c8c5c6b4ce0f601c8d370cb439693b653bb38b8b1ce9c232b"
+    },
+    {
+      "caseId": "procedure-00c830b8",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2336476de88127890470498a50a009bfc0e8ce97236ab1c832fb06123852a34e"
+    },
+    {
+      "caseId": "procedure-9896583d",
+      "instrumentType": "rubrica",
+      "sha256": "6f4a550526813e392e2ccd3564009f4a57e5411797afc48c4bdce93573aa3971"
+    },
+    {
+      "caseId": "procedure-9896583d",
+      "instrumentType": "lista-cotejo",
+      "sha256": "75ea862c002641ac8a215d662e3472620980eaf52ec5cfe0451e5d378e66e0e3"
+    },
+    {
+      "caseId": "procedure-9896583d",
+      "instrumentType": "escala",
+      "sha256": "6874bef82b7d3bb606fc6507a38bf754af12c814055707bed080469202bd1833"
+    },
+    {
+      "caseId": "procedure-9896583d",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed1eebcb30c3561c0d3f8b102ff94abd47a84b5eafc2013f242e663991ebb2c7"
+    },
+    {
+      "caseId": "observable-attitude-0e08646c",
+      "instrumentType": "rubrica",
+      "sha256": "9ca7d6bf8c36425662e7e7e19eb7fb792b14ba618491dc43eab863df96cda20d"
+    },
+    {
+      "caseId": "observable-attitude-0e08646c",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2dcdb0323d3a4bacf24f9b06916af2279a4f1384aa8a9e2b0bf11685067e5287"
+    },
+    {
+      "caseId": "observable-attitude-0e08646c",
+      "instrumentType": "escala",
+      "sha256": "abc067a80b20fe5a0b75841fbe57555028612b99f564ba1e8a28cbb307273b2e"
+    },
+    {
+      "caseId": "observable-attitude-0e08646c",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ef4c0c1069cdfad571bfdea910f6f42f3794718c717c18e6934d034418da3331"
+    },
+    {
+      "caseId": "concept-93decb7c",
+      "instrumentType": "rubrica",
+      "sha256": "5be9d3a6d3f107d902b6754bcede33d5d37916fecc19b99cbc5d365e117a2068"
+    },
+    {
+      "caseId": "concept-93decb7c",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3261809ca45b9f39c9fcf4aa5075cc8db320fcb5423c99662d1781d990457163"
+    },
+    {
+      "caseId": "concept-93decb7c",
+      "instrumentType": "escala",
+      "sha256": "9d6697c917e9afe9f0193e0aa33831d1ad6aaeba8eacca9ff0b37a57672979ab"
+    },
+    {
+      "caseId": "concept-93decb7c",
+      "instrumentType": "lista-ponderada",
+      "sha256": "404bed81539a06f14566510a2a7d99b6502cd734bf8a393a7194783f4a8924fc"
+    },
+    {
+      "caseId": "concept-ce50c140",
+      "instrumentType": "rubrica",
+      "sha256": "cebdfe7b3d6268e18ee9f9a89ef2f77e2d07691d78d6cc9ba8a90c9898b5139a"
+    },
+    {
+      "caseId": "concept-ce50c140",
+      "instrumentType": "lista-cotejo",
+      "sha256": "82aec6d3da8c519ea5a0c76655c144e6a8045bc9351c4265253157a06f90362e"
+    },
+    {
+      "caseId": "concept-ce50c140",
+      "instrumentType": "escala",
+      "sha256": "de31ab15907e4ff3fa9515e9b1c46a6824e3c31157ac53f9ee03afd3b901979c"
+    },
+    {
+      "caseId": "concept-ce50c140",
+      "instrumentType": "lista-ponderada",
+      "sha256": "926ed4bb0642abbdc953bdcc6d4f583ed9c638b211d9a6cd4e80d87186d88274"
+    },
+    {
+      "caseId": "concept-a9ee1249",
+      "instrumentType": "rubrica",
+      "sha256": "f65f07b2e4cb545edd04c9f366e9f6b6fd2706e7519ad72fee2abc25f486b1f0"
+    },
+    {
+      "caseId": "concept-a9ee1249",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c6de3cee632b72a2691724313eca4e16895a464d49a989e5dd0ec1c1a71cf969"
+    },
+    {
+      "caseId": "concept-a9ee1249",
+      "instrumentType": "escala",
+      "sha256": "76bbe33104ffd4a8ddf7de3de4ef3fdae04c22c183f532f4a6d29ad73bbb761f"
+    },
+    {
+      "caseId": "concept-a9ee1249",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eaa41b8d44b7c8d292766cb29946a8c0849a3de4dfd65d66fa5fabf4239e1105"
+    },
+    {
+      "caseId": "concept-d997bc04",
+      "instrumentType": "rubrica",
+      "sha256": "c7e1c88138e0500ae9647bd55851f1bd9c24fc434911738fb30d9fff9dfb1702"
+    },
+    {
+      "caseId": "concept-d997bc04",
+      "instrumentType": "lista-cotejo",
+      "sha256": "02b9e4c53465e1575c79f9d8ffd12887b267bc2412b7149e05aff2bb485afb14"
+    },
+    {
+      "caseId": "concept-d997bc04",
+      "instrumentType": "escala",
+      "sha256": "6c7df1fef3ea18fe8598c8606dcefe33bdd50136df074de3b51dc9fb5c94a45c"
+    },
+    {
+      "caseId": "concept-d997bc04",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ec37184ceba1c6bdb249a98703e791a2eae4d37b5b623459fdde1e649a6adca2"
+    },
+    {
+      "caseId": "concept-8fccb97d",
+      "instrumentType": "rubrica",
+      "sha256": "7daf1f3008e87a316d486e9c89d2d9642119fe8925c57591a83bdab65d54d199"
+    },
+    {
+      "caseId": "concept-8fccb97d",
+      "instrumentType": "lista-cotejo",
+      "sha256": "91dcae4f187d92ce793d6541d3bc86f5e5d8c5ff1970c66d8066480e8cfcf861"
+    },
+    {
+      "caseId": "concept-8fccb97d",
+      "instrumentType": "escala",
+      "sha256": "7d14e85550eac4546691f905c06543c08e8baafa1522c4431f1ed45397ea56fc"
+    },
+    {
+      "caseId": "concept-8fccb97d",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ec122ded037a8af11492d937e31eb00ee23b9721d7291d25ec3bf6e48dc2246"
+    },
+    {
+      "caseId": "concept-764c8063",
+      "instrumentType": "rubrica",
+      "sha256": "3c69e9283b8b116442b50bf82ae1823f6fc45e2d6b44bccbe1b7c760a8fdb816"
+    },
+    {
+      "caseId": "concept-764c8063",
+      "instrumentType": "lista-cotejo",
+      "sha256": "798d23a4198b12b55469f1ea2603cbbf37cee27e528588ddf0a4740896d759b2"
+    },
+    {
+      "caseId": "concept-764c8063",
+      "instrumentType": "escala",
+      "sha256": "b264fb7a4dcae6d306f1c0b487a082774bddc524686ee12e9cf049a04bb6a94a"
+    },
+    {
+      "caseId": "concept-764c8063",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92a492488579a96d193b67dd07b21191a7f708f80c66da777ff069932e3343f3"
+    },
+    {
+      "caseId": "concept-ef19c9bd",
+      "instrumentType": "rubrica",
+      "sha256": "9badce88683e573e999a9e5a14c0d74c5849a2bdfd2fa7af82cdafb390131cee"
+    },
+    {
+      "caseId": "concept-ef19c9bd",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7032d8593a3e8c81d19abe85835cc9c4fa83ce39121a06734e54178b0283dbb2"
+    },
+    {
+      "caseId": "concept-ef19c9bd",
+      "instrumentType": "escala",
+      "sha256": "2def8f1259523c1002e9433da58f6947913312b7fa69dcc78723aad5e8cde1de"
+    },
+    {
+      "caseId": "concept-ef19c9bd",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9bf7bbc966e3397df86913cc9700b0c7b84b0ff827b6ecf4f7c0867fe20ca224"
+    },
+    {
+      "caseId": "procedure-16e58e9c",
+      "instrumentType": "rubrica",
+      "sha256": "16c1630c649e868398f96b100491b1ada40e48aa6d77285f85aa114778db6ca9"
+    },
+    {
+      "caseId": "procedure-16e58e9c",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c103b76d8be844e0febcbea7c541770f5bf5c58685c4ac29ad25bf84410d2285"
+    },
+    {
+      "caseId": "procedure-16e58e9c",
+      "instrumentType": "escala",
+      "sha256": "cf39777102f9e0157b76a3e57adb513d0aa16aa8d121c3196fb9e82a464bf8de"
+    },
+    {
+      "caseId": "procedure-16e58e9c",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a43ff374bd2201044c03281ccba08a5a6e25abe5d718b59b91928886bf5871d"
+    },
+    {
+      "caseId": "procedure-fb7066f2",
+      "instrumentType": "rubrica",
+      "sha256": "3d1a8e2abe03a3fcdb2717a236886e6281be01ec1f90625ba34b585e6e21f82c"
+    },
+    {
+      "caseId": "procedure-fb7066f2",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5a724b72a021f6cfcdf4c3351257b80f3a07e9212548e6c9fe1db8f4b346ab06"
+    },
+    {
+      "caseId": "procedure-fb7066f2",
+      "instrumentType": "escala",
+      "sha256": "343dd70eb130d0f2417b2529b3e7c022c338983833e97392daad76a20baca1e7"
+    },
+    {
+      "caseId": "procedure-fb7066f2",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35672e1427a396f4f3777299e8ef6cf9c69ba8b9171cc4c80e7421a4dc965b30"
+    },
+    {
+      "caseId": "procedure-1e0ddbf1",
+      "instrumentType": "rubrica",
+      "sha256": "5e89bfe2eb91313f4095c97224ebcd182bfc730f5f7672552158bd13d486a395"
+    },
+    {
+      "caseId": "procedure-1e0ddbf1",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4cc4e0eb292d147d91c4ff3a96ccfaef5cf80ddc3e946c7d377d8b2751742ea2"
+    },
+    {
+      "caseId": "procedure-1e0ddbf1",
+      "instrumentType": "escala",
+      "sha256": "f01af9325783fbde4eb0a648395a940ddf5999d1d4a31526a22672c9300577af"
+    },
+    {
+      "caseId": "procedure-1e0ddbf1",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0176f851262ce56d106e8575a7a8a7891eb836a9ee864258de0ec1e616139ce4"
+    },
+    {
+      "caseId": "procedure-a64f69ff",
+      "instrumentType": "rubrica",
+      "sha256": "bfe5fbea8f7f861d1c73006f384a036e71dfe156916a5d0dfa093aa9469395ed"
+    },
+    {
+      "caseId": "procedure-a64f69ff",
+      "instrumentType": "lista-cotejo",
+      "sha256": "761362a0d1a51a9727233bc95069505d76e687cd35e1d34704063fa54e5e07e3"
+    },
+    {
+      "caseId": "procedure-a64f69ff",
+      "instrumentType": "escala",
+      "sha256": "b71b09515d8ef3913a74ed706fd487fc2527f0b218473ebb00ba6d064b1e28e3"
+    },
+    {
+      "caseId": "procedure-a64f69ff",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7fab016f51217853aa69fa3333c381602d20d32180b7aca69367500ebd42d673"
+    },
+    {
+      "caseId": "procedure-2ef496b6",
+      "instrumentType": "rubrica",
+      "sha256": "11a3b0cbcff1d45ecd8fca24aaafc471f032fb5b273a3ff9c2c6e406e7b87b15"
+    },
+    {
+      "caseId": "procedure-2ef496b6",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9e7136ba658d597f5e40606106dbe86d857988eabdaa8a7a6104818d6c20527b"
+    },
+    {
+      "caseId": "procedure-2ef496b6",
+      "instrumentType": "escala",
+      "sha256": "b4f2207165719e05451d4439bb0c3aaf42ff4863407734c2bf04ce2541c9acb8"
+    },
+    {
+      "caseId": "procedure-2ef496b6",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0543da3052b45caaa6512e3252b0069450b696ec02ad7e4ec8dea1a0525b575f"
+    },
+    {
+      "caseId": "procedure-8f97ce17",
+      "instrumentType": "rubrica",
+      "sha256": "0494e59f5ad8b6ccfa4d018db24a1db04ae0d4e38eee20cc4d3a20f9b1cc9353"
+    },
+    {
+      "caseId": "procedure-8f97ce17",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c3e09918bc39d24500e994e23bdad80fe2eb366d8396793ae87c884b1c452dc"
+    },
+    {
+      "caseId": "procedure-8f97ce17",
+      "instrumentType": "escala",
+      "sha256": "4270285f6d0b13257a90c4080b4f40aa28d323195572aab09b168b45edb382d7"
+    },
+    {
+      "caseId": "procedure-8f97ce17",
+      "instrumentType": "lista-ponderada",
+      "sha256": "29797c0e883c04cfec461e928b05d14ad23c9e8636dd37b0c6ce0366c143c280"
+    },
+    {
+      "caseId": "procedure-ddf5fc74",
+      "instrumentType": "rubrica",
+      "sha256": "6df6b64ce30c32721ea66c7137fa6fae8f87b6627684db9c40219571e918a336"
+    },
+    {
+      "caseId": "procedure-ddf5fc74",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2088ce00224951967fae89245da7d5ba2dde7f463f272375b6c442b4776880a6"
+    },
+    {
+      "caseId": "procedure-ddf5fc74",
+      "instrumentType": "escala",
+      "sha256": "ad39a4c9bb203ec6c7225b74bc59fb68d10fa99550fb31f57314e546c06bc0a2"
+    },
+    {
+      "caseId": "procedure-ddf5fc74",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c4e72e16e5e44826f2451109670675a233ede030c4be4090fd12d05f3b2c8c5d"
+    },
+    {
+      "caseId": "procedure-caa16ea1",
+      "instrumentType": "rubrica",
+      "sha256": "9788cdb58018b150490ab3b8c8e072c9c24500f4633e8ce25daf063b3ab347d8"
+    },
+    {
+      "caseId": "procedure-caa16ea1",
+      "instrumentType": "lista-cotejo",
+      "sha256": "130e971b6a7301353cc51fceec8ecae355191c6592005cab3c05c4749101aa36"
+    },
+    {
+      "caseId": "procedure-caa16ea1",
+      "instrumentType": "escala",
+      "sha256": "2863a0ccdcc14c8df96317ef418e8d17821dd6c4f343ef11b4eca2d3ce336fbd"
+    },
+    {
+      "caseId": "procedure-caa16ea1",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bda856de20d2caa87d64efaea001f687849ecdeddafb62baf8be347346507eeb"
+    },
+    {
+      "caseId": "procedure-533ceac7",
+      "instrumentType": "rubrica",
+      "sha256": "793fc893217ddbdc9e9c79c81bf38b5a43c4172dcb073b666460cf282a2ca353"
+    },
+    {
+      "caseId": "procedure-533ceac7",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f7574ba7ca1404854feceba0962cb42b5073a594ddc5c1d48050c033377026d"
+    },
+    {
+      "caseId": "procedure-533ceac7",
+      "instrumentType": "escala",
+      "sha256": "3418aa86ac9eb769bd0d9a74b967219cb78a7cf06c97dca04e5945d047b13475"
+    },
+    {
+      "caseId": "procedure-533ceac7",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ad7bc0a4b9f986e51f21cbb51c8f730dd7a1ded418307c96bad0516b09fe3f6d"
+    },
+    {
+      "caseId": "editorial-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "725681b781fd8397f99e0b69c60e4640d810223d8a6f26c1b78b630ad3c4796e"
+    },
+    {
+      "caseId": "editorial-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2793addebc37a43ba6fbaf7728872e53f8fa03e2c56f881b4c07909f8769a0b9"
+    },
+    {
+      "caseId": "editorial-comparison",
+      "instrumentType": "escala",
+      "sha256": "498928421dfd31c15559fe6e89e3f5cced843d35fca28ca72ce2390167fa8297"
+    },
+    {
+      "caseId": "editorial-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "25875fcdedab50d500c544d04c9cba0a544cf8824ef1ed4e530aa774f321db55"
+    },
+    {
+      "caseId": "ad-resources-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "2b5457efbc03a8f4dd39d946516c97056657fd4d1a4bf5a45fd510e19eeb243e"
+    },
+    {
+      "caseId": "ad-resources-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e39fac9cd1a03e8a9eb177e2ea260b731388aae2aec6f226ec157903b33d85c4"
+    },
+    {
+      "caseId": "ad-resources-alternative",
+      "instrumentType": "escala",
+      "sha256": "27ed0f3fe55db377750fb3d516ce86d89753788ba47b7207841c5c5de4800def"
+    },
+    {
+      "caseId": "ad-resources-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9907edc0f0b055ed36446f30d9f7808ae0ac054d7568742500d48d2bc35dbc38"
+    },
+    {
+      "caseId": "column-group-natural",
+      "instrumentType": "rubrica",
+      "sha256": "f20b4aee8daa4056cdbd3703dd74794899a7b4b5b39dd0f1d5a7033c2f20d3c3"
+    },
+    {
+      "caseId": "column-group-natural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8cd0258b932e165f33e57c53e2fdb0663974e83e68ca83526106b4d1ce37f86a"
+    },
+    {
+      "caseId": "column-group-natural",
+      "instrumentType": "escala",
+      "sha256": "f55c2f9ad0ed7f75ba6d7fa142c1de7b60a746ad443e4dcd1fa3c5da4daa7d2a"
+    },
+    {
+      "caseId": "column-group-natural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1dabf7620d7bb5ff102e2b06d7b6f06ebba4809902169f956b287e56789cb542"
+    },
+    {
+      "caseId": "propaganda-register",
+      "instrumentType": "rubrica",
+      "sha256": "e6bc5623618e66b1523a345c59ea1139fb50a11777135093c5a3b820070742e6"
+    },
+    {
+      "caseId": "propaganda-register",
+      "instrumentType": "lista-cotejo",
+      "sha256": "556a3e43af62b712f84c6ebf87cf6e236299caefc636cf5d502762d290efed21"
+    },
+    {
+      "caseId": "propaganda-register",
+      "instrumentType": "escala",
+      "sha256": "11d20c5d89ea55d51e8e8137d93c16a09ccf2e8f7dd6af427d538d1c67c3927a"
+    },
+    {
+      "caseId": "propaganda-register",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8b65131cd6dbeaa96f57f7666cd85a7b3f635b1f812457736d3662baba33b7aa"
+    },
+    {
+      "caseId": "independent-editorial-and-ad",
+      "instrumentType": "rubrica",
+      "sha256": "ffeadad800649263f1f511151b941eb55d1f8c175e452270ed794557a7f5837b"
+    },
+    {
+      "caseId": "independent-editorial-and-ad",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0e1b474a4085bb3f955f9039ddcf2c780d2236e44431388fed02c04f1dda4ab1"
+    },
+    {
+      "caseId": "independent-editorial-and-ad",
+      "instrumentType": "escala",
+      "sha256": "2a51c3ec8ae81a93669dc69d4457d00f2cf781bc876b5ca8388624a6e22f435c"
+    },
+    {
+      "caseId": "independent-editorial-and-ad",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32a851f308d9d9972a3e68d650e1b2cfd87f0a66913f0a0a64679514eccb1ec6"
+    },
+    {
+      "caseId": "ad-negative-positive",
+      "instrumentType": "rubrica",
+      "sha256": "b16633bd2df89455c0d36ecb9298c4644090d6a450eac57776f0e7610381d2d6"
+    },
+    {
+      "caseId": "ad-negative-positive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0ef9a475e66e3afa25e38a00e236c44b6238805a2d43990d449ac50516b55d92"
+    },
+    {
+      "caseId": "ad-negative-positive",
+      "instrumentType": "escala",
+      "sha256": "68dca18efe32242fb0a525bf6e7f5f46d1cdad9cb3ad1c3417a9b2b8834625ca"
+    },
+    {
+      "caseId": "ad-negative-positive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "42ea4dd9cb17743dfdb58c9297b651fef24ac2c41ecc4580af6eef48c126cc89"
+    },
+    {
+      "caseId": "editorial-brief-plan",
+      "instrumentType": "rubrica",
+      "sha256": "2e440af13bc41ab2d5f06ad7046cb0e32316b6e9ba19d32c8918f196246668b7"
+    },
+    {
+      "caseId": "editorial-brief-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c5cca46f8e2e811dd80ee16ca0a9dc9e3ae70faf0604227191f30564c29bb5b9"
+    },
+    {
+      "caseId": "editorial-brief-plan",
+      "instrumentType": "escala",
+      "sha256": "d9bdcabc3acc5ae2401b8ced75bad5131a8df13e34a47b49d93f0eb8f22b1ab5"
+    },
+    {
+      "caseId": "editorial-brief-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a64850830bfc7e163c2c97b7362671770735b865f34af5f4f06125680ca650da"
+    }
+  ]
+}

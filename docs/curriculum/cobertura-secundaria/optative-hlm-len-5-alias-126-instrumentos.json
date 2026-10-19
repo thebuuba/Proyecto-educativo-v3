@@ -1,0 +1,440 @@
+{
+  "catalog": "evaluation-2026.126",
+  "method": "Cuatro instrumentos completos idénticos a la consigna breve de novela policíaca ya leída en125, comprobados por igualdad exacta de criterios, niveles y descriptores. El nuevo alias no sobrescribe los272ejemplos históricos.",
+  "examples": [
+    {
+      "id": "novel-policial-alias",
+      "description": "Analiza la novela policial proporcionada.",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ],
+      "instrumentType": "rubrica",
+      "activityType": "ANALYSIS",
+      "totalScore": 17.35,
+      "levels": [
+        {
+          "id": "L4",
+          "label": "Destacado",
+          "proportion": 1
+        },
+        {
+          "id": "L3",
+          "label": "Logrado",
+          "proportion": 0.6666666666666666
+        },
+        {
+          "id": "L2",
+          "label": "En proceso",
+          "proportion": 0.3333333333333333
+        },
+        {
+          "id": "L1",
+          "label": "Inicial",
+          "proportion": 0
+        }
+      ],
+      "criteria": [
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-plot",
+          "title": "Desarrollo del misterio",
+          "description": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "maxScore": 5.79,
+          "maxScoreUnits": 579,
+          "progressionLevels": [
+            "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+              "scoreUnits": 579
+            },
+            {
+              "levelId": "L3",
+              "text": "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+              "scoreUnits": 386
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta relaciones reconocibles entre los sucesos del relato solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-characters",
+          "title": "Personajes y acciones",
+          "description": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+              "scoreUnits": 578
+            },
+            {
+              "levelId": "L3",
+              "text": "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+              "scoreUnits": 385
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia reconocible de las acciones y relaciones de los personajes.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-narrator",
+          "title": "Voz narrativa",
+          "description": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+              "scoreUnits": 578
+            },
+            {
+              "levelId": "L3",
+              "text": "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+              "scoreUnits": 385
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite reconocer la voz y perspectiva narrativas solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "novel-policial-alias",
+      "description": "Analiza la novela policial proporcionada.",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ],
+      "instrumentType": "lista-cotejo",
+      "activityType": "ANALYSIS",
+      "totalScore": 17.35,
+      "levels": [],
+      "criteria": [
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-plot",
+          "title": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "description": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "maxScore": 5.79,
+          "maxScoreUnits": 579,
+          "progressionLevels": [
+            "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-characters",
+          "title": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "description": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-narrator",
+          "title": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "description": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        }
+      ]
+    },
+    {
+      "id": "novel-policial-alias",
+      "description": "Analiza la novela policial proporcionada.",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ],
+      "instrumentType": "escala",
+      "activityType": "ANALYSIS",
+      "totalScore": 17.35,
+      "levels": [
+        {
+          "id": "L4",
+          "label": "Completo",
+          "proportion": 1
+        },
+        {
+          "id": "L3",
+          "label": "Suficiente",
+          "proportion": 0.6666666666666666
+        },
+        {
+          "id": "L2",
+          "label": "Parcial",
+          "proportion": 0.3333333333333333
+        },
+        {
+          "id": "L1",
+          "label": "Aún no logrado",
+          "proportion": 0
+        }
+      ],
+      "criteria": [
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-plot",
+          "title": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "description": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+          "maxScore": 5.79,
+          "maxScoreUnits": 579,
+          "progressionLevels": [
+            "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+              "scoreUnits": 579
+            },
+            {
+              "levelId": "L3",
+              "text": "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+              "scoreUnits": 386
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No presenta relaciones reconocibles entre los sucesos del relato solicitado.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-characters",
+          "title": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "description": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+              "scoreUnits": 578
+            },
+            {
+              "levelId": "L3",
+              "text": "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+              "scoreUnits": 385
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No aporta evidencia reconocible de las acciones y relaciones de los personajes.",
+              "scoreUnits": 0
+            }
+          ]
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-narrator",
+          "title": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "description": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "relativeWeight": 4,
+          "descriptors": [
+            {
+              "levelId": "L4",
+              "text": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+              "scoreUnits": 578
+            },
+            {
+              "levelId": "L3",
+              "text": "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+              "scoreUnits": 385
+            },
+            {
+              "levelId": "L2",
+              "text": "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+              "scoreUnits": 193
+            },
+            {
+              "levelId": "L1",
+              "text": "No permite reconocer la voz y perspectiva narrativas solicitadas.",
+              "scoreUnits": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "novel-policial-alias",
+      "description": "Analiza la novela policial proporcionada.",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ],
+      "instrumentType": "lista-ponderada",
+      "activityType": "ANALYSIS",
+      "totalScore": 17.35,
+      "levels": [],
+      "criteria": [
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-plot",
+          "title": "Desarrollo del misterio",
+          "description": "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer. Parcial (50%): Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+          "maxScore": 5.79,
+          "maxScoreUnits": 579,
+          "progressionLevels": [
+            "Explica cómo los sucesos del texto proporcionado contribuyen al desarrollo del misterio, sin atribuir al fragmento una resolución que no permite conocer.",
+            "Se siguen las relaciones principales; una transición entre hechos necesita precisarse.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se invierte una relación causal o se añade un hecho incompatible con los episodios disponibles.",
+            "No presenta relaciones reconocibles entre los sucesos del relato solicitado."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-characters",
+          "title": "Personajes y acciones",
+          "description": "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado. Parcial (50%): Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Explica las acciones y motivaciones de los personajes mediante episodios del relato proporcionado.",
+            "Las acciones permiten reconocer a los personajes; una motivación requiere precisión.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye a un personaje una acción o motivación incompatible con el pasaje.",
+            "No aporta evidencia reconocible de las acciones y relaciones de los personajes."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        },
+        {
+          "templateId": "opt-hlm-len-5-novela-policiaca-analysis-narrator",
+          "title": "Voz narrativa",
+          "description": "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje. Parcial (50%): Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+          "maxScore": 5.78,
+          "maxScoreUnits": 578,
+          "progressionLevels": [
+            "Distingue al narrador de las intervenciones de los personajes y fundamenta su perspectiva con el pasaje.",
+            "Se reconoce quién narra; una referencia requiere distinguir mejor su perspectiva.",
+            "Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.",
+            "Se atribuye al narrador una voz o información incompatible con su perspectiva.",
+            "No permite reconocer la voz y perspectiva narrativas solicitadas."
+          ],
+          "relativeWeight": 4,
+          "descriptors": []
+        }
+      ]
+    }
+  ],
+  "review": [
+    {
+      "caseId": "novel-policial-alias",
+      "instrumentType": "rubrica",
+      "sha256": "a360bbb96703ac8323d71f89c63375fc3a78770e36019ea2d04147fa3e5c5d84"
+    },
+    {
+      "caseId": "novel-policial-alias",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9786d9810dd19194223dd571a896cc6b9c43e657debc785b670bc3ba24587ada"
+    },
+    {
+      "caseId": "novel-policial-alias",
+      "instrumentType": "escala",
+      "sha256": "b7ab6665707d9edeb9a7881985afcc66ec420f0c33e875cdc109890790a93fac"
+    },
+    {
+      "caseId": "novel-policial-alias",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37c7aa7afcbcb5c762effabd4cb9069a84b252c58a1c6060c39098149a16084e"
+    }
+  ]
+}

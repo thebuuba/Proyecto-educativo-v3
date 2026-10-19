@@ -6,7 +6,25 @@ Continuar autónomamente el encargo2026-10-17-secundaria-pendiente-encargo.md y 
 
 Solo Development **eolgunypmtgrsyrjzcld**; producción prohibida **vqrptqffeezqacwtmlqq**. Conservar datos, borradores, puntos pendientes, preparación silenciosa, selecciones manuales y snapshots. pnpm y checksAGENTS. Antes de dist, detener únicamente el Worker propio con árbolCIM verificado. No compilar/generarPrisma con instaladores o HTTP activos. Archivosprivados,credencialesQA,envyrespaldosignorados;stageexplícito/auditoríasecretos/UTF8/diffantesdecommit.
 
-## Último bloque técnico verificado: Literatura5HLM, catálogo125
+## Último cierre: Periodismo/Publicidad6HLM, catálogo126
+
+Base d1f6d755d33c59828e045107a1eb769d4f2d34f1; identificar el nuevo commit español con gitlog, no duplicarlo. Plan2026-10-19-optativa-hlm-periodismo-6.md/informe homónimo. Fuente162registros,PDF437–444/impresas436–443,scope6ebb8ac8-f9d0-5530-9c53-366f87055eee;93adaptables44C/45P/4A,34exclusiones. Editorial,columna,anuncio,propaganda;noHCS6.105fixtures+4breves=109consignas/436instrumentos completos leídos,115textos/27paquetes/109correspondencias;436huellas/0pendientes. Reutilización del proveedor lingüístico,59rasgos y componentes de plan por género. Alias5singular corregido únicamente en126, cuatro formatos exactos a125 y una muestra HTTP adicional.
+
+Backend63.633/164archivos;frontendactivities64.855/101;0fallos. Builds shared/backend/frontend/cloudflare0(dry-run);lints0errores/16warningsprevios;18checksNode/0. Precaché71JS,máximo2.043.126<2MiB. Fuente126=compiled,congelado125=DB;288definiciones4/272de5 ycomunes anteriores exactos. Histórico58catálogos/501snapshots preservado; final59/518,más17QA,sinextrasnapshotporestrategia. PersonalFHR1lectura simple idéntica; nunca--baseline.
+
+Instalador126exec62630 TERMINÓ0 CREATED/UNCHANGED(~16min lectura administrativa); no repetir. Fuente MINERD_SECUNDARIA_2023_OPT_HLM_LEN_6_V1,versión08821d8f-d967-597b-9ac5-3524e46fd458,scopec394ccab-124f-5d07-a20e-3066af940931,CREATED/UNCHANGED162elementos/34exclusiones. QA6reutiliza cursoficticio,0cuentas/ningúncursooriginalmodificado. HTTP6exec45612 falló tras primera muestra por encabezado excluido seleccionado porfixture; se corrigieron CUATROanclasbreves,NodeRED→GREEN/focalbackend856/frontend848. No cambiómetadata/payload/fuente126;436definicionesidénticas,16huellas actualizadas SOLOpor sourceRecordIds. Reanudaciónexec5668 desdeprogreso existente terminó0 con16muestras; alias5separado1muestra terminó0. No duplicar ni sobrescribir evidencia125. final-checks-126.json/historia/evidencias públicas registradas.
+
+Runtime126 launcher1876/exec23797,start-local.mjs--built condevelopmentEnvironment. GuardPGapp_backend_local/sinBYPASSRLS/Auth200/Storage200/variablespúblicas exclusivamenteDevelopment. Assets exactosadist. Entry/assets/index-CxQiaaZ_.js,SHAd9fa1e6a40158834497f13790d5326f387b625d212ba22a60c88109b559ce1af. Browser1/socialCloseTab1796703141,recarga normal entrynuevo/registerSW.js; continuar como cuenta recordada solicita contraseña. NOcreador/guardado/reapertura personal deestaoptativa visualmenteverificados. QAnosustituye. Sincredenciales/correos/tokens/limpiezas. Ver pasos manuales informe/browserJSON.
+
+Revisión propia separada sin subagentes. Menores editoriales diferidos:artículos/conectores/función repetidos yespaciado de una enumeración, sin cambiar requisitos. Pushretenido porusuario,ningúncambio de integraciones/producción/main/despliegues. Tresoptativasacadémicasconectadas;quince yfuentesespecializadaspendientes. No declarar completo elencargo integral.
+
+## Siguiente acción concreta: InglésHLM4, catálogo127
+
+No repetir clasificación/recorders/freeze/expanders de4–6. Congelar126 una vez contraDB ANTES de tocar metadata/código del siguiente módulo. Fuente siguiente ya revisada visualmente completa PDF445–449/impresas444–448,scopeb2d7a388-b852-52a5-adf5-d78642f21f96,188registros80C/56P/17A/21I/14competencias. Asignatura Manejo de la información en inglés; encabezado Manejo de Informaciones en Inglés,mismafuente. Código estructurado OPT-HLM-ING-4 por confirmar enresolver. No Ingléscomún niHLM5/6.
+
+Preparación privada optative-hlm-information-four-preparation.md:153C/P/A leídos individualmente,anclas mixtas/fragmentos/ejemplos señalados y arquitectura inglesa leída parcialmente. NOclasificaciónfinal/contratos/metadata/cat127/fuente/QA/HTTPdeesteámbito. No renderizar otra vez; leer source-reviewed.md ypreparation.md. HayfunctionsfourthGradeEnglishContent/requestedGradeFourFunctions reutilizables yfactory createUpperEnglishProvider,pero guardcommonestricto excluyeoptativas: conservarlo. Decidir guard opcional/contexto ynamespacepropio después decontratosRED, sinclonar motor ni alterar comunes. Revisar connectionpoints inglés,mixedmodalities,traza,catálogo yprefijos. Headroomprecaché54.026bytes;noelevarlímite2MiB. Continuar clasificación/plan/contratos yrevisiones completas, sin pregunta rutinaria.
+
+## Cierre histórico anterior: Literatura5HLM, catálogo125
 
 Informe2026-10-19-optativa-hlm-literatura-5.md, plan2026-10-19-optativa-hlm-apl-5.md. Base46153a345c83826eca5072744ddb4b0901c409e4(HLM4). Identificar el nuevo commit español de quinto con gitlog antes de continuar; no duplicarlo. Antes del commit32delante/0detrás según refs disponibles, sinfetch/push. No deducir publicación remota de un commit.
 
@@ -26,7 +44,7 @@ HTTPexec59972/PID34448terminó0. Privadooptative-hlm-len-5-http.jsony públicove
 
 Historiafinal58catálogos/501snapshots;57/489previosidénticos,más12QA/12snapshots,0extrasnapshotpor cambiar estrategia. preserve-history-125 ypersonal-fhr-one-readonly(simple)terminaron0. No regenerarbaselines. Matriz/inventariomaestro distinguen2optativasconectadas y16restantespendientes,ademásespecialidades.
 
-## Runtime y navegador
+## Runtime histórico125 y navegador (vigente126 arriba)
 
 Worker125launcher37012/exec89039,comando cmd.exe /d /c pnpm.cmd exec wrangler dev --local --env-file .dev.vars.local;runtime.json tieneárbolvigente. Worker12448048/parent57588detenidoconCIM;no reutilizarPIDs viejos. No instalador/HTTP/helperDB activo al cierre; comprobarprocesosrealesantesdeotracomando.
 
@@ -34,15 +52,9 @@ Guardruntime-125-verified.json:PGapp_backend_local/sinBYPASSRLS/Auth200/Storage2
 
 Browser1/socialCloseBrowser,tab1796703141/socialCloseTab,sesión📚LiteraturaHLMdequinto,marcadaHandoff. Trascompactacióncua.rewriteDocumentation. Cuenta personal recordada;continuar solicita contraseña. **No creador/guardado/reapertura personal de estaoptativaverificado.** QAno sustituye laprueba. Pasosmanuales eninforme/browserJSON. No más correos,enlaces,contraseñas,tokens ni limpiezas. PendientespersonalespreviosFHR2–6/Sociales1/2/4/5noheredanverificaciónQA.
 
-## Siguiente bloque: HLM6, periodismo/publicidad, catálogo126
-
-Primero confirmar el commit5yestado limpio. **Hallazgo real menor a corregir en126:** metadata5usa policiales? y no reconoce«novela policial»singular; comprobaciónREADONLYcompilado:denominaciónoficialtrue/aliasfalse. No cambiarpayload125instalado. Congelar125UNAvezcontraDBantesdeeditar metadata;añadirregresiónREDsingular,corregir a policial(?:es)? en126juntoamódulo6,conservar272definiciones5/288de4/snapshots/catalogoshistóricos. Actualizarinforme5conpruebadelalias, sinfingirqueHTTP125lohabíacubierto.
-
-Fuente6YAleída completa,PDF437–444/impresas436–443,scope6ebb8ac8-f9d0-5530-9c53-366f87055eee. Análisis y Producción de Textos Periodísticos y Publicitarios, Humanidades y Lenguas Modernas, grado6académico.162registros51C/60P/16A/21I/14comp. Cuatrogéneros:editorial,columna,anunciopublicitario,propagandapolítica. Notasprivadas optative-hlm-journalism-six-source-reviewed.md/.json y scope/literals.440primerostresPsoncolumna;441lectura/escriturasiguenanuncioshastaúltimaoralidaddepropaganda. Noexigirmínimotresargumentosatodastareas,publicaciónreal,adhesiónpartidaria,ideologíaovotopersonal. Distinguirgéneroestudiado/productoentregado,análisis/producción/plan/revisión yalternativas. Clasificaciónindividualaúnpendiente;no metadata/contratos/proveedor6/cat126/fuente/QA/HTTP6todavía. Reutilizarcompositoroptativocuandoseapertinente,noclonar4/5como cobertura.
-
 ## Las18fuentesoptativas completas ya revisadas
 
-Registro públicoptativas-fuentes-revisadas.json:18scopes/6HLM/6HCS/3MT/3CT,páginas/conteos/SHAimágenes. Tablasasignación427/461/490/498YAleídas. No repetirrenders/lectura. SoloHLM4y5conectadas;16ámbitosrestantesyfuentesespecializadaspendientes. Todasfuentes2023SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58.
+Registro públicoptativas-fuentes-revisadas.json:18scopes/6HLM/6HCS/3MT/3CT,páginas/conteos/SHAimágenes. Tablasasignación427/461/490/498YAleídas. No repetirrenders/lectura. SoloHLM4/5/6conectadas;15ámbitosrestantesyfuentesespecializadaspendientes. Todasfuentes2023SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58.
 
 Stemsprivados:optative-hlm-apl-four/-five;optative-hlm-journalism-six;optative-hlm-information-four;optative-hlm-anglophone-five;optative-hlm-critical-six;optative-hcs-apl-four/-five;optative-hcs-scientific-six;optative-hcs-philosophy-four;optative-hcs-demography-five;optative-hcs-citizenship-six;optative-mt-financial-four;optative-mt-statistics-five;optative-mt-calculus-six;optative-ct-biology-four;optative-ct-chemistry-five;optative-ct-physics-six. Cadauno tiene scope/literals/source-reviewed.json/.md;imágenes/textosensecondary-optative-tables.
 

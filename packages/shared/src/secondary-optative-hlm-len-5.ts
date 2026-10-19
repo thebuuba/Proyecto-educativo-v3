@@ -400,7 +400,7 @@ export const optativeHlmLenFive:OptativeLanguageModule={
     {
       "id": "novela-policiaca",
       "label": "novela policíaca",
-      "match": "novelas?(?: breves?)? (?:policiacas?|policiales?|detectivescas?)",
+      "match": "novelas?(?: breves?)? (?:policiacas?|policial(?:es)?|detectivescas?)",
       "sourceRecordIds": [
         "99d05567-92a8-5657-89d1-51adcd59def4"
       ],

@@ -642,6 +642,21 @@
       ],
       "required": "seres fantásticos",
       "forbidden": "hechos fantásticos"
+    },
+    {
+      "id": "novel-policial-alias",
+      "genre": "novela-policiaca",
+      "description": "Analiza la novela policial proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a5e85ad-f6b6-5f78-bbef-775511302be0"
+      ],
+      "required": "misterio|sucesos"
     }
-  ]
+  ],
+  "additionalCasesByCatalog": {
+    "evaluation-2026.126": [
+      "novel-policial-alias"
+    ]
+  }
 }

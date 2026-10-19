@@ -8,6 +8,12 @@ import {activityDefaultSuggestions} from '../utils/activityDefaultSuggestions'
 const context={level:'SECONDARY' as const,grade:5,cycle:2,subjectCode:contracts.subjectCode,subjectName:contracts.subjectName,modalityCode:contracts.modalityCode,optativeExitName:contracts.optativeExitName}
 const content=(p:ReturnType<typeof editableFallbackRecommendation>)=>({activity:p.activityType,type:p.instrumentType,levels:p.levels,criteria:p.criteria.map(({id,sourceReferences,sourceType,...r})=>r)})
 describe('HLM quinto: alternativa local, sugerencias y puntos pendientes',()=>{
+ it('la variante singular novela policial conserva la paridad con el proveedor optativo',()=>{
+  const input={activityTitle:'Actividad',description:'Analiza la novela policial proporcionada.',maxScore:17.35,participationMode:'INDIVIDUAL' as const}
+  const local=editableFallbackRecommendation({...input,instrumentType:'rubrica',academicContext:context}),remote=recommend({...input,preferredInstrumentType:'rubrica'},context,null,[],'UNMAPPED',null)
+  expect(local.criteria.every(r=>r.templateId.startsWith('opt-hlm-len-5-novela-policiaca-'))).toBe(true)
+  expect(content(local)).toEqual(content(remote))
+ })
  it('sugiere cotejo para reconocimiento y respeta la rúbrica manual',()=>{
   const task=contracts.cases.find(c=>c.id==='epic-figures-only')!
   expect(activityDefaultSuggestions('Actividad',task.description,context)?.instrument).toBe('lista-cotejo')

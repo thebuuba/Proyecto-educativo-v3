@@ -9,7 +9,7 @@ import {readDevelopmentHistory} from './development-history.mjs'
 // One literal, visually reviewed scope. Optatives require explicit selection; no school/account writes.
 const [subjectCode,gradeText,matrixPath]=process.argv.slice(2),grade=Number(gradeText)
 const subjects={SOC:'Ciencias Sociales',ART:'Educación Artística',EFI:'Educación Física',FHR:'Formación Integral Humana y Religiosa'}
-const optative=process.argv.includes('--optative'),optatives={'OPT-HLM-LEN-4':{grade:4,name:'Apreciación y Producción Literarias',exit:'Humanidades y Lenguas Modernas'},'OPT-HLM-LEN-5':{grade:5,name:'Apreciación y Producción Literarias',exit:'Humanidades y Lenguas Modernas'}}
+const optative=process.argv.includes('--optative'),optatives={'OPT-HLM-LEN-4':{grade:4,name:'Apreciación y Producción Literarias',exit:'Humanidades y Lenguas Modernas'},'OPT-HLM-LEN-5':{grade:5,name:'Apreciación y Producción Literarias',exit:'Humanidades y Lenguas Modernas'},'OPT-HLM-LEN-6':{grade:6,name:'Análisis y Producción de Textos Periodísticos y Publicitarios',exit:'Humanidades y Lenguas Modernas'}}
 const selected=optative?optatives[subjectCode]:null
 assert((optative?selected&&selected.grade===grade:subjectCode in subjects)&&Number.isInteger(grade)&&grade>=1&&grade<=6,'Código y grado revisados explícitamente requeridos; las optativas necesitan --optative')
 assert(matrixPath?.startsWith('docs/curriculum/cobertura-secundaria/')&&matrixPath.endsWith('.json'),'Matriz curricular explícita requerida')

@@ -1,0 +1,23 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.126",
+  "url": "http://localhost:8787/login",
+  "status": "BLOCKED_PERSONAL_LOGIN_REQUIRED",
+  "observed": [
+    "Recarga normal recibió /assets/index-CxQiaaZ_.js y registerSW.js",
+    "Cuenta personal recordada; continuar solicita contraseña"
+  ],
+  "notPerformed": [
+    "Creador personal, selección, guardado y reapertura",
+    "Inspección o borrado de caché, service worker, almacenamiento, sesiones o borradores",
+    "Envío de enlaces, entrada de credenciales o uso de tokens"
+  ],
+  "httpQaIsNotPersonalBrowser": true,
+  "manualSteps": [
+    "Iniciar sesión con la cuenta propia de Development",
+    "Abrir6.º académico/HLM y Análisis y Producción de Textos Periodísticos y Publicitarios",
+    "Comprobar controles visibles y puntos pendientes; subrayar tesis/argumentos en una columna sugiere cotejo de dos evidencias sin explicación",
+    "Probar plan breve de editorial y anuncio ficticio; cambiar manualmente formato",
+    "Asignar17.35, editar, guardar y reabrir; cambiar solo estrategia y comprobar instrumento exactamente igual"
+  ]
+}
