@@ -1417,10 +1417,10 @@
         394,
         395
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_PERSONAL_BROWSER_VERIFIED",
+      "provider": "packages/shared/src/secondary-fhr.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/fhr-1-matriz.json",
+      "currentRunVerification": "AUTHENTICATED_12_EXPLICIT_SAMPLES_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
       "nonApplicable": [],
       "notes": null
     },

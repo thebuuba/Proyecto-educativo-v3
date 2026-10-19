@@ -12,9 +12,10 @@ const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(proce
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
 const gradeName=['','one','two','three','four','five','six'][grade]
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'SOC':process.argv[subjectFlag+1]
-assert(['SOC','ART','EFI'].includes(subjectCode),'Solo se admiten los ámbitos comunes revisados')
+assert(['SOC','ART','EFI','FHR'].includes(subjectCode),'Solo se admiten los ámbitos comunes revisados')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
-const family=subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
+assert(subjectCode!=='FHR'||grade===1,'FHR requiere grado y contratos revisados')
+const family=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -36,7 +37,7 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){

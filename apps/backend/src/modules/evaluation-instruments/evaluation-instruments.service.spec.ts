@@ -7,6 +7,7 @@ import { RecommendInstrumentDto } from './recommend-instrument.dto'
 import { evaluationCatalogCurrent } from './catalog-current'
 import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-operations'
 import grammar from '../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
+import fhrOne from '../../../../../data/evaluation-instruments/fhr-grade-one-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   $queryRaw: vi.fn(),
@@ -73,6 +74,18 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
+  for(const task of fhrOne.cases)it(`interpreta y recomienda FHR primero con el mismo propósito: ${task.id}`,async()=>{
+    const row=secondary('FHR');row.grade.sequence=1;row.subject.name='Formación Integral Humana y Religiosa'
+    mocks.sectionSubject.findFirst.mockResolvedValue(row)
+    const service=new EvaluationInstrumentsService(),request={sectionSubjectId:input.sectionSubjectId,activityTitle:'Título antiguo sobre células',description:task.description}
+    const interpreted=await service.interpret(user,request)
+    const proposal=await service.recommend(user,{...request,maxScore:17.35,participationMode:'INDIVIDUAL'})
+    expect(interpreted.suggestedActivityType).toBe(task.activityType)
+    expect(interpreted.suggestedActivityType).toBe(proposal.activityType)
+    expect(interpreted.suggestedInstrumentType).toBe(proposal.instrumentType)
+    if(task.activityType==='PORTFOLIO')expect(interpreted.suggestedEvaluationTechnique).toBe('portafolio')
+    if(task.id==='dialogue-frequency')expect(interpreted.suggestedEvaluationTechnique).toBe('observacion-sistematica')
+  })
   it('conserva la fuente literal pero excluye recursos y rasgos personales de los referentes evaluables',async()=>{
     const row=secondary('SOC');row.grade.sequence=1;row.subject.name='Ciencias Sociales'
     const socialScope={...scope,id:'social-scope',versionId:'social-version',grade:1,cycle:1,areaName:'Ciencias Sociales',subjectName:'Ciencias Sociales'}

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-import { commonArtModules,commonPhysicalModules } from '../../packages/shared/src/index.ts'
+import { commonArtModules,commonPhysicalModules,commonFhrModules } from '../../packages/shared/src/index.ts'
 import {
   editableFallbackRecommendation,
   recommendationToFields,
@@ -11,14 +11,15 @@ import { validateInstrumentDefinition } from '../../packages/shared/src/index.ts
 import { evaluationCatalogCurrent } from '../../apps/backend/src/modules/evaluation-instruments/catalog-current.ts'
 
 const subjectFlag=process.argv.indexOf('--subject'),subjectCode=subjectFlag<0?'ART':process.argv[subjectFlag+1]
-assert(['ART','EFI'].includes(subjectCode),'Área común con fuente y proveedor explícitos requerida')
-const physical=subjectCode==='EFI',family=physical?'physical':'art',fileStem=physical?'physical':'artistica',templatePrefix=physical?'efi':'art',subjectName=physical?'Educación Física':'Educación Artística'
+assert(['ART','EFI','FHR'].includes(subjectCode),'Área común con fuente y proveedor explícitos requerida')
+const physical=subjectCode==='EFI',fhr=subjectCode==='FHR',family=physical?'physical':fhr?'fhr':'art',fileStem=physical?'physical':fhr?'fhr':'artistica',templatePrefix=physical?'efi':fhr?'fhr':'art',subjectName=physical?'Educación Física':fhr?'Formación Integral Humana y Religiosa':'Educación Artística'
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
 assert([1,2,3,4,5,6].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:grade===5?[377,378,379]:[380,381,382] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+assert(!fhr||grade===1,'FHR solo admite grados con fuente y exclusiones explícitamente revisadas')
+const pdfPages = fhr ? [392,393,394,395,396] : physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:grade===5?[377,378,379]:[380,381,382] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
 const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
-const module = (physical?commonPhysicalModules:commonArtModules).find((row) => row.grade === grade)
+const module = (physical?commonPhysicalModules:fhr?commonFhrModules:commonArtModules).find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
 const directory = 'docs/curriculum/cobertura-secundaria/'
 const records = readFileSync('data/curriculum/secondary-2023.jsonl', 'utf8')
@@ -47,7 +48,7 @@ const mapping = JSON.parse(
 )
 assert.equal(mapping.scopeId, scope.id)
 assert.equal(mapping.sourceSha256, source.sha256)
-const exclusions = (physical ? grade===1 ? [
+const exclusions = (fhr ? mapping.privateDispositionExclusions.map(prefix=>({prefix,reason:'PRIVATE_DISPOSITION',explanation:'Disposición o experiencia privada revisada individualmente: no se puntúan adhesión, fe, oración, gratitud, identidad, emociones, aceptación o supuesta moralidad. Las acciones observables explícitas conservan sus anclas aparte.'})) : physical ? grade===1 ? [
   ...['30f04f76','7a6eeb3e','e0ddee18','cff05e33','b40ad2e6','c7b8407a','d86ce6e6','a2fa9de0','1c7a91bf','d69d0d85','3e01de7d','2ab97f2c','41ae5100','e4561e74','2a6cb6c3','919bfeb3','4240375e','e042fcac','68f82dc8'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador de contenidos, sin desempeño independiente. Los deportes optativos dentro de EFI no son salidas académicas adicionales.'})),
   ...['dd8e23a1','7417b621','7e6b6e07'].map(prefix=>({prefix,reason:'PRIVATE_ENJOYMENT',explanation:'El disfrute o identidad internos no se infieren ni puntúan; las acciones del juego se observan cuando se solicitan.'})),
   ...['64c80440','8c5a6dd6'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'La perseverancia interna no se puntúa como rasgo; se evalúan propuestas, decisiones o acciones expresamente solicitadas.'})),

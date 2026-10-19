@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.118",
+  "grade": 1,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "FHR",
+    "optativeExitName": null
+  },
+  "format": "lista-ponderada",
+  "inspectedFormats": [
+    "lista-ponderada"
+  ],
+  "savedAndReopenedFormats": [
+    "lista-ponderada"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "manualInstrumentChosenDuringPendingPreparation": true,
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "597e86d455c03f045d161b9b9e163e8c",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "597e86d455c03f045d161b9b9e163e8c",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "ebbb9d17-112d-4f14-b135-d8b2d1d2b8bd",
+      "format": "lista-ponderada",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-BejOpiFC.js",
+  "servedAssetSha256": "d86a884bfb36b03370728be50191512d60c635b83f2c7edcd42f39e4ac58032e",
+  "limits": [
+    "Una muestra personal en 1.º A secundaria/FHR. Se leyeron completos el criterio, indicador y crédito parcial de la lista ponderada, peso100% y total17.35; no se acredita inspección visual de los otros tres formatos en este grado.",
+    "Estrategia visible desde vacío y puntuación inicialmente vacía. Caso concreto de dignidad y derechos con evidencias, alternativas y justificación: CASE_STUDY automático. Lista ponderada manual durante preparación conservada; Individual y17.35 explícitos.",
+    "Se observó una plantilla temporal de cinco filas vacías que terminó automáticamente en un criterio contextual completo. No se usó Generar nuevo instrumento ni se repitió Guardar. Sin anuncio de preparación; no se declara corregida esa transición como fallo persistente.",
+    "Guardado, primera reapertura desde Cursos/asignatura/Editar, cambio exclusivo de estrategia a PROJECT_BASED/MANUAL, confirmación Actividad actualizada y segunda reapertura mediante href observado después del build final. Huella completa incluye instrumento, snapshot, técnica, puntos e identificadores y permanece exactamente igual.",
+    "La pestaña conservaba entry117 y falló importar CoursesPage tras recompilar. Una recarga normal recuperó sesión y entry118; assets y sw.js servidos coinciden con dist. Sin borrar caché, registroSW, almacenamiento o borradores. Internals del SW no inspeccionados.",
+    "PROJECT_BASED manual comprueba persistencia, no sugiere pertinencia pedagógica. Sin notas a estudiantes, equipos, cuentas, correos, cambios de contraseña o datos copiados de producción. Persisten límites previos de Actividades global/Ver actividad y HTML visible en descripción de tabla, fuera de este bloque."
+  ]
+}
