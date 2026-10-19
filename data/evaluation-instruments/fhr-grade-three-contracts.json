@@ -1,0 +1,1419 @@
+{
+  "grade": 3,
+  "scopeId": "e115e5c8-e553-5613-bf39-2caea0bbbb7d",
+  "sourcePdfPages": [
+    401,
+    402,
+    403,
+    404
+  ],
+  "policy": "OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH",
+  "cases": [
+    {
+      "id": "life-value",
+      "topicIds": [
+        "life-value"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica el valor y respeto a la vida mediante las afirmaciones y acciones del referente proporcionado. No se piden creencias privadas.",
+      "sourceRecordIds": [
+        "2d6f0722"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-mural",
+      "topicIds": [
+        "life-mural"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Construye el mural de respeto e irrespeto a la vida de personas y naturaleza mediante las situaciones proporcionadas. No se pide presentarlo.",
+      "sourceRecordIds": [
+        "5b3f5c58"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-situations",
+      "topicIds": [
+        "life-situations"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las situaciones proporcionadas de respeto e irrespeto a la vida, relacionando causas y efectos. No uses historias privadas.",
+      "sourceRecordIds": [
+        "789c2db5"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "rights-panel",
+      "topicIds": [
+        "rights-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel sobre violaciones de derechos humanos mediante los referentes proporcionados. No se pide realizarlo ni dar asesoría jurídica.",
+      "sourceRecordIds": [
+        "ea41f2ee",
+        "fc0df732"
+      ],
+      "required": "Planifica.*propósito.*secuencia",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "rights-texts",
+      "topicIds": [
+        "rights-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la dignidad humana y defensa de la vida mediante los textos proporcionados de la Constitución artículos37,38,39,67 y Declaración artículos1,3,6,7. No se pide asesoría jurídica vigente.",
+      "sourceRecordIds": [
+        "00bb60e0",
+        "9c9592a2",
+        "eb797144",
+        "ce45611b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-life",
+      "topicIds": [
+        "religious-life"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga el valor de la vida en el cristianismo y otras concepciones religiosas según los referentes proporcionados. No se exige adhesión.",
+      "sourceRecordIds": [
+        "f39c33c1",
+        "88d75898"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "vocation-talents",
+      "topicIds": [
+        "vocation-talents"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las relaciones entre talentos, habilidades e intereses y preferencia vocacional del caso educativo proporcionado. No se piden rasgos propios ni se valora capacidad personal.",
+      "sourceRecordIds": [
+        "72979943",
+        "16c5f507"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "profession-process",
+      "topicIds": [
+        "profession-process"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expón el proceso para elegir una profesión u oficio según los referentes proporcionados. No se pide revelar aspiraciones privadas.",
+      "sourceRecordIds": [
+        "587da7f5"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-service",
+      "topicIds": [
+        "work-service"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate en mesa redonda el trabajo como enriquecimiento personal y servicio a la sociedad mediante los referentes proporcionados. No se piden ingresos ni empleo familiares.",
+      "sourceRecordIds": [
+        "c69a2643",
+        "8b17400c"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "work-sense",
+      "topicIds": [
+        "work-sense"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Argumenta sobre el sentido del trabajo en la realización de la persona según Colosenses3:22–24, Eclesiastés5:19,2Tesalonicenses3:6–12 y Romanos12:11 proporcionados. No se exige acuerdo religioso.",
+      "sourceRecordIds": [
+        "2351ed22",
+        "e4c6847b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "professionals-panel",
+      "topicIds": [
+        "professionals-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel con profesionales sobre dificultades, vivencias y logros mediante las fuentes proporcionadas. No se pide contactar personas ni realizar el panel.",
+      "sourceRecordIds": [
+        "b3a26ca7"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "work-celebration",
+      "topicIds": [
+        "work-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los procesos dados sobre beneficios del trabajo humano. No se pide realizarla ni expresar gratitud privada.",
+      "sourceRecordIds": [
+        "e11a59ed"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "family-mission",
+      "topicIds": [
+        "family-mission"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el concepto, problemáticas y misión de la familia según Aparecida432–435 y Colosenses3:18–21 proporcionados. No describas tu familia ni juzgues sus creencias.",
+      "sourceRecordIds": [
+        "638d3317"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-norms",
+      "topicIds": [
+        "family-norms"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora normas para la convivencia familiar del caso proporcionado, justificando las acciones que proponen. No se evalúa obediencia privada.",
+      "sourceRecordIds": [
+        "1311c19a"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-sociodrama",
+      "topicIds": [
+        "family-sociodrama"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Representa en un sociodrama el caso proporcionado de convivencia familiar y sus soluciones. No se piden testimonios propios.",
+      "sourceRecordIds": [
+        "e36623a3"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-colloquium",
+      "topicIds": [
+        "family-colloquium"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta el coloquio sobre experiencias y valores para resolver conflictos en el hogar, usando los testimonios proporcionados. No contactes familiares ni reveles datos privados.",
+      "sourceRecordIds": [
+        "719dfb4b"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "friendship-drama",
+      "topicIds": [
+        "friendship-drama"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza en un sociodrama el caso de conflictos de amistad y su resolución proporcionado. No se piden experiencias personales.",
+      "sourceRecordIds": [
+        "dc599b14",
+        "92ec9d60"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "family-encounter",
+      "topicIds": [
+        "family-encounter"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el encuentro familiar para presentar los productos y videos proporcionados. No se piden películas ni charlas ni otros medios ni realizar el encuentro.",
+      "sourceRecordIds": [
+        "7598e0b5"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "dialogue-actions",
+      "topicIds": [
+        "dialogue-actions"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora criterios y acciones para el diálogo en los contextos proporcionados, justificando su relación con los problemas dados. No se juzga disposición íntima.",
+      "sourceRecordIds": [
+        "9b5e74e5",
+        "5b8b5bce"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "peace-panel",
+      "topicIds": [
+        "peace-panel"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel sobre diálogo y cultura de paz para resolver los conflictos proporcionados. No se pide realizarlo ni narrar conflictos privados.",
+      "sourceRecordIds": [
+        "746621df",
+        "2d3f78b9"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "conflict-messages",
+      "topicIds": [
+        "conflict-messages"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Compón mensajes escritos que expresen soluciones a las problemáticas analizadas del referente. No se piden audios ni videos ni difusión real.",
+      "sourceRecordIds": [
+        "fbbba7c1"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "conflict-commitments",
+      "topicIds": [
+        "conflict-commitments"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora compromisos aplicables para resolver las problemáticas del caso proporcionado mediante diálogo, respeto y paz. No se evalúa sinceridad ni cumplimiento privado.",
+      "sourceRecordIds": [
+        "45e1b2cc"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecclesiasticus",
+      "topicIds": [
+        "ecclesiasticus"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las relaciones interpersonales del caso proporcionado según el texto dado de Eclesiástico11:2–9. No se evalúa adhesión religiosa.",
+      "sourceRecordIds": [
+        "d793fd15"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-values",
+      "topicIds": [
+        "jesus-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los valores predicados y practicados por Jesús de Nazaret según los textos dados sobre su vida, muerte y resurrección. No se evalúa fe personal.",
+      "sourceRecordIds": [
+        "78f511dc",
+        "d6cfa855"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "dominican-values",
+      "topicIds": [
+        "dominican-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la presencia de valores atribuidos a Jesús en el contexto sociocultural dominicano según las fuentes proporcionadas. No juzgues las creencias de personas reales.",
+      "sourceRecordIds": [
+        "4f06ba26",
+        "bf2fc283"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "dialogue-scene",
+      "topicIds": [
+        "dialogue-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Escenifica la situación proporcionada de construcción de valores mediante diálogo fraterno. No se evalúa autenticidad personal.",
+      "sourceRecordIds": [
+        "b3afea5f"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-relations",
+      "topicIds": [
+        "jesus-relations"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la práctica de valores de Jesús que construyen relaciones sociales mediante los textos bíblicos y otros proporcionados. No se exige practicar una creencia.",
+      "sourceRecordIds": [
+        "e03d15a3"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "interfaith-dialogue",
+      "topicIds": [
+        "interfaith-dialogue"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora criterios para el diálogo entre personas de diversas confesiones según los valores de Jesús de los referentes proporcionados. No se juzga superioridad religiosa.",
+      "sourceRecordIds": [
+        "d8a26849"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "jesus-episodes",
+      "topicIds": [
+        "jesus-episodes"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Relata los momentos de la vida de Jesús narrados en los episodios proporcionados de Marcos14,Marcos15 y Juan20, relacionando su secuencia y evidencias. No se exige fe.",
+      "sourceRecordIds": [
+        "25d735b4"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "tech-effects",
+      "topicIds": [
+        "tech-effects"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza los efectos positivos y negativos de tecnología en persona, familia, sociedad y naturaleza según los datos proporcionados. No se piden hábitos privados.",
+      "sourceRecordIds": [
+        "026bcaaa",
+        "19bb1501",
+        "14fb1216"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "tech-development",
+      "topicIds": [
+        "tech-development"
+      ],
+      "purpose": "DEBATE",
+      "activityType": "DEBATE",
+      "description": "Debate en mesa redonda la tecnología como herramienta de desarrollo de persona y sociedad usando los referentes proporcionados. No se pide adhesión a una postura.",
+      "sourceRecordIds": [
+        "e80796aa"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "tech-nature",
+      "topicIds": [
+        "tech-nature"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga la relación entre tecnología y naturaleza mediante las diferentes fuentes proporcionadas. No se pide ejecutar una acción ambiental.",
+      "sourceRecordIds": [
+        "f4ca7e6b",
+        "0cdb2365"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "science-celebration",
+      "topicIds": [
+        "science-celebration"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la celebración para presentar los beneficios del trabajo científico y sus avances según los productos dados. No se pide realizarla ni expresar gratitud.",
+      "sourceRecordIds": [
+        "3dc7f57e"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "creation-values",
+      "topicIds": [
+        "creation-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los valores del cuidado de la vida creada según los textos proporcionados del Nuevo y Antiguo Testamento. No se evalúa obediencia religiosa.",
+      "sourceRecordIds": [
+        "c5e602bf",
+        "aadfdd98"
+      ],
+      "required": "Indaga.*Nuevo Testamento.*Antiguo Testamento",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecology-texts",
+      "topicIds": [
+        "ecology-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el cuidado y respeto del medioambiente según los textos proporcionados del Cántico de las criaturas y Laudato Si capítulo4 de ecología integral. No se evalúa fe.",
+      "sourceRecordIds": [
+        "3cabe717",
+        "ef7e70b6",
+        "7f1920c3",
+        "7fb1d04f"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "ecology-project",
+      "topicIds": [
+        "ecology-project"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el proyecto de promoción de valores ecológicos para contrarrestar la situación proporcionada, usando los recursos dados. No se pide ejecutarlo ni publicarlo.",
+      "sourceRecordIds": [
+        "5fb43fef"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "nature-scene",
+      "topicIds": [
+        "nature-scene"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Escenifica los elementos de naturaleza y sus beneficios del referente proporcionado. No se piden acciones peligrosas ni gratitud privada.",
+      "sourceRecordIds": [
+        "380a1309"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environment-institutions",
+      "topicIds": [
+        "environment-institutions"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las personas e instituciones que protegen el entorno natural como casa común según las fuentes proporcionadas. No se pide contactar instituciones.",
+      "sourceRecordIds": [
+        "41c75f51"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "conservation-actions",
+      "topicIds": [
+        "conservation-actions"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica acciones de defensa y conservación del medio ambiente del caso proporcionado. No se pide ejecutarlas.",
+      "sourceRecordIds": [
+        "6856764e"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "environment-poster",
+      "topicIds": [
+        "environment-poster"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora un cartel de promoción de la protección y cuidado del entorno natural según los referentes proporcionados. No se piden brochures ni afiches adicionales ni difusión real.",
+      "sourceRecordIds": [
+        "48e815a5"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "environment-presentation",
+      "topicIds": [
+        "environment-presentation"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expón las acciones y medios de defensa de la vida y sostenibilidad del entorno documentados en el registro proporcionado. No se pide ejecutar nuevas acciones.",
+      "sourceRecordIds": [
+        "5aa02a76"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-difficulties",
+      "topicIds": [
+        "adolescent-difficulties"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las situaciones difíciles de adolescentes de los referentes educativos proporcionados. No se piden historias personales ni datos íntimos.",
+      "sourceRecordIds": [
+        "8373e111"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-family",
+      "topicIds": [
+        "adolescent-family"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica los problemas del adolescente con familiares del caso educativo proporcionado, justificando con sus evidencias. No se piden conflictos privados.",
+      "sourceRecordIds": [
+        "aa80e11d",
+        "dd3baf3e"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "adolescent-drama",
+      "topicIds": [
+        "adolescent-drama"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Dramatiza el caso proporcionado de conflictos adolescentes en el ámbito escolar. No se piden testimonios de compañeros.",
+      "sourceRecordIds": [
+        "621b14f8"
+      ],
+      "required": "Escenifica|Representa|Dramatiza",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-figures",
+      "topicIds": [
+        "religious-figures"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Expón los personajes referentes de experiencias religiosas descritos en las fuentes proporcionadas. No se pide revelar tu experiencia religiosa.",
+      "sourceRecordIds": [
+        "5350273a",
+        "55353cc1"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "life-questions",
+      "topicIds": [
+        "life-questions"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el panel sobre grandes interrogantes del ser humano mediante los referentes proporcionados. No se pide realizarlo ni revelar inquietudes íntimas.",
+      "sourceRecordIds": [
+        "73226e41"
+      ],
+      "required": "Planifica.*propósito.*secuencia",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "life-meaning",
+      "topicIds": [
+        "life-meaning"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la búsqueda del sentido de la vida mediante las imágenes proporcionadas. No se piden canciones ni videos ni creencias privadas.",
+      "sourceRecordIds": [
+        "556e3068",
+        "06a4ced0"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "false-ideals",
+      "topicIds": [
+        "false-ideals"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los ideales de felicidad y autorrealización denominados falsos por la fuente proporcionada, contrastando sus argumentos. No se exige aceptar esa etiqueta.",
+      "sourceRecordIds": [
+        "c2dac5b3"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "biblical-life-answers",
+      "topicIds": [
+        "biblical-life-answers"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las respuestas al sentido de la vida según los textos proporcionados de Lucas6,Mateo22 y6,Juan14 y6, justificando sus evidencias. No se exige adhesión.",
+      "sourceRecordIds": [
+        "50eb358a"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "religious-life-answers",
+      "topicIds": [
+        "religious-life-answers"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta las respuestas de grandes religiones al sentido de la vida según las fuentes proporcionadas. No se pide jerarquizar creencias.",
+      "sourceRecordIds": [
+        "5469dbf3",
+        "a1f921be"
+      ],
+      "required": ".+",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Demuestra fe|^Revela"
+    },
+    {
+      "id": "conservation-execution",
+      "topicIds": [
+        "conservation-actions"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "PERFORMANCE",
+      "description": "Realiza las acciones de defensa y conservación del medio ambiente previstas en el caso proporcionado y registra sus decisiones. No se pide elaborar otro plan.",
+      "sourceRecordIds": [
+        "6856764e"
+      ],
+      "required": "Realiza.*acciones",
+      "forbidden": "Planifica|Elabora.*plan|^Profesa"
+    },
+    {
+      "id": "religions-compare",
+      "topicIds": [
+        "religious-life-answers"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las respuestas de grandes religiones al sentido de la vida según las fuentes proporcionadas. No se pide presentar un producto ni declarar superior una creencia.",
+      "sourceRecordIds": [
+        "5469dbf3",
+        "a1f921be"
+      ],
+      "required": "Compara.*respuestas",
+      "forbidden": "Presenta|^Profesa"
+    },
+    {
+      "id": "family-encounter-videos-only",
+      "topicIds": [
+        "family-encounter"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el encuentro familiar para presentar los productos y videos proporcionados. No se piden películas ni charlas ni otros medios.",
+      "sourceRecordIds": [
+        "7598e0b5"
+      ],
+      "required": "Planifica.*videos",
+      "forbidden": "películas|charlas|^Revela|alternativas proporcionadas",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "poster-only",
+      "topicIds": [
+        "environment-poster"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Elabora un cartel de promoción del cuidado del entorno natural con los referentes proporcionados. No se piden brochures ni afiches adicionales ni publicación real.",
+      "sourceRecordIds": [
+        "48e815a5"
+      ],
+      "required": "Elabora.*cartel",
+      "forbidden": "brochure|afiches|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "life-meaning-images-only",
+      "topicIds": [
+        "life-meaning"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la búsqueda del sentido de la vida mediante las imágenes proporcionadas. No se piden canciones ni videos ni experiencias privadas.",
+      "sourceRecordIds": [
+        "556e3068",
+        "06a4ced0"
+      ],
+      "required": "Analiza.*imágenes",
+      "forbidden": "canciones|videos|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "ecology-texts-describe",
+      "topicIds": [
+        "ecology-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe el cuidado y respeto del medioambiente según Cántico de las criaturas y Laudato Si capítulo4 proporcionados, relacionando las afirmaciones y evidencias. No se exige adhesión.",
+      "sourceRecordIds": [
+        "3cabe717",
+        "ef7e70b6",
+        "7f1920c3",
+        "7fb1d04f"
+      ],
+      "required": "Describe.*Cántico",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "formulate-dialogue",
+      "topicIds": [
+        "dialogue-actions"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "WRITTEN_PRODUCTION",
+      "description": "Formula criterios y acciones para el diálogo en los contextos proporcionados. No se pide expresar creencias privadas.",
+      "sourceRecordIds": [
+        "9b5e74e5",
+        "5b8b5bce"
+      ],
+      "required": "Elabora.*criterios",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "design-conservation-plan",
+      "topicIds": [
+        "conservation-actions"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Diseña un plan de acciones de defensa y conservación del medio ambiente según el caso proporcionado. No se pide ejecutarlas.",
+      "sourceRecordIds": [
+        "6856764e"
+      ],
+      "required": "Planifica.*acciones",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela|alternativas proporcionadas"
+    },
+    {
+      "id": "socialize-dignity",
+      "topicIds": [
+        "rights-texts"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Socializa en una exposición oral la dignidad humana y defensa de la vida según los textos proporcionados. No se pide investigar nuevas fuentes.",
+      "sourceRecordIds": [
+        "00bb60e0",
+        "9c9592a2",
+        "eb797144",
+        "ce45611b"
+      ],
+      "required": "Presenta.*dignidad",
+      "forbidden": "^Profesa|^Obedece|^Cree|^Revela"
+    },
+    {
+      "id": "mural-realiza",
+      "topicIds": [
+        "life-mural"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Realiza un mural de respeto e irrespeto a la vida de personas y naturaleza mediante las situaciones proporcionadas. No se pide representarlo ni presentarlo.",
+      "sourceRecordIds": [
+        "5b3f5c58"
+      ],
+      "required": "Elabora.*mural",
+      "forbidden": "Representa|Dramatiza|^Profesa"
+    },
+    {
+      "id": "technology-family-only",
+      "topicIds": [
+        "tech-effects"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza los efectos positivos y negativos de tecnología en la familia según las evidencias proporcionadas. No se piden efectos en la persona ni sociedad ni naturaleza ni datos familiares privados.",
+      "sourceRecordIds": [
+        "026bcaaa",
+        "19bb1501",
+        "14fb1216"
+      ],
+      "required": "Analiza.*familia",
+      "forbidden": "persona|sociedad|naturaleza|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "vocation-skills-only",
+      "topicIds": [
+        "vocation-talents"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe las habilidades y su relación con la preferencia vocacional del caso educativo proporcionado. No se piden talentos ni intereses ni capacidades ni rasgos privados.",
+      "sourceRecordIds": [
+        "72979943",
+        "16c5f507"
+      ],
+      "required": "Describe.*habilidades",
+      "forbidden": "talentos|intereses|capacidades|rasgos privados|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "laudato-only",
+      "topicIds": [
+        "ecology-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el cuidado y respeto del medioambiente según Laudato Si capítulo4 de ecología integral proporcionado. No se pide el Cántico de las criaturas ni otras fuentes.",
+      "sourceRecordIds": [
+        "3cabe717",
+        "ef7e70b6",
+        "7f1920c3",
+        "7fb1d04f"
+      ],
+      "required": "Analiza.*Laudato Si",
+      "forbidden": "Cántico|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "creation-new-testament-only",
+      "topicIds": [
+        "creation-values"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Indaga los valores del cuidado de la vida creada según los textos proporcionados del Nuevo Testamento. No se pide el Antiguo Testamento ni otras fuentes.",
+      "sourceRecordIds": [
+        "c5e602bf",
+        "aadfdd98"
+      ],
+      "required": "Indaga.*Nuevo Testamento",
+      "forbidden": "Antiguo Testamento|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "constitutional-dignity-only",
+      "topicIds": [
+        "rights-texts"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la dignidad humana y defensa de la vida según los artículos proporcionados de la Constitución. No se pide la Declaración Universal ni otras fuentes ni asesoría jurídica vigente.",
+      "sourceRecordIds": [
+        "00bb60e0",
+        "9c9592a2",
+        "eb797144",
+        "ce45611b"
+      ],
+      "required": "Analiza.*Constitución",
+      "forbidden": "Declaración|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "family-aparecida-only",
+      "topicIds": [
+        "family-mission"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el concepto, problemáticas y misión de la familia según el texto proporcionado de Aparecida432–435. No se pide Colosenses ni otras fuentes ni datos familiares privados.",
+      "sourceRecordIds": [
+        "638d3317"
+      ],
+      "required": "Analiza.*Aparecida",
+      "forbidden": "Colosenses|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "biblical-lucas-only",
+      "topicIds": [
+        "biblical-life-answers"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las respuestas al sentido de la vida según el texto proporcionado de Lucas6:20–26. No se piden Mateo ni Juan ni otras fuentes.",
+      "sourceRecordIds": [
+        "50eb358a"
+      ],
+      "required": "Identifica.*Lucas",
+      "forbidden": "Mateo|Juan|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "jesus-marcos-only",
+      "topicIds": [
+        "jesus-episodes"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Relata los momentos de la vida de Jesús narrados en los episodios proporcionados de Marcos14 y Marcos15, relacionando su secuencia y evidencias. No se pide Juan ni otras fuentes.",
+      "sourceRecordIds": [
+        "25d735b4"
+      ],
+      "required": "Relata.*Marcos",
+      "forbidden": "Juan|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-2d6f0722",
+      "topicIds": [
+        "concept-2d6f0722"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El valor y respeto a la vida.",
+      "sourceRecordIds": [
+        "2d6f0722"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-ea41f2ee",
+      "topicIds": [
+        "concept-ea41f2ee"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Vida y derechos humanos.",
+      "sourceRecordIds": [
+        "ea41f2ee"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f39c33c1",
+      "topicIds": [
+        "concept-f39c33c1"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El valor de la vida en el cristianismo y otras concepciones religiosas.",
+      "sourceRecordIds": [
+        "f39c33c1"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-72979943",
+      "topicIds": [
+        "concept-72979943"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Talentos y capacidades personales.",
+      "sourceRecordIds": [
+        "72979943"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-2351ed22",
+      "topicIds": [
+        "concept-2351ed22"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El sentido del trabajo.",
+      "sourceRecordIds": [
+        "2351ed22"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c69a2643",
+      "topicIds": [
+        "concept-c69a2643"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica El trabajo como servicio.",
+      "sourceRecordIds": [
+        "c69a2643"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-aa80e11d",
+      "topicIds": [
+        "concept-aa80e11d"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Problemáticas y conflictos personales, familiares y sociales.",
+      "sourceRecordIds": [
+        "aa80e11d"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-dc599b14",
+      "topicIds": [
+        "concept-dc599b14"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Relaciones de amistad y sus dificultades.",
+      "sourceRecordIds": [
+        "dc599b14"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-746621df",
+      "topicIds": [
+        "concept-746621df"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Manejo de conflicto en la escuela, familia y con amistades.",
+      "sourceRecordIds": [
+        "746621df"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-78f511dc",
+      "topicIds": [
+        "concept-78f511dc"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Valores que predicó y vivió Jesús de Nazaret.",
+      "sourceRecordIds": [
+        "78f511dc"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-4f06ba26",
+      "topicIds": [
+        "concept-4f06ba26"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Valores de Jesús de Nazaret presentes en la cultural dominicana.",
+      "sourceRecordIds": [
+        "4f06ba26"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-9b5e74e5",
+      "topicIds": [
+        "concept-9b5e74e5"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Diálogo fraterno.",
+      "sourceRecordIds": [
+        "9b5e74e5"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-026bcaaa",
+      "topicIds": [
+        "concept-026bcaaa"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Ciencia, tecnología y desarrollo humano.",
+      "sourceRecordIds": [
+        "026bcaaa"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-19bb1501",
+      "topicIds": [
+        "concept-19bb1501"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Tecnología, persona y familia.",
+      "sourceRecordIds": [
+        "19bb1501"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-f4ca7e6b",
+      "topicIds": [
+        "concept-f4ca7e6b"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Relación entre tecnología y la naturaleza.",
+      "sourceRecordIds": [
+        "f4ca7e6b"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-c5e602bf",
+      "topicIds": [
+        "concept-c5e602bf"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Valores de Jesús en torno al cuidado de la creación.",
+      "sourceRecordIds": [
+        "c5e602bf"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-3cabe717",
+      "topicIds": [
+        "concept-3cabe717"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Medioambiente: nuestra casa común.",
+      "sourceRecordIds": [
+        "3cabe717"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-ef7e70b6",
+      "topicIds": [
+        "concept-ef7e70b6"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Sostenibilida y medioambiental.",
+      "sourceRecordIds": [
+        "ef7e70b6"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-5350273a",
+      "topicIds": [
+        "concept-5350273a"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Religión y persona.",
+      "sourceRecordIds": [
+        "5350273a"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-556e3068",
+      "topicIds": [
+        "concept-556e3068"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Búsqueda del sentido de la vida.",
+      "sourceRecordIds": [
+        "556e3068"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "source-concept-5469dbf3",
+      "topicIds": [
+        "concept-5469dbf3"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Respuestas religiosas a las grandes interrogantes de la vida.",
+      "sourceRecordIds": [
+        "5469dbf3"
+      ],
+      "criterionCount": 1,
+      "required": "Explica",
+      "forbidden": "Planifica|Elabora|Dramatiza|Escenifica|mural|panel|campaña|fotograf|^Profesa|^Revela",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "concept-technology-family-describe",
+      "topicIds": [
+        "concept-19bb1501"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Describe Tecnología, persona y familia.",
+      "sourceRecordIds": [
+        "19bb1501"
+      ],
+      "criterionCount": 1,
+      "required": "Describe",
+      "forbidden": "sociedad|naturaleza|panel|campaña|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "concept-talents-analysis",
+      "topicIds": [
+        "concept-72979943"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza Talentos y capacidades personales.",
+      "sourceRecordIds": [
+        "72979943"
+      ],
+      "criterionCount": 1,
+      "required": "Analiza",
+      "forbidden": "vocacion|vocacional|preferencia|intereses|habilidades|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "concept-sustainability-correct-spelling",
+      "topicIds": [
+        "concept-ef7e70b6"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica sostenibilidad medioambiental.",
+      "sourceRecordIds": [
+        "ef7e70b6"
+      ],
+      "criterionCount": 1,
+      "required": "Explica.*sostenibilidad",
+      "forbidden": "Laudato|Cántico|proyecto|^Profesa",
+      "narrowedEvidence": true
+    },
+    {
+      "id": "concept-rights-with-reference",
+      "topicIds": [
+        "concept-ea41f2ee"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica Vida y derechos humanos según los textos proporcionados.",
+      "sourceRecordIds": [
+        "ea41f2ee"
+      ],
+      "criterionCount": 1,
+      "required": "Explica.*derechos humanos",
+      "forbidden": "panel|mural|Planifica|Elabora|^Profesa",
+      "narrowedEvidence": true
+    }
+  ]
+}

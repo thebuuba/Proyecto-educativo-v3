@@ -9,6 +9,7 @@ import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-oper
 import grammar from '../../../../../data/evaluation-instruments/english-grade-one-grammar-contracts.json'
 import fhrOne from '../../../../../data/evaluation-instruments/fhr-grade-one-contracts.json'
 import fhrTwo from '../../../../../data/evaluation-instruments/fhr-grade-two-contracts.json'
+import fhrThree from '../../../../../data/evaluation-instruments/fhr-grade-three-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   $queryRaw: vi.fn(),
@@ -75,7 +76,7 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
-  for(const [grade,fixture]of [[1,fhrOne],[2,fhrTwo]] as const)for(const task of fixture.cases)it(`interpreta y recomienda FHR ${grade} con el mismo propósito: ${task.id}`,async()=>{
+  for(const [grade,fixture]of [[1,fhrOne],[2,fhrTwo],[3,fhrThree]] as const)for(const task of fixture.cases)it(`interpreta y recomienda FHR ${grade} con el mismo propósito: ${task.id}`,async()=>{
     const row=secondary('FHR');row.grade.sequence=grade;row.subject.name='Formación Integral Humana y Religiosa'
     mocks.sectionSubject.findFirst.mockResolvedValue(row)
     const service=new EvaluationInstrumentsService(),request={sectionSubjectId:input.sectionSubjectId,activityTitle:'Título antiguo sobre células',description:task.description}

@@ -4,20 +4,23 @@ import type {InstrumentRecommendation,InstrumentType} from './instrument-recomme
 import {withoutResources} from './evaluation-task-text'
 import {fhrGradeOneTopics} from './secondary-fhr-grade-1'
 import {fhrGradeTwoTopics} from './secondary-fhr-grade-2'
+import {fhrGradeThreeTopics} from './secondary-fhr-grade-3'
 
 type FhrPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'DEBATE'|'PRESENTATION'|'PRODUCTION'|'PLAN'|'PERFORMANCE'|'VERIFICATION'|'OBSERVATION'
-export type FhrTopic={id:string;grade:number;label:string;match:string;object:string;relation:string;sourceRecordIds:string[];pdfPages:number[];choices?:string[][];choiceDefault?:string;excludeWhen?:string;productType?:string;objects?:Partial<Record<FhrPurpose,string>>}
+export type FhrTopic={id:string;grade:number;label:string;match:string;object:string;relation:string;sourceRecordIds:string[];pdfPages:number[];choices?:string[][];choiceDefault?:string;excludeWhen?:string;productType?:string;objects?:Partial<Record<FhrPurpose,string>>;planReferenceOnly?:boolean;conceptBrief?:boolean}
 type FhrAction={text:string;topics:FhrTopic[];purpose:FhrPurpose}
 export type CommonFhrTask={grade:number;text:string;actions:FhrAction[];activityType:string;technique:string}
-export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
+export const commonFhrModules=[{id:'formacion-humana-religiosa-comun-1',grade:1,topics:fhrGradeOneTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-2',grade:2,topics:fhrGradeTwoTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'},{id:'formacion-humana-religiosa-comun-3',grade:3,topics:fhrGradeThreeTopics,policy:'OBSERVABLE_INTERPRETATION_AND_PRODUCTS_NOT_PRIVATE_FAITH'}]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const action='(?:analiz|explic|describ|relat|narr|reflexion|identific|clasific|interpret|compar|contrast|investig|indag|debat|argument|justific|sustent|present|expon|elabor|cre|constru|redact|compon|organiz|prepar|planific|propon|represent|dramatiz|escenific|realiz|registr|verific|comprueb)[a-z]*'
+const action='(?:analiz|explic|describ|relat|narr|reflexion|identific|clasific|interpret|compar|contrast|investig|indag|debat|argument|justific|sustent|present|expon|socializ|elabor|cre|constru|redact|compon|disen|formul|organiz|prepar|planific|propon|represent|dramatiz|escenific|realiz|registr|verific|comprueb)[a-z]*'
 const affirmative=(value:string)=>normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' '))).replace(/\b(?:no|sin(?!\s+acceso\b))\b[^.;\n]*/g,'').trim()
 const join=(parts:string[])=>parts.length<2?parts[0]:parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
 function selectedTopics(text:string,available:FhrTopic[]){
  const exact=available.filter(t=>text.replace(/[.\s]+$/,'')==='explica '+normalize(t.label))
  if(exact.length)return exact
- let topics=available.filter(t=>(text.includes(normalize(t.label))||new RegExp(`\\b(?:${t.match})\\b`).test(text))&&(!t.excludeWhen||!new RegExp(t.excludeWhen).test(text)))
+ const concepts=available.filter(t=>t.conceptBrief&&new RegExp(t.match).test(text))
+ if(concepts.length)return concepts
+ let topics=available.filter(t=>!t.conceptBrief&&(text.includes(normalize(t.label))||new RegExp(`\\b(?:${t.match})\\b`).test(text))&&(!t.excludeWhen||!new RegExp(t.excludeWhen).test(text)))
  if(topics.some(t=>['environment-mural','environment-campaign','environment-news','environment-laws'].includes(t.id)))topics=topics.filter(t=>t.id!=='environment-care')
  return topics
 }
@@ -28,9 +31,10 @@ function purposeFor(text:string):FhrPurpose{
  if(/^compar|^contrast/.test(first))return'COMPARISON'
  if(/^investig|^indag/.test(first))return'RESEARCH'
  if(/^debat|^argument/.test(first)||/^(?:realiz|organiz|prepar)/.test(first)&&/panel|mesa redonda|debate/.test(text))return'DEBATE'
- if(/^present|^expon/.test(first))return'PRESENTATION'
- if(/^planific|^propon/.test(first)||/^(?:elabor|cre|constru|organiz)/.test(first)&&/\bplan\b/.test(text))return'PLAN'
- if(/^elabor|^cre|^constru|^redact|^compon/.test(first))return'PRODUCTION'
+ if(/^present|^expon|^socializ/.test(first))return'PRESENTATION'
+ if(/^planific|^propon/.test(first)||/^(?:elabor|cre|constru|organiz|disen|formul)/.test(first)&&/\bplan\b/.test(text))return'PLAN'
+ if(/^elabor|^cre|^constru|^redact|^compon|^disen|^formul/.test(first))return'PRODUCTION'
+ if(/^realiz/.test(first)&&/\brealiz[a-z]*\s+(?:(?:un|una|el|la|unos|unas|los|las)\s+)?(?:mural(?:es)?|cartel(?:es)?|afiches?|brochures?)\b/.test(text))return'PRODUCTION'
  if(/^represent|^dramatiz|^escenific|^realiz/.test(first))return'PERFORMANCE'
  return'ANALYSIS'
 }
@@ -57,7 +61,7 @@ function topicObject(topic:FhrTopic,text:string,purpose:FhrPurpose){
  return{object:(topic.objects?.[purpose]??topic.object).replaceAll('{choice}',choice),choice}
 }
 function requestedEvidence(topic:FhrTopic,purpose:FhrPurpose,text:string):ContextualTopicCriterion{
- const selected=topicObject(topic,text,purpose),choice=selected.choice,object=purpose==='PLAN'&&/panel/.test(text)&&!selected.object.includes('panel')?'el panel sobre '+selected.object:selected.object,reference=topic.relation
+ const selected=topicObject(topic,text,purpose),choice=selected.choice,object=purpose==='PLAN'&&/panel/.test(text)&&!selected.object.includes('panel')?'el panel sobre '+selected.object:selected.object,reference=topic.relation.replaceAll('{choice}',choice)
  const first=text.match(new RegExp(`\\b${action}\\b`))?.[0]??'',analysisVerb=/^clasific/.test(first)?'Clasifica':/^identific/.test(first)?'Identifica':/^interpret/.test(first)?'Interpreta':/^analiz/.test(first)?'Analiza':/^describ/.test(first)?'Describe':/^relat/.test(first)?'Relata':/^narr/.test(first)?'Narra':/^reflexion/.test(first)?'Reflexiona':'Explica'
  const forum=/mesa redonda/.test(text)?'Realiza la mesa redonda':/panel/.test(text)?'Realiza el panel':/^argument/.test(first)?'Argumenta':'Debate'
  const performanceVerb=/^represent/.test(first)?'Representa':/^dramatiz/.test(first)?'Dramatiza':/^escenific/.test(first)?'Escenifica':'Realiza'
@@ -68,7 +72,8 @@ function requestedEvidence(topic:FhrTopic,purpose:FhrPurpose,text:string):Contex
   DEBATE:`${forum} sobre ${object} sustentando y contrastando argumentos mediante ${reference}.`,
   PRESENTATION:`Presenta ${object} relacionando ${reference} con las evidencias proporcionadas.`,
   PRODUCTION:topic.id==='community-values'?`Construye ${/^(?:la|el|los|las) /.test(choice)?choice:'el '+choice} sobre ${object} relacionando ${reference} con sus evidencias.`:`Elabora ${object} relacionando ${reference} con las evidencias proporcionadas.`,
-  PLAN:`Planifica una propuesta sobre ${object} relacionando ${reference} con las alternativas proporcionadas, sin exigir ejecución.`,
+  // El catálogo anterior conserva su redacción; las nuevas referencias no añaden alternativas no pedidas.
+  PLAN:topic.planReferenceOnly&&!/\balternativas?\b/.test(text)?`Planifica una propuesta sobre ${object} relacionando ${reference}, sin exigir ejecución.`:`Planifica una propuesta sobre ${object} relacionando ${reference} con las alternativas proporcionadas, sin exigir ejecución.`,
   PERFORMANCE:`${performanceVerb} ${object} haciendo reconocibles las acciones y decisiones según ${reference}.`,
   VERIFICATION:`Verifica el cumplimiento de ${object} justificando cada marca con las acciones y condiciones del registro proporcionado.`,
   OBSERVATION:`Cumple ${object} en todas las oportunidades observadas según las reglas concretas proporcionadas.`

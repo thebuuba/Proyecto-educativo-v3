@@ -1,0 +1,29 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.120",
+  "grade": 3,
+  "status": "BLOCKED_PERSONAL_SESSION_EXPIRED_LOGIN_REQUIRED",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "servedAsset": "/assets/index-CrcroHRe.js",
+  "servedAssetMatchesBuild": true,
+  "observed": [
+    "La recarga normal de login cargó el entry final de 120 y registerSW.js.",
+    "Continuar como Alexauris abrió el formulario con contraseña vacía. No se ingresaron credenciales."
+  ],
+  "notVerified": [
+    "Formulario vacío personal de 3.º/FHR",
+    "Estrategia automática y manual e instrumento completo en ese contexto personal",
+    "Guardado y reapertura personal de 3.º",
+    "Huella personal de 3.º tras cambiar únicamente estrategia"
+  ],
+  "existingDraftsAndStorageNotCleared": true,
+  "newEmailsOrPasswordChanges": false,
+  "manualSteps": [
+    "Iniciar sesión con una cuenta propia de Development en localhost:8787.",
+    "Abrir Cursos, 3.º de secundaria, Formación Integral Humana y Religiosa, Bloque 1 y crear actividad; comprobar estrategia visible y puntos inicialmente vacíos.",
+    "Introducir «Elabora un mural de respeto e irrespeto a la vida de personas y naturaleza mediante las situaciones proporcionadas. No se pide representarlo ni presentarlo.»; esperar el instrumento completo y elegir manualmente una rúbrica.",
+    "Asignar 17.35 puntos explícitos, editar un criterio, guardar y reabrir desde esa misma asignatura.",
+    "Cambiar exclusivamente la estrategia, guardar y reabrir; comparar identificadores, criterios, niveles, pesos y puntos. No generar otro instrumento.",
+    "En una actividad nueva, probar «Explica Vida y derechos humanos según los textos proporcionados.» y comprobar que no añade un panel o mural."
+  ]
+}
