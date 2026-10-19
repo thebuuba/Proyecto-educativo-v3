@@ -1,0 +1,1266 @@
+{
+  "subjectCode": "OPT-HCS-SOC-5",
+  "subjectName": "Geografía Humana y Demografía",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "cases": [
+    {
+      "id": "concept-16",
+      "description": "Explica el concepto, desarrollo contemporáneo y ramas de la geografía humana según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0e908a52-8aa8-519b-aca6-3376686eed77"
+      ]
+    },
+    {
+      "id": "concept-17",
+      "description": "Explica las relaciones entre demografía y medioambiente según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ebeb1d70-1caa-50e4-8a69-f41cb2b7c09a"
+      ]
+    },
+    {
+      "id": "concept-18",
+      "description": "Explica el concepto y alcance de la demografía según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "fd5f922d-0b1f-53ae-889f-14cfd6f9f497"
+      ]
+    },
+    {
+      "id": "concept-19",
+      "description": "Explica los indicadores de natalidad, mortalidad infantil y esperanza de vida al nacer según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd"
+      ]
+    },
+    {
+      "id": "concept-20",
+      "description": "Explica la composición de la población según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0094a607-94d7-5144-a56e-4eb9080c2ef8"
+      ]
+    },
+    {
+      "id": "concept-21",
+      "description": "Explica la migración y la emigración según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5399804d-a062-5a43-91fd-6a4a04b8b048"
+      ]
+    },
+    {
+      "id": "concept-22",
+      "description": "Explica los censos de población según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "71dc63ba-7b82-54e4-9d4d-921cc13d0770"
+      ]
+    },
+    {
+      "id": "concept-23",
+      "description": "Explica el Índice de Desarrollo Humano (IDH) según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a57f99f4-1f4c-5f4f-96ca-d00f8b4120ce"
+      ]
+    },
+    {
+      "id": "concept-24",
+      "description": "Explica el Índice de Calidad de Vida (ICV) según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "41a001ef-51fd-5d44-9239-a4e32bcbdadf"
+      ]
+    },
+    {
+      "id": "concept-26",
+      "description": "Explica la regionalización de la República Dominicana según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4b7dd6d5-b339-5419-9946-970d1596d12d"
+      ]
+    },
+    {
+      "id": "concept-27",
+      "description": "Explica la macroregión del Cibao según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3e965cd2-aa17-5130-9acb-1234359513c6"
+      ],
+      "criterionCount": 1,
+      "forbidden": "región y provincia|macroregión, región"
+    },
+    {
+      "id": "concept-28",
+      "description": "Explica la región Cibao Norte según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "18f1cd28-b7b0-56ec-86a8-a4cd372bc983"
+      ]
+    },
+    {
+      "id": "concept-29",
+      "description": "Explica la región Cibao Sur según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "17acbdac-b4b3-5bed-9ebb-a8ccfd6dfa17"
+      ]
+    },
+    {
+      "id": "concept-30",
+      "description": "Explica la región Cibao Nordeste según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1f34cb80-f730-57cd-a464-0ec93a82d3e2"
+      ]
+    },
+    {
+      "id": "concept-31",
+      "description": "Explica la región Cibao Noroeste según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ffabfd58-4cb2-54ce-a7ed-e7d010e886cc"
+      ]
+    },
+    {
+      "id": "concept-32",
+      "description": "Explica la macroregión Suroeste según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4a5fbaf4-d47b-57df-a394-44501cd70786"
+      ],
+      "criterionCount": 1,
+      "forbidden": "región y provincia|macroregión, región"
+    },
+    {
+      "id": "concept-33",
+      "description": "Explica la región Valdesia según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "68b1e539-727d-5057-84d2-0f4262ddcd9e"
+      ]
+    },
+    {
+      "id": "concept-34",
+      "description": "Explica la región El Valle según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "792232ba-7af1-55ec-9300-1f267ae6a6ed"
+      ]
+    },
+    {
+      "id": "concept-35",
+      "description": "Explica la región Enriquillo según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a0761b83-7ddd-5fa3-a246-a9e864f3f403"
+      ]
+    },
+    {
+      "id": "concept-36",
+      "description": "Explica la macroregión Sureste según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0b1177f1-6901-5d24-96aa-96c140a7e3cd"
+      ],
+      "criterionCount": 1,
+      "forbidden": "región y provincia|macroregión, región"
+    },
+    {
+      "id": "concept-37",
+      "description": "Explica la región Ozama o Metropolitana según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f9337110-8cbd-5667-80ab-78c4cfab9cb0"
+      ]
+    },
+    {
+      "id": "concept-38",
+      "description": "Explica las regiones Yuma y Higuamo según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4375a328-4059-5adc-9875-1787ec210c56"
+      ]
+    },
+    {
+      "id": "concept-66",
+      "description": "Explica la convivencia intercultural según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2b6664f3-c39a-531d-aefe-7b8126ade690"
+      ]
+    },
+    {
+      "id": "concept-67",
+      "description": "Explica el concepto de respeto a las demás personas en el caso ficticio según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "552ffc7e-4788-5395-946b-b438633c730d"
+      ]
+    },
+    {
+      "id": "concept-68",
+      "description": "Explica la cultura de paz según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7b4f6288-54bd-592a-9830-afb6b473b78e"
+      ]
+    },
+    {
+      "id": "concept-69",
+      "description": "Explica el concepto y relaciones de la economía según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "37f0efc2-f125-56a4-a642-5ea9efbbd258"
+      ]
+    },
+    {
+      "id": "concept-70",
+      "description": "Explica los sectores económicos primario, secundario y terciario según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bc3cb9dd-dfeb-5d17-abc6-88c6f5a84747"
+      ]
+    },
+    {
+      "id": "concept-71",
+      "description": "Explica los indicadores económicos del conjunto dado según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "619b52dd-2e90-5d35-93db-89ab276d97bc"
+      ],
+      "requiredAll": [
+        "indicadores económicos"
+      ]
+    },
+    {
+      "id": "concept-72",
+      "description": "Explica el Producto Interno Bruto (PIB) según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c04938db-f4ef-52e5-a344-a51d7d60fa91"
+      ]
+    },
+    {
+      "id": "concept-73",
+      "description": "Explica las finanzas, producción y empresas económicas del caso ficticio según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "773a2c20-236a-55c2-80e3-2e4689c40d5f"
+      ]
+    },
+    {
+      "id": "concept-74",
+      "description": "Explica el concepto y efectos de los paraísos fiscales según el texto dado según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cf241fc7-179b-5b95-a51b-fd84a156b5d6"
+      ]
+    },
+    {
+      "id": "concept-75",
+      "description": "Explica el trueque y el mercado según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c0f64f4e-1ea0-50db-9c31-f00400537565"
+      ]
+    },
+    {
+      "id": "concept-76",
+      "description": "Explica el comercio exterior según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9b4f01c3-adc1-5b32-8bad-3d22056277fa"
+      ]
+    },
+    {
+      "id": "concept-77",
+      "description": "Explica la balanza de pagos según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e1ec1862-f19b-5974-8806-c2f175fbf9de"
+      ]
+    },
+    {
+      "id": "concept-78",
+      "description": "Explica las relaciones entre medioambiente y desarrollo según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4f3f79f3-a63f-5f83-85e3-fd9d77f05bf2"
+      ]
+    },
+    {
+      "id": "concept-79",
+      "description": "Explica los recursos naturales y los recursos humanos según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3dc293b8-7a1c-5a34-8c88-a4df277273f9"
+      ]
+    },
+    {
+      "id": "concept-80",
+      "description": "Explica las relaciones entre contaminación y medioambiente según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "02cadf5d-234c-5044-842a-125d84aa0e0a"
+      ]
+    },
+    {
+      "id": "concept-81",
+      "description": "Explica la contaminación visual y acústica según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3a7e10c4-7a99-5b02-bae1-09a592a0e2b1"
+      ]
+    },
+    {
+      "id": "concept-82",
+      "description": "Explica los desechos degradables y no degradables según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ef5f6f3e-753c-52c6-9526-c5d54c697168"
+      ],
+      "requiredAll": [
+        "los desechos degradables",
+        "los desechos no degradables"
+      ]
+    },
+    {
+      "id": "concept-83",
+      "description": "Explica los proyectos personales ficticios y colectivos según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2f7b58af-fa27-5d58-9dbf-bcfb6f0f2274"
+      ]
+    },
+    {
+      "id": "concept-84",
+      "description": "Explica el concepto de respeto al entorno en el caso ficticio según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "de6697f2-c328-5970-a539-5aff21d496f2"
+      ],
+      "requiredAll": [
+        "respeto al entorno"
+      ],
+      "forbidden": "medioambiente y desarrollo"
+    },
+    {
+      "id": "concept-85",
+      "description": "Explica el concepto de pertenencia social en el caso ficticio según las definiciones, mapas o materiales proporcionados. No se pide calcular indicadores, elaborar otro producto ni revelar datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8d6d59d1-3279-5c3e-a2ca-00573fefd625"
+      ]
+    },
+    {
+      "id": "reliable-information-search",
+      "description": "Investiga la pregunta sobre demografía utilizando el conjunto de páginas confiables proporcionado y relaciona los hallazgos con la pregunta dada. No se pide buscar datos personales.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "c1dd8e65-80bc-5191-87b6-0f3bd9a75cea"
+      ]
+    },
+    {
+      "id": "population-data-record-summary",
+      "description": "Registra los datos demográficos del conjunto proporcionado conservando valores y procedencia. Después resume las informaciones relevantes para la pregunta dada.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "f1bda703-131c-5672-aa39-a9fbc6fdc932"
+      ],
+      "requiredEvidence": [
+        "data-record",
+        "summary"
+      ]
+    },
+    {
+      "id": "specialized-reports-reading",
+      "description": "Analiza los informes y extractos de páginas especializadas sobre población y demografía proporcionados, distinguiendo datos y conclusiones. No se pide una investigación nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3fdc0762-0878-5aad-a1c5-8024a2425108",
+        "d61e3dc2-022a-54c8-bdd9-c31f4f4f6ff2"
+      ]
+    },
+    {
+      "id": "human-geography-information-analysis",
+      "description": "Analiza las informaciones sobre geografía humana de las fuentes proporcionadas distinguiendo sus datos, relaciones y límites. No se pide investigar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a98d6d2-71c8-51f9-b348-75aedfa3cd89"
+      ]
+    },
+    {
+      "id": "idh-icv-calculation",
+      "description": "Calcula el IDH y el ICV del territorio ficticio utilizando exclusivamente las fórmulas, los datos y las convenciones dados para cada índice. No se pide buscar otra fórmula.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae"
+      ],
+      "requiredEvidence": [
+        "calculation"
+      ],
+      "required": "IDH|Desarrollo Humano",
+      "forbidden": "fórmula universal|Producto Nacional"
+    },
+    {
+      "id": "population-poverty-map-identification",
+      "description": "Identifica en los mapas de población proporcionados las provincias con mayor crecimiento poblacional y mayor índice de pobreza según sus leyendas y períodos. No se pide elaborar mapas nuevos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e22105ad-c22f-5ec3-854a-108364beb280"
+      ],
+      "required": "crecimiento|pobreza",
+      "forbidden": "publica|encuesta propia",
+      "requiredAll": [
+        "crecimiento",
+        "pobreza"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "demography-information-analysis",
+      "description": "Analiza críticamente las informaciones demográficas dadas distinguiendo los datos, sus límites y las conclusiones que respaldan. No se pide adoptar una postura personal.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "af17372d-b329-5c59-89c9-c34892114f64"
+      ]
+    },
+    {
+      "id": "demographic-indices-calculation",
+      "description": "Calcula los indicadores de natalidad y mortalidad y los índices IDH e ICV solicitados, con la fórmula y los datos dados para cada uno. No se pide usar una fórmula diferente.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059"
+      ],
+      "requiredEvidence": [
+        "calculation"
+      ]
+    },
+    {
+      "id": "territorial-division-analysis",
+      "description": "Analiza los cambios de la división territorial dominicana desde la época colonial hasta el período actual indicado en los mapas y textos proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "61cde0f0-9105-58ec-9182-a9c9e6234b96"
+      ]
+    },
+    {
+      "id": "colonial-division-recognition",
+      "description": "Identifica la división territorial de la época colonial en el mapa dado según las referencias proporcionadas. No se pide compararla con otra época.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6d58b6c1-3b85-5ad8-9e74-88306e0a5f6f"
+      ],
+      "onlyEvidence": "identification"
+    },
+    {
+      "id": "territorial-levels-comparison",
+      "description": "Compara macroregión, región y provincia según su alcance y relaciones en el esquema territorial proporcionado.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "59f9ff9a-380f-5a0c-b988-74d2375f4f57"
+      ],
+      "required": "macroregión|macro región",
+      "forbidden": "jerarquía moral"
+    },
+    {
+      "id": "territorial-changes-comparison",
+      "description": "Compara la división territorial colonial y la del período actual indicado en los dos mapas proporcionados, conservando sus fechas y referencias.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "ec76f251-d7e2-56ce-aeba-be1ac690652c"
+      ]
+    },
+    {
+      "id": "territorial-map-mural",
+      "description": "Elabora un mural con los mapas proporcionados para explicar la división territorial dominicana del período indicado. No se pide una infografía adicional.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "efb5dcb7-b988-5c5d-b21d-8498a38ffef7"
+      ],
+      "forbidden": "infografía adicional obligatoria"
+    },
+    {
+      "id": "intercultural-proposal",
+      "description": "Propone una respuesta al conflicto intercultural ficticio dado para favorecer la convivencia y la cultura de paz, justificándola con sus condiciones.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4ecc2939-4e6d-5790-853d-d468c6711530"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ],
+      "criterionCount": 1,
+      "requiredAll": [
+        "convivencia intercultural",
+        "cultura de paz"
+      ]
+    },
+    {
+      "id": "proposal-definition-only",
+      "description": "Define únicamente el problema, objetivo y alcance de la propuesta de convivencia intercultural según el caso ficticio dado. No se pide ejecutarla ni redactar el proyecto completo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7e0760fc-a78e-5c6e-b8cc-09b715dfb984"
+      ],
+      "forbidden": "ejecuta la campaña|proyecto completo obligatorio",
+      "onlyEvidence": "proposal-scope",
+      "requiredAll": [
+        "problema",
+        "objetivo",
+        "alcance"
+      ]
+    },
+    {
+      "id": "convivence-sources-selection",
+      "description": "Selecciona las fuentes confiables para la pregunta sobre convivencia intercultural entre las fichas de autoría, procedencia y respaldo dadas. No se pide investigar otras.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f18b26fe-46b1-5d0e-aeb1-b10b605e8c16"
+      ],
+      "requiredEvidence": [
+        "source-selection"
+      ]
+    },
+    {
+      "id": "convivence-legislation-analysis",
+      "description": "Analiza las legislaciones sobre convivencia intercultural proporcionadas explicando su alcance en el caso ficticio, sin atribuirles vigencia no indicada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1a57935e-8745-54c8-8d4f-fd21c2abaf76"
+      ],
+      "required": "alcance|condiciones",
+      "forbidden": "ley vigente obligatoria",
+      "onlyEvidence": "legal-analysis",
+      "requiredAll": [
+        "alcance",
+        "artículos|disposiciones",
+        "condiciones"
+      ]
+    },
+    {
+      "id": "intercultural-project-plan",
+      "description": "Elabora el plan de un proyecto escolar sencillo para el problema ficticio de convivencia intercultural, indicando acciones, recursos y criterios de seguimiento según las condiciones dadas. No se pide ejecutarlo.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "9e5497cd-61a4-5b33-b893-5ca7f5266cce"
+      ]
+    },
+    {
+      "id": "trade-agreement-argument",
+      "description": "Argumenta sobre los efectos del acuerdo comercial mundial o regional seleccionado en el caso económico ficticio utilizando el texto y los datos proporcionados. No se pide defender todos los acuerdos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e2addb75-37d6-59d9-bcd4-e8b81a1cb855"
+      ],
+      "requiredEvidence": [
+        "argument"
+      ]
+    },
+    {
+      "id": "trade-agreement-recognition",
+      "description": "Identifica los acuerdos comerciales de la República Dominicana expresamente seleccionados en las fichas fechadas dadas. No se pide investigar otros acuerdos ni afirmar vigencia actual.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3d874fca-fafa-5122-b5a9-f670fbc42712"
+      ],
+      "onlyEvidence": "identification"
+    },
+    {
+      "id": "institution-publications-analysis",
+      "description": "Analiza los extractos fechados de publicaciones del Banco Central, la Dirección General de Impuestos Internos y la ONE sobre los indicadores económicos proporcionados, conservando sus datos y procedencia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cc6044db-89e4-57e6-af9a-2cf9aad868b2"
+      ],
+      "onlyEvidence": "data-analysis",
+      "requiredAll": [
+        "indicadores económicos",
+        "procedencia",
+        "período"
+      ],
+      "forbidden": "Sistema Tributario Dominicano"
+    },
+    {
+      "id": "tax-system-understanding",
+      "description": "Explica las funciones y relaciones del Sistema Tributario Dominicano según el organigrama y textos proporcionados. No se pide calcular impuestos reales ni asesorar a una persona.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0b83c2de-8499-584d-be93-9010085096d4"
+      ]
+    },
+    {
+      "id": "internal-external-trade-impact",
+      "description": "Analiza el impacto social del comercio interno y externo en el caso dominicano ficticio dado, distinguiendo los datos de las conclusiones.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f060de6a-0865-5c5a-a775-8427ea907975"
+      ],
+      "requiredAll": [
+        "comercio interno",
+        "comercio exterior"
+      ]
+    },
+    {
+      "id": "environment-pollution-proposal",
+      "description": "Presenta oralmente una propuesta para proteger el medioambiente y reducir la contaminación visual y acústica del caso ficticio dado, justificando sus acciones. No se pide conservar la contaminación.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "8215b975-c468-53c7-9516-c7f329a88938"
+      ],
+      "requiredEvidence": [
+        "proposal",
+        "oral"
+      ],
+      "forbidden": "preserva la contaminación|conserva la contaminación"
+    },
+    {
+      "id": "environment-proposal-scope",
+      "description": "Define los aspectos de la propuesta de protección ambiental: problema, objetivo y alcance para el caso ficticio proporcionado. No se pide ejecutar acciones externas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ac3805cb-43af-5506-9c14-2278a9c2f224"
+      ],
+      "onlyEvidence": "proposal-scope",
+      "requiredAll": [
+        "problema",
+        "objetivo",
+        "alcance"
+      ]
+    },
+    {
+      "id": "environment-legislation-research",
+      "description": "Investiga las disposiciones y acuerdos ambientales seleccionados utilizando el conjunto de textos proporcionado y explica sus alcances para el caso ficticio dado. No se pide atribuir vigencia no indicada.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "60a455aa-61e3-57b1-8088-2b3be35fb289"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "research",
+      "requiredAll": [
+        "límites"
+      ]
+    },
+    {
+      "id": "population-protected-areas-maps",
+      "description": "Analiza los mapas de población y zonas protegidas proporcionados según sus leyendas, fechas y referencias. No se pide elaborar otro mapa.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7ee49b27-40a4-54fc-a495-04bd0a795825"
+      ],
+      "onlyEvidence": "map-analysis",
+      "requiredAll": [
+        "población",
+        "zonas protegidas",
+        "leyenda"
+      ]
+    },
+    {
+      "id": "pollution-survey-design",
+      "description": "Diseña una encuesta simulada sobre contaminación visual y acústica con preguntas pertinentes al objetivo dado y sin solicitar identidades ni datos privados. No se pide aplicarla fuera del aula.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "5c4e618d-4df7-516d-9068-7e93116bcc65"
+      ],
+      "required": "preguntas|objetivo",
+      "forbidden": "datos personales obligatorios|visita domicilios"
+    },
+    {
+      "id": "environment-proposal-draft",
+      "description": "Redacta el borrador final de la propuesta de reducción de contaminación ambiental de acuerdo con las condiciones y observaciones proporcionadas. No se pide ejecutarla.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "97d8869a-28c6-51ed-b3e2-c1ac840b46d1"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "proposal"
+    },
+    {
+      "id": "personal-social-project",
+      "description": "Elabora el plan de un proyecto personal ficticio y social según la problemática, recursos y condiciones dados. No se piden vivencias reales ni ejecutar el proyecto.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "0c4653c9-5f84-5c31-8b7a-68fff18c6feb"
+      ]
+    },
+    {
+      "id": "project-problem-selection",
+      "description": "Selecciona únicamente la problemática del proyecto personal ficticio o social entre los casos proporcionados y justifica su pertinencia. No se pide elaborar el proyecto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "eef7fd9a-691e-5fec-8a06-a1898ab8d10b"
+      ],
+      "forbidden": "planifica todas las acciones|ejecuta el proyecto",
+      "onlyEvidence": "problem-selection",
+      "requiredAll": [
+        "problema",
+        "justifica"
+      ]
+    },
+    {
+      "id": "project-reliable-sources",
+      "description": "Selecciona las fuentes confiables sobre el problema del proyecto social ficticio entre las fichas dadas, justificando su elección por autoría y respaldo. No se pide ejecutar el proyecto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "786a7915-f9b7-5300-99a0-441be9229e78"
+      ],
+      "requiredEvidence": [
+        "source-selection"
+      ]
+    },
+    {
+      "id": "values-environment-material",
+      "description": "Elabora un cartel educativo para el caso ficticio de convivencia y respeto al entorno, con las ideas y destinatarios proporcionados. No se pide demostrar valores privados ni publicarlo fuera del aula.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "d1b72911-e4e5-5824-bd27-59ed7269b713"
+      ],
+      "requiredAll": [
+        "convivencia",
+        "respeto al entorno"
+      ]
+    },
+    {
+      "id": "responsible-citizenship-participation",
+      "description": "Realiza una simulación con los roles ficticios acordados para aportar una acción concreta a la propuesta de convivencia y ciudadanía responsable del caso dado. No se evalúan sentimientos ni moralidad privada.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "0b306cd0-b50a-52f2-9d43-7f4c00699efa"
+      ]
+    },
+    {
+      "id": "project-draft-revision",
+      "description": "Revisa únicamente la relación entre el objetivo y las acciones del borrador del proyecto social ficticio según las observaciones dadas y muestra el cambio. No se pide ejecutarlo ni corregir ortografía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "72d20167-4f4b-5a28-a680-a48109979e67"
+      ],
+      "onlyEvidence": "revision",
+      "forbidden": "ortografía|cumple todas las acciones del proyecto"
+    },
+    {
+      "id": "information-attribution",
+      "description": "Atribuye las cifras demográficas del informe a sus fuentes proporcionadas y conserva los datos citados al registrarlas. No se pide usar una norma de citas no indicada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6a4d8c7f-3000-50a6-b443-beba35581ba8"
+      ],
+      "requiredEvidence": [
+        "attribution",
+        "data-record"
+      ],
+      "forbidden": "norma APA obligatoria|moralidad"
+    },
+    {
+      "id": "territorial-mural-map-analysis",
+      "description": "Analiza la división territorial dominicana del período indicado en los murales y mapas proporcionados. No se pide producir otros materiales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "457a542e-126a-5b1d-b66e-e7d62c469f90"
+      ],
+      "onlyEvidence": "map-analysis",
+      "requiredAll": [
+        "división territorial",
+        "leyenda",
+        "período"
+      ]
+    },
+    {
+      "id": "environment-simulation-contribution",
+      "description": "Realiza una simulación escolar con roles ficticios para aportar la acción concreta acordada a la propuesta de cuidado del entorno según las condiciones dadas. No se pide una intervención real fuera del aula.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "08d9c646-f822-576c-8d01-b9eb68af68c8"
+      ]
+    },
+    {
+      "id": "indicator-116-human-geography-definition",
+      "description": "Elabora una definición propia de geografía humana a partir de las fuentes proporcionadas conservando sus ideas principales. No se pide redactar un ensayo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4fa7b089-d54d-528b-957b-de0d6f0e55f5"
+      ]
+    },
+    {
+      "id": "indicator-117-geography-demography-authors",
+      "description": "Identifica los autores y sus aportes a la consolidación de la geografía humana y la demografía según las fichas suministradas. No se piden otros autores.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a2bfdf01-1d12-5501-888c-56a1e64ec11c"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "indicator-118-information-authorship",
+      "description": "Atribuye las ideas y datos demográficos del material dado a las fuentes virtuales o impresas proporcionadas. No se pide buscar nuevas fuentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7b111d4e-498b-5dc2-998d-ca32175f61be"
+      ]
+    },
+    {
+      "id": "indicator-119-demography-applications-reading",
+      "description": "Analiza en los ensayos e informes de lectura proporcionados las aplicaciones de la demografía al estudio de la población. No se pide escribir esos productos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e8fedfb2-31a7-5a06-a5fd-416291a1d689"
+      ]
+    },
+    {
+      "id": "indicator-120-dominican-migration-data-research",
+      "description": "Investiga con el conjunto de datos agregados y fechados proporcionado qué países reciben mayor cantidad de inmigrantes dominicanos en ese período y explica los límites de la comparación. No se piden datos personales ni cifras actuales externas.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "9d6e4e39-3c0b-5502-b4b3-d4a513b344f4"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "research",
+      "requiredAll": [
+        "límites"
+      ]
+    },
+    {
+      "id": "indicator-121-report-with-demographic-formulas",
+      "description": "Elabora un informe sobre el crecimiento poblacional del territorio ficticio con las fórmulas y datos proporcionados. Calcula la tasa de crecimiento, el ICV y la mortalidad solicitados e integra sus resultados en el informe.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "c6cb3ae7-3332-581a-9af0-1f7b91a68005"
+      ],
+      "requiredEvidence": [
+        "report",
+        "calculation"
+      ],
+      "requiredAll": [
+        "crecimiento",
+        "ICV",
+        "mortalidad"
+      ],
+      "requiredCalculationTargets": [
+        "crecimiento",
+        "ICV",
+        "mortalidad"
+      ]
+    },
+    {
+      "id": "indicator-122-territorial-mural-or-infographic",
+      "description": "Elabora un mural o una infografía sobre la división territorial dominicana del período indicado utilizando los mapas y datos dados, según la alternativa elegida. No se piden ambos productos.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "b896a10f-24d5-59f7-8d0d-312934768e44"
+      ],
+      "required": "elegid|alternativa| o "
+    },
+    {
+      "id": "indicator-123-territorial-history-analysis",
+      "description": "Analiza las divisiones territoriales dominicanas desde la época colonial hasta el período actual indicado, según los mapas y textos proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "35670a28-778b-5a32-88fe-eaf941c7c06c"
+      ]
+    },
+    {
+      "id": "indicator-124-territorial-levels-reading-recognition",
+      "description": "Identifica en los ensayos y resúmenes proporcionados la diferencia entre macroregión, región y provincia. No se pide escribir esos textos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a70abd3e-333f-5fea-a497-edff6affaaa2"
+      ],
+      "forbidden": "tesis del ensayo|redacta un ensayo"
+    },
+    {
+      "id": "indicator-125-intercultural-project-proposal",
+      "description": "Propone un proyecto escolar sencillo para favorecer la convivencia intercultural del caso ficticio según sus condiciones y justifica su pertinencia. No se pide ejecutarlo.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "7c55f405-3df6-538f-854c-1682e526c324"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "indicator-126-respect-case-simulation",
+      "description": "Realiza una simulación de convivencia con roles ficticios aplicando las reglas de trato respetuoso expresamente dadas para el caso. No se califican autoestima, experiencias o sentimientos privados.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "1dfdb1ff-767b-534d-8230-bca4c38f1498"
+      ]
+    },
+    {
+      "id": "indicator-127-peace-dialogue-argument",
+      "description": "Debate las razones por las que el diálogo puede contribuir a la cultura de paz en el conflicto ficticio dado y responde a las objeciones indicadas con respaldo en el material.",
+      "activityType": "DEBATE",
+      "sourceRecordIds": [
+        "aa06f80d-4fa0-54ba-a2c8-29a93fe6eac2"
+      ],
+      "requiredEvidence": [
+        "argument",
+        "response"
+      ]
+    },
+    {
+      "id": "indicator-128-economic-globalization-monograph-or-essay",
+      "description": "Elabora una monografía o un ensayo sobre las implicaciones de la globalización económica en los mercados mundiales según los textos dados y la alternativa elegida. No se piden ambos productos.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361"
+      ],
+      "required": "alternativa|elegid",
+      "forbidden": "filosófic|fe personal"
+    },
+    {
+      "id": "indicator-129-gdp-net-domestic-product-analysis",
+      "description": "Analiza las implicaciones del Producto Interno Bruto y el Producto Interno Neto en la economía según sus definiciones y datos proporcionados. No se pide calcularlos ni usar otro agregado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cd75ddeb-0484-5d63-9e9f-d71c0df64205"
+      ],
+      "required": "Producto Interno Neto",
+      "forbidden": "Producto Nacional Neto|PNB"
+    },
+    {
+      "id": "indicator-130-trade-tax-research-project",
+      "description": "Elabora el plan de un proyecto sencillo de investigación sobre comercio externo, interno y las instituciones del Sistema Tributario Dominicano, con pregunta, fuentes y pasos según las condiciones proporcionadas. No se pide ejecutar el estudio ni calcular impuestos reales.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "81a7d1a0-5874-504c-8ac1-10117fd4a0ac"
+      ],
+      "onlyEvidence": "research-plan",
+      "requiredAll": [
+        "pregunta",
+        "fuentes",
+        "pasos",
+        "comercio interno",
+        "comercio exterior"
+      ]
+    },
+    {
+      "id": "indicator-131-natural-resources-project",
+      "description": "Elabora el plan de un proyecto de protección de los recursos naturales del territorio ficticio dado, con acciones, recursos y seguimiento acordes a las condiciones. No se pide intervención comunitaria real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "dce0ecf8-ec34-5be6-81d8-d3cab16fb7c3"
+      ]
+    },
+    {
+      "id": "indicator-132-environment-legal-articles-analysis",
+      "description": "Analiza el alcance de los artículos legales de protección ambiental proporcionados para el caso ficticio dado. No se pide afirmar su vigencia actual ni buscar otros artículos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7e5f06b1-8f58-5eb2-8527-2331da6d7356"
+      ],
+      "onlyEvidence": "legal-analysis",
+      "requiredAll": [
+        "alcance",
+        "artículos|disposiciones",
+        "condiciones"
+      ]
+    },
+    {
+      "id": "indicator-133-nondegradable-waste-campaign",
+      "description": "Elabora una campaña educativa escolar sobre los efectos de desechos no degradables en el medioambiente y la salud según el material proporcionado y sus destinatarios. No se pide publicarla ni intervenir fuera del aula.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "fa485b96-823d-5852-ba4b-fe7f2d56dedf"
+      ],
+      "requiredAll": [
+        "medioambiente",
+        "salud",
+        "destinatarios"
+      ]
+    },
+    {
+      "id": "indicator-134-fictitious-personal-social-project",
+      "description": "Elabora un proyecto sencillo de desarrollo personal ficticio y social con objetivos y acciones según las condiciones dadas. No se piden datos familiares ni experiencias propias.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "b97dbe0d-6240-5e84-b78d-d258d991fc99"
+      ]
+    },
+    {
+      "id": "indicator-135-values-campaign-contribution",
+      "description": "Realiza una simulación de campaña escolar de convivencia y respeto al entorno, aportando el mensaje y la acción concreta acordados para tu rol ficticio. No se califican valores privados ni adhesión.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "d92e88e4-2afd-5968-9585-a513bfba920c"
+      ]
+    },
+    {
+      "id": "indicator-136-responsible-belonging-proposal",
+      "description": "Propone una acción de ciudadanía responsable para el caso ficticio de pertenencia social dado y justifica cómo atiende sus condiciones. No se pide declarar sentimientos de pertenencia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9c63bead-8672-51bf-ac22-e7c547f0de16"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ],
+      "forbidden": "intensidad de pertenencia|demuestra amor",
+      "criterionCount": 1,
+      "onlyEvidence": "proposal"
+    },
+    {
+      "id": "icv-formula-only",
+      "description": "Calcula únicamente el ICV con la fórmula, los datos y el período proporcionados. No se pide IDH ni otras tasas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "41a001ef-51fd-5d44-9239-a4e32bcbdadf",
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae"
+      ],
+      "requiredEvidence": [
+        "calculation"
+      ],
+      "forbidden": "IDH|Desarrollo Humano|mortalidad"
+    },
+    {
+      "id": "idh-formula-only",
+      "description": "Calcula únicamente el IDH utilizando la fórmula y los datos dados para sus dimensiones. No se pide ICV ni una fórmula universal.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "a57f99f4-1f4c-5f4f-96ca-d00f8b4120ce",
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae"
+      ],
+      "requiredEvidence": [
+        "calculation"
+      ],
+      "forbidden": "ICV|Calidad de Vida|fórmula universal"
+    },
+    {
+      "id": "mortality-formula-only",
+      "description": "Calcula únicamente la tasa de mortalidad del territorio ficticio con los datos, la fórmula y el período dados. No se pide natalidad ni esperanza de vida.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd",
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059"
+      ],
+      "requiredEvidence": [
+        "calculation"
+      ],
+      "forbidden": "natalidad|esperanza de vida"
+    },
+    {
+      "id": "infant-mortality-vs-general",
+      "description": "Compara mortalidad infantil y mortalidad general según las definiciones, denominadores y períodos proporcionados. No se pide calcular sus valores.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd"
+      ],
+      "required": "infantil|denominador",
+      "forbidden": "realiza las operaciones"
+    },
+    {
+      "id": "growth-then-result",
+      "description": "Calcula la tasa de crecimiento poblacional con la fórmula y los datos proporcionados y explica su resultado según las unidades y el período dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd",
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059",
+        "c6cb3ae7-3332-581a-9af0-1f7b91a68005"
+      ],
+      "requiredEvidence": [
+        "calculation",
+        "result"
+      ],
+      "forbidden": "producto solicitado"
+    },
+    {
+      "id": "formula-recognition-no-calculation",
+      "description": "Identifica únicamente las variables y relaciones de la fórmula de ICV proporcionada. No se pide sustituir datos ni calcular el índice.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae"
+      ],
+      "onlyEvidence": "identification",
+      "forbidden": "sustituye|calcula el resultado"
+    },
+    {
+      "id": "population-count-map-only",
+      "description": "Identifica únicamente la provincia con mayor crecimiento poblacional en el mapa dado usando su leyenda. No se pide analizar pobreza ni calcular tasas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e22105ad-c22f-5ec3-854a-108364beb280"
+      ],
+      "criterionCount": 1,
+      "forbidden": "pobreza|realiza el cálculo"
+    },
+    {
+      "id": "yuma-only",
+      "description": "Ubica únicamente Yuma en el mapa regional proporcionado. No se pide Higuamo ni otras regiones.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4375a328-4059-5adc-9875-1787ec210c56"
+      ],
+      "criterionCount": 1,
+      "required": "Yuma",
+      "forbidden": "Higuamo|Cibao"
+    },
+    {
+      "id": "higuamo-only",
+      "description": "Explica únicamente las características de Higuamo solicitadas en la ficha regional dada. No se pide Yuma.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4375a328-4059-5adc-9875-1787ec210c56"
+      ],
+      "required": "Higuamo",
+      "forbidden": "Yuma"
+    },
+    {
+      "id": "ozama-metropolitana-synonym",
+      "description": "Identifica la región Ozama, también llamada Metropolitana, en el mapa proporcionado. No se pide elegir entre dos regiones distintas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f9337110-8cbd-5667-80ab-78c4cfab9cb0"
+      ],
+      "required": "Ozama|Metropolitana",
+      "forbidden": "alternativa elegida|ambas regiones"
+    },
+    {
+      "id": "net-domestic-product-comparison",
+      "description": "Compara PIB y Producto Interno Neto según las definiciones dadas. No se pide elaborar un producto ni calcular cifras.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "c04938db-f4ef-52e5-a344-a51d7d60fa91",
+        "cd75ddeb-0484-5d63-9e9f-d71c0df64205"
+      ],
+      "criterionCount": 1,
+      "required": "Producto Interno Neto",
+      "forbidden": "Producto Nacional Neto|PNB"
+    },
+    {
+      "id": "sources-only-no-investigation",
+      "description": "Selecciona únicamente las fuentes pertinentes de economía entre las fichas proporcionadas según la pregunta dada. No se pide otra investigación ni resumirlas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f18b26fe-46b1-5d0e-aeb1-b10b605e8c16",
+        "786a7915-f9b7-5300-99a0-441be9229e78"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "source-selection"
+    },
+    {
+      "id": "census-no-private-survey",
+      "description": "Analiza únicamente los resultados agregados del censo ficticio proporcionado. No se pide entrevistar personas ni recoger datos privados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "71dc63ba-7b82-54e4-9d4d-921cc13d0770"
+      ],
+      "forbidden": "aplica una encuesta|visita viviendas|identidades reales"
+    },
+    {
+      "id": "migration-emigration-comparison",
+      "description": "Compara migración y emigración en los casos ficticios dados según el lugar de referencia. No se pide declarar el estatus migratorio propio.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "5399804d-a062-5a43-91fd-6a4a04b8b048"
+      ],
+      "required": "migración|emigración",
+      "forbidden": "estatus personal obligatorio"
+    },
+    {
+      "id": "survey-data-analysis-only",
+      "description": "Analiza los resultados agregados de la encuesta simulada sobre contaminación visual y acústica proporcionada. No se pide diseñar preguntas ni aplicar otra encuesta.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5c4e618d-4df7-516d-9068-7e93116bcc65"
+      ],
+      "forbidden": "diseña preguntas|aplica otra encuesta"
+    },
+    {
+      "id": "proposal-revision-scope",
+      "description": "Revisa únicamente la coherencia entre problema y acciones de la propuesta ambiental según las observaciones dadas y muestra la corrección. No se pide elaborar otra propuesta ni corregir ortografía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "97d8869a-28c6-51ed-b3e2-c1ac840b46d1",
+        "72d20167-4f4b-5a28-a680-a48109979e67"
+      ],
+      "onlyEvidence": "revision",
+      "forbidden": "ortografía|nueva investigación"
+    },
+    {
+      "id": "map-or-infographic-one-product",
+      "description": "Elabora una infografía sobre la regionalización dominicana con el mapa y los datos proporcionados. No se pide un mural ni otro producto.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "efb5dcb7-b988-5c5d-b21d-8498a38ffef7",
+        "b896a10f-24d5-59f7-8d0d-312934768e44"
+      ],
+      "forbidden": "mural obligatorio"
+    },
+    {
+      "id": "independent-map-and-calculation",
+      "description": "Ubica las provincias solicitadas en el mapa de población dado. Después calcula la tasa de natalidad con los datos y la fórmula proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e22105ad-c22f-5ec3-854a-108364beb280",
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059"
+      ],
+      "requiredEvidence": [
+        "location",
+        "calculation"
+      ],
+      "requiredAll": [
+        "las provincias indicadas en el mapa de población"
+      ]
+    },
+    {
+      "id": "report-then-calculation",
+      "description": "Elabora un informe de los datos demográficos proporcionados. Después calcula la tasa de mortalidad con la fórmula y el período dados.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "f1bda703-131c-5672-aa39-a9fbc6fdc932",
+        "c6cb3ae7-3332-581a-9af0-1f7b91a68005"
+      ],
+      "requiredEvidence": [
+        "report",
+        "calculation"
+      ]
+    },
+    {
+      "id": "group-project",
+      "description": "En grupos, elabora el plan del proyecto escolar de convivencia intercultural ficticio con objetivos, acciones y seguimiento según las condiciones dadas. No se pide ejecutarlo.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "9e5497cd-61a4-5b33-b893-5ca7f5266cce"
+      ],
+      "participationMode": "GROUP"
+    },
+    {
+      "id": "individual-summary",
+      "description": "De forma individual, resume los hallazgos demográficos del informe proporcionado conservando datos y sentido. No se pide una tesis propia ni otra investigación.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "f1bda703-131c-5672-aa39-a9fbc6fdc932"
+      ],
+      "onlyEvidence": "summary"
+    },
+    {
+      "id": "globalization-essay-only",
+      "description": "Redacta únicamente un ensayo sobre la globalización económica y los mercados mundiales con tesis y razones a partir de los textos proporcionados. No se pide una monografía.",
+      "activityType": "ESSAY",
+      "sourceRecordIds": [
+        "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361"
+      ],
+      "requiredEvidence": [
+        "thesis",
+        "reason"
+      ],
+      "forbidden": "monografía obligatoria|filosófic"
+    },
+    {
+      "id": "monograph-only",
+      "description": "Elabora únicamente una monografía sobre los efectos de la globalización económica en los mercados mundiales a partir de las fuentes dadas. No se pide un ensayo ni una tesis propia adicional.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361"
+      ],
+      "onlyEvidence": "monograph"
+    }
+  ]
+}

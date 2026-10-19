@@ -1,0 +1,73 @@
+{
+  "catalog": "evaluation-2026.134",
+  "baseline": "evaluation-2026.133",
+  "commonEnglishIdentical": 15176,
+  "philosophyFullDefinitionsExact": 480,
+  "scopes": [
+    {
+      "subject": "OPT-HCS-SOC-4",
+      "definitions": 396,
+      "identical": 396,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-LEN-4",
+      "definitions": 280,
+      "identical": 280,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-LEN-5",
+      "definitions": 268,
+      "identical": 268,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-LEN-6",
+      "definitions": 420,
+      "identical": 420,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-4",
+      "definitions": 1532,
+      "identical": 1532,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-5",
+      "definitions": 2200,
+      "identical": 2200,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HLM-ING-6",
+      "definitions": 2092,
+      "identical": 2092,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HCS-LEN-4",
+      "definitions": 304,
+      "identical": 304,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HCS-LEN-5",
+      "definitions": 292,
+      "identical": 292,
+      "documentedCorrections": 0
+    },
+    {
+      "subject": "OPT-HCS-LEN-6",
+      "definitions": 580,
+      "identical": 580,
+      "documentedCorrections": 0
+    }
+  ],
+  "priorPersonalBaselinesPreserved": 9,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "Comparaciones de artefactos ycontratosprevios;nuevosrecorridosvisuales soloenelcontextopersonal5deestebloque."
+  ]
+}

@@ -35,7 +35,9 @@ Fuente MINERD2023 PDF482–484/impresas481–483, scope `817c41b1-f690-5afe-bbf5
 5. [x] Revisar diff y lineage; detener árbol Worker verificado antes de gates. Backend test/build, frontend actividades/build, cloudflare build dry-run, lints y controles fuente/inventario/historia/precaché ≤2MiB. Mantener límite y comprobar todos los assets.
 6. [x] Arrancar build final y verificar PG/Auth/Storage/frontend exclusivamente Development. Instalar solo catálogo133 y fuente individual revisada, idempotencia e historia exacta. QA en curso ficticio existente y HTTP/DB representativo por familias y cuatro formatos.
 7. [x] Prueba personal con sesión existente y curso QA claramente separado; formulario vacío, estrategia automática/manual, cuatro formatos, puntos, manualidad, guardado/reapertura y estrategia aislada exacta. No correos, credenciales o limpiezas; no sobrescribir baselines previas.
-8. [ ] Cerrar informe/matriz/inventario/continuación, revisión propia, auditoría UTF-8/secretos/respaldos/QA y diff. Commit español local, NO PUSH. Continuar Demografía5→Ciudadanía6→MT/CT y modalidades restantes sin preguntar por decisiones rutinarias.
+8. [x] Cerrar informe/matriz/inventario/continuación, revisión propia, auditoría UTF-8/secretos/respaldos/QA y diff. Commit español local, NO PUSH. Continuar Demografía5→Ciudadanía6→MT/CT y modalidades restantes sin preguntar por decisiones rutinarias.
+
+Commit local verificado: `8821adcdbd115340e9e2687083745dc9cd02afce`,41archivos,árbol limpio al cerrar,41commits delante/0detrás según referencias disponibles. Sin fetch,push o despliegue. El nuevo trabajo es Demografía5;no repetir el cierre133.
 
 ## Decisiones previas y evidencias
 

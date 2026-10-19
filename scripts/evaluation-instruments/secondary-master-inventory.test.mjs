@@ -3,12 +3,21 @@ import {readFileSync} from 'node:fs'
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
 
+test('Demografía HCS quinto distingue instrumentos revisados de verificación runtime pendiente',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-soc-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-social.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.grade,5);assert.equal(row.exit,'Humanidades y Ciencias Sociales');assert.equal(row.evidence,'docs/curriculum/cobertura-secundaria/optative-hcs-soc-5-matriz.json')
+ assert.equal(matrix.topics.length,28);assert.equal(matrix.contents.length,81);assert.equal(matrix.criticalIndicators.length,21)
+ assert.equal(matrix.verification.fullReview.reviewedWithMatchingDigest,608);assert.equal(matrix.verification.fullReview.pending,0)
+ assert.equal(inventory.scopes.find(s=>s.grade===6&&s.area==='Ciencias Sociales'&&s.exit===row.exit)?.provider??null,null)
+})
+
 test('Filosofía HCS cuarto mantiene proveedor propio y evidencia pendiente real',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-soc-4-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-social.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.equal(row.exit,'Humanidades y Ciencias Sociales');assert.equal(row.grade,4)
  assert.equal(row.evidence,'docs/curriculum/cobertura-secundaria/optative-hcs-soc-4-matriz.json');assert.equal(matrix.topics.length,21)
- for(const grade of [5,6])assert.equal(inventory.scopes.find(s=>s.grade===grade&&s.area==='Ciencias Sociales'&&s.exit===row.exit)?.provider??null,null)
+ for(const grade of [6])assert.equal(inventory.scopes.find(s=>s.grade===grade&&s.area==='Ciencias Sociales'&&s.exit===row.exit)?.provider??null,null)
 })
 test('Textos científicos y profesionales HCS sexto conserva evidencia propia de cinco géneros',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-len-6-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)

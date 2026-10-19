@@ -1,0 +1,3014 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 5,
+  "subjectCode": "OPT-HCS-SOC-5",
+  "subjectName": "Geografía Humana y Demografía",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "modalityCode": "academic",
+  "scopeId": "3cfc3564-ea06-53a7-9906-2e7287fdbb44",
+  "pdfPages": [
+    485,
+    486,
+    487
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      485,
+      486,
+      487
+    ],
+    "pageEvidence": [
+      {
+        "number": 485,
+        "printed": 484,
+        "imageSha256": "5cf98946487c8d04ffffcc367cd518358add1d6fdb88046b2b105c701de766a2"
+      },
+      {
+        "number": 486,
+        "printed": 485,
+        "imageSha256": "8ed0f213d499278c401f944775ca0a926352a2e71b42a2b5991b47fded3bb94b"
+      },
+      {
+        "number": 487,
+        "printed": 486,
+        "imageSha256": "2d07b89fd6f6f4c74337a17f6cb3af6e7ee8c1a827250c9b85671d1e3174c206"
+      }
+    ],
+    "reviewedCompetenciesAndIndicators": true
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED",
+  "provider": "packages/shared/src/secondary-optative-social.ts",
+  "providerCatalog": "evaluation-2026.134",
+  "officialRecords": [
+    {
+      "id": "643dd6b2-9c92-5659-bcd2-9a4a3e187407",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Explica de forma crítica las fuentes de información de la Geografía Humana, la Demografía, la\nEconomía y el Medio Ambiente, con la finalidad de respetar la autoría de las informaciones.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "9d87ed4c-ea19-5825-9805-75616dc4a9fd",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "113e12d4-30cf-5b80-9902-403d05c59aeb",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica el pensamiento crítico en el análisis de informaciones obtenidas sobre Demografía, con la\nfinalidad de explicar el contexto en el que se producen.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "17a4ef63-3d9b-5ce5-90d4-2d62ace12890",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y\nCrítico",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "a7bc3b62-a124-55b4-bfc3-49c44ad03c66",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Interpreta los aportes de la división territorial planificada a la solución de problemas de ordenamiento\nprovincial.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "f2c43ecb-18d1-598c-bea4-6960259e1bb1",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "29df533f-84d5-5720-809f-4f190f02170f",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Asume actitud de respeto a normativas que defienden la convivencia intercultural con la finalidad\nde garantizar la cultura de paz.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "d1993eb5-e8d5-5752-8197-6edff42ad967",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "da6dd80a-8467-5e12-aebc-f20552d0d27d",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Produce explicaciones científicas sobre la economía, con la finalidad de comprender su impacto\nsocial",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "69460be2-ab89-5381-90c5-d8999727c43b",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "001cac05-f3c5-515b-b14d-a0a77c41cdb3",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Sintetiza situaciones que ponen en riesgo el medioambiente y un estilo de vida saludable, a fin de\ncomprender su impacto social.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "d34a10b7-ca82-57c8-8926-3b2e745a36a4",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "5fc052c9-94f3-5c93-ae40-19b090c41b1a",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Plantea proyectos sobre la base de valores humanos universales y el bien colectivo con el propósito\nde demostrar su sentido de pertenencia a la sociedad..",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "d15b8461-61cc-5526-a090-666455b37da0",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "fb0ffb70-fbaf-5653-9e8c-d1cbcd4580df",
+      "type": "CONCEPT",
+      "text": "Geografía Humana",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "0e908a52-8aa8-519b-aca6-3376686eed77",
+      "type": "CONCEPT",
+      "text": "• Concepto y desarrollo\ncontemporáneo -Ramas que abarca",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "ebeb1d70-1caa-50e4-8a69-f41cb2b7c09a",
+      "type": "CONCEPT",
+      "text": "• Demografía y Medio Ambiente",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "fd5f922d-0b1f-53ae-889f-14cfd6f9f497",
+      "type": "CONCEPT",
+      "text": "• Demografía",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "261e4534-b5d4-5743-aefe-487232950cfd",
+      "type": "CONCEPT",
+      "text": "• Indicadores demográficos Indicadores\nde natalidad, mortalidad infantil y\nesperanza de vida al nacer.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "0094a607-94d7-5144-a56e-4eb9080c2ef8",
+      "type": "CONCEPT",
+      "text": "• La población y su composición",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "5399804d-a062-5a43-91fd-6a4a04b8b048",
+      "type": "CONCEPT",
+      "text": "• Migración y emigración",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "71dc63ba-7b82-54e4-9d4d-921cc13d0770",
+      "type": "CONCEPT",
+      "text": "• Censos",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "a57f99f4-1f4c-5f4f-96ca-d00f8b4120ce",
+      "type": "CONCEPT",
+      "text": "• Índice de Desarrollo humano (IDH) .",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "41a001ef-51fd-5d44-9239-a4e32bcbdadf",
+      "type": "CONCEPT",
+      "text": "• Índice de Calidad de Vida (ICV).",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "54b6c149-9ebf-53df-8ba9-bf73128c0b12",
+      "type": "CONCEPT",
+      "text": "• Político - social",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "4b7dd6d5-b339-5419-9946-970d1596d12d",
+      "type": "CONCEPT",
+      "text": "• Regionalización en República\nDominicana.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "3e965cd2-aa17-5130-9acb-1234359513c6",
+      "type": "CONCEPT",
+      "text": "• La macro región del Cibao",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "18f1cd28-b7b0-56ec-86a8-a4cd372bc983",
+      "type": "CONCEPT",
+      "text": "• Cibao Norte",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "17acbdac-b4b3-5bed-9ebb-a8ccfd6dfa17",
+      "type": "CONCEPT",
+      "text": "• Cibao Sur",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "1f34cb80-f730-57cd-a464-0ec93a82d3e2",
+      "type": "CONCEPT",
+      "text": "• Cibao Nordeste",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "ffabfd58-4cb2-54ce-a7ed-e7d010e886cc",
+      "type": "CONCEPT",
+      "text": "• Cibao Noroeste",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "4a5fbaf4-d47b-57df-a394-44501cd70786",
+      "type": "CONCEPT",
+      "text": "• La macro región Suroeste",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "68b1e539-727d-5057-84d2-0f4262ddcd9e",
+      "type": "CONCEPT",
+      "text": "• Valdesia",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "792232ba-7af1-55ec-9300-1f267ae6a6ed",
+      "type": "CONCEPT",
+      "text": "• El Valle",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "a0761b83-7ddd-5fa3-a246-a9e864f3f403",
+      "type": "CONCEPT",
+      "text": "• Enriquillo",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "0b1177f1-6901-5d24-96aa-96c140a7e3cd",
+      "type": "CONCEPT",
+      "text": "• La macro región Sureste",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "f9337110-8cbd-5667-80ab-78c4cfab9cb0",
+      "type": "CONCEPT",
+      "text": "• Ozama o Metropolitana",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "4375a328-4059-5adc-9875-1787ec210c56",
+      "type": "CONCEPT",
+      "text": "• Yuma • Higuamo",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "c1dd8e65-80bc-5191-87b6-0f3bd9a75cea",
+      "type": "PROCEDURE",
+      "text": "Levantamiento de informaciones en páginas confiables",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "f1bda703-131c-5672-aa39-a9fbc6fdc932",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de registros, datos y resúmenes de\ninformaciones. levantadas en diversas fuentes.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "3fdc0762-0878-5aad-a1c5-8024a2425108",
+      "type": "PROCEDURE",
+      "text": "• Lecturas de informes y páginas web de instituciones\nespecializadas sobre población y demografía.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "0a98d6d2-71c8-51f9-b348-75aedfa3cd89",
+      "type": "PROCEDURE",
+      "text": "• Análisis de informaciones de fuentes confiables de geografía\nhumana.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "d61e3dc2-022a-54c8-bdd9-c31f4f4f6ff2",
+      "type": "PROCEDURE",
+      "text": "• Lecturas de informes y páginas web de instituciones\nespecializadas sobre población y demografía.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "eba82b36-d0af-5343-a1ed-0c40d4c24aae",
+      "type": "PROCEDURE",
+      "text": "• Aplicación y uso de fórmulas para calcular el Índice de\nDesarrollo Humano, Índice de Calidad de Vida.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "e22105ad-c22f-5ec3-854a-108364beb280",
+      "type": "PROCEDURE",
+      "text": "• Identificación en mapas de población las provincias con\nmayor crecimiento poblacional y mayor índice de pobreza.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "af17372d-b329-5c59-89c9-c34892114f64",
+      "type": "PROCEDURE",
+      "text": "• Análisis críticos de las informaciones obtenidas sobre\ndemografía.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "c226bd2d-5b0a-55fd-9bfe-be29fb94f059",
+      "type": "PROCEDURE",
+      "text": "• Uso de fórmula para calcular el Índice de Desarrollo\nHumano, calidad de vida y los indicadores de natalidad y\nmortalidad.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "61cde0f0-9105-58ec-9182-a9c9e6234b96",
+      "type": "PROCEDURE",
+      "text": "Análisis de la división territorial dominicana desde la vida\ncolonial hasta la actualidad",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "6d58b6c1-3b85-5ad8-9e74-88306e0a5f6f",
+      "type": "PROCEDURE",
+      "text": "• Identificación de división territorial desde la época colonial.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "59f9ff9a-380f-5a0c-b988-74d2375f4f57",
+      "type": "PROCEDURE",
+      "text": "• Diferenciación entre macro región, región y provincia.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "ec76f251-d7e2-56ce-aeba-be1ac690652c",
+      "type": "PROCEDURE",
+      "text": "• Comparación de los cambios en la división territorial desde\nla colonia.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "efb5dcb7-b988-5c5d-b21d-8498a38ffef7",
+      "type": "PROCEDURE",
+      "text": "• Realización de murales con mapas alusivos a la división\nterritorial dominicana actual.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "4ecc2939-4e6d-5790-853d-d468c6711530",
+      "type": "PROCEDURE",
+      "text": "Elaboración de propuestas que garanticen la convivencia\nintercultural y la cultura de paz",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "7e0760fc-a78e-5c6e-b8cc-09b715dfb984",
+      "type": "PROCEDURE",
+      "text": "• Definición de la propuesta.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "f18b26fe-46b1-5d0e-aeb1-b10b605e8c16",
+      "type": "PROCEDURE",
+      "text": "• Identificación de fuentes confiables.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "1a57935e-8745-54c8-8d4f-fd21c2abaf76",
+      "type": "PROCEDURE",
+      "text": "• Análisis de legislaciones que defienden la convivencia.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "9e5497cd-61a4-5b33-b893-5ca7f5266cce",
+      "type": "PROCEDURE",
+      "text": "• Planteamientos de proyectos que garanticen la convivencia\nintercultural.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "a7defa29-9421-5cb9-8b83-f8250d1d6dd0",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Informaciones consultadas.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "6a4d8c7f-3000-50a6-b443-beba35581ba8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Uso ético de las informaciones\nconsultadas.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "16cad9b1-40ad-5080-bf72-da680eba7023",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por citar las fuentes de las\ninformaciones levantadas.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "5e0994fe-02c7-589f-ad17-02d584f57502",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por conocer los Índices\nde Desarrollo Humano, Índice de\nCalidad de Vida.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "c83585c2-272b-5f2b-9ccf-23496ed03a27",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de utilizar páginas\nespecializadas sobre población y\ndemografía.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "16dd79b5-53b2-545b-a9d0-6691b98acbd6",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por el levantamiento\nde informaciones sobre el\ncrecimiento poblacional\nen el mundo y la República\nDominicana.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "0f8be1cc-ca0a-5870-ab68-0e755057dcb3",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración del legado histórico de\nlas provincias.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "3569387f-6dc3-5603-946d-07d27d1291de",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por conocer sobre las\ndivisiones territoriales desde la\népoca colonial.",
+      "pdfPage": 485,
+      "printedPage": "484"
+    },
+    {
+      "id": "2b6664f3-c39a-531d-aefe-7b8126ade690",
+      "type": "CONCEPT",
+      "text": "• Convivencia Intercultural",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "552ffc7e-4788-5395-946b-b438633c730d",
+      "type": "CONCEPT",
+      "text": "• Respeto a las demás personas",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "7b4f6288-54bd-592a-9830-afb6b473b78e",
+      "type": "CONCEPT",
+      "text": "• Cultura de paz",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "37f0efc2-f125-56a4-a642-5ea9efbbd258",
+      "type": "CONCEPT",
+      "text": "• Economía",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "bc3cb9dd-dfeb-5d17-abc6-88c6f5a84747",
+      "type": "CONCEPT",
+      "text": "• Sectores económicos (Primario,\nSecundario y Terciario).",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "619b52dd-2e90-5d35-93db-89ab276d97bc",
+      "type": "CONCEPT",
+      "text": "• Indicadores económicos",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "c04938db-f4ef-52e5-a344-a51d7d60fa91",
+      "type": "CONCEPT",
+      "text": "• Producto Interno Bruto (PIB)",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "773a2c20-236a-55c2-80e3-2e4689c40d5f",
+      "type": "CONCEPT",
+      "text": "• Finanzas y producción -Empresas\neconómicas.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "cf241fc7-179b-5b95-a51b-fd84a156b5d6",
+      "type": "CONCEPT",
+      "text": "• Paraísos fiscales",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "c0f64f4e-1ea0-50db-9c31-f00400537565",
+      "type": "CONCEPT",
+      "text": "• Trueque y mercado",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "9b4f01c3-adc1-5b32-8bad-3d22056277fa",
+      "type": "CONCEPT",
+      "text": "• Comercio exterior",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "e1ec1862-f19b-5974-8806-c2f175fbf9de",
+      "type": "CONCEPT",
+      "text": "• Balanza de pagos",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "4f3f79f3-a63f-5f83-85e3-fd9d77f05bf2",
+      "type": "CONCEPT",
+      "text": "• Medioambiente y desarrollo",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3dc293b8-7a1c-5a34-8c88-a4df277273f9",
+      "type": "CONCEPT",
+      "text": "• Recursos Naturales y Recursos\nHumanos",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "02cadf5d-234c-5044-842a-125d84aa0e0a",
+      "type": "CONCEPT",
+      "text": "• Contaminación y medioambiente",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3a7e10c4-7a99-5b02-bae1-09a592a0e2b1",
+      "type": "CONCEPT",
+      "text": "• Contaminación visual y acústica",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "ef5f6f3e-753c-52c6-9526-c5d54c697168",
+      "type": "CONCEPT",
+      "text": "• Desechos degradables y no\ndegradable",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "2f7b58af-fa27-5d58-9dbf-bcfb6f0f2274",
+      "type": "CONCEPT",
+      "text": "• Proyecto personales y colectivos",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "de6697f2-c328-5970-a539-5aff21d496f2",
+      "type": "CONCEPT",
+      "text": "• Respeto al entorno en el que vive",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "8d6d59d1-3279-5c3e-a2ca-00573fefd625",
+      "type": "CONCEPT",
+      "text": "• Sentido de pertenencia a la sociedad",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "e2addb75-37d6-59d9-bcd4-e8b81a1cb855",
+      "type": "PROCEDURE",
+      "text": "Argumentación crítica sobre acuerdos comerciales\nmundiales y regionales",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3d874fca-fafa-5122-b5a9-f670fbc42712",
+      "type": "PROCEDURE",
+      "text": "• Identificación de los acuerdos comerciales suscritos por la\nRepública Dominicana.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "cc6044db-89e4-57e6-af9a-2cf9aad868b2",
+      "type": "PROCEDURE",
+      "text": "• Análisis de publicaciones del Banco Central, Dirección\nGeneral de Impuestos Internos y la ONE, sobre indicadores\neconómicos.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "0b83c2de-8499-584d-be93-9010085096d4",
+      "type": "PROCEDURE",
+      "text": "• Comprensión del Sistema Tributario Dominicano.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "f060de6a-0865-5c5a-a775-8427ea907975",
+      "type": "PROCEDURE",
+      "text": "• Comprensión del impacto social del comercio interno y el\nexterno en la economía dominicana.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "8215b975-c468-53c7-9516-c7f329a88938",
+      "type": "PROCEDURE",
+      "text": "Presentación de propuestas que preserven el\nmedioambiente y la contaminación visual y acústica",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "ac3805cb-43af-5506-9c14-2278a9c2f224",
+      "type": "PROCEDURE",
+      "text": "• Definición de los aspectos de la propuesta.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "60a455aa-61e3-57b1-8088-2b3be35fb289",
+      "type": "PROCEDURE",
+      "text": "• Consulta de legislaciones y acuerdos internacionales sobre\nmedioambiente.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "7ee49b27-40a4-54fc-a495-04bd0a795825",
+      "type": "PROCEDURE",
+      "text": "• Consulta de mapas de población y zonas protegidas.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "5c4e618d-4df7-516d-9068-7e93116bcc65",
+      "type": "PROCEDURE",
+      "text": "• Encuestas sobre la contaminación visual y acústica.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "97d8869a-28c6-51ed-b3e2-c1ac840b46d1",
+      "type": "PROCEDURE",
+      "text": "• Redacta borrador final de la propuesta.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "0c4653c9-5f84-5c31-8b7a-68fff18c6feb",
+      "type": "PROCEDURE",
+      "text": "Elaboración de proyectos personales y sociales",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "eef7fd9a-691e-5fec-8a06-a1898ab8d10b",
+      "type": "PROCEDURE",
+      "text": "• Selección de problemáticas personales y sociales para la\nelaboración del proyecto.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "786a7915-f9b7-5300-99a0-441be9229e78",
+      "type": "PROCEDURE",
+      "text": "• Identificación de Fuentes confiables.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "d1b72911-e4e5-5824-bd27-59ed7269b713",
+      "type": "PROCEDURE",
+      "text": "• Promoción de los valores humanos y el respeto a su entorno.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "0b306cd0-b50a-52f2-9d43-7f4c00699efa",
+      "type": "PROCEDURE",
+      "text": "• Integración a propuestas que plante en una ciudadanía\nresponsable.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "72d20167-4f4b-5a28-a680-a48109979e67",
+      "type": "PROCEDURE",
+      "text": "• Redacción de borradores antes del final.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "457a542e-126a-5b1d-b66e-e7d62c469f90",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Analiza en murales y mapas, la\ndivisión territorial actual de la\nRepública Dominicana.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "d6639185-06c9-5d65-ab73-90c1bc956247",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por relaciones armoniosas.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3adf6114-94a5-5818-830f-c7b255589193",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de acciones que\npropician la cultura de paz.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "219dccba-034c-583e-8e63-ce3a272527ec",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Aprecio por el diálogo en la\nresolución de conflictos.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "9daa642c-69b0-570c-8fd6-3fab6faa8425",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Posición crítica ante acuerdos\ncomerciales mundiales y\nregionales.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "38c445fc-2884-5252-a844-e5cf0cfe6369",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Se interesa por preservar los\nbienes públicos del país y su\ncomunidad.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3d674a23-defb-5ed0-8261-37629baf9bfa",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de fuentes de\ninformación económicas\nconfiables.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "08d9c646-f822-576c-8d01-b9eb68af68c8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Integración en actividades de\npreservación de su entorno.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "52cd7afc-bcef-5ea1-940f-d5de72092701",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Se interesa por cuidar su entorno\nde contaminación ambiental,\nvisual y acústica.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "3d29611c-3219-5baf-95e0-10e6dd8fffba",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de entornos social\nsaludable.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "8d5e3f9f-a89b-5254-973a-591c0025ac26",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por su desarrollo personal\ny de la sociedad.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "0d318be1-a2f3-5f68-9f06-2438db5255df",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Respeto por los valores humanos\nuniversales.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "4ffc196c-b837-5995-b485-f4cf05cac0f2",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de su sentido de\npertenencia a su sociedad.",
+      "pdfPage": 486,
+      "printedPage": "485"
+    },
+    {
+      "id": "4fa7b089-d54d-528b-957b-de0d6f0e55f5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora una definición propia de geografía humana, a partir de las fuentes consultadas.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "a2bfdf01-1d12-5501-888c-56a1e64ec11c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identifica en fuentes consultadas, los autores que realizaron aportes en la consolidación de la geografía humana y la\ndemografía.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "7b111d4e-498b-5dc2-998d-ca32175f61be",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Respeta la autoría de las informaciones levantadas en medios virtuales e impresos.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "e8fedfb2-31a7-5a06-a5fd-416291a1d689",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Describe mediante ensayos e informes de lectura, algunas de las aplicaciones de la demografía en el estudio de la\npoblación.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "9d6e4e39-3c0b-5502-b4b3-d4a513b344f4",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza al realizar levantamientos de datos e investigaciones, los países donde existe mayor cantidad inmigrantes\ndominicanos.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "c6cb3ae7-3332-581a-9af0-1f7b91a68005",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Integra en informes de lectura y monografías, fórmulas que facilitan calcular el crecimiento poblacional del mundo, el\nÍndice de Calidad de Vida y de Mortalidad.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "b896a10f-24d5-59f7-8d0d-312934768e44",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora murales e infografías sobre la división territorial de la República Dominicana.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "35670a28-778b-5a32-88fe-eaf941c7c06c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza las divisiones territoriales desde la vida colonial hasta la actualidad.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "a70abd3e-333f-5fea-a497-edff6affaaa2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identifica ensayos y resúmenes la diferencia entre macro región, región y provincia.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "7c55f405-3df6-538f-854c-1682e526c324",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Propone proyectos sencillos que garanticen la convivencia intercultural en el entorno en que viven.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "1dfdb1ff-767b-534d-8230-bca4c38f1498",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra en sus actuaciones cotidianas actitud de respeto a su persona y a los demás.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "aa06f80d-4fa0-54ba-a2c8-29a93fe6eac2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Defiende el diálogo como forma de garantizar la cultura de paz entre los ciudadanos y ciudadanas.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza monografías y ensayos las implicaciones de la globalización económica en los mercados mundiales.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "cd75ddeb-0484-5d63-9e9f-d71c0df64205",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza las implicaciones del Producto Interno Bruto y el Producto Interno Neto en la economía.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "81a7d1a0-5874-504c-8ac1-10117fd4a0ac",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora proyectos sencillos de investigación, sobre el comercio externo, interno y las instituciones que componen el\nSistema Tributario Dominicano.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "dce0ecf8-ec34-5be6-81d8-d3cab16fb7c3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Plantea proyectos de protección de los recursos naturales de la República Dominicana y su comunidad.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "7e5f06b1-8f58-5eb2-8527-2331da6d7356",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza artículos de leyes y normativas que regulan la protección del medioambiente.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "fa485b96-823d-5852-ba4b-fe7f2d56dedf",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza campañas de concientización sobre los efectos de la contaminación de desechos no degradables al medioambiente\ny la salud.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "b97dbe0d-6240-5e84-b78d-d258d991fc99",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora proyectos sencillos sobre su desarrollo personal y social.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "d92e88e4-2afd-5968-9585-a513bfba920c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Se integra a campañas que promueven los valores humanos y el respeto a su entorno social.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    },
+    {
+      "id": "9c63bead-8672-51bf-ac22-e7c547f0de16",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Plantea propuestas que demuestran su sentido de pertenencia y la construcción de una ciudadanía responsable.",
+      "pdfPage": 487,
+      "printedPage": "486"
+    }
+  ],
+  "topics": [
+    {
+      "id": "human-geography",
+      "grade": 5,
+      "label": "la geografía humana",
+      "match": "geografia humana|geografia y demografia|geografia.*autores",
+      "relation": "el objeto, las ramas o los aportes expresamente pedidos de {target} y sus relaciones con el estudio de las poblaciones en las fuentes dadas",
+      "sourceRecordIds": [
+        "0e908a52-8aa8-519b-aca6-3376686eed77",
+        "0a98d6d2-71c8-51f9-b348-75aedfa3cd89",
+        "4fa7b089-d54d-528b-957b-de0d6f0e55f5",
+        "a2bfdf01-1d12-5501-888c-56a1e64ec11c",
+        "e8fedfb2-31a7-5a06-a5fd-416291a1d689"
+      ],
+      "pages": [
+        485,
+        487
+      ],
+      "priority": 1,
+      "facets": [
+        {
+          "label": "el concepto, desarrollo contemporáneo y ramas de la geografía humana",
+          "match": "concepto.*desarrollo|ramas"
+        },
+        {
+          "label": "los autores y sus aportes a la geografía humana y la demografía",
+          "match": "autores|aportes"
+        }
+      ]
+    },
+    {
+      "id": "demography",
+      "grade": 5,
+      "label": "la demografía",
+      "match": "demograf|poblacion",
+      "relation": "el significado y las aplicaciones solicitadas de {target}, distinguiendo datos de población, conclusiones y límites de las fuentes dadas",
+      "sourceRecordIds": [
+        "fd5f922d-0b1f-53ae-889f-14cfd6f9f497",
+        "c1dd8e65-80bc-5191-87b6-0f3bd9a75cea",
+        "f1bda703-131c-5672-aa39-a9fbc6fdc932",
+        "3fdc0762-0878-5aad-a1c5-8024a2425108",
+        "d61e3dc2-022a-54c8-bdd9-c31f4f4f6ff2",
+        "af17372d-b329-5c59-89c9-c34892114f64",
+        "6a4d8c7f-3000-50a6-b443-beba35581ba8",
+        "7b111d4e-498b-5dc2-998d-ca32175f61be",
+        "e8fedfb2-31a7-5a06-a5fd-416291a1d689",
+        "9d6e4e39-3c0b-5502-b4b3-d4a513b344f4"
+      ],
+      "pages": [
+        485,
+        487
+      ],
+      "priority": 1,
+      "facets": [
+        {
+          "label": "las provincias indicadas en el mapa de población",
+          "match": "provincias.*mapa de poblacion"
+        }
+      ]
+    },
+    {
+      "id": "demography-environment",
+      "grade": 5,
+      "label": "las relaciones entre demografía y medioambiente",
+      "match": "demografia y medioambiente",
+      "relation": "las relaciones expresamente estudiadas de {target}, distinguiendo las condiciones de población y del entorno en el caso dado",
+      "sourceRecordIds": [
+        "ebeb1d70-1caa-50e4-8a69-f41cb2b7c09a"
+      ],
+      "pages": [
+        485
+      ],
+      "priority": 50
+    },
+    {
+      "id": "demographic-indices",
+      "grade": 5,
+      "label": "los indicadores demográficos solicitados",
+      "match": "natalidad|mortalidad|esperanza de vida|crecimiento poblacional|crecimiento demografico|\\bidh\\b|desarrollo humano|\\bicv\\b|calidad de vida|indicadores demograficos|indice de pobreza|tasa de crecimiento",
+      "relation": "el significado, las variables, la base de referencia y el período de {target} que figuran en las definiciones o leyendas dadas",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd",
+        "a57f99f4-1f4c-5f4f-96ca-d00f8b4120ce",
+        "41a001ef-51fd-5d44-9239-a4e32bcbdadf",
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae",
+        "e22105ad-c22f-5ec3-854a-108364beb280",
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059",
+        "c6cb3ae7-3332-581a-9af0-1f7b91a68005"
+      ],
+      "pages": [
+        485,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "la tasa de natalidad",
+          "match": "natalidad"
+        },
+        {
+          "label": "la mortalidad infantil",
+          "match": "mortalidad infantil"
+        },
+        {
+          "label": "la tasa de mortalidad general",
+          "match": "mortalidad general|mortalidad(?! infantil)"
+        },
+        {
+          "label": "la esperanza de vida al nacer",
+          "match": "esperanza de vida"
+        },
+        {
+          "label": "el crecimiento poblacional",
+          "match": "crecimiento poblacional|crecimiento demografico|tasa de crecimiento"
+        },
+        {
+          "label": "el Índice de Desarrollo Humano (IDH)",
+          "match": "\\bidh\\b|desarrollo humano"
+        },
+        {
+          "label": "el Índice de Calidad de Vida (ICV)",
+          "match": "\\bicv\\b|calidad de vida"
+        },
+        {
+          "label": "el índice de pobreza señalado en la leyenda",
+          "match": "indice de pobreza"
+        }
+      ]
+    },
+    {
+      "id": "population-composition",
+      "grade": 5,
+      "label": "la composición de la población",
+      "match": "composicion de la poblacion",
+      "relation": "las características y relaciones de {target} según las categorías expresamente utilizadas por el conjunto de datos dado",
+      "sourceRecordIds": [
+        "0094a607-94d7-5144-a56e-4eb9080c2ef8"
+      ],
+      "pages": [
+        485
+      ],
+      "priority": 50
+    },
+    {
+      "id": "migration",
+      "grade": 5,
+      "label": "la migración y la emigración",
+      "match": "migracion|emigracion|inmigrantes",
+      "relation": "el lugar de origen, destino o referencia y el período expresamente utilizados para estudiar {target} en los casos o datos agregados dados",
+      "sourceRecordIds": [
+        "5399804d-a062-5a43-91fd-6a4a04b8b048",
+        "9d6e4e39-3c0b-5502-b4b3-d4a513b344f4"
+      ],
+      "pages": [
+        485,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "la migración",
+          "match": "\\bmigracion\\b"
+        },
+        {
+          "label": "la emigración",
+          "match": "emigracion"
+        },
+        {
+          "label": "los países receptores de inmigrantes dominicanos en el período dado",
+          "match": "paises.*inmigrantes"
+        }
+      ]
+    },
+    {
+      "id": "census",
+      "grade": 5,
+      "label": "los censos de población",
+      "match": "censos?|censal",
+      "relation": "la información agregada, el alcance territorial y el período de {target}, distinguiendo lo que sus datos permiten concluir",
+      "sourceRecordIds": [
+        "71dc63ba-7b82-54e4-9d4d-921cc13d0770"
+      ],
+      "pages": [
+        485
+      ],
+      "priority": 50
+    },
+    {
+      "id": "territorial-division",
+      "grade": 5,
+      "label": "la división territorial dominicana",
+      "match": "regionalizacion|division(?:es)? territorial|macroregion|macro region|region y provincia|region, region|macroregiones",
+      "relation": "la organización, los límites o los cambios solicitados de {target}, respetando las escalas territoriales, leyendas y fechas de los materiales dados",
+      "sourceRecordIds": [
+        "4b7dd6d5-b339-5419-9946-970d1596d12d",
+        "61cde0f0-9105-58ec-9182-a9c9e6234b96",
+        "6d58b6c1-3b85-5ad8-9e74-88306e0a5f6f",
+        "59f9ff9a-380f-5a0c-b988-74d2375f4f57",
+        "ec76f251-d7e2-56ce-aeba-be1ac690652c",
+        "efb5dcb7-b988-5c5d-b21d-8498a38ffef7",
+        "457a542e-126a-5b1d-b66e-e7d62c469f90",
+        "b896a10f-24d5-59f7-8d0d-312934768e44",
+        "35670a28-778b-5a32-88fe-eaf941c7c06c",
+        "a70abd3e-333f-5fea-a497-edff6affaaa2"
+      ],
+      "pages": [
+        485,
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "macroregión, región y provincia",
+          "match": "macroregion|macro region"
+        },
+        {
+          "label": "la división territorial colonial y la del período indicado",
+          "match": "colonial.*(?:actual|periodo actual)"
+        },
+        {
+          "label": "la división territorial de la época colonial",
+          "match": "epoca colonial|division territorial colonial"
+        },
+        {
+          "label": "la regionalización dominicana",
+          "match": "regionalizacion"
+        }
+      ]
+    },
+    {
+      "id": "dominican-regions",
+      "grade": 5,
+      "label": "las regiones dominicanas solicitadas",
+      "match": "cibao|suroeste|sureste|valdesia|el valle|enriquillo|ozama|metropolitana|yuma|higuamo|regiones dominicanas",
+      "relation": "la localización o las características expresamente pedidas de {target}, según los límites y referencias del mapa o ficha regional dados",
+      "sourceRecordIds": [
+        "3e965cd2-aa17-5130-9acb-1234359513c6",
+        "18f1cd28-b7b0-56ec-86a8-a4cd372bc983",
+        "17acbdac-b4b3-5bed-9ebb-a8ccfd6dfa17",
+        "1f34cb80-f730-57cd-a464-0ec93a82d3e2",
+        "ffabfd58-4cb2-54ce-a7ed-e7d010e886cc",
+        "4a5fbaf4-d47b-57df-a394-44501cd70786",
+        "68b1e539-727d-5057-84d2-0f4262ddcd9e",
+        "792232ba-7af1-55ec-9300-1f267ae6a6ed",
+        "a0761b83-7ddd-5fa3-a246-a9e864f3f403",
+        "0b1177f1-6901-5d24-96aa-96c140a7e3cd",
+        "f9337110-8cbd-5667-80ab-78c4cfab9cb0",
+        "4375a328-4059-5adc-9875-1787ec210c56"
+      ],
+      "pages": [
+        485
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "la macroregión del Cibao",
+          "match": "macroregion del cibao"
+        },
+        {
+          "label": "Cibao Norte",
+          "match": "cibao norte"
+        },
+        {
+          "label": "Cibao Sur",
+          "match": "cibao sur"
+        },
+        {
+          "label": "Cibao Nordeste",
+          "match": "cibao nordeste"
+        },
+        {
+          "label": "Cibao Noroeste",
+          "match": "cibao noroeste"
+        },
+        {
+          "label": "la macroregión Suroeste",
+          "match": "suroeste"
+        },
+        {
+          "label": "Valdesia",
+          "match": "valdesia"
+        },
+        {
+          "label": "El Valle",
+          "match": "el valle"
+        },
+        {
+          "label": "Enriquillo",
+          "match": "enriquillo"
+        },
+        {
+          "label": "la macroregión Sureste",
+          "match": "sureste"
+        },
+        {
+          "label": "la región Ozama o Metropolitana",
+          "match": "ozama|metropolitana"
+        },
+        {
+          "label": "Yuma",
+          "match": "yuma"
+        },
+        {
+          "label": "Higuamo",
+          "match": "higuamo"
+        }
+      ]
+    },
+    {
+      "id": "intercultural-convivence",
+      "grade": 5,
+      "label": "la convivencia intercultural",
+      "match": "intercultur|convivencia|trato respetuoso|respeto a las demas personas",
+      "relation": "las condiciones y relaciones de {target} en el caso dado, distinguiendo normas de trato y argumentos de juicios sobre la moralidad privada",
+      "sourceRecordIds": [
+        "4ecc2939-4e6d-5790-853d-d468c6711530",
+        "7e0760fc-a78e-5c6e-b8cc-09b715dfb984",
+        "f18b26fe-46b1-5d0e-aeb1-b10b605e8c16",
+        "1a57935e-8745-54c8-8d4f-fd21c2abaf76",
+        "9e5497cd-61a4-5b33-b893-5ca7f5266cce",
+        "2b6664f3-c39a-531d-aefe-7b8126ade690",
+        "552ffc7e-4788-5395-946b-b438633c730d",
+        "0b306cd0-b50a-52f2-9d43-7f4c00699efa",
+        "7c55f405-3df6-538f-854c-1682e526c324",
+        "1dfdb1ff-767b-534d-8230-bca4c38f1498",
+        "d92e88e4-2afd-5968-9585-a513bfba920c"
+      ],
+      "pages": [
+        485,
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "la convivencia intercultural",
+          "match": "intercultur|convivencia"
+        },
+        {
+          "label": "el trato respetuoso a las demás personas en el caso dado",
+          "match": "trato respetuoso|respeto a las demas personas"
+        }
+      ]
+    },
+    {
+      "id": "peace-dialogue",
+      "grade": 5,
+      "label": "la cultura de paz y el diálogo",
+      "match": "cultura de paz|dialogo.*paz",
+      "relation": "el papel del diálogo y las razones expresamente estudiadas de {target} en el conflicto ficticio proporcionado",
+      "sourceRecordIds": [
+        "7b4f6288-54bd-592a-9830-afb6b473b78e",
+        "aa06f80d-4fa0-54ba-a2c8-29a93fe6eac2"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50
+    },
+    {
+      "id": "economy",
+      "grade": 5,
+      "label": "la economía",
+      "match": "\\beconomia\\b|economico|economicas",
+      "relation": "los conceptos y relaciones solicitados de {target}, distinguiendo las afirmaciones del texto de los datos y ejemplos del caso dado",
+      "sourceRecordIds": [
+        "37f0efc2-f125-56a4-a642-5ea9efbbd258",
+        "619b52dd-2e90-5d35-93db-89ab276d97bc",
+        "cc6044db-89e4-57e6-af9a-2cf9aad868b2",
+        "786a7915-f9b7-5300-99a0-441be9229e78"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 1
+    },
+    {
+      "id": "economic-sectors",
+      "grade": 5,
+      "label": "los sectores económicos primario, secundario y terciario",
+      "match": "sectores economicos|sector primario|primario, secundario",
+      "relation": "las funciones y relaciones de {target}, utilizando las actividades productivas expresamente descritas en los ejemplos dados",
+      "sourceRecordIds": [
+        "bc3cb9dd-dfeb-5d17-abc6-88c6f5a84747"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50
+    },
+    {
+      "id": "national-accounts",
+      "grade": 5,
+      "label": "los agregados económicos solicitados",
+      "match": "producto interno|\\bpib\\b|\\bpin\\b|agregados economicos",
+      "relation": "las definiciones, el alcance y las implicaciones solicitadas de {target}, respetando los agregados económicos y los datos proporcionados",
+      "sourceRecordIds": [
+        "c04938db-f4ef-52e5-a344-a51d7d60fa91",
+        "cd75ddeb-0484-5d63-9e9f-d71c0df64205"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "el Producto Interno Bruto (PIB)",
+          "match": "producto interno bruto|\\bpib\\b"
+        },
+        {
+          "label": "el Producto Interno Neto",
+          "match": "producto interno neto|\\bpin\\b"
+        }
+      ]
+    },
+    {
+      "id": "finance-production-business",
+      "grade": 5,
+      "label": "las finanzas, la producción y las empresas económicas",
+      "match": "finanzas|produccion y empresas|empresas economicas",
+      "relation": "las funciones y relaciones expresamente estudiadas de {target}, según la producción, recursos y decisiones descritos en el caso ficticio dado",
+      "sourceRecordIds": [
+        "773a2c20-236a-55c2-80e3-2e4689c40d5f"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50
+    },
+    {
+      "id": "tax-havens",
+      "grade": 5,
+      "label": "los paraísos fiscales",
+      "match": "paraisos fiscales",
+      "relation": "el concepto y los efectos solicitados de {target} según el texto dado, distinguiendo sus afirmaciones de datos o vigencias no proporcionados",
+      "sourceRecordIds": [
+        "cf241fc7-179b-5b95-a51b-fd84a156b5d6"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50
+    },
+    {
+      "id": "barter-market",
+      "grade": 5,
+      "label": "el trueque y el mercado",
+      "match": "trueque|\\bmercado\\b",
+      "relation": "las formas de intercambio y relaciones solicitadas de {target}, según los bienes, participantes y condiciones de los ejemplos dados",
+      "sourceRecordIds": [
+        "c0f64f4e-1ea0-50db-9c31-f00400537565"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "el trueque",
+          "match": "trueque"
+        },
+        {
+          "label": "el mercado",
+          "match": "\\bmercado\\b"
+        }
+      ]
+    },
+    {
+      "id": "trade",
+      "grade": 5,
+      "label": "el comercio y los acuerdos seleccionados",
+      "match": "comercio|acuerdo comercial|acuerdos comerciales",
+      "relation": "los flujos, acuerdos o efectos sociales expresamente pedidos de {target}, según las condiciones, fechas y datos del caso proporcionado",
+      "sourceRecordIds": [
+        "9b4f01c3-adc1-5b32-8bad-3d22056277fa",
+        "e2addb75-37d6-59d9-bcd4-e8b81a1cb855",
+        "3d874fca-fafa-5122-b5a9-f670fbc42712",
+        "f060de6a-0865-5c5a-a775-8427ea907975",
+        "81a7d1a0-5874-504c-8ac1-10117fd4a0ac"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "el comercio exterior",
+          "match": "comercio exterior|comercio externo|comercio interno y externo"
+        },
+        {
+          "label": "el comercio interno",
+          "match": "comercio interno|comercio externo,? (?:e |y )?interno"
+        },
+        {
+          "label": "los acuerdos comerciales seleccionados",
+          "match": "acuerdo comercial|acuerdos comerciales"
+        }
+      ]
+    },
+    {
+      "id": "balance-payments",
+      "grade": 5,
+      "label": "la balanza de pagos",
+      "match": "balanza de pagos",
+      "relation": "la clasificación y las relaciones de las operaciones expresamente estudiadas de {target}, según las definiciones y el período proporcionados",
+      "sourceRecordIds": [
+        "e1ec1862-f19b-5974-8806-c2f175fbf9de"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50
+    },
+    {
+      "id": "tax-system",
+      "grade": 5,
+      "label": "el Sistema Tributario Dominicano",
+      "match": "sistema tributario|impuestos internos|banco central|\\bone\\b",
+      "relation": "las funciones y relaciones institucionales expresamente pedidas de {target}, según el organigrama y los textos proporcionados, sin suponer vigencia o asesoría tributaria real",
+      "sourceRecordIds": [
+        "cc6044db-89e4-57e6-af9a-2cf9aad868b2",
+        "0b83c2de-8499-584d-be93-9010085096d4",
+        "81a7d1a0-5874-504c-8ac1-10117fd4a0ac"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50
+    },
+    {
+      "id": "globalization-markets",
+      "grade": 5,
+      "label": "la globalización económica y los mercados mundiales",
+      "match": "globalizacion|mercados mundiales",
+      "relation": "las implicaciones y relaciones solicitadas de {target}, distinguiendo argumentos, datos y límites de los textos proporcionados",
+      "sourceRecordIds": [
+        "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361"
+      ],
+      "pages": [
+        487
+      ],
+      "priority": 50
+    },
+    {
+      "id": "environment-development",
+      "grade": 5,
+      "label": "las relaciones entre medioambiente y desarrollo",
+      "match": "medioambiente|ambiental|ambiente|entorno",
+      "relation": "las condiciones, efectos o reglas expresamente estudiados de {target} en el caso proporcionado, sin atribuir sentimientos o disposiciones privadas al estudiante",
+      "sourceRecordIds": [
+        "4f3f79f3-a63f-5f83-85e3-fd9d77f05bf2",
+        "de6697f2-c328-5970-a539-5aff21d496f2",
+        "8215b975-c468-53c7-9516-c7f329a88938",
+        "ac3805cb-43af-5506-9c14-2278a9c2f224",
+        "60a455aa-61e3-57b1-8088-2b3be35fb289",
+        "97d8869a-28c6-51ed-b3e2-c1ac840b46d1",
+        "d1b72911-e4e5-5824-bd27-59ed7269b713",
+        "08d9c646-f822-576c-8d01-b9eb68af68c8",
+        "7e5f06b1-8f58-5eb2-8527-2331da6d7356",
+        "d92e88e4-2afd-5968-9585-a513bfba920c"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 1,
+      "facets": [
+        {
+          "label": "el concepto de respeto al entorno en el caso dado",
+          "match": "concepto de respeto al entorno"
+        },
+        {
+          "label": "el cuidado del entorno según el caso dado",
+          "match": "cuidado del entorno"
+        },
+        {
+          "label": "las disposiciones y acuerdos ambientales seleccionados",
+          "match": "disposiciones y acuerdos ambientales"
+        },
+        {
+          "label": "los artículos legales de protección ambiental proporcionados",
+          "match": "articulos legales"
+        },
+        {
+          "label": "la propuesta de protección ambiental del caso dado",
+          "match": "propuesta de proteccion ambiental|propuesta ambiental"
+        }
+      ]
+    },
+    {
+      "id": "natural-human-resources",
+      "grade": 5,
+      "label": "los recursos naturales y humanos solicitados",
+      "match": "recursos naturales|recursos humanos|zonas protegidas",
+      "relation": "las características, distribución o condiciones de protección expresamente estudiadas de {target}, según las referencias del mapa o caso dado",
+      "sourceRecordIds": [
+        "3dc293b8-7a1c-5a34-8c88-a4df277273f9",
+        "7ee49b27-40a4-54fc-a495-04bd0a795825",
+        "dce0ecf8-ec34-5be6-81d8-d3cab16fb7c3"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "los recursos naturales",
+          "match": "recursos naturales"
+        },
+        {
+          "label": "los recursos humanos",
+          "match": "recursos humanos|recursos naturales y humanos"
+        },
+        {
+          "label": "las zonas protegidas",
+          "match": "zonas protegidas"
+        },
+        {
+          "label": "la distribución de población y las zonas protegidas",
+          "match": "mapas de poblacion y zonas protegidas"
+        }
+      ]
+    },
+    {
+      "id": "pollution",
+      "grade": 5,
+      "label": "la contaminación del caso dado",
+      "match": "contaminacion",
+      "relation": "las manifestaciones, efectos y relaciones expresamente estudiadas de {target}, distinguiendo los datos del caso de las propuestas de reducción",
+      "sourceRecordIds": [
+        "02cadf5d-234c-5044-842a-125d84aa0e0a",
+        "3a7e10c4-7a99-5b02-bae1-09a592a0e2b1",
+        "8215b975-c468-53c7-9516-c7f329a88938",
+        "ac3805cb-43af-5506-9c14-2278a9c2f224",
+        "5c4e618d-4df7-516d-9068-7e93116bcc65",
+        "97d8869a-28c6-51ed-b3e2-c1ac840b46d1"
+      ],
+      "pages": [
+        486
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "la contaminación visual",
+          "match": "contaminacion visual"
+        },
+        {
+          "label": "la contaminación acústica",
+          "match": "acustica"
+        },
+        {
+          "label": "las relaciones entre contaminación y medioambiente",
+          "match": "contaminacion y medioambiente"
+        }
+      ]
+    },
+    {
+      "id": "waste",
+      "grade": 5,
+      "label": "los desechos solicitados y sus efectos",
+      "match": "desechos|degradables",
+      "relation": "las características de degradación y los efectos expresamente estudiados de {target}, según las condiciones y materiales proporcionados",
+      "sourceRecordIds": [
+        "ef5f6f3e-753c-52c6-9526-c5d54c697168",
+        "fa485b96-823d-5852-ba4b-fe7f2d56dedf"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50,
+      "facets": [
+        {
+          "label": "los desechos no degradables",
+          "match": "no(?: |-)?degradables"
+        },
+        {
+          "label": "los desechos degradables",
+          "match": "(?<!no )degradables"
+        },
+        {
+          "label": "los efectos de los desechos no degradables en el medioambiente y la salud",
+          "match": "desechos no(?: |-)?degradables.*salud"
+        }
+      ]
+    },
+    {
+      "id": "personal-social-project",
+      "grade": 5,
+      "label": "los proyectos personales ficticios y sociales",
+      "match": "proyecto personal|proyectos personales|desarrollo personal|proyecto social|proyecto.*personal ficticio",
+      "relation": "el problema, los objetivos o las relaciones expresamente estudiadas de {target}, utilizando las condiciones ficticias dadas sin pedir vivencias familiares",
+      "sourceRecordIds": [
+        "2f7b58af-fa27-5d58-9dbf-bcfb6f0f2274",
+        "0c4653c9-5f84-5c31-8b7a-68fff18c6feb",
+        "eef7fd9a-691e-5fec-8a06-a1898ab8d10b",
+        "786a7915-f9b7-5300-99a0-441be9229e78",
+        "72d20167-4f4b-5a28-a680-a48109979e67",
+        "b97dbe0d-6240-5e84-b78d-d258d991fc99"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50
+    },
+    {
+      "id": "social-belonging",
+      "grade": 5,
+      "label": "la pertenencia social y la ciudadanía responsable del caso",
+      "match": "pertenencia social|ciudadania responsable",
+      "relation": "los conceptos y condiciones de participación expresamente estudiados de {target}, utilizando razones del caso sin exigir sentimientos de pertenencia",
+      "sourceRecordIds": [
+        "8d6d59d1-3279-5c3e-a2ca-00573fefd625",
+        "0b306cd0-b50a-52f2-9d43-7f4c00699efa",
+        "9c63bead-8672-51bf-ac22-e7c547f0de16"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50
+    },
+    {
+      "id": "economic-indicators",
+      "grade": 5,
+      "label": "los indicadores económicos de los datos proporcionados",
+      "match": "indicadores economicos",
+      "relation": "el significado y el alcance de {target}, respetando las unidades, la procedencia y el período del conjunto dado",
+      "sourceRecordIds": [
+        "619b52dd-2e90-5d35-93db-89ab276d97bc",
+        "cc6044db-89e4-57e6-af9a-2cf9aad868b2"
+      ],
+      "pages": [
+        486,
+        487
+      ],
+      "priority": 50
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-16",
+      "label": "el concepto, desarrollo contemporáneo y ramas de la geografía humana",
+      "sourceRecordIds": [
+        "0e908a52-8aa8-519b-aca6-3376686eed77"
+      ],
+      "caseIds": [
+        "concept-16"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-17",
+      "label": "las relaciones entre demografía y medioambiente",
+      "sourceRecordIds": [
+        "ebeb1d70-1caa-50e4-8a69-f41cb2b7c09a"
+      ],
+      "caseIds": [
+        "concept-17"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-18",
+      "label": "el concepto y alcance de la demografía",
+      "sourceRecordIds": [
+        "fd5f922d-0b1f-53ae-889f-14cfd6f9f497"
+      ],
+      "caseIds": [
+        "concept-18"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-19",
+      "label": "los indicadores de natalidad, mortalidad infantil y esperanza de vida al nacer",
+      "sourceRecordIds": [
+        "261e4534-b5d4-5743-aefe-487232950cfd"
+      ],
+      "caseIds": [
+        "concept-19",
+        "mortality-formula-only",
+        "infant-mortality-vs-general",
+        "growth-then-result"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-20",
+      "label": "la composición de la población",
+      "sourceRecordIds": [
+        "0094a607-94d7-5144-a56e-4eb9080c2ef8"
+      ],
+      "caseIds": [
+        "concept-20"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-21",
+      "label": "la migración y la emigración",
+      "sourceRecordIds": [
+        "5399804d-a062-5a43-91fd-6a4a04b8b048"
+      ],
+      "caseIds": [
+        "concept-21",
+        "migration-emigration-comparison"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-22",
+      "label": "los censos de población",
+      "sourceRecordIds": [
+        "71dc63ba-7b82-54e4-9d4d-921cc13d0770"
+      ],
+      "caseIds": [
+        "concept-22",
+        "census-no-private-survey"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-23",
+      "label": "el Índice de Desarrollo Humano (IDH)",
+      "sourceRecordIds": [
+        "a57f99f4-1f4c-5f4f-96ca-d00f8b4120ce"
+      ],
+      "caseIds": [
+        "concept-23",
+        "idh-formula-only"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-24",
+      "label": "el Índice de Calidad de Vida (ICV)",
+      "sourceRecordIds": [
+        "41a001ef-51fd-5d44-9239-a4e32bcbdadf"
+      ],
+      "caseIds": [
+        "concept-24",
+        "icv-formula-only"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-26",
+      "label": "la regionalización de la República Dominicana",
+      "sourceRecordIds": [
+        "4b7dd6d5-b339-5419-9946-970d1596d12d"
+      ],
+      "caseIds": [
+        "concept-26"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-27",
+      "label": "la macroregión del Cibao",
+      "sourceRecordIds": [
+        "3e965cd2-aa17-5130-9acb-1234359513c6"
+      ],
+      "caseIds": [
+        "concept-27"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-28",
+      "label": "la región Cibao Norte",
+      "sourceRecordIds": [
+        "18f1cd28-b7b0-56ec-86a8-a4cd372bc983"
+      ],
+      "caseIds": [
+        "concept-28"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-29",
+      "label": "la región Cibao Sur",
+      "sourceRecordIds": [
+        "17acbdac-b4b3-5bed-9ebb-a8ccfd6dfa17"
+      ],
+      "caseIds": [
+        "concept-29"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-30",
+      "label": "la región Cibao Nordeste",
+      "sourceRecordIds": [
+        "1f34cb80-f730-57cd-a464-0ec93a82d3e2"
+      ],
+      "caseIds": [
+        "concept-30"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-31",
+      "label": "la región Cibao Noroeste",
+      "sourceRecordIds": [
+        "ffabfd58-4cb2-54ce-a7ed-e7d010e886cc"
+      ],
+      "caseIds": [
+        "concept-31"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-32",
+      "label": "la macroregión Suroeste",
+      "sourceRecordIds": [
+        "4a5fbaf4-d47b-57df-a394-44501cd70786"
+      ],
+      "caseIds": [
+        "concept-32"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-33",
+      "label": "la región Valdesia",
+      "sourceRecordIds": [
+        "68b1e539-727d-5057-84d2-0f4262ddcd9e"
+      ],
+      "caseIds": [
+        "concept-33"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-34",
+      "label": "la región El Valle",
+      "sourceRecordIds": [
+        "792232ba-7af1-55ec-9300-1f267ae6a6ed"
+      ],
+      "caseIds": [
+        "concept-34"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-35",
+      "label": "la región Enriquillo",
+      "sourceRecordIds": [
+        "a0761b83-7ddd-5fa3-a246-a9e864f3f403"
+      ],
+      "caseIds": [
+        "concept-35"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-36",
+      "label": "la macroregión Sureste",
+      "sourceRecordIds": [
+        "0b1177f1-6901-5d24-96aa-96c140a7e3cd"
+      ],
+      "caseIds": [
+        "concept-36"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-37",
+      "label": "la región Ozama o Metropolitana",
+      "sourceRecordIds": [
+        "f9337110-8cbd-5667-80ab-78c4cfab9cb0"
+      ],
+      "caseIds": [
+        "concept-37",
+        "ozama-metropolitana-synonym"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-38",
+      "label": "las regiones Yuma y Higuamo",
+      "sourceRecordIds": [
+        "4375a328-4059-5adc-9875-1787ec210c56"
+      ],
+      "caseIds": [
+        "concept-38",
+        "yuma-only",
+        "higuamo-only"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-39",
+      "label": "Levantamiento de informaciones en páginas confiables",
+      "sourceRecordIds": [
+        "c1dd8e65-80bc-5191-87b6-0f3bd9a75cea"
+      ],
+      "caseIds": [
+        "reliable-information-search"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-40",
+      "label": "• Elaboración de registros, datos y resúmenes de\ninformaciones. levantadas en diversas fuentes.",
+      "sourceRecordIds": [
+        "f1bda703-131c-5672-aa39-a9fbc6fdc932"
+      ],
+      "caseIds": [
+        "population-data-record-summary",
+        "report-then-calculation",
+        "individual-summary"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-41",
+      "label": "• Lecturas de informes y páginas web de instituciones\nespecializadas sobre población y demografía.",
+      "sourceRecordIds": [
+        "3fdc0762-0878-5aad-a1c5-8024a2425108"
+      ],
+      "caseIds": [
+        "specialized-reports-reading"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-42",
+      "label": "• Análisis de informaciones de fuentes confiables de geografía\nhumana.",
+      "sourceRecordIds": [
+        "0a98d6d2-71c8-51f9-b348-75aedfa3cd89"
+      ],
+      "caseIds": [
+        "human-geography-information-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-43",
+      "label": "• Lecturas de informes y páginas web de instituciones\nespecializadas sobre población y demografía.",
+      "sourceRecordIds": [
+        "d61e3dc2-022a-54c8-bdd9-c31f4f4f6ff2"
+      ],
+      "caseIds": [
+        "specialized-reports-reading"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-44",
+      "label": "• Aplicación y uso de fórmulas para calcular el Índice de\nDesarrollo Humano, Índice de Calidad de Vida.",
+      "sourceRecordIds": [
+        "eba82b36-d0af-5343-a1ed-0c40d4c24aae"
+      ],
+      "caseIds": [
+        "idh-icv-calculation",
+        "icv-formula-only",
+        "idh-formula-only",
+        "formula-recognition-no-calculation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-45",
+      "label": "• Identificación en mapas de población las provincias con\nmayor crecimiento poblacional y mayor índice de pobreza.",
+      "sourceRecordIds": [
+        "e22105ad-c22f-5ec3-854a-108364beb280"
+      ],
+      "caseIds": [
+        "population-poverty-map-identification",
+        "population-count-map-only",
+        "independent-map-and-calculation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-46",
+      "label": "• Análisis críticos de las informaciones obtenidas sobre\ndemografía.",
+      "sourceRecordIds": [
+        "af17372d-b329-5c59-89c9-c34892114f64"
+      ],
+      "caseIds": [
+        "demography-information-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-47",
+      "label": "• Uso de fórmula para calcular el Índice de Desarrollo\nHumano, calidad de vida y los indicadores de natalidad y\nmortalidad.",
+      "sourceRecordIds": [
+        "c226bd2d-5b0a-55fd-9bfe-be29fb94f059"
+      ],
+      "caseIds": [
+        "demographic-indices-calculation",
+        "mortality-formula-only",
+        "growth-then-result",
+        "independent-map-and-calculation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-48",
+      "label": "Análisis de la división territorial dominicana desde la vida\ncolonial hasta la actualidad",
+      "sourceRecordIds": [
+        "61cde0f0-9105-58ec-9182-a9c9e6234b96"
+      ],
+      "caseIds": [
+        "territorial-division-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-49",
+      "label": "• Identificación de división territorial desde la época colonial.",
+      "sourceRecordIds": [
+        "6d58b6c1-3b85-5ad8-9e74-88306e0a5f6f"
+      ],
+      "caseIds": [
+        "colonial-division-recognition"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-50",
+      "label": "• Diferenciación entre macro región, región y provincia.",
+      "sourceRecordIds": [
+        "59f9ff9a-380f-5a0c-b988-74d2375f4f57"
+      ],
+      "caseIds": [
+        "territorial-levels-comparison"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-51",
+      "label": "• Comparación de los cambios en la división territorial desde\nla colonia.",
+      "sourceRecordIds": [
+        "ec76f251-d7e2-56ce-aeba-be1ac690652c"
+      ],
+      "caseIds": [
+        "territorial-changes-comparison"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-52",
+      "label": "• Realización de murales con mapas alusivos a la división\nterritorial dominicana actual.",
+      "sourceRecordIds": [
+        "efb5dcb7-b988-5c5d-b21d-8498a38ffef7"
+      ],
+      "caseIds": [
+        "territorial-map-mural",
+        "map-or-infographic-one-product"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-53",
+      "label": "Elaboración de propuestas que garanticen la convivencia\nintercultural y la cultura de paz",
+      "sourceRecordIds": [
+        "4ecc2939-4e6d-5790-853d-d468c6711530"
+      ],
+      "caseIds": [
+        "intercultural-proposal"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-54",
+      "label": "• Definición de la propuesta.",
+      "sourceRecordIds": [
+        "7e0760fc-a78e-5c6e-b8cc-09b715dfb984"
+      ],
+      "caseIds": [
+        "proposal-definition-only"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-55",
+      "label": "• Identificación de fuentes confiables.",
+      "sourceRecordIds": [
+        "f18b26fe-46b1-5d0e-aeb1-b10b605e8c16"
+      ],
+      "caseIds": [
+        "convivence-sources-selection",
+        "sources-only-no-investigation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-56",
+      "label": "• Análisis de legislaciones que defienden la convivencia.",
+      "sourceRecordIds": [
+        "1a57935e-8745-54c8-8d4f-fd21c2abaf76"
+      ],
+      "caseIds": [
+        "convivence-legislation-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-57",
+      "label": "• Planteamientos de proyectos que garanticen la convivencia\nintercultural.",
+      "sourceRecordIds": [
+        "9e5497cd-61a4-5b33-b893-5ca7f5266cce"
+      ],
+      "caseIds": [
+        "intercultural-project-plan",
+        "group-project"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-59",
+      "label": "• Uso ético de las informaciones\nconsultadas.",
+      "sourceRecordIds": [
+        "6a4d8c7f-3000-50a6-b443-beba35581ba8"
+      ],
+      "caseIds": [
+        "information-attribution"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-66",
+      "label": "la convivencia intercultural",
+      "sourceRecordIds": [
+        "2b6664f3-c39a-531d-aefe-7b8126ade690"
+      ],
+      "caseIds": [
+        "concept-66"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-67",
+      "label": "el concepto de respeto a las demás personas en el caso ficticio",
+      "sourceRecordIds": [
+        "552ffc7e-4788-5395-946b-b438633c730d"
+      ],
+      "caseIds": [
+        "concept-67"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-68",
+      "label": "la cultura de paz",
+      "sourceRecordIds": [
+        "7b4f6288-54bd-592a-9830-afb6b473b78e"
+      ],
+      "caseIds": [
+        "concept-68"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-69",
+      "label": "el concepto y relaciones de la economía",
+      "sourceRecordIds": [
+        "37f0efc2-f125-56a4-a642-5ea9efbbd258"
+      ],
+      "caseIds": [
+        "concept-69"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-70",
+      "label": "los sectores económicos primario, secundario y terciario",
+      "sourceRecordIds": [
+        "bc3cb9dd-dfeb-5d17-abc6-88c6f5a84747"
+      ],
+      "caseIds": [
+        "concept-70"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-71",
+      "label": "los indicadores económicos del conjunto dado",
+      "sourceRecordIds": [
+        "619b52dd-2e90-5d35-93db-89ab276d97bc"
+      ],
+      "caseIds": [
+        "concept-71"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-72",
+      "label": "el Producto Interno Bruto (PIB)",
+      "sourceRecordIds": [
+        "c04938db-f4ef-52e5-a344-a51d7d60fa91"
+      ],
+      "caseIds": [
+        "concept-72",
+        "net-domestic-product-comparison"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-73",
+      "label": "las finanzas, producción y empresas económicas del caso ficticio",
+      "sourceRecordIds": [
+        "773a2c20-236a-55c2-80e3-2e4689c40d5f"
+      ],
+      "caseIds": [
+        "concept-73"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-74",
+      "label": "el concepto y efectos de los paraísos fiscales según el texto dado",
+      "sourceRecordIds": [
+        "cf241fc7-179b-5b95-a51b-fd84a156b5d6"
+      ],
+      "caseIds": [
+        "concept-74"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-75",
+      "label": "el trueque y el mercado",
+      "sourceRecordIds": [
+        "c0f64f4e-1ea0-50db-9c31-f00400537565"
+      ],
+      "caseIds": [
+        "concept-75"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-76",
+      "label": "el comercio exterior",
+      "sourceRecordIds": [
+        "9b4f01c3-adc1-5b32-8bad-3d22056277fa"
+      ],
+      "caseIds": [
+        "concept-76"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-77",
+      "label": "la balanza de pagos",
+      "sourceRecordIds": [
+        "e1ec1862-f19b-5974-8806-c2f175fbf9de"
+      ],
+      "caseIds": [
+        "concept-77"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-78",
+      "label": "las relaciones entre medioambiente y desarrollo",
+      "sourceRecordIds": [
+        "4f3f79f3-a63f-5f83-85e3-fd9d77f05bf2"
+      ],
+      "caseIds": [
+        "concept-78"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-79",
+      "label": "los recursos naturales y los recursos humanos",
+      "sourceRecordIds": [
+        "3dc293b8-7a1c-5a34-8c88-a4df277273f9"
+      ],
+      "caseIds": [
+        "concept-79"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-80",
+      "label": "las relaciones entre contaminación y medioambiente",
+      "sourceRecordIds": [
+        "02cadf5d-234c-5044-842a-125d84aa0e0a"
+      ],
+      "caseIds": [
+        "concept-80"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-81",
+      "label": "la contaminación visual y acústica",
+      "sourceRecordIds": [
+        "3a7e10c4-7a99-5b02-bae1-09a592a0e2b1"
+      ],
+      "caseIds": [
+        "concept-81"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-82",
+      "label": "los desechos degradables y no degradables",
+      "sourceRecordIds": [
+        "ef5f6f3e-753c-52c6-9526-c5d54c697168"
+      ],
+      "caseIds": [
+        "concept-82"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-83",
+      "label": "los proyectos personales ficticios y colectivos",
+      "sourceRecordIds": [
+        "2f7b58af-fa27-5d58-9dbf-bcfb6f0f2274"
+      ],
+      "caseIds": [
+        "concept-83"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-84",
+      "label": "el concepto de respeto al entorno en el caso ficticio",
+      "sourceRecordIds": [
+        "de6697f2-c328-5970-a539-5aff21d496f2"
+      ],
+      "caseIds": [
+        "concept-84"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-85",
+      "label": "el concepto de pertenencia social en el caso ficticio",
+      "sourceRecordIds": [
+        "8d6d59d1-3279-5c3e-a2ca-00573fefd625"
+      ],
+      "caseIds": [
+        "concept-85"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-86",
+      "label": "Argumentación crítica sobre acuerdos comerciales\nmundiales y regionales",
+      "sourceRecordIds": [
+        "e2addb75-37d6-59d9-bcd4-e8b81a1cb855"
+      ],
+      "caseIds": [
+        "trade-agreement-argument"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-87",
+      "label": "• Identificación de los acuerdos comerciales suscritos por la\nRepública Dominicana.",
+      "sourceRecordIds": [
+        "3d874fca-fafa-5122-b5a9-f670fbc42712"
+      ],
+      "caseIds": [
+        "trade-agreement-recognition"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-88",
+      "label": "• Análisis de publicaciones del Banco Central, Dirección\nGeneral de Impuestos Internos y la ONE, sobre indicadores\neconómicos.",
+      "sourceRecordIds": [
+        "cc6044db-89e4-57e6-af9a-2cf9aad868b2"
+      ],
+      "caseIds": [
+        "institution-publications-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-89",
+      "label": "• Comprensión del Sistema Tributario Dominicano.",
+      "sourceRecordIds": [
+        "0b83c2de-8499-584d-be93-9010085096d4"
+      ],
+      "caseIds": [
+        "tax-system-understanding"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-90",
+      "label": "• Comprensión del impacto social del comercio interno y el\nexterno en la economía dominicana.",
+      "sourceRecordIds": [
+        "f060de6a-0865-5c5a-a775-8427ea907975"
+      ],
+      "caseIds": [
+        "internal-external-trade-impact"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-91",
+      "label": "Presentación de propuestas que preserven el\nmedioambiente y la contaminación visual y acústica",
+      "sourceRecordIds": [
+        "8215b975-c468-53c7-9516-c7f329a88938"
+      ],
+      "caseIds": [
+        "environment-pollution-proposal"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-92",
+      "label": "• Definición de los aspectos de la propuesta.",
+      "sourceRecordIds": [
+        "ac3805cb-43af-5506-9c14-2278a9c2f224"
+      ],
+      "caseIds": [
+        "environment-proposal-scope"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-93",
+      "label": "• Consulta de legislaciones y acuerdos internacionales sobre\nmedioambiente.",
+      "sourceRecordIds": [
+        "60a455aa-61e3-57b1-8088-2b3be35fb289"
+      ],
+      "caseIds": [
+        "environment-legislation-research"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-94",
+      "label": "• Consulta de mapas de población y zonas protegidas.",
+      "sourceRecordIds": [
+        "7ee49b27-40a4-54fc-a495-04bd0a795825"
+      ],
+      "caseIds": [
+        "population-protected-areas-maps"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-95",
+      "label": "• Encuestas sobre la contaminación visual y acústica.",
+      "sourceRecordIds": [
+        "5c4e618d-4df7-516d-9068-7e93116bcc65"
+      ],
+      "caseIds": [
+        "pollution-survey-design",
+        "survey-data-analysis-only"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-96",
+      "label": "• Redacta borrador final de la propuesta.",
+      "sourceRecordIds": [
+        "97d8869a-28c6-51ed-b3e2-c1ac840b46d1"
+      ],
+      "caseIds": [
+        "environment-proposal-draft",
+        "proposal-revision-scope"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-97",
+      "label": "Elaboración de proyectos personales y sociales",
+      "sourceRecordIds": [
+        "0c4653c9-5f84-5c31-8b7a-68fff18c6feb"
+      ],
+      "caseIds": [
+        "personal-social-project"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-98",
+      "label": "• Selección de problemáticas personales y sociales para la\nelaboración del proyecto.",
+      "sourceRecordIds": [
+        "eef7fd9a-691e-5fec-8a06-a1898ab8d10b"
+      ],
+      "caseIds": [
+        "project-problem-selection"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-99",
+      "label": "• Identificación de Fuentes confiables.",
+      "sourceRecordIds": [
+        "786a7915-f9b7-5300-99a0-441be9229e78"
+      ],
+      "caseIds": [
+        "project-reliable-sources",
+        "sources-only-no-investigation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-100",
+      "label": "• Promoción de los valores humanos y el respeto a su entorno.",
+      "sourceRecordIds": [
+        "d1b72911-e4e5-5824-bd27-59ed7269b713"
+      ],
+      "caseIds": [
+        "values-environment-material"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-101",
+      "label": "• Integración a propuestas que plante en una ciudadanía\nresponsable.",
+      "sourceRecordIds": [
+        "0b306cd0-b50a-52f2-9d43-7f4c00699efa"
+      ],
+      "caseIds": [
+        "responsible-citizenship-participation"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-102",
+      "label": "• Redacción de borradores antes del final.",
+      "sourceRecordIds": [
+        "72d20167-4f4b-5a28-a680-a48109979e67"
+      ],
+      "caseIds": [
+        "project-draft-revision",
+        "proposal-revision-scope"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-103",
+      "label": "• Analiza en murales y mapas, la\ndivisión territorial actual de la\nRepública Dominicana.",
+      "sourceRecordIds": [
+        "457a542e-126a-5b1d-b66e-e7d62c469f90"
+      ],
+      "caseIds": [
+        "territorial-mural-map-analysis"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    },
+    {
+      "id": "source-110",
+      "label": "• Integración en actividades de\npreservación de su entorno.",
+      "sourceRecordIds": [
+        "08d9c646-f822-576c-8d01-b9eb68af68c8"
+      ],
+      "caseIds": [
+        "environment-simulation-contribution"
+      ],
+      "adaptation": "Desempeño expresamente pedido con datos agregados/ficticios, mapas, fórmulas o textos dados;sin cifras actuales supuestas,asesoría real,datos privados o sentimientos calificados."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "4fa7b089-d54d-528b-957b-de0d6f0e55f5",
+      "literal": "• Elabora una definición propia de geografía humana, a partir de las fuentes consultadas.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-116-human-geography-definition"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "a2bfdf01-1d12-5501-888c-56a1e64ec11c",
+      "literal": "• Identifica en fuentes consultadas, los autores que realizaron aportes en la consolidación de la geografía humana y la\ndemografía.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-117-geography-demography-authors"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "7b111d4e-498b-5dc2-998d-ca32175f61be",
+      "literal": "• Respeta la autoría de las informaciones levantadas en medios virtuales e impresos.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-118-information-authorship"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "e8fedfb2-31a7-5a06-a5fd-416291a1d689",
+      "literal": "• Describe mediante ensayos e informes de lectura, algunas de las aplicaciones de la demografía en el estudio de la\npoblación.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-119-demography-applications-reading"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "9d6e4e39-3c0b-5502-b4b3-d4a513b344f4",
+      "literal": "• Analiza al realizar levantamientos de datos e investigaciones, los países donde existe mayor cantidad inmigrantes\ndominicanos.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-120-dominican-migration-data-research"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "c6cb3ae7-3332-581a-9af0-1f7b91a68005",
+      "literal": "• Integra en informes de lectura y monografías, fórmulas que facilitan calcular el crecimiento poblacional del mundo, el\nÍndice de Calidad de Vida y de Mortalidad.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-121-report-with-demographic-formulas",
+        "growth-then-result",
+        "report-then-calculation"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "b896a10f-24d5-59f7-8d0d-312934768e44",
+      "literal": "• Elabora murales e infografías sobre la división territorial de la República Dominicana.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-122-territorial-mural-or-infographic",
+        "map-or-infographic-one-product"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "35670a28-778b-5a32-88fe-eaf941c7c06c",
+      "literal": "• Analiza las divisiones territoriales desde la vida colonial hasta la actualidad.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-123-territorial-history-analysis"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "a70abd3e-333f-5fea-a497-edff6affaaa2",
+      "literal": "• Identifica ensayos y resúmenes la diferencia entre macro región, región y provincia.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-124-territorial-levels-reading-recognition"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "7c55f405-3df6-538f-854c-1682e526c324",
+      "literal": "• Propone proyectos sencillos que garanticen la convivencia intercultural en el entorno en que viven.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-125-intercultural-project-proposal"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "1dfdb1ff-767b-534d-8230-bca4c38f1498",
+      "literal": "• Demuestra en sus actuaciones cotidianas actitud de respeto a su persona y a los demás.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-126-respect-case-simulation"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "aa06f80d-4fa0-54ba-a2c8-29a93fe6eac2",
+      "literal": "• Defiende el diálogo como forma de garantizar la cultura de paz entre los ciudadanos y ciudadanas.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-127-peace-dialogue-argument"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "a2cacaf0-5ee4-551e-a7a5-f144d5ba0361",
+      "literal": "• Realiza monografías y ensayos las implicaciones de la globalización económica en los mercados mundiales.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-128-economic-globalization-monograph-or-essay",
+        "globalization-essay-only",
+        "monograph-only"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "cd75ddeb-0484-5d63-9e9f-d71c0df64205",
+      "literal": "• Analiza las implicaciones del Producto Interno Bruto y el Producto Interno Neto en la economía.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-129-gdp-net-domestic-product-analysis",
+        "net-domestic-product-comparison"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "81a7d1a0-5874-504c-8ac1-10117fd4a0ac",
+      "literal": "• Elabora proyectos sencillos de investigación, sobre el comercio externo, interno y las instituciones que componen el\nSistema Tributario Dominicano.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-130-trade-tax-research-project"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "dce0ecf8-ec34-5be6-81d8-d3cab16fb7c3",
+      "literal": "• Plantea proyectos de protección de los recursos naturales de la República Dominicana y su comunidad.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-131-natural-resources-project"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "7e5f06b1-8f58-5eb2-8527-2331da6d7356",
+      "literal": "• Analiza artículos de leyes y normativas que regulan la protección del medioambiente.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-132-environment-legal-articles-analysis"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "fa485b96-823d-5852-ba4b-fe7f2d56dedf",
+      "literal": "• Realiza campañas de concientización sobre los efectos de la contaminación de desechos no degradables al medioambiente\ny la salud.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-133-nondegradable-waste-campaign"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "b97dbe0d-6240-5e84-b78d-d258d991fc99",
+      "literal": "• Elabora proyectos sencillos sobre su desarrollo personal y social.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-134-fictitious-personal-social-project"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "d92e88e4-2afd-5968-9585-a513bfba920c",
+      "literal": "• Se integra a campañas que promueven los valores humanos y el respeto a su entorno social.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-135-values-campaign-contribution"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    },
+    {
+      "id": "9c63bead-8672-51bf-ac22-e7c547f0de16",
+      "literal": "• Plantea propuestas que demuestran su sentido de pertenencia y la construcción de una ciudadanía responsable.",
+      "pdfPage": 487,
+      "caseIds": [
+        "indicator-136-responsible-belonging-proposal"
+      ],
+      "adaptation": "Aplicar las condiciones observables según la consigna concreta;Producto Interno Neto en129,índices con fórmulas dadas,sin imponer todos los productos o tareas simultáneamente."
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "fb0ffb70-fbaf-5653-9e8c-d1cbcd4580df",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Organiza el área o subsección; conservar literal y vínculos sin convertirlo en tema evaluable independiente."
+    },
+    {
+      "id": "54b6c149-9ebf-53df-8ba9-bf73128c0b12",
+      "reason": "ORGANIZATIONAL_HEADING",
+      "explanation": "Organiza el área o subsección; conservar literal y vínculos sin convertirlo en tema evaluable independiente."
+    },
+    {
+      "id": "a7defa29-9421-5cb9-8b83-f8250d1d6dd0",
+      "reason": "NON_ACTION_FRAGMENT",
+      "explanation": "Fragmento literal Informaciones consultadas, sin acción autónoma; no inventar un desempeño; atribución y uso de fuentes conservan anclas propias."
+    },
+    {
+      "id": "16cad9b1-40ad-5080-bf72-da680eba7023",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "5e0994fe-02c7-589f-ad17-02d584f57502",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "c83585c2-272b-5f2b-9ccf-23496ed03a27",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "16dd79b5-53b2-545b-a9d0-6691b98acbd6",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "0f8be1cc-ca0a-5870-ab68-0e755057dcb3",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "3569387f-6dc3-5603-946d-07d27d1291de",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "d6639185-06c9-5d65-ab73-90c1bc956247",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "3adf6114-94a5-5818-830f-c7b255589193",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "219dccba-034c-583e-8e63-ce3a272527ec",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "9daa642c-69b0-570c-8fd6-3fab6faa8425",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "38c445fc-2884-5252-a844-e5cf0cfe6369",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "3d674a23-defb-5ed0-8261-37629baf9bfa",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "52cd7afc-bcef-5ea1-940f-d5de72092701",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "3d29611c-3219-5baf-95e0-10e6dd8fffba",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "8d5e3f9f-a89b-5254-973a-591c0025ac26",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "0d318be1-a2f3-5f68-9f06-2438db5255df",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    },
+    {
+      "id": "4ffc196c-b837-5995-b485-f4cf05cac0f2",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés, valoración o posición interna: no evaluar pertenencia, pobreza familiar, origen migratorio, moralidad supuesta ni adhesión."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 152,
+    "fullInstrumentsGenerated": 608,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 608,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_32_SAMPLES_ALL_21_INDICATORS_FOUR_FORMATS_20_AND_17_35_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "browser": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+    "testCounts": {
+      "backend": 81518,
+      "backendFiles": 176,
+      "frontendActivities": 80722,
+      "frontendFiles": 109,
+      "wholeFrontendSuite": false,
+      "frontendStoragePreservation": 5
+    },
+    "timingsMs": {
+      "interpret": 6101,
+      "recommend": 6199,
+      "writes": 4066
+    },
+    "priorScopeRegressions": "optative-hcs-soc-5-regresiones-previas.json",
+    "report": "docs/superpowers/reports/2026-10-19-optativa-hcs-demografia-5.md"
+  },
+  "limits": [
+    "28 agrupaciones temáticas, con 81 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Datos,fórmulas,períodos y convenciones son los proporcionados;no se inventan cifras actuales ni una fórmula universal de índices.",
+    "Las alternativas de producto y las acciones independientes se evalúan según la consigna;sin datos privados ni ejecución externa implícita.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_HCS_SOC_5_V1",
+    "versionId": "68154ff2-7a10-5f41-8ff2-d838cb8d54fa",
+    "scopeId": "3ac2775d-fdd8-539f-8344-dd4c897ff770",
+    "result": "UNCHANGED",
+    "elements": 136,
+    "excludedFromAssessment": 20,
+    "sourceRowsAndSpansMatched": true
+  }
+}

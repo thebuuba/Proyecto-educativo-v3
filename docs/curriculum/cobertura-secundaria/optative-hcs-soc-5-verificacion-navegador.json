@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+  "personalQaContext": {
+    "authorization": "Encargo integral,sección10",
+    "separateClearlyNamedCourse": true,
+    "grade": 5,
+    "cycle": 2,
+    "modality": "academic",
+    "exit": "HCS",
+    "subjectCode": "OPT-HCS-SOC-5",
+    "existingPersonalSchool": true,
+    "newUsers": 0,
+    "newStudents": 0,
+    "originalRowsPreserved": true,
+    "idempotenceVerified": true
+  },
+  "observed": [
+    "Formulario vacío con cuatro selectores y estrategia visibles,puntos vacíos,sin anuncios de preparación.",
+    "Roles ficticios de campaña de convivencia yentorno→Representación/Observación sistemática/SimulaciónAUTO/rúbrica1.",
+    "Grupal yformato elegidos manualmente;17.35→20→17.35exactos.",
+    "Cuatroformatos completos leídos;escala/rúbrica concuatrodescriptores,ponderada conparcial50%/100%.",
+    "Texto manual conservado;una creación,listado→Editar yreapertura.",
+    "SoloEstudiodecasoMANUAL,unaactualización/recarga,IDs/snapshot/huellainstrumentoexactos.",
+    "Borradores anteriores seguían visibles en el listado;sinlimpiezasmanualesdecaché/SW/storage."
+  ],
+  "persistence": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "d1d76e39-94b2-4371-aa85-a217c27111d1",
+    "instrumentId": "2ee7639d-5fa6-4ae7-825c-1388615cfdf1",
+    "snapshotId": "63f1aeeb-87c1-4987-92f2-db4a633ca6ce",
+    "instrumentHash": "451c1e8a3b4a724d8cef945149eb3881",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.134",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "activityWrites": 2,
+    "newActivities": 1,
+    "newSnapshots": 1
+  },
+  "pending": [],
+  "limitations": [
+    "La recomendación tarda variossegundos;se observan plantillas vacías transitorias al cambiar formato.",
+    "Una espera del localizador venció mientrasllegaba la recomendación;la selección síhabía ocurrido yelresultadofinalse comprobó sinrepetiracciones."
+  ],
+  "localFullPageScreenshotAvailable": true,
+  "screenshotExcludedFromGit": true
+}

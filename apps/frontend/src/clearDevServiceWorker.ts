@@ -3,12 +3,13 @@ export async function clearDevServiceWorker() {
   if ((!import.meta.env.DEV && !isLocalHost) || !('serviceWorker' in navigator)) return
 
   try {
+    const scope = new URL(import.meta.env.BASE_URL, window.location.origin).href
+    const workerUrl = new URL('sw.js', scope).href
     const registrations = await navigator.serviceWorker.getRegistrations()
-    await Promise.all(registrations.map((registration) => registration.unregister()))
-
-    const keys = await caches.keys()
-    await Promise.all(keys.map((key) => caches.delete(key)))
+    const owned = registrations.filter((registration) => registration.scope === scope &&
+      [registration.active, registration.waiting, registration.installing].some((worker) => worker?.scriptURL === workerUrl))
+    await Promise.all(owned.map((registration) => registration.unregister()))
   } catch {
-    // Development cache cleanup should never block the app from rendering.
+    // A stale local worker must never block rendering or trigger storage deletion.
   }
 }

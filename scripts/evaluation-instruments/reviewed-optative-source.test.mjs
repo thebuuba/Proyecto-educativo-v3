@@ -4,7 +4,20 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
-test('Filosofía HCS cuarto conserva113registros,59anclas y21indicadores sin habilitar grados siguientes',()=>{
+test('Geografía humana y demografía HCS quinto conserva136registros,81anclas y21indicadores en su ámbito',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-5-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-5','5',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.elements,136);assert.equal(manifest.excludedFromAssessment,20)
+ assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_HCS_SOC_5_V1');assert.deepEqual(manifest.metadata.optativeExitNames,['Humanidades y Ciencias Sociales'])
+ const m=JSON.parse(readFileSync(path,'utf8')),fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hcs-soc-five-contracts.json','utf8')),ids=new Set(m.officialRecords.map(r=>r.id)),excluded=new Set(m.explicitExclusions.map(r=>r.id))
+ assert.equal(m.contents.length,81);assert.equal(m.criticalIndicators.length,21)
+ assert.match(m.criticalIndicators.find(r=>r.literal.includes('Interno Neto')).literal,/Producto Interno Neto/)
+ for(const r of m.criticalIndicators)assert(r.caseIds.length&&r.adaptation)
+ for(const task of fixture.cases)for(const id of task.sourceRecordIds){assert(ids.has(id),task.id);assert(!excluded.has(id),task.id)}
+ for(const args of [['OPT-HCS-SOC-5','4',path,'--optative'],['OPT-HCS-SOC-6','6',path,'--optative'],['OPT-HCS-SOC-5','5',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
+test('Filosofía HCS cuarto conserva113registros,59anclas y21indicadores sin aceptar matrices de otros grados',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-4','4',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
  assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.elements,113);assert.equal(manifest.excludedFromAssessment,19)
