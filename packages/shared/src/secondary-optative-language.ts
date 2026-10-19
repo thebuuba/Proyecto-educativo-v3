@@ -1,3 +1,4 @@
+import {optativeHcsLenSix} from './secondary-optative-hcs-len-6'
 import {optativeHcsLenFive} from './secondary-optative-hcs-len-5'
 import {optativeHcsLenFour} from './secondary-optative-hcs-len-4'
 import type {InstrumentAcademicContext} from './secondary-science'
@@ -14,14 +15,14 @@ import {optativeHlmLenFour} from './secondary-optative-hlm-len-4'
 import {optativeHlmLenFive} from './secondary-optative-hlm-len-5'
 import {optativeHlmLenSix} from './secondary-optative-hlm-len-6'
 
-type OptativeFeature=LanguageFeature&{sourceRecordIds:string[];analysisLevels?:ContextualTopicCriterion['progressionLevels']}
+type OptativeFeature=LanguageFeature&{sourceRecordIds:string[];analysisLevels?:ContextualTopicCriterion['progressionLevels'];productionLevels?:ContextualTopicCriterion['progressionLevels']}
 export type OptativeLanguageGenre={id:string;label:string;match:string;sourceRecordIds:string[];pdfPages:number[];profile:{genre:string;target:string;plan:string};planningComponents?:[string,string][];features:OptativeFeature[];dimensions:TopicDimension[]}
 export type OptativeLanguageModule={id:string;grade:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];topics:OptativeLanguageGenre[]}
 type OptativeAction={text:string;genre:OptativeLanguageGenre;activityType:string;plan:boolean;revision:boolean}
 export type OptativeLanguageTask={module:OptativeLanguageModule;actions:OptativeAction[];activityType:string;technique:string}
-export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix,optativeHcsLenFour,optativeHcsLenFive]
+export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix,optativeHcsLenFour,optativeHcsLenFive,optativeHcsLenSix]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
-const verbs='(?!presente (?:del|de los|en el|narrativo)\\b)(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|lea(?:n|mos)?\\b|public(?:a(?:n|ra(?:n)?)?|ar)\\b|publiqu(?:e|en|emos)\\b|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon|evalu|debat|subray|disen(?:a|en))[a-z]*'
+const verbs='(?!presente (?:del|de los|en el|narrativo)\\b)(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|lea(?:n|mos)?\\b|public(?:a(?:n|ra(?:n)?)?|ar)\\b|publiqu(?:e|en|emos)\\b|registr(?:a(?:n|ra(?:n)?)?|ar|en?)\\b|seleccion(?:a(?:n|ra(?:n)?)?|ar|en?)\\b|inclu(?:y(?:e(?:n)?|a(?:n)?)|ir)\\b|dispon(?:e(?:n)?|ga(?:n)?|er)?\\b|ensay(?:a(?:n)?|ar|en?)\\b|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon|evalu|debat|subray|disen(?:a|en))[a-z]*'
 function requestedText(value:string){
  return normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ')))
   .replace(new RegExp(`\\b(?:no|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:y|pero)\\s+${verbs}\\b|$)`,'g'),'').trim()
@@ -42,10 +43,11 @@ export function resolveOptativeLanguageTask(title:string,description:string,cont
   const start=clause.search(new RegExp(`\\b(?:distingu[a-z]*|${verbs})\\b`))
   if(start<0){if(prior)prior.text+='. '+clause;continue}
   const text=clause.slice(start)
+  if(prior&&/^anticip/.test(prior.text)&&(!explicit||explicit.id===prior.genre.id)&&/^explic[a-z]*\b.*\b(?:indicios|predicci)/.test(text)){prior.text+='. '+text;continue}
   if(prior?.revision&&/^present[a-z]*\b.*(?:cambios|version revisada)/.test(text)){prior.text+='. '+text;continue}
   const genre=explicit??prior?.genre;if(!genre)continue
   const plan=/^planific|^(?:elabor|disen)[a-z]*\s+(?:un\s+)?plan\b/.test(text),revision=/^(?:revis|corrig|corrij)/.test(text)
-  const activityType=plan||revision||/^(?:disen(?:a|en)|public|publiqu)/.test(text)?'WRITTEN_PRODUCTION':detectTopicActivity('',text,languageTopic(genre,module.grade,module.subjectCode))
+  const activityType=plan||revision||/^(?:disen(?:a|en)|public|publiqu|registr|inclu|dispon)/.test(text)?'WRITTEN_PRODUCTION':/^seleccion/.test(text)?'ANALYSIS':/^ensay/.test(text)?'ORAL_PRESENTATION':detectTopicActivity('',text,languageTopic(genre,module.grade,module.subjectCode))
   actions.push({text,genre,activityType,plan,revision})
  }
  if(!actions.length)return null
@@ -71,7 +73,9 @@ function selectedFeatures(genre:OptativeLanguageGenre,text:string,separate=false
 export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTopicCriterion[]{
  const result=task.actions.flatMap<ContextualTopicCriterion>(action=>{
   const {genre,text,activityType}=action,prefix=`${task.module.subjectCode.toLowerCase()}-${genre.id}-${activityType.toLowerCase()}`,base=`len-${task.module.grade}-${genre.id}`
-  const recognition=recognitionOnly(action),features=/^anticip/.test(text)?[]:selectedFeatures(genre,text,recognition),topic=languageTopic(genre,task.module.grade,task.module.subjectCode),focused=/\b(?:solo|unicamente|exclusivamente)\b/.test(text)
+  const recognition=recognitionOnly(action),topic=languageTopic(genre,task.module.grade,task.module.subjectCode),focused=/\b(?:solo|unicamente|exclusivamente)\b/.test(text)
+  let features=/^anticip/.test(text)?[]:selectedFeatures(genre,text,recognition)
+  if(focused&&/^explic[a-z]*\s+(?:unicamente\s+)?(?:una\s+)?postura argumentada\b/.test(text)&&features.some(f=>f.id==='supported-position'))features=features.filter(f=>f.id==='supported-position')
   if(recognition&&features.length)return features.map(f=>({templateId:prefix+'-feature-'+f.id,title:f.name.charAt(0).toUpperCase()+f.name.slice(1),observable:'Localiza '+f.name+' en el texto proporcionado seleccionando los ejemplos que corresponden al recurso solicitado.',weight:3,progressionLevels:[
    'Localiza '+f.name+' en el texto proporcionado seleccionando los ejemplos que corresponden al recurso solicitado.',
    'Reconoce el recurso solicitado; una selección del texto necesita ajustarse para distinguirlo de otro recurso.',
@@ -97,11 +101,17 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
    }
    if(historical.length)components.push(historical.length>1&&/\bo\b/.test(text.slice(historical[0].index,historical.at(-1)!.end))?'el referente elegido entre '+historical.map(r=>r.name).join(' o '):historical.map(r=>r.name).join(' y '))
    if(genre.id==='epopeya'&&/\b(?:verso|prosa)\b/.test(text))components.push(/\bverso\b/.test(text)&&/\bprosa\b/.test(text)?'la forma elegida entre verso o prosa':/\bverso\b/.test(text)?'la forma en verso':'la forma en prosa')
+   if(task.module.subjectCode==='OPT-HCS-LEN-6'){
+    const media=[...text.matchAll(/\b(?:fisico|digital)\b/g)]
+    const names=[...new Set(media.map(m=>m[0]==='fisico'?'físico':'digital'))]
+    if(names.length)components.push(names.length===1?'el soporte '+names[0]:/\bo\b/.test(text.slice(media[0].index!,media.at(-1)!.index!))?'el soporte elegido entre '+names.join(' o '):'los soportes '+names.join(' y '))
+   }
    const plan=components.length?'la relación entre '+components.join(' y '):genre.planningComponents?genre.profile.plan:'los componentes expresamente pedidos y sus relaciones'
    return languageWritingProcedures(text,base,genre.profile.genre,plan).map(r=>({...r,templateId:r.templateId.replace(base,prefix)}))
   }
-  if(action.revision||/^(?:public|publiqu)/.test(text)||focused||features.length&&['ANALYSIS','COMPARISON'].includes(activityType))topic.dimensions=topic.dimensions.filter(d=>d.id==='meaning'&&/intencion/.test(text)&&!action.revision)
-  const profile={...genre.profile,revisionRequested:action.revision,verifyPrediction:/\bcomprueb[a-z]*\b/.test(text),oralCreation:activityType==='ORAL_PRESENTATION'&&(/^(?:narr|cuent|contar|relat)/.test(text)||/^(?:present|expon)[a-z]*\b.*\bque (?:has|han|hemos) (?:preparado|redactado|creado)\b/.test(text))}
+  const rehearsing=genre.id==='poster-cientifico'&&/^ensay/.test(text)
+  if(action.revision||rehearsing||/^(?:public|publiqu)/.test(text)||focused||features.length&&['ANALYSIS','COMPARISON'].includes(activityType))topic.dimensions=topic.dimensions.filter(d=>d.id==='meaning'&&/intencion/.test(text)&&!action.revision)
+  const profile={...genre.profile,revisionRequested:action.revision,verifyPrediction:/\bcomprueb[a-z]*\b/.test(text),oralCreation:activityType==='ORAL_PRESENTATION'&&(rehearsing||task.module.subjectCode==='OPT-HCS-LEN-6'&&/^(?:present|expon)/.test(text)||/^(?:narr|cuent|contar|relat)/.test(text)||/^(?:present|expon)[a-z]*\b.*\bque (?:has|han|hemos) (?:preparado|redactado|creado)\b/.test(text))}
   let rows=composeLanguageCriteria(topic,activityType,text,profile,features)
   if(activityType==='ANALYSIS')rows=rows.map(r=>{
    const source=genre.features.find(f=>f.analysisLevels&&r.templateId===base+'-feature-'+f.id),selected=features.find(f=>f.id===source?.id)
@@ -109,6 +119,12 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
    const levels=source.analysisLevels.map(level=>level.replaceAll('{target}',selected.name)) as ContextualTopicCriterion['progressionLevels']
    return{...r,observable:levels[0],progressionLevels:levels}
   })
+  if(profile.oralCreation||activityType==='WRITTEN_PRODUCTION')rows=rows.map(r=>{
+   const source=genre.features.find(f=>f.productionLevels&&r.templateId===base+'-feature-'+f.id)
+   if(!source?.productionLevels)return r
+   return{...r,observable:source.productionLevels[0],progressionLevels:source.productionLevels}
+  })
+  if(focused&&/^dispon.*\bversion final\b/.test(text))rows=rows.filter(r=>!r.templateId.endsWith('-process-revision'))
   const explicitIntention=genre.id==='poesia-romantica'&&/intencion/.test(text)&&!action.revision&&activityType!=='ORAL_PRESENTATION'
   if(explicitIntention&&!rows.some(r=>r.templateId===base+'-meaning')){
    const d=genre.dimensions.find(d=>d.id==='meaning')!
@@ -124,7 +140,7 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
    'No aporta evidencia de las correcciones ortográficas solicitadas.',
   ]}:r)
   if(activityType==='WRITTEN_PRODUCTION'||profile.oralCreation)rows=rows.map(r=>({...r,progressionLevels:r.progressionLevels.map(s=>s==='Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.'?'Presenta elementos pertinentes, pero una relación necesaria para seguir el desarrollo del texto queda sin construir.':s) as ContextualTopicCriterion['progressionLevels']}))
-  if(action.revision&&features.length&&!/\b(?:contenido|organizacion)\b/.test(text)){
+  if(action.revision&&features.length&&(!/\b(?:contenido|organizacion)\b/.test(text)||focused)){
    const targets=[...features.map(f=>f.name),...(/\bortograf[a-z]*\b/.test(text)?['la ortografía solicitada']:[])].join(' y ')
    rows=rows.map(r=>r.templateId.endsWith('-process-revision')?{...r,observable:`Muestra los cambios que corrigen ${targets} entre el borrador y la versión revisada, conservando el sentido del texto.`,progressionLevels:[
     `Las correcciones resuelven los problemas señalados en ${targets} y conservan el sentido del texto.`,
@@ -134,7 +150,8 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
     `No aporta evidencia de las correcciones solicitadas de ${targets}.`,
    ]}:r)
   }
-  if(rows.some(r=>r.templateId.endsWith('-procedure-vocabulary')))rows=rows.filter(r=>!/-feature-(?:poetry|novel)-vocabulary$/.test(r.templateId))
+  if(rows.some(r=>r.templateId.endsWith('-procedure-vocabulary')))rows=rows.filter(r=>!/-feature-(?:poetry|novel|professional)-vocabulary$/.test(r.templateId))
+  if(/^(?:resum|parafras)/.test(text)&&rows.some(r=>r.templateId.endsWith('-feature-source-synthesis')))rows=rows.filter(r=>!r.templateId.endsWith('-procedure-paraphrase'))
   const represented=new Set(rows.filter(r=>r.templateId.includes('-feature-')).map(r=>r.templateId.split('-feature-')[1]))
   const pairs:Record<string,string[]>={plot:['novel-plot'],characters:['novel-characters'],narrator:['narrator'],meaning:['poetry-themes']}
   rows=rows.filter(r=>!genre.dimensions.some(d=>r.templateId===base+'-'+d.id&&represented.has(d.id))&&!Object.entries(pairs).some(([id,fs])=>r.templateId===base+'-'+id&&fs.some(f=>represented.has(f))))

@@ -1,3 +1,4 @@
+import optativeHcsSix from '../../../../../data/evaluation-instruments/optative-hcs-len-six-contracts.json'
 import optativeHcsFive from '../../../../../data/evaluation-instruments/optative-hcs-len-five-contracts.json'
 import optativeHcsFour from '../../../../../data/evaluation-instruments/optative-hcs-len-four-contracts.json'
 import 'reflect-metadata'
@@ -87,7 +88,7 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
-  for (const fixture of [optativeHcsFive,optativeHcsFour,optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour,optativeHlmEnglishFive,optativeHlmEnglishSix]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
+  for (const fixture of [optativeHcsSix,optativeHcsFive,optativeHcsFour,optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour,optativeHlmEnglishFive,optativeHlmEnglishSix]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
     const row = secondary(fixture.subjectCode)
     row.grade.sequence = fixture.grade
     row.grade.academicCycle.code = 'secundario_segundo_ciclo'

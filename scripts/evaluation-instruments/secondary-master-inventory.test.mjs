@@ -2,6 +2,14 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
+test('Textos científicos y profesionales HCS sexto conserva evidencia propia de cinco géneros',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-len-6-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.exit,'Humanidades y Ciencias Sociales');assert.equal(row.grade,6)
+ assert.equal(row.evidence,'docs/curriculum/cobertura-secundaria/optative-hcs-len-6-matriz.json')
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.id===read('optative-hcs-len-5-matriz.json').scopeId).evidence)
+ assert.equal(matrix.genres.length,5);assert.equal(matrix.verification.fullReview.pending,0)
+})
 test('Literatura HCS quinto conserva su matriz propia sin heredar la evidencia de cuarto o HLM',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-len-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)

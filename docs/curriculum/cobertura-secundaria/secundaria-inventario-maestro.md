@@ -68,7 +68,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Análisis Crítico y Evaluación de Textos en Inglés | 6 | Humanidades y Lenguas Modernas | 456, 457, 458, 459, 460 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Apreciación y Producción Literarias | 4 | Humanidades y Ciencias Sociales | 462, 463, 464, 465, 466 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Apreciación y Producción Literarias | 5 | Humanidades y Ciencias Sociales | 467, 468, 469, 470, 471 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
-| Análisis y Producción de Textos Científicos y Profesionales | 6 | Humanidades y Ciencias Sociales | 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 | PENDING |
+| Análisis y Producción de Textos Científicos y Profesionales | 6 | Humanidades y Ciencias Sociales | 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Filosofía social y Pensamiento Dominicano | 4 | Humanidades y Ciencias Sociales | 482, 483, 484 | PENDING |
 | Geografía Humana y Demografía | 5 | Humanidades y Ciencias Sociales | 485, 486, 487 | PENDING |
 | Ciudadanía y Democracia Participativa | 6 | Humanidades y Ciencias Sociales | 488, 489 | PENDING |

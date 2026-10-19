@@ -1,0 +1,3027 @@
+{
+  "catalog": "evaluation-2026.132",
+  "method": "Lectura completa de195textos iniciales y148correspondencias;179textos finales,33nuevos o modificados releídos,150correspondencias finales y33paquetes exactos de formato/puntuación. Reconstrucción exacta de600instrumentos mediante read-hcs-six.mjs:descripción,criterios,cinco niveles,títulos de cotejo/escala,parcial de ponderada,descriptores y puntos. Los textos de receta se contrastaron literalmente con la receta completa;los personalizados se leyeron íntegros.",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "findingsFixed": [
+    "Registro/selección/inclusión/disposición finales y ensayo oral no reconocidos",
+    "Doble criterio para potencial y pretérito perfecto",
+    "Orden funcional confundido con función estructural",
+    "Contexto dado añadía intención y selección como tareas extra",
+    "Anticipación y justificación de indicios añadían análisis global",
+    "Inferencia léxica y síntesis de fuentes repetidas",
+    "Solicitado añadía citas por coincidencia parcial",
+    "Contraargumentos añadían otros argumentos",
+    "Plan perdía alternativa de soporte e información conocida/nueva",
+    "Revisión acotada añadía proceso o contenido no pedido",
+    "Presentación y ensayo oral usaban niveles de análisis"
+  ],
+  "minorDeferred": [
+    "Repetición editorial de artículos y de función en formulaciones compartidas;sin requisitos añadidos."
+  ],
+  "limits": [
+    "Muestras representativas,no todas las variantes posibles de cada fila curricular.",
+    "Indicadores contextuales no se convierten en tareas simultáneas ni disposiciones privadas evaluables."
+  ],
+  "items": [
+    {
+      "caseId": "brief:curriculum-vitae",
+      "instrumentType": "rubrica",
+      "sha256": "21894928faa3fb5895abbb8c82bdfe3ffb5ffbb07cfd551e5f47aaad1cc75080"
+    },
+    {
+      "caseId": "brief:curriculum-vitae",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9292184e5adba81d88fa17c9089400486c0f2dc733579e263cb4e8986da996b4"
+    },
+    {
+      "caseId": "brief:curriculum-vitae",
+      "instrumentType": "escala",
+      "sha256": "6dd8ade02000afe724a1f8a17d0e4042f4981afee7a01964c82adabda40ce6dd"
+    },
+    {
+      "caseId": "brief:curriculum-vitae",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4f5cceed383281ddfff485ae33d951ef1365be802dd895234837b4a75916897e"
+    },
+    {
+      "caseId": "brief:solicitud-beca",
+      "instrumentType": "rubrica",
+      "sha256": "30e65582d3c6eb2d8e3a2fe57b316b70ce5876d6efebef08c61d3d7400eb2356"
+    },
+    {
+      "caseId": "brief:solicitud-beca",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f6214d7224c444b2a678e74d0a257a51c4b9ab589633268c9631c8d0fa9a94e1"
+    },
+    {
+      "caseId": "brief:solicitud-beca",
+      "instrumentType": "escala",
+      "sha256": "c697ef88c67b8ec2ee61cfbc06744151b88c681458678270902cb7e3b13b4e6d"
+    },
+    {
+      "caseId": "brief:solicitud-beca",
+      "instrumentType": "lista-ponderada",
+      "sha256": "485da521c567044ffae517d44ff6fc00b40e86697453f0b40b90b3f0e93e4ab7"
+    },
+    {
+      "caseId": "brief:solicitud-empleo",
+      "instrumentType": "rubrica",
+      "sha256": "1327e3bf45f2654e0f898342bf9f930c0d7e3dc1d9a0858034756612a3977b5d"
+    },
+    {
+      "caseId": "brief:solicitud-empleo",
+      "instrumentType": "lista-cotejo",
+      "sha256": "829791a265ed6a1ed676bfe190ee7257f64f5e9bf3aceda09e56f10d591aa5e6"
+    },
+    {
+      "caseId": "brief:solicitud-empleo",
+      "instrumentType": "escala",
+      "sha256": "ecbcf3834f9082273cd7f198c6f4f49f3e620c5f8be184d3630c5e57e4f6aabc"
+    },
+    {
+      "caseId": "brief:solicitud-empleo",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1c899eeb5adbfa82beafe9ae530aad5c11850148033274ea71f32590a876492b"
+    },
+    {
+      "caseId": "brief:poster-cientifico",
+      "instrumentType": "rubrica",
+      "sha256": "faa8ffa4bf54dd5dc0369ae6a8ec85eea28fcaeea047fe7d56e2554361ac023d"
+    },
+    {
+      "caseId": "brief:poster-cientifico",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c90fa58368ebbe6d41edfa485bfb38dfe5f8b071d457da345510ff5d35d9f99"
+    },
+    {
+      "caseId": "brief:poster-cientifico",
+      "instrumentType": "escala",
+      "sha256": "be42eba248379d41d5af60a5e0c06a82bc790a3ab8732eec1963fb91c4fcd629"
+    },
+    {
+      "caseId": "brief:poster-cientifico",
+      "instrumentType": "lista-ponderada",
+      "sha256": "df5f4a4d0ca01a6a4ffbfcade17e3074e705e5246a6d6a3ea37ec7e1ff8be031"
+    },
+    {
+      "caseId": "brief:ensayo-academico",
+      "instrumentType": "rubrica",
+      "sha256": "1502408a73ef54142342e57ced28052fd93d4254b8d2e046a55b7553cde261f4"
+    },
+    {
+      "caseId": "brief:ensayo-academico",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9312e0deb4909bb9b4892f58317e0d94d044c6d669dfb58669ecd31a2cc2e26d"
+    },
+    {
+      "caseId": "brief:ensayo-academico",
+      "instrumentType": "escala",
+      "sha256": "586d0e37bcaa0f268629354f3594f1058af021a26b913a78ea44a03605a9ad2c"
+    },
+    {
+      "caseId": "brief:ensayo-academico",
+      "instrumentType": "lista-ponderada",
+      "sha256": "406c2a8d8491ef7bc8ba0d1fa5e834718f8e45996907bb69fb90c670fd77fb11"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "rubrica",
+      "sha256": "52b0039acbcee386274f8ed514be33e71765924554156a855d00b2020022e645"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c3cd7682405a36cf2038488ba4aa0032f6739f1d8e948d5c083f1772d2dfe5f1"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "escala",
+      "sha256": "25e134ca5ad41bd25b5f0b507838718c293b7740b92eec19d23ae2513bc4bd32"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f577f3e98fe8941b687bfb82c43e99fc0bf9d4f0333a341e6e5a285efd19948"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "rubrica",
+      "sha256": "bd0b2b45524d13a7c26138ec5ae5843f4359c101862496fbeb6a9b6a4bc38cef"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1dfa0f6f4107bf5f04c9b950b9cffb8a627248e9b58769287a68b8695c8e5500"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "escala",
+      "sha256": "e6324a9d9089e0e12823d0f0a73c6acdc77eb23e20f53cabd62f9be9b18fd267"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5b5a94ed6b0bbe3f738e07731e64b0878948c34ae60fc465d0b791b430c0c0c1"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "rubrica",
+      "sha256": "543364410dbb4cb1ec4b2c5ce2819f72a4105cccd01d580a6f69d54b989be7ce"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-cotejo",
+      "sha256": "40393a3b97e127db4317bc0fcd0429bdc94ab762805c6620c88bad579f75b070"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "escala",
+      "sha256": "a5dfde20540ecdaf9d3b508ece5f3ae309ea43c6e1a5bda2628251ed414dcf0b"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3406b610b268ccbd0d8cab712fb580a8f7494e852f904c018d1040ead9f10481"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "rubrica",
+      "sha256": "f200ecbabe53fde213781f34fb3f328f54e5ec7a84b8c017bc65d1e5c1fbd8be"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-cotejo",
+      "sha256": "609f327ac13700f9bfcded1fdeefc36c564356b53202c4c062a9adf513253499"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "escala",
+      "sha256": "80874dee79eb09b8b3cba190d72f4c1d29c3e87a03390de16119ff2ddeadc97b"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5b27d46a71eeccac815b3eaaa060532b360e1afe6d8016ca106306522421f89c"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "rubrica",
+      "sha256": "7c3b3a58a9d0d5f625c849a15d78a61adde3e8c942b4cdfdfc4761599ef80836"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-cotejo",
+      "sha256": "914b0b4fa256d48951eb2b070cf9968a3f0adb086d85581301197f14e58ba1fd"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "escala",
+      "sha256": "755aa4abf0a59c21b2a92a8f6831659eed2c487b483522a890fce9b2ffc63c56"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-ponderada",
+      "sha256": "50ed2289388f9b3455103bf527ccab40f531efd27b2744b787cade357f5f0265"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "rubrica",
+      "sha256": "52eec8e0d9db5275b5438d4b646f792a198bab2522c6e9f993a513846aaf0a5d"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-cotejo",
+      "sha256": "13640b742a3a7213b7ddd039261375e40f6e729c9890f4c8d452c912c9877064"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "escala",
+      "sha256": "b09294d38759b77fd156693c07fae947fd3a76067fa1d48b1195d754888ed80d"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-ponderada",
+      "sha256": "569d4cdf896782f2acbab97d30edb09deb608d9135d685b01e79245f6898a797"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "rubrica",
+      "sha256": "9c0bd362b8d3b8bdd603f3b47a4a0582c932d1f3a7fb4fd54b172efc837a1d97"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1a6c64484b8d0a7852a37d4a1bd5ca4665729738fa66ac18990ca60401c7c356"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "escala",
+      "sha256": "e67467cf8aaf136cd098df02b07618480fefbdeb13ba22042055c50938036658"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-ponderada",
+      "sha256": "183aae7cbaf8f74ed96822c034b0281b0ac164782fe4b6304fd004996daba83f"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "rubrica",
+      "sha256": "6b112c88198dce682d04548c5e104b96b8b6a4807e647e6f53a060a07726339b"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d3c1d15fa136bedcdc43a6d29b31829c78f8a693037a711014f41fedf9c1120"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "escala",
+      "sha256": "ebc16b8d2ffecd5a19ef180b15c1abe015cd4fffcf644e3debcc391fa40ebd10"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32871f755b739727eb49d9a9513df6cf71f2b4448a5315933235aace77a5e7af"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "rubrica",
+      "sha256": "140fdeb7c92f947737b625a00f371ec0333ea15c698b879e3a61b0c3f8ebd77d"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b6ecf53e074a92f978745d742a7219aa60a6095ada0b8610c4d30959c55705f4"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "escala",
+      "sha256": "cbb8055ab3ddbdf9711426b58bf35d1e31e8096a72e736f08bca0bee96d6aa70"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "lista-ponderada",
+      "sha256": "df22ba659ebf6394ea5217e0fda3209bc5f69f6252749b1a076ac274fc7c5859"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "rubrica",
+      "sha256": "dfe15bec250c2a154fb93b4e1a4f0ddc049176b1d350d1dd88abf052f86cd0eb"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "lista-cotejo",
+      "sha256": "60690e356932c4c6e29f27325aec5b5e1088ca8da798287bee9db4cd9b5314c0"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "escala",
+      "sha256": "f826bd8de6d7658fab70930fd94d63d2c4b328ffb8cc18fecffbe221f3ea8b1c"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "lista-ponderada",
+      "sha256": "13f149bbd079f7d8d12302c2ca8fbe2612e6da3215ab2c93cb0556b7533d5a77"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "rubrica",
+      "sha256": "d44dd777c2bcd1cfb1e8b26e17a2a03e44db55069ad2c078e944523a6a6f771b"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d73d1b17021cc94564ae898d5d505dd3de59a059e244ceea484549b73bc36ccc"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "escala",
+      "sha256": "ec24f2797e49f4e6eec353cbbd6b42f1721dacc370860741e688aed7516ccdea"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ea5abc1213f29645850fbc618a6e0c99ecc2e0602d9a359c9ffbf2af2dd18c43"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "rubrica",
+      "sha256": "148d85fe743220d1a5081c4535eea68860dd902ffecee032f847a9e3f3d0901e"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba86564d0c37c238657bd65150ce48d2377b9926c793d59e06539e53bedceb22"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "escala",
+      "sha256": "1d80373d961522f563e62afbcdb5570aa56e3a52c8d49af3f1e8f475401983ba"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "lista-ponderada",
+      "sha256": "522fa46348353c7c510ba14b5ea887db5aecbe19c79fe237217926ff3adddcca"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "rubrica",
+      "sha256": "308a6fd4775df74d069b7b37ecc083a8e520f48b595f844feaca8a17194789b1"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4be1687d8449ef93068f7eafa76fa9db20d25a26a59109bdad33e79595d32b3b"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "escala",
+      "sha256": "9e5ac3837e9d8b121db8adf5e0667d8073bbf27adebedf2dfc5173302a75887b"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d49d8a177dbd1e70da2b538d84aa52ab0dc2a318cd7c3fd1a136886469a758bd"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "rubrica",
+      "sha256": "0eb7c867b49471293ee6bf6a97a2861ed5a2f7cfb2ef6b8503dc05100d1487a6"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b232fa9ee8bc67c32ed1c85700ca85ce9a45a5bd431159462370af2bba896da3"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "escala",
+      "sha256": "eb6b31080eaa8c78e27c7b29fa8cd0840ea17f43a5a9db01c8e6ab483c90713c"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "lista-ponderada",
+      "sha256": "74c0d75bf13933d81cc7833e727635e3035486ad4d98965ddf7dde0a77024a0e"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "rubrica",
+      "sha256": "878621862cfffeb0850a7e53c6cd8b71c67735fa2b008468dd8094e2b8a07495"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "lista-cotejo",
+      "sha256": "75ca36a2652ccb1947a290af114ee7eaf8f42a5fc7d5085c1cd0094923234eef"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "escala",
+      "sha256": "b9db57627fed0efeb4f8d3ff4f20d4b96d1f848c9e2a6a63f5e590203ec76c3b"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3647f4e768655677f8782c43eb1d9d137595291021f75c18d2d2baba48598884"
+    },
+    {
+      "caseId": "concept-72",
+      "instrumentType": "rubrica",
+      "sha256": "8664826d718738698d2cf6ddffb1fe88fd4792f4e2b52b84d1c48beec157f551"
+    },
+    {
+      "caseId": "concept-72",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df2ab4cf524867b4419073c06b43dae6cfb3b4a583d47c9cb5f8c2064739eaa4"
+    },
+    {
+      "caseId": "concept-72",
+      "instrumentType": "escala",
+      "sha256": "0bbca24dfa2af022be55a62c6e7b37f9369200886cc286242dff240644dbf0c8"
+    },
+    {
+      "caseId": "concept-72",
+      "instrumentType": "lista-ponderada",
+      "sha256": "46ee26d0091f79543b0a00dbd03add7e2b70684c190dc17c5c52890b54410dc7"
+    },
+    {
+      "caseId": "concept-73",
+      "instrumentType": "rubrica",
+      "sha256": "3ba89476542ad57b63702bc2595b7e6f97cf08d4973a517e0e097953eb6809bf"
+    },
+    {
+      "caseId": "concept-73",
+      "instrumentType": "lista-cotejo",
+      "sha256": "96b2300bf2c3a76b90a4fa95be3b174859ec2b2661e7107f07a4e6b70054868d"
+    },
+    {
+      "caseId": "concept-73",
+      "instrumentType": "escala",
+      "sha256": "ffcb3c1052e7281eea4be1cf003e891af348891b58ec9a368ad0fa434b35ad08"
+    },
+    {
+      "caseId": "concept-73",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3f0dddafd02a468deab4b4dbbbf7eeb566282a6c7db068e7dc8f7d139e6151b2"
+    },
+    {
+      "caseId": "concept-74",
+      "instrumentType": "rubrica",
+      "sha256": "7da03c2bd6ad89be94ebcea49dfcdc373c7a29d2bf5eaaea97da95a6ae97a344"
+    },
+    {
+      "caseId": "concept-74",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0c72d3f04e45a7e9ce2c6241c2ea71f08a73d23cb2113b1f260e33f8309d9db2"
+    },
+    {
+      "caseId": "concept-74",
+      "instrumentType": "escala",
+      "sha256": "797ff4fc1777960fc71265ca937b11e2155e218a1eea4832746395407e7031d9"
+    },
+    {
+      "caseId": "concept-74",
+      "instrumentType": "lista-ponderada",
+      "sha256": "430af2f630a0f6c2f43d58323a3e089efd50806804fe6cf860fa22afec3867df"
+    },
+    {
+      "caseId": "concept-75",
+      "instrumentType": "rubrica",
+      "sha256": "9c881d77cff23bc754e2e0b9896a7f06066e8bf182d66d5cfaaf50f0fa9fb593"
+    },
+    {
+      "caseId": "concept-75",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fca5a6571bf9aadf3675e72f334696fe566f58de2627da02e0404f51e9f615c3"
+    },
+    {
+      "caseId": "concept-75",
+      "instrumentType": "escala",
+      "sha256": "da252eeb6afe460004fa1944f77cb7afb575e47e54ad7c9e7079cd38bff2a119"
+    },
+    {
+      "caseId": "concept-75",
+      "instrumentType": "lista-ponderada",
+      "sha256": "719932ac80c4cc202c5d965045f5b2773bdb0a09ec5e2ed8081444281ae5819c"
+    },
+    {
+      "caseId": "concept-76",
+      "instrumentType": "rubrica",
+      "sha256": "652525ca91916669392fbedcaa2bccdda9e37765b26cdc917b90f3d5a8e5149b"
+    },
+    {
+      "caseId": "concept-76",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cebb57fd12b27054ff0186d3007cdb660392202d966354b4cb43907a90fc7816"
+    },
+    {
+      "caseId": "concept-76",
+      "instrumentType": "escala",
+      "sha256": "ef6848a14d0b486709a41bba4f03505af67f4254fe69016a4a8423484eeb96ab"
+    },
+    {
+      "caseId": "concept-76",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8ceec189a205e430d0e7778e5f46f94103af2138a80e8c979970992eb0233138"
+    },
+    {
+      "caseId": "concept-77",
+      "instrumentType": "rubrica",
+      "sha256": "a0af7bcc20ca8bb37e04ff6431e517ce8de79c40c762e433f83c02ebbce47d7f"
+    },
+    {
+      "caseId": "concept-77",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2246e22edca8c013a59ef9b0bb510658a1ee56160c14282592dedffa0445ba2"
+    },
+    {
+      "caseId": "concept-77",
+      "instrumentType": "escala",
+      "sha256": "f0d4475efea4543dd3415518e998b0a723530ed26be89cd3832fb0d774fa909e"
+    },
+    {
+      "caseId": "concept-77",
+      "instrumentType": "lista-ponderada",
+      "sha256": "86f4ec4e93daf580876cf73a3046d096f1c21b0a1652304f53fbf16793de10cb"
+    },
+    {
+      "caseId": "concept-78",
+      "instrumentType": "rubrica",
+      "sha256": "062a9bcba8f0e4bc0b083867bccb66ee1324d4bc33cef6135682d19fc5ffe76d"
+    },
+    {
+      "caseId": "concept-78",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a904e855e5e1422c9a5087e81dd9040451739de3efe83711486ed9ae71bb19a9"
+    },
+    {
+      "caseId": "concept-78",
+      "instrumentType": "escala",
+      "sha256": "bc492ec8ce0e33821726c57395cf9af4ed985a4f9a03b02ee55117b372acaccc"
+    },
+    {
+      "caseId": "concept-78",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d3ac9fb1c5f12c6e7f5154c527dd8e63be59ac5de882ee01ba246df24b7b2cb4"
+    },
+    {
+      "caseId": "concept-79",
+      "instrumentType": "rubrica",
+      "sha256": "041d16649c0ea31b9d4941007eae22a5f6dc85688923d8db76acb5e16d00b34b"
+    },
+    {
+      "caseId": "concept-79",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e2aa8590426e7b9b3b80271e76424bc50f3675d55fdde3cd5ad9616a404811b7"
+    },
+    {
+      "caseId": "concept-79",
+      "instrumentType": "escala",
+      "sha256": "bca62feb6ce542b311909a10a6af634a4e49194e7a2234260d2fb8238345c2f7"
+    },
+    {
+      "caseId": "concept-79",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3f40caa37480b0d2661feccfd8e4e823ae43aa21c3d7305067da15a28c552222"
+    },
+    {
+      "caseId": "concept-80",
+      "instrumentType": "rubrica",
+      "sha256": "5f03a964d36f3a02c82365ec085e15382fd035d255c07d1dbf4fd74da435e0b9"
+    },
+    {
+      "caseId": "concept-80",
+      "instrumentType": "lista-cotejo",
+      "sha256": "27d7e4c1a1d8cc83bd3e2d94b94febfe9340a5cc26e89188623468ead4d0a12f"
+    },
+    {
+      "caseId": "concept-80",
+      "instrumentType": "escala",
+      "sha256": "b2808e7353974ee9391f884dfa27e73202278a9f0c390ee0305a1bf6c627607a"
+    },
+    {
+      "caseId": "concept-80",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ce7894be1bee9703905445249ea33267b038d033577831c77fb3f8692a5dd150"
+    },
+    {
+      "caseId": "concept-95",
+      "instrumentType": "rubrica",
+      "sha256": "aa69fdd2c8045cae4dd310520f415c76218e41e7a4a24e267a966feb7d3f4e0d"
+    },
+    {
+      "caseId": "concept-95",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0a203f91237927f5a447003a2c13d783f5316993cbad101901f01bced1be05d9"
+    },
+    {
+      "caseId": "concept-95",
+      "instrumentType": "escala",
+      "sha256": "5c8e81cb7ee00d0267bf5d6b62fddf9fb4f3765f8caa40ef1e33fc2a763c0128"
+    },
+    {
+      "caseId": "concept-95",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f5f2794e3ba7000354ed7cb260bc3d8c9533d5558d1ba0c23671bdcc9517e622"
+    },
+    {
+      "caseId": "concept-96",
+      "instrumentType": "rubrica",
+      "sha256": "5e29f64be8f66d7fb3ba9be41e764f240b843d8b6ea4f2d8736255b93d064958"
+    },
+    {
+      "caseId": "concept-96",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5a76c00e6d0075454951502848ed391e02da3c388d1f4592f09fe3459b4ac272"
+    },
+    {
+      "caseId": "concept-96",
+      "instrumentType": "escala",
+      "sha256": "c4ca80060828ac32643b403eb987916853d81199299b3e3e88b53108cc6baf19"
+    },
+    {
+      "caseId": "concept-96",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f45f4f10351e0fe31c1e68cafeb926bc2bd03afd4c206dad50239e1a3afefaae"
+    },
+    {
+      "caseId": "concept-97",
+      "instrumentType": "rubrica",
+      "sha256": "6c43eba542da450bae07547261bd739a3376e03564170b71fc93b78638822f0d"
+    },
+    {
+      "caseId": "concept-97",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9c30a7b52b27279291b8ff505d4e3d88a34b0826786b4ce18ea239833425367b"
+    },
+    {
+      "caseId": "concept-97",
+      "instrumentType": "escala",
+      "sha256": "6bb922007eafe5bfe1a6b02838c6b9b7b6719c38974e4d911385171126a575a3"
+    },
+    {
+      "caseId": "concept-97",
+      "instrumentType": "lista-ponderada",
+      "sha256": "90386f496e3a8d803a65ab3bd5c2adc3b93e0d1078b1ddde96d2ea49a0bd8944"
+    },
+    {
+      "caseId": "concept-98",
+      "instrumentType": "rubrica",
+      "sha256": "8338d9e9f2e0675bac2fe04efb3dcf7f07f370c6e70bc5ad3883fb9645015475"
+    },
+    {
+      "caseId": "concept-98",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a2bc07c9b3900f04ffffde2566c5fa02d5dde9c98590f26b6ff1b7f5705aa545"
+    },
+    {
+      "caseId": "concept-98",
+      "instrumentType": "escala",
+      "sha256": "4b24420c7c88894ac27688cc8371dd715ba8f184f18d025a29ffbe003a552b8c"
+    },
+    {
+      "caseId": "concept-98",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5e800c8dd721848b212aa837200e1426144f29de30ff4d991cc973e086468d92"
+    },
+    {
+      "caseId": "concept-99",
+      "instrumentType": "rubrica",
+      "sha256": "6e1926c5de0917865f54d4c2565314e0cbcca185be08a16f8f543d7fd0116fff"
+    },
+    {
+      "caseId": "concept-99",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f0956d1317697f8cd5a9ec5f38a6394733f4f85f767cfa66d8e6aecbe53a1ee"
+    },
+    {
+      "caseId": "concept-99",
+      "instrumentType": "escala",
+      "sha256": "8c8c3300361b37194a7a664e9ea31135ee6c1bcd4d2663d582a9bca56e77e4e4"
+    },
+    {
+      "caseId": "concept-99",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0e9805a7ac3efc7414056ca130bab8a09f9d5a07498961c380c1e71c49287268"
+    },
+    {
+      "caseId": "concept-100",
+      "instrumentType": "rubrica",
+      "sha256": "53bbec1109d78b4c1e8ea578ad793ef4608000477278aef55048c2423d142c41"
+    },
+    {
+      "caseId": "concept-100",
+      "instrumentType": "lista-cotejo",
+      "sha256": "90ff45c163464d94f258c0177ed1d4596ef1dcfea6f849f6f115eb5dd7374fed"
+    },
+    {
+      "caseId": "concept-100",
+      "instrumentType": "escala",
+      "sha256": "65f217907bbcb7b32ed3b9fe1f09ca24c61f6d1859254aba91f1afad00f87c9c"
+    },
+    {
+      "caseId": "concept-100",
+      "instrumentType": "lista-ponderada",
+      "sha256": "124d3da5d642465f90a4aa0b8be1b3672bfb8ec3af5b1618a73d9aa0f3484083"
+    },
+    {
+      "caseId": "concept-101",
+      "instrumentType": "rubrica",
+      "sha256": "ba40a275d401c2c7980e64de85039cbf0087dd114b57db9726e660504a70aa44"
+    },
+    {
+      "caseId": "concept-101",
+      "instrumentType": "lista-cotejo",
+      "sha256": "31c920c86b8233f9c5cc4a4403ee8e77d621818b32bde835008ecd91b4f41569"
+    },
+    {
+      "caseId": "concept-101",
+      "instrumentType": "escala",
+      "sha256": "3376f3d2d33c35f51a27ae4a2e61738e2e89e5eee33d165c4ecd02eb95dbcc7e"
+    },
+    {
+      "caseId": "concept-101",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6d1a43dc353adbafdef4515121394267326e30b9c3b098f46e3a757decf008d"
+    },
+    {
+      "caseId": "concept-135",
+      "instrumentType": "rubrica",
+      "sha256": "61baa49dc081a31d6b8530419442254cc077a6955ee5a677d510365e3012d415"
+    },
+    {
+      "caseId": "concept-135",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2c4c33cae1ad8cb9978387c116b03691fef2fc0be8ca86ff10a64eaab189a1ea"
+    },
+    {
+      "caseId": "concept-135",
+      "instrumentType": "escala",
+      "sha256": "317c6e71bcfa8834381201ba1fa5a2fbb2c6e608c6209c0bd6eae24dc3d4a9e3"
+    },
+    {
+      "caseId": "concept-135",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0e2739ab419060ce1bd7a80ad70fa89165d6c8ba2cb24273ee8e521a63f1db04"
+    },
+    {
+      "caseId": "concept-136",
+      "instrumentType": "rubrica",
+      "sha256": "6ac2ef43b9076ef6c6fce619d519452094f6e28a188595fa5323e20f59118f25"
+    },
+    {
+      "caseId": "concept-136",
+      "instrumentType": "lista-cotejo",
+      "sha256": "02feb8d787c99d886f5764c7f9a42c31ce13f27a9ee0926b0acc762f79011ffc"
+    },
+    {
+      "caseId": "concept-136",
+      "instrumentType": "escala",
+      "sha256": "f268014f0f97496dff29fce9a67f60d5517fb333abfd59283dcdd7d56615ee98"
+    },
+    {
+      "caseId": "concept-136",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e24a26bde8b99fb044afa1c58f1c7035831ef7c61e3c3ea91123f9e44cf514aa"
+    },
+    {
+      "caseId": "concept-137",
+      "instrumentType": "rubrica",
+      "sha256": "8470068a6ebafefec2d6caf6de81cb43b707365e3f42f94063fe78a95b5cd670"
+    },
+    {
+      "caseId": "concept-137",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e8d46a05ef35639d7aa587a4d69ac64bdeaa65916c49b1584c3881feb2f34aaa"
+    },
+    {
+      "caseId": "concept-137",
+      "instrumentType": "escala",
+      "sha256": "9c729b2c166608b0b8e91a95e23f3dcdb2f8fdc9cb7b1e4a31967145f80b0283"
+    },
+    {
+      "caseId": "concept-137",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a668fe8bbf51cd38ebb5ecb1d4f8e921efc15619dde1451fabf060bf570e3d71"
+    },
+    {
+      "caseId": "concept-138",
+      "instrumentType": "rubrica",
+      "sha256": "5b76ac654207ea5c441fb4376c0440594828258ae5f6070925c5e9ad455ac67c"
+    },
+    {
+      "caseId": "concept-138",
+      "instrumentType": "lista-cotejo",
+      "sha256": "84b792315254b645a0680fa805e51fa7be0111aaabbe121bf2bab12b506d8706"
+    },
+    {
+      "caseId": "concept-138",
+      "instrumentType": "escala",
+      "sha256": "159b33df7dc2651a9431428e14d6a40a0fd135ec3dfcffac8871acc314ba9331"
+    },
+    {
+      "caseId": "concept-138",
+      "instrumentType": "lista-ponderada",
+      "sha256": "22a53d931b02e69bf3c94bc54c56a7c1199552eb8c0a8b590c4f86cd0e289f90"
+    },
+    {
+      "caseId": "concept-139",
+      "instrumentType": "rubrica",
+      "sha256": "3f14d45ba355ccaf28ac559d3e7268408c05617e6570bb93d113128c74f944c9"
+    },
+    {
+      "caseId": "concept-139",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1bc96a5746a446334dee5d864c8883847cb4e1e2c758fc529ac7cc5d56da3bc0"
+    },
+    {
+      "caseId": "concept-139",
+      "instrumentType": "escala",
+      "sha256": "006a573abea747d3fd6dd40d3a1788b8e24971c4387e4832a038eba3c3dd46fd"
+    },
+    {
+      "caseId": "concept-139",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c77f87f19812a0e935021b76937e84356447d52f5ebdd2ce5bd4668842a35401"
+    },
+    {
+      "caseId": "concept-140",
+      "instrumentType": "rubrica",
+      "sha256": "78125ba399af8d8d2380925737d421de206346d0960811a62a66acd7ae8d3908"
+    },
+    {
+      "caseId": "concept-140",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4cd68f401ef249cee69eab1baed2921c055dc2dcf3aa5504301f9b386476405e"
+    },
+    {
+      "caseId": "concept-140",
+      "instrumentType": "escala",
+      "sha256": "f0ef69778cebc80a7a4abdd28dfb16bd3e98ca1454506b2be4a2b757015c2241"
+    },
+    {
+      "caseId": "concept-140",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7d6847c35be73497d67836b4d7b61c992308d35b26ca97c3657ea01c112a8722"
+    },
+    {
+      "caseId": "concept-141",
+      "instrumentType": "rubrica",
+      "sha256": "5b0423bdc6354f4850341b4bb1c91485a9244134ef6326253477879373a89489"
+    },
+    {
+      "caseId": "concept-141",
+      "instrumentType": "lista-cotejo",
+      "sha256": "61347b0085912f721c4c39ad7aa5fb764079161d1fd872fa82faf5379bf03808"
+    },
+    {
+      "caseId": "concept-141",
+      "instrumentType": "escala",
+      "sha256": "c2517fb5131fa156d7f2fc32e899bf7b71e8fcc5971cfb22a00ee1211a693b69"
+    },
+    {
+      "caseId": "concept-141",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1ab270c23c565e6332efd5726c2d402948f8c3a31aaf12c7ccca255842dc2cab"
+    },
+    {
+      "caseId": "concept-142",
+      "instrumentType": "rubrica",
+      "sha256": "bc0f139033225eee6c87493f156e3a5bd70954f4d715da48bae0f282a7c86808"
+    },
+    {
+      "caseId": "concept-142",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0c844997611ed9d928aedb92df19376ba0b46b38f4d8da14b4733df4128a34cc"
+    },
+    {
+      "caseId": "concept-142",
+      "instrumentType": "escala",
+      "sha256": "2d25b3b90c0ba56c759e16f74520aeb46a5f70d51542cdb1b5d04e808c076ff8"
+    },
+    {
+      "caseId": "concept-142",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1df0ae95e1d10fa98d7ff5dc3c896b900548dc1077be4312b9b7a2e2c181549d"
+    },
+    {
+      "caseId": "concept-143",
+      "instrumentType": "rubrica",
+      "sha256": "f6e35c4dd1fb34aa7cec1be070a385b3e93ebd3b6f5cc15f2d2ab108dc94c0b6"
+    },
+    {
+      "caseId": "concept-143",
+      "instrumentType": "lista-cotejo",
+      "sha256": "880aef8877aebc4baa6d62927e6612479bc1dc3384e9a681003f0c8074b12272"
+    },
+    {
+      "caseId": "concept-143",
+      "instrumentType": "escala",
+      "sha256": "a14e8d41c4ee920f80b77b09d951a1c4e92cf0fbd6d2484780104f99f3ad95d3"
+    },
+    {
+      "caseId": "concept-143",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ca3772ccbae983e9fb076922923540a5071c478a7eacee38b298a75cc209b197"
+    },
+    {
+      "caseId": "concept-144",
+      "instrumentType": "rubrica",
+      "sha256": "38a11ef44fac876e8ef5bf8b5d23fca245d85c3054a6c93658bb1c4308f1eae6"
+    },
+    {
+      "caseId": "concept-144",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a164b4e752ad377e979bd36e9438f22e469d1b0051b4dfab02ab1ec4d4a929c3"
+    },
+    {
+      "caseId": "concept-144",
+      "instrumentType": "escala",
+      "sha256": "24c0f9ddb52c09a738acbae6bb4032ab90a21dd2d5b46dfe83d149cbd7a2d801"
+    },
+    {
+      "caseId": "concept-144",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9858bf4e11fb10ca396dd7a3aa15eeca896fa23a771f42895815c8720bacd0c2"
+    },
+    {
+      "caseId": "concept-145",
+      "instrumentType": "rubrica",
+      "sha256": "2954aff11f76617b6d9b3aae84ef7b2ad23ee9a65f02fd40fc14c43d483e7a18"
+    },
+    {
+      "caseId": "concept-145",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a4399e9d9508f4f8053963ef273a084bcbd2b195ce6d781acaf176121df83340"
+    },
+    {
+      "caseId": "concept-145",
+      "instrumentType": "escala",
+      "sha256": "5a8cad7b9f6eeae8eab915e1e0a40d3bffc3717bcc0d175da4752a60a8e54f9c"
+    },
+    {
+      "caseId": "concept-145",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6dfc6745bb5da93701cefbcf82915954818f32b2cbb74f34eddf63125e632730"
+    },
+    {
+      "caseId": "concept-146",
+      "instrumentType": "rubrica",
+      "sha256": "58be709a89f62582a6832ef5b09f0879c46c7d837abf5158d39ce61045957b47"
+    },
+    {
+      "caseId": "concept-146",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e428a80b7b70c5ad2d91568b109ba3ee4b933d74d592affb8dd6446bbc436bf9"
+    },
+    {
+      "caseId": "concept-146",
+      "instrumentType": "escala",
+      "sha256": "f0c017df93d4115ce9ab3c954c3cb755b0b6afdfb1837b79082e8bab9fd3b406"
+    },
+    {
+      "caseId": "concept-146",
+      "instrumentType": "lista-ponderada",
+      "sha256": "06d77c401aecb5519ef421d2de350989f0ca0eea195036b85cd6ac9ea0b97379"
+    },
+    {
+      "caseId": "cv-prediction-listening",
+      "instrumentType": "rubrica",
+      "sha256": "38ef7c802e031d5b1aeeaeab3219f013ac26d65e2cffe5e5d431d60467024028"
+    },
+    {
+      "caseId": "cv-prediction-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12e573a9fc6a118f3d480b27eb52f2bd29a89a71c39d99e847ee44a6e9bb40a1"
+    },
+    {
+      "caseId": "cv-prediction-listening",
+      "instrumentType": "escala",
+      "sha256": "250dc43819cb1516d5f69270504afc32b7ad05fdc07ba81061c48d377e3d33d5"
+    },
+    {
+      "caseId": "cv-prediction-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b36d5f0a3cafa0b993f38f811708df420d102ffecc75e7a3e5778a10b0e65993"
+    },
+    {
+      "caseId": "cv-listening-purpose-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "689829981a76644e389391cd3316ac7f708cf4efefa16ddf6668631aa7357921"
+    },
+    {
+      "caseId": "cv-listening-purpose-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a983d742b95f9d0c8d598cf06c58d74a3ca404ded195a21e18de6ea56be267a5"
+    },
+    {
+      "caseId": "cv-listening-purpose-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "e91c09798f3a0f542d34175e0a55daf4d972ae687e169181eb827d1cdd8c8eaa"
+    },
+    {
+      "caseId": "cv-listening-purpose-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f8acce0d33dd0dc97706ec0649b523c7644253dd459584ed324ccb207b35a0c5"
+    },
+    {
+      "caseId": "cv-oral-plan",
+      "instrumentType": "rubrica",
+      "sha256": "f5d77ef1a7c8f335683de1c4ae2375757ca6a315168d27c390c0ff2780c660e4"
+    },
+    {
+      "caseId": "cv-oral-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "930bc647c262d2ea4629bd54011524a585ad04f1ff1675393d405baed61fc227"
+    },
+    {
+      "caseId": "cv-oral-plan",
+      "instrumentType": "escala",
+      "sha256": "742586d62514c080e90eeef77c5ee9b33ddd0bba40a2838ad168cab3db38f408"
+    },
+    {
+      "caseId": "cv-oral-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "540b9b1ca9178d0819285185a7f048772ce6ca99530e72f205dba4d425693473"
+    },
+    {
+      "caseId": "cv-data-recording",
+      "instrumentType": "rubrica",
+      "sha256": "49351d8e95f93dc436cbd6bc57f6ddfc22ee1fb48d33a61235fa72292756bb79"
+    },
+    {
+      "caseId": "cv-data-recording",
+      "instrumentType": "lista-cotejo",
+      "sha256": "caae413444ba369195df871c0acf1f693254b8acbfe1b9aa6f1d3dde31764994"
+    },
+    {
+      "caseId": "cv-data-recording",
+      "instrumentType": "escala",
+      "sha256": "23f849443ef3b2dc5d6e9347ff0864b18a1eb261739458cf505e3f73e3a08cb7"
+    },
+    {
+      "caseId": "cv-data-recording",
+      "instrumentType": "lista-ponderada",
+      "sha256": "80f10c44fe0832f8e866c8824f7f514bc6660733080d918a5343505d429c253c"
+    },
+    {
+      "caseId": "cv-order-choice",
+      "instrumentType": "rubrica",
+      "sha256": "89ca3958972145b5d20bb5f152dc758020af3251e4b02242ab386c3d9f38077a"
+    },
+    {
+      "caseId": "cv-order-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "76ca88bc81815b1c31995bebfa96d497f5b133ffe7ba81028bbc4f499231ec3e"
+    },
+    {
+      "caseId": "cv-order-choice",
+      "instrumentType": "escala",
+      "sha256": "92ff08db8633e74ae3a124873c426473fb547e52abf035d078e11795a7e9a5e9"
+    },
+    {
+      "caseId": "cv-order-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a1dfd8893501ab66acd6805c4e91e1e44f44ccd847edc89b85673e7122108e0"
+    },
+    {
+      "caseId": "cv-reading-prediction-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "69b66f434ab5c6ce3337f196d671d1a6241301724614700e7e939d51eb755964"
+    },
+    {
+      "caseId": "cv-reading-prediction-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "402e01e717a0719469b398808af7b2a5602501caa9abde3fc4a061b874702c39"
+    },
+    {
+      "caseId": "cv-reading-prediction-purpose",
+      "instrumentType": "escala",
+      "sha256": "8d55549f0ed77525cba99daae596f024ac2eccf042d72cdbbd066216d2c8ba82"
+    },
+    {
+      "caseId": "cv-reading-prediction-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1135a5b480a1c45f0919e143732c9e7fc78b25d0f1ba40dbe5ee55bddf641c50"
+    },
+    {
+      "caseId": "cv-reading-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "f245473c54e90be86c3777a4fd10e36b34e8d6c584f54682a30f673339fa64f2"
+    },
+    {
+      "caseId": "cv-reading-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f576b9bf67b638a83d4a3fee86ab40043ca3c6cea30c68127b6f876ceecfd8d2"
+    },
+    {
+      "caseId": "cv-reading-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "ea26b4ea96aaea65db30b70426442e91bb135b5a7b82ae706e746c8aaebc15e9"
+    },
+    {
+      "caseId": "cv-reading-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "278bf8ecfda6d10b3175b6c655ec52cbb275d71b8c7e66bf114afe247130d9a8"
+    },
+    {
+      "caseId": "cv-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "1d550ea3a912d42a71af866f7bc0d4d1074e2e09132a89df5b1a606d2f739493"
+    },
+    {
+      "caseId": "cv-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "30b26ca5b62b1ac4b8c1d51b44ffb9b969b582186188c85f48e5d32c003ff543"
+    },
+    {
+      "caseId": "cv-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "79a18e38459c5746ecd9aef2191557afb7121404c2d7ae5d43ed9bca710574b5"
+    },
+    {
+      "caseId": "cv-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2d86852b5c5971ad86448852e582599b316055dc9e7776c896dc103f121e4ab0"
+    },
+    {
+      "caseId": "cv-writing-order-paratext",
+      "instrumentType": "rubrica",
+      "sha256": "dd361e91883c82fbe95a827bd3908141d102f996717078f0109fbc94905ab8fb"
+    },
+    {
+      "caseId": "cv-writing-order-paratext",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46259729330d7555cfc2e67201021bb0c9cd4e65ed8ff7b54bca8943b8d9297d"
+    },
+    {
+      "caseId": "cv-writing-order-paratext",
+      "instrumentType": "escala",
+      "sha256": "f9459985fe19c070b4b254e422878b9b07357b514ea9d07cd5f7bb9c9fa8ff53"
+    },
+    {
+      "caseId": "cv-writing-order-paratext",
+      "instrumentType": "lista-ponderada",
+      "sha256": "19528c5aa4269b90dfb6f392f045e23d2742d160bc89cbc117b4bc8cf42c53af"
+    },
+    {
+      "caseId": "cv-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "2ebc9fa38d78d160dae5d2c7468619f064af4d99ba44d3a1578da7f649dbeded"
+    },
+    {
+      "caseId": "cv-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "68b3a4f7bf9ac199ab70ac232ba74ac5b06a0118019b0a2bc585cf1a4e3848ad"
+    },
+    {
+      "caseId": "cv-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "a551dcd6747426eb7775392895c03e44b1fbba7e83cf927584b3a87cf2f918c6"
+    },
+    {
+      "caseId": "cv-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a80ba1984b0823c46a8c7c3aa9e13d3735b1bd354d14b0e15e41d7d2c688a92"
+    },
+    {
+      "caseId": "scholarship-listening-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "231734b0030826a0ba3540beda5dd455c82f6c9cfdc0d44039e67cac544fdb48"
+    },
+    {
+      "caseId": "scholarship-listening-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "50684a939ddd118f13d482524af17744a69855ec23f4e66742f069fa0b3e3a14"
+    },
+    {
+      "caseId": "scholarship-listening-prediction",
+      "instrumentType": "escala",
+      "sha256": "0afcba4d5f13f93464f72e12a3a5ac1bb40f2480c80e902f66971cb0196264cf"
+    },
+    {
+      "caseId": "scholarship-listening-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "223170de725d0799ac7e08156260fd8bf23ac57be9f1ab3a51de11acfd25d155"
+    },
+    {
+      "caseId": "scholarship-listening-inference",
+      "instrumentType": "rubrica",
+      "sha256": "68eaa4f647b676112632a32998cc5836889d9199f95bb8fdf7c8f76af9949271"
+    },
+    {
+      "caseId": "scholarship-listening-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c1ccce427e5a54062da7720a14f0f98dbc4639f6c97b9981a8f29a35baf841bd"
+    },
+    {
+      "caseId": "scholarship-listening-inference",
+      "instrumentType": "escala",
+      "sha256": "b8ae06a7e7e9efd74b8ea54562ea6f3ccadad60c4ab448df6822c99bcf7f43f7"
+    },
+    {
+      "caseId": "scholarship-listening-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8d31d57022b955a7e33966c9bed2bd6fcfbe7541febfe4df3a151299988c1fb0"
+    },
+    {
+      "caseId": "scholarship-listening-summary",
+      "instrumentType": "rubrica",
+      "sha256": "93a8abade7966ea8d6aa77e969795ddfae3b0f1cbf44978b1f01668bd792947e"
+    },
+    {
+      "caseId": "scholarship-listening-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ec6ea23088dad1a8838286f459b8afb196d2a00255784c96f447fd91607741fe"
+    },
+    {
+      "caseId": "scholarship-listening-summary",
+      "instrumentType": "escala",
+      "sha256": "0ecb5c8ec198eaee066a56fa718bdbb6aab3d7131a09bed211aaa5c0aff92a4e"
+    },
+    {
+      "caseId": "scholarship-listening-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "90016185540df3493d0eab600d540b478b8c49e1d2f676c3a0c47bb6f74a2625"
+    },
+    {
+      "caseId": "scholarship-oral-plan",
+      "instrumentType": "rubrica",
+      "sha256": "c530762d3c2c29785415441fa068df885c74713b6626a99df66e4c07df05b763"
+    },
+    {
+      "caseId": "scholarship-oral-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3c57fbc5375b20696e623562de496add10159cca22235e915901ef2eb9f0930c"
+    },
+    {
+      "caseId": "scholarship-oral-plan",
+      "instrumentType": "escala",
+      "sha256": "fb534627be5b9b3082f505473d220054ad9fde2e34126171a877e8c4805dd596"
+    },
+    {
+      "caseId": "scholarship-oral-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c590bcadf0a5180a44739930123fac097d01641c954cf5eec0bbba07d6c1212c"
+    },
+    {
+      "caseId": "scholarship-oral-motives",
+      "instrumentType": "rubrica",
+      "sha256": "7c4bdfd9a2426162e42cbff27e3e8f9fdad653464a365bbec23b53a2fed224b0"
+    },
+    {
+      "caseId": "scholarship-oral-motives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "20ba4da1d05b98e56fb8d375b5f4519cd74cd5f3ed4eaab2c1faf7d716e9829b"
+    },
+    {
+      "caseId": "scholarship-oral-motives",
+      "instrumentType": "escala",
+      "sha256": "af13df767baaf23a7455743fd7aa396831b5588ad998fa62248f0a48affb169b"
+    },
+    {
+      "caseId": "scholarship-oral-motives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bdf064fa69f96459d782d6627763ee2c045410cc271b185424a4d309c10e5e49"
+    },
+    {
+      "caseId": "scholarship-reading-context",
+      "instrumentType": "rubrica",
+      "sha256": "8d71801b51c72d2415a6e866ea170079fd410514ec09a7a2c97245f1b4bf4365"
+    },
+    {
+      "caseId": "scholarship-reading-context",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c37ee9a36baa05165ad700b55159c2e3e362f4237c6fdc8d5b9cc7336a6c414"
+    },
+    {
+      "caseId": "scholarship-reading-context",
+      "instrumentType": "escala",
+      "sha256": "ff0aed82f766552becfeaf76bf60e4e2d238e41f9e16e55398d149b8194559d6"
+    },
+    {
+      "caseId": "scholarship-reading-context",
+      "instrumentType": "lista-ponderada",
+      "sha256": "90d4a1cd8863e586dc54fdf88ff5b7c073d367957cc5c52e9f7c69bc01300cb0"
+    },
+    {
+      "caseId": "scholarship-reading-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "f701bad4e66860d3c44bbb1557f70cdb2f05813192056b7ffd548426ac43a22c"
+    },
+    {
+      "caseId": "scholarship-reading-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "de290f674ff2cd0b8a49f0992d85ab94d96c4d7089e60cfe635a8a9e2895a9e7"
+    },
+    {
+      "caseId": "scholarship-reading-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "7db0dc65069328f5d275f5ae6f25260f250e6a2d4fdfcaf935d52d9b73afdd68"
+    },
+    {
+      "caseId": "scholarship-reading-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8326a5cbdb09b5b7c1e5ff306269a075f6e543b07d0e54c7035a79bc83d4ebf8"
+    },
+    {
+      "caseId": "scholarship-reading-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "4dc96aaefbfb071d20675bc43af22db1901a2c268a0b60bc03c57630e1cedcc3"
+    },
+    {
+      "caseId": "scholarship-reading-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e3ee876d5d189d23e4fadc8f7075adbf7d8a601e27956862f5611d4857d29726"
+    },
+    {
+      "caseId": "scholarship-reading-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "c42b84100dd4c0adb4604b3cdebc002500f14e461b32f3ea3be33ade75f9e9f1"
+    },
+    {
+      "caseId": "scholarship-reading-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "224801faef9e11a24e74135d1d4cfbe918c53067e0aef891f78197d3a2e1c90a"
+    },
+    {
+      "caseId": "scholarship-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "da4e2f524e9f4070643ccb5db92936ca679f31e085d661423014540f7cc8151e"
+    },
+    {
+      "caseId": "scholarship-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba1e6ce2243188937abf3fe5c049ff355803bcf713d468b790e06695b69a5b53"
+    },
+    {
+      "caseId": "scholarship-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "6fbe9f999e773ce4c33f37f1d5dbcf05f8fed2b3b9ffae69ff7ed0caab996048"
+    },
+    {
+      "caseId": "scholarship-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "68b56edbcedf529caa0ba0fde609bb66f84f33940f7c85f647effdad77a018de"
+    },
+    {
+      "caseId": "scholarship-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "a6b26937605641413a5aa1c9ca6ca9fc518ac5637759ab7f2af792fd92b07abf"
+    },
+    {
+      "caseId": "scholarship-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e87db561c3e92a5ac4b8bb86ff419f41bfca694ca77c721f0941f2b1cd7f1aa3"
+    },
+    {
+      "caseId": "scholarship-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "fb880a397b39cfaf597e2f35b596de3aa32123fc7bdc4eb677f1e55d89900820"
+    },
+    {
+      "caseId": "scholarship-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "adc0a0027d7865b59f2fc761342e6f24368415cab1556bea5383ea6237ca923f"
+    },
+    {
+      "caseId": "job-listening-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "434e657706be711451e6e75a6b9e418c3a73e438112bba5e8fad0bd2320761b0"
+    },
+    {
+      "caseId": "job-listening-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08a37dab450caf291bda51741b6b8b43be54515ad43ebb9128afa56d013fab26"
+    },
+    {
+      "caseId": "job-listening-prediction",
+      "instrumentType": "escala",
+      "sha256": "95a61dc15b88600e48ab650d935db80a41d78eb86212b36920d559140421ab5e"
+    },
+    {
+      "caseId": "job-listening-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0db3a27ef41c7ad10b7daccdcf438243e1b63c60f5b915d18936952b2e1cf6b7"
+    },
+    {
+      "caseId": "job-listening-inference",
+      "instrumentType": "rubrica",
+      "sha256": "a17dde65936a43d75aadeec656f073c8d0cc2c67b1130ff8848107a7d5366b02"
+    },
+    {
+      "caseId": "job-listening-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "99f40e9aced15c6f8965d9d8914a94ae585b8b68a2134322005977c84af98a37"
+    },
+    {
+      "caseId": "job-listening-inference",
+      "instrumentType": "escala",
+      "sha256": "a3314efaf69f23bcbca86aeaa52adadaaeee47467ee5ee5d807b849823b16806"
+    },
+    {
+      "caseId": "job-listening-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d7c0257f2e22695693b75ec5598be54c02bbe661cc53fb0f65ce7ccee086e67"
+    },
+    {
+      "caseId": "job-listening-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "f000803f41f9925462a8cb68d10872d3787513e3b29d94002dda3f1b3bc36cf0"
+    },
+    {
+      "caseId": "job-listening-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4fbdd8b5d93436edd29fd090088e1e8e89ad0246234a134242c4cc48c6e6fb2a"
+    },
+    {
+      "caseId": "job-listening-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "9c442ea48a6fc8ab708b901fdb9a20f729c5b436fa55fbb73293bd7e6e8788e3"
+    },
+    {
+      "caseId": "job-listening-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5e7efa3dbaa665146551e47ecf034da970ba5879d2576e8eec141622690aec7d"
+    },
+    {
+      "caseId": "job-oral-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "f947ab5e2c52edec187c477ed7ee570ad780fbc27029e09219b57a5f6281f6fc"
+    },
+    {
+      "caseId": "job-oral-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "87aedef1394c6ca0b66e82be120b6a803601f08a10b9271da106e573298e9bb3"
+    },
+    {
+      "caseId": "job-oral-purpose",
+      "instrumentType": "escala",
+      "sha256": "766097e0e04b8362325cf1e56872f132b11ffe2a6618c60a9bbecdc860d2ae21"
+    },
+    {
+      "caseId": "job-oral-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1906f14875eea47719fbd459df2adf9d5b105344090383f4f69fc7a295c408f2"
+    },
+    {
+      "caseId": "job-oral-plan",
+      "instrumentType": "rubrica",
+      "sha256": "d0d48c067896154c0aa03d02ecc3ec9695c0b17ec35e5c21e73af65b113ea315"
+    },
+    {
+      "caseId": "job-oral-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "71c2522cd050a655d69f88781ec0e82ac1af3f8c0fd5c446f34ebd2d75726d67"
+    },
+    {
+      "caseId": "job-oral-plan",
+      "instrumentType": "escala",
+      "sha256": "4e34f7b924a9d3d71c17def97b9d69292070ad0f24106e5c2db960d811331adf"
+    },
+    {
+      "caseId": "job-oral-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "04fe143eb2eb63f052adc9dd0198eeefa02287bc07bb65d3dbb61af63df69114"
+    },
+    {
+      "caseId": "job-oral-motives",
+      "instrumentType": "rubrica",
+      "sha256": "451671a2391307d499f72deb764940308af3ad56e19a543756c4f4d129eae8fa"
+    },
+    {
+      "caseId": "job-oral-motives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6a0028abcc36470daca633fc9bd06488cdab5103a85333136f42005d0fc2705a"
+    },
+    {
+      "caseId": "job-oral-motives",
+      "instrumentType": "escala",
+      "sha256": "c84d2c8a2324a14995080be429ff0df9eb3326746e239b477143c3192764272b"
+    },
+    {
+      "caseId": "job-oral-motives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2823d6045c7a6b0c29729f0354c6701be1d822e096b9abf6cd0a04fb082d8cfe"
+    },
+    {
+      "caseId": "job-reading-prediction-context",
+      "instrumentType": "rubrica",
+      "sha256": "4f14eed594b4e433828133166bd22c14ba68771b87a4d3be06a0a44be204fa83"
+    },
+    {
+      "caseId": "job-reading-prediction-context",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b61e213241d775711f2b215d1dfdab276ea3d72d64e8e86cac8eb1e10a68404b"
+    },
+    {
+      "caseId": "job-reading-prediction-context",
+      "instrumentType": "escala",
+      "sha256": "a0826df7d213c44a736b10d10e3072a0aaa59f0af39c8429008fbadb9365f0ce"
+    },
+    {
+      "caseId": "job-reading-prediction-context",
+      "instrumentType": "lista-ponderada",
+      "sha256": "55a24e6e6cf5e574e9369f28e6492570010d022678850541a815c0273d3e8f74"
+    },
+    {
+      "caseId": "job-reading-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "868675f26d4a6eb3d916f0486bf3f8164436ab9cac45096db59e08a12127c747"
+    },
+    {
+      "caseId": "job-reading-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c4d5544163c3cf8915e02f69795356fd4b6d2a3124e37ca8a342cee0ee934b6"
+    },
+    {
+      "caseId": "job-reading-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "3b8507ed3d2f1b22b4a76af22826fd5888d0f4d6657dd24869e2b15777c9da56"
+    },
+    {
+      "caseId": "job-reading-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9a7230bf2788fc057e855ef2d036e47ba1fb008aa71f3243b2919193c57402ad"
+    },
+    {
+      "caseId": "job-reading-summary",
+      "instrumentType": "rubrica",
+      "sha256": "09bb1a88c2e4d2337bba6eec72f249291cce89d2d96e124634be260ed10016e8"
+    },
+    {
+      "caseId": "job-reading-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08d20a9f70fb74dae15aabe1f6100d96c74b540396ac828e9834f2c1931841ab"
+    },
+    {
+      "caseId": "job-reading-summary",
+      "instrumentType": "escala",
+      "sha256": "35717ba9cc1b30dfd8f83090333a38bc268c7f3e9a2710899fbe5e8cff636bf0"
+    },
+    {
+      "caseId": "job-reading-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "16a87f6c3c9414dc5c56279269115a5874c2194f462869d1d1a1b7b4c7ed0d47"
+    },
+    {
+      "caseId": "job-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "db58fd598a17dde29d0df3c4d907076a85b5b84a08735946ff5d9ca9302c9e10"
+    },
+    {
+      "caseId": "job-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "16b992144078d1915b9ff03ce6606ac56ffbf6b879ee09b75467a1ef4948c2e7"
+    },
+    {
+      "caseId": "job-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "15842b1b655db8048b2fb1d41c0299aa18357b276aee78544d9446d4d2f0cbd8"
+    },
+    {
+      "caseId": "job-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "532276fd81a30170683dc98a987cdbd78928c3b2fd8abf04ef6b3731fc807413"
+    },
+    {
+      "caseId": "job-data-recording",
+      "instrumentType": "rubrica",
+      "sha256": "86c68b03d53b4441c4b5a0b08eba3f227c3f19a72ced3ebdfcd74328d38287e0"
+    },
+    {
+      "caseId": "job-data-recording",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3815f0050556da437a40e0077a47c0996f8abe6fd228defbda673ef1d744b571"
+    },
+    {
+      "caseId": "job-data-recording",
+      "instrumentType": "escala",
+      "sha256": "850bd6cbbe1a207c4c7bb289481a07d386e05cc23acfd8e22cfa02e5fc45f39d"
+    },
+    {
+      "caseId": "job-data-recording",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c3fdacfe987388a774eb0a9d03b410e65edcbe9174aa876e8cf1c4ddbefa8af3"
+    },
+    {
+      "caseId": "job-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "3e0cfd22b8f90b0f91d5a0bb347844680bd467bb4e4f675c29dec66b159706c7"
+    },
+    {
+      "caseId": "job-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "541ee2bf2001dfd982e0954c737dfbf14ce135a185eaf6a5c9fed7aafe3d65a7"
+    },
+    {
+      "caseId": "job-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "21a13774dc99c55613df81d84c9f23c6accf0ba3dc3842d100c321ac996faf9a"
+    },
+    {
+      "caseId": "job-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2767853792fc58bd40e2128222abb77799ce86e821db5e08e4afbb1a692915b5"
+    },
+    {
+      "caseId": "poster-listening-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "1acf0f1941feaf96b39e614d9bdccf600da6c2b3f63e39bf1f240563e5bc9935"
+    },
+    {
+      "caseId": "poster-listening-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6134b1ed94ca6750576067881e64201d73f82c017aa2e2776c4f8a30aef66678"
+    },
+    {
+      "caseId": "poster-listening-prediction",
+      "instrumentType": "escala",
+      "sha256": "a71fb3c00daa5162c376e29d1ddd694b732c164b046413292afff0aabb4dad62"
+    },
+    {
+      "caseId": "poster-listening-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "52b87080a2f69d0ec701a888ecf9e3d1ad649020098e0a965588379853fc7a1d"
+    },
+    {
+      "caseId": "poster-listening-inference",
+      "instrumentType": "rubrica",
+      "sha256": "8f3895ce719349a3f0fdb8604438286aca07a14047c44fd53314ef899960af5e"
+    },
+    {
+      "caseId": "poster-listening-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aca6e20c6e617b11e3fc49101a70fe0831b47ed507b8b46906e2a555c01bc629"
+    },
+    {
+      "caseId": "poster-listening-inference",
+      "instrumentType": "escala",
+      "sha256": "f494333c84a3f0322f9872ad9856ebab5c4ec827f40807b96c32192e09d384c8"
+    },
+    {
+      "caseId": "poster-listening-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "45abe774e9e097b11432be76fb44356db605b9997c262949eb5fbb645ec18133"
+    },
+    {
+      "caseId": "poster-listening-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "5cc755207d9da4a54312ab65f1bd6c83a121bebe267c200da07b5553b81f992f"
+    },
+    {
+      "caseId": "poster-listening-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "84987327fed0369f51455c4d086066fb36a5e5abe5e8927f44c8ed529942ebf2"
+    },
+    {
+      "caseId": "poster-listening-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "c5359790cd6931f1763a9b8b3121304af70dfdfd4b1e91a53d1c76f509cb9d55"
+    },
+    {
+      "caseId": "poster-listening-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f35eb86ed2cd298c9bf2ee95cc415508c00617574e79ca4865631ccf88b2cbcd"
+    },
+    {
+      "caseId": "poster-oral-selection",
+      "instrumentType": "rubrica",
+      "sha256": "744095513cd83853efee4745d77fe29f1a8e65313d2876defe8580bea88bc20a"
+    },
+    {
+      "caseId": "poster-oral-selection",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e77e066990e6a277c8b88324ffc1776f697cec5a4c7d31fe814f6a9bc9922307"
+    },
+    {
+      "caseId": "poster-oral-selection",
+      "instrumentType": "escala",
+      "sha256": "8f877197586c0a0c46fa57e27bce9000630468977783148644fff79d866150b9"
+    },
+    {
+      "caseId": "poster-oral-selection",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a980e0caa426bd1f4167e0b81e50eab1515da504e8f8be5dff40a6523dc4a3a"
+    },
+    {
+      "caseId": "poster-oral-presentation",
+      "instrumentType": "rubrica",
+      "sha256": "651cb81bbf4b6732dfe545a276b453904333039fd52d453e967a8004e0c437dd"
+    },
+    {
+      "caseId": "poster-oral-presentation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "855a058686e4d5630f315f414fb38759cd3fe929fb6d183fdea153a7d19a6363"
+    },
+    {
+      "caseId": "poster-oral-presentation",
+      "instrumentType": "escala",
+      "sha256": "80c555a20df817a84a9acee81b2bf1bd2c9ec7e2bb0cae0b18f1341ff59c8072"
+    },
+    {
+      "caseId": "poster-oral-presentation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75b533bd2a63835a67c59aff098889cc5b656c2296b42c7197f2c0e1a12f8940"
+    },
+    {
+      "caseId": "poster-oral-rehearsal",
+      "instrumentType": "rubrica",
+      "sha256": "9f8449cf14c101e648616ff3c499356a43600415709ab227f2123c371fa21190"
+    },
+    {
+      "caseId": "poster-oral-rehearsal",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5134e3bad55fc2f0f4ee9825da39e0ff866b4565915e824e80ea9130e54aaad9"
+    },
+    {
+      "caseId": "poster-oral-rehearsal",
+      "instrumentType": "escala",
+      "sha256": "a97b8921d02e1917433f47ae6ed9652a5175cfb16ddb3c38a71fd316d7928c80"
+    },
+    {
+      "caseId": "poster-oral-rehearsal",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a83fd69b2f2444ace9b65eedff025767d330e80cf51c65781661684d54412026"
+    },
+    {
+      "caseId": "poster-reading-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "578c170c84910016dacafd127dc936ced7f61ecf853cd3b0176f1d47c723e6b0"
+    },
+    {
+      "caseId": "poster-reading-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "05c1b8067314ee6616baf2133bd12e9e62e1433c9220bcb53374c82a5e3e6b1c"
+    },
+    {
+      "caseId": "poster-reading-prediction",
+      "instrumentType": "escala",
+      "sha256": "3ffa0de8f750a042ce7e634379fd133a77fe455344ed523da27a640759cddc23"
+    },
+    {
+      "caseId": "poster-reading-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c544cae29c4ef246b82223fb3c0e1b527a8ae70f59adb5173eb6f8306d8fb005"
+    },
+    {
+      "caseId": "poster-reading-vocabulary",
+      "instrumentType": "rubrica",
+      "sha256": "d139c733cc9e92244c159b0580f6eeb6d8d9a6e85c59767b6ee07bb69b7dc6d5"
+    },
+    {
+      "caseId": "poster-reading-vocabulary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e65c97b20ac77d83c20852cff38081440e343ed46aae37db3ff5d35dc8557263"
+    },
+    {
+      "caseId": "poster-reading-vocabulary",
+      "instrumentType": "escala",
+      "sha256": "ef2f7e86081006e6895452c396bdaeed708ad87673fe50a03b8a17bc3f00878b"
+    },
+    {
+      "caseId": "poster-reading-vocabulary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5485f2f1ccbd1685333dd0194615fbc698844c9a8c6da69e8d544fe2f0c1b749"
+    },
+    {
+      "caseId": "poster-reading-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "4198906447372eff6c2f20464958daa1a3a6331b858dc095e2ed29963d100dc1"
+    },
+    {
+      "caseId": "poster-reading-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c7b6ae9350888306e42fb09ee767bde1850b76a6177ce260f59869a7b466fc61"
+    },
+    {
+      "caseId": "poster-reading-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "381a8f7f6b632e066e122e0099d2a73b7776546544c066d431a5b27036bdd1f2"
+    },
+    {
+      "caseId": "poster-reading-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "217993523a05e8b780c05c33256ad683488e37b5494651784922a4ec2277d9cc"
+    },
+    {
+      "caseId": "poster-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "b8f2b9805eea3339368dccc79a011aeeaf3a1097c72c833b1f2f5e14b6a9a1fb"
+    },
+    {
+      "caseId": "poster-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "03434d85f05e83dbb3668915718fd8c809618cf39184de081e0f7f5920351abf"
+    },
+    {
+      "caseId": "poster-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "55632eca7ff4bffc4a33fd72c844d97a6e06d419df030b1adf363fcf914c63ae"
+    },
+    {
+      "caseId": "poster-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "45a7d505e9440820daa1c4c9598a606e54b18a160771311284ce689bcdee2b1a"
+    },
+    {
+      "caseId": "poster-writing-paratext",
+      "instrumentType": "rubrica",
+      "sha256": "497cba2a375d68252ac86d7389ff60553f019968d476ed67154e4621cfc9143d"
+    },
+    {
+      "caseId": "poster-writing-paratext",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f5bf7d041bbf1823d57594e16855bddef8a034889fbb6a77673bdf43b0378b9b"
+    },
+    {
+      "caseId": "poster-writing-paratext",
+      "instrumentType": "escala",
+      "sha256": "9637bb5cff184ae8c7483b5cd5d6bd9892d927ef6c0081f908f67d22b42814ca"
+    },
+    {
+      "caseId": "poster-writing-paratext",
+      "instrumentType": "lista-ponderada",
+      "sha256": "53aad8d5b2150aab6ebfe01a9b926a64de80c3d9bc820159cc98753b5b9ad6fc"
+    },
+    {
+      "caseId": "poster-additional-resource",
+      "instrumentType": "rubrica",
+      "sha256": "7d04116d912e44d69233e080c1bfa96799680c53e52ca4c5db3e005cb6240dc7"
+    },
+    {
+      "caseId": "poster-additional-resource",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8fe0db4e8c6062cab2ae62428fbfe02227f1086abec9bc335d821414046b649a"
+    },
+    {
+      "caseId": "poster-additional-resource",
+      "instrumentType": "escala",
+      "sha256": "3c48d1e38352f85cb25acaf2eae5823ff075dffb218d287ec96c583d23a97b6b"
+    },
+    {
+      "caseId": "poster-additional-resource",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0ae4520f7fffb7617f5de8a5d513ec9fedfa0d78c6a9c8cd732d9b241fb0a9aa"
+    },
+    {
+      "caseId": "poster-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "ebb3b1b2273d30191f7aeb4dbf8f8aa76142443f2ff4df5a7c1c8469ff6dad7b"
+    },
+    {
+      "caseId": "poster-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b663a014ed9f65e1da555504e417482e9b3b2b60e9e204811e9b2f0a9f08c467"
+    },
+    {
+      "caseId": "poster-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "5859b13bf9dfdf790aac8398b6d746cad25d205f679a4a16bcbf25e076b5fc5f"
+    },
+    {
+      "caseId": "poster-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6362dbced1c5087d64cf20b815895c0f1644b4888a5052b232fcfd81b5b28209"
+    },
+    {
+      "caseId": "essay-listening-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "abcd9d927767fad906a1d5ff805b54669c6a7d825bad714034981a472359b66c"
+    },
+    {
+      "caseId": "essay-listening-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0875093be038963608b138fce6564989af7aa68d977d3fe46f96d5aef0c412ca"
+    },
+    {
+      "caseId": "essay-listening-prediction",
+      "instrumentType": "escala",
+      "sha256": "4f82bf5a1229f082142114251ad066d68d9ec93013b49c28c97d5ae8609b5f14"
+    },
+    {
+      "caseId": "essay-listening-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1447a2805d08deef2628d4da4913581666148bbc86250c82d759af9ab782e419"
+    },
+    {
+      "caseId": "essay-listening-thesis-evidence",
+      "instrumentType": "rubrica",
+      "sha256": "80d645642613d1dd63808ee395d671d6d0540f6195d0a7a71c17896392b94bf6"
+    },
+    {
+      "caseId": "essay-listening-thesis-evidence",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54b6971279da9fd11566aaafe44f860f81df35d8508867cd1bdbbb4b5e3ed028"
+    },
+    {
+      "caseId": "essay-listening-thesis-evidence",
+      "instrumentType": "escala",
+      "sha256": "3c27611ec4a4be84d392d4d2dc0207d43fe35b8430b6b990bd3bdea30f0e7ecb"
+    },
+    {
+      "caseId": "essay-listening-thesis-evidence",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7b8a16e4a37a51dcfa783e6a7332ca69b7adf575f02b855507ac669d1ad3f33d"
+    },
+    {
+      "caseId": "essay-listening-summary",
+      "instrumentType": "rubrica",
+      "sha256": "cc8076dd2aa21d64c9e045d86b74261d4f8396cd3bd65747c03265b514eac146"
+    },
+    {
+      "caseId": "essay-listening-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a3a82245a32e2ce27386663cb5ae6f4c451a6841d8120df87b7e361bf5532024"
+    },
+    {
+      "caseId": "essay-listening-summary",
+      "instrumentType": "escala",
+      "sha256": "b67c55f9052e698bea1f9aa680d5652a53c3eaf31104562b070a24eb1048652b"
+    },
+    {
+      "caseId": "essay-listening-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3460b08b439f0af881e0e91d5a07ad3072a64ef4ba440f48ba3b8fb64d99e7d0"
+    },
+    {
+      "caseId": "essay-situation-known-new",
+      "instrumentType": "rubrica",
+      "sha256": "ecc0155954c377da8af19c291ad4639dfff671c9301923fadc6cf2e3e198cc4d"
+    },
+    {
+      "caseId": "essay-situation-known-new",
+      "instrumentType": "lista-cotejo",
+      "sha256": "23552c59842ab7bad90d9028749db76798475af12623a2e37846708ffc9963c4"
+    },
+    {
+      "caseId": "essay-situation-known-new",
+      "instrumentType": "escala",
+      "sha256": "25808d0b9885f03202486d8752aa9a23cc37985c8208db981e82ef4d0162dbd2"
+    },
+    {
+      "caseId": "essay-situation-known-new",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fd68d53aa7a5c2b9ae65f1eb540a0211e03e6bb071f0b08b9617a78a4dc62b0e"
+    },
+    {
+      "caseId": "essay-argument-plan",
+      "instrumentType": "rubrica",
+      "sha256": "1d641934824588f7de01b50c56d6871d3f22a78ffff721cc633f5a7c4135c711"
+    },
+    {
+      "caseId": "essay-argument-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b623634732e92a6c8a0e3721f963603dac25f6305e550be6ec8faa895271c692"
+    },
+    {
+      "caseId": "essay-argument-plan",
+      "instrumentType": "escala",
+      "sha256": "2cebcb88c1278316431f880fdb5506462840c7b7d52776e8bbe45e29482b9b26"
+    },
+    {
+      "caseId": "essay-argument-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ccf216497cf79237bc97005a0c3de8349ae75924a9b2d4e8956272a5255b9ab7"
+    },
+    {
+      "caseId": "essay-writing-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "d2bea626b6b2ba9006f2e5cd5c051853f71dde8e53e5fb462b5ac89415cd34d1"
+    },
+    {
+      "caseId": "essay-writing-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fede9c7174203836f2cfafd5f86eaa10c84582085ab9fa5fc76c134e350d0c43"
+    },
+    {
+      "caseId": "essay-writing-connectors",
+      "instrumentType": "escala",
+      "sha256": "567532d710c971906ff012d34ce6db9bb203a19148028143e666de9c0a399262"
+    },
+    {
+      "caseId": "essay-writing-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b942393b296a6b7763806a6272618978b7a59b1d7ff2d452d8f713f557bdf07b"
+    },
+    {
+      "caseId": "essay-reading-citation-comma",
+      "instrumentType": "rubrica",
+      "sha256": "0844ab58009eb780f4511f99dbdf86fbd7cd9563e2272168e782c30505de743c"
+    },
+    {
+      "caseId": "essay-reading-citation-comma",
+      "instrumentType": "lista-cotejo",
+      "sha256": "acbf04a811722114fd4b0a909260cb8baf17b36b2f565b0a33b44eabaa7e46de"
+    },
+    {
+      "caseId": "essay-reading-citation-comma",
+      "instrumentType": "escala",
+      "sha256": "7b313fe68a4625eb193fc43dbd5aeede098bb67659f6dfca2776e5a3a66ec382"
+    },
+    {
+      "caseId": "essay-reading-citation-comma",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebb6830fe3ff351da62ae048ade99fb91cabbda3381687e63ee2ccd621a3c44f"
+    },
+    {
+      "caseId": "essay-reading-thesis-evidence",
+      "instrumentType": "rubrica",
+      "sha256": "0b4821cb71fe3814e5bd5cfc08d918521a722da2977e5434c47e476e75fcce48"
+    },
+    {
+      "caseId": "essay-reading-thesis-evidence",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c3ebcf4526d2006298ed18bfe322e3209d5f651eceeb7f5e978829e51db4df8"
+    },
+    {
+      "caseId": "essay-reading-thesis-evidence",
+      "instrumentType": "escala",
+      "sha256": "2bfc351a81f49cff1933de4bd4c9d41ee77b8fcd582c4f2945a85fbc4bc8689d"
+    },
+    {
+      "caseId": "essay-reading-thesis-evidence",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e68175f874b35b6985e68b8c960fd2a2da361128fa2ef51b7e404bb14bfb5880"
+    },
+    {
+      "caseId": "essay-reading-voices",
+      "instrumentType": "rubrica",
+      "sha256": "7d0a539d5c851f48a0d362c352b756dafc0d82ed05c56234429cfe8a8c0371cc"
+    },
+    {
+      "caseId": "essay-reading-voices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "007d869520ec04bc223b03ab5eddd7d7f55272037d38225fa4575c29bb3b8021"
+    },
+    {
+      "caseId": "essay-reading-voices",
+      "instrumentType": "escala",
+      "sha256": "823084bc84b98475ec1cbd4f9194d222f8243c1f7d06baded1ca82b9475111a2"
+    },
+    {
+      "caseId": "essay-reading-voices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "edf2f716a3213902b1caaf51ed71014afe79842fbef299ef0b0a0130c0ea7088"
+    },
+    {
+      "caseId": "essay-writing-situation",
+      "instrumentType": "rubrica",
+      "sha256": "fe11a264bd5c05fb5de680ea0e35e29dfb8003b719b730b37cd059df27050bc8"
+    },
+    {
+      "caseId": "essay-writing-situation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2bb7a01f90d2d88a03120b2e07cefabfe2df632251bd6a0cb95011510b0ee432"
+    },
+    {
+      "caseId": "essay-writing-situation",
+      "instrumentType": "escala",
+      "sha256": "bed18ae65c29a7b016efab7b34062135991fa02b9d57888acf7dd10177227186"
+    },
+    {
+      "caseId": "essay-writing-situation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "11ff08de23948fb2ff049c7844a391a762a2315da38f1b6988188d094df8ee6b"
+    },
+    {
+      "caseId": "essay-writing-title-question",
+      "instrumentType": "rubrica",
+      "sha256": "6349880c7a0418c27cd2c3f73c1e4d3387a82c31d8799941bc74dee2b1f78770"
+    },
+    {
+      "caseId": "essay-writing-title-question",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f5ca7aebf8efbf5b1800d2038799e8e1f78164c650fcb228d820cb21fced1c9"
+    },
+    {
+      "caseId": "essay-writing-title-question",
+      "instrumentType": "escala",
+      "sha256": "bfc6a3a6673824c65f654a19460aed1cfc2838bd059cf25bc6c2c59132b9207b"
+    },
+    {
+      "caseId": "essay-writing-title-question",
+      "instrumentType": "lista-ponderada",
+      "sha256": "484e643da2f6e7927329105e5326199681ac341b7fc2d526033b679ce2aba9b3"
+    },
+    {
+      "caseId": "essay-draft-revision",
+      "instrumentType": "rubrica",
+      "sha256": "163c5dbcf8cecc5c8670b42979671dc9c803639de756f66acfea7f4ca5947c98"
+    },
+    {
+      "caseId": "essay-draft-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "858739adc2bddc33ed2f999c6c446c14b9cdc52793de5a1d38877b479a8a2c0a"
+    },
+    {
+      "caseId": "essay-draft-revision",
+      "instrumentType": "escala",
+      "sha256": "4201d33c2ce7b9510ab46307d539a47494824ce6e394f06cda7dff47518a6c57"
+    },
+    {
+      "caseId": "essay-draft-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1e1c76c30567c4fbc33b270cf5f2e6e9d089ca79e89b0d1c7cc59665da60ab51"
+    },
+    {
+      "caseId": "cv-information-effectiveness",
+      "instrumentType": "rubrica",
+      "sha256": "1cc2713b124c6d1913bcc93002e3ad16ff0390d45d9e29efe74153797ea3939b"
+    },
+    {
+      "caseId": "cv-information-effectiveness",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e023bb7572aa28b1130ae2e7cef2dd7c16921a3743c7e61704b360a0d1fbf24a"
+    },
+    {
+      "caseId": "cv-information-effectiveness",
+      "instrumentType": "escala",
+      "sha256": "5095e22a2074374552a1004e7f7609bfdf2b5061a323a2213221a26a0866bbb7"
+    },
+    {
+      "caseId": "cv-information-effectiveness",
+      "instrumentType": "lista-ponderada",
+      "sha256": "094d0c9fb4efd9d22b64e8fd32911375281c812c8689f94430df862bf3e0c80c"
+    },
+    {
+      "caseId": "cv-position-relevance",
+      "instrumentType": "rubrica",
+      "sha256": "052ed2854e45b077312f991d187aa79f041bfc9bb9933868d7e0aeecc510779b"
+    },
+    {
+      "caseId": "cv-position-relevance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54a7618d8fd169db0e9a7058415527a832c0b06a980e7f1cfcd52114bbc3f5cd"
+    },
+    {
+      "caseId": "cv-position-relevance",
+      "instrumentType": "escala",
+      "sha256": "e7d333f3cbe93c80daaa563156a6b117feb70353340a9d7acbe1167ac869eb8d"
+    },
+    {
+      "caseId": "cv-position-relevance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2e417163f2298128515efa3a37359b8e26bd58fb1fc0994733d428c696fe47fc"
+    },
+    {
+      "caseId": "cv-formal-oral-register",
+      "instrumentType": "rubrica",
+      "sha256": "e34ccf861c9e08d216611afdf67a1f1de0f5631d30a5a3c46d4c9665713caf24"
+    },
+    {
+      "caseId": "cv-formal-oral-register",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f55972173e238433d27ef2905dc29f2b1e998834c69406be29f5e4141ec6cd4a"
+    },
+    {
+      "caseId": "cv-formal-oral-register",
+      "instrumentType": "escala",
+      "sha256": "a3c13f6a61275111283896427f09c0bea3d5adc3c14b91e55020849cf626831c"
+    },
+    {
+      "caseId": "cv-formal-oral-register",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fa3f16926c6d2173b42e9097d970478696d1426798641686aabec4e3dfc2fb2e"
+    },
+    {
+      "caseId": "scholarship-content-assessment",
+      "instrumentType": "rubrica",
+      "sha256": "c7a98598a0fa33561f861993856f6f86801995647afd0de3440e7bdd85f8cf25"
+    },
+    {
+      "caseId": "scholarship-content-assessment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e518a76bb301bff83319a5cd4fe95b23b425c79d753d059c633ead50a61dba4a"
+    },
+    {
+      "caseId": "scholarship-content-assessment",
+      "instrumentType": "escala",
+      "sha256": "cdc4ea03113dc91605ae7c4a3f0f555f8a8cdea99b32eef9b64a7b1e2a219d5a"
+    },
+    {
+      "caseId": "scholarship-content-assessment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "db42c1d3cb07df2c2bbfe2edb3f9f9208b8f935849ff1dcabe36fdda8e5cc2a7"
+    },
+    {
+      "caseId": "scholarship-brief-motives",
+      "instrumentType": "rubrica",
+      "sha256": "b3014f9411868b1173a5796308153966f38a0807549526ed15bb3afe76229005"
+    },
+    {
+      "caseId": "scholarship-brief-motives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "569dbb057bd7541b5f7e61daa010a2bfa61f625c09942995be03f79e61239a6f"
+    },
+    {
+      "caseId": "scholarship-brief-motives",
+      "instrumentType": "escala",
+      "sha256": "24a8820e841da44df789ec38f3f76ea17cfc40a762392a9e4c11d5adafeb34a5"
+    },
+    {
+      "caseId": "scholarship-brief-motives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "79996d28d2c8f54aa05652a44015ad865897c4c6912aeea5840ca1622a5dab3f"
+    },
+    {
+      "caseId": "job-content-assessment",
+      "instrumentType": "rubrica",
+      "sha256": "1660e98bba4b2525179b33154c47d363fba1403be05f57a6f318f42afce297b5"
+    },
+    {
+      "caseId": "job-content-assessment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dc01f07ebc4503757878b802b27b9bb2b42312e4c8754618233c8bf61ca10d8d"
+    },
+    {
+      "caseId": "job-content-assessment",
+      "instrumentType": "escala",
+      "sha256": "3e3ea010eba85b72a98927372cf5b5e3b2de0cfb658f52dd18fc4a96ad897fd5"
+    },
+    {
+      "caseId": "job-content-assessment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0b40b407d7ab25f86a2cb5867f3fc553747a55097baaa21bba129f3f5b044aeb"
+    },
+    {
+      "caseId": "poster-oral-logical-organization",
+      "instrumentType": "rubrica",
+      "sha256": "86eb209e1c0d7cd5e5ce7440558def36fc80da93da72d28e725ce0d476e06d13"
+    },
+    {
+      "caseId": "poster-oral-logical-organization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a9a3d31832028f5c5959f5ba32c3b590c539541c6adbccd3caafc2a901c36da2"
+    },
+    {
+      "caseId": "poster-oral-logical-organization",
+      "instrumentType": "escala",
+      "sha256": "77d8467167798bc58541802720da5b57a731ad45f788cde0f56ff425c71e7c7d"
+    },
+    {
+      "caseId": "poster-oral-logical-organization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "50c79bc8c94c6b1d74b501d971df4b04b3e1b15f7aa531bd60e61973a4895a73"
+    },
+    {
+      "caseId": "poster-provided-source-synthesis",
+      "instrumentType": "rubrica",
+      "sha256": "0bef1a9d80a1b5234a8102cd4be1bf5d2e67736f69792d46ac4703282c82bfd1"
+    },
+    {
+      "caseId": "poster-provided-source-synthesis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4078375be6e7370dbac7fdb4866492e3beef4fe1e0c24308c8a91a37d30f1740"
+    },
+    {
+      "caseId": "poster-provided-source-synthesis",
+      "instrumentType": "escala",
+      "sha256": "5499310ab842a858af579fec6e392b88847ea66b55c73c136f16508e8480d422"
+    },
+    {
+      "caseId": "poster-provided-source-synthesis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0a22c8e38951f41eef91054a4ecd89ef8316cd225366bb9d8ee91bf44a6cae6f"
+    },
+    {
+      "caseId": "essay-heard-supported-position",
+      "instrumentType": "rubrica",
+      "sha256": "d98f244ca9a4ab03b1495407302f81df883974480b714e88737852bacb976cc2"
+    },
+    {
+      "caseId": "essay-heard-supported-position",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a1b85498ec7a7abf0a41a8cf8f48b022f351537c5457e6a909dd19b4a9c5dee2"
+    },
+    {
+      "caseId": "essay-heard-supported-position",
+      "instrumentType": "escala",
+      "sha256": "5b675ba8cd7ad354771fb44ed3518fb587d2d06bb2e7b36163d5c3316c1f65fe"
+    },
+    {
+      "caseId": "essay-heard-supported-position",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ede415380bc24e1ac1bc1e89f8e6e8885fe50538f22fc11c19a561ffbe3340d5"
+    },
+    {
+      "caseId": "essay-read-supported-position",
+      "instrumentType": "rubrica",
+      "sha256": "7f7e4531985b466452ce455979c9a4a3496f5ebf82e231e1bd0be763318f57de"
+    },
+    {
+      "caseId": "essay-read-supported-position",
+      "instrumentType": "lista-cotejo",
+      "sha256": "414a9d398df9130394a14d543ea6de02dadc8f5bbaa2c4f865340b6fc26ea84e"
+    },
+    {
+      "caseId": "essay-read-supported-position",
+      "instrumentType": "escala",
+      "sha256": "657b016e7e65138f9b28595eb8e398afe2e4bc9c0da5d2ae827f5e78676bd5bb"
+    },
+    {
+      "caseId": "essay-read-supported-position",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dbd638f1eb7f33e4d6fbbc63686a95b8b3915e41f996f4c9b92201cdb314cbb2"
+    },
+    {
+      "caseId": "cv-recognize-infinitive",
+      "instrumentType": "rubrica",
+      "sha256": "7e55eb5f1c517a614034f4b85ded04e99845a5b7545201db9db2dd1da428e897"
+    },
+    {
+      "caseId": "cv-recognize-infinitive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f3f0fec8d058c3491c92b99f3703c3957f24239e69fe006203a1365c5d6aea90"
+    },
+    {
+      "caseId": "cv-recognize-infinitive",
+      "instrumentType": "escala",
+      "sha256": "d321acfe8106b9f0a4e71ec2ad4f59dea3c8592708f354c3d669e43af9b5424a"
+    },
+    {
+      "caseId": "cv-recognize-infinitive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c5cb909778f76f79c43b54fba30255968779c5cefbcd77fb911ebec34fd288b7"
+    },
+    {
+      "caseId": "cv-order-or",
+      "instrumentType": "rubrica",
+      "sha256": "3e1bcb82b4f865641491ebaf863e7142e8eccb87fc2797141edb823ced39c1d5"
+    },
+    {
+      "caseId": "cv-order-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2d3e432a1075d4ea5c161cb7c1ddbe34603e524c4ecc8365114bc03c6e0255e"
+    },
+    {
+      "caseId": "cv-order-or",
+      "instrumentType": "escala",
+      "sha256": "8f43b77ab5ed1aaa8877a45db48ad262831686a2f20387498e8505ffe88b8cfb"
+    },
+    {
+      "caseId": "cv-order-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a43a194a59f2cdf6ccd7dbd25fc6299b432018a98e900c3a99b6355b788ba18c"
+    },
+    {
+      "caseId": "cv-order-inverse-only",
+      "instrumentType": "rubrica",
+      "sha256": "211d4f0c2a11882036145a61f31b424da23597082de2ebbcfc74d88ea0ac103a"
+    },
+    {
+      "caseId": "cv-order-inverse-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3287b2c71eaf388363a01276886b94e66bc90fd4179374a7777f8b5657d24887"
+    },
+    {
+      "caseId": "cv-order-inverse-only",
+      "instrumentType": "escala",
+      "sha256": "3468dcd6f4def63e8949a9440c81f97ce43ee0e0a113e3122f7b17194fb47bee"
+    },
+    {
+      "caseId": "cv-order-inverse-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7052cb76b08714f7309708c23145f7e7cbc75325d907eeb70eea71fbd4ad672c"
+    },
+    {
+      "caseId": "cv-data-only",
+      "instrumentType": "rubrica",
+      "sha256": "fdbf7e9883cf1f2adb4cfc4ff082bda308c5b07777288892f8b78f62f3d574ff"
+    },
+    {
+      "caseId": "cv-data-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1cde12faed3c8ca709bcf9361ccdcfd84bb87e3381c8f2e2d5c84cac3d85bfb2"
+    },
+    {
+      "caseId": "cv-data-only",
+      "instrumentType": "escala",
+      "sha256": "56f0fc23b8022917a6382ebfea9d15333047a7cbd2babffaa66b3dab6bab7f10"
+    },
+    {
+      "caseId": "cv-data-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bbe0726cea8e7faf6f058ad9c915a58458c3b7ac764b3e2ddce9fcb544d73138"
+    },
+    {
+      "caseId": "cv-physical-or-digital",
+      "instrumentType": "rubrica",
+      "sha256": "156944c27ed5be7825bf960de3fe5f329d1444fac77097bda395569985a56690"
+    },
+    {
+      "caseId": "cv-physical-or-digital",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2a605a23ef0060883bf554004a867126c67da2359d0875b2128b453c1cf9d3a9"
+    },
+    {
+      "caseId": "cv-physical-or-digital",
+      "instrumentType": "escala",
+      "sha256": "345cc97de2753cb1b939d0e7ed8526e5f687d0ede52acf2a1f80718a2c4f8d60"
+    },
+    {
+      "caseId": "cv-physical-or-digital",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c5a5b8aa4fd0a0e67affc0c845cec5f9405ce727aafe09b42b24b72dbfc50220"
+    },
+    {
+      "caseId": "scholarship-connectors-or",
+      "instrumentType": "rubrica",
+      "sha256": "57a2b893f91d1f8cbca8df0f2683deb9d500436e929e69fb271342fa80d6a74d"
+    },
+    {
+      "caseId": "scholarship-connectors-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b2af73a19636426acda29485030461ab7ecad479242a2b5f481332eea1d92000"
+    },
+    {
+      "caseId": "scholarship-connectors-or",
+      "instrumentType": "escala",
+      "sha256": "1e53e6c593520e94791c5da02a189ca97e1290602b098083adadb84e1311ed5b"
+    },
+    {
+      "caseId": "scholarship-connectors-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0326183af245c26168981a5ded8c557e6ca2d70453c739280387e7319fde7880"
+    },
+    {
+      "caseId": "scholarship-causal-facts",
+      "instrumentType": "rubrica",
+      "sha256": "ebf64258d253d97404a145d265fba3e0292def9280d70aef3d9f6f722c6f5fa9"
+    },
+    {
+      "caseId": "scholarship-causal-facts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5eaf0aa1cb1fd049c001396e24bfd77762bd669ca41a8259ebbec002b630374e"
+    },
+    {
+      "caseId": "scholarship-causal-facts",
+      "instrumentType": "escala",
+      "sha256": "05850ef5e166e82ee9892e651df54de325c3ad743edf0ebec6016ca43ee680f4"
+    },
+    {
+      "caseId": "scholarship-causal-facts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "814f3e207c2036ad5f66bca4ed2d96b3e539c2d8de0d2d2c8278ce0d4a6bdeff"
+    },
+    {
+      "caseId": "scholarship-present-noun",
+      "instrumentType": "rubrica",
+      "sha256": "0d29497844d7cb606e2dd7a307569f6c48834d70fcb9eb5b76d502d405122e50"
+    },
+    {
+      "caseId": "scholarship-present-noun",
+      "instrumentType": "lista-cotejo",
+      "sha256": "54576288b274e0e73e3f3c43489cba5d47dff60cbfe04b176f4b4cf7955cee29"
+    },
+    {
+      "caseId": "scholarship-present-noun",
+      "instrumentType": "escala",
+      "sha256": "5326c2c1b6d7c715587d4088da71727793585e55b51d0c4d82f819a0348947fb"
+    },
+    {
+      "caseId": "scholarship-present-noun",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ac256394bb67127e32883afd9632bad3598c17222467bfb58f8c685675783fb"
+    },
+    {
+      "caseId": "scholarship-revise-brevity-only",
+      "instrumentType": "rubrica",
+      "sha256": "1d254c419b1c2be3cabb0218d1283534570b537a843c89ab64dea5fddc85662f"
+    },
+    {
+      "caseId": "scholarship-revise-brevity-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "18de307d159e06ec6337365ad4e2bfef33c61ac4981e59f3682f80e874f7dc69"
+    },
+    {
+      "caseId": "scholarship-revise-brevity-only",
+      "instrumentType": "escala",
+      "sha256": "7528f946cae02fe23dfebe9fb3fb3f3e7b1f8ce9b6a43d6184722bc961ec711b"
+    },
+    {
+      "caseId": "scholarship-revise-brevity-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "09852c26bc89a2d3da1eff0021e4ad5bcdefe3edcbc530b4b8bd59164a3090d5"
+    },
+    {
+      "caseId": "job-modes-or",
+      "instrumentType": "rubrica",
+      "sha256": "e5449758287152c174d4cf2d4341f8272767939859497420435919733a1b1157"
+    },
+    {
+      "caseId": "job-modes-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cee4a002d168ae81d971a4e9935b2d09225a333ba0b8dce76678d15e26fc5d5d"
+    },
+    {
+      "caseId": "job-modes-or",
+      "instrumentType": "escala",
+      "sha256": "b78c94c5b0e4b99ba5a1006151604b287abf2db22e54cf4e61e4fba27ece46f6"
+    },
+    {
+      "caseId": "job-modes-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "aabbbd2eb1530e34c77245036a3a3013f430d4a6304e98ba74fa19fbee6ff135"
+    },
+    {
+      "caseId": "job-courtesy-only",
+      "instrumentType": "rubrica",
+      "sha256": "5876bd3e49dc2475757e3c4d24a1955501bae82edf9b2f2c605619e455ccd0c1"
+    },
+    {
+      "caseId": "job-courtesy-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b146fb4e293025d845f86487313637cbb23b3bba50d695ad3630cedb3da3dd93"
+    },
+    {
+      "caseId": "job-courtesy-only",
+      "instrumentType": "escala",
+      "sha256": "2c1aca4f12df4a80b50dc019246018df59f7328a214605726e7365e0b3f74e1f"
+    },
+    {
+      "caseId": "job-courtesy-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e673eac50260daf1667d6f3520456d967fdc1da878e574a6a2f77a5d91e540d5"
+    },
+    {
+      "caseId": "job-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "1f624ac2f4186c702434501c0e322e58f7fa54bef6c13ce9db7594d550900f66"
+    },
+    {
+      "caseId": "job-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5d39a114a160936b05cbc5fdb3459a00c960e6c3dfdd3aa00300b0332eed3e56"
+    },
+    {
+      "caseId": "job-comparison",
+      "instrumentType": "escala",
+      "sha256": "490780d7445036563b3f832f4be62cf9c63fabd4240b52106705ff9d468ff61f"
+    },
+    {
+      "caseId": "job-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "795b926de1b6e0b3fb1d21a3bf748f2a5b406fb0553d628f2cb8db409fdbf360"
+    },
+    {
+      "caseId": "job-revision-connectors-orthography",
+      "instrumentType": "rubrica",
+      "sha256": "d95c35893a2017679f946f0644046deb78bc0ecf95c9976cbb3f05fa03aa5324"
+    },
+    {
+      "caseId": "job-revision-connectors-orthography",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e16b0bb48e4159a525f0da2a7968d5c87fa57a9a05379f04213897f0a4822ef2"
+    },
+    {
+      "caseId": "job-revision-connectors-orthography",
+      "instrumentType": "escala",
+      "sha256": "c382b19b198e2b433c36f0f02c3dc82c86f219c869b451811fba13fc5eeecf34"
+    },
+    {
+      "caseId": "job-revision-connectors-orthography",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dc75940d48c3ef7e3ae45c2767c3dfa0d9aa92117bf927066fc683e6106a5fe5"
+    },
+    {
+      "caseId": "poster-adverbs-recognition",
+      "instrumentType": "rubrica",
+      "sha256": "39d884754c3cb1957ff96b619146984613c492542e35a32e78fb931f95c380a9"
+    },
+    {
+      "caseId": "poster-adverbs-recognition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7b09b41727cc3e6a527fe77a3dc81e166fc0834341dd04372270c7f7e4903cdb"
+    },
+    {
+      "caseId": "poster-adverbs-recognition",
+      "instrumentType": "escala",
+      "sha256": "b2b736ee22db7b14245cdc0381d3431a6b2f505124a6c048e295bb9bd6768bce"
+    },
+    {
+      "caseId": "poster-adverbs-recognition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8aff480a309a124e80d5b63ab76bf24aab7e9f0d38b6c123e9d4d2235ce7f3a5"
+    },
+    {
+      "caseId": "poster-table-or-figure",
+      "instrumentType": "rubrica",
+      "sha256": "aabd206b10cd881125e4a884764db6c5863d414b860ebbc6ef22ebbeeb8f830b"
+    },
+    {
+      "caseId": "poster-table-or-figure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2d2ac08067a217a5465ede08dc777aaedb2cc4a1909f063b9ad001c9a64cdd52"
+    },
+    {
+      "caseId": "poster-table-or-figure",
+      "instrumentType": "escala",
+      "sha256": "59c545db41b04aa4c2bb196046d7161ef4425349b4cf9ca4842f85f3b2959fd9"
+    },
+    {
+      "caseId": "poster-table-or-figure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2152a5bbe4ff0f081c364ce206b3b6a23b10c850e097b256c71e228857890641"
+    },
+    {
+      "caseId": "poster-additional-qr",
+      "instrumentType": "rubrica",
+      "sha256": "603c5727300de278121687cc6fa410c01fae4073311cf3ff0e5626d77bd7ee27"
+    },
+    {
+      "caseId": "poster-additional-qr",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1025048531700adbee86dfd1bbfac9b48264e080a256fa22d06120d2077d6dac"
+    },
+    {
+      "caseId": "poster-additional-qr",
+      "instrumentType": "escala",
+      "sha256": "cbd129f3af5c9a97d431865c7982f100dec25da5f70654a3d83aa273192d0024"
+    },
+    {
+      "caseId": "poster-additional-qr",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9e70e397ff1ff0efeca964ca004129b6befa0186377235e8a1043a212eae1fe1"
+    },
+    {
+      "caseId": "poster-publish-only",
+      "instrumentType": "rubrica",
+      "sha256": "9d50a763a59f8e80d23250abab0901d436708396569e3c5c0456e5fbf80da492"
+    },
+    {
+      "caseId": "poster-publish-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1d3c6fb38ba673c700b1004ec5a6142c64844eb05d00d6ff714eadb0d2b54dfe"
+    },
+    {
+      "caseId": "poster-publish-only",
+      "instrumentType": "escala",
+      "sha256": "a812e76ac9b147a12a22fbe5960e8e38f01536dfee588a1a0d76d7fb97c54888"
+    },
+    {
+      "caseId": "poster-publish-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebd1898e73e9cb0dd7a53dae388ed630ec08599414254d1f9cf12bc4cc2c3997"
+    },
+    {
+      "caseId": "poster-rehearsal-not-essay",
+      "instrumentType": "rubrica",
+      "sha256": "ed0559aa195ca8bb04ac4ba0cb35dcc4254d842af79b803d7033e57ba314c0f1"
+    },
+    {
+      "caseId": "poster-rehearsal-not-essay",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fbaf40f5bcdf1f51469065ffdf37c72536e221ee64ba7fbcc2f183145750e573"
+    },
+    {
+      "caseId": "poster-rehearsal-not-essay",
+      "instrumentType": "escala",
+      "sha256": "27093794ae491dd77862871b14d28495e2b961b4d9a7c1465aeebdef87c7edc9"
+    },
+    {
+      "caseId": "poster-rehearsal-not-essay",
+      "instrumentType": "lista-ponderada",
+      "sha256": "08bb85565928f93d91c52af46dc4142962889e49699e62b52e0297a87aa5affd"
+    },
+    {
+      "caseId": "essay-arguments-or",
+      "instrumentType": "rubrica",
+      "sha256": "5af585890d075bc100f2612682a77107eb0295f673f5728de1eceb25704635f5"
+    },
+    {
+      "caseId": "essay-arguments-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6404f2e2953b3a731f316be2af0aa7f4b1d0c700339ea7c50e108c311adb28e9"
+    },
+    {
+      "caseId": "essay-arguments-or",
+      "instrumentType": "escala",
+      "sha256": "bf736cecf4f780abf4fbfad88c2a0f11dea4fae2a8a17143a45aeca985e06c1c"
+    },
+    {
+      "caseId": "essay-arguments-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "26d3a2901598761ab84e1dd36058233d77da67f4341c956a2b44c5ebf79c0837"
+    },
+    {
+      "caseId": "essay-evidence-or-guarantees",
+      "instrumentType": "rubrica",
+      "sha256": "d6afe2242df346801bc28ad51937eb616d8b6ca31c4fc6625fe87aeeb115bf3f"
+    },
+    {
+      "caseId": "essay-evidence-or-guarantees",
+      "instrumentType": "lista-cotejo",
+      "sha256": "782a8bfddbc41ae2a75ba5b1dfb88e2073383f53088797c67dd0f164f958efd5"
+    },
+    {
+      "caseId": "essay-evidence-or-guarantees",
+      "instrumentType": "escala",
+      "sha256": "edfd9209c88ddec568ff07372e6bdaa0d15b8d140b6c6b89aaafc41a1760a569"
+    },
+    {
+      "caseId": "essay-evidence-or-guarantees",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d872b08d1c5ecc617d05cc172f7242b6b27ca3917c223ce8dabe8a2c46095f21"
+    },
+    {
+      "caseId": "essay-voices-only",
+      "instrumentType": "rubrica",
+      "sha256": "cfd796cfdbd5837268d585242db402cb8a7f29b9914477c94e00bcdee00ae759"
+    },
+    {
+      "caseId": "essay-voices-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "211b5e2d5c02c5aae9c9a0ae91e62f92410e3c337af9436928710d4a1dc99949"
+    },
+    {
+      "caseId": "essay-voices-only",
+      "instrumentType": "escala",
+      "sha256": "4e324553c3142143b7aa84c847b951f69deb9c28792d05e13403cd7007a271e8"
+    },
+    {
+      "caseId": "essay-voices-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "896cda1b1db197f3f1cd81ad5a5ce9a68dd09e322e1c0fea537d79dc682322dd"
+    },
+    {
+      "caseId": "essay-read-then-compare",
+      "instrumentType": "rubrica",
+      "sha256": "24242b10e46a33744c9c3eac24550a4e1cf36a9d4563d6e6948e99c0ea918e7e"
+    },
+    {
+      "caseId": "essay-read-then-compare",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c59685ad0af969a9aa3eab80eb85b4aa25599db42cb26163cc832673a9034bf"
+    },
+    {
+      "caseId": "essay-read-then-compare",
+      "instrumentType": "escala",
+      "sha256": "f8e852dc305431a32acbccb73e498b7bffd524aa040619249919488b1952b8d6"
+    },
+    {
+      "caseId": "essay-read-then-compare",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3cf43b25b2362de6827f3330c8974427fbdc6ed0fd74f971ef857ada6943b427"
+    },
+    {
+      "caseId": "essay-known-new-only",
+      "instrumentType": "rubrica",
+      "sha256": "2ab3ee260f5bd3aff608e4eb883113ebe40bd885d99b48c0da26ef992bc3b98a"
+    },
+    {
+      "caseId": "essay-known-new-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "52f454fd748e6c15678aec14e0b9db1e86c7e0e33cb2f2ef2147953934310249"
+    },
+    {
+      "caseId": "essay-known-new-only",
+      "instrumentType": "escala",
+      "sha256": "512fe16a21422c42ae4aaf2effd8fd4c62499eaa1f95b71efd62cc54b8ace946"
+    },
+    {
+      "caseId": "essay-known-new-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ffb0557251412d286e598cdab8ae7a48e11febd91a3b2dfc807131ebc4c3363"
+    },
+    {
+      "caseId": "essay-publish-plural",
+      "instrumentType": "rubrica",
+      "sha256": "6eb3fbcc81170d0b50ae9f1bf8be6e25b1170c7cd4923c19253c9b9e67e4a181"
+    },
+    {
+      "caseId": "essay-publish-plural",
+      "instrumentType": "lista-cotejo",
+      "sha256": "56d612762ac7a25db6c87a5be3632e299da49127571b3d6d1735423d3b06bf7f"
+    },
+    {
+      "caseId": "essay-publish-plural",
+      "instrumentType": "escala",
+      "sha256": "8f6fb1be9bf64e48302f6b39aabc9c468b6a0b1b364fa7ff1ff7ec6ff59f0c3a"
+    },
+    {
+      "caseId": "essay-publish-plural",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a5d1f69b77552b3dd9f4cd82b51d9dbcd68358efee8c1899c1cca59e192036ce"
+    },
+    {
+      "caseId": "essay-revise-punctuation-only",
+      "instrumentType": "rubrica",
+      "sha256": "14af889a74e03b03f2555a6eaefc83ca9f4a72b513feb92fa014febeec690816"
+    },
+    {
+      "caseId": "essay-revise-punctuation-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fe689c9a41429e6efbb0a8524661344bd59a364496ce2e74c16e28275c05ee92"
+    },
+    {
+      "caseId": "essay-revise-punctuation-only",
+      "instrumentType": "escala",
+      "sha256": "862e9ba66eb44f60d6a42ed1095222c0d631eb612aa14d2d1edc59e5799b8bbe"
+    },
+    {
+      "caseId": "essay-revise-punctuation-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75de86f4dcb36edb55302344842ac75e4c9d02419078c7d4cc81b9b6a6279fe8"
+    },
+    {
+      "caseId": "cv-independent-scholarship",
+      "instrumentType": "rubrica",
+      "sha256": "e97fb97175862e85b3678574da973e0382330bd7d10668fd243b95d53a51a17a"
+    },
+    {
+      "caseId": "cv-independent-scholarship",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ef6d9865d613a6c2c600a2ff23f346cc8b0c971535a22673ebf89a2b2b37a68a"
+    },
+    {
+      "caseId": "cv-independent-scholarship",
+      "instrumentType": "escala",
+      "sha256": "844eb7a4ca8c7a12b06e98857e95098cfc9691b8006dae7163a13d814f9f76d4"
+    },
+    {
+      "caseId": "cv-independent-scholarship",
+      "instrumentType": "lista-ponderada",
+      "sha256": "670484c1cfb560ebbe3577e885991c378b94984d4d42149ac25a6d61f0a7f45f"
+    },
+    {
+      "caseId": "poster-negative-positive",
+      "instrumentType": "rubrica",
+      "sha256": "9c2f77b37baf3a18ebdde11f62963c81bbe88e4d3e8fe303e99e5262602d04d0"
+    },
+    {
+      "caseId": "poster-negative-positive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "22089d931eca4f2992feeafe435e35a2c48cf54bbd62ee9f89a928c32e39123c"
+    },
+    {
+      "caseId": "poster-negative-positive",
+      "instrumentType": "escala",
+      "sha256": "d29d2cf0de22a34e4d24e34d0b6836d47f81372bdfa53c8f7bbe68d3e5e478b3"
+    },
+    {
+      "caseId": "poster-negative-positive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e5c31854f68123154281cab284610f918b90d2ea896010041c1fab4a02c0b9f1"
+    },
+    {
+      "caseId": "essay-individual",
+      "instrumentType": "rubrica",
+      "sha256": "596c441a4461a044a8220e4eeac8dfe95bf043c973761bda0c5d64e38a15a90d"
+    },
+    {
+      "caseId": "essay-individual",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d71e91c1def80804378bc51c8b8dea94779fbcbcaf8220a15eb2faca3da766b4"
+    },
+    {
+      "caseId": "essay-individual",
+      "instrumentType": "escala",
+      "sha256": "b03346134c11dcd4331e486726891e90567558eb78bcb71e5c241c3d8bb9a926"
+    },
+    {
+      "caseId": "essay-individual",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fd0289fb44f81c8f47386b77c5c1ff105fe036bbac3a6f06f2e1f606dd43efd3"
+    },
+    {
+      "caseId": "poster-group",
+      "instrumentType": "rubrica",
+      "sha256": "8288e9c3cd10fc2deb31d2a2828a00f41e5c11cd42fb48ea4ec0a0ccbd68db68"
+    },
+    {
+      "caseId": "poster-group",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d5e7effe71c29cf59a04998c28453ec07d8077e3bd643436d10b071f7c5be720"
+    },
+    {
+      "caseId": "poster-group",
+      "instrumentType": "escala",
+      "sha256": "b9ab96996f9d4690d9a37c92c9c3a7e225cf7dfcafe9022d043c8c3ccda0d437"
+    },
+    {
+      "caseId": "poster-group",
+      "instrumentType": "lista-ponderada",
+      "sha256": "845e46c533f81da28c8627dc3ba13276d03415801a0205253b881981cfde62ba"
+    },
+    {
+      "caseId": "essay-citation-textual",
+      "instrumentType": "rubrica",
+      "sha256": "59e0809de5956acecf58064add8af11e3151d9c1fe7c8487d2fc7f3f1b6179a2"
+    },
+    {
+      "caseId": "essay-citation-textual",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a309ae087cf42f81c736682cb06ab82edc973b36ea7c0b7af60fb04969517cce"
+    },
+    {
+      "caseId": "essay-citation-textual",
+      "instrumentType": "escala",
+      "sha256": "abcbc28b3e91254724334bfe49d01c23bd5ec1f04effdc524b0ec75b6adf7f36"
+    },
+    {
+      "caseId": "essay-citation-textual",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d78fa990a273724575a499ecc88f7d2f73152eb0285f66eb4513dbd9f88d6cdb"
+    },
+    {
+      "caseId": "essay-citation-parafraseada",
+      "instrumentType": "rubrica",
+      "sha256": "7e0956f8f51f73b518340e01252cae2ae14c65fccb0eb0364e1f1f360c82c5ee"
+    },
+    {
+      "caseId": "essay-citation-parafraseada",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d3b68e2781265e90725c39a2bb1cd4773124a7f5c04ad2150f8c6bc08b759e4b"
+    },
+    {
+      "caseId": "essay-citation-parafraseada",
+      "instrumentType": "escala",
+      "sha256": "a29df1e2a4cdf9e14da6ece3711a9a326c7bfb68c9c99765e1deeab1fac03b24"
+    },
+    {
+      "caseId": "essay-citation-parafraseada",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c915a990626629a3c4f9538c353f5e923c90182e1c24c335b95e84c92c71dd64"
+    },
+    {
+      "caseId": "essay-citation-corporativa",
+      "instrumentType": "rubrica",
+      "sha256": "e0bcd82c75bb0a9e7fc7a4469ec7ac4671ed666c531743c654d324c447fe20eb"
+    },
+    {
+      "caseId": "essay-citation-corporativa",
+      "instrumentType": "lista-cotejo",
+      "sha256": "42a547461fce1ec1462fe7333548c6386e661c2e0db765471cb2d5e486ab2d8c"
+    },
+    {
+      "caseId": "essay-citation-corporativa",
+      "instrumentType": "escala",
+      "sha256": "fb619aea903781fd11054c9b93b043add5a16a583caca452c68039e3edce6722"
+    },
+    {
+      "caseId": "essay-citation-corporativa",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a0761b07bd36ab7a72795f7b1f1ded8938dc7bb70e8a28361d9303aae230efd"
+    },
+    {
+      "caseId": "essay-citation-secundaria",
+      "instrumentType": "rubrica",
+      "sha256": "1c795bbb163d11af4a5ba861ea866abceaaa1db461daa5d545c9850b86eb4339"
+    },
+    {
+      "caseId": "essay-citation-secundaria",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8f9b9d7d57ba2c4a4731e768faf0967bbee2ae42675523bcbe0b9b60096b4853"
+    },
+    {
+      "caseId": "essay-citation-secundaria",
+      "instrumentType": "escala",
+      "sha256": "a4494c1eb72445377c322d4c6248e8ec9cb5d04034781da36ca32436a0a42b46"
+    },
+    {
+      "caseId": "essay-citation-secundaria",
+      "instrumentType": "lista-ponderada",
+      "sha256": "190831513d292b29743f25a90a6b930098d47c884f413db64e22807096dafd4b"
+    },
+    {
+      "caseId": "essay-vocabulary-context",
+      "instrumentType": "rubrica",
+      "sha256": "063577ad8793bce2916600686e0d90a88fe8665db78ad2fdbdb7608aa7688735"
+    },
+    {
+      "caseId": "essay-vocabulary-context",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dbd12f78dc61c816314b2086316db37818a55407305c1cdcc7755a90b88d58a6"
+    },
+    {
+      "caseId": "essay-vocabulary-context",
+      "instrumentType": "escala",
+      "sha256": "1c897d77899cc61f2bd644317df1e260d69c22d3c1f7d20f80dc8af8297af385"
+    },
+    {
+      "caseId": "essay-vocabulary-context",
+      "instrumentType": "lista-ponderada",
+      "sha256": "51e42213c125cd28619e47089a030c6d0d55393df741dcd31bac8e72310c8059"
+    },
+    {
+      "caseId": "essay-counterargument-only",
+      "instrumentType": "rubrica",
+      "sha256": "04a820a9a51886d427334d8a633b303e91b326ee9e6ca32151ff21fa717b1ac9"
+    },
+    {
+      "caseId": "essay-counterargument-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a3678547f8c3b32f27597f7929a3ced6c53c57bbc9b9ea65032f1e091b095baa"
+    },
+    {
+      "caseId": "essay-counterargument-only",
+      "instrumentType": "escala",
+      "sha256": "7e65480aa2367c498e3939e34afc339c894b943c20ffb74549aba94bfea84ac0"
+    },
+    {
+      "caseId": "essay-counterargument-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "300ac278cf179b772b4750985bbf009f7a151c6665f8207db64bd9e16c19657b"
+    }
+  ]
+}

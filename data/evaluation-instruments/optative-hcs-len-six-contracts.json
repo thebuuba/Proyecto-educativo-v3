@@ -1,0 +1,1301 @@
+{
+  "grade": 6,
+  "subjectCode": "OPT-HCS-LEN-6",
+  "subjectName": "Análisis y Producción de Textos Científicos y Profesionales",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "modalityCode": "academic",
+  "scopeId": "bd48332d-4af6-5d2d-a5cf-e3be5591436d",
+  "cases": [
+    {
+      "id": "concept-16",
+      "description": "Analiza únicamente la función y la estructura en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cf9eb736-c7aa-5835-b3af-8f5a53a045ff"
+      ]
+    },
+    {
+      "id": "concept-17",
+      "description": "Analiza únicamente las características señaladas en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "313d9ef8-1181-58aa-8fa1-3ecb1274b3ff"
+      ]
+    },
+    {
+      "id": "concept-18",
+      "description": "Analiza únicamente los criterios de selección de la información en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "51657e7e-5343-5d42-bacd-0ad5ec7804a6"
+      ]
+    },
+    {
+      "id": "concept-19",
+      "description": "Analiza únicamente las frases nominalizadas en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2392551d-1a4d-5189-acaf-65f5ffa5cee4"
+      ]
+    },
+    {
+      "id": "concept-20",
+      "description": "Analiza únicamente los sustantivos en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1fa8ed4d-bba5-5672-9ce2-e02384328e8a"
+      ]
+    },
+    {
+      "id": "concept-21",
+      "description": "Analiza únicamente los adjetivos en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cb7bb87d-ff41-5ed6-8ac8-80908985e5e8"
+      ]
+    },
+    {
+      "id": "concept-22",
+      "description": "Analiza únicamente los verbos en infinitivo en el texto de currículum vitae proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92043058-8deb-5607-8114-d31acf1cf6a5"
+      ]
+    },
+    {
+      "id": "concept-37",
+      "description": "Analiza únicamente la función y la estructura en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8bcff4e3-d54c-5793-b135-7c59e3d6b90d"
+      ]
+    },
+    {
+      "id": "concept-38",
+      "description": "Analiza únicamente las fórmulas de cortesía en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5feb23c7-2ccf-5b6f-a0be-ef19cfbd1ce4"
+      ]
+    },
+    {
+      "id": "concept-39",
+      "description": "Analiza únicamente los verbos en presente de indicativo, primera persona singular y pretérito perfecto en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f4b176ac-7a4c-5273-90f3-a751725537f2"
+      ]
+    },
+    {
+      "id": "concept-40",
+      "description": "Analiza únicamente el modo potencial en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d2a9d29d-8fc0-5358-a9f2-5efb5be6fffa"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "concept-41",
+      "description": "Analiza únicamente los adjetivos en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a31888a7-16bb-505e-9be5-859e8e863eff"
+      ]
+    },
+    {
+      "id": "concept-42",
+      "description": "Analiza únicamente los conectores de finalidad, causa-efecto y adición en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "73860dc2-0be9-58cd-9681-d82fd916e160"
+      ]
+    },
+    {
+      "id": "concept-43",
+      "description": "Analiza únicamente el vocabulario temático en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ee8e538e-8384-569e-895b-566b3e353706"
+      ]
+    },
+    {
+      "id": "concept-44",
+      "description": "Analiza únicamente los argumentos causales y de hechos en el texto de solicitud de beca proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b865de4c-0694-5d14-9bca-c69ce4abaf57",
+        "39be5f9b-8ff9-522e-8133-5a49c8d6fcc9"
+      ]
+    },
+    {
+      "id": "concept-72",
+      "description": "Analiza únicamente la función y la estructura en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4ce7d5fd-7076-5021-ad95-3f7b84cd4d91"
+      ]
+    },
+    {
+      "id": "concept-73",
+      "description": "Analiza únicamente las fórmulas de cortesía en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9c85d949-000e-5187-b9f5-39e938d1a74d"
+      ]
+    },
+    {
+      "id": "concept-74",
+      "description": "Analiza únicamente los verbos en presente de indicativo y primera persona singular en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "51293eb4-e2e8-5d19-a192-83c91eedd5da"
+      ]
+    },
+    {
+      "id": "concept-75",
+      "description": "Analiza únicamente el modo potencial en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a1919fd-6a7d-5dfd-b4d7-d782694a6eeb"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "concept-76",
+      "description": "Analiza únicamente los verbos en pretérito perfecto en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e62eee8d-ba9b-5013-a344-e1f46b96f633"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "concept-77",
+      "description": "Analiza únicamente los adjetivos en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e0750060-5970-5a77-a082-cfa56a9333c0"
+      ]
+    },
+    {
+      "id": "concept-78",
+      "description": "Analiza únicamente los conectores de finalidad, causa-efecto y adición en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8623d242-2164-5f0b-b50c-5b3556e9c2d6"
+      ]
+    },
+    {
+      "id": "concept-79",
+      "description": "Analiza únicamente el vocabulario temático en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "01935b9e-1557-5db2-913e-b769c6ef7d11"
+      ]
+    },
+    {
+      "id": "concept-80",
+      "description": "Analiza únicamente los argumentos causales y de hechos en el texto de solicitud de empleo proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7e595764-c632-5fc0-85ee-ca0b440cc6db"
+      ]
+    },
+    {
+      "id": "concept-95",
+      "description": "Analiza únicamente la función y la estructura en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "805fe5d7-f8cb-59bc-8bda-5523c73f6943"
+      ]
+    },
+    {
+      "id": "concept-96",
+      "description": "Analiza únicamente las características señaladas en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4b56a3d6-4c08-5e49-ae61-68c025fc35c2"
+      ]
+    },
+    {
+      "id": "concept-97",
+      "description": "Analiza únicamente las formas impersonales del verbo, el pretérito indefinido y el presente del indicativo en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f1323472-d24d-5907-b51f-e348bc902e39"
+      ]
+    },
+    {
+      "id": "concept-98",
+      "description": "Analiza únicamente el registro formal en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "eb062266-dfb6-5a3a-8273-dcbf97ab15a9"
+      ]
+    },
+    {
+      "id": "concept-99",
+      "description": "Analiza únicamente el vocabulario temático en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ff9699c1-f414-53c4-b87c-a3e9bd483fe5"
+      ]
+    },
+    {
+      "id": "concept-100",
+      "description": "Analiza únicamente los sustantivos en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "267ff1ac-88c2-5f46-8bef-dd159268be74"
+      ]
+    },
+    {
+      "id": "concept-101",
+      "description": "Analiza únicamente los adverbios de frecuencia, de cantidad y de modo en el texto de póster científico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5a160896-abf2-5e64-9319-118972bda629"
+      ]
+    },
+    {
+      "id": "concept-135",
+      "description": "Analiza únicamente la función en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "40cedb75-9f06-5eba-a46c-d1ad6635621d"
+      ]
+    },
+    {
+      "id": "concept-136",
+      "description": "Analiza únicamente la estructura y la relación entre título y pregunta en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "13d9e2e1-2467-5c14-9e1b-61ff3052fab3"
+      ]
+    },
+    {
+      "id": "concept-137",
+      "description": "Analiza únicamente la tesis en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "977bd29c-46e1-5b27-a645-3eaa842cff19"
+      ]
+    },
+    {
+      "id": "concept-138",
+      "description": "Analiza únicamente los argumentos de ejemplificación, analogía, autoridad y deductivos en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a90738d0-be39-5f32-832b-f72cb535f053"
+      ]
+    },
+    {
+      "id": "concept-139",
+      "description": "Analiza únicamente las garantías o evidencias, a elección en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c763b439-7da9-5258-9905-f9fe5858ee1f"
+      ]
+    },
+    {
+      "id": "concept-140",
+      "description": "Analiza únicamente las formas impersonales del verbo en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "61ed25cc-1061-51d2-bede-b181d9f74f4d"
+      ]
+    },
+    {
+      "id": "concept-141",
+      "description": "Analiza únicamente el vocabulario temático en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4327cedf-71ed-5a7e-b2c4-057b53b648b4"
+      ]
+    },
+    {
+      "id": "concept-142",
+      "description": "Analiza únicamente los conectores de concesión, transición, precisión, reformulación y causa-efecto en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "54fa59ec-1286-5bc8-a8c8-9616de1e4452"
+      ]
+    },
+    {
+      "id": "concept-143",
+      "description": "Analiza únicamente las locuciones adverbiales en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5b21846b-4332-5992-ac7b-1a7a0a239dc4"
+      ]
+    },
+    {
+      "id": "concept-144",
+      "description": "Analiza únicamente las expresiones modalizadoras en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5116505e-6702-5b31-afda-86371adc26a1"
+      ]
+    },
+    {
+      "id": "concept-145",
+      "description": "Analiza únicamente las referencias bibliográficas en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "87bb53bd-116b-5666-a201-2b7c954fcb7f"
+      ]
+    },
+    {
+      "id": "concept-146",
+      "description": "Analiza únicamente los mecanismos de citación señalados en el texto de ensayo académico proporcionado. No se pide redactar otro texto, publicar ni investigar fuentes nuevas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6f0dcba5-844a-55d1-b320-527efeec8f35"
+      ]
+    },
+    {
+      "id": "cv-prediction-listening",
+      "description": "Anticipa el contenido del currículum vitae escuchado a partir de las claves profesionales dadas y explica los indicios de tu predicción. No se pide decidir una contratación real.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "38fcc109-7516-5da2-900c-9295caa30611"
+      ]
+    },
+    {
+      "id": "cv-listening-purpose-vocabulary",
+      "description": "Infiere únicamente la intención comunicativa y el significado de las palabras desconocidas del currículum vitae escuchado mediante el contexto dado. No se pide otra redacción.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "12edf961-1228-5cdc-98b0-0301f121be84"
+      ],
+      "criterionCount": 2,
+      "required": "intención",
+      "requiredEvidence": [
+        "feature-communication-context",
+        "procedure-vocabulary"
+      ]
+    },
+    {
+      "id": "cv-oral-plan",
+      "description": "Planifica la presentación oral del currículum vitae ficticio: intención, destinatario, estructura breve y fuentes proporcionadas para completar datos. No se pide entrevistar a una persona real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "08eb2dff-2e8c-552a-9182-007a7b1de810"
+      ]
+    },
+    {
+      "id": "cv-data-recording",
+      "description": "Registra en el currículum vitae únicamente los datos profesionales y laborales pertinentes de la ficha ficticia proporcionada. No se piden experiencias personales ni certificados reales.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "5364b003-9246-522a-9cf5-54e63fb56361"
+      ]
+    },
+    {
+      "id": "cv-order-choice",
+      "description": "Selecciona el orden cronológico, cronológico inverso o funcional para el currículum vitae ficticio, a elección, y justifica su pertinencia para el destinatario dado. No se piden las tres versiones.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "27f62b06-70a8-59a6-aed8-8f6160a72221"
+      ],
+      "criterionCount": 1
+    },
+    {
+      "id": "cv-reading-prediction-purpose",
+      "description": "Anticipa el contenido del currículum vitae a partir de las marcas textuales proporcionadas y explica su intención comunicativa. No se pide inventar datos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d693fa00-905f-5f64-9c46-b9dc362b4ea5"
+      ],
+      "criterionCount": 2
+    },
+    {
+      "id": "cv-reading-paraphrase",
+      "description": "Parafrasea la formación y experiencia de la persona ficticia del currículum vitae leído, conservando la organización de la información dada. No se pide añadir hechos propios.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a7f100d0-dfaa-5c3d-8c26-4b6081be389c"
+      ]
+    },
+    {
+      "id": "cv-writing-plan",
+      "description": "Planifica el currículum vitae ficticio: intención, destinatario, información pertinente y estructura breve con las fuentes dadas. No se pide investigar otras fuentes.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "83ede175-c55f-522f-914f-5b54baabc4ed"
+      ]
+    },
+    {
+      "id": "cv-writing-order-paratext",
+      "description": "Escribe el currículum vitae de la ficha ficticia en orden cronológico inverso y con subtítulos y viñetas para localizar la información. Usa solo los datos proporcionados. No se piden fotografías, certificados o diplomas reales.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "64ee753e-6b15-5afd-ba1a-90ffd8731f01"
+      ]
+    },
+    {
+      "id": "cv-draft-revision",
+      "description": "Revisa únicamente las frases nominalizadas y la puntuación señaladas en el borrador de currículum vitae ficticio y muestra los cambios. No se pide publicar o enviar a una empresa.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c1e97d2e-4421-5078-9883-115698fa946a"
+      ]
+    },
+    {
+      "id": "scholarship-listening-prediction",
+      "description": "Anticipa el contenido de la solicitud de beca escuchada a partir del destinatario y asunto dados y explica los indicios de tu predicción. No se pide resolver la elegibilidad real.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f3f59990-46dd-58dd-b175-17b7e4644856"
+      ]
+    },
+    {
+      "id": "scholarship-listening-inference",
+      "description": "Infiere únicamente las relaciones entre las razones y la petición de la solicitud de beca escuchada, con las referencias del texto dado. No se piden motivaciones privadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6d8ce186-05ea-55d2-84f6-9c8c8518be02"
+      ]
+    },
+    {
+      "id": "scholarship-listening-summary",
+      "description": "Resume la solicitud de beca escuchada mediante selección de ideas principales, omisión de detalles y reconstrucción del sentido del texto proporcionado. No se pide otra solicitud.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "44d3f3eb-d5c4-5ed1-a5b9-857a3aefb653"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "scholarship-oral-plan",
+      "description": "Planifica la presentación oral de la solicitud de beca del personaje ficticio: intención, destinatario y argumentos pertinentes a los requisitos dados. No se pide una experiencia propia.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "6e269866-28e1-53cc-97f6-9965e9bd528a"
+      ]
+    },
+    {
+      "id": "scholarship-oral-motives",
+      "description": "Presenta oralmente el motivo de la solicitud de beca ficticia usando los conectores de finalidad y causa-efecto pedidos y un vocabulario apropiado al destinatario dado. No se pide enviar una solicitud.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "e928c75a-e89e-5e52-9c1e-f8e9d7c58001"
+      ],
+      "forbidden": "Identifica.*en el texto|Localiza y caracteriza|Explica la intención y el destinatario|Explica cómo se relacionan la petición"
+    },
+    {
+      "id": "scholarship-reading-context",
+      "description": "Infiere únicamente la intención, el destinatario y el canal de la solicitud de beca proporcionada con las marcas textuales del caso. No se pide otra redacción.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4bdea78a-b4d1-53ce-9dd2-e1adaba41044"
+      ]
+    },
+    {
+      "id": "scholarship-reading-vocabulary",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la solicitud de beca leída con indicios del contexto. No se pide resumirla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7d5b596e-25bf-5507-ac57-4c1a2c9f6e4c"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-vocabulary"
+    },
+    {
+      "id": "scholarship-reading-paraphrase",
+      "description": "Parafrasea la petición y las razones de la solicitud de beca proporcionada conservando el sentido del texto. No se piden datos personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "081ae5ce-e52f-5ed1-ae96-992a08a562ed"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "scholarship-writing-plan",
+      "description": "Planifica la solicitud de beca ficticia: intención, destinatario y argumentos dados, en soporte físico o digital a elección. No se piden los dos soportes ni una solicitud real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c900a52b-b525-5754-9525-713f92532c37"
+      ],
+      "required": "físico.*o.*digital"
+    },
+    {
+      "id": "scholarship-draft-revision",
+      "description": "Revisa únicamente la brevedad y la credibilidad textual de los motivos del borrador de solicitud de beca con la ficha ficticia proporcionada y muestra los cambios. No se piden méritos personales ni publicación externa.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "9538c280-72c3-5fbb-bc17-797e6c7dfe00"
+      ]
+    },
+    {
+      "id": "job-listening-prediction",
+      "description": "Anticipa el contenido de la solicitud de empleo escuchada a partir del destinatario y asunto proporcionados y explica los indicios. No se pide contratar a nadie.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e4ccbf13-6a25-529e-a6d4-3e561762d493"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-prediction"
+    },
+    {
+      "id": "job-listening-inference",
+      "description": "Infiere únicamente las relaciones entre la petición y los motivos de la solicitud de empleo escuchada con los pasajes dados. No se pide evaluar a una persona real.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c3e6f5f5-d13f-5645-84e2-1caa780b6975"
+      ]
+    },
+    {
+      "id": "job-listening-paraphrase",
+      "description": "Parafrasea las razones y la petición de la solicitud de empleo escuchada conservando el sentido del texto dado. No se pide experiencia propia.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c20813ff-f94e-5662-b736-dad84efe812d"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "job-oral-purpose",
+      "description": "Explica oralmente únicamente la intención comunicativa de la solicitud de empleo del caso ficticio dado. No se pide enviar una carta.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "8f906960-d095-5b96-957c-0c69f28b2f56"
+      ]
+    },
+    {
+      "id": "job-oral-plan",
+      "description": "Planifica la presentación oral de la solicitud de empleo ficticia: intención, destinatario, estructura y argumentos pertinentes a los requisitos dados. No se pide una entrevista real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "88d4e01f-d4ee-5571-b448-1d6ab3dcd52c"
+      ]
+    },
+    {
+      "id": "job-oral-motives",
+      "description": "Presenta oralmente el motivo de la solicitud de empleo ficticia mediante oraciones coherentes y vocabulario apropiado al destinatario dado. No se piden experiencias personales.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "8fc09837-32c3-555a-8447-ae240027ab9b"
+      ],
+      "forbidden": "Identifica.*en el texto|Localiza y caracteriza|Explica la intención y el destinatario|Explica cómo se relacionan la petición"
+    },
+    {
+      "id": "job-reading-prediction-context",
+      "description": "Anticipa el contenido de la solicitud de empleo leída a partir de las marcas dadas y explica su intención y destinatario. No se pide redactar otra carta.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9f1b96c9-a399-5da9-91df-5a3b53ae72e9"
+      ]
+    },
+    {
+      "id": "job-reading-vocabulary",
+      "description": "Infiere únicamente el significado de las palabras desconocidas de la solicitud de empleo leída con indicios del contexto proporcionado. No se pide una investigación nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "45b35256-652f-581a-aa57-cf6bcb4e7e8e"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-vocabulary"
+    },
+    {
+      "id": "job-reading-summary",
+      "description": "Resume la solicitud de empleo proporcionada seleccionando ideas principales, omitiendo detalles prescindibles y conservando su sentido. No se piden datos propios.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a45b0a1a-0936-50ea-b1e4-3adbacbb6d44"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "job-writing-plan",
+      "description": "Planifica la solicitud de empleo ficticia: intención, destinatario y argumentos dados, en soporte físico o digital a elección. No se piden los dos soportes ni un envío real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "bef2fc52-b708-53f9-903d-7fa75b0024a7"
+      ],
+      "required": "físico.*o.*digital"
+    },
+    {
+      "id": "job-data-recording",
+      "description": "Registra únicamente en la solicitud de empleo los datos pertinentes y el vocabulario temático de la ficha ficticia proporcionada. No se piden experiencias privadas.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "89c9eb30-141e-5e43-a504-9d5dd0ee62cd"
+      ]
+    },
+    {
+      "id": "job-draft-revision",
+      "description": "Revisa únicamente los conectores de finalidad y la ortografía señalados en el borrador de solicitud de empleo ficticia y muestra los cambios. No se pide cambiar el contenido o publicarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "0b6eb3a5-5b09-5280-8347-c845385f6768"
+      ]
+    },
+    {
+      "id": "poster-listening-prediction",
+      "description": "Anticipa el contenido del resumen del póster científico escuchado con las claves dadas y explica los indicios de la predicción. No se pide realizar una investigación.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "49af5f1f-021f-57e3-95c7-0e5d269128e8"
+      ]
+    },
+    {
+      "id": "poster-listening-inference",
+      "description": "Infiere únicamente las relaciones lógicas entre las ideas del resumen del póster científico escuchado, con los pasajes proporcionados. No se piden datos nuevos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "94b834a9-f96f-5798-a370-1f9dd1f2761b"
+      ]
+    },
+    {
+      "id": "poster-listening-paraphrase",
+      "description": "Parafrasea el sentido global del resumen del póster científico escuchado conservando sus relaciones y la información proporcionada. No se pide otro proyecto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "286e3fcf-e817-5eed-8c9a-c7cc494a4c67"
+      ]
+    },
+    {
+      "id": "poster-oral-selection",
+      "description": "Selecciona únicamente la información relevante para la presentación oral del póster científico según la intención y destinatario dados. No se pide presentar todavía.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "45261e9d-23ee-55d0-8ee5-03bb540b3e18"
+      ]
+    },
+    {
+      "id": "poster-oral-presentation",
+      "description": "Presenta oralmente el póster científico que has preparado con los datos dados, un título coherente y formas impersonales del verbo. No se piden vídeos, audios o sitios web adicionales.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "f4243930-8097-56c5-b39e-6c6c82d82969"
+      ],
+      "forbidden": "Identifica.*en el texto|Localiza y caracteriza|Explica la intención y el destinatario|Explica cómo se relacionan la petición"
+    },
+    {
+      "id": "poster-oral-rehearsal",
+      "description": "Ensaya la presentación oral del póster científico proporcionado y muestra las mejoras de organización tras las sugerencias dadas. No se pide escribir un ensayo académico ni publicar.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "5f114e60-4780-5937-a94e-c7c329fbb9d7"
+      ],
+      "forbidden": "Identifica|Localiza y caracteriza|Explica cómo se organizan"
+    },
+    {
+      "id": "poster-reading-prediction",
+      "description": "Anticipa el contenido del póster científico leído a partir de las figuras y tablas dadas y explica los indicios. No se pide crear otras figuras.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "123903b9-6957-5b01-aadf-f9cfc72ce28e"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-prediction"
+    },
+    {
+      "id": "poster-reading-vocabulary",
+      "description": "Infiere únicamente el significado de las palabras desconocidas del póster científico leído con indicios del contexto dado. No se piden otras fuentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a53b6dbb-9a5b-5108-980f-e79796855812"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-vocabulary"
+    },
+    {
+      "id": "poster-reading-paraphrase",
+      "description": "Parafrasea el sentido global del póster científico leído conservando la organización y las relaciones de la información dada. No se pide otra investigación.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "791323f9-73c7-595e-989b-3a88ed56d625"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "poster-writing-plan",
+      "description": "Planifica el póster científico: intención, destinatario, selección y organización de la información relevante proporcionada. No se pide recopilar datos nuevos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "618045b4-5b75-5daf-9fb7-86712887b8c9"
+      ]
+    },
+    {
+      "id": "poster-writing-paratext",
+      "description": "Escribe el póster científico con los datos dados y una tabla o una figura a elección para relacionar la información con un título coherente. No se piden los dos recursos ni nuevas fuentes.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f6f6c57e-ee41-5d96-b822-04820ba06368"
+      ]
+    },
+    {
+      "id": "poster-additional-resource",
+      "description": "Incluye únicamente el hipervínculo proporcionado como información adicional del póster científico, relacionándolo con el contenido que complementa. No se piden QR, vídeos, audios, cuentas o enlaces nuevos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e5015dab-8936-5c49-8187-ba6722d1aee4"
+      ]
+    },
+    {
+      "id": "poster-draft-revision",
+      "description": "Revisa únicamente el título y la organización señalados en el borrador de póster científico proporcionado y muestra los cambios. No se pide una publicación externa ni otra investigación.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4f69a502-9c4c-583d-b864-182183201e10"
+      ],
+      "forbidden": "problemas de contenido, organización o escritura|errores ortográficos"
+    },
+    {
+      "id": "essay-listening-prediction",
+      "description": "Anticipa el contenido del ensayo académico escuchado a partir del título y las marcas dadas y explica los indicios. No se pide escribir otro ensayo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2e701e39-a8cd-5578-89de-0033387ef02c"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-prediction"
+    },
+    {
+      "id": "essay-listening-thesis-evidence",
+      "description": "Infiere únicamente la tesis y la relación entre argumentos y evidencias del ensayo académico escuchado mediante los pasajes dados. No se pide una postura personal correcta.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "33797823-fab7-5a77-90e5-2b2435d05671"
+      ]
+    },
+    {
+      "id": "essay-listening-summary",
+      "description": "Resume el ensayo académico escuchado seleccionando los argumentos principales, omitiendo detalles y conservando el sentido del texto dado. No se pide escribir otro ensayo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f48bff73-09d3-5948-8aa7-e70df30375a5"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-paraphrase"
+    },
+    {
+      "id": "essay-situation-known-new",
+      "description": "Planifica el ensayo académico: tema, intención, audiencia, fuentes proporcionadas e información conocida y la nueva para el destinatario dado. No se pide una investigación externa.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "280822fa-cfe1-5260-9572-8d66b45d1871"
+      ],
+      "required": "conocida.*nueva"
+    },
+    {
+      "id": "essay-argument-plan",
+      "description": "Planifica el ensayo académico con la tesis, los argumentos, los contraargumentos y las evidencias proporcionados. No se pide redactarlo todavía.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "71defff2-4d9e-5577-8f35-3e7449f43694"
+      ]
+    },
+    {
+      "id": "essay-writing-connectors",
+      "description": "Escribe el fragmento de ensayo académico solicitado con conectores de concesión y precisión y vocabulario temático apropiado a los datos dados. No se piden todos los tipos de conectores.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4f1cc943-f1ab-57d4-97ea-4b96a82b2faf"
+      ],
+      "forbidden": "mecanismos de citación|referencias bibliográficas"
+    },
+    {
+      "id": "essay-reading-citation-comma",
+      "description": "Identifica únicamente las citas textuales y la coma de las frases aclaratorias en el ensayo académico proporcionado. No se pide otra redacción ni una norma de cita distinta.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c5dedb34-79f6-5157-9ade-de1a53c14767"
+      ]
+    },
+    {
+      "id": "essay-reading-thesis-evidence",
+      "description": "Analiza únicamente la relación entre la tesis, los argumentos, los contraargumentos y las evidencias del ensayo académico leído con los pasajes dados. No se pide adherirse a la tesis.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "763a65c3-6b2f-5c67-bb81-2ea852eae373"
+      ]
+    },
+    {
+      "id": "essay-reading-voices",
+      "description": "Identifica únicamente la voz del autor y las voces ajenas del ensayo académico proporcionado. No se piden valoraciones de las personas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "42593d59-76ed-5b3d-8404-8a678c56ef47"
+      ]
+    },
+    {
+      "id": "essay-writing-situation",
+      "description": "Planifica el ensayo académico: intención, audiencia, tema y selección de fuentes proporcionadas para distinguir información conocida y nueva. No se pide otra investigación.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d6d88f08-1789-59ea-8cce-578440be8136"
+      ]
+    },
+    {
+      "id": "essay-writing-title-question",
+      "description": "Escribe el fragmento de ensayo académico solicitado con un título coherente con la pregunta generadora, la tesis y las evidencias dadas. No se pide una bibliografía nueva.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "dd5ea94d-1300-55c2-8a0d-9c24f33c2203"
+      ],
+      "forbidden": "mecanismos de citación|referencias bibliográficas"
+    },
+    {
+      "id": "essay-draft-revision",
+      "description": "Revisa únicamente la puntuación y las tildes señaladas en el borrador de ensayo académico proporcionado y muestra los cambios. No se pide modificar la tesis ni publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c2fdc0-5a59-5326-a10c-6a3c572b4c49"
+      ]
+    },
+    {
+      "id": "cv-information-effectiveness",
+      "description": "Analiza únicamente la eficacia de la información del currículum vitae ficticio para su intención comunicativa, con los referentes dados. No se pide valorar a la persona ni contratarla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "601fe017-08f0-5f45-9c90-9788aeb6839c"
+      ]
+    },
+    {
+      "id": "cv-position-relevance",
+      "description": "Selecciona únicamente los datos pertinentes del currículum vitae ficticio para los requisitos del puesto proporcionados y justifica la selección. No se pide elegibilidad real.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3fab1f40-3ad2-5d8e-8f81-4904f5cc110d"
+      ]
+    },
+    {
+      "id": "cv-formal-oral-register",
+      "description": "Presenta oralmente el currículum vitae ficticio en una simulación de entrevista usando el registro formal pedido y los datos dados. No se pide una entrevista real.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "a968b983-b2c7-5e35-8dfc-417efc6d5208"
+      ],
+      "forbidden": "Identifica.*en el texto|Localiza y caracteriza|Explica la intención y el destinatario|Explica cómo se relacionan la petición"
+    },
+    {
+      "id": "scholarship-content-assessment",
+      "description": "Analiza únicamente la pertinencia de los motivos de la solicitud de beca ficticia frente a los requisitos dados. No se piden creencias ni motivación privada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "abf6febf-f22e-5bc7-9f06-dc9f4a7bcf27"
+      ]
+    },
+    {
+      "id": "scholarship-brief-motives",
+      "description": "Escribe únicamente los motivos breves y lógicamente relacionados de la solicitud de beca del personaje ficticio dado. No se pide creatividad innata ni atractivo estético.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "b16b8326-d622-5549-b782-1004cd88206b"
+      ]
+    },
+    {
+      "id": "job-content-assessment",
+      "description": "Analiza únicamente la pertinencia de los motivos de la solicitud de empleo ficticia frente a los requisitos proporcionados. No se pide contratar ni valorar méritos privados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "22626dba-e328-5088-9435-0666b9bdeb6a"
+      ]
+    },
+    {
+      "id": "poster-oral-logical-organization",
+      "description": "Presenta oralmente el póster científico que has preparado organizando lógicamente la información dada para la audiencia indicada. No se pide asistir a un congreso real.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "54427c92-5cb0-5e36-a225-34a54f87c4e5"
+      ],
+      "forbidden": "Identifica.*en el texto|Localiza y caracteriza|Explica la intención y el destinatario|Explica cómo se relacionan la petición"
+    },
+    {
+      "id": "poster-provided-source-synthesis",
+      "description": "Resume únicamente la información relevante de las fuentes proporcionadas para el póster científico conservando sus relaciones y atribución. No se piden nuevas fuentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "55a80e9b-3730-5ad7-a687-a6582536f79c"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "feature-source-synthesis",
+      "forbidden": "Identifica.*en el texto"
+    },
+    {
+      "id": "essay-heard-supported-position",
+      "description": "Explica únicamente una postura argumentada sobre la tesis del ensayo académico escuchado con evidencias del texto dado. No se exige aceptar o rechazar la tesis ni creencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "971269b7-aa7b-587e-86bc-503823e3116f"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "feature-supported-position"
+    },
+    {
+      "id": "essay-read-supported-position",
+      "description": "Explica únicamente una postura argumentada sobre la tesis del ensayo académico leído con evidencias del texto proporcionado. No se exige una postura ideológica correcta.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "3e3b2ab5-4000-5d3a-ac51-351ab0c0ce99"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "feature-supported-position"
+    },
+    {
+      "id": "cv-recognize-infinitive",
+      "description": "Identifica únicamente los verbos en infinitivo del currículum vitae proporcionado. No se pide explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92043058-8deb-5607-8114-d31acf1cf6a5"
+      ],
+      "required": "infinitivo",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "cv-order-or",
+      "description": "Escribe únicamente la organización de los datos del currículum vitae ficticio en orden cronológico o funcional, a elección. No se piden las dos formas ni orden inverso.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "64ee753e-6b15-5afd-ba1a-90ffd8731f01"
+      ],
+      "required": "cronológico.*o.*funcional",
+      "forbidden": "inverso|organización de las partes con la intención comunicativa"
+    },
+    {
+      "id": "cv-order-inverse-only",
+      "description": "Escribe únicamente los datos proporcionados del currículum vitae ficticio en orden cronológico inverso. No se pide orden funcional.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "64ee753e-6b15-5afd-ba1a-90ffd8731f01"
+      ],
+      "required": "inverso",
+      "forbidden": "funcional"
+    },
+    {
+      "id": "cv-data-only",
+      "description": "Registra únicamente los datos laborales dados en el currículum vitae ficticio. No se piden fotos, diplomas ni experiencias personales.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "5364b003-9246-522a-9cf5-54e63fb56361"
+      ],
+      "required": "datos",
+      "forbidden": "diplomas reales|experiencia propia"
+    },
+    {
+      "id": "cv-physical-or-digital",
+      "description": "Dispón únicamente la versión final del currículum vitae ficticio en soporte físico o digital, a elección, para la revisión de clase. No se pide un envío real ni dos versiones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c1e97d2e-4421-5078-9883-115698fa946a"
+      ],
+      "required": "físico.*o.*digital",
+      "forbidden": "físico y digital|Revisión del borrador|Muestra cambios"
+    },
+    {
+      "id": "scholarship-connectors-or",
+      "description": "Identifica únicamente los conectores de finalidad o adición de la solicitud de beca proporcionada, a elección. No se piden ambos ni explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "73860dc2-0be9-58cd-9681-d82fd916e160"
+      ],
+      "required": "finalidad.*o.*adición",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "scholarship-causal-facts",
+      "description": "Analiza únicamente los argumentos causales y de hechos de la solicitud de beca proporcionada con los referentes dados. No se pide otra petición.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b865de4c-0694-5d14-9bca-c69ce4abaf57",
+        "39be5f9b-8ff9-522e-8133-5a49c8d6fcc9"
+      ],
+      "required": "causales.*hechos"
+    },
+    {
+      "id": "scholarship-present-noun",
+      "description": "Escribe únicamente la solicitud de beca ficticia con pretérito perfecto y presente del indicativo según los datos dados. No se pide presentar oralmente.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f4b176ac-7a4c-5273-90f3-a751725537f2"
+      ],
+      "required": "presente",
+      "forbidden": "Identifica|producción oral"
+    },
+    {
+      "id": "scholarship-revise-brevity-only",
+      "description": "Revisa únicamente la brevedad del borrador de solicitud de beca dado y muestra los cambios. No se pide cambiar los argumentos, la ortografía o publicar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "9538c280-72c3-5fbb-bc17-797e6c7dfe00"
+      ],
+      "required": "brevedad",
+      "forbidden": "ortográficos|publicada"
+    },
+    {
+      "id": "job-modes-or",
+      "description": "Identifica únicamente el modo potencial o el presente del indicativo de la solicitud de empleo proporcionada, a elección. No se piden ambos ni explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0a1919fd-6a7d-5dfd-b4d7-d782694a6eeb",
+        "51293eb4-e2e8-5d19-a192-83c91eedd5da"
+      ],
+      "required": "potencial.*o.*presente|presente.*o.*potencial",
+      "forbidden": "Explica|función",
+      "criterionCount": 1
+    },
+    {
+      "id": "job-courtesy-only",
+      "description": "Identifica únicamente las fórmulas de cortesía de la solicitud de empleo proporcionada. No se pide explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9c85d949-000e-5187-b9f5-39e938d1a74d"
+      ],
+      "required": "cortesía",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "job-comparison",
+      "description": "Compara únicamente los argumentos causales de las dos solicitudes de empleo proporcionadas. No se piden argumentos de hechos ni una contratación real.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "7e595764-c632-5fc0-85ee-ca0b440cc6db"
+      ],
+      "required": "causales",
+      "forbidden": "argumentos de hechos"
+    },
+    {
+      "id": "job-revision-connectors-orthography",
+      "description": "Revisa únicamente los conectores de adición y la ortografía señalados en la solicitud de empleo ficticia y muestra los cambios. No se pide revisar contenido ni publicarla.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "0b6eb3a5-5b09-5280-8347-c845385f6768"
+      ],
+      "required": "adición.*ortografía|ortografía.*adición",
+      "forbidden": "problemas de contenido"
+    },
+    {
+      "id": "poster-adverbs-recognition",
+      "description": "Identifica únicamente los adverbios de frecuencia del póster científico proporcionado. No se pide evaluar la frecuencia de la conducta ni explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5a160896-abf2-5e64-9319-118972bda629"
+      ],
+      "required": "adverbios de frecuencia",
+      "forbidden": "Explica|función|conducta"
+    },
+    {
+      "id": "poster-table-or-figure",
+      "description": "Escribe únicamente una tabla o una figura a elección para el póster científico con los datos dados. No se piden ambas ni otras ilustraciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f6f6c57e-ee41-5d96-b822-04820ba06368"
+      ],
+      "required": "tabla.*o.*figura",
+      "forbidden": "tabla y.*figura"
+    },
+    {
+      "id": "poster-additional-qr",
+      "description": "Incluye únicamente el código QR proporcionado en el póster científico y vincúlalo con la información adicional dada. No se pide una cuenta, un vídeo ni crear enlaces.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "e5015dab-8936-5c49-8187-ba6722d1aee4"
+      ],
+      "required": "QR",
+      "forbidden": "cuenta externa"
+    },
+    {
+      "id": "poster-publish-only",
+      "description": "Publica únicamente la versión final de póster científico proporcionada en el mural de clase. No se pide otra investigación ni reescritura.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4f69a502-9c4c-583d-b864-182183201e10"
+      ],
+      "required": "medio solicitado",
+      "forbidden": "investiga|nuevos resultados"
+    },
+    {
+      "id": "poster-rehearsal-not-essay",
+      "description": "Ensaya únicamente la presentación oral del póster científico dado y muestra las mejoras de secuencia indicadas. No se pide redactar un ensayo académico.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "5f114e60-4780-5937-a94e-c7c329fbb9d7"
+      ],
+      "required": "ensayo|práctica|mejoras",
+      "forbidden": "tesis.*contraargumentos|Identifica|Localiza y caracteriza|Explica cómo se organizan"
+    },
+    {
+      "id": "essay-arguments-or",
+      "description": "Identifica únicamente los argumentos de autoridad o analogía del ensayo académico dado, a elección. No se piden ambos ni explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a90738d0-be39-5f32-832b-f72cb535f053"
+      ],
+      "required": "autoridad.*o.*analogía|analogía.*o.*autoridad",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-evidence-or-guarantees",
+      "description": "Analiza únicamente las garantías o evidencias del ensayo académico proporcionado, a elección. No se piden las dos clases a la vez.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c763b439-7da9-5258-9905-f9fe5858ee1f"
+      ],
+      "required": "garantías.*o.*evidencias",
+      "forbidden": "garantías y.*evidencias"
+    },
+    {
+      "id": "essay-voices-only",
+      "description": "Identifica únicamente la voz propia del autor y las voces ajenas en el ensayo académico dado. No se pide explicar su función ni otra tesis.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "42593d59-76ed-5b3d-8404-8a678c56ef47"
+      ],
+      "required": "voz",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-read-then-compare",
+      "description": "Lean el ensayo académico proporcionado y comparen únicamente las tesis de los dos pasajes dados. No se pide otro ensayo.",
+      "activityType": "COMPARISON",
+      "sourceRecordIds": [
+        "763a65c3-6b2f-5c67-bb81-2ea852eae373"
+      ],
+      "required": "tesis",
+      "forbidden": "narrador|trama"
+    },
+    {
+      "id": "essay-known-new-only",
+      "description": "Planifica únicamente la información conocida y la información nueva para la audiencia del ensayo académico dado. No se piden argumentos nuevos.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "d6d88f08-1789-59ea-8cce-578440be8136"
+      ],
+      "required": "conocida.*nueva",
+      "forbidden": "investigación externa"
+    },
+    {
+      "id": "essay-publish-plural",
+      "description": "Publiquen únicamente la versión final de ensayo académico proporcionada en el mural de clase. No se pide escribir otra tesis.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c2fdc0-5a59-5326-a10c-6a3c572b4c49"
+      ],
+      "required": "medio solicitado",
+      "forbidden": "tesis.*evidencias"
+    },
+    {
+      "id": "essay-revise-punctuation-only",
+      "description": "Revisa únicamente la puntuación señalada en el ensayo académico proporcionado y muestra los cambios. No se pide cambiar el contenido, las citas o publicarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c2fdc0-5a59-5326-a10c-6a3c572b4c49"
+      ],
+      "required": "puntuación",
+      "forbidden": "problemas de contenido|publicada"
+    },
+    {
+      "id": "cv-independent-scholarship",
+      "description": "Revisa únicamente la puntuación del currículum vitae ficticio dado. Luego escribe una solicitud de beca con los motivos proporcionados. No se pide un envío real.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "c1e97d2e-4421-5078-9883-115698fa946a",
+        "9538c280-72c3-5fbb-bc17-797e6c7dfe00"
+      ],
+      "required": "puntuación.*motivos|puntuación.*razones"
+    },
+    {
+      "id": "poster-negative-positive",
+      "description": "Sin publicar ni investigar, pero identifica únicamente los sustantivos del póster científico proporcionado. No se pide explicar su función.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "267ff1ac-88c2-5f46-8bef-dd159268be74"
+      ],
+      "required": "sustantivos",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-individual",
+      "description": "De forma individual, el estudiante escribirá el fragmento de ensayo académico solicitado con la tesis y datos dados. No se pide publicar ni investigar.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "81c2fdc0-5a59-5326-a10c-6a3c572b4c49"
+      ],
+      "required": "tesis",
+      "forbidden": "mecanismos de citación|referencias bibliográficas"
+    },
+    {
+      "id": "poster-group",
+      "description": "En parejas, los estudiantes escribirán un póster científico con los datos y destinatarios dados. No se piden experiencias reales ni publicarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "f6f6c57e-ee41-5d96-b822-04820ba06368"
+      ],
+      "required": "información|contenido",
+      "participationMode": "GROUP"
+    },
+    {
+      "id": "essay-citation-textual",
+      "description": "Identifica únicamente la cita textual señalada en el ensayo académico proporcionado. No se pide explicar su función ni seguir normas adicionales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6f0dcba5-844a-55d1-b320-527efeec8f35",
+        "c5dedb34-79f6-5157-9ade-de1a53c14767"
+      ],
+      "required": "textual",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-citation-parafraseada",
+      "description": "Identifica únicamente la cita parafraseada señalada en el ensayo académico proporcionado. No se pide explicar su función ni seguir normas adicionales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6f0dcba5-844a-55d1-b320-527efeec8f35",
+        "c5dedb34-79f6-5157-9ade-de1a53c14767"
+      ],
+      "required": "parafraseada",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-citation-corporativa",
+      "description": "Identifica únicamente la cita de autor corporativo señalada en el ensayo académico proporcionado. No se pide explicar su función ni seguir normas adicionales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6f0dcba5-844a-55d1-b320-527efeec8f35",
+        "c5dedb34-79f6-5157-9ade-de1a53c14767"
+      ],
+      "required": "corporativo",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-citation-secundaria",
+      "description": "Identifica únicamente la cita de otra cita señalada en el ensayo académico proporcionado. No se pide explicar su función ni seguir normas adicionales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6f0dcba5-844a-55d1-b320-527efeec8f35",
+        "c5dedb34-79f6-5157-9ade-de1a53c14767"
+      ],
+      "required": "otra cita|secundaria",
+      "forbidden": "Explica|función"
+    },
+    {
+      "id": "essay-vocabulary-context",
+      "description": "Infiere únicamente el significado de las palabras desconocidas del ensayo académico proporcionado mediante indicios del contexto. No se pide explicar recursos ni crear otro ensayo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "763a65c3-6b2f-5c67-bb81-2ea852eae373"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "procedure-vocabulary"
+    },
+    {
+      "id": "essay-counterargument-only",
+      "description": "Identifica únicamente los contraargumentos del ensayo académico proporcionado. No se pide explicar su función ni otros argumentos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "33797823-fab7-5a77-90e5-2b2435d05671"
+      ],
+      "criterionCount": 1,
+      "onlyEvidence": "feature-counterarguments"
+    }
+  ]
+}
