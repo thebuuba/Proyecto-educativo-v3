@@ -1,0 +1,55 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+  "personalQaContext": {
+    "authorization": "Encargo integral,sección10",
+    "separateClearlyNamedCourse": true,
+    "grade": 4,
+    "cycle": 2,
+    "modality": "academic",
+    "exit": "HCS",
+    "subjectCode": "OPT-HCS-SOC-4",
+    "existingPersonalSchool": true,
+    "newUsers": 0,
+    "newStudents": 0,
+    "originalRowsPreserved": true,
+    "idempotenceVerified": true
+  },
+  "observed": [
+    "Formulario vacío con cuatro selectores y estrategia visibles, puntos pendientes, sin anuncios de preparación.",
+    "Diálogo mayéutico con preguntas abiertas: Interacción oral, Observación directa, Indagación dialógica AUTO y rúbrica de dos criterios.",
+    "Modalidad Grupal manual; 17.35→20→17.35 con sumas exactas.",
+    "Cuatro formatos completos leídos: rúbrica y escala con dos criterios/indicadores y cuatro niveles, cotejo de dos observables y ponderada con parciales50% y total100%.",
+    "Criterio manual conservado, una creación, listado→Editar y reapertura de la misma actividad.",
+    "Solo estrategia a Estudio de caso MANUAL, una actualización, recarga y comprobación de IDs,snapshot,instrumento y huella idénticos."
+  ],
+  "persistence": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "4edbcf09-543d-4651-be97-4788a170713a",
+    "instrumentId": "eae5df53-827c-4022-b977-0d47530dee0a",
+    "snapshotId": "c82a78d0-72e4-4dbe-8c6d-8b2ebe386224",
+    "instrumentHash": "bc51777ddad37bc1dd6194db84ae5945",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.133",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "activityWrites": 2,
+    "newActivities": 1,
+    "newSnapshots": 1
+  },
+  "pending": [],
+  "draftsDeleted": 0,
+  "limitations": [
+    "CursoQAseparadoenlacuenta personal;no todaslasconsignas/cursos originales.",
+    "Transicionesal cambiarmanualmentedeformatomostraronplantillasvacíasantesdelresultadofinal;selección ypuntospreservados.",
+    "Unasconsultasdelocalizadores vencieronantesdecargarlavista;seleyóelresultadofinalsinrepetirescrituras.",
+    "La capturadepáginacompletavencióa5s;secapturólavista disponible.",
+    "No se borraron caché,serviceworker,sesiones,almacenamiento oborradores;elassetcargadosecomparóconelbuild."
+  ],
+  "localScreenshotAvailable": true,
+  "screenshotExcludedFromGit": true
+}

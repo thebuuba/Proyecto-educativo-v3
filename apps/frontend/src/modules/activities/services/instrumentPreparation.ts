@@ -1,3 +1,4 @@
+import {resolveOptativeSocialTask,optativeSocialCriteria} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,adaptPhysicalScale} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,adaptOptativeLanguageScale} from '@aula/shared'
@@ -59,6 +60,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',input.academicContext)
+  if(socialOptative)return adaptSocialScale(editableAuthoredRecommendation(optativeSocialCriteria(socialOptative),input,input.activityType??socialOptative.activityType,socialOptative.module.id))
   const optative=resolveOptativeLanguageTask(input.activityTitle,input.description??'',input.academicContext)
   if(optative)return adaptOptativeLanguageScale(editableAuthoredRecommendation(optativeLanguageCriteria(optative),input,input.activityType??optative.activityType,optative.module.id))
   const fhr=resolveCommonFhrTask(input.activityTitle,input.description??'',input.academicContext)

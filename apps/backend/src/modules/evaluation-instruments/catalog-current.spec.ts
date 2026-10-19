@@ -48,7 +48,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.132')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.133')
     const frozen126=evaluationCatalogForVersion('evaluation-2026.126')
     expect(frozen126.optativeEnglishModules).toBeUndefined()
     expect(evaluationCatalogCurrent.optativeLanguageModules.slice(0,3)).toEqual(frozen126.optativeLanguageModules)

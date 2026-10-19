@@ -3,6 +3,18 @@ import {spawnSync} from 'node:child_process'
 import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
+
+test('Filosofía HCS cuarto conserva113registros,59anclas y21indicadores sin habilitar grados siguientes',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-4','4',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.elements,113);assert.equal(manifest.excludedFromAssessment,19)
+ assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_HCS_SOC_4_V1');assert.deepEqual(manifest.metadata.optativeExitNames,['Humanidades y Ciencias Sociales'])
+ const matrix=JSON.parse(readFileSync(path,'utf8')),fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hcs-soc-four-contracts.json','utf8')),ids=new Set(matrix.officialRecords.map(r=>r.id)),excluded=new Set(matrix.explicitExclusions.map(r=>r.id))
+ assert.equal(matrix.contents.length,59);assert.equal(matrix.criticalIndicators.length,21)
+ for(const r of matrix.criticalIndicators){assert(r.caseIds.length&&r.adaptation);assert.equal(matrix.officialRecords.find(e=>e.id===r.id)?.type,'ACHIEVEMENT_INDICATOR')}
+ for(const task of fixture.cases)for(const id of task.sourceRecordIds){assert(ids.has(id),task.id);assert(!excluded.has(id),task.id)}
+ for(const args of [['OPT-HCS-SOC-4','5',path,'--optative'],['OPT-HCS-SOC-5','5',path,'--optative'],['OPT-HCS-SOC-6','6',path,'--optative'],['OPT-HCS-SOC-4','4',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
 test('Textos científicos y profesionales HCS sexto conserva186registros y40exclusiones sin contaminar otras salidas',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-hcs-len-6-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-LEN-6','6',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)

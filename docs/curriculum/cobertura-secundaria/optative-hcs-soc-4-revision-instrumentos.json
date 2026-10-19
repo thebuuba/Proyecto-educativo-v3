@@ -1,0 +1,2439 @@
+{
+  "catalog": "evaluation-2026.133",
+  "method": "Lectura completa inicial de120textos y116consignas;relectura de43deltas semánticos,19de facetas y5finales,con131textos finales,117correspondencias y10paquetes exactos de puntuación. Reconstrucción exacta de468instrumentos:descripción,criterios,cinco progresiones,títulos de cotejo/escala,parcial de ponderada,descriptores y puntos. La alternativa ensayo/resumen/informe se leyó completa;solo se evalúa el producto elegido.",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "findingsFixed": [
+    "Presocráticos confundidos con método socrático",
+    "Ensayo científico desviaba el objeto hacia filosofía de la ciencia",
+    "Sustantivo argumentos separado como otra tarea",
+    "Pérdida de dimensiones,períodos,autores y facetas explícitas",
+    "Kant convertía crítica al racionalismo en una enumeración sin relación",
+    "Justificación de respaldo,solución y explicación de hallazgos duplicaban criterios",
+    "Respuestas del diálogo repetidas y respuestas del debate omitidas",
+    "Solución debatida no evaluaba propuesta",
+    "Presentación política evaluaba comunicación sin implicaciones sociales",
+    "Procedimiento de epojé rompía una oración",
+    "Religión,responsabilidad y problema social perdían el objeto explícito",
+    "Indicador107 añadía alternativa informe no cubierta por el primer ejemplo",
+    "Aplicar mayéutica,duda metódica oepojé devolvía análisis general en lugar del procedimiento"
+  ],
+  "minorDeferred": [
+    "Repeticiones editoriales de artículos y conectores en algunas etiquetas compuestas; no añaden tareas ni alteran los criterios."
+  ],
+  "limits": [
+    "Muestras representativas, no todas las variantes posibles de cada fila curricular.",
+    "Las adaptaciones no son instrumentos oficiales ni califican creencias,adhesión o experiencias privadas.",
+    "La lectura no acredita todavía ejecución HTTP/DB o navegador133."
+  ],
+  "items": [
+    {
+      "caseId": "brief:philosophy-foundations",
+      "instrumentType": "rubrica",
+      "sha256": "97e3c1fda97ca2456f9e92fe600443cfade1ddb62ab478e70b21a664f779c32c"
+    },
+    {
+      "caseId": "brief:philosophy-foundations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "788d1a7d41b296c6847205b125de53d0178239a4c77a09eb7f99f499254d6e73"
+    },
+    {
+      "caseId": "brief:philosophy-foundations",
+      "instrumentType": "escala",
+      "sha256": "5b9853517987b870fefbb0a8cccad9f298c668b39adb16730ad58a22c8eb708c"
+    },
+    {
+      "caseId": "brief:philosophy-foundations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "90f2eda03930f1088db201ae756ff686b0f6cf3e128438bd522fbad822a1cb79"
+    },
+    {
+      "caseId": "brief:human-reflection",
+      "instrumentType": "rubrica",
+      "sha256": "8730e8e49959ec9660303a7473968ac60395401e5af2ffcb8c350b5ffbf13f02"
+    },
+    {
+      "caseId": "brief:human-reflection",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43d6380668d463bef96c7a71492f521075a1368e3d472d4661295bc458025d76"
+    },
+    {
+      "caseId": "brief:human-reflection",
+      "instrumentType": "escala",
+      "sha256": "9df84cb312b760449f5d306fd56d794c0782bd8602224f48bbec05bc38c9ed92"
+    },
+    {
+      "caseId": "brief:human-reflection",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6925f0be1bf060fd79077ae98ce94ea51d9a40532c6e455f30ca47564665a892"
+    },
+    {
+      "caseId": "brief:anthropology",
+      "instrumentType": "rubrica",
+      "sha256": "673e4027c5040012937f617d5cb07b9335bc4c71bb9d244a4f5cb890f151eb46"
+    },
+    {
+      "caseId": "brief:anthropology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3df9513ae3d2b34df9df7c027897e7e43388f063483d5d146a13b9e83dfcf9bc"
+    },
+    {
+      "caseId": "brief:anthropology",
+      "instrumentType": "escala",
+      "sha256": "9d2e46cc3ed22e045cecd0e40d90e692acab96556c38d23c435e74476477f6ab"
+    },
+    {
+      "caseId": "brief:anthropology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f9ef542be9273883390af2d3eab6ec4e17a6a7b1d8915b42f4e9085886b0d777"
+    },
+    {
+      "caseId": "brief:culture",
+      "instrumentType": "rubrica",
+      "sha256": "48cc95c3d8a6a3f698877a4b866122cd44c1f28cd772bdf23535a36a19893a06"
+    },
+    {
+      "caseId": "brief:culture",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95a55bc618f4ad70018fbbf7a232cceca3c6ef8d299b77e893b47c181672a8e7"
+    },
+    {
+      "caseId": "brief:culture",
+      "instrumentType": "escala",
+      "sha256": "47b2f159ea36754406676250ac01558061273937339c7d2d65a5effb0af8ff18"
+    },
+    {
+      "caseId": "brief:culture",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32a6e2e1d91830a542826487ec57c42b7c3c54f0ddc64235bb6c8a2e7293d1af"
+    },
+    {
+      "caseId": "brief:knowledge",
+      "instrumentType": "rubrica",
+      "sha256": "eb7af7258f8842b7928acf5cfab0c7e0cc9bdc7d8237bbd5df682ce763b3eb29"
+    },
+    {
+      "caseId": "brief:knowledge",
+      "instrumentType": "lista-cotejo",
+      "sha256": "83e06bdc079ed9c24ea95c3fd8517235b548d48df0856aee5d774849ca88a0b3"
+    },
+    {
+      "caseId": "brief:knowledge",
+      "instrumentType": "escala",
+      "sha256": "420ece035b314e3d1f539039a9f896fab8cfbb118d8b38b4eefb73a71cddb0b3"
+    },
+    {
+      "caseId": "brief:knowledge",
+      "instrumentType": "lista-ponderada",
+      "sha256": "075e178ea275ed98b11378cb280df811ce5a149bbcd31cbc715ac5bc52b73f88"
+    },
+    {
+      "caseId": "brief:enlightenment",
+      "instrumentType": "rubrica",
+      "sha256": "e1c38229a465681511ad60389fc6202aae26753efd1cd66bd506fbd5d6713514"
+    },
+    {
+      "caseId": "brief:enlightenment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "070ef1422bb999578c7be5445a181f29391ce64e09525dd630f82da042181eac"
+    },
+    {
+      "caseId": "brief:enlightenment",
+      "instrumentType": "escala",
+      "sha256": "728d79d32cb880c6955de9daaec5d2515e6da051961b6c288c786e12cf5da8f1"
+    },
+    {
+      "caseId": "brief:enlightenment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d5a0c5be54a706bae6b5453489f4d34353fd04866192c25592f400b35f8a827f"
+    },
+    {
+      "caseId": "brief:modern-consciousness",
+      "instrumentType": "rubrica",
+      "sha256": "5011d8a94e4769fd68b9ddfb4f7fe62d3fbcc32dbd11a0498d710bb8fa58758c"
+    },
+    {
+      "caseId": "brief:modern-consciousness",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b83ac1c9c037a3aaf46dc7dd7cc3e013da761e2ddaebe59018c2587b3ab248ca"
+    },
+    {
+      "caseId": "brief:modern-consciousness",
+      "instrumentType": "escala",
+      "sha256": "95479e991e299f402e5670b0bc348481af6e5e1f098583218751604cd3d30114"
+    },
+    {
+      "caseId": "brief:modern-consciousness",
+      "instrumentType": "lista-ponderada",
+      "sha256": "88e54f1d68461f82dae2751ca9d70b4fc30771e64dc115ab4ff1c7e7ec9c3338"
+    },
+    {
+      "caseId": "brief:classical-philosophy",
+      "instrumentType": "rubrica",
+      "sha256": "d612dff7034eb9355b653ed7c003fb9431557abdad460ea781578507b7be9362"
+    },
+    {
+      "caseId": "brief:classical-philosophy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "06b3c1e7eaf9352ad9af76ffde5cb99bdd94b588979340bfaed75e5182f9dda6"
+    },
+    {
+      "caseId": "brief:classical-philosophy",
+      "instrumentType": "escala",
+      "sha256": "7a5dc8489174ff923d1e69381f2ebbe2da558cc9beb6e849eaeeac52918bbe5f"
+    },
+    {
+      "caseId": "brief:classical-philosophy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8746326b82d908f7f521c95f1c70c5bb5cfe7e61cea2f70820b0d9976bf4f8b"
+    },
+    {
+      "caseId": "brief:virtue",
+      "instrumentType": "rubrica",
+      "sha256": "69984ac939f17d7adb4c903a836b14642ad71782b74727ece8235e28423c84a1"
+    },
+    {
+      "caseId": "brief:virtue",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43d3a592dd860db3f15f8fcabe260b7c8f070fb3b152ccc72f1077a873d8218b"
+    },
+    {
+      "caseId": "brief:virtue",
+      "instrumentType": "escala",
+      "sha256": "d44f0b70183442aa0afedb3c4aa2bdc396eb9ce7be6fd5ed6ab3c3395be358a3"
+    },
+    {
+      "caseId": "brief:virtue",
+      "instrumentType": "lista-ponderada",
+      "sha256": "02d30810730af8b82fc4b7a5cb77ff141e753acac09a48438090660ea954faeb"
+    },
+    {
+      "caseId": "brief:ethics",
+      "instrumentType": "rubrica",
+      "sha256": "5afc5e54525d23231566c4f83cd92d8fdc824dbc3a65c8f2b4beb05f96c1d417"
+    },
+    {
+      "caseId": "brief:ethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7d58dbf06533e567d55b0fcc2857c0962ae4e697d16fb2678c7495150bd76e6f"
+    },
+    {
+      "caseId": "brief:ethics",
+      "instrumentType": "escala",
+      "sha256": "b76695627f55136e61407f14eab0f238397c6781deadf7994c8e5786e5527227"
+    },
+    {
+      "caseId": "brief:ethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f4f8986c39d7300fbd3687811cdd42f4c9654a85fff99e44849fd4aba2889da8"
+    },
+    {
+      "caseId": "brief:human-rights-philosophy",
+      "instrumentType": "rubrica",
+      "sha256": "8554c66f803318255cbf009d4dcd613366607c85688684568375789a0be43eed"
+    },
+    {
+      "caseId": "brief:human-rights-philosophy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6f7702a04dc2eb49ba2cc915c985930365bd57f2d24b956f1cae0d68ec864b71"
+    },
+    {
+      "caseId": "brief:human-rights-philosophy",
+      "instrumentType": "escala",
+      "sha256": "57f6ac54ba769b19d5451337837ffeaeff97559af2c01e06ab1c672e880ef71a"
+    },
+    {
+      "caseId": "brief:human-rights-philosophy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23807952da8de0ff09dc3738253414d24b9ec41260b708e901293fb37aaa8f7c"
+    },
+    {
+      "caseId": "brief:other-knowledge",
+      "instrumentType": "rubrica",
+      "sha256": "b085657c6c5e72a7ac7e700326f1ee39e0313cb9766091317cdda8395150d1ac"
+    },
+    {
+      "caseId": "brief:other-knowledge",
+      "instrumentType": "lista-cotejo",
+      "sha256": "654dd79093492d0f76a632115ac30e983006cc6f25ef427877bb0adcd25644db"
+    },
+    {
+      "caseId": "brief:other-knowledge",
+      "instrumentType": "escala",
+      "sha256": "314d562c1c3079a098c45f413eaa7a3e15cd5d4955117419b92def3f9734025b"
+    },
+    {
+      "caseId": "brief:other-knowledge",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37465d6363b09ab82efb5564e669a1365c3ddd9da606fffc6913f3ba9f0a0608"
+    },
+    {
+      "caseId": "brief:science-philosophy",
+      "instrumentType": "rubrica",
+      "sha256": "3e455058194974d7cf6fb129187eb80e1d3f377351d3eb88dc29c3acea374349"
+    },
+    {
+      "caseId": "brief:science-philosophy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6da4608f69f3e045c172e40adb12e404ecea4dba7ae05f56d03051b37914ccbb"
+    },
+    {
+      "caseId": "brief:science-philosophy",
+      "instrumentType": "escala",
+      "sha256": "8c138b01a0f901928a3d49fc3a1dc07bbfe42c8f022ca7bf3270564153e5271d"
+    },
+    {
+      "caseId": "brief:science-philosophy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6112d581c1fcbca23a7468e07fc82daeeecfc16fe881ac8f7885d8f307a3729d"
+    },
+    {
+      "caseId": "brief:myth-logos",
+      "instrumentType": "rubrica",
+      "sha256": "46d21872a0e5ab8c94b5eeccb33e07c1e270a57121cbb8d47a143087a4539653"
+    },
+    {
+      "caseId": "brief:myth-logos",
+      "instrumentType": "lista-cotejo",
+      "sha256": "22235623ccedb0c5a8569fdd61890515f657a0665168eda4fd06fd0ab566d1f9"
+    },
+    {
+      "caseId": "brief:myth-logos",
+      "instrumentType": "escala",
+      "sha256": "4c68c4980e24512214b8e3fef0aca621e2dc2cdbce62ffb36c11058609949047"
+    },
+    {
+      "caseId": "brief:myth-logos",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7780b28ab2583bd7683135640498ba9216e29e4164a11d50efd6d94edc13e07f"
+    },
+    {
+      "caseId": "brief:political-power",
+      "instrumentType": "rubrica",
+      "sha256": "d164088335249996610f5a47ddd9115c1a414e4c2d3d61fdba3caa7f6316346c"
+    },
+    {
+      "caseId": "brief:political-power",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bc64c26e488caa24fc29e0ac1bf03f63db584413e2b44d53fb27101c35e6fb32"
+    },
+    {
+      "caseId": "brief:political-power",
+      "instrumentType": "escala",
+      "sha256": "c36bfadb2dd6dea2eff218987a78e72bc9aa742c53ee0937ca153a6379cdc153"
+    },
+    {
+      "caseId": "brief:political-power",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8b02e05c7238b1f0dbb355ab6b25f53a02d9af01337028996d419304b17c269c"
+    },
+    {
+      "caseId": "brief:philosophical-methods",
+      "instrumentType": "rubrica",
+      "sha256": "3e29f19809d235e90474f63ce792886a89a8c785ce176ad4d44b227e37088239"
+    },
+    {
+      "caseId": "brief:philosophical-methods",
+      "instrumentType": "lista-cotejo",
+      "sha256": "07cc772144ea107d291a56fc471a0e42fa34a46364d1754a7a9673d5ee29dd6d"
+    },
+    {
+      "caseId": "brief:philosophical-methods",
+      "instrumentType": "escala",
+      "sha256": "4ccd1e46ac1003a54fe47bb61168a7b37e0c62366b986edd503442a01b7a632b"
+    },
+    {
+      "caseId": "brief:philosophical-methods",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c55a33e9ad62fba7d7899f86c3b680ede40b61bfbb620720b77bd0c3b37c2208"
+    },
+    {
+      "caseId": "brief:globalization",
+      "instrumentType": "rubrica",
+      "sha256": "caf9490aaf77881e1c879de7aa7f47c1626b79db923d5b2729eb8355d7d3b5d2"
+    },
+    {
+      "caseId": "brief:globalization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "88cb0dd678fddb86f702569fa35cb0760d2f334366ebbc63115765a900aaa20d"
+    },
+    {
+      "caseId": "brief:globalization",
+      "instrumentType": "escala",
+      "sha256": "c7a66760325eec09bd705d5b160487711dc12e0b19af99e770afa157b3e6b814"
+    },
+    {
+      "caseId": "brief:globalization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2dfb60d2c046916112bddde4e6bb9433ff1d8858c2838b618757d62093c1d372"
+    },
+    {
+      "caseId": "brief:environment-quality",
+      "instrumentType": "rubrica",
+      "sha256": "bb9e51e026082e05b8c4d13f2608974dc39ca04e88fca23bcb844e9bd110234f"
+    },
+    {
+      "caseId": "brief:environment-quality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "87e236a3f9f05e598086011f9f2182e22502df70760846e3e507e1004edca29f"
+    },
+    {
+      "caseId": "brief:environment-quality",
+      "instrumentType": "escala",
+      "sha256": "5bfbad4f6ecb0ceac6a2c40ba14193613e6970a837873b38f63ccad957ab2e1e"
+    },
+    {
+      "caseId": "brief:environment-quality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a56fe75339d8e94ddc4a728a505e1bf24e0e372c522c60eba9f02d6a49f13d3d"
+    },
+    {
+      "caseId": "brief:religion-philosophy",
+      "instrumentType": "rubrica",
+      "sha256": "3041690c830932ef9b42e897042d678c6d34de97bd8844a22ac71059af079bcc"
+    },
+    {
+      "caseId": "brief:religion-philosophy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7da3245c3c2d700c02c6da424aa4b81a62413ab02ac2f311e2a924fabce1b674"
+    },
+    {
+      "caseId": "brief:religion-philosophy",
+      "instrumentType": "escala",
+      "sha256": "3fad28e1d68592a45b6b19be1872fd2df54b0cead01f6c66288432b8721b77ce"
+    },
+    {
+      "caseId": "brief:religion-philosophy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "38c041eb723cd129054ebeac92b62dd1c6373e8def85e4e51021b9d981a38fa8"
+    },
+    {
+      "caseId": "brief:spiritual-dimension",
+      "instrumentType": "rubrica",
+      "sha256": "514205ccf5a735e02a42a0921018ed1d13decdc255e9b7d874d3198bf424a434"
+    },
+    {
+      "caseId": "brief:spiritual-dimension",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ad94e929db62eeb85c01da771229f76bbcb2320e26ce328a4636b62e1eeca191"
+    },
+    {
+      "caseId": "brief:spiritual-dimension",
+      "instrumentType": "escala",
+      "sha256": "d94f6703bcdf1aacf247b5ea1c6a173943b19c3323b72ae266d9399f5f9969cb"
+    },
+    {
+      "caseId": "brief:spiritual-dimension",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8976d702775969296243d58651386e2c1d5b834c66021858e6f2432509d011a5"
+    },
+    {
+      "caseId": "brief:faith-reason",
+      "instrumentType": "rubrica",
+      "sha256": "4adac073fe838dcbeca46dd6773976f0466fc1e3f1b5be88b703eb0d07e263c6"
+    },
+    {
+      "caseId": "brief:faith-reason",
+      "instrumentType": "lista-cotejo",
+      "sha256": "83da261b989405d0f1fdfd89a90bc73bde932229a778a5b3a1fd69b699b38fe0"
+    },
+    {
+      "caseId": "brief:faith-reason",
+      "instrumentType": "escala",
+      "sha256": "f86ff4b831efe090aa79c4f7fb81efbc7041bdc6a6dc2fe587f761f94f6909e9"
+    },
+    {
+      "caseId": "brief:faith-reason",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a6d1edd757fba1285e1596317bb4f60ccbfc5333b823cd5a07d79b93dbe41773"
+    },
+    {
+      "caseId": "concept-15",
+      "instrumentType": "rubrica",
+      "sha256": "817e19242158a9f701223d602cb8ae3a10adf3e2b412b049533ff91febf695f9"
+    },
+    {
+      "caseId": "concept-15",
+      "instrumentType": "lista-cotejo",
+      "sha256": "658a83fef5688d69558978da6ac931bdb92bec8f8c52f09e7211755a7a5ee992"
+    },
+    {
+      "caseId": "concept-15",
+      "instrumentType": "escala",
+      "sha256": "aa1d5d4648c464679476e2c6e8fc8d4d1b57ed41bf763255bdd230788dca1d79"
+    },
+    {
+      "caseId": "concept-15",
+      "instrumentType": "lista-ponderada",
+      "sha256": "365fc3296893b653e2ec9149a96e66b4aa99e4328359e08a5061b54648c3aa00"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "rubrica",
+      "sha256": "e34be8394c605273fcb1e52e77ec2650b69796a859fbe141608b7e53374979c2"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b49699c3f69ad0e8844619eb71ce5f59f709c310ab426e17243c819f1be91090"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "escala",
+      "sha256": "9eba52560f27edcba9725f9308ddfbf5db0f824776a59b4611ae58c04de521c9"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-ponderada",
+      "sha256": "91bfea71861dcbf21ac693ee342a320be823a44d526ed5ceb216a5a8d79c6f47"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "rubrica",
+      "sha256": "0b803e5712c8a170de2687ca936ab16d2c566ab8936a6ea363088fa906e5ada7"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6075076d418c0ea5075c07a2bed02a43705ca66ecd1e77eb6a79836f3c7e0960"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "escala",
+      "sha256": "34bcfc9de056790537660fc0b789d97f696ef4c128fbc4c9bd81691e9bf2bfe4"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-ponderada",
+      "sha256": "778c554bde83ca425765ade04513513fe85d3a5f426c8a12dc933d75b8aa3138"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "rubrica",
+      "sha256": "cae839544a02dca9b3d132c494c5b8a5a4d34015f6fc6869aaa8d0a74b8ec418"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-cotejo",
+      "sha256": "67745425e29f32689ab044031ed35db2dc73a15badca95d162895be536360226"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "escala",
+      "sha256": "0009c871c6d3914694e71939cd334209823ab9455619891bca73c5a199a3608c"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-ponderada",
+      "sha256": "563b180d2d22c49a3c597c802483fbe3f4ecd0b6120a7ef5b0056e5cfc402dac"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "rubrica",
+      "sha256": "51e2856d06d6dd63bca391a7a22bd95fafe09170c583792efe7afa7d8a69f55c"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e6b70062381354bd2821260d6084a6cd4fdbff1ce5ff3276375d3cca9a113577"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "escala",
+      "sha256": "2d0f5acde26737c78d4bbdc0059204e551b20b5fcb96f30ade6280d1d1462456"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-ponderada",
+      "sha256": "356b16e1f8bf5688fcb2e3e54e338af31671a3a3a8b079be1048fbd894e515cb"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "rubrica",
+      "sha256": "98f7c059b5484f029a2293dd4bb6213f5da25859c2cd7c31e44bfac641321b95"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-cotejo",
+      "sha256": "321a749fa097425e35e7a1645a011cdf722e07a4ae0ffaaf5ffe14ba165f96f7"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "escala",
+      "sha256": "7acf90339588eaf0bcdc556bce70eec95a7fa1924a3ae5c79fc6f5b7bbe85ddf"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-ponderada",
+      "sha256": "721156ba27b1c632f902dcaea632c7634e03bbaf44264afbad651b1094d89ff0"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "rubrica",
+      "sha256": "e0448da07218d562e97135630e1e57da95e62d98200d0fcba8fc8a5f7f8d03de"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2bab0bf8bee242573fe6d4d6a6e9a8fdf0484d014184ae9a774d5c286923dacc"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "escala",
+      "sha256": "f6802d6228a9d956247e2a891c5ef9d60a2f4e3310f1000dac718d54e893d733"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-ponderada",
+      "sha256": "40751dd3f6a6fc559ceb9956fe5d7272573f3eee9e2adc96a0ad129da629ab94"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "rubrica",
+      "sha256": "07cfd74148900a538469deccc25a44d7263fda1aad59b0d49b16e4b209a4efb4"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c52990b4f451ede63c3aad434de91b4fb09a905d18fe6b55af8fc3fbc34da871"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "escala",
+      "sha256": "301d1b599b684494a5859ee8ef75fe37662019af9a1e66ddab41f2596862561b"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8c030ef0041c92ad592d384da4ba98a7421b731c2bda58dc3813146fb82be789"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "rubrica",
+      "sha256": "b05d86d9598bf65b364fde70e6aa73f3365fbceb308a71312e05573b1139d57c"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "lista-cotejo",
+      "sha256": "69a9ada7e578884b63017f1ab19a0dfd72390e4697f9053bff4c1d9f5f7f6b92"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "escala",
+      "sha256": "0a4e26c7ff7377befa0ae17faadff550bc2221e0b7c8611ac89aecb850400024"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "lista-ponderada",
+      "sha256": "453d7eebc43c07cc9906595a8bd5ff9e18ef2c685deb615a4f5cd3ee1163f7d4"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "rubrica",
+      "sha256": "1f0ca4db1d96a1dd2423113801dc67b0b8407e23684c80c478e85690adfa99a0"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95fd00ca0eda2ad8b1d58cf7abd88c39c77b5d0a1a09249003bb37c1568a15c6"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "escala",
+      "sha256": "00fe8f9de028d6bbd7fb83038e1f8ba0ac2fd5065a0bfc8fbf9ebc498ae5880b"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c0fe8a1bd1883dff390ce0445f89944b3ba75449de8187cc9b03982907aaa9a7"
+    },
+    {
+      "caseId": "concept-27",
+      "instrumentType": "rubrica",
+      "sha256": "a4a9e13c746871995d909c6285cdf42d79b93a2405bfc10f693fd485e9c1209e"
+    },
+    {
+      "caseId": "concept-27",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8a084dede693d797971106bdfca432b07ee44e1817ee6859727b75f284f044b2"
+    },
+    {
+      "caseId": "concept-27",
+      "instrumentType": "escala",
+      "sha256": "a9bae2ee95ee7849f6fbd11f0f0dcfff8e5a0d0a425693740ec000104bebe51d"
+    },
+    {
+      "caseId": "concept-27",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e0d06d3bd211a5d627844e4b08efd9bd54f2b9338434a51f8aa6634deabbd510"
+    },
+    {
+      "caseId": "concept-28",
+      "instrumentType": "rubrica",
+      "sha256": "822d14637b1a10a19375af8cd78b9e777edf2259234d492ac1e4bd1e21a154fd"
+    },
+    {
+      "caseId": "concept-28",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c15272ee6e157b0982615384f531388a779ad09bad769d67a8945dbb1998e62e"
+    },
+    {
+      "caseId": "concept-28",
+      "instrumentType": "escala",
+      "sha256": "2329908d11e024f847524708db81d942ab760658cbdf21782854ffcd50e5f1c2"
+    },
+    {
+      "caseId": "concept-28",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ea1e0d1d87510e985bfdaa93aadec47fd73a11af7dcaff7c62c620730deb717c"
+    },
+    {
+      "caseId": "concept-29",
+      "instrumentType": "rubrica",
+      "sha256": "ee74806f95b910024d466a61e27bb0ece006bb10ca448320d2aae547811a4402"
+    },
+    {
+      "caseId": "concept-29",
+      "instrumentType": "lista-cotejo",
+      "sha256": "112dd889d9566b5d345725beb4dbeebddeacccdf929b69d8b373f8caede24458"
+    },
+    {
+      "caseId": "concept-29",
+      "instrumentType": "escala",
+      "sha256": "f147fe194cfe88da7c3fcbebfa67bb81295a65d8d9ae785a6ca3c12c4771dcad"
+    },
+    {
+      "caseId": "concept-29",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f29527bf1ba007bc0ccae184de91df2d20dbc6fae3aab1edc8924500586739ae"
+    },
+    {
+      "caseId": "concept-30",
+      "instrumentType": "rubrica",
+      "sha256": "108ed61ce4fc32d2d792468f655f73cd821bc3860a0bf1b38f52c3d847025afb"
+    },
+    {
+      "caseId": "concept-30",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2bf62fbb4a05bee2deec77f48b4448b18fa0369c7be47193033b92178c15604f"
+    },
+    {
+      "caseId": "concept-30",
+      "instrumentType": "escala",
+      "sha256": "324284694ebfd3d2f42f2b582ba0b7b651c35ca454a63bfef76d310193cb22ff"
+    },
+    {
+      "caseId": "concept-30",
+      "instrumentType": "lista-ponderada",
+      "sha256": "80b45e756203da3c90b46dfae2cc2468f57dcccbc5b8d00820a52c70f5ba647c"
+    },
+    {
+      "caseId": "concept-31",
+      "instrumentType": "rubrica",
+      "sha256": "b70b50286e581ffbde5cf9b9e256475d75cd83feff6ee67da61e0358fb2416d3"
+    },
+    {
+      "caseId": "concept-31",
+      "instrumentType": "lista-cotejo",
+      "sha256": "75b1d7a9b6745a6c391e3918f540c2efe64b093359149413bc6299bf1fb9a37e"
+    },
+    {
+      "caseId": "concept-31",
+      "instrumentType": "escala",
+      "sha256": "aed0296c7a5d504a1b2e7b94fbf27aee5a6e0063c4031956eb44066d0a395cca"
+    },
+    {
+      "caseId": "concept-31",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a5731ea504b6829edaf8e769a14ef8591bbda5c34ffec378234ca1702786ade9"
+    },
+    {
+      "caseId": "concept-32",
+      "instrumentType": "rubrica",
+      "sha256": "ab229d0671feccc1e5714b622c9a56527ae00288bbb962766ff2bd8271c7d28c"
+    },
+    {
+      "caseId": "concept-32",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aa5d298baa86082d669044a29b08c1ac7ecadbf462f0feae0172a2bdf4c58700"
+    },
+    {
+      "caseId": "concept-32",
+      "instrumentType": "escala",
+      "sha256": "801c5a7b3610d73e0572c4b6284c71d3f0d6f2a18ef14987ba915f107aa393ab"
+    },
+    {
+      "caseId": "concept-32",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b3775beae5bc608ac4ff64cc84b243dbc0f3b28e605027820315eedf0d7d9220"
+    },
+    {
+      "caseId": "concept-33",
+      "instrumentType": "rubrica",
+      "sha256": "1764c00d343dd4f2da346157e1acc11158bd0f8d25c0afede946b849dfa993b3"
+    },
+    {
+      "caseId": "concept-33",
+      "instrumentType": "lista-cotejo",
+      "sha256": "80726a27a6ded8ab4a2e0c504d7ba7e324f133f0578aba2051655744b6970cce"
+    },
+    {
+      "caseId": "concept-33",
+      "instrumentType": "escala",
+      "sha256": "35c1faf311d6d31e87dbac48c14d20126d447f9605597522430f0416b0b405b6"
+    },
+    {
+      "caseId": "concept-33",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cffe7e5d48142cee46b476b2b18b470dac6ddbd31c0969bb59c54b21e377dca2"
+    },
+    {
+      "caseId": "concept-59",
+      "instrumentType": "rubrica",
+      "sha256": "9648a66724d1482403a100ed64fb8753db37e08a9df9e00272510ffd0f2f2625"
+    },
+    {
+      "caseId": "concept-59",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df2ebb277011c562e5292716d29a943b5c3f1de5eac2dd1985ce84eeb0e4a769"
+    },
+    {
+      "caseId": "concept-59",
+      "instrumentType": "escala",
+      "sha256": "41dd93ca0415122ad1a2b43f7aa2f39bbef9a1d6a1a2e8240b1871c6547a256e"
+    },
+    {
+      "caseId": "concept-59",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dc35bbe100d7ccf8fb3a799d2c3996ecf9b76d6d740cc695e2a1ab29f8e17da3"
+    },
+    {
+      "caseId": "concept-60",
+      "instrumentType": "rubrica",
+      "sha256": "72074faa15ce82fa791533a3c365eace9779d1b18480bf8f0a5d0ea68b671b88"
+    },
+    {
+      "caseId": "concept-60",
+      "instrumentType": "lista-cotejo",
+      "sha256": "984286b52ec34896df7b433372f9c7edd566e9707c7da13d94aee7024383abbf"
+    },
+    {
+      "caseId": "concept-60",
+      "instrumentType": "escala",
+      "sha256": "acc69d40c8c097a58c3d0f973c32ea9a242d641c2bafb7c63f8775c343adb146"
+    },
+    {
+      "caseId": "concept-60",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b3ba50151282bc4f1db701536906941201091350fdc0da5c24f26e3a561eb58a"
+    },
+    {
+      "caseId": "concept-61",
+      "instrumentType": "rubrica",
+      "sha256": "dc22bd4e1e9f67d64840d40c4916858b35543576570c13eb790aa0246fba69de"
+    },
+    {
+      "caseId": "concept-61",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41ce6a1c0e96dfe150c52685fac85ca87d8db407e33c2109f7916d6ecd069838"
+    },
+    {
+      "caseId": "concept-61",
+      "instrumentType": "escala",
+      "sha256": "4002b6a9486641b8ab456ce76e56ba65be69253ae33ed3918d603272f1d5b16b"
+    },
+    {
+      "caseId": "concept-61",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4af594ea4213bc3b928e09d0b8ec3c9026c592b17e80aaff6ba1ecc482398dfb"
+    },
+    {
+      "caseId": "concept-62",
+      "instrumentType": "rubrica",
+      "sha256": "fd670310c2dbf4e520dd97997676cbb550b3f1b0d96ca1385d583f70cb703622"
+    },
+    {
+      "caseId": "concept-62",
+      "instrumentType": "lista-cotejo",
+      "sha256": "980c5f524bcfbfeb7030ce76db0acc02af2d318d8b6d23a7f64cb584ae1e7046"
+    },
+    {
+      "caseId": "concept-62",
+      "instrumentType": "escala",
+      "sha256": "278f854bde2acd950c284e909d250df221c81beda65f7f9528d92cc5c0facbfb"
+    },
+    {
+      "caseId": "concept-62",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bdd849c78400b5945d9edc4a16b519e96248b0522ce94d82c07d99cc84c0451b"
+    },
+    {
+      "caseId": "concept-63",
+      "instrumentType": "rubrica",
+      "sha256": "3b6eb9e96eb169b1be571d2685499a0fc0511d77f20f1fc76b305035f7580f2e"
+    },
+    {
+      "caseId": "concept-63",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6b9c2766dee18f52455895931a18b50b638fe9bfc465d20be23cb633a1baa4ce"
+    },
+    {
+      "caseId": "concept-63",
+      "instrumentType": "escala",
+      "sha256": "d703356d087526dc76648a3fa3b64b3c9aff51337ea8e96aa12d5ec47eaeb829"
+    },
+    {
+      "caseId": "concept-63",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d9ed46637935698ddab2637e14dcdbd0c0751f7c31d3cd99b7c878fd125d151f"
+    },
+    {
+      "caseId": "concept-64",
+      "instrumentType": "rubrica",
+      "sha256": "ce162aa33162644fb5eb004415508f7c58da3ec2699fd80e195d7829a599eec7"
+    },
+    {
+      "caseId": "concept-64",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8373713f853223ea32040e9914dfa5a5b4b1b4280ad589a21b3fd7feb5db117e"
+    },
+    {
+      "caseId": "concept-64",
+      "instrumentType": "escala",
+      "sha256": "67801ffe24a1d16f3fe9a357a4a6812b5ac9a1afe5ab4e380ed461920f29c631"
+    },
+    {
+      "caseId": "concept-64",
+      "instrumentType": "lista-ponderada",
+      "sha256": "29bf6f19ed2b3b3308811c6a18ecea365b4ebe3d51418a10a1fc5d3c0b840f14"
+    },
+    {
+      "caseId": "concept-65",
+      "instrumentType": "rubrica",
+      "sha256": "519920348e79deb44cfb7f3d6700bf80f4b22e7f07959bf6d05a812788b4d8ce"
+    },
+    {
+      "caseId": "concept-65",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5db474bc647ae1d4fa3a5261e1289acc36da35f1d72f08bc4feb863f434b82b9"
+    },
+    {
+      "caseId": "concept-65",
+      "instrumentType": "escala",
+      "sha256": "bf452458d4bd0ce12e59582db3ad77ddfa4644609173920a9fb03edaf1b81d95"
+    },
+    {
+      "caseId": "concept-65",
+      "instrumentType": "lista-ponderada",
+      "sha256": "89ff4171a54d311b032e6d6d9969df596b301b08d7a4321c05be2abd8d8a36cb"
+    },
+    {
+      "caseId": "concept-66",
+      "instrumentType": "rubrica",
+      "sha256": "386ed96232caea4d501ed2f44a84d891f0d50f4109fc6d61960e3b3cecf0eadc"
+    },
+    {
+      "caseId": "concept-66",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fbac24b0300c719a4abe0ab27161e223fe4c8668a70dba4c9454a9dc1c8804ea"
+    },
+    {
+      "caseId": "concept-66",
+      "instrumentType": "escala",
+      "sha256": "40320b484be01b0ae01727f9ca31ef8c497804e067b2d3d46b32a48ae49dcfa6"
+    },
+    {
+      "caseId": "concept-66",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8076bf446218fd2fe149f9fdf15805d2f59c994c9f2a110adf95e2e4882387b6"
+    },
+    {
+      "caseId": "concept-67",
+      "instrumentType": "rubrica",
+      "sha256": "0d20a91a4c4146063afaa0eb4a23081251a8232439118fcbcfb8a7689edc5a03"
+    },
+    {
+      "caseId": "concept-67",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0596ebdc0e2da8f8d15026d7e037f054b6c96c4e7022d5b50c43090e0d0ee82f"
+    },
+    {
+      "caseId": "concept-67",
+      "instrumentType": "escala",
+      "sha256": "797cc70ae5c970daa5b46188910bf035aad0b48dd4ffaf51e94bfcbcb4afb5b1"
+    },
+    {
+      "caseId": "concept-67",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0f5ac2d0f742c07fd079a2f4620cbb194bfb23ce55bc8e1498615d7b4416562e"
+    },
+    {
+      "caseId": "concept-68",
+      "instrumentType": "rubrica",
+      "sha256": "3779c4627c0921e04f23da96af3e15f4d8b536abb130d5117ba67eeeb9eadfe4"
+    },
+    {
+      "caseId": "concept-68",
+      "instrumentType": "lista-cotejo",
+      "sha256": "698348d2c4e78ca95da8362879bfa0eccbae7afb76bd63c4d7e3feb7d45f501a"
+    },
+    {
+      "caseId": "concept-68",
+      "instrumentType": "escala",
+      "sha256": "99b9d6b991509c6d723e826009bd79b935f8b0f8a99612b6bf3173effd265a21"
+    },
+    {
+      "caseId": "concept-68",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4594780af29e01f908f0cfd1876002a977bdfffaf98378059670ccf20a469b6f"
+    },
+    {
+      "caseId": "concept-69",
+      "instrumentType": "rubrica",
+      "sha256": "9fc59945554abfadd8c6ff2c36383c65c852d6be6043f19f6c2c268d744ee02c"
+    },
+    {
+      "caseId": "concept-69",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4d92f654b34369b08a99b112a23de0fe336472256b4d6e0b8d9ff801cb7ca51f"
+    },
+    {
+      "caseId": "concept-69",
+      "instrumentType": "escala",
+      "sha256": "5437cf8eb496dbdb2f9e204462db6ddb2cc5d92e5a59e8cb9f346975ad0f0de4"
+    },
+    {
+      "caseId": "concept-69",
+      "instrumentType": "lista-ponderada",
+      "sha256": "162e6e0bec6c34b47174065bfc50f38a09ff91ea705420056e427b27cd33145d"
+    },
+    {
+      "caseId": "concept-70",
+      "instrumentType": "rubrica",
+      "sha256": "8cd099ef28b7fe41ef608a6e9f1dab6d2f6227450282c62573d8ab1e6400b397"
+    },
+    {
+      "caseId": "concept-70",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cddae5a4f0363e53cfaec199c260c5a533aab15edac997f6c2012db2734e8743"
+    },
+    {
+      "caseId": "concept-70",
+      "instrumentType": "escala",
+      "sha256": "f43523fb4c5b3395291412894139aaf799984f52cfa9715724e2c820d572b0cd"
+    },
+    {
+      "caseId": "concept-70",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0e0fc835ea65a1d0ebb17a0044dfd8b2d357b8ce0d781d1aad813ccb6d4be7c8"
+    },
+    {
+      "caseId": "reliable-source-recognition",
+      "instrumentType": "rubrica",
+      "sha256": "a2b36184eb428a7b5d929f1af5d534e2cfad75c6edc65a3642793a3184769ed6"
+    },
+    {
+      "caseId": "reliable-source-recognition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6e175a33dd99c03b14ed8e7cbb88d534c46230c1318f8875b6ab11a125f85ce1"
+    },
+    {
+      "caseId": "reliable-source-recognition",
+      "instrumentType": "escala",
+      "sha256": "5689e19c585e50e7e229308d389aa5d7b9ef07fc270d028ae3d5e39c0230183b"
+    },
+    {
+      "caseId": "reliable-source-recognition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a43cd7b9171fea0c1d2c91024f3157863987ffe443e6f19cbdf2ff5cc122e8bd"
+    },
+    {
+      "caseId": "source-selection",
+      "instrumentType": "rubrica",
+      "sha256": "6b5fa5e200265aa0442f6c605fec4e92aacdb968780fe9ad98351d7eebd0cf80"
+    },
+    {
+      "caseId": "source-selection",
+      "instrumentType": "lista-cotejo",
+      "sha256": "afdc7029e730c1f5efd0c3d705ae17b22feea0371ae16a32773f79092164e4b9"
+    },
+    {
+      "caseId": "source-selection",
+      "instrumentType": "escala",
+      "sha256": "2f281865d99f6989052f273e4dae0d1f7bbe3c1ab159aa8895a88a8f264606eb"
+    },
+    {
+      "caseId": "source-selection",
+      "instrumentType": "lista-ponderada",
+      "sha256": "164464f0cfc26aa82b8cb4866e4d40aeac0bf3543d6d8f38464b0492f7a53397"
+    },
+    {
+      "caseId": "social-trends-research",
+      "instrumentType": "rubrica",
+      "sha256": "b1621259bb970b8c7802ec47c731d5522eb768f78108e23cd46f4c703a7d0fa2"
+    },
+    {
+      "caseId": "social-trends-research",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bfc8c5315900f7994f9a94496b88fe4bf9dcf616974aabc67521768e980c18d9"
+    },
+    {
+      "caseId": "social-trends-research",
+      "instrumentType": "escala",
+      "sha256": "3962e2269a71b3e39b8319fe09b3fe6d92d632bc8a3a5cf4236e40807da62a85"
+    },
+    {
+      "caseId": "social-trends-research",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9278e2096f923817e96f54567ae649425390482e8f05b5cf682615af8b2b6845"
+    },
+    {
+      "caseId": "ethics-text-understanding",
+      "instrumentType": "rubrica",
+      "sha256": "0750bbef5dd0d7440c3ea70f7e4254713901a2abd0025bf32e1d6f512527379c"
+    },
+    {
+      "caseId": "ethics-text-understanding",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7b28c6ab544205d08e6971fc1ae6c3e52603d29a03fe921b042783ee1d773aca"
+    },
+    {
+      "caseId": "ethics-text-understanding",
+      "instrumentType": "escala",
+      "sha256": "6aa8c01b317f6511dc9fe90c53090b584481f5640c42ffc0733d6f161ff25141"
+    },
+    {
+      "caseId": "ethics-text-understanding",
+      "instrumentType": "lista-ponderada",
+      "sha256": "027dff1637d3096d0d8e642b8530c6f7887d3035fd10e847761b9bfc12505099"
+    },
+    {
+      "caseId": "philosophical-publication-revision",
+      "instrumentType": "rubrica",
+      "sha256": "17b7d0365ae7da38710d6d1f96e12620e39aea9de459d2fb548de1a2d2345a86"
+    },
+    {
+      "caseId": "philosophical-publication-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "30876e77cf7e49ec3b6763bdbc7f27b63c92fcac3da82ec022219b0351661e8f"
+    },
+    {
+      "caseId": "philosophical-publication-revision",
+      "instrumentType": "escala",
+      "sha256": "33e493b6d670008904c242e88b1855dc9d9c50f43c83218bb2de12ba39060ac7"
+    },
+    {
+      "caseId": "philosophical-publication-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "188773737e4d2dc2bd6a4f492a17b7b1a914772e8be0800cd4214236b5807544"
+    },
+    {
+      "caseId": "philosophy-critical-reality",
+      "instrumentType": "rubrica",
+      "sha256": "0544d33f4975fbf90c186560919dc27f87598abb49ce1f61048dc2b26c5ae2fa"
+    },
+    {
+      "caseId": "philosophy-critical-reality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bc239565515a42584bc9b4c999d9f71b8ac5b116b2e25fbeae2070bc161caa67"
+    },
+    {
+      "caseId": "philosophy-critical-reality",
+      "instrumentType": "escala",
+      "sha256": "b8b171e8df0c686a323ffc22f50ada5d8acf3a9afedfa3cee9c37d503c3675dc"
+    },
+    {
+      "caseId": "philosophy-critical-reality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "206711dbf442e702c908974ec09acc6ab9de23e250f5944582d1b79c02a72eb0"
+    },
+    {
+      "caseId": "philosophy-science-understanding",
+      "instrumentType": "rubrica",
+      "sha256": "7ea3a657792ad0464f89b105584f2abff2af56efa9fa2a005a32b5d7cc82a789"
+    },
+    {
+      "caseId": "philosophy-science-understanding",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a04231af94a35157589f5020077e9cdf8cf64a3d33aa66b7ced4a1dba3637998"
+    },
+    {
+      "caseId": "philosophy-science-understanding",
+      "instrumentType": "escala",
+      "sha256": "782ccbac753b8b79e0e507b3fa1b5a6284a051909d469c88bd2b148ad92dbfa5"
+    },
+    {
+      "caseId": "philosophy-science-understanding",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a30c09bf4469a16ec974087bb1bc4e5034d698a8b67dbdaffdb147271d3bc11"
+    },
+    {
+      "caseId": "maieutic-dialogue",
+      "instrumentType": "rubrica",
+      "sha256": "d1e37024de451c9bd12d932bea5dfa93b17ddfdd033c6c076dd26262e629a23d"
+    },
+    {
+      "caseId": "maieutic-dialogue",
+      "instrumentType": "lista-cotejo",
+      "sha256": "17a3c0eb10bfb31744a3f94df1d878513029df4408dcf9a8f3fedf684ba1138e"
+    },
+    {
+      "caseId": "maieutic-dialogue",
+      "instrumentType": "escala",
+      "sha256": "524228928078e4d73e01de26957d475d3b9ac7d74b92443ea9d5301e22a4c060"
+    },
+    {
+      "caseId": "maieutic-dialogue",
+      "instrumentType": "lista-ponderada",
+      "sha256": "412a3113578469498173c8d949b8ab6baaf8ab5d6b5887d845a2d8c7aaac6eb8"
+    },
+    {
+      "caseId": "modern-schools-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "9b666c8e239d207b187a0849a8c7d02fe8ef8ebbb4bd4af73223f13380e48fa8"
+    },
+    {
+      "caseId": "modern-schools-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9a579bc1e173a6cee03f2d6285ba22a47dbf42b927fc2e7c9d602fe2d445f33"
+    },
+    {
+      "caseId": "modern-schools-comparison",
+      "instrumentType": "escala",
+      "sha256": "ed8d7eb16ff86db1b83014fdf27d7c455c7e003f07feb91e04c830eceaa8972b"
+    },
+    {
+      "caseId": "modern-schools-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "16dcc7aa1e6d602881b340ccc36c158c5ae0968ee320494a9a355abe93f302fa"
+    },
+    {
+      "caseId": "quality-environment-positions",
+      "instrumentType": "rubrica",
+      "sha256": "5b9b8e810b4501c85f0295a29d8368342e81bba9e3482eeffc3d189fe9bf56f0"
+    },
+    {
+      "caseId": "quality-environment-positions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d0c770cacc36a0846760dd54679b871abfaba438ebf8fbad179371585bd48b56"
+    },
+    {
+      "caseId": "quality-environment-positions",
+      "instrumentType": "escala",
+      "sha256": "c2112415b9335b98480a551467c1b288fc077d4df9a46c6252eb39d42c6ea2b7"
+    },
+    {
+      "caseId": "quality-environment-positions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9d7c170ce582f8f8b41ad83735b0ce132bb2e1518121d087e45e65e3e7015714"
+    },
+    {
+      "caseId": "philosophical-social-solutions",
+      "instrumentType": "rubrica",
+      "sha256": "715d0b588ddadfe1db518f7a59697b015f34efb4340d075ea63d730588a368c0"
+    },
+    {
+      "caseId": "philosophical-social-solutions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2bf922909e6c87c350b720fa13cb5bc694950d5fed1fdd7ccea4dd479730369a"
+    },
+    {
+      "caseId": "philosophical-social-solutions",
+      "instrumentType": "escala",
+      "sha256": "6389b8480f42088deb78794ee5263681cdad2e737e73142e259757b03c50fa0c"
+    },
+    {
+      "caseId": "philosophical-social-solutions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "da09c67284973b90153bd21403139697c42b51e87d8fd55dd4cb4b601927a213"
+    },
+    {
+      "caseId": "socrates-sophists-virtue",
+      "instrumentType": "rubrica",
+      "sha256": "43fd39ceef27bfd2ced204d1bda8f7e6c5b4a091d5b1f659494b9113aea9dd07"
+    },
+    {
+      "caseId": "socrates-sophists-virtue",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2ddf33b3355a8521eb660b90b4f1a62afd1f05c3c5ea640bdd2a96223796633c"
+    },
+    {
+      "caseId": "socrates-sophists-virtue",
+      "instrumentType": "escala",
+      "sha256": "99fb2d1421a82d6ec23d11890e9c229cf34a16f7cf78fede15985963e22015fc"
+    },
+    {
+      "caseId": "socrates-sophists-virtue",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bad410622a41ca77e7e31fdf6815cea3b60dd67395e7b618ceb01a986cc5eab6"
+    },
+    {
+      "caseId": "renaissance-modern-anthropology",
+      "instrumentType": "rubrica",
+      "sha256": "5f31c7652bcf34687e927af7a762e28d857a1f4c5b22273463d4ad2002401928"
+    },
+    {
+      "caseId": "renaissance-modern-anthropology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d5e331302adc6c94dfb1acd2c7c2a9bde5af33582cedbad68aa1a23f5b08343a"
+    },
+    {
+      "caseId": "renaissance-modern-anthropology",
+      "instrumentType": "escala",
+      "sha256": "f07572fe2ad11b693171d3f89efc7757066a970cbe6bcb045cc6b0c14fafef8d"
+    },
+    {
+      "caseId": "renaissance-modern-anthropology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c67e71996722603ad00ac7cbd4575f8fc86b11b05ef83b67728d743b9c18acfe"
+    },
+    {
+      "caseId": "existentialism-human-being",
+      "instrumentType": "rubrica",
+      "sha256": "2912c25502e0d9f47ca5eec8eed679deb8111677371e6475fde26c3ceb025677"
+    },
+    {
+      "caseId": "existentialism-human-being",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c22e1bfbed5e49c139fa2bc5b83421e7b57b716bdaca98ca558128e1b30717c"
+    },
+    {
+      "caseId": "existentialism-human-being",
+      "instrumentType": "escala",
+      "sha256": "c4ad286600736242e9d417d26f8d4dd2f1bec1c51f937a7809b2098e81776f1d"
+    },
+    {
+      "caseId": "existentialism-human-being",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8bac1e2da9176698398c6290ca51fce2d06915b9fc2e358f648c40f50acf3073"
+    },
+    {
+      "caseId": "historical-ethical-positions",
+      "instrumentType": "rubrica",
+      "sha256": "394c34743934d2c18718b651eddce18fe3d0ae68b433d649093ef5822ad01e37"
+    },
+    {
+      "caseId": "historical-ethical-positions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af346f7fe9fb83b896ec7b4d11fa9e8ba4b985e17d896826a1a40fb0a925046a"
+    },
+    {
+      "caseId": "historical-ethical-positions",
+      "instrumentType": "escala",
+      "sha256": "c8ae44db62146eb552e23e2b85c7200f2124c2a3b2250b5ef145b38a1e93c384"
+    },
+    {
+      "caseId": "historical-ethical-positions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "22bdd75b37ae8c0219c226001df7859610d1e7d262f911083fb8963432682392"
+    },
+    {
+      "caseId": "everyday-philosophical-case",
+      "instrumentType": "rubrica",
+      "sha256": "ece0d0662acc09e98a5b2504fbe6892971d8da15f0848c0750b8a9214440eb88"
+    },
+    {
+      "caseId": "everyday-philosophical-case",
+      "instrumentType": "lista-cotejo",
+      "sha256": "44aba36a6d3f3fb0cee334d13c08853dcf8e2b94772b49c359960cfdd9b32785"
+    },
+    {
+      "caseId": "everyday-philosophical-case",
+      "instrumentType": "escala",
+      "sha256": "239727dc15d485b60882906dd3f4b51c734f19c3afb04b2328c2ba4d484a6754"
+    },
+    {
+      "caseId": "everyday-philosophical-case",
+      "instrumentType": "lista-ponderada",
+      "sha256": "384fddf5b7ecbfb3be0f2503ca22a83b675f9732e49fe2f072ee62c1b497f69b"
+    },
+    {
+      "caseId": "philosophy-science-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "77cfd12bc1b1025a8aecf43d633fcd049be742cf720032a96d13f9e0d9ef65e1"
+    },
+    {
+      "caseId": "philosophy-science-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c92054f2d8649baa814b8374b4172922d1213c432a93ab353ace8e1a1b8f403e"
+    },
+    {
+      "caseId": "philosophy-science-analysis",
+      "instrumentType": "escala",
+      "sha256": "5901d7febf98c69988a84ae15eb6e279ee7d790504e8a8f5983a995cc9d9c69d"
+    },
+    {
+      "caseId": "philosophy-science-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e454497b2e0f30aa11c2035053e12abf44908ed3982def6e0a0a889ad9875542"
+    },
+    {
+      "caseId": "philosophy-concept-function-origins",
+      "instrumentType": "rubrica",
+      "sha256": "b91b1018945e668bde3dc32b99e1acf7c0c530db553c884b2480711ba9dcc56a"
+    },
+    {
+      "caseId": "philosophy-concept-function-origins",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1e7648bc4ffbb1317ebd8c5c4e1c4f8d64e19c7fc970fe955caffd3b6153de62"
+    },
+    {
+      "caseId": "philosophy-concept-function-origins",
+      "instrumentType": "escala",
+      "sha256": "8c441b36866f5b98d63dcd885fc0bb5664518b61eb2270e69da7db825d319dab"
+    },
+    {
+      "caseId": "philosophy-concept-function-origins",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e7f57e0a4c6f42e67f737f4e696c340bab7e5544054cd1d263e840a93c508d5b"
+    },
+    {
+      "caseId": "modern-knowledge-interpretation",
+      "instrumentType": "rubrica",
+      "sha256": "21b2b6f46a6523154325dbcab0221e9c801ec46d0ea3ba95950a9b9f0f0c8ed0"
+    },
+    {
+      "caseId": "modern-knowledge-interpretation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3dde336c12b073af15b96fc83234848c2faebf5fb5c0b27fac2111b00f5961dd"
+    },
+    {
+      "caseId": "modern-knowledge-interpretation",
+      "instrumentType": "escala",
+      "sha256": "834fe4b1bf3296c91dd8d37a7db514e56af2adb14bb503dd23429dee3f88522a"
+    },
+    {
+      "caseId": "modern-knowledge-interpretation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "45236676b15ad6d9750928f62e0b9f6e08b04f66928464c366397e2905ba7478"
+    },
+    {
+      "caseId": "modern-schools-current-case",
+      "instrumentType": "rubrica",
+      "sha256": "eb65c8a644c39e422df8f4248c55ea1308914c053352b6712016bec481d8ee6c"
+    },
+    {
+      "caseId": "modern-schools-current-case",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7a7ebcf078e054124ceab42ae36841c4d116e3ab7abb79878980e70829cb299c"
+    },
+    {
+      "caseId": "modern-schools-current-case",
+      "instrumentType": "escala",
+      "sha256": "7fce8c8af3bf4b76597684a4f1b2d3f9b577fef587d219d762d07bc5da231fba"
+    },
+    {
+      "caseId": "modern-schools-current-case",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9522c0bd8e5225a937212d531e5d517d78b5e35a34ff2c9b251f79a943f6851a"
+    },
+    {
+      "caseId": "religious-worldviews-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "44bca02cfa9f8ed1ba9c6a6e92e0e04cfa8a45773eb1f68c14822e8cebf7f01e"
+    },
+    {
+      "caseId": "religious-worldviews-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7e14de04fab5c88d947b5a63a1ded22aed8958fb3eeacfa916fb6e60de3c5ab6"
+    },
+    {
+      "caseId": "religious-worldviews-analysis",
+      "instrumentType": "escala",
+      "sha256": "6cb0c75e46e99d04c669aaf7a916f94ff6323d9d6ac17294e88ae3e3b657a90d"
+    },
+    {
+      "caseId": "religious-worldviews-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "447b7a4f3b564bb4dbbbbe160dde51de4b6ca1026406a49ed2f10defe9ab0ed9"
+    },
+    {
+      "caseId": "spiritual-dimension-interpretation",
+      "instrumentType": "rubrica",
+      "sha256": "3ac28235547ba9333a74598aa12a7edda6750923b3e6b22c9446f2fae202c8ee"
+    },
+    {
+      "caseId": "spiritual-dimension-interpretation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "042804d5a5615481b4579ca4e703241adb56c1ad9e1ad1ca6103cd83148c3c5a"
+    },
+    {
+      "caseId": "spiritual-dimension-interpretation",
+      "instrumentType": "escala",
+      "sha256": "bedb9ea60660dd3bea16423f54da1cbf49492cc066882e2856be8c3f62b95053"
+    },
+    {
+      "caseId": "spiritual-dimension-interpretation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85ce2b656a72913e0db9b31c5aee208b5b179a549ba79bade3332d6c8cfdf138"
+    },
+    {
+      "caseId": "medieval-faith-reason-research",
+      "instrumentType": "rubrica",
+      "sha256": "35e277648a85fbfb47aa2847b0d556053e610d332701a3a3ed2281862a3b4c99"
+    },
+    {
+      "caseId": "medieval-faith-reason-research",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba79f494073d421e2c57542610dcc623f209a452d921b4fc32543ff5188f6624"
+    },
+    {
+      "caseId": "medieval-faith-reason-research",
+      "instrumentType": "escala",
+      "sha256": "2ed61de3fc068c3da2c7b6f4a2ca12a7917486e6620889cedcb63f86074ad48d"
+    },
+    {
+      "caseId": "medieval-faith-reason-research",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8c388277d3bf73874bb7c1ae4542442655a2fe5f4ff322727a8e312038f96d0e"
+    },
+    {
+      "caseId": "theocentric-anthropocentric-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "9ceffbf509b69584c6e48f42d4650432e949f5e5d8d1988e05f1ed0f636f34e9"
+    },
+    {
+      "caseId": "theocentric-anthropocentric-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0dff4a971c161e9d93a0747a8c609511306839f7211c1ffa5f1da0095a450bac"
+    },
+    {
+      "caseId": "theocentric-anthropocentric-comparison",
+      "instrumentType": "escala",
+      "sha256": "102cc81c03739648346b2e20272e4ae00bad40138a127a43545d1b6ebf868b38"
+    },
+    {
+      "caseId": "theocentric-anthropocentric-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "60ac1b257faf02282b59f70ebb80641bca5b9b3fa6978f3a564b7edbaf6b7bc6"
+    },
+    {
+      "caseId": "source-attribution",
+      "instrumentType": "rubrica",
+      "sha256": "1b16e71f6818bda1c455bce773434e637320078325a1d15e2dfadec0b71bf2d5"
+    },
+    {
+      "caseId": "source-attribution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2300522d14df683d9ee02729c982c46e88ea1221dea4fc9aa617dc522c757c8c"
+    },
+    {
+      "caseId": "source-attribution",
+      "instrumentType": "escala",
+      "sha256": "ef1599390cd77e0016573a2170808bb35a713a30b352df2fa4a2d8a298c89b56"
+    },
+    {
+      "caseId": "source-attribution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b6fb7c8aa3b756c70418440e8c5e952c3fc1f7cdea4b9b28fed4475354767185"
+    },
+    {
+      "caseId": "globalization-understanding",
+      "instrumentType": "rubrica",
+      "sha256": "b9e64390c48f9309d523ffae0fb22e6b420f587b540ef8040554a5b11a11c54a"
+    },
+    {
+      "caseId": "globalization-understanding",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7330dd27638ee5e775931b30a6dcd575daa04ff2d092ea5780196ef452671ba9"
+    },
+    {
+      "caseId": "globalization-understanding",
+      "instrumentType": "escala",
+      "sha256": "6b57ec4315b464c61bdc9081f7cc08706157ec71940ed78f9a838b09fc3060ba"
+    },
+    {
+      "caseId": "globalization-understanding",
+      "instrumentType": "lista-ponderada",
+      "sha256": "15d91c2d77740c1b1edb8bb8796d3dafcb3252e84b8735def01edddd829fbc15"
+    },
+    {
+      "caseId": "globalization-social-texts",
+      "instrumentType": "rubrica",
+      "sha256": "b0d5e1b10a2979ac786521aaa3a505e791cf83cad03611353e3de7f793256ce7"
+    },
+    {
+      "caseId": "globalization-social-texts",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d5fff7c396c72502d5e9a8b90294b136be036d8ba35a28212ab5a8cccfc11abd"
+    },
+    {
+      "caseId": "globalization-social-texts",
+      "instrumentType": "escala",
+      "sha256": "f2e98fae43b42fa8d952eccd776bf9fd199b319ce448e7a687e8e336e76cb70e"
+    },
+    {
+      "caseId": "globalization-social-texts",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0c4f6cae3d8671cc68663c838a5a5f92d3218f3ab91800a573e8afff5d9120fe"
+    },
+    {
+      "caseId": "indicator-93-political-implications-oral",
+      "instrumentType": "rubrica",
+      "sha256": "049ac89532bf06f156c288fb564ceb940d477045d08b155e31efbbc6c24bb1ee"
+    },
+    {
+      "caseId": "indicator-93-political-implications-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0f9ec7bd82515390037a798b827e54c09ae25c5e1debb7464aff2f4202bab35b"
+    },
+    {
+      "caseId": "indicator-93-political-implications-oral",
+      "instrumentType": "escala",
+      "sha256": "de154e4b8946059bfcc7ee935be82501346470d0f302f1f5441739aa4064aefe"
+    },
+    {
+      "caseId": "indicator-93-political-implications-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "850134fd149ac6e210902a75fbb01130fa4b1a24b6872491a8e456f2f747b7b9"
+    },
+    {
+      "caseId": "indicator-94-multicultural-intercultural-relations",
+      "instrumentType": "rubrica",
+      "sha256": "283a1d79a62ea67d7bc6bf4a307e51f98f47b28c77dd7415c32ab3291cdc7f3b"
+    },
+    {
+      "caseId": "indicator-94-multicultural-intercultural-relations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af9607c1aa198bb74667f04b51a24e585da7ccc158c6e646b570a5643c2e4e8c"
+    },
+    {
+      "caseId": "indicator-94-multicultural-intercultural-relations",
+      "instrumentType": "escala",
+      "sha256": "085c1969abe07724ab2044b49ccb0278fcc4be8b9b6b959884b7f1d0d25aeb52"
+    },
+    {
+      "caseId": "indicator-94-multicultural-intercultural-relations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "20d7d724c2ecccd1b5bff417a2301aa1285f654eec58e929976effe688629d59"
+    },
+    {
+      "caseId": "indicator-95-kant-source-selection",
+      "instrumentType": "rubrica",
+      "sha256": "7ef861aba028c245d2fc2a41febca9d28c7ca74b99f0a730880aeca5dae93294"
+    },
+    {
+      "caseId": "indicator-95-kant-source-selection",
+      "instrumentType": "lista-cotejo",
+      "sha256": "688e5d2ee9edfea2f67fa9107fbdb5ff997f4b0448649cbcc5e6b901bf764770"
+    },
+    {
+      "caseId": "indicator-95-kant-source-selection",
+      "instrumentType": "escala",
+      "sha256": "3a64caa35fdefb36a043c568f565dbb4b5964fbe05debe9f40dd8258b6581b01"
+    },
+    {
+      "caseId": "indicator-95-kant-source-selection",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1e958d2d133e4474ce95e8cd7e4ae449af70b59d2a58524f0f4d55847dcc128b"
+    },
+    {
+      "caseId": "indicator-96-philosophical-method-debate",
+      "instrumentType": "rubrica",
+      "sha256": "b1ad4e0c2097e2a54a5e88657ac1c1fea6952d7ef90ac1bb6f8100cfc1fe71fd"
+    },
+    {
+      "caseId": "indicator-96-philosophical-method-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4a6d0613c30cd76fd8c1c339700a04c7f3bc1475b3ec72a4dc6bd9467821ebe4"
+    },
+    {
+      "caseId": "indicator-96-philosophical-method-debate",
+      "instrumentType": "escala",
+      "sha256": "b361028ff9f9c8f0ad7add62a4d252901f152bd5054adb1c6ba259f933d6a209"
+    },
+    {
+      "caseId": "indicator-96-philosophical-method-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "310add4e3ba3b30c1764411f9bc0ff72b5e3f2d1d7ef16d1169af8a5a0ec84b8"
+    },
+    {
+      "caseId": "indicator-97-knowledge-schools-essay",
+      "instrumentType": "rubrica",
+      "sha256": "e1aab3f395b13085d4ca3fcf71b73321a72dd19245e2e5d4a5c113d0fbf3a9ed"
+    },
+    {
+      "caseId": "indicator-97-knowledge-schools-essay",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43c6b60ac591a86a7422369d0f47fc2a6717a468dcce3766a3289ddf0ae6df3c"
+    },
+    {
+      "caseId": "indicator-97-knowledge-schools-essay",
+      "instrumentType": "escala",
+      "sha256": "5c64c8d6ddf71bd81adddde6bac63ba19d000ee07aca0661931b6b0ece80742f"
+    },
+    {
+      "caseId": "indicator-97-knowledge-schools-essay",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9e4114781c24252a4f80d5cf3170300a14ff69b8fe48c917f2811f201caab5ca"
+    },
+    {
+      "caseId": "indicator-98-political-power-recognition",
+      "instrumentType": "rubrica",
+      "sha256": "95ef88a392ae2fc8e52996be2e6e3b7fb69942d5d72e36ec00dc90ed8da764d9"
+    },
+    {
+      "caseId": "indicator-98-political-power-recognition",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0c962c9ff7281af0b50d8351576ee663ad899fe7bb14b9be1009cda5dd59342d"
+    },
+    {
+      "caseId": "indicator-98-political-power-recognition",
+      "instrumentType": "escala",
+      "sha256": "bc003bb37325732dc31fc62274c1825b24a448ebf3a7cc5770bd0305cdb5fe62"
+    },
+    {
+      "caseId": "indicator-98-political-power-recognition",
+      "instrumentType": "lista-ponderada",
+      "sha256": "467966288d346be6ae7cf6ea8c31db99721e489ee092649f711f38efa5483294"
+    },
+    {
+      "caseId": "indicator-99-anthropology-short-essay",
+      "instrumentType": "rubrica",
+      "sha256": "731938d14a32414d99426bad3320b1a90a483ac2f201ddc6e4070e82fc9b89fa"
+    },
+    {
+      "caseId": "indicator-99-anthropology-short-essay",
+      "instrumentType": "lista-cotejo",
+      "sha256": "daf337bc3afb19e3ac4dc71386267136e0d3a7f7aae7b2c8c8622b7069e28d19"
+    },
+    {
+      "caseId": "indicator-99-anthropology-short-essay",
+      "instrumentType": "escala",
+      "sha256": "01c375af452ebbfa5ddddbe33ee2de0b8df3bc40cc33abd8eca104ea70cd0328"
+    },
+    {
+      "caseId": "indicator-99-anthropology-short-essay",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8b29c7345224ec7005c1231265d5237d3fd6257d9de5fb0df1e5023e838b9c76"
+    },
+    {
+      "caseId": "indicator-100-social-solutions-debate",
+      "instrumentType": "rubrica",
+      "sha256": "e5b5a01b37a13b49aa7f8f4a1ebdc8a98716faf410664f7d6144e9235c71512a"
+    },
+    {
+      "caseId": "indicator-100-social-solutions-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "22160cd65e741a5f61fd11c0031f2f861067c1568996d99baeb0f20904233d87"
+    },
+    {
+      "caseId": "indicator-100-social-solutions-debate",
+      "instrumentType": "escala",
+      "sha256": "ee787c02b48f8ed1474f0986bfba7c5bd632833ee93861714e308fab6ffffd6d"
+    },
+    {
+      "caseId": "indicator-100-social-solutions-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "55cbf6f5fe34c22c31201ab643b01c1b55d0f4d25edaddee36d8f79d467eebdb"
+    },
+    {
+      "caseId": "indicator-101-anthropological-change-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "b741f093cddd08547a45f9ecefadf372833e70c0838043db1f08efecd0e62c7a"
+    },
+    {
+      "caseId": "indicator-101-anthropological-change-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6bad537bc9e258e4457521c08cc7be52e63a68e317899027dabe00a84219e703"
+    },
+    {
+      "caseId": "indicator-101-anthropological-change-analysis",
+      "instrumentType": "escala",
+      "sha256": "a1b23a5b7bf3bcbd0943941a563d6672e86a3d308341bf21b4d3874312e90268"
+    },
+    {
+      "caseId": "indicator-101-anthropological-change-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a908431389b4781dac08858487beee940f88ed386ea33aef3f8336e12c530f4"
+    },
+    {
+      "caseId": "indicator-102-ethical-responsibility-debate",
+      "instrumentType": "rubrica",
+      "sha256": "729a9540fbe0df8505ae87704e6a52d51b55b07237170234743b4e95cb767506"
+    },
+    {
+      "caseId": "indicator-102-ethical-responsibility-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c783ae6697a0207baf91230276f44d60a3e92d5853abac21e3cac3176534d36b"
+    },
+    {
+      "caseId": "indicator-102-ethical-responsibility-debate",
+      "instrumentType": "escala",
+      "sha256": "cb9dbe9a1d025c845b8c5534acf94091673f58b149071d1863c8b5d7dd7afe70"
+    },
+    {
+      "caseId": "indicator-102-ethical-responsibility-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a012ec4dc85cae5010e2c8500b85784fadbd2176e988951b87fb7b87578f454"
+    },
+    {
+      "caseId": "indicator-103-human-rights-solution",
+      "instrumentType": "rubrica",
+      "sha256": "be7b58e6433f8bfc719475b1503df805d01423bb2e5fe41e5e1cbbe51affdce0"
+    },
+    {
+      "caseId": "indicator-103-human-rights-solution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e0a713e8286e9cfac9329990833b9257660b2231b0c63cbea035f384d0b5d82"
+    },
+    {
+      "caseId": "indicator-103-human-rights-solution",
+      "instrumentType": "escala",
+      "sha256": "3ca04ccdd37f00f3b3dbdad228bad5eb3f795851a45d70c3bfd90fdb1d7bc0a6"
+    },
+    {
+      "caseId": "indicator-103-human-rights-solution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0872147369d65ed7e8d53dc5fe81882d01633b58bc81c52c29b93ae91062ff26"
+    },
+    {
+      "caseId": "indicator-104-short-ethics-moral-text",
+      "instrumentType": "rubrica",
+      "sha256": "e487f89df9fede6f392ad400edd7cc13ba9bcd505476a4bc7280de098a9ade86"
+    },
+    {
+      "caseId": "indicator-104-short-ethics-moral-text",
+      "instrumentType": "lista-cotejo",
+      "sha256": "42beb960dff53ee46a3b8bd4afa6312be239cfa543635952f6cff4475ff2d6a8"
+    },
+    {
+      "caseId": "indicator-104-short-ethics-moral-text",
+      "instrumentType": "escala",
+      "sha256": "9a3931273c21033df11bcb876bd4a6548313d911dbe0525034c6124fa2da84ff"
+    },
+    {
+      "caseId": "indicator-104-short-ethics-moral-text",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c9f02529fe3774f16cb1e14e441e85269d11c4a03d693f6b38a77a403dc36b17"
+    },
+    {
+      "caseId": "indicator-105-globalization-author-positions",
+      "instrumentType": "rubrica",
+      "sha256": "e48551be26f0f1095aaeb9d805ba8bf49b96e2084fd8dfe60bfd25242936f312"
+    },
+    {
+      "caseId": "indicator-105-globalization-author-positions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "28071547d2de687b33caac76fd07c854e2b94cf8c1287e940afc2cd99e4ff554"
+    },
+    {
+      "caseId": "indicator-105-globalization-author-positions",
+      "instrumentType": "escala",
+      "sha256": "0881a225a7bcce958385aedb27b1c54430ee7f150229f96be315bf0742d1a43d"
+    },
+    {
+      "caseId": "indicator-105-globalization-author-positions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6f96acecea905b70062ba10c9f89f64f22e3e20359fb96cd0a22f2b32c23e847"
+    },
+    {
+      "caseId": "indicator-106-globalization-quality-impact",
+      "instrumentType": "rubrica",
+      "sha256": "a02ead8b12eb3363936d03f809ec988098fc79513369d0fbbe1bfe1a22b1ba9e"
+    },
+    {
+      "caseId": "indicator-106-globalization-quality-impact",
+      "instrumentType": "lista-cotejo",
+      "sha256": "91bf3e7dbb9cffe2781b8feeedd6b968bdc56504b8e3833d8d684517ff4056b7"
+    },
+    {
+      "caseId": "indicator-106-globalization-quality-impact",
+      "instrumentType": "escala",
+      "sha256": "4030bcf3bcdf82d8d19703336ab9151e6f4d2273c82d306d30201e4bc2fa4da2"
+    },
+    {
+      "caseId": "indicator-106-globalization-quality-impact",
+      "instrumentType": "lista-ponderada",
+      "sha256": "03fbc4069809ad76ebf17d69bfff15e51b358d8bb1b7ab68994ec43966d69c6f"
+    },
+    {
+      "caseId": "indicator-107-globalization-alternative-product",
+      "instrumentType": "rubrica",
+      "sha256": "3b95e743e606c1e832a95437c014bf51d69732f7c980f715cc82300957817afc"
+    },
+    {
+      "caseId": "indicator-107-globalization-alternative-product",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8d24e7583f54b6ef1775e80ce4b174960ba95f9d52804381adda622c01034678"
+    },
+    {
+      "caseId": "indicator-107-globalization-alternative-product",
+      "instrumentType": "escala",
+      "sha256": "ae8fd51fcdddfe2a36ba71493749e7d996063ce702c6ed441ade78f7cfe27be8"
+    },
+    {
+      "caseId": "indicator-107-globalization-alternative-product",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b59cfec5d30d7ddd86ed40fc0f3938e8979b88b886293315b431d2ab6496ea25"
+    },
+    {
+      "caseId": "indicator-108-religion-study-fields",
+      "instrumentType": "rubrica",
+      "sha256": "7120a3b066f57877b27a8bd9267bab787e23d80e30fdf59574e92d898bc0ce86"
+    },
+    {
+      "caseId": "indicator-108-religion-study-fields",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fb59acaa726f3781cde806e1270369e8fedf709a36434a5e9ad1ace24f45a502"
+    },
+    {
+      "caseId": "indicator-108-religion-study-fields",
+      "instrumentType": "escala",
+      "sha256": "7565b7698934283068fdcc7079fb770247ac2708683a50b239f7eabe1565f801"
+    },
+    {
+      "caseId": "indicator-108-religion-study-fields",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d253631ef0bd0c12894932eea65c6d8d6d7cd99eb1f42b70ffc7876c73d41b93"
+    },
+    {
+      "caseId": "indicator-109-human-divinity-debate",
+      "instrumentType": "rubrica",
+      "sha256": "71f65246ef0db146b0cbf08d992c762b0fe644e92ea9689fb6ec813378268562"
+    },
+    {
+      "caseId": "indicator-109-human-divinity-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a7cdeedaaf78ed5e649e6ccb64c0b25354f5af3274ddde047ce77945e8cf1583"
+    },
+    {
+      "caseId": "indicator-109-human-divinity-debate",
+      "instrumentType": "escala",
+      "sha256": "ba30d5458d03c72a5b00fbd0bbccf8357466ae028fbf13b8c36d18415d108c0a"
+    },
+    {
+      "caseId": "indicator-109-human-divinity-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2375350d860d41d07bbf17fa2eb4098b20ffb78bb6c27e157cea18fe9b1b58d7"
+    },
+    {
+      "caseId": "indicator-110-religious-worldviews-text",
+      "instrumentType": "rubrica",
+      "sha256": "6ed27a001c33759822c3a8284f0d1279147dd5be2c9c90a92a075e9d6ce3e610"
+    },
+    {
+      "caseId": "indicator-110-religious-worldviews-text",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d8806bd0cf7cc0f0c3f54f3cc513a0010cf2c6b795b980e7facf80b23e05a378"
+    },
+    {
+      "caseId": "indicator-110-religious-worldviews-text",
+      "instrumentType": "escala",
+      "sha256": "910d5ad9835ac7397d74ad6a9c4240875092439f0fde4a04b00096204f3e4e4b"
+    },
+    {
+      "caseId": "indicator-110-religious-worldviews-text",
+      "instrumentType": "lista-ponderada",
+      "sha256": "275aad92d64ea350df83510be3b2c4cbdcf99374943f1e4b609a3b5517addbf7"
+    },
+    {
+      "caseId": "indicator-111-greek-science-contributions",
+      "instrumentType": "rubrica",
+      "sha256": "bc1410d92cdba4aa6373250c6ab6c7b521c698d12746476429e3b58d51a565e2"
+    },
+    {
+      "caseId": "indicator-111-greek-science-contributions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "91e2b6cb5ce8aa98924793347ec41671ae2bec71985d0224efdf1e28cd2046dc"
+    },
+    {
+      "caseId": "indicator-111-greek-science-contributions",
+      "instrumentType": "escala",
+      "sha256": "c2e2c5fba081b0698cc52664b54dd4c5277523604fcd99bb3bf8a274abb21cbb"
+    },
+    {
+      "caseId": "indicator-111-greek-science-contributions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d13f86229e3b8def27efd2dc009e809547c5b94803e1e2601143b2d762d87dd2"
+    },
+    {
+      "caseId": "indicator-112-modern-science-contributions",
+      "instrumentType": "rubrica",
+      "sha256": "b94b734080ac362a4e1996a064c923f1de4ca1703f89373e22785742d54f3f8f"
+    },
+    {
+      "caseId": "indicator-112-modern-science-contributions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3cddd1f3d07033c3ee5b1891ffc0fbccdec81320577d863e19b0b90d6b47cfd0"
+    },
+    {
+      "caseId": "indicator-112-modern-science-contributions",
+      "instrumentType": "escala",
+      "sha256": "4d495f66748e3ab0f9ed9347e2b78614c02ea46ccd7bd5896e92dec103b7b405"
+    },
+    {
+      "caseId": "indicator-112-modern-science-contributions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "84662fe7d9e0e9a9098671325069a30a74691302ec620805229cd4fd284f83b3"
+    },
+    {
+      "caseId": "indicator-113-twentieth-century-science",
+      "instrumentType": "rubrica",
+      "sha256": "30948cd010b869e4b2bb3355b8777271d987a15a9571f858a7b24d6d31eed803"
+    },
+    {
+      "caseId": "indicator-113-twentieth-century-science",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f958852f4cfa8c0b7145615abab7f670b8f2c77b3df551ab5c45d0df92f6a127"
+    },
+    {
+      "caseId": "indicator-113-twentieth-century-science",
+      "instrumentType": "escala",
+      "sha256": "314f908509f3608a76e735a6483032e35e0892d773c343b941f9f8408f01ac41"
+    },
+    {
+      "caseId": "indicator-113-twentieth-century-science",
+      "instrumentType": "lista-ponderada",
+      "sha256": "149731f005445fe8524c0b84208f31693072553ef17b8d9c1f1a4313666a833b"
+    },
+    {
+      "caseId": "socrates-only",
+      "instrumentType": "rubrica",
+      "sha256": "f6601e7dfe867dcafdaf7b0cef7c4f2a83a8de24de5315772d5c6124b9d38948"
+    },
+    {
+      "caseId": "socrates-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6e5f3a10269f6b0caaa9cb727f4843b6538ba67bc46ba610beb790b3c127cb52"
+    },
+    {
+      "caseId": "socrates-only",
+      "instrumentType": "escala",
+      "sha256": "610e4e6e507a4face7bb282cd045b8e2d5df0350a91d58a8455a93ebb11fa62e"
+    },
+    {
+      "caseId": "socrates-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2fc2a879b1607cad284b99e0194969e3adde3df5a6ee6b8d49972f7a6bf32dd2"
+    },
+    {
+      "caseId": "kant-only",
+      "instrumentType": "rubrica",
+      "sha256": "9d34c75c9c17866ede20b6a03fbc53298b12fddc0a722f1f49fc7c495c2e5a80"
+    },
+    {
+      "caseId": "kant-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1c37f7b34670450dbc9922b054ee02509c399b0b6910db4c699f3fcc42d3230a"
+    },
+    {
+      "caseId": "kant-only",
+      "instrumentType": "escala",
+      "sha256": "a5b46588cd55a0c4208180e973377e811265941803550f5ab77cfc151e84c4c9"
+    },
+    {
+      "caseId": "kant-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "19abc1a2a46dfa95489bf2b1baf034a0aad72c511820eece5b1ef46e443d3a81"
+    },
+    {
+      "caseId": "mayieutic-or-doubt",
+      "instrumentType": "rubrica",
+      "sha256": "918ce54ed839d534d8effa7ef28e22c6e0c776968547b3989334a4a8c5942105"
+    },
+    {
+      "caseId": "mayieutic-or-doubt",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d9c052316c899f2e1f9fe5c575f78475d736ae579846b16ea0794fc4c176ac2a"
+    },
+    {
+      "caseId": "mayieutic-or-doubt",
+      "instrumentType": "escala",
+      "sha256": "bb80417d5e091b4cd887390cda75b971d8d0c0aa6dd919d4fb297ef0ff20a467"
+    },
+    {
+      "caseId": "mayieutic-or-doubt",
+      "instrumentType": "lista-ponderada",
+      "sha256": "61b96d3909bf42e13139c9dd26598ffec6942b786084dcf5288e751d0f13895d"
+    },
+    {
+      "caseId": "epoche-demonstration",
+      "instrumentType": "rubrica",
+      "sha256": "71e327183de76705c53fce142e2c8d33408a15e26fffa2f743b4703cbd4ca9eb"
+    },
+    {
+      "caseId": "epoche-demonstration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fe576f403602424ea9291930674d6b2a69748bb425d7edb7f9c78732b777d1dc"
+    },
+    {
+      "caseId": "epoche-demonstration",
+      "instrumentType": "escala",
+      "sha256": "a22647a93e0de69dde7dbfd7a4ee4ab3ae91983c8cdf381f1635865d48da29dc"
+    },
+    {
+      "caseId": "epoche-demonstration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5c1d19ef99527a24a8ccb6cfe3f94ab1b4da19b02636e3c9e36c2d6463139ebe"
+    },
+    {
+      "caseId": "dialogue-no-timeline",
+      "instrumentType": "rubrica",
+      "sha256": "54a6f21850fcf778aee8a28ec843260b121ca15c27f530279befb7b14de4ddce"
+    },
+    {
+      "caseId": "dialogue-no-timeline",
+      "instrumentType": "lista-cotejo",
+      "sha256": "184cfe196c4e9342d16326a5e8440d45271bc0976488d352cbeb6c3cf9c58d7f"
+    },
+    {
+      "caseId": "dialogue-no-timeline",
+      "instrumentType": "escala",
+      "sha256": "c362bd93928ef67bcc36ac234864f2700db8038cba82fecfb24771d3dda7bf27"
+    },
+    {
+      "caseId": "dialogue-no-timeline",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5ba531024ea50154faf943bc7fa4d816d30a7cf656316dee62f1f990feb353f6"
+    },
+    {
+      "caseId": "source-selection-only",
+      "instrumentType": "rubrica",
+      "sha256": "674266085fe5497408d0e5aeec472c4d6b50bd7ff9e38797778de17cf518b6ae"
+    },
+    {
+      "caseId": "source-selection-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6314fb86ecb1aee462197f6228ccfd2a3ec1647f93d63af878f8a2fde2a5be11"
+    },
+    {
+      "caseId": "source-selection-only",
+      "instrumentType": "escala",
+      "sha256": "739670aa50a5aed010080d1e4bd18398a9269cae1fa5ec1595b07f4862ef4cc6"
+    },
+    {
+      "caseId": "source-selection-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2d76d0c6ae11264033504937877710d1c441320f7f811e1aab3dd056a1f9336e"
+    },
+    {
+      "caseId": "essay-thesis-reasons",
+      "instrumentType": "rubrica",
+      "sha256": "124cea3d1bbbd0d8bce61d0209e772012880ed41638200f7ebdc6dd7abf902ad"
+    },
+    {
+      "caseId": "essay-thesis-reasons",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0b05863d99b84f980083c07c8f8fd11868644c1f64e5cf83c46c5da0b1aca9ce"
+    },
+    {
+      "caseId": "essay-thesis-reasons",
+      "instrumentType": "escala",
+      "sha256": "6a06466e195f704ccf65249b8e2cbd7e0ea77ee0ff6d343c54597a77e1e8703c"
+    },
+    {
+      "caseId": "essay-thesis-reasons",
+      "instrumentType": "lista-ponderada",
+      "sha256": "86f31093f10b62279833adc760361cd86fa40ec8b394186e8ee035950008f0d9"
+    },
+    {
+      "caseId": "summary-only",
+      "instrumentType": "rubrica",
+      "sha256": "3e1c6d39b1fb28ff4914ee2c97e870967c5bceb2bc9020ac197d949a1642c0d4"
+    },
+    {
+      "caseId": "summary-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "abddf61dd7bab1714134315cd7a49b161de563319ba592e7460174e44eeaeab4"
+    },
+    {
+      "caseId": "summary-only",
+      "instrumentType": "escala",
+      "sha256": "2ab6f4eb0bea1496b3b618e233a513900e6435da394bacf4603aa439214566a1"
+    },
+    {
+      "caseId": "summary-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "692cc39eee11fc54bac366edf56ec74b1b8c77cff1fe40458f690ea82a705fc6"
+    },
+    {
+      "caseId": "report-only",
+      "instrumentType": "rubrica",
+      "sha256": "a761e46b62c86b265bf6f82f17cf0c5716885349af108ac1b32b770b3c684adf"
+    },
+    {
+      "caseId": "report-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "78c698916420df21216e1c5b11c9cb48bdb1ad45fd802f63715a1a4bb64735bf"
+    },
+    {
+      "caseId": "report-only",
+      "instrumentType": "escala",
+      "sha256": "45cd5e911fd045254a56278f5eeced2e42fc901915fd9ac838907d0d04398960"
+    },
+    {
+      "caseId": "report-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d817f3c0d0baba7af0ef16358655a8a3e8e5fa812913404f6fede13a3ecbc56"
+    },
+    {
+      "caseId": "revision-attribution-only",
+      "instrumentType": "rubrica",
+      "sha256": "9cd34158b89f8b1be47ed53a03be2fcc28969077054fc6b50f969816e35cf61e"
+    },
+    {
+      "caseId": "revision-attribution-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "50424670f55eabece0874435ed602f1729e9fa530de78d9a97b883cdc4e2b69b"
+    },
+    {
+      "caseId": "revision-attribution-only",
+      "instrumentType": "escala",
+      "sha256": "b08e3f71d453cfaf628fd096151ae82580c8ac58d49ab03c05c54c19246262e8"
+    },
+    {
+      "caseId": "revision-attribution-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cb5a0c4282005b1c8e725576ec125c1477745bd36d5cbf730aca1b68f3596cbd"
+    },
+    {
+      "caseId": "faith-reason-no-belief",
+      "instrumentType": "rubrica",
+      "sha256": "798035d88ff5c461213a765710f68632a2aa142386d5fa3e210ecbe5a4f72df7"
+    },
+    {
+      "caseId": "faith-reason-no-belief",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0ecb69cc9f3594bb41a61e14c43f3c7962dc905e95c910af5fb4492aebaabe26"
+    },
+    {
+      "caseId": "faith-reason-no-belief",
+      "instrumentType": "escala",
+      "sha256": "6cd271807c44bdc619946b3ab41e259194bc0177bf7c55f828bd1966b9a85f2a"
+    },
+    {
+      "caseId": "faith-reason-no-belief",
+      "instrumentType": "lista-ponderada",
+      "sha256": "31ac53575e1a558595f66200b23e0db7cd6b792cfbebda007684f318ff0df78a"
+    },
+    {
+      "caseId": "human-rights-no-activism",
+      "instrumentType": "rubrica",
+      "sha256": "b65b528f3e050d826a63075e80877c001417e9774be7556c302b37190d32a429"
+    },
+    {
+      "caseId": "human-rights-no-activism",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c28bf604307524f3a6b8eb040761a688b70006147d04b51b5c954826e8bd545b"
+    },
+    {
+      "caseId": "human-rights-no-activism",
+      "instrumentType": "escala",
+      "sha256": "1b0107589bfcb40d2e45d8d68723a08af3bedc059f8d456a4bef3cbd9787d336"
+    },
+    {
+      "caseId": "human-rights-no-activism",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0b4e1c79ab92ab79ec09c19d251c3522a79192ec43daf39e330170a70af4443e"
+    },
+    {
+      "caseId": "maquiavelli-only",
+      "instrumentType": "rubrica",
+      "sha256": "1c132dccdc3629863c983dbbafb9db4cbd03759cce2bc056aad92b601871dd81"
+    },
+    {
+      "caseId": "maquiavelli-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95463f1ae26dc2dec3b65fd9d166824cc0b77900327b77d26e6479f4b5356827"
+    },
+    {
+      "caseId": "maquiavelli-only",
+      "instrumentType": "escala",
+      "sha256": "1fbc7e51e977c4d3f8f64391d2464338c0b14aeec382f26ec1559be6a54708e0"
+    },
+    {
+      "caseId": "maquiavelli-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1827e6e31973df9a5edbf60aebf503f4be8cbcc8bfd38f6c3a051116c4371a7b"
+    },
+    {
+      "caseId": "author-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "c2174e4b2bad9c291861e47b9fde15e11140c6ed8c631098ef94b3e6dd40473e"
+    },
+    {
+      "caseId": "author-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "437916cc5bb20186df3a55a7c638984c1652f95bca8bf7935e67027328135f7b"
+    },
+    {
+      "caseId": "author-alternative",
+      "instrumentType": "escala",
+      "sha256": "c51940622713a0290e8c3548bcae5a152ddd1fa6bae223586207fefe104f348f"
+    },
+    {
+      "caseId": "author-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9934184b6d0861a5bd143900de03bab3ff897c28ad92c054a94741ef0ffb4785"
+    },
+    {
+      "caseId": "independent-comparison-summary",
+      "instrumentType": "rubrica",
+      "sha256": "6107f21757078ee48144b0293c640eeef9c5cfe923306795deffe1f388cbef18"
+    },
+    {
+      "caseId": "independent-comparison-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2bbf4bd6852c49adf6a8df56aadc56919b3dc3720ae235fb17cce6f88e566c13"
+    },
+    {
+      "caseId": "independent-comparison-summary",
+      "instrumentType": "escala",
+      "sha256": "4c3c0217a7b47ead032d6707f1d8ff8e22482e929ea502c688f6b8edc69b307d"
+    },
+    {
+      "caseId": "independent-comparison-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c25166e4d83a6ff08ce8b82b2ba3d5e1afabdba0a7f7eada24782a7acc65a7b9"
+    },
+    {
+      "caseId": "group-dialogue",
+      "instrumentType": "rubrica",
+      "sha256": "74f286f422c9177021208af73e472f35ec222a0b7b4f701ad50183c5241a2085"
+    },
+    {
+      "caseId": "group-dialogue",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6b75baaea123fdbc3b2ac5c06b7330971aa64850c74faf398a15b2441d85e2de"
+    },
+    {
+      "caseId": "group-dialogue",
+      "instrumentType": "escala",
+      "sha256": "0eccaa9050dbdccc8f58a93feaff4edde550d3c90092413f7626c1b83aff65e3"
+    },
+    {
+      "caseId": "group-dialogue",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bd874334f09e33f542a4c7e69c6cacddde9164c6d2bb6db277b6c4fdd525ef42"
+    },
+    {
+      "caseId": "individual-essay",
+      "instrumentType": "rubrica",
+      "sha256": "ed3b3dd402f6232eb41f3ae58f5e87e315dcae30b63875b7f6c7a8358db1ec79"
+    },
+    {
+      "caseId": "individual-essay",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d9cf730aeb68724baf0f69b146387c208e56284b147d1fefa0b310dae5a53e51"
+    },
+    {
+      "caseId": "individual-essay",
+      "instrumentType": "escala",
+      "sha256": "b1c558ef1a13bac8037e7e82612f7ace85d59c9e9feb0c659521a9c7d6be2ea9"
+    },
+    {
+      "caseId": "individual-essay",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1a2da0fa960063786bf3edd8fea9f2ec02f118911fa6d5752e48b4011356e19f"
+    },
+    {
+      "caseId": "posture-without-agreement",
+      "instrumentType": "rubrica",
+      "sha256": "288bfe13479017da915adcbac4f51d5eaf19f94775934afba15f24c565eac04e"
+    },
+    {
+      "caseId": "posture-without-agreement",
+      "instrumentType": "lista-cotejo",
+      "sha256": "245eaa354b19d8a3a8de23003761420edfcac44b76a716735623d45a055bfe7c"
+    },
+    {
+      "caseId": "posture-without-agreement",
+      "instrumentType": "escala",
+      "sha256": "d6587f6d0bea9a1b2c2a5cbff7d9b78acc17953cc680626f13f28f2469451992"
+    },
+    {
+      "caseId": "posture-without-agreement",
+      "instrumentType": "lista-ponderada",
+      "sha256": "67cb5f1223292b5baa615d49cb2c56a9a0b1ae07ea7c58f628ed5e08f55e5cb5"
+    },
+    {
+      "caseId": "indicator-107-three-product-alternatives",
+      "instrumentType": "rubrica",
+      "sha256": "2a9e68e1c0e1b0bf75963309be28f9e72678273d9a1cbc73a88fff81431b80b8"
+    },
+    {
+      "caseId": "indicator-107-three-product-alternatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3dc1c1df969b6b71a8aa6e2e85d77647923b499c0ea1e7ea9826a5d4bd973936"
+    },
+    {
+      "caseId": "indicator-107-three-product-alternatives",
+      "instrumentType": "escala",
+      "sha256": "be5b1ce91f0f92b898a5cb0fb06a88fafd7d82b3cf4175e3d76451c0688f63f1"
+    },
+    {
+      "caseId": "indicator-107-three-product-alternatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f9fd8a78c1e57e512280450926235424d07d6691a87046b377cb4388d44cd13c"
+    },
+    {
+      "caseId": "apply-maieutics",
+      "instrumentType": "rubrica",
+      "sha256": "6e3ee6a7ff63fc11c6a0c91f369c2c00f5514d244c44bcc8127cd2767872a1ac"
+    },
+    {
+      "caseId": "apply-maieutics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1935b09ebac032f879b4324c0638e7227612c05b0fc9b3a96a61cac100397f09"
+    },
+    {
+      "caseId": "apply-maieutics",
+      "instrumentType": "escala",
+      "sha256": "bbb27ad89aa9e61b8689ed32af83f7e2b57d8c9ca40d2a328d41fc2e96610fcf"
+    },
+    {
+      "caseId": "apply-maieutics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "97e604046cdffdd9e7bed7bf505af5b580bddb4a2c58495187561bd8bed75531"
+    },
+    {
+      "caseId": "apply-methodical-doubt",
+      "instrumentType": "rubrica",
+      "sha256": "bdca314d1ed8a51e4fd18b8ccc8d31c7340bd974e51710d2f5878878a8b5defd"
+    },
+    {
+      "caseId": "apply-methodical-doubt",
+      "instrumentType": "lista-cotejo",
+      "sha256": "36b800ea4e60baf2659b49ab377c9673c5cff3369349ee03c2a63e14be9000b2"
+    },
+    {
+      "caseId": "apply-methodical-doubt",
+      "instrumentType": "escala",
+      "sha256": "2816a8d3d3feff91bbe72309c1d87eed997a6bc8d3e2a0f478e99f14e737a6cf"
+    },
+    {
+      "caseId": "apply-methodical-doubt",
+      "instrumentType": "lista-ponderada",
+      "sha256": "efd48ff702d4db59dc054830ee05d918c0a4b45eb49132785e21541e7bac5228"
+    },
+    {
+      "caseId": "apply-epoche",
+      "instrumentType": "rubrica",
+      "sha256": "22db96ddefa9441a234f2f91653ed1a53bbc134f8182b4b082bcad57d7cdf5fb"
+    },
+    {
+      "caseId": "apply-epoche",
+      "instrumentType": "lista-cotejo",
+      "sha256": "efd65e568c575b979beabfb3b9ba1f26eef2895aaf73c57d22d2195547df5886"
+    },
+    {
+      "caseId": "apply-epoche",
+      "instrumentType": "escala",
+      "sha256": "13b2a786a440ee69e550e582db7590a2b41aab01712b97570e35d588b9c84624"
+    },
+    {
+      "caseId": "apply-epoche",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dbd77adcf0a818573eda1aa71947b96bd254950b392213e08678bf031d01c93a"
+    }
+  ],
+  "additionalReading": {
+    "reason": "La revisión detectó que Aplica no activaba evaluación del procedimiento;3RED/3GREEN ycomprobación afectada posterior.",
+    "method": "Dos textos completos nuevos y la epojé ya leída,las3correspondencias yelpaqueteP3enloscuatroformatos,reconstrucciónexacta.",
+    "newInstruments": 12,
+    "finalFullInstruments": 480,
+    "finalDistinctTexts": 133,
+    "finalCases": 120,
+    "finalScoringPacks": 10
+  }
+}

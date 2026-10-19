@@ -18,10 +18,11 @@ export const commonSocialModules=[{id:'ciencias-sociales-comun-1',grade:1,topics
 const normalize=(s:string)=>s.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const verbs=`(?:${['analiz','analic','interpret','explic','expliqu','compar(?!t)','contrast','identific','identifiqu','describ','ubic','ubiqu','localiz','orden','elabor','constru','redact','investig','consult','debat','argument','justific','justifiqu','propon','propong','present','expon','registr','represent','simul','formul','comprob','comprueb','indag','indagu','diferenci','produc','observ','caracteriz','discut','evalu','valor','calcul','realiz','respond','particip','dramatiz','dramatic','socializ','socialic','busc','busqu','recolect','sintetiz','sintetic','plante','indic(?!ador)','indiqu','utiliz','utilic','emple','us(?:a|e)','clasifi(?:ca(?!cion)|que)','cre(?:a(?!cion|dor|tiv)|e)'].map(v=>v+'[a-z]*').join('|')})`
 /** Preserve clause boundaries: a negative requirement cannot suppress a later positive action. */
-function requestedText(value:string,grade=1){
+function requestedText(value:string,grade=1,additionalVerbs=''){
+ const actionVerbs=additionalVerbs?`(?:${verbs}|${additionalVerbs})`:verbs
  return normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ')))
   .replace(/\bno democratic(?:a|as|o|os)\b/g,match=>grade===6?match.replace(' ','_'):match)
-  .replace(new RegExp(`\\b(?:no|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:y|pero)\\s+${verbs}\\b|$)`,'g'),'')
+  .replace(new RegExp(`\\b(?:no|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:y|pero)\\s+${actionVerbs}\\b|$)`,'g'),'')
   .replace(/\bno_democratic/g,'no democratic')
   .replace(/\b(?:pueden|podran)\s+(?:usar|utilizar|apoyarse)[^.;\n]*/g,'').trim()
 }
@@ -116,13 +117,14 @@ function matches(text:string,topics:SocialTopic[]){
  // A map can be a delivery medium for historical content, rather than the studied topic.
  return thematic&&has(text,'elabor|represent|constru|ubic|ubiqu|localiz')?selected.filter(t=>t.id!=='cartography'):selected
 }
-function socialActionVerbs(grade:number){
+function socialActionVerbs(grade:number,additionalVerbs=''){
  let qualified=grade>=5?verbs.replace('interpret[a-z]*','interpret(?!acion)[a-z]*').replace('particip[a-z]*','particip(?!acion)[a-z]*'):verbs
  if(grade===6)qualified=qualified.replace('produc[a-z]*','produ(?:ce|cen|cir|cira|ciran|ciendo|zca|zcan)')
- return grade===6?`(?:${qualified}|disting(?:ue|uen|uir|uira|uiran|a|an|uiendo)|(?:disen|recopil|estudi|aplic|sistematiz|expres|reformul|organiz)(?:a|an|ar|ara|aran|e|en|ando))`:qualified
+ const result=grade===6?`(?:${qualified}|disting(?:ue|uen|uir|uira|uiran|a|an|uiendo)|(?:disen|recopil|estudi|aplic|sistematiz|expres|reformul|organiz)(?:a|an|ar|ara|aran|e|en|ando))`:qualified
+ return additionalVerbs?`(?:${result}|${additionalVerbs})`:result
 }
-function splitActions(text:string,grade:number){
- const actionVerbs=socialActionVerbs(grade)
+function splitActions(text:string,grade:number,additionalVerbs=''){
+ const actionVerbs=socialActionVerbs(grade,additionalVerbs)
  const activeVerbs=grade>=3?`(?:${actionVerbs.replace('explic[a-z]*','explic(?!acion)[a-z]*')}|seleccion(?:a|an|ar|ara|aran|e|en|ando)${grade>=5?'|organiz(?:a|an|ar|ara|aran|e|en|ando)':''})`:actionVerbs
  const parts=text.split(new RegExp(`(?:[.;\\n]+\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${activeVerbs}\\b)`)).filter(Boolean)
  // Coordinated verbs can share one object: «formula y comprueba una hipótesis».
@@ -197,12 +199,16 @@ function splitActions(text:string,grade:number){
 }
 export function resolveCommonSocialTask(title:string,description:string,context?:InstrumentAcademicContext|null,providedTopics?:SocialTopic[]):CommonSocialTask|null{
  if(context?.level!=='SECONDARY'||context.optativeExitName||context.subjectCode.trim().toUpperCase()!=='SOC')return null
- const topics=(providedTopics??commonSocialModules.find(m=>m.grade===context.grade)?.topics??[]).filter(t=>t.grade===context.grade)
- const text=requestedText(description||title,context.grade!),selected=matches(text,topics)
- if(!selected.length||!new RegExp(`\\b${socialActionVerbs(context.grade!)}\\b`).test(text)&&!(context.grade>=3&&selects(text))&&!(context.grade===5&&/\bverifi(?:ca|can|car|que|quen)\b/.test(text)))return null
+ return resolveSocialTaskForTopics(title,description,context.grade!,providedTopics??commonSocialModules.find(m=>m.grade===context.grade)?.topics??[])
+}
+/** Pure action composition; public resolvers validate their academic context before calling it. */
+export function resolveSocialTaskForTopics(title:string,description:string,grade:number,providedTopics:SocialTopic[],policy:{selectTopics?:(text:string,topics:SocialTopic[])=>SocialTopic[];additionalVerbs?:string}={}):CommonSocialTask|null{
+ const context={grade},topics=providedTopics.filter(t=>t.grade===grade),selectTopics=policy.selectTopics??matches
+ const text=requestedText(description||title,grade,policy.additionalVerbs),selected=selectTopics(text,topics)
+ if(!selected.length||!new RegExp(`\\b${socialActionVerbs(grade,policy.additionalVerbs)}\\b`).test(text)&&!(context.grade>=3&&selects(text))&&!(context.grade===5&&/\bverifi(?:ca|can|car|que|quen)\b/.test(text)))return null
  let previous:SocialTopic[]=selected
- const actions=splitActions(text,context.grade).map(text=>{
-  let own=matches(text,topics)
+ const actions=splitActions(text,context.grade,policy.additionalVerbs).map(text=>{
+  let own=selectTopics(text,topics)
   if(previous.some(t=>t.id==='gps')&&own.length===1&&own[0].id==='cartography'&&has(text,'ubic|ubiqu|localiz')&&!/elementos|componentes|tipos de mapas/.test(text))own=[]
   if(own.length)previous=own
   return{text,topics:own.length?own:previous}
