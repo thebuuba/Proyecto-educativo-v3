@@ -64,7 +64,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Apreciación y Producción Literarias | 5 | Humanidades y Lenguas Modernas | 432, 433, 434, 435, 436 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Análisis y Producción de Textos Periodísticos y Publicitarios | 6 | Humanidades y Lenguas Modernas | 437, 438, 439, 440, 441, 442, 443, 444 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_PENDING |
 | Manejo de la información en inglés | 4 | Humanidades y Lenguas Modernas | 445, 446, 447, 448, 449 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
-| Apreciación de la Literatura Anglófona | 5 | Humanidades y Lenguas Modernas | 450, 451, 452, 453, 454, 455 | PENDING |
+| Apreciación de la Literatura Anglófona | 5 | Humanidades y Lenguas Modernas | 450, 451, 452, 453, 454, 455 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Análisis Crítico y Evaluación de Textos en Inglés | 6 | Humanidades y Lenguas Modernas | 456, 457, 458, 459, 460 | PENDING |
 | Apreciación y Producción Literarias | 4 | Humanidades y Ciencias Sociales | 462, 463, 464, 465, 466 | PENDING |
 | Apreciación y Producción Literarias | 5 | Humanidades y Ciencias Sociales | 467, 468, 469, 470, 471 | PENDING |

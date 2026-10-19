@@ -28,7 +28,7 @@ export const englishGradeFourStrategies:Strategy[]=[
   'Atribuye al texto información que cambia {target}.',
   'No aporta información reconocible que permita identificar {target} del texto.',
  ]},
- {id:'courtesy',match:'normas de cortesia|con cortesia|con respeto|sin descalificaciones|asertiv\\w*|con tacto',modes:['writing','oral','interaction'],title:'Cortesía en la intención comunicativa',levels:[
+ {id:'courtesy',match:'normas de cortesia|(?:con|usando|utilizando|aplicando) cortesia|con respeto|sin descalificaciones|asertiv\\w*|con tacto',modes:['writing','oral','interaction'],title:'Cortesía en la intención comunicativa',levels:[
   'Comunica en inglés la intención solicitada con fórmulas de cortesía pertinentes para la situación, sin descalificar al interlocutor.',
   'La intención se comprende y el trato es cortés; una fórmula necesita ajuste a la situación.',
   'La intención se reconoce, pero una expresión necesita reformulación para comunicarla con cortesía.',

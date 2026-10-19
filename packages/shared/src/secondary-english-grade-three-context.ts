@@ -37,7 +37,7 @@ export function gradeThreeContextCriteria(text:string,receptive=false){
   'Presenta como hecho confirmado una conclusión incompatible con los datos o aún no confirmada.',
   'No aporta una distinción reconocible entre los hechos disponibles y las conclusiones solicitadas.',
  ]))
- if(receptive&&/\bproblema (?:cotidiano|de la situacion)\b/.test(text)&&/\b(?:identific\w*|localiz\w*|reconoc\w*)\b/.test(text))rows.push(row('problem-information','Datos del problema comunicado',[
+ if(receptive&&/\bproblema (?:cotidiano|de la situacion)\b/.test(text)&&/\b(?:identific\w*|identifiqu\w*|localiz\w*|reconoc\w*)\b/.test(text))rows.push(row('problem-information','Datos del problema comunicado',[
   'Identifica en el mensaje en inglés el problema del personaje y relaciona los datos solicitados con la necesidad de solución planteada.',
   'Reconoce el problema y los datos principales; una relación con la necesidad planteada necesita precisión.',
   'Reconoce datos aislados, pero no establece claramente qué problema debe resolverse.',

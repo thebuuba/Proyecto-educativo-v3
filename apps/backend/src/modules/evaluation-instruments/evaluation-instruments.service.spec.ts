@@ -17,6 +17,7 @@ import optativeHlmFour from '../../../../../data/evaluation-instruments/optative
 import optativeHlmFive from '../../../../../data/evaluation-instruments/optative-hlm-len-five-contracts.json'
 import optativeHlmSix from '../../../../../data/evaluation-instruments/optative-hlm-len-six-contracts.json'
 import optativeHlmEnglishFour from '../../../../../data/evaluation-instruments/optative-hlm-ing-four-contracts.json'
+import optativeHlmEnglishFive from '../../../../../data/evaluation-instruments/optative-hlm-ing-five-contracts.json'
 
 const mocks = vi.hoisted(() => ({
   $queryRaw: vi.fn(),
@@ -83,7 +84,7 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
-  for (const fixture of [optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
+  for (const fixture of [optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour,optativeHlmEnglishFive]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
     const row = secondary(fixture.subjectCode)
     row.grade.sequence = fixture.grade
     row.grade.academicCycle.code = 'secundario_segundo_ciclo'

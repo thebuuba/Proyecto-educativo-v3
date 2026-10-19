@@ -7,7 +7,12 @@ test('el inventario distingue Inglés HLM cuarto del inglés común y de las opt
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider)
  assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===4&&s.subject==='Inglés'&&s.character==='COMMON').evidence)
- for(const grade of [5,6])assert.equal(inventory.scopes.find(s=>s.grade===grade&&s.exit===matrix.optativeExitName&&s.area===row.area).status,'PENDING')
+ assert.equal(inventory.scopes.find(s=>s.grade===6&&s.exit===matrix.optativeExitName&&s.area===row.area).status,'PENDING')
+})
+test('Literatura Anglófona quinto distingue conexión de lectura y runtime pendientes',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hlm-ing-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===5&&s.subject==='Inglés'&&s.character==='COMMON').evidence)
 })
 for(const grade of [4,5,6])test(`el inventario maestro conserva el ámbito y el estado real de HLM de ${grade}.º`,()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read(`optative-hlm-len-${grade}-matriz.json`)

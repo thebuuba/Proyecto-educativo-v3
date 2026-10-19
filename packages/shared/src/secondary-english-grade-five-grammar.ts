@@ -48,9 +48,29 @@ export const englishGradeFiveGrammar:LanguageFeature[]=[
 ]
 export function requestedGradeFiveGrammar(text:string){
  const scoped=text.replace(/uso enfatico de (?:los )?pronombres reflexivos/g,'emphatic reflexive pronouns')
- return requestedScopedEnglishGrammar(scoped,englishGradeFiveGrammar,['suggest','advise','causatives','medical-verbs','phrasal-verbs','how-much-many','why-suggestion'])
+ const forms=englishGradeFiveGrammar.map(f=>f.id==='reflexive-pronouns'?{...f,match:'(?<!emphatic )'+f.match}:f)
+ return requestedScopedEnglishGrammar(scoped,forms,['suggest','advise','causatives','medical-verbs','phrasal-verbs','how-much-many','why-suggestion'])
 }
 export function gradeFiveGrammarCriterion(feature:LanguageFeature,text:string,mode:string){
+ // Curricular examples do not require another medical or purchase scenario.
+ const medical=/\b(?:consultas? medicas?|consulta simulada|sintomas?|reclamacion(?:es)?|quejas?)\b/.test(text)
+ const purchase=/\b(?:compras?|transacciones?|bienes|servicios|precios?|pagos?)\b/.test(text)
+ const neutral:Record<string,{function:string;error?:string}>={
+  ...(!medical?{
+   'present-simple':{function:'comunicar la información actual indicada en la situación'},
+   'present-perfect':{function:'relacionar un antecedente con la situación presente'},
+   'present-perfect-continuous':{function:'comunicar la continuidad del estado o actividad y su duración indicada'},
+   'medical-verbs':{function:'relacionar el estado, posesión o sensación con el referente indicado en la situación',error:'atribuye a otro referente el estado, posesión o sensación comunicados'},
+  }:{}),
+  ...(!purchase?{
+   'modal-may':{function:'comunicar una posibilidad o una solicitud cortés según la intención indicada',error:'presenta la posibilidad como confirmada o cambia la solicitud indicada'},
+   'modal-could':{function:'comunicar una posibilidad o una solicitud cortés según la intención indicada'},
+   'modal-can':{function:'comunicar una solicitud mediante una expresión cortés',error:'cambia lo solicitado o lo presenta como una orden incompatible con la situación'},
+   'modal-will':{function:'comunicar la acción futura indicada',error:'sitúa como ya realizada una acción futura o cambia su referente'},
+   'modal-would-like':{function:'expresar cortésmente lo deseado o solicitado en la situación'},
+  }:{}),
+ }
+ const contextual=neutral[feature.id]?{...feature,...neutral[feature.id]}:feature
  const explains=new RegExp(`\\b(?:funcion|significado|uso) (?:de|del|de la) (?:(?:el|la|los|las)\\s+)*(?:${feature.match})`).test(text)&&/\b(?:explic\w*|analiz\w*|investig\w*)\b/.test(text)
- return scopedEnglishGrammarCriterion(feature,text,mode!=='comparison'&&explains?'analysis':mode,'ing-5')
+ return scopedEnglishGrammarCriterion(contextual,text,mode!=='comparison'&&explains?'analysis':mode,'ing-5')
 }

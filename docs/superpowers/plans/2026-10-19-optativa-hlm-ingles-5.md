@@ -1,0 +1,23 @@
+# Apreciación de la Literatura Anglófona de 5.º HLM
+
+Ejecución individual con executing-plans y TDD. Spec: encargo integral2026-10-17. Base b02c680c463d23e6c6434e6165eac2181f8ebaff. Solo Development, commits españoles locales; NO PUSH, producción, main, despliegue, migración remota, cuentas nuevas, borrados ni subagentes.
+
+Objetivo: conectar el ámbito explícito OPT-HLM-ING-5, grado5/ciclo2/modalidad académica o general/salida Humanidades y Lenguas Modernas. PDF450–455/impresas449–454 ya revisadas visualmente; scope95d4757b-5e0a-5821-af62-37d031ccf922.205registros/170C/P/A:114adaptables,56exclusiones clasificadas por lectura individual. No repetir renders, clasificación ni recorders. Catálogo127 congelado una vez por consulta contra el instalado; sus datos y snapshots permanecen inmutables.
+
+Arquitectura: ampliar el registro optativo explícito4/5, conservar el guard común y reutilizar funciones, gramática, léxico, estrategias, géneros y medios de5 cotejados contra esta fuente. Agregar únicamente evidencias literarias básicas que falten y estén expresamente solicitadas, justificadas por competencias e indicadores185–205: información/idea/detalles, personajes/acontecimientos/ambiente pedidos, estructura sencilla, sentido literal/figurado y figuras básicas con apoyo, puntos de vista/razones vinculados al texto. No exigir canon, autor, época, interpretación única, talento, adhesión, perfección, intimidad ni acciones reales externas.
+
+La consigna gobierna la evidencia; un nombre literario o de vocabulario no impone todas las dimensiones. Distinguir recepción, producción e interacción, reconocimiento de figuras frente a explicación/uso, medios OR frente a AND y acciones independientes. Las preferencias culturales/salud/ambiente solo se adaptan a comparación y justificación observables cuando se solicitan; no se califican creencias o hábitos privados.
+
+1. [x] Verificar cierre127/procesos; congelar127 una vez contraDB antes de cambiar proveedores.
+2. [x] Contratos RED backend/frontend de funciones y evidencia literaria, guard negativo, títulos incompatibles, manual, cuatro formatos20/17.35/puntos pendientes/grupo y alternativas/negaciones.
+3. [x] Conectar registro5 y evidencias mínimas; regresiones RED→GREEN por hallazgo. Trazas y escala dinámicas, sin asumir módulo4. Catálogo128 y lookup127, conservando campos anteriores.
+4. [x] Vincular114anclas adaptables y lista explícita de indicadores revisados a consignas pertinentes. Generar ejemplos completos, leer textos/niveles/pesos/correspondencias y registrar huellas sin acreditar pertinencia por conteos.
+5. [x] Comparar definiciones comunes/optativas anteriores contra baseline127; documentar únicamente correcciones compartidas demostradas. Allowlist explícita fuente/QA/HTTP5.
+6. [x] Detener Worker propio verificado; gatesAGENTS backendtest/build, frontendactivities/build, sharedbuild, cloudflarebuild dry-run, lints, fuente/inventario/precaché≤2MiB. Sin builds/Prisma durante instalador o HTTP.
+7. [x] Guard efectivoPG/Auth/Storage/frontend Development; instalar128 y fuente individual idempotentes, preservar historial; HTTP/DB cuatro formatos/score/manual/paridad/source/excluidos/save-reopen/estrategiaexacta y tiempos.
+8. [x] Navegador personal representativo. Si falta asignación específica, puede agregarse curso QA claramente identificado y separado en la misma escuela bajo sección10, conservando filas originales y cuentas, como en4. No sustituir la cuenta personal por QA ni cambiar su curso genérico.
+9. [x] Informe/matriz/inventario/continuación fieles, revisión propia sin subagentes, secretos/UTF8/diff y commit local; continuar InglésHLM6 autónomamente.
+
+Archivos: secondary-optative-english.ts y nuevo helper literario acotado; consumidores existentes; contratos optative-hlm-ing-five-contracts.json; artefactos optative-hlm-ing-5; catálogo128/congelado127; scripts existentes de fuente/QA/HTTP/inventario con allowlist explícita. Sin dependencias nuevas ni UI adicional. El timeout del listado personal de Actividades permanece documentado en el cierre4 y no autoriza ocultarlo elevando timeouts.
+
+Cierre128:550consignas/2200instrumentos completos leídos y huellas0pendientes. Backend72047/frontendactivities72339,0fallos;4builds0(dry-run),lints0/16advertencias previas,Node23/0. Catálogo y fuente205/56 idempotentes. HTTP28únicas completadas tras un corte inicial de PostgreSQL sin escrituras. Recorrido personal completo en curso QA separado:cuatroformatos,puntos pendientes/manual17.35→20→17.35,guardar/reabrir/solo estrategiaexacta. Historia60/543preservada,final61/572. Auditoría y commit local español de cierre, sinpush; continuarInglésHLM6.

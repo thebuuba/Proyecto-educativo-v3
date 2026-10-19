@@ -12,7 +12,9 @@ export function upperEnglishCommunication(task:UpperEnglishEvidence,scope:string
   'No aporta una respuesta pertinente reconocible para continuar el intercambio.',
  ],3))
  const preparationOnly=/\b(?:planific\w*|ensay\w*)\b/.test(text)&&!/\b(?:present(?:ar|aran|an|en)|expon\w*|comunic\w*|escrib\w*|redact\w*)\b/.test(text)
- if(!['oral','interaction','writing'].includes(mode)||preparationOnly)return rows
+ const messageRequested=/\b(?:mensaje|texto|parrafo|discurso)\b/.test(text)
+ const standalone=!messageRequested&&(/\b(?:oraciones|frases|enunciados) independientes\b/.test(text)||mode==='writing'&&/\bpreguntas?\b/.test(text))
+ if(!['oral','interaction','writing'].includes(mode)||preparationOnly||standalone)return rows
  rows.push(mode==='writing'?upperEnglishRow(scope,'written','Texto escrito estructurado y comprensible',[
   'Organiza en inglés las ideas del texto con una estructura y relaciones que permiten seguir la información y el propósito solicitados; los errores aislados no impiden comprenderlo.',
   'El texto se comprende; una relación entre ideas necesita revisión.',

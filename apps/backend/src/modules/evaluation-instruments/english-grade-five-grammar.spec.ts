@@ -17,7 +17,10 @@ describe('Quinto: formas y propositos de PDF164-167',()=>{
   expect(continuous.criteria.map(c=>c.templateId)).not.toContain('ing-5-feature-present-perfect')
  })
  for(const f of fixtures)for(const form of f.forms)for(const action of ['Leerán un texto en inglés e identificarán','Explicarán la función de','Escribirán un mensaje en inglés utilizando','Compararán la función de','Investigarán en textos en inglés el uso de'])for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'] as const)for(const total of [20,17.35])it(`${f.id} ${form} ${action} ${format} ${total}`,()=>{
-  const description=`${action} ${form} con ejemplos de los textos proporcionados.`
+  // These source-purpose assertions use their stated curricular situation;
+  // generic school contexts are separately checked without inventing a scenario.
+  const situation=['present-simple','present-perfect','present-perfect-continuous','medical-verbs'].includes(f.id)?' de una consulta médica simulada':f.id.startsWith('modal-')?' de una compra simulada de bienes y servicios':''
+  const description=`${action} ${form} con ejemplos de los textos proporcionados${situation}.`
   const p=propose(description,format,total),c=p.criteria.find(c=>c.templateId===`ing-5-feature-${f.id}`)
   expect(c).toBeDefined();expect(c!.progressionLevels).toHaveLength(5)
   if(action.startsWith('Escribirán'))expect(c!.description.toLowerCase()).toContain(f.purpose.toLowerCase())

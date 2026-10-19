@@ -13,7 +13,7 @@ export function requestedGradeFiveFunctions(raw:string){
  for(const feature of englishGradeFiveGrammar)text=text.replace(new RegExp(feature.match,'g'),' ')
  const ids:string[]=[]
  if(/\b(?:quejas?|reclamacion(?:es)?|reclamos?)\b/.test(text))ids.push('complaint')
- if(/\b(?:compar\w*|contrast\w*)\b/.test(text)&&!/\b(?:funcion|gramatica|vocabulario|expresiones)\b/.test(text))ids.push('alternatives')
+ if(/\b(?:compar(?:ar(?:an)?|an|en|ando)|contrast(?:ar(?:an)?|an|en|ando))\b/.test(text)&&!/\b(?:funcion|gramatica|vocabulario|expresiones)\b/.test(text))ids.push('alternatives')
  if(/\b(?:comprar(?:an)?|compra(?:n|s)?|transaccion(?:es)?|adquirir\w*)\b/.test(text))ids.push('purchase')
  if(/\b(?:probabilidad|probable\w*|posibilidad(?:es)?)\b/.test(text))ids.push('probability')
  if(/\b(?:certeza|cierta|cierto|segura|seguro)\b/.test(text))ids.push('certainty')
@@ -28,7 +28,8 @@ export function requestedGradeFiveFunctions(raw:string){
 }
 export function fifthGradeEnglishContent(task:UpperEnglishEvidence){
  const {mode,text}=task,receptive=['reading','listening','analysis','comparison','research'].includes(mode),source=mode==='listening'?'mensaje escuchado':'texto disponible'
- const cultural=gradeFiveStrategyCriteria(task.requirementText,mode).some(c=>c.templateId.endsWith('cultural-comparison'))
+ const strategies=gradeFiveStrategyCriteria(task.requirementText,mode)
+ const cultural=strategies.some(c=>c.templateId.endsWith('cultural-comparison'))
  const rows=(cultural?[]:task.functions).map(id=>{
   switch(id){
    case 'complaint':{
@@ -107,6 +108,13 @@ export function fifthGradeEnglishContent(task:UpperEnglishEvidence){
    case 'advice':case 'suggestion':{
     const ask=/\b(?:pedir(?:an)?|pidan|solicitar(?:an)?)\b/.test(text),give=/\b(?:dar(?:an)?|dan|den|comunic(?:ar(?:an)?|an|en|ando)|expres(?:ar(?:an)?|an|en|ando)|propon(?:dran|er|en|gan))\b/.test(text)
     const definite=id==='advice'?'el consejo':'la sugerencia',indefinite=id==='advice'?'un consejo':'una sugerencia'
+    if(!receptive&&ask&&!give)return row(id,id==='advice'?'Solicitud de consejo relacionada con la situación':'Solicitud de sugerencia relacionada con la necesidad',[
+     `Solicita en inglés ${indefinite}, precisando la situación o necesidad del personaje sobre la que pide orientación.`,
+     'La solicitud de orientación se relaciona con la situación; una referencia a la necesidad necesita precisión.',
+     'Formula una solicitud general, pero deja imprecisa parte de la situación sobre la que pide orientación.',
+     'La solicitud cambia la necesidad o contradice los datos proporcionados del personaje.',
+     'No se reconoce una solicitud de orientación pertinente para la situación indicada.',
+    ])
     return row(id,id==='advice'?'Consejo relacionado con la situación':'Sugerencia relacionada con la necesidad',[
      receptive?`Relaciona ${definite} del ${source} en inglés con la situación y los datos que ${id==='advice'?'lo motivan':'la motivan'}.`:ask&&!give?`Solicita en inglés ${indefinite}, precisando la situación o necesidad del personaje sobre la que pide orientación.`:`${ask?'Solicita y comunica':'Comunica'} en inglés ${indefinite}, relacionando la recomendación u opción propuesta con la situación y los datos del personaje.`,
      `${id==='advice'?'El consejo solicitado o comunicado':'La sugerencia solicitada o comunicada'} se relaciona con la situación; una referencia necesita precisión.`,
@@ -124,11 +132,11 @@ export function fifthGradeEnglishContent(task:UpperEnglishEvidence){
   return row(group.map(c=>c.id).join('-or-'),group.map(c=>c.title).join(' o '),[0,1,2,3,4].map(i=>group.map(c=>c.progressionLevels![i]).join(' / ')+' Se valora únicamente la alternativa elegida.') as Parameters<typeof row>[2])
  })
  combined.push(...requestedGradeFiveGrammar(task.requirementText).map(f=>gradeFiveGrammarCriterion(f,task.requirementText,mode)))
- combined.push(...requestedGradeFiveLexicon(task.requirementText).map(f=>gradeFiveLexicalCriterion(f,task.requirementText,mode)))
- combined.push(...gradeFiveStrategyCriteria(task.requirementText,mode))
+ combined.push(...requestedGradeFiveLexicon(task.requirementText).filter(f=>!(receptive&&f.id==='ask-help'&&strategies.some(c=>c.templateId==='ing-5-strategy-help'))).map(f=>gradeFiveLexicalCriterion(f,task.requirementText,mode)))
+ combined.push(...strategies)
  combined.push(...gradeFiveContextCriteria(task,combined))
  combined.push(...gradeFiveGenreCriteria(task.requirementText,mode,combined))
- if(combined.length)combined.push(...upperEnglishCommunication(task,'ing-5'))
+ if(combined.length)combined.push(...upperEnglishCommunication(task,'ing-5').filter(r=>!(r.templateId==='ing-5-interaction'&&combined.some(c=>c.templateId==='ing-5-genre-conversation'))))
  return combined
 }
 const provider=createUpperEnglishProvider({grade:5,functions:requestedGradeFiveFunctions,criteria:fifthGradeEnglishContent})

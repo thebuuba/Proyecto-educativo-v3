@@ -1,0 +1,60 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "environment": "http://localhost:8787",
+  "accountKind": "PERSONAL_DEVELOPMENT_ACCOUNT_NOT_QA",
+  "frontendCandidate": "evaluation-2026.128",
+  "entryAsset": "/assets/index-BMB5l9HX.js",
+  "entrySha256": "5c269f1c7af8a106bcfc690233b14d149fb6ab7b82113e4974e72b89e6c7df07",
+  "normalReloadObserved": true,
+  "registerSwScriptObserved": true,
+  "storageOrServiceWorkerCleared": false,
+  "loginEmailOrCredentialsUsed": false,
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+  "personalQaContext": {
+    "authorization": "Encargo integral, sección10: crear datos QA identificables",
+    "separateClearlyNamedCourse": true,
+    "grade": 5,
+    "cycle": 2,
+    "modality": "academic",
+    "exit": "HLM",
+    "subjectCode": "OPT-HLM-ING-5",
+    "existingPersonalSchool": true,
+    "newUsers": 0,
+    "newStudents": 0,
+    "originalRowsPreserved": true,
+    "idempotenceVerified": true
+  },
+  "observed": [
+    "Creador vacío de la asignatura específica cargó sin error; cuatro selectores verticales visibles, Sin estrategia y puntos vacíos, sin anuncio de preparación.",
+    "Título y descripción de lectura breve para identificar idea general: Comprensión escrita, Sin estrategia, Lista de cotejo automática y editor completo con una evidencia pertinente, puntos aún vacíos.",
+    "Al añadir diálogo con punto de vista y razones en una simulación de lectores ficticios: Interacción oral, Simulación automática y rúbrica completa de cuatro criterios, puntos aún vacíos.",
+    "Selección Individual y17.35manuales; rúbrica, cotejo, escala de grado y ponderada preparados completos e inspeccionados; ponderada100% y17.35→20→17.35 exactos.",
+    "Regreso manual a rúbrica y edición del primer criterio con QA manual. Una sola actividad creada y reabierta mediante enlace Editar del listado cargado. Simulación y17.35 y texto manual conservados.",
+    "Cambio únicamente a Estudio de caso manual; guardado, recarga de edición y verificación de estrategia y texto manual visibles. Consulta de solo lectura confirma instrumento/snapshot/criterios/pesos/puntos/hash exactamente iguales."
+  ],
+  "persistence": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "5ba83b92-b3f3-4bb5-8f97-1848a48104be",
+    "instrumentId": "0fb30827-cbbd-4c47-b071-8e0bb8aeed87",
+    "snapshotId": "4da908cf-340f-4341-add9-19996884d2a3",
+    "instrumentHash": "e859dcde1a41bf71721292d06d92937c",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.128",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "activityWrites": 2,
+    "newActivities": 1,
+    "newSnapshots": 1
+  },
+  "pending": [],
+  "databaseActivityWrites": 2,
+  "draftsDeleted": 0,
+  "limitations": [
+    "Prueba representativa en curso QA específico separado dentro de la cuenta personal; conserva sus cursos y borradores originales y no acredita automáticamente la optativa genérica sin contexto.",
+    "El listado cargó y permitió Editar en este recorrido. Los timeouts observados antes y el corte de PostgreSQL del primer intento HTTP siguen documentados; no se ha identificado su origen ni se afirma que estén corregidos."
+  ]
+}
