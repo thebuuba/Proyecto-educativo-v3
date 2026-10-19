@@ -66,7 +66,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Manejo de la información en inglés | 4 | Humanidades y Lenguas Modernas | 445, 446, 447, 448, 449 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Apreciación de la Literatura Anglófona | 5 | Humanidades y Lenguas Modernas | 450, 451, 452, 453, 454, 455 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Análisis Crítico y Evaluación de Textos en Inglés | 6 | Humanidades y Lenguas Modernas | 456, 457, 458, 459, 460 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
-| Apreciación y Producción Literarias | 4 | Humanidades y Ciencias Sociales | 462, 463, 464, 465, 466 | PENDING |
+| Apreciación y Producción Literarias | 4 | Humanidades y Ciencias Sociales | 462, 463, 464, 465, 466 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Apreciación y Producción Literarias | 5 | Humanidades y Ciencias Sociales | 467, 468, 469, 470, 471 | PENDING |
 | Análisis y Producción de Textos Científicos y Profesionales | 6 | Humanidades y Ciencias Sociales | 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 | PENDING |
 | Filosofía social y Pensamiento Dominicano | 4 | Humanidades y Ciencias Sociales | 482, 483, 484 | PENDING |

@@ -1,0 +1,1584 @@
+{
+  "catalog": "evaluation-2026.130",
+  "method": "Lectura completa de80textos iniciales y16textos nuevos/cambiados,83textos finales;36paquetes exactos de formato/puntuación y78correspondencias. Reconstrucción exacta de312instrumentos mediante read-hcs-four.mjs; descripción, criterios y cinco niveles, títulos de cotejo/escala, parcial de ponderada, descriptores y puntos. Relectura de deltas y foco final de recepción.",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "findingsFixed": [
+    "Distingue inicial perdía la referencia al autor",
+    "Estilo del autor activaba identificación adicional del autor",
+    "Voces y motivaciones arrastraban rasgos de personajes no pedidos",
+    "Plan omitía intención expresamente solicitada",
+    "Revisión de puntuación ampliada a contenido y organización",
+    "Inferencia léxica duplicada por explicación genérica",
+    "Trama/ambiente/adjetivos autobiográficos caían al generador genérico",
+    "Recepción preparatoria añadía dimensiones ajenas al foco explícito"
+  ],
+  "minorDeferred": [
+    "Repeticiones de artículos y de función en formulaciones compartidas; no añaden requisitos."
+  ],
+  "limits": [
+    "Muestras representativas, no todas las variantes posibles de cada fila curricular.",
+    "Indicadores contextuales no se convierten en tareas simultáneas ni disposiciones privadas evaluables."
+  ],
+  "items": [
+    {
+      "caseId": "brief:novela-autobiografica",
+      "instrumentType": "rubrica",
+      "sha256": "ac4365251cb58bb27c0803a1b349aac2d720f00fdbb65c74b450e84d91b012d2"
+    },
+    {
+      "caseId": "brief:novela-autobiografica",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cbc1b64636e9ef44103efc449cfd96be687bb76c585c2416ef97249b6a7f6f7f"
+    },
+    {
+      "caseId": "brief:novela-autobiografica",
+      "instrumentType": "escala",
+      "sha256": "963c42268b22928c543081b61d7f435ff5fe90b5344ad01c059c0db1a7ea1378"
+    },
+    {
+      "caseId": "brief:novela-autobiografica",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2dbfb7284f59701e93ec49ffa4ba639709d1c45c2925d25fad9c7ab4ea1e3b67"
+    },
+    {
+      "caseId": "brief:novela-realismo-magico",
+      "instrumentType": "rubrica",
+      "sha256": "7e510676959e75e1ea22426f8c55474beaa3f14bc154d09b5e7c5bfbabc3ec40"
+    },
+    {
+      "caseId": "brief:novela-realismo-magico",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3099a9ad5465110a84e8c6313eeed68b7a96bdc282ef5af0ca4f75ae5252c657"
+    },
+    {
+      "caseId": "brief:novela-realismo-magico",
+      "instrumentType": "escala",
+      "sha256": "50f1a26cb604e019f96207b57b06e6f8ed263d6ed81a812e51a654505b496a17"
+    },
+    {
+      "caseId": "brief:novela-realismo-magico",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c14c54f9957d527c2acf22ce179a8ff06923a68a7ede9117292e48045353ccff"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "rubrica",
+      "sha256": "eabb071b2cf73c99221aba02d1a02e42ae746f39305cf63fdaa24415521887d8"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b0d547b7f1cb9d2a32b3b8ef535752cd1207f199865813a19685dd067aee76c1"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "escala",
+      "sha256": "190dacfbc8a9bebd8b793ffd1c1071e17eafc0a0ba99618f46aa7405150c7245"
+    },
+    {
+      "caseId": "concept-16",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7df359fa0158f5424721646128a54f3772f2a6193a0bf2b6575eefedd1dc6034"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "rubrica",
+      "sha256": "ae3f4275ecaa891da8bd45d452027ac5470fe24b01741f0010214ddd95f0e124"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7c328d0cb34c2cbe0175b88ba791e52c35549f61cb73dc38e894775260742dda"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "escala",
+      "sha256": "eeb2a23c950e1efc719985f03a0cdec810a5d6c6f143282ff95cf054fdbb5fd3"
+    },
+    {
+      "caseId": "concept-17",
+      "instrumentType": "lista-ponderada",
+      "sha256": "59af16ac509fd56c66221044c9027020e295f86c63a3e07e542aba2d05ebd86b"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "rubrica",
+      "sha256": "0838fc3720438aaad8c39749ec3b19a3df6cbf10e5c7edec8ff3e2089b416dc4"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2d166afb8bf7f0954a523d5ba8df8667c26afca5080e4d6dbeab5d68a37dc29d"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "escala",
+      "sha256": "2e51e838e64d5388717e0bf2868b7d7f921f035d02544fc5118b8b58177c79e6"
+    },
+    {
+      "caseId": "concept-18",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35d6b86d4cd75a6d6d01bce865143538d91def0e0b04ebd7a20abb0768e57357"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "rubrica",
+      "sha256": "256a178ce06bde92c177617fc8634560af80d6f84e029f83167882f25f48c9d4"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df74193227c74746838c669bebeb8788dc9803f84aaf349a0c59b5947aa2ad87"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "escala",
+      "sha256": "945dc70f6d2a6220b934359e8cfde44223796f133602b17996c5bc478cdd0ea4"
+    },
+    {
+      "caseId": "concept-19",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e1395aae62e6c0ade543b5dc3eaa12f425c4191e77a67d8afdc3eb4869c8e7df"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "rubrica",
+      "sha256": "73f641de0917ea983cc69a142f41a4903b684005ba3b083db062df89a1068219"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6a24bd1391cd6d0838c1e2386f5ab9348669c14909f943d1a0ef857b0f27a893"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "escala",
+      "sha256": "2d7ac93fbbc1a7b8492fd14d9a149b8dbd7bc3c6245b7c2d1ea077d28542bd47"
+    },
+    {
+      "caseId": "concept-20",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5cc51337862fb79354fb4a48fb3d0eb339176391a94cad039259ff350e57a3d1"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "rubrica",
+      "sha256": "4ae67b71c89c39c16c3837dd1d6b36e7456abeb178f51a1eb7faa0d584ad1cb3"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4a99bcf95a822c192ad12f1dc05483f8a2d157f669b2330dc4f613c04d273ffc"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "escala",
+      "sha256": "d8fe85a1046a785a506d0fae968d3743f3b31e4798b256c49454aac8d0286582"
+    },
+    {
+      "caseId": "concept-21",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8149715cc6625ae4edeb91d0da06f9722a8f6c7ee85dfbdefade697f3b9b6b35"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "rubrica",
+      "sha256": "fbc12cc0b042d2e109a6b0fc7ef108dd982fd607f1868b642fef12f39261c4d6"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ffc4175c27f0e42c26646c8210f08c0af3036c26e38d09eac855e8ec36e2857"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "escala",
+      "sha256": "cc0ed37b35078762c7f6631723e1f211cb01cf6c3d6fd8b9fecf388da9e6a123"
+    },
+    {
+      "caseId": "concept-22",
+      "instrumentType": "lista-ponderada",
+      "sha256": "057b7e7586f8e7c906e124594183b2f99ca3f449022e3b0a6f5a1a235c92aa3b"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "rubrica",
+      "sha256": "e3266ce778c3eacf21fd3d6d8af426c00c8bc79e17ef56dc372132aee8f02609"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dd6263da7e42ce09576aa9a119e8a2b1c0d9d9fed13bc3d150b6facc12b1a0ec"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "escala",
+      "sha256": "9d47c4aaea2b7bea23d6dbd9fafcb2be84f8bf1bf82fe1d8d2219ac337db8170"
+    },
+    {
+      "caseId": "concept-23",
+      "instrumentType": "lista-ponderada",
+      "sha256": "624a355d8d10edc7fbb2db7965bf2542f57b7538bc7810cd28941be1c316535d"
+    },
+    {
+      "caseId": "concept-24",
+      "instrumentType": "rubrica",
+      "sha256": "f3f056fec26ba3a6e76242d74d4c0dd3a7615ce40be070e32ec85b0bbc2f83dc"
+    },
+    {
+      "caseId": "concept-24",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b544467bc2f87055e8e3c2eefb5080f0b820cdc518eded823059fbac891a268a"
+    },
+    {
+      "caseId": "concept-24",
+      "instrumentType": "escala",
+      "sha256": "7470913819f8f43b0ebc21ffebdaa09a2054cad4aaa7b16133b1ea3157e8ff7d"
+    },
+    {
+      "caseId": "concept-24",
+      "instrumentType": "lista-ponderada",
+      "sha256": "47b1955d6e0788ad6bc7fded8839bc2fd484e601dee8a3bb12bffe40741d75b7"
+    },
+    {
+      "caseId": "concept-25",
+      "instrumentType": "rubrica",
+      "sha256": "f2c290b96b93b8ae00e5242b4f011dc5c1436d9dd17b88d67c160aab25ccc763"
+    },
+    {
+      "caseId": "concept-25",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2ac6db8ca481803974c19f21a631591af5d7ecc152bf9dc1a9b1671d446cd8f3"
+    },
+    {
+      "caseId": "concept-25",
+      "instrumentType": "escala",
+      "sha256": "54ade168e227982d8ed848110a29c82a4607303c1f177b2e47ec3571e838d510"
+    },
+    {
+      "caseId": "concept-25",
+      "instrumentType": "lista-ponderada",
+      "sha256": "641bf66ab5951ad1b27532dd1d91648674a240564c3443ea84f6891983e0ea60"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "rubrica",
+      "sha256": "25c6e69be24d98eb58e42b6223b7649a8c03a6022e10a900e82ff758b19ab2f5"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7aff76032273d815c559334d41c9cc0aac12bfdf8694a1054932c719f5153f7d"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "escala",
+      "sha256": "60090d4f5606bc246414b711b69564944e010eb85ad5081c589f9f05e7b56ef1"
+    },
+    {
+      "caseId": "concept-26",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cfa4f302c0f13aa4b637b8b7b9160a6f6f4c4a2fd6dbbc2553c3e836805277c3"
+    },
+    {
+      "caseId": "concept-36",
+      "instrumentType": "rubrica",
+      "sha256": "d112ba06e2df782ecefd645cda6417b11a03b19f0e67071ed434c19f4cc6c4fc"
+    },
+    {
+      "caseId": "concept-36",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a8abbbfa78daf1280b366aaad608413e1ee5a31b097a691ae55d23f2390424c3"
+    },
+    {
+      "caseId": "concept-36",
+      "instrumentType": "escala",
+      "sha256": "da3564a28032e69f06b04d97adde260ec8eb7b39cda63046088d355424a8eb22"
+    },
+    {
+      "caseId": "concept-36",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a27ff219b6a16d01b9c90d7b15920fa4823f3f4cd4b4c5ed1e5c079656f3c1ff"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "rubrica",
+      "sha256": "af38201965ddd3d89d1dc14618913d7274ba2405dc7ff4994cb43b9985064a87"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c6615517a83e6cdc8a4da8b6a96a4d2d9a92fba31da612cfc7deff0b72476ace"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "escala",
+      "sha256": "b3b306e730dcf897087b0e8aae5cb0b3b34550d163f6f2b67c946db40750fe80"
+    },
+    {
+      "caseId": "concept-37",
+      "instrumentType": "lista-ponderada",
+      "sha256": "78dfd96f5b26ce70be84d0e7bbcd23035e82dc03d99a5b8336ed9f2e9fe94599"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "rubrica",
+      "sha256": "2d361900d670bd5deb18dd60a2fb7181e7ae47f8aa40474de2adb8d246520e01"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "lista-cotejo",
+      "sha256": "402462093acd30215c6c0642c8a7de9f4fa29aec94586f83b7d2c46b57685677"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "escala",
+      "sha256": "c5850576682ca0cb1f2dc0107de7fcb277bb08501548b048169d2c828eca6150"
+    },
+    {
+      "caseId": "concept-38",
+      "instrumentType": "lista-ponderada",
+      "sha256": "73aabc868b2afcd0df652addc9bd7b66fb54035ddbcd1b5eee2f54e6891bb4f2"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "rubrica",
+      "sha256": "8940e1927c9d800547df4b0d9de5af87b72c10c0da74a95443bf68ad60443916"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "lista-cotejo",
+      "sha256": "31bd921eeb076a268a21e502951aa978127aaa7158cbbc5054d737e8f777d3a3"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "escala",
+      "sha256": "113c231908389acfec5a3b0b0122c233dbb8094d9a5cef4ecc80d524b4c55fc3"
+    },
+    {
+      "caseId": "concept-39",
+      "instrumentType": "lista-ponderada",
+      "sha256": "028fbeb6b37637f85d3c6736e1bf57fc3aa8ed6df5be413f96d068b660a06a49"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "rubrica",
+      "sha256": "a610622b3da451e89adf1d40805e76c00bc1f8f79631f27509f6ecd291b1433c"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "lista-cotejo",
+      "sha256": "392b3c0e238f0ef0cdb7fcedb7213ef768b15843272ee4de2dbac3285d1d363b"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "escala",
+      "sha256": "440de7de21d495edd0c79e95f968f8d589a16abafc493bb90c55a103928ec1f8"
+    },
+    {
+      "caseId": "concept-40",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c219706ad5857a0363a18f668c6935d632e40f88493201c797cbc3f5105fc201"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "rubrica",
+      "sha256": "d72b0767172d9a99a8ff3bb4fa8d54dc21f0745d682afa4401b8f2cda6e26a51"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "lista-cotejo",
+      "sha256": "af5b9e09564daf11a7b74e4b0bf0d4538b9ba3ba512b2c8ab16db2ebc2a80dcf"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "escala",
+      "sha256": "a25b9b3532d497f280ea4ed77bcaab5374e128f3d9a2cb21d7673eb0ed52a682"
+    },
+    {
+      "caseId": "concept-41",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6cb012ee1066d4e34d590bbcc15a972e9dec60a0ce8a7e263ac35dff82860574"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "rubrica",
+      "sha256": "78cebab23a14bb1342232dda8deb6a02322f0ebd6464cd9598f74840d216e4ae"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4a5f4c70fcbf8fa2b6ec455c2bbf1b5ef3fb0120d2af4f56afd0a3c80062417b"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "escala",
+      "sha256": "1c853fa020d6d92743422e94f63e8e3448be6910ca35defa91176288d8630206"
+    },
+    {
+      "caseId": "concept-42",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fba6ca7f400992ab25dfbc2133be7ffa567d8695895bb1019e539af6ca707c50"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "rubrica",
+      "sha256": "f722e4fc87c21e4d820f4c1acc2b10ae80aa253579f1a61900e2f569eb06078b"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d90f33e2771c1459eaa0bb99deb57b9c6948b89a78f0df760b4237fc6585e8ab"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "escala",
+      "sha256": "5640ed9320384daac277d11a2bd353c2cdb7b4d1b04d08c9a39c50d98dd573f7"
+    },
+    {
+      "caseId": "concept-43",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2f4a8a60790e7f2f3172bfbf9cc58b9327fb04a8789e32224f2b89dbe7b46433"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "rubrica",
+      "sha256": "cffcf1b76aee225950e886e4c74af907d190b5af5a6e799475c53ed65e36c72c"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7b9041146ee42bb5e6724631dd31bbb33f63a96f8266435b8c3a95d6927c02de"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "escala",
+      "sha256": "6cf52a9f43c142045ad3bfa7d8e898bfb088e31059d66cbcdf0df8a0af490a21"
+    },
+    {
+      "caseId": "concept-44",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cee625473e1135a75b411ed9654bc434aa61f07c53569c1d207322120793c837"
+    },
+    {
+      "caseId": "concept-45",
+      "instrumentType": "rubrica",
+      "sha256": "8f240646cb8f99d70277227e7451494c674f4189102b26fa61e88acd301a5def"
+    },
+    {
+      "caseId": "concept-45",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ad3216d7c1a95081a1c4699c904d7db86681ab132be916aa6d748af83189b4a"
+    },
+    {
+      "caseId": "concept-45",
+      "instrumentType": "escala",
+      "sha256": "04cce568c932aacacd87066ef63776bfc78ea56c46f5e183c302a4b8fee95213"
+    },
+    {
+      "caseId": "concept-45",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f6dd22c2caedf35062e925e1a5e2066b4e9aeb623f911d3120509e4465827957"
+    },
+    {
+      "caseId": "concept-46",
+      "instrumentType": "rubrica",
+      "sha256": "99650d183e28bf844834d6c17b936e13800a1ac6afa69d4fbb42fed92eb56e83"
+    },
+    {
+      "caseId": "concept-46",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2d7fc7e0a3506d72d6cb86370e3db99251fbf3785b0655316ea5fe3ce171b2e3"
+    },
+    {
+      "caseId": "concept-46",
+      "instrumentType": "escala",
+      "sha256": "e5b096b74633267b9ee61517ca9658b76ed69a2eb3ce1bda2dc4f5c146f326cd"
+    },
+    {
+      "caseId": "concept-46",
+      "instrumentType": "lista-ponderada",
+      "sha256": "16a56c54cd2a52a0fde6066cc71092c190a40aeeae39b63f7c339a10b2a6b30c"
+    },
+    {
+      "caseId": "concept-47",
+      "instrumentType": "rubrica",
+      "sha256": "16f666b79e5ad56524079b8149e72ab785a3190f93141803cb05827636867c69"
+    },
+    {
+      "caseId": "concept-47",
+      "instrumentType": "lista-cotejo",
+      "sha256": "104c3a9adc0458cbe816e39f954f59f5401d50f4ab27eb2a2744ee5c3951b0ee"
+    },
+    {
+      "caseId": "concept-47",
+      "instrumentType": "escala",
+      "sha256": "9d1b04413f64896055a08eccdac76db0f6e66c3835408cb025f5fe0ac6c12b41"
+    },
+    {
+      "caseId": "concept-47",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7453973b868b3a7a27f4dfeb8c6030b80fa68ed16330997408b31ea9e4c9ec60"
+    },
+    {
+      "caseId": "concept-48",
+      "instrumentType": "rubrica",
+      "sha256": "38ee8de8e804c29ae48c5485acfd6fb89e35b729be138b75ce13b9f424e6fd91"
+    },
+    {
+      "caseId": "concept-48",
+      "instrumentType": "lista-cotejo",
+      "sha256": "37cc913d0f5d9654eeb2bbf5448f297d06d2d25db83b630d1282109e4e264c43"
+    },
+    {
+      "caseId": "concept-48",
+      "instrumentType": "escala",
+      "sha256": "a632378a0da26a12ddbbc1a83d6e71c2cc920e1a63448e46fdc286f967d08339"
+    },
+    {
+      "caseId": "concept-48",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dc64693dfddc9d50ee12a23587dcacddfd751b344efeeab60aba4d6713648be4"
+    },
+    {
+      "caseId": "concept-49",
+      "instrumentType": "rubrica",
+      "sha256": "e4b5af400c8972942fd5dd5980929d8d001a58db403ddf4c25a7c42aaabb2d44"
+    },
+    {
+      "caseId": "concept-49",
+      "instrumentType": "lista-cotejo",
+      "sha256": "748346392742f057a6bd2793c8c4299251f009d28b74c5a4a44760bf6ea2cbf9"
+    },
+    {
+      "caseId": "concept-49",
+      "instrumentType": "escala",
+      "sha256": "0dcbdc43c413dbab81d912a6a72c90aa505673d79b4f81adfc2bde9615a47291"
+    },
+    {
+      "caseId": "concept-49",
+      "instrumentType": "lista-ponderada",
+      "sha256": "855d98ef4f1ae304adec11be5818460e570911ea1c20552ef1fc86bb36878ab1"
+    },
+    {
+      "caseId": "concept-50",
+      "instrumentType": "rubrica",
+      "sha256": "6578dff3c7ad947b1579bdc8f50b8298044750f207e815092ca18a4ad8446346"
+    },
+    {
+      "caseId": "concept-50",
+      "instrumentType": "lista-cotejo",
+      "sha256": "703c06f4fe4b52947fdb03c2a3302359baaeb2ae1230f7256a4a178e5fa4a86b"
+    },
+    {
+      "caseId": "concept-50",
+      "instrumentType": "escala",
+      "sha256": "3b78afa5c6b1f51d3aa6fdc7bb7f6b0145ea753881066a114ff9a81fd32e7910"
+    },
+    {
+      "caseId": "concept-50",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a50b6c072add812d64eda7a671d9a52091464cc2b6a6a1c986d3d2ec3207c632"
+    },
+    {
+      "caseId": "auto-listening",
+      "instrumentType": "rubrica",
+      "sha256": "d5ea300437aa7ee523e860afc31d931d0e2719f0bd9b248d9cec598edd79e5b2"
+    },
+    {
+      "caseId": "auto-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "13d8f08f6d7a8532e41eb564149fc3aaed9f7636d289de2a6a5f4cdc5d821846"
+    },
+    {
+      "caseId": "auto-listening",
+      "instrumentType": "escala",
+      "sha256": "93e9a4e3532e7f4a46c323366fa284b88a501568a1548f99a3eb39ed928f33b5"
+    },
+    {
+      "caseId": "auto-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "134f4721ff0fc2c023f2496aab45dab9fcb5d1fe86139c7ec158a4f940073f25"
+    },
+    {
+      "caseId": "auto-causality",
+      "instrumentType": "rubrica",
+      "sha256": "8ea66f09944a19473e30743dcc5c9ee0e13cdf397eed1e43ff3286e6187c8c83"
+    },
+    {
+      "caseId": "auto-causality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c843a3a862bda9ea4b9e0d9bfbfcf6544d515c24560e46c030c59ef0b36805c"
+    },
+    {
+      "caseId": "auto-causality",
+      "instrumentType": "escala",
+      "sha256": "b05e87aed2c409bb170bbd96bc11808fdbea036dcac8b3f1d4a7ad2d2fe983b4"
+    },
+    {
+      "caseId": "auto-causality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ef8511056a77729a093ab1e6a9b970752470e78f36838a8d9ddc8074165cd27e"
+    },
+    {
+      "caseId": "auto-oral-plan",
+      "instrumentType": "rubrica",
+      "sha256": "73d51dd2c6b1d51d7590a33e263a91c06fe6bb5b6cac3811045cfdd512ebee41"
+    },
+    {
+      "caseId": "auto-oral-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f994af13f756aa3f28d2c25fbde085a06fb00ab1bf2a7e04bbf5103fc97c967f"
+    },
+    {
+      "caseId": "auto-oral-plan",
+      "instrumentType": "escala",
+      "sha256": "92a38eabe35182a269b78bf25438d87fd46e16a30035ca12ea287337f2c6f111"
+    },
+    {
+      "caseId": "auto-oral-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eb4a4f37608eef899d92bf6e7e2b132b1bf0facc3a2586c1082a26a2cb15916e"
+    },
+    {
+      "caseId": "auto-oral",
+      "instrumentType": "rubrica",
+      "sha256": "6ce247463569d32caaa7863c2c55ad88c3f34d380d72975e517f7ee72e691bf9"
+    },
+    {
+      "caseId": "auto-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41f21e82ee77e670e11ec3c058739b17e540ba8fa20208c1756787c769a0b503"
+    },
+    {
+      "caseId": "auto-oral",
+      "instrumentType": "escala",
+      "sha256": "3dd101c975022f521301e0ecd70a5c9af7cca2f117c5e889a34f9c1eab49db1b"
+    },
+    {
+      "caseId": "auto-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a44bcdf32cae75415cfd95bcaad9731a47f5541b32a3486e66c7c6e111ac926"
+    },
+    {
+      "caseId": "auto-prediction",
+      "instrumentType": "rubrica",
+      "sha256": "f4b03d08b4d9e2761abd9c557b503c6c0e94e7c1e09a306afc9be26fa8af712a"
+    },
+    {
+      "caseId": "auto-prediction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2442c4789784b1f6e24548414fa9da7664ba0a47c8429491d3b5e187cd4b6905"
+    },
+    {
+      "caseId": "auto-prediction",
+      "instrumentType": "escala",
+      "sha256": "9b0c06920454d9b1c8e289dbb9cce2dd8f537c1d46416f24d33475e88a83e964"
+    },
+    {
+      "caseId": "auto-prediction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "511f61e79535b1076e2974bbb6a2159b043ec84886f6a5c1b97bbc5fc6f81594"
+    },
+    {
+      "caseId": "auto-inference",
+      "instrumentType": "rubrica",
+      "sha256": "22d77c0f05537ee8768d92b08f010eb06ef14d50f4e944e1cf9b55adb8aa3b10"
+    },
+    {
+      "caseId": "auto-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4596821941b6247f876c3dc3f14b5d9d5912274cfcb50927b391c2bea91ef314"
+    },
+    {
+      "caseId": "auto-inference",
+      "instrumentType": "escala",
+      "sha256": "c20ae9566bd9e9cfda08b9a300fead33a250c0dacdbfff5223836d9650118352"
+    },
+    {
+      "caseId": "auto-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d2cf6eee90ab0f3921bd718f459261a98d6afc83b8952ed246f992181f57913e"
+    },
+    {
+      "caseId": "auto-summary",
+      "instrumentType": "rubrica",
+      "sha256": "e95574004548ba545196146007ec43680ae8ea8b68bc3acfb3887701b4514dec"
+    },
+    {
+      "caseId": "auto-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "468c1533679dd3ff2646fb2e1c4589fad96eb30e17caa73f0fbc0a86560e77aa"
+    },
+    {
+      "caseId": "auto-summary",
+      "instrumentType": "escala",
+      "sha256": "2b4c6eb68ba8d0968afc65d92c48602204fe14f7d74ba460435d4ab29f655a55"
+    },
+    {
+      "caseId": "auto-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d20f14ce8c4d444ee2128b7d3641959d65ea241f34c5fc069ab285f69a082e25"
+    },
+    {
+      "caseId": "auto-writing-plan",
+      "instrumentType": "rubrica",
+      "sha256": "198055bc9af7707e368a861cf2f727e4d1bb8b48dc8c807b43c0707b751af133"
+    },
+    {
+      "caseId": "auto-writing-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b9f73852430084e595124738305ba6f2e4fc1676d77396e94dab608946f36943"
+    },
+    {
+      "caseId": "auto-writing-plan",
+      "instrumentType": "escala",
+      "sha256": "d25e123c87e947dd42911be1df0981be22ad78e142f215d345c065019c1a5df1"
+    },
+    {
+      "caseId": "auto-writing-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1b73e17639bee5530dbf4b72fb881af725b5a4f6220c738ea967de86ec014f3e"
+    },
+    {
+      "caseId": "auto-writing-voices",
+      "instrumentType": "rubrica",
+      "sha256": "33677c34b490ce18e88b3571887095dc352e649f518c59f5aa51f4ecc3e49278"
+    },
+    {
+      "caseId": "auto-writing-voices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "90673e87b1da32287bda9046a9b12b4db0e115a84649e357caa6622de82ea9b1"
+    },
+    {
+      "caseId": "auto-writing-voices",
+      "instrumentType": "escala",
+      "sha256": "1cc2b9c54dda6f040070afadd3b7cf78f626229b629dfa70a332e8af4d7b3d9f"
+    },
+    {
+      "caseId": "auto-writing-voices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "76a86d39ade3629d36c275d708b385131ea76e05536e6ce8f95487f91177cc7f"
+    },
+    {
+      "caseId": "auto-revision",
+      "instrumentType": "rubrica",
+      "sha256": "bfd98564cc140cd7c9f3b0db5e9ba61079444f0c281d9d231f98e37d4b044f20"
+    },
+    {
+      "caseId": "auto-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9c1110d4654769cc14df65f24e556e0d622264ffe9e6775d0ddca9c5e15d75f"
+    },
+    {
+      "caseId": "auto-revision",
+      "instrumentType": "escala",
+      "sha256": "25c7b3018ad1fd968834b16610ad54d03f72f76a5d3743e9329151dce6b2915a"
+    },
+    {
+      "caseId": "auto-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "af5ed86f03c3dc1738a2861f4f9354fe8469b0d5e192fa1251aa8e067be03e5e"
+    },
+    {
+      "caseId": "magic-listening",
+      "instrumentType": "rubrica",
+      "sha256": "c421bf88090641b02a15b34145493af6b364a31f2cad00f914662b4a619f81d8"
+    },
+    {
+      "caseId": "magic-listening",
+      "instrumentType": "lista-cotejo",
+      "sha256": "60378536033aab1f88a546fa81c618160c98a81c5520e2c21d2934272ee114ef"
+    },
+    {
+      "caseId": "magic-listening",
+      "instrumentType": "escala",
+      "sha256": "305bfb68bc556badd63230b55a1b837625863d720e6b840f3ee116c467c9331d"
+    },
+    {
+      "caseId": "magic-listening",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bd566270ab71644b3c3ffca890bfafe38efa91499b6fed7b0d23f60128dc3f66"
+    },
+    {
+      "caseId": "magic-causality",
+      "instrumentType": "rubrica",
+      "sha256": "ec2002c34c846c76e82ea7df02d9ff4419ad28f2cdc700386a69c8314e346868"
+    },
+    {
+      "caseId": "magic-causality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e28a3036c3a7e716c008d4ceda83f42fab7c7471cba434d6189cc0cb4939ae8b"
+    },
+    {
+      "caseId": "magic-causality",
+      "instrumentType": "escala",
+      "sha256": "e3820b57c4dc6fc98323b9715177c16aab6ff62f122b28f9f04eb54326174cf0"
+    },
+    {
+      "caseId": "magic-causality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebfe070d01c266bef01d4a1e1662cdf9b664f3ed05d74be0f8901bcb566d76d0"
+    },
+    {
+      "caseId": "magic-summary",
+      "instrumentType": "rubrica",
+      "sha256": "bd8e262fb3717c8ad78c0af8a7773aae11022f7654f4c5f486337327a1b5ed19"
+    },
+    {
+      "caseId": "magic-summary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3553817d38489ca58d5f105f09e8eabe915e2803fe3b3c37872a416985743e02"
+    },
+    {
+      "caseId": "magic-summary",
+      "instrumentType": "escala",
+      "sha256": "def5c6ea5b4dfcbf6caaf7b13d22625b0e2a24277b515a7d7b1275340cbb57e7"
+    },
+    {
+      "caseId": "magic-summary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7c5e274b726ef1fdbbdeb55fd7c55ecbb4879ee9ce4935401b04a7edf1c69425"
+    },
+    {
+      "caseId": "magic-oral-plan",
+      "instrumentType": "rubrica",
+      "sha256": "8f3ca0cd5d9a8aca2083899bc8e51376c5fcb780a476f588af53ed8fee7d4154"
+    },
+    {
+      "caseId": "magic-oral-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e395043d4ea5f1c1677ba054a121efc33ffd30cf1de6036adc2634e95b418477"
+    },
+    {
+      "caseId": "magic-oral-plan",
+      "instrumentType": "escala",
+      "sha256": "ecc4e9dce95635964d34923460649b1b330377f3d2b7bb29b28657005a0939e2"
+    },
+    {
+      "caseId": "magic-oral-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b30874e727302f223024a8efb24368da7c38895a1b17b3e65a79ca0bdfb5dac0"
+    },
+    {
+      "caseId": "magic-oral-chronology",
+      "instrumentType": "rubrica",
+      "sha256": "4af1b470c02695a40e8db99382d0bb2047b41c37b1fa158711f1812df955d1be"
+    },
+    {
+      "caseId": "magic-oral-chronology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c7e1f7f1d06e9b99307026079df7da2159f20d2e6f0ff99a8855bd4ca98218ef"
+    },
+    {
+      "caseId": "magic-oral-chronology",
+      "instrumentType": "escala",
+      "sha256": "930e568b33fee20b69359015a663c09d1b24a51f8187997e6f2ce80437152f5a"
+    },
+    {
+      "caseId": "magic-oral-chronology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23f8c008c677167af32927d330ff79b327f225e22e70252bab8ab08dfa8c7a6f"
+    },
+    {
+      "caseId": "magic-oral",
+      "instrumentType": "rubrica",
+      "sha256": "3fa8f715afc268abfdcb94a7c4a2efbc58941e55f978081ece919fd08bc16322"
+    },
+    {
+      "caseId": "magic-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "45e296012b7d662f2cf14da05ba819a0437119b5a640a5044967e1e34dda8c23"
+    },
+    {
+      "caseId": "magic-oral",
+      "instrumentType": "escala",
+      "sha256": "7ee817af6aee7eb13c0033126acf2af8e3ec3ede8df6f88670944ba07fe22a66"
+    },
+    {
+      "caseId": "magic-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a64a54c69b143d5c49895c9f9b37339dbe3a26079f912c1195f770c71c77fb2a"
+    },
+    {
+      "caseId": "magic-reading-voices",
+      "instrumentType": "rubrica",
+      "sha256": "011d739172ac2ca3ccb0998df8b9823e6bbc4a12c8962f2c2cecda480a98f4ae"
+    },
+    {
+      "caseId": "magic-reading-voices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eb06f38d3965cfec64924e491156a4233ea24b4b2fd961d884cff92743bdb099"
+    },
+    {
+      "caseId": "magic-reading-voices",
+      "instrumentType": "escala",
+      "sha256": "2d881ed63d58512c4025f248b01767add29568ba688508b51dbc68f2d658d787"
+    },
+    {
+      "caseId": "magic-reading-voices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f01fc22e8cd4a3c40ca3b1a38422191f0041bae37e1ecd6999dc7d51f8aca677"
+    },
+    {
+      "caseId": "magic-inference",
+      "instrumentType": "rubrica",
+      "sha256": "ab1bffb0fda9f36eadb719430e4af85f13022ac136d214767b3e802b14a04c04"
+    },
+    {
+      "caseId": "magic-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "be902032d8d9433fe8e6440ade4a20bb67ff6d90000dfa8be27c6cb128aaddc6"
+    },
+    {
+      "caseId": "magic-inference",
+      "instrumentType": "escala",
+      "sha256": "9f76ad1353a75932757860d227e887126cba748e759a1af2da4154503fdb3867"
+    },
+    {
+      "caseId": "magic-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1d82d21792ba1c81b8717e98b1632f4432abbc90eda1eb7f4fdf128aa5eb0258"
+    },
+    {
+      "caseId": "magic-paraphrase",
+      "instrumentType": "rubrica",
+      "sha256": "357cbb73d70750fca15d83d8b585c476c8bedbb127bebced825dd5b94eaf3283"
+    },
+    {
+      "caseId": "magic-paraphrase",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8628d910acb0fc85f5036ac1ecfe8324c314f84008a50e8a72b6ad9f7a5ab852"
+    },
+    {
+      "caseId": "magic-paraphrase",
+      "instrumentType": "escala",
+      "sha256": "4ae8c09b09352f40faa00a270f8aec39faf3ea4b2658bb59ea61296b736fed3b"
+    },
+    {
+      "caseId": "magic-paraphrase",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eec5542eae53fada741e928d51294618d94051f4a1ff0419502dbda5c98c3af5"
+    },
+    {
+      "caseId": "magic-writing",
+      "instrumentType": "rubrica",
+      "sha256": "63201efda5a167bfcacfadbebbac7abd315ddcde755a59aa2b4fe5255fa2b77e"
+    },
+    {
+      "caseId": "magic-writing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d99f623cdea5badf9c4dc8bc7f9a9b27c1bb2ab07c073235ea05ab99ee591284"
+    },
+    {
+      "caseId": "magic-writing",
+      "instrumentType": "escala",
+      "sha256": "4c167928ee5c2b22868ad9f9624edd2e4b70bcd3a432bf74c8fca2808742f98f"
+    },
+    {
+      "caseId": "magic-writing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9f0482e172ecaa32eaf18ff90943314510a59acbc302de12c5b55c1f4b1a03d7"
+    },
+    {
+      "caseId": "magic-revision",
+      "instrumentType": "rubrica",
+      "sha256": "d5582f11d094f4d422835428975bed6b798749b62222d88a33c18bab452c12b9"
+    },
+    {
+      "caseId": "magic-revision",
+      "instrumentType": "lista-cotejo",
+      "sha256": "887ad3c7acf15db24aa3c193c10bf9f748bd5846c947d85f6dfa28e8c602f11b"
+    },
+    {
+      "caseId": "magic-revision",
+      "instrumentType": "escala",
+      "sha256": "1a124352148cd0ac1f177cdd621e394667c674db6ebd67974e432a7ebf5cc516"
+    },
+    {
+      "caseId": "magic-revision",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c40c73a32b8ae37fd5e6cd27b44827e6df30d61fbeec25647769e8877566f7b0"
+    },
+    {
+      "caseId": "auto-narrator-only",
+      "instrumentType": "rubrica",
+      "sha256": "82035af514bffb8d1e5a2285eb7460854ffc14495f76884325ac1fcbcc7affda"
+    },
+    {
+      "caseId": "auto-narrator-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1ec6bea0fc6ae50389e21bcc0dc2f9b2c150a8e4b5fe13595acdaa65d16dd304"
+    },
+    {
+      "caseId": "auto-narrator-only",
+      "instrumentType": "escala",
+      "sha256": "34e168a7712f3525fb1190449399111fede598dff1728e76311f107a9bf33bec"
+    },
+    {
+      "caseId": "auto-narrator-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "14f0a310c75a25251bffc7e4f49d736a762136ddc659760caccbbab7690dea7e"
+    },
+    {
+      "caseId": "auto-identify-connectors",
+      "instrumentType": "rubrica",
+      "sha256": "547bf20b15a03130f1db6ccc5a870e089c90ae9d42d741aa1ad9e88b97d06e6a"
+    },
+    {
+      "caseId": "auto-identify-connectors",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b7ec7855687252c501bcdf2362b6af06b3b6234b3631917801908825a062051b"
+    },
+    {
+      "caseId": "auto-identify-connectors",
+      "instrumentType": "escala",
+      "sha256": "bb2b853fb16e6f33cb733ebec14932b9316a424bfb264f932c5184bfd8b0a4ab"
+    },
+    {
+      "caseId": "auto-identify-connectors",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c03be5ad5bc6c1b4505d1d214056ba5eefc195bc9cc98df28d5906fe1e5f040d"
+    },
+    {
+      "caseId": "auto-connectors-or",
+      "instrumentType": "rubrica",
+      "sha256": "708dcdcbe769eafb14e0327c4531aef01d81376fee0ff53e4eb912f524544959"
+    },
+    {
+      "caseId": "auto-connectors-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ae8c6bddb93211d36011561354b0fb42000a31bf148b7edfc30f0e94cc9dd014"
+    },
+    {
+      "caseId": "auto-connectors-or",
+      "instrumentType": "escala",
+      "sha256": "e21bbd5b37b120d78b171ffa32ef9bf93d696f53e701c84e55b57448f711644c"
+    },
+    {
+      "caseId": "auto-connectors-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "203ed8b291b133199bd6dd5213a94c52cf466d511fabf3aaef4cd36e9a2f1768"
+    },
+    {
+      "caseId": "auto-sequences-or",
+      "instrumentType": "rubrica",
+      "sha256": "302915447c319bf677f4394d992d727675b7b9b28ce6b020657350334fb1d74b"
+    },
+    {
+      "caseId": "auto-sequences-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c330d2b30a7f3b780954f309d88f77f0dfdf6b7f4388d9f10e3f01cb53c3f6b8"
+    },
+    {
+      "caseId": "auto-sequences-or",
+      "instrumentType": "escala",
+      "sha256": "4ed71f5532a2d3c543ebd54f9db9aa07969981025fdb132a88681edcb88d166d"
+    },
+    {
+      "caseId": "auto-sequences-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c4281b91d6d9044c27c5bfb1cb32f1dedddc5a843ebe938549cf6d43cee82702"
+    },
+    {
+      "caseId": "auto-time-frequency",
+      "instrumentType": "rubrica",
+      "sha256": "5ce4a38d31ffad310b284a934ca1b3fef809fbb66664fa2a5c2933387f67028d"
+    },
+    {
+      "caseId": "auto-time-frequency",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ca98c7d34a3f33ba5a17ff1e117505b2e22e2e9e44acb384873de559e485b382"
+    },
+    {
+      "caseId": "auto-time-frequency",
+      "instrumentType": "escala",
+      "sha256": "85396f47c7f6655ddea40d83db5e2016d990ab7e9e8493777ed2abb97cf729f3"
+    },
+    {
+      "caseId": "auto-time-frequency",
+      "instrumentType": "lista-ponderada",
+      "sha256": "64760393faadb4ac96852d4c041d7473299847dbbf818c61c0049257b192e547"
+    },
+    {
+      "caseId": "auto-author-narrator",
+      "instrumentType": "rubrica",
+      "sha256": "07e3053ccfc2339dee8e096ebdfe36e09afe188dd8fecba355ea67b37dffe1cc"
+    },
+    {
+      "caseId": "auto-author-narrator",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7cd0e38708201f15c87a491361433d64a5ecc508dc6585df70302135f55c40bc"
+    },
+    {
+      "caseId": "auto-author-narrator",
+      "instrumentType": "escala",
+      "sha256": "33a91c8e4c43a33904a3c0256fa52164ff2618851415207007d2bd0f67c4d7d0"
+    },
+    {
+      "caseId": "auto-author-narrator",
+      "instrumentType": "lista-ponderada",
+      "sha256": "97c78313b03303d017bcafd060aa4623e9f3e9196de3ef3add7c14e5348be8fa"
+    },
+    {
+      "caseId": "auto-orthography-only",
+      "instrumentType": "rubrica",
+      "sha256": "0f2b2dfcbb0c74dbda02b0f2a27ae9dca011cee121cc5090526bce62315370bb"
+    },
+    {
+      "caseId": "auto-orthography-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "505fbc0d1673ec0414f6627ab414fb8603c4c34752e8a88adcaafaddcc41cc18"
+    },
+    {
+      "caseId": "auto-orthography-only",
+      "instrumentType": "escala",
+      "sha256": "71c2a85941dd9579e2507f497856e182e0363ebb3fdb543f8d28fbf53521e7c2"
+    },
+    {
+      "caseId": "auto-orthography-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a420f2ef211a8f285e97d0526eb3a1b70fcaac9d5942f386cb55874867ea72b7"
+    },
+    {
+      "caseId": "auto-analysis-and-write",
+      "instrumentType": "rubrica",
+      "sha256": "44a838cf19f997ec5011e0c63455dacfedd0990c13eb2f0667797a47a130a3da"
+    },
+    {
+      "caseId": "auto-analysis-and-write",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d1d1229f684365bc676eb7ec362784d818539b79a4f18f74907561062b4bdded"
+    },
+    {
+      "caseId": "auto-analysis-and-write",
+      "instrumentType": "escala",
+      "sha256": "cd1f63bac255ca38ced4eebcc0f5f38270e22ea82f9f6c6973080b1a3c1f7c7e"
+    },
+    {
+      "caseId": "auto-analysis-and-write",
+      "instrumentType": "lista-ponderada",
+      "sha256": "63ada688c54e21a576169da7321bf0a9e11d2a1d8fe3ba928ea7258ab9f90b18"
+    },
+    {
+      "caseId": "auto-negative-positive",
+      "instrumentType": "rubrica",
+      "sha256": "af463ef863de19bb7c21d379334f585d7624b1c6a8d886f5fb6cf64aa03604d8"
+    },
+    {
+      "caseId": "auto-negative-positive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7df88f9e096866c479538e2a751732a518d113d1a388edc5f33a18770f3ef76c"
+    },
+    {
+      "caseId": "auto-negative-positive",
+      "instrumentType": "escala",
+      "sha256": "9d4216ffcf8d4e98c3e57074c7978a5d60fc149498b0e780b23f77a719a702a7"
+    },
+    {
+      "caseId": "auto-negative-positive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ba4716bcbb9dbefe02c227a4cbc4500bf4c0cc612e134457a9d878bb578b9f3"
+    },
+    {
+      "caseId": "magic-ordinary",
+      "instrumentType": "rubrica",
+      "sha256": "f235b8d27c6a2a97f2959b2256337d7bd755665e265c78dc261e4616475a4778"
+    },
+    {
+      "caseId": "magic-ordinary",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3371f98695db450d317865c45aeb09ce2f87164eb8b9c1578893a307106a43ff"
+    },
+    {
+      "caseId": "magic-ordinary",
+      "instrumentType": "escala",
+      "sha256": "e6eaa570ffed6733806db3cf7af2b0db146ff40306c8feaa6905de8ee54c3eeb"
+    },
+    {
+      "caseId": "magic-ordinary",
+      "instrumentType": "lista-ponderada",
+      "sha256": "78c9356c8b60ce7e580c694bd41b0b0d697fbce5205c9d4f38421e6b4b5a5c23"
+    },
+    {
+      "caseId": "magic-interior",
+      "instrumentType": "rubrica",
+      "sha256": "e61d643efd84c8c067a6727fb922d749bcc2bbae721586f0e81ae0a46790139b"
+    },
+    {
+      "caseId": "magic-interior",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e06d6ba6926ae9708e17461bbd915e0559ff7092fa326b3d98e65b6c7c6e52e6"
+    },
+    {
+      "caseId": "magic-interior",
+      "instrumentType": "escala",
+      "sha256": "5a67ba5426555f8256ee734d702b78c8d70f19a7e2c22788bd57ff455394578e"
+    },
+    {
+      "caseId": "magic-interior",
+      "instrumentType": "lista-ponderada",
+      "sha256": "22362374a2ff5374582a53c38547222301e6f1311661d9316d2830c8a166ecdb"
+    },
+    {
+      "caseId": "magic-time-or",
+      "instrumentType": "rubrica",
+      "sha256": "7d05e895ce314c18591fbdcbf725057688b91702bb294295669f6d59dc39c95e"
+    },
+    {
+      "caseId": "magic-time-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "72c0526f2ae67c9a5f2b85ee27c2a5ea18dbc7a506c07175845b64870b7bb56d"
+    },
+    {
+      "caseId": "magic-time-or",
+      "instrumentType": "escala",
+      "sha256": "2095f66e8742a41e0ad4e769e2cb5654a6571b32f8f876c744f6d2590467e4d3"
+    },
+    {
+      "caseId": "magic-time-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "014726fa0bac221bc33211d7ce082aefad584abd12b694dfd41ed73a3ea59cac"
+    },
+    {
+      "caseId": "magic-descriptive",
+      "instrumentType": "rubrica",
+      "sha256": "91f455f5bca7c6a2eb9c214481886468a3804e3bcc4d7e4e6c0a4d961788eb14"
+    },
+    {
+      "caseId": "magic-descriptive",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43fcf249d65de5c70443168c9e9936eb9bcef7e6713d7efef77be11f87f523e3"
+    },
+    {
+      "caseId": "magic-descriptive",
+      "instrumentType": "escala",
+      "sha256": "6211f578ba500b35fa0c35f75ba52300f7ef214c4b9d70a8eed61c37ec9cd39a"
+    },
+    {
+      "caseId": "magic-descriptive",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0ee302fc0455fb03f0b90d58c4577332d304717352f88bd0091207186fe034e9"
+    },
+    {
+      "caseId": "magic-narrators-or",
+      "instrumentType": "rubrica",
+      "sha256": "ab4b5fc673edd741688ae509203b1178679a78979d217813f6f95e8e9bb3f227"
+    },
+    {
+      "caseId": "magic-narrators-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4f63709dc0735e93b974a232fa9202fa452713533c40073d57a11428b5862903"
+    },
+    {
+      "caseId": "magic-narrators-or",
+      "instrumentType": "escala",
+      "sha256": "81538c5eed5aba777f5548b152ee057e2e9c2881d5ae33b0d4ba49077ea7eeed"
+    },
+    {
+      "caseId": "magic-narrators-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "44665403d32ba4684fcc2539a7e6e02ebbbfadd7d9f2b00d2f02cdba752e3527"
+    },
+    {
+      "caseId": "magic-written-chronology",
+      "instrumentType": "rubrica",
+      "sha256": "24c69c2c638b1980926f817e32b02e58d67df8e363a9016ba40a0e590caa1467"
+    },
+    {
+      "caseId": "magic-written-chronology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "864ea1211e5cdc9d464d4b0f000998d27e788eda763141b789b82619d37dfd8f"
+    },
+    {
+      "caseId": "magic-written-chronology",
+      "instrumentType": "escala",
+      "sha256": "5b28af595390202842e8a823bed2cf2e0da6bfbd89132f03b43c1a33d946b25c"
+    },
+    {
+      "caseId": "magic-written-chronology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "39f7c324ecaae4ed0f1c0d373e4a93b26148c0b56a8d0c09f64217015c742d99"
+    },
+    {
+      "caseId": "magic-individual",
+      "instrumentType": "rubrica",
+      "sha256": "bce7097cfa05fdea4bfd9e8746cd68342565fd6befad813ac21f360ab34f3236"
+    },
+    {
+      "caseId": "magic-individual",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bc10a91580ee32554ca88e84f3d6b0ba3a29aee3c2d152060f314bdf9b3f4fb1"
+    },
+    {
+      "caseId": "magic-individual",
+      "instrumentType": "escala",
+      "sha256": "a70c2495f762a8cd7e9c4a7a02e688c9354fbbfaa772ab4d92737b7cb24d6097"
+    },
+    {
+      "caseId": "magic-individual",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c17d1d77d9a340c0a1039c39a210710a117309d961b8bee7d57f810935cb0ebe"
+    },
+    {
+      "caseId": "magic-group",
+      "instrumentType": "rubrica",
+      "sha256": "33d2c880e830eb146b92f0cb29a85f56052508a4b2b4106b3d7caaaf94fafd66"
+    },
+    {
+      "caseId": "magic-group",
+      "instrumentType": "lista-cotejo",
+      "sha256": "18cafaf1f149c8cf6eb1d9797de456a5b7ca7ade2fe79a4684e9b402208f69b8"
+    },
+    {
+      "caseId": "magic-group",
+      "instrumentType": "escala",
+      "sha256": "e499ac58850820350150e92f3d46155c0f525f8c890998a61f2727cdecd19d0d"
+    },
+    {
+      "caseId": "magic-group",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a5b5841963662f3b3f47e90d84fcb1039d0f985378c43a95e0874feba5926a52"
+    },
+    {
+      "caseId": "magic-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "8a429c6fe8709c785b12f5e55a92a32f819d4c5d94d80cda27a4c57841728878"
+    },
+    {
+      "caseId": "magic-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c89690a767b16abdd032b79de7c7c72802b98807202e3574381a43f67a1e6ac0"
+    },
+    {
+      "caseId": "magic-comparison",
+      "instrumentType": "escala",
+      "sha256": "7ae0979ee9ba65c312ffc1ed47653ab7df1cec8f5a132e08b97fa1670d114fdd"
+    },
+    {
+      "caseId": "magic-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f4c4269cf154fc19e0072c80c8bfeef35edb2ddbb08518e86395716250b08ef9"
+    },
+    {
+      "caseId": "magic-revision-no-private",
+      "instrumentType": "rubrica",
+      "sha256": "38931a6732a5cd50fe2fcf213cbcf5fec437480ac092118c6d215bbb1d557f62"
+    },
+    {
+      "caseId": "magic-revision-no-private",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ba0df9150086585edf6ea51f890a50c083a9d57daedfae206ba8a682d8d3679"
+    },
+    {
+      "caseId": "magic-revision-no-private",
+      "instrumentType": "escala",
+      "sha256": "2d29ff67d051f18c1985e7fa387b5bd3afc0d0e06b8449da1b0f525efee5211a"
+    },
+    {
+      "caseId": "magic-revision-no-private",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d3458003d0b1ac8e74293664fba21327d3ca9f48c6454c19e3a48f6deb1720f6"
+    },
+    {
+      "caseId": "auto-adjectives-only",
+      "instrumentType": "rubrica",
+      "sha256": "5350c4128456f6c1925950e11bafe9c5db5db2151a7477460507457236dc604d"
+    },
+    {
+      "caseId": "auto-adjectives-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "19b3d230c45bf51bb24fcb0ef9331551077b39fef5674aa7c79db0885e58ca62"
+    },
+    {
+      "caseId": "auto-adjectives-only",
+      "instrumentType": "escala",
+      "sha256": "3d83d89a07b9c30f4000e86b2b62210aecbb9b916ddfd27c81768a0203af9ca6"
+    },
+    {
+      "caseId": "auto-adjectives-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c9f6e94bbcf79e3a8002761b9df21d14942c9638bf91f262a44a11ba50049287"
+    },
+    {
+      "caseId": "auto-plot-only",
+      "instrumentType": "rubrica",
+      "sha256": "648af758c054dae1bff1e660d33e4cc5fcad7c5ee778a7d91193ee088f531483"
+    },
+    {
+      "caseId": "auto-plot-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cdc5e3a9fac46ad23329d1d1a1e2b70ae0e7691b0011e5a1b1bbcc4507c6056e"
+    },
+    {
+      "caseId": "auto-plot-only",
+      "instrumentType": "escala",
+      "sha256": "87e081eaffe5ad853af1188ed81987c4ed673325306c1052bfed670059aa5660"
+    },
+    {
+      "caseId": "auto-plot-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "17989ba6f2568b27e61f8a13e07f672f7f81e334e61b1674d56c42b4381df0e1"
+    },
+    {
+      "caseId": "auto-setting-only",
+      "instrumentType": "rubrica",
+      "sha256": "7ddb0ec0c2ba28cfe7b7612ebba9bb7b2004da80a2d26c09f687687c0b712cf6"
+    },
+    {
+      "caseId": "auto-setting-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b022397ded7cca6058bf68b9b8ac32ba91b60698934d3d1788bb983e4774efab"
+    },
+    {
+      "caseId": "auto-setting-only",
+      "instrumentType": "escala",
+      "sha256": "a3c0dcdc278067b0119d5847c758946802e61a9e7648244ef816b81741d02943"
+    },
+    {
+      "caseId": "auto-setting-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fc4dc7a5d584d06c665668a47649b1b265e6c3bbbb7b5dc98735546ab9d48365"
+    },
+    {
+      "caseId": "magic-plot-only",
+      "instrumentType": "rubrica",
+      "sha256": "d504ad090101195e6bd67eae1f988565de6c654d511a60c53dbeac60e93ce378"
+    },
+    {
+      "caseId": "magic-plot-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "90e2da706c8c9589c6c4024e814bacb2f198249665a7245ba2e862ca00a81457"
+    },
+    {
+      "caseId": "magic-plot-only",
+      "instrumentType": "escala",
+      "sha256": "daef564d6afde30e010b98d3c24cd565905a1c5b05cccd50ce48496ddeaf9bef"
+    },
+    {
+      "caseId": "magic-plot-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7cdbd521830dc24d83849f923996d824fde42a2bad15a6bb36eab9982080c26c"
+    },
+    {
+      "caseId": "magic-setting-only",
+      "instrumentType": "rubrica",
+      "sha256": "25916d8e3f37b2b10e268a791ef0ee1e211be0febfb2ad9066c0596ef77ca368"
+    },
+    {
+      "caseId": "magic-setting-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5535a53b5d6a504d698c3f1d2a3e8e18f01dbd735464ad04ef4af5b11a7bd095"
+    },
+    {
+      "caseId": "magic-setting-only",
+      "instrumentType": "escala",
+      "sha256": "9dc36ca7695510af69868eefeafb0e5d73f4e77fc5f1545db76df4a8f960cbd1"
+    },
+    {
+      "caseId": "magic-setting-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "38cc62e5561a090c5741b999e090ba5ad321a02120a4de09d4d6bd79f154df3c"
+    },
+    {
+      "caseId": "auto-lexical-inference",
+      "instrumentType": "rubrica",
+      "sha256": "4716ad5cac0a267cb2d04963c64b301c0dfafcd05388c096c644f8d3fe161379"
+    },
+    {
+      "caseId": "auto-lexical-inference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b2333889c187f6d425146b64055af1cdac97402c724aff861cd774c9c536cb7b"
+    },
+    {
+      "caseId": "auto-lexical-inference",
+      "instrumentType": "escala",
+      "sha256": "72cd9486ddf94650ecdd893873c05ef6bed0b479a9ac19899f5dd620ef3c8879"
+    },
+    {
+      "caseId": "auto-lexical-inference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "18fe474817607a33236ccb616502fb05cc1a900e38d04162c3e743dfc1d5834d"
+    },
+    {
+      "caseId": "auto-type-narrator-only",
+      "instrumentType": "rubrica",
+      "sha256": "0c8aafa9f5225c750d958e865281921d73972a099428c1181d6864be12bd1e11"
+    },
+    {
+      "caseId": "auto-type-narrator-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ecfc8cf1b1fc16ed9367c79391b6f9fb92f76c15cbed30c26cca600f8ff57b79"
+    },
+    {
+      "caseId": "auto-type-narrator-only",
+      "instrumentType": "escala",
+      "sha256": "8690ebaf54a966436a0578ce058becd8119482678d235b56bda24c7f193f26b9"
+    },
+    {
+      "caseId": "auto-type-narrator-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "102b514c0805f5c0e90685d1347997b30b4a76d11b906f16fe324b86ad0377fb"
+    },
+    {
+      "caseId": "magic-sensory-only",
+      "instrumentType": "rubrica",
+      "sha256": "fc217cfb8b60ecfe03c7b43b50821559aef4097afbb95cdd1815e8ab250cc7f1"
+    },
+    {
+      "caseId": "magic-sensory-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ad1a0f776f38bce990da573d23f311879e0ddedbb4310f1e02e76e04b5aaf6c9"
+    },
+    {
+      "caseId": "magic-sensory-only",
+      "instrumentType": "escala",
+      "sha256": "71c85d4c49b4b78a51fde94492ada048931e207406caf427fe1831e86c4ddc10"
+    },
+    {
+      "caseId": "magic-sensory-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dddd8c6663641dec774388a68c5e1dff68eeae3522339e2c8da6db381599e0e5"
+    },
+    {
+      "caseId": "magic-myths-or",
+      "instrumentType": "rubrica",
+      "sha256": "644cff386c854a615f0ee0ca9e493b727a94beada3cd37f3c54a1436edc689c3"
+    },
+    {
+      "caseId": "magic-myths-or",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3c3721d3f9e7cfedfa91bbd41d847838de9613c4594955c726488636a33841d8"
+    },
+    {
+      "caseId": "magic-myths-or",
+      "instrumentType": "escala",
+      "sha256": "5390258274de761c914d79af3b8ae30921d79baba421b367ad0a6c6067873718"
+    },
+    {
+      "caseId": "magic-myths-or",
+      "instrumentType": "lista-ponderada",
+      "sha256": "038a782a06ace711d8c204166497358f68901879128aebe1407bcacc5fda5e6e"
+    },
+    {
+      "caseId": "magic-context-only",
+      "instrumentType": "rubrica",
+      "sha256": "9de9eab1ff5d3e77edb50b9249f80fe27ef9ff6023b7abfffe2d0b610507f86b"
+    },
+    {
+      "caseId": "magic-context-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3a8a19d78ecdae5eb33c1912e717007567aa8f4a0f250406c4c58aa514d3be38"
+    },
+    {
+      "caseId": "magic-context-only",
+      "instrumentType": "escala",
+      "sha256": "f043caf6dd2c3e5dc9a4d5f376f0cbf7bcd743ab5e0ab064b77be4acdea6ca34"
+    },
+    {
+      "caseId": "magic-context-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6fce1dd41d5f9eebf8daba8b00391b6dc3d5c36f7ef6be602b2581093986eeb3"
+    }
+  ]
+}

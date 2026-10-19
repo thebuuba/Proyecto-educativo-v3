@@ -1,3 +1,4 @@
+import {optativeHcsLenFour} from './secondary-optative-hcs-len-4'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {SecondaryLanguageTopic,TopicDimension} from './secondary-topic-types'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
@@ -17,7 +18,7 @@ export type OptativeLanguageGenre={id:string;label:string;match:string;sourceRec
 export type OptativeLanguageModule={id:string;grade:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];topics:OptativeLanguageGenre[]}
 type OptativeAction={text:string;genre:OptativeLanguageGenre;activityType:string;plan:boolean;revision:boolean}
 export type OptativeLanguageTask={module:OptativeLanguageModule;actions:OptativeAction[];activityType:string;technique:string}
-export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix]
+export const optativeLanguageModules=[optativeHlmLenFour,optativeHlmLenFive,optativeHlmLenSix,optativeHcsLenFour]
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const verbs='(?![a-z]*(?:ando|iendo)\\b)(?:analiz|interpret|explic|describ|identific|clasific|compar|contrast|escuch|anticip|le(?:e|er)|infier|infer|parafras|resum|recit|declam|narr|cuent|contar|redact|escrib|cre(?:a(?!cion)|e)|compon|elabor|planific|revis|corrig|corrij|investig|present|expon|evalu|debat|subray|disen(?:a|en))[a-z]*'
 function requestedText(value:string){
@@ -30,13 +31,14 @@ function languageTopic(genre:OptativeLanguageGenre,grade:number,subjectCode:stri
 export function resolveOptativeLanguageTask(title:string,description:string,context?:InstrumentAcademicContext|null,modules:OptativeLanguageModule[]=optativeLanguageModules):OptativeLanguageTask|null{
  if(context?.level!=='SECONDARY'||!context.modalityCode)return null
  const code=context.subjectCode.trim().toUpperCase(),module=modules.find(m=>m.grade===context.grade&&m.modalityCodes.includes(context.modalityCode!)
+  &&(!m.subjectCode.startsWith('OPT-HCS-')||(context.cycle==null||context.cycle===2)&&context.optativeExitName===m.optativeExitName)
   &&(!context.optativeExitName||context.optativeExitName===m.optativeExitName)
   &&(m.subjectCode===code||!/^(?:OPT-|LEN$|ING$|FRA$|MAT$|NAT|SOC$|ART$|EFI$|FHR$)/.test(code)&&context.optativeExitName===m.optativeExitName&&normalize(context.subjectName??'')===normalize(m.subjectName)))
  if(!module)return null
  const text=requestedText(description||title),clauses=text.split(new RegExp(`[.;\\n]+|\\s+(?:y|luego|despues|pero)\\s+(?=${verbs}\\b)`)).map(s=>s.trim().replace(/^(?:y|luego|despues|pero)\s+/, '')).filter(Boolean),actions:OptativeAction[]=[]
  for(const clause of clauses){
   const explicit=module.topics.find(t=>new RegExp(t.match).test(clause)),prior=actions.at(-1)
-  const start=clause.search(new RegExp(`\\b${verbs}\\b`))
+  const start=clause.search(new RegExp(`\\b(?:distingu[a-z]*|${verbs})\\b`))
   if(start<0){if(prior)prior.text+='. '+clause;continue}
   const text=clause.slice(start)
   if(prior?.revision&&/^present[a-z]*\b.*(?:cambios|version revisada)/.test(text)){prior.text+='. '+text;continue}
@@ -46,10 +48,15 @@ export function resolveOptativeLanguageTask(title:string,description:string,cont
   actions.push({text,genre,activityType,plan,revision})
  }
  if(!actions.length)return null
- const activityType=actions[0].activityType
- return{module,actions,activityType,technique:activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='DEBATE'?'debate':'analisis-producciones'}
+ const requested=actions.filter((action,i)=>{
+  const next=actions[i+1]
+  const receptionOnly=/^(?:escuch|le(?:e|an|er))\w*\b/.test(action.text)&&!action.genre.features.some(f=>new RegExp(f.match).test(action.text))&&!/anticip|resum|parafras|infier|predic|proposito|intencion|significado/.test(action.text)
+  return !(receptionOnly&&next?.activityType==='ANALYSIS'&&next.genre.id===action.genre.id)
+ })
+ const activityType=requested[0].activityType
+ return{module,actions:requested,activityType,technique:activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='DEBATE'?'debate':'analisis-producciones'}
 }
-const recognitionOnly=(action:OptativeAction)=>action.activityType==='ANALYSIS'&&/^(?:identific|subray)/.test(action.text)&&!/\b(?:explic|justific|analiz|interpret|contrast)[a-z]*\b|funcion|efecto/.test(action.text)
+const recognitionOnly=(action:OptativeAction)=>action.activityType==='ANALYSIS'&&(/^(?:identific|subray|distingu)/.test(action.text)||/^(?:escuch|le(?:e|an|er))\w*\b.*\b(?:identific|distingu|subray)/.test(action.text)&&!/intencion|proposito|significado|motivacion|causalidad|infier|resum|parafras/.test(action.text))&&!/\b(?:explic|justific|analiz|interpret|contrast)[a-z]*\b|funcion|efecto/.test(action.text)
 function selectedFeatures(genre:OptativeLanguageGenre,text:string,separate=false):LanguageFeature[]{
  return genre.features.filter(f=>new RegExp(f.match).test(text)&&!(f.id==='novel-characters'&&/qu(?:e|ien(?:es)?) personajes hablan/.test(text))).flatMap(f=>{
   const selected=(f.terms??[]).flatMap(([pattern,name])=>{const m=new RegExp(pattern).exec(text);return m?[{name,index:m.index,end:m.index+m[0].length}]:[]}).sort((a,b)=>a.index-b.index)
@@ -101,7 +108,17 @@ export function optativeLanguageCriteria(task:OptativeLanguageTask):ContextualTo
    'No aporta evidencia de las correcciones ortográficas solicitadas.',
   ]}:r)
   if(activityType==='WRITTEN_PRODUCTION'||profile.oralCreation)rows=rows.map(r=>({...r,progressionLevels:r.progressionLevels.map(s=>s==='Presenta elementos pertinentes, pero no explica una relación necesaria para comprenderlos.'?'Presenta elementos pertinentes, pero una relación necesaria para seguir el desarrollo del texto queda sin construir.':s) as ContextualTopicCriterion['progressionLevels']}))
-  if(rows.some(r=>r.templateId.endsWith('-procedure-vocabulary')))rows=rows.filter(r=>!r.templateId.endsWith('-feature-poetry-vocabulary'))
+  if(action.revision&&features.length&&!/\b(?:contenido|organizacion)\b/.test(text)){
+   const targets=[...features.map(f=>f.name),...(/\bortograf[a-z]*\b/.test(text)?['la ortografía solicitada']:[])].join(' y ')
+   rows=rows.map(r=>r.templateId.endsWith('-process-revision')?{...r,observable:`Muestra los cambios que corrigen ${targets} entre el borrador y la versión revisada, conservando el sentido del texto.`,progressionLevels:[
+    `Las correcciones resuelven los problemas señalados en ${targets} y conservan el sentido del texto.`,
+    `Corrige los problemas principales de ${targets}; queda un caso señalado sin resolver.`,
+    `Corrige algunos casos, pero mantiene varios problemas señalados de ${targets}.`,
+    'Las modificaciones introducen errores o cambian el sentido del texto.',
+    `No aporta evidencia de las correcciones solicitadas de ${targets}.`,
+   ]}:r)
+  }
+  if(rows.some(r=>r.templateId.endsWith('-procedure-vocabulary')))rows=rows.filter(r=>!/-feature-(?:poetry|novel)-vocabulary$/.test(r.templateId))
   const represented=new Set(rows.filter(r=>r.templateId.includes('-feature-')).map(r=>r.templateId.split('-feature-')[1]))
   const pairs:Record<string,string[]>={plot:['novel-plot'],characters:['novel-characters'],narrator:['narrator'],meaning:['poetry-themes']}
   rows=rows.filter(r=>!genre.dimensions.some(d=>r.templateId===base+'-'+d.id&&represented.has(d.id))&&!Object.entries(pairs).some(([id,fs])=>r.templateId===base+'-'+id&&fs.some(f=>represented.has(f))))

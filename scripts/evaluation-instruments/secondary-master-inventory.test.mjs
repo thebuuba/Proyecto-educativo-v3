@@ -2,6 +2,13 @@ import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
+test('Literatura HCS cuarto conserva su evidencia independiente de HLM y de HCS quinto',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-len-4-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.exit,'Humanidades y Ciencias Sociales')
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.id===read('optative-hlm-len-4-matriz.json').scopeId).evidence)
+ const fifth=inventory.scopes.find(s=>s.grade===5&&s.subject===row.subject&&s.exit===row.exit);assert(fifth);assert.notEqual(fifth.evidence,row.evidence)
+})
 test('el inventario distingue Inglés HLM cuarto del inglés común y de las optativas aún pendientes',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hlm-ing-4-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider)

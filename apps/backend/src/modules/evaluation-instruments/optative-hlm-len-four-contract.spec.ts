@@ -3,6 +3,13 @@ import contracts from '../../../../../data/evaluation-instruments/optative-hlm-l
 import {recommend} from './recommendation-engine'
 const context={level:'SECONDARY' as const,grade:4,cycle:2,subjectCode:contracts.subjectCode,subjectName:contracts.subjectName,modalityCode:contracts.modalityCode,optativeExitName:contracts.optativeExitName}
 describe('Optativa HLM: Apreciación y Producción Literarias de cuarto',()=>{
+ it('revisar vocabulario y ortografía conserva las dos correcciones pedidas',()=>{
+  const task=contracts.cases.find(c=>c.id==='poetry-draft-revision')!
+  const p=recommend({activityTitle:'Actividad',description:task.description,maxScore:20,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
+  const revision=p.criteria.find(r=>r.templateId.endsWith('-process-revision'))!
+  expect(revision.description).toMatch(/vocabulario.*ortograf/)
+  expect(revision.progressionLevels?.join(' ')).toMatch(/vocabulario.*ortograf/)
+ })
  it('identificar dos figuras permite cotejar cada reconocimiento sin una explicación no pedida',()=>{
   const task=contracts.cases.find(c=>c.id==='poetry-figures-only')!
   const p=recommend({activityTitle:'Actividad',description:task.description,maxScore:20,participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)

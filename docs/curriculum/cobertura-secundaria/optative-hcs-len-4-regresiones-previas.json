@@ -1,0 +1,353 @@
+{
+  "catalog": "evaluation-2026.130",
+  "baseline": "evaluation-2026.129",
+  "commonEnglishIdentical": 15176,
+  "scopes": [
+    {
+      "subject": "OPT-HLM-LEN-4",
+      "definitions": 280,
+      "identical": 268,
+      "documentedCorrections": 12,
+      "cases": [
+        "poetry-draft-revision",
+        "novel-listening",
+        "novel-draft-revision"
+      ],
+      "definitionDigests": [
+        {
+          "caseId": "poetry-draft-revision",
+          "format": "rubrica",
+          "old": "b895d3f1ac5aa030a927bd7f46df2393386e3ce57afc76499f6dc9544d1efb66",
+          "current": "5432937245e46fb84c6809ba3805b5bbfbc761c1fdbbac2e354792c6378b5606"
+        },
+        {
+          "caseId": "poetry-draft-revision",
+          "format": "lista-cotejo",
+          "old": "4ec92dab70a5869c884fb12705ee1a17b3cdfcf49a05806973bda7d504a95a60",
+          "current": "92d48cff8ee3c89251db9367cba7c6f0400a2e85b630de1048e2ecab13de0ca7"
+        },
+        {
+          "caseId": "poetry-draft-revision",
+          "format": "escala",
+          "old": "b9d67fc583470e997982bdf61cf2cdd2c32a5da5c4f7acc35a01b86fd9ca3cac",
+          "current": "2caf4c75bef440bd9a238f1217ab45ab7bb44d17f0f7635fcc514bb0ec51ea96"
+        },
+        {
+          "caseId": "poetry-draft-revision",
+          "format": "lista-ponderada",
+          "old": "0f23c696aa26664527ed1ac634b9572b5190c8aca53896b217ccaa5a5cc5a441",
+          "current": "b5680f7057efbbd63412952ee041d8b63633f5af392938511766c1fbf053a338"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "rubrica",
+          "old": "58e44838f3d6143b17bbce74ff06cd9179f00eaee03204b62bfb006012a03d76",
+          "current": "056985e6ab84f2bff4b40d331ece1d3d4aa98be4fb462d39a2db882d54cbe73d"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "lista-cotejo",
+          "old": "7345d1c8efb3c865e74529da8d3249dbfe0a12dbd2470fe6e04a2b0e8dade3cc",
+          "current": "f55c1d85b5ffd65a7003414792f75a056e5a0e0474d02f63630ded849ef4be16"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "escala",
+          "old": "82661097919e34123453e9cb088603b1c884aa73e13cec287ca4f6d8a3cff541",
+          "current": "b7931717cd9a13521dbd9762edece7a9677b33172872c6c72fed014f80cb6870"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "lista-ponderada",
+          "old": "30ad55543969e5f2cc8bd70a26fb2b0494267321e0462f21dd19fb04e643ac91",
+          "current": "53f0b1140cab1e9405dfb03bafe7535cbc7a768515dfd54a89a55fc6bbc1f481"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "rubrica",
+          "old": "59243003f01a93990ee7843bf43e634ef087581409f099f8e89ac44c79efe641",
+          "current": "60ff4321d3ed63b9bed6c77b9571fa3685bc84403126342c1f1c2725c057d44e"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "lista-cotejo",
+          "old": "ddaf1d6bf0b01640deffd608853ad3c93dc31e0f55c3b4b17cce4b13b8d41ed6",
+          "current": "5b4133079c553bdd1f28256bdff591c9e6da4b09bffbdd8bc3afd7302ddac956"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "escala",
+          "old": "9a86988c875fa9e20542d636c3bf2c4ca50e8b94109f5522276ad92fab9d6156",
+          "current": "e26aa0cb2b35ea3ac2a95151a916aca8181dcf9aa871a3f0a41a5ab007f5029c"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "lista-ponderada",
+          "old": "1105aff7b40b6d3e8cd0425a2f537da2e3c4ccbbd8bca3aa683fd34cccb35ef6",
+          "current": "6e97f22078a16f537d459e641e8848fb206836a08fbdda76727036f4f6897d3c"
+        }
+      ]
+    },
+    {
+      "subject": "OPT-HLM-LEN-5",
+      "definitions": 268,
+      "identical": 252,
+      "documentedCorrections": 16,
+      "cases": [
+        "epic-listening",
+        "epic-draft-revision",
+        "novel-listening",
+        "novel-draft-revision"
+      ],
+      "definitionDigests": [
+        {
+          "caseId": "epic-listening",
+          "format": "rubrica",
+          "old": "0af27384369f7ee481321d12e46d2a3dd2395cf6a05799374cab3c887ad37774",
+          "current": "abed06b13a58b18bd58341b6f8df3eccb94c4e44c1513d068f065e4f530ff82d"
+        },
+        {
+          "caseId": "epic-listening",
+          "format": "lista-cotejo",
+          "old": "01253c4e3810903a7e8359d2454df8c7174298a86c14815d7ebf51d1ef5f4818",
+          "current": "c2f960b0eb34531dc0827ab2d60d34c0de4dfd842b5408d44f590c8c63f47eea"
+        },
+        {
+          "caseId": "epic-listening",
+          "format": "escala",
+          "old": "8ce0064be1cad2b5e72553c5be0241358dd2c0a28c6937d43b362ef7f8db2ee5",
+          "current": "90c49bade6c398ca021fbabf969d8e161dd50182a76bcb4cfce9de086d4184d3"
+        },
+        {
+          "caseId": "epic-listening",
+          "format": "lista-ponderada",
+          "old": "a19a6b8bc5ef0c731a79eb211374b86838c349df90d7a41d8489840409d7a209",
+          "current": "46ccbe39eeee68e4099ef8f039773356fe69358195a8e64f591f4ca453ae730c"
+        },
+        {
+          "caseId": "epic-draft-revision",
+          "format": "rubrica",
+          "old": "959b6a007cf79d353fe9cde5b2270cac183b3f7540e79da9a7cf2e3bb288bd96",
+          "current": "78452bdb33f96283776c11ec577e85bb1915694582ca126a75d7165c8caaf2c9"
+        },
+        {
+          "caseId": "epic-draft-revision",
+          "format": "lista-cotejo",
+          "old": "2b3af362b64de1b3078a3e65b730e6585229d7915286ab1939687f8dfcd89cb1",
+          "current": "201d70d0f7624b6b3dbc5c1e98561c44f43e869b5c98c2f668ccfed4f4dd50da"
+        },
+        {
+          "caseId": "epic-draft-revision",
+          "format": "escala",
+          "old": "866015893b6f427cb284394fd15a733f982d0d77b93267d404c46efc13717f84",
+          "current": "72c1768bdd8c0204f48fc3e4faec04a3c838198db8fa469e505d7245c0a13f7f"
+        },
+        {
+          "caseId": "epic-draft-revision",
+          "format": "lista-ponderada",
+          "old": "549bcb5b03a72e240d0a8e53eb406dee1c19571ebbb38dbb3d2ec5c548eef71c",
+          "current": "7bc5b5a9cebace2b5cecfd0273ac1158b6c94c0459a675dcaaae13652f037b0f"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "rubrica",
+          "old": "7ac8d5bd57d74b1d4b8410bf8af1dc9d85f602b64b80b23a454c2bfb1f907eed",
+          "current": "1e5fd6468700a579c8d1f7181bb7bf724f90178629f2fcffeddb86526948c86c"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "lista-cotejo",
+          "old": "e50b11efe978ef638f17d5b86146101439827c73efbdeb00ca5cb13537c1c55f",
+          "current": "03557b188e7f7d7b474fd380226cef129ba10cef50d5ab56e941a42e335150a5"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "escala",
+          "old": "629edba172758b9a39c0781ad28408316afbf49b5f1a394809f4a7919e3db1c0",
+          "current": "361a11043ad96b40d6e75e71db2f7a47eec34738ce86fcb551fc1346436365b4"
+        },
+        {
+          "caseId": "novel-listening",
+          "format": "lista-ponderada",
+          "old": "60d588a67d9bf179eedb2328fb276981bb42707192134cea7e2259eea2b5d8a6",
+          "current": "f5ff0fd4e0f7b9ebf52f9a8e0de5050e3785a1b556e6c9438a40345aa6d937fe"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "rubrica",
+          "old": "d1f59cc4c3022ef4f668867393238d4eac4a3b520dd7aba9d05eda05f32d28a4",
+          "current": "59adf9ab1e1135ca12110daf1b0ef267de142fdfa54e343a2566c3d5125062f5"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "lista-cotejo",
+          "old": "9ab34555574f6aed7b629b726f366cad99f9a5e04b59ae543a8b236a6611afff",
+          "current": "dc09e94d42d49bef1352b9ec1af6b99e639f7d545f673bdfb41174865c0c96a8"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "escala",
+          "old": "9d264ee3f0d6d1d91ad44cbc49676ea93736abf3c703ca64355fe707003e9bae",
+          "current": "9f039d42d37a3276847e7f5e2a066639525eba7c78086a6cf3e786e5b1cc4fb7"
+        },
+        {
+          "caseId": "novel-draft-revision",
+          "format": "lista-ponderada",
+          "old": "f498082a9dadc28738047d36f8333ccec00a6f0be614dff53fcb68d3b7795a38",
+          "current": "62f480363a6e4eaad5ca96dfe82cdd6ab7d57d92cbcec059ca2e812638c5df16"
+        }
+      ]
+    },
+    {
+      "subject": "OPT-HLM-LEN-6",
+      "definitions": 420,
+      "identical": 420,
+      "documentedCorrections": 0,
+      "cases": [],
+      "definitionDigests": []
+    },
+    {
+      "subject": "OPT-HLM-ING-4",
+      "definitions": 1532,
+      "identical": 1532,
+      "documentedCorrections": 0,
+      "cases": [],
+      "definitionDigests": []
+    },
+    {
+      "subject": "OPT-HLM-ING-5",
+      "definitions": 2200,
+      "identical": 2200,
+      "documentedCorrections": 0,
+      "cases": [],
+      "definitionDigests": []
+    },
+    {
+      "subject": "OPT-HLM-ING-6",
+      "definitions": 2092,
+      "identical": 2092,
+      "documentedCorrections": 0,
+      "cases": [],
+      "definitionDigests": []
+    }
+  ],
+  "fullChangesReviewed": "Siete consignas, observables/niveles y cinco textos nuevos completos, además de puntos y correspondencias; ortografía conservada junto a vocabulario.",
+  "historicalSnapshotsChanged": false,
+  "httpFollowup": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "grade": 4,
+    "catalog": "evaluation-2026.130",
+    "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+    "coverage": {
+      "availableContracts": 70,
+      "selectedCaseIds": [
+        "poetry-draft-revision",
+        "novel-listening"
+      ],
+      "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+    },
+    "sourceScope": "41ab0555-56ab-58d3-94fb-fb553c5f0624",
+    "curriculumVersionId": "78377c1a-3d59-51dd-8003-68d06194285c",
+    "samples": [
+      {
+        "format": "rubrica",
+        "score": 20,
+        "activityId": "158a4639-be9e-4cf8-a48a-2f09b09b9587",
+        "snapshotId": "fc61d620-0d45-4d49-a7d0-35fb405cba97",
+        "strategyOnlyInstrumentUnchanged": true,
+        "manualTextPreserved": true,
+        "hash": "174aed79f0c715832d9f413a61220bf27d84f74c2f29b9d92fa97fcbe2093930"
+      },
+      {
+        "format": "lista-cotejo",
+        "score": 20,
+        "activityId": "7c6ebba6-c676-427d-b497-c6007d679921",
+        "snapshotId": "45e6b7ea-718a-4282-ac9d-a57a09845e0a",
+        "strategyOnlyInstrumentUnchanged": true,
+        "manualTextPreserved": true,
+        "hash": "b8f30f9b91d9b1dcce9a653137ed2a1c549e2625065324aaa07b006503e9669e"
+      }
+    ],
+    "timings": [
+      {
+        "endpoint": "/auth/login",
+        "status": 201,
+        "ms": 1934.0230999999999
+      },
+      {
+        "endpoint": "/activities/center?contextOnly=true",
+        "status": 200,
+        "ms": 2228.6654999999996
+      },
+      {
+        "endpoint": "/evaluation-instruments/recommend",
+        "status": 400,
+        "ms": 6172.5646
+      },
+      {
+        "endpoint": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 5495.320900000001
+      },
+      {
+        "endpoint": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 5380.956900000001
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 4292.4362
+      },
+      {
+        "endpoint": "/activities?sectionSubjectId=5296ab2a-6b2f-4f82-aca0-05e47530a5cd",
+        "status": 200,
+        "ms": 2231.218499999999
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 3320.208900000005
+      },
+      {
+        "endpoint": "/activities?sectionSubjectId=5296ab2a-6b2f-4f82-aca0-05e47530a5cd",
+        "status": 200,
+        "ms": 2276.492299999998
+      },
+      {
+        "endpoint": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 5848.970300000001
+      },
+      {
+        "endpoint": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 5258.657699999996
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 4255.340900000003
+      },
+      {
+        "endpoint": "/activities?sectionSubjectId=5296ab2a-6b2f-4f82-aca0-05e47530a5cd",
+        "status": 200,
+        "ms": 2803.3560999999972
+      },
+      {
+        "endpoint": "/activities",
+        "status": 201,
+        "ms": 3285.8027999999977
+      },
+      {
+        "endpoint": "/activities?sectionSubjectId=5296ab2a-6b2f-4f82-aca0-05e47530a5cd",
+        "status": 200,
+        "ms": 2217.443800000001
+      }
+    ],
+    "browser": "NOT_SEPARATELY_BROWSED_IN_THIS_BLOCK"
+  },
+  "limits": [
+    "Las dos muestras HTTP adicionales no son una nueva prueba visual personal de HLM4 o de HLM5."
+  ]
+}
