@@ -1,0 +1,3803 @@
+{
+  "grade": 6,
+  "method": "FULL_ROWS_LEVELS_AND_FORMATS_READ_WITH_EXACT_TEXT_REFERENCES",
+  "sourcePdfPages": [
+    380,
+    381,
+    382
+  ],
+  "items": [
+    {
+      "caseId": "physical-condition-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "6e74e701bb7e48e3c0d545217a2022e5954fcafb993a1df2a9064bf9204342a0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-condition-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5ceb1b3210ae9a3e66f94e3a7bc9b795958c6973b9727fc154c383f738841262",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-condition-explanation",
+      "instrumentType": "escala",
+      "sha256": "3d736b714ae2e601363a9d8c06dcb69a5db57ddd52f7899226413b705c62e906",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-condition-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "efbfe5b2dd40be52e341bc34a00597da762dcc6d42653accf55ef6e44e272117",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "circuit-plan",
+      "instrumentType": "rubrica",
+      "sha256": "1d8749e03a5b5042c2a10201a8d831916e30170ed1582fa66352835272259f29",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "circuit-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7d051518d036c31cf115e1e90306ac5d7879c3f3cdcb9bf6462a180826e584e3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "circuit-plan",
+      "instrumentType": "escala",
+      "sha256": "e3394c909e340e49d121502067f822335fb1d57e2060ce907b6ede673b9c0110",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "circuit-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "46ec70cd8e220bbd54e6c630142eed5bbe6e2ca92a3869353069478cdfd0dbd6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "flexibility-observation",
+      "instrumentType": "rubrica",
+      "sha256": "1b0686a378c00046d80ba7d5acb9c1e60be428b2b7007703f8b17d40d44b8fbd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "flexibility-observation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e9f9821c8d47cfee4f84827e0df0d30ddf2ea201be42832c409fc39afe9f154",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "flexibility-observation",
+      "instrumentType": "escala",
+      "sha256": "9452eaccd49fe35275643e55c94b42865ac9defb860a02b63a5911e04b27651a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "flexibility-observation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bc2192fb0d47604dc8dbc8957151f2e3348555607d462593295dda5c21c342fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-variation",
+      "instrumentType": "rubrica",
+      "sha256": "9f8e8a07372bfb97d427cd9d737bd90332feeba9d21816f2f33d259c1c129c31",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-variation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "50b11a020004443299b780f1884a29607d1150d79f6e5bb457ac422742683e4f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-variation",
+      "instrumentType": "escala",
+      "sha256": "6c8ee794f50e36071630363d473fb8c0a4516d2d3ceccfbac9e30d09bdebc999",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-variation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dd46e7c29a25fd8ec7b08b7f95271fabf35258d82120ae3741e1d4cdba16bcb2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "equilibrium-observation",
+      "instrumentType": "rubrica",
+      "sha256": "3b078b75da79aa451c90f2cb516274b90c3f53e89553a4d6c5c625610f2d13df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "equilibrium-observation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b13dd40cd57bb0e813d9f58d6774d6085e35aa67513fdfa045d01c28c497f444",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "equilibrium-observation",
+      "instrumentType": "escala",
+      "sha256": "52e40e07edaae3efe812fc093eb686c14e2255d46fda7d2811f999c0f4173242",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "equilibrium-observation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d121981cb085a151432c8bdb001df0f873fbed62e65156a8b3b1590c59612d1a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "spatial-orientation",
+      "instrumentType": "rubrica",
+      "sha256": "5534575292de9c7c343ba60e0ae724c7d126ca3120aaedd675b028c1f6f0661b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "spatial-orientation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "32e98bc242b644ec468494eb483737b8b083775614cb9b97a4bee7a637df7c1e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "spatial-orientation",
+      "instrumentType": "escala",
+      "sha256": "933937212f2286fc3510699bb0ae6929f3c78b0f2d99575a699d216784cfca59",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "spatial-orientation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2df4d766cbe1753c892371df2d617be4a9a0949edba88b8d5b9258b3e2d8bd1d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "compass-orientation",
+      "instrumentType": "rubrica",
+      "sha256": "1815c7a53e32e32902c680aa6e8a9851b8529f3b49a1d5780200e97baf23721c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "compass-orientation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ee92901002d6ddacfa762b059d6b3ad85330aa3fd5cb621da98a0b0f127c35b9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "compass-orientation",
+      "instrumentType": "escala",
+      "sha256": "4b28e9b0c011d18eb2b9070c5e803a1192bbe69316367e43a8ae399982bc22db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "compass-orientation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "813e4035e6cce6fe34c2786229acd92f356c32704e3dd2eb565b875e47e92e9b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "gps-orientation",
+      "instrumentType": "rubrica",
+      "sha256": "a73e943a0f0d0f9bd36c3331afe8b6b6d115368625be589c82762e4b41e2d24f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "gps-orientation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "37291509ac54bb09b7f1e9ed57c1dc98bf89117ff6b45b1645d0a0130e6673c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "gps-orientation",
+      "instrumentType": "escala",
+      "sha256": "515e0ce4977ae6a0ecfa870b08e4c3ff04f37901ac83926e93ddec2934f447ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "gps-orientation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a5632ffde73c971718defc5b94de0f03cc9497c88709dba1613f9add0cadb9cc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "care-frequency",
+      "instrumentType": "rubrica",
+      "sha256": "d7416c03f888203bfc26e40330b6fbc362c6b4d240f30df8c622a835f7a3defb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "care-frequency",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e140cf5072b1c1354347f6b76f8aa322bb60e10dad5e032cb87fc7337d572ff0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "care-frequency",
+      "instrumentType": "escala",
+      "sha256": "7487f469fe006ed5457c900e0e29f3c290a7303a5d489d694382a647dcbf6afd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "care-frequency",
+      "instrumentType": "lista-ponderada",
+      "sha256": "631f2ff35df68f1211d97d3e3193d295b51bd92e875115dce1ed4fb91a71c9e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tactical-cooperation",
+      "instrumentType": "rubrica",
+      "sha256": "3cc2442f68bcddfebab298afe30a66ee9f49fdd77a395b5eb427ae1580d827cb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tactical-cooperation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4be0226098831155c849fe631d0720b5f7fa525dfbd90809a8136ce982f654ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tactical-cooperation",
+      "instrumentType": "escala",
+      "sha256": "eb0d02c5081b172fa8a464148e1195cabee63260d8949034fcd23fa4a339a42a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tactical-cooperation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f3ae4e9a17f88aa29d904eefdb7312077cd9dbd14e600dccd8af138837636727",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-progress-record",
+      "instrumentType": "rubrica",
+      "sha256": "00fa08394e5a6fddbbbd430eeddd5d5253b6590d9459a84d5581e875ec3bfca5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-progress-record",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0528a87b72acac34b774c839c1b07c97bfb274a545c53300c3b0c326fea331d0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-progress-record",
+      "instrumentType": "escala",
+      "sha256": "1df733916c9bd630928f304fe3c594d8b5106c99b9d7526cbfefefabed99b46d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "motor-progress-record",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8f2e07db54b48df992a9df716d5e4e9c7b022fddd09692402031d71989ab729c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "wellbeing-reference",
+      "instrumentType": "rubrica",
+      "sha256": "091a28efe101ec6bc2b88ab739f0efb1e86bcee5a11e4d22f3db726df5ffbbc1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "wellbeing-reference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "62f66e6d8740c273095c5d25512a686fb049a6c122e00b03159fdb4d3bdf0f8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "wellbeing-reference",
+      "instrumentType": "escala",
+      "sha256": "6dc0114717ea14a66a009b485e8250ffea9e50ad5a419fc7ed11c5dcd1a2a381",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "wellbeing-reference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c5d8dd5c7e83e61d995120232c966336ce51fc4ba987efca7499605c458917ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fair-play-verification",
+      "instrumentType": "rubrica",
+      "sha256": "1cd5ade035290532adc5ef9eaf9d95929bdc9782bf639aa51a75d563c23bae7e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fair-play-verification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f4e49c794696172aee7ec20e495dc38dad323649f64234659467384931ce737",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fair-play-verification",
+      "instrumentType": "escala",
+      "sha256": "e5b61bfcd36508faf2cb0858217f84b63407d80fe4c274049b64370ec84a5be0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "fair-play-verification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c4941eaee4070ba1381c4394566500e61fe7547e4dc664fc4be5db93a5656592",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hygiene-verification",
+      "instrumentType": "rubrica",
+      "sha256": "447c68e43a845e72bda0a4399efe275d0450db57a72c1613769d145595ab7ea2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hygiene-verification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1241f6a4cf52fd7e27de38a096882b4ae9f8668219c4e4234eea8e083de3d0b6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hygiene-verification",
+      "instrumentType": "escala",
+      "sha256": "a4853461d4944be63475b268f193e6e08f03f972573c2e1226033c11a6aa2bf9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "hygiene-verification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0cc1882580340771a2779685a22d5cf836fb54587d64bb73280569eeb0a6de28",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "continuous-running",
+      "instrumentType": "rubrica",
+      "sha256": "a65af00490b022612e478ed998da3f85e8208f981855a78b65cfef08a5e2062d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "continuous-running",
+      "instrumentType": "lista-cotejo",
+      "sha256": "317f203bfbff3ef93afff649e8175f89b8eaa7f0af77af974635b3436fa158ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "continuous-running",
+      "instrumentType": "escala",
+      "sha256": "bf60c156162e47857b931a941c132575d7999d531df780fe6139518f394e7e79",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "continuous-running",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e3838762f37fc5fd8f836f5b86c25ea45667fe7222279eecad153ce0013853e3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-race",
+      "instrumentType": "rubrica",
+      "sha256": "8eca7a6c32bab43d794cb6cc7b43faeb27c228188b37577de6163e11a13ec3bf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-race",
+      "instrumentType": "lista-cotejo",
+      "sha256": "762216ba89222b6afa1b420956af54cfa0882d6bbbc60dd8feec6d2717f270fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-race",
+      "instrumentType": "escala",
+      "sha256": "450cfde5d6e5da48ebef963258093606e999864b2da6cc798ef30674a19d9c52",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-race",
+      "instrumentType": "lista-ponderada",
+      "sha256": "57cf53d50874a764ad37876ecc6a5b6894c00d37da78962dfc9715dd87b3ac3a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-rules",
+      "instrumentType": "rubrica",
+      "sha256": "29ce54c0e55c10e238213c8d1cabd17c686db4abf9c53119ef08d31e63912f2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "28fce95c54f4b59a80b866089547d58d03ca2a0a34fe0f032d33a99487674539",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-rules",
+      "instrumentType": "escala",
+      "sha256": "7be28bd4feb175d8e055279fe35f3b3600e0f10e22723adb51a3c65631c81565",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "70ea4853531a84988ed958bfc0287e9839f75327e93bbef4454b885dafe7b231",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-history",
+      "instrumentType": "rubrica",
+      "sha256": "3f0b4e5b5adde998fa14b8bcc3bea505c2d3a5f09bba72bc31f3cb4ae664bbcc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a7e804b4829b34565d06da11af2e003f0efc1034534b803b8a3fd9559a721d2e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-history",
+      "instrumentType": "escala",
+      "sha256": "af09e1f69c0487a134be1799bf03a59e0a31c2385072e3ccda11aa72ca53597c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "73535c160f91a81b347733b1e97d8abe636d31c8038d965add91dff66324977a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-game",
+      "instrumentType": "rubrica",
+      "sha256": "adfd21c07f4c84954843634248b2c91339c9b7d162784ae05b350687fdea4bf4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "442d4caffa7168df843268f5f8628aa1e350c5683ef0d7b30688e1aa3c5dfe93",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-game",
+      "instrumentType": "escala",
+      "sha256": "bf3a742a4a517760028c517acd3d6cacd26a4fa55a9f2175cae98ebccef5b4cd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35c0a982815db9c642c8f6f14dd5d2cf390e22406f92b9460c80c309d1418cfa",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-rules",
+      "instrumentType": "rubrica",
+      "sha256": "e6430601e63fba402fd710fa98b028e6f0759e58ab3b51c2487ee7e4f2917de7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "700c3049a3c68216efa3e337ecfcad55cfb5645eb15d1ca4d0bcddd6847565ed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-rules",
+      "instrumentType": "escala",
+      "sha256": "2a2c7aec88b54265642b430f7f909f59287fb16b8147b4df2765f36f715404c4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8c0e62594476b19f13cda6417d90a6e718d02b083fdfa1f434fafee067f0d489",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-adaptation",
+      "instrumentType": "rubrica",
+      "sha256": "8b74523f78d0313267323dd4fa66b9501743c0fb13628a3d517d60edaa772671",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-adaptation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d9490ad0ffcdc1524f5f875e03a16118c4e6c84b9c0970a67cbf529baccd7352",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-adaptation",
+      "instrumentType": "escala",
+      "sha256": "9070e05c6b8bf2d4d8ec768b2647db13e878a97cc3a2410d797edf9b29de11ba",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-adaptation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "51b31b3040bdd3dc7b54a197317f73c14db85b174e936dc3f24a18cf0ac9671d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-history",
+      "instrumentType": "rubrica",
+      "sha256": "92bf1daab7f000ab9f6ed8af3efa07aa28f7913aaa3fd154af632539498663ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "640721df716b9d83a74ce9941ae393ae867d81c2e01b90a22f3f91a78fdbfcf2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-history",
+      "instrumentType": "escala",
+      "sha256": "0e7eb3f8d728ce5e60a69f69275d06541f6241ca415ea76ca04bbf240e592333",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "647136a7a57a886dfa319729937190a1d0be49666c24d9f317041acbe3976dcd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-rules",
+      "instrumentType": "rubrica",
+      "sha256": "1158cf5394a255abb7769ff13b8bf621f3243b0428158312c03acb3d57632f99",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1193eb81819769f4263469193326bb4385acf9a7dbc3cea80b08358fa96f3d0f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-rules",
+      "instrumentType": "escala",
+      "sha256": "2d144b5d21dcdce04ad5a82e88db456ddbb8f2c8514e2a91724b385f0d12ebb1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "edf766da69cb945abbd173e866019ed6f3e3dde1146cc1f76f716510c19a942e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-pass",
+      "instrumentType": "rubrica",
+      "sha256": "e320822e5e1e9e585f8edb90d6431899b069c09fae52e38e412cd45e27068228",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-pass",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08e150379326482aadedc4c703ee6c03972a58dc335b3dfd08a30a7e8413ea53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-pass",
+      "instrumentType": "escala",
+      "sha256": "6d3e4f7141c11e4cb739ab6d7431e53614c7e65f118b1a2e1dc9fe61a553469b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-pass",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ab0c37130307fc06b324e4f4c18fd0c2c15076e136e53f0e71085bab0f0dafe4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-attack",
+      "instrumentType": "rubrica",
+      "sha256": "f6ea47646f6128ebe4dd168ec31da56bfce29b218185fa85d9bf58bb6e0f59ea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-attack",
+      "instrumentType": "lista-cotejo",
+      "sha256": "da177c9b292ac04f950cee6522ed937109b60066671ab20e2e1bf6a433a89dd9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-attack",
+      "instrumentType": "escala",
+      "sha256": "a17dc900f962f3d8cfb3781db77943518998b62dc648519b46121d27e17d5457",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-attack",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7c6b534ab2c65fceaa1fbfe594481e46e42a4e4b5c32dff203bd22135f449ef0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-reception",
+      "instrumentType": "rubrica",
+      "sha256": "ad0811d6367f66d4e3763f9801ec555745ab293b9e053f1ef1c7faeeb56b535f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-reception",
+      "instrumentType": "lista-cotejo",
+      "sha256": "232fe4237d14d2fae0a200989c092a4a70faf46a210df61636da8fc4aeecf909",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-reception",
+      "instrumentType": "escala",
+      "sha256": "e221df30b479a5025bb5664304ebdef23bd32c0f8f04ad1ff002d21aa8cf7766",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-reception",
+      "instrumentType": "lista-ponderada",
+      "sha256": "791a144d8d9e6b91aa2a925765f8ff1e58fee7750d64ccec22ec3c7678d0b2cc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-block",
+      "instrumentType": "rubrica",
+      "sha256": "ce70223a05a2daa2cbe6d185145c9e4663f7dfc98662c4786827fcd05d80f05f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-block",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fa4555d5cfc612e36fd4f1b25d3ec922489b6731c0fa0fbcdf54084b9a06dfb2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-block",
+      "instrumentType": "escala",
+      "sha256": "c0c568f5098bcbfd6eaea9ea6eaff8f592907e1306955694f2d2643fb79e1ca4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-block",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9d1e1a728be6b8f86dbdc9e624abf25d62cbfaed4f816d54d2b6873f8f24fc91",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-defence",
+      "instrumentType": "rubrica",
+      "sha256": "ad225ac25bc36ae6c31d07867a7c0ad474d27b5b96ff5230889b78c1dec7831b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-defence",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e7dc2e01810307d20d340420d287a11cc97ff1e150e482498dabf55d299ec9d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-defence",
+      "instrumentType": "escala",
+      "sha256": "345dcbba46bd7c58c892930cd0b56bb95751a55f7bbcd40b8af17a0dace7b13e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-defence",
+      "instrumentType": "lista-ponderada",
+      "sha256": "263421112e67c34b378a74e3262bd7df4b7c23a1c27abf4b8471b017640ca2c1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-game",
+      "instrumentType": "rubrica",
+      "sha256": "5280ea516321988f514419805d0f0b6d0f9f8360bfd090baf1665020d61eb89d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7456f6ff94a544f4c310f9290fbd1fd48d4fbc938c1660529f95ffac8aafd383",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-game",
+      "instrumentType": "escala",
+      "sha256": "102b62debba4fa58c005359225a62bfce29dac2bf98ce6dae8008b4447dfa341",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "84c67ed1f13b8882949fbcd9cb4aa7c06a87c36b9361316527297ffd97e4ffc0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-serve",
+      "instrumentType": "rubrica",
+      "sha256": "c8f9c0f1f4521f52a71768b3d01434e275ba86408e022f3e4d4aa175e196d2bc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8740f7bf4b9516baafe2e8561509314a8d182aee56863591d00ac5678ff42650",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-serve",
+      "instrumentType": "escala",
+      "sha256": "cd06b0bee77b441077172b2f10e66febaa714c1592b244b909a6b34a2ebee6d2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6306dec3ca2b3f7457fb1b02c5e4fd78b1faf3c0d62a4a82172cbe5773ca9548",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-repertoire",
+      "instrumentType": "rubrica",
+      "sha256": "2333804b72bbd9f4f7ebbcbfa32e731dc2e1edb2032265dfe2992f3e732c8a83",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-repertoire",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6e7081073e854d6a904c9b291a9e52b4d0402df32429e898f710319c9c5a4b73",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-repertoire",
+      "instrumentType": "escala",
+      "sha256": "de0836b79ff3c4a020a5ee3c450852a713ef46b156bcc001763272d896b1d8cc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-repertoire",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85b13eac760c3bdaf1a6b94fba67fd9de685674cc814d0a03b29e68e0b735681",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-tactics",
+      "instrumentType": "rubrica",
+      "sha256": "a24a77a18cbaefc8fa8009ae25df81befe4d13605459c60c99b4b5347c9b096c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-tactics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8b6e933b8d923a1d8fa4503965827aa200df456f5634b07d85f5e865137682f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-tactics",
+      "instrumentType": "escala",
+      "sha256": "a136778a6e5cb7d30a185b1a8718b30387f1bc6f39e6e6f289e098b5f7485248",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-tactics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7efe54ccaa500dffa23d4d58c355f1449df257669216f82eff586318bee64dce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-structure",
+      "instrumentType": "rubrica",
+      "sha256": "d452952720e22499ef455e9199a296224c2314d4b66f46093ab92c5a934a8632",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "81520f508a5e7ef92285033829956ef6aa1f9906bcb2f33037e4d475d5338489",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-structure",
+      "instrumentType": "escala",
+      "sha256": "052693bc436b8b4a1b8382a73510c70d8b39d4f53ec89f68008a888d9d2bf216",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "df5c38e46bf242eaab6e69444b007f748e357b2197151534ba501b310e04cdc5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "diet-rest-case",
+      "instrumentType": "rubrica",
+      "sha256": "37f3030759e961c2b934000e28591d207625848f23880ef9f4f59c5664be5487",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "diet-rest-case",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3211831a831078ac617e2a2923db0ab6a16d6d6d7c2ec121c922e581c99f89b3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "diet-rest-case",
+      "instrumentType": "escala",
+      "sha256": "0d42212d64123f48c007f5e50bef78d96c560beaede525de0a738f31e6f448ff",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "diet-rest-case",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1c56132992a26bf7a499c0546cd7124e2372cddb53b98f7bbb063daaf083c87",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-ending-game",
+      "instrumentType": "rubrica",
+      "sha256": "1e1c32e329dbb63fd4baf53e6ab5b1251cc9a5687003fa3cb29c99210181e38f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-ending-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c6ab20247d769fdcb5a99398a88ca332d8d5cfa4e07eb53e31320b061ba91a10",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-ending-game",
+      "instrumentType": "escala",
+      "sha256": "c760c24cf9d7b4a0ff9f1fac5df1b29eedd0b6766f000a54ab271805b7ce6099",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-ending-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "03ce046f55038d0c33d99a45e98b9efa0ebe050c7053f7301e6c3976601ec567",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "distance-running",
+      "instrumentType": "rubrica",
+      "sha256": "bf1902c6c848594b2d7f0324c8f17a35b486e169498367543ccb84696f531660",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "distance-running",
+      "instrumentType": "lista-cotejo",
+      "sha256": "93e8cc8746b16961aa8f0e9fc5f2356d89937c18db22acd2c600211b51dcf07f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "distance-running",
+      "instrumentType": "escala",
+      "sha256": "6ab13d92740271fedc13ac05dfff54bbb4b4459095e27d6db675bbb98560bf75",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "distance-running",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d90387899a5d7cdf7bdc1822dec5aa6ad11f25cbced1360cf4f33d912caa37ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-signs",
+      "instrumentType": "rubrica",
+      "sha256": "7e1e2e4a2c3e0dd8a0427cdaf82607f4ad32e96255610d06d29bdbe13cc2a69f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-signs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9a01f6959b3c8581bc18f61463f8ff47a53b5f3f4c4a16469b9bf22388639a2e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-signs",
+      "instrumentType": "escala",
+      "sha256": "94085c3ce4717b0fb7f111afb89fbd382d4f1a7f03da541dde4c9e478528634a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-signs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "17d29ec964f5ca0857f646cea85e7b4b330334f3aa61722a43a90c44e6954f20",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-safety",
+      "instrumentType": "rubrica",
+      "sha256": "81b5741ea0c40cfb2bb297e7ac93c7fed564fd28e487067ef3814790ff7830c7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "499f7039f17f399482d8e8304a757056ecf2b473c3206771d649f971c11ef261",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-safety",
+      "instrumentType": "escala",
+      "sha256": "933640cd249a986bf99aafad94cc88e5b4a16f0c1597db1adf50dbf8037a5ee3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ca2f1414e3d730280fb3b3cc622f7a869876aa044857d5ad2225be62c616b79a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-modalities",
+      "instrumentType": "rubrica",
+      "sha256": "4df87db9e90f828cb5d8120a77dcbe820dba2e434c3797b04de9ce1588501f21",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-modalities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b0b8691f732d23a8d572c906be3f97aa0d42928d665a570f236752a416136bb9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-modalities",
+      "instrumentType": "escala",
+      "sha256": "7e3cc85f8125609a6c172eff3aa0a5212585980239d39b16f663138a1109ac2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-modalities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc7565cb3ea4341932a4bf8cc6a813fd12e29069f5fa10a5d26d02020a145413",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-local",
+      "instrumentType": "rubrica",
+      "sha256": "cdcac3268d1550fd38afe1ce8dd4d8dfb39d8ac8894c2a3f273de44320cf9d16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-local",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e49728d1da0a1d44c0e73e3b6b822fa4e653323e92bcf33da2c6c0a54a695f92",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-local",
+      "instrumentType": "escala",
+      "sha256": "6c82434bb25fb1b6b61517dea267fa59dc3a8699b191298fa29013daa9f32879",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-local",
+      "instrumentType": "lista-ponderada",
+      "sha256": "60384c443d629b7cc5afeae09c6f103f0c41d36be816ea825119d6e235d48ae8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-biography",
+      "instrumentType": "rubrica",
+      "sha256": "41eda59b54da4843a742b9e9d3b91611da762b6a7933d4c407f7391dadbe8495",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-biography",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b55461772f7087387941042a063767bda2c9c813dd5c6c86eea2e7eb51f2c025",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-biography",
+      "instrumentType": "escala",
+      "sha256": "b1eb1ba8d7aae1aef1eea42082ac4fcf5f3fe4f9bd120683bb561aa4611227f4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-biography",
+      "instrumentType": "lista-ponderada",
+      "sha256": "83c3441adc9a056be44468d589479e8a90071d5d8e42598b79ae8aef0d21e8ca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-possession",
+      "instrumentType": "rubrica",
+      "sha256": "d670ce5c372173cbdc26967ce6a6842f336ffd6072f95764cad632fb5ef5342c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-possession",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5195afd5c206687a87cb41138e6b9a868bcf67c1b42aa4f7fa24337c28edd550",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-possession",
+      "instrumentType": "escala",
+      "sha256": "a821eaf51201bdd91c1b066e6a7b1aeafe3adb78b749720ad768d192172d91a7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-possession",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a405a860dbdf24f23513a11d419a3dda922e00658e68e2a1e8d4df487c53d3b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-counterattack",
+      "instrumentType": "rubrica",
+      "sha256": "e17ad860b95a8ab0202bd5fb68163a095fb11492fa44e78658349fb8673d98db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-counterattack",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ee03318009207cd846f3bec39339bf0643c98083970a7e2e939424a85470b557",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-counterattack",
+      "instrumentType": "escala",
+      "sha256": "ff63e59af4f6be86413dd1872670e2784ab25fbe2f10efe7825f83999a7e0f4d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-counterattack",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cec678c7c09db33d7e5b99f1bd1aec77899d5a10c61aca78bc7113c9a1ca7718",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-defense",
+      "instrumentType": "rubrica",
+      "sha256": "ed20a2374318e745898c2a4a37c89a71c99cbc69de61f74420b0650108cc7a30",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-defense",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1cdd3050c5eb320a4b8ae05b1efe568a885f8fe5d7ecc275861b8b6d47d366ad",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-defense",
+      "instrumentType": "escala",
+      "sha256": "1325407c63eedbc2ffddc6d286ead727c2e2b97cc4e282a31444747e6ca2a401",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-defense",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1c3c7d051c13654ed1dbd703830346e68a5a50d7fe209e51f63fc45c5675964",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-systems",
+      "instrumentType": "rubrica",
+      "sha256": "a6f83ce1925b253d80b6d3206f36238773193fd3f287c302aa4c0cb60e9c1cbf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-systems",
+      "instrumentType": "lista-cotejo",
+      "sha256": "026278df32ee892bd8413fb16d2f871a661f4ae2cd43e938340736d0e312ee35",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-systems",
+      "instrumentType": "escala",
+      "sha256": "b3107af47c42d344a6acdef7b4852cdb22225cccb3fb0f84d5dc53d3f52568ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-systems",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2322d2b42a852a7598b64698464e06d569e273b94b09b046f49d150f573857be",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-team-plan",
+      "instrumentType": "rubrica",
+      "sha256": "bb131ee357bf99fc9c4e124bc8bf05895ea49d40ce29f6f42eab4c1bb6f21bb2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-team-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bb2330faebdd3fe9b4795906a1e7fda4b946100977e4b616c29f7ba9b55362e8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-team-plan",
+      "instrumentType": "escala",
+      "sha256": "a19681c54514e19cae893844eba6c369ed2e6901d4fc8e289c93297672bde998",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "football-team-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "14b0b9821382d3271d524bf1fe474f40b42088314a1ff22fbcf3db9784009d01",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-institutions",
+      "instrumentType": "rubrica",
+      "sha256": "c279fdc0b6624769f65ab34607f5c8cda20cd2933383dfdf6607e12efdaf8c7d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-institutions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95985f9792957796b15df612798ef4f36fb8c888d72a22200148392256031f3b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-institutions",
+      "instrumentType": "escala",
+      "sha256": "213cea96a88fab026eb5045dc9196263eb88029ada3a5b8a20fec6602c3d10a5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-institutions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b8040407d4b9b39e3b85c13cd198dc99030e9c548ba27cc36711903632bbf0b9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-modalities",
+      "instrumentType": "rubrica",
+      "sha256": "342fb9f0e80fcfb42d732f83f313aa08dfa7d9f7cb63a9676bd8f56717597d24",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-modalities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "25f44f94ff268b7ad369247b91f2f66b1911e6c774fd4c1110b61320ceb63a01",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-modalities",
+      "instrumentType": "escala",
+      "sha256": "2af92f4a4a22eca2d338a3b56068fe43af503ee4562acd33a37435854c1faf27",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-modalities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8fdb4a61fd724c3c8be91ee7f8f9324890360596197d0a165ca84f964c7ecc2f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-alignments",
+      "instrumentType": "rubrica",
+      "sha256": "7aaa88a182826d8e69b0ddb1a823b8cebac8356c0287ac3ba3415cc98db7ae1d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-alignments",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1cbbd4407cb4b175fe2e49d6f7684c1c7ebda27e56e3bda67fed62a787786ec2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-alignments",
+      "instrumentType": "escala",
+      "sha256": "9587974b10b7445dab9c6920c406131bf14e7eb8bddf8d0796e8f11c19eb6cd7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "volleyball-alignments",
+      "instrumentType": "lista-ponderada",
+      "sha256": "45d6af5179c6be1fa34e9bed095ee87b48b6ed6552aa254e945beff07e5bbf84",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-advanced-ending",
+      "instrumentType": "rubrica",
+      "sha256": "820060c57e7db1fc1f6153d28f169604cb0a4bb70fdbf85b765451a7ce683fe4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-advanced-ending",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b727841ec04c267456fe81baeef5c419ed7b872171c0993396e0067a94309656",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-advanced-ending",
+      "instrumentType": "escala",
+      "sha256": "d82664aecabccfa82fd14975072e2ea966358f3ebe6074fd1c526e3a14259c95",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-advanced-ending",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2021bfd43899c2a552b0ee09568e484ee61151f6f73a01711e53fae66873506",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rook-ending",
+      "instrumentType": "rubrica",
+      "sha256": "efc08792fa2db372047b86175307049c75e46ae721668098171e38dc8445b5df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rook-ending",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0d7ade61a3931234da56a9849fdd17facf6df8278f68f6091bd25fc2616bc43c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rook-ending",
+      "instrumentType": "escala",
+      "sha256": "8b769cbc6b25c6a3738467ad1c2240c8ff404654eb1ff51f462c3cd191fffed5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rook-ending",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d09ff227937064301f7b32c1d8e5f6e7df2249c46b86ae6e6240eb94b3bebdce",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-bishop-ending",
+      "instrumentType": "rubrica",
+      "sha256": "5640a9f1eff9cd762a45150c5a7bba8fec83b1ec6563dfc5a6e6ef5078679972",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-bishop-ending",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bcdb65417bb76f0a1ceba205185b99ede0d267a47e74e813e4d23d194320383c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-bishop-ending",
+      "instrumentType": "escala",
+      "sha256": "2bbdf2178f46c271d67600a5fb1fe496c47f0c3e034c431c7ffc529988c93420",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-bishop-ending",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a7260a821401c41a5ceb30d2cd6031895d01b121534a1378cc88a090e847cf6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-weak-squares",
+      "instrumentType": "rubrica",
+      "sha256": "3627962fb1f1b4e95259a7bba10bc0c785b92a760fd3c63aa65eae9c7767e799",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-weak-squares",
+      "instrumentType": "lista-cotejo",
+      "sha256": "599d9297144e6ebd697340880e9a77f29b4d831382def14e7922791375bb1ba7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-weak-squares",
+      "instrumentType": "escala",
+      "sha256": "7f776839680ef545094396985f2ae32b941e4ddf1d8368f411cb1b665a4fe8bd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-weak-squares",
+      "instrumentType": "lista-ponderada",
+      "sha256": "545978c44896dc5a59a2eaee50fc85acb3cf833de30bc2f373b1f0a87c6ddb93",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-openings",
+      "instrumentType": "rubrica",
+      "sha256": "05e9cce31fe067198e7cd659eeb3d0e7cbaad0e7829bb65c368606b218744eda",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-openings",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6d50582fd3071b11d25ed89f459971e6eaaf4b9cb717c748a504ba2e8b431a42",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-openings",
+      "instrumentType": "escala",
+      "sha256": "cd890c551ed81a26d34b662c546ceb7a0904893448bb693d646610039639bf0e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-openings",
+      "instrumentType": "lista-ponderada",
+      "sha256": "912ad10030bf858940f5cf7ce4a3b3bebe74600f6405d78730d46a40ada2ee43",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-game",
+      "instrumentType": "rubrica",
+      "sha256": "0646842e89989d4dbe1b111c5aaab5b7e9c02a28cb7169683df19f838925a0e3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a11143f7c90b04b61be85b19ec78c8feb06f33a97db105c352d5e8f46a9bb0ea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-game",
+      "instrumentType": "escala",
+      "sha256": "8ff8b6b96e0323831347e320b2825995836346ab6f3193101be0a00c7c6902cf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-pawn-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d54859f49d69e4dcab54e8b05b0c383573addd4a113261a012806fef4b711756",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-history",
+      "instrumentType": "rubrica",
+      "sha256": "c41cd2f85d8ad91e2da60ce30c833bf6934ceded0776fdef2f955d5a061ff165",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cd54133ce59cde4d0c4e0fffa652d7ad6fe782732d94a4cc84dbf37d4e4ee508",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-history",
+      "instrumentType": "escala",
+      "sha256": "f2573bb18db38058eae9da629700047f5eb459c9abb8a0e1341c8273124a812e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "598bb9019b2c183b271bbe137fc06b838a5a1d13a1feb0eb7c7cfa3b883320e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rules",
+      "instrumentType": "rubrica",
+      "sha256": "f606a000eafd99f506f9a0333efe89f8e8471db6e261d423b9fc95234dbe8ad8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "922ee0fd2b80aad571df82e930749bb4c373010fae8a73958b56d9c17a96bfa3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rules",
+      "instrumentType": "escala",
+      "sha256": "fc6b58ffed6d0401b5c451cc4a1f9f123b128c01a535423e719645f0ddc8dde9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "chess-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a69e497ba7700ea045afdbbf6c36f4ebe62fd26fa6a2400a4cb286ec20e0f2f0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-institutions",
+      "instrumentType": "rubrica",
+      "sha256": "aa6e3aa97a7bb371d279f80b74c7a419035db325565ffdf00769b1a8c408e7a9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-institutions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "208778305216bb609968eefd2db0d5593484b052e569eec6b48c0cefe207465c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-institutions",
+      "instrumentType": "escala",
+      "sha256": "5c0991bc95d610b54908bc3ed18ab1dc1c6b9fe0347c2b948cd17ce25404413f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-institutions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3a52fe0a1e07999563da9f392d5ac47ce3569b89d733159707d633f846481e49",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-rules",
+      "instrumentType": "rubrica",
+      "sha256": "243cdd6713273386e95ba2891fe4f7fa57674f3f21ae5ac441e62690940bf758",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e06c95726b4a0207ceb47a0576f030e5312e066ba1a1c14e95c13a125bcc37db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-rules",
+      "instrumentType": "escala",
+      "sha256": "a75a51ba4b18848a3f82f613f29f71bacdfc4ec8d9df73521f5c4ff335007515",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc76cc165f186efa991cd2dd1c110195b552a939ac9284c38e9088f15404cc48",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-stroke",
+      "instrumentType": "rubrica",
+      "sha256": "a5b61269c2c56f673f8f6bfec2b7bce96029cba3b2a1685a9a24fd20df7d5d4b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-stroke",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9ed45d677165b632dc1d4b42c955464fe4171b47862423a6e34544fadbd62ec1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-stroke",
+      "instrumentType": "escala",
+      "sha256": "7ed1862feb87aca5b7f8f2a6ee6e6eb811fa2a8e58c1293f113d278e91a8b006",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-stroke",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f2f24d6d065c3d0de9a9c7d9954c48e653c9c48dbe6c419df89f69af23673f5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-block",
+      "instrumentType": "rubrica",
+      "sha256": "50ae25703a028b9fad5d8d82387fb76b00cb666c688eeb89b65084321405603a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-block",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ab471f7331419d8f1557656624c289127f126d3cd088248196579456577d7bf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-block",
+      "instrumentType": "escala",
+      "sha256": "b7a889aaff3fc2c09822790cfc8fd2cc382623728e917df9d093463110c74934",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-block",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d89cb558e2c404066883a6e4cc6b50f915d66b62d8db9df709ad769ee984abb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-cut",
+      "instrumentType": "rubrica",
+      "sha256": "764f777d250baf05526745a1390c0cef7259170b968d16b3ed75d86215425732",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-cut",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4e28bb25ab13e815ffd5be37e07d76ec09d23a728591f08033f702079fbc305",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-cut",
+      "instrumentType": "escala",
+      "sha256": "f8ee677ac81a0dd1e79bad902264090fb3f044b597f3938ee8d8448d4dc7d8e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-cut",
+      "instrumentType": "lista-ponderada",
+      "sha256": "952d773b5d526b3bc0af74538e1597a7f05e6b10071343d3181105ff11d7e51f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-serve",
+      "instrumentType": "rubrica",
+      "sha256": "242c4cfa0c717b29534df2acbafec7ed94d119f2be1247c7b7cd5c195fa5b598",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "61b629c62b76eaa813ede1465c91f252701f99682339dfe2dcd99d6a238f0de8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-serve",
+      "instrumentType": "escala",
+      "sha256": "0c55835cfec0a07b4d88627b43589560db2fd3124cb441b761a1230c95111e19",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "74e1d29611c1948d0e7b3e485434545f582daf454cbc9403ad2c599b759ddf4a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-combination",
+      "instrumentType": "rubrica",
+      "sha256": "a4c579e0a0385276dc6a2cd728c8346b8fb15c346320c82f2eae50f6f5731680",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-combination",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b930568dd90c6b746fb4168d07e1736f5746179479d7377a73cdd6d3e2ff64e7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-combination",
+      "instrumentType": "escala",
+      "sha256": "61180ed29f5b9746f3982c9fa88e126ba6321fef041f950f83ae21a0583e7166",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "table-combination",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d0348998bb2baaea6fc613a17771ceac6bac06a7bfd29536d2bdc99f568a8e08",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-game",
+      "instrumentType": "rubrica",
+      "sha256": "ffc549c7d0a1929b6d7a77f4b0c163fbe42cca3c221f62db9d857d08b7da86e0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "633faac7845fe4e7c43d771172eb4bc17a6aeb3cf5117bf86df5bbe3759e3816",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-game",
+      "instrumentType": "escala",
+      "sha256": "5396a5716e7714e1bef9ce8f7424b2610bdc5e67020321ec8ea80e6ad8d18526",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "racket-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2bdf5037f6520e7f349f7299713c7009387405e2e928b75410a28788a9b28bc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-serve",
+      "instrumentType": "rubrica",
+      "sha256": "3dbf4e4ef22164b634a752d22086cbc7fcac6f39b304b65a37728cec7e7ae2d2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c5381c7ee9313f85b432a8e387b41067cd92a7d38dfa33100b51dd94a35c460",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-serve",
+      "instrumentType": "escala",
+      "sha256": "802227498cc157c22a19a4159211332b9086c9a875bdec1763c715131110b817",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5bc43ddaa5067a3751229fda2c3d3011b3c3a06ff54bd913663824edd0b7a1a7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-back",
+      "instrumentType": "rubrica",
+      "sha256": "503a040648595b56c544866a0d500d5ca70cb4ecc5c45f6a6b3185d85f32b076",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-back",
+      "instrumentType": "lista-cotejo",
+      "sha256": "60252dcf7c9066454fe58d1272cf5912b11a1005ed81c01199bb3ead88e3f5a0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-back",
+      "instrumentType": "escala",
+      "sha256": "849e1baf776b49354a4e8fe3bce712e10fc979fa26b6043c2cc9b6a59c7f9f59",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-back",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6322dc3bc46ebda12d62b97fd1cd848876b942f1764dbe5337b0c495c04a77c2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-net",
+      "instrumentType": "rubrica",
+      "sha256": "966909eb3636735d0d6416db0745bb51c9bf43d2ab9536218f5d54caff062c94",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-net",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b1039ff1bb54bdc04cb43d257292c009ce7cac2a342c0b6a8e6af8546d7f9dcd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-net",
+      "instrumentType": "escala",
+      "sha256": "a7a2503a72c1b3dc82954a43c4eff79e6ccb8a4bc88dd6b56aaa212ba9ac5d0b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "badminton-net",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2c9e41f298aa33f2d415e1805b5e1988d1dc30cfee0ae81e785e581286a11a53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-serve",
+      "instrumentType": "rubrica",
+      "sha256": "4f7e34947cf992a4f6024f377ff4e9ac7f9b47b0e7b131630ecf5818ac539fc4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a77241315f43aaab5333f2fa6d669d02b77e6f879cc3e0d28f4b4d6b48bf28de",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-serve",
+      "instrumentType": "escala",
+      "sha256": "9f00405cce9e7bf07a3bb0504afd21a9fb1e4c7b24f8f17f0ed19696cc4ba712",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "72dc86ee40a0c33f1116183aa5e549ddfc60493f211079c6a2948123a105de9d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-stroke",
+      "instrumentType": "rubrica",
+      "sha256": "43d4d2030b8ce7a2ed0a13d4978cd9cdb6f2f3c52a2506449b0b49dbe5e8383b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-stroke",
+      "instrumentType": "lista-cotejo",
+      "sha256": "82aec63a03264ba82a6b02e5e43dbb1143af5db47f4037caf12fe52c219d0500",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-stroke",
+      "instrumentType": "escala",
+      "sha256": "295499a4bd347041ee5785131bd8f6f13f27c40d3a8257124b4d1e31a6ce57d0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-stroke",
+      "instrumentType": "lista-ponderada",
+      "sha256": "94f4b58d14e595c847c93587976c1b013b539927b70f0eeef0d7ecb410e7777b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-volley",
+      "instrumentType": "rubrica",
+      "sha256": "57be175d48feeaa5be46739ffb0625faad2f143fd2e521b57eed9cb7cc53a88d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-volley",
+      "instrumentType": "lista-cotejo",
+      "sha256": "87a51e5ba0934de66c3579063d8c3da5f061deadc0231d472c5c1646d07eb87b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-volley",
+      "instrumentType": "escala",
+      "sha256": "0b23fc94fc95bc7766e8c2eb1ace231df0072ec8bc2016dbb59a945128dff69c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-volley",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0defb0f9deca547f16b4c646d4ea6edce65d92ca50b588310e5117a71ceac048",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-lob",
+      "instrumentType": "rubrica",
+      "sha256": "857e5cd0957d67c98a333d6d3648b79bb223565f3de9a1d384f0bf11b6b61101",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-lob",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a24d0357cdb774ffccdae349c01e748a9bd5d2c9229805f0ac6ce128c1f01010",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-lob",
+      "instrumentType": "escala",
+      "sha256": "c4fabf2d17396d25affb888760b2c23ed642b27e58152d55fc0a87423e45ced6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-lob",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b461723cb3bd216820224995825a7d9a8a3d0bfd35e8de650dfd8b764f036bcc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-smash",
+      "instrumentType": "rubrica",
+      "sha256": "8ccc6185fa34a64210ce628e85d9431c2758eedea36c713fe8a3ceb63d414291",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-smash",
+      "instrumentType": "lista-cotejo",
+      "sha256": "30ec58fc4ba352f8225252119ade605b18ae149c6c89dfc756e1e98558ff6754",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-smash",
+      "instrumentType": "escala",
+      "sha256": "2d1c2818ec8b3723a92dce9bfe36f52c66aa7027ed40fb0a9b2d37f2c690be50",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "tennis-smash",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6177d6b778c7db39b912a7452190eb82b6a4cc30887fb73c633c2b4ae86cdb81",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-image-reference",
+      "instrumentType": "rubrica",
+      "sha256": "9572b24715a1a8959e51aea3b0e670e859f4c3ea135a14da21a3740603cbb4d5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-image-reference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cab51cdfad1e765ae2cb4de50318707f32e6628334839810557cfd3be2ec5cea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-image-reference",
+      "instrumentType": "escala",
+      "sha256": "adbccc7e408c0353f699d8be8432b7c30e0bb6c305bf90f8e213dedad13128b2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "physical-image-reference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8c06e9a2a4bff88f32670590944c36eace1cce18b6a555335f56ea6c8cc09263",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:capacities",
+      "instrumentType": "rubrica",
+      "sha256": "e560b4b217916225315372e70eabf5ee9d9d0aa429eab0044c82ae559eb935f9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:capacities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a7edb7360ce4fbc84b0dd667aaf89a7f40707259f044c7af0b35920571a5cd74",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:capacities",
+      "instrumentType": "escala",
+      "sha256": "147f41cf15f9bf977349afc0f57bd466c5782f50beba7dddd82dddbf3de61138",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:capacities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cb88a4c70f2188fbf0f50f253dfd452b7209fa794731280ca3fdc9a0f250c98f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:coordination",
+      "instrumentType": "rubrica",
+      "sha256": "b631cad4cc61043c7ee364054ff35df70e44751d0d05ab0bbf196456449abf16",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:coordination",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ebd6cd2717304fc8ebbd4d64e276883d1b62346d02ba74b2c15345481b3be6df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:coordination",
+      "instrumentType": "escala",
+      "sha256": "913b0467fa68d61e99c21e8fa0afb94bd79822dedb5e2d903166ac08760da442",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:coordination",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a15426d1afc4277bb6310e6b1f344d4fa9c926ec69d21fb26341de8d64f3a283",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:circuit-plan",
+      "instrumentType": "rubrica",
+      "sha256": "5f0d240020ffb0d851d6a8a239601475c2309ea8fb9bb7989647e9442bcf7698",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:circuit-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "999191c838f79dc72797ccc8e20c6e23c07b7af4bc4d05f238be3680c66084dc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:circuit-plan",
+      "instrumentType": "escala",
+      "sha256": "08054963ac1cceeb8834e6a727b86ae9db624ca788dbd04bd83aa49769d8c210",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:circuit-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8697c04f4515cc40e58a4a01d562fd728efb2076ae82b641d2e50311a52875cb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:flexibility-check",
+      "instrumentType": "rubrica",
+      "sha256": "801c789370ee9b35ee0eb5ab590e7bdf9757eb2255967d76abba003f30baae86",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:flexibility-check",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0ef6f0b9d2db1d073a76e75d97f037991b819bcc8e21735ddaed84a10989c101",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:flexibility-check",
+      "instrumentType": "escala",
+      "sha256": "00ec86e26f8e7009cff104e83691787fda1b0dbb9ae42242e861979319bc7f88",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:flexibility-check",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7757ff2e3e80289bf51b6d3aeaa40b9616670b2f39a28cb9e7082e2de0e86d75",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:motor-variation",
+      "instrumentType": "rubrica",
+      "sha256": "d73bd218d2ec59fae51673292014a9de725ce7c17797b6838257d56952e904d5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:motor-variation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "701d7bb1a209a02fd03d56ff831b42bbc3d7a084accdd782428180391f1c67a8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:motor-variation",
+      "instrumentType": "escala",
+      "sha256": "b80996810623da4a69552f2951a41f07b349a2b3a0d47f15ac33ccae4e061960",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:motor-variation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ba81f3e984c5dff2a2a510ad0d4de3843540b3c730e306cd1c30a24a462f63c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:equilibrium",
+      "instrumentType": "rubrica",
+      "sha256": "2e5823bb4d8d36c435e52e0c0ea808e899720d369df8ffeb0293bc3b9d7799f8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:equilibrium",
+      "instrumentType": "lista-cotejo",
+      "sha256": "13c50e285d15dfa87c684f9b012b24dba13b7409a1bea489c276dc2333464c50",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:equilibrium",
+      "instrumentType": "escala",
+      "sha256": "79dc0b88e20cfaee7822155de09c92b163e91c5cd1f91381ac3b5b5eba9e1975",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:equilibrium",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7b981b8110d5fb18126750f198bf41b9e805702397f7d65385cffc0d557eceea",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-no-tools",
+      "instrumentType": "rubrica",
+      "sha256": "abdb63f76b491aba22ddca9d8514d4a983735eb8078474ee29e146b136f61fde",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-no-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3d58d20742f5ec1f53cb4bfccb738c21308c7e5bdafabb9be0a99568b29c075d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-no-tools",
+      "instrumentType": "escala",
+      "sha256": "f315f631f108dc97ebad92a06368bf298d909383d5be0008eb4dc85a8b25d31b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-no-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9d0934715803855f8322603aef685ffe4f2c4773f1890cb75e71a3a53658b28a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:compass",
+      "instrumentType": "rubrica",
+      "sha256": "295a2f23f4c232532adbed3b077939a8ab1a99818246702fd4b0f31f28d1a1f6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:compass",
+      "instrumentType": "lista-cotejo",
+      "sha256": "80fe94827c43a3cf42d8144de1f130eaabe0e5b71f27682462a7c14eb736cd19",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:compass",
+      "instrumentType": "escala",
+      "sha256": "388f47a7323f64656a9a2fd26c505d6316154a8ce623941cd9388f39d81b19d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:compass",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b9cbc83288baaff0937c77cf0548e890f1ea2c8b4d03711c3e1bd24fa2b5b58f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:gps",
+      "instrumentType": "rubrica",
+      "sha256": "1a4850145d84283d3dd6ffb11152fce1a4662aeec9c380d5ea232dbc7007d857",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:gps",
+      "instrumentType": "lista-cotejo",
+      "sha256": "799a6b9dfc133333d4ffa0ce5823358e82ba6ba86b8343ba0bd02a04d2f9ef46",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:gps",
+      "instrumentType": "escala",
+      "sha256": "00542d3a983c0f2bf3cfcbaba7b5399a1379532e6ce82b35caea7fe4fe5d03d8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:gps",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92cb48890df626d57ddfe00104e9e592cf57570bc135a64a12f3af0e1b8ab103",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:care-frequency",
+      "instrumentType": "rubrica",
+      "sha256": "0e02a0fc20f585dd3a28dd5d69d4666648b198789387faaaefc9a452b19a2245",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:care-frequency",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fbcfd3b2e91f10ec035e4a401f9e5c48b531cc646814fcae43a3f36c412ac141",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:care-frequency",
+      "instrumentType": "escala",
+      "sha256": "20e87816ecc41ed28fe88874302cce3b9e261cff56a7cfba0d1cc3f1557c1cc6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:care-frequency",
+      "instrumentType": "lista-ponderada",
+      "sha256": "264865b34e01c98d91cde2bbed0c18e95261f1379b396472d0fcea14bb3e157a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:cooperation-frequency",
+      "instrumentType": "rubrica",
+      "sha256": "6cb89cfc5e7645137063d2b0ba96f6758da78d3aaa402189906b55177e4449df",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:cooperation-frequency",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f095350340c64c511d842066fa6e7230e790f4db7dbacd73f2961c737f04c4f0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:cooperation-frequency",
+      "instrumentType": "escala",
+      "sha256": "290f16e12c5367aa9cce0cc857893f3e5d42ec77b80bd018e9357017d82ad117",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:cooperation-frequency",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e823ca12901ea369fd4a1ccfdbd56cbccd39d746f4878729557aa4de167ad438",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fair-play",
+      "instrumentType": "rubrica",
+      "sha256": "e7bfd872fb0543b2ba379495d7c507d9182b2bad808e0916040076b2a5e507b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fair-play",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fdb8c7e7d9b2cef9b96b9114a50699def584f6c4e5259a215498ffc3233edb53",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fair-play",
+      "instrumentType": "escala",
+      "sha256": "93ebca2fc4a4953d9b28eaa697531ebd07c12547180372f350820eeed55be7a0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:fair-play",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7e33d1eff0c17ffd36d11f476784c0621e2e61d29354f9fd3aac86eb9f57a7da",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hygiene",
+      "instrumentType": "rubrica",
+      "sha256": "264f6072a647fe7b1097d2158e2d4c0909b9df35c6a3f866c4675abd23840aca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hygiene",
+      "instrumentType": "lista-cotejo",
+      "sha256": "07e78b431405aacf69c77cb5ed3fda1529fc4840f20e0bb694ae633340a971cb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hygiene",
+      "instrumentType": "escala",
+      "sha256": "af07b227bee1502cb2be47c9f0e9a6b44c503777f275419d729b123183330e4b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:hygiene",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2cd11cf2e40d4a60cd3b6cc74dd4ce26d653e6332195f6216b72c1c89a9bb54e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:progress",
+      "instrumentType": "rubrica",
+      "sha256": "73a74ebee8c7dcd379f67b74559e8be6a8e64d0e7028108a1871be29d9e835e6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:progress",
+      "instrumentType": "lista-cotejo",
+      "sha256": "de624152e3552741226a8c84a9d731f4c57cc9abdca953000b17bc3afcd9bee6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:progress",
+      "instrumentType": "escala",
+      "sha256": "127a3db2b0d6472ab6e11cdce2d46dddf730e51baab0d61bcdc19efcbafd5b88",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:progress",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eea470d26adc04f0bac2d2c30c3070e0d140de2d79d82363beebf98643cb259e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:wellbeing",
+      "instrumentType": "rubrica",
+      "sha256": "95fc272462841a388f802b2600edb7dd65a8444b4b686b20d03f5fafecccd6a4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:wellbeing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "98fe39335db132e0fe71129b56c9dc3b93d2162a9ff9e0d1717b40bacdda151f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:wellbeing",
+      "instrumentType": "escala",
+      "sha256": "bb85756b4fad9ab1a54d1c9f21d1b0275d7894f2cc1a7bb959b702a38d40b778",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:wellbeing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5944cda23beb70566530f36b396ffe79448a73a2bf0a27ca527a07a505f8c554",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:continuous-running",
+      "instrumentType": "rubrica",
+      "sha256": "720c53fd41c35ea888390007868922f70b05382fb7eab404a925a16805388ab9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:continuous-running",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a74e5d83b38fb9ff475564fa384a22080e02a8752473ecd08f2a2565779d16ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:continuous-running",
+      "instrumentType": "escala",
+      "sha256": "6da2c67d3f2151faeebe088b639a6c468f43057723a894d29566e8b893909a66",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:continuous-running",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6544600e0692788f6ecd15c63b56f9ec5be7dcaea4a3570b7bc021a6ff196be0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:distance-running",
+      "instrumentType": "rubrica",
+      "sha256": "b9eb2c75240079d599af02003bef479370de6d9da59b5609adf1c0c5b5b67483",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:distance-running",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f0e7df914b82342620b48afb83ce25a4ef6a89089623763e9775fc457600e1c2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:distance-running",
+      "instrumentType": "escala",
+      "sha256": "6ab06557f27b99dad39c835e8f986dc55bb87d6067544c40ecd796ed82e0a40f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:distance-running",
+      "instrumentType": "lista-ponderada",
+      "sha256": "12a29e27d5dffb16b2418a4fc2af571c54887801e1b76f948205cc0152de91cd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-race",
+      "instrumentType": "rubrica",
+      "sha256": "2f364c20eef80bbd6304af84e803a7322fcedb2dc5a7268ce1587d19e735f98f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-race",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0b19d76e734254667d5e3fdda32519c78eec59434fb33b1fd6fdcea23b4c181e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-race",
+      "instrumentType": "escala",
+      "sha256": "50e1713dfcca1480df27bfbd11a2e43966c26764b04370a446aab142bb528b4e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-race",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75a4dc6f5482afb3a53965b304c27c36375e942d948d3e7e59bd2dbc66bcc75c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-rules",
+      "instrumentType": "rubrica",
+      "sha256": "9206b8b30678a8f4cf5d50965991fd21243e5cd508856a3f1b189eb672423659",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b24c5f861b015e1725a07cba9721a37755dba0513ed18a4151aa6bbcc7de3aba",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-rules",
+      "instrumentType": "escala",
+      "sha256": "44f0c84896e4794d7313f2254161be25ba3f57611b12be6c2a4c9e49b33b31f3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e46b1e56a6a0285ad2dfc16952c1e871edca13e762914931afdafd7af8af6fb4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-signs",
+      "instrumentType": "rubrica",
+      "sha256": "d093d028ecc8de23e6f9884c3c8295293dbfd34bfdae424807677e100f2d4a61",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-signs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ea6707c47e05249ee9380da58a80e5c59051965ec069a3e6f8a1a7d232a338c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-signs",
+      "instrumentType": "escala",
+      "sha256": "d51995bde434b9413799ea283f8e42cd6a35e648b37f841c00689fcf53c911d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-signs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ab3c78af29695fdef1c82eff75ad06e9122be1c7bf8a5e23612642bd574aaf79",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map",
+      "instrumentType": "rubrica",
+      "sha256": "5484b9d683db09e7e20cd9280aa1db936ec020cca3038bd5a4e795c7c9914f82",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cb529e831256bc50a83d68019bdeaf9dec07a2ce929ad0358146f26279ee3ff5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map",
+      "instrumentType": "escala",
+      "sha256": "1f465f785454b66b7eeb0d4ae9d82ad63d2b33ba600760b961ee3f000469fe80",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e36c0b76d7e1e4cdb7a8c8c0731d1d46aef17574bc3ad9ddbe6fbdb2c3f0d688",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-ocad",
+      "instrumentType": "rubrica",
+      "sha256": "138257857454218444d291b4674c4a13b35271ac6b37cbb141cb9772bdb182c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-ocad",
+      "instrumentType": "lista-cotejo",
+      "sha256": "766da7b9c10ef6be141be5ea854d507b7c4dd3744eea6ebc7d07323fc06c5422",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-ocad",
+      "instrumentType": "escala",
+      "sha256": "c4b921a82c451ecf66348c0219e3feb5b3f175f68d3ead11504c4fd25b742151",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-ocad",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cb33e254333b6a3c76234d0cab63576e9cdafc0968cb9395ea610302728bcd66",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-safety",
+      "instrumentType": "rubrica",
+      "sha256": "a4595fe1f2f0b4d77e57666143f8b86238f122de5000ce5740b22ce5a83f73de",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b8a655ed2d73719945fa93e27692d146d37368c18bcf7018e8a407cfa6473bc5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-safety",
+      "instrumentType": "escala",
+      "sha256": "ac02e4e76a37eeedeaf1af9b520ffa1557119c9d0f661ca58a59509d01863970",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b2024fea46bf5e0b3ee6b812d022b884cf0cce8a0b2ec68eb0ff149b2ca3863",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-modalities",
+      "instrumentType": "rubrica",
+      "sha256": "91f1f30a73a0f912de8ccc981f69a92e75037d917b5ed75d4d7aedecc3defe68",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-modalities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12acee94006660feefa284c4e15480cbd75eff5fc735e841422e95e100e18e09",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-modalities",
+      "instrumentType": "escala",
+      "sha256": "f5c58a0734bf49cae7e8bfd63a94c19e64b3c340566735617f4fabeb90ebf40e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-modalities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2dafa25c39668f0186423db97c0b534833290cf6ba2448f7733132700f82e136",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-history",
+      "instrumentType": "rubrica",
+      "sha256": "cb5f0c0d7b8feb068fc5975c77910048bcad48e94a72a42fac7f05478cfb7a17",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d2073d917319077e2dfba1f2389c14075c2787ffbae7cf99fd34aeff84c9949f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-history",
+      "instrumentType": "escala",
+      "sha256": "2b667fc6246b4098631421e3f93163e1b5ae002aafaa43c3c8242fd7967653ed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7c7eb6879f9e8608d661097c8a7946bb9eac6a81097a847f570b3de444824865",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-local",
+      "instrumentType": "rubrica",
+      "sha256": "af8b88859ec6275db752c009857778b44e9d5bb60785e19f894e1c022c1afa84",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-local",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ed79a9158b1c778bbd65846527d278c54a9db275490bdc825742f86998c38ee6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-local",
+      "instrumentType": "escala",
+      "sha256": "42d0dac9712bd8e43631ad92731cb34bd4bacc42824a547749df86ba6199b3ed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-local",
+      "instrumentType": "lista-ponderada",
+      "sha256": "30e1522aca2e7940907ff905ad5806885077a25473bf55ba74db899daace0d65",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-biography",
+      "instrumentType": "rubrica",
+      "sha256": "e5370f54f3963294f97674ef38eb773c53adb699e70469330efe1287df2fa2bf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-biography",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b5e76a78251fe3b69cd2d4b66b2621fc6700e4370ea6f023710018eecc76c0dd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-biography",
+      "instrumentType": "escala",
+      "sha256": "37794ac34364233b2676846cf01e8074be3742972845bba978533e7bf2d4e819",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-biography",
+      "instrumentType": "lista-ponderada",
+      "sha256": "26358a2389e04c8550203ff943c8e8df7db50e644feddc484a1052b44c6633be",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-counterattack",
+      "instrumentType": "rubrica",
+      "sha256": "6ea72fbf6645cd45868620b25d0f6e2f747ee4cc2c63a673775ba45f6ef22a5f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-counterattack",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9cc66ef503857829629e6be6c45e025bc98d85e2d45e12c7ab9700142c3eece6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-counterattack",
+      "instrumentType": "escala",
+      "sha256": "0bc37ffd6bce9d36265171ee7e09eee2e8fd04a3fbd9727848d35c7d65982b5b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-counterattack",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7e8088d67254e94006d7dfa8fa4187ad9f8845bad1c0010085a78599a190e93c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense",
+      "instrumentType": "rubrica",
+      "sha256": "75e8856a75d3326160982750efbb904a29a3009a5bc7a4c57077c675c6a2d1e6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0327411853338e81d03b6660dc8ab3af17cbdb1cf3486e6d54ad7897ec1ba37c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense",
+      "instrumentType": "escala",
+      "sha256": "c13d269317e3ec0c8bc4b4e934ee07e905b3e0c559d99e18ac80e75cb801e024",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6bafee69ccd1e1afb95336450b4d8b4781b7fc45e1e668b4ec598b88697e5d5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-systems",
+      "instrumentType": "rubrica",
+      "sha256": "658840e88212fc083d48727f095be2a477240f81ee4e17c23f8ce8058c2bf25b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-systems",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f4e73861f9f00905e7c0d345ca903200c90758d713666d34cecea4be0ea2b8eb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-systems",
+      "instrumentType": "escala",
+      "sha256": "cec85d70c8d08f839c41ea0b12c738c6b9f5d1ac29cd9de556551f166d2e5fd6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-systems",
+      "instrumentType": "lista-ponderada",
+      "sha256": "226330f20e192c5df058e366628a4cc1715971687a8a9b9299021224655dcef1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-team-plan",
+      "instrumentType": "rubrica",
+      "sha256": "0b6a6c8ec665bff6e09ab973509026844ca594020b1f2e7578afe334405add51",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-team-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "33adfe7fd40956c2feb42e330c673ea0a5df1043af9a3a17d320219d6156bc07",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-team-plan",
+      "instrumentType": "escala",
+      "sha256": "baea916c7a632e23168a0de9eccf5fb17f5f4ec4933222a2a5f1385ae839bd77",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-team-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b578700b003582750518dbe3e1dfe9b3140c0e96dbdbd051d81b77b8c40733d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-game",
+      "instrumentType": "rubrica",
+      "sha256": "c77fb680cc6aabc0c58f03c502d224bb24812e166a581f9a035b289f4863c515",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e1220174ee71e9c8cbb6a4b1dff90e5b5bb69081191f24267546e2acbc473415",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-game",
+      "instrumentType": "escala",
+      "sha256": "18bb50c5dbe223670a0334af732b9b82031a5babc6aafe00e8eb3c31edb062f8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "da3f5ff5ec21c8951b6b2e750bf7e236a8ba9c5f437baed1e1504ca411e64b31",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rules",
+      "instrumentType": "rubrica",
+      "sha256": "3423f396b961ed786b0e15f2a9226acd0ba5063936ed8844a58e9db9953932db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "215a3dc66f180922fcd1e1448634677aa55d5e8661d1600ddeb5dfd76aac6521",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rules",
+      "instrumentType": "escala",
+      "sha256": "e53f889658c1a6446a81daba44f8e18a08699e5b7d7dd3fccb0f974dffda3d48",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d1ed0cd92132b44dd28557d6e74723bb14d22efed04f90169f82ffbb80e5ae4d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-adaptation",
+      "instrumentType": "rubrica",
+      "sha256": "ca2c27fa74737de146d37a61e5bfad221adb8868970f65602eb4d5de74434e86",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-adaptation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fec86176cb0ca00baadb07b9d4628378ebffc8f512c2d3ad23847455c374905f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-adaptation",
+      "instrumentType": "escala",
+      "sha256": "99140e6dc8ebb978ac29e4f0fc7907c58b2ffc51944595cc36d1150c3247c9d7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-adaptation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4423a60314c15c85a3ade4bbb2a3aa51942865e760e9c7f7a5564a923a0c41f4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-institutions",
+      "instrumentType": "rubrica",
+      "sha256": "04d834a2f6d6499df5e49cd6634c31b15ed1987e8d13bb504f679ad63e78c01d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-institutions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1d73456b4a1a3e028decba13606e370e332423a6d2e7c1014e053bfb87a97912",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-institutions",
+      "instrumentType": "escala",
+      "sha256": "526c50e92d430f7983e16e9593782cf42451495f4c399427d5cc576ad45935f0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-institutions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "651c97b3fc008bd00c546c8edf41006e52b970a61d0649bdefcbdf3569804f21",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-history",
+      "instrumentType": "rubrica",
+      "sha256": "3335bd2b3687674c4725c4d49d66c642e368b471a9f1cc14f2f436db39ecc58c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "47f2a4d037f890afeeaf09ad4ff135330a6d86bbf7441e6e16dc2b6bb8d4ee99",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-history",
+      "instrumentType": "escala",
+      "sha256": "9861753e12d475b91eb1c404a48dec7e73ff7696859df4653c07cac2c43322e1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "30b707b17305c92a7a95ff33b9beaabda8b9728ece8f5339d576a047e43f9f14",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-rules",
+      "instrumentType": "rubrica",
+      "sha256": "15422b78e988b900282bb6025230ed65437e2a70899c75d3c8f020952f2b05fb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3440242ccc010aa02d6c5057446f365d4fa8d44d22397b1f35e54a0fc748b8b4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-rules",
+      "instrumentType": "escala",
+      "sha256": "2d94400972f28c1f2297022622deca3660e9a16ab3a0a2d67380b83a00ad7ba8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c013e316e952d4a300b370fa2d317ac0ce6da6f294e27da8c7f0a0c71e701164",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-modalities",
+      "instrumentType": "rubrica",
+      "sha256": "720338f5ff805dd5fc909a32afac6fb2419d010ba4b215d477163212f504ac65",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-modalities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "52b71dc523e88cee4062c00319815ef515e87881d1dab1fea47a9e43c7d6f48b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-modalities",
+      "instrumentType": "escala",
+      "sha256": "555f1a34e70312154c836621086b7a6e18b9ad2898fe23f76b71bb699d5b5b0e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-modalities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4b620e5145c1413ce65aa357c4a5fe43f1b8957c6951ffdb774c76f921409fe2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-pass",
+      "instrumentType": "rubrica",
+      "sha256": "839539ea2585efaf29c70b7533cf495dc6761c39d4336b67ae1ab549c0dfd95f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-pass",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9f444d422182f6f0b1939b5760c1327a473344d40136edc935335d04e4e60f18",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-pass",
+      "instrumentType": "escala",
+      "sha256": "2b3c65c0e211fcb813e6982d4696052995696e94580702715ad2c103ed5b3a7a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-pass",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b5624c6db8b39bf80c8bcd39e5c37cf3a9bdc83b96f58c55b40804d3c2a68ad3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-attack",
+      "instrumentType": "rubrica",
+      "sha256": "fe7e2dcb6afec73acb12c281fa75f76d0052b1d2ecb8a91c99f2187e387871db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-attack",
+      "instrumentType": "lista-cotejo",
+      "sha256": "87b07685fffcef26b1f0e41358aed86c0953769eecd9c5e4f4ebe1ae07b65ef1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-attack",
+      "instrumentType": "escala",
+      "sha256": "2df49059d8f2175f45311f0f190370bfe7447f3a088444d71396849cb2fc6900",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-attack",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b75f6e4b2e0b71015e4e2c47de6f45ba68ec8080cc5d4a75c295eb1edba97882",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-reception",
+      "instrumentType": "rubrica",
+      "sha256": "f1aaea9f534e7395d816715248b3ff47c5238b02d735001b5ae01b3f14a5fb5c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-reception",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e65bb67c9d98e986dce88c91a7b7cae6d6d3db2d4729612016829c3f154f45f3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-reception",
+      "instrumentType": "escala",
+      "sha256": "01f5dfc3037a5b4b5246b854755bdaea8b35bada459e53113e7d5ecb1c7b409c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-reception",
+      "instrumentType": "lista-ponderada",
+      "sha256": "40eb72aa387ab47ad025ae1115c5edbe084947f72e59899f22098b076376939c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-block",
+      "instrumentType": "rubrica",
+      "sha256": "176d843e05daf5e9f49b4a68a3e69b5d36d7de151ba2da1f05fcf67d530dfa37",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-block",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4faf84e618c66f58f49d210e15737f96bcaeef618d0a2db295c08c33e5ca028a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-block",
+      "instrumentType": "escala",
+      "sha256": "8e62395dbb4f1c4d42fcab7c501fafcd3b0a89bc73fef2b546e2fbbfa4488f7b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-block",
+      "instrumentType": "lista-ponderada",
+      "sha256": "837c19aea73464249f786e4c5e7bb86ad3478342d13ae4e333cd2ff198f5d2ca",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-defence",
+      "instrumentType": "rubrica",
+      "sha256": "740baeaab59308441bdcc6dc714b3ede85a7208333fd8ac38fd3ed16c6d9766a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-defence",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e19da899261217a38287cae5d4df92802ee732175ad90895b456d46d83ada3ab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-defence",
+      "instrumentType": "escala",
+      "sha256": "5f4b1b4c90b72c6992247c01779049c1dc8a1025ebec7f4bc528d5cf892adf2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-defence",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b3e5a9b4fdc5dfe78ad95ea3504f5a3e76c2618d737d763a292a3d20f46074db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignments",
+      "instrumentType": "rubrica",
+      "sha256": "878891d52a99a9a7cae487053c54431c37489fd5f126ae4f5b4f9a8c14f79967",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignments",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e09fe70896a409418b9817d8437b51ff4aeb68692d5806d1aa731538155ea75",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignments",
+      "instrumentType": "escala",
+      "sha256": "7a411cc2baae3a85d406ca1ad7f2bc74010f62e40b7d541311595ce30e0d7f04",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignments",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d8da17fcefb0f54e6ac6fd9aa4aedf8321e7bdca4c8cbe20c3b493ec60108013",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-game",
+      "instrumentType": "rubrica",
+      "sha256": "85f2ff05501a6641363416308df33da81016864b09b6edb6833f3e56ae1d1cb4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fd070f1bab9e9f6505dcd871543e799054f6b49664492ecafc52c214dd7045b7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-game",
+      "instrumentType": "escala",
+      "sha256": "76cbc55561654d1c92089ffd9d722f5007d130d4baaebf6aa85b0dbba7789a5b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9511b43df707a628db3d6662b236ecbbd031f1f86e69e52d18d2fbf7775ab967",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-serve",
+      "instrumentType": "rubrica",
+      "sha256": "071a7b7539b0c5f19b52c038a2bbc929f4bf125da27dc92c4a828226de9f1036",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d25191c9e6cd631673791d34258cd75daa736cf91c849a14244755d82a1d51e4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-serve",
+      "instrumentType": "escala",
+      "sha256": "bc4dd4e73ebafd0648930bd08ec28076067ab17281d82e8afb22cd164ca2715e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "216ebc9475e705f4c9853076f0581903d1aa569f8733722d1690e7bd59d7a4e9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-advanced",
+      "instrumentType": "rubrica",
+      "sha256": "8fd7ffb0898a6291b6c979bb4a604de6f0cf800df76568b15d3df3a1725a4ce4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-advanced",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1bd0913705a0ca7bfaa027cfd787da2114dd31f690bb15af1551fdfd3349a142",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-advanced",
+      "instrumentType": "escala",
+      "sha256": "98892a88d38dd1f53f1ffe4ba326fc8555a558df24521d45bd84529b0c12e220",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-advanced",
+      "instrumentType": "lista-ponderada",
+      "sha256": "947fb78de7007d8b55e36583bbe461b90f1988913bf4e82a8e202e1eb0a4325b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rooks",
+      "instrumentType": "rubrica",
+      "sha256": "3100ae37a8e07efdd4bd24b5cc0640d8822f08e0cb0e028905ee5d7e25372970",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rooks",
+      "instrumentType": "lista-cotejo",
+      "sha256": "efbcbee02c0b656be187275bae2c619eb10be24f36a8ca6a503cc8953ce7f4c0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rooks",
+      "instrumentType": "escala",
+      "sha256": "df53b527572a6373b8756ed533f73e311967746b33ed526f47a5c064de9ee059",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rooks",
+      "instrumentType": "lista-ponderada",
+      "sha256": "14fee00d5c6b9fb377cfa1a119fb6eb8385e95fbf66f6c29cd61b548fca9de0b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops",
+      "instrumentType": "rubrica",
+      "sha256": "1be99fa7ceadee52251b9b7f04a609458d8c02ef73e1383497775183bab86a64",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3de91102971f609b373c6a47fbadeed9ba26dcb2372253517090b0cd46655885",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops",
+      "instrumentType": "escala",
+      "sha256": "23d28ce1bcda1e8b12a67928a62b9fdfdc87dd1f3d10b4039290b089554dc80f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d14d4a81315f87dce5ae7088c11e659de86baf729cff000d9883b4d2cb7096ae",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawns",
+      "instrumentType": "rubrica",
+      "sha256": "ce55985ec5ddc10ae436d4df4ac6b8ac0ad0992883a6f576d464694fbe200ab3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawns",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7cd0ac4c82560294c3cb2a17905cd07209dc5155598682fb9aed27589868d20f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawns",
+      "instrumentType": "escala",
+      "sha256": "6d68606e90dfd2f1cc9d18acbdf32bf2b87807aff328f5578301e8d7d13c16fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawns",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ee327da035cac3df7129159db91db77182b1e4939bb27d5f4440ba1cc563d4a1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-weak",
+      "instrumentType": "rubrica",
+      "sha256": "280215eb03972b05c8dee48929305b1eb39714fec0e3f0ab57450e4d312f4da5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-weak",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7a42660a952a8eaa0cdb801af639d95fe80ee03d494473dff7b835fd8ddaee5e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-weak",
+      "instrumentType": "escala",
+      "sha256": "086e23731940fc367fdb3b2c74722080e4ee645fc7abe7d1dae29668d85f1c78",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-weak",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ddf0eaf2062cf41636794d72c3385cc4f991480d4a66f7a7a6024a84747db338",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-openings",
+      "instrumentType": "rubrica",
+      "sha256": "e61f2ccba855db01e0c74f93e464d055067f2ba7489ed3529bbe2dad3eba6568",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-openings",
+      "instrumentType": "lista-cotejo",
+      "sha256": "290839f8a140dfa3da9f403ae209bffab2796b97aaf885ea315fe534598f8463",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-openings",
+      "instrumentType": "escala",
+      "sha256": "e98dd432a57c3c492afdabf3ba31c71227a8683ee1a97767005315e988bd47cb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-openings",
+      "instrumentType": "lista-ponderada",
+      "sha256": "680822566e529cbe585ebc4e455cd49abdc26371f078dedd5b767563733b72a1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-ending-game",
+      "instrumentType": "rubrica",
+      "sha256": "fba461e580d54645d159ba02190bd9a66e0c2fc0b5891f4647cf2453aa38ab3f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-ending-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b4faf4405ef06b376fe33efb0cb1cfb9d71a805bd716df7305191828761c1b7d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-ending-game",
+      "instrumentType": "escala",
+      "sha256": "cbe263b4d8309220446145bb7cfe74369a6eaade7b37c34c5590b93ea7540374",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-ending-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7145a3117f598732584b1633a701308858cb927062297f5832ca64af48c7ec1f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-game",
+      "instrumentType": "rubrica",
+      "sha256": "a638a963dd0fa9e129578252f723fa23c904e991bcde19a72f6b42abe069b385",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e323141b37d37479d9e1bcec4cf4a03641e2aa2b50f54dcfcb7569ce29642d3d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-game",
+      "instrumentType": "escala",
+      "sha256": "bd6ca89aa8b0e967aef64c56657a854505f5780879224e5e38d114e1777ce2c0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-pawn-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b5ffe369337ea8ee135e318bcda19cc58cb2084fad612fbde3e7b8e4c7eba097",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-repertoire",
+      "instrumentType": "rubrica",
+      "sha256": "3634d92f886908bf8e879ed69f424b1e81d544f639e362cc39d18bd22b28f41c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-repertoire",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9ea7d7d8afab0523d5f354711082e1bfd4e4d38497f190d8fb93f1f5a91cc4e1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-repertoire",
+      "instrumentType": "escala",
+      "sha256": "ab18192d4924a5b8822ff8d36d9828d5ab65dcc6c73bda542b77fcbaab72e37f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-repertoire",
+      "instrumentType": "lista-ponderada",
+      "sha256": "76e70265a1856ab253f8417fa108453c5f70a6ac57a83c155b50f01c99fedb69",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-history",
+      "instrumentType": "rubrica",
+      "sha256": "7ca0721fb5d751dec1c1b62f54d7283f5d2c83fa602da05c1f2eee8fa20cc147",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3c946febd345cd0dad30e70c47d8c886b5a6f340b35e6cc05a0e895c5625e29f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-history",
+      "instrumentType": "escala",
+      "sha256": "3cd3134430f3c1ed24ead08dcc46ed47944479de1223ecf012c8d2e94df2b05d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5f1317e62db99185a0c9b9bd08c967ff53abedda459184f0915d79d9579f5ccc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rules",
+      "instrumentType": "rubrica",
+      "sha256": "4ff178340380bd8f1dd68305c588045675d3d93375f4b2670d368f05d2109cab",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7e7ae64e7aab042fa18f861b661a9e5d80380b908e67718ce3660fd9e94c8ddb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rules",
+      "instrumentType": "escala",
+      "sha256": "d4dfce76e755f24d519c147ec1b67581959dd777a66821922921b02271f519c3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a60d2cf2afab724d628803db78c5c547ae1417e48a0b883634d5a04f72cc2523",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-institutions",
+      "instrumentType": "rubrica",
+      "sha256": "18a63ddccb540d234fcd8556ea5a9b91eb713392a507af03a021cb1266767248",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-institutions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "543942eb7552625758e8bb8b7ec9e047cf150145d23c87d0d93f7be6b9ba29ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-institutions",
+      "instrumentType": "escala",
+      "sha256": "5ed4c477a3661b04eecddd8e26464592768d4ae36e69589368e7e99570c27073",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-institutions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "33891d99543b2840b232c1af482d68d1d84300036d8b9214be4f991592f7355c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-rules",
+      "instrumentType": "rubrica",
+      "sha256": "209d547d15c5328c021c3112526e6f3795baf3d6c02f9d21e6343d02e29044f6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-rules",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a64051f549270abc3bff7c752ff136ec66f60e96e0552325acd00a4f4ea9b1f5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-rules",
+      "instrumentType": "escala",
+      "sha256": "b4ac0dbe9f77161ccddb119b32c4d443f00cd455b94874734a35ee7195665a21",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-rules",
+      "instrumentType": "lista-ponderada",
+      "sha256": "88d2b197b2fb5427c5b3337f89fefae34e789008813a4f1d8e4f1faa0897be8d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-stroke",
+      "instrumentType": "rubrica",
+      "sha256": "667ac64b740f99dfb3b89dfb5694b3fc01e5214ff452b81cd329c105566711d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-stroke",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a6232ea466b4ac1d14ca6c52c50b9f9a4433c7c09762ebbe9d5fe17a7eb2b9d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-stroke",
+      "instrumentType": "escala",
+      "sha256": "387826ca68e1527a834b75caa3463e6d4a5e5e359471abcb351d4ed437500a90",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-stroke",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9d0f416603931f569eafd012e82e3f0b34d0302c60cbbf74e5db10671938138",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-block",
+      "instrumentType": "rubrica",
+      "sha256": "1aab58d6f3af51bb57fbcf4dc4aa54fdd510b120f25336a25b52cca2528259cc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-block",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6455b91d46d719a1ffcd409d8d802e9f6276f6b54771922ef337b9796106aa2a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-block",
+      "instrumentType": "escala",
+      "sha256": "96f4c0a7913cb4e9d9908a7e01e6c2e193482b1950d90c971a0b044206816f2d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-block",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5fae039097a5aa7745a6842a108c55e2fcf30914147bc48ef2b00882f461f227",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-cut",
+      "instrumentType": "rubrica",
+      "sha256": "6e889257b25521b118550e4759367d40c9903a24d1e92c29517820eefc81c84a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-cut",
+      "instrumentType": "lista-cotejo",
+      "sha256": "80d4fe3d4017d9c58d1ad2d808fc134f3eb9a5133e9fe09a9edfdc7e03bf9a0f",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-cut",
+      "instrumentType": "escala",
+      "sha256": "f3880971ddae57f38444f66546d11c5f8914a392f69efeb9d7b50bbf6dec3b1b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-cut",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf225c8d522395863559c4f95afb777fe4baaca43d8dddd6e0451c6a14014d50",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-serve",
+      "instrumentType": "rubrica",
+      "sha256": "d005f4f654433b0745d3a92a08dbcdda99c84de759d025090f7024c985260c90",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a933cdcab01f9ca14fa775e68dcaf14ec0a60a12b60b95cbb7689d7d0e1a4685",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-serve",
+      "instrumentType": "escala",
+      "sha256": "09665d8f262126a0eba81dbd21067838d5df429289aeb0b13f2f6e82e555656b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d017fe9e1f321f942635f63502d7d5c70889959710d692de196c716bb15f85d3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-combination",
+      "instrumentType": "rubrica",
+      "sha256": "c6ded2c225221ffb371f6abaeaaa5d60fb6e74ed5acab70b2838d819b5f71b12",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-combination",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ee7bed50e244bbcd8d87370e9f856c1190d13cd8e454ebd15a05af3ff31eeb1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-combination",
+      "instrumentType": "escala",
+      "sha256": "e86c20e1b8ec290a03addb59e42af034222d99c6a089fbe0b79330e5dd5113fc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:table-combination",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d9f542cfa130489704f5865bf8dbb5f3627ecd8a30a816bb27515874aba25ad2",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-game",
+      "instrumentType": "rubrica",
+      "sha256": "9282c10972994e13dfa239d95948e701dc848b06d5e5e760d1e8c6c072e05a64",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-game",
+      "instrumentType": "lista-cotejo",
+      "sha256": "17afee5ab0783451e3936bdea19362aa8eb44d33850c56e89439ca0485f87892",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-game",
+      "instrumentType": "escala",
+      "sha256": "b93a74ed5076d6ebd4dd9ea9f4d96c3cb6eb77af76929b469583e3e386b49903",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-game",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f3aef9e52d082fe3a0d2f95cecbb075fbeea7d764c53b91252f1e852ccd137f8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-serve",
+      "instrumentType": "rubrica",
+      "sha256": "367399b153ce85a1c87e454b5e3b377d2752e2890d596312f068cc844fbc74f0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0debcb055cbc3b8fa343c45b21c23b8116055e10a843716fdab227f11865e0b5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-serve",
+      "instrumentType": "escala",
+      "sha256": "d34508d082895bbdd26a6d193b24c3fed13cd2897bc6eae79739b5be258e83eb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bbf3fdb30b147e3d547a2c20818b09d0f201de89689aef0dd879e0eb0603607e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-back",
+      "instrumentType": "rubrica",
+      "sha256": "e1a5aab776c0ac0f61b4e0708bb421a8c303666190acb5e9719e5912778d9016",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-back",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4c8ec9059aad34ca1129f1e8585abb18bb819d332891655891cad6ef1d39ec34",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-back",
+      "instrumentType": "escala",
+      "sha256": "a7de0ea10223aec69346e9394afda1a5492a7fa04c68ed274750592e1a08c701",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-back",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6da0392e67e919c814e1ff5a3742532c95045cc9b93fc51ea82198f10992839c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-net",
+      "instrumentType": "rubrica",
+      "sha256": "09552a056949ee3102a9d2207f90f010e26e0c091be0fb178b7d8caa56e0e1b6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-net",
+      "instrumentType": "lista-cotejo",
+      "sha256": "989d9236e846c661e24bcfad55e5a220fade02718ac36757106c29596cc88197",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-net",
+      "instrumentType": "escala",
+      "sha256": "5ab8b37e370997a71f3d08091fb04e6340b719749692090b449111e16666e518",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:badminton-net",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e1f3ce860467be7c1d6cce6269955004b99417f1a7c975e35570a1daaa7960a6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve",
+      "instrumentType": "rubrica",
+      "sha256": "d093612f3936a31069e6d0393eb2e1385c025cb3ea57d4fe0dad2addfa11e118",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve",
+      "instrumentType": "lista-cotejo",
+      "sha256": "85b86cc380706f84021fd3ba95d76e1e8ef5e157fdeb5ff1df33efafe9212a10",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve",
+      "instrumentType": "escala",
+      "sha256": "be838478f5a0c8f2c969331aec3d5b28d112a6bc9db04467bb88933ff455b9bb",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ded5c1b7e0e62760d564859e50bfaec4a283e959c67f4139fcc9d593f555cba3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-stroke",
+      "instrumentType": "rubrica",
+      "sha256": "8656c3b3d1531ec4f6b46ced252db5f846e2776082e987ae668e0e3f5b2c2081",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-stroke",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bee2dcbccfcd23f3edb6fab2bf4471f287897f5a21c84ef24bd1cabd31ec51c9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-stroke",
+      "instrumentType": "escala",
+      "sha256": "68862cb4e96b2deb8da2009ec3ffde0cc3ee6915323eace4a07596176f7f5dd4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-stroke",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b19b6165fd9e4c949714f3247e1ec6a8c5b14a96d881dc41bc7af86e8d474058",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-volley",
+      "instrumentType": "rubrica",
+      "sha256": "dda323fac7065c7f3136c41227e0e8382d3e468991f34076ea3dbd3f15ef8934",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-volley",
+      "instrumentType": "lista-cotejo",
+      "sha256": "edfdd48c04e0dab6467dcabbb8b7aeef867195850f38e9d6c9afbfced8035e96",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-volley",
+      "instrumentType": "escala",
+      "sha256": "e809a3854a3e51c6132990d4a8e1067d81b5363629518e890795a2ea15750720",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-volley",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9877ee2262e7b111a51bc896238de74cec8d618fa723b43638f9c366d37ca0fe",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-lob",
+      "instrumentType": "rubrica",
+      "sha256": "36ad180a3b54c672f8c573f53e80a0f22f16bfecf75000a48bdf8028954e61a1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-lob",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bb1cc61c5b828ed2fe7ff061e8d537fc78f9157d6455916acfd879326b8f7515",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-lob",
+      "instrumentType": "escala",
+      "sha256": "3a8c6cad1eead053ef16e8ac2c7b5a0cead17b75d233c05ab5626bcadc2782b5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-lob",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c4270df79c8927d1b0657fcf6da69bfcd2f1d94ec5984abeb5aef37ac87fc542",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-smash",
+      "instrumentType": "rubrica",
+      "sha256": "2d55326d6575ae4e400029dddf64a808f4ecec01fe48843654aea78ca47edc39",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-smash",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ad7442bc759d7a43f781a0ea78851caa550f1bf16fc9497b49d117f9f76018c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-smash",
+      "instrumentType": "escala",
+      "sha256": "a30ac650fa013a68d838dde300bf049d7e861f9c52f663f64c8acb21760f672d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-smash",
+      "instrumentType": "lista-ponderada",
+      "sha256": "13bf01d032e8e2c820715a308e512615f6adff90030d79774d9efed8133938dd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-tactics",
+      "instrumentType": "rubrica",
+      "sha256": "a3217fa15855e359296008fbc27bd24d391504f4875971591c8711d5dc352133",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-tactics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3d7872ff39e96b037f1fee72b3be8eff126be39f56810c86d0ae95f597cc0eaf",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-tactics",
+      "instrumentType": "escala",
+      "sha256": "3e661055758aad9828be0a912c5694548db6f362877853e8d2b90109748ebb1a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:racket-tactics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e2073b55c3973de717c542e9bdecc27f533208ad475d9fabf956ef9018f24bd7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:body-image",
+      "instrumentType": "rubrica",
+      "sha256": "4c5783381a8f10c638b98e93bc05cc5bd2bca3e8e2289ce7890f854067e2592c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:body-image",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2c98e4fe19b774ea1308606a50e28044247df4b15420f1d3290ccf95060b2c8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:body-image",
+      "instrumentType": "escala",
+      "sha256": "7b49437537bc81af8fd4ecce7864897e6c3b1ccf0d8554162eba9916d3ae799b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:body-image",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a43af7f757cd43504312a804a11a63b0a8842e7dded4ec68598237c2609eb92",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:rest",
+      "instrumentType": "rubrica",
+      "sha256": "8dec4ceec105345ba156a32ead02ddab0c65b8784682fd50a7b1dcd0f0d830db",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:rest",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bdcd6c1bc2e8afcd71eb11da6d472d25ad8ad8f08946a5117776fb4b6f7dab99",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:rest",
+      "instrumentType": "escala",
+      "sha256": "9ba4d97de57c5fc21850c7c1473540ab4c23b8d9dd1e1a8aa38e1be855e37387",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:rest",
+      "instrumentType": "lista-ponderada",
+      "sha256": "aa80da3d8582bf8c0e55d5045b3fb088ce26e5de01bc4d69a7ed9ac01a1a1ab3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignment-choice",
+      "instrumentType": "rubrica",
+      "sha256": "6948447da987dcd2d7c828db85d4b9b34b3cd67abe624d5791b45b3d54e4f5bd",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignment-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3be7040a4e7643a698e85e3e775b9124a88e0c1e4ecd1a22e76e2412d4846493",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignment-choice",
+      "instrumentType": "escala",
+      "sha256": "d839bc390bde9e69c125dfb64105aaa4e66565a5f479c04cc9add4c36375d75c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:volleyball-alignment-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "be2995927d2a5d8c722fee8e447773dc175ce727c7725462229fb42ae63dd53c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense-choice",
+      "instrumentType": "rubrica",
+      "sha256": "dfd2466fa31e8f06647537bfa890efbc3df7a5ea0fd4b309de9c8f97433d6732",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "08e44afd6dfab6bb7948ad2a32db466cbb31042f88d0c86e0d5b67f5e9591eb1",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense-choice",
+      "instrumentType": "escala",
+      "sha256": "d23e7eae6dd89306fd4ffef6a24004a4dcfbed8d5511a86f0440ffca5fa1d4b5",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-defense-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b39d924c36e427d93e7f0b0fab30e5e47b1738600d68f4e11c897187f954c099",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops-choice",
+      "instrumentType": "rubrica",
+      "sha256": "a51ca4a8cf902ef3513ea2212e5dead84b5339fdb5b375e9f56a082425e7d81a",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2040542953e764e47df753fdde12df2b64ba1d55d708afe2ea5ea88842b10ba4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops-choice",
+      "instrumentType": "escala",
+      "sha256": "0e676482b3e1233561b6411358a721b04fb1bdb1f3bb28f7df47e74a42e955d4",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:chess-bishops-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "417ff5929b495fa3838636fc0aaff31bfeb98677ac19f119ff505e7eb07e75b8",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve-choice",
+      "instrumentType": "rubrica",
+      "sha256": "657d5366024f2e6df0392b678835cb6cf63906988c7d90435916c85df5b762c9",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "09e374848b2c4506ce6a311eda1628e1ac8b9d94a24f4cac30a5a3324cffb16b",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve-choice",
+      "instrumentType": "escala",
+      "sha256": "bdfa89a5d5bb896defc19d50841caa342e4ec7d8e32c3e3163462d12486a42ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:tennis-serve-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "119d4509d0603a29c2255a208cd52bebb881d49408c801cb6aab57be001d87f3",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map-production-ocad",
+      "instrumentType": "rubrica",
+      "sha256": "158de6e3ff38498c0942fd545561816a6e26a2630e4be80bac077757e39a0601",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map-production-ocad",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9fa6eb79d4d810f7841d4c149b7dbc1452e690682a90bee91e0f4022e069013",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map-production-ocad",
+      "instrumentType": "escala",
+      "sha256": "60bebf47ffc93d8df93d730d75d487ede729493186007a52e78dd1026ec822ac",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:orientation-map-production-ocad",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e55196a9931468bdfb89b4fe857cfd3b60386f4a67c25eaef523a6cb331f2b1c",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rule-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "9fc706e70f75a8c95b5e7b16b2cb608c136c3727b302f23f2dd13f8171b51d07",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rule-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "995ecf560858c834e3ad955741d421625c9dd22e38d20d9925b0953eef5d4fb6",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rule-explanation",
+      "instrumentType": "escala",
+      "sha256": "5831fc77d7c302a35cba709bbbf8ba8466a8ddcc9b7c382a5dcd3eca36999b6d",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-rule-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1a048360d0b5a57e822bf4a1061e60ec23a6129c0b8f31702c7f488b55d728ed",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-map",
+      "instrumentType": "rubrica",
+      "sha256": "82169648d67b1da6a993fef961d0225c0a96b3bd169d25d0078020afa7024566",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-map",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d83442d19994a463eac340d223af9e1d99af8f250c0de0dbde9163c880570667",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-map",
+      "instrumentType": "escala",
+      "sha256": "8a7d22f8f913a41d468e6487701dccca275e93b6cebf72af29836f7161ee8cf7",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "orientation-map",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ac32f48e350fd7b64405525116e3b28d4ac619df6d7bc234d2beb294e4cbca5e",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-possession",
+      "instrumentType": "rubrica",
+      "sha256": "d7aeeff12d02e1db3565f74a452991df7b1bcba9ee1a8d6992827a272d49a481",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-possession",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fc45f5abb2f273f3b16146a7fe8504c0051d211be0ddf770605a9403f4deaee0",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-possession",
+      "instrumentType": "escala",
+      "sha256": "7bdf890ce53fa6a198531ec4ffa2f0bd5785042c57bb90dc99152e5e897fbebc",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    },
+    {
+      "caseId": "case:football-possession",
+      "instrumentType": "lista-ponderada",
+      "sha256": "82c7c53df1a6f2d883b693d472750e738178f984a317633921fd89cd4f537839",
+      "review": "REVIEWED_DISCIPLINE_TASK_SCOPE_PROGRESSION_FORMAT_SCORE"
+    }
+  ]
+}

@@ -15,8 +15,8 @@ assert(['ART','EFI'].includes(subjectCode),'Área común con fuente y proveedor 
 const physical=subjectCode==='EFI',family=physical?'physical':'art',fileStem=physical?'physical':'artistica',templatePrefix=physical?'efi':'art',subjectName=physical?'Educación Física':'Educación Artística'
 const flag = process.argv.indexOf('--grade'),
   grade = flag < 0 ? 1 : Number(process.argv[flag + 1])
-assert((physical?[1,2,3,4,5]:[1,2,3,4,5,6]).includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
-const pdfPages = physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:[377,378,379] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
+assert([1,2,3,4,5,6].includes(grade), 'Solo se admiten los grados con páginas, anclas y exclusiones revisadas explícitamente.')
+const pdfPages = physical ? grade===1?[359,360,361]:grade===2?[362,363,364]:grade===3?[365,366,367]:grade===4?[374,375,376]:grade===5?[377,378,379]:[380,381,382] : grade === 1 ? [330,331] : grade === 2 ? [332,333] : grade === 3 ? [334,335] : grade === 4 ? [341,342,343] : grade === 5 ? [344,345,346] : [347,348,349]
 const gradeName = ['', 'one', 'two', 'three', 'four', 'five', 'six'][grade]
 const module = (physical?commonPhysicalModules:commonArtModules).find((row) => row.grade === grade)
 assert(module, 'Grado con proveedor conectado requerido')
@@ -60,9 +60,12 @@ const exclusions = (physical ? grade===1 ? [
 ] : grade===4 ? [
   ...['58745c37','a53b6ea6','4c115c3d','85cad1f7','6763238b','9636e996','279d365e','f938b7ad','26222c6e','c557a204','3efccc30','3197f2f7','143e30cc','9676fab2','6573245f','0ce24234','ee852868','c42a15fa'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador sin desempeño independiente. Se mantienen continuaciones y fragmentos con su procedencia, sin crear criterios duplicados. Deportes optativos internos de EFI no son salidas académicas.'})),
   ...['d231df59','db93135c'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'No se puntúan tenacidad o confianza internas. Se evalúan decisiones, evidencias y acciones observables expresamente solicitadas.'})),
-] : [
+] : grade===5 ? [
   ...['14dc4b62','f33f6937','e0ea12b1','5d5e0b2a','f62bb4fd','c9cef5ff','5b89327a','44fbc7e7','63c155bc','e6d34d2e','d7b262e3','1cbe43cc','d6d01bac','f0960ddc','93637679'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador sin desempeño independiente. Las conductas marciales214b26bc sí permanecen mapeadas; duplicados y continuaciones conservan literal y procedencia. Deportes optativos internos de EFI no son salidas académicas.'})),
   ...['8900155d','39bf6759'].map(prefix=>({prefix,reason:'PRIVATE_TRAIT',explanation:'La perseverancia interna no se puntúa. Los acuerdos, roles y decisiones concretos se observan solo cuando están expresamente solicitados.'})),
+] : [
+  ...['3b84e071','9ad8e4c9','e0c79aa3','c484dde6','2548c500','7a57a82d','49c96d2b','017c7100','293cc314','621f6c2e','8ed78da7','c0e9ff73','d3d51f31'].map(prefix=>({prefix,reason:'PURE_HEADING',explanation:'Organizador sin desempeño independiente. Se conservan las continuaciones de capacidades, los duplicados de historia y las filas mixtas con desempeño. Práctica de globos es desempeño, no encabezado.'})),
+  {prefix:'4a272932',reason:'PRIVATE_TRAIT',explanation:'No se califica perseverancia interna. Los roles, acuerdos y decisiones observables se evalúan solo cuando están expresamente solicitados.'},
 ] : grade === 1 ? [
   {
     prefix: '03bf6274',

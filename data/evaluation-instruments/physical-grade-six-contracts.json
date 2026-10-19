@@ -1,0 +1,1396 @@
+{
+  "grade": 6,
+  "scopeId": "0ed53f73-90ab-5bc7-8db8-0294b348f5be",
+  "sourcePdfPages": [
+    380,
+    381,
+    382
+  ],
+  "policy": "REPRESENTATIVE_TASKS_NOT_FULL_COMPOUND_ROW_COVERAGE",
+  "cases": [
+    {
+      "id": "capacities",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la función de fuerza y resistencia en los ejemplos adaptados dados. No se pide velocidad ni flexibilidad ni comparar personas.",
+      "sourceRecordIds": [
+        "98486c92",
+        "57730434"
+      ],
+      "required": "fuerza.*resistencia",
+      "forbidden": "velocidad|flexibilidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "coordination",
+      "topicIds": [
+        "physical-condition-explanation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la coordinación y la reacción de los ejemplos adaptados proporcionados. No se pide fuerza ni velocidad ni calificar cuerpos.",
+      "sourceRecordIds": [
+        "6c8fdde7"
+      ],
+      "required": "coordinación.*reacción",
+      "forbidden": "fuerza|velocidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "circuit-plan",
+      "topicIds": [
+        "circuit-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el circuito adaptado relacionando las estaciones de fuerza y velocidad con el orden y las pausas ya fijadas en la ficha docente. No añadas dosis nuevas ni lo ejecutes.",
+      "sourceRecordIds": [
+        "3f8b0ffc"
+      ],
+      "required": "Planifica",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "flexibility-check",
+      "topicIds": [
+        "flexibility-observation"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las acciones de flexibilidad activa adaptadas usando la ficha y registro proporcionados. No se pide flexibilidad pasiva ni medir cuerpos.",
+      "sourceRecordIds": [
+        "16a517a9"
+      ],
+      "required": "flexibilidad activa",
+      "forbidden": "pasiva",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "motor-variation",
+      "topicIds": [
+        "motor-variation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Combina los giros y desplazamientos adaptados variando sentido y centro de gravedad según las señales proporcionadas. No se piden saltos ni velocidad.",
+      "sourceRecordIds": [
+        "e7d71979"
+      ],
+      "required": "sentido.*centro de gravedad",
+      "forbidden": "saltos|velocidad",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "equilibrium",
+      "topicIds": [
+        "equilibrium-observation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el equilibrio estático del referente adaptado relacionando base de sustentación y altura con los apoyos dados. No se pide equilibrio dinámico ni ejecutar la maniobra.",
+      "sourceRecordIds": [
+        "64492bec"
+      ],
+      "required": "base de sustentación.*altura",
+      "forbidden": "dinámic|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "orientation-no-tools",
+      "topicIds": [
+        "spatial-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la orientación espacial del trayecto adaptado dado usando objetos y puntos cardinales según las señales y apoyos proporcionados. No utilices mapa ni brújula ni GPS.",
+      "sourceRecordIds": [
+        "009b9224"
+      ],
+      "required": "puntos cardinales",
+      "forbidden": "mapa|brújula|GPS",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "compass",
+      "topicIds": [
+        "compass-orientation"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la orientación con brújula no convencional del trayecto adaptado dado según puntos cardinales y referencias proporcionadas. No se pide GPS ni elaborar otro instrumento.",
+      "sourceRecordIds": [
+        "009b9224"
+      ],
+      "required": "brújula no convencional",
+      "forbidden": "GPS",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "gps",
+      "topicIds": [
+        "gps-orientation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las referencias GPS de la orientación del trayecto dado mediante sus coordenadas ficticias y puntos cardinales proporcionados. No solicites ubicación personal ni uses brújula.",
+      "sourceRecordIds": [
+        "009b9224"
+      ],
+      "required": "GPS",
+      "forbidden": "brújula",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "care-frequency",
+      "topicIds": [
+        "care-frequency"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra la frecuencia del cuidado acordado de materiales y espacio durante las oportunidades observadas de la actividad física según el registro dado. No se evalúa intención privada.",
+      "sourceRecordIds": [
+        "fae1a451"
+      ],
+      "required": "oportunidades",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "cooperation-frequency",
+      "topicIds": [
+        "tactical-cooperation"
+      ],
+      "purpose": "OBSERVATION",
+      "activityType": "OBSERVATION",
+      "description": "Registra la frecuencia de propuestas pertinentes y cumplimiento de acuerdos técnicos concretos durante las oportunidades observadas del trabajo colectivo. No infieras perseverancia o esfuerzo privado.",
+      "sourceRecordIds": [
+        "53b4167c",
+        "5df10925"
+      ],
+      "required": "propuestas|acuerdos",
+      "forbidden": "perseverancia",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "fair-play",
+      "topicIds": [
+        "fair-play-verification"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las reglas de juego limpio y turnos del registro de actividad deportiva proporcionado. No puntúes personalidad ni adhesión interna.",
+      "sourceRecordIds": [
+        "d00f3ebb",
+        "89d624ad"
+      ],
+      "required": "Verifica.*reglas",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "hygiene",
+      "topicIds": [
+        "hygiene-verification"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica el cumplimiento de las acciones de higiene de materiales expresamente acordadas mediante el registro proporcionado. No solicites hábitos íntimos ni datos personales.",
+      "sourceRecordIds": [
+        "284d8c04"
+      ],
+      "required": "higiene.*materiales",
+      "forbidden": "íntimos",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "progress",
+      "topicIds": [
+        "motor-progress-record"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la progresión motriz del registro de actividad física proporcionado relacionando los cambios documentados con las acciones y condiciones dadas. No compares cuerpos ni capacidad natural.",
+      "sourceRecordIds": [
+        "134a9f12",
+        "0406b607",
+        "9e9a2e87"
+      ],
+      "required": "progresión",
+      "forbidden": "talento|apariencia",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "wellbeing",
+      "topicIds": [
+        "wellbeing-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica la relación entre actividad física y bienestar mediante las evidencias de los referentes proporcionados. No recomiendes dieta ni ejercicio personal ni diagnostiques.",
+      "sourceRecordIds": [
+        "0fece179",
+        "a2a5a296",
+        "ec8a26da"
+      ],
+      "required": "bienestar",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Evidencia solicitada y referentes dados; sin imponer otras variantes, datos privados o instrucciones operativas nuevas"
+    },
+    {
+      "id": "continuous-running",
+      "topicIds": [
+        "continuous-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la carrera continua adaptada según las señales, ritmo y condiciones supervisadas proporcionadas, con los apoyos permitidos. No asignes duración nueva ni compares rapidez personal.",
+      "sourceRecordIds": [
+        "da186a76"
+      ],
+      "required": "carrera continua",
+      "forbidden": "8 a 13|ocho a trece",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "distance-running",
+      "topicIds": [
+        "distance-running"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Realiza la carrera de mediana distancia adaptada según las señales, ritmo y condiciones supervisadas dadas. No se pide larga distancia ni fijar otra duración.",
+      "sourceRecordIds": [
+        "b8daf84e"
+      ],
+      "required": "mediana distancia",
+      "forbidden": "larga distancia|8 a 13",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-race",
+      "topicIds": [
+        "orientation-race"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Recorre la carrera de orientación adaptada siguiendo el mapa y las señales de rastreo de la simulación supervisada proporcionada. No se pide brújula ni GPS.",
+      "sourceRecordIds": [
+        "acb80eed",
+        "784d8a98",
+        "fc1d038d",
+        "b24c9446"
+      ],
+      "required": "mapa.*señales de rastreo|señales de rastreo.*mapa",
+      "forbidden": "brújula|GPS",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-rules",
+      "topicIds": [
+        "orientation-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones de la carrera de orientación del registro dado cumplen las reglas proporcionadas. No se pide realizar el recorrido.",
+      "sourceRecordIds": [
+        "b24c9446",
+        "5e9ae1b9"
+      ],
+      "required": "Verifica.*reglas",
+      "forbidden": "^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-signs",
+      "topicIds": [
+        "orientation-signs"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Interpreta los símbolos y señales de rastreo de la carrera de orientación mediante los referentes proporcionados. No se pide elaborar un mapa ni recorrer.",
+      "sourceRecordIds": [
+        "acb80eed",
+        "fc1d038d"
+      ],
+      "required": "símbolos.*señales",
+      "forbidden": "^Elabora|^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-map",
+      "topicIds": [
+        "orientation-map"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el croquis del trayecto de orientación del caso dado relacionando símbolos, referencias y ubicaciones proporcionadas. No se pide mapa ni usar O-CAD ni hacer el recorrido.",
+      "sourceRecordIds": [
+        "80d33b5d",
+        "fc1d038d"
+      ],
+      "required": "Elabora.*croquis",
+      "forbidden": "O-CAD|^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-ocad",
+      "topicIds": [
+        "orientation-map"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el mapa de orientación elaborado con O-CAD expresamente proporcionado relacionando símbolos y referencias con sus ubicaciones dadas. No se pide instalar software ni elaborar otro mapa.",
+      "sourceRecordIds": [
+        "0f77d006"
+      ],
+      "required": "O-CAD",
+      "forbidden": "^Elabora|^Instala",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-safety",
+      "topicIds": [
+        "orientation-safety"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica las medidas de seguridad del recorrido de orientación urbano del caso según los riesgos y protocolos proporcionados. No se pide entorno rural ni realizar una excursión.",
+      "sourceRecordIds": [
+        "553b223f"
+      ],
+      "required": "Planifica.*urbano",
+      "forbidden": "rural|^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-modalities",
+      "topicIds": [
+        "orientation-modalities"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las modalidades de carrera de orientación expresamente elegidas según las condiciones y recursos de los referentes dados. No inventes otra modalidad.",
+      "sourceRecordIds": [
+        "c33ce6bf"
+      ],
+      "required": "Compara.*modalidades",
+      "forbidden": "^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-history",
+      "topicIds": [
+        "football-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga la historia del futsal del ámbito nacional asignado relacionando hechos, fechas y fuentes proporcionadas. No se pide fútbol 11 ni historia internacional.",
+      "sourceRecordIds": [
+        "67813de3",
+        "8343dea3",
+        "bc645420",
+        "94727fee",
+        "e076710d"
+      ],
+      "required": "futsal.*nacional",
+      "forbidden": "fútbol 11|internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-local",
+      "topicIds": [
+        "football-local"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los aportes de clubes y equipos de fútbol de la comunidad asignada relacionándolos con las fuentes proporcionadas. No se pide historia internacional.",
+      "sourceRecordIds": [
+        "96db7d1d",
+        "94727fee"
+      ],
+      "required": "comunidad",
+      "forbidden": "internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-biography",
+      "topicIds": [
+        "football-biography"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los aportes biográficos de futbolistas dominicanos del ámbito provincial asignado mediante las fuentes proporcionadas. No infieras prestigio ni capacidad natural.",
+      "sourceRecordIds": [
+        "571a46b9",
+        "209331a3"
+      ],
+      "required": "biográficos.*provincial|provincial.*biográficos",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-possession",
+      "topicIds": [
+        "football-possession"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la ofensiva de posesión del fútbol 11 del caso relacionando posiciones y decisiones con las alternativas dadas. No se pide contraataque ni ejecutar juego.",
+      "sourceRecordIds": [
+        "0fcdc02f",
+        "da255c73",
+        "841d1975"
+      ],
+      "required": "Planifica.*posesión.*fútbol 11",
+      "forbidden": "contraataque|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-counterattack",
+      "topicIds": [
+        "football-counterattack"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el contraataque de futsal sin posesión del balón de la situación adaptada dada según señales, posiciones y apoyos proporcionados. No se pide ofensiva de posesión.",
+      "sourceRecordIds": [
+        "0fcdc02f",
+        "da255c73",
+        "841d1975"
+      ],
+      "required": "contraataque.*sin posesión",
+      "forbidden": "ofensiva de posesión",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-defense",
+      "topicIds": [
+        "football-defense"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la defensa del portero de fútbol del referente dado relacionando posición y decisión con las evidencias proporcionadas. No se pide jugador de campo ni ejecutar maniobras.",
+      "sourceRecordIds": [
+        "73dad8b3",
+        "6224a790"
+      ],
+      "required": "portero",
+      "forbidden": "jugador de campo|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-systems",
+      "topicIds": [
+        "football-systems"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el sistema defensivo 4-4-2 de fútbol 11 en la situación de juego adaptada según las señales, posiciones y apoyos proporcionados. No se pide 4-5-1 ni 4-3-3.",
+      "sourceRecordIds": [
+        "9c714105",
+        "3c1c088a"
+      ],
+      "required": "4-4-2",
+      "forbidden": "4-5-1|4-3-3",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-team-plan",
+      "topicIds": [
+        "football-team-plan"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Organiza el plan de acciones ofensivas del equipo de fútbol del caso dado relacionando roles y posiciones con las alternativas proporcionadas. No se pide defensa ni ejecutar el juego.",
+      "sourceRecordIds": [
+        "2f79c8fe"
+      ],
+      "required": "plan.*ofensivas",
+      "forbidden": "defensiv|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-game",
+      "topicIds": [
+        "football-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la situación adaptada de fútbol 5 en grama dada aplicando reglas y decisiones técnico-tácticas proporcionadas con los apoyos acordados. No se pide fútbol 11 ni ganar.",
+      "sourceRecordIds": [
+        "9174de56",
+        "2f79c8fe",
+        "d31d83ac"
+      ],
+      "required": "Juega.*5 en grama",
+      "forbidden": "fútbol 11|^Verifica",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-rules",
+      "topicIds": [
+        "football-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del registro de futsal cumplen las reglas básicas proporcionadas. No se pide jugar ni fútbol 11.",
+      "sourceRecordIds": [
+        "5e9ae1b9"
+      ],
+      "required": "Verifica.*futsal",
+      "forbidden": "^Juega|fútbol 11",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-adaptation",
+      "topicIds": [
+        "football-adaptation"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza las adaptaciones del fútbol con cascabeles del caso concreto según sus recursos y condiciones de participación. Compara las alternativas dadas y justifica la decisión elegida. No infieras diagnósticos ni exijas maniobras nuevas.",
+      "sourceRecordIds": [
+        "9c714105",
+        "d31d83ac"
+      ],
+      "required": "cascabeles",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-institutions",
+      "topicIds": [
+        "volleyball-institutions"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las funciones de las instituciones que regulan y fomentan el voleibol en el ámbito nacional asignado mediante las fuentes dadas. No se pide ámbito internacional.",
+      "sourceRecordIds": [
+        "c322ccb3",
+        "121255fd"
+      ],
+      "required": "instituciones.*nacional",
+      "forbidden": "internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-history",
+      "topicIds": [
+        "volleyball-history"
+      ],
+      "purpose": "PRESENTATION",
+      "activityType": "EXPOSITION",
+      "description": "Presenta los hechos y personajes históricos del voleibol sentado del ámbito local asignado mediante fechas y fuentes proporcionadas. No se pide voleibol arena ni historia internacional.",
+      "sourceRecordIds": [
+        "ce7385bb",
+        "e076710d"
+      ],
+      "required": "voleibol sentado.*local",
+      "forbidden": "voleibol arena|internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-rules",
+      "topicIds": [
+        "volleyball-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las decisiones del registro de voleibol sentado cumplen las reglas proporcionadas. No se pide modalidad arena ni jugar.",
+      "sourceRecordIds": [
+        "c322ccb3",
+        "d4ec4c6e",
+        "1a5480db",
+        "5e9ae1b9"
+      ],
+      "required": "Verifica.*sentado",
+      "forbidden": "arena|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-modalities",
+      "topicIds": [
+        "volleyball-modalities"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara los objetivos y características del voleibol arena y grama mediante los referentes proporcionados. No se pide modalidad sala ni sentado.",
+      "sourceRecordIds": [
+        "c322ccb3",
+        "1c53a4ed",
+        "aa023c71",
+        "1a5480db"
+      ],
+      "required": "arena.*grama",
+      "forbidden": "sala|sentado",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-pass",
+      "topicIds": [
+        "volleyball-pass"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el pase de antebrazos adaptado de voleibol según posiciones, señales y apoyos proporcionados. No se pide toque de manos altas ni remate.",
+      "sourceRecordIds": [
+        "9fc6d399"
+      ],
+      "required": "antebrazos",
+      "forbidden": "manos altas|remate",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-attack",
+      "topicIds": [
+        "volleyball-attack"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el pase en ataque y el remate adaptados de voleibol de la situación dada según posiciones, señales y apoyos proporcionados. No se pide recepción del saque.",
+      "sourceRecordIds": [
+        "9fc6d399"
+      ],
+      "required": "pase.*remate",
+      "forbidden": "recepción del saque",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-reception",
+      "topicIds": [
+        "volleyball-reception"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la recepción del saque adaptada de voleibol según posiciones, señales y apoyos proporcionados. No se pide recepción del remate ni bloqueo.",
+      "sourceRecordIds": [
+        "9060bf0b"
+      ],
+      "required": "recepción del saque",
+      "forbidden": "recepción del remate|bloqueo",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-block",
+      "topicIds": [
+        "volleyball-block"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el bloqueo de voleibol del referente dado relacionando posición y decisión con las evidencias proporcionadas. No se pide ejecutarlo ni otras técnicas.",
+      "sourceRecordIds": [
+        "9060bf0b"
+      ],
+      "required": "bloqueo",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-defence",
+      "topicIds": [
+        "volleyball-defence"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el complejo técnico de defensa de voleibol del caso dado relacionando elementos técnicos y posiciones con las alternativas proporcionadas. No se pide ataque ni ejecutar el juego.",
+      "sourceRecordIds": [
+        "2c80741a",
+        "9060bf0b",
+        "ba7ff818"
+      ],
+      "required": "Planifica.*defensa",
+      "forbidden": "ataque|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-alignments",
+      "topicIds": [
+        "volleyball-alignments"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la función de acomodador en la alineación ofensiva 3-3 de voleibol de la situación adaptada dada según posiciones y señales proporcionadas. No se pide atacador ni 2-6 ni 2-4 ni 6-6.",
+      "sourceRecordIds": [
+        "3ded2dc9",
+        "1343603e",
+        "b96b48ed"
+      ],
+      "required": "acomodador.*3-3",
+      "forbidden": "atacador|2-6|2-4|6-6",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-game",
+      "topicIds": [
+        "volleyball-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la situación adaptada de voleibol 4 contra 4 en cancha modificada con las reglas y decisiones técnico-tácticas proporcionadas. No se pide6 contra 6 ni ganar.",
+      "sourceRecordIds": [
+        "1c53a4ed",
+        "1d9cf6b8",
+        "d31d83ac"
+      ],
+      "required": "Juega.*4.*4",
+      "forbidden": "6 contra 6|^Verifica",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-serve",
+      "topicIds": [
+        "volleyball-serve"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el saque de abajo adaptado de voleibol según referencias, señales y apoyos de la tarea proporcionada. No se pide remate ni recepción.",
+      "sourceRecordIds": [
+        "1d9cf6b8"
+      ],
+      "required": "saque de abajo",
+      "forbidden": "remate|recepción",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-advanced",
+      "topicIds": [
+        "chess-advanced-ending"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la partida de ajedrez con final de nivel avanzado relacionando jugadas y decisiones con la posición proporcionada. No se pide final básico ni medio.",
+      "sourceRecordIds": [
+        "f2feff03",
+        "9d8a193a"
+      ],
+      "required": "avanzado",
+      "forbidden": "básico|medio",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-rooks",
+      "topicIds": [
+        "chess-rook-ending"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema del final de torres de ajedrez justificando las jugadas con la posición y reglas proporcionadas. No se piden alfiles ni caballo.",
+      "sourceRecordIds": [
+        "0a02820e",
+        "00491a85"
+      ],
+      "required": "final de torres",
+      "forbidden": "alfiles|caballo",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-bishops",
+      "topicIds": [
+        "chess-bishop-ending"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema del final de alfiles del mismo color de ajedrez justificando las jugadas con la posición proporcionada. No se piden colores opuestos ni alfil contra caballo.",
+      "sourceRecordIds": [
+        "b12466de",
+        "89f44746",
+        "8c9fc218"
+      ],
+      "required": "alfiles del mismo color",
+      "forbidden": "opuestos|caballo",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-pawns",
+      "topicIds": [
+        "chess-pawn-structure"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la estructura de peones pasados de la posición de ajedrez dada relacionándola con las decisiones proporcionadas. No se piden aislados ni doblados ni retrasados.",
+      "sourceRecordIds": [
+        "fef04d74"
+      ],
+      "required": "peones pasados",
+      "forbidden": "aislados|doblados|retrasados",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-weak",
+      "topicIds": [
+        "chess-weak-squares"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Identifica las casillas débiles de la posición de ajedrez dada justificando su clasificación con las piezas y evidencias proporcionadas. No se pide jugar.",
+      "sourceRecordIds": [
+        "ea5eb554"
+      ],
+      "required": "casillas débiles",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-pawn-openings",
+      "topicIds": [
+        "chess-pawn-openings"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la partida con apertura de ajedrez que deriva en la estructura de peones expresamente dada relacionando jugadas y decisiones con la posición proporcionada. No se pide repertorio nuevo.",
+      "sourceRecordIds": [
+        "295b67a1"
+      ],
+      "required": "apertura.*estructura de peones",
+      "forbidden": "repertorio",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-ending-game",
+      "topicIds": [
+        "chess-ending-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la partida adaptada de ajedrez aplicando las técnicas de finales expresamente dadas según la posición y reglas proporcionadas. No se exige ganar ni apertura nueva.",
+      "sourceRecordIds": [
+        "30beb9eb"
+      ],
+      "required": "Juega.*finales",
+      "forbidden": "apertura",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-pawn-game",
+      "topicIds": [
+        "chess-pawn-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega la partida adaptada de ajedrez aplicando el tema ofensivo de la estructura de peones dada según las reglas y posiciones proporcionadas. No se pide tema defensivo ni ganar.",
+      "sourceRecordIds": [
+        "b51d8560"
+      ],
+      "required": "ofensivo.*peones",
+      "forbidden": "defensivo",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-repertoire",
+      "topicIds": [
+        "chess-repertoire"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica el repertorio de aperturas de ajedrez del caso relacionando sus fortalezas y debilidades documentadas con las alternativas dadas. No infieras inteligencia ni capacidad natural ni exijas jugar.",
+      "sourceRecordIds": [
+        "8c391b8a"
+      ],
+      "required": "Planifica.*repertorio",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-history",
+      "topicIds": [
+        "chess-history"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga los hechos históricos del ajedrez del ámbito local asignado relacionando personajes, fechas y fuentes proporcionadas. No se pide fútbol ni historia internacional.",
+      "sourceRecordIds": [
+        "e076710d"
+      ],
+      "required": "ajedrez.*local",
+      "forbidden": "fútbol|internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-rules",
+      "topicIds": [
+        "chess-rules"
+      ],
+      "purpose": "VERIFICATION",
+      "activityType": "ANALYSIS",
+      "description": "Verifica si las jugadas del registro de ajedrez cumplen las reglas proporcionadas justificando cada marca con sus evidencias. No se pide jugar otra partida.",
+      "sourceRecordIds": [
+        "5e9ae1b9"
+      ],
+      "required": "Verifica.*reglas",
+      "forbidden": "^Juega",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "racket-institutions",
+      "topicIds": [
+        "racket-institutions"
+      ],
+      "purpose": "RESEARCH",
+      "activityType": "RESEARCH",
+      "description": "Investiga las funciones de las instituciones que regulan y fomentan el tenis de mesa en el ámbito nacional asignado mediante las fuentes dadas. No se pide tenis de campo ni bádminton ni ámbito internacional.",
+      "sourceRecordIds": [
+        "2ed6c3b5",
+        "656b5617",
+        "e94f3f78",
+        "215675ce"
+      ],
+      "required": "tenis de mesa.*nacional",
+      "forbidden": "tenis de campo|bádminton|internacional",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "racket-rules",
+      "topicIds": [
+        "racket-rules"
+      ],
+      "purpose": "COMPARISON",
+      "activityType": "COMPARISON",
+      "description": "Compara las reglas de individuales y dobles mixtos de bádminton mediante los referentes proporcionados. No se pide tenis ni dobles no mixtos.",
+      "sourceRecordIds": [
+        "37b1fad7",
+        "5e9ae1b9"
+      ],
+      "required": "individuales.*dobles mixtos.*bádminton|bádminton.*individuales.*dobles mixtos",
+      "forbidden": "tenis",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "table-stroke",
+      "topicIds": [
+        "table-stroke"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el golpeo de derecha cruzado de tenis de mesa de la tarea adaptada dada según las señales y apoyos proporcionados. No se pide revés ni recto ni bloqueo ni corte.",
+      "sourceRecordIds": [
+        "8003e8d7"
+      ],
+      "required": "derecha.*cruzado",
+      "forbidden": "revés|recto|bloqueo|corte",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "table-block",
+      "topicIds": [
+        "table-block"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el bloqueo de revés recto de tenis de mesa según señales y condiciones supervisadas proporcionadas. No se pide derecha ni cruzado ni corte.",
+      "sourceRecordIds": [
+        "a98ed5eb"
+      ],
+      "required": "revés.*recto",
+      "forbidden": "derecha|cruzado|corte",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "table-cut",
+      "topicIds": [
+        "table-cut"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el corte de derecha recto de tenis de mesa de la tarea adaptada según señales y apoyos proporcionados. No se pide revés ni cruzado ni bloqueo.",
+      "sourceRecordIds": [
+        "2a31aca4"
+      ],
+      "required": "derecha.*recto",
+      "forbidden": "revés|cruzado|bloqueo",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "table-serve",
+      "topicIds": [
+        "table-serve"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el saque de revés cruzado con efecto de tenis de mesa del referente dado relacionando trayectoria y decisión con sus evidencias. No se pide derecha ni recto ni ejecutar.",
+      "sourceRecordIds": [
+        "945d75fc"
+      ],
+      "required": "revés.*cruzado.*efecto",
+      "forbidden": "derecha|recto|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "table-combination",
+      "topicIds": [
+        "table-combination"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el ejercicio combinado 2 vs 2 por la diagonal de tenis de mesa de la tarea adaptada según señales y apoyos dados. No se pide 1 vs 2 ni trayecto recto.",
+      "sourceRecordIds": [
+        "94bba2e4"
+      ],
+      "required": "2.*2.*diagonal",
+      "forbidden": "1 vs 2|recto",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "racket-game",
+      "topicIds": [
+        "racket-game"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Juega el set adaptado de tenis de mesa aplicando las reglas y decisiones expresamente proporcionadas con los apoyos acordados. No se pide tenis de campo ni bádminton ni ganar.",
+      "sourceRecordIds": [
+        "0d3c113e",
+        "25a9ea6b",
+        "d31d83ac"
+      ],
+      "required": "Juega.*set.*tenis de mesa",
+      "forbidden": "tenis de campo|bádminton",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "badminton-serve",
+      "topicIds": [
+        "badminton-serve"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el saque de revés corto de bádminton según señales y condiciones supervisadas proporcionadas. No se pide derecha ni alto ni flick ni drive.",
+      "sourceRecordIds": [
+        "de698fba",
+        "f3f91f0d"
+      ],
+      "required": "revés.*corto",
+      "forbidden": "derecha|alto|flick|drive",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "badminton-back",
+      "topicIds": [
+        "badminton-back"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el globo o clear expresamente elegido del referente de fondo de pista de bádminton relacionando trayectoria y decisión con sus evidencias. No se pide dejada ni remate ni drive ni ejecutar.",
+      "sourceRecordIds": [
+        "1bcd45e6"
+      ],
+      "required": "globo|clear",
+      "forbidden": "dejada|remate|drive|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "badminton-net",
+      "topicIds": [
+        "badminton-net"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el net adaptado de bádminton en la red según señales y condiciones supervisadas proporcionadas. No se pide lob ni fondo de pista.",
+      "sourceRecordIds": [
+        "1bcd45e6"
+      ],
+      "required": "net",
+      "forbidden": "lob|fondo de pista",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-serve",
+      "topicIds": [
+        "tennis-serve"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el servicio plano adaptado de tenis según señales, referencias y apoyos proporcionados. No se pide liftado ni cortado.",
+      "sourceRecordIds": [
+        "b023b115"
+      ],
+      "required": "servicio plano",
+      "forbidden": "liftado|cortado",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-stroke",
+      "topicIds": [
+        "tennis-stroke"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el golpe de revés cortado adaptado de tenis según señales y condiciones supervisadas proporcionadas. No se pide derecha ni liftado ni plano ni volea.",
+      "sourceRecordIds": [
+        "14b42f7f"
+      ],
+      "required": "revés.*cortado",
+      "forbidden": "derecha|liftado|plano|volea",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-volley",
+      "topicIds": [
+        "tennis-volley"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la volea de derecha adaptada de tenis según señales y condiciones supervisadas proporcionadas. No se pide revés ni servicio.",
+      "sourceRecordIds": [
+        "b161e350"
+      ],
+      "required": "volea.*derecha",
+      "forbidden": "revés|servicio",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-lob",
+      "topicIds": [
+        "tennis-lob"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el globo adaptado de tenis según señales, referencias y apoyos proporcionados. No se pide remate ni bádminton.",
+      "sourceRecordIds": [
+        "18dfd71f"
+      ],
+      "required": "globo",
+      "forbidden": "remate|bádminton",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-smash",
+      "topicIds": [
+        "tennis-smash"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el remate de tenis del referente técnico dado relacionando trayectoria y decisión con sus evidencias. No se pide ejecutarlo ni globo ni bádminton.",
+      "sourceRecordIds": [
+        "9f09edbe"
+      ],
+      "required": "remate.*tenis",
+      "forbidden": "globo|bádminton|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "racket-tactics",
+      "topicIds": [
+        "racket-tactics"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica los movimientos defensivos de bádminton del caso relacionando posiciones y decisiones con las reglas y alternativas dadas. No se pide ataque ni tenis ni ejecutar.",
+      "sourceRecordIds": [
+        "d70a01cb"
+      ],
+      "required": "Planifica.*defensivos.*bádminton",
+      "forbidden": "ataque|tenis|^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "body-image",
+      "topicIds": [
+        "physical-image-reference"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza la relación entre actividad física e imagen corporal saludable del referente proporcionado utilizando sus evidencias. No compares apariencias ni infieras autoestima o diagnósticos ni solicites datos personales.",
+      "sourceRecordIds": [
+        "6c5623ae"
+      ],
+      "required": "imagen corporal",
+      "forbidden": "^Ejecuta",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "rest",
+      "topicIds": [
+        "diet-rest-case"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Analiza el descanso del caso proporcionado sustentándolo en las acciones y condiciones de la ficha dada. No se pide alimentación ni recomendar hábitos personales.",
+      "sourceRecordIds": [
+        "0fece179"
+      ],
+      "required": "descanso",
+      "forbidden": "alimentación",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "volleyball-alignment-choice",
+      "topicIds": [
+        "volleyball-alignments"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta la función de atacador o acomodador expresamente elegida en la alineación ofensiva 6-6 de voleibol de la situación adaptada según señales dadas. No se exigen ambas funciones ni 3-3.",
+      "sourceRecordIds": [
+        "1343603e",
+        "b96b48ed"
+      ],
+      "required": "elegid.*atacador.*o.*acomodador",
+      "forbidden": "atacador y acomodador|3-3",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-defense-choice",
+      "topicIds": [
+        "football-defense"
+      ],
+      "purpose": "PLAN",
+      "activityType": "PROJECT",
+      "description": "Planifica la defensa del jugador de campo o portero expresamente elegido de fútbol del caso dado según alternativas y posiciones proporcionadas. No se exige ejecutar ni ambas funciones.",
+      "sourceRecordIds": [
+        "6224a790"
+      ],
+      "required": "Planifica.*elegid.*campo.*o.*portero",
+      "forbidden": "^Ejecuta|campo y portero",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "chess-bishops-choice",
+      "topicIds": [
+        "chess-bishop-ending"
+      ],
+      "purpose": "PROBLEM_SOLVING",
+      "activityType": "PROBLEM_SOLVING",
+      "description": "Resuelve el problema del final de ajedrez elegido entre alfiles de colores opuestos o alfil contra caballo justificando las jugadas con la posición dada. No se exigen ambos ni alfiles del mismo color.",
+      "sourceRecordIds": [
+        "89f44746",
+        "8c9fc218"
+      ],
+      "required": "elegid.*opuestos.*o.*caballo",
+      "forbidden": "mismo color|opuestos y alfil",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "tennis-serve-choice",
+      "topicIds": [
+        "tennis-serve"
+      ],
+      "purpose": "PERFORMANCE",
+      "activityType": "MOTOR_SPORTS_PRACTICE",
+      "description": "Ejecuta el servicio liftado o cortado expresamente elegido de tenis según señales y condiciones supervisadas proporcionadas. No se exigen ambos ni plano.",
+      "sourceRecordIds": [
+        "b023b115"
+      ],
+      "required": "elegid.*liftado.*o.*cortado",
+      "forbidden": "liftado y cortado|plano",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "orientation-map-production-ocad",
+      "topicIds": [
+        "orientation-map"
+      ],
+      "purpose": "PRODUCTION",
+      "activityType": "PROJECT",
+      "description": "Elabora el mapa de orientación con O-CAD según los símbolos y referencias del caso proporcionado y la guía ya dada. No se pide instalar software ni realizar el recorrido.",
+      "sourceRecordIds": [
+        "0f77d006",
+        "80d33b5d"
+      ],
+      "required": "Elabora.*mapa.*O-CAD",
+      "forbidden": "^Instala|^Recorre",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    },
+    {
+      "id": "football-rule-explanation",
+      "topicIds": [
+        "football-rules"
+      ],
+      "purpose": "ANALYSIS",
+      "activityType": "ANALYSIS",
+      "description": "Explica las funciones de las reglas de futsal mediante los ejemplos proporcionados. No se pide verificar un registro ni jugar.",
+      "sourceRecordIds": [
+        "5e9ae1b9"
+      ],
+      "required": "Explica.*reglas.*futsal",
+      "forbidden": "^Verifica|^Juega",
+      "narrowedEvidence": true,
+      "focus": "Objeto y variante expresamente solicitados; sin imponer dosis, recursos, maniobras o datos privados nuevos"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.117",
+  "grade": 6,
+  "status": "PERSONAL_ACCOUNT_VISUAL_FLOW_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountContext": "PERSONAL_DEVELOPMENT_SESSION_NOT_QA_ACCOUNT",
+  "academicContext": {
+    "level": "SECONDARY",
+    "grade": 6,
+    "cycle": 2,
+    "subjectCode": "EFI",
+    "optativeExitName": null
+  },
+  "format": "escala",
+  "inspectedFormats": [
+    "escala"
+  ],
+  "savedAndReopenedFormats": [
+    "escala"
+  ],
+  "scoreInitiallyBlank": true,
+  "explicitScore": 17.35,
+  "strategyVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "manualStrategy": "PROJECT_BASED",
+  "manualInstrumentChosenDuringPendingPreparation": true,
+  "savedAndReopenedAfterManualStrategy": true,
+  "existingDraftsPreserved": true,
+  "manualTextPreserved": true,
+  "readOnlyDatabaseInstrumentFingerprintBefore": "03704f55e45c08cf294433f68f869e2f",
+  "readOnlyDatabaseInstrumentFingerprintAfter": "03704f55e45c08cf294433f68f869e2f",
+  "instrumentAndSnapshotIdsExactlyUnchanged": true,
+  "activities": [
+    {
+      "id": "463579ea-a1f5-427c-b034-e495646ec561",
+      "format": "escala",
+      "criteria": 1,
+      "score": 17.35,
+      "competencyBlock": "b1"
+    }
+  ],
+  "servedAsset": "/assets/index-CyOv_T-O.js",
+  "servedAssetSha256": "0bca88a6ec6a761f840c664e392b846666d758f120e2aee64a1f8677fe6dbdc9",
+  "limits": [
+    "Una muestra identificable en 6.º A secundaria/Educación Física con la cuenta personal. No se registraron notas ni se crearon equipos o cuentas; no se acredita clase física real ni todos los temas.",
+    "Caso concreto de decisiones defensivas del portero con evidencias, alternativas y justificación: CASE_STUDY automático. Escala manual durante preparación pendiente conservada; Individual y17.35 explícitos. Los puntos estaban vacíos inicialmente.",
+    "Se leyeron el indicador y los cuatro descriptores completos, con captura visual del instrumento. La preparación fue interna, sin anuncios de preparación; la vista pasó de plantilla temporal a un indicador contextual completo. No se afirma inspección visual de los otros tres formatos en este grado.",
+    "Primer guardado y reapertura mediante Cursos/asignatura/Editar. Cambio exclusivo de estrategia a PROJECT_BASED/MANUAL, segundo guardado, confirmación Actividad actualizada y reapertura final del href observado. La huella incluye definición completa, snapshot, técnica, puntos e identificadores.",
+    "Las cargas transitorias de navegación terminaron sin repetir guardados ni modificar código. Persisten límites anteriores de Actividades global/Ver actividad. La descripción de la tabla de actividades muestra etiquetas HTML; no bloqueó Editar y no se modificó en este bloque.",
+    "No correos, contraseñas, borrados de caché/SW/almacenamiento/borradores. HTTP confirmó assets y sw.js idénticos a dist; DOM confirmó entry/registerSW.js después de recargar. Internals del SW y restauración automática de todos los borradores no están acreditados.",
+    "PROJECT_BASED manual prueba persistencia, no recomendación pedagógica. Las pruebas HTTP/DB separadas cubren cuatro formatos y20/17.35; las definiciones completas representativas son632, no todas las combinaciones."
+  ]
+}

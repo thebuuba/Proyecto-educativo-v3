@@ -7,19 +7,20 @@ import {physicalGradeTwoTopics} from './secondary-physical-grade-2'
 import {physicalGradeThreeTopics} from './secondary-physical-grade-3'
 import {physicalGradeFourTopics} from './secondary-physical-grade-4'
 import {physicalGradeFiveTopics} from './secondary-physical-grade-5'
+import {physicalGradeSixTopics} from './secondary-physical-grade-6'
 
 type PhysicalPurpose='ANALYSIS'|'COMPARISON'|'RESEARCH'|'REPORT'|'PLAN'|'PERFORMANCE'|'PRODUCTION'|'PROBLEM_SOLVING'|'OBSERVATION'|'VERIFICATION'|'DEBATE'|'PRESENTATION'
 type PhysicalEvidence={id?:string;title:string;success:string;sufficient:string;partial:string;error:string;absent?:string}
 export type PhysicalTopic={id:string;grade:number;label:string;match:string;excludeWhen?:string;relation:string;pdfPages:number[];sourceRecordIds:string[];primaryPurpose:PhysicalPurpose;evidence:(PhysicalEvidence&{id:string;plan?:PhysicalEvidence;variants?:Partial<Record<PhysicalPurpose,PhysicalEvidence>>})[]}
 type PhysicalAction={text:string;topics:PhysicalTopic[];purpose:PhysicalPurpose}
 export type CommonPhysicalTask={grade:number;text:string;actions:PhysicalAction[];activityType:string;technique:string}
-export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-4',grade:4,topics:physicalGradeFourTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-5',grade:5,topics:physicalGradeFiveTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
+export const commonPhysicalModules=[{id:'educacion-fisica-comun-1',grade:1,topics:physicalGradeOneTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-2',grade:2,topics:physicalGradeTwoTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-3',grade:3,topics:physicalGradeThreeTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-4',grade:4,topics:physicalGradeFourTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-5',grade:5,topics:physicalGradeFiveTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'},{id:'educacion-fisica-comun-6',grade:6,topics:physicalGradeSixTopics,policy:'REQUESTED_ADAPTED_MOTOR_EVIDENCE_V1'}]
 
 const normalize=(value:string)=>value.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
 const action='(?:(?:analiz|compar|contrast|explic|identific|interpret|verific|comprueb|registr|organiz|recopil|investig|indag|debat|expon|present|resuelv|ejecut|realiz|recorr|juega|combin|represent|improvis|particip|facilit|cre|constru|instal|filde|corre|elabor|disen|planific|propon|observ|ubic|relacion|justific|sustent)[a-z]*|clasifica|clasifiquen|selecciona|seleccionen|reproduce|reproduzcan|conduce|conduzcan|recepciona|recepcionen|valora|valoren)'
-function requestedText(value:string){
+function requestedText(value:string,preservePossession=false){
  return normalize(withoutResources(value.replace(/<\/(?:p|li|div)>|<br\s*\/?\s*>/gi,'. ').replace(/<[^>]*>/g,' ').replace(/&nbsp;|&#160;/g,' ')))
-  .replace(new RegExp(`\\b(?:no(?!\\s+convencional(?:es)?\\b)|sin)\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:pero|y)\\s+(?:${action})\\b|$)`,'g'),'').trim()
+  .replace(new RegExp(`\\b(?:no(?!\\s+convencional(?:es)?\\b)|sin${preservePossession?'(?!\\s+posesion\\b)':''})\\b[^.;\\n]*?(?=[.;\\n]|\\s+(?:pero|y)\\s+(?:${action})\\b|$)`,'g'),'').trim()
 }
 function selectedTopics(text:string,available:PhysicalTopic[]){
  let topics=available.filter(t=>(text.includes(normalize(t.label))||new RegExp(`\\b(?:${t.match})\\b`).test(text))&&(!t.excludeWhen||!new RegExp(t.excludeWhen).test(text)))
@@ -32,7 +33,7 @@ function selectedTopics(text:string,available:PhysicalTopic[]){
  if(has('spatial-orientation')&&!/fuerza|velocidad|flexibilidad|resistencia|coordinacion|equilibrio/.test(text))topics=topics.filter(t=>t.id!=='physical-condition-explanation')
  if((has('compass-orientation')||has('gps-orientation'))&&!/fuerza|velocidad|flexibilidad|resistencia|coordinacion|equilibrio/.test(text))topics=topics.filter(t=>t.id!=='physical-condition-explanation')
  if(['orientation-race','orientation-rules','orientation-history'].some(has)&&!/fuerza|velocidad|flexibilidad|resistencia|coordinacion|equilibrio/.test(text))topics=topics.filter(t=>t.id!=='physical-condition-explanation')
- for(const family of ['volleyball','football'])if(topics.some(t=>t.grade===3&&t.id.startsWith(family+'-')&&t.id!==family+'-rules')&&!/^(?:explica|interpreta|analiza)\s+(?:las\s+)?reglas|^(?:verifica|comprueba|registra)\b/.test(text))topics=topics.filter(t=>t.id!==family+'-rules')
+ for(const family of ['volleyball','football'])if(topics.some(t=>[3,6].includes(t.grade)&&t.id.startsWith(family+'-')&&t.id!==family+'-rules')&&!/^(?:explica|interpreta|analiza)\s+(?:las\s+)?reglas|^(?:verifica|comprueba|registra)\b/.test(text))topics=topics.filter(t=>t.id!==family+'-rules')
  if(has('game-facilitation'))topics=topics.filter(t=>t.id!=='game-performance')
  if(has('apparatus-reference-analysis'))topics=topics.filter(t=>t.id!=='gymnastics-sequence')
  if(has('chess-problem')||has('chess-game-analysis')||has('chess-notation'))topics=topics.filter(t=>t.id!=='chess-tactic-concept')
@@ -50,6 +51,11 @@ function selectedTopics(text:string,available:PhysicalTopic[]){
   if(has('baseball-offensive-reference'))topics=topics.filter(t=>t.id!=='baseball-batting')
   if(has('baseball-five-rules'))topics=topics.filter(t=>t.id!=='baseball-rules')
   if(has('baseball-game')||has('baseball-tactics'))topics=topics.filter(t=>!['baseball-rules','baseball-five-rules'].includes(t.id))
+ }
+ if(topics.some(t=>t.grade===6)){
+  if(has('physical-image-reference'))topics=topics.filter(t=>t.id!=='wellbeing-reference')
+  if(has('chess-pawn-openings')||has('chess-pawn-game'))topics=topics.filter(t=>t.id!=='chess-pawn-structure')
+  if(has('orientation-race')&&/^(?:recorre|realiza|ejecuta)\b/.test(text))topics=topics.filter(t=>!['orientation-map','orientation-signs'].includes(t.id))
  }
  return topics
 }
@@ -73,7 +79,7 @@ const activityTypes:Record<PhysicalPurpose,string>={ANALYSIS:'ANALYSIS',COMPARIS
 export function resolveCommonPhysicalTask(title:string,description:string,context?:InstrumentAcademicContext|null,providedTopics?:PhysicalTopic[]):CommonPhysicalTask|null{
  if(context?.level!=='SECONDARY'||context.subjectCode.trim().toUpperCase()!=='EFI'||context.optativeExitName)return null
  const module=commonPhysicalModules.find(m=>m.grade===context.grade);if(!module)return null
- const text=requestedText(description||title);if(!new RegExp(`\\b${action}\\b`).test(text))return null
+ const text=requestedText(description||title,context.grade===6);if(!new RegExp(`\\b${action}\\b`).test(text))return null
  const available=(providedTopics??module.topics).filter(t=>t.grade===context.grade)
  const clauses=text.split(new RegExp(`[.;\\n]+|\\s+(?:y|luego|despues)\\s+(?=${action}\\b)`)).map(s=>s.trim()).filter(Boolean)
  const actions:PhysicalAction[]=[]
@@ -86,7 +92,7 @@ export function resolveCommonPhysicalTask(title:string,description:string,contex
   actions.push({text:clause,topics:own,purpose:purposeFor(clause,own)})
  }
  if(!actions.length)return null
- const purpose=actions[0].purpose,tacticalScheme=purpose==='PRODUCTION'&&actions[0].topics.some(t=>t.grade===3&&t.id==='chess-scheme'),technique=tacticalScheme?'analisis-producciones':['PERFORMANCE','PRODUCTION','OBSERVATION'].includes(purpose)?'observacion-sistematica':purpose==='REPORT'?'portafolio':purpose==='DEBATE'?'debate':purpose==='PRESENTATION'?'presentacion':purpose==='PROBLEM_SOLVING'?'resolucion-problemas':'analisis-producciones'
+ const purpose=actions[0].purpose,tacticalScheme=purpose==='PRODUCTION'&&actions[0].topics.some(t=>t.grade===3&&t.id==='chess-scheme'||t.grade===6&&t.id==='orientation-map'),technique=tacticalScheme?'analisis-producciones':['PERFORMANCE','PRODUCTION','OBSERVATION'].includes(purpose)?'observacion-sistematica':purpose==='REPORT'?'portafolio':purpose==='DEBATE'?'debate':purpose==='PRESENTATION'?'presentacion':purpose==='PROBLEM_SOLVING'?'resolucion-problemas':'analisis-producciones'
  return{grade:context.grade!,text,actions,activityType:tacticalScheme?'PROJECT':activityTypes[purpose],technique}
 }
 function criterion(topic:PhysicalTopic,purpose:PhysicalPurpose,e:PhysicalEvidence):ContextualTopicCriterion{
@@ -107,7 +113,7 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  const select=(options:[string,string][])=>options.filter(([pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([,label])=>label)
  const join=(parts:string[])=>parts.length<2?parts[0]:parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
  let evidence=topic.evidence.map(e=>({...e}))
- if(topic.grade===5){
+ if([5,6].includes(topic.grade)){
   evidence=evidence.map(e=>({...e,absent:'No aporta evidencia del desempeño expresamente solicitado.'}))
   const choice=(parts:string[])=>parts.length>1&&/\bo\b/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la opción expresamente elegida'
   const update=(success:string,relation?:string)=>{evidence=evidence.map(e=>({...e,success}));if(relation)topic={...topic,relation}}
@@ -303,11 +309,75 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
    evidence=evidence.map(e=>({...e,absent,success:render(e.success),...(e.variants?.PRESENTATION?.success?{variants:{...e.variants,PRESENTATION:{...e.variants.PRESENTATION,success:render(e.variants.PRESENTATION.success)}}}:{})}))
   }
  }
+ if(topic.grade===6){
+  const choice=(parts:string[])=>parts.length>1&&/\bo\b/.test(text)?'la opción elegida entre '+parts.join(' o '):parts.length?join(parts):'la variante expresamente elegida'
+  const scope=choice(select([['internacional','internacional'],['nacional','nacional'],['provincial','provincial'],['local','local'],['comunidad','de la comunidad asignada']]))
+  const sport=choice(select([['futsal','futsal'],['futbol 11','fútbol 11'],['futbol 5(?: en grama)?','fútbol 5 en grama'],['futbol arena','fútbol arena'],['futbol con cascabeles','fútbol con cascabeles']]))
+  const volleyball=choice(select([['arena','arena'],['grama','grama'],['sala','sala'],['sentado','sentado']]))
+  const racket=choice(select([['tenis de mesa','tenis de mesa'],['badminton','bádminton'],['tenis(?! de mesa)','tenis']]))
+  const side=choice(select([['derecha','derecha'],['reves','revés']]))
+  const trajectory=choice(select([['cruzad[oa]','cruzado'],['rect[oa]','recto'],['diagonal','diagonal']]))
+  const style=choice(select([['liftad[oa]','liftado'],['cortad[oa]','cortado'],['plan[oa]','plano']]))
+  // Actualiza también las variantes por propósito: de otro modo eclipsan la selección contextual.
+  const update=(success:string,relation?:string)=>{
+   const render=<T extends PhysicalEvidence>(e:T)=>({...e,success})
+   evidence=evidence.map(e=>({...render(e),...(e.plan?{plan:render(e.plan)}:{}),...(e.variants?{variants:Object.fromEntries(Object.entries(e.variants).map(([purpose,v])=>[purpose,render(v)]))}:{})}))
+   if(relation)topic={...topic,relation}
+  }
+  if(topic.id==='distance-running')update(`Realiza la carrera de ${choice(select([['mediana distancia','mediana distancia'],['larga distancia','larga distancia']]))} adaptada siguiendo el ritmo, señales y condiciones supervisadas proporcionadas con los apoyos permitidos, sin asignar distancias ni duración nuevas.`)
+  if(topic.id==='orientation-race')update(`Recorre la carrera de orientación adaptada siguiendo ${join(select([['mapa','el mapa'],['senales de rastreo','las señales de rastreo'],['balizas','las balizas'],['tarjetas','las tarjetas']]))||'las referencias expresamente dadas'} según las condiciones supervisadas proporcionadas con los apoyos permitidos.`)
+  if(topic.id==='orientation-map'){
+   const target=choice(select([['croquis','croquis'],['mapa','mapa']]))+(/o-cad/.test(text)?' con O-CAD':''),product=target.startsWith('la ')?target:'el '+target,relation=`la correspondencia entre símbolos, referencias y ubicaciones ${product.startsWith('el ')?'del '+product.slice(3):'de '+product} de orientación proporcionado`
+   update(`Elabora ${product} de orientación relacionando símbolos, referencias y ubicaciones proporcionadas según la guía dada, sin exigir instalar software ni realizar el recorrido.`,relation)
+  }
+  if(topic.id==='orientation-safety')update(`Planifica las medidas de seguridad del recorrido de orientación ${choice(select([['urbano','urbano'],['rural','rural']]))} justificándolas según los riesgos y protocolos proporcionados, sin exigir realizar una excursión.`)
+  if(topic.id==='football-history'){
+   const render=<T extends PhysicalEvidence>(e:T,verb:string)=>({...e,success:`${verb} los hechos históricos de ${sport} del ámbito ${scope} relacionando personajes, fechas y evidencias de las fuentes proporcionadas.`})
+   evidence=evidence.map(e=>({...render(e,'Presenta'),variants:{...e.variants,RESEARCH:render({...e,...e.variants?.RESEARCH},'Investiga')}}))
+  }
+  if(topic.id==='football-biography')update(`Investiga los aportes biográficos de futbolistas dominicanos del ámbito ${scope} relacionándolos con las evidencias de las fuentes proporcionadas.`)
+  if(topic.id==='football-counterattack')update(`Ejecuta el contraataque de ${sport} ${/sin posesion/.test(text)?'sin posesión del balón':/con posesion/.test(text)?'con posesión del balón':'en la condición de posesión expresamente dada'} de la situación adaptada según posiciones, señales y apoyos proporcionados.`)
+  if(topic.id==='football-possession')update(`Planifica la ofensiva de posesión de ${sport} relacionando posiciones y decisiones con las alternativas proporcionadas, sin exigir ejecutar el juego.`)
+  if(topic.id==='football-defense'){
+   const target=choice(select([['jugador de campo','jugador de campo'],['portero','portero']]))
+   evidence=evidence.map(e=>({...e,success:`Analiza la defensa de ${target} de fútbol relacionando posiciones y decisiones con las evidencias del referente proporcionado, sin exigir ejecución.`,variants:{...e.variants,PLAN:{...e,...e.variants?.PLAN,success:`Planifica la defensa de ${target} de fútbol relacionando posiciones y decisiones con las alternativas proporcionadas, sin exigir ejecución.`}}}))
+  }
+  if(topic.id==='football-systems')update(`Ejecuta el sistema defensivo ${choice(select([['4-4-2','4-4-2'],['4-5-1','4-5-1'],['4-3-3','4-3-3']]))} de ${sport} en la situación adaptada según señales, posiciones y apoyos proporcionados.`)
+  if(topic.id==='football-team-plan')update(`Organiza el plan de acciones ${choice(select([['ofensivas','ofensivas'],['defensivas','defensivas']]))} del equipo de fútbol relacionando roles y posiciones con las alternativas proporcionadas, sin exigir ejecutar el juego.`)
+  if(topic.id==='football-game')update(`Juega la situación adaptada de ${sport} aplicando las reglas y decisiones técnico tácticas proporcionadas con los apoyos acordados, sin evaluar ganar.`)
+  if(topic.id==='football-rules')evidence=evidence.map(e=>({...e,success:`Explica las reglas de ${sport} relacionando sus funciones con los ejemplos proporcionados.`,variants:{...e.variants,VERIFICATION:{...e,...e.variants?.VERIFICATION,success:`Verifica si las decisiones del registro de ${sport} cumplen las reglas proporcionadas justificando cada marca con sus evidencias.`}}}))
+  if(topic.id==='volleyball-institutions')update(`Investiga las funciones de las instituciones que regulan y fomentan el voleibol del ámbito ${scope} mediante las fuentes proporcionadas.`)
+  if(topic.id==='volleyball-history')update(`Presenta los hechos y personajes históricos del voleibol ${volleyball} del ámbito ${scope} relacionando fechas y evidencias de las fuentes proporcionadas.`)
+  if(topic.id==='volleyball-rules')update(`Verifica si las decisiones del registro de voleibol ${volleyball} cumplen las reglas proporcionadas justificando cada marca con sus evidencias.`)
+  if(topic.id==='volleyball-modalities')update(`Compara los objetivos y características del voleibol ${volleyball} mediante las evidencias de los referentes proporcionados.`)
+  if(topic.id==='volleyball-pass')update(`Ejecuta ${choice(select([['antebrazos','el pase de antebrazos'],['manos altas','el toque de manos altas']]))} adaptado de voleibol según las posiciones, señales y apoyos proporcionados.`)
+  if(topic.id==='volleyball-attack')update(`Ejecuta ${choice(select([['pase','el pase en ataque'],['remate','el remate']]))} adaptados de voleibol según posiciones, señales y apoyos proporcionados.`)
+  if(topic.id==='volleyball-reception')update(`Ejecuta la recepción ${choice(select([['saque','del saque'],['remate','del remate']]))} adaptada de voleibol según posiciones, señales y apoyos proporcionados.`)
+  if(topic.id==='volleyball-alignments')update(`Ejecuta la función de ${choice(select([['atacador','atacador'],['acomodador','acomodador']]))} en la alineación ofensiva ${choice(select([['2-6','2-6'],['2-4','2-4'],['3-3','3-3'],['6-6','6-6']]))} de voleibol según posiciones y señales de la situación adaptada proporcionada.`)
+  if(topic.id==='volleyball-game')update(`Juega la situación adaptada de voleibol ${choice(select([['4 contra 4','4 contra 4'],['6 contra 6','6 contra 6']]))} en cancha modificada aplicando las reglas y decisiones proporcionadas con los apoyos acordados, sin evaluar ganar.`)
+  if(topic.id==='volleyball-serve')update(`Ejecuta el ${/saque de abajo/.test(text)?'saque de abajo':'saque expresamente elegido'} adaptado de voleibol según referencias, señales y apoyos proporcionados.`)
+  if(topic.id==='chess-bishop-ending')update(`Resuelve el problema del final de ${choice(select([['alfiles del mismo color','alfiles del mismo color'],['alfiles de colores opuestos','alfiles de colores opuestos'],['alfil contra caballo','alfil contra caballo']]))} de ajedrez justificando las jugadas con la posición proporcionada.`)
+  if(topic.id==='chess-pawn-game')update(`Juega la partida adaptada de ajedrez aplicando el tema ${choice(select([['ofensivo','ofensivo'],['defensivo','defensivo']]))} de la estructura de peones dada según las reglas y posiciones proporcionadas, sin exigir ganar.`)
+  if(topic.id==='chess-history')update(`Investiga los hechos históricos del ajedrez del ámbito ${scope} relacionando personajes, fechas y fuentes proporcionadas.`)
+  if(topic.id==='racket-institutions')update(`Investiga las funciones de las instituciones que regulan y fomentan ${racket} del ámbito ${scope} mediante las fuentes proporcionadas.`)
+  if(topic.id==='racket-rules')update(`Compara las reglas de ${choice(select([['individuales','individuales'],['dobles mixtos','dobles mixtos'],['dobles(?! mixtos)','dobles']]))} de ${racket} mediante las semejanzas y diferencias de los referentes proporcionados.`)
+  if(['table-stroke','table-block','table-cut'].includes(topic.id))update(`Ejecuta el ${topic.id==='table-stroke'?'golpeo':topic.id==='table-block'?'bloqueo':'corte'} de ${side} ${trajectory} de tenis de mesa de la tarea adaptada según las señales y apoyos proporcionados.`)
+  if(topic.id==='table-serve')update(`Analiza el saque de ${side} ${trajectory}${/efecto/.test(text)?' con efecto':''} de tenis de mesa relacionando trayectoria y decisión con las evidencias proporcionadas, sin exigir ejecución.`)
+  if(topic.id==='table-combination')update(`Ejecuta el ejercicio combinado ${choice(select([['1\\s*vs\\s*2','1 vs 2'],['2\\s*vs\\s*2','2 vs 2']]))} por el trayecto ${trajectory} de tenis de mesa según las señales y apoyos proporcionados.`)
+  if(topic.id==='racket-game')update(`Juega el ${choice(select([['set','set'],['game','game'],['partido','partido']]))} adaptado de ${racket} aplicando las reglas y decisiones proporcionadas con los apoyos acordados, sin evaluar ganar.`)
+  if(topic.id==='badminton-serve')update(`Ejecuta el saque de ${side} ${choice(select([['alto','alto'],['flick','flick'],['drive','drive'],['corto','corto']]))} de bádminton según señales y condiciones supervisadas proporcionadas.`)
+  if(topic.id==='badminton-back')update(`Analiza ${choice(select([['globo|clear','el globo o clear'],['dejada|drop','la dejada o drop'],['remate','el remate'],['drive','el drive']]))} del referente de fondo de pista de bádminton relacionando trayectoria y decisión con sus evidencias, sin exigir ejecución.`)
+  if(topic.id==='badminton-net')update(`Ejecuta el ${choice(select([['lob','lob'],['net','net']]))} adaptado de bádminton en la red según señales y condiciones supervisadas proporcionadas.`)
+  if(topic.id==='tennis-serve')update(`Ejecuta el servicio ${style.replace(/^la opción elegida/,'elegido').replace(/^la variante/,'de la variante')} adaptado de tenis según señales, referencias y apoyos proporcionados.`)
+  if(topic.id==='tennis-stroke')update(`Ejecuta el golpe de ${side} ${style} adaptado de tenis según señales y condiciones supervisadas proporcionadas.`)
+  if(topic.id==='tennis-volley')update(`Ejecuta la volea de ${side} adaptada de tenis según señales y condiciones supervisadas proporcionadas.`)
+  if(topic.id==='racket-tactics')update(`Planifica los movimientos ${choice(select([['ofensivos|ataque','ofensivos'],['defensivos|defensa','defensivos']]))} de ${racket} del caso relacionando posiciones y decisiones con las reglas y alternativas proporcionadas, sin exigir ejecución.`)
+ }
  if(topic.grade>=2&&topic.id==='motor-variation'){
   const motions=select([['saltos?','saltos'],['giros?','giros'],['desplazamientos?','desplazamientos']]),changes=select([['direccion','dirección'],['sentido','sentido'],['velocidad','velocidad'],['centro de gravedad','centro de gravedad']])
   evidence=evidence.map(e=>({...e,success:`Combina ${motions.length?join(motions):'los movimientos expresamente dados'} variando ${changes.length?join(changes):'las condiciones expresamente señaladas'} según las señales y apoyos de la tarea adaptada proporcionada.`,partial:'Presenta acciones pertinentes, pero una respuesta no corresponde a las señales o variaciones dadas.',absent:'No aporta evidencia de los movimientos y variaciones expresamente solicitados.'}))
  }
- if(topic.grade===2){
+ if([2,6].includes(topic.grade)){
   const absent='No aporta evidencia del desempeño expresamente solicitado.'
   if(topic.id==='baseball-history'||topic.id==='baseball-rules'){
    const parts=select([['beisbol','béisbol'],['softbol','softbol']]),chosen=parts.length>1&&/\bo\b/.test(text)&&/elegid|seleccion/.test(text)?'la disciplina elegida de '+parts.join(' o '):parts.length?join(parts):'la disciplina expresamente elegida'
@@ -368,7 +438,7 @@ function contextualTopic(topic:PhysicalTopic,text:string):PhysicalTopic{
  }
  if(topic.id==='physical-condition-explanation'){
   const parts=select([['fuerza rapida','fuerza rápida'],['velocidad de reaccion','velocidad de reacción'],['traslacion','traslación'],['gestual','velocidad gestual'],['flexibilidad','flexibilidad'],['resistencia aerobica','resistencia aeróbica'],['coordinacion','coordinación'],['equilibrio','equilibrio'],['orientacion','orientación'],...(topic.grade===3?[['velocidad maxima','velocidad máxima'],['aciclica','velocidad acíclica'],['resistencia anaerobica','resistencia anaeróbica']] as [string,string][]:[])]),contrast=/diferenci|compar|contrast/.test(text)
-  const chosenParts=[4,5].includes(topic.grade)?select([['fuerza','fuerza'],['velocidad','velocidad'],['flexibilidad','flexibilidad'],['resistencia','resistencia'],['equilibrio','equilibrio'],['coordinacion','coordinación'],['orientacion','orientación'],['diferenciacion','diferenciación'],['reaccion','reacción'],['adaptacion','adaptación'],['ritmo','ritmo']]):parts
+  const chosenParts=[4,5,6].includes(topic.grade)?select([['fuerza','fuerza'],['velocidad','velocidad'],['flexibilidad','flexibilidad'],['resistencia','resistencia'],['equilibrio','equilibrio'],['coordinacion','coordinación'],['orientacion','orientación'],['diferenciacion','diferenciación'],['reaccion','reacción'],['adaptacion','adaptación'],['ritmo','ritmo']]):parts
   const target=chosenParts.length?join(chosenParts):'las capacidades físicas expresamente asignadas'
   evidence=evidence.map(e=>({...e,success:`Explica ${contrast?'las diferencias entre':'la función de'} ${target} mediante evidencias de los ejemplos adaptados proporcionados, sin clasificar cuerpos o personas.`,...(!contrast?{sufficient:'La función de la capacidad se sustenta; una relación secundaria con el ejemplo queda poco precisada.',partial:'Reconoce la capacidad pertinente, pero su función no se vincula con la acción del ejemplo dado.'}:{})}))
  }

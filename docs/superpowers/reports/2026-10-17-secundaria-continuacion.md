@@ -1,8 +1,46 @@
-# Continuación maestra — secundaria pendiente
+# Continuación del encargo integral de secundaria
 
-[Encargo íntegro](../specs/2026-10-17-secundaria-pendiente-encargo.md). Continuar autónomamente hasta completar el alcance, sin preguntas rutinarias, subagentes, push, main, producción, despliegues, resets o borrados. No cambiar integraciones ni permisos. Push pendiente hasta revisión de integraciones; un build no acredita preview ni despliegue efectivo. El 403 anterior impidió verificar triggers.
+## Trabajo actual — FHR común de1.º, después del cierreEFI6
 
-## Trabajo actual — cierre EFI de 5.º y continuación con 6.º
+Educación Física de6.º está verificada: informe2026-10-18-educacion-fisica-6-cierre.md, notas de fuente, plan marcado, matriz e instrumentos/HTTP/navegador117. El commit español del bloque es «Amplía Educación Física de sexto y verifica sus instrumentos»; obtener su hash de gitlog, no duplicarlo. Rama ampliacion-de-instrumentos-2, base2cd2c1781cd032921a24f0f5d716a40c0f70e949. Sin push por instrucción vigente; no fetch nuevo. Antes del commit6 había24 delante/0 detrás según refs locales. No producción, main, despliegue, resets, borrados, cuentas nuevas, cambios de integraciones o subagentes.
+
+Siguiente: ejecutar docs/superpowers/plans/2026-10-18-fhr-1.md y luegoFHR2–6, optativas/modalidades y cierre consolidado (personales Sociales1/2/4/5 pendientes). PlanFHR1 preparado durante esperaHTTP, todavía SIN proveedor ni catálogo. Mantenerlo fuera del commitEFI6 y guardarlo con su bloque. No pedir confirmación para avanzar. El encargo integral sigue abierto.
+
+### Estado efectivo y procesos
+
+Fuente=manifiesto=compilado=DB evaluation-2026.117, solo Development eolgunypmtgrsyrjzcld. Frozen116 ya creado una sola vez, igualDB; physical-six-base-116.json inmutable. **Frozen117 todavía NO existe**: antes de118, congelar117 instalado una vez por READ ONLY y conservar base117. No volver a ejecutar autores, checkpoints o cierres de5.º/6.º que cambien versión o continuación.
+
+Worker único launcher4980/sesión77824: cmd.exe /d /c pnpm.cmd exec wrangler dev --local --env-file .dev.vars.local. runtime.json registra su árbol propio. Detenerlo verificado antes de dist; no Prisma generate con instalador/HTTP/helper Prisma activo. Instalador117/sesión62426/PID56996 YA terminó0, CREATED/UNCHANGED. Publicador/contexto6/sesión77339 YA terminó0, fuenteCREATED/UNCHANGED127/14,0cuentas nuevas. HTTP6/sesión56759 YA terminó0 con12muestras; NO duplicar. Ningún build/test/instalador/HTTP pendiente conocido.
+
+Guard117: PG app_backend_local sinBYPASSRLS, Auth200/Storage200 y Vite exclusivamenteDev. Asset /assets/index-CyOv_T-O.js, SHA0bca88a6ec6a761f840c664e392b846666d758f120e2aee64a1f8677fe6dbdc9=dist; assets y sw.js=dist,sinprodref/servicekey. DOM personal confirmó entry/registerSW.js. InternalsSW no inspeccionados, sin limpiar caché/almacenamiento/borradores. IncidenciaDNS previa no se declara resuelta.
+
+### Evidencia de6.º que no debe rehacerse
+
+PDF380–382/impresas379–381 ya leído visualmente completo.127registros28C54P9A22I14competencias,69C/P útiles,14exclusiones (13encabezados y perseverancia4a272932).75temas/83contratos+75breves=158consignas/632instrumentos leídos y632SHA coincidentes,0pendientes. Registrar solo huellas nuevas si se modifica algo. Runnersart-artifacts/social-http soportanEFI1–6 explícitamente; instalador conserva94–116. No son todas las combinaciones de las filas compuestas ni clase física real.
+
+Rojo:0/656 por proveedor ausente; conectado290/441. Regresiones adicionales:mapa breve730/1,modalidad de posesión y explicación de reglas723/16. Verde focal6:739. Arreglos6 conservan sin posesión, mapa documentalPROJECT, variantes, ámbitos y alternativa elegida, evitan criterios extra por referencias contextuales; tipos genéricos de helpers preservanID. Se ajustaron4expectativas móviles de versión sin debilitar históricos.
+
+Checks finales: backend56.321/155,frontendafectado6.591/19 (6.257/14+334/5),0fallos. Shared/backend/frontend y cloudflare:build dry-run0; lint0errores/16advertencias frontend previas; inventario9. No toda la suite frontend. final-checks-117.json/lineage-117.json conservan evidencias. Último build92337, backend7968 y frontend86635/creador50069 YA terminados0. No cambios de código de aplicación después.
+
+Históricos: todos los campos de116 y definiciones completas EFI1–5 (540/532/496/460/528),Sociales1–6(292/480/484/756/736/828),Artística1–6(288/344/348/368/400/392) idénticos. Historia49/390 preservada; final50/403,12QA+1personal nuevos,sin snapshots por estrategia. MedianasHTTP:interpret6261ms/recommend7233ms/writes4218ms; no comparación causal de rendimiento.
+
+### Personal6 y navegador
+
+Actividad463579ea-a1f5-427c-b034-e495646ec561,escala17.35/PROJECT_BASED-MANUAL,antesCASE_STUDY-AUTO. Instrumentodaf17c3c-634b-48c9-a40b-f0114ae7dcbb,snapshot98572d71-34df-403b-a672-65e2be7b2c95,hash03704f55e45c08cf294433f68f869e2f. **Baseline ya creado UNA vez; NUNCA --baseline otra vez.** Plain personal-physical-six-readonly.mjs verifica exacto; dos lecturas finales iguales. Tampoco sobrescribir los baselines previos. Personal5 reconsultado exacto tras117.
+
+Curso b7c4e44b-c755-4cfe-9cc2-cdb92f5e1ae6,asignaturac0c91c59-7a29-4948-b14a-bb630426a4b3,b1. Título QA Development · Decisiones defensivas del portero · 6.º; descripción de caso concreto/alternativas/justificación, sin jugador de campo ni ejecución. Indicador completo con QA manual conservado y4descriptores cualitativos. Escala manual elegida durante preparación pendiente, puntos vacíos antes de17.35, guardado y dos reaperturas desde href observado, cambio soloestrategia exacto. Sin nuevos correos, contraseñas, notas o equipos. EtiquetasHTML en descripción de tabla no bloqueanEditar; límite documentado, no corregido.
+
+Browser1/tab1796703141/socialCloseTab/socialCloseBrowser,physicalSixthEditUrl observado, página final marcadaDeliverable. Screenshot privado personal-physical-six-final.png ya visto. Trascompactación llamar cua.rewriteDocumentation antes de continuar browser. No reload si hay borrador en curso sin comprobarlo. Reaperturas tuvieron cargas transitorias; esperar estado nuevo, no duplicar guardados.
+
+### FHR preparado, todavía pendiente de implementación
+
+FHR1 PDF392–396,scope5839ecc8-d722-53c6-82d7-f7f4f8106faf,146registros24C53P34A21I14competencias; FHR2 PDF397–400,scope7046d495-351c-52ab-a193-fde308e0000f,128registros22C45P26A21I14competencias. Páginas renderizadas1800px y YA leídas completas: no repetir. Notas fhr-one-source-reviewed.md/fhr-two-source-reviewed.md,literales y PNG/TXT privados. fhr-one-design-preflight.md contiene responsabilidades y límites. Código estructurado FHR/familiafihr confirmado porseed/context.
+
+Usar motor y constructores compartidos, proveedor disciplinar de criterios; sin duplicar motor/IA/dependencias/UI. Revisar cada C/P y actitud por ancla; no calificar fe, gratitud, oración, adhesión, moralidad, intimidad, maduración, apariencia o talento/vocación. No inventar caso ficticio si no se pide ni exigir entrevistas/fotos/publicaciónreal/datos privados. Literal falsas actitudes religiosas es objeto documental atribuido, no juicio sobre alumno/familia. FHR2 fd56d4e9 es relato observable aunque figure enActitudes; citas anómalas Juan3:10 y2Tes2:17–17 conservadas. Fuente3 tiene errata de ciclo documentada en source-anomalies; inspeccionarla visualmente al llegar, no inferir por analogía.
+
+Preparar contratos rojos, proveedor/mapeo, instrumentos completos y SHA,118 sin modificar117, pruebas obligatorias/históricos/Development/HTTP/personal, informes y commitlocal; luego siguientes grados sin preguntas rutinarias. No nuevas autorizaciones para push: continúa prohibido hasta revisar integraciones. El403 previo no permite equiparar builds,previews y producción efectiva.
+
+## Antecedente — cierre EFI de 5.º y continuación con 6.º
 
 Rama **ampliacion-de-instrumentos-2**, base **37e0cd717cf84722edddb8d9c41a2670b8ac987a** (EFI4). El bloque5 se identifica por el commit español «Amplía Educación Física de quinto y verifica sus instrumentos»; consultar gitlog para su hash y no duplicarlo. Antes del commit había23commits delante/0detrás según refs locales, sinfetch. **NO PUSH** hasta revisar integraciones;403previo impidió verificar todos los triggers y un build no prueba preview/despliegue efectivo. No producción/main/deploy/subagentes/reset/borrados/esquema/cuentas nuevas/cambios de integraciones. Continuar EFI6,FHR1–6,optativas/modalidades y cierre consolidado (personales Sociales1/2/4/5 pendientes), sin preguntas rutinarias.
 

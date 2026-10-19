@@ -1,0 +1,297 @@
+{
+  "grade": 6,
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "scopeId": "0ed53f73-90ab-5bc7-8db8-0294b348f5be",
+  "usefulConceptualProceduralRows": 69,
+  "topicRecords": {
+    "physical-condition-explanation": [
+      "98486c92-e206-5632-8844-d7a57ebc6d17",
+      "57730434-18ae-5d8e-8986-1f3bd9554aeb",
+      "6c8fdde7-7ff2-549a-bbc1-9ef4f96d1ea4"
+    ],
+    "circuit-plan": [
+      "3f8b0ffc-3082-51e5-a104-66cecf6ea438"
+    ],
+    "flexibility-observation": [
+      "16a517a9-50ae-5667-90ca-8ad80450ec9c"
+    ],
+    "motor-variation": [
+      "e7d71979-6025-548e-a4b6-0b4c62324b4f"
+    ],
+    "equilibrium-observation": [
+      "64492bec-47a2-5f3e-b5d7-01affd508fc7"
+    ],
+    "spatial-orientation": [
+      "009b9224-27d2-56c9-87ac-6f4c06fae944"
+    ],
+    "compass-orientation": [
+      "009b9224-27d2-56c9-87ac-6f4c06fae944"
+    ],
+    "gps-orientation": [
+      "009b9224-27d2-56c9-87ac-6f4c06fae944"
+    ],
+    "care-frequency": [
+      "fae1a451-1189-534d-b8dc-8a6d4af7dba0"
+    ],
+    "tactical-cooperation": [
+      "53b4167c-8e38-5163-8499-0dd703be91bc",
+      "5df10925-c8f0-5804-978b-47415a4b1618"
+    ],
+    "motor-progress-record": [
+      "134a9f12-127f-5a7c-8e8f-2885d2742795",
+      "0406b607-132c-5933-843d-f70077c26549",
+      "9e9a2e87-9bb6-54e8-a566-149cdb9e41eb"
+    ],
+    "wellbeing-reference": [
+      "0fece179-5327-54b5-8736-da6521f0e092",
+      "a2a5a296-9950-5cbb-806c-a72a9e2c16ae",
+      "ec8a26da-821f-5d4f-918b-68334d5a1e7f"
+    ],
+    "fair-play-verification": [
+      "d00f3ebb-555b-5a30-8a5c-93112e76dda1",
+      "89d624ad-7e1f-5f40-ad0f-aa9ad9fac73b"
+    ],
+    "hygiene-verification": [
+      "284d8c04-a862-5770-b951-417e39d50798"
+    ],
+    "continuous-running": [
+      "da186a76-ffa9-5bc2-b66f-83760c658f82"
+    ],
+    "orientation-race": [
+      "acb80eed-10e9-5f71-b22c-a98f452a4875",
+      "784d8a98-3c0f-5a21-94a9-b49a8bb06308",
+      "fc1d038d-6f9f-59fb-acfe-6d1653ff2b50",
+      "b24c9446-a573-5fe9-9e62-6d7c7d58bccd"
+    ],
+    "orientation-rules": [
+      "b24c9446-a573-5fe9-9e62-6d7c7d58bccd",
+      "5e9ae1b9-bb82-54e9-af43-80b2a8a81098"
+    ],
+    "football-history": [
+      "67813de3-73c7-5e74-bb08-cd988f46da19",
+      "8343dea3-0644-5484-8561-55af5c219041",
+      "bc645420-c508-50c5-b555-7d84f844f7e9",
+      "94727fee-d90a-5108-9dbd-91f4282daabe",
+      "e076710d-f299-5289-a620-836efad387eb"
+    ],
+    "football-game": [
+      "9174de56-cea4-5b2b-b221-93ffc51b81fd",
+      "2f79c8fe-4ef0-5be2-8234-dd396f3bc0e2",
+      "d31d83ac-8126-5d94-b681-5b1fd6cd3618"
+    ],
+    "football-rules": [
+      "5e9ae1b9-bb82-54e9-af43-80b2a8a81098"
+    ],
+    "football-adaptation": [
+      "9c714105-6f57-5c02-8dc1-51fe6a2574b5",
+      "d31d83ac-8126-5d94-b681-5b1fd6cd3618"
+    ],
+    "volleyball-history": [
+      "ce7385bb-3bb2-5e73-9e9f-31b95bc83f89",
+      "e076710d-f299-5289-a620-836efad387eb"
+    ],
+    "volleyball-rules": [
+      "c322ccb3-26f6-5215-9ee3-ee56255f6ccf",
+      "d4ec4c6e-55fe-52f3-be22-b95d3e2219ea",
+      "1a5480db-c7a2-5b90-bb3e-af37e95bf924",
+      "5e9ae1b9-bb82-54e9-af43-80b2a8a81098"
+    ],
+    "volleyball-pass": [
+      "9fc6d399-d251-5d06-8a0f-1d5cab807244"
+    ],
+    "volleyball-attack": [
+      "9fc6d399-d251-5d06-8a0f-1d5cab807244"
+    ],
+    "volleyball-reception": [
+      "9060bf0b-c197-51aa-ad29-2ff37d3d4fe1"
+    ],
+    "volleyball-block": [
+      "9060bf0b-c197-51aa-ad29-2ff37d3d4fe1"
+    ],
+    "volleyball-defence": [
+      "2c80741a-e73c-5c42-bef9-def093c5a0f0",
+      "9060bf0b-c197-51aa-ad29-2ff37d3d4fe1",
+      "ba7ff818-6e90-5e54-a2f7-2c9ad2fc4780"
+    ],
+    "volleyball-game": [
+      "1c53a4ed-5497-5970-ae7c-eb289dcf1897",
+      "1d9cf6b8-cc99-5621-b3d8-26c8387333ce",
+      "d31d83ac-8126-5d94-b681-5b1fd6cd3618"
+    ],
+    "volleyball-serve": [
+      "1d9cf6b8-cc99-5621-b3d8-26c8387333ce"
+    ],
+    "chess-repertoire": [
+      "8c391b8a-4924-5837-8039-35a3ee6a72fe"
+    ],
+    "racket-tactics": [
+      "d70a01cb-39e1-5e3f-9eeb-3ec8727b2584"
+    ],
+    "chess-pawn-structure": [
+      "fef04d74-fada-5df4-a618-0d35ecdeec61"
+    ],
+    "diet-rest-case": [
+      "0fece179-5327-54b5-8736-da6521f0e092"
+    ],
+    "chess-ending-game": [
+      "30beb9eb-ef12-5829-8b99-833cf081553e"
+    ],
+    "distance-running": [
+      "b8daf84e-811e-5287-b2f4-4d3c1a3b06e3"
+    ],
+    "orientation-signs": [
+      "acb80eed-10e9-5f71-b22c-a98f452a4875",
+      "fc1d038d-6f9f-59fb-acfe-6d1653ff2b50"
+    ],
+    "orientation-map": [
+      "80d33b5d-7c2b-5891-8263-8c53b7cd0659",
+      "fc1d038d-6f9f-59fb-acfe-6d1653ff2b50",
+      "0f77d006-7e1c-5742-b875-8d5f85b636ac"
+    ],
+    "orientation-safety": [
+      "553b223f-f03f-5226-a388-d38c1b907e3f"
+    ],
+    "orientation-modalities": [
+      "c33ce6bf-11b5-5eff-93ff-c02434e8d209"
+    ],
+    "football-local": [
+      "96db7d1d-5cfb-5c8b-a9ed-94b97909e52e",
+      "94727fee-d90a-5108-9dbd-91f4282daabe"
+    ],
+    "football-biography": [
+      "571a46b9-7900-553e-b903-c99694930bd3",
+      "209331a3-3d87-5932-87e1-2bd4bf243dab"
+    ],
+    "football-possession": [
+      "0fcdc02f-9690-5d51-9113-5e05b8fe6773",
+      "da255c73-6eb6-576d-b0c7-2ab929c1ee47",
+      "841d1975-eea6-57c3-92e0-09dbbf547122"
+    ],
+    "football-counterattack": [
+      "0fcdc02f-9690-5d51-9113-5e05b8fe6773",
+      "da255c73-6eb6-576d-b0c7-2ab929c1ee47",
+      "841d1975-eea6-57c3-92e0-09dbbf547122"
+    ],
+    "football-defense": [
+      "73dad8b3-ab0c-571d-8e14-743f9ec98055",
+      "6224a790-830f-5c49-81e6-bd9f5397b19f"
+    ],
+    "football-systems": [
+      "9c714105-6f57-5c02-8dc1-51fe6a2574b5",
+      "3c1c088a-ce33-5890-b7a0-873e9be2fbf5"
+    ],
+    "football-team-plan": [
+      "2f79c8fe-4ef0-5be2-8234-dd396f3bc0e2"
+    ],
+    "volleyball-institutions": [
+      "c322ccb3-26f6-5215-9ee3-ee56255f6ccf",
+      "121255fd-402d-5f94-a6ba-3d613aa212a5"
+    ],
+    "volleyball-modalities": [
+      "c322ccb3-26f6-5215-9ee3-ee56255f6ccf",
+      "1c53a4ed-5497-5970-ae7c-eb289dcf1897",
+      "aa023c71-ef92-51e3-868e-9d0ffa1e7ae4",
+      "1a5480db-c7a2-5b90-bb3e-af37e95bf924"
+    ],
+    "volleyball-alignments": [
+      "3ded2dc9-13a7-533c-a534-208b716003bd",
+      "1343603e-c26a-5ef2-93fe-18929963bdf5",
+      "b96b48ed-e531-554d-b162-60b8c19563cd"
+    ],
+    "chess-advanced-ending": [
+      "f2feff03-de52-5e38-9567-51a8dd64915d",
+      "9d8a193a-a3ca-5c5c-8000-df910c73c7ba"
+    ],
+    "chess-rook-ending": [
+      "0a02820e-0abe-5788-9a89-347dfac21368",
+      "00491a85-1f8b-51e5-a6ef-1ef8856cd266"
+    ],
+    "chess-bishop-ending": [
+      "b12466de-5760-524c-9522-db0feb93b176",
+      "89f44746-3653-59cc-8f1c-36e6863f9a2a",
+      "8c9fc218-507e-5a00-a594-f90137f30310"
+    ],
+    "chess-weak-squares": [
+      "ea5eb554-bad7-5254-b106-38904037cb46"
+    ],
+    "chess-pawn-openings": [
+      "295b67a1-4179-571b-b820-da655f6ebd7d"
+    ],
+    "chess-pawn-game": [
+      "b51d8560-a7fd-50ce-850d-6c8e19fb3da6"
+    ],
+    "chess-history": [
+      "e076710d-f299-5289-a620-836efad387eb"
+    ],
+    "chess-rules": [
+      "5e9ae1b9-bb82-54e9-af43-80b2a8a81098"
+    ],
+    "racket-institutions": [
+      "2ed6c3b5-0781-5a62-98ca-be55549bbcc9",
+      "656b5617-6d45-5282-a70f-be06518af13f",
+      "e94f3f78-8715-5267-9e15-939ca0049d48",
+      "215675ce-49bf-5276-b0a8-b451c93c2930"
+    ],
+    "racket-rules": [
+      "37b1fad7-7cd6-52ae-bb1a-45f5d396af25",
+      "5e9ae1b9-bb82-54e9-af43-80b2a8a81098"
+    ],
+    "table-stroke": [
+      "8003e8d7-381a-56ae-bb03-322eb99c4d35"
+    ],
+    "table-block": [
+      "a98ed5eb-112e-562d-95fd-8c35b13186f4"
+    ],
+    "table-cut": [
+      "2a31aca4-7abb-5c73-8769-141bc6bab047"
+    ],
+    "table-serve": [
+      "945d75fc-9346-535b-a08b-aa2b17cd5b60"
+    ],
+    "table-combination": [
+      "94bba2e4-4896-53aa-843b-7f7f8ddaaa84"
+    ],
+    "racket-game": [
+      "0d3c113e-8604-55cc-bd4b-145ca8463ab2",
+      "25a9ea6b-c38d-5dc1-a5fd-d33999d4e16a",
+      "d31d83ac-8126-5d94-b681-5b1fd6cd3618"
+    ],
+    "badminton-serve": [
+      "de698fba-5e45-5161-92ac-0986b902fe74",
+      "f3f91f0d-4185-5726-a012-c58271f3763e"
+    ],
+    "badminton-back": [
+      "1bcd45e6-56b0-5c8c-a49e-437862c5d614"
+    ],
+    "badminton-net": [
+      "1bcd45e6-56b0-5c8c-a49e-437862c5d614"
+    ],
+    "tennis-serve": [
+      "b023b115-55db-5535-bb6a-a5f72cf439a8"
+    ],
+    "tennis-stroke": [
+      "14b42f7f-685c-55d4-9ae4-adb2843e7b6e"
+    ],
+    "tennis-volley": [
+      "b161e350-bde0-5fb3-8af8-df1f66dc0e46"
+    ],
+    "tennis-lob": [
+      "18dfd71f-b199-59e5-b2c5-75f16fab7d9a"
+    ],
+    "tennis-smash": [
+      "9f09edbe-df37-5834-a1b5-ce0c5db83203"
+    ],
+    "physical-image-reference": [
+      "6c5623ae-b722-5bc1-a4f7-5bd799efefdd"
+    ]
+  },
+  "notes": [
+    "98486c92/57730434 son continuación de capacidades; no criterios independientes.",
+    "67813de3/8343dea3/bc645420 conservan la historia genérica del fútbol repetida, incluso bajo Fútbol arena; sin duplicar criterios ni atribuirla exclusivamente a arena.",
+    "121255fd/1c53a4ed/2c80741a/1343603e son procedimientos de voleibol impresos antes de su encabezado: asociación pedagógica por léxico, literal y procedencia intactos.",
+    "0f77d006/1d9cf6b8/0d3c113e/1bcd45e6 contienen desempeño más encabezado embebido; no se excluye el procedimiento completo.",
+    "18dfd71f Práctica de globos es desempeño aunque esté en negrita, no encabezado puro.",
+    "O-CAD es referente de elaboración o análisis de producto dado, sin integración, instalación o dependencia nueva.",
+    "5df10925 enlaza roles y acuerdos concretos pedidos, no esfuerzo privado."
+  ]
+}
