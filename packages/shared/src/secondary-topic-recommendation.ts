@@ -5,7 +5,7 @@ import { detectTopicActivity } from './secondary-language-topics'
 import type { SecondaryLanguageTopic } from './secondary-topic-types'
 import { formatAuthoredCriteria } from './authored-instrument-format'
 import { adaptLanguageScale } from './language-scale'
-import {withDeliveryCriteria} from './task-delivery-requirements'
+import {withDeliveryCriteria,type DeliveryOptions} from './task-delivery-requirements'
 
 export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTopic, input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType
@@ -18,8 +18,8 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean
-}, activity: string, moduleName: string): InstrumentRecommendation {
-  authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??''), input.instrumentType)
+}, activity: string, moduleName: string, deliveryOptions:DeliveryOptions={}): InstrumentRecommendation {
+  authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??'',deliveryOptions), input.instrumentType)
   if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []

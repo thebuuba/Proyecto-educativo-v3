@@ -2167,10 +2167,10 @@
         515,
         516
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_DB_AND_PERSONAL_BROWSER_VERIFIED",
+      "provider": "packages/shared/src/secondary-optative-science.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/optative-ct-6-matriz.json",
+      "currentRunVerification": "VERIFIED_36_UNIQUE_QA_SAMPLES_36_OBSERVABLE_INDICATORS",
       "nonApplicable": [
         1,
         2,

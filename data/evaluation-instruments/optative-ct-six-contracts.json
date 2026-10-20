@@ -1,0 +1,6040 @@
+{
+  "subjectCode": "OPT-CT-6",
+  "subjectName": "Física y Computación",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Ciencias y Tecnología",
+  "scopeId": "1941d633-9878-579b-9cc3-ae913a00dfda",
+  "cases": [
+    {
+      "id": "circuit-specification-design",
+      "description": "Diseña y simula un circuito electrónico que cumpla las especificaciones proporcionadas. Justifica la conexión de sus componentes y comprueba sus salidas en el simulador dado, sin montaje físico ni conexión a la red eléctrica.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        272
+      ],
+      "sourceRecordIds": [
+        "ab477edf-307c-5eea-86aa-bb99c0749e92"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 2
+    },
+    {
+      "id": "circuit-fault-problem",
+      "description": "Resuelve el fallo del circuito electrónico del esquema y las mediciones proporcionados. Identifica la causa y comprueba la corrección con los resultados del caso, sin manipular un circuito real.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        273
+      ],
+      "sourceRecordIds": [
+        "f1dd0e9e-f36d-5de8-b0e4-eeb0b8ce8e48"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "electric-current-problem",
+      "description": "Resuelve el problema de voltaje, corriente y resistencia del circuito simulado con los datos y relaciones proporcionados. Justifica el procedimiento y comprueba las unidades del resultado.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        274
+      ],
+      "sourceRecordIds": [
+        "e7b4c285-912d-5fac-b8f1-2b89bcd85f3e"
+      ],
+      "requiredEvidence": [
+        "calculation",
+        "result"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 2,
+      "requiredTopic": "electrical-measurement"
+    },
+    {
+      "id": "digital-control-explanation",
+      "description": "Explica el sistema digital de control representado en el diagrama dado. Relaciona sus entradas, procesamiento de señales y salidas con el comportamiento descrito, sin construir otro sistema.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        275
+      ],
+      "sourceRecordIds": [
+        "1e18599f-0170-505d-89e3-5906bf1193b8"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "circuit-software-simulation",
+      "description": "Simula el circuito electrónico mediante el recurso proporcionado con los parámetros dados. Compara las salidas obtenidas con las especificaciones del modelo, sin comprar ni instalar software.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        276
+      ],
+      "sourceRecordIds": [
+        "e1a04dcf-ac1c-55c9-9929-b32df5965280"
+      ],
+      "requiredEvidence": [
+        "simulation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 2
+    },
+    {
+      "id": "signal-modulation-comparison",
+      "description": "Compara la modulación, la codificación y el filtrado de las señales ilustradas en las fichas proporcionadas. Explica qué cambia cada proceso y qué función cumple en la transmisión, sin operar equipos reales.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        277
+      ],
+      "sourceRecordIds": [
+        "54234111-dd4d-596b-b954-f4a9cd385fc0"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "requiredTopic": "signal-modulation",
+      "requiredText": [
+        "modulación",
+        "codificación",
+        "filtrado"
+      ]
+    },
+    {
+      "id": "electrical-measurement-analysis",
+      "description": "Analiza las fichas del voltímetro, amperímetro y óhmetro y las mediciones eléctricas ya registradas que se proporcionan. Relaciona cada instrumento con su magnitud, conexión representada y unidad, sin medir circuitos reales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        278
+      ],
+      "sourceRecordIds": [
+        "fb40127e-f8b9-5872-8061-2b788d4034d9"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "circuit-team-safety-report",
+      "description": "En equipo, elabora un informe del circuito simulado y las reglas de protección proporcionadas. Justifica las medidas de seguridad del caso y documenta qué evidencia aportó cada integrante, sin montaje real ni juicios sobre personalidad.",
+      "activityType": "REPORT",
+      "participationMode": "GROUP",
+      "sourceOrdinals": [
+        279
+      ],
+      "sourceRecordIds": [
+        "79980938-ff47-5baf-9f2f-736855381d57"
+      ],
+      "requiredEvidence": [
+        "report",
+        "contribution"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "observation"
+      ],
+      "expectedCriteria": 3,
+      "expectedDescriptionOccurrences": {
+        "Documenta una aportación": 1
+      }
+    },
+    {
+      "id": "circuit-results-oral",
+      "description": "Presenta oralmente los resultados del proyecto de circuito electrónico ya realizado que se proporcionan. Explica la relación entre especificaciones, resultados y límites; no elabores otro informe ni ejecutes el proyecto.",
+      "activityType": "ORAL_PRESENTATION",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        280
+      ],
+      "sourceRecordIds": [
+        "9e4ec703-add5-55c4-8a77-388c4d08f331"
+      ],
+      "requiredEvidence": [
+        "oral"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation",
+        "project",
+        "design"
+      ]
+    },
+    {
+      "id": "robot-task-design",
+      "description": "Diseña en un esquema un robot que clasifique las piezas ficticias según la tarea y las restricciones dadas. Justifica la selección de sensores, actuadores y controlador, sin comprar un kit ni fabricar un robot.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        281
+      ],
+      "sourceRecordIds": [
+        "1ecd9aad-9c26-50e6-903d-204fba9fad6e"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "classification"
+      ],
+      "requiredText": [
+        "sensores",
+        "actuadores"
+      ]
+    },
+    {
+      "id": "robot-task-program",
+      "description": "Programa en el recurso de acceso proporcionado la secuencia de un robot simulado para recorrer la ruta indicada y detenerse ante un obstáculo. Comprueba el programa con los casos dados, sin robot físico ni nuevas dependencias.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        282
+      ],
+      "sourceRecordIds": [
+        "345b2f41-389d-5ff9-85d3-38bf7508187e"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "calculation",
+        "simulation"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "robot-prompt-improvement",
+      "description": "Mejora el prompt de control robótico proporcionado para precisar la tarea, las restricciones y el formato de salida. Compara las respuestas ficticias dadas antes y después y justifica los cambios, sin invocar un servicio de IA ni un robot real.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        283
+      ],
+      "sourceRecordIds": [
+        "d2dac3d8-290a-59e0-8d46-99ea9e4a31b7"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 2,
+      "requiredTopic": "prompt-design"
+    },
+    {
+      "id": "robot-log-diagnosis",
+      "description": "Resuelve el fallo del sistema robótico simulado a partir del registro de sensores y las salidas proporcionadas. Justifica la causa y contrasta la corrección con los casos de prueba, sin realizar nuevas mediciones.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        284
+      ],
+      "sourceRecordIds": [
+        "bc478dea-6fca-5bdd-9138-eb0f49e32726"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "comparison",
+        "content"
+      ],
+      "expectedCriteria": 1,
+      "requiredTopic": "robot-diagnosis"
+    },
+    {
+      "id": "robot-coordinate-explanation",
+      "description": "Explica el movimiento del robot representado en el esquema dado. Relaciona las coordenadas, la cinemática y la función de los sensores y actuadores solicitados, sin programar ni construir otro robot.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        285
+      ],
+      "sourceRecordIds": [
+        "73094551-1f87-53a1-abf6-c5fc96937e26"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "robot-piece-design",
+      "description": "Diseña en un plano una pieza robótica personalizada que cumpla las dimensiones y la función indicadas en la ficha. Justifica la adecuación de la herramienta de diseño proporcionada, sin fabricar, comprar o utilizar maquinaria.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        286
+      ],
+      "sourceRecordIds": [
+        "791c6a4c-a91a-53d0-aac1-c8404fc8101a"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "robot-vision-ai-analysis",
+      "description": "Analiza el sistema de visión artificial del robot colaborativo ficticio descrito. Explica cómo las entradas y salidas del modelo de aprendizaje automático dado ayudan a la tarea y qué límites presentan, sin entrenar otro modelo.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        287
+      ],
+      "sourceRecordIds": [
+        "22aee93a-99bc-5fc8-9a0a-7c08328fdc1e"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation"
+      ],
+      "requiredText": [
+        "visión artificial",
+        "aprendizaje automático"
+      ]
+    },
+    {
+      "id": "robot-team-report",
+      "description": "En equipo, elabora un informe del proyecto robótico colaborativo ya realizado que se proporciona. Documenta las decisiones y aportaciones identificables de los integrantes con evidencias del expediente, sin calificar liderazgo o creencias privadas.",
+      "activityType": "REPORT",
+      "participationMode": "GROUP",
+      "sourceOrdinals": [
+        288
+      ],
+      "sourceRecordIds": [
+        "7e865518-661d-5066-aed9-969c906462f8"
+      ],
+      "requiredEvidence": [
+        "report",
+        "contribution"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation",
+        "project",
+        "design"
+      ]
+    },
+    {
+      "id": "robot-privacy-debate",
+      "description": "Debate las decisiones de privacidad, responsabilidad y seguridad del robot de servicio del caso ficticio. Fundamenta las posturas con las fuentes proporcionadas sin captar datos personales ni intervenir sobre personas.",
+      "activityType": "DEBATE",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        289
+      ],
+      "sourceRecordIds": [
+        "ca032201-d415-5350-88de-2752a7866641"
+      ],
+      "requiredEvidence": [
+        "argument"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "physical-numerical-program",
+      "description": "Programa un algoritmo numérico propio para aproximar la velocidad con las posiciones, tiempos y método de diferencias proporcionados. Comprueba el resultado con los casos de prueba y las unidades dadas, sin exigir un algoritmo previo ni dependencias nuevas.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        290
+      ],
+      "sourceRecordIds": [
+        "d65cdfa2-abe3-577f-a919-35bcbf7b4ea9"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "calculation",
+        "simulation"
+      ]
+    },
+    {
+      "id": "physical-model-simulation",
+      "description": "Simula el movimiento parabólico con el modelo y los parámetros proporcionados. Representa sus resultados en una gráfica e interpreta sus límites, sin lanzar objetos ni realizar mediciones físicas.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        291
+      ],
+      "sourceRecordIds": [
+        "cf392c45-20ec-5bb5-be0a-d2643d618582"
+      ],
+      "requiredEvidence": [
+        "simulation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "physical-statistical-analysis",
+      "description": "Analiza los datos experimentales de posición y tiempo ya registrados que se proporcionan. Calcula el estadístico indicado con el recurso dado e interpreta su relación con la teoría y la incertidumbre, sin repetir el experimento.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        292
+      ],
+      "sourceRecordIds": [
+        "720adeb5-bd3c-5422-9be6-3f76b8b01182"
+      ],
+      "requiredEvidence": [
+        "data-interpretation",
+        "calculation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 4,
+      "requiredTopic": "physical-data-analysis"
+    },
+    {
+      "id": "physical-results-report",
+      "description": "Elabora un informe científico de los resultados de simulación física y los datos experimentales proporcionados. Distingue el modelo, sus resultados y sus límites sin realizar otra simulación ni recolectar datos nuevos.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        293
+      ],
+      "sourceRecordIds": [
+        "57092586-7558-5842-b41d-ed03096c1878"
+      ],
+      "requiredEvidence": [
+        "report"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation",
+        "project",
+        "design",
+        "comparison",
+        "representation"
+      ],
+      "expectedCriteria": 2,
+      "requiredText": [
+        "variables, parámetros",
+        "sin atribuir mediciones nuevas"
+      ]
+    },
+    {
+      "id": "physical-algorithm-debug",
+      "description": "Resuelve el error del algoritmo numérico de integración por trapecios proporcionado para el sistema físico ficticio. Justifica la causa y comprueba la corrección con los casos de prueba dados, sin cambiar a otro método no solicitado.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        294
+      ],
+      "sourceRecordIds": [
+        "f349cef2-4720-5002-b371-234a5669ca61"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "calculation",
+        "result"
+      ]
+    },
+    {
+      "id": "physical-gravitation-problem",
+      "description": "Resuelve el problema de movimiento planetario del modelo gravitatorio proporcionado usando los datos dados. Justifica las relaciones físicas y las unidades, sin añadir simulaciones o investigaciones.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        295
+      ],
+      "sourceRecordIds": [
+        "36e206db-1463-5aa6-84f9-13d4512b4095"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "complex-physical-model-analysis",
+      "description": "Compara el modelo de dinámica molecular y el de sistema físico complejo descritos en las fichas proporcionadas. Explica las interacciones, los supuestos y los límites de cada representación sin ejecutar otra simulación.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        296
+      ],
+      "sourceRecordIds": [
+        "b9264125-20ed-5aae-99f0-b2b722e9035d"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "requiredTopic": "complex-physical-model"
+    },
+    {
+      "id": "physical-team-report",
+      "description": "En equipo, elabora un informe de los resultados del proyecto de física computacional proporcionado. Documenta qué evidencia aportó cada integrante y cómo resolvieron una discrepancia con los datos, sin calificar disposiciones privadas.",
+      "activityType": "REPORT",
+      "participationMode": "GROUP",
+      "sourceOrdinals": [
+        297
+      ],
+      "sourceRecordIds": [
+        "765f4301-1aff-5b67-8ab9-13c20005be57"
+      ],
+      "requiredEvidence": [
+        "report",
+        "contribution"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "observation"
+      ]
+    },
+    {
+      "id": "school-program-design",
+      "description": "Diseña en un esquema una aplicación que organice el uso de la biblioteca del centro ficticio del caso. Justifica sus entradas, salidas y restricciones de privacidad con los requisitos proporcionados, sin cuentas, datos reales o despliegues.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        298
+      ],
+      "sourceRecordIds": [
+        "ac0678dd-8ab3-5ce0-9175-dfe58783f546"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "algorithm-structure-comparison",
+      "description": "Compara las dos estructuras de datos y los algoritmos proporcionados para la búsqueda de elementos de una aplicación ficticia. Justifica cuál satisface los límites de operaciones y memoria dados sin medir un sistema de producción.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        299
+      ],
+      "sourceRecordIds": [
+        "4895469e-394b-5817-84ab-1a86e6d684db"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "expectedCriteria": 1,
+      "requiredTopic": "algorithms-data-structures"
+    },
+    {
+      "id": "programming-language-program",
+      "description": "Programa una función en Python que transforme las entradas ficticias según la regla dada. Comprueba sus salidas con los casos de prueba proporcionados, sin algoritmo previo obligatorio ni nuevas dependencias.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        300
+      ],
+      "sourceRecordIds": [
+        "207fc475-f86f-526a-8755-517679a093a9"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "calculation",
+        "simulation"
+      ],
+      "forbiddenText": [
+        "del algoritmo dado"
+      ]
+    },
+    {
+      "id": "application-security-problem",
+      "description": "Resuelve la vulnerabilidad de validación de entradas del fragmento de código propio de la aplicación ficticia que se proporciona. Justifica la corrección y compruébala con los casos dados, sin escanear sistemas ajenos ni datos reales.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        301
+      ],
+      "sourceRecordIds": [
+        "06768a52-701c-569f-84e7-debf044bc64d"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ]
+    },
+    {
+      "id": "interface-design",
+      "description": "Diseña en un esquema la interfaz de la aplicación del caso ficticio según sus usuarios y tareas. Justifica la legibilidad de etiquetas, los controles y la navegación solicitados sin imponer preferencias decorativas ni programar una aplicación completa.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        302
+      ],
+      "sourceRecordIds": [
+        "76487844-a18a-5c8b-b5cf-088083b0252a"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming"
+      ]
+    },
+    {
+      "id": "mobile-application-program",
+      "description": "Programa en el recurso de acceso proporcionado el prototipo móvil de la tarea ficticia indicada. Comprueba las entradas y salidas con los casos dados y explica las diferencias de uso en iOS y Android, sin publicar en tiendas ni comprar dispositivos.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        303
+      ],
+      "sourceRecordIds": [
+        "81d73b41-92b5-5fcb-8806-3ded244d788f"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "calculation",
+        "simulation"
+      ]
+    },
+    {
+      "id": "machine-learning-model-analysis",
+      "description": "Analiza el modelo de aprendizaje automático y los datos ficticios de entrenamiento y prueba proporcionados para la aplicación. Explica las predicciones y los límites de la evaluación sin entrenar otro modelo ni utilizar datos personales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        304
+      ],
+      "sourceRecordIds": [
+        "31fe174d-fa98-5269-96e7-45c3832e04e7"
+      ],
+      "requiredEvidence": [
+        "data-interpretation",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation"
+      ]
+    },
+    {
+      "id": "ai-models-comparison",
+      "description": "Compara las redes neuronales, el aprendizaje profundo y el procesamiento del lenguaje natural de las fichas dadas. Explica las relaciones, diferencias y límites de los modelos sin exigir servicios, cuentas o entrenamiento propio.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        305
+      ],
+      "sourceRecordIds": [
+        "3812d53b-8516-50d0-9e2b-557ca958080d"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment"
+      ],
+      "requiredText": [
+        "redes neuronales",
+        "aprendizaje profundo",
+        "procesamiento del lenguaje natural"
+      ]
+    },
+    {
+      "id": "prompt-results-report",
+      "description": "Elabora un informe de las pruebas de los prompts del caso ficticio ya realizadas que se proporcionan. Relaciona instrucciones, respuestas y restricciones y justifica los límites observados, sin invocar servicios de IA ni datos reales.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        306
+      ],
+      "sourceRecordIds": [
+        "3f34e3a6-9773-50ce-a288-6c15a03a5cd2"
+      ],
+      "requiredEvidence": [
+        "report"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "programming",
+        "simulation",
+        "project",
+        "design",
+        "observation"
+      ]
+    },
+    {
+      "id": "functional-application-design",
+      "description": "Diseña el algoritmo de una aplicación que resuelva el problema ficticio de organización indicado. Justifica sus entradas, decisiones y salidas y compruébalo con los casos de prueba proporcionados, sin implementarlo en producción ni crear cuentas.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        307
+      ],
+      "sourceRecordIds": [
+        "ae8f071b-68dc-58bf-b5da-0c37767bf229"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "problem-reasoning",
+        "calculation",
+        "result"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-electronic-circuit",
+      "description": "Analiza Circuitos eléctricos y electrónicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        16,
+        37,
+        39
+      ],
+      "sourceRecordIds": [
+        "0b7472fe-da1b-528a-b9f8-6e4a08bd31c1",
+        "f7da748f-295a-5c6f-8fac-c960d58979fe",
+        "573c99e9-02be-5e4f-9d4c-a3e008dd0442"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electric-magnetism",
+      "description": "Analiza Electricidad y magnetismo con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        17
+      ],
+      "sourceRecordIds": [
+        "8b466997-6a37-5d56-bace-abf7281ab1bf"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electronic-components",
+      "description": "Analiza Componentes electrónicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        18
+      ],
+      "sourceRecordIds": [
+        "1c9d41f5-de9a-5064-8f7b-51723c7e8c93"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electronic-power",
+      "description": "Analiza Baterías y fuentes de alimentación con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        19
+      ],
+      "sourceRecordIds": [
+        "7b8eafb2-6233-51da-87ac-504f2977d2a0"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-digital-systems",
+      "description": "Analiza Circuitos lógicos y sistemas digitales con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        20,
+        41
+      ],
+      "sourceRecordIds": [
+        "76dc2498-b69b-547d-a865-4ea5c72ec7a8",
+        "54f4956a-62c7-5012-98c5-6601b9968dec"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-signal-communication",
+      "description": "Analiza Comunicación y transmisión de señales con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        21,
+        43
+      ],
+      "sourceRecordIds": [
+        "63f19aaf-2daf-51c8-90f4-3f5da8ecd969",
+        "48c9a846-f9aa-5705-8808-ab414dda3fd2"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electrical-measurement",
+      "description": "Analiza Instrumentación y parámetros eléctricos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        22,
+        40
+      ],
+      "sourceRecordIds": [
+        "28aa9faf-dbb6-5a16-9ce9-24982aecf7bc",
+        "2220ff47-d3f5-522a-8414-aa747f8d92f8"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-signal-control",
+      "description": "Analiza Procesamiento de señales y control con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        23,
+        44
+      ],
+      "sourceRecordIds": [
+        "1136cf00-724f-5b32-8896-9e7678485ffa",
+        "10437154-fc4d-5040-a40e-0acca7095137"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-circuit-simulation",
+      "description": "Analiza Diseño y simulación de circuitos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        24,
+        42
+      ],
+      "sourceRecordIds": [
+        "595143b0-9c97-5c91-9387-b5694e7e38c6",
+        "245bc832-cef1-596b-ab24-096d58407c00"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electrical-safety",
+      "description": "Analiza Ética y protección eléctrica mediante modelos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        25,
+        45
+      ],
+      "sourceRecordIds": [
+        "639abc18-40ca-59b2-afc8-1db7462fc4ec",
+        "5a36cc30-bf95-5275-b8d5-f56fcbc48d7b"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-scientific-phases",
+      "description": "Analiza Etapas científicas expresamente solicitadas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "sourceRecordIds": [
+        "0e57a6e4-144e-5a1a-a207-ac72acac6d11",
+        "07da8b60-ae0c-5b45-a532-7d3a84ea8590",
+        "c803979a-59a4-5528-8bc3-1c2f6a6f77f4",
+        "cae70a38-6d47-5cf3-9485-8ccb2ce39279",
+        "0f5f1872-6090-5bfe-a90c-18e410c8ebce"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-results-ethics",
+      "description": "Analiza Procedencia y límites de resultados comunicados con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        49
+      ],
+      "sourceRecordIds": [
+        "79d2c5a9-cdc9-53a1-9fd8-c02391b3cc9c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-information-contrast",
+      "description": "Analiza Contraste crítico de información dada con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        51
+      ],
+      "sourceRecordIds": [
+        "9acc9012-8676-5062-b0f2-a46345b1237b"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming",
+        "comparison"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-requested-technology",
+      "description": "Analiza Uso tecnológico expresamente solicitado con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        52
+      ],
+      "sourceRecordIds": [
+        "495e4a3b-4e0e-5c50-8f83-fb5144f3a0a4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-home-electrical-model",
+      "description": "Analiza Instalaciones domésticas e inversores mediante planos y fichas dadas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        88,
+        89,
+        90
+      ],
+      "sourceRecordIds": [
+        "fc5a9cef-2ccd-54cb-804a-38361238b7f8",
+        "71c9c150-60f0-5279-a9df-100df20d8c9c",
+        "dc5cfc15-3072-544a-b45a-6f1122da57e9"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-circuit-board-model",
+      "description": "Analiza Tarjetas de circuito impreso mediante modelos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        91
+      ],
+      "sourceRecordIds": [
+        "4f119893-5e1a-5a4f-8d4d-b76a2be2b5fa"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electronic-instrument-model",
+      "description": "Analiza Instrumentos y juguetes electrónicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        92
+      ],
+      "sourceRecordIds": [
+        "289c2fe7-c8e8-5b7a-be52-80696f8ce0a4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-rectifier-model",
+      "description": "Analiza Conversión de alterna a directa con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        93
+      ],
+      "sourceRecordIds": [
+        "9c32d86e-2a08-5904-bac8-c39603ad93bb"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-transformer-model",
+      "description": "Analiza Transformadores mediante modelos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        94
+      ],
+      "sourceRecordIds": [
+        "4de4e7a0-9638-52f4-a6ef-ac714e7dacd0"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-voltage-regulator-model",
+      "description": "Analiza Tarjetas reguladoras de voltaje con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        95
+      ],
+      "sourceRecordIds": [
+        "b722bdb0-f9d1-575f-8364-21fdb4a20129"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-electronic-enterprise-model",
+      "description": "Analiza Producto, proceso y empresa electrónica simulados con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "sourceRecordIds": [
+        "b722bdb0-f9d1-575f-8364-21fdb4a20129",
+        "922e454d-58ec-5aee-b356-13914d034677",
+        "194bc418-461b-536f-8048-395a0c2c6ea7",
+        "24a65559-eb15-5865-bd31-c932ef2d1d65",
+        "b62efa73-b38f-5c80-a1d7-866b1e774440",
+        "75fd24d7-40dd-5259-89de-d32582996ffb"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-introduction",
+      "description": "Analiza Robótica, aplicaciones y control de movimiento con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        26
+      ],
+      "sourceRecordIds": [
+        "b455f7ab-0718-5ca3-909d-3912fc56c6a1"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-configuration",
+      "description": "Analiza Configuración, ensamblaje y desmontaje de robots con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        27,
+        102,
+        103
+      ],
+      "sourceRecordIds": [
+        "f1837b05-c79a-54e6-bf76-6944abde779c",
+        "e5a0ba4e-04c0-5310-bb7e-fa6633c56da9",
+        "0b53a162-195f-5070-abe0-d9c3288ecfb6"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-coordinates",
+      "description": "Analiza Coordenadas y cinemática robótica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        28
+      ],
+      "sourceRecordIds": [
+        "1079249d-6e04-501b-8ce0-f7f3988894ca"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-movement",
+      "description": "Analiza Movimientos y tareas de robots con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        29,
+        113
+      ],
+      "sourceRecordIds": [
+        "7aaba363-dba5-51e8-acbb-0f3782c039c9",
+        "f6e49cdd-f66d-5ea9-ab5d-f0d9fc6d6d48"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-command-sequence",
+      "description": "Analiza Secuencias de comandos robóticos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        30,
+        61
+      ],
+      "sourceRecordIds": [
+        "c905df2d-0728-5993-9174-f109535b2caf",
+        "6fc4a3ea-6946-50d9-bc03-2d9d80b26956"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-sensors",
+      "description": "Analiza Sensores y actuadores según tarea con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        105,
+        106
+      ],
+      "sourceRecordIds": [
+        "774c3103-1bd9-5bed-bb1c-31e2d01fe7d8",
+        "88b70477-7dc4-5aa9-9aae-9d13a1af5bab",
+        "22152152-f194-5085-bd21-e9503e6139f5",
+        "3748be13-b651-50eb-b4ff-c0cd399d5467",
+        "a4e27dac-7a3d-56c0-a172-a30f1aa25098",
+        "9386180b-6773-57b8-86c0-14cd29c913e4",
+        "c36ed19d-e574-5fad-85d9-903240cb4f72"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-controller",
+      "description": "Analiza Controladores y parámetros con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        60,
+        111
+      ],
+      "sourceRecordIds": [
+        "adb64e72-a2bb-5862-bf71-fe3194b88490",
+        "37e84c98-a8dc-59e4-93a9-53e7c3cb09da"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-flowchart",
+      "description": "Analiza Diagramas de flujo y pseudocódigo con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        62
+      ],
+      "sourceRecordIds": [
+        "bb537579-c8a1-586a-aba5-23e8bc84b863"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-wait",
+      "description": "Analiza Comandos de espera con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        63
+      ],
+      "sourceRecordIds": [
+        "1423a49d-58ad-5a82-bb56-7aac4fc42ef0"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-control-structures",
+      "description": "Analiza Decisiones, selección y repetición con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        64,
+        65,
+        66
+      ],
+      "sourceRecordIds": [
+        "b7ad0b68-6f2e-55b7-8b07-3d02ef47af4b",
+        "11059b38-4ea6-5ac6-a18d-82eef1bd1c64",
+        "46ce65f5-880b-579e-8ba6-0ca7c9d53826"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-program-data",
+      "description": "Analiza Variables, funciones y arreglos robóticos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        67,
+        68,
+        69
+      ],
+      "sourceRecordIds": [
+        "584c8ab0-c6e2-570a-8c72-1035b05a130f",
+        "45de2493-537b-593e-b4e3-cb41627b3be7",
+        "ca766931-e6da-5220-80bd-a766c0a94513"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-programming",
+      "description": "Analiza Programación de control robótico con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        108,
+        109,
+        110
+      ],
+      "sourceRecordIds": [
+        "e18c2a22-8270-533b-8633-b06c829fbab1",
+        "b644e70d-85dd-56ae-baf6-82616c875b9c",
+        "9eab4200-3755-57ba-900e-a0715d5739d9"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-types",
+      "description": "Analiza Tipos y clasificación de robots con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        71,
+        72
+      ],
+      "sourceRecordIds": [
+        "cf6a849f-ff49-5f98-8fc7-c35fbc6585c1",
+        "8fa793fb-2857-51a9-b838-a7278fcded1f"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-vision",
+      "description": "Analiza Señales y visión artificial robótica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        73
+      ],
+      "sourceRecordIds": [
+        "d51cf294-015e-558d-a8b0-0e42304ef888"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-ai",
+      "description": "Analiza IA y aprendizaje automático robótico con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        74
+      ],
+      "sourceRecordIds": [
+        "086e1364-76d8-57f2-bcf3-557930bd46eb"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-ethics",
+      "description": "Analiza Seguridad, privacidad y ética robótica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        75
+      ],
+      "sourceRecordIds": [
+        "efcfff6d-4613-58e1-91c0-083cf2fa6b67"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-design",
+      "description": "Analiza Diseño, componentes y piezas robóticas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        76,
+        115,
+        117
+      ],
+      "sourceRecordIds": [
+        "7f2c2218-cc71-541b-b181-3f7ee430fa56",
+        "81caea96-176c-5add-93a4-8d14b536bbfa",
+        "ba264a18-34d9-5d74-9864-1b0ca46ba94e"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-collaboration",
+      "description": "Analiza Robótica colaborativa, servicio y aportaciones con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        77,
+        86
+      ],
+      "sourceRecordIds": [
+        "04d63916-f8a1-5bb8-a045-b80b878e83cc",
+        "28a2488d-4642-5db7-8738-1f1c306cff21"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-diagnosis",
+      "description": "Analiza Diagnóstico y mantenimiento robótico con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        114
+      ],
+      "sourceRecordIds": [
+        "efc764cf-a69f-5ea0-ad60-45f2b873bb4c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-simulation",
+      "description": "Analiza Simulación de robots con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        116
+      ],
+      "sourceRecordIds": [
+        "e8f17ad1-bf35-5c90-b97d-c7a11986f906"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-robot-validation",
+      "description": "Analiza Pruebas de sistemas robóticos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        118
+      ],
+      "sourceRecordIds": [
+        "6258c03a-ae4c-59f4-9fb0-5c796e9fa5d2"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-engineering-problem",
+      "description": "Analiza Estrategias de solución de problemas de ingeniería con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        79,
+        154
+      ],
+      "sourceRecordIds": [
+        "3b62f062-233f-5b6b-9331-2581d6f1a318",
+        "9adea446-e316-5405-8e86-d72edf900f08"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-spreadsheet",
+      "description": "Analiza Hojas de cálculo para métodos numéricos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        83
+      ],
+      "sourceRecordIds": [
+        "266b97e8-c75e-5302-b9fb-c0b0c60e97d6"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-function",
+      "description": "Analiza Funciones, gráficas y características con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        84,
+        85
+      ],
+      "sourceRecordIds": [
+        "2632c1cb-5e65-57f9-8d21-16f4b4d1c165",
+        "bda5f2ac-6750-59d8-8f4f-3ce3ba525bf7"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-limit",
+      "description": "Analiza Límite y cálculo numérico con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        119
+      ],
+      "sourceRecordIds": [
+        "0cc90f79-817a-5f0b-af2a-fac57c46daa4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-derivative",
+      "description": "Analiza Derivada e interpretación geométrica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        120
+      ],
+      "sourceRecordIds": [
+        "9e118f60-10da-50db-8562-bd5576783f91"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming",
+        "content"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-numerical-difference",
+      "description": "Analiza Diferencias hacia adelante, atrás y centrales con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        121
+      ],
+      "sourceRecordIds": [
+        "fb5bc8de-56bc-547a-9a8b-f40e62b1cf46"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-second-derivative",
+      "description": "Analiza Segundas derivadas numéricas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        122
+      ],
+      "sourceRecordIds": [
+        "d7c2d078-b5b1-5676-bc03-1ca5832b5e08"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-numerical-integration",
+      "description": "Analiza Integración numérica e interpretación geométrica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        123,
+        124
+      ],
+      "sourceRecordIds": [
+        "a2f5dcb1-f53b-53c9-b893-4f2a56f0a567",
+        "d8c07420-6078-5681-a06f-c4001f0d9795"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming",
+        "content"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-computational-physics",
+      "description": "Analiza Física computacional, clásica y moderna con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        125,
+        162
+      ],
+      "sourceRecordIds": [
+        "4b727ca9-dcd1-5f35-a5bf-d9645ec564db",
+        "bbf7fc80-1efc-5714-aa8b-915a9eee4afa"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-model",
+      "description": "Analiza Modelado y simulación de sistemas físicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        126,
+        163,
+        165
+      ],
+      "sourceRecordIds": [
+        "b7f6dee2-3343-5218-a75b-7eabbf27a211",
+        "cc89b56e-c29f-5bd9-a3e2-dca2565769c7",
+        "f0420a4a-bfbf-5e8b-a705-a9d588864a6c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-visualization",
+      "description": "Analiza Gráficas, animación y visualización física con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        127,
+        167
+      ],
+      "sourceRecordIds": [
+        "650ca724-f331-5adf-a358-00ff277e4626",
+        "f075a898-b5a0-571b-bbab-abf192b94e9b"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-position-graph",
+      "description": "Analiza Posición, tiempo y funciones paramétricas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        129,
+        130,
+        132,
+        174
+      ],
+      "sourceRecordIds": [
+        "edc58206-3d3f-5c5f-919e-5233171612cc",
+        "c7f2f063-d364-5bfd-b773-197b168d3b50",
+        "cd23e4d0-e0a5-5a7f-b182-3a65d0b13bdb",
+        "8ea007af-856f-5fa4-9b9e-898341d41f09"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-velocity-acceleration",
+      "description": "Analiza Velocidad y aceleración con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        131
+      ],
+      "sourceRecordIds": [
+        "b4a42c24-4122-545c-919f-3c30472f2bc1"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-uniform-motion",
+      "description": "Analiza Movimiento con velocidad constante con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        133
+      ],
+      "sourceRecordIds": [
+        "c1a29652-3355-546b-8b44-67002c088986"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-constant-acceleration",
+      "description": "Analiza Movimiento con aceleración constante con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        134
+      ],
+      "sourceRecordIds": [
+        "bac46bd2-ecac-5ac4-9011-8037c5f9f065"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-free-fall",
+      "description": "Analiza Caída libre mediante modelos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        135
+      ],
+      "sourceRecordIds": [
+        "2b6545e9-d1f2-59da-9555-692983449a4f"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-air-drag",
+      "description": "Analiza Movimiento con resistencia del aire con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        136,
+        176
+      ],
+      "sourceRecordIds": [
+        "d5c59799-1626-5c0c-9e26-c3e8067785b5",
+        "f1f310a5-799e-55bc-a61a-57d4afe05bf4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-projectile-motion",
+      "description": "Analiza Movimiento parabólico con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        137
+      ],
+      "sourceRecordIds": [
+        "b04eb75f-7bc5-53fd-9c94-cfda27f6d3a9"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-oscillatory-motion",
+      "description": "Analiza Movimiento oscilatorio con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        138,
+        177
+      ],
+      "sourceRecordIds": [
+        "f9018efc-e6d5-5434-bcb1-5eee181cce0c",
+        "446f9772-6cc0-55a0-b8da-c3bd354c0ac5"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-circular-motion",
+      "description": "Analiza Movimiento circular con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        139
+      ],
+      "sourceRecordIds": [
+        "55ff3b95-a22c-56df-ac76-3b861569fe38"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-planet-motion",
+      "description": "Analiza Gravitación y movimiento de planetas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        140,
+        177
+      ],
+      "sourceRecordIds": [
+        "e9cf874f-2d19-5572-9bea-baf58adf3baf",
+        "446f9772-6cc0-55a0-b8da-c3bd354c0ac5"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physics-trends",
+      "description": "Analiza Tendencias e impacto de física computacional con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        141
+      ],
+      "sourceRecordIds": [
+        "f0b4dbd7-55ac-57cc-ac43-ef8d9adec92f"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-newton-optional",
+      "description": "Analiza Leyes de Newton cuando se solicitan con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        143
+      ],
+      "sourceRecordIds": [
+        "eb4b845f-6aa7-5b2c-8166-b4c318adcb6e"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-linear-momentum",
+      "description": "Analiza Momento lineal con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        144
+      ],
+      "sourceRecordIds": [
+        "c1888b53-e255-53ea-8a16-67134bf81752"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-angular-momentum",
+      "description": "Analiza Momento angular con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        145
+      ],
+      "sourceRecordIds": [
+        "0e2be728-2a4f-5a7e-98d8-866c3d8b0b08"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-momentum-conservation",
+      "description": "Analiza Conservación de momentos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        146,
+        178
+      ],
+      "sourceRecordIds": [
+        "96fe559b-5644-5489-a610-a126310a0208",
+        "88ebc3dd-07f2-5644-ae5c-3edf0e85eb70"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-collision-model",
+      "description": "Analiza Colisiones con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        147
+      ],
+      "sourceRecordIds": [
+        "9aeb42c2-8f67-54d2-974f-53b4d3056867"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-energy-conservation",
+      "description": "Analiza Energía y su conservación con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        148,
+        149,
+        178
+      ],
+      "sourceRecordIds": [
+        "bd661237-9ee1-5574-a594-9f19f889b04b",
+        "0f965195-cd95-5c79-a86b-1d7b7bc38d83",
+        "88ebc3dd-07f2-5644-ae5c-3edf0e85eb70"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-algorithm",
+      "description": "Analiza Algoritmos numéricos para problemas físicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        160,
+        171
+      ],
+      "sourceRecordIds": [
+        "eb37dc55-b502-57b2-b283-818cca4346d1",
+        "0f00c0a0-919c-58d1-adb4-e588584bb97c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-symbolic-optimization",
+      "description": "Analiza Cálculo simbólico y optimización con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        161
+      ],
+      "sourceRecordIds": [
+        "8288b273-1457-58fb-81b1-e340e21348bf"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-data-analysis",
+      "description": "Analiza Análisis estadístico, datos y teoría física con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        164,
+        170,
+        175
+      ],
+      "sourceRecordIds": [
+        "229dbbed-94ff-5c8e-9a27-d9f942cccc40",
+        "a2086c04-0ae5-5b7d-8dd4-842b56ccfe11",
+        "3ca7bc76-0fbb-5120-a937-0ca69073583f"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-oop",
+      "description": "Analiza Objetos y estructuras de datos en física con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        166
+      ],
+      "sourceRecordIds": [
+        "dfc798e4-e7a4-5a81-b5f9-fc0fe30b42b1"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-report",
+      "description": "Analiza Informes científicos digitales con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        168
+      ],
+      "sourceRecordIds": [
+        "de139f99-1378-5337-a764-0e2b6744a0df"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-model-validation",
+      "description": "Analiza Validación de modelos y algoritmos físicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        169
+      ],
+      "sourceRecordIds": [
+        "55625fbd-edd2-5e87-96c2-6c74c84ed443"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-project",
+      "description": "Analiza Proyecto de física computacional con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        172
+      ],
+      "sourceRecordIds": [
+        "16da026f-e2c8-5aed-bc16-51bbe5363334"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-ethics",
+      "description": "Analiza Ética y responsabilidad en casos físicos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        179
+      ],
+      "sourceRecordIds": [
+        "fd3f4d78-4c5e-5b27-aafc-ff532e83df3b"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-physical-applications",
+      "description": "Analiza Aplicaciones físicas en salud, ambiente y astronomía con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        180
+      ],
+      "sourceRecordIds": [
+        "ea2f2198-b67c-57e7-86a6-bd4428ada194"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "salud",
+        "ambiente",
+        "astronomía"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-programming-basics",
+      "description": "Analiza Programación, variables y tipos de datos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        151,
+        152,
+        217,
+        241
+      ],
+      "sourceRecordIds": [
+        "972561fd-9147-5714-b937-ded4d9aa3a9c",
+        "a5b84b03-1a31-5130-9b90-5c11ff7dcba6",
+        "b3a421f0-eac9-5166-aeef-8d0715477e71",
+        "551c7e17-e938-548a-919b-66d41c7a4d29"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-functions-objects",
+      "description": "Analiza Funciones, clases y programación orientada a objetos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        181,
+        219
+      ],
+      "sourceRecordIds": [
+        "c7c8d123-f504-55f4-be6f-7cf9bec778b6",
+        "a4f0cf88-9bf2-507e-b5ee-5197a7c2fe93"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "expectedCriteria": 1,
+      "requiredTopic": "functions-objects"
+    },
+    {
+      "id": "source-algorithms-data-structures",
+      "description": "Analiza Algoritmos y estructuras de datos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        182,
+        220
+      ],
+      "sourceRecordIds": [
+        "41e0acd1-fe21-5c4b-8a00-1611c360cc66",
+        "01771b41-2e60-5cad-a3de-2907cf495ef0"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-graphical-interface",
+      "description": "Analiza Interfaces gráficas según usuarios y tarea con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        183,
+        221
+      ],
+      "sourceRecordIds": [
+        "64bf5773-9490-55ab-bf0d-21b4c7b740bd",
+        "af546947-f7d2-5c9a-bdf3-00c4217e3829"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-programming-security",
+      "description": "Analiza Seguridad y ética de código propio o entorno ficticio con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        184
+      ],
+      "sourceRecordIds": [
+        "fc62278c-cf4b-5f01-9789-8150af4478fc"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-control-structures",
+      "description": "Analiza Selección y bucles de programación con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        218
+      ],
+      "sourceRecordIds": [
+        "b4585d2c-1332-53ee-b1fb-a1da02cff7a8"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-html-structure",
+      "description": "Analiza HTML, etiquetas y contenido textual con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        187,
+        189,
+        224
+      ],
+      "sourceRecordIds": [
+        "57e326fb-fb08-51f7-97f5-228170b26ee3",
+        "47c09c42-4150-5b6f-beb0-746255abf90f",
+        "39a9f9f5-1a64-5edf-933e-a1e8238bfd91"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-html-rich-content",
+      "description": "Analiza Encabezados, listas, enlaces e imágenes con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        190
+      ],
+      "sourceRecordIds": [
+        "45279e7d-d754-5f41-86ae-1fbc14b01a81"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-html-multimedia",
+      "description": "Analiza Tablas y multimedia con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        191,
+        225
+      ],
+      "sourceRecordIds": [
+        "83ef7ffa-ab08-5e85-b06e-7ac7dfc2c712",
+        "14702a2d-409b-5c59-b03b-c8af4de3b3e3"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-html-forms",
+      "description": "Analiza Formularios y controles con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        192
+      ],
+      "sourceRecordIds": [
+        "b6d59aef-a96b-5f2e-bc05-a5a207e6b655"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-html-compatibility",
+      "description": "Analiza Validación y compatibilidad HTML con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        193
+      ],
+      "sourceRecordIds": [
+        "0584b379-d3e5-53c3-afbf-a5846dee08f1"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-web-dom",
+      "description": "Analiza Modelo de Objetos del Documento con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        194
+      ],
+      "sourceRecordIds": [
+        "dbdf9773-e5c9-5364-9528-e3b0d2543d92"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-javascript-syntax",
+      "description": "Analiza Sintaxis JavaScript con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        195
+      ],
+      "sourceRecordIds": [
+        "4092fb80-e688-5350-88db-9b477bd8011c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-values",
+      "description": "Analiza Variables, referencias y valores primitivos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        196,
+        197
+      ],
+      "sourceRecordIds": [
+        "6a29e2ac-3727-5960-ab01-1d8e2a4c8a5e",
+        "ec7b5e79-c926-562d-ba5c-dfe4bfd7c00c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-types",
+      "description": "Analiza Valores lógicos, fechas, objetos y arreglos con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        198
+      ],
+      "sourceRecordIds": [
+        "2209db86-4ed2-5ef7-ad5c-757b9ba4e955"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-operators",
+      "description": "Analiza Operadores JavaScript con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        199
+      ],
+      "sourceRecordIds": [
+        "8a2f5fb1-b6df-56c4-87fb-d811e7c66a73"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-control",
+      "description": "Analiza Selección y bucles JavaScript con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        200
+      ],
+      "sourceRecordIds": [
+        "219160f2-d003-5dbd-81c0-2b1519daf5cc"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-json-functions",
+      "description": "Analiza JSON y funciones JavaScript con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        201
+      ],
+      "sourceRecordIds": [
+        "f2505680-8d95-5cd4-a9b0-079b09c5a800"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-web-bom",
+      "description": "Analiza Browser Object Model con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        202
+      ],
+      "sourceRecordIds": [
+        "4793e514-7002-50f2-830c-5000ce87d28a"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "source-css-style",
+      "description": "Analiza Estilos y hojas CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        203,
+        231,
+        232
+      ],
+      "sourceRecordIds": [
+        "de7c3e15-2669-5f39-bbbf-607e3a4c896a",
+        "f38a3924-cd51-5d29-b9fb-a32be758aca7",
+        "93c69e3d-627a-577a-b01f-94df54897f41"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-css-selectors",
+      "description": "Analiza Selectores CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        204
+      ],
+      "sourceRecordIds": [
+        "1c67b780-81f7-5cc3-8a0b-491fe443867f"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-css-properties",
+      "description": "Analiza Propiedades CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        205
+      ],
+      "sourceRecordIds": [
+        "91aa2f4b-814a-5333-bcbb-660caa2de193"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-css-cascade",
+      "description": "Analiza Orden de cascada CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        206
+      ],
+      "sourceRecordIds": [
+        "a7afdd16-6aae-59fc-a6e9-070f35546a15"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming",
+        "sequence"
+      ]
+    },
+    {
+      "id": "source-css-text",
+      "description": "Analiza Formato textual CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        207
+      ],
+      "sourceRecordIds": [
+        "7b50cd1c-d4dd-519e-a343-4b092c51421e"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-css-box",
+      "description": "Analiza Modelo de caja CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        208
+      ],
+      "sourceRecordIds": [
+        "e331e2c7-d897-5435-8c2c-f69f7d68f9e7"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-css-background",
+      "description": "Analiza Imágenes de fondo CSS con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        209
+      ],
+      "sourceRecordIds": [
+        "842f90a4-92b9-5556-9d50-67b80c3617b2"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-mobile-frameworks",
+      "description": "Analiza Recursos para aplicaciones móviles con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        211
+      ],
+      "sourceRecordIds": [
+        "46af9b36-ef1e-531d-8cee-352d02516898"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-mobile-specifics",
+      "description": "Analiza Particularidades móviles con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        212
+      ],
+      "sourceRecordIds": [
+        "e77c69b0-30df-534a-b79d-d54e7210ca4b"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-application-market-model",
+      "description": "Analiza Comercialización y distribución de aplicaciones simuladas con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        214,
+        215,
+        233,
+        235
+      ],
+      "sourceRecordIds": [
+        "c22c0348-8dc5-5699-9061-ab686cb36b92",
+        "cb75f2fb-cd08-572b-ae3d-9a5c2b911e68",
+        "3d451b1c-08ca-599d-990f-1e077127099f",
+        "36b6d29c-ca63-5a32-a8fc-ccf026412ff8"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-javascript-dynamic-page",
+      "description": "Analiza Comportamiento y datos con JavaScript con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        227
+      ],
+      "sourceRecordIds": [
+        "2fca2e19-83fc-56ee-8ef9-fa20c934d8d6"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-educational-web-application",
+      "description": "Analiza Aplicación educativa o lúdica con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        228
+      ],
+      "sourceRecordIds": [
+        "d44e13f4-6cd4-5304-87a7-3859eb44c47c"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-automation-web-application",
+      "description": "Analiza Aplicación para automatizar tarea con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        229
+      ],
+      "sourceRecordIds": [
+        "3ce990e9-250f-5240-b8d2-103ce1bd5ecb"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-application-database",
+      "description": "Analiza Almacenamiento y acceso abase de datos ficticios con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        236
+      ],
+      "sourceRecordIds": [
+        "0e3f69f8-2bd4-54eb-b13f-d2b929709dd3"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-game-animation",
+      "description": "Analiza Juegos y animaciones según recurso de acceso con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        237
+      ],
+      "sourceRecordIds": [
+        "c9e2aed2-f595-59de-9596-4cb744cd675a"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-machine-learning",
+      "description": "Analiza Aprendizaje automático y redes neuronales con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        238,
+        243,
+        244,
+        245,
+        261,
+        262,
+        269
+      ],
+      "sourceRecordIds": [
+        "2d67232d-40e1-53ff-9242-93661437904f",
+        "989c5b01-1493-59b1-b7cc-ec3db9af340b",
+        "f144bf73-974d-5f11-9b1b-17a9532ead55",
+        "907d5c27-19c8-5f30-97f7-4a68a8158f11",
+        "b6c57f85-835f-5de2-8192-2ad14e9c4876",
+        "339d9c61-6754-5de8-8c14-9f315861e0d5",
+        "4a1128c3-6ba5-5202-9499-a3a1a224f7e4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-deep-learning",
+      "description": "Analiza Aprendizaje profundo con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        246,
+        263
+      ],
+      "sourceRecordIds": [
+        "80d1402f-a8c0-52fc-a078-9befc91dc0dc",
+        "9eca22e4-f8c7-5534-ad84-59764f3c0458"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-computer-vision",
+      "description": "Analiza Visión artificial y procesamiento de imágenes con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        247,
+        264
+      ],
+      "sourceRecordIds": [
+        "9f854a76-4efa-5d14-8906-bd352f9c53d1",
+        "d8f5096b-b06d-5641-8ca5-225989aa1b79"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-natural-language-processing",
+      "description": "Analiza Procesamiento de lenguaje natural con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        248,
+        265
+      ],
+      "sourceRecordIds": [
+        "78f65211-e2d8-5251-a7f0-0d72a3067f72",
+        "aab4ee25-205c-5f94-9704-bfc02e2b65c4"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-search-optimization",
+      "description": "Analiza Búsqueda y optimización con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        249,
+        266
+      ],
+      "sourceRecordIds": [
+        "554b0268-4100-57bd-a771-7a8d1cba8ea7",
+        "cc195949-90dc-5853-af3b-a3173e80d381"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-expert-fuzzy-systems",
+      "description": "Analiza Sistemas expertos y lógica difusa con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        250,
+        267
+      ],
+      "sourceRecordIds": [
+        "ce817d84-96d4-5e39-9425-a93b9b340884",
+        "eb243def-44ed-5364-b5fc-7c1bce8d5944"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-ai-ethics",
+      "description": "Analiza Ética, responsabilidad y futuro de IA con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        251,
+        252,
+        268
+      ],
+      "sourceRecordIds": [
+        "439e92d3-2470-5a6a-a65c-c954f07f4095",
+        "c00e2eff-843d-5f12-b386-9ad3ff046bf9",
+        "c602a07f-b073-531c-8166-88ea7c16ed1e"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-introduction",
+      "description": "Analiza Ingeniería de prompts y aplicaciones con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        239,
+        242
+      ],
+      "sourceRecordIds": [
+        "401dd3ed-d987-50b5-8ba5-f214dc5a0d1b",
+        "6f1c56bc-dc80-5346-b3c6-d0d89490f31a"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-design",
+      "description": "Analiza Diseño, instrucciones y mejora de prompts con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        70,
+        80,
+        155,
+        157,
+        253,
+        257,
+        258,
+        259,
+        271
+      ],
+      "sourceRecordIds": [
+        "4da53da4-2adb-578b-8d0e-5fc6ac67867c",
+        "4f52cabd-696d-5a24-9dee-9967af408e87",
+        "b59b30e9-88ac-57d9-acea-b4138acbe8b7",
+        "d901e015-36ef-5724-a2e3-bb86b4ce9941",
+        "c9ab6a1a-97a7-5fcb-b3f4-2d72e78e32fc",
+        "42a79019-2893-56b1-96f9-82bea132b936",
+        "a933b467-a6f5-5462-9a87-b4fd9cb3a3bd",
+        "49f7f9ac-3474-5c55-a555-0d20e1af39e0",
+        "2758a9b2-1b13-51d6-9617-2588e8fc8c92"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-analysis",
+      "description": "Analiza Análisis de prompts para imágenes o control con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        81,
+        156
+      ],
+      "sourceRecordIds": [
+        "bbd7aeb3-7230-509f-8609-c7c99f1707b4",
+        "d217bfde-b6d4-5346-846b-5515f09ff888"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-validation",
+      "description": "Analiza Pruebas y validación de prompts con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        240,
+        270
+      ],
+      "sourceRecordIds": [
+        "6bd74757-2375-56a3-8d28-e155c7c2b525",
+        "48feb47a-d1f5-53a3-aec2-5acf735d9dd8"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-data",
+      "description": "Analiza Adquisición de datos y prompts con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        254
+      ],
+      "sourceRecordIds": [
+        "ddfdb2aa-2fb0-570e-b99b-db6f27cd0aa8"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-selection",
+      "description": "Analiza Tipos y elección de prompts con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        255,
+        256
+      ],
+      "sourceRecordIds": [
+        "91c4209e-9f6c-564b-97bd-2477f0d1f8cd",
+        "e5e94b85-990a-55b9-a733-cb493846d0fc"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "source-prompt-security",
+      "description": "Analiza Seguridad y ética de prompts con las fuentes y fichas proporcionadas. Fundamenta las relaciones expresamente solicitadas; sin ejecutar procedimientos reales ni buscar otras fuentes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        260
+      ],
+      "sourceRecordIds": [
+        "71476c4b-c538-502a-b487-17e3535ab9df"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "facet-resistor",
+      "description": "Analiza resistencias electrónicas usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide capacitores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        18
+      ],
+      "sourceRecordIds": [
+        "1c9d41f5-de9a-5064-8f7b-51723c7e8c93"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "resistencias electrónicas"
+      ],
+      "forbiddenText": [
+        "capacitores"
+      ]
+    },
+    {
+      "id": "facet-capacitor",
+      "description": "Analiza capacitores usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide transistores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        18
+      ],
+      "sourceRecordIds": [
+        "1c9d41f5-de9a-5064-8f7b-51723c7e8c93"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "capacitores"
+      ],
+      "forbiddenText": [
+        "transistores"
+      ]
+    },
+    {
+      "id": "facet-diode",
+      "description": "Analiza diodos usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide inductores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        18
+      ],
+      "sourceRecordIds": [
+        "1c9d41f5-de9a-5064-8f7b-51723c7e8c93"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "diodos"
+      ],
+      "forbiddenText": [
+        "inductores"
+      ]
+    },
+    {
+      "id": "facet-transistor",
+      "description": "Analiza transistores usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide capacitores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        18
+      ],
+      "sourceRecordIds": [
+        "1c9d41f5-de9a-5064-8f7b-51723c7e8c93"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "transistores"
+      ],
+      "forbiddenText": [
+        "capacitores"
+      ]
+    },
+    {
+      "id": "facet-battery",
+      "description": "Analiza baterías usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide fuentes de alimentación.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        19
+      ],
+      "sourceRecordIds": [
+        "7b8eafb2-6233-51da-87ac-504f2977d2a0"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "baterías"
+      ],
+      "forbiddenText": [
+        "fuentes de alimentación"
+      ]
+    },
+    {
+      "id": "facet-power-supply",
+      "description": "Analiza fuentes de alimentación usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide baterías.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        19
+      ],
+      "sourceRecordIds": [
+        "7b8eafb2-6233-51da-87ac-504f2977d2a0"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "fuentes de alimentación"
+      ],
+      "forbiddenText": [
+        "baterías"
+      ]
+    },
+    {
+      "id": "facet-wire-gauge",
+      "description": "Analiza calibre del alambrado usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide conexión a tierra.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        88
+      ],
+      "sourceRecordIds": [
+        "fc5a9cef-2ccd-54cb-804a-38361238b7f8"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "calibre del alambrado"
+      ],
+      "forbiddenText": [
+        "conexión a tierra"
+      ]
+    },
+    {
+      "id": "facet-grounding",
+      "description": "Analiza conexión a tierra usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide calibre del alambrado.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        89
+      ],
+      "sourceRecordIds": [
+        "71c9c150-60f0-5279-a9df-100df20d8c9c"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "conexión a tierra"
+      ],
+      "forbiddenText": [
+        "calibre del alambrado"
+      ]
+    },
+    {
+      "id": "facet-inverter",
+      "description": "Analiza inversores usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide transformadores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        90
+      ],
+      "sourceRecordIds": [
+        "dc5cfc15-3072-544a-b45a-6f1122da57e9"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "inversores"
+      ],
+      "forbiddenText": [
+        "transformadores"
+      ]
+    },
+    {
+      "id": "facet-rectifier",
+      "description": "Analiza conversión de alterna a directa usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide transformadores.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        93
+      ],
+      "sourceRecordIds": [
+        "9c32d86e-2a08-5904-bac8-c39603ad93bb"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "conversión de alterna a directa"
+      ],
+      "forbiddenText": [
+        "transformadores"
+      ]
+    },
+    {
+      "id": "facet-transformer",
+      "description": "Analiza transformadores usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide rectificador.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        94
+      ],
+      "sourceRecordIds": [
+        "4de4e7a0-9638-52f4-a6ef-ac714e7dacd0"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "transformadores"
+      ],
+      "forbiddenText": [
+        "rectificador"
+      ]
+    },
+    {
+      "id": "facet-regulator",
+      "description": "Analiza tarjetas reguladoras de voltaje usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide comercialización.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        95
+      ],
+      "sourceRecordIds": [
+        "b722bdb0-f9d1-575f-8364-21fdb4a20129"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "tarjetas reguladoras de voltaje"
+      ],
+      "forbiddenText": [
+        "comercialización"
+      ]
+    },
+    {
+      "id": "facet-contact-sensor",
+      "description": "Analiza sensor de contacto del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide sensor de color.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        56
+      ],
+      "sourceRecordIds": [
+        "88b70477-7dc4-5aa9-9aae-9d13a1af5bab"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "sensor de contacto del robot"
+      ],
+      "forbiddenText": [
+        "sensor de color"
+      ]
+    },
+    {
+      "id": "facet-sonar",
+      "description": "Analiza sonares del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide giroscopio.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        57
+      ],
+      "sourceRecordIds": [
+        "22152152-f194-5085-bd21-e9503e6139f5"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "sonares del robot"
+      ],
+      "forbiddenText": [
+        "giroscopio"
+      ]
+    },
+    {
+      "id": "facet-gyroscope",
+      "description": "Analiza giroscopio del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide sonares.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        58
+      ],
+      "sourceRecordIds": [
+        "3748be13-b651-50eb-b4ff-c0cd399d5467"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "giroscopio del robot"
+      ],
+      "forbiddenText": [
+        "sonares"
+      ]
+    },
+    {
+      "id": "facet-color-sensor",
+      "description": "Analiza sensor de color del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide sensor de contacto.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        59
+      ],
+      "sourceRecordIds": [
+        "a4e27dac-7a3d-56c0-a172-a30f1aa25098"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "sensor de color del robot"
+      ],
+      "forbiddenText": [
+        "sensor de contacto"
+      ]
+    },
+    {
+      "id": "facet-robot-variable",
+      "description": "Analiza variables del programa robótico usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide clases de objetos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        67
+      ],
+      "sourceRecordIds": [
+        "584c8ab0-c6e2-570a-8c72-1035b05a130f"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "variables del programa robótico"
+      ],
+      "forbiddenText": [
+        "clases de objetos"
+      ]
+    },
+    {
+      "id": "facet-robot-function",
+      "description": "Analiza funciones del programa robótico usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide arreglos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        68
+      ],
+      "sourceRecordIds": [
+        "45de2493-537b-593e-b4e3-cb41627b3be7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "funciones del programa robótico"
+      ],
+      "forbiddenText": [
+        "arreglos"
+      ],
+      "expectedCriteria": 2,
+      "requiredTopic": "robot-program-data"
+    },
+    {
+      "id": "facet-robot-array",
+      "description": "Analiza arreglos del programa robótico usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide clases de objetos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        69
+      ],
+      "sourceRecordIds": [
+        "ca766931-e6da-5220-80bd-a766c0a94513"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "arreglos del programa robótico"
+      ],
+      "forbiddenText": [
+        "clases de objetos"
+      ],
+      "expectedCriteria": 2,
+      "requiredTopic": "robot-program-data"
+    },
+    {
+      "id": "facet-robot-decision",
+      "description": "Analiza toma de decisiones del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide comandos de espera.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        64
+      ],
+      "sourceRecordIds": [
+        "b7ad0b68-6f2e-55b7-8b07-3d02ef47af4b"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "toma de decisiones del robot"
+      ],
+      "forbiddenText": [
+        "comandos de espera"
+      ]
+    },
+    {
+      "id": "facet-robot-selection",
+      "description": "Analiza estructura de selección del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide estructuras de repetición.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        65
+      ],
+      "sourceRecordIds": [
+        "11059b38-4ea6-5ac6-a18d-82eef1bd1c64"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "estructura de selección del robot"
+      ],
+      "forbiddenText": [
+        "estructuras de repetición"
+      ]
+    },
+    {
+      "id": "facet-robot-loop",
+      "description": "Analiza estructuras de repetición del robot usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide comandos de espera.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        66
+      ],
+      "sourceRecordIds": [
+        "46ce65f5-880b-579e-8ba6-0ca7c9d53826"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "estructuras de repetición del robot"
+      ],
+      "forbiddenText": [
+        "comandos de espera"
+      ]
+    },
+    {
+      "id": "facet-forward-difference",
+      "description": "Analiza diferencias hacia adelante usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide diferencias centrales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        121
+      ],
+      "sourceRecordIds": [
+        "fb5bc8de-56bc-547a-9a8b-f40e62b1cf46"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "diferencias hacia adelante"
+      ],
+      "forbiddenText": [
+        "diferencias centrales"
+      ]
+    },
+    {
+      "id": "facet-backward-difference",
+      "description": "Analiza diferencias hacia atrás usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide diferencias hacia adelante.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        121
+      ],
+      "sourceRecordIds": [
+        "fb5bc8de-56bc-547a-9a8b-f40e62b1cf46"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "diferencias hacia atrás"
+      ],
+      "forbiddenText": [
+        "diferencias hacia adelante"
+      ]
+    },
+    {
+      "id": "facet-central-difference",
+      "description": "Analiza diferencias centrales usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide diferencias hacia atrás.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        121
+      ],
+      "sourceRecordIds": [
+        "fb5bc8de-56bc-547a-9a8b-f40e62b1cf46"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "diferencias centrales"
+      ],
+      "forbiddenText": [
+        "diferencias hacia atrás"
+      ]
+    },
+    {
+      "id": "facet-second-derivative",
+      "description": "Analiza segunda derivada numérica usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide integración numérica.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        122
+      ],
+      "sourceRecordIds": [
+        "d7c2d078-b5b1-5676-bc03-1ca5832b5e08"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "segunda derivada numérica"
+      ],
+      "forbiddenText": [
+        "integración numérica"
+      ]
+    },
+    {
+      "id": "facet-trapezoid",
+      "description": "Analiza método del trapecio usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide método de Simpson.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        124
+      ],
+      "sourceRecordIds": [
+        "d8c07420-6078-5681-a06f-c4001f0d9795"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "método del trapecio"
+      ],
+      "forbiddenText": [
+        "método de Simpson"
+      ]
+    },
+    {
+      "id": "facet-simpson",
+      "description": "Analiza método de Simpson usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide método del trapecio.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        124
+      ],
+      "sourceRecordIds": [
+        "d8c07420-6078-5681-a06f-c4001f0d9795"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "método de Simpson"
+      ],
+      "forbiddenText": [
+        "método del trapecio"
+      ]
+    },
+    {
+      "id": "facet-function-graph",
+      "description": "Analiza gráficas de funciones usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide funciones de programación.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        84
+      ],
+      "sourceRecordIds": [
+        "2632c1cb-5e65-57f9-8d21-16f4b4d1c165"
+      ],
+      "requiredEvidence": [
+        "data-interpretation",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "gráficas de funciones"
+      ],
+      "forbiddenText": [
+        "funciones de programación"
+      ],
+      "expectedCriteria": 2,
+      "requiredTopic": "numerical-function"
+    },
+    {
+      "id": "facet-asymptote",
+      "description": "Analiza asíntotas de la función usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide raíces.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        85
+      ],
+      "sourceRecordIds": [
+        "bda5f2ac-6750-59d8-8f4f-3ce3ba525bf7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "asíntotas de la función"
+      ],
+      "forbiddenText": [
+        "raíces"
+      ]
+    },
+    {
+      "id": "facet-root",
+      "description": "Analiza raíces de la función usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide asíntotas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        85
+      ],
+      "sourceRecordIds": [
+        "bda5f2ac-6750-59d8-8f4f-3ce3ba525bf7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "raíces de la función"
+      ],
+      "forbiddenText": [
+        "asíntotas"
+      ]
+    },
+    {
+      "id": "facet-newton",
+      "description": "Analiza leyes de Newton usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide momento angular.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        143
+      ],
+      "sourceRecordIds": [
+        "eb4b845f-6aa7-5b2c-8166-b4c318adcb6e"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "leyes de Newton"
+      ],
+      "forbiddenText": [
+        "momento angular"
+      ]
+    },
+    {
+      "id": "facet-linear-momentum",
+      "description": "Analiza momento lineal usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide momento angular.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        144
+      ],
+      "sourceRecordIds": [
+        "c1888b53-e255-53ea-8a16-67134bf81752"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "momento lineal"
+      ],
+      "forbiddenText": [
+        "momento angular"
+      ]
+    },
+    {
+      "id": "facet-angular-momentum",
+      "description": "Analiza momento angular usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide momento lineal.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        145
+      ],
+      "sourceRecordIds": [
+        "0e2be728-2a4f-5a7e-98d8-866c3d8b0b08"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "momento angular"
+      ],
+      "forbiddenText": [
+        "momento lineal"
+      ]
+    },
+    {
+      "id": "facet-energy",
+      "description": "Analiza conservación de la energía usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide momento angular.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        149
+      ],
+      "sourceRecordIds": [
+        "0f965195-cd95-5c79-a86b-1d7b7bc38d83"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "conservación de la energía"
+      ],
+      "forbiddenText": [
+        "momento angular"
+      ]
+    },
+    {
+      "id": "facet-html-text",
+      "description": "Analiza contenido textual HTML usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide JavaScript.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        189
+      ],
+      "sourceRecordIds": [
+        "47c09c42-4150-5b6f-beb0-746255abf90f"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "contenido textual HTML"
+      ],
+      "forbiddenText": [
+        "programa una función JavaScript"
+      ]
+    },
+    {
+      "id": "facet-html-link",
+      "description": "Analiza enlaces HTML usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide imágenes.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        190
+      ],
+      "sourceRecordIds": [
+        "45279e7d-d754-5f41-86ae-1fbc14b01a81"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "enlaces HTML"
+      ],
+      "forbiddenText": [
+        "imágenes"
+      ]
+    },
+    {
+      "id": "facet-html-table",
+      "description": "Analiza tablas HTML usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide multimedia.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        191
+      ],
+      "sourceRecordIds": [
+        "83ef7ffa-ab08-5e85-b06e-7ac7dfc2c712"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "tablas HTML"
+      ],
+      "forbiddenText": [
+        "multimedia"
+      ]
+    },
+    {
+      "id": "facet-html-form",
+      "description": "Analiza formularios HTML usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide base de datos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        192
+      ],
+      "sourceRecordIds": [
+        "b6d59aef-a96b-5f2e-bc05-a5a207e6b655"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "formularios HTML"
+      ],
+      "forbiddenText": [
+        "base de datos"
+      ]
+    },
+    {
+      "id": "facet-js-primitive",
+      "description": "Analiza valores primitivos JavaScript usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide todo primitivo es un objeto.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        197
+      ],
+      "sourceRecordIds": [
+        "ec7b5e79-c926-562d-ba5c-dfe4bfd7c00c"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "valores primitivos"
+      ],
+      "forbiddenText": [
+        "son objetos primitivos"
+      ]
+    },
+    {
+      "id": "facet-js-date",
+      "description": "Analiza fechas JavaScript usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide arreglos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        198
+      ],
+      "sourceRecordIds": [
+        "2209db86-4ed2-5ef7-ad5c-757b9ba4e955"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "fechas JavaScript"
+      ],
+      "forbiddenText": [
+        "arreglos"
+      ]
+    },
+    {
+      "id": "facet-js-array",
+      "description": "Analiza arreglos JavaScript usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide fechas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        198
+      ],
+      "sourceRecordIds": [
+        "2209db86-4ed2-5ef7-ad5c-757b9ba4e955"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "arreglos JavaScript"
+      ],
+      "forbiddenText": [
+        "fechas"
+      ]
+    },
+    {
+      "id": "facet-json",
+      "description": "Analiza JSON usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide función JavaScript.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        201
+      ],
+      "sourceRecordIds": [
+        "f2505680-8d95-5cd4-a9b0-079b09c5a800"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "JSON"
+      ],
+      "forbiddenText": [
+        "función JavaScript"
+      ]
+    },
+    {
+      "id": "facet-js-function",
+      "description": "Analiza funciones JavaScript usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide JSON.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        201
+      ],
+      "sourceRecordIds": [
+        "f2505680-8d95-5cd4-a9b0-079b09c5a800"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "funciones JavaScript"
+      ],
+      "forbiddenText": [
+        "JSON"
+      ]
+    },
+    {
+      "id": "facet-bom",
+      "description": "Analiza Browser Object Model usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide modelo de objetos del documento.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        202
+      ],
+      "sourceRecordIds": [
+        "4793e514-7002-50f2-830c-5000ce87d28a"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "Browser Object Model"
+      ],
+      "forbiddenText": [
+        "modelo de objetos del documento"
+      ]
+    },
+    {
+      "id": "facet-css-selector",
+      "description": "Analiza selectores CSS usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide modelo de caja.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        204
+      ],
+      "sourceRecordIds": [
+        "1c67b780-81f7-5cc3-8a0b-491fe443867f"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "selectores CSS"
+      ],
+      "forbiddenText": [
+        "modelo de caja"
+      ]
+    },
+    {
+      "id": "facet-css-cascade",
+      "description": "Analiza orden de cascada CSS usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide modelo de caja.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        206
+      ],
+      "sourceRecordIds": [
+        "a7afdd16-6aae-59fc-a6e9-070f35546a15"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming",
+        "sequence"
+      ],
+      "requiredText": [
+        "orden de cascada CSS"
+      ],
+      "forbiddenText": [
+        "modelo de caja"
+      ]
+    },
+    {
+      "id": "facet-css-text",
+      "description": "Analiza formato de texto CSS usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide imágenes de fondo.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        207
+      ],
+      "sourceRecordIds": [
+        "7b50cd1c-d4dd-519e-a343-4b092c51421e"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "formato de texto CSS"
+      ],
+      "forbiddenText": [
+        "imágenes de fondo"
+      ]
+    },
+    {
+      "id": "facet-css-box",
+      "description": "Analiza modelo de caja CSS usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide formato de texto.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        208
+      ],
+      "sourceRecordIds": [
+        "e331e2c7-d897-5435-8c2c-f69f7d68f9e7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "modelo de caja CSS"
+      ],
+      "forbiddenText": [
+        "formato de texto"
+      ]
+    },
+    {
+      "id": "facet-css-background",
+      "description": "Analiza imágenes de fondo CSS usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide modelo de caja.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        209
+      ],
+      "sourceRecordIds": [
+        "842f90a4-92b9-5556-9d50-67b80c3617b2"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "imágenes de fondo CSS"
+      ],
+      "forbiddenText": [
+        "modelo de caja"
+      ]
+    },
+    {
+      "id": "facet-neural-network",
+      "description": "Analiza redes neuronales usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide procesamiento del lenguaje natural.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        245
+      ],
+      "sourceRecordIds": [
+        "907d5c27-19c8-5f30-97f7-4a68a8158f11"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "redes neuronales"
+      ],
+      "forbiddenText": [
+        "procesamiento del lenguaje natural"
+      ]
+    },
+    {
+      "id": "facet-deep-learning",
+      "description": "Analiza aprendizaje profundo usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide procesamiento del lenguaje natural.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        246
+      ],
+      "sourceRecordIds": [
+        "80d1402f-a8c0-52fc-a078-9befc91dc0dc"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "aprendizaje profundo"
+      ],
+      "forbiddenText": [
+        "procesamiento del lenguaje natural"
+      ]
+    },
+    {
+      "id": "facet-computer-vision",
+      "description": "Analiza visión artificial usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide procesamiento del lenguaje natural.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        247
+      ],
+      "sourceRecordIds": [
+        "9f854a76-4efa-5d14-8906-bd352f9c53d1"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "visión artificial"
+      ],
+      "forbiddenText": [
+        "procesamiento del lenguaje natural"
+      ]
+    },
+    {
+      "id": "facet-nlp",
+      "description": "Analiza procesamiento del lenguaje natural usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide visión artificial.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        248
+      ],
+      "sourceRecordIds": [
+        "78f65211-e2d8-5251-a7f0-0d72a3067f72"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "procesamiento del lenguaje natural"
+      ],
+      "forbiddenText": [
+        "visión artificial"
+      ]
+    },
+    {
+      "id": "facet-search",
+      "description": "Analiza búsqueda y optimización usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide lógica difusa.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        249
+      ],
+      "sourceRecordIds": [
+        "554b0268-4100-57bd-a771-7a8d1cba8ea7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "búsqueda y optimización"
+      ],
+      "forbiddenText": [
+        "lógica difusa"
+      ]
+    },
+    {
+      "id": "facet-expert",
+      "description": "Analiza sistemas expertos usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide lógica difusa.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        250
+      ],
+      "sourceRecordIds": [
+        "ce817d84-96d4-5e39-9425-a93b9b340884"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "sistemas expertos"
+      ],
+      "forbiddenText": [
+        "lógica difusa"
+      ]
+    },
+    {
+      "id": "facet-fuzzy",
+      "description": "Analiza lógica difusa usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide sistemas expertos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        250
+      ],
+      "sourceRecordIds": [
+        "ce817d84-96d4-5e39-9425-a93b9b340884"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "lógica difusa"
+      ],
+      "forbiddenText": [
+        "sistemas expertos"
+      ]
+    },
+    {
+      "id": "facet-prompt-types",
+      "description": "Analiza tipos de prompts usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide programación de robots.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        255
+      ],
+      "sourceRecordIds": [
+        "91c4209e-9f6c-564b-97bd-2477f0d1f8cd"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "tipos de prompts"
+      ],
+      "forbiddenText": [
+        "programación de robots"
+      ]
+    },
+    {
+      "id": "facet-prompt-choice",
+      "description": "Analiza elección de prompts usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide programación de robots.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        256
+      ],
+      "sourceRecordIds": [
+        "e5e94b85-990a-55b9-a733-cb493846d0fc"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "elección de prompts"
+      ],
+      "forbiddenText": [
+        "programación de robots"
+      ]
+    },
+    {
+      "id": "facet-prompt-privacy",
+      "description": "Analiza seguridad de prompts usando únicamente las fichas proporcionadas. Explica las relaciones solicitadas. No se pide datos personales reales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        260
+      ],
+      "sourceRecordIds": [
+        "71476c4b-c538-502a-b487-17e3535ab9df"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "seguridad de prompts"
+      ],
+      "forbiddenText": [
+        "datos personales reales"
+      ]
+    },
+    {
+      "id": "action-robot-tool-alternative",
+      "description": "Programa el robot simulado en Python o en Scratch para seguir la ruta indicada. Comprueba las entradas y salidas con los casos dados, sin usar ambos lenguajes ni un kit físico.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        109
+      ],
+      "sourceRecordIds": [
+        "b644e70d-85dd-56ae-baf6-82616c875b9c"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "simulation",
+        "calculation"
+      ],
+      "requiredText": [],
+      "forbiddenText": [],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "action-robot-action-alternative",
+      "description": "Programa el robot simulado para seguir la ruta indicada o bien simula su movimiento con los parámetros dados. Elige una alternativa, sin realizar ambas.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        108
+      ],
+      "sourceRecordIds": [
+        "e18c2a22-8270-533b-8633-b06c829fbab1"
+      ],
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ],
+      "requiredText": [
+        "alternativa elegida",
+        "O BIEN"
+      ],
+      "forbiddenText": [],
+      "expectedDescriptionOccurrences": {
+        "El programa solicitado de": 1,
+        "Ejecuta la simulación solicitada de": 1
+      }
+    },
+    {
+      "id": "action-given-model-optional-tool",
+      "description": "Analiza el modelo de aprendizaje automático proporcionado y sus resultados de prueba ficticios. Puede utilizar una hoja de cálculo como recurso opcional. No entrenes otro modelo.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        269
+      ],
+      "sourceRecordIds": [
+        "4a1128c3-6ba5-5202-9499-a3a1a224f7e4"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "programming",
+        "simulation"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-html-delivery",
+      "description": "Diseña la estructura de la página HTML indicada en un esquema con las etiquetas solicitadas. Entrega el esquema en PDF, sin programar JavaScript ni publicar la página.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        187
+      ],
+      "sourceRecordIds": [
+        "57e326fb-fb08-51f7-97f5-228170b26ee3"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "programming",
+        "simulation"
+      ],
+      "requiredText": [
+        "PDF"
+      ],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-circuit-negative-actions",
+      "description": "Analiza las conexiones del circuito electrónico del esquema proporcionado. Explica su relación con las salidas dadas. Sin programar ni simular otro circuito.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        16
+      ],
+      "sourceRecordIds": [
+        "0b7472fe-da1b-528a-b9f8-6e4a08bd31c1"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "simulation",
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-program-independent-calculation",
+      "description": "Programa el algoritmo numérico solicitado para el movimiento físico del caso dado. Calcula por separado la velocidad con la posición y el tiempo proporcionados y comprueba las unidades.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        171
+      ],
+      "sourceRecordIds": [
+        "0f00c0a0-919c-58d1-adb4-e588584bb97c"
+      ],
+      "requiredEvidence": [
+        "programming",
+        "calculation",
+        "result"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-hypothesis-given",
+      "description": "Analiza la hipótesis física ya formulada del caso de caída libre proporcionado. Explica su relación con las evidencias dadas sin formular otra hipótesis ni ejecutar el experimento.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        32
+      ],
+      "sourceRecordIds": [
+        "07da8b60-ae0c-5b45-a532-7d3a84ea8590"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "hypothesis",
+        "experiment"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-prompt-given-analysis",
+      "description": "Analiza las instrucciones y el formato del prompt proporcionado para organizar la biblioteca ficticia. Explica sus límites con las respuestas dadas, sin invocar servicios de IA ni utilizar datos reales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        253
+      ],
+      "sourceRecordIds": [
+        "c9ab6a1a-97a7-5fcb-b3f4-2d72e78e32fc"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "simulation",
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": [],
+      "expectedCriteria": 2,
+      "requiredTopic": "prompt-design"
+    },
+    {
+      "id": "action-dom-bom-comparison",
+      "description": "Compara el Modelo de Objetos del Documento DOM y el Browser Object Model BOM de las fichas proporcionadas. Explica qué representa cada uno, sin programar una página.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        194
+      ],
+      "sourceRecordIds": [
+        "dbdf9773-e5c9-5364-9528-e3b0d2543d92"
+      ],
+      "requiredEvidence": [
+        "comparison",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredText": [
+        "DOM",
+        "BOM"
+      ],
+      "forbiddenText": [],
+      "expectedCriteria": 4,
+      "forbidDelivery": true
+    },
+    {
+      "id": "action-html-form-design-only",
+      "description": "Diseña en un esquema el formulario HTML con las entradas ficticias y las etiquetas dadas. Justifica la elección de sus controles, sin programar JavaScript o una base de datos.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        192
+      ],
+      "sourceRecordIds": [
+        "b6d59aef-a96b-5f2e-bc05-a5a207e6b655"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research",
+        "data-interpretation"
+      ],
+      "requiredText": [],
+      "forbiddenText": [],
+      "expectedCriteria": 1,
+      "requiredTopic": "html-forms",
+      "forbidDelivery": true
+    },
+    {
+      "id": "action-css-box-analysis",
+      "description": "Analiza el modelo de caja CSS del ejemplo proporcionado. Explica la relación entre contenido, relleno, borde y margen, sin programar una aplicación.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        208
+      ],
+      "sourceRecordIds": [
+        "e331e2c7-d897-5435-8c2c-f69f7d68f9e7"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-fictitious-database-program",
+      "description": "Programa la operación de acceso a la base de datos ficticia solicitada con el recurso proporcionado. Comprueba las entradas y salidas con los casos dados, sin conectar una base real ni utilizar credenciales reales.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        236
+      ],
+      "sourceRecordIds": [
+        "0e3f69f8-2bd4-54eb-b13f-d2b929709dd3"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "calculation",
+        "result"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-robot-repeated-observation",
+      "description": "Observa el sensor de color del robot simulado y registra con regularidad sus cambios según la pauta dada. No programes ni construyas un robot.",
+      "activityType": "OBSERVATION",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        59
+      ],
+      "sourceRecordIds": [
+        "a4e27dac-7a3d-56c0-a172-a30f1aa25098"
+      ],
+      "requiredEvidence": [
+        "observation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research",
+        "simulation"
+      ],
+      "requiredText": [],
+      "forbiddenText": [],
+      "expectedCriteria": 1,
+      "requiredTopic": "robot-sensors"
+    },
+    {
+      "id": "action-given-electrical-observation",
+      "description": "Analiza las mediciones eléctricas ya registradas y las observaciones documentadas proporcionadas. Explica las variaciones de voltaje según las fichas dadas, sin medir un circuito real.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        278
+      ],
+      "sourceRecordIds": [
+        "fb40127e-f8b9-5872-8061-2b788d4034d9"
+      ],
+      "requiredEvidence": [
+        "data-interpretation",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "observation",
+        "measurement",
+        "programming",
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": []
+    },
+    {
+      "id": "action-physical-documentary-research",
+      "description": "Investiga las aplicaciones de la física computacional en astronomía usando las fuentes proporcionadas. Selecciona evidencia y documenta su procedencia y sus límites, sin simulaciones o datos personales.",
+      "activityType": "RESEARCH",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        141
+      ],
+      "sourceRecordIds": [
+        "f0b4dbd7-55ac-57cc-ac43-ef8d9adec92f"
+      ],
+      "requiredEvidence": [
+        "research"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "simulation",
+        "content"
+      ],
+      "requiredText": [
+        "astronomía"
+      ],
+      "forbiddenText": [
+        "salud",
+        "ambiental"
+      ],
+      "expectedCriteria": 1,
+      "requiredTopic": "physical-applications"
+    },
+    {
+      "id": "action-motion-without-optional-laws",
+      "description": "Simula el movimiento parabólico con el modelo y los parámetros dados. Interpreta sus resultados sin exigir leyes de Newton, momento angular o colisiones.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        137
+      ],
+      "sourceRecordIds": [
+        "b04eb75f-7bc5-53fd-9c94-cfda27f6d3a9"
+      ],
+      "requiredEvidence": [
+        "simulation",
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ],
+      "requiredText": [],
+      "forbiddenText": [
+        "momento angular",
+        "colisiones"
+      ]
+    },
+    {
+      "id": "action-javascript-array-only",
+      "description": "Analiza el arreglo JavaScript del ejemplo dado. Explica la relación entre elementos, índices y salidas, sin fechas, clases o robótica.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        198
+      ],
+      "sourceRecordIds": [
+        "2209db86-4ed2-5ef7-ad5c-757b9ba4e955"
+      ],
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredText": [
+        "arreglos JavaScript"
+      ],
+      "forbiddenText": [
+        "fechas JavaScript",
+        "programa robótico"
+      ]
+    },
+    {
+      "id": "action-html-native-controls",
+      "description": "Diseña una página HTML con el formulario y los controles nativos solicitados para la tarea ficticia dada. Justifica su estructura sin JavaScript, servicios de IA o publicación real.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        224
+      ],
+      "sourceRecordIds": [
+        "39a9f9f5-1a64-5edf-933e-a1e8238bfd91"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredText": [
+        "HTML"
+      ],
+      "forbiddenText": [],
+      "expectedCriteria": 1,
+      "requiredTopic": "html-forms",
+      "forbidDelivery": true
+    },
+    {
+      "id": "action-robot-program-design-only",
+      "description": "Diseña en un esquema el programa del robot simulado que recorra la ruta dada. Justifica sus entradas, decisiones y salidas sin programar otro robot.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        108
+      ],
+      "sourceRecordIds": [
+        "e18c2a22-8270-533b-8633-b06c829fbab1"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "classification",
+        "research"
+      ]
+    },
+    {
+      "id": "action-design-independent-classification",
+      "description": "Diseña el robot del caso ficticio según las restricciones dadas. Clasifica por separado las piezas robóticas ilustradas según las categorías proporcionadas.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        76
+      ],
+      "sourceRecordIds": [
+        "7f2c2218-cc71-541b-b181-3f7ee430fa56"
+      ],
+      "requiredEvidence": [
+        "design",
+        "classification"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "action-robot-program-future",
+      "description": "Los estudiantes programarán el robot simulado para seguir la ruta indicada. Comprobarán las entradas y salidas con los casos proporcionados, sin un kit físico.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        108
+      ],
+      "sourceRecordIds": [
+        "e18c2a22-8270-533b-8633-b06c829fbab1"
+      ],
+      "requiredEvidence": [
+        "programming"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "simulation",
+        "content"
+      ],
+      "expectedCriteria": 1
+    },
+    {
+      "id": "action-css-explicit-ordering",
+      "description": "Ordena las reglas CSS proporcionadas según la prioridad de cascada solicitada. No se pide programar una página.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        206
+      ],
+      "sourceRecordIds": [
+        "a7afdd16-6aae-59fc-a6e9-070f35546a15"
+      ],
+      "requiredEvidence": [
+        "sequence"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredTopic": "css-cascade"
+    },
+    {
+      "id": "action-dom-expanded-acronym",
+      "description": "Analiza el Modelo de Objetos del Documento (DOM) con la ficha proporcionada. No se pide programar una página.",
+      "activityType": "ANALYSIS",
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "expectedCriteria": 1,
+      "requiredTopic": "web-dom",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        194
+      ],
+      "sourceRecordIds": [
+        "dbdf9773-e5c9-5364-9528-e3b0d2543d92"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ]
+    },
+    {
+      "id": "action-dom-and-js-objects",
+      "description": "Compara el Modelo de Objetos del Documento (DOM) y los objetos JavaScript de las fichas proporcionadas. No se pide programar una página.",
+      "activityType": "COMPARISON",
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "expectedCriteria": 2,
+      "requiredText": [
+        "Modelo de Objetos del Documento",
+        "objetos JavaScript"
+      ],
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        194,
+        198
+      ],
+      "sourceRecordIds": [
+        "dbdf9773-e5c9-5364-9528-e3b0d2543d92",
+        "2209db86-4ed2-5ef7-ad5c-757b9ba4e955"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ]
+    },
+    {
+      "id": "action-geometric-interpretation-explanation",
+      "description": "Explica la interpretación geométrica de la derivada con la función proporcionada, sin calcular otra derivada.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        120
+      ],
+      "sourceRecordIds": [
+        "9e118f60-10da-50db-8562-bd5576783f91"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "calculation"
+      ]
+    },
+    {
+      "id": "action-explicit-source-contrast",
+      "description": "Contrasta las fuentes proporcionadas sobre la física computacional según las referencias dadas, sin investigar otras fuentes.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        51
+      ],
+      "sourceRecordIds": [
+        "9acc9012-8676-5062-b0f2-a46345b1237b"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "action-design-independent-calculation",
+      "description": "Diseña el circuito electrónico del caso simulado según las especificaciones dadas. Calcula por separado el voltaje con la corriente y resistencia proporcionadas, sin montaje físico.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        16,
+        40
+      ],
+      "sourceRecordIds": [
+        "0b7472fe-da1b-528a-b9f8-6e4a08bd31c1",
+        "2220ff47-d3f5-522a-8414-aa747f8d92f8"
+      ],
+      "requiredEvidence": [
+        "design",
+        "calculation",
+        "result"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "simulation"
+      ]
+    },
+    {
+      "id": "action-report-and-explicit-graph",
+      "description": "Elabora un informe del movimiento parabólico con los resultados proporcionados. Representa la trayectoria en la gráfica solicitada, sin ejecutar otra simulación.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        168,
+        127
+      ],
+      "sourceRecordIds": [
+        "de139f99-1378-5337-a764-0e2b6744a0df",
+        "650ca724-f331-5adf-a358-00ff277e4626"
+      ],
+      "requiredEvidence": [
+        "report",
+        "representation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "simulation",
+        "comparison"
+      ]
+    },
+    {
+      "id": "action-robot-js-function-comparison",
+      "description": "Compara funciones del programa robótico y funciones JavaScript de las fichas proporcionadas. No se pide programar otro sistema.",
+      "activityType": "COMPARISON",
+      "participationMode": "INDIVIDUAL",
+      "sourceOrdinals": [
+        68,
+        201
+      ],
+      "sourceRecordIds": [
+        "45de2493-537b-593e-b4e3-cb41627b3be7",
+        "f2505680-8d95-5cd4-a9b0-079b09c5a800"
+      ],
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "forbiddenEvidence": [
+        "programming",
+        "research"
+      ],
+      "requiredText": [
+        "funciones del programa robótico",
+        "funciones JavaScript"
+      ],
+      "expectedCriteria": 2
+    }
+  ],
+  "limits": [
+    "Expectativas preliminares requieren cotejo por propósito antes de RED; no acreditar cobertura.",
+    "Algunas palabras de una negación pueden ser una distinción disciplinar legítima; revisar instrumentos, no relajar por conveniencia.",
+    "Modelos y datos ficticios; sin servicios IA, dependencias, tiendas, publicación o escrituras remotas."
+  ],
+  "policy": "REQUESTED_PHYSICAL_COMPUTATIONAL_ACTIONS_GIVEN_MODELS_NO_DEPLOYMENTS_V1",
+  "contractStatus": "IMPLEMENTED_FULL_INSTRUMENT_REVIEW_PENDING"
+}

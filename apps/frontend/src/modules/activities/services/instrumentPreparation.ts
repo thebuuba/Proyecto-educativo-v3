@@ -75,7 +75,7 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   const social=resolveCommonSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(social)return adaptSocialScale(editableAuthoredRecommendation(commonSocialCriteria(social),input,input.activityType??social.activityType,`ciencias-sociales-comun-${social.grade}`))
   const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',input.academicContext)
-  if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id),input.description??'',optativeScience)
+  if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id,optativeScience.grade===6?{includeFileFormats:true,requestedOnly:true}:undefined),input.description??'',optativeScience)
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
   if(commonScience)return adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
   const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',input.academicContext)

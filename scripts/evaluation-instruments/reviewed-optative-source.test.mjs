@@ -4,6 +4,29 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
+test('Física CT6 conserva307registros,223anclas,36indicadores y34exclusiones en su ámbito propio',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-ct-6-matriz.json',run=spawnSync(process.execPath,[script,'OPT-CT-6','6',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr)
+ const manifest=JSON.parse(run.stdout),m=JSON.parse(readFileSync(path,'utf8'))
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_CT_6_V1')
+ assert.equal(manifest.elements,307);assert.equal(manifest.excludedFromAssessment,34);assert.equal(m.contents.length,223)
+ assert.equal(m.criticalIndicators.length,36);assert(m.criticalIndicators.every(r=>r.assessmentPolicy==='OBSERVABLE_CONTENT_TO_ADAPT'&&r.caseIds.length))
+ assert.deepEqual(m.sourceVisualReview.pages,[511,512,513,514,515,516,517]);assert.equal(m.subjectName,'Física y Computación');assert.equal(m.optativeExitName,'Ciencias y Tecnología')
+ const excluded=new Set(m.explicitExclusions.map(r=>r.id));assert.equal(excluded.size,34)
+ const privateRows=m.explicitExclusions.filter(r=>r.reason==='PRIVATE_DISPOSITION');assert.equal(privateRows.length,6)
+ assert(privateRows.every(r=>manifest.metadata.excludedAssessmentElementIds.includes(manifest.elementIdMap[r.id])))
+ const fixtures=JSON.parse(readFileSync('data/evaluation-instruments/optative-ct-six-contracts.json','utf8'))
+ for(const task of fixtures.cases)for(const id of task.sourceRecordIds)assert(!excluded.has(id),task.id)
+ for(const args of [['OPT-CT-6','5',path,'--optative'],['OPT-CT-5','5',path,'--optative'],['OPT-CT-6','6',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
+test('Física CT6 conserva límites físicos y de programación propios sin heredar los clínicos',()=>{
+ const m=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/optative-ct-6-matriz.json','utf8'))
+ assert(m.limits.some(line=>line.includes('red eléctrica energizada')))
+ assert(m.limits.some(line=>line.includes('HTML')&&line.includes('CSS')))
+ assert(!m.limits.some(line=>line.includes('similitud de secuencias')))
+})
+
 test('Química CT5 conserva188registros,117anclas,37indicadores y20exclusiones en su ámbito propio',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-ct-5-matriz.json',run=spawnSync(process.execPath,[script,'OPT-CT-5','5',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr)

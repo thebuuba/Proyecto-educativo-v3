@@ -1,0 +1,67 @@
+{
+  "status": "VERIFIED_PERSONAL_DEVELOPMENT_SESSION",
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.141",
+  "grade": 6,
+  "subjectCode": "OPT-CT-6",
+  "modality": "academic",
+  "optativeExitName": "Ciencias y Tecnología",
+  "account": "PERSONAL_ACCOUNT_CONFIRMED_IN_PROFILE_MENU",
+  "frontendEntry": "/assets/index-DTq0G3ez.js",
+  "context": "SEPARATE_IDENTIFIABLE_QA_COURSE_NO_STUDENTS",
+  "newAccounts": 0,
+  "newStudents": 0,
+  "originalAcademicDataUnchanged": true,
+  "activityId": "1363eacf-cf63-469f-b928-1b2afa3027a7",
+  "instrumentId": "4524cb5f-6959-4374-9a86-a03df2e2a1da",
+  "snapshotId": "af93a5fa-0f22-448a-8860-4f11916c79c1",
+  "instrumentHash": "7ca025124c47c1dba2af9ddb4a7935d9",
+  "visibleFormats": [
+    "rubrica",
+    "lista-cotejo",
+    "escala",
+    "lista-ponderada"
+  ],
+  "persistedBrowserFormat": "rubrica",
+  "pendingScoreObserved": true,
+  "scoreSequence": [
+    17.35,
+    20,
+    17.35
+  ],
+  "manualTextPreserved": true,
+  "automaticStrategy": {
+    "id": "CASE_STUDY",
+    "origin": "AUTO",
+    "basis": "Caso concreto, decisiones y justificación explícitos en la descripción"
+  },
+  "manualStrategy": {
+    "id": "PROBLEM_BASED",
+    "origin": "MANUAL",
+    "purpose": "Comprobar respeto a selección manual; no es una recomendación automática para esta consigna"
+  },
+  "strategyOnlyInstrumentExactlyUnchanged": true,
+  "matchingDomFields": 13,
+  "reloadedDomFieldsExactlyUnchanged": true,
+  "previousPersonalBaselinesNotOverwritten": true,
+  "newPersonalBaselines": 1,
+  "observed": [
+    "Formulario vacío con estrategia visible y puntos pendientes.",
+    "Diseño robótico aislado no forzó estrategia; preparó instrumento completo de manera silenciosa.",
+    "Cambio de descripción a caso concreto preparó análisis y sugirió Estudio de caso automáticamente.",
+    "Se revisaron los cuatro formatos completos y sus estructuras propias; escala de calidad, no frecuencia impuesta.",
+    "Cambio17.35→20→17.35 con sumas exactas; rúbrica con marca QA manual conservada.",
+    "Guardado único confirmado, detalle reabierto y edición con descripción, criterios, niveles y puntos conservados.",
+    "Cambio exclusivo de estrategia, guardado y recarga:13campos DOM idénticos y consulta de solo lectura con IDs/snapshot/huella exactos.",
+    "Chrome cargó index-DTq0G3ez.js después de recargar; no se borró caché, service worker o almacenamiento."
+  ],
+  "limits": [
+    "Una consigna personal persistida en rúbrica; los otros tres formatos se revisaron en el editor y la persistencia de cada formato corresponde a la prueba QA HTTP/DB separada.",
+    "No representa todas las paráfrasis, temas o contextos personales.",
+    "Captura de página completa agotó5s; capturas de viewport posteriores se guardaron correctamente.",
+    "Dos acciones UI encontraron un control transitorio ya ausente al completar una solicitud; se inspeccionó el estado actualizado sin repetir guardados.",
+    "Los recorridos personales pendientes de CT4/CT5/MT5/MT6 y anteriores no heredan esta verificación."
+  ],
+  "push": false,
+  "deploy": false
+}

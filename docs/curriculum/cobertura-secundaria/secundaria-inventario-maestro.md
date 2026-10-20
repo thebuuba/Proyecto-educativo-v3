@@ -77,7 +77,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Tigonometría, Cálculo Diferencial y Tecnología | 6 | Matemática y Tecnología | 496, 497 | CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_EXTERNAL_DNS_BLOCKED |
 | Biología y Computación | 4 | Ciencias y Tecnología | 499, 500, 501, 502, 503, 504, 505 | CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_CONNECTION_BLOCKED |
 | Química y Computación | 5 | Ciencias y Tecnología | 506, 507, 508, 509, 510 | CONNECTED_INSTRUMENTS_REVIEWED_HTTP_DB_VERIFIED_PERSONAL_AUTH_BLOCKED |
-| Física y Computación | 6 | Ciencias y Tecnología | 511, 512, 513, 514, 515, 516, 517 | PENDING |
+| Física y Computación | 6 | Ciencias y Tecnología | 511, 512, 513, 514, 515, 516, 517 | CONNECTED_INSTRUMENTS_REVIEWED_HTTP_DB_AND_PERSONAL_BROWSER_VERIFIED |
 
 No se promete cobertura universal: las áreas implementadas conservan los límites y muestras de sus informes. Las fuentes oficiales complementarias de Técnico-Profesional y Artes se localizaron y constan en fuentes-complementarias.json; su revisión y cobertura siguen pendientes. No se duplican como optativas las áreas comunes.
 

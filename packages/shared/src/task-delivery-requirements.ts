@@ -5,13 +5,23 @@ export class TaskRequirementError extends RangeError {
  constructor(detail:string){super(`Requisitos de entrega contradictorios: ${detail}. Revisa la consigna; se conservaron tus cambios.`);this.name='TaskRequirementError'}
 }
 type Condition={key:string;label:string}
+export type DeliveryOptions={includeFileFormats?:boolean;requestedOnly?:boolean}
 const numbers:Record<string,number>={un:1,una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,trece:13,catorce:14,quince:15,dieciseis:16,diecisiete:17,dieciocho:18,diecinueve:19,veinte:20}
 const number='(?:\\d+(?:[.,]\\d+)?|'+Object.keys(numbers).join('|')+')'
 const value=(n:string)=>numbers[n]??Number(n.replace(',','.'))
-export function deliveryConditions(description:string):Condition[]{
- const text=withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+export function deliveryConditions(description:string,options:DeliveryOptions={}):Condition[]{
+ let text=withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
   .replace(/\bno se (?:pide|requiere|exige)\b[^.;]*/g,'')
+ if(options.requestedOnly)text=text
+  .replace(/\b(?:sin\s+|no\s+(?:(?:se|deben?|es necesario|hay que)\s+)*)(?:program\w*|simul\w*|constru\w*|disen\w*|entreg\w*|elabor\w*|ejecut\w*|crea\w*)\b[^.;]*/g,'')
+  .replace(new RegExp(`\\b${number}\\s+paginas?\\s+(?:web|html)\\b`,'g'),'producto web')
  const conditions:Condition[]=[],add=(key:string,label:string)=>{if(!conditions.some(c=>c.key===key&&c.label===label))conditions.push({key,label})}
+ if(options.includeFileFormats)for(const raw of text.split(/[.;](?!\d)/)){
+  if(/^\s*(?:puede|pueden|podra|podran)\b/.test(raw))continue
+  const clause=raw.replace(/\b(?:no|sin)\s+[^.;]*/g,'')
+  const format=clause.match(/(?:^|\by\s+|\bluego\s+|\bdespues\s+)\s*(?:debe(?:n)?\s+)?(?:entrega(?:n|r|d)?|entregue(?:n)?)\b[^.;]*?\ben\s+(?:formato\s+)?(pdf|docx|odt|pptx|xlsx|csv)\b/)
+  if(format)add('file-format','archivo en '+format[1].toUpperCase())
+ }
  const pageClauses=text.split(/[.;](?!\d)/).filter(clause=>/\bpaginas?\b/.test(clause))
  const bounds:{min:number[];max:number[];exact:number[]}={min:[],max:[],exact:[]}
  for(const clause of pageClauses){
@@ -26,7 +36,7 @@ export function deliveryConditions(description:string):Condition[]{
  const distinct=(n:number[])=>[...new Set(n)]
  const min=bounds.min.length?Math.max(...bounds.min):undefined,max=bounds.max.length?Math.min(...bounds.max):undefined,exact=distinct(bounds.exact)
  if(exact.length>1||min!==undefined&&max!==undefined&&min>max||exact.some(n=>min!==undefined&&n<min||max!==undefined&&n>max))throw new TaskRequirementError('los límites de páginas no son compatibles')
- if(exact.length)add('pages',`${exact[0]} páginas`)
+ if(exact.length)add('pages',`${exact[0]} ${options.requestedOnly&&exact[0]===1?'página':'páginas'}`)
  else if(min!==undefined&&max!==undefined)add('pages',`entre ${min} y ${max} páginas`)
  else if(min!==undefined)add('pages',`mínimo ${min} ${min===1?'página':'páginas'}`)
  else if(max!==undefined)add('pages',`máximo ${max} ${max===1?'página':'páginas'}`)
@@ -66,12 +76,12 @@ export function deliveryConditions(description:string):Condition[]{
  return conditions
 }
 const distinctStrings=(values:string[])=>[...new Set(values)]
-export function deliveryCriteria(description:string):ContextualTopicCriterion[]{
- const conditions=deliveryConditions(description)
+export function deliveryCriteria(description:string,options:DeliveryOptions={}):ContextualTopicCriterion[]{
+ const conditions=deliveryConditions(description,options)
  if(!conditions.length)return []
  const requirements=conditions.map(c=>c.label).join('; ')
  const levels:ContextualTopicCriterion['progressionLevels']=[
-  `Cumple las ${conditions.length} condiciones de entrega solicitadas: ${requirements}.`,
+  `${options.requestedOnly&&conditions.length===1?'Cumple la condición de entrega solicitada':`Cumple las ${conditions.length} condiciones de entrega solicitadas`}: ${requirements}.`,
   conditions.length>1?`Cumple ${Math.max(1,conditions.length-1)} de las ${conditions.length} condiciones solicitadas: ${requirements}.`:`La condición solicitada se comprueba en la entrega: ${requirements}.`,
   conditions.length>1?`Cumple algunas condiciones y deja otras sin cumplir; contrasta cada condición por separado: ${requirements}.`:`La entrega permite comprobar solo parte de la condición: ${requirements}.`,
   `La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: ${requirements}.`,
@@ -83,6 +93,6 @@ export function deliveryCriteria(description:string):ContextualTopicCriterion[]{
   ]})),
  }]
 }
-export function withDeliveryCriteria<T extends {templateId:string}>(criteria:T[],description:string):(T|ContextualTopicCriterion)[]{
- return [...criteria,...deliveryCriteria(description).filter(c=>!criteria.some(row=>row.templateId===c.templateId))]
+export function withDeliveryCriteria<T extends {templateId:string}>(criteria:T[],description:string,options:DeliveryOptions={}):(T|ContextualTopicCriterion)[]{
+ return [...criteria,...deliveryCriteria(description,options).filter(c=>!criteria.some(row=>row.templateId===c.templateId))]
 }

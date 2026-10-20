@@ -1,19 +1,27 @@
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
 
+test('Física CT6 conserva evidencia propia y separa lectura completa de runtime pendiente',()=>{
+ const directory='docs/curriculum/cobertura-secundaria/',inventory=JSON.parse(readFileSync(directory+'secundaria-inventario-maestro.json','utf8')),matrix=JSON.parse(readFileSync(directory+'optative-ct-6-matriz.json','utf8')),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-science.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.grade,6);assert.equal(row.exit,'Ciencias y Tecnología');assert.equal(matrix.contents.length,223);assert.equal(matrix.criticalIndicators.length,36)
+ assert.equal(matrix.verification.fullReview.reviewedWithMatchingDigest,1524);assert.equal(matrix.verification.fullReview.pending,0)
+ for(const grade of [4,5])assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===grade&&s.exit===row.exit).evidence)
+})
+
 test('Química CT5 tiene evidencia independiente de Biología CT4 y no acredita Física CT6',()=>{
  const directory='docs/curriculum/cobertura-secundaria/',inventory=JSON.parse(readFileSync(directory+'secundaria-inventario-maestro.json','utf8')),matrix=JSON.parse(readFileSync(directory+'optative-ct-5-matriz.json','utf8')),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-science.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.equal(row.grade,5);assert.equal(row.exit,'Ciencias y Tecnología');assert.equal(matrix.contents.length,117);assert.equal(matrix.criticalIndicators.length,37)
  assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===4&&s.exit===row.exit).evidence)
- assert.equal(inventory.scopes.find(s=>s.grade===6&&s.exit===row.exit).provider,null)
+ assert.notEqual(row.evidence,inventory.scopes.find(s=>s.grade===6&&s.exit===row.exit).evidence)
 })
 
 test('Biología CT4 mantiene evidencia propia independiente de Química CT5 y Física CT6',()=>{
  const directory='docs/curriculum/cobertura-secundaria/',inventory=JSON.parse(readFileSync(directory+'secundaria-inventario-maestro.json','utf8')),matrix=JSON.parse(readFileSync(directory+'optative-ct-4-matriz.json','utf8')),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-science.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
  assert.equal(row.exit,'Ciencias y Tecnología');assert.equal(row.grade,4);assert.equal(matrix.contents.length,258)
- for(const other of inventory.scopes.filter(s=>s.exit===row.exit&&s.grade===6))assert.equal(other.provider,null)
+ for(const other of inventory.scopes.filter(s=>s.exit===row.exit&&s.grade===6))assert.notEqual(other.evidence,row.evidence)
  assert.notEqual(row.evidence,inventory.scopes.find(s=>s.exit===row.exit&&s.grade===5).evidence)
 })
 import {test} from 'node:test'
