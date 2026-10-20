@@ -29,7 +29,7 @@ function MiniWeek() {
                 cell === "r" ? "schedule-break-pattern h-2.5 bg-muted" : "h-7",
                 cell === "f" && "border border-dashed border-border",
                 cell === "x" && "opacity-0",
-                "animate-in fade-in zoom-in-95 fill-mode-both duration-500 motion-reduce:animate-none",
+                "schedule-mini-week-cell",
               )}
               style={{
                 animationDelay: `${(c * 5 + r) * 35}ms`,
@@ -62,7 +62,7 @@ const STEPS = [
 
 export function ScheduleEmptyState({ canEditStructure, onCreate }: ScheduleEmptyStateProps) {
   return (
-    <section className="grid items-center gap-10 overflow-hidden rounded-[2rem] bg-card p-6 shadow-sm sm:p-10 lg:grid-cols-[1.1fr_1fr] lg:p-14">
+    <section className="grid items-center gap-8 overflow-hidden rounded-[2rem] bg-card p-6 shadow-sm sm:p-8 lg:grid-cols-[1.1fr_1fr]">
       <div className="order-2 lg:order-1">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">Tu semana, en orden</p>
         <h2 className="mt-3 max-w-md text-2xl font-semibold leading-tight tracking-tight text-foreground sm:text-3xl">Construyamos tu horario en cuatro pasos</h2>
