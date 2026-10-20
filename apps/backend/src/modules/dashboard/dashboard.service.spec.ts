@@ -17,7 +17,7 @@ const mocks = vi.hoisted(() => ({
     grade: { count: vi.fn() },
     section: { count: vi.fn() },
     sectionSubject: { count: vi.fn(), findMany: vi.fn() },
-    scheduleEntry: { count: vi.fn() },
+    scheduleEntry: { count: vi.fn(), findMany: vi.fn() },
     attendanceDaily: { count: vi.fn() },
     attendanceClass: { count: vi.fn() },
     planningEntry: { count: vi.fn() },
@@ -59,8 +59,19 @@ describe('DashboardService', () => {
       distinct: ['sectionId'],
     }))
     expect(mocks.prisma.scheduleEntry.count).toHaveBeenCalledWith({ where: expect.objectContaining({
-      schoolYearId: 'year-1', dayOfWeek: 4, sectionSubject: { teacherId: 'teacher-1', status: 'ACTIVE' }, status: 'ACTIVE',
+      schoolYearId: 'year-1', dayOfWeek: 4, timeSlot: { ownerUserId: 'user-1' }, sectionSubject: { teacherId: 'teacher-1', status: 'ACTIVE' }, status: 'ACTIVE',
     }) })
+  })
+
+  it('limits the teacher agenda to blocks owned by the current account', async () => {
+    mocks.prisma.scheduleEntry.findMany.mockResolvedValue([])
+    await (new DashboardService() as any).getAgenda('school-1', 'year-1', null, {
+      view: 'teacher', ownerUserId: 'user-1', teacherId: 'teacher-1',
+      studentIds: [], enrollmentIds: [], sectionIds: [],
+    }, new Date('2026-10-01T15:00:00Z'))
+    expect(mocks.prisma.scheduleEntry.findMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: expect.objectContaining({ schoolId: 'school-1', timeSlot: { ownerUserId: 'user-1' } }),
+    }))
   })
 
   it('starts every stats count before waiting for any result', async () => {

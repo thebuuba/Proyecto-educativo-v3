@@ -2769,6 +2769,7 @@ export type Database = {
       }
       schedule_journeys: {
         Row: {
+          owner_user_id: string | null
           created_at: string
           end_time: string
           id: string
@@ -2781,6 +2782,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          owner_user_id?: string | null
           created_at?: string
           end_time: string
           id?: string
@@ -2793,6 +2795,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          owner_user_id?: string | null
           created_at?: string
           end_time?: string
           id?: string
@@ -2806,6 +2809,13 @@ export type Database = {
         }
         Relationships: [
           {
+            foreignKeyName: "schedule_journeys_owner_user_id_fkey"
+            columns: ["owner_user_id"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
+          {
             foreignKeyName: "schedule_journeys_school_id_fkey"
             columns: ["school_id"]
             isOneToOne: false
@@ -2816,6 +2826,7 @@ export type Database = {
       }
       time_slots: {
         Row: {
+          owner_user_id: string | null
           block_source: string
           block_type: string
           created_at: string
@@ -2832,6 +2843,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          owner_user_id?: string | null
           block_source?: string
           block_type?: string
           created_at?: string
@@ -2848,6 +2860,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          owner_user_id?: string | null
           block_source?: string
           block_type?: string
           created_at?: string
@@ -2864,6 +2877,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "time_slots_owner_user_id_fkey"
+            columns: ["owner_user_id"]
+            isOneToOne: false
+            referencedRelation: "app_users"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "time_slots_journey_id_fkey"
             columns: ["journey_id"]

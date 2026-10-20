@@ -76,10 +76,10 @@ describe('ScheduleService.saveStructure', () => {
 
   it('reutiliza el bloque natural al reintentar sin ids y no crea duplicados', async () => {
     const service = new ScheduleService()
-    await expect(service.saveStructure(schoolId, dto)).resolves.toEqual({ saved: true })
+    await expect(service.saveStructure({ schoolId, ownerUserId: 'user-1' }, dto)).resolves.toEqual({ saved: true })
 
     expect(mocks.tx.timeSlot.update).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { id: slotId } }),
+      expect.objectContaining({ where: { id: slotId, schoolId, ownerUserId: 'user-1' } }),
     )
     expect(mocks.tx.timeSlot.createMany).not.toHaveBeenCalled()
     expect(mocks.tx.timeSlot.deleteMany).not.toHaveBeenCalled()
@@ -91,18 +91,33 @@ describe('ScheduleService.saveStructure', () => {
     mocks.tx.scheduleJourney.deleteMany.mockResolvedValue({ count: 1 })
 
     const service = new ScheduleService()
-    await expect(service.deleteStructure(schoolId)).resolves.toEqual({
+    await expect(service.deleteStructure({ schoolId, ownerUserId: 'user-1' })).resolves.toEqual({
       deleted: { assignments: 4, blocks: 6, journeys: 1 },
     })
 
-    expect(mocks.tx.scheduleEntry.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
-    expect(mocks.tx.timeSlot.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
-    expect(mocks.tx.scheduleJourney.deleteMany).toHaveBeenCalledWith({ where: { schoolId } })
+    expect(mocks.tx.scheduleEntry.deleteMany).toHaveBeenCalledWith({ where: { schoolId, timeSlot: { ownerUserId: 'user-1' } } })
+    expect(mocks.tx.timeSlot.deleteMany).toHaveBeenCalledWith({ where: { schoolId, ownerUserId: 'user-1' } })
+    expect(mocks.tx.scheduleJourney.deleteMany).toHaveBeenCalledWith({ where: { schoolId, ownerUserId: 'user-1' } })
     expect(mocks.tx.scheduleEntry.deleteMany.mock.invocationCallOrder[0]).toBeLessThan(
       mocks.tx.timeSlot.deleteMany.mock.invocationCallOrder[0],
     )
     expect(mocks.tx.timeSlot.deleteMany.mock.invocationCallOrder[0]).toBeLessThan(
       mocks.tx.scheduleJourney.deleteMany.mock.invocationCallOrder[0],
     )
+  })
+
+  it('crea el primer horario de una cuenta nueva con su propietario', async () => {
+    mocks.tx.scheduleJourney.findMany.mockResolvedValue([])
+    mocks.tx.scheduleJourney.create.mockResolvedValue({ id: journeyId })
+    mocks.tx.timeSlot.findMany.mockResolvedValue([])
+    await expect(new ScheduleService().saveStructure({ schoolId, ownerUserId: 'new-teacher' }, dto))
+      .resolves.toEqual({ saved: true })
+    expect(mocks.tx.scheduleJourney.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({ schoolId, ownerUserId: 'new-teacher' }),
+    })
+    expect(mocks.tx.timeSlot.createMany).toHaveBeenCalledWith({
+      data: [expect.objectContaining({ schoolId, ownerUserId: 'new-teacher', journeyId })],
+    })
+    expect(mocks.tx.timeSlot.deleteMany).not.toHaveBeenCalled()
   })
 })

@@ -224,6 +224,9 @@ model AppUser {
   billingSupportAssigned        BillingSupportCase[]  @relation("BillingSupportAssignee")
   billingSupportMessages        BillingSupportMessage[] @relation("BillingSupportAuthor")
 
+  scheduleJourneys  ScheduleJourney[]
+  scheduleTimeSlots TimeSlot[]
+
   @@map("app_users")
 }
 
@@ -1233,6 +1236,8 @@ model Report {
 model ScheduleJourney {
   id        String       @id @default(uuid()) @db.Uuid
   schoolId  String       @map("school_id") @db.Uuid
+  ownerUserId String?     @map("owner_user_id") @db.Uuid
+  owner       AppUser?    @relation(fields: [ownerUserId], references: [id], onDelete: Restrict)
   name      String
   kind      String       @default("CUSTOM")
   startTime DateTime     @map("start_time") @db.Time
@@ -1246,12 +1251,15 @@ model ScheduleJourney {
   timeSlots TimeSlot[]
 
   @@index([schoolId, sequence])
+  @@index([schoolId, ownerUserId])
   @@map("schedule_journeys")
 }
 
 model TimeSlot {
   id        String       @id @default(uuid()) @db.Uuid
   schoolId  String       @map("school_id") @db.Uuid
+  ownerUserId String?     @map("owner_user_id") @db.Uuid
+  owner       AppUser?    @relation(fields: [ownerUserId], references: [id], onDelete: Restrict)
   name      String
   startTime DateTime     @map("start_time") @db.Time
   endTime   DateTime     @map("end_time") @db.Time
@@ -1272,6 +1280,7 @@ model TimeSlot {
   @@index([schoolId, dayOfWeek, sequence])
   @@index([journeyId])
   @@index([schoolId, blockSource, sourceKey, dayOfWeek])
+  @@index([schoolId, ownerUserId])
   @@map("time_slots")
 }
 

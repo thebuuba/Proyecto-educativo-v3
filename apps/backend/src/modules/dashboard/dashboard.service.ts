@@ -21,6 +21,7 @@ type TeacherGradeRecord = {
   sectionSubject: { subject: { name: string } }
 }
 type ViewerScope = {
+  ownerUserId: string
   view: DashboardView
   teacherId: string | null
   studentIds: string[]
@@ -119,7 +120,7 @@ export class DashboardService {
         distinct: ['sectionId'],
       }),
       prisma.scheduleEntry.count({
-        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) }, dayOfWeek: getDashboardClock(now).dayOfWeek,
+        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', ...(view === 'teacher' ? { timeSlot: { ownerUserId: user.id } } : {}), section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) }, dayOfWeek: getDashboardClock(now).dayOfWeek,
           ...(period ? { OR: [{ academicPeriodId: period.id }, { academicPeriodId: null }] } : {}), ...sectionScope },
       }),
     ])
@@ -268,7 +269,7 @@ export class DashboardService {
   }
 
   private async getViewerScope(user: AuthenticatedUser, view: DashboardView, schoolYearId: string | null): Promise<ViewerScope> {
-    if (view === 'management' || view === 'viewer') return { view, teacherId: null, studentIds: [], enrollmentIds: [], sectionIds: [] }
+    if (view === 'management' || view === 'viewer') return { view, ownerUserId: user.id, teacherId: null, studentIds: [], enrollmentIds: [], sectionIds: [] }
     let teacherId: string | null = null
     let studentIds: string[] = []
     if (view === 'teacher') {
@@ -286,7 +287,7 @@ export class DashboardService {
     const enrollments = studentIds.length
       ? await prisma.enrollment.findMany({ where: { schoolId: user.schoolId, studentId: { in: studentIds }, status: 'ACTIVE', ...(schoolYearId ? { schoolYearId } : {}) }, select: { id: true, sectionId: true } })
       : []
-    return { view, teacherId, studentIds, enrollmentIds: enrollments.map((item) => item.id), sectionIds: [...new Set(enrollments.map((item) => item.sectionId))] }
+    return { view, ownerUserId: user.id, teacherId, studentIds, enrollmentIds: enrollments.map((item) => item.id), sectionIds: [...new Set(enrollments.map((item) => item.sectionId))] }
   }
 
   private async getAgenda(schoolId: string, schoolYearId: string | null, periodId: string | null, scope: ViewerScope, now: Date) {
@@ -295,6 +296,7 @@ export class DashboardService {
     const entries = await prisma.scheduleEntry.findMany({
       where: {
         schoolId, schoolYearId, dayOfWeek, status: 'ACTIVE',
+        ...(scope.view === 'teacher' ? { timeSlot: { ownerUserId: scope.ownerUserId } } : {}),
         ...(periodId ? { OR: [{ academicPeriodId: periodId }, { academicPeriodId: null }] } : {}),
         ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}),
         ...((scope.view === 'student' || scope.view === 'guardian') ? { sectionId: { in: scope.sectionIds } } : {}),

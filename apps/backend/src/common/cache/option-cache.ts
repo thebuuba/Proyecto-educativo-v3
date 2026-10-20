@@ -24,7 +24,7 @@ export const optionCacheKeys = {
     sectionSubjects: (schoolId: string, sectionId = 'all') =>
       `schedule:section-subjects:${schoolId}:${sectionId}`,
     sectionSubjectsPrefix: (schoolId: string) => `schedule:section-subjects:${schoolId}:`,
-    timeSlots: (schoolId: string) => `schedule:time-slots:${schoolId}`,
+    timeSlots: (schoolId: string, ownerUserId: string) => `schedule:time-slots:${schoolId}:${ownerUserId}`,
   },
 } as const
 

@@ -26,7 +26,7 @@ export class ScheduleController {
   /** Agrupa la carga inicial del horario para evitar cascadas de red. */
   @Get('workspace')
   getWorkspace(@CurrentUser() user: AuthenticatedUser) {
-    return this.scheduleService.getWorkspace(user.schoolId)
+    return this.scheduleService.getWorkspace({ schoolId: user.schoolId, ownerUserId: user.id })
   }
 
   /** Obtiene todas las entradas de horario con filtros opcionales */
@@ -38,7 +38,7 @@ export class ScheduleController {
     @Query('teacherId') teacherId?: string,
     @Query('gradeId') gradeId?: string,
   ) {
-    return this.scheduleService.findAll(user.schoolId, sectionId, schoolYearId, teacherId, gradeId)
+    return this.scheduleService.findAll({ schoolId: user.schoolId, ownerUserId: user.id }, sectionId, schoolYearId, teacherId, gradeId)
   }
 
   /** Obtiene las secciones activas del colegio */
@@ -68,49 +68,49 @@ export class ScheduleController {
   /** Obtiene las franjas horarias del colegio */
   @Get('time-slots')
   getTimeSlots(@CurrentUser() user: AuthenticatedUser) {
-    return this.scheduleService.getTimeSlots(user.schoolId)
+    return this.scheduleService.getTimeSlots({ schoolId: user.schoolId, ownerUserId: user.id })
   }
 
   @Get('journeys')
   getJourneys(@CurrentUser() user: AuthenticatedUser) {
-    return this.scheduleService.getJourneys(user.schoolId)
+    return this.scheduleService.getJourneys({ schoolId: user.schoolId, ownerUserId: user.id })
   }
 
   @Post('structure')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   saveStructure(@CurrentUser() user: AuthenticatedUser, @Body() dto: SaveScheduleStructureDto) {
-    return this.scheduleService.saveStructure(user.schoolId, dto)
+    return this.scheduleService.saveStructure({ schoolId: user.schoolId, ownerUserId: user.id }, dto)
   }
 
   @Delete('structure')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteStructure(@CurrentUser() user: AuthenticatedUser) {
-    return this.scheduleService.deleteStructure(user.schoolId)
+    return this.scheduleService.deleteStructure({ schoolId: user.schoolId, ownerUserId: user.id })
   }
 
-  /** Crea una nueva franja horaria (solo admin, director, coordinador) */
+  /** Crea una nueva franja horaria (admin, director, coordinador y docente) */
   @Post('time-slots')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   createTimeSlot(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateTimeSlotDto) {
-    return this.scheduleService.createTimeSlot(user.schoolId, dto)
+    return this.scheduleService.createTimeSlot({ schoolId: user.schoolId, ownerUserId: user.id }, dto)
   }
 
-  /** Actualiza una franja horaria existente (solo admin, director, coordinador) */
+  /** Actualiza una franja horaria existente (admin, director, coordinador y docente) */
   @Patch('time-slots/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   updateTimeSlot(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
     @Body() dto: UpdateTimeSlotDto,
   ) {
-    return this.scheduleService.updateTimeSlot(user.schoolId, id, dto)
+    return this.scheduleService.updateTimeSlot({ schoolId: user.schoolId, ownerUserId: user.id }, id, dto)
   }
 
-  /** Elimina una franja horaria (solo admin, director, coordinador) */
+  /** Elimina una franja horaria (admin, director, coordinador y docente) */
   @Delete('time-slots/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteTimeSlot(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.scheduleService.deleteTimeSlot(user.schoolId, id)
+    return this.scheduleService.deleteTimeSlot({ schoolId: user.schoolId, ownerUserId: user.id }, id)
   }
 
   /** Obtiene las entradas de horario con filtros opcionales */
@@ -124,31 +124,31 @@ export class ScheduleController {
     @Query('teacherId') teacherId?: string,
     @Query('gradeId') gradeId?: string,
   ) {
-    return this.scheduleService.findEntries(user.schoolId, sectionId, dayOfWeek, schoolYearId, teacherId, gradeId, sectionSubjectId)
+    return this.scheduleService.findEntries({ schoolId: user.schoolId, ownerUserId: user.id }, sectionId, dayOfWeek, schoolYearId, teacherId, gradeId, sectionSubjectId)
   }
 
-  /** Crea una nueva entrada de horario (solo admin, director, coordinador) */
+  /** Crea una nueva entrada de horario (admin, director, coordinador y docente) */
   @Post('entries')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   createEntry(@CurrentUser() user: AuthenticatedUser, @Body() dto: CreateScheduleEntryDto) {
-    return this.scheduleService.createEntry(user.schoolId, dto)
+    return this.scheduleService.createEntry({ schoolId: user.schoolId, ownerUserId: user.id }, dto)
   }
 
-  /** Actualiza una entrada de horario existente (solo admin, director, coordinador) */
+  /** Actualiza una entrada de horario existente (admin, director, coordinador y docente) */
   @Patch('entries/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   updateEntry(
     @CurrentUser() user: AuthenticatedUser,
     @Param('id') id: string,
     @Body() dto: UpdateScheduleEntryDto,
   ) {
-    return this.scheduleService.updateEntry(user.schoolId, id, dto)
+    return this.scheduleService.updateEntry({ schoolId: user.schoolId, ownerUserId: user.id }, id, dto)
   }
 
-  /** Elimina una entrada de horario (solo admin, director, coordinador) */
+  /** Elimina una entrada de horario (admin, director, coordinador y docente) */
   @Delete('entries/:id')
-  @Roles('admin', 'director', 'coordinator')
+  @Roles('admin', 'director', 'coordinator', 'teacher')
   deleteEntry(@CurrentUser() user: AuthenticatedUser, @Param('id') id: string) {
-    return this.scheduleService.deleteEntry(user.schoolId, id)
+    return this.scheduleService.deleteEntry({ schoolId: user.schoolId, ownerUserId: user.id }, id)
   }
 }

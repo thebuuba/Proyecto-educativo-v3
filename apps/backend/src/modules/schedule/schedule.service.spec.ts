@@ -6,6 +6,7 @@ const mocks = vi.hoisted(() => ({
     academicPeriod: { findFirst: vi.fn() },
     grade: { findMany: vi.fn() },
     schoolYear: { findFirst: vi.fn() },
+    scheduleJourney: { findFirst: vi.fn() },
     scheduleEntry: {
       findMany: vi.fn(),
       findFirst: vi.fn(),
@@ -104,16 +105,16 @@ describe('ScheduleService option caching', () => {
     mocks.prisma.timeSlot.create.mockResolvedValue(created)
     const service = new ScheduleService()
 
-    await service.getTimeSlots('school-1')
-    await service.getTimeSlots('school-1')
+    await service.getTimeSlots({ schoolId: 'school-1', ownerUserId: 'user-1' })
+    await service.getTimeSlots({ schoolId: 'school-1', ownerUserId: 'user-1' })
     expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(2)
 
-    await service.createTimeSlot('school-1', {
+    await service.createTimeSlot({ schoolId: 'school-1', ownerUserId: 'user-1' }, {
       name: 'Segunda hora',
       startTime: '08:45',
       endTime: '09:30',
     })
-    const refreshed = await service.getTimeSlots('school-1')
+    const refreshed = await service.getTimeSlots({ schoolId: 'school-1', ownerUserId: 'user-1' })
 
     expect(mocks.prisma.timeSlot.findMany).toHaveBeenCalledTimes(3)
     expect(refreshed).toHaveLength(2)
@@ -138,7 +139,7 @@ describe('ScheduleService parallel queries', () => {
     mocks.prisma.timeSlot.findFirst.mockReturnValue(timeSlot.promise)
     mocks.prisma.academicPeriod.findFirst.mockReturnValue(academicPeriod.promise)
 
-    const request = new ScheduleService().createEntry('school-1', {
+    const request = new ScheduleService().createEntry({ schoolId: 'school-1', ownerUserId: 'user-1' }, {
       schoolYearId: 'year-1',
       sectionId: 'section-1',
       sectionSubjectId: 'subject-1',
@@ -184,7 +185,7 @@ describe('ScheduleService parallel queries', () => {
     mocks.prisma.grade.findMany.mockReturnValue(grades.promise)
     mocks.prisma.timeSlot.findMany.mockReturnValue(slots.promise)
 
-    const request = new ScheduleService().findEntries('school-1')
+    const request = new ScheduleService().findEntries({ schoolId: 'school-1', ownerUserId: 'user-1' })
     await Promise.resolve()
     await Promise.resolve()
 
@@ -256,7 +257,7 @@ describe('ScheduleService integrity issues', () => {
       },
     ])
 
-    await expect(new ScheduleService().getIntegrityIssues('school-1', 'year-1')).resolves.toEqual([
+    await expect(new ScheduleService().getIntegrityIssues({ schoolId: 'school-1', ownerUserId: 'user-1' }, 'year-1')).resolves.toEqual([
       {
         code: 'SUBJECT_ASSIGNMENT_ARCHIVED',
         entryIds: ['entry-1', 'entry-2'],
@@ -267,5 +268,76 @@ describe('ScheduleService integrity issues', () => {
         message: 'Matemática ya no está asignada a 4.º A.',
       },
     ])
+  })
+})
+
+describe('ScheduleService personal ownership', () => {
+  const ana = { schoolId: 'school-1', ownerUserId: 'ana' }
+  const bea = { schoolId: 'school-1', ownerUserId: 'bea' }
+
+  beforeEach(() => {
+    vi.resetAllMocks()
+    __test__clearScheduleCache()
+  })
+
+  it('loads separate blocks for two teachers in the same school', async () => {
+    mocks.prisma.timeSlot.findMany.mockImplementation(async ({ where }) => [{
+      id: where.ownerUserId === 'ana' ? 'ana-slot' : 'bea-slot',
+      status: 'ACTIVE', startTime: '08:00', endTime: '08:45',
+    }])
+    const service = new ScheduleService()
+    const [anaSlots, beaSlots] = await Promise.all([
+      service.getTimeSlots(ana), service.getTimeSlots(bea),
+    ])
+    expect(anaSlots[0].id).toBe('ana-slot')
+    expect(beaSlots[0].id).toBe('bea-slot')
+  })
+
+  it('always scopes entries to the current owner even with teacher filters', async () => {
+    mocks.prisma.scheduleEntry.findMany.mockResolvedValue([])
+    mocks.prisma.sectionSubject.findMany.mockResolvedValue([{ id: 'subject-1' }])
+    await new ScheduleService().findEntries(ana, undefined, undefined, undefined, 'other-teacher')
+    expect(mocks.prisma.scheduleEntry.findMany).toHaveBeenCalledWith(expect.objectContaining({
+      where: expect.objectContaining({ schoolId: 'school-1', timeSlot: { ownerUserId: 'ana' } }),
+    }))
+  })
+
+  it.each(['updateTimeSlot', 'deleteTimeSlot'] as const)('cannot %s another teacher block', async (method) => {
+    mocks.prisma.timeSlot.findFirst.mockImplementation(async ({ where }) =>
+      where.ownerUserId === 'ana' ? null : { id: 'bea-slot' })
+    await expect(new ScheduleService()[method](ana, 'bea-slot', {})).rejects.toThrow('Time slot not found')
+    expect(mocks.prisma.timeSlot.update).not.toHaveBeenCalled()
+    expect(mocks.prisma.timeSlot.delete).not.toHaveBeenCalled()
+  })
+
+  it.each(['updateEntry', 'deleteEntry'] as const)('cannot %s another teacher assignment', async (method) => {
+    mocks.prisma.scheduleEntry.findFirst.mockImplementation(async ({ where }) =>
+      where.timeSlot?.ownerUserId === 'ana' ? null : { id: 'bea-entry' })
+    await expect(new ScheduleService()[method](ana, 'bea-entry', {})).rejects.toThrow('Schedule entry not found')
+    expect(mocks.prisma.scheduleEntry.update).not.toHaveBeenCalled()
+    expect(mocks.prisma.scheduleEntry.delete).not.toHaveBeenCalled()
+  })
+
+  it('does not link a new block to another teacher journey', async () => {
+    mocks.prisma.scheduleJourney.findFirst.mockResolvedValue(null)
+    await expect(new ScheduleService().createTimeSlot(ana, {
+      name: 'Clase', startTime: '08:00', endTime: '08:45', journeyId: 'bea-journey',
+    })).rejects.toThrow('Schedule journey not found')
+    expect(mocks.prisma.timeSlot.create).not.toHaveBeenCalled()
+  })
+
+  it('does not assign a class to another teacher block', async () => {
+    mocks.prisma.schoolYear.findFirst.mockResolvedValue({ id: 'year-1' })
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-1' })
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue({ id: 'subject-1' })
+    mocks.prisma.timeSlot.findFirst.mockResolvedValue(null)
+    await expect(new ScheduleService().createEntry(ana, {
+      schoolYearId: 'year-1', sectionId: 'section-1', sectionSubjectId: 'subject-1',
+      timeSlotId: 'bea-slot', dayOfWeek: 1,
+    })).rejects.toThrow('Time slot not found')
+    expect(mocks.prisma.timeSlot.findFirst).toHaveBeenCalledWith({
+      where: { id: 'bea-slot', schoolId: 'school-1', ownerUserId: 'ana' },
+    })
+    expect(mocks.prisma.scheduleEntry.create).not.toHaveBeenCalled()
   })
 })
