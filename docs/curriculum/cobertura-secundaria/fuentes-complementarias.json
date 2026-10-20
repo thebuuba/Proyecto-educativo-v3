@@ -1,23 +1,89 @@
 {
-  "checkedOn":"2026-10-17",
-  "policy":"LOCATED_IS_NOT_VISUALLY_REVIEWED_OR_IMPLEMENTED",
-  "arts":{
-    "officialIndex":"https://www.ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-modalidad-en-artes/diseno-curricular",
-    "secondIndexPage":"https://www.ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-modalidad-en-artes/diseno-curricular?page=2",
-    "status":"OFFICIAL_DOCUMENTS_LOCATED_REVIEW_PENDING",
-    "documents":[
-      {"area":"Música","url":"https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/XbKS-diseno-curricular-de-musica-webpdf.pdf","pages":141},
-      {"area":"Artes Visuales","url":"https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/tREM-diseno-curricular-de-artes-visuales-webpdf.pdf","pages":325},
-      {"area":"Artes Escénicas","url":"https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/8j7A-diseno-curricular-de-artes-escenicas-web-1pdf.pdf","pages":221},
-      {"area":"Artes Aplicadas: Diseño y Producción Artesanal","url":"https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/IzuP-diseno-curricular-de-artes-aplicadas-diseno-y-produccion-artesanal-webpdf.pdf","pages":238}
+  "checkedOn": "2026-10-20",
+  "policy": "LOCATED_IS_NOT_VISUALLY_REVIEWED_OR_IMPLEMENTED",
+  "arts": {
+    "officialIndex": "https://www.ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-modalidad-en-artes/diseno-curricular",
+    "secondIndexPage": "https://www.ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-modalidad-en-artes/diseno-curricular?page=2",
+    "status": "OFFICIAL_2019_COVERS_AND_ASSIGNMENT_TABLES_REVIEWED_IMPLEMENTATION_PENDING",
+    "documents": [
+      {
+        "area": "Música",
+        "url": "https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/XbKS-diseno-curricular-de-musica-webpdf.pdf",
+        "pages": 141,
+        "sha256": "92fe8b7a155fd7b329784aae16db858c55cb77429a3cf284ee90b3e4ad15cad0",
+        "editionYear": 2019,
+        "editionLabel": "Versión Preliminar para Revisión y Retroalimentación",
+        "visuallyReviewedPdfPages": [
+          1,
+          8,
+          9,
+          78,
+          79,
+          80
+        ]
+      },
+      {
+        "area": "Artes Visuales",
+        "url": "https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/tREM-diseno-curricular-de-artes-visuales-webpdf.pdf",
+        "pages": 325,
+        "sha256": "60d0a8201354cd278537cbe4f5b8b7b256404819db04c875bad274d6672e5056",
+        "editionYear": 2019,
+        "editionLabel": "Versión Preliminar para Revisión y Retroalimentación",
+        "visuallyReviewedPdfPages": [
+          1,
+          84,
+          146,
+          208,
+          258,
+          266
+        ]
+      },
+      {
+        "area": "Artes Escénicas",
+        "url": "https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/8j7A-diseno-curricular-de-artes-escenicas-web-1pdf.pdf",
+        "pages": 221,
+        "sha256": "df522fc7c9ed8979128279d50b63a1465c8f811c6377d22f51fdb805396fd5ec",
+        "editionYear": 2019,
+        "editionLabel": "Versión Preliminar para Revisión y Retroalimentación",
+        "visuallyReviewedPdfPages": [
+          1,
+          88,
+          89,
+          170
+        ]
+      },
+      {
+        "area": "Artes Aplicadas: Diseño y Producción Artesanal",
+        "url": "https://www.ministeriodeeducacion.gob.do/docs/direccion-de-educacion-modalidad-en-artes/IzuP-diseno-curricular-de-artes-aplicadas-diseno-y-produccion-artesanal-webpdf.pdf",
+        "pages": 238,
+        "sha256": "ee2fd5199a5ca8dfe1129b7e6bd68d8cc160f522268a2bf6581902f205f1c7ac",
+        "editionYear": 2019,
+        "editionLabel": "Versión Preliminar para Revisión y Retroalimentación",
+        "visuallyReviewedPdfPages": [
+          1,
+          83,
+          84,
+          85
+        ]
+      }
     ],
-    "limits":["El índice publica los cuatro diseños en2020 y también menciones anteriores; cotejar versiones, portadas y tablas antes de inventariar asignaturas por grado.","La disponibilidad oficial no acredita vigencia ni lectura visual completa. No equiparar estas menciones a Educación Artística común."]
+    "limits": [
+      "El índice publica los cuatro diseños en2020 y también menciones anteriores; cotejar versiones, portadas y tablas antes de inventariar asignaturas por grado.",
+      "La disponibilidad oficial no acredita vigencia ni lectura visual completa. No equiparar estas menciones a Educación Artística común.",
+      "Revisión2026-10-20:portadas2019preliminares y13tablas de asignación leídas; no acredita mallas completas ni instrumentos.",
+      "Nueva fuente académica2024 localizada; descarga oficial bloqueada por certificado, sin eludir validación."
+    ],
+    "inventory": "modalidades-especializadas-inventario.json"
   },
-  "technicalProfessional":{
-    "officialIndex":"https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional",
-    "officialPublications":"https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional/publicaciones",
-    "exampleOfficialFamily":"https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional/oferta-curricular-ifc",
-    "status":"OFFICIAL_FAMILY_INDEX_LOCATED_PROGRAM_DESIGNS_PENDING_REVIEW",
-    "limits":["El menú distingue familias profesionales de programas/títulos; no contarlas como asignaturas ni como los18 ámbitos optativos académicos por grado del PDF2023.","Localizar diseños de cada programa, comprobar nivel, grado y versiones antes de incorporar ámbitos. Los módulos laborales no quedan cubiertos por el componente académico común."]
+  "technicalProfessional": {
+    "officialIndex": "https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional",
+    "officialPublications": "https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional/publicaciones",
+    "exampleOfficialFamily": "https://ministeriodeeducacion.gob.do/sobre-nosotros/areas-institucionales/direccion-de-educacion-tecnico-profesional/oferta-curricular-ifc",
+    "status": "SEVENTEEN_OFFICIAL_FAMILY_INDEXES_READ_75_DOCUMENTS_LOCATED_PROGRAM_REVIEW_PENDING",
+    "limits": [
+      "El menú distingue familias profesionales de programas/títulos; no contarlas como asignaturas ni como los18 ámbitos optativos académicos por grado del PDF2023.",
+      "Localizar diseños de cada programa, comprobar nivel, grado y versiones antes de incorporar ámbitos. Los módulos laborales no quedan cubiertos por el componente académico común."
+    ],
+    "inventory": "modalidades-especializadas-inventario.json"
   }
 }
