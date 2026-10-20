@@ -1,0 +1,51 @@
+{
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_FULL_FLOW_VERIFIED",
+  "account": "Sesión personal confirmada de Alexauris;sin credenciales en evidencia",
+  "context": {
+    "grade": 6,
+    "subjectCode": "OPT-HCS-SOC-6",
+    "subjectName": "Ciudadanía y Democracia Participativa",
+    "modalityCode": "academic",
+    "optativeExitName": "Humanidades y Ciencias Sociales",
+    "course": "6.º secundaria QA HCS Development",
+    "originalSchoolAndDataPreserved": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "runtimeEntry": "/assets/index-Dzuj2BcB.js",
+  "checks": [
+    "Formulario vacío vertical,cuatro selectores y estrategia visibles,puntos pendientes,sin anuncio de preparación.",
+    "Rúbrica,cotejo,escala yponderada completos leídos;ponderada100%,totales17.35→20→17.35exactos.",
+    "Consigna conrol/decisión singular seleccionaSIMULATIONAUTO en buildfinal.",
+    "Grupal yRúbrica manuales,texto manual;una creación,listado→Editar yreapertura.",
+    "Cambiar soloaCASE_STUDYMANUAL conserva13camposDOM,unaactualización yrecarga;IDs,snapshot yhuellaDB exactos.",
+    "Diezbaselinespersonalesanteriores preservadas,sin nuevascuentas oestudiantes ni limpiezas de almacenamiento."
+  ],
+  "persistence": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "d4894586-9899-4a94-a7d8-dfaab8d680f7",
+    "instrumentId": "fca9bfee-ea69-4931-b384-7440e8c1857c",
+    "snapshotId": "0cdf2057-f1e6-4b69-9ba3-e6d130634a25",
+    "instrumentHash": "62c5fe2645cbf1ba24a2d951c2ae45d6",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.135",
+    "strategy": "CASE_STUDY",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "activityWrites": 2,
+    "newActivities": 1,
+    "newSnapshots": 1
+  },
+  "pending": [],
+  "limitations": [
+    "La lectura de cuatro formatos se hizo con el mismo payload135 antes del último ajuste de inferencia;rúbrica,autoestrategia,guardado,reapertura y comparación exacta se comprobaron en el buildfinal.",
+    "Al recargar para servir el código nuevo,el formulario QA recién iniciado reapareció vacío antes de su autoguardado;se reintrodujo solamente esa prueba,sin limpiar almacenamiento ni alterar otros borradores.",
+    "La validación exigió confirmar modalidad;se regeneró el instrumento QA con confirmación yse reintrodujo su título manual antes del único POST de creación.",
+    "Lectura ycaptura representativas de un contextoQAseparado en la misma escuela personal,no de todas las variantes del currículo."
+  ],
+  "localFullPageScreenshotAvailable": true,
+  "screenshotExcludedFromGit": true
+}

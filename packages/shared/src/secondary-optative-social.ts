@@ -4,6 +4,8 @@ import type {SocialTopic} from './secondary-social-grade-1'
 import {resolveSocialTaskForTopics,commonSocialCriteria,commonSocialSelections,type CommonSocialTask} from './secondary-social'
 import {optativeHcsSocFour} from './secondary-optative-hcs-soc-4'
 import {optativeHcsSocFive} from './secondary-optative-hcs-soc-5'
+import {optativeHcsSocSix} from './secondary-optative-hcs-soc-6'
+import {citizenshipTask,citizenshipCriteria,citizenshipTopics} from './secondary-optative-citizenship-evidence'
 import {demographyTask,demographyCriteria} from './secondary-optative-demography-evidence'
 
 type SocialFacet={label:string;match:string;procedure?:string}
@@ -11,9 +13,10 @@ export type OptativeSocialTopic=SocialTopic&{sourceRecordIds:string[];priority:n
 type Evidence={title:string;levels:ContextualTopicCriterion['progressionLevels'];weight:number}
 export type OptativeSocialModule={id:string;grade:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];topics:OptativeSocialTopic[];evidence:Record<string,Evidence>}
 export type OptativeSocialTask=CommonSocialTask&{module:OptativeSocialModule}
-export const optativeSocialModules=[optativeHcsSocFour,optativeHcsSocFive]
+export const optativeSocialModules=[optativeHcsSocFour,optativeHcsSocFive,optativeHcsSocSix]
 const additionalVerbs='(?:resum(?:e|en|ir|ira|iran|a|an)|revis(?:a|an|ar|ara|aran|e|en)|corrig(?:e|en)|corrij(?:a|an)|atribuy(?:e|en|a|an)|demuestr(?:a|an|e|en)|aplic(?:a|an|ar|ara|aran|e|en))'
 function selectTopics(text:string,provided:SocialTopic[]):SocialTopic[]{
+ if(provided[0]?.grade===6)return citizenshipTopics(text,provided)
  // «Científico» califica el género del ensayo; su objeto sigue siendo el tema pedido.
  const subject=text.replace(/\bensayo cientifico\b/g,'ensayo')
  let matched=(provided as OptativeSocialTopic[]).filter(t=>new RegExp(t.match).test(subject))
@@ -67,8 +70,13 @@ export function resolveOptativeSocialTask(title:string,description:string,contex
  const demography=module.subjectCode==='OPT-HCS-SOC-5'
  // «No degradables» names a material category; it does not negate the requested task.
  const protect=(text:string)=>demography?text.replace(/\bno degradables\b/gi,'nodegradables'):text
- const task=resolveSocialTaskForTopics(protect(title),protect(description),module.grade,module.topics,{selectTopics,additionalVerbs:demography?'(?:'+additionalVerbs+'|defin(?:e|en|ir|a|an)|disen(?:a|an|ar|e|en))':additionalVerbs})
+ const task=resolveSocialTaskForTopics(protect(title),protect(description),module.grade,module.topics,{selectTopics,additionalVerbs:demography?'(?:'+additionalVerbs+'|defin(?:e|en|ir|a|an)|disen(?:a|an|ar|e|en))':module.subjectCode==='OPT-HCS-SOC-6'?'(?:'+additionalVerbs+'|escrib[a-z]*)':additionalVerbs})
  if(!task)return null
+ if(module.subjectCode==='OPT-HCS-SOC-6'){
+  const own=citizenshipTask(task)
+  own.actions=own.actions.map(action=>({...action,topics:selectTopics(action.text,module.topics).length?selectTopics(action.text,module.topics):action.topics}))
+  return{...own,module}
+ }
  if(module.subjectCode==='OPT-HCS-SOC-5'){
   task.actions=task.actions.map(action=>({...action,text:action.text.replace(/\bnodegradables\b/g,'no degradables')}))
   const own=demographyTask(task),technique=own.activityType==='DEBATE'?'debate':own.activityType==='ORAL_PRESENTATION'?'presentacion':own.activityType==='PERFORMANCE'?'observacion-sistematica':'analisis-producciones'
@@ -101,6 +109,7 @@ function authored(module:OptativeSocialModule,topic:SocialTopic,key:string,value
 export function optativeSocialCriteria(task:OptativeSocialTask):ContextualTopicCriterion[]{
  const {module}=task
  if(module.subjectCode==='OPT-HCS-SOC-5')return demographyCriteria(task,(topic,key,values)=>authored(module,topic,key,values))
+ if(module.subjectCode==='OPT-HCS-SOC-6')return citizenshipCriteria(task,(topic,key,values)=>authored(module,topic,key,values))
  const rows=task.actions.flatMap(action=>{
   const text=head(action.text),one={...task,actions:[action]},topic=action.topics[0],make=(key:string,values?:Record<string,string>)=>authored(module,topic,key,values)
   if(!topic)return[]

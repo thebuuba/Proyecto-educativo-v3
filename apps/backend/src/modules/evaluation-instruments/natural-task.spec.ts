@@ -14,6 +14,9 @@ describe('Consignas naturales y condiciones explícitas',()=>{
  for(const description of ['Incluye las secciones: introducción, desarrollo y conclusión.','El informe tendrá secciones de introducción, desarrollo y conclusión.','Apartados: introducción, desarrollo y conclusión.','Incluye las secciones introducción, desarrollo y conclusión.','Secciones de introducción, desarrollo y conclusión.'])it(`conserva la lista explícita de secciones: ${description}`,()=>{
   expect(deliveryConditions(description)).toContainEqual({key:'sections',label:'apartados solicitados: introduccion, desarrollo y conclusion'})
  })
+ for(const description of ['Elabora un periódico con secciones y artículos sustentados en los materiales proporcionados.','Redacta el borrador con las secciones expresamente indicadas en la pauta dada.'])it('no inventa una lista de apartados a partir de una referencia genérica: '+description,()=>{
+  expect(deliveryConditions(description).some(c=>c.key==='sections')).toBe(false)
+ })
  it('analizar un informe proporcionado no añade una condición de entrega',()=>{
   const p=propose('Analiza las secciones de un informe proporcionado sobre la ocupación haitiana de 1822–1844.',5,'SOC')
   expect(p.criteria.some(c=>c.templateId.startsWith('delivery-'))).toBe(false)

@@ -4,6 +4,19 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
+test('Ciudadanía y Democracia Participativa HCS sexto conserva97registros,47anclas y21indicadores',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-6-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-6','6',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.elements,97);assert.equal(manifest.excludedFromAssessment,15)
+ assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_HCS_SOC_6_V1');assert.deepEqual(manifest.metadata.optativeExitNames,['Humanidades y Ciencias Sociales'])
+ const m=JSON.parse(readFileSync(path,'utf8')),fixture=JSON.parse(readFileSync('data/evaluation-instruments/optative-hcs-soc-six-contracts.json','utf8')),ids=new Set(m.officialRecords.map(r=>r.id)),excluded=new Set(m.explicitExclusions.map(r=>r.id))
+ assert.equal(m.contents.length,47);assert.equal(m.criticalIndicators.length,21)
+ for(const r of m.criticalIndicators)assert(r.caseIds.length&&r.adaptation)
+ for(const task of fixture.cases)for(const id of task.sourceRecordIds){assert(ids.has(id),task.id);assert(!excluded.has(id),task.id)}
+ const repeated=JSON.parse(readFileSync(path.replace('-matriz.json','-correspondencias.json'),'utf8')).classification.filter(r=>r.ordinal===37||r.ordinal===60);assert.equal(repeated.length,2);assert.equal(repeated[0].literal.replace(/\s+/g,' '),repeated[1].literal.replace(/\s+/g,' '));assert.notEqual(repeated[0].id,repeated[1].id)
+ for(const args of [['OPT-HCS-SOC-6','5',path,'--optative'],['OPT-HCS-SOC-5','5',path,'--optative'],['OPT-HCS-SOC-6','6',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
 test('Geografía humana y demografía HCS quinto conserva136registros,81anclas y21indicadores en su ámbito',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-5-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-5','5',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)

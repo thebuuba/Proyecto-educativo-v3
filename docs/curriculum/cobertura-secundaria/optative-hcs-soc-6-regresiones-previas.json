@@ -1,0 +1,70 @@
+{
+  "catalog": "evaluation-2026.135",
+  "baseline": "evaluation-2026.134",
+  "commonEnglishIdentical": 15176,
+  "fullDefinitionsExactToFrozen134": 9120,
+  "scopes": [
+    {
+      "code": "OPT-HCS-SOC-4",
+      "fullDefinitionsExactToFrozen134": 480,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-5",
+      "fullDefinitionsExactToFrozen134": 608,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-4",
+      "fullDefinitionsExactToFrozen134": 312,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-5",
+      "fullDefinitionsExactToFrozen134": 300,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-6",
+      "fullDefinitionsExactToFrozen134": 600,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HLM-LEN-4",
+      "fullDefinitionsExactToFrozen134": 288,
+      "olderArtifactDifferencesAlreadyPresentIn134": 12
+    },
+    {
+      "code": "OPT-HLM-LEN-5",
+      "fullDefinitionsExactToFrozen134": 272,
+      "olderArtifactDifferencesAlreadyPresentIn134": 16
+    },
+    {
+      "code": "OPT-HLM-LEN-6",
+      "fullDefinitionsExactToFrozen134": 436,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HLM-ING-4",
+      "fullDefinitionsExactToFrozen134": 1532,
+      "olderArtifactDifferencesAlreadyPresentIn134": 8
+    },
+    {
+      "code": "OPT-HLM-ING-5",
+      "fullDefinitionsExactToFrozen134": 2200,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    },
+    {
+      "code": "OPT-HLM-ING-6",
+      "fullDefinitionsExactToFrozen134": 2092,
+      "olderArtifactDifferencesAlreadyPresentIn134": 0
+    }
+  ],
+  "historicalArtifactDifferenceCountAlreadyIn134": 36,
+  "priorPersonalBaselinesPreserved": 10,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "Las comparaciones de instrumentos se distinguen de nuevos recorridos visuales;eneste bloque solo el contexto personalQA6 es nuevo.",
+    "No se regeneraron artefactos históricos más antiguos ni sobrescribieron baselines."
+  ]
+}

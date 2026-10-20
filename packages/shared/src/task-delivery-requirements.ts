@@ -46,7 +46,7 @@ export function deliveryConditions(description:string):Condition[]{
  const sections=text.match(/\b(?:apartados|secciones)\s*:\s*([^.;]+)/)
   ??text.match(/(?:^|[.;]\s*)(?:apartados|secciones)\s+de\s+([^.;]+)/)
   ??text.match(/\b(?:inclu[a-z]*|con|tendra|contendra|debe tener|debe contener)\s+(?:(?:los|las)\s+)?(?:apartados|secciones)\s+(?:de\s+)?([^.;]+)/)
- if(sections){const content=sections[1].trim();if(content)add('sections',`apartados solicitados: ${content}`)}
+ if(sections){const content=sections[1].trim();if(content&&!/^(?:y\b|expresamente\b|indicad|senalad|solicitad|previst|segun\b)/.test(content))add('sections',`apartados solicitados: ${content}`)}
  const quantities=new Map<string,{unit:string;min:number[];max:number[];exact:number[]}>()
  for(const m of text.matchAll(new RegExp(`\\b(${number})\\s+(ejemplos?|parrafos?|oraciones?|fuentes?|citas?|imagenes?|apartados?)\\b`,'g'))){
   const clauseBefore=text.slice(0,m.index).split(/[.;]/).at(-1)??'',after=text.slice(m.index!+m[0].length)

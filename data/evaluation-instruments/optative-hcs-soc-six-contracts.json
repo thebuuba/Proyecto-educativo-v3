@@ -1,0 +1,877 @@
+{
+  "subjectCode": "OPT-HCS-SOC-6",
+  "subjectName": "Ciudadanía y Democracia Participativa",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Humanidades y Ciencias Sociales",
+  "cases": [
+    {
+      "id": "concept-15",
+      "description": "Explica la confiabilidad de las páginas dadas sobre Constitución, derechos humanos e inmigrantes a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9f999b36-1a61-50ed-bf35-256db0375252"
+      ],
+      "required": "confiabilidad|procedencia"
+    },
+    {
+      "id": "concept-16",
+      "description": "Explica la democracia y la participación en la familia, escuela, comunidad y sociedad a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "96638a16-5f68-548a-ad63-ad97e569aba8"
+      ]
+    },
+    {
+      "id": "concept-17",
+      "description": "Explica la participación cívica a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "daa9b9e5-bb84-53e9-bb68-4e00f9d8cf04"
+      ],
+      "forbidden": "principios cívicos"
+    },
+    {
+      "id": "concept-18",
+      "description": "Explica la democracia representativa y la democracia participativa a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e633dc5f-3f0d-53f0-94e5-edc789de2460"
+      ]
+    },
+    {
+      "id": "concept-19",
+      "description": "Explica los valores democráticos en el caso ficticio a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "c344cbe9-6b37-5a3f-9abd-848c0b38705c"
+      ]
+    },
+    {
+      "id": "concept-20",
+      "description": "Explica el Estado democrático y de derecho a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6d760447-8273-5f67-907e-726c2a9cd8ae"
+      ]
+    },
+    {
+      "id": "concept-22",
+      "description": "Explica los derechos y los deberes a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "4dd54cdb-c05e-5ab7-a823-38efc422c651"
+      ]
+    },
+    {
+      "id": "concept-23",
+      "description": "Explica los derechos fundamentales de la Constitución dominicana según el texto dado a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "cd3d493c-e4d5-577e-b93c-bad97482265f"
+      ]
+    },
+    {
+      "id": "concept-24",
+      "description": "Explica los poderes del Estado a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "563b3b5b-220f-57ec-8a2a-1293f5499766"
+      ]
+    },
+    {
+      "id": "concept-25",
+      "description": "Explica los derechos humanos a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d30ccbe4-7f72-59b2-9cdc-4801693e6358"
+      ]
+    },
+    {
+      "id": "concept-26",
+      "description": "Explica la igualdad de derechos a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "24a12dfc-06d6-5b8f-af89-2fc375bf8731"
+      ]
+    },
+    {
+      "id": "concept-27",
+      "description": "Explica el concepto de ciudadanía a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "11519de1-4c35-57b9-95bc-a0e3a33edbac"
+      ]
+    },
+    {
+      "id": "concept-28",
+      "description": "Explica la ciudadanía democrática a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ca7aea8c-9b5a-5948-a91b-ef8129da7348"
+      ]
+    },
+    {
+      "id": "concept-29",
+      "description": "Explica la ciudadanía global a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d6412626-f907-5c3a-8d4f-662f5ceae153"
+      ]
+    },
+    {
+      "id": "concept-30",
+      "description": "Explica la convivencia y la diversidad cultural a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "85eba0a8-af4f-5d55-94d8-da0951b1c9e8"
+      ],
+      "forbidden": "multiculturalidad|interculturalidad"
+    },
+    {
+      "id": "concept-31",
+      "description": "Explica la inmigración, la multiculturalidad y la interculturalidad a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "79ae9d8a-3f95-5c93-9345-dd9427f0b819"
+      ]
+    },
+    {
+      "id": "concept-32",
+      "description": "Explica el cuidado del medioambiente a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "74bcec61-e726-5551-8b7a-b537843db1be"
+      ]
+    },
+    {
+      "id": "concept-33",
+      "description": "Explica la cultura de paz a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0f583cc3-0933-5558-9cbc-72fa06b9ec7c"
+      ]
+    },
+    {
+      "id": "concept-34",
+      "description": "Explica la educación vial a partir de los materiales proporcionados. No se pide elaborar otro producto ni revelar experiencias personales.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d35e9bed-cdaf-52b7-87eb-7aa2674200b9"
+      ]
+    },
+    {
+      "id": "international-sources",
+      "description": "Investiga la pregunta dada sobre migración y ciudadanía utilizando los extractos proporcionados de ONU, OEA y UNESCO. Relaciona los hallazgos con esa pregunta y atribuye las informaciones a sus fuentes. No se pide recopilar datos personales.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "2592b369-00df-5015-a633-90237232b73b"
+      ],
+      "requiredEvidence": [
+        "research",
+        "attribution"
+      ]
+    },
+    {
+      "id": "rights-position",
+      "description": "Argumenta una posición sobre la vulneración de derechos humanos del caso ficticio, sustentando las razones en los artículos proporcionados. No se califica la adhesión a una postura ni una emoción privada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7e7b44a8-bc1f-51a3-ab93-39a10e6435d8",
+        "e9f028b3-3731-5ee7-87f3-1c3863a6bcb8"
+      ],
+      "requiredEvidence": [
+        "reason"
+      ]
+    },
+    {
+      "id": "migration-data-record",
+      "description": "Registra las informaciones agregadas sobre inmigrantes del conjunto ficticio proporcionado, conservando los valores y la procedencia. No se pide entrevistar personas reales.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "08413b5a-bc74-577d-9c06-339f4bcd2414"
+      ],
+      "requiredEvidence": [
+        "data-record"
+      ]
+    },
+    {
+      "id": "democracy-research-project",
+      "description": "Elabora un proyecto de investigación sobre democracia con pregunta, fuentes dadas, pasos y producto previstos. No se pide ejecutar la investigación.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "e603f417-d806-5cd6-a68f-bff26b2ed3bc"
+      ],
+      "requiredEvidence": [
+        "research-plan"
+      ],
+      "forbidden": "hallazgos obtenidos|investigación realizada"
+    },
+    {
+      "id": "democracy-project-steps",
+      "description": "Selecciona los pasos del proyecto de investigación sobre democracia entre las opciones dadas y ordénalos según su finalidad. No se pide elaborar el proyecto completo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e0acbdb1-1cba-5077-9691-45441b18ab9d"
+      ],
+      "onlyEvidence": "project-steps"
+    },
+    {
+      "id": "identify-rights-sources",
+      "description": "Identifica las fuentes confiables sobre derechos humanos y Constitución dominicana entre los materiales dados, justificando su selección con autoría y respaldo. No se pide realizar una investigación nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b777f8f3-141d-5664-b815-2fe776a39b26",
+        "667f0a4e-352b-581a-b5ba-da99b1e46735"
+      ],
+      "requiredEvidence": [
+        "source-selection",
+        "source-credibility"
+      ]
+    },
+    {
+      "id": "democracy-drafts",
+      "description": "Revisa los borradores del proyecto sobre democracia y corrige únicamente las relaciones señaladas entre pregunta y pasos. No se pide cambiar los demás apartados.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "23c7aa84-f3f8-5bdc-bd3f-1407c030f6c7"
+      ],
+      "onlyEvidence": "revision",
+      "required": "pregunta|pasos",
+      "forbidden": "filosófic|demográfic"
+    },
+    {
+      "id": "democracy-final-draft",
+      "description": "Redacta el borrador final del proyecto sobre democracia incorporando únicamente las correcciones señaladas en el borrador dado. No se pide ejecutar el proyecto ni exponerlo oralmente.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "0e089477-125f-58ae-872a-ab6737437372"
+      ],
+      "onlyEvidence": "draft"
+    },
+    {
+      "id": "rights-research-proposal",
+      "description": "Formula una propuesta de investigación sobre derechos fundamentales con pregunta y pasos previstos usando las fuentes dadas. No se pide presentar resultados de una investigación realizada.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "2c829ce2-9b78-588b-9113-bbd190d145d7"
+      ],
+      "requiredEvidence": [
+        "research-plan"
+      ]
+    },
+    {
+      "id": "school-newspaper",
+      "description": "Elabora un periódico escolar sobre un problema ficticio de derechos y deberes con secciones y artículos sustentados en los materiales proporcionados. No se pide publicarlo ni entrevistar personas reales.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37840259-bdf9-5213-9612-00d3cca1a3be",
+        "084fcf4c-02ee-589d-8611-274ad87dd343"
+      ],
+      "requiredEvidence": [
+        "newspaper",
+        "attribution"
+      ]
+    },
+    {
+      "id": "newspaper-structure",
+      "description": "Selecciona únicamente la estructura de un periódico escolar sobre derechos y deberes entre las alternativas dadas. Justifica cómo las secciones atienden el propósito. No se pide redactar los artículos.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0501b7a4-0224-5166-846b-69268e9069de"
+      ],
+      "onlyEvidence": "newspaper-structure",
+      "forbidden": "artículos redactados|publicación real"
+    },
+    {
+      "id": "rights-articles-analysis",
+      "description": "Analiza los artículos de convenciones y constituciones proporcionados sobre derechos humanos, relacionando sus disposiciones con el caso ficticio dado. No se pide buscar legislación nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5d0e8a72-fca6-5bfe-93cd-d9e5c8b3f1f5"
+      ],
+      "requiredEvidence": [
+        "document-analysis"
+      ]
+    },
+    {
+      "id": "electoral-simulation",
+      "description": "Realiza una simulación de proceso electoral escolar con candidaturas ficticias y el procedimiento dado. Cumple el rol acordado y registra la decisión siguiendo los pasos establecidos. No se califica la opción política ni el resultado ganador.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "3c4ad8cf-899f-5a63-8718-69fab961b9a8"
+      ],
+      "requiredEvidence": [
+        "electoral-procedure",
+        "role-contribution"
+      ]
+    },
+    {
+      "id": "rights-group-discussion",
+      "description": "Discute en grupo la importancia de los derechos fundamentales a partir del caso y los artículos proporcionados. Aporta una razón y responde a una intervención del grupo.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "4d878415-a12e-578f-b5cd-6f7121defcd8"
+      ],
+      "participationMode": "GROUP",
+      "requiredEvidence": [
+        "reason",
+        "response"
+      ]
+    },
+    {
+      "id": "rights-article",
+      "description": "Redacta un artículo sobre el aporte a los derechos humanos del personaje ficticio descrito en los materiales dados. No se pide una memoria ni un ensayo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4ab686f9-8a7c-5981-8801-93c6eca78b70"
+      ],
+      "requiredEvidence": [
+        "article"
+      ]
+    },
+    {
+      "id": "rights-memory",
+      "description": "Redacta una memoria sobre las actuaciones del personaje ficticio que aportó a los derechos humanos según las fuentes dadas. No se pide un artículo ni un ensayo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4ab686f9-8a7c-5981-8801-93c6eca78b70"
+      ],
+      "requiredEvidence": [
+        "memory"
+      ],
+      "forbidden": "El memoria|un memoria"
+    },
+    {
+      "id": "rights-essay",
+      "description": "Redacta un ensayo sobre los planteamientos que sustentan la Constitución y los derechos humanos con tesis y razones a partir de los textos dados. No se pide investigar nuevas fuentes.",
+      "activityType": "ESSAY",
+      "sourceRecordIds": [
+        "4ab686f9-8a7c-5981-8801-93c6eca78b70",
+        "6f17d0d7-15c5-55cc-9645-15601bebe338"
+      ],
+      "requiredEvidence": [
+        "thesis",
+        "reason",
+        "organization"
+      ],
+      "criterionCount": 3,
+      "requiredAll": [
+        "Constitución",
+        "derechos humanos"
+      ]
+    },
+    {
+      "id": "rights-campaign",
+      "description": "Diseña una campaña escolar ficticia sobre cumplimiento de la Constitución y defensa de los derechos humanos con propósito, destinatarios, mensaje y acciones previstas. Utiliza y atribuye las fuentes dadas. No se pide ejecutar una campaña real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "237561c5-17ed-50aa-b1c8-45266e9a4d2a",
+        "6cb829b1-0c45-5a4b-90ba-6fab239a687e"
+      ],
+      "requiredEvidence": [
+        "campaign-plan",
+        "attribution"
+      ],
+      "criterionCount": 2,
+      "requiredAll": [
+        "Constitución",
+        "derechos humanos"
+      ]
+    },
+    {
+      "id": "intercultural-proposal",
+      "description": "Propón una solución de convivencia entre personajes ficticios de distintas culturas, justificando su relación con el problema dado de ciudadanía, multiculturalidad e interculturalidad. No se pide ejecutar un proyecto.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "5c728b10-2f64-5a9b-96dd-5258770d18b8"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "environmental-project",
+      "description": "Elabora un proyecto de cuidado del medioambiente con problema, acciones, responsables y forma de comprobar resultados previstos, usando los materiales dados sobre contaminación y residuos sólidos. No se pide ejecutarlo.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "7b0ad5dd-a5e8-507c-9bb6-5f12bfc10a62",
+        "1354f61c-26e5-517a-9d20-f796164e3cb7"
+      ],
+      "requiredEvidence": [
+        "project-plan"
+      ],
+      "requiredAll": [
+        "cuidado del medioambiente",
+        "contaminación",
+        "residuos sólidos"
+      ]
+    },
+    {
+      "id": "environmental-campaign",
+      "description": "Elabora una campaña escolar ficticia de cuidado del entorno sobre contaminación y residuos sólidos con propósito, destinatarios, mensaje y acciones previstas. No se pide ejecutarla.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "7b0ad5dd-a5e8-507c-9bb6-5f12bfc10a62"
+      ],
+      "requiredEvidence": [
+        "campaign-plan"
+      ]
+    },
+    {
+      "id": "environmental-project-steps",
+      "description": "Selecciona y ordena los pasos del proyecto de cuidado del medioambiente según el propósito dado. No se pide desarrollar los demás componentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f0790a9e-5c43-59d6-a7d1-f31c0000f082"
+      ],
+      "onlyEvidence": "project-steps"
+    },
+    {
+      "id": "environmental-reliable-sources",
+      "description": "Identifica las fuentes confiables sobre contaminación y residuos sólidos entre las páginas dadas y justifica su respaldo. No se pide elaborar un proyecto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6acb2171-4ddd-55e9-b59e-55dd9bc9ded4"
+      ],
+      "requiredEvidence": [
+        "source-selection",
+        "source-credibility"
+      ],
+      "requiredAll": [
+        "contaminación",
+        "residuos sólidos"
+      ],
+      "forbidden": "Constitución|inmigrantes"
+    },
+    {
+      "id": "environmental-draft",
+      "description": "Redacta el borrador del proyecto de cuidado del medioambiente con las secciones expresamente indicadas en la pauta dada. No se pide ejecutar las acciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "5b6321f5-fa9e-52ae-a288-47a5afc2c612"
+      ],
+      "onlyEvidence": "draft"
+    },
+    {
+      "id": "environmental-project-presentation",
+      "description": "Expón oralmente el proyecto de cuidado del medioambiente ya proporcionado, explicando la relación entre el problema y las acciones previstas. No se pide elaborar otro proyecto.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "2520c219-9003-58d9-8f57-c1c96a1e97b1"
+      ],
+      "requiredEvidence": [
+        "interpretation",
+        "oral"
+      ]
+    },
+    {
+      "id": "peace-road-brochure",
+      "description": "Elabora un brochure sobre cultura de paz y convivencia vial con información, recomendaciones y organización legible para los destinatarios escolares dados. No se pide una exposición oral.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "b78f069c-1ab3-5b99-b3d9-2ebab6aa9527"
+      ],
+      "requiredEvidence": [
+        "brochure"
+      ],
+      "requiredAll": [
+        "cultura de paz",
+        "vial"
+      ]
+    },
+    {
+      "id": "democratic-decision-procedure",
+      "description": "Realiza una simulación de decisión democrática escolar siguiendo el método y los turnos dados; registra la decisión acordada. No se evalúan las creencias o la preferencia personal.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "e23fc18c-95f2-5f3a-ace9-0ee28a9c2e4a"
+      ],
+      "requiredEvidence": [
+        "decision-procedure"
+      ]
+    },
+    {
+      "id": "agreed-school-role",
+      "description": "Participa en la simulación escolar de cuidado del entorno cumpliendo únicamente la contribución concreta de tu rol acordado según la pauta dada. No se exige activismo externo ni se califica interés personal.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "0be1a47a-b4ff-5bfa-9ec3-3c63c9ef7405",
+        "a800c527-974b-54f3-8e80-2654a761b83e"
+      ],
+      "onlyEvidence": "role-contribution"
+    },
+    {
+      "id": "agreed-cleaning-role",
+      "description": "Realiza la simulación de campaña escolar de limpieza y cuidado del entorno cumpliendo la acción concreta de tu rol acordado. No se pide ejecutar una campaña real ni evaluar compromiso íntimo.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "a333707c-47a4-50cf-84a4-a83b687b662c"
+      ],
+      "onlyEvidence": "role-contribution"
+    },
+    {
+      "id": "migrant-rights-project",
+      "description": "Elabora un proyecto sobre la situación de los derechos humanos de inmigrantes a partir de datos agregados ficticios con problema, acciones y comprobación prevista. No se pide revelar información personal ni ejecutarlo.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "b49819d0-54b9-57dd-841d-43c9854cbb76"
+      ],
+      "requiredEvidence": [
+        "project-plan"
+      ]
+    },
+    {
+      "id": "simulated-field-inquiry",
+      "description": "Investiga la pregunta sobre inmigrantes mediante trabajo de campo simulado con registros ficticios dados. Registra los hallazgos y atribuye las fuentes siguiendo únicamente la pauta APA proporcionada. No se pide entrevistar personas reales ni usar MLA o LM.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "7258925a-76ab-5afa-9ce1-6c97561c8694"
+      ],
+      "requiredEvidence": [
+        "research",
+        "attribution"
+      ],
+      "required": "pauta APA",
+      "forbidden": "MLA|LM|encuesta propia"
+    },
+    {
+      "id": "responsible-citizenship-debate",
+      "description": "Debate las características de una ciudadanía responsable a partir del caso ficticio dado. Sostén razones y responde a las objeciones sobre el caso. No se pide revelar opiniones políticas personales.",
+      "activityType": "DEBATE",
+      "sourceRecordIds": [
+        "6f6ac9db-5c75-5838-9243-540f0a705b5a"
+      ],
+      "requiredEvidence": [
+        "reason",
+        "response"
+      ]
+    },
+    {
+      "id": "civic-principles-case",
+      "description": "Identifica los principios cívicos en las actuaciones de los personajes del caso ficticio dado y relaciona cada principio con una evidencia del texto. No se califica la moralidad del estudiante.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "42fba15a-0755-5047-bee3-3d5964438101"
+      ],
+      "requiredEvidence": [
+        "identification"
+      ]
+    },
+    {
+      "id": "global-roundtable",
+      "description": "Participa en una mesa redonda sobre las implicaciones de la ciudadanía global, aportando una explicación basada en los textos dados y respondiendo a las intervenciones.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "0cb8b84c-e080-537b-adfd-17689b905877"
+      ],
+      "requiredEvidence": [
+        "interpretation",
+        "response"
+      ]
+    },
+    {
+      "id": "state-powers-alternative",
+      "description": "Elabora un ensayo o un informe sobre las funciones de los poderes del Estado a partir de los textos dados. En el ensayo formula tesis y razones; en el informe sintetiza las funciones. No se piden ambos productos.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "59060daa-7708-5a16-b435-f10f0f9ef2f4"
+      ],
+      "onlyEvidence": "alternative-product"
+    },
+    {
+      "id": "democratic-school-solution",
+      "description": "Propón una salida democrática al problema escolar ficticio y justifica cómo atiende ese problema con las condiciones dadas. No se pide ejecutar la solución.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "57e3c29c-83d3-5aa1-b11a-43550d4d5dfc"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "democratic-authoritarian-organizer",
+      "description": "Elabora un cuadro sinóptico o un organizador gráfico que distinga actitudes democráticas y autoritarias en los casos ficticios de familia, escuela y comunidad dados. No se pide realizar ambos productos ni evaluar creencias personales.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "56b309cf-ab78-5454-81b7-62ae324eabb9"
+      ],
+      "requiredEvidence": [
+        "organizer"
+      ]
+    },
+    {
+      "id": "participation-representation-debate",
+      "description": "Debate las implicaciones de la democracia participativa y la democracia representativa según los casos dados. Compara las dos formas y responde a las objeciones.",
+      "activityType": "DEBATE",
+      "sourceRecordIds": [
+        "2c74dd25-7c62-5015-8868-b44428db8553"
+      ],
+      "requiredEvidence": [
+        "comparison",
+        "reason",
+        "response"
+      ]
+    },
+    {
+      "id": "electoral-system-essay",
+      "description": "Redacta un ensayo sobre las fortalezas y debilidades del sistema electoral dominicano según los textos proporcionados, con tesis y razones. No se pide apoyar un partido ni evaluar al estudiante por su preferencia.",
+      "activityType": "ESSAY",
+      "sourceRecordIds": [
+        "a8ae2099-71b4-5e88-a9ae-44e7ccbe5765"
+      ],
+      "requiredEvidence": [
+        "thesis",
+        "reason",
+        "organization"
+      ]
+    },
+    {
+      "id": "women-rights-analysis",
+      "description": "Analiza los artículos de legislación nacional sobre derechos de la mujer proporcionados, distinguiendo las disposiciones y su relación con el caso ficticio dado. No se pide asesoría legal ni buscar legislación vigente.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5b0e2fc4-b1bf-5530-8ee7-e0a5cd33ca7c"
+      ],
+      "requiredEvidence": [
+        "document-analysis"
+      ]
+    },
+    {
+      "id": "equal-rights-brochure",
+      "description": "Elabora un brochure sobre igualdad y respeto a los derechos humanos utilizando los textos dados y las recomendaciones pertinentes para los destinatarios escolares. No se pide campaña real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "df253a47-eaa4-5bc6-a482-778f2fbee63e"
+      ],
+      "requiredEvidence": [
+        "brochure"
+      ]
+    },
+    {
+      "id": "pollution-health-records",
+      "description": "Registra las informaciones del conjunto agregado ficticio dado sobre contaminación y efectos en la salud, conservando valores y procedencia. No se pide experimentar con personas ni recoger información privada.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "ccd1304b-6619-5561-b70c-d386b9ce960f"
+      ],
+      "requiredEvidence": [
+        "data-record"
+      ]
+    },
+    {
+      "id": "peace-project-proposal",
+      "description": "Propón un proyecto sencillo para resolver el problema ficticio de convivencia y cultura de paz, indicando acciones previstas y justificando su pertinencia. No se pide ejecutar el proyecto.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "10d6f1c2-e087-5f3e-b05b-5bce0a51e2cf"
+      ],
+      "requiredEvidence": [
+        "proposal"
+      ]
+    },
+    {
+      "id": "national-ritual-procedure",
+      "description": "Realiza una simulación del procedimiento de izado de la bandera y escucha del himno nacional siguiendo únicamente la secuencia y los roles dados. No se evalúa emoción patriótica ni se pide cantar.",
+      "activityType": "PERFORMANCE",
+      "sourceRecordIds": [
+        "08d7b730-d448-5697-873a-a15d749f37a3"
+      ],
+      "onlyEvidence": "ritual-procedure",
+      "forbidden": "canta|entona|sentimiento|fervor|orgullo"
+    },
+    {
+      "id": "road-education-proposal",
+      "description": "Formula una propuesta de campaña escolar ficticia de educación vial con propósito, destinatarios, mensaje y acciones previstas para el problema dado. No se pide realizar una intervención en calles reales.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "8375ce1e-88ef-5419-8268-d75153281aa0"
+      ],
+      "requiredEvidence": [
+        "campaign-plan"
+      ]
+    },
+    {
+      "id": "sources-only",
+      "description": "Selecciona las fuentes confiables sobre derechos humanos entre las páginas dadas. No se pide justificar ni investigar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9f999b36-1a61-50ed-bf35-256db0375252",
+        "667f0a4e-352b-581a-b5ba-da99b1e46735"
+      ],
+      "onlyEvidence": "source-selection"
+    },
+    {
+      "id": "chosen-mla-attribution",
+      "description": "Atribuye las informaciones sobre inmigrantes del registro ficticio a las fuentes dadas siguiendo únicamente la pauta MLA proporcionada. No se pide APA ni LM.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7258925a-76ab-5afa-9ce1-6c97561c8694"
+      ],
+      "onlyEvidence": "attribution",
+      "required": "pauta MLA",
+      "forbidden": "APA|LM"
+    },
+    {
+      "id": "chosen-lm-attribution",
+      "description": "Atribuye las informaciones sobre inmigrantes del registro ficticio a las fuentes dadas siguiendo únicamente la pauta LM proporcionada. No se pide APA ni MLA.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7258925a-76ab-5afa-9ce1-6c97561c8694"
+      ],
+      "onlyEvidence": "attribution",
+      "required": "pauta LM",
+      "forbidden": "APA|MLA"
+    },
+    {
+      "id": "given-style-no-invention",
+      "description": "Atribuye las informaciones sobre inmigrantes del registro ficticio a las fuentes dadas siguiendo la pauta elegida proporcionada. No se pide imponer otro sistema de citas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7258925a-76ab-5afa-9ce1-6c97561c8694"
+      ],
+      "onlyEvidence": "attribution",
+      "forbidden": "APA|MLA|LM|edición obligatoria"
+    },
+    {
+      "id": "report-only-state-powers",
+      "description": "Redacta únicamente un informe sobre las funciones de los poderes del Estado a partir de los textos dados. No se pide un ensayo ni una tesis propia.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "59060daa-7708-5a16-b435-f10f0f9ef2f4"
+      ],
+      "onlyEvidence": "report",
+      "forbidden": "tesis propia obligatoria"
+    },
+    {
+      "id": "non-democratic-attitudes",
+      "description": "Identifica las actitudes no democráticas de los personajes del caso ficticio según los criterios dados. No se pide un organizador ni evaluar al estudiante por sus creencias.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "56b309cf-ab78-5454-81b7-62ae324eabb9"
+      ],
+      "requiredEvidence": [
+        "identification"
+      ],
+      "required": "no democráticas|autoritarias",
+      "forbidden": "organizador realizado"
+    },
+    {
+      "id": "flag-analysis-no-ritual",
+      "description": "Analiza la función cívica de la bandera y del himno nacional en el texto dado. No se pide ejecutar un ritual, izar la bandera ni cantar.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "08d7b730-d448-5697-873a-a15d749f37a3"
+      ],
+      "requiredEvidence": [
+        "interpretation"
+      ],
+      "forbidden": "secuencia ejecutada|ritual-procedure|entona|fervor|principios cívicos"
+    },
+    {
+      "id": "citizenship-discussion-no-ritual",
+      "description": "Discute las características de la ciudadanía responsable a partir del caso ficticio dado. No se pide cantar el himno ni izar una bandera.",
+      "activityType": "ORAL_INTERACTION",
+      "sourceRecordIds": [
+        "11519de1-4c35-57b9-95bc-a0e3a33edbac",
+        "6f6ac9db-5c75-5838-9243-540f0a705b5a"
+      ],
+      "requiredEvidence": [
+        "interpretation"
+      ],
+      "forbidden": "entonación|izado|ritual-procedure"
+    },
+    {
+      "id": "newspaper-revision-only",
+      "description": "Corrige únicamente la atribución de las fuentes del periódico escolar sobre derechos y deberes dado. Conserva su estructura y los artículos existentes. No se pide un periódico nuevo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37840259-bdf9-5213-9612-00d3cca1a3be",
+        "0501b7a4-0224-5166-846b-69268e9069de"
+      ],
+      "onlyEvidence": "revision",
+      "required": "atribución",
+      "forbidden": "filosófic|demográfic"
+    },
+    {
+      "id": "campaign-message-only",
+      "description": "Redacta únicamente el mensaje de la campaña escolar ficticia sobre derechos humanos para los destinatarios dados. No se pide un plan completo ni ejecutar acciones.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "237561c5-17ed-50aa-b1c8-45266e9a4d2a",
+        "6cb829b1-0c45-5a4b-90ba-6fab239a687e"
+      ],
+      "onlyEvidence": "campaign-message"
+    },
+    {
+      "id": "civic-simulation-frequency",
+      "description": "Observa y registra la frecuencia con que los personajes de la simulación de decisión democrática cumplen los turnos dados. No se califica la preferencia política ni la personalidad.",
+      "activityType": "OBSERVATION",
+      "sourceRecordIds": [
+        "e23fc18c-95f2-5f3a-ace9-0ee28a9c2e4a"
+      ],
+      "onlyEvidence": "frequency",
+      "recommendedInstrumentType": "escala"
+    },
+    {
+      "id": "rights-analysis-independent-product",
+      "description": "Analiza los derechos humanos en los artículos dados. Después elabora un brochure sobre igualdad de derechos para los destinatarios escolares. No se pide campaña real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "d30ccbe4-7f72-59b2-9cdc-4801693e6358",
+        "5d0e8a72-fca6-5bfe-93cd-d9e5c8b3f1f5"
+      ],
+      "requiredEvidence": [
+        "document-analysis",
+        "brochure"
+      ]
+    },
+    {
+      "id": "brochure-or-campaign",
+      "description": "Elabora un brochure o una campaña escolar ficticia sobre educación vial con mensaje y destinatarios dados. No se piden ambos productos ni ejecución real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "b78f069c-1ab3-5b99-b3d9-2ebab6aa9527",
+        "6cb829b1-0c45-5a4b-90ba-6fab239a687e"
+      ],
+      "onlyEvidence": "alternative-product"
+    },
+    {
+      "id": "create-rights-brochure",
+      "description": "Crea un brochure sobre igualdad y respeto a los derechos humanos usando los textos y destinatarios escolares dados. No se pide una campaña real.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "df253a47-eaa4-5bc6-a482-778f2fbee63e"
+      ],
+      "requiredEvidence": [
+        "brochure"
+      ]
+    },
+    {
+      "id": "write-rights-memory",
+      "description": "Escribe una memoria sobre las actuaciones del personaje ficticio que aportó a los derechos humanos según las fuentes dadas. No se pide un ensayo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "4ab686f9-8a7c-5981-8801-93c6eca78b70"
+      ],
+      "requiredEvidence": [
+        "memory"
+      ]
+    },
+    {
+      "id": "present-written-newspaper",
+      "description": "Presenta el periódico escolar escrito sobre derechos y deberes con las secciones y artículos sustentados en los materiales proporcionados. No se pide exponer oralmente ni publicarlo.",
+      "activityType": "WRITTEN_PRODUCTION",
+      "sourceRecordIds": [
+        "37840259-bdf9-5213-9612-00d3cca1a3be",
+        "084fcf4c-02ee-589d-8611-274ad87dd343"
+      ],
+      "requiredEvidence": [
+        "newspaper",
+        "attribution"
+      ]
+    }
+  ]
+}

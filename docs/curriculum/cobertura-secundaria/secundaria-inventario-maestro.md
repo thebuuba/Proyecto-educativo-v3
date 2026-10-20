@@ -71,7 +71,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Análisis y Producción de Textos Científicos y Profesionales | 6 | Humanidades y Ciencias Sociales | 472, 473, 474, 475, 476, 477, 478, 479, 480, 481 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Filosofía social y Pensamiento Dominicano | 4 | Humanidades y Ciencias Sociales | 482, 483, 484 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Geografía Humana y Demografía | 5 | Humanidades y Ciencias Sociales | 485, 486, 487 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
-| Ciudadanía y Democracia Participativa | 6 | Humanidades y Ciencias Sociales | 488, 489 | PENDING |
+| Ciudadanía y Democracia Participativa | 6 | Humanidades y Ciencias Sociales | 488, 489 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Matemática Financiera y Tecnología | 4 | Matemática y Tecnología | 491, 492, 493 | PENDING |
 | Estadística Probabilidad y Tecnología | 5 | Matemática y Tecnología | 494, 495 | PENDING |
 | Tigonometría, Cálculo Diferencial y Tecnología | 6 | Matemática y Tecnología | 496, 497 | PENDING |

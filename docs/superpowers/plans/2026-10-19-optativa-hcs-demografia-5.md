@@ -82,6 +82,8 @@ Scope `3cfc3564-ea06-53a7-9906-2e7287fdbb44`, Geografía Humana y Demografía, g
 
 ### Task 8: cierre y continuidad
 
-- [ ] Cerrar informe,matriz/inventario ycontinuación con evidencia separada de fuente,tests,HTTP ybrowser. Revisión propia,UTF‑8/secretos/QA/respaldos/diff;commit español local yárbol/hash comprobados. NO PUSH. DespuésCiudadanía6→MT/CT yresto delencargo sinpreguntasrutinarias.
+- [x] Cerrar informe,matriz/inventario ycontinuación con evidencia separada de fuente,tests,HTTP ybrowser. Revisión propia,UTF‑8/secretos/QA/respaldos/diff;commit español local yárbol/hash comprobados. NO PUSH. DespuésCiudadanía6→MT/CT yresto delencargo sinpreguntasrutinarias.
 
 Verificación134:608instrumentos completos/608huellas/0pendientes;32HTTP/DB(incluidos21I),personal5 y9baselines anteriores exactos. Backend81518/176,frontendactividades80722/109 y5pruebas de conservaciónCacheStorage.4builds0 y2repetidos afectados0(CFdry-run),Node36/0másprecaché repetida1/0,lints0/16previas. Historia66/739exacta→67/772. Auditoría/commitlocales pendientes;NOPUSH. ContinuarCiudadanía6despuésdelcommit.
+
+Cierre local confirmado: f2b0961eefdfe2aadbe9b5132f1e5cb9a09067d7,árbol limpio y42delante,sinpush.

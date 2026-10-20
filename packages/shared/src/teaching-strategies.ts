@@ -103,8 +103,8 @@ export function detectTeachingStrategy(input: TeachingStrategyContext & {title?:
   const complementary = has(/\bpregunt\w*\b/)&&has(/\brespond\w*\b/)
     || has(/\buno\b.*\botro\b/)&&has(/entrevist\w*|vendedor|comprador|cliente|roles|papeles/)
   const exchange = has(/\b(?:intercambi\w*|altern\w*|cambi\w*)\s+(?:(?:los|sus|de|ambos)\s+)?(?:roles|papeles)\b/)
-  add('SIMULATION',enacted && (has(/simul\w*|juego de roles|role play/)&&has(/roles|decisiones|interaccion|practicar.*comunicacion/)
-    || has(/dialog\w*|entrevist\w*|situacion/)&&complementary&&exchange),'Práctica de una situación con papeles complementarios e intercambio de roles.',2)
+  add('SIMULATION',enacted && (has(/simul\w*|juego de roles|role play/)&&has(/\b(?:rol|roles|decision|decisiones|interaccion)\b|practicar.*comunicacion/)
+    || has(/dialog\w*|entrevist\w*|situacion/)&&complementary&&exchange),'Práctica de una situación representada con roles, decisiones o interacción.',2)
   candidates.sort((a,b)=>b.score-a.score)
   // A title supports an already evidenced candidate; it never creates one.
   const top=candidates.filter(c=>c.score===candidates[0]?.score)
