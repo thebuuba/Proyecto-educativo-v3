@@ -1,0 +1,4712 @@
+{
+  "catalog": "evaluation-2026.140",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "method": "Lectura completa por reconstrucción exacta de234consignas/936instrumentos:216textos,20familias de cinco progresiones,234referencias de objeto/relación y17paquetes de cuatro formatos.233ensamblajes normales más el caso de observación repetida leído aparte en los cuatro formatos. Se revisaron familias,referencias,consignas,ensamblajes,descriptores ysumas;el tramo123–147 truncado se releyó. Los hallazgos importantes se transformaron en RED→GREEN yse releyeron los resultados modificados antes de registrar huellas.",
+  "findingsFixed": [
+    "Contexto de prospecto,síntesis farmacéutica y objetos textiles perdido entre frases.",
+    "Privacidad,decisiones ycontribuciones confundidas con medición uobservación.",
+    "Programa que calcula confundido con cálculo manual independiente;otra acción explícita de cálculo se conserva.",
+    "Contrastar soluciones oafirmaciones imponía comparación de casos ajenos.",
+    "Facetas parciales ocultaban parte de agrupaciones nombradas completas.",
+    "Sustantivos contraste,observables,caracterización,presentación einterpretaciones generaban acciones ycriterios extra.",
+    "Alternativas de equipos textiles tenían evidencia idéntica;ahora distinguen función yseñal dadas.",
+    "El prospecto identifica las secciones pedidas;los grupos funcionales no exigen transformaciones de síntesis.",
+    "Debate de reacciones adversas tenía seis filas genéricas;queda una evidencia argumentativa propia.",
+    "Comparación de fermentación yaplicación biotecnológica conserva ambos objetos explícitos."
+  ],
+  "minorDeferred": [
+    "Algunas combinaciones de artículos ycláusulas son poco naturales;no alteran evidencia opuntuación.",
+    "Las secciones del prospecto conservan un orden distinto al de la frase de entrada,sin omisiones.",
+    "Las alternativas se expresan en una fila extensa con ambas ramas claramente opcionales.",
+    "Una consigna negativa de prueba usa la construcción poco natural «No se pide administra medicamentos»;el instrumento no exige administrar."
+  ],
+  "limits": [
+    "No se acredita cada paráfrasis ocombinación posible por las117anclas.",
+    "72agrupaciones contienen117anclas decontenido eI161observable adicional;no son118temas independientes.",
+    "Builds finales,instalación,HTTP/DB ynavegador aún pendientes al registrar la lectura.",
+    "No dosis,clínica,síntesis peligrosa,cultivos,consumo,visitas,ventas,compras ni datos sanitarios personales.",
+    "Un modelo oensayo in vitro no acredita eficacia clínica;prácticas terapéuticas se examinan mediante evidencia dada,sin promesas de eficacia."
+  ],
+  "items": [
+    {
+      "caseId": "brief:food-ethics",
+      "instrumentType": "rubrica",
+      "sha256": "b8612508fae034c9be86c0ce2ca9b3d3fa3103badbda847e0cab3ae0869de06b"
+    },
+    {
+      "caseId": "brief:food-ethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "da54a58deae445fdc3e263570ac1e367b823c08044f2d552f01baedd3da49974"
+    },
+    {
+      "caseId": "brief:food-ethics",
+      "instrumentType": "escala",
+      "sha256": "b238b9a9e59dab63e41ba2e4bf5f66f02d81d43f5f37533555fdc9f69a85f6a2"
+    },
+    {
+      "caseId": "brief:food-ethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37ea7c3006e205d98aa88fec099ab8aedf1e0b81299fbe3edd835cd8e27c07d3"
+    },
+    {
+      "caseId": "brief:food-nutrients",
+      "instrumentType": "rubrica",
+      "sha256": "b9794ba1cbf79b6da2726ad3ac4f0771bcb9eec2b2d9c6650f65d8fa04d20dac"
+    },
+    {
+      "caseId": "brief:food-nutrients",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f53eb9f57701e6dee0ced7ad49847977c028cf1f0e5a11f54d83dfc48f5e5242"
+    },
+    {
+      "caseId": "brief:food-nutrients",
+      "instrumentType": "escala",
+      "sha256": "d441e9df77ae64a9e04fbb45b73e02e5a7946fc029c9cc86ff62054bab18f18f"
+    },
+    {
+      "caseId": "brief:food-nutrients",
+      "instrumentType": "lista-ponderada",
+      "sha256": "abb7e85ee568caa5485033380c88a9174175269e7573af08612a7a7e39347058"
+    },
+    {
+      "caseId": "brief:food-spices",
+      "instrumentType": "rubrica",
+      "sha256": "1cdb6caccda64a514976ade26371bf93e35dba52949f67e4bb64c25091398d91"
+    },
+    {
+      "caseId": "brief:food-spices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2af3ca6147fd4ff756aa8f0b910c59f6a6050e53f8cf35a96c45de61be926986"
+    },
+    {
+      "caseId": "brief:food-spices",
+      "instrumentType": "escala",
+      "sha256": "024cd73f7f44a42ed1995e00df64b4cf8617948eae4f01c7c440a915fd22f4b5"
+    },
+    {
+      "caseId": "brief:food-spices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d209843cb2016344e940c989b1ccb52c51a547ee7b23c2f5069600206fd2ffc2"
+    },
+    {
+      "caseId": "brief:molecular-food",
+      "instrumentType": "rubrica",
+      "sha256": "f50c21310358ac5c983c8177fcaf877a6706785ab948bad22de59e4ee0c53bf5"
+    },
+    {
+      "caseId": "brief:molecular-food",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3b9c2164908973feb0ee441ddf2ba4e2a0163065be0622d1e4b461e730248a8e"
+    },
+    {
+      "caseId": "brief:molecular-food",
+      "instrumentType": "escala",
+      "sha256": "6e2a4d81fabeb12d32fac0b5c91572b532a598f0bee3527a5e014f84c7a149d6"
+    },
+    {
+      "caseId": "brief:molecular-food",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1be84c7addfeba9f032a974951ebe8a8674db0f9a82b66354195f24e2012e7b9"
+    },
+    {
+      "caseId": "brief:food-chain",
+      "instrumentType": "rubrica",
+      "sha256": "19325966961ee24745a856e728da54407826b7ad3689696c519ae6b4a8da9f4c"
+    },
+    {
+      "caseId": "brief:food-chain",
+      "instrumentType": "lista-cotejo",
+      "sha256": "59f68cb637e787f97d662e61e50858eb3f14ab4b9f5c84c16e71a517448cecda"
+    },
+    {
+      "caseId": "brief:food-chain",
+      "instrumentType": "escala",
+      "sha256": "2701a4245cb9ea60d1e134a008b4abad45f50ca0f235c38924e9616892dbdcc4"
+    },
+    {
+      "caseId": "brief:food-chain",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc6748866ce4ea65ea6147c72e85ed8dab199f893088b61901bfc5312c937c9c"
+    },
+    {
+      "caseId": "brief:food-quality",
+      "instrumentType": "rubrica",
+      "sha256": "7353b43ae72c93c3419f51f3e7684ab7a92d2d5ae39271921a99b2bdce4364dd"
+    },
+    {
+      "caseId": "brief:food-quality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c8f536f1a9f141555e46b26ed3b105469d9ff1f135b5749cb2d155f3b1e2bed"
+    },
+    {
+      "caseId": "brief:food-quality",
+      "instrumentType": "escala",
+      "sha256": "520676af921d98bee0daf079c06ddaa8eb98e2c0b329b84d12f3e1fc828430a3"
+    },
+    {
+      "caseId": "brief:food-quality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cebf0a8b3a051de4e858dfb2abff0d2afaf4099b1b166faae5dec7b545fcf673"
+    },
+    {
+      "caseId": "brief:food-drying",
+      "instrumentType": "rubrica",
+      "sha256": "b286c18c34ed710cd971a3c516624b6ae636850848e7e5ac6029711934efc6c0"
+    },
+    {
+      "caseId": "brief:food-drying",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e81eb73983007e5c54c332b753bb0ab19d6af50c39c659cb23c05ade3bbc7254"
+    },
+    {
+      "caseId": "brief:food-drying",
+      "instrumentType": "escala",
+      "sha256": "51404529b567b674a38f61d6ea17d8e52f4d99b021fcbe3f50fe7317dcae9f11"
+    },
+    {
+      "caseId": "brief:food-drying",
+      "instrumentType": "lista-ponderada",
+      "sha256": "663f19bb4c00719c883433949f71c422ead3f33e0b9cee295c87ace7043ecade"
+    },
+    {
+      "caseId": "brief:food-preservatives",
+      "instrumentType": "rubrica",
+      "sha256": "3dd3368ee764d23277df5c39d4ea9e1feb8e107c290bf1d16982ef850baa7586"
+    },
+    {
+      "caseId": "brief:food-preservatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "143b7e5cdf3d0d228c475b4de8a678c5d92cba1527644d0d3ca8f656cab7717a"
+    },
+    {
+      "caseId": "brief:food-preservatives",
+      "instrumentType": "escala",
+      "sha256": "0c9bf52831df542cb0cfd0fa8cb2229037b0157c0d14bb6ca18c0a0cd30f9cac"
+    },
+    {
+      "caseId": "brief:food-preservatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a23b1289d9c1833fde2bed98dd946ae0278ca4ae560dfbd94346f0470e1249c6"
+    },
+    {
+      "caseId": "brief:food-temperature",
+      "instrumentType": "rubrica",
+      "sha256": "33121877f0feda0c94be2d1ad185813dbaca85ada678a96158b0b2b35b61a16e"
+    },
+    {
+      "caseId": "brief:food-temperature",
+      "instrumentType": "lista-cotejo",
+      "sha256": "37f784393d7267e94faabb7bc351496aedc5a719a112bd1ad9a5786e78e14266"
+    },
+    {
+      "caseId": "brief:food-temperature",
+      "instrumentType": "escala",
+      "sha256": "0542cce7bebbfb7715c0fe3e0fe2a41e3a4c7a24b468a1782eedfcf48413b5d1"
+    },
+    {
+      "caseId": "brief:food-temperature",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eecdf02fe3ffc2182185b3408068e9d487ee30235699eb8c2507d92b65bd658d"
+    },
+    {
+      "caseId": "brief:food-ph",
+      "instrumentType": "rubrica",
+      "sha256": "42887c0aab9b64a2cf0244182e1121695737869ece82d91a831fc8b1c7f33bac"
+    },
+    {
+      "caseId": "brief:food-ph",
+      "instrumentType": "lista-cotejo",
+      "sha256": "288da320c9540c427d7d53c42e339a16bdb20df8416334d131b7ab160f1c5fc9"
+    },
+    {
+      "caseId": "brief:food-ph",
+      "instrumentType": "escala",
+      "sha256": "d57f9bbf21c6eabfd2de69c4c3f3159b1f799612eb592acbf4d0dbc63f67dcda"
+    },
+    {
+      "caseId": "brief:food-ph",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0d71e81883b934d76e3c70150fc8213b8ad83c6e73ac29e6145cf12c380e8c8a"
+    },
+    {
+      "caseId": "brief:scientific-method",
+      "instrumentType": "rubrica",
+      "sha256": "a587f2dc73d3abbdf7fdd01ac9677366b13e889e74c504faecbd5687fdfb55a3"
+    },
+    {
+      "caseId": "brief:scientific-method",
+      "instrumentType": "lista-cotejo",
+      "sha256": "924777b78157b6de785acf0558d9b3620284875cc5b7bd89000132e629a1642a"
+    },
+    {
+      "caseId": "brief:scientific-method",
+      "instrumentType": "escala",
+      "sha256": "502daa7f3e79fa4a6a22c88bbc1a9215262e219e9c2828dd3893025d7ff9c1d3"
+    },
+    {
+      "caseId": "brief:scientific-method",
+      "instrumentType": "lista-ponderada",
+      "sha256": "04164a16a69e726c3420f3a5df04c5bb5c57119d7438c64a33a461da3be1949c"
+    },
+    {
+      "caseId": "brief:food-design",
+      "instrumentType": "rubrica",
+      "sha256": "ab11fa953683171b0ffff3a5ea4b59997fc0ef15443685fe7da3bef92be6f4b1"
+    },
+    {
+      "caseId": "brief:food-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "525dd0b7473c921cd6253cb20d2f8d215720e89bd09ae6cef0240b339d14533e"
+    },
+    {
+      "caseId": "brief:food-design",
+      "instrumentType": "escala",
+      "sha256": "44f005493d3b8c8612b39ff04571dd192f3ae75468749d20af17c50615918a00"
+    },
+    {
+      "caseId": "brief:food-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dd9c5b071de6d1e01d220e22e5f34e542bbec1fb811f0cc83481c11ce94c6d2b"
+    },
+    {
+      "caseId": "brief:food-properties",
+      "instrumentType": "rubrica",
+      "sha256": "c2ee71884c38e9cfdcd4bc5fcf494b187dd88ce8b4e92ddc2afc557a7d944cc5"
+    },
+    {
+      "caseId": "brief:food-properties",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2b8c19b412411ccce18286e98c7907f1692206e311269643aaf20ce51d1ce267"
+    },
+    {
+      "caseId": "brief:food-properties",
+      "instrumentType": "escala",
+      "sha256": "a7661450ffa87cb746704fe28e3bce74de779e347f32d68531718a4cbd27160e"
+    },
+    {
+      "caseId": "brief:food-properties",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6efe30ba9ad96fa3bb4a78fafcadd0bc344bd79e0ce3bcb22c869c0047a3ce7f"
+    },
+    {
+      "caseId": "brief:food-biotechnology",
+      "instrumentType": "rubrica",
+      "sha256": "f351183ee7c4510f6d5e3583d8924ba0f24b2c40f7b082da2845eb4b883c831b"
+    },
+    {
+      "caseId": "brief:food-biotechnology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2a7f48a0c16d18ac758ea7cef682cc27bbb0a20fbdbedfd0e3cced6d53d90758"
+    },
+    {
+      "caseId": "brief:food-biotechnology",
+      "instrumentType": "escala",
+      "sha256": "b88dd76ef06320849a307d2b52dcdce119ec0064619fcc09cf738ef553c626b3"
+    },
+    {
+      "caseId": "brief:food-biotechnology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bda63e31e60574d85c0174ebf5562968d0871540f5e0fcb2dd902ca251f3bec4"
+    },
+    {
+      "caseId": "brief:food-fermentation",
+      "instrumentType": "rubrica",
+      "sha256": "351735f277c5c5fed83ec56195aed994a80f3552cf65f9cdd26d3f29c02570e0"
+    },
+    {
+      "caseId": "brief:food-fermentation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ad3ca967c39dfddea1dc807a4da26cc37c3a266d1da643d27e770d18f3b95a6c"
+    },
+    {
+      "caseId": "brief:food-fermentation",
+      "instrumentType": "escala",
+      "sha256": "56c8f015c7abf68aa725fdf6f58359c9406322a71b5b004e7b6bedf8fc013cd9"
+    },
+    {
+      "caseId": "brief:food-fermentation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "835e3c493203d2f2b3eaf535091336d9ca3e65f005515f6d7aaa5d3b3a98faac"
+    },
+    {
+      "caseId": "brief:food-packaging",
+      "instrumentType": "rubrica",
+      "sha256": "bf54314040f14e757a5d1f13a9b0962da4034ebbc837d873d3630c6e82d41281"
+    },
+    {
+      "caseId": "brief:food-packaging",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8adbc8df29f3998e6887f199d6a2ad3e7064190016eb0422ee7bf24e2d8b502e"
+    },
+    {
+      "caseId": "brief:food-packaging",
+      "instrumentType": "escala",
+      "sha256": "b427e4ee885a0fa515f942ca55c4a8f7a258e8a282bdfb945f83e073fa863d2e"
+    },
+    {
+      "caseId": "brief:food-packaging",
+      "instrumentType": "lista-ponderada",
+      "sha256": "859e91918605cfde3dd410db4f093a7c929b3f40f2f17960089da27a04372954"
+    },
+    {
+      "caseId": "brief:food-quality-tests",
+      "instrumentType": "rubrica",
+      "sha256": "03860ed2794200c2d67c34271d3718f2800490b85bebaf00e065c70cc05cbbcd"
+    },
+    {
+      "caseId": "brief:food-quality-tests",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f9505129af692d638367f109f23b0856e73ac36a1282ab6cee55a050798d4d1"
+    },
+    {
+      "caseId": "brief:food-quality-tests",
+      "instrumentType": "escala",
+      "sha256": "a861b7a24c47747c270c4ea59f307fd93c7bae55d800d100dd9b02502be9cd91"
+    },
+    {
+      "caseId": "brief:food-quality-tests",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bfa8ffce9873dc421cb798d091f7e80a817fc8de2e24170abe5a549754a6a6b5"
+    },
+    {
+      "caseId": "brief:food-tools",
+      "instrumentType": "rubrica",
+      "sha256": "582030a8f61a174f17dfface31cb251d61bea6838300f73a4643f54732205d17"
+    },
+    {
+      "caseId": "brief:food-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5b82ff2d0013204953ed02fb6cbec27b3ba8b89083f7044a2404c31a75797c10"
+    },
+    {
+      "caseId": "brief:food-tools",
+      "instrumentType": "escala",
+      "sha256": "fe40b11a2b1735a972765e6cb54cb2aa569c987905d5f0f3237f57b443133acd"
+    },
+    {
+      "caseId": "brief:food-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ec7259d955019635715b0f2dd90c4021b566a15995034559138169608593752"
+    },
+    {
+      "caseId": "brief:food-problems",
+      "instrumentType": "rubrica",
+      "sha256": "cec220588bcd8265ee1146f32116a7986007a736e2bbb3f77fc99920825cc04a"
+    },
+    {
+      "caseId": "brief:food-problems",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0a95e45a6ed80bccddc99b80a5c90c4912faa2933260313716f8066e0999f6da"
+    },
+    {
+      "caseId": "brief:food-problems",
+      "instrumentType": "escala",
+      "sha256": "1195b0f6bf28bc49f71b4eac61367955e6174aba2eb27becf01436147c1b9c0e"
+    },
+    {
+      "caseId": "brief:food-problems",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d5410691bfe0b425e260d42d86678d69d4e1f630755f703b5c5ca10a03212a55"
+    },
+    {
+      "caseId": "brief:food-regulations",
+      "instrumentType": "rubrica",
+      "sha256": "167f75452bbdde6889b3029d075cd94fd90c4b283c5111ae55bf4781c729596e"
+    },
+    {
+      "caseId": "brief:food-regulations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2eb47260aa6258e83b25d0d156e49260b1e2cd901ba2b56cb3def86303a6326a"
+    },
+    {
+      "caseId": "brief:food-regulations",
+      "instrumentType": "escala",
+      "sha256": "ecc4699998b1e59f79db9ddb9da7508ec68b07de3413e5525a11a8bf99ee786b"
+    },
+    {
+      "caseId": "brief:food-regulations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4bcf813c322e9e3dbfac080e16a85fa1def355e7078ba7741897dc6364482c59"
+    },
+    {
+      "caseId": "brief:food-infections",
+      "instrumentType": "rubrica",
+      "sha256": "44b828406a60e4cb5878ac1e99ffe368a058fd9971518602762beee3a124fdaf"
+    },
+    {
+      "caseId": "brief:food-infections",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e7ed9d65a9e47f4f866bb5aae277a571646b1aff0dbeaf8094846a915f61c85b"
+    },
+    {
+      "caseId": "brief:food-infections",
+      "instrumentType": "escala",
+      "sha256": "7db04b903ef85c61208c8f5d1682f6208b1b45e9916f156198208d57d15f39b9"
+    },
+    {
+      "caseId": "brief:food-infections",
+      "instrumentType": "lista-ponderada",
+      "sha256": "758355f2c7a81b386a9a2ba3290091c12ef73e6839be820ed79ce6ea88c3a460"
+    },
+    {
+      "caseId": "brief:food-handling",
+      "instrumentType": "rubrica",
+      "sha256": "3dc565f9db1bfdafcdd5bc0519aa543596b7d5652f894000af37098e14a9062e"
+    },
+    {
+      "caseId": "brief:food-handling",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8d854e6510189ae40f38d441ec90f8b72e25f693dcdea9576fe93aeddece9950"
+    },
+    {
+      "caseId": "brief:food-handling",
+      "instrumentType": "escala",
+      "sha256": "e23e36972281396a5ed308921a163925ff55cfd9d0e23856ea730a0f8b7409e4"
+    },
+    {
+      "caseId": "brief:food-handling",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b7a27316832fb78c094e120ce390537fdad2efd5714f107058e4902bb094aed3"
+    },
+    {
+      "caseId": "brief:food-pesticides",
+      "instrumentType": "rubrica",
+      "sha256": "f8ebb4d14df31a870d8a26a49949a59a1320a8de9e84d5ff4b0bb030af1c92bb"
+    },
+    {
+      "caseId": "brief:food-pesticides",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7027ff25195c24c37b9dee5bb1898de06764871d93ffa4ff2d24a87089492928"
+    },
+    {
+      "caseId": "brief:food-pesticides",
+      "instrumentType": "escala",
+      "sha256": "22c453378cb5a10508c6d781762beb2a0fd20c21eb8d464af88443bb87d8f62b"
+    },
+    {
+      "caseId": "brief:food-pesticides",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a9f94dda466606da581c06ba1c67f13e32b474e0047f07a326287dc07e0be177"
+    },
+    {
+      "caseId": "brief:food-environment",
+      "instrumentType": "rubrica",
+      "sha256": "a83a7ef2950e721392dd96df070b756eadd1cb28d4f6ca4d3edd6e88bb624100"
+    },
+    {
+      "caseId": "brief:food-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3b8883ebfe693898a1515df869f6481836c7f3dc1ac516436d37f87c10f8bb00"
+    },
+    {
+      "caseId": "brief:food-environment",
+      "instrumentType": "escala",
+      "sha256": "60b8a77b6d6b910397615590c322ab319ec2fae4f852e7f49168f0c586a1be5e"
+    },
+    {
+      "caseId": "brief:food-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ff47f89e1184d7bd95b0751fe0e977317ca93c2531d7f8cf4797282d23e037b1"
+    },
+    {
+      "caseId": "brief:scientific-collaboration",
+      "instrumentType": "rubrica",
+      "sha256": "ec2fb63f701e465a95a51c88de15b8f6c5a193601c07a285cb8a9631e9870ad2"
+    },
+    {
+      "caseId": "brief:scientific-collaboration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3090a431bf32093c87b3fd8890e1a5842ec0134aa4470efab6e07ac550828b66"
+    },
+    {
+      "caseId": "brief:scientific-collaboration",
+      "instrumentType": "escala",
+      "sha256": "dcebe01f43cd3af04398fa445108803829bda65dec20f185e7100248e3bd4e25"
+    },
+    {
+      "caseId": "brief:scientific-collaboration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f18f5bf58ef747ebdd34850b3e3871d81215da21f7845473685363b70f14d50f"
+    },
+    {
+      "caseId": "brief:scientific-communication",
+      "instrumentType": "rubrica",
+      "sha256": "1209fab9eff87823c2201693d4c9f5ab0f37976b9f372192cbb82229f78d3ec9"
+    },
+    {
+      "caseId": "brief:scientific-communication",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a18fed89f44f0fd79a3415da64a131c5149b23b12703b4bb5c850c77589bc52d"
+    },
+    {
+      "caseId": "brief:scientific-communication",
+      "instrumentType": "escala",
+      "sha256": "564d9c33f6e19092e5361023a0ecbcc15e816d73be1b7fbf0e6138682394d942"
+    },
+    {
+      "caseId": "brief:scientific-communication",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ad9b61c5260429f99c01ae625851503f2254ce145a9e9e09aa4b5bbd8ff7650f"
+    },
+    {
+      "caseId": "brief:pharmaceutical-chemistry",
+      "instrumentType": "rubrica",
+      "sha256": "98ea8dabae525c58cc32c928b3b6361c377da29f73db88044f5cd761b286ebb5"
+    },
+    {
+      "caseId": "brief:pharmaceutical-chemistry",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c0560772908a938506452bb3241312e9bd83368c51bac3781960d58d6bee025f"
+    },
+    {
+      "caseId": "brief:pharmaceutical-chemistry",
+      "instrumentType": "escala",
+      "sha256": "3243e3fabcc73c83ccab24cc04821eb60a0029372632f4a1dada852b1a1a4d23"
+    },
+    {
+      "caseId": "brief:pharmaceutical-chemistry",
+      "instrumentType": "lista-ponderada",
+      "sha256": "91345ec0f69f467b965d602249059063718643d8fb66ecc833a9fd134041ed6c"
+    },
+    {
+      "caseId": "brief:pharmaceutical-synthesis",
+      "instrumentType": "rubrica",
+      "sha256": "7d7376881dd767a314ca680822d9efae320672dfc5c16abce085a8450e65ec86"
+    },
+    {
+      "caseId": "brief:pharmaceutical-synthesis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "33bebc72e90d2387a8e84d3fee612448c0465b4f5ab165df2a6140354eaed8c9"
+    },
+    {
+      "caseId": "brief:pharmaceutical-synthesis",
+      "instrumentType": "escala",
+      "sha256": "2eaadb1dc89e397ad1818d71029b72705cc972329e26d2b7343e6fb8baf9f0b0"
+    },
+    {
+      "caseId": "brief:pharmaceutical-synthesis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6ad03c320eeac550c0a948b4e3272ec0938c4e332a1aba10680c7868ad4a87dc"
+    },
+    {
+      "caseId": "brief:drug-classification",
+      "instrumentType": "rubrica",
+      "sha256": "28e3f47c681a61653917e391e5793ee1bc84282202e2694ca966aad6fc9b6361"
+    },
+    {
+      "caseId": "brief:drug-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "340bbd05adeab83ca11639191615ec1fdc43b4ee16adcef853c32d46f1041763"
+    },
+    {
+      "caseId": "brief:drug-classification",
+      "instrumentType": "escala",
+      "sha256": "9ed24136572c6034a4c2e4665fedbc9e78628e2d479ce1a71772f2195771f40b"
+    },
+    {
+      "caseId": "brief:drug-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5d449e8c040d38dce9a0eed5477be5465bb75b32d99d5fed73a61f6788ca125b"
+    },
+    {
+      "caseId": "brief:drug-interactions",
+      "instrumentType": "rubrica",
+      "sha256": "2cee708b186e34ffebae9cbd9a5c0d90a4bfb4a51034a7859ca68124a45876ee"
+    },
+    {
+      "caseId": "brief:drug-interactions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3da399284b5f4bbbdb16603f4a0bba43ebe32cf62dbc00bad1ae5aeb270e16d9"
+    },
+    {
+      "caseId": "brief:drug-interactions",
+      "instrumentType": "escala",
+      "sha256": "ad34a71c01f80a0a16220dabbc3399fb72627d823d671bf358ff578892f7e900"
+    },
+    {
+      "caseId": "brief:drug-interactions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "82a9ddd7204087861fc8e5941e87a66cba86a7ccbe1078f5f6320afadf79b792"
+    },
+    {
+      "caseId": "brief:drug-development",
+      "instrumentType": "rubrica",
+      "sha256": "55ab27098e4fab832fda78e36716842a445a2d4fb059b0207917c0894f93ab18"
+    },
+    {
+      "caseId": "brief:drug-development",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f3743887128e843ade30d709c3928d25f34b452002b3b767279f735b9f68b807"
+    },
+    {
+      "caseId": "brief:drug-development",
+      "instrumentType": "escala",
+      "sha256": "4c4d990781c692a9a2fe49f78c91f7ee9cff12ca10dda136bb5ea0d6d8b06c01"
+    },
+    {
+      "caseId": "brief:drug-development",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e704faa5b3465d4c9f870a36075d9c2cfc740bf3c6b292b6cbbd2dd165cbd60c"
+    },
+    {
+      "caseId": "brief:drug-sources",
+      "instrumentType": "rubrica",
+      "sha256": "bfa86320687ce324cdb8719586778b5a09e52cad4a7437c991dc344445c28d38"
+    },
+    {
+      "caseId": "brief:drug-sources",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4da713513411e69673dbe4a6196f223c9c332ae897c795ca016e276fdef6b07"
+    },
+    {
+      "caseId": "brief:drug-sources",
+      "instrumentType": "escala",
+      "sha256": "352dd6f2dd414bec093ff239f20c39bc5b6551bf4d0501c1f3b4bc8d2d0678b0"
+    },
+    {
+      "caseId": "brief:drug-sources",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cc5948a7577d780282f4d709526e1f9740e2745257a7e86a787faa8dc1800faa"
+    },
+    {
+      "caseId": "brief:pharmacokinetics",
+      "instrumentType": "rubrica",
+      "sha256": "e20a3a3cdf1ceda5f3e70b3b5c14398e9a0cc2c4c8e6acdb94f654d5384c3794"
+    },
+    {
+      "caseId": "brief:pharmacokinetics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b11c497af2bc0342ed199d221daf4d384c385319c419c8f91723604d6df515bc"
+    },
+    {
+      "caseId": "brief:pharmacokinetics",
+      "instrumentType": "escala",
+      "sha256": "5e7a770a3e18b81699d2c5e057f4a35701f798bdc62f01d121bccfafe8d97fcf"
+    },
+    {
+      "caseId": "brief:pharmacokinetics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ab908a06eb5b505a18083d23435ba2db2bb97a57b571d63c8efa34e3935e314e"
+    },
+    {
+      "caseId": "brief:drug-mechanisms",
+      "instrumentType": "rubrica",
+      "sha256": "372c764d052d357577e4c78e0461572e421e9d092408fc4e5f2116774b5cb31c"
+    },
+    {
+      "caseId": "brief:drug-mechanisms",
+      "instrumentType": "lista-cotejo",
+      "sha256": "168fe6c3aabc4132279d065dea463b59b2fda3bd4a149389f130e2236c58242e"
+    },
+    {
+      "caseId": "brief:drug-mechanisms",
+      "instrumentType": "escala",
+      "sha256": "b9202b039d88a8399e52d5fc65eaa1fedcd622a8ffa8bf6adae943bc51ce0bc5"
+    },
+    {
+      "caseId": "brief:drug-mechanisms",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e4546e5d800258af964cb82f4ebdd227128f266710a48204bd44b5d78e6fb6dc"
+    },
+    {
+      "caseId": "brief:drug-adverse",
+      "instrumentType": "rubrica",
+      "sha256": "e5f3d6976f081e33a94461282737bdfbbf8578e6e450fe5e6d936861294962f5"
+    },
+    {
+      "caseId": "brief:drug-adverse",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8f64b0a96ac772f0794f42222b4c97b6852d0018c4580397035172f77d05f261"
+    },
+    {
+      "caseId": "brief:drug-adverse",
+      "instrumentType": "escala",
+      "sha256": "23c61c7fafe9496cac28a0b9aa4c536de674cd40e68891f8785c1b5a1b5cbdf9"
+    },
+    {
+      "caseId": "brief:drug-adverse",
+      "instrumentType": "lista-ponderada",
+      "sha256": "33c9f391a99e9db655a2d0184185910a91b7bbc98633a917459e7433ab1198a6"
+    },
+    {
+      "caseId": "brief:drug-regulation",
+      "instrumentType": "rubrica",
+      "sha256": "4f012d2df7ed149f255938d740cf20ba9c03e2fef1e24db8b59977244784a9ad"
+    },
+    {
+      "caseId": "brief:drug-regulation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c26c061fa26d5f1bb225313f26dee95e8c193cc060d800b74660135533cf700"
+    },
+    {
+      "caseId": "brief:drug-regulation",
+      "instrumentType": "escala",
+      "sha256": "22c25fda604f1819bab859326124e7ec210d795d2bc2848284e2cfac1f1adb84"
+    },
+    {
+      "caseId": "brief:drug-regulation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "23af3b5db94129ec004a42992f3c5ab687563b299e70e80626c8779891a31527"
+    },
+    {
+      "caseId": "brief:drug-invitro",
+      "instrumentType": "rubrica",
+      "sha256": "c76e65dd1bb3d6ab14e68fe471d59d6d283153ea81bbbfe3e828a10eb9daba73"
+    },
+    {
+      "caseId": "brief:drug-invitro",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d48c00b61241ecb66d381cdca9bb8fa2855f3dfb0c86459ce341f9c52776ad3b"
+    },
+    {
+      "caseId": "brief:drug-invitro",
+      "instrumentType": "escala",
+      "sha256": "c30e10ccd9daf518735a0613887fbae2709917ff241ce125dfd1a4253c8baf46"
+    },
+    {
+      "caseId": "brief:drug-invitro",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1dc676cfa094488e11a3bf55459daa970c8e7d298faab184fe0a5d9b21360dab"
+    },
+    {
+      "caseId": "brief:drug-report",
+      "instrumentType": "rubrica",
+      "sha256": "87fc9b0a3f841dbe485242a6a5082d3f8fe4b4f3cf8c9e09b794fd28ceb494a6"
+    },
+    {
+      "caseId": "brief:drug-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a3e39e0d81aa252fa7d4b8e85a9b42f2f1adbadf576cca5a0c62e5641b246355"
+    },
+    {
+      "caseId": "brief:drug-report",
+      "instrumentType": "escala",
+      "sha256": "35b5d1e57167913b15b12ce70af2ce03de43585f43d7ae24516bdb3ecfa61278"
+    },
+    {
+      "caseId": "brief:drug-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b8761b3e42b4c02e32ef93d3511b7b0647936ebe1bbb0ba28c65ec7748686957"
+    },
+    {
+      "caseId": "brief:drug-labels",
+      "instrumentType": "rubrica",
+      "sha256": "05fda0896fde36dc79e9b59ef2807be41f7ee0f7995751016c59582787bdfbcb"
+    },
+    {
+      "caseId": "brief:drug-labels",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7beff45da1110e61ef7d9a0d5350edfc5cb12e6e37b647697567778ffed8191f"
+    },
+    {
+      "caseId": "brief:drug-labels",
+      "instrumentType": "escala",
+      "sha256": "411a199e610e9b4939702f7cc4d3f7503f6b49435085ee4ae152733cb9ef0ad3"
+    },
+    {
+      "caseId": "brief:drug-labels",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f2cc3f0f025031599482584c78488178374b68e08a9e959c72b5181de8cc6194"
+    },
+    {
+      "caseId": "brief:drug-software",
+      "instrumentType": "rubrica",
+      "sha256": "9dbfec8bee24705b0b6b26c4ffa93eb7c9896ecaa49307a96743554666a74e54"
+    },
+    {
+      "caseId": "brief:drug-software",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f66dd0047b476b27431384747c7f0c1cface30d570f11da069d0c386bc3093d5"
+    },
+    {
+      "caseId": "brief:drug-software",
+      "instrumentType": "escala",
+      "sha256": "759adb8e6da5dd7dfa8024f04fe75990d5843a0f971f2974e0f98cc9bd915ec5"
+    },
+    {
+      "caseId": "brief:drug-software",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2e33d52f54f4c1dd5e357bde1e2a237c6f181747e710bf5d2ab2bfb47331a2b4"
+    },
+    {
+      "caseId": "brief:drug-alternatives",
+      "instrumentType": "rubrica",
+      "sha256": "e2bc37f41449c382d0d14ba373d8a7b982ef9767379c6894fb124bf0f74b4918"
+    },
+    {
+      "caseId": "brief:drug-alternatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "866d7a228a17283868d5d92422790437af8ebf3f3b1e8619cabe490f1d219951"
+    },
+    {
+      "caseId": "brief:drug-alternatives",
+      "instrumentType": "escala",
+      "sha256": "88fa16a91cb670f218773f8078e4334059e1115cf3ccab3ad0944392f9b5b794"
+    },
+    {
+      "caseId": "brief:drug-alternatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2bd133f14e27407a41c3c5a95f9c3e776b48580435c5195c8ee9901a112e8e28"
+    },
+    {
+      "caseId": "brief:first-aid-kit",
+      "instrumentType": "rubrica",
+      "sha256": "dba288d2cf29c4fa52fa4185b60c2a2981855393f74e79f8a7f5c39edc154319"
+    },
+    {
+      "caseId": "brief:first-aid-kit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f7762ae5eeab19746f17ea623b4054bf1213cd637a50dd452123cc34ec0fe7f4"
+    },
+    {
+      "caseId": "brief:first-aid-kit",
+      "instrumentType": "escala",
+      "sha256": "b84f585c42c30c1167a67710573bcf7394fcc82386b256b384849109b0525f9c"
+    },
+    {
+      "caseId": "brief:first-aid-kit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1677d6686dcc840ca4f9ea08981fecf1c28fa87430b0ea8a2a82a593af1175f1"
+    },
+    {
+      "caseId": "brief:computational-foundations",
+      "instrumentType": "rubrica",
+      "sha256": "71b925eb0b732d01d3bed2ef109ea4f18e31b30393bfdc2a0998379b84dc6e50"
+    },
+    {
+      "caseId": "brief:computational-foundations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e17dbed1febb3fe0904b5e89799402255704179b79ccc414b755de4d771198dd"
+    },
+    {
+      "caseId": "brief:computational-foundations",
+      "instrumentType": "escala",
+      "sha256": "b7b9c957caa56490ab8e1b9584bb0ca6a0df0e2a7528a105780fe418d5ea83d4"
+    },
+    {
+      "caseId": "brief:computational-foundations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dc4ca890f60e7cf8aa7f6b36f712fa3079f2ce3820fb081f935824491993ef5a"
+    },
+    {
+      "caseId": "brief:molecular-mechanics",
+      "instrumentType": "rubrica",
+      "sha256": "34949406062d9eaa8bf3142be4e02dc0514194de34807b4598cfd286b9fccec3"
+    },
+    {
+      "caseId": "brief:molecular-mechanics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b532f86849bf369efa05e93c23417c53f5974ef11573fac2bdcf66abb9702e50"
+    },
+    {
+      "caseId": "brief:molecular-mechanics",
+      "instrumentType": "escala",
+      "sha256": "5ed3ca5546dbdc7c7adb933906e8156bd549d1f903f5d0bb98f0a69c2da573ea"
+    },
+    {
+      "caseId": "brief:molecular-mechanics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4e579c09efb5484642e9d40ec3dd4a63217489b846552563168fb3fc61b1f16b"
+    },
+    {
+      "caseId": "brief:molecular-geometry",
+      "instrumentType": "rubrica",
+      "sha256": "889a34a157a95f02ab57cb246404299b9463a04cafae5eb55959f51596547256"
+    },
+    {
+      "caseId": "brief:molecular-geometry",
+      "instrumentType": "lista-cotejo",
+      "sha256": "256ed24f72d3d50806dc5e90b2aa15fa25a6beafea42caaa54fcd9712cecaaf2"
+    },
+    {
+      "caseId": "brief:molecular-geometry",
+      "instrumentType": "escala",
+      "sha256": "dd8eb9a1315b944159db62adb1a20599ef15f7610b13aeacd4184c6922ef6a78"
+    },
+    {
+      "caseId": "brief:molecular-geometry",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0368ce5a00a1a492cd351002b0a2bfb7dc5cca5affc054a74a3c58ab563f8738"
+    },
+    {
+      "caseId": "brief:electronic-structure",
+      "instrumentType": "rubrica",
+      "sha256": "d3eab7e641e19245c14f6d64d6d27405dd26933369655dc4059a0c10a1253bcd"
+    },
+    {
+      "caseId": "brief:electronic-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eb4a1051efed0cea3692de3493e2e03b2153395cd1d4986b15ce4463e66debd2"
+    },
+    {
+      "caseId": "brief:electronic-structure",
+      "instrumentType": "escala",
+      "sha256": "a0fb9a201b34d7f0cb1f884e920e418b4aae824de5185898bce9f277b288efdf"
+    },
+    {
+      "caseId": "brief:electronic-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e49e1a41b7a390f83218b8c0e37cda7bc51e83f8648cbb7d5c9caa46b842c281"
+    },
+    {
+      "caseId": "brief:structure-activity",
+      "instrumentType": "rubrica",
+      "sha256": "def590125e9808b3cc4c1f6b758cb3c86d3f630f1935d2b813b560c129e49fea"
+    },
+    {
+      "caseId": "brief:structure-activity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9cd91c1ae9fab57bfb5e8648f04116cb2100d225e5d52ec3696dea7f38cf67e3"
+    },
+    {
+      "caseId": "brief:structure-activity",
+      "instrumentType": "escala",
+      "sha256": "886f296c5af53ca8c95d9cbc56e3e74ca1f4bde17e2d185893f25a891260abd0"
+    },
+    {
+      "caseId": "brief:structure-activity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a4f467f419643a8604697d18e9373143165118463cb9a7db5765f473c6f6615b"
+    },
+    {
+      "caseId": "brief:molecule-design",
+      "instrumentType": "rubrica",
+      "sha256": "b44948456dbf4d16b04517c5b580abb4d91d9dc739749c10917f8eec766e1ee2"
+    },
+    {
+      "caseId": "brief:molecule-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2472e2644588921c432c53d6bd0d0dab84b4ab7d63fe261e3dab03ca69e39def"
+    },
+    {
+      "caseId": "brief:molecule-design",
+      "instrumentType": "escala",
+      "sha256": "713b39d282d2ab1adcda5295888fc0edd14b113437564032966b5ca6a32e77e0"
+    },
+    {
+      "caseId": "brief:molecule-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "826aec7ecff31fd26a1ba9fe9cae7f342593239ca303100042580dc7dba8bea3"
+    },
+    {
+      "caseId": "brief:reaction-simulation",
+      "instrumentType": "rubrica",
+      "sha256": "7a12a9945a73f309936e626dfa923a7f280d9db213e1989e7ed08eef44bdb6f7"
+    },
+    {
+      "caseId": "brief:reaction-simulation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "552200fbbecea81af2a069fe53900e53dde8b6bb4e6fd06b6e29f988ba6376c7"
+    },
+    {
+      "caseId": "brief:reaction-simulation",
+      "instrumentType": "escala",
+      "sha256": "42c965d55388077d7bf5f97843290d7f30f07b101f4b1a38099933d95a2ed63f"
+    },
+    {
+      "caseId": "brief:reaction-simulation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "274ad566e1c417ff3e5a214440bbd58d0db42e67aa78184e8a84821f34d141e9"
+    },
+    {
+      "caseId": "brief:chemical-programming",
+      "instrumentType": "rubrica",
+      "sha256": "159ee8bccde3d9af5dc8c298af61cd1df991490ceb9436f6e028a34b2e007088"
+    },
+    {
+      "caseId": "brief:chemical-programming",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d1f50e738099718b0ba3376184a27bd94364569b1dfbd1ac1c5af17219899676"
+    },
+    {
+      "caseId": "brief:chemical-programming",
+      "instrumentType": "escala",
+      "sha256": "5a377b332d972ba71a5ab1d9423bb643173c61602d05856126694725e0265c8f"
+    },
+    {
+      "caseId": "brief:chemical-programming",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7b693736331004fbf52877635b38a0ce9070047895af929e641afbc32a1b9a43"
+    },
+    {
+      "caseId": "brief:computational-ethics",
+      "instrumentType": "rubrica",
+      "sha256": "939886b28bac1e410b01f1ef87f0e0b9dac13488fed9340edbe64c921ca8d7b4"
+    },
+    {
+      "caseId": "brief:computational-ethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a627f596949017be2c9bdc8c34429643e9337d9e809a6d7bd6e09c5cde0e5c23"
+    },
+    {
+      "caseId": "brief:computational-ethics",
+      "instrumentType": "escala",
+      "sha256": "bc8bbde433beb0d2769a12c08709db8139f54aa3b33d6db7daa1e0b258ecd24c"
+    },
+    {
+      "caseId": "brief:computational-ethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a65cb0195533d32f1a1899d17d911a805f8be22ca4d69dc752478660049bf037"
+    },
+    {
+      "caseId": "brief:molecular-software",
+      "instrumentType": "rubrica",
+      "sha256": "e95be6c8895f06548ca994713a3bbcff5223e49089e283b3a93a2d64712fb2ba"
+    },
+    {
+      "caseId": "brief:molecular-software",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0de772749b51d42f9941b8640cd7ecd9130511af308dc59c57d928e33b311989"
+    },
+    {
+      "caseId": "brief:molecular-software",
+      "instrumentType": "escala",
+      "sha256": "47f88a322bcae5743e227f0d3899dcfd24b1eb64b677eab1a2fb4d031c58c185"
+    },
+    {
+      "caseId": "brief:molecular-software",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cd4708201093a5b3c0a83a9b2c609b544a417e6047d9be6cffb9ed64a58235bf"
+    },
+    {
+      "caseId": "brief:molecular-calculation",
+      "instrumentType": "rubrica",
+      "sha256": "9f3e9869d6947559bb6c7a6c1d9fe8e6e38ea1200d1f540d5542f6787ef172b7"
+    },
+    {
+      "caseId": "brief:molecular-calculation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2e5f6b3c4387eaf1b568dc7b78297b92cdc5db9e86256a514635d4e5ac6861a4"
+    },
+    {
+      "caseId": "brief:molecular-calculation",
+      "instrumentType": "escala",
+      "sha256": "9b84a69c893d535fca7b9dc4f3669bc513e8f4f5ec539af16c06e3532b36b736"
+    },
+    {
+      "caseId": "brief:molecular-calculation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35eeb19a002ea3f63abcb2a62501b6bbb03f4da3efa6070d86d0c68bd8d29ebc"
+    },
+    {
+      "caseId": "brief:simulation-results",
+      "instrumentType": "rubrica",
+      "sha256": "0657e24d96cb41d3cd361d176ea0200b34b0be3fa328ae3871ff7fba1d42b194"
+    },
+    {
+      "caseId": "brief:simulation-results",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ead666a283ba799fc905cd1d9c222d19fdc0b2a91772c2b924b0a16bf19afb8b"
+    },
+    {
+      "caseId": "brief:simulation-results",
+      "instrumentType": "escala",
+      "sha256": "3aa21a658a945926b0486f8edb34bfbf85212af221da211a68582515bb24b62c"
+    },
+    {
+      "caseId": "brief:simulation-results",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c0ffbb99ee5077dfb2c0c823cc98c2d544b8ec1558bc356beb4e439fe3e351d2"
+    },
+    {
+      "caseId": "brief:computational-debug",
+      "instrumentType": "rubrica",
+      "sha256": "0982f7c4c8d38171266d02f647e6a02bc66c85655c903f0437566e17361c5600"
+    },
+    {
+      "caseId": "brief:computational-debug",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c177898212ec3dc682b84d2b2ad2cbe360094fa61b96614447349975dd677002"
+    },
+    {
+      "caseId": "brief:computational-debug",
+      "instrumentType": "escala",
+      "sha256": "05fb86a89d356ad2d209d523099f679f81fad1cc7c11e101c87c4b5b9c9fd1d6"
+    },
+    {
+      "caseId": "brief:computational-debug",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9a38f9a3a758864c99977e46c2a012f2b49bd72bf486950cff26993c44f59455"
+    },
+    {
+      "caseId": "brief:computational-project",
+      "instrumentType": "rubrica",
+      "sha256": "775ec3d7122b001dd83b11c760107e87327b2bd3aa108170f714c23ba81819f6"
+    },
+    {
+      "caseId": "brief:computational-project",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e4cc733ca65a7a3a3ce335fc5cabcebda9eeb67fed12d6fa4864623d979e04c6"
+    },
+    {
+      "caseId": "brief:computational-project",
+      "instrumentType": "escala",
+      "sha256": "8714510bb66b15e228bcb3ec09d9d93d1db7bc490130bc7b7df437e694fd46e5"
+    },
+    {
+      "caseId": "brief:computational-project",
+      "instrumentType": "lista-ponderada",
+      "sha256": "69b5b099243645cca8d22e5f05cd7a09bf79b0e4fedee45f30eb39794ebe0767"
+    },
+    {
+      "caseId": "brief:given-safety",
+      "instrumentType": "rubrica",
+      "sha256": "22cb23edf5490a4585766decaf9ce34a6575969d736fc054671226bb954de890"
+    },
+    {
+      "caseId": "brief:given-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "505ad28cd6f89a9a39c9512c3a20f646e2b2cae78c6c45d289fdd7c345e93300"
+    },
+    {
+      "caseId": "brief:given-safety",
+      "instrumentType": "escala",
+      "sha256": "ac96f524dee4aa1040e16452f688d2767a1068808ba179faff2bfd4b325ea7e6"
+    },
+    {
+      "caseId": "brief:given-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c80c29f84dbe0438cedc0b9dc4f6b20142f542e11e33ac16be64c3830effe163"
+    },
+    {
+      "caseId": "brief:textile-foundations",
+      "instrumentType": "rubrica",
+      "sha256": "1c080a567e08cb9730d45fab97f5cdfbd1192067544fa8505011e1b5e0f142fe"
+    },
+    {
+      "caseId": "brief:textile-foundations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "68e8f772cf4574e12d3a76b61ce504637192b1c77d9e698834afe098d7916537"
+    },
+    {
+      "caseId": "brief:textile-foundations",
+      "instrumentType": "escala",
+      "sha256": "9bb9a59b74ed6b3b5d7c970bd01d333ea0552ccef0ef3026fee6bf559502d36e"
+    },
+    {
+      "caseId": "brief:textile-foundations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5cc392305729b0e5ff6992ce934a274807ccb7b93e51fa1b9f362f624dc8bf1f"
+    },
+    {
+      "caseId": "brief:textile-fibers",
+      "instrumentType": "rubrica",
+      "sha256": "99945ecbb6660848291bbb227c37e7eb26c230d1b6421a58310c2b5e04d5f218"
+    },
+    {
+      "caseId": "brief:textile-fibers",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4ec714281c1b4527b0bcdc405040da4ba5447a347612d4e9c42ca80ef98fbf9a"
+    },
+    {
+      "caseId": "brief:textile-fibers",
+      "instrumentType": "escala",
+      "sha256": "84470a4b278139d93e8563609fa5dd80389aa0a68dc26184aa7017868a75a0a8"
+    },
+    {
+      "caseId": "brief:textile-fibers",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4b12199db091b6e9d5d383c2abb97cc21a8a9e7d2d0b4d044820e2d6b248b181"
+    },
+    {
+      "caseId": "brief:textile-finishing",
+      "instrumentType": "rubrica",
+      "sha256": "ddf017fd12e53db1455f7653ace94198a2020b31014c7d1705ee86168f2103a3"
+    },
+    {
+      "caseId": "brief:textile-finishing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5d3445bb46e6e53b9bd64dc52bc1b78760a0921ab79e69d46deed7b7202f60de"
+    },
+    {
+      "caseId": "brief:textile-finishing",
+      "instrumentType": "escala",
+      "sha256": "ba6d80c5ab064a784c2c17e914256525432bea646e26d1ad709f25ce24d55c63"
+    },
+    {
+      "caseId": "brief:textile-finishing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b0d70b0b99c515a9bceb89f9e6e810dc2b380bc12beb94cd3831a7268480be67"
+    },
+    {
+      "caseId": "brief:textile-colorants",
+      "instrumentType": "rubrica",
+      "sha256": "df9161621e763b7620924edce3373032de262c14539ec5ee29446fffdc6e3ad9"
+    },
+    {
+      "caseId": "brief:textile-colorants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "499cb5223fa5b996f985d63f578aeccef17f464fbf61bf0b959b1c7e946d21df"
+    },
+    {
+      "caseId": "brief:textile-colorants",
+      "instrumentType": "escala",
+      "sha256": "992b3751838ec7b1ce751537ccfdfac53255f99dca041498fce19738c60e99db"
+    },
+    {
+      "caseId": "brief:textile-colorants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "505488b0a9bcf75f10c10927c72ed6ccd9bda6797a1848d5bd36cac31409c80f"
+    },
+    {
+      "caseId": "brief:textile-agents",
+      "instrumentType": "rubrica",
+      "sha256": "9faf491c70c8af0a8b8d62a7f05cf56b53b1ad48efe716ee900443b0168504f1"
+    },
+    {
+      "caseId": "brief:textile-agents",
+      "instrumentType": "lista-cotejo",
+      "sha256": "28fd7b10d857b48a061d9cb1ffa1ad4070058488a94e0c3bf5ad97bdb013de7c"
+    },
+    {
+      "caseId": "brief:textile-agents",
+      "instrumentType": "escala",
+      "sha256": "359f18f72750ceb7d71a89fe944dcbbdae8dc1fb128acd395acabb7185d7fa70"
+    },
+    {
+      "caseId": "brief:textile-agents",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8312c724df9e19e737b739bfc615dfdd1434efe24ad27f0dae214b91ffd479de"
+    },
+    {
+      "caseId": "brief:textile-cleaning",
+      "instrumentType": "rubrica",
+      "sha256": "f43928d722588b484d21f555e40aea1a8efffd5ac5490b5029a980c4a754258c"
+    },
+    {
+      "caseId": "brief:textile-cleaning",
+      "instrumentType": "lista-cotejo",
+      "sha256": "baeac555723257c6440f78696a60b9b4a083aaaea16c7823b73652b662678c1b"
+    },
+    {
+      "caseId": "brief:textile-cleaning",
+      "instrumentType": "escala",
+      "sha256": "535cfdafcc269eb33b6884d9c93a382e13fb529a3505b5f05d384c4ac7968680"
+    },
+    {
+      "caseId": "brief:textile-cleaning",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a665ee4c49ca8add0f3dc1e468852c38cd2a544734a02d23a6288a012989013a"
+    },
+    {
+      "caseId": "brief:textile-safety",
+      "instrumentType": "rubrica",
+      "sha256": "e0ea3f45d415d70b6c2a60f010d156f7d32436797d409667f93c1a37afac088f"
+    },
+    {
+      "caseId": "brief:textile-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8d7d122f82061a0ff61d3bdb5ee0a7b887f21db96d6e345fc3d125ba933a57d"
+    },
+    {
+      "caseId": "brief:textile-safety",
+      "instrumentType": "escala",
+      "sha256": "00fc4744a1721cde231c99c8c078db042f43c916057918d27b10a43c00092989"
+    },
+    {
+      "caseId": "brief:textile-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "593b6cf37fa0cc45ed6e4d20a8a5d13c4087ca9974b79f648da16382e8101044"
+    },
+    {
+      "caseId": "brief:textile-environment",
+      "instrumentType": "rubrica",
+      "sha256": "6048782630f54447a5fa96ec7849c28a2e24180d5396d1fff3093bb19f1cb2c3"
+    },
+    {
+      "caseId": "brief:textile-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aafd499cc6671816d5abb352f36ee79c74ea1053a75416060b1e4e3596d9214a"
+    },
+    {
+      "caseId": "brief:textile-environment",
+      "instrumentType": "escala",
+      "sha256": "f1cf8f5a376c58dc4c2e7c2f398509871f2eaa3042de032c15d4dc4ced7c2c2c"
+    },
+    {
+      "caseId": "brief:textile-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6801a7bd2f8294f7c267e9b89de30f3e59650d753dc97d0602f277352048fbc8"
+    },
+    {
+      "caseId": "brief:textile-innovation",
+      "instrumentType": "rubrica",
+      "sha256": "1d7322ac777b9bae0bf91efdb385f8089e7f7057c12f79155ef9e920929f843a"
+    },
+    {
+      "caseId": "brief:textile-innovation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4abc0ece10596d41b6727f83995732f6b41af2b28b8157fecb0f49773a5f215c"
+    },
+    {
+      "caseId": "brief:textile-innovation",
+      "instrumentType": "escala",
+      "sha256": "41d86171d8729b21795afd07900736149adc9a9f4a913633aaea04f795aa7d21"
+    },
+    {
+      "caseId": "brief:textile-innovation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "63fb7989256b1347dfd0953a07dffecc9661ddb859bc53c114676a03e792d588"
+    },
+    {
+      "caseId": "brief:textile-tests",
+      "instrumentType": "rubrica",
+      "sha256": "c150a54c56c04cf634b58320b2f8530db99a88a9540d214ff734593c29fa0672"
+    },
+    {
+      "caseId": "brief:textile-tests",
+      "instrumentType": "lista-cotejo",
+      "sha256": "39f8eefa360c341302258ccd43a2d40ddf23b022a13e7214bb3bd4d25715add8"
+    },
+    {
+      "caseId": "brief:textile-tests",
+      "instrumentType": "escala",
+      "sha256": "7ada8d7fbe33d1871ee076c0c144fe8b766058e16cc4dcfb5f373b33e93b6fa2"
+    },
+    {
+      "caseId": "brief:textile-tests",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2a5e0c442fd700523d676d2aef2cd3c812eb3d90d25905fa4c000bf56dfe2550"
+    },
+    {
+      "caseId": "brief:textile-concentrations",
+      "instrumentType": "rubrica",
+      "sha256": "bd02f6d0eb3ab83ab8c6ff5b326fcbc386959623b6d6eef9a4f2ba3d5a254a5c"
+    },
+    {
+      "caseId": "brief:textile-concentrations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9f03a4fe789a48428058cdf7142754c0210b5fdb3bada27dc4f5a48cbebc1392"
+    },
+    {
+      "caseId": "brief:textile-concentrations",
+      "instrumentType": "escala",
+      "sha256": "2a5442ca65484585b6bab209c121756ceed13d97ab3f26bc0a22528cc56bfacf"
+    },
+    {
+      "caseId": "brief:textile-concentrations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ee41924df6b0606d0ad3aad9b07798e1e1988a284f733aa8223dff28a19003f"
+    },
+    {
+      "caseId": "brief:textile-tools",
+      "instrumentType": "rubrica",
+      "sha256": "da74378a5451803370c60b4978d4e72e33cc8991f87ff5f9907f80929b2bbf30"
+    },
+    {
+      "caseId": "brief:textile-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9996f3e32f83552d425b9c18697f582ffab4bceda29b94266728fcd8d73623bf"
+    },
+    {
+      "caseId": "brief:textile-tools",
+      "instrumentType": "escala",
+      "sha256": "2a8aac7a9570eca35dec2b128add9ff8610a6e4d99d1b0b20f35502ea19640ef"
+    },
+    {
+      "caseId": "brief:textile-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c2517ec5bcf5d67f8e757b21f249b187259d362eb9ac921699204b26916fdb5a"
+    },
+    {
+      "caseId": "brief:textile-report",
+      "instrumentType": "rubrica",
+      "sha256": "1cada1f6674f64bf031ffb688db52ec1bd665e8c430c544781bba3ece6df3d54"
+    },
+    {
+      "caseId": "brief:textile-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "877d75daee620aac96dc2ddcd609f355b9edf3eee16ead420714dfb696a1c84e"
+    },
+    {
+      "caseId": "brief:textile-report",
+      "instrumentType": "escala",
+      "sha256": "50820b9cd899f092950e046b97edd881959c11b83fe08d221e2e2e3325114f61"
+    },
+    {
+      "caseId": "brief:textile-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "53ae900a989b7ec978b67d5620afdf0a47356ef1b8b50e501a27ae1f9b1692fa"
+    },
+    {
+      "caseId": "brief:textile-garment",
+      "instrumentType": "rubrica",
+      "sha256": "0130b75e72c898d4eb563094636d17de0c7408182e2552edd7d7544ba11c33d8"
+    },
+    {
+      "caseId": "brief:textile-garment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3688266fac1dd511e0d1b46606eccfbfdfd298af50b2549523943ac8428bcdd7"
+    },
+    {
+      "caseId": "brief:textile-garment",
+      "instrumentType": "escala",
+      "sha256": "09a4210a8b9e1dea10a9a77f28e7d9c4b7987cdbcf7d829315bcc46b3995ae73"
+    },
+    {
+      "caseId": "brief:textile-garment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "234b175b557a47069e7af4b391d95a51bb9d5ac299e456739f80538b0cd831d8"
+    },
+    {
+      "caseId": "brief:requested-technology",
+      "instrumentType": "rubrica",
+      "sha256": "9af5e68877b03abf565c5d368980d7283c4f21a3ef09ef1ee2197ff39f1d25c6"
+    },
+    {
+      "caseId": "brief:requested-technology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "39674f3771597b4c9781638231f21b3a85a61b64cba2557fc474b29acadad318"
+    },
+    {
+      "caseId": "brief:requested-technology",
+      "instrumentType": "escala",
+      "sha256": "4b983a720cda7174652145416e1008db0dc0a05f803193195a839a5582ed6ff3"
+    },
+    {
+      "caseId": "brief:requested-technology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4d1310ce09ac794c469a3f919f97a6242b08f9f14344265fcd4267c5a1e83972"
+    },
+    {
+      "caseId": "food-design-safety",
+      "instrumentType": "rubrica",
+      "sha256": "305ea004b34bbbc33d900c24995f161eca909fffeea3b78942b6c4e44ad45e55"
+    },
+    {
+      "caseId": "food-design-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eec79f0f636f18b79d8ddabe51fffd38a26cdb7b774f937796cc11885859ac7d"
+    },
+    {
+      "caseId": "food-design-safety",
+      "instrumentType": "escala",
+      "sha256": "b2dc88a7427ac53da6098d34848d1e364ae5aa4eac2e0f2b12dfb23b1334cac3"
+    },
+    {
+      "caseId": "food-design-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2952627c6ed4f16369959f2536199b5073ea1862e07bc796e9593ffd7cd1e37b"
+    },
+    {
+      "caseId": "food-pathogen-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "8067f0788d4c5558bb83ccbada0cfa17a1c2eab06c52de927146f97191b2f93c"
+    },
+    {
+      "caseId": "food-pathogen-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "31a6c2f81af23f29d099987e23c045f12c629e0b939020eb3ff9a83ea4a2cb1a"
+    },
+    {
+      "caseId": "food-pathogen-analysis",
+      "instrumentType": "escala",
+      "sha256": "9673dc8500ea257b3ff9af58e47390e914f79fffe63b6d35ddac937bf439a48d"
+    },
+    {
+      "caseId": "food-pathogen-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0d9abcbf49c72877400f6424430214e65f5d2dbf3a3c7beaf12f01eda481485f"
+    },
+    {
+      "caseId": "food-tests-report",
+      "instrumentType": "rubrica",
+      "sha256": "4855f0f675a7eb0a6df583dffb225711be729b8a6e7a9cb06bb2b5408cd98c28"
+    },
+    {
+      "caseId": "food-tests-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5cfa5847c6db7b51233045567742741b960c936141c8f9137d9dd307e75e4170"
+    },
+    {
+      "caseId": "food-tests-report",
+      "instrumentType": "escala",
+      "sha256": "e08afd4077b728ea367f392fc1194e2ef02806a378d902458d93db355345f607"
+    },
+    {
+      "caseId": "food-tests-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6d109f47ce2a25ca52995f8b9cd8c3eb73d2b8de30c9d6001621fd94715ab528"
+    },
+    {
+      "caseId": "food-chemistry-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "d14f8309568f024fd7669879df9d42bd67b2c617f9c63ee91ed07b555abd7944"
+    },
+    {
+      "caseId": "food-chemistry-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9a4b3f79857e9083b4fe7161055e8be6bd034192d8a86c1da219bc17070371d4"
+    },
+    {
+      "caseId": "food-chemistry-explanation",
+      "instrumentType": "escala",
+      "sha256": "0dfd8ed3d56cfea8f76f83d22b4464986d395a83b0fe890ac29a36171bfd7689"
+    },
+    {
+      "caseId": "food-chemistry-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dbf9b635f5bc2e828a3216ca92a92a9a7b64b55cd75cf20f650c09212695f98e"
+    },
+    {
+      "caseId": "food-biotechnology-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "a78b1b830c2d21444bf55f4a38b55d57f0b4efbb570cac715fae720467f1d7a4"
+    },
+    {
+      "caseId": "food-biotechnology-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c9c21095bbe3a29e96a15264b64e1b687d80cbb6b0abb3ff5a8a19698a3d409a"
+    },
+    {
+      "caseId": "food-biotechnology-analysis",
+      "instrumentType": "escala",
+      "sha256": "9235138822c2d40e28bc6ccc014aa2cd26cc9ebf0ccfb582e2c377d3c2a72d07"
+    },
+    {
+      "caseId": "food-biotechnology-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a2eed4233d64322eef9a9c9891ba689e3650ec19165ff4bcac0387cbcd934e30"
+    },
+    {
+      "caseId": "food-tools-identification",
+      "instrumentType": "rubrica",
+      "sha256": "92864c69ebd189cc6fa38874ca56c027040418d18561aa8c896c2c453ccadb11"
+    },
+    {
+      "caseId": "food-tools-identification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3bae40f1659922d0243e21e9d1cdf940eb48a38f871d62caf1f90db4aad4453a"
+    },
+    {
+      "caseId": "food-tools-identification",
+      "instrumentType": "escala",
+      "sha256": "078d2295b6c04a8aa6d36622b12b82c71c94bed17756d733b16eb23d7f2fcc80"
+    },
+    {
+      "caseId": "food-tools-identification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b4e2c73f15a58439160d6c1b704a8b57142fbf7a8f97b0347bce3e58c7fe1800"
+    },
+    {
+      "caseId": "food-production-problem",
+      "instrumentType": "rubrica",
+      "sha256": "854e060e5ba3330daf25512e35a665d04bf0e88b211744b21422e4e40188482d"
+    },
+    {
+      "caseId": "food-production-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8c301268163bf7e5f275ccbb5a9f8300c05b633aa1a341b43f8a7e1d556e4b89"
+    },
+    {
+      "caseId": "food-production-problem",
+      "instrumentType": "escala",
+      "sha256": "01e0d0ec4e9540b8c29fad08c4700b49668d517d667ce04c68fb9aab893c2833"
+    },
+    {
+      "caseId": "food-production-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "094b13ee0353a3b4c896a99945201d6daff066547f4aa8a5a2899e07cf491a4c"
+    },
+    {
+      "caseId": "food-regulations-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "3e4849cfc6df50e789d22cb9bd23de2daa26a7bbe4ba89ecb0c97c456e2e83c2"
+    },
+    {
+      "caseId": "food-regulations-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "789876226bccd5baec8de8ddc74f5abcf4426ba46294dae0603f6ddf06e2b64c"
+    },
+    {
+      "caseId": "food-regulations-analysis",
+      "instrumentType": "escala",
+      "sha256": "9b0a99a3bfee97c50b674d15d75194d3505dfd8a9e8882d71207ea5b6f7f2476"
+    },
+    {
+      "caseId": "food-regulations-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "49edd4fd1476bb513ecbff32f9ee001a4aa103f5c3c1dc49029aa41afd7a0a01"
+    },
+    {
+      "caseId": "food-team-contribution",
+      "instrumentType": "rubrica",
+      "sha256": "0d73a6126ce4dc16318b3da904a737c9a916740a864a3e6646ae9f9f22d876a2"
+    },
+    {
+      "caseId": "food-team-contribution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "aeb3267aae80ca076962c57a704d3ed239c6b89b70a37eef51ff9ee378148cc5"
+    },
+    {
+      "caseId": "food-team-contribution",
+      "instrumentType": "escala",
+      "sha256": "412185556000a0c81999415eed7678ae7b10cfe823de8341b8b9ff5f43963e13"
+    },
+    {
+      "caseId": "food-team-contribution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d07ac10d1438a1966c24efd3abbdaba47d473c994e7169dfb0497afeb8f92d48"
+    },
+    {
+      "caseId": "food-ethical-case",
+      "instrumentType": "rubrica",
+      "sha256": "3f2a45b26f92f8c307698579cd95fc9ed280f449090e691ffeb1a4f7744f1538"
+    },
+    {
+      "caseId": "food-ethical-case",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cb9143bae6da7f9a1410e3eb5305fe03fa46dc609bda1a7cf36e0d2bf70f73d1"
+    },
+    {
+      "caseId": "food-ethical-case",
+      "instrumentType": "escala",
+      "sha256": "4e9a4c87dedd9e40bd003c8a69d774da80d02cd9f7bd14a5c3dd63e720a272da"
+    },
+    {
+      "caseId": "food-ethical-case",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8013a2f439ff29129df3766989bdd4b424d201b19810000156154f7731452457"
+    },
+    {
+      "caseId": "drug-molecular-design",
+      "instrumentType": "rubrica",
+      "sha256": "e0fc72aa2e8b70a25ed7351f742396ba92cdeef5da769c2ebc1722a9a2eaa103"
+    },
+    {
+      "caseId": "drug-molecular-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6ce619578e3fd02c6bd4429ca31e31a5a007ba00dac7180c7c719d381ce98ad6"
+    },
+    {
+      "caseId": "drug-molecular-design",
+      "instrumentType": "escala",
+      "sha256": "ba823a079bb6c906fbb8411328ae3dd12de26398154ed8497c1139347d50c619"
+    },
+    {
+      "caseId": "drug-molecular-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a0f1197adacfb43dc383279b882b7fcc9945fb66018b272c3aeb17f4b705e422"
+    },
+    {
+      "caseId": "drug-invitro-data",
+      "instrumentType": "rubrica",
+      "sha256": "39280e6d54ba7e5009ff1830eac09dc8225d7c6dbf613a000af4161e5f14bbd5"
+    },
+    {
+      "caseId": "drug-invitro-data",
+      "instrumentType": "lista-cotejo",
+      "sha256": "93cb2aede1dfb220b10a5611ac538e349ea75c637b13e238771a2c029acdf34d"
+    },
+    {
+      "caseId": "drug-invitro-data",
+      "instrumentType": "escala",
+      "sha256": "66adb3f87b205100d33286c0d18100877ddc541eaf33e79962b8f2cf5f5d69d8"
+    },
+    {
+      "caseId": "drug-invitro-data",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5856280adb217929a38fdf7359aa25b35547d9258255ca75f310f5e0639c86d2"
+    },
+    {
+      "caseId": "drug-trial-data",
+      "instrumentType": "rubrica",
+      "sha256": "becdc8ff49015f602a1cb6b55bd19a954ed40a67f450060478efcad8547b20de"
+    },
+    {
+      "caseId": "drug-trial-data",
+      "instrumentType": "lista-cotejo",
+      "sha256": "38a6bc4a230357e658f0d51373cc5804a351559069acf87b47b543bcbf020115"
+    },
+    {
+      "caseId": "drug-trial-data",
+      "instrumentType": "escala",
+      "sha256": "32dc7f467395c28e15354206ebcfc282830d12a6b75e83166c8d00eac0d692a9"
+    },
+    {
+      "caseId": "drug-trial-data",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8e849f90333bc05ab2fc7d0292dd95687895369c1f03d4a8032c82356f784c22"
+    },
+    {
+      "caseId": "drug-adme-model",
+      "instrumentType": "rubrica",
+      "sha256": "763b1abc617dfa665fb7a4746f2a2ddaf826a98073a37776615910306ab29c43"
+    },
+    {
+      "caseId": "drug-adme-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e50499d8acdae68d3f95a67e7b710151e1580372856661790f0cb170930a0457"
+    },
+    {
+      "caseId": "drug-adme-model",
+      "instrumentType": "escala",
+      "sha256": "9e0569169d44c38dd581f655aace0b837c0e699db6cb78162a34ed4ed23efc31"
+    },
+    {
+      "caseId": "drug-adme-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4bd6f38264721cd4eeb4b97732f1569e1108c61e4fc93822831310cc9dd8951f"
+    },
+    {
+      "caseId": "drug-development-report",
+      "instrumentType": "rubrica",
+      "sha256": "f0fecfe7d173da196cce818f26d06eec5b82552b5a7d1821cbc231bf9f0f20ae"
+    },
+    {
+      "caseId": "drug-development-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0f4327d04ef1e75d5695ad8384114b5ac3059b57a4dad539ae9d03d752c0eb1d"
+    },
+    {
+      "caseId": "drug-development-report",
+      "instrumentType": "escala",
+      "sha256": "f92beb0c58d3abfef161fc9f150b3dcf2b37d39441e883bcf248e280c79e487d"
+    },
+    {
+      "caseId": "drug-development-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "84034604b5abf93bb0afe88defaa7cc396be0386933a099d1c21840695efa263"
+    },
+    {
+      "caseId": "drug-regulatory-debate",
+      "instrumentType": "rubrica",
+      "sha256": "150e43911a9743c99b95a2667a5c88f119a5c91e8efdd5df2e6497e76d94882b"
+    },
+    {
+      "caseId": "drug-regulatory-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8d458cbbf5c27b65bcf551ed95206b3c891041d0a50dc03104af3cb00f93998e"
+    },
+    {
+      "caseId": "drug-regulatory-debate",
+      "instrumentType": "escala",
+      "sha256": "84382a34d1d7ebe53a00401138dca20803b16166613327e1caaf4d6fb9ab9630"
+    },
+    {
+      "caseId": "drug-regulatory-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "34748327c98889cf00d7dc530fa03f298a3eca2427ab86c6283023c5df6f38bd"
+    },
+    {
+      "caseId": "drug-label-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "e9e5d53b81615da432ea592cd7ad3002e19da5ecbc815c09cea435599f208021"
+    },
+    {
+      "caseId": "drug-label-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f4dd41dd6f202481bf06533726b789ff1a885916ff22aabde8b556db059c126a"
+    },
+    {
+      "caseId": "drug-label-analysis",
+      "instrumentType": "escala",
+      "sha256": "536f621545fd99c0d0bb74c12184dcd850b4afaf153a644460d4ff60c48db380"
+    },
+    {
+      "caseId": "drug-label-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "87b3c6f54e6f4c2ca587fb58b80c6161c0dc6dc0edec07728832d7aa66172423"
+    },
+    {
+      "caseId": "drug-case-debate",
+      "instrumentType": "rubrica",
+      "sha256": "24fb5236fb6b557298d39d55c7fc78ecb3a7aaa343c75a2a42762eb07673076f"
+    },
+    {
+      "caseId": "drug-case-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0992e0803b3289063003948d72d00f797f1df8ead2c4e54fcf4892565da2a562"
+    },
+    {
+      "caseId": "drug-case-debate",
+      "instrumentType": "escala",
+      "sha256": "47d21e1d8dad57b72454d2edb614c3f0cfcee416c4bcbe33d8aa08485ef838cf"
+    },
+    {
+      "caseId": "drug-case-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0cf99c957bdefda9682b90f9fa38547d46cd88d0e38445b32248325e2390e03b"
+    },
+    {
+      "caseId": "drug-software-model",
+      "instrumentType": "rubrica",
+      "sha256": "6d1d90b37ca6fc02a04234b854474d03062903a35ebd92d23800c32cfdcdaf23"
+    },
+    {
+      "caseId": "drug-software-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dda7f67de555b5866283a18e0abba59bc3976da75636f0ec8aa685bae3fb4813"
+    },
+    {
+      "caseId": "drug-software-model",
+      "instrumentType": "escala",
+      "sha256": "77488dc8f15ea68ed51a94eff9f616c3d201d0ae23f2ce27471faee980a733bf"
+    },
+    {
+      "caseId": "drug-software-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7c8c82058dd78a1e994b08abe21a9a88ce363dd9122ae49c797d76f3fe20056e"
+    },
+    {
+      "caseId": "molecule-design-simulation",
+      "instrumentType": "rubrica",
+      "sha256": "18c5eb9573d408ff12c577cc0d1fec2393d4093715ac1829541d564f745daa75"
+    },
+    {
+      "caseId": "molecule-design-simulation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5e46b778f333fad5b535b37d8d584210f5d8ee09aaf7fd6ec99fa2ec9ef34640"
+    },
+    {
+      "caseId": "molecule-design-simulation",
+      "instrumentType": "escala",
+      "sha256": "e34706bf14ad2f7d5859b0400682a10c0e27c374c611d5a86416f72c2c4c001b"
+    },
+    {
+      "caseId": "molecule-design-simulation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6464a0629884807ca1211635ac3233ce2ba41ee5c5d6ebd6d75640e6798760b1"
+    },
+    {
+      "caseId": "simulation-results-oral",
+      "instrumentType": "rubrica",
+      "sha256": "9b5966df6c847a2ea87e84492d6ac05d9f20122acb5d4ae9a022eb8333488bbb"
+    },
+    {
+      "caseId": "simulation-results-oral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e20e2f9788ed8fedf5ed9854d9418d6e4286fc2d73b869a88326ef3e9d669016"
+    },
+    {
+      "caseId": "simulation-results-oral",
+      "instrumentType": "escala",
+      "sha256": "bc51ddd8d6c196affb9341b8d7a3e88da4da2952d13d3440fb2d572862df1463"
+    },
+    {
+      "caseId": "simulation-results-oral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75696e0b092083643930cff921e6e6b81d8650a5fd6b0031ab95fecaf6ebc740"
+    },
+    {
+      "caseId": "molecule-script",
+      "instrumentType": "rubrica",
+      "sha256": "24c3c77f551829cfe27571535135ab674cc24a0614217cfb1161e1d784036f66"
+    },
+    {
+      "caseId": "molecule-script",
+      "instrumentType": "lista-cotejo",
+      "sha256": "727ba44049617fb3256dc14884dde0058b2bb701739f73981f3eff51affff003"
+    },
+    {
+      "caseId": "molecule-script",
+      "instrumentType": "escala",
+      "sha256": "e029c1cc67935235e307d7a7d6ec3a62a02f4ee33f5ec975ff421a5f7c096ec0"
+    },
+    {
+      "caseId": "molecule-script",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e3adc8a9e53f5066380b29877dc89ea633847a41ea41febefbac58c402ec9066"
+    },
+    {
+      "caseId": "simulation-problem-plan",
+      "instrumentType": "rubrica",
+      "sha256": "17a59532258d42f89775635a2a6e48292e5aa533a6adc8fc8be678501992912c"
+    },
+    {
+      "caseId": "simulation-problem-plan",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e2e3739152e8ab794c4d3601722e534f9452fd11ac9b14a34cc8d56b583d8181"
+    },
+    {
+      "caseId": "simulation-problem-plan",
+      "instrumentType": "escala",
+      "sha256": "d3a2944807efa29c431f79138281b78cbd6af278156d92bae265932352aa5e63"
+    },
+    {
+      "caseId": "simulation-problem-plan",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3439a20cf685c03a3dc8a0c6f231769d0923084fd855562f166d69e5b3bfb55d"
+    },
+    {
+      "caseId": "computational-model-explanation",
+      "instrumentType": "rubrica",
+      "sha256": "40766a35fe338a08d2d11978f2c606bac7d68546d1d77ed12cf7b223caa28192"
+    },
+    {
+      "caseId": "computational-model-explanation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "916aaa7d0fa6efb32b9785b511c4629ec5132d5eab2f8ee472f1795cf40767ad"
+    },
+    {
+      "caseId": "computational-model-explanation",
+      "instrumentType": "escala",
+      "sha256": "b4c7235da8ab57f63cd605983e4b73da8aeff8b4aa02185086bd9ada253b0105"
+    },
+    {
+      "caseId": "computational-model-explanation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ec3af0a4f8bf975ef8cbf90706c9695a84e17354189b5e8d784029486182b4e"
+    },
+    {
+      "caseId": "computational-team-report",
+      "instrumentType": "rubrica",
+      "sha256": "92ecdd11c6a1853ecf10687a69458f9b34e416f191ae494e311194849e570e49"
+    },
+    {
+      "caseId": "computational-team-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4b9a9dc656946dff277b96b08252dc2f4b2ecae3ba64df2ca5942456abbaf950"
+    },
+    {
+      "caseId": "computational-team-report",
+      "instrumentType": "escala",
+      "sha256": "8e726816e18a4bd7a89a34c60c72b0bee54154dfd1d1753d6eda9215b7b0f34f"
+    },
+    {
+      "caseId": "computational-team-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "107e6c53fd76c3ec7055acbe4f590a90065f7d188ec3321a9df4fbc5d40326ef"
+    },
+    {
+      "caseId": "computational-privacy",
+      "instrumentType": "rubrica",
+      "sha256": "e35d7eb74c0f5d423db755e56cc2eb306bee5ecb732f13f27d93fffe36404bb7"
+    },
+    {
+      "caseId": "computational-privacy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f0764e068c323aa9a30c47d95c78e1ce3107655cd4566c3b4977d645b6b34e30"
+    },
+    {
+      "caseId": "computational-privacy",
+      "instrumentType": "escala",
+      "sha256": "ba7b7bf5e9f830392ab93b4714268093faa8adf03f2bf4c8badc2b2921e82b7c"
+    },
+    {
+      "caseId": "computational-privacy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a869783fcf39f7b16f1f526fb8098f974b42c57762a99c9e3c59e57fe3cc73fd"
+    },
+    {
+      "caseId": "molecule-results-report",
+      "instrumentType": "rubrica",
+      "sha256": "d6fa7491a6116c566df0d327f027c61c69138100159133d02397f4f735db7179"
+    },
+    {
+      "caseId": "molecule-results-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8d8761f19579c34b007c36511437336ca5b96e08ca09c99d00ae7aaf6d99684"
+    },
+    {
+      "caseId": "molecule-results-report",
+      "instrumentType": "escala",
+      "sha256": "c781dc33b1b13326eebbffba6ea16912a7da1ff6a63e9256018dec78e036f377"
+    },
+    {
+      "caseId": "molecule-results-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "81d64dfcf4b5f8363a90e5cb688355a918cdbfcfc48260e0732ca3af6ab66aeb"
+    },
+    {
+      "caseId": "molecule-tools-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "ffeb7b15d22f9b45dbe1eb27f8fdd7023ef073b915b470f4592c835db924ab18"
+    },
+    {
+      "caseId": "molecule-tools-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9f49d6199e56a7aa0b12cb4337c280ef88c8a9562f3e3fb3fb712e91a81845cb"
+    },
+    {
+      "caseId": "molecule-tools-comparison",
+      "instrumentType": "escala",
+      "sha256": "59dd15e5e604f70fc18986b7125f16ee049ec68ea469ada9039bd259b4c618cd"
+    },
+    {
+      "caseId": "molecule-tools-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dd1180789dc8b579558fcce762c162a37fc5ee1c8d5fa66402e21a3b62010d15"
+    },
+    {
+      "caseId": "textile-fibers-identification",
+      "instrumentType": "rubrica",
+      "sha256": "2f92741b8f17e179ce2b5a4935cbd1195c403103a191eb7cd6f20dc9a9329759"
+    },
+    {
+      "caseId": "textile-fibers-identification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f870dcb8c70be3a4d0455a3cc26240b1d77ef3b6377fea86dac3a5346e520fe4"
+    },
+    {
+      "caseId": "textile-fibers-identification",
+      "instrumentType": "escala",
+      "sha256": "e768f063398fec1ec5ac91320db3a839d45f7968c0641df8688ebf14748575b7"
+    },
+    {
+      "caseId": "textile-fibers-identification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9db23b7639e0186a93b18431ca59215b2e1d597c31f3c95ec0dcd810d042842e"
+    },
+    {
+      "caseId": "textile-test-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "c22dc5b91353f00eb658224a6d1a73834a458b7ba58bdc69d9be4f3e8609336c"
+    },
+    {
+      "caseId": "textile-test-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "678c8c702f2b498bdcf620ca384dc7c21b4b67c95627c45b509d45febbc6d7e3"
+    },
+    {
+      "caseId": "textile-test-analysis",
+      "instrumentType": "escala",
+      "sha256": "7323eae5eb60f098fc4a49ce34648365975ece7d58d47694e14dbf1b69666927"
+    },
+    {
+      "caseId": "textile-test-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6411f64b2f8ba7ac081f8602aae563f9972645d361113e504a473fdf3ff8497b"
+    },
+    {
+      "caseId": "textile-finish-design",
+      "instrumentType": "rubrica",
+      "sha256": "9198a3a4022da2ae59be7c49b77e7c16c51948ef062ea02bf27bc0698b17bc2e"
+    },
+    {
+      "caseId": "textile-finish-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e2a72f17be2dc36f4d070fb8794ed10374ba5abf069be30da2e4b4b517a7af46"
+    },
+    {
+      "caseId": "textile-finish-design",
+      "instrumentType": "escala",
+      "sha256": "8e5b7ec65f1f0fff0cc18df877a3c9236dc3d61392b86efc074488d94944177e"
+    },
+    {
+      "caseId": "textile-finish-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bccbf91177670d3a3ce0e15f88c44cd8b50eca2dd36fc84a842af2155286dec3"
+    },
+    {
+      "caseId": "textile-tools-identification",
+      "instrumentType": "rubrica",
+      "sha256": "82a64a258c50f756dd6cd10e77bb2a9b8cf2562715086ab43d28b72489dacee0"
+    },
+    {
+      "caseId": "textile-tools-identification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a5fa4d441d13f958e0afb4742ebefa7d0cd298b0c6f6d32c253f0eaf4f74f412"
+    },
+    {
+      "caseId": "textile-tools-identification",
+      "instrumentType": "escala",
+      "sha256": "d4b751d0aa24b5b898e36df2f27de88aafd7622b4830d226a7ca8c6751c01b21"
+    },
+    {
+      "caseId": "textile-tools-identification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f47d7f105843c3283fc73b1e396e50890ec7ac6289f5c918a69c4e71832fc9b4"
+    },
+    {
+      "caseId": "textile-risk-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "43f6541aad19844200e1613e05fc4c2f1dbde0229a7ee46a381d8df8dccf72e3"
+    },
+    {
+      "caseId": "textile-risk-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "afb8d17ce83001c830bfa770851d53da132ca3143f4dea183935191efb7e0023"
+    },
+    {
+      "caseId": "textile-risk-analysis",
+      "instrumentType": "escala",
+      "sha256": "87e25d6d677022c3e9c6e77a8a43080e8b99b77c346ae5b6c8c860567f528210"
+    },
+    {
+      "caseId": "textile-risk-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a4e2815f92fa52b40998cb6a5857dbd7a5ed6995a935d12546c8157608969584"
+    },
+    {
+      "caseId": "textile-results-report",
+      "instrumentType": "rubrica",
+      "sha256": "03c887685694af13b5f994b44a5201f1348fadfce15f0ff02c860c7524584fc5"
+    },
+    {
+      "caseId": "textile-results-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "73c8df278b0d43624c84d10911e9b4524fba546bd91d908fe84f88474048c967"
+    },
+    {
+      "caseId": "textile-results-report",
+      "instrumentType": "escala",
+      "sha256": "d7f432284e22a5aaa88e3d5b38bacf87fab10f9e1f9c181a88e105cd1d1d31f4"
+    },
+    {
+      "caseId": "textile-results-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fa9caf1440297aefff8ddb5f116813b25ebaf75d2e5024fcee2ecfaba7af59e4"
+    },
+    {
+      "caseId": "textile-trends-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "4cac8831e103c3c1dcdae5c25e72cb7572a518e5d36ee936dec7bdea32f58435"
+    },
+    {
+      "caseId": "textile-trends-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "15aafec421da3bf76f34ced57db07005e381af4901a532c6917c3b4d78bf497f"
+    },
+    {
+      "caseId": "textile-trends-comparison",
+      "instrumentType": "escala",
+      "sha256": "d36363870f597b9c770f91a2c8b34d1b6eefcad3e2cef5477254db65e3ced24c"
+    },
+    {
+      "caseId": "textile-trends-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a0a386da17a22fca3504cf50036a7aff745b695b9589fdce0709ab464f659f81"
+    },
+    {
+      "caseId": "textile-garment-model",
+      "instrumentType": "rubrica",
+      "sha256": "b062dec6fee173c8fd22284c754bbc214dc5c37223edd5d539332b474046fbfd"
+    },
+    {
+      "caseId": "textile-garment-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3450cf8a957470dc264296036825c53ad2a040b4cc75d16963255e8d299e546b"
+    },
+    {
+      "caseId": "textile-garment-model",
+      "instrumentType": "escala",
+      "sha256": "66b3b104baee5e98b7b20ea50770c81b4af2da2e5497a14ba56dcc8cbb7687aa"
+    },
+    {
+      "caseId": "textile-garment-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fafa746ac98634b9660b30837e4578ebc0165252f9e24b3603fb48322bd6d4e5"
+    },
+    {
+      "caseId": "textile-safety-environment",
+      "instrumentType": "rubrica",
+      "sha256": "4926402bddd851832850eaaf22a98ff20490038372059050dd4da6eb6a2df9e3"
+    },
+    {
+      "caseId": "textile-safety-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fbd345f462a83f3ab53b7ed37d5cbb980d60bc943b94bd218f6cb42667592562"
+    },
+    {
+      "caseId": "textile-safety-environment",
+      "instrumentType": "escala",
+      "sha256": "1215d3ac1dad97863b7d9710866d652426735e4741c3ee540914408b3f33a298"
+    },
+    {
+      "caseId": "textile-safety-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7a2ac8c603544d58892e7639f9365a08d6697d2f7872955da5e15b7210ee1904"
+    },
+    {
+      "caseId": "source-food-nutrients",
+      "instrumentType": "rubrica",
+      "sha256": "ab85857b3d2f131f8ce09524dc043c908dbc630e742b85c273bb71e912661f53"
+    },
+    {
+      "caseId": "source-food-nutrients",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6edb8da9d16c66d9fe367731f9677fb13c313b58cd1ea6f905352540580d3bb4"
+    },
+    {
+      "caseId": "source-food-nutrients",
+      "instrumentType": "escala",
+      "sha256": "d1cdb963887e6e84560f9f588a96438ac59927ff8fc5708db83e000d48b9262a"
+    },
+    {
+      "caseId": "source-food-nutrients",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f551206fe8b5e935510e0c54562cf3aaa0c783b2b84691e94745fd04592e34d"
+    },
+    {
+      "caseId": "source-food-spices",
+      "instrumentType": "rubrica",
+      "sha256": "acd9b01b9ad027022b36458da2257cb7fddfed880061697c997a66d80b445874"
+    },
+    {
+      "caseId": "source-food-spices",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1860e1673dfc80560074d0a7c4b17486eecd38609db17d288576a7afad2cb99d"
+    },
+    {
+      "caseId": "source-food-spices",
+      "instrumentType": "escala",
+      "sha256": "5dcc135189f8af1db7336311299a86809c672bbd3dc59620d8de6b4efcab0e66"
+    },
+    {
+      "caseId": "source-food-spices",
+      "instrumentType": "lista-ponderada",
+      "sha256": "027b233d50a5dd79ae3ac1affee1397d1b5066eb09f395127f60289e8da98a4f"
+    },
+    {
+      "caseId": "source-molecular-food",
+      "instrumentType": "rubrica",
+      "sha256": "f82574069c616319bde08448c78088881784130d4bc438502f8d3e26911c3150"
+    },
+    {
+      "caseId": "source-molecular-food",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c0eae46437dae5a08d1eb133455cc6fbd76f6caea646b2249d097fa7a6cfd46"
+    },
+    {
+      "caseId": "source-molecular-food",
+      "instrumentType": "escala",
+      "sha256": "ae34358b2bcdda99b29d75dc15f439bff4c7fe6436f50ede9b02b4afa0f2228b"
+    },
+    {
+      "caseId": "source-molecular-food",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f72ebc8553d0c29cddb66631010e43a7df96f9c35e441e18d4b2542ad8574449"
+    },
+    {
+      "caseId": "source-food-chain",
+      "instrumentType": "rubrica",
+      "sha256": "4958f7499bc4d7de9f94b907821c88ee20b361adfb7cbbdbd2605c602d2864f2"
+    },
+    {
+      "caseId": "source-food-chain",
+      "instrumentType": "lista-cotejo",
+      "sha256": "793a98a0e7271e5dc97e78db3b02a3515c04d9c84d9eab78fcab0c13152b93d5"
+    },
+    {
+      "caseId": "source-food-chain",
+      "instrumentType": "escala",
+      "sha256": "8f1f8807e0de3ca8eda4c7d3e6968f38eda6877f984fda409f5d38cc1a38a086"
+    },
+    {
+      "caseId": "source-food-chain",
+      "instrumentType": "lista-ponderada",
+      "sha256": "685b4b6f15eac8a21944167ac21f027bb36614002f469597f410a8f5587eeb62"
+    },
+    {
+      "caseId": "source-food-quality",
+      "instrumentType": "rubrica",
+      "sha256": "463d052bf0eeae9715f7e2d731a21d0e71c8eeb097173bf0c127778a59377cd7"
+    },
+    {
+      "caseId": "source-food-quality",
+      "instrumentType": "lista-cotejo",
+      "sha256": "12382b7fdec98c132ae0c630ec4e0843dfe881b01f852f7929aeaf3af50b855b"
+    },
+    {
+      "caseId": "source-food-quality",
+      "instrumentType": "escala",
+      "sha256": "9fe19a0ab4d77c519a6de4983c5cfec6c085534c519396801ef0856d6e2c7b08"
+    },
+    {
+      "caseId": "source-food-quality",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3bf3d790fbbeb6b8e4188690b31d40c9f216461bdcdd1a76583704a7a5041866"
+    },
+    {
+      "caseId": "source-food-drying",
+      "instrumentType": "rubrica",
+      "sha256": "d10af45c093d8ba25eb1b8d12e14ac30d82a2da787d3a582a4c5f85fa5f40f36"
+    },
+    {
+      "caseId": "source-food-drying",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b2bbb2a9cc122fe9facd2ae4525e565b4954859106324b000a8a26d39e677d84"
+    },
+    {
+      "caseId": "source-food-drying",
+      "instrumentType": "escala",
+      "sha256": "50854f4121c0fb24d51b477ef4df6f22a5f58c0d413ba1d4ede006d4068dc608"
+    },
+    {
+      "caseId": "source-food-drying",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0d2b8fd5f550e3d115e5a1bb4a5b76244299c7073b5c714329b55119de69f596"
+    },
+    {
+      "caseId": "source-food-preservatives",
+      "instrumentType": "rubrica",
+      "sha256": "740b2d26e5be9d5622092700f28bf1ac003c4f965314a5e3edf781c49c9de890"
+    },
+    {
+      "caseId": "source-food-preservatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "440a8ba48ada5be6f1673b87c02b4152224717dbb6a3f72510604229f0aa8730"
+    },
+    {
+      "caseId": "source-food-preservatives",
+      "instrumentType": "escala",
+      "sha256": "7c7c3006cc313c82c7bf9625d5c7ac69351fd5a656cf4fc76a513b583cb077a6"
+    },
+    {
+      "caseId": "source-food-preservatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e7f37ef53aac1c1bf1bbd5f3011487cac20e3975af2fa930535ee84338fd6b8d"
+    },
+    {
+      "caseId": "source-food-temperature",
+      "instrumentType": "rubrica",
+      "sha256": "75489dfb7a8518cce3fdc9b23cea50331512506e161622563f3c1c38970c6272"
+    },
+    {
+      "caseId": "source-food-temperature",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c0fedd9497e590c01634b50e38c64afd9651a0e03db1f53791e24daee63bf7b1"
+    },
+    {
+      "caseId": "source-food-temperature",
+      "instrumentType": "escala",
+      "sha256": "cddaa6bc83bafb529886847358a889f044251eceab8ea347dcf75fee290d25ad"
+    },
+    {
+      "caseId": "source-food-temperature",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d07bb329594e19d672c206cec6275d9d588555c9ed231e7c747881f74e11e2a4"
+    },
+    {
+      "caseId": "source-food-ph",
+      "instrumentType": "rubrica",
+      "sha256": "97f99681745c847b5b1a3db59516b60c080a65effd24d04ee1a0cc62e78c7702"
+    },
+    {
+      "caseId": "source-food-ph",
+      "instrumentType": "lista-cotejo",
+      "sha256": "21917822eaa96eba5f461a1ab0a6f395b8b5471b7e82882609d0ddf51938d9f1"
+    },
+    {
+      "caseId": "source-food-ph",
+      "instrumentType": "escala",
+      "sha256": "cee93a7a18b88e941d36f324bdbafb72f3134a0d3cc5596db60a768fa77b9629"
+    },
+    {
+      "caseId": "source-food-ph",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6f16e57539b44d1a714915420ea3678de0f08edbfe04209da169d625c650d24d"
+    },
+    {
+      "caseId": "source-scientific-method",
+      "instrumentType": "rubrica",
+      "sha256": "2cee7bed3702fc49825b7d0b7daa07d0d46aa89fc194be07f56ee1a79e5c847b"
+    },
+    {
+      "caseId": "source-scientific-method",
+      "instrumentType": "lista-cotejo",
+      "sha256": "57236fc7bd9accd7c7e46ca2365858a573498d80b0f5b3c11c446fb073717ed2"
+    },
+    {
+      "caseId": "source-scientific-method",
+      "instrumentType": "escala",
+      "sha256": "45ebf4f84f85f4b975940bdd32cdd8d7b6d102f1c83eaa913f8917131f9c7b75"
+    },
+    {
+      "caseId": "source-scientific-method",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9996dc91f1c3206f69ee1973f96107ee4da1c32a098c4e9642694074cd0d42c3"
+    },
+    {
+      "caseId": "source-food-design",
+      "instrumentType": "rubrica",
+      "sha256": "026fe39d6af2e3a052e329698234fc560b7521c34ca971580c96c7c4925ba5cc"
+    },
+    {
+      "caseId": "source-food-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7b1602ddc3f10923771d5fbc947cbc3f086ccf978e7d6a6588c9b39ee6de0763"
+    },
+    {
+      "caseId": "source-food-design",
+      "instrumentType": "escala",
+      "sha256": "89dbef54bc144643f59409267062a11aed5dc2f8ef2bd4943eabc7146fddface"
+    },
+    {
+      "caseId": "source-food-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c2a3541f268cfee973a68a648496e22af105b52248b3528adc7b20b7024ff54"
+    },
+    {
+      "caseId": "source-food-properties",
+      "instrumentType": "rubrica",
+      "sha256": "a8beac3de4ec81a9bc380bf85672249417e04dda11b8478c13e0564fee0e463e"
+    },
+    {
+      "caseId": "source-food-properties",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7c5f01672436095103aaaa2c6d42190d17ee5417afe5ba8e0344c5c56b5d56d8"
+    },
+    {
+      "caseId": "source-food-properties",
+      "instrumentType": "escala",
+      "sha256": "0fd6d1ae29812325e14d0821c051bab8e894da344b0032124011cc5451e41577"
+    },
+    {
+      "caseId": "source-food-properties",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8705724bda150b3a46832ac2c4ac5c896c1fc2ab5c2ee5775c0e1a7b957016ae"
+    },
+    {
+      "caseId": "source-food-biotechnology",
+      "instrumentType": "rubrica",
+      "sha256": "5de90cdec4c96c1aea1ecdd042f32db9aa797bd73c7049e4990a4d013709841e"
+    },
+    {
+      "caseId": "source-food-biotechnology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6d9a3699f3f918ff66110170e0c92f65b7b03e8dd7a46dc9403d814350a44ecb"
+    },
+    {
+      "caseId": "source-food-biotechnology",
+      "instrumentType": "escala",
+      "sha256": "6f0f2690f53e8c4b80cf27017cc93f53f65309645299ebc04db91c0d934601e2"
+    },
+    {
+      "caseId": "source-food-biotechnology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "85b38ad53bd4472f8922106674b70154654bf4eb5196ac6afabb8ed810fb0efa"
+    },
+    {
+      "caseId": "source-food-fermentation",
+      "instrumentType": "rubrica",
+      "sha256": "2427bb4bf75d954f3f99c69760d0e905be9e2962fe56891f737d86e44e6cfc26"
+    },
+    {
+      "caseId": "source-food-fermentation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "82105e047e2e6af49d7fc94dc3c3bbcb2849c5cb404591d2717eb27e33cff831"
+    },
+    {
+      "caseId": "source-food-fermentation",
+      "instrumentType": "escala",
+      "sha256": "6852136df7016655942a89505b4955b76665363e9a2d8ae491f69fb18d272736"
+    },
+    {
+      "caseId": "source-food-fermentation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a92e6b4555c8c9b6df03e8c1d9d38b9598c08f433dc18ee387525c58a8f49816"
+    },
+    {
+      "caseId": "source-food-packaging",
+      "instrumentType": "rubrica",
+      "sha256": "d1f673f2957caf9c8a86d22223cebaaa227aeb299a3edca2908672aedb21228a"
+    },
+    {
+      "caseId": "source-food-packaging",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8d173357f5678c368a6614dcd9d4c35f00604016eea31b98409a496a87a14c6f"
+    },
+    {
+      "caseId": "source-food-packaging",
+      "instrumentType": "escala",
+      "sha256": "58226931bd1b3af7e4c2261faaa9fc4dd463826e4a8c8ed473d0b96a0cb8b7ed"
+    },
+    {
+      "caseId": "source-food-packaging",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ca43a04fad2d26f0347b4657a70ad370718f51fdba983311220e270853ba2a9"
+    },
+    {
+      "caseId": "source-food-quality-tests",
+      "instrumentType": "rubrica",
+      "sha256": "dafcc04b23a9beffe3b7ccb3eed94411a1569e4647305c346ef9709acaeb259f"
+    },
+    {
+      "caseId": "source-food-quality-tests",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d31effb60d76e99d29cfcd65a351ac869d29d74c6c20d2bc430e1585a991dc26"
+    },
+    {
+      "caseId": "source-food-quality-tests",
+      "instrumentType": "escala",
+      "sha256": "9a2acaa4e6fb16ad00066f34eddffaf1f8e4573c9dd009fd46d85c9862f0ada4"
+    },
+    {
+      "caseId": "source-food-quality-tests",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ac73a5a0af965abdf9f95597345940d0397f4d1a2392d2ec89ea99e274a32265"
+    },
+    {
+      "caseId": "source-food-tools",
+      "instrumentType": "rubrica",
+      "sha256": "e7d5f06df39ea4d009ff162bedbc9ad806de14e2dcf29fe915d53a8074c2ce0f"
+    },
+    {
+      "caseId": "source-food-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ead31f93a3c4b7407e7de0c591f699a7d8dbb731fd735091005788e2b9b45cb7"
+    },
+    {
+      "caseId": "source-food-tools",
+      "instrumentType": "escala",
+      "sha256": "79b71a1271a6a14991a046d17c77a6676e83cd9272049a67e663808dae266198"
+    },
+    {
+      "caseId": "source-food-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ab0e53a470ed739ba10cc0390ff6cd5d2bede87f270b6d1da297f82424df3e8"
+    },
+    {
+      "caseId": "source-food-problems",
+      "instrumentType": "rubrica",
+      "sha256": "2bef8638a83a479bc96df39ba28199c019b87fb155d3fff2394f6922167fb41a"
+    },
+    {
+      "caseId": "source-food-problems",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6405967fbc51d12e39c4306c77368d87255336af32906f93a9c5515bcdede79e"
+    },
+    {
+      "caseId": "source-food-problems",
+      "instrumentType": "escala",
+      "sha256": "10396ac87138863cff02425ef645db73fb7f53e64483fd0e9c1962d399b0e497"
+    },
+    {
+      "caseId": "source-food-problems",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b26701848115b990bc90623f512c9fc09dcbe97a5a3c32089a851401b7ecb85a"
+    },
+    {
+      "caseId": "source-food-regulations",
+      "instrumentType": "rubrica",
+      "sha256": "286d9604f6164f2a34ec6dc2760ff5a7a765fda65041d410c85698bf6f94ff79"
+    },
+    {
+      "caseId": "source-food-regulations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dcb6d01f43ff03d252f65bc52ec2a5855faa385b50fb7e525621e5c6c8a481d7"
+    },
+    {
+      "caseId": "source-food-regulations",
+      "instrumentType": "escala",
+      "sha256": "09aa1723175f4af8d58eb32454438af548c0d0e305e51457e36a310adf17d1cb"
+    },
+    {
+      "caseId": "source-food-regulations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b0f84341bc904ccb8acd61a482f4175548f2ffa2137711fef9f890d6baaa38c"
+    },
+    {
+      "caseId": "source-food-infections",
+      "instrumentType": "rubrica",
+      "sha256": "e0080464b119820f968d87502b28b55790d0cb6cc7b479fcf40a2990d7272225"
+    },
+    {
+      "caseId": "source-food-infections",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9c4d17e7ebbae3fa1c1f470516998212b3e618e50570a5123f8d3dea96a92888"
+    },
+    {
+      "caseId": "source-food-infections",
+      "instrumentType": "escala",
+      "sha256": "f8b01ac817842ccdead8ee65b6790bafb2d9dfb8f1c1278638f5578db42699fc"
+    },
+    {
+      "caseId": "source-food-infections",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f3f5d92c47e52b7b6197bb462daf22c037065f864481e477f169c83e42e8bcdf"
+    },
+    {
+      "caseId": "source-food-handling",
+      "instrumentType": "rubrica",
+      "sha256": "c96f081349329ba58daee274eef86c7f92b0630db68bde87149d73a681acff5a"
+    },
+    {
+      "caseId": "source-food-handling",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ceda9cf530b0d404e30c1e9c15af7ee7cbe6c1d8194e66cbcf921fd9bdafe63"
+    },
+    {
+      "caseId": "source-food-handling",
+      "instrumentType": "escala",
+      "sha256": "119d87b1a0914540d9482f435d0a87f519f5f63d9495431874d44a93c7847ea7"
+    },
+    {
+      "caseId": "source-food-handling",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2756d196bf19e2dece57ebeca47195bf3379a69dad57825327d2c88fe70600d7"
+    },
+    {
+      "caseId": "source-food-pesticides",
+      "instrumentType": "rubrica",
+      "sha256": "8c92c003a042b05ee015a12111a7299071f8375cbcf8c7ee1b28ed0d3c782f47"
+    },
+    {
+      "caseId": "source-food-pesticides",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7c8f5db335c60441679e2b03b1dd23c96d1f80583cf05ebb6a75587e7273bef5"
+    },
+    {
+      "caseId": "source-food-pesticides",
+      "instrumentType": "escala",
+      "sha256": "57f3c39aa2d3392761c615d789b59731a15808aa45ec0e83a5642fc1d88ee253"
+    },
+    {
+      "caseId": "source-food-pesticides",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eca9d5bf38f51cb6a2c4c3d062704afa03eb4310bf3a0d03e194d067ea994b97"
+    },
+    {
+      "caseId": "source-food-environment",
+      "instrumentType": "rubrica",
+      "sha256": "031f9013af9a495ed082aafc20e8c532e8b348d8889b1c47e988b5fb2c9bc819"
+    },
+    {
+      "caseId": "source-food-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "568b24147b069ea6b22615fd34c2722eff76ffe9dd59bce61b3bcf90c563d2d7"
+    },
+    {
+      "caseId": "source-food-environment",
+      "instrumentType": "escala",
+      "sha256": "bbd35feca1129d8f9269541c76a76884acedc8ff8d05004229e0e122e62bd3d2"
+    },
+    {
+      "caseId": "source-food-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ef5857c87d9ad6315a65c690c0bbdc5a5f4321aecebe36432f2cdad3213ac68d"
+    },
+    {
+      "caseId": "source-scientific-collaboration",
+      "instrumentType": "rubrica",
+      "sha256": "2d3583659a4528166de56430aa2b841a43d8b65522419b063c00d01f96ac3544"
+    },
+    {
+      "caseId": "source-scientific-collaboration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fc38253629d8d0d5a43e860cfbe275f4e7b31d4f45a29a9fcb4a53b02c8c7ffc"
+    },
+    {
+      "caseId": "source-scientific-collaboration",
+      "instrumentType": "escala",
+      "sha256": "9f02f120eb4b94330d4e9ffaa052d5d2f1cc0b8d34a3b225b2540bf27b3b0d2f"
+    },
+    {
+      "caseId": "source-scientific-collaboration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0d226faa1a033e77731b51e75603bde563088d6734ea18c4d1a6c9a37f315b4d"
+    },
+    {
+      "caseId": "source-scientific-communication",
+      "instrumentType": "rubrica",
+      "sha256": "cf8ad3927af28f4d63beeb00e89e1e77c660b3c8535e38cb0ab10d426297dfae"
+    },
+    {
+      "caseId": "source-scientific-communication",
+      "instrumentType": "lista-cotejo",
+      "sha256": "05d278f0159006a6b4cc3d0344adfb5322eeb0e8bcfaa737205c82f2d34e6b26"
+    },
+    {
+      "caseId": "source-scientific-communication",
+      "instrumentType": "escala",
+      "sha256": "ba3f76a9ae1dbe1ac04a19e25c362a75f359bf37e4e1488c032e7f49f862dec0"
+    },
+    {
+      "caseId": "source-scientific-communication",
+      "instrumentType": "lista-ponderada",
+      "sha256": "da8d2c5a46a609f2d409aad270d5967e4b5f92225646583bad541e15c4432838"
+    },
+    {
+      "caseId": "source-pharmaceutical-chemistry",
+      "instrumentType": "rubrica",
+      "sha256": "fb6c29da96ead45fbf996617397858c0090b722f816e766a8fb449ce98cd6a35"
+    },
+    {
+      "caseId": "source-pharmaceutical-chemistry",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c8b9e8b67408748c1670061002d37cc1eebd525e03c199721b7ba902b462fe26"
+    },
+    {
+      "caseId": "source-pharmaceutical-chemistry",
+      "instrumentType": "escala",
+      "sha256": "51aef7c1bc0e80f63959266477b8dd74b22e6c50daf7b9794ec2196af5c052e3"
+    },
+    {
+      "caseId": "source-pharmaceutical-chemistry",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eddbd8e52e01685cd2b0610e78bc5ecc2086b98d6ea2d749643ac73d6f2ae01d"
+    },
+    {
+      "caseId": "source-pharmaceutical-synthesis",
+      "instrumentType": "rubrica",
+      "sha256": "26504a945f0e9c50244eebb225a3a8df862b418ca5473e2dd552869e3122ac4b"
+    },
+    {
+      "caseId": "source-pharmaceutical-synthesis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "52edaa112687717034d7cd5ecd267875b5c3665983df4aa8f9d02cf15bf1b0a7"
+    },
+    {
+      "caseId": "source-pharmaceutical-synthesis",
+      "instrumentType": "escala",
+      "sha256": "a4eae013aac50c9d17c4fdb90e7f8a1228547c10dbdc030b6d1843b4d37c5198"
+    },
+    {
+      "caseId": "source-pharmaceutical-synthesis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ff77acd3c6142c44e410864c0fd248286e19d8112c897eee445d2ad0fc1a26fe"
+    },
+    {
+      "caseId": "source-drug-classification",
+      "instrumentType": "rubrica",
+      "sha256": "33375f81ef968a6333afbfcbbd1327dd168fc3d3d6546cc56ae60710437d25aa"
+    },
+    {
+      "caseId": "source-drug-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "74c66e988cc1201a37fcd832bc4bb69c8aba3bf24846736c00d0ff7c881b8d32"
+    },
+    {
+      "caseId": "source-drug-classification",
+      "instrumentType": "escala",
+      "sha256": "2d2eeef7eaad1d7d55540f744ebbee836cb9111f9fd1ca295b1258a27c198e5d"
+    },
+    {
+      "caseId": "source-drug-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d833e63ffb981980b74e84e7d6e86212756ffcb48bb0eae03bd70ddb0b350708"
+    },
+    {
+      "caseId": "source-drug-interactions",
+      "instrumentType": "rubrica",
+      "sha256": "a333560d152625fb4c44fc5d5a77511ee06d8d15e03893bc2b98a18f5e601e03"
+    },
+    {
+      "caseId": "source-drug-interactions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9ac501913128f54c4fa6a48c37f85661b2e0c7d1ae2aa22428be604f6021459e"
+    },
+    {
+      "caseId": "source-drug-interactions",
+      "instrumentType": "escala",
+      "sha256": "904af4bb5be7e8a90eaccb2a3c42036f0c731a7caf46d01aa15baf848a1b83bb"
+    },
+    {
+      "caseId": "source-drug-interactions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "439ea30a6c60642e6ff5b07d1b8b02311e3f6079939eee9121ec72388f14e72e"
+    },
+    {
+      "caseId": "source-drug-development",
+      "instrumentType": "rubrica",
+      "sha256": "fbdbac025d785a833e9ff54c3274ac166696d900ae4a263d7d02718589ad7d15"
+    },
+    {
+      "caseId": "source-drug-development",
+      "instrumentType": "lista-cotejo",
+      "sha256": "334c5a8485762c611e712187a1a6e6e50b018e6ce5f69de98e8575706f951869"
+    },
+    {
+      "caseId": "source-drug-development",
+      "instrumentType": "escala",
+      "sha256": "3363049ced56ed909118f1c6b901b75495f056446a70f34440831335bbe866db"
+    },
+    {
+      "caseId": "source-drug-development",
+      "instrumentType": "lista-ponderada",
+      "sha256": "83ffdbbf72cf271e9d80e5dafdb3153f27512be8f5f102108845bedab3e41277"
+    },
+    {
+      "caseId": "source-drug-sources",
+      "instrumentType": "rubrica",
+      "sha256": "60e86120437c69679dacfe479f97666174d2c6df3ed2c306a30269f39289fef4"
+    },
+    {
+      "caseId": "source-drug-sources",
+      "instrumentType": "lista-cotejo",
+      "sha256": "22b853e534c07ec9e921683db78ccc55352b62692396cd979b754c260f93e925"
+    },
+    {
+      "caseId": "source-drug-sources",
+      "instrumentType": "escala",
+      "sha256": "e579341e83ed431e4d1fff82b8d9c8dcc462fe05b891d8c6ad0ba002c2ce7069"
+    },
+    {
+      "caseId": "source-drug-sources",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebce0448066546599a102735524a41004aec457423d1c2e3d99d3c6ecc3ed7ff"
+    },
+    {
+      "caseId": "source-pharmacokinetics",
+      "instrumentType": "rubrica",
+      "sha256": "b173681ff5fb0fe64e19745774a102877e6d3a64f75abc8a9c8551c6b939f174"
+    },
+    {
+      "caseId": "source-pharmacokinetics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "79bb314903a1335a7aa9a5b3589ff427ba3860125340984442dbd3f0ba79a116"
+    },
+    {
+      "caseId": "source-pharmacokinetics",
+      "instrumentType": "escala",
+      "sha256": "980dceb505dbf30469c800f538ee0533c6bdd95d5ca4290a3033270d79e1f8e3"
+    },
+    {
+      "caseId": "source-pharmacokinetics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0038815789fccc77f4922dafcbdea48cec5e5d678edda5df979b79022fb4358f"
+    },
+    {
+      "caseId": "source-drug-mechanisms",
+      "instrumentType": "rubrica",
+      "sha256": "047af33c5d6502921b8847a0d245a33b771c05393fe463e0315ba1c6956e2c32"
+    },
+    {
+      "caseId": "source-drug-mechanisms",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2407fb5e94f87f3a46215d7ae667ec74bef0f378511b9e0ba00e6bf45893ff1a"
+    },
+    {
+      "caseId": "source-drug-mechanisms",
+      "instrumentType": "escala",
+      "sha256": "7a8b3ce68671beeb8b6ced165fcea5ba448d993b483b40bf2d7c040b449c95d1"
+    },
+    {
+      "caseId": "source-drug-mechanisms",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3867b5ade3b4493e0f16938c045ac7cda0b3ffb01e7b9aee788298d94d55fbeb"
+    },
+    {
+      "caseId": "source-drug-adverse",
+      "instrumentType": "rubrica",
+      "sha256": "0287583a8ece779354bdabb7fa2f010a571021070e8144e530608d97b220528b"
+    },
+    {
+      "caseId": "source-drug-adverse",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ebc618227606f54420651a26073bf2ff163b6d039051380db34fa20b80db977e"
+    },
+    {
+      "caseId": "source-drug-adverse",
+      "instrumentType": "escala",
+      "sha256": "7db33a60261475cb6c5393dc23b37b675bb9b698a020b5f39367d38d6bb47024"
+    },
+    {
+      "caseId": "source-drug-adverse",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8e6cb7b6e40a92e24cfafe20cd8c506d4093735e85bbecf0f55742f07b6ca4e"
+    },
+    {
+      "caseId": "source-drug-regulation",
+      "instrumentType": "rubrica",
+      "sha256": "32008ef832933be27a340b14888d5f6edd91ac20db45b08d52c504fafbba0724"
+    },
+    {
+      "caseId": "source-drug-regulation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e3c3bf7f9dc7901019d4d5aa1ab65d80c8623bb6e67df618504968b8b38c4a73"
+    },
+    {
+      "caseId": "source-drug-regulation",
+      "instrumentType": "escala",
+      "sha256": "a7a23eb8f39352211127c1bba3ec8f7caa02cbbbebaa2318c30353598b56a3a6"
+    },
+    {
+      "caseId": "source-drug-regulation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9dcdbecad642625f5a2ed79f682251c2d328a3de0db4b0e672287198a60d480"
+    },
+    {
+      "caseId": "source-drug-invitro",
+      "instrumentType": "rubrica",
+      "sha256": "9afc5438bb58afb34856594f6e5b59f0757d9f676f95e1437240fcec5b657d2f"
+    },
+    {
+      "caseId": "source-drug-invitro",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0862f6c43e38d23f439c53346b54d4e2751b1813b8db6a17552dc622db48bcde"
+    },
+    {
+      "caseId": "source-drug-invitro",
+      "instrumentType": "escala",
+      "sha256": "6f149b2160f4035b486aef751882479c997761ccfa32330ba289ecbb1e6aaa55"
+    },
+    {
+      "caseId": "source-drug-invitro",
+      "instrumentType": "lista-ponderada",
+      "sha256": "193a449bf2104c652e36354c7b030f3cf6bbeab1a734df64ec648ddff89962ec"
+    },
+    {
+      "caseId": "source-drug-report",
+      "instrumentType": "rubrica",
+      "sha256": "22f0d4be208631688ad01eaad14accbc98d444d3e5962933966dadd0480ea6b9"
+    },
+    {
+      "caseId": "source-drug-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c236f8fd6600cdd93cb48520a40cea63c63cbf9f5b149d6e88f35bbbf5264fdd"
+    },
+    {
+      "caseId": "source-drug-report",
+      "instrumentType": "escala",
+      "sha256": "12c5c319734af11b9d3504b24092d04a06a93f0eef019937126ee4e6ae365ead"
+    },
+    {
+      "caseId": "source-drug-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0e24b0f81134e70c74853fccbfcffd4ecb9234f6c307702d02f80b42bdb0e74e"
+    },
+    {
+      "caseId": "source-drug-labels",
+      "instrumentType": "rubrica",
+      "sha256": "da56724413ae3df438857c2f8c9efc106ee68dfe25cb67e6499fe4dc0f8d2886"
+    },
+    {
+      "caseId": "source-drug-labels",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3f907b9d25435faee1db7f4fc1d7b69f65f2d83e71cbec2b6c7e1e1144d6bde8"
+    },
+    {
+      "caseId": "source-drug-labels",
+      "instrumentType": "escala",
+      "sha256": "a750b79ec3a5516c94706eb0a8b5fb631020524be3698807c607f9dc83182b58"
+    },
+    {
+      "caseId": "source-drug-labels",
+      "instrumentType": "lista-ponderada",
+      "sha256": "140d2f6d0f07e5ad8e0843d49a66066b149e2ec1f46f11fe22eadb8cdf6a2fb9"
+    },
+    {
+      "caseId": "source-drug-software",
+      "instrumentType": "rubrica",
+      "sha256": "210eb973e9d38044044ef12f581e2a5cfe58915d586df2373effc0234e7d1786"
+    },
+    {
+      "caseId": "source-drug-software",
+      "instrumentType": "lista-cotejo",
+      "sha256": "da50657b1fc0dd5854f00fe111ebeb05d3cc1cafb50899ad87db535fb47833f8"
+    },
+    {
+      "caseId": "source-drug-software",
+      "instrumentType": "escala",
+      "sha256": "5cb3beb12ac12d861ccebafcde37c1cfb17d5a0bf844c3b5bd4ce28f133334a4"
+    },
+    {
+      "caseId": "source-drug-software",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b5d3f5300dfe36f994d69700dc7627cf8c1d21946c4ee1f64aebcbbe775673b6"
+    },
+    {
+      "caseId": "source-drug-alternatives",
+      "instrumentType": "rubrica",
+      "sha256": "aa68d11b25c3fb1bff9a907eac55adc5ee2c29dc9efd67b47ff84f147094bd1b"
+    },
+    {
+      "caseId": "source-drug-alternatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "871414695a350ab6414ebcb6b0f41fa6a7c5a17b61ce53e39a0ad90e1f8ab825"
+    },
+    {
+      "caseId": "source-drug-alternatives",
+      "instrumentType": "escala",
+      "sha256": "debc23d0653efb90aae3505ddf8bb8f638c2f142d90ef5f134c6b959466f6f8a"
+    },
+    {
+      "caseId": "source-drug-alternatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "11b8cbf59ba422eef1e15531fa645775feafc78d6f2468f21aef02032f9965fa"
+    },
+    {
+      "caseId": "source-first-aid-kit",
+      "instrumentType": "rubrica",
+      "sha256": "179948462d3cf0eb9e3522cdb6471e4ca323ec8dabf75ff597f5f1425944af7b"
+    },
+    {
+      "caseId": "source-first-aid-kit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3f139208203969b80d35cd39cc8ea0a10e802ce6d6e0a80ad343e15356a2ebca"
+    },
+    {
+      "caseId": "source-first-aid-kit",
+      "instrumentType": "escala",
+      "sha256": "f55de1c8e94a63767b342bafc78ba4e8119d2052f376968b7fceac3a6e8f8389"
+    },
+    {
+      "caseId": "source-first-aid-kit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "be85c4c909cd22e9251e09e54425cafdda59972690cfb8bb4b93b882a8a78c6b"
+    },
+    {
+      "caseId": "source-computational-foundations",
+      "instrumentType": "rubrica",
+      "sha256": "b9bbde1128b26550f1742045929d781e41a0d37de40f316044ca7bab9141c370"
+    },
+    {
+      "caseId": "source-computational-foundations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "747ff2250958aba3f904943393a4a164d9ce39c0ba207fbeb635729e6ead5b04"
+    },
+    {
+      "caseId": "source-computational-foundations",
+      "instrumentType": "escala",
+      "sha256": "8db05f189906f4e2e3f52591044d1c446a495c6080823f91b1e2bc6223c4bfcd"
+    },
+    {
+      "caseId": "source-computational-foundations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "48ce8acde3a6997e452d542d3e8754d79b2c25179d53d38b0eec65037d99048e"
+    },
+    {
+      "caseId": "source-molecular-mechanics",
+      "instrumentType": "rubrica",
+      "sha256": "ccebac2e760ed0eee32f8ce6756af353c5ada84a32375d916d49f877d129bffb"
+    },
+    {
+      "caseId": "source-molecular-mechanics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2b3e8b730df1772f33869ebe959bdfaca720c06ca5b9ac9eeee1e5ec3dead446"
+    },
+    {
+      "caseId": "source-molecular-mechanics",
+      "instrumentType": "escala",
+      "sha256": "700d319dfd23e3cd31e6427686f707e81fd3b9519b770b8a7848bdee1eb31aa8"
+    },
+    {
+      "caseId": "source-molecular-mechanics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "406f65fa06f43a2018dac4ab00c5425e411e874327958b538e46bc4c2846dfdb"
+    },
+    {
+      "caseId": "source-molecular-geometry",
+      "instrumentType": "rubrica",
+      "sha256": "b572c88fcf32f81f1f74f413486636a60fe4b4d27a933104e75d5f4e3c66ed8b"
+    },
+    {
+      "caseId": "source-molecular-geometry",
+      "instrumentType": "lista-cotejo",
+      "sha256": "306e0afe164281af46f4403b91741b4e4e174b590879558591263376382ac596"
+    },
+    {
+      "caseId": "source-molecular-geometry",
+      "instrumentType": "escala",
+      "sha256": "c21fc2d73c1ad59564235be9625784e8946c4db1af12a563769d03db582eb05c"
+    },
+    {
+      "caseId": "source-molecular-geometry",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ba59ff5e3f65971f27e2060900d5a88b918c37c82b8081c441b62db50b600216"
+    },
+    {
+      "caseId": "source-electronic-structure",
+      "instrumentType": "rubrica",
+      "sha256": "8f051dd75efc0f0d5413bd748caf4381668e7be52d147cf837bf6d2fec4b3fde"
+    },
+    {
+      "caseId": "source-electronic-structure",
+      "instrumentType": "lista-cotejo",
+      "sha256": "31a112ecdf2349fca4ecf7a5a54b4d9f5b0caeec66cce356869108815115a0b4"
+    },
+    {
+      "caseId": "source-electronic-structure",
+      "instrumentType": "escala",
+      "sha256": "49adeed093dc58fb430c869b4da44d64e312c5b791aaa1dd93ead6051f0e8bb9"
+    },
+    {
+      "caseId": "source-electronic-structure",
+      "instrumentType": "lista-ponderada",
+      "sha256": "861ceda3233dd87358355d5c8f5e980e206d97c3dc313cecf6b651d190d06da0"
+    },
+    {
+      "caseId": "source-structure-activity",
+      "instrumentType": "rubrica",
+      "sha256": "f3b52ddc14f305f066602f84956c28c8f1332ca5f39e2054536ac69e92c016ae"
+    },
+    {
+      "caseId": "source-structure-activity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "29fdfd5ad005aad23eb6993cfe3305eca1fe32768b70f826c022cbb964276bf8"
+    },
+    {
+      "caseId": "source-structure-activity",
+      "instrumentType": "escala",
+      "sha256": "2d999874417ead4df0d2e5d537fdbf1f9583304dad4d4be184eb40582e84c3c2"
+    },
+    {
+      "caseId": "source-structure-activity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "569b01594284f95619f6d3582d19c58c46df987287142874c90040347ab572a3"
+    },
+    {
+      "caseId": "source-molecule-design",
+      "instrumentType": "rubrica",
+      "sha256": "27f2ad81ac02beb16dd15c62706fc5b24291f2ea3f38beafcf057c6706e0b40f"
+    },
+    {
+      "caseId": "source-molecule-design",
+      "instrumentType": "lista-cotejo",
+      "sha256": "253115e6951ad8c601a45ad394e4637d760f44a6f9f7f54fd901f44eb507c503"
+    },
+    {
+      "caseId": "source-molecule-design",
+      "instrumentType": "escala",
+      "sha256": "a64212ffb4955414e3bf18550a96d6b4f8eb33c754358b873d356340b46ff089"
+    },
+    {
+      "caseId": "source-molecule-design",
+      "instrumentType": "lista-ponderada",
+      "sha256": "179ba7268d765b8f01eae7804f9ba6c942210c033452560270b17c5657831a70"
+    },
+    {
+      "caseId": "source-reaction-simulation",
+      "instrumentType": "rubrica",
+      "sha256": "c2ace918c8171cf20cb71727b4310b8794b32676d15ab345e1a0824b31722bd0"
+    },
+    {
+      "caseId": "source-reaction-simulation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ff38533178a64364f371d71cb7df4f3daf1d7517cbf5718c828b97c903d00e72"
+    },
+    {
+      "caseId": "source-reaction-simulation",
+      "instrumentType": "escala",
+      "sha256": "164b62a93a504a66c3b48c20b92a9eaae56095e517c899ed67abc09ab5105a43"
+    },
+    {
+      "caseId": "source-reaction-simulation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d74a288fe407fdbe75482c93bec718db30c34ed9b46640bd289d11da3b87b16c"
+    },
+    {
+      "caseId": "source-chemical-programming",
+      "instrumentType": "rubrica",
+      "sha256": "cf8831716d13e8d501927a7c3943d26086a70122b9b039768391d37142f4883e"
+    },
+    {
+      "caseId": "source-chemical-programming",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cb06636fe2d9f4af801d994f4b096c8ab97968e34d15d3a710e79c04e3d25749"
+    },
+    {
+      "caseId": "source-chemical-programming",
+      "instrumentType": "escala",
+      "sha256": "cedfb1c9caa9243c90fb31df69a72d186a63978356f5138add3f941716ed9a5e"
+    },
+    {
+      "caseId": "source-chemical-programming",
+      "instrumentType": "lista-ponderada",
+      "sha256": "227247b241c40a5e8adf29d9ad684fb7b6bc3c4618ef29112f0700e4b52b0b08"
+    },
+    {
+      "caseId": "source-computational-ethics",
+      "instrumentType": "rubrica",
+      "sha256": "9f1fa8956570ff8e972c7e7b49a2ff91e3ef661aef7f49ab8f3567465934ebc7"
+    },
+    {
+      "caseId": "source-computational-ethics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1d76f6cfd6c6e633b00306a64ca2eaf1c1eb1a69082eb925e99e418aa5900215"
+    },
+    {
+      "caseId": "source-computational-ethics",
+      "instrumentType": "escala",
+      "sha256": "9ac9161d2ad6a36a9a3eca410124f9974e3011abb7a0de919d9c5db38d9fde14"
+    },
+    {
+      "caseId": "source-computational-ethics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "73562ef0e5c001f0a9db1faffbe51ecc8030a3e2866a8dbdf9cb1981527a9f88"
+    },
+    {
+      "caseId": "source-molecular-software",
+      "instrumentType": "rubrica",
+      "sha256": "e8904a3f18420f5f7dca6e03c7fb23a09588e73750409af612a484e32be8daeb"
+    },
+    {
+      "caseId": "source-molecular-software",
+      "instrumentType": "lista-cotejo",
+      "sha256": "abf48e323087e4f0ffc7180b6b0b76345c120c1ebc8ff8da500860d1f31d6a51"
+    },
+    {
+      "caseId": "source-molecular-software",
+      "instrumentType": "escala",
+      "sha256": "5b0bc4aa490e680a5f0bbd399af0de2aa759bc8ccc3e2c4c4bc5be9ddf82c6d6"
+    },
+    {
+      "caseId": "source-molecular-software",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8d73b8ae289387f7c615d531139c80af4a1ca0fe77d9db11160dac2f7598b5fe"
+    },
+    {
+      "caseId": "source-molecular-calculation",
+      "instrumentType": "rubrica",
+      "sha256": "c1a4bd126ad1ed555acdc5c8a1c2a526d433f96f179be03c79f0803cab0a8b5b"
+    },
+    {
+      "caseId": "source-molecular-calculation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8005aa557ce890fea233ef0bdb156bab21949a47601629cf99b895cbe08fb0d8"
+    },
+    {
+      "caseId": "source-molecular-calculation",
+      "instrumentType": "escala",
+      "sha256": "12538ffcf3dd894e5560850ab894c1e1a871f6221d0feb2af5bb80698be1325e"
+    },
+    {
+      "caseId": "source-molecular-calculation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6cb632a1c322d34519dff59a92252d823e9cb4faf5d0539fe867854ec4c6162e"
+    },
+    {
+      "caseId": "source-simulation-results",
+      "instrumentType": "rubrica",
+      "sha256": "5cebf52459b4783b0b601ea05a6bd380b819a21bd7b3697a470b099349a8761d"
+    },
+    {
+      "caseId": "source-simulation-results",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dfdb1ac95a0d7ba4d413ec9fc6864d80fe61a590013758fa69ece985b365e893"
+    },
+    {
+      "caseId": "source-simulation-results",
+      "instrumentType": "escala",
+      "sha256": "3e75c02392685b7db9ee472cd546dd38b427c837cead99a0b27489f2396378fb"
+    },
+    {
+      "caseId": "source-simulation-results",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e23f868dfd64e7a4056ed379eded06ce9546a053d5653c47a826b16bed6aebba"
+    },
+    {
+      "caseId": "source-computational-debug",
+      "instrumentType": "rubrica",
+      "sha256": "63ebc213e8cf3bb1b8f824e2e0974a05693568be840d860f8148970fb42ab517"
+    },
+    {
+      "caseId": "source-computational-debug",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6d221a6d1f15fe5aaee6ce48f0595d84d568cc0de4317f9d71c84358be32a09c"
+    },
+    {
+      "caseId": "source-computational-debug",
+      "instrumentType": "escala",
+      "sha256": "55f9b4f8e60b57ae9f5b8b41390cf6a43d4f6e19db06c604b3bff746aad047e4"
+    },
+    {
+      "caseId": "source-computational-debug",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2bed35236ae529e38681eded0c98b572e74e8ee8eafa2e93d809dc8a9074f960"
+    },
+    {
+      "caseId": "source-computational-project",
+      "instrumentType": "rubrica",
+      "sha256": "c60c5ae080b6bf65fc3cf5fd83e323cd6aa94af502af2f4c9272131d833cdb57"
+    },
+    {
+      "caseId": "source-computational-project",
+      "instrumentType": "lista-cotejo",
+      "sha256": "61020c391b66f5a5ac89a94ea27f508a768f9369bfbe2b04008c597a05c1bf6d"
+    },
+    {
+      "caseId": "source-computational-project",
+      "instrumentType": "escala",
+      "sha256": "430a87c12691b21e4c3920be4ecc1a078c3c41ff270e94da2554faff30d4d791"
+    },
+    {
+      "caseId": "source-computational-project",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d2e954f02789c416abd1dc4542d3c8c2d7e927fabe1fa085c3ae7d7d24398cef"
+    },
+    {
+      "caseId": "source-given-safety",
+      "instrumentType": "rubrica",
+      "sha256": "d0774f7943691b4ad04faa3cd788e52a3b917682ba3eeb37b3fec4a72b8e57f1"
+    },
+    {
+      "caseId": "source-given-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "df3df28c2bb1b06b7ae1183a9cebfa3dd6392247ac044743e9e839073c1d9a47"
+    },
+    {
+      "caseId": "source-given-safety",
+      "instrumentType": "escala",
+      "sha256": "1fa5778e6ef87057c618605426f04a92425d0305c63713a68167afa124d7ed1f"
+    },
+    {
+      "caseId": "source-given-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "332e15f37658673d581f6c484003ac21e1b10893518300966695891505ba922b"
+    },
+    {
+      "caseId": "source-textile-foundations",
+      "instrumentType": "rubrica",
+      "sha256": "84486a32fee495701c0b3b2ea820b7d1d7dfd5331535b59d57af047e97917d7e"
+    },
+    {
+      "caseId": "source-textile-foundations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8288c2c71c2e62e0437cf4a31e49bf7831cb7d242da8f934c0758f6b25546a45"
+    },
+    {
+      "caseId": "source-textile-foundations",
+      "instrumentType": "escala",
+      "sha256": "fb13ef756095f50b01f6b58acbe83269621e6d6ebce74bfb2948f97fa4532c48"
+    },
+    {
+      "caseId": "source-textile-foundations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3070d45c007fa7bfa2d8a0c2cb456b6a3f77fe636676cbaad4566a10d4a27977"
+    },
+    {
+      "caseId": "source-textile-fibers",
+      "instrumentType": "rubrica",
+      "sha256": "41fa9457de91db136b11eb96435306efc4a57829d377be3c0557ad43b6249ec4"
+    },
+    {
+      "caseId": "source-textile-fibers",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b07cd46d5b63d2e4065e61e1f7889853999ebd440726699e58b5298bcf17c72f"
+    },
+    {
+      "caseId": "source-textile-fibers",
+      "instrumentType": "escala",
+      "sha256": "b3ca07244e4117b785315dcdff773fd1a2f5b681ea9861439f5471049b46ba92"
+    },
+    {
+      "caseId": "source-textile-fibers",
+      "instrumentType": "lista-ponderada",
+      "sha256": "627829793bf9ce6351c57b2617c115eb0e442fd0f12fa2d37cae3de0d68b52a4"
+    },
+    {
+      "caseId": "source-textile-finishing",
+      "instrumentType": "rubrica",
+      "sha256": "f95f454bec43195f9284a97b2f7ae192f4bbb5dc7e09fc047ad45c8d29026745"
+    },
+    {
+      "caseId": "source-textile-finishing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d12c057d8376a4904e8def2fa6c42fa68bc4f714ec1ba91646a0bca1623322dd"
+    },
+    {
+      "caseId": "source-textile-finishing",
+      "instrumentType": "escala",
+      "sha256": "5745c43d2126880952bfd1a58562792f220230d252dc285bd3bba2bc61174a39"
+    },
+    {
+      "caseId": "source-textile-finishing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ba5330f784d95ca212e19c65cf9d9f053fbdfce59a1612a67a6c98ac41450c09"
+    },
+    {
+      "caseId": "source-textile-colorants",
+      "instrumentType": "rubrica",
+      "sha256": "ed2ceb26cc93540eae89495b883254679a6fbde0f21df009f19300bda4bbc1bb"
+    },
+    {
+      "caseId": "source-textile-colorants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a5f833fd8213d50fe64a53f0f6f62d3033ddc46710cf3d8a10e725be6d33a12b"
+    },
+    {
+      "caseId": "source-textile-colorants",
+      "instrumentType": "escala",
+      "sha256": "3005ec13fdf8fb2e8ccc226f285be084ac535193139e6bbe857f73efd0d863c9"
+    },
+    {
+      "caseId": "source-textile-colorants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eda6098ba5fd2db3347af660ec0d801b6ade51029f621651b64e76099ea0c40b"
+    },
+    {
+      "caseId": "source-textile-agents",
+      "instrumentType": "rubrica",
+      "sha256": "e9dc7dc53674b6fc249ea1ee235e73a51dd7ce980a80aac0cf4becf17c26bd60"
+    },
+    {
+      "caseId": "source-textile-agents",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f9341a3265974616518c7e6ae4e0715bbe1aa5d5308bbacc1b29c197cc75ac1a"
+    },
+    {
+      "caseId": "source-textile-agents",
+      "instrumentType": "escala",
+      "sha256": "8107c15e16675cd209b2850bb48393c9a180e74b01c71f07696c2be3679cf651"
+    },
+    {
+      "caseId": "source-textile-agents",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d750d92d4feeee56346a0de4b837e87ff2b234c3421e542fea6778e3bfb84323"
+    },
+    {
+      "caseId": "source-textile-cleaning",
+      "instrumentType": "rubrica",
+      "sha256": "10fbc6b626ef073bde768948e0494c2816f96caa84ee25bb5e9f330d29641b58"
+    },
+    {
+      "caseId": "source-textile-cleaning",
+      "instrumentType": "lista-cotejo",
+      "sha256": "180d2ffaac23f360726995a300ed216c9e25feebf77f717d764fc2701cf4c236"
+    },
+    {
+      "caseId": "source-textile-cleaning",
+      "instrumentType": "escala",
+      "sha256": "ab17fc769d350ce78ef12f0aaaa90b209e3ccf26d1bda328ae58198c6a38ebf1"
+    },
+    {
+      "caseId": "source-textile-cleaning",
+      "instrumentType": "lista-ponderada",
+      "sha256": "00d9f5383b174fb845d7791e95d21d433bb2db59953e88bced6a63c70df01523"
+    },
+    {
+      "caseId": "source-textile-safety",
+      "instrumentType": "rubrica",
+      "sha256": "42973db243f8e67d91ba0cca7550fa0cb9e2f10a9e35b87c5ed5416a9e5da7d7"
+    },
+    {
+      "caseId": "source-textile-safety",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7959d782527d9c919da48c666beeea5540046a84d700b7a4bb20fce939f170c4"
+    },
+    {
+      "caseId": "source-textile-safety",
+      "instrumentType": "escala",
+      "sha256": "acdaa4904e4ad233a6c83c0a609fb5edb36465476ac5fd99c9e168a967ced358"
+    },
+    {
+      "caseId": "source-textile-safety",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7dbe49f5adac49a4cff01d3c0884f0739a96d999ad3ed07f3602c4575c9d6ec9"
+    },
+    {
+      "caseId": "source-textile-environment",
+      "instrumentType": "rubrica",
+      "sha256": "f5c75f3eec4272638d15077d99a2e640fec980e29b8b806d1aea0564253ff73f"
+    },
+    {
+      "caseId": "source-textile-environment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "99b15a563b0f3197e02dd5eaf3781da19904674b846ea63c1d49d8d3f923887e"
+    },
+    {
+      "caseId": "source-textile-environment",
+      "instrumentType": "escala",
+      "sha256": "12e7f28972118afe23b0217de85d49e3c564cac9ce6f1a4c191df635fef33ed5"
+    },
+    {
+      "caseId": "source-textile-environment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b8d7c0dc30c84a13f26918ad390e4997a8df0fb1464043d7de003d98d28cc67a"
+    },
+    {
+      "caseId": "source-textile-innovation",
+      "instrumentType": "rubrica",
+      "sha256": "5ecc9b3332a77001653bfab0fb821334ac4bd45472da3bc50263b96b71535f5f"
+    },
+    {
+      "caseId": "source-textile-innovation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5ac4248dfb016f8af7ac899878af9000db581c2d252e9db18be5fc79675dd882"
+    },
+    {
+      "caseId": "source-textile-innovation",
+      "instrumentType": "escala",
+      "sha256": "a694d9d874d23664c0e9cd635ba3189ee0cd77b3c266369f7a9d876409e181e0"
+    },
+    {
+      "caseId": "source-textile-innovation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b164b134015426031970f8b3db70360861ffba5ff18fe8b6973bf2f2857c1f07"
+    },
+    {
+      "caseId": "source-textile-tests",
+      "instrumentType": "rubrica",
+      "sha256": "70a3340e159659cd609ffc2a56a3e714fd9989bf86ff5ac9024c9bc70e5f6d67"
+    },
+    {
+      "caseId": "source-textile-tests",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6899562c21709b61adf014f3adcf479c0d7f2f19b275a1168af88a74e4423ad7"
+    },
+    {
+      "caseId": "source-textile-tests",
+      "instrumentType": "escala",
+      "sha256": "8d09f5079fc8113b379ba0e01d913c8eff8f761f9ac0c83c70742e7d21a2bd31"
+    },
+    {
+      "caseId": "source-textile-tests",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a438d8d8b33aa56d3d07a957985c3214078f2dd59cebd6c04274709c09d180f5"
+    },
+    {
+      "caseId": "source-textile-concentrations",
+      "instrumentType": "rubrica",
+      "sha256": "bf8b8c520d97a227ff08b63118d829be646c8dc292a2df80ef758824b5bed116"
+    },
+    {
+      "caseId": "source-textile-concentrations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9ce7a467269ba54d093591123b7c065935375446c75e491b400765cd214a642e"
+    },
+    {
+      "caseId": "source-textile-concentrations",
+      "instrumentType": "escala",
+      "sha256": "eeca1b405be290a6b165411e12baee8dec8162340d9f7044324773bae9186c71"
+    },
+    {
+      "caseId": "source-textile-concentrations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "454f208fa1d118c10173c3937861eaf3d9d831a7eb4562e076b9f633b88d2d72"
+    },
+    {
+      "caseId": "source-textile-tools",
+      "instrumentType": "rubrica",
+      "sha256": "a4fa7ac96b07fda7b1bf78f48ba8fe7725232ecd82711694039e168f61baa38f"
+    },
+    {
+      "caseId": "source-textile-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "60ab8c3ca12a5c9cadc7211665c8c567170b84475e53d1d291a0630334833e68"
+    },
+    {
+      "caseId": "source-textile-tools",
+      "instrumentType": "escala",
+      "sha256": "3f3fe36f11c18f6ab07be55e899f9636fecb898a3d87ed6061b58c3462b69c1b"
+    },
+    {
+      "caseId": "source-textile-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d4f218e3721543fefe06cbc0e649deda6738c141f07bd742714b294c4d50a420"
+    },
+    {
+      "caseId": "source-textile-report",
+      "instrumentType": "rubrica",
+      "sha256": "c0f286e2febcf781df3c0a0f962030a003ea1f4ad2af87cdf4fa66242c8ec815"
+    },
+    {
+      "caseId": "source-textile-report",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bc58e6345ab7cc4e9fae95fbc719d49d7b25d4522c57de04ab09d44120ba5b4b"
+    },
+    {
+      "caseId": "source-textile-report",
+      "instrumentType": "escala",
+      "sha256": "fe127023fd195d734bf7736bfbc3eb5182f71660e207b38fb80d4e8f34375246"
+    },
+    {
+      "caseId": "source-textile-report",
+      "instrumentType": "lista-ponderada",
+      "sha256": "67bcd2fe1bfa0e6f8fb53ad5ea46af49d972096d32c3275a72b93d0b0a963008"
+    },
+    {
+      "caseId": "source-textile-garment",
+      "instrumentType": "rubrica",
+      "sha256": "b364921c4a87c523aa36b807c8aab4d0dc16e31d052215396f16af312477252e"
+    },
+    {
+      "caseId": "source-textile-garment",
+      "instrumentType": "lista-cotejo",
+      "sha256": "06ce1bca6b5601e31ce5d8eeb20e49bf076c38fb56e0afe483ab7270eb9335c2"
+    },
+    {
+      "caseId": "source-textile-garment",
+      "instrumentType": "escala",
+      "sha256": "d26739b16954466eaa803f427405bcf7a4f606dd1d66679927d1baa09e72f38d"
+    },
+    {
+      "caseId": "source-textile-garment",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32d364e9e9dfec56bded0b85a4d2e01a80bf87bfa5479af41e4d65d8388f28aa"
+    },
+    {
+      "caseId": "source-requested-technology",
+      "instrumentType": "rubrica",
+      "sha256": "5c8076bc4c0e0ca2417faab0b31d0ad3779cac0a3ed0e3cb627a84f24ebd26ca"
+    },
+    {
+      "caseId": "source-requested-technology",
+      "instrumentType": "lista-cotejo",
+      "sha256": "43b2d1eeab7129d6b7324394c4b61fe592bdfdc682adae9ad26c08d81f56e0f0"
+    },
+    {
+      "caseId": "source-requested-technology",
+      "instrumentType": "escala",
+      "sha256": "93db5500ef4abb1ecee4dedb0298037cebdf5a72902196d565831ee7fdc673f8"
+    },
+    {
+      "caseId": "source-requested-technology",
+      "instrumentType": "lista-ponderada",
+      "sha256": "431ebe6d85110423147a41024d80b5cbf5b7f3b466207ff68304d146b9142020"
+    },
+    {
+      "caseId": "facet-food-transport",
+      "instrumentType": "rubrica",
+      "sha256": "a2b5bbd9c46aae4c9a1aeb304526e7726c71e5e3ee930b84e180780218afdf25"
+    },
+    {
+      "caseId": "facet-food-transport",
+      "instrumentType": "lista-cotejo",
+      "sha256": "be4314b6676420a670c7f655a6fd5770e964fa744785d06c362df342f5901633"
+    },
+    {
+      "caseId": "facet-food-transport",
+      "instrumentType": "escala",
+      "sha256": "6c7df487aa569c332d5093d8cb358ee835111a95ea751ab7a09ce1f1be45b570"
+    },
+    {
+      "caseId": "facet-food-transport",
+      "instrumentType": "lista-ponderada",
+      "sha256": "defc841ba8d295d3714b53d37e165d96df73e0d1bc3a970da92ff8be2c127238"
+    },
+    {
+      "caseId": "facet-food-reception",
+      "instrumentType": "rubrica",
+      "sha256": "efe83454e3827ce0aaa7f4dc54a74cca2d8730194ff84c74010944da7532f5e6"
+    },
+    {
+      "caseId": "facet-food-reception",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eab0df38bc8f41f2f9c21042589027bd2710c528d89252218c863c63ee36fbbf"
+    },
+    {
+      "caseId": "facet-food-reception",
+      "instrumentType": "escala",
+      "sha256": "2dac9a22e1ac9071dc37ecb402bd9ca63ab7d9ff9fff68e91e90819cffac8cbe"
+    },
+    {
+      "caseId": "facet-food-reception",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fd582bad1db2205b57110697818118748a92add4d0298b9b2eb72ab50c97c3e7"
+    },
+    {
+      "caseId": "facet-food-storage",
+      "instrumentType": "rubrica",
+      "sha256": "87d3d4891a41c6c50903c747b4c2ac92ae84f2e180b6326f5270c3909f8a32ad"
+    },
+    {
+      "caseId": "facet-food-storage",
+      "instrumentType": "lista-cotejo",
+      "sha256": "68d0c06d12293ba71c4e7e6c7e7d321e913e5a456ec6dbbd6dcd5bf393da2c52"
+    },
+    {
+      "caseId": "facet-food-storage",
+      "instrumentType": "escala",
+      "sha256": "4783637231dbf24069276317150adb67b58ab4097a842b388d05f0673a5c5a46"
+    },
+    {
+      "caseId": "facet-food-storage",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b12816e2adfe468f778551315bb09ccc9e2a0b41d9c3773cecd24068ef558f23"
+    },
+    {
+      "caseId": "facet-food-carbs",
+      "instrumentType": "rubrica",
+      "sha256": "c48d626f2f1bcbf66cc68d5803c228c225a08f95e6cfbb7d5ef3b8cef40c9e0a"
+    },
+    {
+      "caseId": "facet-food-carbs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b3bea7b685e5d76b1ee9694468b2d4f97475517bd6615f88936bcbbf564ffaaf"
+    },
+    {
+      "caseId": "facet-food-carbs",
+      "instrumentType": "escala",
+      "sha256": "2b442d09c164b7474ccd1ea8d455d69dab5f397902a7576d129c1350299c6039"
+    },
+    {
+      "caseId": "facet-food-carbs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "51e482eac7ab8fb9db2a43667b82548862709df88cf9ceeb683960c2d29a6e7a"
+    },
+    {
+      "caseId": "facet-food-proteins",
+      "instrumentType": "rubrica",
+      "sha256": "46a979355037d3bc4671c43c1c093adb401ecb23347d5af377089643408c4abf"
+    },
+    {
+      "caseId": "facet-food-proteins",
+      "instrumentType": "lista-cotejo",
+      "sha256": "58d353e59cc471c5ae1e579fd59c8f7845edd18c24caadf75edab8293cbc1296"
+    },
+    {
+      "caseId": "facet-food-proteins",
+      "instrumentType": "escala",
+      "sha256": "70f0fb70f65afb1ebeeffa46acf997913ce6cc2bfbd03750b75bcecd23ed2f5d"
+    },
+    {
+      "caseId": "facet-food-proteins",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a0781962a381365f169670a9b5bbe9861a7839d6e6df9b5ef7ee5b81a8ae7915"
+    },
+    {
+      "caseId": "facet-food-lipids",
+      "instrumentType": "rubrica",
+      "sha256": "273b13e4955b4edfdac21b79922888b3d74e48526585c920af5cb5de50e72822"
+    },
+    {
+      "caseId": "facet-food-lipids",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8f5a7703c3a18bdb7d910474a5c4f0e80e17c59a322b9cf2a10611620b80ffe7"
+    },
+    {
+      "caseId": "facet-food-lipids",
+      "instrumentType": "escala",
+      "sha256": "07105add1fb1a7070d1163de0e0a51381e8485c09ca4f8982fc57e524a338433"
+    },
+    {
+      "caseId": "facet-food-lipids",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4a2c79a2690ae791d3695ca4ac87263eb8f9d8369001a6f8dbad346abf6d8c02"
+    },
+    {
+      "caseId": "facet-food-lyophilization",
+      "instrumentType": "rubrica",
+      "sha256": "0d95b3e971a109f114f35e9ecdbb731847a29a7ed75ec254b251fa3e26c6fcd7"
+    },
+    {
+      "caseId": "facet-food-lyophilization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3e1f3fbf4b1390261faaee26bba1537b7043588d1790240a0bda08c2b6d466f6"
+    },
+    {
+      "caseId": "facet-food-lyophilization",
+      "instrumentType": "escala",
+      "sha256": "86620cffbbf44bbce8b92fc5eefa35c5b1383db9e3a7f13ee747249082ba2900"
+    },
+    {
+      "caseId": "facet-food-lyophilization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3885a4ad8d87146609d4edccf122fc2de04fe94c557906f4e65fc364edee6d8a"
+    },
+    {
+      "caseId": "facet-food-drying",
+      "instrumentType": "rubrica",
+      "sha256": "4721e384b24583f23d862d61a91c2d58f2d9b175c26a06920d16b939334dd5ba"
+    },
+    {
+      "caseId": "facet-food-drying",
+      "instrumentType": "lista-cotejo",
+      "sha256": "da9c6ed4a74d670cc1332b78cbd53a459448effaf440a0386f70f462609496a9"
+    },
+    {
+      "caseId": "facet-food-drying",
+      "instrumentType": "escala",
+      "sha256": "0b95634efc742b3d78f7a3b6fe5c564a7cea358ec9dbdb9aeb8e5117d122f6c5"
+    },
+    {
+      "caseId": "facet-food-drying",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5748f71b4f4adec5838bada1114f7a2af0690fcc65beb4366e939aedf777a650"
+    },
+    {
+      "caseId": "facet-food-concentration",
+      "instrumentType": "rubrica",
+      "sha256": "aaee6f5483bc318ec9ae41f4f17ca8d38a27b7cc28599fc61575d664e494fd12"
+    },
+    {
+      "caseId": "facet-food-concentration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4c5645c7a956cb8048f34703c4b1dd8ba0de2112e241c5d840929cfd17fc22c5"
+    },
+    {
+      "caseId": "facet-food-concentration",
+      "instrumentType": "escala",
+      "sha256": "9c41b0a5541d49eb30934049d63cc6ee3b857a23256d47c2af5e417f22037e34"
+    },
+    {
+      "caseId": "facet-food-concentration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d8fa27399c93b8af99c2b9e256b5a4facf11d364bb0b51f5a839ad3c45ce120b"
+    },
+    {
+      "caseId": "facet-food-brine",
+      "instrumentType": "rubrica",
+      "sha256": "c436b9d1754c588fa9070a5e45f393bc10d578d32068ba83d54f2a4678e62b88"
+    },
+    {
+      "caseId": "facet-food-brine",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c02a790c7d9912df2b96eb5fb452c519785f757ff65aa8cbf1743d50a0b5f2fd"
+    },
+    {
+      "caseId": "facet-food-brine",
+      "instrumentType": "escala",
+      "sha256": "b3493bcf840bbde632a7355e4d679b28119a746c22eca951d408682f0f7bbea3"
+    },
+    {
+      "caseId": "facet-food-brine",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3ae4009ce2d554ab72f4e34879ceb30e31bb4daa418ae399f81090b8fe34b3fc"
+    },
+    {
+      "caseId": "facet-food-vinegar",
+      "instrumentType": "rubrica",
+      "sha256": "e7fb8a154f6f4fbbc8a7dcd490f235e1710bda34edca73f54ba7b548403a9334"
+    },
+    {
+      "caseId": "facet-food-vinegar",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ac3e7554a6aab1b31558623fe9eccca6651bb000953f2edb7e8a0b8e241adf66"
+    },
+    {
+      "caseId": "facet-food-vinegar",
+      "instrumentType": "escala",
+      "sha256": "996d7d8d115504341a3476ad9faeb352991f3692ae93f563d9e4fe3420bda3bd"
+    },
+    {
+      "caseId": "facet-food-vinegar",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c3f8d2e589cd52e10fa09f1e8a7a6161ed3a11d0f80ccd1ecae12472b0ac397b"
+    },
+    {
+      "caseId": "facet-food-freezing",
+      "instrumentType": "rubrica",
+      "sha256": "6434acd7c40d531ff7900ed262a635f17052838b1f2476e24539a0194bf5496c"
+    },
+    {
+      "caseId": "facet-food-freezing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2a24feb0bb56d0c33db21ed2dbca3d017c41f847215a77dd940aa546babbc7c1"
+    },
+    {
+      "caseId": "facet-food-freezing",
+      "instrumentType": "escala",
+      "sha256": "9b5dcfa44c557dede50a103d40a51bfa1a3bb547d310507bc3e7a15e54079198"
+    },
+    {
+      "caseId": "facet-food-freezing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a4e8a981b51d200f86a3f1022b5156bd238f76d0e3678940afec36f1887579fd"
+    },
+    {
+      "caseId": "facet-food-pasteurization",
+      "instrumentType": "rubrica",
+      "sha256": "96839fe5a25942ba68297fa6e84817fa6ec4d76ca431c02fefda7435336147a6"
+    },
+    {
+      "caseId": "facet-food-pasteurization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f3558027795fa7358f30e156147fcc6bfac62db0c64d2411b687ea020e5ab5c"
+    },
+    {
+      "caseId": "facet-food-pasteurization",
+      "instrumentType": "escala",
+      "sha256": "bb3f6008f6881b80650dc1a146e146137ee351cbf193733c1d5da686ae031442"
+    },
+    {
+      "caseId": "facet-food-pasteurization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f474c978f8357574e3c7da57968dad2763e257d9582f5cad6b64d824ab3965da"
+    },
+    {
+      "caseId": "facet-food-sterilization",
+      "instrumentType": "rubrica",
+      "sha256": "8427856719ecea24947403108cf9469479833d8f4bedfe44d3ef79f92b8598c2"
+    },
+    {
+      "caseId": "facet-food-sterilization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e13f2b4147c92250ea29478055455452aded3962a42360ec1df6e5a3608a65e1"
+    },
+    {
+      "caseId": "facet-food-sterilization",
+      "instrumentType": "escala",
+      "sha256": "725d14e2430b82733760c6a142501fbe6a51b9ccd031fd05e5d87cab8d066e48"
+    },
+    {
+      "caseId": "facet-food-sterilization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6bc67df55e055f5581bf0c6cee372a3a65e4721dfd6a6fbb91307e557f154b0a"
+    },
+    {
+      "caseId": "facet-food-ph",
+      "instrumentType": "rubrica",
+      "sha256": "d99ea1f3c3ac9ee9966032d88292f7e030b4cf0ddf82d9de6c31817748d4573f"
+    },
+    {
+      "caseId": "facet-food-ph",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7cb23834c4a4a9791dc415fb727170c0817e973a079b0a8ee85d3021f92f5f9b"
+    },
+    {
+      "caseId": "facet-food-ph",
+      "instrumentType": "escala",
+      "sha256": "adbfd79e75345e62941087246699a970bc729dd3a362e33d6bccfa562942a79e"
+    },
+    {
+      "caseId": "facet-food-ph",
+      "instrumentType": "lista-ponderada",
+      "sha256": "48e435d93af370b2781f9fbca2d275989fdeb9b2cb12aa45fe857989a6917299"
+    },
+    {
+      "caseId": "facet-food-smoking",
+      "instrumentType": "rubrica",
+      "sha256": "d5a003405b03fe4077942f36b018cc7aa90d65206a4af55672cc6122069c505a"
+    },
+    {
+      "caseId": "facet-food-smoking",
+      "instrumentType": "lista-cotejo",
+      "sha256": "445b87d4049e6e762073b18afdb93a21ddcb52bbfff1d84d9720dc0b143fbd48"
+    },
+    {
+      "caseId": "facet-food-smoking",
+      "instrumentType": "escala",
+      "sha256": "5d8e503d2e395ee0fa7027f657334d443c5313d7ed0c12a5020da002d7eed635"
+    },
+    {
+      "caseId": "facet-food-smoking",
+      "instrumentType": "lista-ponderada",
+      "sha256": "29b2878229b8f5bd36f8fd2f7315ead25b0468c6bde0cd344d22f44330c40a00"
+    },
+    {
+      "caseId": "facet-food-salmonella",
+      "instrumentType": "rubrica",
+      "sha256": "d42a4f42166427f8983f739ec86209b02812158893832cb68fb40d46cd0d2f8c"
+    },
+    {
+      "caseId": "facet-food-salmonella",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cae97c88e44a2e3c4744f76535f868d79f146beaf6cb3c63a0490222c54e9473"
+    },
+    {
+      "caseId": "facet-food-salmonella",
+      "instrumentType": "escala",
+      "sha256": "90d61a3df0cc506da51520571436ce56e4e83f7694fd110ddd601e9f0a7fa4b2"
+    },
+    {
+      "caseId": "facet-food-salmonella",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6f4ca67f7ab82d4318bfa80531a080d75ca50002293928d5c6d43843154bd514"
+    },
+    {
+      "caseId": "facet-food-listeria",
+      "instrumentType": "rubrica",
+      "sha256": "b319b7c9d93e4a89ddb66178c649897098769815713506ee19aa3f8be6d75112"
+    },
+    {
+      "caseId": "facet-food-listeria",
+      "instrumentType": "lista-cotejo",
+      "sha256": "26109fb8d51699ef34d86501e90ab6c0fa13e83ce8d479f51086c6b0bb6c5061"
+    },
+    {
+      "caseId": "facet-food-listeria",
+      "instrumentType": "escala",
+      "sha256": "44a9ce255ff0b2391fdd6403cdf0f42ff68086f8d21c51b2dc9947aca62f4c9b"
+    },
+    {
+      "caseId": "facet-food-listeria",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c1b03014f87411ae4d9ad9151ccec75bb281c90935b67635b640e6b6b65962bd"
+    },
+    {
+      "caseId": "facet-food-norovirus",
+      "instrumentType": "rubrica",
+      "sha256": "a4daf7b189cb2ff66ab3395f81c83f90604d68da1cb8a953e0874fe2b28710f2"
+    },
+    {
+      "caseId": "facet-food-norovirus",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e3631114df5f18a6bfbf0eb963fa6652d8252f52bae854773fdb1e1efa73bedd"
+    },
+    {
+      "caseId": "facet-food-norovirus",
+      "instrumentType": "escala",
+      "sha256": "d778156f743b57d89fe4ad8b064a60923d34d078fb728b3e426ac4c4010da087"
+    },
+    {
+      "caseId": "facet-food-norovirus",
+      "instrumentType": "lista-ponderada",
+      "sha256": "69b172ad699e8ee2058dd6b35cf7bc7ad1c78b80692cfc16adbb9a7bc5a5aa23"
+    },
+    {
+      "caseId": "facet-food-hepatitis",
+      "instrumentType": "rubrica",
+      "sha256": "3fcf48d2350454d8266a7222ccf01a261649d1dc1825297575c264217ca5a8e6"
+    },
+    {
+      "caseId": "facet-food-hepatitis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0067164474430bcd38e996bf8af285c0690ff872d580bf073be83b7cc76d3538"
+    },
+    {
+      "caseId": "facet-food-hepatitis",
+      "instrumentType": "escala",
+      "sha256": "e0c3f614cc6e19d1f0727c0fa82294640547dd9248deb0fe56721bd5666c5bb1"
+    },
+    {
+      "caseId": "facet-food-hepatitis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4ad1e84c321cb0adc93802a7c0ad36e212ef6ba0de9404d0eafd036d0721199c"
+    },
+    {
+      "caseId": "facet-food-herbicides",
+      "instrumentType": "rubrica",
+      "sha256": "0b42bbb6abc649f9dd4652b745149d908214e47f3680af22acf073df4d556f0a"
+    },
+    {
+      "caseId": "facet-food-herbicides",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2050af186170801761f9c2838dd09eaa10c3051515664d4e91e4aad37ad0129"
+    },
+    {
+      "caseId": "facet-food-herbicides",
+      "instrumentType": "escala",
+      "sha256": "09ffd97d989c50b7d1d2242d88c192a2ec9aa7ac220508aa8f0ea88a76f2d68e"
+    },
+    {
+      "caseId": "facet-food-herbicides",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1f8efb1a3798be5fd2bb7a36615ae80eb8874b7d8585b041b9d20501917e3015"
+    },
+    {
+      "caseId": "facet-food-insecticides",
+      "instrumentType": "rubrica",
+      "sha256": "b1178736f384436f26f9fd6cc8245619253ea8999d2f7542268476cef84f5273"
+    },
+    {
+      "caseId": "facet-food-insecticides",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4ee26ec9d3067733e39ecf0f650df4f97c79a88acb102e96a25c9deabbc6c81b"
+    },
+    {
+      "caseId": "facet-food-insecticides",
+      "instrumentType": "escala",
+      "sha256": "0e198b837588daa5a8846186e0e2e07ea95d50927959a52a926cc6acda950814"
+    },
+    {
+      "caseId": "facet-food-insecticides",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75b112ce7cb2b6ac7a8c170b12b0108f3a82692653a36f68a298d7e7e2bd1023"
+    },
+    {
+      "caseId": "facet-drug-pk",
+      "instrumentType": "rubrica",
+      "sha256": "5ef3b5121147bc8832d8dd3dd3df6a213db7e9bda33d463b533d52baed462085"
+    },
+    {
+      "caseId": "facet-drug-pk",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51c87842ee45a67a42af55c69dff65cc6af11a9690c4e1e0cd80e2888572068c"
+    },
+    {
+      "caseId": "facet-drug-pk",
+      "instrumentType": "escala",
+      "sha256": "e45e2fe5e15f6d15d0ccc4e5d7d0d2da492500f4bc1f42fdf9944d757475e854"
+    },
+    {
+      "caseId": "facet-drug-pk",
+      "instrumentType": "lista-ponderada",
+      "sha256": "617291076ea815e563b8916962b1ebc9505f84e2de2e9d090ff9be413a27ef67"
+    },
+    {
+      "caseId": "facet-drug-pd",
+      "instrumentType": "rubrica",
+      "sha256": "f097ac2561a560fe6c86e916e36840b88100eb151ecd1e725fb5b772a8846a46"
+    },
+    {
+      "caseId": "facet-drug-pd",
+      "instrumentType": "lista-cotejo",
+      "sha256": "088a211ebc3f19c5f2a25de8cd82d5655df89fde84644406a1c1c97f4d1989b2"
+    },
+    {
+      "caseId": "facet-drug-pd",
+      "instrumentType": "escala",
+      "sha256": "7aa9ebc69d6d395d3e4beaa16c2c182f20980827772c6e492a1fcc22d01e0da8"
+    },
+    {
+      "caseId": "facet-drug-pd",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b0accb82da73d0d88313b6fb5c655b641ec27be3e31d42139de22c12b0e727f"
+    },
+    {
+      "caseId": "facet-drug-functional-groups",
+      "instrumentType": "rubrica",
+      "sha256": "d72562431ebe061e803e19eddddf9996c67f7439426128ae031fb43fa99fac27"
+    },
+    {
+      "caseId": "facet-drug-functional-groups",
+      "instrumentType": "lista-cotejo",
+      "sha256": "81d63f1717f4ce946102aa9e1ab23bb69a7d1f43ae306818b5e19aff629882d3"
+    },
+    {
+      "caseId": "facet-drug-functional-groups",
+      "instrumentType": "escala",
+      "sha256": "77fe3196c155880fb00040ca1d395d5b24a1112c0edf0061be6990390eeaaf48"
+    },
+    {
+      "caseId": "facet-drug-functional-groups",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eb117291b99b775448e8dbaca73e5f5291697f370ded11dce03fdfaeb15a9392"
+    },
+    {
+      "caseId": "facet-drug-adverse-only",
+      "instrumentType": "rubrica",
+      "sha256": "bcd42ae7884b0ac6b2a56085cb57aadf22859c3ff174c8b9e53e405a84548b22"
+    },
+    {
+      "caseId": "facet-drug-adverse-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0ec296c237c819ee2257be700d42340db9e4246a5bae1a7b7be754017887b8c4"
+    },
+    {
+      "caseId": "facet-drug-adverse-only",
+      "instrumentType": "escala",
+      "sha256": "14335d0943ce11b49ec75459837e92b914a6954fcf3664f351f513a5d12807fc"
+    },
+    {
+      "caseId": "facet-drug-adverse-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d55db6561dce616467c0b6ebb7be40348de805b890a48880220f7b8bd94d243e"
+    },
+    {
+      "caseId": "facet-drug-homeopathy",
+      "instrumentType": "rubrica",
+      "sha256": "7853a0f18e8abce44af7f5ac91b10d614d0e1bb835b898ad263d731cf96b1d99"
+    },
+    {
+      "caseId": "facet-drug-homeopathy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ee456b9e51087a65e0c82b7a04efcbea4a58bc7335ce247684820335d3cb53e1"
+    },
+    {
+      "caseId": "facet-drug-homeopathy",
+      "instrumentType": "escala",
+      "sha256": "fb1a0b82729ade04d632c14a84719fe7f43eebfe51a500d7826810d1976168f5"
+    },
+    {
+      "caseId": "facet-drug-homeopathy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a48e5e205f939e86367c475142812b56ee52ccc82a94b616541379a0fc4b44e3"
+    },
+    {
+      "caseId": "facet-drug-phytotherapy",
+      "instrumentType": "rubrica",
+      "sha256": "0439371292c5d2f21890a0887428eccffaff98b3f9b444bbb5a4dff7b8c04eaf"
+    },
+    {
+      "caseId": "facet-drug-phytotherapy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fe0233506efa4afa467a5193e29695830c0304b15bf8da84b6b9b41cae67ab68"
+    },
+    {
+      "caseId": "facet-drug-phytotherapy",
+      "instrumentType": "escala",
+      "sha256": "f9ec22df664f8791b37953744cd2b6bcf1aa45ffe8f683eabdaf594164d0ac73"
+    },
+    {
+      "caseId": "facet-drug-phytotherapy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "932d9d9ce7d9c8d555dbb1deb92e0115b3acea35247c8ce6d0e4764c88ae0a3d"
+    },
+    {
+      "caseId": "facet-drug-kit",
+      "instrumentType": "rubrica",
+      "sha256": "930a77eea36b49ae8177b5988a4cc0b6c253d6810208796d6639f2eaaa482a09"
+    },
+    {
+      "caseId": "facet-drug-kit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ba251acf2124aa33fd974e25344b649c0a3649405defdf30e43e720539b4c860"
+    },
+    {
+      "caseId": "facet-drug-kit",
+      "instrumentType": "escala",
+      "sha256": "3ac59e1247417112a100f88bb8aa7ae52994ac3bdce885a532f2b4a2146da710"
+    },
+    {
+      "caseId": "facet-drug-kit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "efc48415a59abf6e9453e6941f10f0fac184459192e9304e439af722c856bd8f"
+    },
+    {
+      "caseId": "facet-molecular-mechanics",
+      "instrumentType": "rubrica",
+      "sha256": "295fceb7b9872edc533b4e09c0c8621d3266b8d1315d190ddf9404663b37cf2b"
+    },
+    {
+      "caseId": "facet-molecular-mechanics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95f6ad70adde294fb260dff2180f49e06c4bf4c52c8be586cc3c848af2ebd9da"
+    },
+    {
+      "caseId": "facet-molecular-mechanics",
+      "instrumentType": "escala",
+      "sha256": "c246f3e8fe0c16f05e2f6a96ee98acc83b549aace1d2159ddba243ee6a5bdf4a"
+    },
+    {
+      "caseId": "facet-molecular-mechanics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a15e0e8c84325459f8f999a789f57d243296eb06632749fd38495d2274c95db"
+    },
+    {
+      "caseId": "facet-molecular-dynamics",
+      "instrumentType": "rubrica",
+      "sha256": "a94047e7fdaef02b697dead35e331498d8408ff1db3dfb7db6c44def5185c460"
+    },
+    {
+      "caseId": "facet-molecular-dynamics",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2582de14a91222b347ea1673f709abd2fd63bd850a49be7b7d8c56d9c8bd719f"
+    },
+    {
+      "caseId": "facet-molecular-dynamics",
+      "instrumentType": "escala",
+      "sha256": "d980a5b0bce4f0530616b44e3d072853b6fe359dd3ff64feb6a4cd58bd0555d4"
+    },
+    {
+      "caseId": "facet-molecular-dynamics",
+      "instrumentType": "lista-ponderada",
+      "sha256": "81247dda3e8155b814fcf316562cce3cd7887b578c3a84e6b8ed33d1869e3cb8"
+    },
+    {
+      "caseId": "facet-electron-density",
+      "instrumentType": "rubrica",
+      "sha256": "ab42b57fcc117499943f96aa759e3640c0771166149a0342848ebac24b10b55c"
+    },
+    {
+      "caseId": "facet-electron-density",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3edb83a26b9b249e836442f1de675915ccf44b621d1587fe50bbaa27527858dd"
+    },
+    {
+      "caseId": "facet-electron-density",
+      "instrumentType": "escala",
+      "sha256": "07dd583a1ee22aa7c79b74d3e13a518e56ca7b0b54c5949a869d310aacaff922"
+    },
+    {
+      "caseId": "facet-electron-density",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1803900324d0e47033689a13b167caf900f32f2df2dc46d615e3d374c7bea19a"
+    },
+    {
+      "caseId": "facet-bond-energy",
+      "instrumentType": "rubrica",
+      "sha256": "cfc33443f0b1a55cbd1885f3b52bd7fa9f18a3d022edc1cd4a9010729f42be56"
+    },
+    {
+      "caseId": "facet-bond-energy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8bc6d7621cb65dd69917f005728af7cf21102a9cf299b99789a69c633271b197"
+    },
+    {
+      "caseId": "facet-bond-energy",
+      "instrumentType": "escala",
+      "sha256": "9f51f365d2f845ad12de1db396b0aa536c706bc2dc86f9a1c2025db3efb049f3"
+    },
+    {
+      "caseId": "facet-bond-energy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ec8051306c596ef71ee3aa611755a2cc995580d127800c2428912e025387cd06"
+    },
+    {
+      "caseId": "facet-dissociation-energy",
+      "instrumentType": "rubrica",
+      "sha256": "9fe345dec60b44b224f55710ae18409bf217e49aba9b7e09eb352dfb9f420e3a"
+    },
+    {
+      "caseId": "facet-dissociation-energy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0db4bf24442a10d845236f7b56b3df93462bf86853c2262027ba10082bc7c8fe"
+    },
+    {
+      "caseId": "facet-dissociation-energy",
+      "instrumentType": "escala",
+      "sha256": "d3a8f15986b179c4b6f1621c10fc583aa4602d754f31df5630bec54abdd34269"
+    },
+    {
+      "caseId": "facet-dissociation-energy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "aeb0975a16759a589461dc2ccfdec9758e1f879f2d0de52c8576ef388364c3af"
+    },
+    {
+      "caseId": "facet-textile-fibers",
+      "instrumentType": "rubrica",
+      "sha256": "e440f2697fb6141165791855023a3a1099aaafb7ab60e5273bc309412fc41ab3"
+    },
+    {
+      "caseId": "facet-textile-fibers",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46535d50e0b4bf5699a692dc9397357bd2cde9aa94bbea6482db7770125af9c8"
+    },
+    {
+      "caseId": "facet-textile-fibers",
+      "instrumentType": "escala",
+      "sha256": "4085451bed1714fb13141014cf105c27315d2f1e86c4c9fd01d45cc80dad81c8"
+    },
+    {
+      "caseId": "facet-textile-fibers",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a6455840d23d3b05334475a5e54355a17f2d1878c132ca230f622a6bf02cc8b5"
+    },
+    {
+      "caseId": "facet-textile-colorants",
+      "instrumentType": "rubrica",
+      "sha256": "bec1a1e776315dc210794349caf002379c5665d069de7de5102febd1def43ec8"
+    },
+    {
+      "caseId": "facet-textile-colorants",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b2c7a90659b3b3d9e40fa5b418fcefebe536049a3b06537dac2bb4cea5420570"
+    },
+    {
+      "caseId": "facet-textile-colorants",
+      "instrumentType": "escala",
+      "sha256": "ab2a9aaa478fc23d8a4c247fad81cad15af2c42475ccab4db6e8946f900660b5"
+    },
+    {
+      "caseId": "facet-textile-colorants",
+      "instrumentType": "lista-ponderada",
+      "sha256": "998cbb538348a7ec9451916424fe7e73c25eec4c794fcd4ed1d3a852e6441099"
+    },
+    {
+      "caseId": "facet-textile-pigments",
+      "instrumentType": "rubrica",
+      "sha256": "bbd1f2f3f773a10087b0e17bc6952120186059b6387f2229f3115f46bb20ad31"
+    },
+    {
+      "caseId": "facet-textile-pigments",
+      "instrumentType": "lista-cotejo",
+      "sha256": "009572b741f51c5100933be8afbe95b1597b4575a6571030bd35c8461e0b68a7"
+    },
+    {
+      "caseId": "facet-textile-pigments",
+      "instrumentType": "escala",
+      "sha256": "d8c434f4575034f18a4cca28998bdf7bb7a3a4ca4f0b44ef847cf2221f2481fa"
+    },
+    {
+      "caseId": "facet-textile-pigments",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3f02380b4bb83d445ad1598a57d9d0d94e8bfca16c209f2a6593bc95984f374b"
+    },
+    {
+      "caseId": "facet-textile-softener",
+      "instrumentType": "rubrica",
+      "sha256": "cd5690659b6d1e8e1451c49c5af22f9adedb13585ebd51f3bb5eef6c53424254"
+    },
+    {
+      "caseId": "facet-textile-softener",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c9bd5817dcb73b26c4fdbf255ed6e29735af0a43960a093138a02d67647ca843"
+    },
+    {
+      "caseId": "facet-textile-softener",
+      "instrumentType": "escala",
+      "sha256": "3f4dc5acdd03a5cd882b7d6ee78cddb9eaf8e22920c30dca938f9b06d56a96eb"
+    },
+    {
+      "caseId": "facet-textile-softener",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bd1d6420fc9ac435d35dacc1c55fe3a26f71a1ce7fb31c5741b1d345e8d859c1"
+    },
+    {
+      "caseId": "facet-textile-repellent",
+      "instrumentType": "rubrica",
+      "sha256": "c04049ec24b35530d7bc9641b0b2bc4bea8ed9743aff99598ec25bc336d25bac"
+    },
+    {
+      "caseId": "facet-textile-repellent",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1ad61ec45a32f4ecd193714177f14aa31e38e307cd412db47fd20d0e9c6ee270"
+    },
+    {
+      "caseId": "facet-textile-repellent",
+      "instrumentType": "escala",
+      "sha256": "ba7c33145e2078a9d19485836bd1bc5f5b41bbd7b65c29263f5e303c4150d37b"
+    },
+    {
+      "caseId": "facet-textile-repellent",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f089a26780166448a1ba09cdbef9c2931c39278772c4cf6df930f35801397e05"
+    },
+    {
+      "caseId": "facet-textile-flame",
+      "instrumentType": "rubrica",
+      "sha256": "ac77403451066efc99c3e0541370a54e5f922099ef4de45659005042f51954ea"
+    },
+    {
+      "caseId": "facet-textile-flame",
+      "instrumentType": "lista-cotejo",
+      "sha256": "acc150dea8195197990f120bec4307dcb04b16653fd5e3f3d737dffc0d2e5b0d"
+    },
+    {
+      "caseId": "facet-textile-flame",
+      "instrumentType": "escala",
+      "sha256": "885fddb8412c314632169f0984e78f11dc23f083871b66f108871e043cc55f53"
+    },
+    {
+      "caseId": "facet-textile-flame",
+      "instrumentType": "lista-ponderada",
+      "sha256": "63f02b6eff53876de6747d3ac416e27349d4334ebf9ce4762e88d0f24c821a79"
+    },
+    {
+      "caseId": "facet-textile-bleaching",
+      "instrumentType": "rubrica",
+      "sha256": "05d6119816208d4126184d5c04884b97678ffc60409640fbefb89ee417c8566b"
+    },
+    {
+      "caseId": "facet-textile-bleaching",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3662ff9825c08be0dc30de60dae992096d115b716e5c55b68baa8975629907c5"
+    },
+    {
+      "caseId": "facet-textile-bleaching",
+      "instrumentType": "escala",
+      "sha256": "37dc1139dcd53e1c23a447d84e983257495ca1bf0d603177b4c5405c028dd601"
+    },
+    {
+      "caseId": "facet-textile-bleaching",
+      "instrumentType": "lista-ponderada",
+      "sha256": "72e1732877da4d9c394a813dad0f5938933f0761e78db48ae513ed48878a8685"
+    },
+    {
+      "caseId": "facet-textile-degreasing",
+      "instrumentType": "rubrica",
+      "sha256": "e61475e2cae14ac8bf632d6a61cb82dbb8ad8927381d72aaf9f7b12fdc66ea3d"
+    },
+    {
+      "caseId": "facet-textile-degreasing",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d5abd9078b081b0c635f797533f7847b70703a7400a8aea20c19f627d5e27c23"
+    },
+    {
+      "caseId": "facet-textile-degreasing",
+      "instrumentType": "escala",
+      "sha256": "a8df09a154cac74eecc96ade0cfe1b4a9b350c3c51e2a96ff3fe30ff466c0739"
+    },
+    {
+      "caseId": "facet-textile-degreasing",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a15cef8ab14b202afc6bf4cc4dce9cbe2f40cd6dd6f62e3f849e6222d8e2a549"
+    },
+    {
+      "caseId": "facet-textile-print",
+      "instrumentType": "rubrica",
+      "sha256": "b4c2fdddc8f6394c7b3696154c5c2d48969da7996cb7c19101b59a72e6df0b4b"
+    },
+    {
+      "caseId": "facet-textile-print",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1a9c5f23eeb1e38795bbda206ea1da740be5c422b04d0197736929f9aa86a5ca"
+    },
+    {
+      "caseId": "facet-textile-print",
+      "instrumentType": "escala",
+      "sha256": "8029c56481f3222da84a34c7867aa1cd1e531a8be22ea242f119228f9aa05fcb"
+    },
+    {
+      "caseId": "facet-textile-print",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4cd433b66b10022e280958220c731870ca8e52a08ea83b67073225d6ebcb592b"
+    },
+    {
+      "caseId": "facet-textile-smart",
+      "instrumentType": "rubrica",
+      "sha256": "41c642604e270cd44c719a68733dae3b387570f608bafe357574b82e2581cf28"
+    },
+    {
+      "caseId": "facet-textile-smart",
+      "instrumentType": "lista-cotejo",
+      "sha256": "153ed5db8a994c240a3817c25e8ed2bd8dc86a1f4a132ba2e8d206d7175e7ef0"
+    },
+    {
+      "caseId": "facet-textile-smart",
+      "instrumentType": "escala",
+      "sha256": "6b30773054761e46e463b8118b2c5a5ebb47c4a91d31e7e7e143e40e33ead7eb"
+    },
+    {
+      "caseId": "facet-textile-smart",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f7f75102c69af3a40edda0f9f8491e05ae02ec01f03aa4964dba301b4dc26584"
+    },
+    {
+      "caseId": "textile-concentration-calculation",
+      "instrumentType": "rubrica",
+      "sha256": "6285acbd552a9ef8aac381011556c91bd716a750bfb6c4ff40c6d69850a884d9"
+    },
+    {
+      "caseId": "textile-concentration-calculation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6b86635ce0994cc789452544a9cbb82cc6c069e0e4db3f20b736f82a078ac3a6"
+    },
+    {
+      "caseId": "textile-concentration-calculation",
+      "instrumentType": "escala",
+      "sha256": "105d2b386be0846e5cfca5ba25f65068f8c8ea9500918890e56353eedf80fa07"
+    },
+    {
+      "caseId": "textile-concentration-calculation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5699de1037487e98ae01adc6ed9fbf6a3ca9ea2405aad0512db030a3f52e0fd5"
+    },
+    {
+      "caseId": "program-and-independent-calculation",
+      "instrumentType": "rubrica",
+      "sha256": "3ab9bb0986e9dd7833e37bdbf71702d6b49bdafaab2031d37c6edc5cd04e2e2b"
+    },
+    {
+      "caseId": "program-and-independent-calculation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "62d7f1f83c3de025692c0b31c61362c4b6fe5e3145ff89e2d2c4bdf913785854"
+    },
+    {
+      "caseId": "program-and-independent-calculation",
+      "instrumentType": "escala",
+      "sha256": "61b9d70adf6fbf3a676df9ec0542417c60b00eaf34f1f5bf85360492e2b9b489"
+    },
+    {
+      "caseId": "program-and-independent-calculation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8842a274ac340f5a0e3799cae3320ab86e5e2ab8aa0ca46ae748391b3bb8ce3"
+    },
+    {
+      "caseId": "given-computational-project-results",
+      "instrumentType": "rubrica",
+      "sha256": "57d0dfe962be91312fdb29d986c18dcf14978da2c4a468c802e68d58a6130d99"
+    },
+    {
+      "caseId": "given-computational-project-results",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c60de6acd1d898d6a0ee90cefcbc17d2276e629dc5442511909871462e267c8b"
+    },
+    {
+      "caseId": "given-computational-project-results",
+      "instrumentType": "escala",
+      "sha256": "ee98b8af5b62f03f04ca4f614cc5684e534901517d05d25902735d7d8ecf84d0"
+    },
+    {
+      "caseId": "given-computational-project-results",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cb6ac210ab0f7a186402e02ca295fb9e9aa00f18682037aeafbb4dc94174306e"
+    },
+    {
+      "caseId": "chemical-alternative-report-debate",
+      "instrumentType": "rubrica",
+      "sha256": "712181551a6efcbdde717fda772c5be5b5563b7a7300f4ec2a0594d972641a96"
+    },
+    {
+      "caseId": "chemical-alternative-report-debate",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6fa527c1188dedd12ef5a65b8a3064bb97406d1fa8dcd8990fd4f885511f186f"
+    },
+    {
+      "caseId": "chemical-alternative-report-debate",
+      "instrumentType": "escala",
+      "sha256": "eefeed6eeedc0ef030abf7a02c99a2333e9c9f75d17e3b94d8403b6c69aef1cb"
+    },
+    {
+      "caseId": "chemical-alternative-report-debate",
+      "instrumentType": "lista-ponderada",
+      "sha256": "da364fa1bef2034ebaca4d243477b893aa017d72b4bc8694d2fbae1c5f504b2e"
+    },
+    {
+      "caseId": "textile-alternative-tools",
+      "instrumentType": "rubrica",
+      "sha256": "f7689a5c5c75635d3a09dcfbf1328eb13c8abd8ffd408849ba02b0d59ef77d94"
+    },
+    {
+      "caseId": "textile-alternative-tools",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51fdac204c5a6b43c6cfcb499ef5db1425cab3210e65a37db0071995998a6a9a"
+    },
+    {
+      "caseId": "textile-alternative-tools",
+      "instrumentType": "escala",
+      "sha256": "e744a992824eb10aeb93efe10f472cc302c15b99fe4214f5fb7d171fea16c8fa"
+    },
+    {
+      "caseId": "textile-alternative-tools",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b551b18c6272e76e1fabceb54c8f50ab5ae8cbdfc69a074e7204791a5006840e"
+    },
+    {
+      "caseId": "optional-computational-resource",
+      "instrumentType": "rubrica",
+      "sha256": "482ac758f8149705a34ead252c114195d34c27b2ad8218a7eec04fff5fd80956"
+    },
+    {
+      "caseId": "optional-computational-resource",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6d63c06f307c2512ec7d76a868d044711e111a3d25f7d028cb7eb42369eec11b"
+    },
+    {
+      "caseId": "optional-computational-resource",
+      "instrumentType": "escala",
+      "sha256": "df25adb6da4ba04ea26d019a5f98f50b68341be70c7a0de4ae56df6427cb847c"
+    },
+    {
+      "caseId": "optional-computational-resource",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ca0199de75384dc00dea33f4179996d76bd77b5a2a45c20dc309089d0bf9a28"
+    },
+    {
+      "caseId": "given-food-report-delivery",
+      "instrumentType": "rubrica",
+      "sha256": "9a3df00e5c0ab4b3336abafffaac948b456112edd9cb868ff3281402c15c66dc"
+    },
+    {
+      "caseId": "given-food-report-delivery",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1d8bbae5768d53320ead220afbcc454cda2d68612f02cb056edd09b1fc81ea0b"
+    },
+    {
+      "caseId": "given-food-report-delivery",
+      "instrumentType": "escala",
+      "sha256": "731eac51f1a65fc6efa89e9f355d6f1cba2b757a7540e3cf31ec7b59a3081ff1"
+    },
+    {
+      "caseId": "given-food-report-delivery",
+      "instrumentType": "lista-ponderada",
+      "sha256": "025a88873c15d9979f234e7079ae1b68acfdb36b271cffff72f6bb7dcad62a0b"
+    },
+    {
+      "caseId": "explicit-label-and-adverse-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "880914655526a2b1450089a83c94d3ec90472e97cfae98c7a1f073f4484e5810"
+    },
+    {
+      "caseId": "explicit-label-and-adverse-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0d32b86fee0d6effc16e3bd19606584a502bf0acda8821e71cf8bc0199dd820a"
+    },
+    {
+      "caseId": "explicit-label-and-adverse-analysis",
+      "instrumentType": "escala",
+      "sha256": "d47d5e552e6f68a2be6282e9367703d0715ad7342ce11fcec5a1869fff1a2cf9"
+    },
+    {
+      "caseId": "explicit-label-and-adverse-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a1ea6404c8f54821f6903ff8f93e906b06497dd56609cc5aacc7c0ae9ddeccca"
+    },
+    {
+      "caseId": "explicit-compare-drug-classes",
+      "instrumentType": "rubrica",
+      "sha256": "bbfd7fec9a5c3c4ee5d29b5c71c2a4a377f5d6512314d4c00640dba8693b107c"
+    },
+    {
+      "caseId": "explicit-compare-drug-classes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b80ec0b4cd05cb17f879b5dfd90ba338e49210671dd54ba87e0abaa332547e05"
+    },
+    {
+      "caseId": "explicit-compare-drug-classes",
+      "instrumentType": "escala",
+      "sha256": "96d8a0da0d7b20203210833782e327d084a13702ac3f740b019c297c7a83bdff"
+    },
+    {
+      "caseId": "explicit-compare-drug-classes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ae67ea6daffb87dd2788d01c8ce0984ec6ef88cc0d29e78033a7aa72b30872bf"
+    },
+    {
+      "caseId": "textile-repeated-observation",
+      "instrumentType": "rubrica",
+      "sha256": "2dac79e10c9d934dc672bc0e7d4f3d335aeb7e876b41cfae5559eb0ef09a3f8f"
+    },
+    {
+      "caseId": "textile-repeated-observation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c7f379e99d866dc40e7ecbafff833a28f9201b2c96bb9b9ce6d5fec6c1a7c26e"
+    },
+    {
+      "caseId": "textile-repeated-observation",
+      "instrumentType": "escala",
+      "sha256": "02410832b5555862afe6f22a59be29a9dabfcb108329f9c581d97cdbb9034ea5"
+    },
+    {
+      "caseId": "textile-repeated-observation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c56b22cdeff7ee130049712085f370ec1899380ffc7ca7b88963256f51cd761"
+    }
+  ]
+}

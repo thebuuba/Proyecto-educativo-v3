@@ -1,0 +1,38 @@
+{
+  "catalog": "evaluation-2026.140",
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION",
+  "browser": "Chrome",
+  "observed": [
+    "Pestaña personal en localhost:8787/login,contraseña vacía confirmada antes de recargar.",
+    "Recarga intencional de la pantalla de acceso:script DOM index-4iU23om7.js coincide con el build final140.",
+    "Continuar con la cuenta recordada abre nuevamente el campo Contraseña vacío;no hay sesión autenticada.",
+    "Captura final guardada en evidencia privada ymostrada en el informe de avance;no se envió formulario,correo ocontraseña."
+  ],
+  "notVerified": [
+    "Creador autenticado personal de Química yComputación5.",
+    "Estrategia visible,AUTO cuando exista fundamento,selección manual einstrumento completo por navegador.",
+    "Puntos pendientes,manuales,17.35→20→17.35,guardado/reapertura yestrategia aislada con cuenta personal."
+  ],
+  "preservation": {
+    "passwordChanged": false,
+    "emailSent": false,
+    "storageCleared": false,
+    "cacheCleared": false,
+    "draftsDeleted": false,
+    "newPersonalActivity": false,
+    "newPersonalBaseline": false
+  },
+  "manualSteps": [
+    "Iniciar sesión en localhost:8787 con la cuenta propia de Development,sin credenciales de producción.",
+    "Abrir quinto,modalidad Académica,salida Ciencias yTecnología,Química yComputación. Si falta un contexto QA personal separado,prepararlo tras recuperar el acceso;no modificar actividades previas.",
+    "Consigna QA: Analiza la etiqueta y el prospecto ficticios proporcionados. Identifica presentación,indicaciones,contraindicaciones,reacciones adversas ycaducidad según la ficha,sin recomendar dosis ni tratamientos. Revisar estrategia visible,sugerencia automática cuando exista fundamento yselección manual.",
+    "Revisar cuatro formatos completos,puntuación inicialmente vacía y17.35→20→17.35;conservar un criterio manual. Guardar una sola actividad QA identificable yreabrir.",
+    "Cambiar únicamente la estrategia,guardar yreabrir;comparar exactamente instrumento,criterios,descriptores,puntos ysnapshot. Registrar baseline una sola vez después de verificar."
+  ],
+  "limits": [
+    "QA HTTP/DB se documenta por separado y no sustituye el recorrido personal.",
+    "No se borró caché,service worker,almacenamiento,borradores ni datos.",
+    "Continúan las tareas independientes autorizadas sin solicitar nuevos enlaces de acceso."
+  ]
+}

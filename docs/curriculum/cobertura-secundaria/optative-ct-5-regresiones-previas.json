@@ -1,0 +1,98 @@
+{
+  "catalog": "evaluation-2026.140",
+  "baseline": "evaluation-2026.139",
+  "commonEnglishIdentical": 15176,
+  "commonMathIdentical": 2888,
+  "previousOptatives": 16,
+  "fullDefinitionsExactToFrozen139": 12028,
+  "scopes": [
+    {
+      "code": "OPT-CT-4",
+      "fullDefinitionsExactToFrozen139": 1264,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-MT-6",
+      "fullDefinitionsExactToFrozen139": 272,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-MT-5",
+      "fullDefinitionsExactToFrozen139": 528,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-MT-4",
+      "fullDefinitionsExactToFrozen139": 432,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-6",
+      "fullDefinitionsExactToFrozen139": 412,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-4",
+      "fullDefinitionsExactToFrozen139": 480,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-5",
+      "fullDefinitionsExactToFrozen139": 608,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-4",
+      "fullDefinitionsExactToFrozen139": 312,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-5",
+      "fullDefinitionsExactToFrozen139": 300,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-6",
+      "fullDefinitionsExactToFrozen139": 600,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HLM-LEN-4",
+      "fullDefinitionsExactToFrozen139": 288,
+      "historicalArtifactDifferenceCount": 12
+    },
+    {
+      "code": "OPT-HLM-LEN-5",
+      "fullDefinitionsExactToFrozen139": 272,
+      "historicalArtifactDifferenceCount": 16
+    },
+    {
+      "code": "OPT-HLM-LEN-6",
+      "fullDefinitionsExactToFrozen139": 436,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HLM-ING-4",
+      "fullDefinitionsExactToFrozen139": 1532,
+      "historicalArtifactDifferenceCount": 8
+    },
+    {
+      "code": "OPT-HLM-ING-5",
+      "fullDefinitionsExactToFrozen139": 2200,
+      "historicalArtifactDifferenceCount": 0
+    },
+    {
+      "code": "OPT-HLM-ING-6",
+      "fullDefinitionsExactToFrozen139": 2092,
+      "historicalArtifactDifferenceCount": 0
+    }
+  ],
+  "historicalArtifactDifferenceCountAlreadyIn139": 36,
+  "priorPersonalBaselinesPreserved": 12,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "No son recorridos visuales nuevos de los ámbitos anteriores.",
+    "No se regeneraron artefactos antiguos ni se sobrescribieron baselines.",
+    "CT4 y MT6 conservan sus pendientes HTTP anteriores; esta regresión local no los cierra."
+  ]
+}

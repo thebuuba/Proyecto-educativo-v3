@@ -3,6 +3,65 @@
 
 
 
+
+
+
+## Punto vigente: CT5 verificado por HTTP/DB; siguiente CT6
+
+Rama ampliacion-de-instrumentos-2. Base del bloque CT5: 25a174eea877b285a6a357abdc70a072a7c58bbb. Este cierre se guarda mediante commit local español; consultar git log y .wrangler/secondary-completion/commit-ct-five.json para el hash resultante. NO PUSH por instrucción vigente sobre integraciones403; no cambiar integraciones, permisos o triggers. Sin producción, main, merge, despliegue, reset, migraciones remotas, dependencias, nuevas cuentas o subagentes.
+
+CT5 catálogo140, fuente MINERD_SECUNDARIA_2023_OPT_CT_5_V1/dd284655-295b-5456-ac12-c1cc4a82c476,188registros/20exclusiones.72topics/117anclas+I161observable adicional.162contratos/234consignas/936instrumentos completos leídos y936huellasexactas/0pendientes;216textos/20familias/234refs/17packs+4especiales. No repetir autores, clasificadores, renders o recorders; no regenerar instrumentos antiguos.
+
+Gates finales:backend87339/185/0,frontendactividades86182/115/0,4builds0inclCFdry-run,Node47+precache1=48/0,lints0/9warningsprevias. Primerfrontendglobalincompleto preservado;SocialFiveaislado1473/0 yUNA repetición completa pasó sin cambiar app/config/timeouts;causaprofundanoestablecida.75JSmax2075848/margen21304/allprecached. Sourcecompiled936/16previas12028/ING15176/MAT2888 ycomunes exactos a139.36oldartefactdifferencesya139,no regenerar.12baselinesplainantesydespuésQAintactas,0nuevas.
+
+HTTP37/37I COMPLETO:37QA37snapshots,233respuestas/0HTTP500/0timeouts registrados,5rechazos400esperados.10rúbricas/9cotejos/9escalas/9ponderadas,20×20puntos/17×17.35,manual/pending/paridad/fuente/guardar-reabrir/estrategiasola exactos. Participación persistida individual;GROUPsolo contratos, no atribuir HTTPgrupal. PrimerpreflightQAfallóporcampo typeausente enexclusionesantesguardar;corregidoreasonPRIVATE_DISPOSITION/Node20/0. Luego proceso86455dejódeestaractivo tras37.ºguardado/36verificadas/226responses,causanoestablecida. Se preservaronlogs/progreso;readonlyconfirmó37existentes/36intactas. Recuperaciónprivada91744TERMINÓ0soloúltimamismaID,sinrepetir36ni crearID. Los5x400incluyennuevo preflight2trasrecuperación. No cambiosapp/config/timeoutspara recuperar.
+
+Historia72releases/907snapshotsprevia EXACTA;final73/944,0duplicados. final-checks-140.json y optative-ct-5-verificacion-http.json autoritativos. Catálogo/fuenteCREATED/UNCHANGED,QA5existente,sin nuevascuentas/estudiantes. Worker140rearrancado SINbuild exec9299/launcher69504. RuntimefinalPGapp_backend_local/sinBYPASSRLS/Auth200/Storage200/frontend soloDevelopmenteolgunypmtgrsyrjzcld. Entryindex-4iU23om7.js;mainSHAa8e3bcdf300e554298451409dbb5f0a1f571da6425f5651fdec96442a0c723b6;chunkcientífico79645SHA822dd9f7a12dcc5f64d48238ea1f77dd213e7d1c77b2f3c31602cc338e355239.
+
+PersonalCT5BLOCKED_AUTH:Chrome1tab1796703313passwordvacío,DOM140/capturact-five-personal-password-required.pngguardada/mostrada;sinformulario/correo/password/cache/SW/storageborrado,0actividad/baselinepersonalCT5. QAnoespersonal. Mantener CT4PARCIAL19/42/19creadas20IDs/2timeouts1HTTP500tardíoservidor,partial-checks139;MT6PARCIAL17/32/18creadas2DNS,partial-checks138. No helpersfull ni nuevosbuclesdeesosámbitos.
+
+SiguienteCT6Física yComputación,PDF511–517/impreso510–516,scope1941d633-9878-579b-9cc3-ae913a00dfda. PreparaciónprivadaYAhecha:307registros/223adapt(124C96P3A)/36I/34exclusiones,127outlinegrupos223anclas,129metadatadraft(127+I277modulación/I296sistemascomplejos),36critical,223contratosdraft(36+127+60facets),probeinyección34/36tasks y0conectadas. ct-six-resumption-analysis.md yct-six-reuse-findings.json conservanfuentes/decisiones/hallazgos. No repetir autores/renders/clasificación/probe. Todavía sinprovider/contratospúblicos/freeze140/catálogo141 oremotoCT6.
+
+Ordeninmediato:inventario/Nodepostclosure/auditUTF8secretosignorados/diff ycommitLOCALCT5;despuésplanCT6,freeze140UNAvezantesderegistrar141,contratosRED yproveedorGREENacotado6preservando4/5. Cotejar expectativasporevidencia:problemanuméricorequierocálculo/resultado,análisisconestadísticoexplícitopuedeEXERCISE_SET;noforzarpurposepreliminar. Probe mostróalgoritmodadoimpuesto,fuentesdadascomopruebasnuevas,negaciónsinimponer...niprogramarconfundida,nominales,exacttopicocultaredes/NLP,contribuciónaportóausente. CorregirconREDantesfix. Leer instrumentos completosademásdepruebas. Despuésmodalidadesespecializadas/backfillssegúnplanintegral,NOcerrarencargoporinventario otests.
+
+## Checkpoints históricos superados
+
+## Estado vigente: lectura CT5 terminada; gates140 en recuperación del runner
+
+HEAD25a174eea877b285a6a357abdc70a072a7c58bbb,ramaampliacion-de-instrumentos-2,47aheadcacheado0behind. CT4commitYAhecho;CT5SINCOMMIT.NOPUSH/noProd/main/merge/deploy/reset/migraciones/deps/subagentes.
+
+CT5Task4lecturaCOMPLETAyregistrada936instrumentos/234consignas/216textos/20familias/234refs/17packs+4formatoscasoespecial. Cotejadosensamblajes1–233,gap123–147truncadofuevueltoaleer;fiximportantesRED→GREENyresultadoscambiadosreleídos. No regenerarartefactos/recorders,reseteanHTTP/huellas. Últimofocaldisciplinary-green1304backend/1297front/0,purpose7final-reading0,priorCT4/catalog/config1776/0yfront1753/0. 162contratos/72topics/117anclas+I161extra,188fuente/37I/20exclusiones.139congeladosource/compilado/DBexactoUNAvez. Runtime/DBsiguen139;NOinstalación140aún.
+
+Gates140exec20756TERMINÓ1trasbackend87339/185/0yfrontendincompleto84668/1/114archivos. FaltaSocialGradeFour1513tests yerrorSTACK_TRACE_ERRORenSocialFive/santana-baez-conflict/rubrica/17.35duración682923ms. No seestableciócausaprofundanisedecidiófixdeapp. SocialFiveaislado1473/0,sin cambiosdeconfig/timeouts. Falloprimerintentopreservadoenfrontend-activities-140-first-runner-failure.json/log,first-attemptcommands yfrontend-140-runner-first-failure.json. UNArepeticiónglobalSINotraspesadasexec59341ACTIVA:resume-final-gates-140.mjs;exige86182/115archivosy todoslosprevios presentes,después4buildssecuenciales0inclCFdry-run. Consultarantesdeotrocomando;no repetirBackendnidosprocesosfrontendporquietud.
+
+Node140fuente/inventario47/0trasregenerarsoloinventario,lintbackend0/frontend0con9previas. ING15176/16previas12028instrumentosfull/MAT2888EXACTOSa139;36diferenciasoldartefactsyapresentes139,no regenerar. Comparaciónsourcecompiled140/lineageDBreadonly/baselinesplain12/precachefinalPENDIENTESdebuild. Herramientas140preparadaslistadasenledger. GatecomparatorsourceCompiledusa936,fullpreviasincluyeCT4,mathcompara139. Noemitirclaimbuild140hasta leerresultados.
+
+Worker139launcher49308árbolpropiocomprobadoydetenidoSOLOese;logsarchivadosruntime-139-final*. ActualmenteSINlistener8787. NoHTTP/installeractivo. Runtime140capturaPREPARADAnoejecutada,instaladorfuente+QA5PREPARADOnoejecutado,sourceallowlist4/5,CT6no. HTTPtoolCT5habilitado37seleccionadas/37I,2rechazos400previstos(encabezado+ATTITUDEprivada;CT5NOtieneindicadorprivado),runnerPREPARADONOejecutado. Noaplicarinstalaciónsinbuild/runtimeverificados. No source/QA/HTTPCT5escritosenDBtodavía.
+
+CT4siguepartial-checks139:19/42/19guardadas/20IDspreparados;126respuestas/2timeouts/1HTTP500servidortardío,ID20ausenteconservado,NOtercerintento.Historia72/907actualy71/888previaexacta,12baselinesplainpreservadas. MT6sigue17/32/18guardadas/dosDNS;personalauthbloqueado. Chrome1statisticsFreshTab1796703313loginpasswordvacíoHandoff;nocorreos/password/cache/SW/storageborrados. No recrearIDs,rebaseline niheredarQAapersonal.
+
+Siguiente:leer59341/gatesfinales;si frontend vuelvefallar,diagnósticoconcreto,no bucle/timeoutraise. Con4builds0hacerNodeprecache,sourcecompiled936,lineage139DB,12baselinesplain;runtime140Devonly yassets;instalar140individualidempotente yfuente/contextoQA5solo si conexiónverificable;HTTP37y navegadorpersonal si sesión. Documentarincidencias reales,conservarhistoria,report/audit/commitLOCALdespués CT6/especializadas/backfills. Usuarioexigecontinuidadsinpreguntas. Informe2026-10-20-optativa-ct-quimica-5.mdactualizado.
+
+## Checkpoints históricos superados
+
+## Punto efectivo: CT4 comprometido localmente; CT5 en lectura completa
+
+HEAD25a174eea877b285a6a357abdc70a072a7c58bbb («Conecta los instrumentos de Biología yComputación de cuarto»),ramaampliacion-de-instrumentos-2,47aheadcacheado/0behind. CommitCT4YAhecho yárbollimpioantesCT5;no duplicar. NOPUSHpororden403,sinproducción/main/merge/deploy/reset/migraciones/deps/subagentes.
+
+CT5código140conectado ySINCOMMIT. Plan/informe2026-10-20-optativa-ct-quimica-5.md,ledgerpropio .superpowers/sdd/2026-10-20-optativa-ct-quimica-5/progress.md. Freeze139UNAvezYAhecho:source/compilado/DBreadonlyexacto,camposscienceModules/version,baselineING15176yengine139preservados. No repetirfreeze ni autores/classificadores/renders. SourceCT5visual506–510ya revisada/188registros/117adapt57C55P5A/37I/20exclusiones;fragmento40,mixtos44/108,122computacionalconservados. Metadata72topics117anclas+I161observable adicional.
+
+Contratos162(37critical+71source+44facets+10acciones);últimoGREENreading-green-2backend1304/0/front1297/0. REDinicial1216/1217fallosporregistroausente. Propósito7GREENtrasjustificación→rúbricagrado5;repetirdespuésúltimaslecturas. PriorCT4/config/propósito/catálogo1776/0yfrontCT41753/0antesúltimafixCT5. Nodefuente/inventario36/0antesúltimalectura;sourceallowlistQA5preparadas,sin ejecuciónremota. Currentcatalog140con139congeladoruteado;localhost/DBsiguen139,NOcompilar/instalar140hasta lectura+gates.
+
+LecturaENPROGRESO936instrumentos(234consignas=162+72),0huellasregistradas. Índicect-five-complete-review-index.json:233casosnormales/932instrumentos+1casoespecial/4formatos(observación repetida);216textos/21familias/228referencias/17packs,exactreconstruction. Herramientasread-ct-five-complete/condensed/assemblies yprepare-ct-five-condensedpreparadas. Última regeneracióntrasfixagrupacionescompletas/nombrecaracterización. NOrepetirautoresdeoutline/metadata/drafts:solo generadoresartefactos permitidoshasta registrarlectura. Leídosprimerospatrones1–11yrefs1–76ANTESdelasúltimasfix;volveracotejarloscambiadosycompletarresto anteshuellas. ImportantesdelecturaconRED96fallos→GREEN:full-labelnoestrecharafaceta parcial;nominales contraste/evidenciasobservables/caracterizaciónnofingiracciones. Último8falloporparserpartíacaracterizacióntras«y»→normalizaciónpreviaCT5perfilmoleculardocumentadoyaliasespecífico. No alterarcómún/CT4.
+
+Worker139exec50766/launcher49308SIGUEACTIVO8787,mismobuildindex-BGRlQSSe.js,PGapp_backend_local/sinbypass/AuthStorage200/frontendonlyeolgunypmtgrsyrjzcldverificadopostHTTP. NingúnHTTP/installer/buildactivo. Antesdebuilds140verificar ydetenerSOLOárbolpropio. No emitirclaimbuild140. QA/fuenteCT5NOinstaladas,0escriturasremotasCT5. BrowserpersonalChrome1statisticsFreshTab1796703313/loginContraseñavacíaHandoff;nocorreos/password/SW/caché/storageborrados.
+
+CT4autoridadpartial-checks139:19/42HTTP/19de43I,19actividades/20IDspreparados;126respuestas/0HTTP500cliente/1HTTP500servidortardío239263ms/2timeouts30s,Connection terminated unexpectedly. DosintentosTERMINADOS,no tercero. ID20bfaf8f1b-dd61-4000-95fb-261dcf15aec7NOexiste(segúnPGreadonly),preservado. Historia71/888previaEXACTA,final72/907,0duplicados;12baselinesplainpostQA0. NOfinal-checks139;helpersfull42/930soloPREPARADOSNOejecutados. MT6sigue17/32HTTP/18guardadas/dosDNS. No heredarpruebaspersonales,no rebaseline ni recrearIDs.
+
+Siguiente:lecturacompletaCT5(patrones/referencias/ensamblajes/packs/especial),regresionesimportantesRED→GREEN,huellascuando0pendientes;gates4builds/tests/lint/Node/precache/comparación16previasycomunes/baselinesplain;runtime140Devonly/instalacionesindividualesidempotentes/QAHTTPsolo si conexiónverificable;browserpersonal si sesión. Informes/audit/commitespañolLOCAL ysiguienteCT6/especializadas/backfills. SiHTTPvuelvebloquear,norepetirbucles,documentarIDs yseguirindependientes.
+
+## Checkpoints históricos superados
+
 ## Punto efectivo: CT4 con código verificado y HTTP parcial; continuar CT5
 
 Rama ampliacion-de-instrumentos-2. Base CT4:6a5ea75cda009b96e4b616300780f97eb458c44f; commit LOCAL CT4 pendiente de auditoría en este checkpoint. Antes de repetir, consultar git log ycommit-ct-four.json. NO PUSH por orden vigente sobre integraciones403. Sin producción,main,merge,despliegue,reset,migraciones,nuevas dependencias ni subagentes.

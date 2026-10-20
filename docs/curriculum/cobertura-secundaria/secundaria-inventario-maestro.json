@@ -2129,10 +2129,10 @@
         508,
         509
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_DB_VERIFIED_PERSONAL_AUTH_BLOCKED",
+      "provider": "packages/shared/src/secondary-optative-science.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/optative-ct-5-matriz.json",
+      "currentRunVerification": "VERIFIED_37_UNIQUE_QA_SAMPLES_37_OBSERVABLE_INDICATORS",
       "nonApplicable": [
         1,
         2,

@@ -1,0 +1,4183 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 5,
+  "subjectCode": "OPT-CT-5",
+  "subjectName": "Química y Computación",
+  "optativeExitName": "Ciencias y Tecnología",
+  "modalityCode": "academic",
+  "scopeId": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+  "pdfPages": [
+    506,
+    507,
+    508,
+    509,
+    510
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      506,
+      507,
+      508,
+      509,
+      510
+    ],
+    "reviewedCompetenciesAndIndicators": true,
+    "previousReview": "optativas-fuentes-revisadas.json",
+    "preservedReview": "Fuente visual existente506–510;no se repitió render oclasificador."
+  },
+  "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_DB_VERIFIED_PERSONAL_AUTH_BLOCKED",
+  "provider": "packages/shared/src/secondary-optative-science.ts",
+  "providerCatalog": "evaluation-2026.140",
+  "officialRecords": [
+    {
+      "id": "e7eb239c-ac49-5852-9b64-d81b3084c901",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se comunica utilizando el lenguaje científico y tecnológico fundamental de la química\naplicada en los alimentos y bioquímica que implica ideas, leyes, modelos y procesos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "10cbc810-9cae-532c-8347-ebffbb550bf0",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "f728a455-3444-528e-8e2d-3ee11a0a1c08",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Ofrece explicaciones y estrategias científicas y tecnológicas a problemas y fenómenos\nnaturales relacionados con los fundamentos de la química aplicada en los alimentos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "ed9e2bef-5bce-511b-a72e-a4d94d2ea262",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y Crítico",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "71f9e83b-7150-5757-8438-c44022a2ba10",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica diversos procedimientos científicos y tecnológicos para solucionar problemas o dar\nrespuestas a fenómenos naturales relacionados con los fundamentos de la química aplicada\nen los alimentos y bioquímica.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "2342491a-f694-552f-b7fb-609e4d6309ca",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "50e59388-4fee-5811-ad59-a2af82411097",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Analiza críticamente la naturaleza y filosofía de ingenierías químicas y las tecnologías, sus\naportes, alcance del desarrollo tecnológico en nuestra sociedad y la ética asociada con las\ntecnologías en bioquímica.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "3e3dd0be-b4fa-502e-8d3e-dfdbe9c2f270",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "8d0cae8f-b28e-5b5e-abb3-f3cea026ada9",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Se cuestiona e identifica problemas y situaciones, y construye una explicación utilizando\nconceptos, modelos, leyes, teorías y procesos fundamentales de las ingenierías químicas y\nbioquímica.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "647e263f-3b9f-5bd5-928a-1e79e604db64",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "c4ee82ee-f357-528c-81f8-fa986bf67db1",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Asume y actúa con responsabilidad crítica y autónoma para un desarrollo sostenible,\ncuidado ambiental y su salud, basadas en las ideas y aplicaciones de las ingenierías químicas.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "0b2d789e-2abd-5040-97bf-541f1bc74802",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "a555148b-2edd-523e-ab20-c84ce0dde54e",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Gestiona actitudes intelectuales, emocionales y conductuales proactivas al desarrollo de su\nproyección personal y profesional relacionados con los fundamentos de la química aplicada.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "8ea9692f-e2e9-5305-9e01-a9072175babd",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "8313c806-c66b-52a4-ae48-967cbe104b69",
+      "type": "CONCEPT",
+      "text": "Aplicaciones Químicas para Alimentos\nAlimentos",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "7b5ffa4e-11c1-59c5-8a63-cf7dacde848e",
+      "type": "CONCEPT",
+      "text": "• Tipos de alimentos: carbohidratos, proteínas, lípidos",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "bb57f3d2-c626-5d91-b66e-5922511c58ec",
+      "type": "CONCEPT",
+      "text": "• Especias, hierbas aromáticas",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "4cf124bc-9288-5679-b3f5-28fbd76b82d8",
+      "type": "CONCEPT",
+      "text": "• Alimentos a nivel molecular",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "81333d38-5bc2-527c-9c3e-b80624807ffa",
+      "type": "CONCEPT",
+      "text": "Producción de alimentos",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "f331b5e7-bb2c-56ce-b7a1-e4fca02dc5c9",
+      "type": "CONCEPT",
+      "text": "• Transporte de alimentos (refrigeradoras, contenedores,\naviones, embarcaciones).",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "2f23c35d-8be2-57a9-9199-9748ecfefbde",
+      "type": "CONCEPT",
+      "text": "• Recepción de alimentos (operaciones de recepción,\ncontrol de materias primas, equipos y maquinarias\nasociadas).",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "218c7502-cd45-5d9d-8fa8-b9880d116483",
+      "type": "CONCEPT",
+      "text": "• Almacenamiento de alimentos (almacenes, cámaras\nfrigoríficas).",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "56185e3e-dcce-5ca0-b7f3-18d51d1fdc14",
+      "type": "CONCEPT",
+      "text": "Procesamiento de Alimentos",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "077638c7-88b2-5c5e-ae96-cfa526a04fce",
+      "type": "CONCEPT",
+      "text": "• Normativas (regulaciones sanitarias y alimentarias)",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "e7b6b23a-fe44-576e-826a-08430e5f7196",
+      "type": "CONCEPT",
+      "text": "• Calidad nutritiva de los alimentos (seguridad,\ninocuidad, caducidad, aditivos).",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "2ed10153-035b-5a04-9625-81b085c46d70",
+      "type": "CONCEPT",
+      "text": "• Alimentos perecederos, enlatados",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "e2d4d226-7d8a-59ca-b436-398c50d565b2",
+      "type": "CONCEPT",
+      "text": "• Vida y salud (nutrientes, dietas, enfermedades)",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "31d7c917-3f3f-57cc-97f6-9aebe44c82b9",
+      "type": "CONCEPT",
+      "text": "Conservación y preservación de alimentos",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "6391f17d-121a-5c51-996d-ac14716c1e40",
+      "type": "CONCEPT",
+      "text": "• Deshidratación: liofilización, secado, concentración",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "33d9f09e-616c-5826-b2cb-2e769262c08d",
+      "type": "CONCEPT",
+      "text": "• Aditivos (azúcar, salmueras, alcohol, vinagre)",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "496c37e8-6358-57fa-96d4-77433336b5b0",
+      "type": "CONCEPT",
+      "text": "• Temperatura: congelación, pasteurización,\nesterilización",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "c894f3a3-3df0-5c16-8dee-f7570252a915",
+      "type": "CONCEPT",
+      "text": "• Métodos químicos (agregar sal, adición de azúcar,\ncambios de pH como adición de ácidos, fermentación,\nahumado y curado.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "46ecf324-ebed-5c15-959d-723cd1e84f9a",
+      "type": "PROCEDURE",
+      "text": "• P 1. Observación, planteamiento de problema.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "8ebf3ae5-869e-5fa6-834a-98cca5080cdb",
+      "type": "PROCEDURE",
+      "text": "• P 2. Formulación de preguntas o hipótesis.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "a7b4fe92-dfd1-52d7-95e4-f05d5fc406a8",
+      "type": "PROCEDURE",
+      "text": "• P 3. Planificación y ejecución de experimentos,\nrecolección y registro de evidencias.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "444b86b4-b8f2-5143-8c7b-0514ae672e61",
+      "type": "PROCEDURE",
+      "text": "• P 4. Diseño y construcción de modelos y\nsimulaciones con la integración de las TIC y la\ningeniería.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "f6b0981d-3f01-5f83-9e6c-7ff77af9381e",
+      "type": "PROCEDURE",
+      "text": "• P 5. Resolución de problema, Análisis, discusión,\nevaluación y comunicación de los resultados.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "8cba4075-076e-5069-bfae-103f4fd25ce0",
+      "type": "PROCEDURE",
+      "text": "• Diseño y elaboración de alimentos con la\nutilización de aditivos y conservantes.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "b2133bc2-c571-53e7-8eeb-d351ba5f358f",
+      "type": "PROCEDURE",
+      "text": "• Determinación de propiedades físicas y químicas\nde los alimentos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "72014524-a6d0-5c9f-827e-0e4890b40611",
+      "type": "PROCEDURE",
+      "text": "• en alimentos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "d18cb3a1-9805-5086-86b9-0c9aacf8b17b",
+      "type": "PROCEDURE",
+      "text": "• Procesamiento de alimentos mediante técnicas de\nbiotecnología.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "04199072-f132-5afb-8f57-8d066c53ef87",
+      "type": "PROCEDURE",
+      "text": "• Elaboración y control de fermentaciones\nalimentarias.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "b792fe81-3486-55ef-87c7-9e9525a226df",
+      "type": "PROCEDURE",
+      "text": "• Embalaje y envasado de alimentos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "2eb63931-bc36-5a98-b68c-ef4ff84bf86d",
+      "type": "PROCEDURE",
+      "text": "• Identificación y análisis de microorganismos\nRealización de pruebas de calidad en la industria\nalimentaria.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "1595367e-ff74-5891-893b-a44fdd6f6c20",
+      "type": "PROCEDURE",
+      "text": "• Manejo de herramientas y equipos de laboratorio\nutilizados en la industria alimentaria.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "b29dfb11-1c8c-5649-b7e7-638f07f8c310",
+      "type": "PROCEDURE",
+      "text": "• Identificación y resolución de problemas en la\nproducción de alimentos.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "c43878dd-d8c1-5ae1-9389-deda957bc73f",
+      "type": "PROCEDURE",
+      "text": "• Conocimiento de las normas y regulaciones\naplicables a la industria alimentaria.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "239724f7-6f66-5673-8e1a-5e23f117ce77",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Muestra de interés y participa\nal comparar las diferentes\nideas que tienen los grupos de\ntrabajo.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "ac8ffd81-1169-5691-b5c2-1783bb559957",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Desarrollo de sus actividades\ncientíficas en forma\norganizada y metódica.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "e10a996b-8863-579a-99e5-e34c2eb02cd2",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Manifestación de sentido de\niniciativa al realizar actividades\ncientíficas.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "cf37a0ce-3738-56d3-a102-f6a98600282c",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Utilización de lenguaje\no términos científicos\napropiados al comunicarse\ntanto oral como a través de\ninformes o reportes.",
+      "pdfPage": 506,
+      "printedPage": "505"
+    },
+    {
+      "id": "aead4902-57a9-5db9-b5c1-e34e435f4d22",
+      "type": "CONCEPT",
+      "text": "Seguridad Alimentaria",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "e8fa4c2a-0ed5-5d13-9aee-f5618a28039a",
+      "type": "CONCEPT",
+      "text": "• Seguridad alimentaria",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "e3a1e3c9-2cd0-540e-86f5-8c42a531259e",
+      "type": "CONCEPT",
+      "text": "• Infecciones alimentarias",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "71368673-4b99-56ae-88a0-eb9ea74fbb99",
+      "type": "CONCEPT",
+      "text": "• Manipulación de alimentos",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "ddd7005c-bb1c-5a83-bf9f-28616edfae88",
+      "type": "CONCEPT",
+      "text": "• Riesgos asociados a las frutas y vegetales",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "c87c3780-30e2-59e2-80ec-bf8f90f33ed4",
+      "type": "CONCEPT",
+      "text": "• Patógenos (escherichia coli, listeria, salmonella, ameba,\nshigella).",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "9f1b7724-fcb7-5b20-81dd-1f64375c9ae0",
+      "type": "CONCEPT",
+      "text": "• Virus (hepatitis A, norovirus)",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "6540ee15-ee87-5eca-a5c5-57767e8f52d9",
+      "type": "CONCEPT",
+      "text": "• Pesticidas (fungicidas, herbicidas, insecticidas)",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "d09745b5-80d1-5afe-bbf0-4bb4a812f8ae",
+      "type": "CONCEPT",
+      "text": "• Código de buenas prácticas",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a00bc7db-fd0d-5984-8c43-4b9d7b999e53",
+      "type": "CONCEPT",
+      "text": "• Regulaciones",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "caddc620-d28e-5734-aa94-47042650ded2",
+      "type": "CONCEPT",
+      "text": "• Normativas sanitarias",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "2f8a3ad8-87d6-5261-bbda-b1f693110022",
+      "type": "CONCEPT",
+      "text": "• Reciclaje",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "104637de-1bd6-5609-a4f6-a40428655661",
+      "type": "CONCEPT",
+      "text": "• Respeto al medioambiente",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "e2626f19-388c-590d-bdb9-a434519f4a53",
+      "type": "CONCEPT",
+      "text": "Aplicaciones Químicas para Fármacos",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "ca8e9f6b-f729-5b46-a76b-82ee9c5ae3c3",
+      "type": "CONCEPT",
+      "text": "• Química farmacéutica y su importancia en la salud\nhumana.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a93eebd5-23d0-530f-8c55-743ecf3c2680",
+      "type": "CONCEPT",
+      "text": "• Conceptos básicos de química orgánica y su relación con\nla síntesis de fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "349553ff-3d76-5228-923f-55ff5e3cab00",
+      "type": "CONCEPT",
+      "text": "• Clasificación de los fármacos, según su modo de acción y\nsu estructura química.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "4f8710e3-f7b2-548d-b729-56c0ffe7ed03",
+      "type": "CONCEPT",
+      "text": "• Interacciones entre fármacos y el organismo humano.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "46dcb01d-418e-5c29-b2b9-6592ae8c6953",
+      "type": "CONCEPT",
+      "text": "• Desarrollo de nuevos fármacos y su evaluación preclínica\ny clínica.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "6e843916-54a8-5cc4-a64b-884c4b797f61",
+      "type": "CONCEPT",
+      "text": "• Principales fuentes de obtención de fármacos, como\nplantas y microorganismos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "b7f76427-ad71-588e-b29f-8b71e13fb220",
+      "type": "CONCEPT",
+      "text": "• Conceptos básicos de farmacocinética y farmacodinámica.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "04eab2d0-d065-5a71-a601-9604466f1e24",
+      "type": "CONCEPT",
+      "text": "• Mecanismos de acción de los fármacos y su relación con\nenfermedades específicas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "0e6e672e-1811-5285-b5cd-db5b5409e99a",
+      "type": "CONCEPT",
+      "text": "• Estudio de los efectos adversos de los fármacos y su\nprevención.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "7517b89d-a33e-5a97-8992-c51344d61782",
+      "type": "CONCEPT",
+      "text": "• Importancia de la regulación y la seguridad en el uso de\nlos fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "8f681e37-79f2-5c9f-8b25-cd64c0fd61f2",
+      "type": "CONCEPT",
+      "text": "• Química Computacional",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "564f6869-4694-5fe3-b4d2-23a329aff286",
+      "type": "CONCEPT",
+      "text": "• Introducción a la química computacional y su relación con\nla química teórica y experimental.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "2ccb3bc8-e399-5bd0-bede-68b4ec4cc462",
+      "type": "CONCEPT",
+      "text": "• Modelos moleculares y sus aplicaciones en la química\ncomputacional.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "b35868d5-2ee1-5fb4-be8a-ef9fa65232b6",
+      "type": "CONCEPT",
+      "text": "• Métodos de cálculo en la química computacional, como la\nmecánica molecular y la dinámica molecular.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a1190a9a-ff74-5c06-b408-a739d6f4b608",
+      "type": "CONCEPT",
+      "text": "• Simulación de estructuras moleculares: Optimización de la\ngeometría de moléculas. Cálculo de propiedades físicas y\nquímicas de moléculas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "56f5f26d-c81b-5951-9995-e71061abe776",
+      "type": "CONCEPT",
+      "text": "• Densidad electrónica. Cálculo de la energía de enlace y la\nenergía de disociación.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "ea74a25c-30b3-5cc8-bc1a-d48aa1606ff7",
+      "type": "CONCEPT",
+      "text": "• Análisis de la relación estructura•actividad de moléculas y\nsu aplicación en la industria farmacéutica y de materiales.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "08c6d0c8-c15e-5d0f-8510-8f73ed8ea46a",
+      "type": "CONCEPT",
+      "text": "• Diseño y optimización de moléculas con propiedades\nespecíficas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "60129d55-7d36-502d-99b1-6c6d2ab2b1f9",
+      "type": "CONCEPT",
+      "text": "• Simulación de reacciones químicas y mecanismos de\nreacción.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "61060933-0f79-5c01-9c55-48761d44d6f7",
+      "type": "CONCEPT",
+      "text": "• Programación y uso de software especializado en química\ncomputacional.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "dbafa21e-302a-50dd-a1b0-8ba448a7770b",
+      "type": "CONCEPT",
+      "text": "• Aspectos éticos y de privacidad en el uso de la química\ncomputacional.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "40500dc5-3faa-5d3c-a151-3636adccd419",
+      "type": "PROCEDURE",
+      "text": "• Indagación sobre la elaboración de un tipo de\nalimento utilizando biología molecular.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "bcb544fb-c096-5619-9a60-37d66d367bf2",
+      "type": "PROCEDURE",
+      "text": "• Indagación acerca de los principales patógenos,\nvirus y pesticidas que se utilizan en su comunidad o\nque han incidido en enfermedades locales, visitando\nhospitales, hogares, agroalimentarias, mercados.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "bba1653a-5fbe-560d-b611-d06ec74fd1e7",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de un código de buenas prácticas sobre\nriesgos, prevenciones y consumo de frutas y vegetales\nde forma adecuada, realizando indagaciones y\nvisitas a mercados, campos de cultivo, hogares y\nrestaurantes.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "5a67119f-60e9-50e7-bc91-24c184b12c7b",
+      "type": "PROCEDURE",
+      "text": "Aplicaciones Químicas para Fármacos",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "409bfed4-11f2-524b-b4fd-61a1a5218e15",
+      "type": "PROCEDURE",
+      "text": "• Síntesis de compuestos orgánicos y su caracterización\npor técnicas analíticas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "0e2ecb4a-22d4-5840-b0bc-100bbdf00c37",
+      "type": "PROCEDURE",
+      "text": "• Identificación de los grupos funcionales y estructuras\nbásicas en fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "506f4d0d-8b87-5277-ab51-6cda08075fc5",
+      "type": "PROCEDURE",
+      "text": "• Realización de ensayos in vitro, para evaluar la\nactividad de fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "e8b7d594-964e-52e0-ab23-7af55b44320c",
+      "type": "PROCEDURE",
+      "text": "• Interpretación de datos de estudios preclínicos y\nclínicos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "d6f04cc9-9b3b-5568-98c9-9788546fadf5",
+      "type": "PROCEDURE",
+      "text": "• Realización de experimentos prácticos y seguros para\ndeterminar la absorción, distribución, metabolismo y\nexcreción de fármacos en el organismo.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "fc519870-b780-55fe-8cd6-69f288e2f86d",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de informes técnicos y científicos sobre el\ndesarrollo y evaluación de fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "57d65ee6-e919-5616-8b83-ece8aef3e163",
+      "type": "PROCEDURE",
+      "text": "• Interpretación de la información presentada en\netiquetas y prospectos de fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "59d544ff-6a2f-5ee4-86f4-e90660a251f7",
+      "type": "PROCEDURE",
+      "text": "• Realización de evaluaciones de la seguridad y la\neficacia de los fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "15d016c0-87ef-571f-a9de-e99fa3935454",
+      "type": "PROCEDURE",
+      "text": "• Uso de software especializado para el diseño y\nsimulación de fármacos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "6983ad3b-5341-51d0-91f0-8ed9240ce01c",
+      "type": "PROCEDURE",
+      "text": "• Discusión y análisis de casos de estudio y aplicaciones\nprácticas de la química farmacéutica.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "34020500-ab26-5a58-b945-f50627bd34fb",
+      "type": "PROCEDURE",
+      "text": "• Lectura de medicamentos: Presentación, posología,\ndosis, indicaciones, contraindicaciones, efectos\nsecundarios, fecha de caducidad.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a6a7468c-4b71-5bc8-9df6-069cb6f3ca7b",
+      "type": "PROCEDURE",
+      "text": "• Enfermedades y medicamentos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "27e9b770-7455-5fee-9e9f-844a1697a8bf",
+      "type": "PROCEDURE",
+      "text": "• Tipos de medicamentos (algunos como: anti: gripales,\nfebriles, depresivos, estrés, alérgicos. Parasitarios,\nrespiratorios, odontológicos, cardiovasculares,\nmicrobianos, oftalmológicos, digestivos).",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "d92f938a-424b-51db-85c9-31432cd39e62",
+      "type": "PROCEDURE",
+      "text": "• Lectura de resultado de análisis médico rutinario.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "01256f4b-31c6-5c2c-a6e8-ab55d41ad728",
+      "type": "PROCEDURE",
+      "text": "• Vitaminas /suplementos, nutrientes",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "d849dd58-3c55-5318-9a42-79554c9e1b3b",
+      "type": "PROCEDURE",
+      "text": "• Alternativos (yerbas medicinales, homeopatía,\nfitoterapia, naturopatia)",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "344fdd80-b0ad-50ed-9f5b-f1415f582667",
+      "type": "PROCEDURE",
+      "text": "• Medicamentos en el botiquín",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "af0e3543-11a4-5930-b670-6b25e2b5ee51",
+      "type": "PROCEDURE",
+      "text": "• Medicamentos y aplicación de un Botiquín del hogar,\nescuela, carro y Medidas de seguridad para su uso.\nQuímica Computacional",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "dcf05684-7894-51a1-a0df-a0db7fe50094",
+      "type": "PROCEDURE",
+      "text": "• Uso de software para modelar moléculas y simular\nalgunas propiedades físicas y químicas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "bcfbf5d7-736c-5841-a5e4-37345368c142",
+      "type": "PROCEDURE",
+      "text": "• Aplicación de métodos de cálculo en la química\ncomputacional.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "61c8c69d-4ced-5cf6-9127-a453fcb549cc",
+      "type": "PROCEDURE",
+      "text": "• Análisis de resultados de simulaciones moleculares\nsencillas y posible inferencia.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "c9737127-ca31-5a7e-b157-3f4b726e1a9b",
+      "type": "PROCEDURE",
+      "text": "• Diseño y optimización de moléculas con propiedades\nespecíficas utilizando software de química\ncomputacional.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "d63e9de7-93d9-5480-8e97-2783a7291524",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Muestra de entusiasmo al\ngenerar soluciones originales\nante situaciones o problemas\npresentados.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "80c15781-5b2f-5bf4-bee2-80ad615a6ab4",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Demostración de\nresponsabilidad en el desarrollo\nde sus trabajos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "23dafcd0-285e-5044-9ddd-4c2daa441004",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Manifestación de solidaridad y\ncomprensión al realizar trabajos\njunto a sus compañeros.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "5ccef8e3-d6ef-5b77-9325-b08806846833",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de los aportes que la\nciencia realiza en beneficio de la\nhumanidad.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "44a8c29b-73ed-5746-b6b1-7b145e7383d8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración y acatamiento de\nlas reglas de seguridad en el\nlaboratorio.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "4474a735-6958-51c8-b9c9-9979bf7eb481",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Manifestación de curiosidad,\ncreatividad al realizar sus\nexperimentos científicos.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "c124d94a-9201-5072-8079-c34a1225dc2e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Demostración de respeto\ny protección por el\nmedioambiente.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a55047e0-27ce-5722-b26f-d7026fd066cb",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute de las actividades\ncientíficas.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "67dc6f88-9566-5687-81ce-42153490def7",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés por mostrar una actitud\nde cambio siempre que la\nsituación así lo requiera.",
+      "pdfPage": 507,
+      "printedPage": "506"
+    },
+    {
+      "id": "a5c8efaf-e88b-5309-a510-73e9ca626ddb",
+      "type": "CONCEPT",
+      "text": "• Perspectivas futuras de la química computacional y\nsu impacto en la investigación y la industria.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "c9c23866-f48a-5164-a1a4-a9ab276cd0b4",
+      "type": "CONCEPT",
+      "text": "• Aplicaciones Químicas para Textiles",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "4e63e829-4e34-56e3-a3ed-90308d6872ac",
+      "type": "CONCEPT",
+      "text": "• Introducción a la Química Textil y sus aplicaciones en\nla industria.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "7ac85079-04bd-5d5a-96b7-7a154c07f689",
+      "type": "CONCEPT",
+      "text": "• Conceptos básicos de la estructura de los materiales\ntextiles, como la fibra, el hilado y el tejido.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "a8c7600c-1386-5228-8dd9-84f36fe00f17",
+      "type": "CONCEPT",
+      "text": "• Procesos de tintura y acabado textil",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "974f440d-4068-5d01-8219-a713efd419b6",
+      "type": "CONCEPT",
+      "text": "• Química de los colorantes y pigmentos",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "d1efac6f-0009-54ae-96ae-2747f56090a2",
+      "type": "CONCEPT",
+      "text": "• Química de los agentes de acabado textil: los\nsuavizantes, los repelentes al agua y los retardantes\nde llama.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "d1942465-e2b4-5941-9988-6d92e4143128",
+      "type": "CONCEPT",
+      "text": "• Sustancias químicas utilizadas en la preparación\nde fibras textiles: los agentes blanqueadores y los\ndesengrasantes.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "7705f83d-e423-5647-99ee-2c139e55c1b4",
+      "type": "CONCEPT",
+      "text": "• Seguridad y manejo de sustancias químicas en la\nindustria textil.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "16ec4a4a-f67e-589e-bbfe-a898722cb034",
+      "type": "CONCEPT",
+      "text": "• Impacto ambiental de la industria textil y las formas\nde minimizarlo.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "618de39f-ce9f-5bfd-88c9-f9261ee08e06",
+      "type": "CONCEPT",
+      "text": "• Nuevas tendencias en la química textil: la impresión\ndigital y la ropa inteligente.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "1ac98d5b-8d47-59ae-8f1c-b9308ea2e4f0",
+      "type": "CONCEPT",
+      "text": "• Interacciones entre la química textil y la moda",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "e93ef938-8f0c-5566-9051-0c970d095b2b",
+      "type": "PROCEDURE",
+      "text": "• Simulación de reacciones químicas y posibles\nmecanismos de reacción identificado.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "9c5e5782-ec0d-56f8-a792-c303058a3aec",
+      "type": "PROCEDURE",
+      "text": "• Programación y uso de scripts para automatizar\ntareas en química computacional.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "c9c51882-338b-515e-a304-d51635111858",
+      "type": "PROCEDURE",
+      "text": "• Interpretación y presentación de resultados de\nsimulaciones moleculares.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "53746a91-3357-53c2-ad45-e3190bd5d868",
+      "type": "PROCEDURE",
+      "text": "• Identificación y resolución de problemas en\nsimulaciones moleculares.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "0a578b73-9d30-5f8c-a6fa-6014db4e2d10",
+      "type": "PROCEDURE",
+      "text": "• Ejecución de proyectos de química\ncomputacional.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "3ff1bfcb-64c3-5b1e-9fd7-6a2a44a358cc",
+      "type": "PROCEDURE",
+      "text": "• Aplicación de las herramientas y técnicas de\nla química computacional en la solución de\nproblemas reales.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "24955880-26d3-5563-a40c-691404aacd88",
+      "type": "PROCEDURE",
+      "text": "• Aplicaciones Químicas para Textiles",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "e3433339-8cb4-5d3f-9582-dec1717c2175",
+      "type": "PROCEDURE",
+      "text": "• Identificación y análisis de diferentes tipos de\nmateriales textiles y sus características químicas.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "d182ac92-09d0-5cce-a505-3f94cdb69dd4",
+      "type": "PROCEDURE",
+      "text": "• Realización de pruebas químicas para\ndeterminar la presencia de sustancias\nespecíficas en materiales textiles.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "c937c19a-9c79-5c60-959b-996cb0c528a7",
+      "type": "PROCEDURE",
+      "text": "• Selección y aplicación de técnicas de tintura y\nacabado textil adecuadas para diferentes tipos\nde materiales.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "4e5eb4cf-3e31-5381-a899-6bfc865edc6a",
+      "type": "PROCEDURE",
+      "text": "• Preparación de soluciones y disoluciones\nquímicas y realización de cálculos de\nconcentración.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "38148333-956e-5e76-8249-a4060f43f77a",
+      "type": "PROCEDURE",
+      "text": "• Uso de equipos y herramientas especializadas\nen la industria textil, como la máquina de teñir,\nla máquina de acabado y el espectrofotómetro.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "1c58bf22-45d5-556e-aac6-d1a167fb22ef",
+      "type": "PROCEDURE",
+      "text": "• Análisis y evaluación de los resultados\nobtenidos en las pruebas químicas y los\nprocesos de tintura y acabado.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "a67fc178-7279-5c88-82cb-dd6836b8c958",
+      "type": "PROCEDURE",
+      "text": "• Identificación y manejo adecuado de sustancias\nquímicas peligrosas.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "306a2207-9fb4-56a0-aff1-8a2d485236f8",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de informes técnicos sobre los\nprocesos de tintura y acabado textil y la\nevaluación de resultados.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "7eee29e5-9426-5047-9701-140318803033",
+      "type": "PROCEDURE",
+      "text": "• Investigación y análisis de nuevas tendencias\nen la química textil y su impacto en la industria\ny la moda.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "a2837903-a45c-598f-bd57-b655bc378e87",
+      "type": "PROCEDURE",
+      "text": "• Diseño y elaboración de prendas de vestir\nutilizando nuevas tecnologías en la química\ntextil.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "e5b3c152-3b5b-58d9-a388-a790a00d38d4",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Vinculación con entusiasmo\nherramientas tecnológicas a sus\nactividades científicas.",
+      "pdfPage": 508,
+      "printedPage": "507"
+    },
+    {
+      "id": "8085a1bd-3908-52ae-b772-1a7916c372b4",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Diseño y elaboración de alimentos con la utilización de aditivos y conservantes, con cumplimiento de las normas de\nseguridad alimentaria.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "f057f985-dc15-5c18-a807-eb759c671d46",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identificación y análisis de microorganismos presentes en alimentos y aplicación de medidas para prevenir la contaminación.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "c34bd086-d042-5e36-8b83-dd8accf86e30",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realización de pruebas de calidad en la industria alimentaria y elaboración de informes de resultados.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "ab8273ae-9d1a-5533-9e70-651209c719df",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Conocimiento y comprensión de los conceptos básicos de química y su aplicación en la industria alimentaria.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "29097886-4d41-5215-826a-a804b50b5b90",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demostración de habilidades para la elaboración de alimentos mediante técnicas de biotecnología y fermentación.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "6c73a617-1bc8-570a-bec2-b8a5722b91bc",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Manejo y utilización adecuada de herramientas y equipos de laboratorio utilizados en la industria alimentaria.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "9037a5aa-df6c-57e8-8993-4543cd25e39f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identificación y resolución de problemas en la producción de alimentos, y aplicación de medidas para evitar problemas\nfuturos.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "211336db-5e5e-56b1-96b9-a6657344f6cd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Conocimiento y aplicación de las normas y regulaciones aplicables a la industria alimentaria, en particular en relación a\nla seguridad alimentaria.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "739f2924-0e27-513d-a682-39e0817fe03c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Trabajo en equipo y colaboración en la elaboración de proyectos y pruebas prácticas.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "826e9f2e-48b1-507f-a290-63a570dc0b57",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comprensión de la importancia de la ética y responsabilidad social en la industria alimentaria.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "28328a7a-e744-5350-8c9b-f8b3afe95cee",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Diseño y síntesis de un compuesto orgánico con potencial actividad farmacológica.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "b6fbcd48-500e-530a-8d93-fd26858fea58",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realización de ensayos in vitro para evaluar la actividad de un fármaco.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "cd00a5ef-285f-5722-9cea-997d33e118fc",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpretación de resultados de estudios preclínicos y clínicos para determinar la seguridad y la eficacia de un fármaco.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "4a9a312b-de2d-5f34-9a55-110131d6ce62",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realización de experimentos para determinar elementos de farmacocinética y farmacodinámica de un fármaco.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "904c53f5-ddf8-5236-bcb8-ebeb3b8f8d41",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elaboración de un informe técnico sobre el desarrollo y evaluación de un fármaco.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "1373b73d-d47a-5ec9-b7ac-b8c7b15b7349",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Análisis y discusión de la importancia de la regulación y la seguridad en el uso de los fármacos.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "65a10105-4295-5e20-853d-409232a35e22",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpretación de la información presentada en etiquetas y prospectos de fármacos.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "f39a8a38-75bb-501d-b218-79de8fd5d9da",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Participación en discusiones y debates sobre temas relevantes de la química farmacéutica.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "4f4841f3-41e4-5b79-95cc-3d059baef72c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utilización de software para el diseño y simulación de fármacos.",
+      "pdfPage": 509,
+      "printedPage": "508"
+    },
+    {
+      "id": "2c8abbde-2775-5c5e-a749-e5f2470c7a2c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Diseño y simulación de una molécula con propiedades específicas, como por ejemplo actividad biológica o propiedades\ncon aplicación a materiales.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "faf3185d-0e73-55d9-b9f0-4c25a8ef7754",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Análisis y presentación de resultados de simulaciones moleculares.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "5b4d8c19-73a5-5317-a0fc-22acab320553",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Programación y uso de software en química computacional para simular propiedades de moléculas.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "044dfe7b-d230-5ad7-a03b-68cee48a26e2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Resolución de problemas y diseño de experimentos simulados para entender las propiedades de las moléculas.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "6ba3d852-89af-5670-af17-71f55f2c0ddb",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demostración de comprensión de conceptos clave en la química computacional, como modelos moleculares y métodos\nde cálculo.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "160190d0-4885-55f0-b670-78ecf3193476",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Trabajo colaborativo en la solución de problemas y proyectos en química computacional.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "b26a1bf9-ee05-5cf4-9e48-1fdb4e79d349",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identificación y discusión de aspectos éticos y de privacidad en el uso de la química computacional.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "0dd6db85-c6ef-59c4-b72f-d52c5eec2202",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presentación clara y concisa de los resultados de las simulaciones y el diseño de moléculas.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "7166ce06-91ee-552e-afd5-3fce957700f7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Uso efectivo de herramientas y equipos de simulación y modelado molecular.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "5e1c79ca-16c2-5d65-a1e3-b24ad00bd4cd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identificación y análisis de diferentes tipos de materiales textiles y sus características químicas.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "35ac8c88-d5d4-5eb1-b93c-e04cfe4c5f8f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realización de pruebas químicas para determinar la presencia de sustancias específicas en materiales textiles.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "94e2e341-75b7-55da-b7bd-6fbd4995c1fd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Selección y aplicación de técnicas de tintura y acabado textil, adecuadas para diferentes tipos de materiales.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "a1318fd8-5aec-54ca-9e9b-41b9f5c38b5e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Uso adecuado de equipos y herramientas especializadas en la industria textil.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "b7073c09-8996-5369-9230-2d49ee94811e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Identificación y manejo adecuado de sustancias químicas peligrosas.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "b07a04c8-8012-52e8-9b4f-80e05a22af8b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elaboración de informes técnicos sobre los procesos de tintura y acabado textil y la evaluación de resultados.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "ac2e116a-1830-5ec4-8e61-fb58697c969a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Investigación y análisis de nuevas tendencias en la química textil y su impacto en la industria y la moda.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "89277fd0-8355-5af7-bbc6-c61cac9f12f2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Diseño y elaboración de prendas de vestir utilizando nuevas tecnologías en la química textil.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    },
+    {
+      "id": "0741ecb1-e7b7-59dd-81ff-e27e7696d90f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comprender la importancia de la seguridad y el impacto ambiental.",
+      "pdfPage": 510,
+      "printedPage": "509"
+    }
+  ],
+  "topics": [
+    {
+      "id": "food-ethics",
+      "grade": 5,
+      "label": "Decisiones éticas de etiquetado alimentario",
+      "match": "etiquetado de alimentos|decision etica alimentaria",
+      "relation": "la relación entre la información comunicada, sus evidencias y límites y los riesgos documentados del caso ficticio de etiquetado, sin ocultarlos ni calificar creencias personales",
+      "pages": [
+        509
+      ],
+      "sourceRecordIds": [
+        "826e9f2e-48b1-507f-a290-63a570dc0b57"
+      ]
+    },
+    {
+      "id": "food-nutrients",
+      "grade": 5,
+      "label": "Nutrientes de los alimentos",
+      "match": "nutrientes?|carbohidratos|proteinas|lipidos|vitaminas|suplementos",
+      "relation": "la composición y función de los nutrientes expresamente pedidos según el modelo dado, sin inferir recomendaciones nutricionales personales ni eficacia terapéutica de suplementos",
+      "pages": [
+        506,
+        507
+      ],
+      "sourceRecordIds": [
+        "7b5ffa4e-11c1-59c5-8a63-cf7dacde848e",
+        "e2d4d226-7d8a-59ca-b436-398c50d565b2",
+        "01256f4b-31c6-5c2c-a6e8-ab55d41ad728"
+      ]
+    },
+    {
+      "id": "food-spices",
+      "grade": 5,
+      "label": "Especias y hierbas en alimentos",
+      "match": "especias|hierbas (?:en|para) alimentos",
+      "relation": "las propiedades y función de las especias o hierbas indicadas en la formulación alimentaria proporcionada, sin atribuirles eficacia terapéutica",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "bb57f3d2-c626-5d91-b66e-5922511c58ec"
+      ]
+    },
+    {
+      "id": "molecular-food",
+      "grade": 5,
+      "label": "Química molecular de alimentos",
+      "match": "quimica molecular de alimentos|composicion molecular (?:de los |de )?alimentos|molecular de alimentos",
+      "relation": "la relación entre composición molecular y propiedades del alimento representado en los datos o modelos proporcionados",
+      "pages": [
+        506,
+        507
+      ],
+      "sourceRecordIds": [
+        "4cf124bc-9288-5679-b3f5-28fbd76b82d8",
+        "40500dc5-3faa-5d3c-a151-3636adccd419"
+      ]
+    },
+    {
+      "id": "food-chain",
+      "grade": 5,
+      "label": "Transporte, recepción y almacenamiento de alimentos",
+      "match": "transporte de alimentos|recepcion de alimentos|almacenamiento de alimentos|transporte, recepcion y almacenamiento",
+      "relation": "las condiciones de transporte, recepción o almacenamiento expresamente indicadas en el caso y su relación con la conservación del alimento, sin inventar temperaturas o plazos",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "f331b5e7-bb2c-56ce-b7a1-e4fca02dc5c9",
+        "2f23c35d-8be2-57a9-9199-9748ecfefbde",
+        "218c7502-cd45-5d9d-8fa8-b9880d116483"
+      ]
+    },
+    {
+      "id": "food-quality",
+      "grade": 5,
+      "label": "Calidad e inocuidad de alimentos",
+      "match": "calidad (?:e |y )?inocuidad|inocuidad de alimentos|calidad de alimentos|caducidad|alimentos perecederos|alimentos enlatados|seguridad alimentaria",
+      "relation": "los indicadores de calidad, inocuidad o caducidad del alimento y sus referencias proporcionadas, sin concluir seguridad de consumo solo por apariencia",
+      "pages": [
+        506,
+        507
+      ],
+      "sourceRecordIds": [
+        "077638c7-88b2-5c5e-ae96-cfa526a04fce",
+        "e7b6b23a-fe44-576e-826a-08430e5f7196",
+        "2ed10153-035b-5a04-9625-81b085c46d70",
+        "e8fa4c2a-0ed5-5d13-9aee-f5618a28039a"
+      ]
+    },
+    {
+      "id": "food-drying",
+      "grade": 5,
+      "label": "Liofilización, desecación y concentración",
+      "match": "liofilizacion|desecacion|concentracion de alimentos",
+      "relation": "la transferencia de agua y las condiciones del método de conservación solicitado según el modelo proporcionado, sin exigir preparar ni consumir alimentos",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "6391f17d-121a-5c51-996d-ac14716c1e40"
+      ]
+    },
+    {
+      "id": "food-preservatives",
+      "grade": 5,
+      "label": "Conservación por aditivos",
+      "match": "conservantes|conservacion por aditivos|salmuera|vinagre|aditivos alimentarios",
+      "relation": "la función y las restricciones del conservante solicitado según la ficha alimentaria proporcionada, sin formular concentraciones seguras no documentadas",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "33d9f09e-616c-5826-b2cb-2e769262c08d"
+      ]
+    },
+    {
+      "id": "food-temperature",
+      "grade": 5,
+      "label": "Conservación por temperatura",
+      "match": "conservacion por temperatura|congelacion|pasteurizacion|esterilizacion de alimentos",
+      "relation": "los cambios térmicos y las condiciones del método solicitado en el modelo dado, sin afirmar inocuidad de un producto real ni exigir calentarlo",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "496c37e8-6358-57fa-96d4-77433336b5b0"
+      ]
+    },
+    {
+      "id": "food-ph",
+      "grade": 5,
+      "label": "Sal, azúcar, pH y otros métodos de conservación",
+      "match": "conservacion por ph|conservacion por sal|conservacion por azucar|ahumado|curado de alimentos",
+      "relation": "la variable química y su relación con la conservación en el modelo proporcionado, sin inferir parámetros seguros para preparar o consumir alimentos reales",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "c894f3a3-3df0-5c16-8dee-f7570252a915"
+      ]
+    },
+    {
+      "id": "scientific-method",
+      "grade": 5,
+      "label": "Etapas expresamente solicitadas del método científico",
+      "match": "metodo cientifico|etapas del metodo|hipotesis de quimica|procedimiento cientifico",
+      "relation": "solo las etapas del método científico expresamente solicitadas, relacionando pregunta, evidencia y conclusión del caso sin exigir completar un experimento ausente",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "46ecf324-ebed-5c15-959d-723cd1e84f9a",
+        "8ebf3ae5-869e-5fa6-834a-98cca5080cdb",
+        "a7b4fe92-dfd1-52d7-95e4-f05d5fc406a8",
+        "444b86b4-b8f2-5143-8c7b-0514ae672e61",
+        "f6b0981d-3f01-5f83-9e6c-7ff77af9381e",
+        "ac8ffd81-1169-5691-b5c2-1783bb559957"
+      ]
+    },
+    {
+      "id": "food-design",
+      "grade": 5,
+      "label": "Diseño de alimentos con aditivos o conservantes",
+      "match": "diseno de alimentos|disena[^.;]*alimento",
+      "relation": "la correspondencia entre propósito, ingredientes y restricciones de la formulación simulada dada, diferenciando el diseño de un producto realmente preparado o validado",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "8cba4075-076e-5069-bfae-103f4fd25ce0"
+      ]
+    },
+    {
+      "id": "food-properties",
+      "grade": 5,
+      "label": "Propiedades de sustancias en alimentos",
+      "match": "propiedades de sustancias en alimentos|propiedades de los alimentos",
+      "relation": "las propiedades químicas y físicas de las sustancias alimentarias solicitadas y su relación con la evidencia proporcionada",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "b2133bc2-c571-53e7-8eeb-d351ba5f358f"
+      ]
+    },
+    {
+      "id": "food-biotechnology",
+      "grade": 5,
+      "label": "Biotecnología de alimentos",
+      "match": "biotecnologia de alimentos|biotecnologica[^.;]*alimento",
+      "relation": "el proceso biotecnológico y sus resultados descritos en las fuentes alimentarias proporcionadas, distinguiendo evidencia de inferencias y sin exigir cultivos",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "d18cb3a1-9805-5086-86b9-0c9aacf8b17b"
+      ]
+    },
+    {
+      "id": "food-fermentation",
+      "grade": 5,
+      "label": "Fermentación de alimentos",
+      "match": "fermentacion de alimentos|fermentacion",
+      "relation": "las transformaciones del modelo de fermentación y las variables o resultados dados, sin imponer preparación, cultivo ni consumo real",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "04199072-f132-5afb-8f57-8d066c53ef87"
+      ]
+    },
+    {
+      "id": "food-packaging",
+      "grade": 5,
+      "label": "Envases para alimentos",
+      "match": "envases? (?:para |de )?alimentos|envasado|empaque de alimentos",
+      "relation": "la relación entre las propiedades del envase solicitado, el alimento y las condiciones de conservación del caso, sin inventar pruebas de compatibilidad",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "b792fe81-3486-55ef-87c7-9e9525a226df"
+      ]
+    },
+    {
+      "id": "food-quality-tests",
+      "grade": 5,
+      "label": "Microorganismos y pruebas de calidad",
+      "match": "pruebas de calidad de alimentos|microorganismos y pruebas de calidad",
+      "relation": "los controles, resultados y referencias de las pruebas alimentarias proporcionadas, sin atribuir pruebas propias ni generalizar a seguridad de consumo",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "2eb63931-bc36-5a98-b68c-ef4ff84bf86d"
+      ]
+    },
+    {
+      "id": "food-tools",
+      "grade": 5,
+      "label": "Equipos y materiales de química de alimentos",
+      "match": "equipos de quimica de alimentos|materiales de quimica de alimentos|instrumentos de quimica de alimentos",
+      "relation": "la correspondencia entre la herramienta ilustrada, su función y el resultado que permite obtener según la ficha dada, sin exigir equipos reales",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "1595367e-ff74-5891-893b-a44fdd6f6c20"
+      ]
+    },
+    {
+      "id": "food-problems",
+      "grade": 5,
+      "label": "Problemas de producción de alimentos",
+      "match": "produccion de alimentos|problema[^.;]*(?:conservacion|produccion)[^.;]*alimentos",
+      "relation": "la relación entre datos, restricciones y solución del problema alimentario proporcionado, justificando qué evidencia permite comprobarla",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "b29dfb11-1c8c-5649-b7e7-638f07f8c310"
+      ]
+    },
+    {
+      "id": "food-regulations",
+      "grade": 5,
+      "label": "Regulaciones y normas sanitarias alimentarias",
+      "match": "normas sanitarias alimentarias|regulaciones alimentarias|regulacion de alimentos|normas de alimentos",
+      "relation": "las disposiciones del extracto alimentario dado y su aplicación al caso ficticio, sin afirmar vigencia o autorizaciones fuera de la fuente proporcionada",
+      "pages": [
+        506,
+        507
+      ],
+      "sourceRecordIds": [
+        "c43878dd-d8c1-5ae1-9389-deda957bc73f",
+        "a00bc7db-fd0d-5984-8c43-4b9d7b999e53",
+        "caddc620-d28e-5734-aa94-47042650ded2"
+      ]
+    },
+    {
+      "id": "food-infections",
+      "grade": 5,
+      "label": "Infecciones y enfermedades transmitidas por alimentos",
+      "match": "contaminacion de alimentos|infecciones alimentarias|bacterias|virus|escherichia coli|listeria|salmonella|ameba|shigella|hepatitis a|norovirus",
+      "relation": "las evidencias del agente y de la vía de contaminación expresamente solicitados en el expediente ficticio, distinguiendo prevención documentada de diagnóstico o cultivo real",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "e3a1e3c9-2cd0-540e-86f5-8c42a531259e",
+        "c87c3780-30e2-59e2-80ec-bf8f90f33ed4",
+        "9f1b7724-fcb7-5b20-81dd-1f64375c9ae0",
+        "bcb544fb-c096-5619-9a60-37d66d367bf2"
+      ]
+    },
+    {
+      "id": "food-handling",
+      "grade": 5,
+      "label": "Manipulación y buenas prácticas alimentarias",
+      "match": "manipulacion de alimentos|buenas practicas alimentarias|riesgos de frutas|riesgos de vegetales",
+      "relation": "las prácticas y riesgos documentados de manipulación del alimento indicado, justificando las medidas dadas sin visitas, consumo ni pruebas reales",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "71368673-4b99-56ae-88a0-eb9ea74fbb99",
+        "ddd7005c-bb1c-5a83-bf9f-28616edfae88",
+        "d09745b5-80d1-5afe-bbf0-4bb4a812f8ae",
+        "bba1653a-5fbe-560d-b611-d06ec74fd1e7"
+      ]
+    },
+    {
+      "id": "food-pesticides",
+      "grade": 5,
+      "label": "Plaguicidas y riesgos en alimentos",
+      "match": "plaguicidas|pesticidas|fungicidas|herbicidas|insecticidas",
+      "relation": "la presencia, función y riesgos del plaguicida solicitado según las fichas y resultados proporcionados, sin exigir aplicación ni inferir residuos no medidos",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "6540ee15-ee87-5eca-a5c5-57767e8f52d9"
+      ]
+    },
+    {
+      "id": "food-environment",
+      "grade": 5,
+      "label": "Reciclaje y cuidado ambiental alimentario",
+      "match": "reciclaje alimentario|residuos alimentarios|ambiente alimentario",
+      "relation": "la relación entre residuos y medidas de manejo del proceso alimentario ficticio proporcionado, sin imponer manipulación de residuos reales",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "2f8a3ad8-87d6-5261-bbda-b1f693110022",
+        "104637de-1bd6-5609-a4f6-a40428655661"
+      ]
+    },
+    {
+      "id": "scientific-collaboration",
+      "grade": 5,
+      "label": "Contraste de ideas con evidencias observables",
+      "match": "contraste de ideas|aportaciones del equipo|contribucion del equipo",
+      "relation": "las aportaciones identificables y el uso de evidencias para resolver la discrepancia del trabajo científico solicitado, sin calificar interés o personalidad",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "239724f7-6f66-5673-8e1a-5e23f117ce77"
+      ]
+    },
+    {
+      "id": "scientific-communication",
+      "grade": 5,
+      "label": "Comunicación científica solicitada",
+      "match": "comunicacion cientifica|lenguaje cientifico",
+      "relation": "la correspondencia entre afirmaciones, representaciones y evidencias del contenido químico expresamente solicitado, sin exigir productos adicionales",
+      "pages": [
+        506
+      ],
+      "sourceRecordIds": [
+        "cf37a0ce-3738-56d3-a102-f6a98600282c"
+      ]
+    },
+    {
+      "id": "pharmaceutical-chemistry",
+      "grade": 5,
+      "label": "Química farmacéutica y salud",
+      "match": "quimica farmaceutica|caso farmaceutico|clases de medicamentos",
+      "relation": "las relaciones químicas y sanitarias expresamente descritas en el expediente ficticio dado, sin recomendaciones clínicas ni identificación de pacientes",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "ca8e9f6b-f729-5b46-a76b-82ee9c5ae3c3",
+        "6983ad3b-5341-51d0-91f0-8ed9240ce01c",
+        "a6a7468c-4b71-5bc8-9df6-069cb6f3ca7b",
+        "27e9b770-7455-5fee-9e9f-844a1697a8bf"
+      ]
+    },
+    {
+      "id": "pharmaceutical-synthesis",
+      "grade": 5,
+      "label": "Síntesis y caracterización molecular mediante modelos",
+      "match": "sintesis y perfil molecular documentado|sintesis molecular|sintesis[^.;]*farmaceutic|sintesis[^.;]*compuesto|grupos funcionales|caracterizacion molecular",
+      "relation": "los grupos funcionales, transformaciones y restricciones del modelo molecular proporcionado, distinguiendo su representación de síntesis o caracterización real de sustancias",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "a93eebd5-23d0-530f-8c55-743ecf3c2680",
+        "409bfed4-11f2-524b-b4fd-61a1a5218e15",
+        "0e2ecb4a-22d4-5840-b0bc-100bbdf00c37"
+      ]
+    },
+    {
+      "id": "drug-classification",
+      "grade": 5,
+      "label": "Clasificación, estructura y modo de acción de fármacos",
+      "match": "clasificacion de farmacos|estructura y modo de accion|clasificacion de medicamentos",
+      "relation": "la correspondencia entre clase, estructura y modo de acción del fármaco ficticio según las fichas dadas, sin inferir tratamientos para personas",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "349553ff-3d76-5228-923f-55ff5e3cab00"
+      ]
+    },
+    {
+      "id": "drug-interactions",
+      "grade": 5,
+      "label": "Interacciones de fármacos con el organismo",
+      "match": "interacciones de farmacos|interaccion[^.;]*organismo",
+      "relation": "las interacciones descritas en el modelo y las fuentes profesionales proporcionados, sin extrapolar a combinaciones o tratamientos personales",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "4f8710e3-f7b2-548d-b729-56c0ffe7ed03"
+      ]
+    },
+    {
+      "id": "drug-development",
+      "grade": 5,
+      "label": "Desarrollo preclínico y clínico de medicamentos",
+      "match": "desarrollo[^.;]*(?:compuesto|farmaco|medicamento)|resultados preclinicos|resultados clinicos|ensayos clinicos",
+      "relation": "las fases, controles y resultados documentados del desarrollo farmacéutico ficticio, distinguiendo evidencias preclínicas y clínicas y sus límites",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "46dcb01d-418e-5c29-b2b9-6592ae8c6953",
+        "e8b7d594-964e-52e0-ab23-7af55b44320c"
+      ]
+    },
+    {
+      "id": "drug-sources",
+      "grade": 5,
+      "label": "Fuentes de compuestos farmacéuticos",
+      "match": "fuentes de compuestos farmaceuticos|origen de farmacos|plantas y microorganismos",
+      "relation": "la procedencia y características del compuesto descrito en las fuentes proporcionadas, sin inferir eficacia por su origen ni exigir extracción o cultivo",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "6e843916-54a8-5cc4-a64b-884c4b797f61"
+      ]
+    },
+    {
+      "id": "pharmacokinetics",
+      "grade": 5,
+      "label": "Farmacocinética y farmacodinámica",
+      "match": "farmacocinetica|farmacodinamica|absorcion|distribucion, metabolismo|excrecion|adme",
+      "relation": "los parámetros y relaciones de absorción, distribución, metabolismo, excreción o respuesta expresamente pedidos en el modelo dado, sin derivar dosis o tratamientos personales",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "b7f76427-ad71-588e-b29f-8b71e13fb220",
+        "d6f04cc9-9b3b-5568-98c9-9788546fadf5"
+      ]
+    },
+    {
+      "id": "drug-mechanisms",
+      "grade": 5,
+      "label": "Mecanismos de acción y enfermedad",
+      "match": "mecanismos? de accion de farmacos|mecanismos? de accion de medicamentos",
+      "relation": "la relación entre el compuesto y el mecanismo descrito en el modelo de enfermedad dado, sin atribuir eficacia clínica no respaldada",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "04eab2d0-d065-5a71-a601-9604466f1e24"
+      ]
+    },
+    {
+      "id": "drug-adverse",
+      "grade": 5,
+      "label": "Reacciones adversas y prevención en casos documentales",
+      "match": "reacciones adversas|efectos adversos",
+      "relation": "los efectos y límites causales documentados en el expediente ficticio, justificando la prevención descrita por las fuentes profesionales sin indicar medicamentos",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "0e6e672e-1811-5285-b5cd-db5b5409e99a"
+      ]
+    },
+    {
+      "id": "drug-regulation",
+      "grade": 5,
+      "label": "Regulación, seguridad y eficacia farmacéutica",
+      "match": "regulacion[^.;]*farmaceutic|seguridad y eficacia|seguridad del[^.;]*medicamento|extracto regulatorio",
+      "relation": "los criterios de seguridad, eficacia y regulación de los extractos proporcionados aplicados al caso ficticio, sin afirmar autorización vigente ni recomendar uso",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "7517b89d-a33e-5a97-8992-c51344d61782",
+        "59d544ff-6a2f-5ee4-86f4-e90660a251f7"
+      ]
+    },
+    {
+      "id": "drug-invitro",
+      "grade": 5,
+      "label": "Evaluación in vitro con resultados proporcionados",
+      "match": "evaluacion in vitro|ensayo in vitro",
+      "relation": "las condiciones, controles y resultados in vitro proporcionados o simulados y sus límites para inferir efectos en personas, sin realizar ensayos reales",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "506f4d0d-8b87-5277-ab51-6cda08075fc5"
+      ]
+    },
+    {
+      "id": "drug-report",
+      "grade": 5,
+      "label": "Informes farmacéuticos y resultados de laboratorio dados",
+      "match": "informe[^.;]*farmaceutic|resultados de laboratorio farmaceutico",
+      "relation": "la organización de procedimientos, resultados y límites del expediente farmacéutico dado, distinguiendo actuaciones propias de información proporcionada",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "fc519870-b780-55fe-8cd6-69f288e2f86d",
+        "d92f938a-424b-51db-85c9-31432cd39e62"
+      ]
+    },
+    {
+      "id": "drug-labels",
+      "grade": 5,
+      "label": "Etiquetas y prospectos de medicamentos",
+      "match": "etiqueta[^.;]*medicamento|prospectos?|etiqueta[^.;]*fictici",
+      "relation": "la lectura de las secciones expresamente solicitadas de la etiqueta o prospecto ficticios según la fuente profesional proporcionada, sin recomendar dosis, tratamientos ni cambios de medicación",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "57d65ee6-e919-5616-8b83-ece8aef3e163",
+        "34020500-ab26-5a58-b945-f50627bd34fb"
+      ]
+    },
+    {
+      "id": "drug-software",
+      "grade": 5,
+      "label": "Diseño molecular farmacéutico con software",
+      "match": "modelado[^.;]*farmaceutic|software[^.;]*farmaco|molecula farmaceutica",
+      "relation": "la relación entre restricciones estructurales, parámetros y propiedades del diseño farmacéutico simulado, sin atribuir validación clínica al modelo computacional",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "15d016c0-87ef-571f-a9de-e99fa3935454"
+      ]
+    },
+    {
+      "id": "drug-alternatives",
+      "grade": 5,
+      "label": "Lectura crítica de prácticas terapéuticas citadas",
+      "match": "homeopatia|fitoterapia|naturopatia|terapias alternativas|practicas terapeuticas",
+      "relation": "las afirmaciones y calidad de evidencia de las prácticas citadas en fuentes profesionales proporcionadas, sin atribuir eficacia o equivalencia clínica por tradición u origen natural",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "d849dd58-3c55-5318-9a42-79554c9e1b3b"
+      ]
+    },
+    {
+      "id": "first-aid-kit",
+      "grade": 5,
+      "label": "Botiquín y pautas profesionales proporcionadas",
+      "match": "botiquin|primeros auxilios",
+      "relation": "los componentes y pautas de la ficha profesional de botiquín proporcionada y su adecuación al caso simulado, sin administrar productos ni intervenir sobre personas",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "344fdd80-b0ad-50ed-9f5b-f1415f582667",
+        "af0e3543-11a4-5930-b670-6b25e2b5ee51"
+      ]
+    },
+    {
+      "id": "computational-foundations",
+      "grade": 5,
+      "label": "Química teórica, experimental y modelos computacionales",
+      "match": "quimica teorica|quimica experimental|modelo molecular|modelos computacionales|metodo de calculo",
+      "relation": "la correspondencia entre representación molecular, supuestos teóricos, método de cálculo y evidencia experimental proporcionada, sin equiparar una predicción a validación empírica",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "564f6869-4694-5fe3-b4d2-23a329aff286",
+        "2ccb3bc8-e399-5bd0-bede-68b4ec4cc462"
+      ]
+    },
+    {
+      "id": "molecular-mechanics",
+      "grade": 5,
+      "label": "Mecánica y dinámica molecular",
+      "match": "mecanica molecular|dinamica molecular",
+      "relation": "las variables, interacciones y supuestos del modelo de mecánica o dinámica molecular solicitado y sus límites según los datos dados",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "b35868d5-2ee1-5fb4-be8a-ef9fa65232b6"
+      ]
+    },
+    {
+      "id": "molecular-geometry",
+      "grade": 5,
+      "label": "Optimización geométrica y propiedades fisicoquímicas",
+      "match": "optimizacion geometrica|propiedades fisicoquimicas",
+      "relation": "la relación entre geometría, criterio de optimización y propiedad fisicoquímica expresamente solicitada bajo las condiciones del modelo dado",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "a1190a9a-ff74-5c06-b408-a739d6f4b608"
+      ]
+    },
+    {
+      "id": "electronic-structure",
+      "grade": 5,
+      "label": "Densidad electrónica y energías de enlace",
+      "match": "densidad electronica|energias? de enlace|energias? de disociacion",
+      "relation": "la distribución electrónica o la energía del enlace expresamente solicitado según el modelo y sus unidades, sin confundir energía de enlace con energía total ausente",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "56f5f26d-c81b-5951-9995-e71061abe776"
+      ]
+    },
+    {
+      "id": "structure-activity",
+      "grade": 5,
+      "label": "Relación estructura y actividad",
+      "match": "relacion estructura.actividad|estructura y actividad",
+      "relation": "la asociación documentada entre estructura y actividad en el conjunto de datos dado, diferenciando correlación de causalidad o eficacia clínica",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "ea74a25c-30b3-5cc8-bc1a-d48aa1606ff7"
+      ]
+    },
+    {
+      "id": "molecule-design",
+      "grade": 5,
+      "label": "Diseño y optimización de moléculas",
+      "match": "disena[^.;]*molecula|diseno molecular|optimizacion de moleculas",
+      "relation": "la correspondencia entre estructura, restricciones y propiedades objetivo de la molécula simulada, sin atribuir síntesis o validación experimental no realizadas",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "08c6d0c8-c15e-5d0f-8510-8f73ed8ea46a",
+        "c9737127-ca31-5a7e-b157-3f4b726e1a9b"
+      ]
+    },
+    {
+      "id": "reaction-simulation",
+      "grade": 5,
+      "label": "Simulación de mecanismos de reacción",
+      "match": "mecanismos? de reaccion|simulacion de reacciones",
+      "relation": "la secuencia y las condiciones del mecanismo de reacción representado en la simulación proporcionada, distinguiendo salidas calculadas de resultados experimentales",
+      "pages": [
+        507,
+        508
+      ],
+      "sourceRecordIds": [
+        "60129d55-7d36-502d-99b1-6c6d2ab2b1f9",
+        "e93ef938-8f0c-5566-9051-0c970d095b2b"
+      ]
+    },
+    {
+      "id": "chemical-programming",
+      "grade": 5,
+      "label": "Programación y scripts de química computacional",
+      "match": "algoritmo[^.;]*molecular|programacion quimica|script[^.;]*quimic|programa[^.;]*propiedad molecular",
+      "relation": "los pasos, entradas, decisiones y salidas del algoritmo químico expresamente pedido, comprobables con los casos proporcionados sin imponer nuevas dependencias",
+      "pages": [
+        507,
+        508
+      ],
+      "sourceRecordIds": [
+        "61060933-0f79-5c01-9c55-48761d44d6f7",
+        "9c5e5782-ec0d-56f8-a792-c303058a3aec"
+      ]
+    },
+    {
+      "id": "computational-ethics",
+      "grade": 5,
+      "label": "Ética, privacidad e impactos computacionales",
+      "match": "privacidad[^.;]*quimica|datos[^.;]*quimica computacional|etica[^.;]*computacional|impactos computacionales",
+      "relation": "las decisiones verificables sobre privacidad, atribución y comunicación de límites del caso computacional ficticio, sin divulgar información personal ni calificar convicciones",
+      "pages": [
+        507,
+        508
+      ],
+      "sourceRecordIds": [
+        "dbafa21e-302a-50dd-a1b0-8ba448a7770b",
+        "a5c8efaf-e88b-5309-a510-73e9ca626ddb"
+      ]
+    },
+    {
+      "id": "molecular-software",
+      "grade": 5,
+      "label": "Herramientas de modelado y simulación molecular",
+      "match": "herramientas de modelado molecular|herramientas de simulacion molecular|software molecular",
+      "relation": "la adecuación de las funciones y restricciones de las herramientas proporcionadas al problema químico solicitado, sin imponer instalación, compra ni servicios externos",
+      "pages": [
+        507,
+        508
+      ],
+      "sourceRecordIds": [
+        "dcf05684-7894-51a1-a0df-a0db7fe50094",
+        "3ff1bfcb-64c3-5b1e-9fd7-6a2a44a358cc"
+      ]
+    },
+    {
+      "id": "molecular-calculation",
+      "grade": 5,
+      "label": "Cálculos de propiedades moleculares",
+      "match": "calculo[^.;]*propiedades moleculares|calcula[^.;]*molecular",
+      "relation": "la relación entre datos, método de cálculo, unidades y resultado molecular solicitado, comprobando coherencia con las referencias proporcionadas",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "bcfbf5d7-736c-5841-a5e4-37345368c142"
+      ]
+    },
+    {
+      "id": "simulation-results",
+      "grade": 5,
+      "label": "Análisis y presentación de resultados de simulación",
+      "match": "resultados de simulacion molecular|resultados[^.;]*simulacion|parametros, resultados",
+      "relation": "la relación entre entradas, parámetros, salidas e incertidumbre de la simulación dada, distinguiendo resultados calculados de observaciones empíricas",
+      "pages": [
+        507,
+        508
+      ],
+      "sourceRecordIds": [
+        "61c8c69d-4ced-5cf6-9127-a453fcb549cc",
+        "c9c51882-338b-515e-a304-d51635111858"
+      ]
+    },
+    {
+      "id": "computational-debug",
+      "grade": 5,
+      "label": "Resolución de errores de química computacional",
+      "match": "errores de quimica computacional|depura[^.;]*quimic|error[^.;]*simulacion",
+      "relation": "la identificación del error y la comprobación de la corrección con los datos y casos de prueba proporcionados, sin atribuir salidas no obtenidas",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "53746a91-3357-53c2-ad45-e3190bd5d868"
+      ]
+    },
+    {
+      "id": "computational-project",
+      "grade": 5,
+      "label": "Proyecto computacional expresamente solicitado",
+      "match": "proyecto de quimica computacional|proyecto computacional",
+      "relation": "la relación entre propósito, modelo, procedimiento y resultados del proyecto computacional expresamente solicitado, sin exigir investigar o ejecutar otro si los resultados ya están dados",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "0a578b73-9d30-5f8c-a6fa-6014db4e2d10"
+      ]
+    },
+    {
+      "id": "given-safety",
+      "grade": 5,
+      "label": "Cumplimiento de reglas de seguridad proporcionadas",
+      "match": "reglas de seguridad proporcionadas|reglas de seguridad dadas",
+      "relation": "la aplicación verificable de las reglas proporcionadas al desempeño expresamente pedido, sin atribuir cumplimiento de acciones no observadas",
+      "pages": [
+        507
+      ],
+      "sourceRecordIds": [
+        "44a8c29b-73ed-5746-b6b1-7b145e7383d8"
+      ]
+    },
+    {
+      "id": "textile-foundations",
+      "grade": 5,
+      "label": "Química de textiles y moda",
+      "match": "quimica de textiles|quimica textil|quimica y moda",
+      "relation": "la relación entre composición, proceso y uso textil descrita en las fuentes dadas, sin imponer fabricación o compra de materiales",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "4e63e829-4e34-56e3-a3ed-90308d6872ac",
+        "1ac98d5b-8d47-59ae-8f1c-b9308ea2e4f0"
+      ]
+    },
+    {
+      "id": "textile-fibers",
+      "grade": 5,
+      "label": "Fibras, hilado, tejido y materiales",
+      "match": "fibras textiles|hilado|tejido|materiales textiles",
+      "relation": "las propiedades y estructura del material o fibra solicitados según las muestras ilustradas y datos proporcionados, sin exigir pruebas adicionales",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "7ac85079-04bd-5d5a-96b7-7a154c07f689",
+        "e3433339-8cb4-5d3f-9582-dec1717c2175"
+      ]
+    },
+    {
+      "id": "textile-finishing",
+      "grade": 5,
+      "label": "Tintura y acabados textiles",
+      "match": "tintura|acabado textil|acabados textiles|tenido",
+      "relation": "la compatibilidad entre fibra, colorante, tratamiento y resultado expresamente solicitados según las fichas dadas, distinguiendo diseño simulado de aplicación real",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "a8c7600c-1386-5228-8dd9-84f36fe00f17",
+        "c937c19a-9c79-5c60-959b-996cb0c528a7"
+      ]
+    },
+    {
+      "id": "textile-colorants",
+      "grade": 5,
+      "label": "Colorantes y pigmentos textiles",
+      "match": "colorantes textiles|pigmentos textiles",
+      "relation": "las propiedades y función del colorante o pigmento solicitado en el sistema textil del modelo dado, sin confundir pigmento con colorante soluble",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "974f440d-4068-5d01-8219-a713efd419b6"
+      ]
+    },
+    {
+      "id": "textile-agents",
+      "grade": 5,
+      "label": "Suavizantes, repelentes y retardantes textiles",
+      "match": "suavizantes|repelentes al agua|retardantes de llama",
+      "relation": "la función y compatibilidad del agente de acabado expresamente solicitado según las fichas proporcionadas, sin atribuir prestaciones no comprobadas",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "d1efac6f-0009-54ae-96ae-2747f56090a2"
+      ]
+    },
+    {
+      "id": "textile-cleaning",
+      "grade": 5,
+      "label": "Blanqueo y desengrasado textiles",
+      "match": "blanqueo|desengrasado",
+      "relation": "las transformaciones y restricciones del método de limpieza textil solicitado en el modelo dado, sin exigir manipulación real de sustancias",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "d1942465-e2b4-5941-9988-6d92e4143128"
+      ]
+    },
+    {
+      "id": "textile-safety",
+      "grade": 5,
+      "label": "Seguridad química textil mediante fichas dadas",
+      "match": "seguridad quimica textil|riesgos[^.;]*textil|fichas de seguridad[^.;]*textil",
+      "relation": "los riesgos y medidas preventivas de las fichas profesionales dadas relacionados con el proceso textil ficticio, sin manipulación peligrosa ni decisiones sanitarias personales",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "7705f83d-e423-5647-99ee-2c139e55c1b4",
+        "a67fc178-7279-5c88-82cb-dd6836b8c958"
+      ]
+    },
+    {
+      "id": "textile-environment",
+      "grade": 5,
+      "label": "Impacto ambiental de procesos textiles",
+      "match": "impacto ambiental[^.;]*textil|manejo ambiental[^.;]*textil|residuos[^.;]*textil",
+      "relation": "la relación entre proceso, residuos e impactos descritos en las fuentes del caso textil ficticio y las medidas indicadas, sin intervenciones ambientales reales",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "16ec4a4a-f67e-589e-bbfe-a898722cb034"
+      ]
+    },
+    {
+      "id": "textile-innovation",
+      "grade": 5,
+      "label": "Impresión digital, ropa inteligente e innovaciones",
+      "match": "impresion digital|ropa inteligente|innovaciones textiles|tecnologias textiles",
+      "relation": "el funcionamiento, usos y límites de la innovación textil solicitada según las fuentes dadas, sin exigir compra o acceso a tecnología ausente",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "618de39f-ce9f-5bfd-88c9-f9261ee08e06",
+        "7eee29e5-9426-5047-9701-140318803033"
+      ]
+    },
+    {
+      "id": "textile-tests",
+      "grade": 5,
+      "label": "Pruebas textiles y resultados proporcionados",
+      "match": "pruebas[^.;]*textiles|pruebas de sustancias|resultados[^.;]*textiles",
+      "relation": "la correspondencia entre prueba, control y resultado textil proporcionados, explicitando los límites de identificación de sustancias sin realizar ensayos químicos",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "d182ac92-09d0-5cce-a505-3f94cdb69dd4",
+        "1c58bf22-45d5-556e-aac6-d1a167fb22ef"
+      ]
+    },
+    {
+      "id": "textile-concentrations",
+      "grade": 5,
+      "label": "Concentraciones de soluciones para textiles",
+      "match": "concentracion[^.;]*textil|soluciones para textiles|soluciones textiles",
+      "relation": "la relación entre cantidad, volumen o masa, unidades y concentración de la solución del problema textil dado, sin exigir preparación física de sustancias",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "4e5eb4cf-3e31-5381-a899-6bfc865edc6a"
+      ]
+    },
+    {
+      "id": "textile-tools",
+      "grade": 5,
+      "label": "Herramientas y equipos textiles solicitados",
+      "match": "maquina de tenido|espectrofotometro|equipos textiles|herramientas textiles",
+      "relation": "la función de la herramienta expresamente solicitada y su relación con el dato o resultado textil de las fichas dadas, sin imponer equipos físicos",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "38148333-956e-5e76-8249-a4060f43f77a"
+      ]
+    },
+    {
+      "id": "textile-report",
+      "grade": 5,
+      "label": "Informes de pruebas y procesos textiles",
+      "match": "informe[^.;]*textil|informes de pruebas y procesos textiles",
+      "relation": "la organización de condiciones, resultados y límites del proceso textil documentado, distinguiendo la información dada de procedimientos propios",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "306a2207-9fb4-56a0-aff1-8a2d485236f8"
+      ]
+    },
+    {
+      "id": "textile-garment",
+      "grade": 5,
+      "label": "Diseño simulado de prendas y tecnología",
+      "match": "prenda[^.;]*tecnologia|diseno[^.;]*prenda|disena[^.;]*prenda",
+      "relation": "la relación entre material, tecnología y función de la prenda representada en el diseño simulado según las restricciones dadas, sin exigir fabricación o venta",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "a2837903-a45c-598f-bd57-b655bc378e87"
+      ]
+    },
+    {
+      "id": "requested-technology",
+      "grade": 5,
+      "label": "Uso de tecnología expresamente solicitado",
+      "match": "integracion tecnologica|uso de tecnologia solicitado",
+      "relation": "el uso verificable de la función tecnológica expresamente requerida para el producto químico dado, sin imponer recursos o servicios adicionales",
+      "pages": [
+        508
+      ],
+      "sourceRecordIds": [
+        "e5b3c152-3b5b-58d9-a388-a790a00d38d4"
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-16",
+      "label": "• Tipos de alimentos: carbohidratos, proteínas, lípidos",
+      "sourceRecordIds": [
+        "7b5ffa4e-11c1-59c5-8a63-cf7dacde848e"
+      ],
+      "caseIds": [
+        "source-food-nutrients",
+        "facet-food-carbs",
+        "facet-food-proteins",
+        "facet-food-lipids"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-17",
+      "label": "• Especias, hierbas aromáticas",
+      "sourceRecordIds": [
+        "bb57f3d2-c626-5d91-b66e-5922511c58ec"
+      ],
+      "caseIds": [
+        "source-food-spices"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-18",
+      "label": "• Alimentos a nivel molecular",
+      "sourceRecordIds": [
+        "4cf124bc-9288-5679-b3f5-28fbd76b82d8"
+      ],
+      "caseIds": [
+        "source-molecular-food"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-20",
+      "label": "• Transporte de alimentos (refrigeradoras, contenedores, aviones, embarcaciones).",
+      "sourceRecordIds": [
+        "f331b5e7-bb2c-56ce-b7a1-e4fca02dc5c9"
+      ],
+      "caseIds": [
+        "source-food-chain",
+        "facet-food-transport"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-21",
+      "label": "• Recepción de alimentos (operaciones de recepción, control de materias primas, equipos y maquinarias asociadas).",
+      "sourceRecordIds": [
+        "2f23c35d-8be2-57a9-9199-9748ecfefbde"
+      ],
+      "caseIds": [
+        "source-food-chain",
+        "facet-food-reception"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-22",
+      "label": "• Almacenamiento de alimentos (almacenes, cámaras frigoríficas).",
+      "sourceRecordIds": [
+        "218c7502-cd45-5d9d-8fa8-b9880d116483"
+      ],
+      "caseIds": [
+        "source-food-chain",
+        "facet-food-storage"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-24",
+      "label": "• Normativas (regulaciones sanitarias y alimentarias)",
+      "sourceRecordIds": [
+        "077638c7-88b2-5c5e-ae96-cfa526a04fce"
+      ],
+      "caseIds": [
+        "source-food-quality"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-25",
+      "label": "• Calidad nutritiva de los alimentos (seguridad, inocuidad, caducidad, aditivos).",
+      "sourceRecordIds": [
+        "e7b6b23a-fe44-576e-826a-08430e5f7196"
+      ],
+      "caseIds": [
+        "source-food-quality"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-26",
+      "label": "• Alimentos perecederos, enlatados",
+      "sourceRecordIds": [
+        "2ed10153-035b-5a04-9625-81b085c46d70"
+      ],
+      "caseIds": [
+        "source-food-quality"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-27",
+      "label": "• Vida y salud (nutrientes, dietas, enfermedades)",
+      "sourceRecordIds": [
+        "e2d4d226-7d8a-59ca-b436-398c50d565b2"
+      ],
+      "caseIds": [
+        "source-food-nutrients"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-29",
+      "label": "• Deshidratación: liofilización, secado, concentración",
+      "sourceRecordIds": [
+        "6391f17d-121a-5c51-996d-ac14716c1e40"
+      ],
+      "caseIds": [
+        "source-food-drying",
+        "facet-food-lyophilization",
+        "facet-food-drying",
+        "facet-food-concentration"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-30",
+      "label": "• Aditivos (azúcar, salmueras, alcohol, vinagre)",
+      "sourceRecordIds": [
+        "33d9f09e-616c-5826-b2cb-2e769262c08d"
+      ],
+      "caseIds": [
+        "source-food-preservatives",
+        "facet-food-brine",
+        "facet-food-vinegar"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-31",
+      "label": "• Temperatura: congelación, pasteurización, esterilización",
+      "sourceRecordIds": [
+        "496c37e8-6358-57fa-96d4-77433336b5b0"
+      ],
+      "caseIds": [
+        "source-food-temperature",
+        "facet-food-freezing",
+        "facet-food-pasteurization",
+        "facet-food-sterilization"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-32",
+      "label": "• Métodos químicos (agregar sal, adición de azúcar, cambios de pH como adición de ácidos, fermentación, ahumado y curado.",
+      "sourceRecordIds": [
+        "c894f3a3-3df0-5c16-8dee-f7570252a915"
+      ],
+      "caseIds": [
+        "source-food-ph",
+        "facet-food-ph",
+        "facet-food-smoking"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-33",
+      "label": "• P 1. Observación, planteamiento de problema.",
+      "sourceRecordIds": [
+        "46ecf324-ebed-5c15-959d-723cd1e84f9a"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-34",
+      "label": "• P 2. Formulación de preguntas o hipótesis.",
+      "sourceRecordIds": [
+        "8ebf3ae5-869e-5fa6-834a-98cca5080cdb"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-35",
+      "label": "• P 3. Planificación y ejecución de experimentos, recolección y registro de evidencias.",
+      "sourceRecordIds": [
+        "a7b4fe92-dfd1-52d7-95e4-f05d5fc406a8"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-36",
+      "label": "• P 4. Diseño y construcción de modelos y simulaciones con la integración de las TIC y la ingeniería.",
+      "sourceRecordIds": [
+        "444b86b4-b8f2-5143-8c7b-0514ae672e61"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-37",
+      "label": "• P 5. Resolución de problema, Análisis, discusión, evaluación y comunicación de los resultados.",
+      "sourceRecordIds": [
+        "f6b0981d-3f01-5f83-9e6c-7ff77af9381e"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-38",
+      "label": "• Diseño y elaboración de alimentos con la utilización de aditivos y conservantes.",
+      "sourceRecordIds": [
+        "8cba4075-076e-5069-bfae-103f4fd25ce0"
+      ],
+      "caseIds": [
+        "source-food-design"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-39",
+      "label": "• Determinación de propiedades físicas y químicas de los alimentos.",
+      "sourceRecordIds": [
+        "b2133bc2-c571-53e7-8eeb-d351ba5f358f"
+      ],
+      "caseIds": [
+        "source-food-properties"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-41",
+      "label": "• Procesamiento de alimentos mediante técnicas de biotecnología.",
+      "sourceRecordIds": [
+        "d18cb3a1-9805-5086-86b9-0c9aacf8b17b"
+      ],
+      "caseIds": [
+        "source-food-biotechnology"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-42",
+      "label": "• Elaboración y control de fermentaciones alimentarias.",
+      "sourceRecordIds": [
+        "04199072-f132-5afb-8f57-8d066c53ef87"
+      ],
+      "caseIds": [
+        "source-food-fermentation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-43",
+      "label": "• Embalaje y envasado de alimentos.",
+      "sourceRecordIds": [
+        "b792fe81-3486-55ef-87c7-9e9525a226df"
+      ],
+      "caseIds": [
+        "source-food-packaging"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-44",
+      "label": "• Identificación y análisis de microorganismos Realización de pruebas de calidad en la industria alimentaria.",
+      "sourceRecordIds": [
+        "2eb63931-bc36-5a98-b68c-ef4ff84bf86d"
+      ],
+      "caseIds": [
+        "source-food-quality-tests",
+        "given-food-report-delivery"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-45",
+      "label": "• Manejo de herramientas y equipos de laboratorio utilizados en la industria alimentaria.",
+      "sourceRecordIds": [
+        "1595367e-ff74-5891-893b-a44fdd6f6c20"
+      ],
+      "caseIds": [
+        "source-food-tools"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-46",
+      "label": "• Identificación y resolución de problemas en la producción de alimentos.",
+      "sourceRecordIds": [
+        "b29dfb11-1c8c-5649-b7e7-638f07f8c310"
+      ],
+      "caseIds": [
+        "source-food-problems"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-47",
+      "label": "• Conocimiento de las normas y regulaciones aplicables a la industria alimentaria.",
+      "sourceRecordIds": [
+        "c43878dd-d8c1-5ae1-9389-deda957bc73f"
+      ],
+      "caseIds": [
+        "source-food-regulations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-48",
+      "label": "• Muestra de interés y participa al comparar las diferentes ideas que tienen los grupos de trabajo.",
+      "sourceRecordIds": [
+        "239724f7-6f66-5673-8e1a-5e23f117ce77"
+      ],
+      "caseIds": [
+        "source-scientific-collaboration"
+      ],
+      "adaptation": "Solo actuación concreta expresamente pedida;no personalidad,interés oestado privado."
+    },
+    {
+      "id": "source-49",
+      "label": "• Desarrollo de sus actividades científicas en forma organizada y metódica.",
+      "sourceRecordIds": [
+        "ac8ffd81-1169-5691-b5c2-1783bb559957"
+      ],
+      "caseIds": [
+        "source-scientific-method"
+      ],
+      "adaptation": "Solo actuación concreta expresamente pedida;no personalidad,interés oestado privado."
+    },
+    {
+      "id": "source-51",
+      "label": "• Utilización de lenguaje o términos científicos apropiados al comunicarse tanto oral como a través de informes o reportes.",
+      "sourceRecordIds": [
+        "cf37a0ce-3738-56d3-a102-f6a98600282c"
+      ],
+      "caseIds": [
+        "source-scientific-communication"
+      ],
+      "adaptation": "Solo actuación concreta expresamente pedida;no personalidad,interés oestado privado."
+    },
+    {
+      "id": "source-53",
+      "label": "• Seguridad alimentaria",
+      "sourceRecordIds": [
+        "e8fa4c2a-0ed5-5d13-9aee-f5618a28039a"
+      ],
+      "caseIds": [
+        "source-food-quality"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-54",
+      "label": "• Infecciones alimentarias",
+      "sourceRecordIds": [
+        "e3a1e3c9-2cd0-540e-86f5-8c42a531259e"
+      ],
+      "caseIds": [
+        "source-food-infections"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-55",
+      "label": "• Manipulación de alimentos",
+      "sourceRecordIds": [
+        "71368673-4b99-56ae-88a0-eb9ea74fbb99"
+      ],
+      "caseIds": [
+        "source-food-handling"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-56",
+      "label": "• Riesgos asociados a las frutas y vegetales",
+      "sourceRecordIds": [
+        "ddd7005c-bb1c-5a83-bf9f-28616edfae88"
+      ],
+      "caseIds": [
+        "source-food-handling"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-57",
+      "label": "• Patógenos (escherichia coli, listeria, salmonella, ameba, shigella).",
+      "sourceRecordIds": [
+        "c87c3780-30e2-59e2-80ec-bf8f90f33ed4"
+      ],
+      "caseIds": [
+        "source-food-infections",
+        "facet-food-salmonella",
+        "facet-food-listeria"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-58",
+      "label": "• Virus (hepatitis A, norovirus)",
+      "sourceRecordIds": [
+        "9f1b7724-fcb7-5b20-81dd-1f64375c9ae0"
+      ],
+      "caseIds": [
+        "source-food-infections",
+        "facet-food-norovirus",
+        "facet-food-hepatitis"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-59",
+      "label": "• Pesticidas (fungicidas, herbicidas, insecticidas)",
+      "sourceRecordIds": [
+        "6540ee15-ee87-5eca-a5c5-57767e8f52d9"
+      ],
+      "caseIds": [
+        "source-food-pesticides",
+        "facet-food-herbicides",
+        "facet-food-insecticides"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-60",
+      "label": "• Código de buenas prácticas",
+      "sourceRecordIds": [
+        "d09745b5-80d1-5afe-bbf0-4bb4a812f8ae"
+      ],
+      "caseIds": [
+        "source-food-handling"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-61",
+      "label": "• Regulaciones",
+      "sourceRecordIds": [
+        "a00bc7db-fd0d-5984-8c43-4b9d7b999e53"
+      ],
+      "caseIds": [
+        "source-food-regulations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-62",
+      "label": "• Normativas sanitarias",
+      "sourceRecordIds": [
+        "caddc620-d28e-5734-aa94-47042650ded2"
+      ],
+      "caseIds": [
+        "source-food-regulations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-63",
+      "label": "• Reciclaje",
+      "sourceRecordIds": [
+        "2f8a3ad8-87d6-5261-bbda-b1f693110022"
+      ],
+      "caseIds": [
+        "source-food-environment"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-64",
+      "label": "• Respeto al medioambiente",
+      "sourceRecordIds": [
+        "104637de-1bd6-5609-a4f6-a40428655661"
+      ],
+      "caseIds": [
+        "source-food-environment"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-66",
+      "label": "• Química farmacéutica y su importancia en la salud humana.",
+      "sourceRecordIds": [
+        "ca8e9f6b-f729-5b46-a76b-82ee9c5ae3c3"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-chemistry"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-67",
+      "label": "• Conceptos básicos de química orgánica y su relación con la síntesis de fármacos.",
+      "sourceRecordIds": [
+        "a93eebd5-23d0-530f-8c55-743ecf3c2680"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-synthesis"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-68",
+      "label": "• Clasificación de los fármacos, según su modo de acción y su estructura química.",
+      "sourceRecordIds": [
+        "349553ff-3d76-5228-923f-55ff5e3cab00"
+      ],
+      "caseIds": [
+        "source-drug-classification",
+        "explicit-compare-drug-classes"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-69",
+      "label": "• Interacciones entre fármacos y el organismo humano.",
+      "sourceRecordIds": [
+        "4f8710e3-f7b2-548d-b729-56c0ffe7ed03"
+      ],
+      "caseIds": [
+        "source-drug-interactions"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-70",
+      "label": "• Desarrollo de nuevos fármacos y su evaluación preclínica y clínica.",
+      "sourceRecordIds": [
+        "46dcb01d-418e-5c29-b2b9-6592ae8c6953"
+      ],
+      "caseIds": [
+        "source-drug-development"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-71",
+      "label": "• Principales fuentes de obtención de fármacos, como plantas y microorganismos.",
+      "sourceRecordIds": [
+        "6e843916-54a8-5cc4-a64b-884c4b797f61"
+      ],
+      "caseIds": [
+        "source-drug-sources"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-72",
+      "label": "• Conceptos básicos de farmacocinética y farmacodinámica.",
+      "sourceRecordIds": [
+        "b7f76427-ad71-588e-b29f-8b71e13fb220"
+      ],
+      "caseIds": [
+        "source-pharmacokinetics",
+        "facet-drug-pk",
+        "facet-drug-pd"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-73",
+      "label": "• Mecanismos de acción de los fármacos y su relación con enfermedades específicas.",
+      "sourceRecordIds": [
+        "04eab2d0-d065-5a71-a601-9604466f1e24"
+      ],
+      "caseIds": [
+        "source-drug-mechanisms"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-74",
+      "label": "• Estudio de los efectos adversos de los fármacos y su prevención.",
+      "sourceRecordIds": [
+        "0e6e672e-1811-5285-b5cd-db5b5409e99a"
+      ],
+      "caseIds": [
+        "source-drug-adverse",
+        "facet-drug-adverse-only",
+        "explicit-label-and-adverse-analysis"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-75",
+      "label": "• Importancia de la regulación y la seguridad en el uso de los fármacos.",
+      "sourceRecordIds": [
+        "7517b89d-a33e-5a97-8992-c51344d61782"
+      ],
+      "caseIds": [
+        "source-drug-regulation",
+        "chemical-alternative-report-debate"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-77",
+      "label": "• Introducción a la química computacional y su relación con la química teórica y experimental.",
+      "sourceRecordIds": [
+        "564f6869-4694-5fe3-b4d2-23a329aff286"
+      ],
+      "caseIds": [
+        "source-computational-foundations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-78",
+      "label": "• Modelos moleculares y sus aplicaciones en la química computacional.",
+      "sourceRecordIds": [
+        "2ccb3bc8-e399-5bd0-bede-68b4ec4cc462"
+      ],
+      "caseIds": [
+        "source-computational-foundations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-79",
+      "label": "• Métodos de cálculo en la química computacional, como la mecánica molecular y la dinámica molecular.",
+      "sourceRecordIds": [
+        "b35868d5-2ee1-5fb4-be8a-ef9fa65232b6"
+      ],
+      "caseIds": [
+        "source-molecular-mechanics",
+        "facet-molecular-mechanics",
+        "facet-molecular-dynamics"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-80",
+      "label": "• Simulación de estructuras moleculares: Optimización de la geometría de moléculas. Cálculo de propiedades físicas y químicas de moléculas.",
+      "sourceRecordIds": [
+        "a1190a9a-ff74-5c06-b408-a739d6f4b608"
+      ],
+      "caseIds": [
+        "source-molecular-geometry"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-81",
+      "label": "• Densidad electrónica. Cálculo de la energía de enlace y la energía de disociación.",
+      "sourceRecordIds": [
+        "56f5f26d-c81b-5951-9995-e71061abe776"
+      ],
+      "caseIds": [
+        "source-electronic-structure",
+        "facet-electron-density",
+        "facet-bond-energy",
+        "facet-dissociation-energy",
+        "optional-computational-resource"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-82",
+      "label": "• Análisis de la relación estructura•actividad de moléculas y su aplicación en la industria farmacéutica y de materiales.",
+      "sourceRecordIds": [
+        "ea74a25c-30b3-5cc8-bc1a-d48aa1606ff7"
+      ],
+      "caseIds": [
+        "source-structure-activity"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-83",
+      "label": "• Diseño y optimización de moléculas con propiedades específicas.",
+      "sourceRecordIds": [
+        "08c6d0c8-c15e-5d0f-8510-8f73ed8ea46a"
+      ],
+      "caseIds": [
+        "source-molecule-design"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-84",
+      "label": "• Simulación de reacciones químicas y mecanismos de reacción.",
+      "sourceRecordIds": [
+        "60129d55-7d36-502d-99b1-6c6d2ab2b1f9"
+      ],
+      "caseIds": [
+        "source-reaction-simulation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-85",
+      "label": "• Programación y uso de software especializado en química computacional.",
+      "sourceRecordIds": [
+        "61060933-0f79-5c01-9c55-48761d44d6f7"
+      ],
+      "caseIds": [
+        "source-chemical-programming"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-86",
+      "label": "• Aspectos éticos y de privacidad en el uso de la química computacional.",
+      "sourceRecordIds": [
+        "dbafa21e-302a-50dd-a1b0-8ba448a7770b"
+      ],
+      "caseIds": [
+        "source-computational-ethics"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-87",
+      "label": "• Indagación sobre la elaboración de un tipo de alimento utilizando biología molecular.",
+      "sourceRecordIds": [
+        "40500dc5-3faa-5d3c-a151-3636adccd419"
+      ],
+      "caseIds": [
+        "source-molecular-food"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-88",
+      "label": "• Indagación acerca de los principales patógenos, virus y pesticidas que se utilizan en su comunidad o que han incidido en enfermedades locales, visitando hospitales, hogares, agroalimentarias, mercados.",
+      "sourceRecordIds": [
+        "bcb544fb-c096-5619-9a60-37d66d367bf2"
+      ],
+      "caseIds": [
+        "source-food-infections"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-89",
+      "label": "• Elaboración de un código de buenas prácticas sobre riesgos, prevenciones y consumo de frutas y vegetales de forma adecuada, realizando indagaciones y visitas a mercados, campos de cultivo, hogares y restaurantes.",
+      "sourceRecordIds": [
+        "bba1653a-5fbe-560d-b611-d06ec74fd1e7"
+      ],
+      "caseIds": [
+        "source-food-handling"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-91",
+      "label": "• Síntesis de compuestos orgánicos y su caracterización por técnicas analíticas.",
+      "sourceRecordIds": [
+        "409bfed4-11f2-524b-b4fd-61a1a5218e15"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-synthesis"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-92",
+      "label": "• Identificación de los grupos funcionales y estructuras básicas en fármacos.",
+      "sourceRecordIds": [
+        "0e2ecb4a-22d4-5840-b0bc-100bbdf00c37"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-synthesis",
+        "facet-drug-functional-groups"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-93",
+      "label": "• Realización de ensayos in vitro, para evaluar la actividad de fármacos.",
+      "sourceRecordIds": [
+        "506f4d0d-8b87-5277-ab51-6cda08075fc5"
+      ],
+      "caseIds": [
+        "source-drug-invitro"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-94",
+      "label": "• Interpretación de datos de estudios preclínicos y clínicos.",
+      "sourceRecordIds": [
+        "e8b7d594-964e-52e0-ab23-7af55b44320c"
+      ],
+      "caseIds": [
+        "source-drug-development"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-95",
+      "label": "• Realización de experimentos prácticos y seguros para determinar la absorción, distribución, metabolismo y excreción de fármacos en el organismo.",
+      "sourceRecordIds": [
+        "d6f04cc9-9b3b-5568-98c9-9788546fadf5"
+      ],
+      "caseIds": [
+        "source-pharmacokinetics"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-96",
+      "label": "• Elaboración de informes técnicos y científicos sobre el desarrollo y evaluación de fármacos.",
+      "sourceRecordIds": [
+        "fc519870-b780-55fe-8cd6-69f288e2f86d"
+      ],
+      "caseIds": [
+        "source-drug-report"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-97",
+      "label": "• Interpretación de la información presentada en etiquetas y prospectos de fármacos.",
+      "sourceRecordIds": [
+        "57d65ee6-e919-5616-8b83-ece8aef3e163"
+      ],
+      "caseIds": [
+        "source-drug-labels"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-98",
+      "label": "• Realización de evaluaciones de la seguridad y la eficacia de los fármacos.",
+      "sourceRecordIds": [
+        "59d544ff-6a2f-5ee4-86f4-e90660a251f7"
+      ],
+      "caseIds": [
+        "source-drug-regulation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-99",
+      "label": "• Uso de software especializado para el diseño y simulación de fármacos.",
+      "sourceRecordIds": [
+        "15d016c0-87ef-571f-a9de-e99fa3935454"
+      ],
+      "caseIds": [
+        "source-drug-software"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-100",
+      "label": "• Discusión y análisis de casos de estudio y aplicaciones prácticas de la química farmacéutica.",
+      "sourceRecordIds": [
+        "6983ad3b-5341-51d0-91f0-8ed9240ce01c"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-chemistry"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-101",
+      "label": "• Lectura de medicamentos: Presentación, posología, dosis, indicaciones, contraindicaciones, efectos secundarios, fecha de caducidad.",
+      "sourceRecordIds": [
+        "34020500-ab26-5a58-b945-f50627bd34fb"
+      ],
+      "caseIds": [
+        "source-drug-labels",
+        "explicit-label-and-adverse-analysis"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-102",
+      "label": "• Enfermedades y medicamentos.",
+      "sourceRecordIds": [
+        "a6a7468c-4b71-5bc8-9df6-069cb6f3ca7b"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-chemistry"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-103",
+      "label": "• Tipos de medicamentos (algunos como: anti: gripales, febriles, depresivos, estrés, alérgicos. Parasitarios, respiratorios, odontológicos, cardiovasculares, microbianos, oftalmológicos, digestivos).",
+      "sourceRecordIds": [
+        "27e9b770-7455-5fee-9e9f-844a1697a8bf"
+      ],
+      "caseIds": [
+        "source-pharmaceutical-chemistry"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-104",
+      "label": "• Lectura de resultado de análisis médico rutinario.",
+      "sourceRecordIds": [
+        "d92f938a-424b-51db-85c9-31432cd39e62"
+      ],
+      "caseIds": [
+        "source-drug-report"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-105",
+      "label": "• Vitaminas /suplementos, nutrientes",
+      "sourceRecordIds": [
+        "01256f4b-31c6-5c2c-a6e8-ab55d41ad728"
+      ],
+      "caseIds": [
+        "source-food-nutrients"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-106",
+      "label": "• Alternativos (yerbas medicinales, homeopatía, fitoterapia, naturopatia)",
+      "sourceRecordIds": [
+        "d849dd58-3c55-5318-9a42-79554c9e1b3b"
+      ],
+      "caseIds": [
+        "source-drug-alternatives",
+        "facet-drug-homeopathy",
+        "facet-drug-phytotherapy"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-107",
+      "label": "• Medicamentos en el botiquín",
+      "sourceRecordIds": [
+        "344fdd80-b0ad-50ed-9f5b-f1415f582667"
+      ],
+      "caseIds": [
+        "source-first-aid-kit",
+        "facet-drug-kit"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-108",
+      "label": "• Medicamentos y aplicación de un Botiquín del hogar, escuela, carro y Medidas de seguridad para su uso. Química Computacional",
+      "sourceRecordIds": [
+        "af0e3543-11a4-5930-b670-6b25e2b5ee51"
+      ],
+      "caseIds": [
+        "source-first-aid-kit"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-109",
+      "label": "• Uso de software para modelar moléculas y simular algunas propiedades físicas y químicas.",
+      "sourceRecordIds": [
+        "dcf05684-7894-51a1-a0df-a0db7fe50094"
+      ],
+      "caseIds": [
+        "source-molecular-software"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-110",
+      "label": "• Aplicación de métodos de cálculo en la química computacional.",
+      "sourceRecordIds": [
+        "bcfbf5d7-736c-5841-a5e4-37345368c142"
+      ],
+      "caseIds": [
+        "source-molecular-calculation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-111",
+      "label": "• Análisis de resultados de simulaciones moleculares sencillas y posible inferencia.",
+      "sourceRecordIds": [
+        "61c8c69d-4ced-5cf6-9127-a453fcb549cc"
+      ],
+      "caseIds": [
+        "source-simulation-results"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-112",
+      "label": "• Diseño y optimización de moléculas con propiedades específicas utilizando software de química computacional.",
+      "sourceRecordIds": [
+        "c9737127-ca31-5a7e-b157-3f4b726e1a9b"
+      ],
+      "caseIds": [
+        "source-molecule-design"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-117",
+      "label": "• Valoración y acatamiento de las reglas de seguridad en el laboratorio.",
+      "sourceRecordIds": [
+        "44a8c29b-73ed-5746-b6b1-7b145e7383d8"
+      ],
+      "caseIds": [
+        "source-given-safety"
+      ],
+      "adaptation": "Solo actuación concreta expresamente pedida;no personalidad,interés oestado privado."
+    },
+    {
+      "id": "source-122",
+      "label": "• Perspectivas futuras de la química computacional y su impacto en la investigación y la industria.",
+      "sourceRecordIds": [
+        "a5c8efaf-e88b-5309-a510-73e9ca626ddb"
+      ],
+      "caseIds": [
+        "source-computational-ethics"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-124",
+      "label": "• Introducción a la Química Textil y sus aplicaciones en la industria.",
+      "sourceRecordIds": [
+        "4e63e829-4e34-56e3-a3ed-90308d6872ac"
+      ],
+      "caseIds": [
+        "source-textile-foundations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-125",
+      "label": "• Conceptos básicos de la estructura de los materiales textiles, como la fibra, el hilado y el tejido.",
+      "sourceRecordIds": [
+        "7ac85079-04bd-5d5a-96b7-7a154c07f689"
+      ],
+      "caseIds": [
+        "source-textile-fibers",
+        "facet-textile-fibers"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-126",
+      "label": "• Procesos de tintura y acabado textil",
+      "sourceRecordIds": [
+        "a8c7600c-1386-5228-8dd9-84f36fe00f17"
+      ],
+      "caseIds": [
+        "source-textile-finishing"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-127",
+      "label": "• Química de los colorantes y pigmentos",
+      "sourceRecordIds": [
+        "974f440d-4068-5d01-8219-a713efd419b6"
+      ],
+      "caseIds": [
+        "source-textile-colorants",
+        "facet-textile-colorants",
+        "facet-textile-pigments"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-128",
+      "label": "• Química de los agentes de acabado textil: los suavizantes, los repelentes al agua y los retardantes de llama.",
+      "sourceRecordIds": [
+        "d1efac6f-0009-54ae-96ae-2747f56090a2"
+      ],
+      "caseIds": [
+        "source-textile-agents",
+        "facet-textile-softener",
+        "facet-textile-repellent",
+        "facet-textile-flame"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-129",
+      "label": "• Sustancias químicas utilizadas en la preparación de fibras textiles: los agentes blanqueadores y los desengrasantes.",
+      "sourceRecordIds": [
+        "d1942465-e2b4-5941-9988-6d92e4143128"
+      ],
+      "caseIds": [
+        "source-textile-cleaning",
+        "facet-textile-bleaching",
+        "facet-textile-degreasing"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-130",
+      "label": "• Seguridad y manejo de sustancias químicas en la industria textil.",
+      "sourceRecordIds": [
+        "7705f83d-e423-5647-99ee-2c139e55c1b4"
+      ],
+      "caseIds": [
+        "source-textile-safety"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-131",
+      "label": "• Impacto ambiental de la industria textil y las formas de minimizarlo.",
+      "sourceRecordIds": [
+        "16ec4a4a-f67e-589e-bbfe-a898722cb034"
+      ],
+      "caseIds": [
+        "source-textile-environment"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-132",
+      "label": "• Nuevas tendencias en la química textil: la impresión digital y la ropa inteligente.",
+      "sourceRecordIds": [
+        "618de39f-ce9f-5bfd-88c9-f9261ee08e06"
+      ],
+      "caseIds": [
+        "source-textile-innovation",
+        "facet-textile-print",
+        "facet-textile-smart"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-133",
+      "label": "• Interacciones entre la química textil y la moda",
+      "sourceRecordIds": [
+        "1ac98d5b-8d47-59ae-8f1c-b9308ea2e4f0"
+      ],
+      "caseIds": [
+        "source-textile-foundations"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-134",
+      "label": "• Simulación de reacciones químicas y posibles mecanismos de reacción identificado.",
+      "sourceRecordIds": [
+        "e93ef938-8f0c-5566-9051-0c970d095b2b"
+      ],
+      "caseIds": [
+        "source-reaction-simulation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-135",
+      "label": "• Programación y uso de scripts para automatizar tareas en química computacional.",
+      "sourceRecordIds": [
+        "9c5e5782-ec0d-56f8-a792-c303058a3aec"
+      ],
+      "caseIds": [
+        "source-chemical-programming",
+        "program-and-independent-calculation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-136",
+      "label": "• Interpretación y presentación de resultados de simulaciones moleculares.",
+      "sourceRecordIds": [
+        "c9c51882-338b-515e-a304-d51635111858"
+      ],
+      "caseIds": [
+        "source-simulation-results"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-137",
+      "label": "• Identificación y resolución de problemas en simulaciones moleculares.",
+      "sourceRecordIds": [
+        "53746a91-3357-53c2-ad45-e3190bd5d868"
+      ],
+      "caseIds": [
+        "source-computational-debug"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-138",
+      "label": "• Ejecución de proyectos de química computacional.",
+      "sourceRecordIds": [
+        "0a578b73-9d30-5f8c-a6fa-6014db4e2d10"
+      ],
+      "caseIds": [
+        "source-computational-project",
+        "given-computational-project-results"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-139",
+      "label": "• Aplicación de las herramientas y técnicas de la química computacional en la solución de problemas reales.",
+      "sourceRecordIds": [
+        "3ff1bfcb-64c3-5b1e-9fd7-6a2a44a358cc"
+      ],
+      "caseIds": [
+        "source-molecular-software"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-141",
+      "label": "• Identificación y análisis de diferentes tipos de materiales textiles y sus características químicas.",
+      "sourceRecordIds": [
+        "e3433339-8cb4-5d3f-9582-dec1717c2175"
+      ],
+      "caseIds": [
+        "source-textile-fibers"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-142",
+      "label": "• Realización de pruebas químicas para determinar la presencia de sustancias específicas en materiales textiles.",
+      "sourceRecordIds": [
+        "d182ac92-09d0-5cce-a505-3f94cdb69dd4"
+      ],
+      "caseIds": [
+        "source-textile-tests"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-143",
+      "label": "• Selección y aplicación de técnicas de tintura y acabado textil adecuadas para diferentes tipos de materiales.",
+      "sourceRecordIds": [
+        "c937c19a-9c79-5c60-959b-996cb0c528a7"
+      ],
+      "caseIds": [
+        "source-textile-finishing"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-144",
+      "label": "• Preparación de soluciones y disoluciones químicas y realización de cálculos de concentración.",
+      "sourceRecordIds": [
+        "4e5eb4cf-3e31-5381-a899-6bfc865edc6a"
+      ],
+      "caseIds": [
+        "source-textile-concentrations",
+        "textile-concentration-calculation",
+        "program-and-independent-calculation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-145",
+      "label": "• Uso de equipos y herramientas especializadas en la industria textil, como la máquina de teñir, la máquina de acabado y el espectrofotómetro.",
+      "sourceRecordIds": [
+        "38148333-956e-5e76-8249-a4060f43f77a"
+      ],
+      "caseIds": [
+        "source-textile-tools",
+        "textile-alternative-tools"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-146",
+      "label": "• Análisis y evaluación de los resultados obtenidos en las pruebas químicas y los procesos de tintura y acabado.",
+      "sourceRecordIds": [
+        "1c58bf22-45d5-556e-aac6-d1a167fb22ef"
+      ],
+      "caseIds": [
+        "source-textile-tests",
+        "textile-repeated-observation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-147",
+      "label": "• Identificación y manejo adecuado de sustancias químicas peligrosas.",
+      "sourceRecordIds": [
+        "a67fc178-7279-5c88-82cb-dd6836b8c958"
+      ],
+      "caseIds": [
+        "source-textile-safety"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-148",
+      "label": "• Elaboración de informes técnicos sobre los procesos de tintura y acabado textil y la evaluación de resultados.",
+      "sourceRecordIds": [
+        "306a2207-9fb4-56a0-aff1-8a2d485236f8"
+      ],
+      "caseIds": [
+        "source-textile-report"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-149",
+      "label": "• Investigación y análisis de nuevas tendencias en la química textil y su impacto en la industria y la moda.",
+      "sourceRecordIds": [
+        "7eee29e5-9426-5047-9701-140318803033"
+      ],
+      "caseIds": [
+        "source-textile-innovation"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-150",
+      "label": "• Diseño y elaboración de prendas de vestir utilizando nuevas tecnologías en la química textil.",
+      "sourceRecordIds": [
+        "a2837903-a45c-598f-bd57-b655bc378e87"
+      ],
+      "caseIds": [
+        "source-textile-garment"
+      ],
+      "adaptation": "Acciones químicas/computacionales pedidas sobre modelos,fichas yresultados proporcionados;sin clínica,química peligrosa,consumo,visitas,compras odatos personales."
+    },
+    {
+      "id": "source-151",
+      "label": "• Vinculación con entusiasmo herramientas tecnológicas a sus actividades científicas.",
+      "sourceRecordIds": [
+        "e5b3c152-3b5b-58d9-a388-a790a00d38d4"
+      ],
+      "caseIds": [
+        "source-requested-technology"
+      ],
+      "adaptation": "Solo actuación concreta expresamente pedida;no personalidad,interés oestado privado."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "8085a1bd-3908-52ae-b772-1a7916c372b4",
+      "literal": "• Diseño y elaboración de alimentos con la utilización de aditivos y conservantes, con cumplimiento de las normas de\nseguridad alimentaria.",
+      "caseIds": [
+        "food-design-safety"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "f057f985-dc15-5c18-a807-eb759c671d46",
+      "literal": "• Identificación y análisis de microorganismos presentes en alimentos y aplicación de medidas para prevenir la contaminación.",
+      "caseIds": [
+        "food-pathogen-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "c34bd086-d042-5e36-8b83-dd8accf86e30",
+      "literal": "• Realización de pruebas de calidad en la industria alimentaria y elaboración de informes de resultados.",
+      "caseIds": [
+        "food-tests-report"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "ab8273ae-9d1a-5533-9e70-651209c719df",
+      "literal": "• Conocimiento y comprensión de los conceptos básicos de química y su aplicación en la industria alimentaria.",
+      "caseIds": [
+        "food-chemistry-explanation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "29097886-4d41-5215-826a-a804b50b5b90",
+      "literal": "• Demostración de habilidades para la elaboración de alimentos mediante técnicas de biotecnología y fermentación.",
+      "caseIds": [
+        "food-biotechnology-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "6c73a617-1bc8-570a-bec2-b8a5722b91bc",
+      "literal": "• Manejo y utilización adecuada de herramientas y equipos de laboratorio utilizados en la industria alimentaria.",
+      "caseIds": [
+        "food-tools-identification"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "9037a5aa-df6c-57e8-8993-4543cd25e39f",
+      "literal": "• Identificación y resolución de problemas en la producción de alimentos, y aplicación de medidas para evitar problemas\nfuturos.",
+      "caseIds": [
+        "food-production-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "211336db-5e5e-56b1-96b9-a6657344f6cd",
+      "literal": "• Conocimiento y aplicación de las normas y regulaciones aplicables a la industria alimentaria, en particular en relación a\nla seguridad alimentaria.",
+      "caseIds": [
+        "food-regulations-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "739f2924-0e27-513d-a682-39e0817fe03c",
+      "literal": "• Trabajo en equipo y colaboración en la elaboración de proyectos y pruebas prácticas.",
+      "caseIds": [
+        "food-team-contribution"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "826e9f2e-48b1-507f-a290-63a570dc0b57",
+      "literal": "• Comprensión de la importancia de la ética y responsabilidad social en la industria alimentaria.",
+      "caseIds": [
+        "food-ethical-case"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "28328a7a-e744-5350-8c9b-f8b3afe95cee",
+      "literal": "• Diseño y síntesis de un compuesto orgánico con potencial actividad farmacológica.",
+      "caseIds": [
+        "drug-molecular-design"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "b6fbcd48-500e-530a-8d93-fd26858fea58",
+      "literal": "• Realización de ensayos in vitro para evaluar la actividad de un fármaco.",
+      "caseIds": [
+        "drug-invitro-data"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "cd00a5ef-285f-5722-9cea-997d33e118fc",
+      "literal": "• Interpretación de resultados de estudios preclínicos y clínicos para determinar la seguridad y la eficacia de un fármaco.",
+      "caseIds": [
+        "drug-trial-data"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "4a9a312b-de2d-5f34-9a55-110131d6ce62",
+      "literal": "• Realización de experimentos para determinar elementos de farmacocinética y farmacodinámica de un fármaco.",
+      "caseIds": [
+        "drug-adme-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "904c53f5-ddf8-5236-bcb8-ebeb3b8f8d41",
+      "literal": "• Elaboración de un informe técnico sobre el desarrollo y evaluación de un fármaco.",
+      "caseIds": [
+        "drug-development-report"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "1373b73d-d47a-5ec9-b7ac-b8c7b15b7349",
+      "literal": "• Análisis y discusión de la importancia de la regulación y la seguridad en el uso de los fármacos.",
+      "caseIds": [
+        "drug-regulatory-debate"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "65a10105-4295-5e20-853d-409232a35e22",
+      "literal": "• Interpretación de la información presentada en etiquetas y prospectos de fármacos.",
+      "caseIds": [
+        "drug-label-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "f39a8a38-75bb-501d-b218-79de8fd5d9da",
+      "literal": "• Participación en discusiones y debates sobre temas relevantes de la química farmacéutica.",
+      "caseIds": [
+        "drug-case-debate"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "4f4841f3-41e4-5b79-95cc-3d059baef72c",
+      "literal": "• Utilización de software para el diseño y simulación de fármacos.",
+      "caseIds": [
+        "drug-software-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "2c8abbde-2775-5c5e-a749-e5f2470c7a2c",
+      "literal": "• Diseño y simulación de una molécula con propiedades específicas, como por ejemplo actividad biológica o propiedades\ncon aplicación a materiales.",
+      "caseIds": [
+        "molecule-design-simulation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "faf3185d-0e73-55d9-b9f0-4c25a8ef7754",
+      "literal": "• Análisis y presentación de resultados de simulaciones moleculares.",
+      "caseIds": [
+        "simulation-results-oral"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "5b4d8c19-73a5-5317-a0fc-22acab320553",
+      "literal": "• Programación y uso de software en química computacional para simular propiedades de moléculas.",
+      "caseIds": [
+        "molecule-script"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "044dfe7b-d230-5ad7-a03b-68cee48a26e2",
+      "literal": "• Resolución de problemas y diseño de experimentos simulados para entender las propiedades de las moléculas.",
+      "caseIds": [
+        "simulation-problem-plan"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "6ba3d852-89af-5670-af17-71f55f2c0ddb",
+      "literal": "• Demostración de comprensión de conceptos clave en la química computacional, como modelos moleculares y métodos\nde cálculo.",
+      "caseIds": [
+        "computational-model-explanation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "160190d0-4885-55f0-b670-78ecf3193476",
+      "literal": "• Trabajo colaborativo en la solución de problemas y proyectos en química computacional.",
+      "caseIds": [
+        "computational-team-report"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "b26a1bf9-ee05-5cf4-9e48-1fdb4e79d349",
+      "literal": "• Identificación y discusión de aspectos éticos y de privacidad en el uso de la química computacional.",
+      "caseIds": [
+        "computational-privacy"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "0dd6db85-c6ef-59c4-b72f-d52c5eec2202",
+      "literal": "• Presentación clara y concisa de los resultados de las simulaciones y el diseño de moléculas.",
+      "caseIds": [
+        "molecule-results-report"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "7166ce06-91ee-552e-afd5-3fce957700f7",
+      "literal": "• Uso efectivo de herramientas y equipos de simulación y modelado molecular.",
+      "caseIds": [
+        "molecule-tools-comparison"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "5e1c79ca-16c2-5d65-a1e3-b24ad00bd4cd",
+      "literal": "• Identificación y análisis de diferentes tipos de materiales textiles y sus características químicas.",
+      "caseIds": [
+        "textile-fibers-identification"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "35ac8c88-d5d4-5eb1-b93c-e04cfe4c5f8f",
+      "literal": "• Realización de pruebas químicas para determinar la presencia de sustancias específicas en materiales textiles.",
+      "caseIds": [
+        "textile-test-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "94e2e341-75b7-55da-b7bd-6fbd4995c1fd",
+      "literal": "• Selección y aplicación de técnicas de tintura y acabado textil, adecuadas para diferentes tipos de materiales.",
+      "caseIds": [
+        "textile-finish-design"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "a1318fd8-5aec-54ca-9e9b-41b9f5c38b5e",
+      "literal": "• Uso adecuado de equipos y herramientas especializadas en la industria textil.",
+      "caseIds": [
+        "textile-tools-identification"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "b7073c09-8996-5369-9230-2d49ee94811e",
+      "literal": "• Identificación y manejo adecuado de sustancias químicas peligrosas.",
+      "caseIds": [
+        "textile-risk-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "b07a04c8-8012-52e8-9b4f-80e05a22af8b",
+      "literal": "• Elaboración de informes técnicos sobre los procesos de tintura y acabado textil y la evaluación de resultados.",
+      "caseIds": [
+        "textile-results-report"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "ac2e116a-1830-5ec4-8e61-fb58697c969a",
+      "literal": "• Investigación y análisis de nuevas tendencias en la química textil y su impacto en la industria y la moda.",
+      "caseIds": [
+        "textile-trends-comparison"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "89277fd0-8355-5af7-bbc6-c61cac9f12f2",
+      "literal": "• Diseño y elaboración de prendas de vestir utilizando nuevas tecnologías en la química textil.",
+      "caseIds": [
+        "textile-garment-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    },
+    {
+      "id": "0741ecb1-e7b7-59dd-81ff-e27e7696d90f",
+      "literal": "• Comprender la importancia de la seguridad y el impacto ambiental.",
+      "caseIds": [
+        "textile-safety-environment"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Desempeño observable solicitado en caso oproducto simulado;no procedimiento clínico/químico peligroso ni adhesión privada."
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "8313c806-c66b-52a4-ae48-967cbe104b69",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "81333d38-5bc2-527c-9c3e-b80624807ffa",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "56185e3e-dcce-5ca0-b7f3-18d51d1fdc14",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "31d7c917-3f3f-57cc-97f6-9aebe44c82b9",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "72014524-a6d0-5c9f-827e-0e4890b40611",
+      "reason": "FRAGMENT_CONTINUING_PROCEDURE",
+      "explanation": "Fragmento «en alimentos.»:continúa propiedades físicas y químicas P39 según revisión visual registrada,no desempeño autónomo."
+    },
+    {
+      "id": "e10a996b-8863-579a-99e5-e34c2eb02cd2",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "aead4902-57a9-5db9-b5c1-e34e435f4d22",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "e2626f19-388c-590d-bdb9-a434519f4a53",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "8f681e37-79f2-5c9f-8b25-cd64c0fd61f2",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "5a67119f-60e9-50e7-bc91-24c184b12c7b",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "d63e9de7-93d9-5480-8e97-2783a7291524",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "80c15781-5b2f-5bf4-bee2-80ad615a6ab4",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "23dafcd0-285e-5044-9ddd-4c2daa441004",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "5ccef8e3-d6ef-5b77-9325-b08806846833",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "4474a735-6958-51c8-b9c9-9979bf7eb481",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "c124d94a-9201-5072-8079-c34a1225dc2e",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "a55047e0-27ce-5722-b26f-d7026fd066cb",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "67dc6f88-9566-5687-81ce-42153490def7",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,entusiasmo,iniciativa,responsabilidad,solidaridad,valoración,curiosidad,disfrute oactitud de cambio sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "c9c23866-f48a-5164-a1a4-a9ab276cd0b4",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    },
+    {
+      "id": "24955880-26d3-5563-a40c-691404aacd88",
+      "reason": "GROUP_HEADING",
+      "explanation": "Rótulo de componente o agrupación:conservar literal y anclar los contenidos hijos,sin exigir una tarea independiente por el encabezado."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 234,
+    "fullInstrumentsGenerated": 936,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 936,
+      "pending": 0
+    },
+    "httpDb": "VERIFIED_37_UNIQUE_QA_SAMPLES_37_OBSERVABLE_INDICATORS",
+    "browser": "BLOCKED_PERSONAL_AUTHENTICATION",
+    "testCounts": {
+      "backend": {
+        "tests": 87339,
+        "files": 185
+      },
+      "frontendActivities": {
+        "tests": 86182,
+        "files": 115
+      },
+      "nodeTests": 48
+    },
+    "timingsMs": {
+      "interpret": 5458,
+      "recommend": 5515,
+      "activityWrite": 4465
+    },
+    "priorScopeRegressions": "optative-ct-5-regresiones-previas.json",
+    "report": "docs/superpowers/reports/2026-10-20-optativa-ct-quimica-5.md",
+    "httpFailuresObserved": 0,
+    "clientTimeouts": 0,
+    "observableIndicatorsHttpVerified": 37
+  },
+  "limits": [
+    "72 agrupaciones temáticas, con 117 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Se evalúan las acciones químicas y computacionales pedidas con fichas profesionales,modelos yresultados proporcionados;sin dosis,clínica real,síntesis peligrosa,cultivos,consumo,visitas ocompras.",
+    "Un modelo oensayo in vitro no demuestra eficacia clínica en personas;la mención curricular de prácticas terapéuticas no acredita eficacia oequivalencia.",
+    "Fases,objetos yfilas mixtas conservan su literal;calcular no exige preparar sustancias eidentificar equipos no exige ejecutarlos.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_CT_5_V1",
+    "versionId": "dd284655-295b-5456-ac12-c1cc4a82c476",
+    "scopeId": "e8ce1749-4ad5-53af-aebc-3bb07c77cfdf",
+    "result": "UNCHANGED",
+    "elements": 188,
+    "excludedFromAssessment": 20,
+    "sourceRowsAndSpansMatched": true
+  }
+}
