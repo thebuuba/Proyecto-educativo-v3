@@ -1,0 +1,82 @@
+{
+  "catalog": "evaluation-2026.137",
+  "baseline": "evaluation-2026.136",
+  "commonEnglishIdentical": 15176,
+  "commonMathIdentical": 2888,
+  "previousOptatives": 13,
+  "fullDefinitionsExactToFrozen136": 9964,
+  "scopes": [
+    {
+      "code": "OPT-MT-4",
+      "fullDefinitionsExactToFrozen136": 432,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-6",
+      "fullDefinitionsExactToFrozen136": 412,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-4",
+      "fullDefinitionsExactToFrozen136": 480,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-5",
+      "fullDefinitionsExactToFrozen136": 608,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-4",
+      "fullDefinitionsExactToFrozen136": 312,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-5",
+      "fullDefinitionsExactToFrozen136": 300,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-6",
+      "fullDefinitionsExactToFrozen136": 600,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HLM-LEN-4",
+      "fullDefinitionsExactToFrozen136": 288,
+      "olderArtifactDifferencesAlreadyPresentIn136": 12
+    },
+    {
+      "code": "OPT-HLM-LEN-5",
+      "fullDefinitionsExactToFrozen136": 272,
+      "olderArtifactDifferencesAlreadyPresentIn136": 16
+    },
+    {
+      "code": "OPT-HLM-LEN-6",
+      "fullDefinitionsExactToFrozen136": 436,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HLM-ING-4",
+      "fullDefinitionsExactToFrozen136": 1532,
+      "olderArtifactDifferencesAlreadyPresentIn136": 8
+    },
+    {
+      "code": "OPT-HLM-ING-5",
+      "fullDefinitionsExactToFrozen136": 2200,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    },
+    {
+      "code": "OPT-HLM-ING-6",
+      "fullDefinitionsExactToFrozen136": 2092,
+      "olderArtifactDifferencesAlreadyPresentIn136": 0
+    }
+  ],
+  "historicalArtifactDifferenceCountAlreadyIn136": 36,
+  "priorPersonalBaselinesPreserved": 12,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "Las comparaciones de definiciones no equivalen a nuevos recorridos visuales de ámbitos anteriores.",
+    "No se regeneraron artefactos antiguos ni sobrescribieron baselines."
+  ]
+}

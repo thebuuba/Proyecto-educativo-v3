@@ -1,0 +1,927 @@
+{
+  "subjectCode": "OPT-MT-5",
+  "subjectName": "Estadística Probabilidad y Tecnología",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Matemática y Tecnología",
+  "cases": [
+    {
+      "id": "concept-descriptive-inferential",
+      "description": "Explica la estadística descriptiva y la estadística inferencial.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4"
+      ],
+      "required": "descriptiva"
+    },
+    {
+      "id": "concept-variables",
+      "description": "Explica los tipos de variables estadísticas de los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "required": "variables"
+    },
+    {
+      "id": "concept-population-sample",
+      "description": "Explica la población y la muestra de los casos ficticios dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0"
+      ],
+      "required": "población"
+    },
+    {
+      "id": "concept-descriptive-methods",
+      "description": "Explica los métodos descriptivos de los ejemplos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79"
+      ],
+      "required": "descriptivos"
+    },
+    {
+      "id": "concept-organization",
+      "description": "Explica la organización de datos y los métodos tabulares dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "418690db-7b53-51a6-9559-236d229d06ef"
+      ],
+      "required": "datos"
+    },
+    {
+      "id": "concept-frequencies",
+      "description": "Explica la distribución de frecuencias proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b"
+      ],
+      "required": "frecuencias"
+    },
+    {
+      "id": "concept-charts",
+      "description": "Explica las gráficas estadísticas proporcionadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e"
+      ],
+      "required": "gráficas"
+    },
+    {
+      "id": "concept-parameters",
+      "description": "Explica los parámetros estadísticos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8e1b068d-5eae-5e5e-b10c-7e84bedb202c"
+      ],
+      "required": "parámetros"
+    },
+    {
+      "id": "concept-central",
+      "description": "Explica las medidas de tendencia central de los ejemplos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "tendencia central"
+    },
+    {
+      "id": "concept-position",
+      "description": "Explica las medidas de posición del ejemplo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50"
+      ],
+      "required": "posición"
+    },
+    {
+      "id": "concept-dispersion",
+      "description": "Explica las medidas de dispersión del ejemplo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "dispersión"
+    },
+    {
+      "id": "concept-probability",
+      "description": "Explica la probabilidad experimental y la probabilidad teórica de los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "required": "probabilidad"
+    },
+    {
+      "id": "concept-sample-space",
+      "description": "Explica los eventos y el espacio muestral del experimento dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a"
+      ],
+      "required": "espacio muestral"
+    },
+    {
+      "id": "concept-dependence",
+      "description": "Explica los eventos dependientes e independientes del experimento dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dea0fb98-de4b-5c1c-b864-2dabd93cf06d"
+      ],
+      "required": "dependientes"
+    },
+    {
+      "id": "concept-compound-events",
+      "description": "Explica los eventos compuestos del experimento dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8b4789e6-1bda-5755-b120-561106028e10"
+      ],
+      "required": "compuestos"
+    },
+    {
+      "id": "concept-conditional",
+      "description": "Explica la probabilidad condicional del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966"
+      ],
+      "required": "condicional"
+    },
+    {
+      "id": "concept-distributions-expectation",
+      "description": "Explica las distribuciones de probabilidad y la esperanza matemática dadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987"
+      ],
+      "required": "esperanza"
+    },
+    {
+      "id": "concept-random-sampling",
+      "description": "Explica el muestreo aleatorio del caso ficticio dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49"
+      ],
+      "required": "muestreo"
+    },
+    {
+      "id": "concept-sampling-distributions",
+      "description": "Explica las distribuciones de muestreo dadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "db0c8e1e-d8f5-57da-9128-5d16cc6fe510"
+      ],
+      "required": "muestreo"
+    },
+    {
+      "id": "concept-correlation-regression",
+      "description": "Explica la correlación y la regresión del modelo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9"
+      ],
+      "required": "correlación"
+    },
+    {
+      "id": "concept-linear-correlation",
+      "description": "Explica la correlación lineal simple del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd"
+      ],
+      "required": "correlación"
+    },
+    {
+      "id": "concept-coefficient",
+      "description": "Explica el coeficiente de correlación lineal simple dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f"
+      ],
+      "required": "coeficiente"
+    },
+    {
+      "id": "concept-linear-regression",
+      "description": "Explica la regresión lineal simple del modelo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2870464f-8872-5d64-be31-d1cef29a418f"
+      ],
+      "required": "regresión"
+    },
+    {
+      "id": "technology-choice",
+      "description": "Calcula la media aritmética de los datos dados con una calculadora o una hoja de cálculo, según tu elección.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62",
+        "089d9aa1-fede-51a2-8343-84db8a0b5ad5"
+      ],
+      "required": "media aritmética",
+      "forbidden": "debe usar Matlab|debe usar todos"
+    },
+    {
+      "id": "statistics-nature",
+      "description": "Describe la naturaleza de la estadística y sus objetivos en el caso proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79",
+        "968562f9-8730-5c7c-ba0e-ccb8e52c1183"
+      ],
+      "required": "estadística",
+      "requiredEvidence": [
+        "description"
+      ]
+    },
+    {
+      "id": "descriptive-inferential-interpret",
+      "description": "Interpreta la diferencia entre estadística descriptiva e inferencial en los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "ef03683a-3a97-5735-8a5d-a51c6ce16c3c"
+      ],
+      "required": "inferencial"
+    },
+    {
+      "id": "frequency-organization",
+      "description": "Organiza los datos dados en la distribución de frecuencias indicada, conservando sus valores y el tamaño del conjunto.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "418690db-7b53-51a6-9559-236d229d06ef",
+        "34a906d9-c26c-5bc1-afe0-158466255c9b",
+        "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf",
+        "c9109b26-2230-5f6d-822c-02aa2fc04110"
+      ],
+      "required": "frecuencias"
+    },
+    {
+      "id": "frequency-representation",
+      "description": "Representa la distribución de frecuencias dada mediante el gráfico solicitado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b",
+        "63a4e8b1-b26e-55e9-b560-d9239c5bc079",
+        "c9109b26-2230-5f6d-822c-02aa2fc04110"
+      ],
+      "required": "frecuencias"
+    },
+    {
+      "id": "position-calculation",
+      "description": "Calcula los cuartiles del conjunto dado con el método indicado e interpreta su posición.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "required": "cuartiles",
+      "forbidden": "quintiles|percentiles"
+    },
+    {
+      "id": "dispersion-calculation",
+      "description": "Calcula la varianza poblacional de los datos dados e interpreta la dispersión con la convención proporcionada.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "required": "poblacional",
+      "forbidden": "varianza muestral"
+    },
+    {
+      "id": "measures-problem",
+      "description": "Resuelve el problema ficticio de media aritmética, percentiles y desviación estándar utilizando el método dado para cada medida.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "required": "media aritmética",
+      "forbidden": "media geométrica|media armónica|mediana|moda"
+    },
+    {
+      "id": "chart-reading-representation",
+      "description": "Representa los datos dados en la gráfica indicada y lee los valores que corresponden a la pregunta.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e",
+        "b241cc36-8188-5202-b7ab-a93732e03e21",
+        "3b6b34e5-9e50-5d61-b091-3ea71c10ed01"
+      ],
+      "required": "gráfica"
+    },
+    {
+      "id": "sample-size",
+      "description": "Calcula el tamaño de la muestra con la fórmula y todos los parámetros proporcionados para el caso ficticio.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+        "eac979ec-ded3-543a-8bb0-b9e935eaae8f"
+      ],
+      "required": "tamaño de la muestra",
+      "forbidden": "95 ?%|0[.,]05"
+    },
+    {
+      "id": "appropriate-sample",
+      "description": "Justifica la muestra apropiada para el proyecto ficticio dado, considerando la población objetivo y el diseño suministrado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+        "aeced235-479c-5371-be7d-7ae94e7e1f0c",
+        "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd"
+      ],
+      "required": "muestra"
+    },
+    {
+      "id": "statistical-project",
+      "description": "Formula un proyecto estadístico para el problema ficticio dado, organiza y analiza los datos suministrados y presenta el informe escrito de resultados según la pauta.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "eb9be78d-639c-5694-a8a0-588991332c6d",
+        "3d5c7518-abe5-5608-b765-3503a22c9103",
+        "994daef7-99f3-5c99-ab62-dc9b16f5af65"
+      ],
+      "required": "estadístico",
+      "requiredEvidence": [
+        "project",
+        "organization",
+        "analysis",
+        "report"
+      ]
+    },
+    {
+      "id": "event-dependence",
+      "description": "Determina si los eventos dados son dependientes o independientes usando las condiciones del experimento proporcionado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "dea0fb98-de4b-5c1c-b864-2dabd93cf06d",
+        "682e98c5-6206-5d18-9a31-b72e17028db5",
+        "7219676f-632b-5402-9160-1b040c07bced"
+      ],
+      "required": "eventos"
+    },
+    {
+      "id": "simple-compound-events",
+      "description": "Identifica los eventos simples y compuestos del experimento indicado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a",
+        "8b4789e6-1bda-5755-b120-561106028e10",
+        "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f",
+        "779387ca-eb2a-5894-8a29-5b2bd6e15af7"
+      ],
+      "required": "eventos",
+      "requiredAll": [
+        "simples",
+        "compuestos"
+      ]
+    },
+    {
+      "id": "conditional-calculation",
+      "description": "Calcula la probabilidad condicional con el evento condicionante y los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966",
+        "0165ed6e-bd7a-5ad9-9847-5910d5763f66"
+      ],
+      "required": "condicional"
+    },
+    {
+      "id": "probability-decision",
+      "description": "Calcula la probabilidad de los eventos dados y justifica la decisión bajo los supuestos proporcionados, reconociendo la incertidumbre del caso ficticio.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "928ea565-adf8-5778-9821-e04e7a4b9410",
+        "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0"
+      ],
+      "required": "probabilidad",
+      "requiredAll": [
+        "supuestos",
+        "incertidumbre"
+      ]
+    },
+    {
+      "id": "distribution-problem",
+      "description": "Resuelve el problema ficticio usando la distribución de probabilidad indicada y sus parámetros dados.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987",
+        "f49139b3-2305-569e-aa1f-be7f9584a474",
+        "1a061cc6-c675-5e6a-90e8-e2071df37bc7"
+      ],
+      "required": "distribución"
+    },
+    {
+      "id": "sampling-methods",
+      "description": "Compara los métodos de muestreo de los casos dados y explica sus límites de representatividad y sesgo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+        "db0c8e1e-d8f5-57da-9128-5d16cc6fe510",
+        "293488a5-0f8c-51fa-b574-9006bc286293",
+        "55b88293-a0d0-5a51-bf2b-380e71c531ac"
+      ],
+      "required": "muestreo",
+      "requiredAll": [
+        "representatividad",
+        "sesgo"
+      ]
+    },
+    {
+      "id": "correlation-analysis",
+      "description": "Analiza la correlación lineal simple de los datos ficticios dados sin atribuir causalidad.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd",
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f",
+        "bdd2ab45-5376-553c-9e22-a71bb08e0133"
+      ],
+      "required": "correlación"
+    },
+    {
+      "id": "regression-model",
+      "description": "Aplica el modelo de regresión lineal simple dado para la predicción solicitada dentro del dominio indicado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+        "2870464f-8872-5d64-be31-d1cef29a418f",
+        "0ce429d5-1386-543d-842f-02f25bb54dea"
+      ],
+      "required": "regresión"
+    },
+    {
+      "id": "work-review",
+      "description": "Revisa la solución estadística dada: identifica una fortaleza y propone una mejora comprobable del procedimiento.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b3cc92da-068b-5d73-baaa-500e23c1a7fe"
+      ],
+      "required": "fortaleza",
+      "forbidden": "espíritu|compromiso|tolerancia|personalidad",
+      "requiredAll": [
+        "fortaleza",
+        "mejora"
+      ]
+    },
+    {
+      "id": "statistical-arguments",
+      "description": "Explica con argumentos las conclusiones del análisis estadístico proporcionado sobre el caso comunitario ficticio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "3407f5c7-6b03-54c5-b697-e1886ab664b6"
+      ],
+      "required": "estadístico"
+    },
+    {
+      "id": "project-results-report",
+      "description": "Elabora un informe escrito de los resultados estadísticos del proyecto ya realizado que se proporciona.",
+      "activityType": "REPORT",
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d",
+        "3d5c7518-abe5-5608-b765-3503a22c9103"
+      ],
+      "required": "resultados",
+      "forbidden": "realiza una nueva encuesta|ejecuta todo el proyecto"
+    },
+    {
+      "id": "project-results-oral",
+      "description": "Presenta oralmente los resultados estadísticos del proyecto dado y explica las conclusiones con los datos proporcionados.",
+      "activityType": "ORAL_PRESENTATION",
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d",
+        "3d5c7518-abe5-5608-b765-3503a22c9103"
+      ],
+      "required": "resultados"
+    },
+    {
+      "id": "data-change-effects",
+      "description": "Analiza el efecto del cambio de los datos sobre la media aritmética y la desviación estándar, comparando los valores de antes y después proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "required": "media aritmética",
+      "requiredAll": [
+        "antes",
+        "después"
+      ]
+    },
+    {
+      "id": "probability-alternative",
+      "description": "Calcula la probabilidad teórica o calcula la probabilidad experimental del caso ficticio, según la alternativa elegida.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "b4820d22-4d1d-541f-90c0-1a56c390a110"
+      ],
+      "required": "alternativa elegida"
+    },
+    {
+      "id": "probability-projection",
+      "description": "Estima la probabilidad de ocurrencia del evento con el modelo y los datos dados, usando la herramienta disponible.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0"
+      ],
+      "required": "probabilidad"
+    },
+    {
+      "id": "simulation-estimation",
+      "description": "Simula el experimento aleatorio con el protocolo y el número de repeticiones dados y estima la probabilidad del evento a partir de sus frecuencias.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "ce29f37d-6680-5a07-b549-75934edc4362"
+      ],
+      "required": "simulación|simula",
+      "requiredAll": [
+        "repeticiones",
+        "frecuencias"
+      ]
+    },
+    {
+      "id": "random-variable",
+      "description": "Explica el concepto de variable aleatoria en el experimento dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "49c95bf9-963a-5248-b0b0-c7269fd9b2a1"
+      ],
+      "required": "variable aleatoria"
+    },
+    {
+      "id": "normal-curve",
+      "description": "Describe la curva normal del modelo proporcionado y explica las características solicitadas bajo el supuesto normal indicado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b6ca419d-dae1-5fcc-81b0-88137780bae9"
+      ],
+      "required": "normal",
+      "requiredAll": [
+        "normal",
+        "supuesto"
+      ]
+    },
+    {
+      "id": "theoretical-model",
+      "description": "Interpreta el modelo teórico de probabilidad proporcionado para el problema ficticio y sus límites dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987",
+        "1a061cc6-c675-5e6a-90e8-e2071df37bc7"
+      ],
+      "required": "modelo"
+    },
+    {
+      "id": "theory-simulation-comparison",
+      "description": "Explica la diferencia entre el método teórico y la simulación para calcular probabilidades en el ejemplo dado, sin ejecutar una simulación nueva.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "bd921971-7d00-57ad-b64d-bf4559dc3175"
+      ],
+      "required": "simulación",
+      "requiredAll": [
+        "teórico",
+        "simulación"
+      ],
+      "forbiddenEvidence": [
+        "simulation"
+      ]
+    },
+    {
+      "id": "theory-simulation-validation",
+      "description": "Resuelve el problema con el modelo teórico de probabilidad dado y valida el resultado mediante la simulación proporcionada, considerando la variación muestral.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "fe97741f-c1f7-55c3-9493-6a7dcb78f9af"
+      ],
+      "required": "probabilidad",
+      "requiredAll": [
+        "simulación",
+        "variación"
+      ]
+    },
+    {
+      "id": "arithmetic-only",
+      "description": "Calcula media aritmética de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "media aritmética",
+      "forbidden": "mediana|moda|geométrica|armónica"
+    },
+    {
+      "id": "geometric-only",
+      "description": "Calcula media geométrica de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "media geométrica",
+      "forbidden": "media aritmética|mediana|moda|armónica"
+    },
+    {
+      "id": "harmonic-only",
+      "description": "Calcula media armónica de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "media armónica",
+      "forbidden": "media aritmética|mediana|moda|geométrica"
+    },
+    {
+      "id": "median-only",
+      "description": "Calcula mediana de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "mediana",
+      "forbidden": "media aritmética|moda|geométrica|armónica"
+    },
+    {
+      "id": "mode-only",
+      "description": "Calcula moda de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "moda",
+      "forbidden": "media aritmética|mediana|geométrica|armónica"
+    },
+    {
+      "id": "quintiles-only",
+      "description": "Calcula quintiles de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50"
+      ],
+      "required": "quintiles",
+      "forbidden": "cuartiles|percentiles"
+    },
+    {
+      "id": "percentile-only",
+      "description": "Calcula percentil indicado de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50"
+      ],
+      "required": "percentil",
+      "forbidden": "cuartiles|quintiles"
+    },
+    {
+      "id": "range-only",
+      "description": "Calcula rango de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "rango",
+      "forbidden": "varianza|desviación"
+    },
+    {
+      "id": "sample-variance-only",
+      "description": "Calcula varianza muestral de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "muestral",
+      "forbidden": "varianza poblacional"
+    },
+    {
+      "id": "mean-deviation-only",
+      "description": "Calcula desviación media de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "desviación media",
+      "forbidden": "desviación estándar|desviación típica|varianza"
+    },
+    {
+      "id": "standard-deviation-only",
+      "description": "Calcula desviación estándar de los datos dados con el método y las condiciones indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "desviación estándar",
+      "forbidden": "desviación media|varianza"
+    },
+    {
+      "id": "two-measures-only",
+      "description": "Calcula la media aritmética y la mediana de los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "media aritmética",
+      "forbidden": "moda|geométrica|armónica",
+      "requiredAll": [
+        "media aritmética",
+        "mediana"
+      ]
+    },
+    {
+      "id": "conditional-not-independence",
+      "description": "Explica la probabilidad condicional del caso dado. No asumas que los eventos son independientes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966"
+      ],
+      "required": "condicional",
+      "forbidden": "son independientes por defecto",
+      "forbiddenTopics": [
+        "dependence"
+      ]
+    },
+    {
+      "id": "correlation-not-causality",
+      "description": "Interpreta el coeficiente de correlación lineal simple dado y distingue la asociación de una conclusión causal.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd",
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f"
+      ],
+      "required": "correlación",
+      "requiredAll": [
+        "no implica causalidad"
+      ]
+    },
+    {
+      "id": "normalized-not-normal",
+      "description": "Organiza los datos normalizados en la tabla de frecuencias indicada. No supongas una curva normal.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b",
+        "9bf6b54c-c625-59b4-b705-c76d0750226e"
+      ],
+      "required": "frecuencias",
+      "forbidden": "curva normal|distribución normal"
+    },
+    {
+      "id": "theoretical-only",
+      "description": "Calcula la probabilidad teórica del experimento equiprobable dado. No simules ni calcules frecuencias experimentales.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "required": "teórica",
+      "forbiddenEvidence": [
+        "simulation"
+      ]
+    },
+    {
+      "id": "experimental-only",
+      "description": "Calcula la probabilidad experimental con las frecuencias y las repeticiones dadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "required": "experimental",
+      "forbiddenTopics": [
+        "frequencies"
+      ]
+    },
+    {
+      "id": "expectation-only",
+      "description": "Calcula la esperanza matemática de la distribución dada.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987"
+      ],
+      "required": "esperanza",
+      "forbiddenTopics": [
+        "probability-distributions"
+      ]
+    },
+    {
+      "id": "population-only",
+      "description": "Identifica la población del caso ficticio dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0"
+      ],
+      "required": "población",
+      "forbidden": "selecciona una muestra|tamaño muestral"
+    },
+    {
+      "id": "variables-only",
+      "description": "Clasifica los tipos de variables estadísticas de los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "required": "variables",
+      "forbidden": "probabilidad|curva normal"
+    },
+    {
+      "id": "charts-only",
+      "description": "Interpreta la gráfica de barras proporcionada. No construyas otro gráfico.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e"
+      ],
+      "required": "gráfica",
+      "forbiddenEvidence": [
+        "production",
+        "representation"
+      ]
+    },
+    {
+      "id": "reflection-evidence-only",
+      "description": "Identifica una fortaleza y un punto de mejora de la solución estadística dada usando evidencia de sus cálculos. No se califican el compromiso ni la personalidad.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b3cc92da-068b-5d73-baaa-500e23c1a7fe"
+      ],
+      "required": "mejora",
+      "forbidden": "compromiso|personalidad|espíritu"
+    },
+    {
+      "id": "title-description-change",
+      "description": "Calcula la probabilidad condicional del caso dado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "required": "condicional",
+      "forbidden": "interés compuesto|préstamos"
+    },
+    {
+      "id": "single-written-result",
+      "description": "Calcula la media aritmética de los datos dados y entrega el resultado por escrito.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "3d5c7518-abe5-5608-b765-3503a22c9103"
+      ],
+      "required": "media aritmética",
+      "forbidden": "exposición oral|presentación oral"
+    },
+    {
+      "id": "weighted-purpose",
+      "description": "Calcula la desviación estándar con los datos dados. Se admite crédito parcial por componentes con los pesos indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "required": "desviación estándar",
+      "suggestedInstrumentType": "lista-ponderada"
+    },
+    {
+      "id": "checklist-purpose",
+      "description": "Clasifica las variables dadas; verifica su cumplimiento con sí o no.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "required": "variables",
+      "suggestedInstrumentType": "lista-cotejo"
+    },
+    {
+      "id": "autonomy-purpose",
+      "description": "Observa el grado de autonomía al calcular la media aritmética con los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "required": "autonomía|autónom",
+      "suggestedInstrumentType": "escala"
+    },
+    {
+      "id": "justification-purpose",
+      "description": "Justifica la selección del método de muestreo del caso ficticio dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49"
+      ],
+      "required": "muestreo",
+      "suggestedInstrumentType": "rubrica"
+    }
+  ]
+}

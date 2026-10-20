@@ -1,3 +1,4 @@
+import {evaluationCatalogV136} from './catalog-v136'
 import {evaluationCatalogV135} from './catalog-v135'
 import {optativeMathModules} from '@aula/shared'
 import {evaluationCatalogV134} from './catalog-v134'
@@ -165,7 +166,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.136',
+  version: 'evaluation-2026.137',
   optativeMathModules,
   optativeSocialModules,
   optativeEnglishModules,
@@ -266,6 +267,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { optativeMathModules?:typeof optativeMathModules; optativeSocialModules?:typeof optativeSocialModules; optativeEnglishModules?:typeof optativeEnglishModules; optativeLanguageModules?:typeof optativeLanguageModules; fhrCommonModules?:typeof commonFhrModules; physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV136.version)return evaluationCatalogV136
   if(version===evaluationCatalogV135.version)return evaluationCatalogV135
   if(version===evaluationCatalogV134.version)return evaluationCatalogV134
   if(version===evaluationCatalogV133.version)return evaluationCatalogV133

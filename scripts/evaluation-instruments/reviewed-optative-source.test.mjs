@@ -4,6 +4,23 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
+test('Estadística MT5 conserva84registros,44anclas,20indicadores observables y6exclusiones',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-mt-5-matriz.json',run=spawnSync(process.execPath,[script,'OPT-MT-5','5',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr)
+ const manifest=JSON.parse(run.stdout),m=JSON.parse(readFileSync(path,'utf8'))
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_MT_5_V1')
+ assert.equal(manifest.elements,84);assert.equal(manifest.excludedFromAssessment,6);assert.equal(m.contents.length,44)
+ assert.equal(m.criticalIndicators.length,21)
+ const observable=m.criticalIndicators.filter(r=>r.assessmentPolicy==='OBSERVABLE_CONTENT_TO_ADAPT'),privateRows=m.criticalIndicators.filter(r=>r.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION')
+ assert.equal(observable.length,20);assert(observable.every(r=>r.caseIds.length));assert.equal(privateRows.length,1);assert.equal(privateRows[0].caseIds.length,0)
+ const excluded=new Set(m.explicitExclusions.map(r=>r.id));assert(excluded.has(privateRows[0].id))
+ assert(manifest.metadata.excludedAssessmentElementIds.includes(manifest.elementIdMap[privateRows[0].id]))
+ assert.match(m.criticalIndicators.find(r=>r.literal.includes('normalizados')).literal,/normalizados/)
+ const fixtures=JSON.parse(readFileSync('data/evaluation-instruments/optative-mt-five-contracts.json','utf8'))
+ for(const task of fixtures.cases)for(const id of task.sourceRecordIds)assert(!excluded.has(id))
+ for(const args of [['OPT-MT-5','4',path,'--optative'],['OPT-MT-4','4',path,'--optative'],['OPT-MT-6','6',path,'--optative'],['OPT-MT-5','5',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
 test('Matemática Financiera MT4 conserva98registros,51anclas,21indicadores y12exclusiones',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-mt-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-MT-4','4',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr)

@@ -73,7 +73,7 @@ Se distinguen 72 ámbitos por grado (54 comunes y 18 optativos académicos). Los
 | Geografía Humana y Demografía | 5 | Humanidades y Ciencias Sociales | 485, 486, 487 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Ciudadanía y Democracia Participativa | 6 | Humanidades y Ciencias Sociales | 488, 489 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
 | Matemática Financiera y Tecnología | 4 | Matemática y Tecnología | 491, 492, 493 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED |
-| Estadística Probabilidad y Tecnología | 5 | Matemática y Tecnología | 494, 495 | PENDING |
+| Estadística Probabilidad y Tecnología | 5 | Matemática y Tecnología | 494, 495 | CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_AUTH_BLOCKED |
 | Tigonometría, Cálculo Diferencial y Tecnología | 6 | Matemática y Tecnología | 496, 497 | PENDING |
 | Biología y Computación | 4 | Ciencias y Tecnología | 499, 500, 501, 502, 503, 504, 505 | PENDING |
 | Química y Computación | 5 | Ciencias y Tecnología | 506, 507, 508, 509, 510 | PENDING |

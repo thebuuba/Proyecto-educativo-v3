@@ -1,0 +1,1227 @@
+{
+  "scopeId": "87268d19-5d32-5426-9396-21ae21fc5bbd",
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      494,
+      495
+    ],
+    "reviewedCompetenciesAndIndicators": true,
+    "previousReview": "optativas-fuentes-revisadas.json"
+  },
+  "classification": [
+    {
+      "ordinal": 15,
+      "id": "6043f659-ffce-5982-b387-922a93c66ed4",
+      "type": "CONCEPT",
+      "literal": "Conceptos de Estadística Descriptiva e\nInferencial",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 16,
+      "id": "546135e6-f06c-59d1-905b-9d199b7bbc72",
+      "type": "CONCEPT",
+      "literal": "• Variable estadística. Tipos de variables.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 17,
+      "id": "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+      "type": "CONCEPT",
+      "literal": "• Población y Muestra.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 18,
+      "id": "ac93dfb7-109b-5f09-aa4d-d60fd6570a79",
+      "type": "CONCEPT",
+      "literal": "• Los métodos descriptivos",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 19,
+      "id": "418690db-7b53-51a6-9559-236d229d06ef",
+      "type": "CONCEPT",
+      "literal": "• Organización de datos. Métodos\ntabulares.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 20,
+      "id": "34a906d9-c26c-5bc1-afe0-158466255c9b",
+      "type": "CONCEPT",
+      "literal": "• Distribución de frecuencias.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 21,
+      "id": "9bf6b54c-c625-59b4-b705-c76d0750226e",
+      "type": "CONCEPT",
+      "literal": "• Gráficas estadísticas.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 22,
+      "id": "8e1b068d-5eae-5e5e-b10c-7e84bedb202c",
+      "type": "CONCEPT",
+      "literal": "• Parámetros estadísticos.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 23,
+      "id": "b7fba731-aeb6-5466-bec3-32a5aca08167",
+      "type": "CONCEPT",
+      "literal": "• Medidas de tendencia central: media\naritmética, mediana, moda, media\ngeométrica y armónica.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 24,
+      "id": "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+      "type": "CONCEPT",
+      "literal": "• Medidas de posición: cuartiles, quintiles,\npercentiles",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 25,
+      "id": "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+      "type": "CONCEPT",
+      "literal": "• Medidas de dispersión: rango, varianza,\ndesviación media y estándar.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 26,
+      "id": "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+      "type": "CONCEPT",
+      "literal": "• Probabilidad concepto. Probabilidad\nexperimental y teórica.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 27,
+      "id": "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a",
+      "type": "CONCEPT",
+      "literal": "• Eventos y espacio muestral.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 28,
+      "id": "dea0fb98-de4b-5c1c-b864-2dabd93cf06d",
+      "type": "CONCEPT",
+      "literal": "• Eventos o sucesos dependientes e\nindependientes",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 29,
+      "id": "8b4789e6-1bda-5755-b120-561106028e10",
+      "type": "CONCEPT",
+      "literal": "• Eventos o sucesos compuestos.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 30,
+      "id": "79e55365-24b6-5d90-9a68-54ea5cebf966",
+      "type": "CONCEPT",
+      "literal": "• Probabilidad condicional.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 31,
+      "id": "11f8f3d8-ebfe-58c1-91d9-0666153f9987",
+      "type": "CONCEPT",
+      "literal": "Principales distribuciones de\nprobabilidad.\nEsperanza matemática.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 32,
+      "id": "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+      "type": "CONCEPT",
+      "literal": "• Muestreo aleatorio.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 33,
+      "id": "db0c8e1e-d8f5-57da-9128-5d16cc6fe510",
+      "type": "CONCEPT",
+      "literal": "• Distribuciones de muestreo.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 34,
+      "id": "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+      "type": "CONCEPT",
+      "literal": "• Conceptos de correlación y regresión.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 35,
+      "id": "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd",
+      "type": "CONCEPT",
+      "literal": "• Correlación lineal simple.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 36,
+      "id": "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f",
+      "type": "CONCEPT",
+      "literal": "• Interpretación del coeficiente de\ncorrelación lineal simple.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 37,
+      "id": "2870464f-8872-5d64-be31-d1cef29a418f",
+      "type": "CONCEPT",
+      "literal": "• Regresión lineal simple.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 38,
+      "id": "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62",
+      "type": "PROCEDURE",
+      "literal": "• Integración de las tecnologías digitales a lo largo de toda\nla asignatura (software especializados en análisis de datos,\nhojas de cálculo, calculadora científica)",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 39,
+      "id": "968562f9-8730-5c7c-ba0e-ccb8e52c1183",
+      "type": "PROCEDURE",
+      "literal": "• Descripción de la naturaleza de la Estadística y sus\nobjetivos.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 40,
+      "id": "ef03683a-3a97-5735-8a5d-a51c6ce16c3c",
+      "type": "PROCEDURE",
+      "literal": "• Interpretación del significado de Estadística Descriptiva y\nEstadística Inferencial.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 41,
+      "id": "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf",
+      "type": "PROCEDURE",
+      "literal": "• Organización de datos en distribuciones de frecuencias.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 42,
+      "id": "63a4e8b1-b26e-55e9-b560-d9239c5bc079",
+      "type": "PROCEDURE",
+      "literal": "• Representación de distribuciones de frecuencia.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 43,
+      "id": "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo e interpretación de las medidas de posición.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 44,
+      "id": "e9093413-0a74-5b56-a036-2427bd407c1d",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo e interpretación de las medidas de dispersión en\nsituaciones de problemas.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 45,
+      "id": "feafabce-eec6-55a4-8fed-280b25548928",
+      "type": "PROCEDURE",
+      "literal": "• Resolución de problemas de aplicación de las medidas de\ntendencia central, de posición, de dispersión.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 46,
+      "id": "b241cc36-8188-5202-b7ab-a93732e03e21",
+      "type": "PROCEDURE",
+      "literal": "• Representación y lectura de gráficas.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 47,
+      "id": "eac979ec-ded3-543a-8bb0-b9e935eaae8f",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo de muestras.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 48,
+      "id": "aeced235-479c-5371-be7d-7ae94e7e1f0c",
+      "type": "PROCEDURE",
+      "literal": "• Determinación de la muestra apropiada según tipo de\nproyecto a desarrollar.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 49,
+      "id": "eb9be78d-639c-5694-a8a0-588991332c6d",
+      "type": "PROCEDURE",
+      "literal": "• Elaboración de proyectos de investigación y aplicación de\nla estadística en temas de interés social y comunitario.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 50,
+      "id": "682e98c5-6206-5d18-9a31-b72e17028db5",
+      "type": "PROCEDURE",
+      "literal": "• Determinación de eventos o sucesos dependientes e\nindependientes.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 51,
+      "id": "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f",
+      "type": "PROCEDURE",
+      "literal": "• Determinación de eventos o sucesos simples y\ncompuestos.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 52,
+      "id": "0165ed6e-bd7a-5ad9-9847-5910d5763f66",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo de probabilidad condicional.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 53,
+      "id": "928ea565-adf8-5778-9821-e04e7a4b9410",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo de probabilidades y aplicaciones a la toma de\ndecisiones bajo certeza supuesta.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 54,
+      "id": "f49139b3-2305-569e-aa1f-be7f9584a474",
+      "type": "PROCEDURE",
+      "literal": "• Utilización de las distribuciones de probabilidad en\nsituaciones de problemas.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 55,
+      "id": "293488a5-0f8c-51fa-b574-9006bc286293",
+      "type": "PROCEDURE",
+      "literal": "• Utilización de diferentes métodos de muestreo en\nproblemas de aplicación.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 56,
+      "id": "bdd2ab45-5376-553c-9e22-a71bb08e0133",
+      "type": "PROCEDURE",
+      "literal": "• Realización de un análisis de correlación simple.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 57,
+      "id": "0ce429d5-1386-543d-842f-02f25bb54dea",
+      "type": "PROCEDURE",
+      "literal": "• Aplicación del modelo de regresión lineal simple en\nsituaciones de problema.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 58,
+      "id": "fc2c8eae-8fb9-51d6-b3b6-0050f456e20b",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Compromiso y responsabilidad\nen sus actuaciones personales y\nen su relación con compañeros y\ndocente.",
+      "pdfPage": 494,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 59,
+      "id": "9fb0ddfa-9127-536f-b6dc-a10973d35a9b",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Apertura y tolerancia a la\ncrítica y a las recomendaciones\nde sus compañeros, tanto\nen experiencias en grupos\ncolaborativos como de\naprendizaje individual.",
+      "pdfPage": 494,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 60,
+      "id": "b3cc92da-068b-5d73-baaa-500e23c1a7fe",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Espíritu reflexivo sobre su\nlabor estudiantil identificando\nfortalezas y puntos de mejora.",
+      "pdfPage": 494,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Identificar fortalezas y puntos de mejora del trabajo matemático mostrado es observable;no puntuar espíritu reflexivo,autoconcepto o rasgos personales."
+    },
+    {
+      "ordinal": 61,
+      "id": "0f44922c-ea3d-5367-b1e9-f84875ccf6e9",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Satisfacción por el trabajo\nmatemático bien desarrollado.",
+      "pdfPage": 494,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 62,
+      "id": "7691913d-a745-53d2-b221-a60fa913468e",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Disciplina y perseverancia en sus\npropósitos para el aprendizaje de\nla asignatura.",
+      "pdfPage": 494,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 63,
+      "id": "cea00aad-4bff-56ca-b606-1bfa8b01ecd1",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Apreciación de la economía,\npotencia y elegancia de la\nnotación matemática y el papel\nque cumple en el desarrollo y\nexplicación de las ideas relativas.",
+      "pdfPage": 494,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 84,
+      "id": "7a551a54-9c6d-5b94-a966-036d8d160d72",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "literal": "• Demuestra compromiso y responsabilidad en sus actuaciones estudiantiles personales y en su relación con compañeros\ny docente.",
+      "pdfPage": 495,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Compromiso y responsabilidad privados,no desempeño observable independiente;se conserva el literal yse excluye de evaluación."
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-15",
+      "label": "Conceptos de Estadística Descriptiva e Inferencial",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4"
+      ],
+      "caseIds": [
+        "concept-descriptive-inferential",
+        "statistics-nature",
+        "descriptive-inferential-interpret",
+        "statistical-project",
+        "statistical-arguments"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-16",
+      "label": "• Variable estadística. Tipos de variables.",
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "caseIds": [
+        "concept-variables",
+        "variables-only",
+        "checklist-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-17",
+      "label": "• Población y Muestra.",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0"
+      ],
+      "caseIds": [
+        "concept-population-sample",
+        "sample-size",
+        "appropriate-sample",
+        "population-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-18",
+      "label": "• Los métodos descriptivos",
+      "sourceRecordIds": [
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79"
+      ],
+      "caseIds": [
+        "concept-descriptive-methods",
+        "statistics-nature"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-19",
+      "label": "• Organización de datos. Métodos tabulares.",
+      "sourceRecordIds": [
+        "418690db-7b53-51a6-9559-236d229d06ef"
+      ],
+      "caseIds": [
+        "concept-organization",
+        "frequency-organization"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-20",
+      "label": "• Distribución de frecuencias.",
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b"
+      ],
+      "caseIds": [
+        "concept-frequencies",
+        "frequency-organization",
+        "frequency-representation",
+        "normalized-not-normal"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-21",
+      "label": "• Gráficas estadísticas.",
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e"
+      ],
+      "caseIds": [
+        "concept-charts",
+        "chart-reading-representation",
+        "normalized-not-normal",
+        "charts-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-22",
+      "label": "• Parámetros estadísticos.",
+      "sourceRecordIds": [
+        "8e1b068d-5eae-5e5e-b10c-7e84bedb202c"
+      ],
+      "caseIds": [
+        "concept-parameters"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-23",
+      "label": "• Medidas de tendencia central: media aritmética, mediana, moda, media geométrica y armónica.",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "caseIds": [
+        "concept-central",
+        "technology-choice",
+        "measures-problem",
+        "data-change-effects",
+        "arithmetic-only",
+        "geometric-only",
+        "harmonic-only",
+        "median-only",
+        "mode-only",
+        "two-measures-only",
+        "single-written-result",
+        "autonomy-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-24",
+      "label": "• Medidas de posición: cuartiles, quintiles, percentiles",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50"
+      ],
+      "caseIds": [
+        "concept-position",
+        "position-calculation",
+        "measures-problem",
+        "quintiles-only",
+        "percentile-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-25",
+      "label": "• Medidas de dispersión: rango, varianza, desviación media y estándar.",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "caseIds": [
+        "concept-dispersion",
+        "dispersion-calculation",
+        "measures-problem",
+        "data-change-effects",
+        "range-only",
+        "sample-variance-only",
+        "mean-deviation-only",
+        "standard-deviation-only",
+        "weighted-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-26",
+      "label": "• Probabilidad concepto. Probabilidad experimental y teórica.",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "caseIds": [
+        "concept-probability",
+        "probability-decision",
+        "probability-alternative",
+        "probability-projection",
+        "simulation-estimation",
+        "theory-simulation-comparison",
+        "theory-simulation-validation",
+        "theoretical-only",
+        "experimental-only",
+        "title-description-change"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-27",
+      "label": "• Eventos y espacio muestral.",
+      "sourceRecordIds": [
+        "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a"
+      ],
+      "caseIds": [
+        "concept-sample-space",
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-28",
+      "label": "• Eventos o sucesos dependientes e independientes",
+      "sourceRecordIds": [
+        "dea0fb98-de4b-5c1c-b864-2dabd93cf06d"
+      ],
+      "caseIds": [
+        "concept-dependence",
+        "event-dependence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-29",
+      "label": "• Eventos o sucesos compuestos.",
+      "sourceRecordIds": [
+        "8b4789e6-1bda-5755-b120-561106028e10"
+      ],
+      "caseIds": [
+        "concept-compound-events",
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-30",
+      "label": "• Probabilidad condicional.",
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966"
+      ],
+      "caseIds": [
+        "concept-conditional",
+        "conditional-calculation",
+        "conditional-not-independence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-31",
+      "label": "Principales distribuciones de probabilidad. Esperanza matemática.",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987"
+      ],
+      "caseIds": [
+        "concept-distributions-expectation",
+        "distribution-problem",
+        "theoretical-model",
+        "expectation-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-32",
+      "label": "• Muestreo aleatorio.",
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49"
+      ],
+      "caseIds": [
+        "concept-random-sampling",
+        "sample-size",
+        "appropriate-sample",
+        "sampling-methods",
+        "justification-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-33",
+      "label": "• Distribuciones de muestreo.",
+      "sourceRecordIds": [
+        "db0c8e1e-d8f5-57da-9128-5d16cc6fe510"
+      ],
+      "caseIds": [
+        "concept-sampling-distributions",
+        "sampling-methods"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-34",
+      "label": "• Conceptos de correlación y regresión.",
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9"
+      ],
+      "caseIds": [
+        "concept-correlation-regression",
+        "correlation-analysis",
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-35",
+      "label": "• Correlación lineal simple.",
+      "sourceRecordIds": [
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd"
+      ],
+      "caseIds": [
+        "concept-linear-correlation",
+        "correlation-analysis",
+        "correlation-not-causality"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-36",
+      "label": "• Interpretación del coeficiente de correlación lineal simple.",
+      "sourceRecordIds": [
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f"
+      ],
+      "caseIds": [
+        "concept-coefficient",
+        "correlation-analysis",
+        "correlation-not-causality"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-37",
+      "label": "• Regresión lineal simple.",
+      "sourceRecordIds": [
+        "2870464f-8872-5d64-be31-d1cef29a418f"
+      ],
+      "caseIds": [
+        "concept-linear-regression",
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-38",
+      "label": "• Integración de las tecnologías digitales a lo largo de toda la asignatura (software especializados en análisis de datos, hojas de cálculo, calculadora científica)",
+      "sourceRecordIds": [
+        "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62"
+      ],
+      "caseIds": [
+        "technology-choice"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-39",
+      "label": "• Descripción de la naturaleza de la Estadística y sus objetivos.",
+      "sourceRecordIds": [
+        "968562f9-8730-5c7c-ba0e-ccb8e52c1183"
+      ],
+      "caseIds": [
+        "statistics-nature"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-40",
+      "label": "• Interpretación del significado de Estadística Descriptiva y Estadística Inferencial.",
+      "sourceRecordIds": [
+        "ef03683a-3a97-5735-8a5d-a51c6ce16c3c"
+      ],
+      "caseIds": [
+        "descriptive-inferential-interpret"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-41",
+      "label": "• Organización de datos en distribuciones de frecuencias.",
+      "sourceRecordIds": [
+        "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf"
+      ],
+      "caseIds": [
+        "frequency-organization"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-42",
+      "label": "• Representación de distribuciones de frecuencia.",
+      "sourceRecordIds": [
+        "63a4e8b1-b26e-55e9-b560-d9239c5bc079"
+      ],
+      "caseIds": [
+        "frequency-representation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-43",
+      "label": "• Cálculo e interpretación de las medidas de posición.",
+      "sourceRecordIds": [
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93"
+      ],
+      "caseIds": [
+        "position-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-44",
+      "label": "• Cálculo e interpretación de las medidas de dispersión en situaciones de problemas.",
+      "sourceRecordIds": [
+        "e9093413-0a74-5b56-a036-2427bd407c1d"
+      ],
+      "caseIds": [
+        "dispersion-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-45",
+      "label": "• Resolución de problemas de aplicación de las medidas de tendencia central, de posición, de dispersión.",
+      "sourceRecordIds": [
+        "feafabce-eec6-55a4-8fed-280b25548928"
+      ],
+      "caseIds": [
+        "measures-problem"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-46",
+      "label": "• Representación y lectura de gráficas.",
+      "sourceRecordIds": [
+        "b241cc36-8188-5202-b7ab-a93732e03e21"
+      ],
+      "caseIds": [
+        "chart-reading-representation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-47",
+      "label": "• Cálculo de muestras.",
+      "sourceRecordIds": [
+        "eac979ec-ded3-543a-8bb0-b9e935eaae8f"
+      ],
+      "caseIds": [
+        "sample-size"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-48",
+      "label": "• Determinación de la muestra apropiada según tipo de proyecto a desarrollar.",
+      "sourceRecordIds": [
+        "aeced235-479c-5371-be7d-7ae94e7e1f0c"
+      ],
+      "caseIds": [
+        "appropriate-sample"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-49",
+      "label": "• Elaboración de proyectos de investigación y aplicación de la estadística en temas de interés social y comunitario.",
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d"
+      ],
+      "caseIds": [
+        "statistical-project",
+        "project-results-report",
+        "project-results-oral"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-50",
+      "label": "• Determinación de eventos o sucesos dependientes e independientes.",
+      "sourceRecordIds": [
+        "682e98c5-6206-5d18-9a31-b72e17028db5"
+      ],
+      "caseIds": [
+        "event-dependence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-51",
+      "label": "• Determinación de eventos o sucesos simples y compuestos.",
+      "sourceRecordIds": [
+        "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f"
+      ],
+      "caseIds": [
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-52",
+      "label": "• Cálculo de probabilidad condicional.",
+      "sourceRecordIds": [
+        "0165ed6e-bd7a-5ad9-9847-5910d5763f66"
+      ],
+      "caseIds": [
+        "conditional-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-53",
+      "label": "• Cálculo de probabilidades y aplicaciones a la toma de decisiones bajo certeza supuesta.",
+      "sourceRecordIds": [
+        "928ea565-adf8-5778-9821-e04e7a4b9410"
+      ],
+      "caseIds": [
+        "probability-decision"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-54",
+      "label": "• Utilización de las distribuciones de probabilidad en situaciones de problemas.",
+      "sourceRecordIds": [
+        "f49139b3-2305-569e-aa1f-be7f9584a474"
+      ],
+      "caseIds": [
+        "distribution-problem"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-55",
+      "label": "• Utilización de diferentes métodos de muestreo en problemas de aplicación.",
+      "sourceRecordIds": [
+        "293488a5-0f8c-51fa-b574-9006bc286293"
+      ],
+      "caseIds": [
+        "sampling-methods"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-56",
+      "label": "• Realización de un análisis de correlación simple.",
+      "sourceRecordIds": [
+        "bdd2ab45-5376-553c-9e22-a71bb08e0133"
+      ],
+      "caseIds": [
+        "correlation-analysis"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-57",
+      "label": "• Aplicación del modelo de regresión lineal simple en situaciones de problema.",
+      "sourceRecordIds": [
+        "0ce429d5-1386-543d-842f-02f25bb54dea"
+      ],
+      "caseIds": [
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-60",
+      "label": "• Espíritu reflexivo sobre su labor estudiantil identificando fortalezas y puntos de mejora.",
+      "sourceRecordIds": [
+        "b3cc92da-068b-5d73-baaa-500e23c1a7fe"
+      ],
+      "caseIds": [
+        "work-review",
+        "reflection-evidence-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "089d9aa1-fede-51a2-8343-84db8a0b5ad5",
+      "literal": "• Integra las tecnologías (aplicaciones especializadas para la estadística, hojas de cálculo, simulaciones, objetos virtuales,\ninternet, calculadoras científicas), como apoyo para la comprensión de las ideas de probabilidad y estadística, y en la\nresolución de problemas.",
+      "caseIds": [
+        "technology-choice"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3b6b34e5-9e50-5d61-b091-3ea71c10ed01",
+      "literal": "• Explica diagramas, tablas y gráficas que recojan datos del mundo real y plantea conjeturas sobre posibles inferencias\nderivadas de las mismas.",
+      "caseIds": [
+        "chart-reading-representation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3407f5c7-6b03-54c5-b697-e1886ab664b6",
+      "literal": "• Explica con argumentos convincentes y fundamentados en el análisis estadístico, informaciones sobre temas de\nactualidad y de interés para la comunidad.",
+      "caseIds": [
+        "statistical-arguments"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "c9109b26-2230-5f6d-822c-02aa2fc04110",
+      "literal": "• Elabora diagramas, tablas y gráficas que se correspondan con el tipo de datos estadísticos recolectados.",
+      "caseIds": [
+        "frequency-organization",
+        "frequency-representation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3249a96d-c240-528f-a219-4fe081524a13",
+      "literal": "• Aplica medidas de centralización, posición, dispersión y correlación en problemas del mundo real, en especial aquellos\nrelacionados con salud, medioambiente y su entorno social.",
+      "caseIds": [
+        "position-calculation",
+        "dispersion-calculation",
+        "measures-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3d5c7518-abe5-5608-b765-3503a22c9103",
+      "literal": "• Comunica los resultados de un proyecto de investigación a partir de los conocimientos estadísticos que posee.",
+      "caseIds": [
+        "statistical-project",
+        "project-results-report",
+        "project-results-oral",
+        "single-written-result"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd",
+      "literal": "• Comprende el proceso de muestreo y reconoce el papel que desempeña en las afirmaciones de carácter estadístico.",
+      "caseIds": [
+        "appropriate-sample"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "994daef7-99f3-5c99-ab62-dc9b16f5af65",
+      "literal": "• Formula un proyecto estadístico para estudiar un problema, ejecuta el proyecto y presenta el informe de los resultados.",
+      "caseIds": [
+        "statistical-project"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "d62ec3cd-41c9-5d10-be55-6c55ab73d78e",
+      "literal": "• Analiza y describe qué efecto produce el cambio en las variables estadísticas sobre las medidas de tendencia central y\ndispersión en un determinado proyecto.",
+      "caseIds": [
+        "data-change-effects"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "55b88293-a0d0-5a51-bf2b-380e71c531ac",
+      "literal": "• Explica las nociones de azar, representatividad y sesgo con relación a las muestras estadísticas.",
+      "caseIds": [
+        "sampling-methods"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "b4820d22-4d1d-541f-90c0-1a56c390a110",
+      "literal": "• Utiliza, la probabilidad teórica o experimental en una determinada situación real o ficticia, según sea necesaria.",
+      "caseIds": [
+        "probability-alternative"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "7219676f-632b-5402-9160-1b040c07bced",
+      "literal": "• Utiliza, los conceptos de eventos o sucesos dependientes e independientes.",
+      "caseIds": [
+        "event-dependence"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0",
+      "literal": "• Realiza proyecciones sobre la probabilidad de ocurrencia de distintos eventos con el apoyo de herramientas tecnológicas\napropiadas.",
+      "caseIds": [
+        "probability-decision",
+        "probability-projection"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "779387ca-eb2a-5894-8a29-5b2bd6e15af7",
+      "literal": "• Realiza cálculos de probabilidades para eventos simples y compuestos en la resolución de problemas relativos a la salud,\nel medio ambiente, la economía, entre otras áreas.",
+      "caseIds": [
+        "simple-compound-events"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "ce29f37d-6680-5a07-b549-75934edc4362",
+      "literal": "• Realiza la estimación de la probabilidad en un experimento utilizando simulaciones.",
+      "caseIds": [
+        "simulation-estimation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "49c95bf9-963a-5248-b0b0-c7269fd9b2a1",
+      "literal": "• Explica el concepto de variable aleatoria.",
+      "caseIds": [
+        "random-variable"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "b6ca419d-dae1-5fcc-81b0-88137780bae9",
+      "literal": "• Describe la curva normal y utiliza sus propiedades para explicar características de un conjunto de datos que se asumen\nnormalizados.",
+      "caseIds": [
+        "normal-curve"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "1a061cc6-c675-5e6a-90e8-e2071df37bc7",
+      "literal": "• Interpreta modelos teóricos para la resolución de problemas relativos a la salud, el medio ambiente, la economía, entre\notras áreas.",
+      "caseIds": [
+        "distribution-problem",
+        "theoretical-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "bd921971-7d00-57ad-b64d-bf4559dc3175",
+      "literal": "• Explica, la diferencia que existe entre las técnicas teóricas y de simulación para el cálculo de probabilidades.",
+      "caseIds": [
+        "theory-simulation-comparison"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "fe97741f-c1f7-55c3-9493-6a7dcb78f9af",
+      "literal": "• Realiza la resolución de un problema de probabilidad aplicando un modelo teórico y valida los resultados obtenidos por\nmedio de una simulación.",
+      "caseIds": [
+        "theory-simulation-validation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "7a551a54-9c6d-5b94-a966-036d8d160d72",
+      "literal": "• Demuestra compromiso y responsabilidad en sus actuaciones estudiantiles personales y en su relación con compañeros\ny docente.",
+      "caseIds": [],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptation": "No calificar compromiso oresponsabilidad privados."
+    }
+  ],
+  "adaptationNotes": [
+    "I80conserva «normalizados»;normalizar no demuestra normalidad,modelo normal solo bajo supuesto explícito.",
+    "P53conserva «certeza supuesta»;probabilidades ydecisiones dependen de supuestos yno se presentan como certezas universales.",
+    "5disposiciones privadasC/P/A másI84privado=6exclusiones;84registros originales intactos."
+  ],
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_AUTH_BLOCKED",
+  "implementationStatus": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_AUTH_BLOCKED"
+}

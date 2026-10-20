@@ -1,0 +1,2436 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 5,
+  "subjectCode": "OPT-MT-5",
+  "subjectName": "Estadística Probabilidad y Tecnología",
+  "optativeExitName": "Matemática y Tecnología",
+  "modalityCode": "academic",
+  "scopeId": "87268d19-5d32-5426-9396-21ae21fc5bbd",
+  "pdfPages": [
+    494,
+    495
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      494,
+      495
+    ],
+    "reviewedCompetenciesAndIndicators": true,
+    "previousReview": "optativas-fuentes-revisadas.json"
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_VERIFIED_PERSONAL_BROWSER_AUTH_BLOCKED",
+  "provider": "packages/shared/src/secondary-optative-math.ts",
+  "providerCatalog": "evaluation-2026.137",
+  "officialRecords": [
+    {
+      "id": "f7e95d22-bc0b-5fdc-98c8-4f70c58e1027",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Comunica sus ideas haciendo uso del lenguaje y simbolismo del análisis estadístico.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "27edecd9-b059-5c6b-8305-e35fb68e1267",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "ac568b52-3044-52ec-9097-4ac180653a76",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Razona y argumenta lógicamente sobre procesos implicados en situaciones relativas a la\nprobabilidad y a la estadística.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "77e31e13-d026-5ebc-9142-5e44c32c58de",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y Crítico",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "29572157-319a-50fb-bd8d-7f67d63c4ee4",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Desarrolla diversas estrategias para resolver problemas del contexto, dentro y fuera de la\nmatemática, interpretando y verificando los resultados en relación con la situación del problema\noriginal, haciendo uso de los conocimientos de probabilidad y estadística.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "95b8f825-e850-5c73-8ad0-a6a0ffe4ab53",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "d9545413-3e8b-50e5-8522-357b2c377a90",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Modela e interpreta problemas y situaciones referidas al campo de la estadística.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "148f5990-886a-538b-b98e-1352ef6a7955",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "c7f79b38-db4d-54f8-bfde-d7084d54d46c",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica herramientas tecnológicas en la resolución de problemas estadísticos, a fin de tomar\ndecisiones en situaciones del contexto comunitario.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "956331ab-4789-5bc8-9b90-61f81fd22820",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "f1e67272-37e2-55de-85e6-98c762a7130d",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica el pensamiento estadístico conectando con otras áreas como forma de contribuir de\nmanera responsable al análisis de temas de interés comunitario, incluidos la preservación del\nmedioambiente y la salud.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "ba1906a6-dc67-5ba3-b4d0-16cc139acdbb",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "eff9a22a-9aa0-5aa0-ab54-a6cf120c7454",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Muestra autonomía y apertura en la interpretación de situaciones y problemas matemáticos\nrespetando los diferentes criterios de abordaje de sus compañeros.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "50968877-3923-5b5e-89ac-771e69b48734",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "6043f659-ffce-5982-b387-922a93c66ed4",
+      "type": "CONCEPT",
+      "text": "Conceptos de Estadística Descriptiva e\nInferencial",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "546135e6-f06c-59d1-905b-9d199b7bbc72",
+      "type": "CONCEPT",
+      "text": "• Variable estadística. Tipos de variables.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+      "type": "CONCEPT",
+      "text": "• Población y Muestra.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "ac93dfb7-109b-5f09-aa4d-d60fd6570a79",
+      "type": "CONCEPT",
+      "text": "• Los métodos descriptivos",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "418690db-7b53-51a6-9559-236d229d06ef",
+      "type": "CONCEPT",
+      "text": "• Organización de datos. Métodos\ntabulares.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "34a906d9-c26c-5bc1-afe0-158466255c9b",
+      "type": "CONCEPT",
+      "text": "• Distribución de frecuencias.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "9bf6b54c-c625-59b4-b705-c76d0750226e",
+      "type": "CONCEPT",
+      "text": "• Gráficas estadísticas.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "8e1b068d-5eae-5e5e-b10c-7e84bedb202c",
+      "type": "CONCEPT",
+      "text": "• Parámetros estadísticos.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "b7fba731-aeb6-5466-bec3-32a5aca08167",
+      "type": "CONCEPT",
+      "text": "• Medidas de tendencia central: media\naritmética, mediana, moda, media\ngeométrica y armónica.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+      "type": "CONCEPT",
+      "text": "• Medidas de posición: cuartiles, quintiles,\npercentiles",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+      "type": "CONCEPT",
+      "text": "• Medidas de dispersión: rango, varianza,\ndesviación media y estándar.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+      "type": "CONCEPT",
+      "text": "• Probabilidad concepto. Probabilidad\nexperimental y teórica.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a",
+      "type": "CONCEPT",
+      "text": "• Eventos y espacio muestral.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "dea0fb98-de4b-5c1c-b864-2dabd93cf06d",
+      "type": "CONCEPT",
+      "text": "• Eventos o sucesos dependientes e\nindependientes",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "8b4789e6-1bda-5755-b120-561106028e10",
+      "type": "CONCEPT",
+      "text": "• Eventos o sucesos compuestos.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "79e55365-24b6-5d90-9a68-54ea5cebf966",
+      "type": "CONCEPT",
+      "text": "• Probabilidad condicional.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "11f8f3d8-ebfe-58c1-91d9-0666153f9987",
+      "type": "CONCEPT",
+      "text": "Principales distribuciones de\nprobabilidad.\nEsperanza matemática.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+      "type": "CONCEPT",
+      "text": "• Muestreo aleatorio.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "db0c8e1e-d8f5-57da-9128-5d16cc6fe510",
+      "type": "CONCEPT",
+      "text": "• Distribuciones de muestreo.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+      "type": "CONCEPT",
+      "text": "• Conceptos de correlación y regresión.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd",
+      "type": "CONCEPT",
+      "text": "• Correlación lineal simple.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f",
+      "type": "CONCEPT",
+      "text": "• Interpretación del coeficiente de\ncorrelación lineal simple.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "2870464f-8872-5d64-be31-d1cef29a418f",
+      "type": "CONCEPT",
+      "text": "• Regresión lineal simple.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62",
+      "type": "PROCEDURE",
+      "text": "• Integración de las tecnologías digitales a lo largo de toda\nla asignatura (software especializados en análisis de datos,\nhojas de cálculo, calculadora científica)",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "968562f9-8730-5c7c-ba0e-ccb8e52c1183",
+      "type": "PROCEDURE",
+      "text": "• Descripción de la naturaleza de la Estadística y sus\nobjetivos.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "ef03683a-3a97-5735-8a5d-a51c6ce16c3c",
+      "type": "PROCEDURE",
+      "text": "• Interpretación del significado de Estadística Descriptiva y\nEstadística Inferencial.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf",
+      "type": "PROCEDURE",
+      "text": "• Organización de datos en distribuciones de frecuencias.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "63a4e8b1-b26e-55e9-b560-d9239c5bc079",
+      "type": "PROCEDURE",
+      "text": "• Representación de distribuciones de frecuencia.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+      "type": "PROCEDURE",
+      "text": "• Cálculo e interpretación de las medidas de posición.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "e9093413-0a74-5b56-a036-2427bd407c1d",
+      "type": "PROCEDURE",
+      "text": "• Cálculo e interpretación de las medidas de dispersión en\nsituaciones de problemas.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "feafabce-eec6-55a4-8fed-280b25548928",
+      "type": "PROCEDURE",
+      "text": "• Resolución de problemas de aplicación de las medidas de\ntendencia central, de posición, de dispersión.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "b241cc36-8188-5202-b7ab-a93732e03e21",
+      "type": "PROCEDURE",
+      "text": "• Representación y lectura de gráficas.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "eac979ec-ded3-543a-8bb0-b9e935eaae8f",
+      "type": "PROCEDURE",
+      "text": "• Cálculo de muestras.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "aeced235-479c-5371-be7d-7ae94e7e1f0c",
+      "type": "PROCEDURE",
+      "text": "• Determinación de la muestra apropiada según tipo de\nproyecto a desarrollar.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "eb9be78d-639c-5694-a8a0-588991332c6d",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de proyectos de investigación y aplicación de\nla estadística en temas de interés social y comunitario.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "682e98c5-6206-5d18-9a31-b72e17028db5",
+      "type": "PROCEDURE",
+      "text": "• Determinación de eventos o sucesos dependientes e\nindependientes.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f",
+      "type": "PROCEDURE",
+      "text": "• Determinación de eventos o sucesos simples y\ncompuestos.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "0165ed6e-bd7a-5ad9-9847-5910d5763f66",
+      "type": "PROCEDURE",
+      "text": "• Cálculo de probabilidad condicional.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "928ea565-adf8-5778-9821-e04e7a4b9410",
+      "type": "PROCEDURE",
+      "text": "• Cálculo de probabilidades y aplicaciones a la toma de\ndecisiones bajo certeza supuesta.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "f49139b3-2305-569e-aa1f-be7f9584a474",
+      "type": "PROCEDURE",
+      "text": "• Utilización de las distribuciones de probabilidad en\nsituaciones de problemas.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "293488a5-0f8c-51fa-b574-9006bc286293",
+      "type": "PROCEDURE",
+      "text": "• Utilización de diferentes métodos de muestreo en\nproblemas de aplicación.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "bdd2ab45-5376-553c-9e22-a71bb08e0133",
+      "type": "PROCEDURE",
+      "text": "• Realización de un análisis de correlación simple.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "0ce429d5-1386-543d-842f-02f25bb54dea",
+      "type": "PROCEDURE",
+      "text": "• Aplicación del modelo de regresión lineal simple en\nsituaciones de problema.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "fc2c8eae-8fb9-51d6-b3b6-0050f456e20b",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Compromiso y responsabilidad\nen sus actuaciones personales y\nen su relación con compañeros y\ndocente.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "9fb0ddfa-9127-536f-b6dc-a10973d35a9b",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Apertura y tolerancia a la\ncrítica y a las recomendaciones\nde sus compañeros, tanto\nen experiencias en grupos\ncolaborativos como de\naprendizaje individual.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "b3cc92da-068b-5d73-baaa-500e23c1a7fe",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Espíritu reflexivo sobre su\nlabor estudiantil identificando\nfortalezas y puntos de mejora.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "0f44922c-ea3d-5367-b1e9-f84875ccf6e9",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Satisfacción por el trabajo\nmatemático bien desarrollado.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "7691913d-a745-53d2-b221-a60fa913468e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disciplina y perseverancia en sus\npropósitos para el aprendizaje de\nla asignatura.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "cea00aad-4bff-56ca-b606-1bfa8b01ecd1",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Apreciación de la economía,\npotencia y elegancia de la\nnotación matemática y el papel\nque cumple en el desarrollo y\nexplicación de las ideas relativas.",
+      "pdfPage": 494,
+      "printedPage": "493"
+    },
+    {
+      "id": "089d9aa1-fede-51a2-8343-84db8a0b5ad5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Integra las tecnologías (aplicaciones especializadas para la estadística, hojas de cálculo, simulaciones, objetos virtuales,\ninternet, calculadoras científicas), como apoyo para la comprensión de las ideas de probabilidad y estadística, y en la\nresolución de problemas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "3b6b34e5-9e50-5d61-b091-3ea71c10ed01",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica diagramas, tablas y gráficas que recojan datos del mundo real y plantea conjeturas sobre posibles inferencias\nderivadas de las mismas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "3407f5c7-6b03-54c5-b697-e1886ab664b6",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica con argumentos convincentes y fundamentados en el análisis estadístico, informaciones sobre temas de\nactualidad y de interés para la comunidad.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "c9109b26-2230-5f6d-822c-02aa2fc04110",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora diagramas, tablas y gráficas que se correspondan con el tipo de datos estadísticos recolectados.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "3249a96d-c240-528f-a219-4fe081524a13",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Aplica medidas de centralización, posición, dispersión y correlación en problemas del mundo real, en especial aquellos\nrelacionados con salud, medioambiente y su entorno social.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "3d5c7518-abe5-5608-b765-3503a22c9103",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comunica los resultados de un proyecto de investigación a partir de los conocimientos estadísticos que posee.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Comprende el proceso de muestreo y reconoce el papel que desempeña en las afirmaciones de carácter estadístico.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "994daef7-99f3-5c99-ab62-dc9b16f5af65",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Formula un proyecto estadístico para estudiar un problema, ejecuta el proyecto y presenta el informe de los resultados.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "d62ec3cd-41c9-5d10-be55-6c55ab73d78e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Analiza y describe qué efecto produce el cambio en las variables estadísticas sobre las medidas de tendencia central y\ndispersión en un determinado proyecto.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "55b88293-a0d0-5a51-bf2b-380e71c531ac",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica las nociones de azar, representatividad y sesgo con relación a las muestras estadísticas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "b4820d22-4d1d-541f-90c0-1a56c390a110",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza, la probabilidad teórica o experimental en una determinada situación real o ficticia, según sea necesaria.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "7219676f-632b-5402-9160-1b040c07bced",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza, los conceptos de eventos o sucesos dependientes e independientes.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza proyecciones sobre la probabilidad de ocurrencia de distintos eventos con el apoyo de herramientas tecnológicas\napropiadas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "779387ca-eb2a-5894-8a29-5b2bd6e15af7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza cálculos de probabilidades para eventos simples y compuestos en la resolución de problemas relativos a la salud,\nel medio ambiente, la economía, entre otras áreas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "ce29f37d-6680-5a07-b549-75934edc4362",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza la estimación de la probabilidad en un experimento utilizando simulaciones.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "49c95bf9-963a-5248-b0b0-c7269fd9b2a1",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica el concepto de variable aleatoria.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "b6ca419d-dae1-5fcc-81b0-88137780bae9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Describe la curva normal y utiliza sus propiedades para explicar características de un conjunto de datos que se asumen\nnormalizados.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "1a061cc6-c675-5e6a-90e8-e2071df37bc7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpreta modelos teóricos para la resolución de problemas relativos a la salud, el medio ambiente, la economía, entre\notras áreas.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "bd921971-7d00-57ad-b64d-bf4559dc3175",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica, la diferencia que existe entre las técnicas teóricas y de simulación para el cálculo de probabilidades.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "fe97741f-c1f7-55c3-9493-6a7dcb78f9af",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza la resolución de un problema de probabilidad aplicando un modelo teórico y valida los resultados obtenidos por\nmedio de una simulación.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    },
+    {
+      "id": "7a551a54-9c6d-5b94-a966-036d8d160d72",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Demuestra compromiso y responsabilidad en sus actuaciones estudiantiles personales y en su relación con compañeros\ny docente.",
+      "pdfPage": 495,
+      "printedPage": "494"
+    }
+  ],
+  "topics": [
+    {
+      "id": "statistics",
+      "grade": 5,
+      "label": "estadística descriptiva e inferencial",
+      "match": "estadistic[ao]s?|naturaleza de la estadistica",
+      "relation": "la diferencia entre describir los datos disponibles e inferir sobre una población bajo los supuestos del diseño dado",
+      "representation": "representa estadística descriptiva e inferencial conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79",
+        "968562f9-8730-5c7c-ba0e-ccb8e52c1183",
+        "ef03683a-3a97-5735-8a5d-a51c6ce16c3c",
+        "3407f5c7-6b03-54c5-b697-e1886ab664b6"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "descriptive-methods",
+      "grade": 5,
+      "label": "métodos descriptivos",
+      "match": "metodos? descriptivos?",
+      "relation": "los métodos descriptivos solicitados y sus objetivos en los ejemplos dados",
+      "representation": "representa métodos descriptivos conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79",
+        "968562f9-8730-5c7c-ba0e-ccb8e52c1183",
+        "ef03683a-3a97-5735-8a5d-a51c6ce16c3c"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "variables",
+      "grade": 5,
+      "label": "variables estadísticas",
+      "match": "variables?(?: estadisticas?)?|tipos? de variables?",
+      "relation": "la naturaleza de las variables estadísticas proporcionadas y las categorías pertinentes al caso",
+      "representation": "representa variables estadísticas conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": [],
+      "exclude": "variable aleatoria"
+    },
+    {
+      "id": "population",
+      "grade": 5,
+      "label": "población",
+      "match": "poblacion(?:es)?",
+      "relation": "la población objetivo delimitada por el caso ficticio dado",
+      "representation": "representa población conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "sample",
+      "grade": 5,
+      "label": "muestra",
+      "match": "muestras?",
+      "relation": "la muestra, la población objetivo y la justificación del diseño suministrado; no se exigen encuestas privadas",
+      "representation": "representa muestra conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+        "aeced235-479c-5371-be7d-7ae94e7e1f0c",
+        "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": [],
+      "exclude": "tamano de (?:la )?muestra"
+    },
+    {
+      "id": "sample-size",
+      "grade": 5,
+      "label": "tamaño de la muestra",
+      "match": "tamano (?:de (?:la )?muestra|muestral)",
+      "relation": "la fórmula y todos los parámetros proporcionados para el tamaño de la muestra, sin fijar niveles de confianza ni márgenes de error no indicados",
+      "representation": "representa tamaño de la muestra conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0",
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+        "eac979ec-ded3-543a-8bb0-b9e935eaae8f"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "organization",
+      "grade": 5,
+      "label": "organización de datos y métodos tabulares",
+      "match": "organizacion de datos|metodos? tabulares?",
+      "relation": "los valores, las categorías y el tamaño del conjunto de datos dado",
+      "representation": "representa organización de datos y métodos tabulares conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "418690db-7b53-51a6-9559-236d229d06ef",
+        "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "frequencies",
+      "grade": 5,
+      "label": "distribución de frecuencias",
+      "match": "frecuencias?|distribucion de frecuencias",
+      "relation": "las frecuencias, el tamaño del conjunto y las categorías de los datos proporcionados, sin alterar los valores originales",
+      "representation": "representa distribución de frecuencias conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b",
+        "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf",
+        "63a4e8b1-b26e-55e9-b560-d9239c5bc079",
+        "3b6b34e5-9e50-5d61-b091-3ea71c10ed01"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "charts",
+      "grade": 5,
+      "label": "gráficas estadísticas",
+      "match": "grafic[ao]s?(?: estadistic[ao]s?)?",
+      "relation": "las gráficas, los ejes, las escalas, las etiquetas y los valores proporcionados, distinguiendo la lectura de la construcción de otra gráfica",
+      "representation": "representa gráficas estadísticas conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e",
+        "63a4e8b1-b26e-55e9-b560-d9239c5bc079",
+        "b241cc36-8188-5202-b7ab-a93732e03e21",
+        "3b6b34e5-9e50-5d61-b091-3ea71c10ed01",
+        "c9109b26-2230-5f6d-822c-02aa2fc04110"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "parameters",
+      "grade": 5,
+      "label": "parámetros estadísticos",
+      "match": "parametros? estadisticos?",
+      "relation": "los parámetros estadísticos dados y su referencia a la población, distinguiéndolos de un estadístico muestral",
+      "representation": "representa parámetros estadísticos conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "8e1b068d-5eae-5e5e-b10c-7e84bedb202c"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "central",
+      "grade": 5,
+      "label": "medidas de tendencia central",
+      "match": "tendencia central",
+      "relation": "la medida de tendencia central solicitada y su pertinencia para los datos, sin exigir otras medidas",
+      "representation": "representa medidas de tendencia central conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "arithmetic-mean",
+      "grade": 5,
+      "label": "media aritmética",
+      "match": "media aritmetica",
+      "relation": "el significado y el método indicado para media aritmética, con los datos dados y las condiciones de validez del método, sin agregar otras medidas",
+      "representation": "representa media aritmética conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e",
+        "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "geometric-mean",
+      "grade": 5,
+      "label": "media geométrica",
+      "match": "media geometrica",
+      "relation": "el significado y el método indicado para media geométrica, con los datos dados y las condiciones de validez del método, sin agregar otras medidas",
+      "representation": "representa media geométrica conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "harmonic-mean",
+      "grade": 5,
+      "label": "media armónica",
+      "match": "media armonica",
+      "relation": "el significado y el método indicado para media armónica, con los datos dados y las condiciones de validez del método, sin agregar otras medidas",
+      "representation": "representa media armónica conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "median",
+      "grade": 5,
+      "label": "mediana",
+      "match": "medianas?",
+      "relation": "el significado y el método indicado para mediana, con los datos dados y las condiciones de validez del método, sin agregar otras medidas",
+      "representation": "representa mediana conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "mode",
+      "grade": 5,
+      "label": "moda",
+      "match": "modas?",
+      "relation": "el significado y el método indicado para moda, con los datos dados y las condiciones de validez del método, sin agregar otras medidas",
+      "representation": "representa moda conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "position",
+      "grade": 5,
+      "label": "medidas de posición",
+      "match": "medidas? de posicion",
+      "relation": "la posición solicitada en el conjunto ordenado y el método proporcionado",
+      "representation": "representa medidas de posición conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "quartiles",
+      "grade": 5,
+      "label": "cuartiles",
+      "match": "cuartil(?:es)?",
+      "relation": "la posición de cuartiles solicitada y el método de localización dado, sin exigir otra medida de posición",
+      "representation": "representa cuartiles conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "quintiles",
+      "grade": 5,
+      "label": "quintiles",
+      "match": "quintil(?:es)?",
+      "relation": "la posición de quintiles solicitada y el método de localización dado, sin exigir otra medida de posición",
+      "representation": "representa quintiles conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "percentiles",
+      "grade": 5,
+      "label": "percentiles",
+      "match": "percentil(?:es)?",
+      "relation": "la posición de percentiles solicitada y el método de localización dado, sin exigir otra medida de posición",
+      "representation": "representa percentiles conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50",
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "dispersion",
+      "grade": 5,
+      "label": "medidas de dispersión",
+      "match": "dispersion",
+      "relation": "la dispersión solicitada de los datos y la convención proporcionada, sin imponer otra medida",
+      "representation": "representa medidas de dispersión conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "range",
+      "grade": 5,
+      "label": "rango",
+      "match": "rango",
+      "relation": "la diferencia entre el máximo y el mínimo del conjunto dado, sin agregar otras medidas no solicitadas",
+      "representation": "representa rango conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "population-variance",
+      "grade": 5,
+      "label": "varianza poblacional",
+      "match": "varianza poblacional",
+      "relation": "la varianza poblacional y su denominador según la convención proporcionada, sin agregar otras medidas no solicitadas",
+      "representation": "representa varianza poblacional conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "sample-variance",
+      "grade": 5,
+      "label": "varianza muestral",
+      "match": "varianza muestral",
+      "relation": "la varianza muestral y su denominador según la convención proporcionada, sin agregar otras medidas no solicitadas",
+      "representation": "representa varianza muestral conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "variance",
+      "grade": 5,
+      "label": "varianza",
+      "match": "varianza(?! (?:poblacional|muestral))",
+      "relation": "la varianza bajo la convención explícita dada, sin decidir por defecto entre población y muestra, sin agregar otras medidas no solicitadas",
+      "representation": "representa varianza conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "mean-deviation",
+      "grade": 5,
+      "label": "desviación media",
+      "match": "desviacion media",
+      "relation": "la desviación media respecto de la referencia indicada en el método dado, sin agregar otras medidas no solicitadas",
+      "representation": "representa desviación media conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "standard-deviation",
+      "grade": 5,
+      "label": "desviación estándar",
+      "match": "desviacion (?:estandar|tipica)",
+      "relation": "la desviación estándar bajo la convención proporcionada y sus unidades respecto de los datos, sin agregar otras medidas no solicitadas",
+      "representation": "representa desviación estándar conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9",
+        "e9093413-0a74-5b56-a036-2427bd407c1d",
+        "feafabce-eec6-55a4-8fed-280b25548928",
+        "3249a96d-c240-528f-a219-4fe081524a13",
+        "d62ec3cd-41c9-5d10-be55-6c55ab73d78e"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "probability",
+      "grade": 5,
+      "label": "probabilidad",
+      "match": "probabilidad(?:es)?",
+      "relation": "la probabilidad del evento, los datos y los supuestos proporcionados, reconociendo la incertidumbre del caso; una probabilidad no constituye certeza",
+      "representation": "representa probabilidad conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "928ea565-adf8-5778-9821-e04e7a4b9410",
+        "b4820d22-4d1d-541f-90c0-1a56c390a110",
+        "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0",
+        "779387ca-eb2a-5894-8a29-5b2bd6e15af7"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "theoretical-probability",
+      "grade": 5,
+      "label": "probabilidad teórica",
+      "match": "probabilidad teorica|metodo teorico|modelo teorico",
+      "relation": "la probabilidad teórica bajo el modelo y los supuestos dados, sin imponer equiprobabilidad cuando no está indicada",
+      "representation": "representa probabilidad teórica conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "b4820d22-4d1d-541f-90c0-1a56c390a110",
+        "1a061cc6-c675-5e6a-90e8-e2071df37bc7",
+        "bd921971-7d00-57ad-b64d-bf4559dc3175",
+        "fe97741f-c1f7-55c3-9493-6a7dcb78f9af"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "experimental-probability",
+      "grade": 5,
+      "label": "probabilidad experimental",
+      "match": "probabilidad experimental",
+      "relation": "las frecuencias del evento y el número de repeticiones dados, distinguiendo la estimación experimental de un valor teórico exacto",
+      "representation": "representa probabilidad experimental conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1",
+        "b4820d22-4d1d-541f-90c0-1a56c390a110",
+        "ce29f37d-6680-5a07-b549-75934edc4362"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "sample-space",
+      "grade": 5,
+      "label": "eventos y espacio muestral",
+      "match": "espacio muestral|eventos? simples?",
+      "relation": "los eventos y el espacio muestral del experimento proporcionado",
+      "representation": "representa eventos y espacio muestral conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a",
+        "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f",
+        "779387ca-eb2a-5894-8a29-5b2bd6e15af7"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "dependence",
+      "grade": 5,
+      "label": "eventos dependientes e independientes",
+      "match": "dependientes?|independientes?",
+      "relation": "las condiciones de los eventos dependientes o independientes del experimento dado, sin asumir independencia por defecto",
+      "representation": "representa eventos dependientes e independientes conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "dea0fb98-de4b-5c1c-b864-2dabd93cf06d",
+        "682e98c5-6206-5d18-9a31-b72e17028db5",
+        "7219676f-632b-5402-9160-1b040c07bced"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "compound-events",
+      "grade": 5,
+      "label": "eventos compuestos",
+      "match": "eventos? (?:simples? (?:y |o ))?compuestos?",
+      "relation": "los eventos simples o compuestos indicados y las condiciones del experimento dado",
+      "representation": "representa eventos compuestos conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "8b4789e6-1bda-5755-b120-561106028e10",
+        "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f",
+        "779387ca-eb2a-5894-8a29-5b2bd6e15af7"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "conditional",
+      "grade": 5,
+      "label": "probabilidad condicional",
+      "match": "probabilidad condicional|evento condicionante",
+      "relation": "el evento condicionante y la probabilidad condicional con los datos dados, sin asumir independencia por defecto",
+      "representation": "representa probabilidad condicional conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966",
+        "0165ed6e-bd7a-5ad9-9847-5910d5763f66"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "probability-distributions",
+      "grade": 5,
+      "label": "distribución de probabilidad",
+      "match": "distribucion(?:es)? de probabilidad|distribucion (?:dada|indicada)",
+      "relation": "la distribución de probabilidad y sus parámetros dados, conservando los supuestos y los límites del modelo proporcionado",
+      "representation": "representa distribución de probabilidad conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987",
+        "f49139b3-2305-569e-aa1f-be7f9584a474",
+        "1a061cc6-c675-5e6a-90e8-e2071df37bc7"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "expectation",
+      "grade": 5,
+      "label": "esperanza matemática",
+      "match": "esperanza(?: matematica)?",
+      "relation": "los valores y las probabilidades de la distribución dada y el significado de la esperanza matemática",
+      "representation": "representa esperanza matemática conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "sampling",
+      "grade": 5,
+      "label": "muestreo aleatorio",
+      "match": "muestreo(?: aleatorio)?|metodos? de muestreo",
+      "relation": "el método de muestreo, la población objetivo, la aleatoriedad, la representatividad y el sesgo bajo el diseño dado",
+      "representation": "representa muestreo aleatorio conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49",
+        "293488a5-0f8c-51fa-b574-9006bc286293",
+        "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd",
+        "55b88293-a0d0-5a51-bf2b-380e71c531ac"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "sampling-distributions",
+      "grade": 5,
+      "label": "distribuciones de muestreo",
+      "match": "distribucion(?:es)? de muestreo",
+      "relation": "las distribuciones de muestreo y sus supuestos dados, con límites de representatividad y posibles fuentes de sesgo",
+      "representation": "representa distribuciones de muestreo conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "db0c8e1e-d8f5-57da-9128-5d16cc6fe510",
+        "293488a5-0f8c-51fa-b574-9006bc286293"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "correlation",
+      "grade": 5,
+      "label": "correlación lineal simple",
+      "match": "correlacion(?: lineal(?: simple)?)?",
+      "relation": "la dirección y la intensidad de la asociación de los datos dados: la correlación no implica causalidad",
+      "representation": "representa correlación lineal simple conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd",
+        "bdd2ab45-5376-553c-9e22-a71bb08e0133"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "correlation-coefficient",
+      "grade": 5,
+      "label": "coeficiente de correlación lineal simple",
+      "match": "coeficiente de correlacion",
+      "relation": "el signo, la magnitud y los límites del coeficiente de correlación dado: la correlación no implica causalidad",
+      "representation": "representa coeficiente de correlación lineal simple conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f",
+        "bdd2ab45-5376-553c-9e22-a71bb08e0133"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "regression",
+      "grade": 5,
+      "label": "regresión lineal simple",
+      "match": "regresion(?: lineal(?: simple)?)?",
+      "relation": "el modelo de regresión, los parámetros y el dominio proporcionados, sin atribuir causalidad ni extrapolar fuera de las condiciones dadas",
+      "representation": "representa regresión lineal simple conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9",
+        "2870464f-8872-5d64-be31-d1cef29a418f",
+        "0ce429d5-1386-543d-842f-02f25bb54dea"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "project",
+      "grade": 5,
+      "label": "proyecto estadístico",
+      "match": "proyecto estadistico",
+      "relation": "la pregunta del proyecto estadístico ficticio, los datos suministrados, el método y las conclusiones respaldadas, sin exigir encuestas personales",
+      "representation": "representa proyecto estadístico conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d",
+        "994daef7-99f3-5c99-ab62-dc9b16f5af65"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "results",
+      "grade": 5,
+      "label": "resultados estadísticos",
+      "match": "resultados? estadisticos?|informe escrito (?:de )?resultados",
+      "relation": "los resultados estadísticos y las conclusiones del trabajo proporcionado, relacionados con los datos y sus límites",
+      "representation": "representa resultados estadísticos conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d",
+        "3d5c7518-abe5-5608-b765-3503a22c9103",
+        "994daef7-99f3-5c99-ab62-dc9b16f5af65"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "work-review",
+      "grade": 5,
+      "label": "fortalezas y mejoras del trabajo estadístico",
+      "match": "fortalezas?|(?:puntos? de )?mejoras?",
+      "relation": "una fortaleza y una mejora comprobable de la solución estadística concreta, sustentadas en sus procedimientos y resultados",
+      "representation": "representa fortalezas y mejoras del trabajo estadístico conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b3cc92da-068b-5d73-baaa-500e23c1a7fe"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "simulation",
+      "grade": 5,
+      "label": "simulación del experimento aleatorio",
+      "match": "simul(?:a|an|ar|e|en)|simulacion(?:es)?",
+      "relation": "el protocolo, las repeticiones y las frecuencias del experimento aleatorio dado, distinguiendo variación muestral y resultado teórico",
+      "representation": "representa simulación del experimento aleatorio conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "ce29f37d-6680-5a07-b549-75934edc4362",
+        "bd921971-7d00-57ad-b64d-bf4559dc3175",
+        "fe97741f-c1f7-55c3-9493-6a7dcb78f9af"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "random-variable",
+      "grade": 5,
+      "label": "variable aleatoria",
+      "match": "variables? aleatorias?",
+      "relation": "la variable aleatoria, sus posibles valores y el experimento dado",
+      "representation": "representa variable aleatoria conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "49c95bf9-963a-5248-b0b0-c7269fd9b2a1"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "normal-model",
+      "grade": 5,
+      "label": "curva normal",
+      "match": "curva normal|modelo normal|supuesto normal",
+      "relation": "la curva normal y sus características bajo el supuesto normal explícito del modelo proporcionado; normalizar datos no prueba normalidad",
+      "representation": "representa curva normal conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "b6ca419d-dae1-5fcc-81b0-88137780bae9"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    },
+    {
+      "id": "statistical-analysis",
+      "grade": 5,
+      "label": "análisis estadístico",
+      "match": "analisis estadistico",
+      "relation": "las conclusiones del análisis estadístico dado y los argumentos respaldados por sus datos, conservando los límites de la información disponible",
+      "representation": "representa estadística descriptiva e inferencial conservando los datos, las escalas y las referencias indicadas",
+      "pages": [
+        494,
+        495
+      ],
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4",
+        "3407f5c7-6b03-54c5-b697-e1886ab664b6"
+      ],
+      "priority": 1,
+      "originIsHistorical": false,
+      "calculationTargets": []
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-15",
+      "label": "Conceptos de Estadística Descriptiva e Inferencial",
+      "sourceRecordIds": [
+        "6043f659-ffce-5982-b387-922a93c66ed4"
+      ],
+      "caseIds": [
+        "concept-descriptive-inferential",
+        "statistics-nature",
+        "descriptive-inferential-interpret",
+        "statistical-project",
+        "statistical-arguments"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-16",
+      "label": "• Variable estadística. Tipos de variables.",
+      "sourceRecordIds": [
+        "546135e6-f06c-59d1-905b-9d199b7bbc72"
+      ],
+      "caseIds": [
+        "concept-variables",
+        "variables-only",
+        "checklist-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-17",
+      "label": "• Población y Muestra.",
+      "sourceRecordIds": [
+        "a46b86a0-0a7e-54ab-898b-14a7182e88e0"
+      ],
+      "caseIds": [
+        "concept-population-sample",
+        "sample-size",
+        "appropriate-sample",
+        "population-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-18",
+      "label": "• Los métodos descriptivos",
+      "sourceRecordIds": [
+        "ac93dfb7-109b-5f09-aa4d-d60fd6570a79"
+      ],
+      "caseIds": [
+        "concept-descriptive-methods",
+        "statistics-nature"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-19",
+      "label": "• Organización de datos. Métodos tabulares.",
+      "sourceRecordIds": [
+        "418690db-7b53-51a6-9559-236d229d06ef"
+      ],
+      "caseIds": [
+        "concept-organization",
+        "frequency-organization"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-20",
+      "label": "• Distribución de frecuencias.",
+      "sourceRecordIds": [
+        "34a906d9-c26c-5bc1-afe0-158466255c9b"
+      ],
+      "caseIds": [
+        "concept-frequencies",
+        "frequency-organization",
+        "frequency-representation",
+        "normalized-not-normal"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-21",
+      "label": "• Gráficas estadísticas.",
+      "sourceRecordIds": [
+        "9bf6b54c-c625-59b4-b705-c76d0750226e"
+      ],
+      "caseIds": [
+        "concept-charts",
+        "chart-reading-representation",
+        "normalized-not-normal",
+        "charts-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-22",
+      "label": "• Parámetros estadísticos.",
+      "sourceRecordIds": [
+        "8e1b068d-5eae-5e5e-b10c-7e84bedb202c"
+      ],
+      "caseIds": [
+        "concept-parameters"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-23",
+      "label": "• Medidas de tendencia central: media aritmética, mediana, moda, media geométrica y armónica.",
+      "sourceRecordIds": [
+        "b7fba731-aeb6-5466-bec3-32a5aca08167"
+      ],
+      "caseIds": [
+        "concept-central",
+        "technology-choice",
+        "measures-problem",
+        "data-change-effects",
+        "arithmetic-only",
+        "geometric-only",
+        "harmonic-only",
+        "median-only",
+        "mode-only",
+        "two-measures-only",
+        "single-written-result",
+        "autonomy-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-24",
+      "label": "• Medidas de posición: cuartiles, quintiles, percentiles",
+      "sourceRecordIds": [
+        "0c864b48-c3a5-5ad6-b0ed-99915abc8d50"
+      ],
+      "caseIds": [
+        "concept-position",
+        "position-calculation",
+        "measures-problem",
+        "quintiles-only",
+        "percentile-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-25",
+      "label": "• Medidas de dispersión: rango, varianza, desviación media y estándar.",
+      "sourceRecordIds": [
+        "92c41e67-e67c-5309-9ad8-1d1a116474f9"
+      ],
+      "caseIds": [
+        "concept-dispersion",
+        "dispersion-calculation",
+        "measures-problem",
+        "data-change-effects",
+        "range-only",
+        "sample-variance-only",
+        "mean-deviation-only",
+        "standard-deviation-only",
+        "weighted-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-26",
+      "label": "• Probabilidad concepto. Probabilidad experimental y teórica.",
+      "sourceRecordIds": [
+        "85c359c0-d99f-5c08-bb5a-eebc336a0ec1"
+      ],
+      "caseIds": [
+        "concept-probability",
+        "probability-decision",
+        "probability-alternative",
+        "probability-projection",
+        "simulation-estimation",
+        "theory-simulation-comparison",
+        "theory-simulation-validation",
+        "theoretical-only",
+        "experimental-only",
+        "title-description-change"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-27",
+      "label": "• Eventos y espacio muestral.",
+      "sourceRecordIds": [
+        "f90f3b9f-d5f4-587c-9f09-65bb548fcd8a"
+      ],
+      "caseIds": [
+        "concept-sample-space",
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-28",
+      "label": "• Eventos o sucesos dependientes e independientes",
+      "sourceRecordIds": [
+        "dea0fb98-de4b-5c1c-b864-2dabd93cf06d"
+      ],
+      "caseIds": [
+        "concept-dependence",
+        "event-dependence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-29",
+      "label": "• Eventos o sucesos compuestos.",
+      "sourceRecordIds": [
+        "8b4789e6-1bda-5755-b120-561106028e10"
+      ],
+      "caseIds": [
+        "concept-compound-events",
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-30",
+      "label": "• Probabilidad condicional.",
+      "sourceRecordIds": [
+        "79e55365-24b6-5d90-9a68-54ea5cebf966"
+      ],
+      "caseIds": [
+        "concept-conditional",
+        "conditional-calculation",
+        "conditional-not-independence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-31",
+      "label": "Principales distribuciones de probabilidad. Esperanza matemática.",
+      "sourceRecordIds": [
+        "11f8f3d8-ebfe-58c1-91d9-0666153f9987"
+      ],
+      "caseIds": [
+        "concept-distributions-expectation",
+        "distribution-problem",
+        "theoretical-model",
+        "expectation-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-32",
+      "label": "• Muestreo aleatorio.",
+      "sourceRecordIds": [
+        "b32f6ef6-87b8-5a88-8c87-4152f9968a49"
+      ],
+      "caseIds": [
+        "concept-random-sampling",
+        "sample-size",
+        "appropriate-sample",
+        "sampling-methods",
+        "justification-purpose"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-33",
+      "label": "• Distribuciones de muestreo.",
+      "sourceRecordIds": [
+        "db0c8e1e-d8f5-57da-9128-5d16cc6fe510"
+      ],
+      "caseIds": [
+        "concept-sampling-distributions",
+        "sampling-methods"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-34",
+      "label": "• Conceptos de correlación y regresión.",
+      "sourceRecordIds": [
+        "1b180cfa-6f62-5d35-a16e-146ee45aadc9"
+      ],
+      "caseIds": [
+        "concept-correlation-regression",
+        "correlation-analysis",
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-35",
+      "label": "• Correlación lineal simple.",
+      "sourceRecordIds": [
+        "01751aac-e4e2-5d85-9c9e-15fd3baa7ecd"
+      ],
+      "caseIds": [
+        "concept-linear-correlation",
+        "correlation-analysis",
+        "correlation-not-causality"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-36",
+      "label": "• Interpretación del coeficiente de correlación lineal simple.",
+      "sourceRecordIds": [
+        "82d7666e-9648-54ba-9b0d-84c9e8bd7f0f"
+      ],
+      "caseIds": [
+        "concept-coefficient",
+        "correlation-analysis",
+        "correlation-not-causality"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-37",
+      "label": "• Regresión lineal simple.",
+      "sourceRecordIds": [
+        "2870464f-8872-5d64-be31-d1cef29a418f"
+      ],
+      "caseIds": [
+        "concept-linear-regression",
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-38",
+      "label": "• Integración de las tecnologías digitales a lo largo de toda la asignatura (software especializados en análisis de datos, hojas de cálculo, calculadora científica)",
+      "sourceRecordIds": [
+        "9e5fbcff-0a4e-5fac-a7ab-aeeef7cedd62"
+      ],
+      "caseIds": [
+        "technology-choice"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-39",
+      "label": "• Descripción de la naturaleza de la Estadística y sus objetivos.",
+      "sourceRecordIds": [
+        "968562f9-8730-5c7c-ba0e-ccb8e52c1183"
+      ],
+      "caseIds": [
+        "statistics-nature"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-40",
+      "label": "• Interpretación del significado de Estadística Descriptiva y Estadística Inferencial.",
+      "sourceRecordIds": [
+        "ef03683a-3a97-5735-8a5d-a51c6ce16c3c"
+      ],
+      "caseIds": [
+        "descriptive-inferential-interpret"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-41",
+      "label": "• Organización de datos en distribuciones de frecuencias.",
+      "sourceRecordIds": [
+        "3c1b8e04-1d60-5f03-8af2-3dd23ad6dfaf"
+      ],
+      "caseIds": [
+        "frequency-organization"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-42",
+      "label": "• Representación de distribuciones de frecuencia.",
+      "sourceRecordIds": [
+        "63a4e8b1-b26e-55e9-b560-d9239c5bc079"
+      ],
+      "caseIds": [
+        "frequency-representation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-43",
+      "label": "• Cálculo e interpretación de las medidas de posición.",
+      "sourceRecordIds": [
+        "cca9fb85-b10d-55f5-88c1-f9bb1bac2d93"
+      ],
+      "caseIds": [
+        "position-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-44",
+      "label": "• Cálculo e interpretación de las medidas de dispersión en situaciones de problemas.",
+      "sourceRecordIds": [
+        "e9093413-0a74-5b56-a036-2427bd407c1d"
+      ],
+      "caseIds": [
+        "dispersion-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-45",
+      "label": "• Resolución de problemas de aplicación de las medidas de tendencia central, de posición, de dispersión.",
+      "sourceRecordIds": [
+        "feafabce-eec6-55a4-8fed-280b25548928"
+      ],
+      "caseIds": [
+        "measures-problem"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-46",
+      "label": "• Representación y lectura de gráficas.",
+      "sourceRecordIds": [
+        "b241cc36-8188-5202-b7ab-a93732e03e21"
+      ],
+      "caseIds": [
+        "chart-reading-representation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-47",
+      "label": "• Cálculo de muestras.",
+      "sourceRecordIds": [
+        "eac979ec-ded3-543a-8bb0-b9e935eaae8f"
+      ],
+      "caseIds": [
+        "sample-size"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-48",
+      "label": "• Determinación de la muestra apropiada según tipo de proyecto a desarrollar.",
+      "sourceRecordIds": [
+        "aeced235-479c-5371-be7d-7ae94e7e1f0c"
+      ],
+      "caseIds": [
+        "appropriate-sample"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-49",
+      "label": "• Elaboración de proyectos de investigación y aplicación de la estadística en temas de interés social y comunitario.",
+      "sourceRecordIds": [
+        "eb9be78d-639c-5694-a8a0-588991332c6d"
+      ],
+      "caseIds": [
+        "statistical-project",
+        "project-results-report",
+        "project-results-oral"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-50",
+      "label": "• Determinación de eventos o sucesos dependientes e independientes.",
+      "sourceRecordIds": [
+        "682e98c5-6206-5d18-9a31-b72e17028db5"
+      ],
+      "caseIds": [
+        "event-dependence"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-51",
+      "label": "• Determinación de eventos o sucesos simples y compuestos.",
+      "sourceRecordIds": [
+        "6f8cd9cd-ce6c-5dc5-bf2b-41c08db97d7f"
+      ],
+      "caseIds": [
+        "simple-compound-events"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-52",
+      "label": "• Cálculo de probabilidad condicional.",
+      "sourceRecordIds": [
+        "0165ed6e-bd7a-5ad9-9847-5910d5763f66"
+      ],
+      "caseIds": [
+        "conditional-calculation"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-53",
+      "label": "• Cálculo de probabilidades y aplicaciones a la toma de decisiones bajo certeza supuesta.",
+      "sourceRecordIds": [
+        "928ea565-adf8-5778-9821-e04e7a4b9410"
+      ],
+      "caseIds": [
+        "probability-decision"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-54",
+      "label": "• Utilización de las distribuciones de probabilidad en situaciones de problemas.",
+      "sourceRecordIds": [
+        "f49139b3-2305-569e-aa1f-be7f9584a474"
+      ],
+      "caseIds": [
+        "distribution-problem"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-55",
+      "label": "• Utilización de diferentes métodos de muestreo en problemas de aplicación.",
+      "sourceRecordIds": [
+        "293488a5-0f8c-51fa-b574-9006bc286293"
+      ],
+      "caseIds": [
+        "sampling-methods"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-56",
+      "label": "• Realización de un análisis de correlación simple.",
+      "sourceRecordIds": [
+        "bdd2ab45-5376-553c-9e22-a71bb08e0133"
+      ],
+      "caseIds": [
+        "correlation-analysis"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-57",
+      "label": "• Aplicación del modelo de regresión lineal simple en situaciones de problema.",
+      "sourceRecordIds": [
+        "0ce429d5-1386-543d-842f-02f25bb54dea"
+      ],
+      "caseIds": [
+        "regression-model"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    },
+    {
+      "id": "source-60",
+      "label": "• Espíritu reflexivo sobre su labor estudiantil identificando fortalezas y puntos de mejora.",
+      "sourceRecordIds": [
+        "b3cc92da-068b-5d73-baaa-500e23c1a7fe"
+      ],
+      "caseIds": [
+        "work-review",
+        "reflection-evidence-only"
+      ],
+      "adaptation": "Solo acción estadística o probabilística solicitada,datos dados/ficticios ysupuestos indicados;A60se limita al trabajo concreto,con evidencia de fortalezas/mejoras."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "089d9aa1-fede-51a2-8343-84db8a0b5ad5",
+      "literal": "• Integra las tecnologías (aplicaciones especializadas para la estadística, hojas de cálculo, simulaciones, objetos virtuales,\ninternet, calculadoras científicas), como apoyo para la comprensión de las ideas de probabilidad y estadística, y en la\nresolución de problemas.",
+      "caseIds": [
+        "technology-choice"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3b6b34e5-9e50-5d61-b091-3ea71c10ed01",
+      "literal": "• Explica diagramas, tablas y gráficas que recojan datos del mundo real y plantea conjeturas sobre posibles inferencias\nderivadas de las mismas.",
+      "caseIds": [
+        "chart-reading-representation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3407f5c7-6b03-54c5-b697-e1886ab664b6",
+      "literal": "• Explica con argumentos convincentes y fundamentados en el análisis estadístico, informaciones sobre temas de\nactualidad y de interés para la comunidad.",
+      "caseIds": [
+        "statistical-arguments"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "c9109b26-2230-5f6d-822c-02aa2fc04110",
+      "literal": "• Elabora diagramas, tablas y gráficas que se correspondan con el tipo de datos estadísticos recolectados.",
+      "caseIds": [
+        "frequency-organization",
+        "frequency-representation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3249a96d-c240-528f-a219-4fe081524a13",
+      "literal": "• Aplica medidas de centralización, posición, dispersión y correlación en problemas del mundo real, en especial aquellos\nrelacionados con salud, medioambiente y su entorno social.",
+      "caseIds": [
+        "position-calculation",
+        "dispersion-calculation",
+        "measures-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "3d5c7518-abe5-5608-b765-3503a22c9103",
+      "literal": "• Comunica los resultados de un proyecto de investigación a partir de los conocimientos estadísticos que posee.",
+      "caseIds": [
+        "statistical-project",
+        "project-results-report",
+        "project-results-oral",
+        "single-written-result"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "2c77e1bc-5d55-5f36-acd9-89e6c40db2dd",
+      "literal": "• Comprende el proceso de muestreo y reconoce el papel que desempeña en las afirmaciones de carácter estadístico.",
+      "caseIds": [
+        "appropriate-sample"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "994daef7-99f3-5c99-ab62-dc9b16f5af65",
+      "literal": "• Formula un proyecto estadístico para estudiar un problema, ejecuta el proyecto y presenta el informe de los resultados.",
+      "caseIds": [
+        "statistical-project"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "d62ec3cd-41c9-5d10-be55-6c55ab73d78e",
+      "literal": "• Analiza y describe qué efecto produce el cambio en las variables estadísticas sobre las medidas de tendencia central y\ndispersión en un determinado proyecto.",
+      "caseIds": [
+        "data-change-effects"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "55b88293-a0d0-5a51-bf2b-380e71c531ac",
+      "literal": "• Explica las nociones de azar, representatividad y sesgo con relación a las muestras estadísticas.",
+      "caseIds": [
+        "sampling-methods"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "b4820d22-4d1d-541f-90c0-1a56c390a110",
+      "literal": "• Utiliza, la probabilidad teórica o experimental en una determinada situación real o ficticia, según sea necesaria.",
+      "caseIds": [
+        "probability-alternative"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "7219676f-632b-5402-9160-1b040c07bced",
+      "literal": "• Utiliza, los conceptos de eventos o sucesos dependientes e independientes.",
+      "caseIds": [
+        "event-dependence"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "dbc420c4-1de4-5d0d-8ad7-1f087aa777c0",
+      "literal": "• Realiza proyecciones sobre la probabilidad de ocurrencia de distintos eventos con el apoyo de herramientas tecnológicas\napropiadas.",
+      "caseIds": [
+        "probability-decision",
+        "probability-projection"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "779387ca-eb2a-5894-8a29-5b2bd6e15af7",
+      "literal": "• Realiza cálculos de probabilidades para eventos simples y compuestos en la resolución de problemas relativos a la salud,\nel medio ambiente, la economía, entre otras áreas.",
+      "caseIds": [
+        "simple-compound-events"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "ce29f37d-6680-5a07-b549-75934edc4362",
+      "literal": "• Realiza la estimación de la probabilidad en un experimento utilizando simulaciones.",
+      "caseIds": [
+        "simulation-estimation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "49c95bf9-963a-5248-b0b0-c7269fd9b2a1",
+      "literal": "• Explica el concepto de variable aleatoria.",
+      "caseIds": [
+        "random-variable"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "b6ca419d-dae1-5fcc-81b0-88137780bae9",
+      "literal": "• Describe la curva normal y utiliza sus propiedades para explicar características de un conjunto de datos que se asumen\nnormalizados.",
+      "caseIds": [
+        "normal-curve"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "1a061cc6-c675-5e6a-90e8-e2071df37bc7",
+      "literal": "• Interpreta modelos teóricos para la resolución de problemas relativos a la salud, el medio ambiente, la economía, entre\notras áreas.",
+      "caseIds": [
+        "distribution-problem",
+        "theoretical-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "bd921971-7d00-57ad-b64d-bf4559dc3175",
+      "literal": "• Explica, la diferencia que existe entre las técnicas teóricas y de simulación para el cálculo de probabilidades.",
+      "caseIds": [
+        "theory-simulation-comparison"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "fe97741f-c1f7-55c3-9493-6a7dcb78f9af",
+      "literal": "• Realiza la resolución de un problema de probabilidad aplicando un modelo teórico y valida los resultados obtenidos por\nmedio de una simulación.",
+      "caseIds": [
+        "theory-simulation-validation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción solicitada con datos/modelos/supuestos dados,sin inferir certeza,causalidad onormalidad sin respaldo."
+    },
+    {
+      "id": "7a551a54-9c6d-5b94-a966-036d8d160d72",
+      "literal": "• Demuestra compromiso y responsabilidad en sus actuaciones estudiantiles personales y en su relación con compañeros\ny docente.",
+      "caseIds": [],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptation": "No calificar compromiso oresponsabilidad privados."
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "fc2c8eae-8fb9-51d6-b3b6-0050f456e20b",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "9fb0ddfa-9127-536f-b6dc-a10973d35a9b",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "0f44922c-ea3d-5367-b1e9-f84875ccf6e9",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "7691913d-a745-53d2-b221-a60fa913468e",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "cea00aad-4bff-56ca-b606-1bfa8b01ecd1",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "id": "7a551a54-9c6d-5b94-a966-036d8d160d72",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Compromiso y responsabilidad privados,no desempeño observable independiente;se conserva el literal yse excluye de evaluación."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 132,
+    "fullInstrumentsGenerated": 528,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 528,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_32_PERSISTED_SAMPLES_20_OBSERVABLE_INDICATORS_FOUR_FORMATS_20_AND_17_35",
+    "browser": "BLOCKED_PERSONAL_AUTHENTICATION",
+    "testCounts": {
+      "backend": 83781,
+      "backendFiles": 179,
+      "frontendActivities": 82711,
+      "frontendFiles": 112,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 6062,
+      "recommend": 6001,
+      "activityWrite": 4347
+    },
+    "priorScopeRegressions": "optative-mt-5-regresiones-previas.json",
+    "report": "docs/superpowers/reports/2026-10-20-optativa-mt-estadistica-5.md"
+  },
+  "limits": [
+    "48 agrupaciones temáticas, con 44 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Se evalúan únicamente acciones estadísticas oprobabilísticas con datos dados,ficticios oagregados ysupuestos explícitos;no se imponen encuestas privadas.",
+    "Normalizar no demuestra normalidad;correlación no implica causalidad;simulación no exige igualdad exacta con elmodelo teórico.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_MT_5_V1",
+    "versionId": "7ee9b5de-67ee-5b58-8319-334da606520c",
+    "scopeId": "c9ff2b76-9d3a-58d8-a3cf-e876a655b165",
+    "result": "UNCHANGED",
+    "elements": 84,
+    "excludedFromAssessment": 6,
+    "sourceRowsAndSpansMatched": true
+  }
+}

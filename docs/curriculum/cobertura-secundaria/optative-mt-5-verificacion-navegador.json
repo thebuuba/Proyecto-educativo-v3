@@ -1,0 +1,22 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.137",
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION",
+  "browser": "Chrome",
+  "url": "http://localhost:8787/login",
+  "servedEntry": "/assets/index-GUsJIhIk.js",
+  "observed": [
+    "Nueva pestaña accede a localhost con build final.",
+    "Continuar como Alexauris muestra campo Contraseña;no hay sesión autenticada."
+  ],
+  "notVerified": [
+    "Recorrido visual autenticado MT5",
+    "Selección manual,guardado/reapertura y estrategia sola con cuenta personal"
+  ],
+  "preserved": [
+    "Pestañas yactividades personales anteriores intactas",
+    "Sin limpieza de SW,cachés,almacenamiento o borradores",
+    "Sin contraseñas cambiadas,correos reenviados,usuarios o cuentas nuevas"
+  ],
+  "nextAction": "Iniciar sesión directamente en la pestaña conservada;después probar el contextoQA5 publicado en el informe. No usar credenciales QA como si fueran personales."
+}

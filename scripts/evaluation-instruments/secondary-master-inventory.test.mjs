@@ -3,6 +3,14 @@ import {readFileSync} from 'node:fs'
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
 
+test('Estadística MT5 conserva su evidencia propia y no acredita Cálculo MT6',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-mt-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.evidence,'docs/curriculum/cobertura-secundaria/optative-mt-5-matriz.json');assert.equal(row.exit,'Matemática y Tecnología')
+ const fourth=inventory.scopes.find(s=>s.id===read('optative-mt-4-matriz.json').scopeId),sixth=inventory.scopes.find(s=>s.grade===6&&s.exit===row.exit)
+ assert(fourth&&sixth);assert.notEqual(row.evidence,fourth.evidence);assert.notEqual(row.evidence,sixth.evidence)
+})
+
 test('Ciudadanía HCS sexto separa revisión completa de runtime pendiente y otros grados',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-hcs-soc-6-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-social.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
