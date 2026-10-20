@@ -1,0 +1,3349 @@
+{
+  "moduleCode": "MF_002_3",
+  "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+  "date": "2026-10-20",
+  "sources": [
+    {
+      "programCode": "IFC006_3",
+      "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+      "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+      "editionYear": null,
+      "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_IDENTIFICATION_PAGE",
+      "assignmentPdfPage": 14,
+      "visuallyReviewedPages": [
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "programCode": "IFC007_3",
+      "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/VX8P-ifc007-3-bt-soporte-redes-sistemas-informaticospdf.pdf",
+      "sha256": "f8c00ee2924602c6a00eaa3311e2907bd983058a47feafca92c2c7ec13501581",
+      "editionYear": null,
+      "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_IDENTIFICATION_PAGE",
+      "assignmentPdfPage": 18,
+      "visuallyReviewedPages": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ]
+    }
+  ],
+  "reviewMethod": "Lectura visual completa previa de 20 páginas; lectura de los registros y contraste de sus continuaciones por columnas. Página 63 revisada nuevamente para separar dos procedimientos sin inventar puntuación.",
+  "counts": {
+    "records": 210,
+    "parts": 302,
+    "types": {
+      "LEARNING_OUTCOME": 9,
+      "EVALUATION_CRITERION": 67,
+      "CONCEPT": 5,
+      "PROCEDURE": 98,
+      "ATTITUDE": 22,
+      "TEACHING_STRATEGY": 9
+    }
+  },
+  "records": [
+    {
+      "id": "technical-mf002-ra1-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "4a0b68d60445060aafb3bd217f85173159e70cdb743ed6b5601f02dbc2b21504",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ra",
+          "sha256": "4a0b68d60445060aafb3bd217f85173159e70cdb743ed6b5601f02dbc2b21504"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ra",
+          "sha256": "4a0b68d60445060aafb3bd217f85173159e70cdb743ed6b5601f02dbc2b21504"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra2-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "7b07a9e4519864dad00699cf2105b7494d4f7f4dcd057d64162cb99d9dcf7adb",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ra",
+          "sha256": "d7a2664204750c9607faebb59a1ccf52290618cc1bf10d48b6f6686fc4af77f8"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ra",
+          "sha256": "456c86b05aa36c73da74e2ab594ecf6bd3f3ad993157e17e71ef99f9d8c61f48"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ra",
+          "sha256": "7b07a9e4519864dad00699cf2105b7494d4f7f4dcd057d64162cb99d9dcf7adb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra3-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "34fc9b966797466219d45217d0bf654dcbaef263a49493dadb23f14da80cb498",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ra",
+          "sha256": "34fc9b966797466219d45217d0bf654dcbaef263a49493dadb23f14da80cb498"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ra",
+          "sha256": "34fc9b966797466219d45217d0bf654dcbaef263a49493dadb23f14da80cb498"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra4-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "f6a6061ddb687f49b667fe97dfe0fb5deffab27c08b6e75618dc76e080126749",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ra",
+          "sha256": "f6a6061ddb687f49b667fe97dfe0fb5deffab27c08b6e75618dc76e080126749"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ra",
+          "sha256": "f6a6061ddb687f49b667fe97dfe0fb5deffab27c08b6e75618dc76e080126749"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra5-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "bc21926c54d407742c688749d9e52988874b91da296a545b6c18437c59c64de3",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ra",
+          "sha256": "bc21926c54d407742c688749d9e52988874b91da296a545b6c18437c59c64de3"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ra",
+          "sha256": "bc21926c54d407742c688749d9e52988874b91da296a545b6c18437c59c64de3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra6-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "996b3e11fd1f5b8f9e0f701732e7adaa112c72619d931ddd02ec001789db2dd8",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ra",
+          "sha256": "a262af9f3b1f53a7ff4a357e6303a1501b62acce5edf5c76d219c427e774725e"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ra",
+          "sha256": "7bcdef3de797dc3884f29eee507477e4fa2c7fdbf4bc3b2fea02c1bef7f903d3"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ra",
+          "sha256": "996b3e11fd1f5b8f9e0f701732e7adaa112c72619d931ddd02ec001789db2dd8"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra7-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "231ec6a562e0caa06ebf7dbab0b9c9c3d846da712faf051902beb2a4713cbfe5",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ra",
+          "sha256": "231ec6a562e0caa06ebf7dbab0b9c9c3d846da712faf051902beb2a4713cbfe5"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ra",
+          "sha256": "72351320589c95bc091105d9c2434ff9a093af6cbbf4818d3aa25b9fe57a5bf7"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ra",
+          "sha256": "772429a7bc7aaa7df937b52b558b96d17ae483bc23dcccca96cc33ea234a4842"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra8-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "8f39aa4996c20b93af94f30407a9faa18feb14237449cdc4f07bc177e15aa867",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ra",
+          "sha256": "8f39aa4996c20b93af94f30407a9faa18feb14237449cdc4f07bc177e15aa867"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ra",
+          "sha256": "55ae0315ee86d88c6976eded19444b600099858028142c21e2dd1ac363944e79"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ra",
+          "sha256": "d392b4db27067e00a0084573bd54e28a9ffa76388c4d18bacc3df1b3b61d901b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ra9-1",
+      "type": "LEARNING_OUTCOME",
+      "sha256": "ddba44942162e1e1984dd98e2c77048978eb6b80f121a38e12c94d1347b84138",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ra",
+          "sha256": "ddba44942162e1e1984dd98e2c77048978eb6b80f121a38e12c94d1347b84138"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ra",
+          "sha256": "ddba44942162e1e1984dd98e2c77048978eb6b80f121a38e12c94d1347b84138"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "7cebd17bb268122988d797e1886c7fdb31e0fba44098a14f34abc4aeea58fce9",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "7cebd17bb268122988d797e1886c7fdb31e0fba44098a14f34abc4aeea58fce9"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "7cebd17bb268122988d797e1886c7fdb31e0fba44098a14f34abc4aeea58fce9"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "3dad05933c9c89017dd8e2dcd2ba16bacc94c4b9dddc04159d83a599b4acd36b",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "3dad05933c9c89017dd8e2dcd2ba16bacc94c4b9dddc04159d83a599b4acd36b"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "3dad05933c9c89017dd8e2dcd2ba16bacc94c4b9dddc04159d83a599b4acd36b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "8cc4405324a815c1e8ad720b1f736055a892bb04456776607a26ea3fc9eeb8b1",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "8cc4405324a815c1e8ad720b1f736055a892bb04456776607a26ea3fc9eeb8b1"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "8cc4405324a815c1e8ad720b1f736055a892bb04456776607a26ea3fc9eeb8b1"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "43f772c304360d3784cecbada64f83b22f24d9c256d4f0d23263b2533806fa28",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "43f772c304360d3784cecbada64f83b22f24d9c256d4f0d23263b2533806fa28"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "43f772c304360d3784cecbada64f83b22f24d9c256d4f0d23263b2533806fa28"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "74df62a03f4f485aa22f5872ce0640fe143bb619a37429aa3df309338896c7aa",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "74df62a03f4f485aa22f5872ce0640fe143bb619a37429aa3df309338896c7aa"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "74df62a03f4f485aa22f5872ce0640fe143bb619a37429aa3df309338896c7aa"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "107b270327754e75fba80e78ca9c7a31cb8aa78a1dc4b16dd928b4b87b5cd4a4",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "107b270327754e75fba80e78ca9c7a31cb8aa78a1dc4b16dd928b4b87b5cd4a4"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "107b270327754e75fba80e78ca9c7a31cb8aa78a1dc4b16dd928b4b87b5cd4a4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-7-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "f4b057f89732ecb76bbdf50d1b4e890947adf80beab18c41ca7a5b3b141394fb",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "f4b057f89732ecb76bbdf50d1b4e890947adf80beab18c41ca7a5b3b141394fb"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "f4b057f89732ecb76bbdf50d1b4e890947adf80beab18c41ca7a5b3b141394fb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-8-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "6a7ed49e6295f4fd6f5b4c353293a271c8725793e90966d0883e3e09c82f60a5",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "6a7ed49e6295f4fd6f5b4c353293a271c8725793e90966d0883e3e09c82f60a5"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "6a7ed49e6295f4fd6f5b4c353293a271c8725793e90966d0883e3e09c82f60a5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-9-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "ba1457af90175e65d64c7af0944a12e444d5cb5147b16ea767b2c21775baeb9c",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "ba1457af90175e65d64c7af0944a12e444d5cb5147b16ea767b2c21775baeb9c"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "ba1457af90175e65d64c7af0944a12e444d5cb5147b16ea767b2c21775baeb9c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-10-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "7053c077c780094456841b2d90578fa16f6cde9971f2fcede0d18f2796deed82",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "7053c077c780094456841b2d90578fa16f6cde9971f2fcede0d18f2796deed82"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "7053c077c780094456841b2d90578fa16f6cde9971f2fcede0d18f2796deed82"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce1-11-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "7a8dd45853b1c7b096786977ba0b3413826225a1a6bb449a1e5280a291969988",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "7a8dd45853b1c7b096786977ba0b3413826225a1a6bb449a1e5280a291969988"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "7a8dd45853b1c7b096786977ba0b3413826225a1a6bb449a1e5280a291969988"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "a14715880309e4f48df5090ee31065839b7a1aba08a34cd86b751d35ac370211",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 49,
+          "column": "ce",
+          "sha256": "22d1ef3da1ca057b739adcc117527389a260d0438cf28ad31b997705eb0fe01b"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "f8f2f553d6366562603a0f4dbfb8956b63c57fb4d03562b72547a455539c98f6"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "a14715880309e4f48df5090ee31065839b7a1aba08a34cd86b751d35ac370211"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "33ad2b13d1a32f72fb1fa0124d6d6f3ce1e2e4dee3b59b534d4ee226600c968f",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "33ad2b13d1a32f72fb1fa0124d6d6f3ce1e2e4dee3b59b534d4ee226600c968f"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "33ad2b13d1a32f72fb1fa0124d6d6f3ce1e2e4dee3b59b534d4ee226600c968f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "80f127776991c5cb0980662d7586d44a08456fbc4bce459806d3183ad4264b91",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "80f127776991c5cb0980662d7586d44a08456fbc4bce459806d3183ad4264b91"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "80f127776991c5cb0980662d7586d44a08456fbc4bce459806d3183ad4264b91"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "ca9d5c674c9a3e4a01ab262da12277a6cb22ba9adabfe2c22395b498a20aa61c",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "ca9d5c674c9a3e4a01ab262da12277a6cb22ba9adabfe2c22395b498a20aa61c"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "ca9d5c674c9a3e4a01ab262da12277a6cb22ba9adabfe2c22395b498a20aa61c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "a091b55078aed98fb85e11a04d78c7927c07474ab0ee411eaad351f78b3ee446",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "a091b55078aed98fb85e11a04d78c7927c07474ab0ee411eaad351f78b3ee446"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "a091b55078aed98fb85e11a04d78c7927c07474ab0ee411eaad351f78b3ee446"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "e65510b36d6b53fbe777eee51e6706e2d59b65cb09987493bfb6b657d59967eb",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "e65510b36d6b53fbe777eee51e6706e2d59b65cb09987493bfb6b657d59967eb"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "e65510b36d6b53fbe777eee51e6706e2d59b65cb09987493bfb6b657d59967eb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-7-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "e5cc3b6613806280791385167c1c4b12e8a7091476395927b1dfedec9f2a4ec3",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 50,
+          "column": "ce",
+          "sha256": "98d85ae6f074cea7770f1481e4dcb1d2ea92faa2a03a81f1757646ff62db5427"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "8947dfac8489c7a26707fd6bd6118bb979feb3d3cf539a7d3a2e220c71d542bb"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "e5cc3b6613806280791385167c1c4b12e8a7091476395927b1dfedec9f2a4ec3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce2-8-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "3aec0c801a84f5165ec6438b9f62ce75e6b97086fe8e3cd47fabbec2ea266c6d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "3aec0c801a84f5165ec6438b9f62ce75e6b97086fe8e3cd47fabbec2ea266c6d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "3aec0c801a84f5165ec6438b9f62ce75e6b97086fe8e3cd47fabbec2ea266c6d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "8651acf37f294914f4bf2176acd1dee2dca8b1bfd7081b564a8c6acc58b958b2",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "8651acf37f294914f4bf2176acd1dee2dca8b1bfd7081b564a8c6acc58b958b2"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "8651acf37f294914f4bf2176acd1dee2dca8b1bfd7081b564a8c6acc58b958b2"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "7bc3593752a3211adfa770c236a8b667cf876fe47fb46afabeca6a184675beeb",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "7bc3593752a3211adfa770c236a8b667cf876fe47fb46afabeca6a184675beeb"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "7bc3593752a3211adfa770c236a8b667cf876fe47fb46afabeca6a184675beeb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "3f3ba3e1943d28628632356f4ea2cdbbd6a258fad9b1c49ea442c0ada2997584",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "3f3ba3e1943d28628632356f4ea2cdbbd6a258fad9b1c49ea442c0ada2997584"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 56,
+          "column": "ce",
+          "sha256": "834d62b4796021fab417f6fba432ed0212090c6cd3dd7855fe7ffa19bda13dc3"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "d1a9e59873a2287e462c36a1c0065878a3564b46b4f0cc2bc904fbc9340e162b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "beed8d9d136997b7e33de198ce05386fcce60bebc614c0a29bb5615f32475726",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "beed8d9d136997b7e33de198ce05386fcce60bebc614c0a29bb5615f32475726"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "beed8d9d136997b7e33de198ce05386fcce60bebc614c0a29bb5615f32475726"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "ec80ea91d03542754fed550a5d4b79a6b4b4d7f1a9fd3e4316aeb926f2e52613",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "ec80ea91d03542754fed550a5d4b79a6b4b4d7f1a9fd3e4316aeb926f2e52613"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "ec80ea91d03542754fed550a5d4b79a6b4b4d7f1a9fd3e4316aeb926f2e52613"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "02bc7f3ce38d992888fa5792ff6735748336ea1f60cef805e9c0f99dfafa61c6",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "02bc7f3ce38d992888fa5792ff6735748336ea1f60cef805e9c0f99dfafa61c6"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "02bc7f3ce38d992888fa5792ff6735748336ea1f60cef805e9c0f99dfafa61c6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-4-2",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "95bbc08e5f972a626b955591b48dd890c3788f9c519e745722cbeba74a928be5",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "95bbc08e5f972a626b955591b48dd890c3788f9c519e745722cbeba74a928be5"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "95bbc08e5f972a626b955591b48dd890c3788f9c519e745722cbeba74a928be5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce3-5-2",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "76610abf7c1ed953ea83129d1443c01ec6e6990975146b1f6929aa1ace8771ab",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "76610abf7c1ed953ea83129d1443c01ec6e6990975146b1f6929aa1ace8771ab"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "76610abf7c1ed953ea83129d1443c01ec6e6990975146b1f6929aa1ace8771ab"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce4-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "6b86c5a39bf3b524d1178e71fd2a10ddc5c2717e288684f2396939d567d246a5",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "6b86c5a39bf3b524d1178e71fd2a10ddc5c2717e288684f2396939d567d246a5"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "6b86c5a39bf3b524d1178e71fd2a10ddc5c2717e288684f2396939d567d246a5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce4-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "0a318fe83cbb5807179b8a1f8f98ea4396b6f8ac092d986c94325989be72c00a",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "0a318fe83cbb5807179b8a1f8f98ea4396b6f8ac092d986c94325989be72c00a"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "0a318fe83cbb5807179b8a1f8f98ea4396b6f8ac092d986c94325989be72c00a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce4-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "4f21b2323b5f666b56214d9805733ec00e7da766b923d05c4c67a69f56246c9b",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "4f21b2323b5f666b56214d9805733ec00e7da766b923d05c4c67a69f56246c9b"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "4f21b2323b5f666b56214d9805733ec00e7da766b923d05c4c67a69f56246c9b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce4-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "5da9d865848b4f4e52775e218d4edb7e499c268bc787865d04f0cc9802682412",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 51,
+          "column": "ce",
+          "sha256": "0e73f6a08d016bc2dc9de3c8f41918f027162df8eae8938db773f251d39434ff"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "9c8b803c33d813cdf46b3dc522c0d85c1ae53926311dcd661d257d6180b4c9d2"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "5da9d865848b4f4e52775e218d4edb7e499c268bc787865d04f0cc9802682412"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "4bf4ee89edb07196370d06d2fd3430802fa074c7aca564a0ad2d38af689a43e7",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "4bf4ee89edb07196370d06d2fd3430802fa074c7aca564a0ad2d38af689a43e7"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "4bf4ee89edb07196370d06d2fd3430802fa074c7aca564a0ad2d38af689a43e7"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "589958923c4499251f3e9d361886a9d1e7e7b64d41be1ce37259b9e86a3a7ea1",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "589958923c4499251f3e9d361886a9d1e7e7b64d41be1ce37259b9e86a3a7ea1"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "589958923c4499251f3e9d361886a9d1e7e7b64d41be1ce37259b9e86a3a7ea1"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "064f7da84966c7bdceb69333fa40264a26f646d5a804216289b5a6beff4ee1e2",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "064f7da84966c7bdceb69333fa40264a26f646d5a804216289b5a6beff4ee1e2"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 57,
+          "column": "ce",
+          "sha256": "583289eb35e39896e39e3074c1d370ddee1e944d4872b6d1169a2a9fab786d43"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "6a3a01aefd84e06a36c149d065331d5c723f5dfe5546dff7f23a0fcae04d67d6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "a47bb3c6b8d20f627eb04cb0bd79b16b11dff0651fcecee8d642a5ee8edd4eee",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "a47bb3c6b8d20f627eb04cb0bd79b16b11dff0651fcecee8d642a5ee8edd4eee"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "a47bb3c6b8d20f627eb04cb0bd79b16b11dff0651fcecee8d642a5ee8edd4eee"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "b764cca750be36586e0e34fadcb59869fcd4cf253e1382a91c6cab7084694f85",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "b764cca750be36586e0e34fadcb59869fcd4cf253e1382a91c6cab7084694f85"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "b764cca750be36586e0e34fadcb59869fcd4cf253e1382a91c6cab7084694f85"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "0a4d278b6505294b0fab60939787bb37b341144de322d1ab9fc531f190f6bf2d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "0a4d278b6505294b0fab60939787bb37b341144de322d1ab9fc531f190f6bf2d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "0a4d278b6505294b0fab60939787bb37b341144de322d1ab9fc531f190f6bf2d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-7-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "46c00589535fcb6cdde37ffac4348c559d8d67ea3623f1f67b32ee06be14438d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "46c00589535fcb6cdde37ffac4348c559d8d67ea3623f1f67b32ee06be14438d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "46c00589535fcb6cdde37ffac4348c559d8d67ea3623f1f67b32ee06be14438d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce5-8-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "e4c2ce980a8708b5e859d491502d458d4f2ad2768db5219e4297b96d87f37345",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "e4c2ce980a8708b5e859d491502d458d4f2ad2768db5219e4297b96d87f37345"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "e4c2ce980a8708b5e859d491502d458d4f2ad2768db5219e4297b96d87f37345"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "0eff9c8c02faa91fb2ea44ed103d0cab4a2c33dada798bc5cf454e70558c335d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 52,
+          "column": "ce",
+          "sha256": "0eff9c8c02faa91fb2ea44ed103d0cab4a2c33dada798bc5cf454e70558c335d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "0eff9c8c02faa91fb2ea44ed103d0cab4a2c33dada798bc5cf454e70558c335d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "e9bcbb6bd9e4faedb60167d3ac6cef61cef882f56b649f47908ab3ddc54eadc0",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "e9bcbb6bd9e4faedb60167d3ac6cef61cef882f56b649f47908ab3ddc54eadc0"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "e9bcbb6bd9e4faedb60167d3ac6cef61cef882f56b649f47908ab3ddc54eadc0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "9ef388d511d1d01c027ff9908d902f895cbead4d221cfd437f020e9474e455e8",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "9ef388d511d1d01c027ff9908d902f895cbead4d221cfd437f020e9474e455e8"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "9ef388d511d1d01c027ff9908d902f895cbead4d221cfd437f020e9474e455e8"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "38becd507f3824adbfbd761f39bb473b799e3662c28630efba6a3cde18ec987c",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "38becd507f3824adbfbd761f39bb473b799e3662c28630efba6a3cde18ec987c"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "38becd507f3824adbfbd761f39bb473b799e3662c28630efba6a3cde18ec987c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "09b7fb9da01f13b57adbe8557cf7800ac3af37ab347d3828e7b1aa2202e348fb",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "09b7fb9da01f13b57adbe8557cf7800ac3af37ab347d3828e7b1aa2202e348fb"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "09b7fb9da01f13b57adbe8557cf7800ac3af37ab347d3828e7b1aa2202e348fb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce6-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "712be4957e7433e6c1beee7cf97a65b9345669163053f0971d846efabb0025e7",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "712be4957e7433e6c1beee7cf97a65b9345669163053f0971d846efabb0025e7"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "712be4957e7433e6c1beee7cf97a65b9345669163053f0971d846efabb0025e7"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "cdac1d6714656a59e25a5057515428d420b4142a2ef08db7b188fcbda559968d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "cdac1d6714656a59e25a5057515428d420b4142a2ef08db7b188fcbda559968d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 58,
+          "column": "ce",
+          "sha256": "cdac1d6714656a59e25a5057515428d420b4142a2ef08db7b188fcbda559968d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "d1699b9b1f61012ab516069ba08b677e2fdfe22fe59efd4f84f1bb75d2e329fc",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "d1699b9b1f61012ab516069ba08b677e2fdfe22fe59efd4f84f1bb75d2e329fc"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "d1699b9b1f61012ab516069ba08b677e2fdfe22fe59efd4f84f1bb75d2e329fc"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "ef2eb9cdbd4ba86926b0cace16a41cf1ded93ebdf7df47f14f7de6392ab7cc94",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "ef2eb9cdbd4ba86926b0cace16a41cf1ded93ebdf7df47f14f7de6392ab7cc94"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "ef2eb9cdbd4ba86926b0cace16a41cf1ded93ebdf7df47f14f7de6392ab7cc94"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "a8f28727aa00c8867375842b3118357a728117595af306855fdf3bdd8cfddcbe",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "a8f28727aa00c8867375842b3118357a728117595af306855fdf3bdd8cfddcbe"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "a8f28727aa00c8867375842b3118357a728117595af306855fdf3bdd8cfddcbe"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "4410cd78794ff59ba46c3f47532a5ef31d68f6d7365abae888ac60c8ecea652a",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "4410cd78794ff59ba46c3f47532a5ef31d68f6d7365abae888ac60c8ecea652a"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "4410cd78794ff59ba46c3f47532a5ef31d68f6d7365abae888ac60c8ecea652a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "dd38fdac4405b0977ee5a06a1a19de7b02dbdf75cd173f5db0e3001efd391487",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "dd38fdac4405b0977ee5a06a1a19de7b02dbdf75cd173f5db0e3001efd391487"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "dd38fdac4405b0977ee5a06a1a19de7b02dbdf75cd173f5db0e3001efd391487"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-7-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "1a1921f99097afb2d800417dcc0324665547e8f2c1aea3ecc9fd8ff743cb3c48",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 53,
+          "column": "ce",
+          "sha256": "a41974661670fc454b00a39cc677c83fe671bf49dceae487424befbd4de53b99"
+        },
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "888e056a204649f4ba8027648e96c5cc6ee66f7f9e63e633f4e420a7ab847b0e"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "1a1921f99097afb2d800417dcc0324665547e8f2c1aea3ecc9fd8ff743cb3c48"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-8-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "5d369e372822005628b5406637013782f71c6a875cb3629566c361b4aaf40d02",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "5d369e372822005628b5406637013782f71c6a875cb3629566c361b4aaf40d02"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "5d369e372822005628b5406637013782f71c6a875cb3629566c361b4aaf40d02"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-9-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "dbf383af254dedf0faf43c2d77cfc459a492ea7fbd588db8573894d55db857f6",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "dbf383af254dedf0faf43c2d77cfc459a492ea7fbd588db8573894d55db857f6"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "dbf383af254dedf0faf43c2d77cfc459a492ea7fbd588db8573894d55db857f6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce7-10-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "bf85f0c37f676fbbc5d4692126fc1423d08bf9114d15b383c117ce03b0baed2b",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "bf85f0c37f676fbbc5d4692126fc1423d08bf9114d15b383c117ce03b0baed2b"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "bf85f0c37f676fbbc5d4692126fc1423d08bf9114d15b383c117ce03b0baed2b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "da4351cfdc33b736a0b8f3b82600135d3765c6363ad0f199af313af5eca6fc9d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "da4351cfdc33b736a0b8f3b82600135d3765c6363ad0f199af313af5eca6fc9d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 59,
+          "column": "ce",
+          "sha256": "da4351cfdc33b736a0b8f3b82600135d3765c6363ad0f199af313af5eca6fc9d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "b13f5e9bc93d1e79f61e027405aa18c3bc8aba5887d67e12d2de80f3a9a959bf",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "b13f5e9bc93d1e79f61e027405aa18c3bc8aba5887d67e12d2de80f3a9a959bf"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "b13f5e9bc93d1e79f61e027405aa18c3bc8aba5887d67e12d2de80f3a9a959bf"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "809524247f22e81dc8495360e71c8acacd7acf4b220f3b099b0ac3559d956129",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "809524247f22e81dc8495360e71c8acacd7acf4b220f3b099b0ac3559d956129"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "809524247f22e81dc8495360e71c8acacd7acf4b220f3b099b0ac3559d956129"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "4fe35a195817791f07f87b2dbf16e9333c21e3288940500b30962578ab07b4f3",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "4fe35a195817791f07f87b2dbf16e9333c21e3288940500b30962578ab07b4f3"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "4fe35a195817791f07f87b2dbf16e9333c21e3288940500b30962578ab07b4f3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "dea7f1cc8c7557a2efc3279d3590162036acac739ad24b2551aefcfdf99d61f6",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "dea7f1cc8c7557a2efc3279d3590162036acac739ad24b2551aefcfdf99d61f6"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "dea7f1cc8c7557a2efc3279d3590162036acac739ad24b2551aefcfdf99d61f6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce8-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "2b13038061d7d8f6480ef827a6e637f9de72867e9efc81044e14daff5c2428c3",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 54,
+          "column": "ce",
+          "sha256": "2b13038061d7d8f6480ef827a6e637f9de72867e9efc81044e14daff5c2428c3"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "2b13038061d7d8f6480ef827a6e637f9de72867e9efc81044e14daff5c2428c3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-1-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "46c1c97916da6d9d2a22d32cd0f77aeae2eeb5f4487a5e391e9b6f0a50b321b8",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "46c1c97916da6d9d2a22d32cd0f77aeae2eeb5f4487a5e391e9b6f0a50b321b8"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "46c1c97916da6d9d2a22d32cd0f77aeae2eeb5f4487a5e391e9b6f0a50b321b8"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-2-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "71966c3bfbc23ba926b3cf634832fc556c2b800e64f2b8bf06d4613215b49453",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "71966c3bfbc23ba926b3cf634832fc556c2b800e64f2b8bf06d4613215b49453"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "71966c3bfbc23ba926b3cf634832fc556c2b800e64f2b8bf06d4613215b49453"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-3-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "bd1a1844fbd52cb09098fec5158844210dd834cc1806c7d98dd2910c057b273b",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "bd1a1844fbd52cb09098fec5158844210dd834cc1806c7d98dd2910c057b273b"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 60,
+          "column": "ce",
+          "sha256": "bd1a1844fbd52cb09098fec5158844210dd834cc1806c7d98dd2910c057b273b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-4-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "f4c76eca9a4aebc0dbc51b79d12f9d9006b6cbbcafd8dfa4d5beffee8fe870b1",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "f4c76eca9a4aebc0dbc51b79d12f9d9006b6cbbcafd8dfa4d5beffee8fe870b1"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "ce",
+          "sha256": "f4c76eca9a4aebc0dbc51b79d12f9d9006b6cbbcafd8dfa4d5beffee8fe870b1"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-5-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "641507369ca7467baadb0e70b87e76c9f6668c3241ba6b84bf361c818faf450d",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "641507369ca7467baadb0e70b87e76c9f6668c3241ba6b84bf361c818faf450d"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "ce",
+          "sha256": "641507369ca7467baadb0e70b87e76c9f6668c3241ba6b84bf361c818faf450d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-ce9-6-1",
+      "type": "EVALUATION_CRITERION",
+      "sha256": "16737df66f97ebceec9219bdaf2a45a92b7618edf70b0032ead4d242d16878b5",
+      "parts": [
+        {
+          "programCode": "IFC006_3",
+          "pdfPage": 55,
+          "column": "ce",
+          "sha256": "16737df66f97ebceec9219bdaf2a45a92b7618edf70b0032ead4d242d16878b5"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "ce",
+          "sha256": "16737df66f97ebceec9219bdaf2a45a92b7618edf70b0032ead4d242d16878b5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-concept-1",
+      "type": "CONCEPT",
+      "sha256": "65fd3ea98c6fe9671e333c9062a4d86d511afee1d2dc9ec8d72cc515c8e8c75c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "concept",
+          "sha256": "f6c6ab213385d288368fa9ad42259b7c215debe0ea94abb91d7ed41141ad411c"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "concept",
+          "sha256": "8d2b4704e67a6699055990361f4cd53811f2bf476e878bd2d009577f06e3da49"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-concept-2",
+      "type": "CONCEPT",
+      "sha256": "8265ec6aa54fdf4cf05982417b7a491f7375861bf8e4d019a25652763d1bf6a3",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "concept",
+          "sha256": "a263ab94f3145fcf0bb73c3f284a718c61e5f567be67a605cff6e42607a8fe6f"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "concept",
+          "sha256": "6f70e858dfe88c33dffc4e2d6b45e207b2e3888b168e1137f40354f9a86c00c6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-concept-3",
+      "type": "CONCEPT",
+      "sha256": "9666e053d0b44d030862ab2de8b652e4c781b1cb28912a7ad0561f9db86f7605",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "concept",
+          "sha256": "13a67ea7d596324d93c6238f1d9c7a2589295c3d665cf8eeb7b4c4d9a27d6e1b"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "concept",
+          "sha256": "4183bd2003bff4b164086bb2807000f5819d9ea1525ed6caddabf0d9aabe53e3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-concept-4",
+      "type": "CONCEPT",
+      "sha256": "68cdf44e57b89cb96bf650970a263d1d32269dab04ea4cb376272b41fce2d2af",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "concept",
+          "sha256": "68cdf44e57b89cb96bf650970a263d1d32269dab04ea4cb376272b41fce2d2af"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-concept-5",
+      "type": "CONCEPT",
+      "sha256": "d949865c7f922a242be6069c53922821be8748075e97be9b958232b556e59d24",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "concept",
+          "sha256": "ce406303bf82a3ffbe7e71ddd2eac34055c4c3d6857a220429fcae8e9821e4ed"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "concept",
+          "sha256": "0e654d722b5399ecfb24926ee46effd3caac8655548fbdab3a4179be29f6bb2c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-001",
+      "type": "PROCEDURE",
+      "sha256": "6e8d776166a9a7ff0cc8dfc9242fbc9a3ca3ef51ed02d8c9beefedafacc9098b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "6e8d776166a9a7ff0cc8dfc9242fbc9a3ca3ef51ed02d8c9beefedafacc9098b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-002",
+      "type": "PROCEDURE",
+      "sha256": "1186ca1892c98a1ea8c440350863445a144bc0d2c881a6a1a50eb1e7d8559b57",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "1186ca1892c98a1ea8c440350863445a144bc0d2c881a6a1a50eb1e7d8559b57"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-003",
+      "type": "PROCEDURE",
+      "sha256": "f9a47d00d11357913ed7277c4dd0f8f738f5d4508d081e1467bfc82a804dc9e1",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "f9a47d00d11357913ed7277c4dd0f8f738f5d4508d081e1467bfc82a804dc9e1"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-004",
+      "type": "PROCEDURE",
+      "sha256": "e0e52a9a7d64c383da3c87d82972b028dd74a3d9a26f6812b76271d0c8dda813",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "e0e52a9a7d64c383da3c87d82972b028dd74a3d9a26f6812b76271d0c8dda813"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-005",
+      "type": "PROCEDURE",
+      "sha256": "ae2f886bd0999d21d24e3f1022d103893cd4ae76567ec4579b4d00d2816023aa",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "ae2f886bd0999d21d24e3f1022d103893cd4ae76567ec4579b4d00d2816023aa"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-006",
+      "type": "PROCEDURE",
+      "sha256": "472fcecf75af137dd6f32ecf633360ffbbc63a3ac4f9bd109b05fcc98b85f0b4",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "472fcecf75af137dd6f32ecf633360ffbbc63a3ac4f9bd109b05fcc98b85f0b4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-007",
+      "type": "PROCEDURE",
+      "sha256": "7d400b7192c7e90bb85aadb7211653deec137eebb605b86d5e4f4b6d9d24d406",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "procedure",
+          "sha256": "7d400b7192c7e90bb85aadb7211653deec137eebb605b86d5e4f4b6d9d24d406"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-008",
+      "type": "PROCEDURE",
+      "sha256": "04056fcfe5fda7af2ff6694e21067caf574d0184f57892430f2c29e601d38833",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "04056fcfe5fda7af2ff6694e21067caf574d0184f57892430f2c29e601d38833"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-009",
+      "type": "PROCEDURE",
+      "sha256": "34986c2b315e3947c389a4144db28b95f6168ea6c4652b0d5e2a5d720ee71af3",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "34986c2b315e3947c389a4144db28b95f6168ea6c4652b0d5e2a5d720ee71af3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-010",
+      "type": "PROCEDURE",
+      "sha256": "df2364fb8090c345f6cc67167e21c4b46db9f849f5b0701baaf12d772c3c49b5",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "df2364fb8090c345f6cc67167e21c4b46db9f849f5b0701baaf12d772c3c49b5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-011",
+      "type": "PROCEDURE",
+      "sha256": "1236f54005359251fa83891c6f898d3b186a3c4bb180684bbb3bb631bc8ab2c4",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "1236f54005359251fa83891c6f898d3b186a3c4bb180684bbb3bb631bc8ab2c4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-012",
+      "type": "PROCEDURE",
+      "sha256": "355521089aa4a37c224a29aff437af133604647882bcc9092aa23cb336e8853e",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "355521089aa4a37c224a29aff437af133604647882bcc9092aa23cb336e8853e"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-013",
+      "type": "PROCEDURE",
+      "sha256": "87bb5cc12e75e48ed34ed66ddd823a1262f909427e102f66aac62cc0dfcf6490",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "87bb5cc12e75e48ed34ed66ddd823a1262f909427e102f66aac62cc0dfcf6490"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-014",
+      "type": "PROCEDURE",
+      "sha256": "4727ab50aafe85591c5286a08f206a5e6a68b91461c3909969a68f94cafb540d",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "4727ab50aafe85591c5286a08f206a5e6a68b91461c3909969a68f94cafb540d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-015",
+      "type": "PROCEDURE",
+      "sha256": "f0dd16b0e248d2313c36ae80f29d25c3c7778a668421f0dc8ce6d4501e9d68ed",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "f0dd16b0e248d2313c36ae80f29d25c3c7778a668421f0dc8ce6d4501e9d68ed"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-016",
+      "type": "PROCEDURE",
+      "sha256": "d0798c2b3f6039dd9d6c7c4dcd7cd0c0978c3c8da9d8b7bdec35508eb82ea16c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "d0798c2b3f6039dd9d6c7c4dcd7cd0c0978c3c8da9d8b7bdec35508eb82ea16c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-017",
+      "type": "PROCEDURE",
+      "sha256": "3a8fa59d20696715da3e1472fa20477d251bfc80a25098aaa82f82175888e5ce",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "3a8fa59d20696715da3e1472fa20477d251bfc80a25098aaa82f82175888e5ce"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-018",
+      "type": "PROCEDURE",
+      "sha256": "784f542a805e060a669907980083094eab860023badf98376e30ddbe3f1aacd6",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "784f542a805e060a669907980083094eab860023badf98376e30ddbe3f1aacd6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-019",
+      "type": "PROCEDURE",
+      "sha256": "a180640b41f6030ab01af77de6b58f948904024df858b12c447e6a6d5edc9b0b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "a180640b41f6030ab01af77de6b58f948904024df858b12c447e6a6d5edc9b0b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-020",
+      "type": "PROCEDURE",
+      "sha256": "90fd605df94feb86fc6d18c122217e3698eaad36bf60bf0d2195717b79529432",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "90fd605df94feb86fc6d18c122217e3698eaad36bf60bf0d2195717b79529432"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-021",
+      "type": "PROCEDURE",
+      "sha256": "038c265bdfa5a438530d45875968bcfa08491009d97e94f78c7ed1fbfdb1c391",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "038c265bdfa5a438530d45875968bcfa08491009d97e94f78c7ed1fbfdb1c391"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-022",
+      "type": "PROCEDURE",
+      "sha256": "69729d51f738600f0bb27ed2e59b0fbfed5dd9383ccbcd5bff9ccfa5ed16b1c4",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "69729d51f738600f0bb27ed2e59b0fbfed5dd9383ccbcd5bff9ccfa5ed16b1c4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-023",
+      "type": "PROCEDURE",
+      "sha256": "14c5a0cd46383061f9ae4d0a37ee4baf99553a3a0d8598f560573bcbe049ae3f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "procedure",
+          "sha256": "3b2907ef8d76ca2be19b59ac3ea7c7676e2878d428e0e88035e8701fbda2d6a2"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "2d19091abd1560d5c79de0e53bf48fa422ad6c091a751898f17aba65f3c19973"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-024",
+      "type": "PROCEDURE",
+      "sha256": "5c3c52bf230132a768ebc6c4e16e7f81e685ba6bf3c2d1d3e6f32bf32cc96918",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "5c3c52bf230132a768ebc6c4e16e7f81e685ba6bf3c2d1d3e6f32bf32cc96918"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-025",
+      "type": "PROCEDURE",
+      "sha256": "855972784a4e8315d1631912bb0dd44478779f95b7f378fd1b317f7fec2e0488",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "855972784a4e8315d1631912bb0dd44478779f95b7f378fd1b317f7fec2e0488"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-026",
+      "type": "PROCEDURE",
+      "sha256": "9bba73a9fd24bd7ed4e74291d300e1465046b2bafcca6c1bdd85a48fd6142ed2",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "9bba73a9fd24bd7ed4e74291d300e1465046b2bafcca6c1bdd85a48fd6142ed2"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-027",
+      "type": "PROCEDURE",
+      "sha256": "6cc13a7b15220b1d27cbd9ea836d0e3d13df9084dca38fdd1f1e6ccb305085be",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "6cc13a7b15220b1d27cbd9ea836d0e3d13df9084dca38fdd1f1e6ccb305085be"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-028",
+      "type": "PROCEDURE",
+      "sha256": "5a496affea62ccf8ace1888dc0207e9a1b5f07c5171bb676db85f2b2b5ca07f5",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "5a496affea62ccf8ace1888dc0207e9a1b5f07c5171bb676db85f2b2b5ca07f5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-029",
+      "type": "PROCEDURE",
+      "sha256": "73b76772ec58f269199af8abfd183c22b5e7d56ee77784d93252da8d81562527",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "73b76772ec58f269199af8abfd183c22b5e7d56ee77784d93252da8d81562527"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-030",
+      "type": "PROCEDURE",
+      "sha256": "41a6776ab664f5f5fdb1a60e8683f8a3f69501f9980bbbddcdde857d10643d85",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "41a6776ab664f5f5fdb1a60e8683f8a3f69501f9980bbbddcdde857d10643d85"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-031",
+      "type": "PROCEDURE",
+      "sha256": "5bef35a3a17454d7be46031d1ebc16752657ca0eae6e96091d6deca079a93b6e",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "5bef35a3a17454d7be46031d1ebc16752657ca0eae6e96091d6deca079a93b6e"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-032",
+      "type": "PROCEDURE",
+      "sha256": "45e81b992ae351b477530bd2ed695c8471baf88ca3f8ae48e46af60f394ffa30",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "45e81b992ae351b477530bd2ed695c8471baf88ca3f8ae48e46af60f394ffa30"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-033",
+      "type": "PROCEDURE",
+      "sha256": "bb7ebcbe9c9f71d8e8ced894477d1c2efb69a90285e0c72d220b132f046d2e75",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "bb7ebcbe9c9f71d8e8ced894477d1c2efb69a90285e0c72d220b132f046d2e75"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-034",
+      "type": "PROCEDURE",
+      "sha256": "fecafa4c3f7021d51513d473415c4b34f5e74fdbdc5bee9d0a5ac33ea7c2d966",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "fecafa4c3f7021d51513d473415c4b34f5e74fdbdc5bee9d0a5ac33ea7c2d966"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-035",
+      "type": "PROCEDURE",
+      "sha256": "aef803db7fc3258ed77293ddbcccc5eafd1d7722bb7d8047623e4fe23d98bc4e",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "aef803db7fc3258ed77293ddbcccc5eafd1d7722bb7d8047623e4fe23d98bc4e"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-036",
+      "type": "PROCEDURE",
+      "sha256": "c8af6c02a4fc8087a327c32b91ceb372754794a73c91594510d1205848e37e49",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "c8af6c02a4fc8087a327c32b91ceb372754794a73c91594510d1205848e37e49"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-037",
+      "type": "PROCEDURE",
+      "sha256": "f217440f98f6e94553f884781553413e429d2fda54d4dadfe095e061728db739",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "f217440f98f6e94553f884781553413e429d2fda54d4dadfe095e061728db739"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-038",
+      "type": "PROCEDURE",
+      "sha256": "e103911868280ce4f53a4f15cbfd9560d70499db253ce05bc57990d4d084d530",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "e103911868280ce4f53a4f15cbfd9560d70499db253ce05bc57990d4d084d530"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-039",
+      "type": "PROCEDURE",
+      "sha256": "0da6e3ec29fa8e283d74eec4ebef5b604e660c4d8f860bbb47e565f220a90429",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "0da6e3ec29fa8e283d74eec4ebef5b604e660c4d8f860bbb47e565f220a90429"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-040",
+      "type": "PROCEDURE",
+      "sha256": "3eb453b1819ca5a6701f497bc17411481ee8714b73952aa55a15bd94657563bd",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "3eb453b1819ca5a6701f497bc17411481ee8714b73952aa55a15bd94657563bd"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-041",
+      "type": "PROCEDURE",
+      "sha256": "f75bbe5cddd880d7925dbbf630786d9314d434f70e1b1db8691652a9262f6b9d",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "f75bbe5cddd880d7925dbbf630786d9314d434f70e1b1db8691652a9262f6b9d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-042",
+      "type": "PROCEDURE",
+      "sha256": "896399c1311b2baa3117a289b52c498bf980332c0bb382c5dffb7e699f2a6c49",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "896399c1311b2baa3117a289b52c498bf980332c0bb382c5dffb7e699f2a6c49"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-043",
+      "type": "PROCEDURE",
+      "sha256": "b46c3b4db1c402b944ec1b7b0686d800f87a6eacd18e85d6e9b0763b913e6324",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "procedure",
+          "sha256": "410cb7b281b3324e257eeccf0215863688b680e35d97a92f347a04c73f7254c2"
+        },
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "a13606ed391544ea6cc1b11a9e8be26100f68608f013f399befac112970b06ec"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-044",
+      "type": "PROCEDURE",
+      "sha256": "d08d9f4e2364e313ca039d9433341710c19ecde73df6659b4d0e9a7bfdbd955d",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "d08d9f4e2364e313ca039d9433341710c19ecde73df6659b4d0e9a7bfdbd955d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-045",
+      "type": "PROCEDURE",
+      "sha256": "53b24f2adc61cfb357dcd43e5bf6d1313553c64cebea403210a2733367d0a58b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "53b24f2adc61cfb357dcd43e5bf6d1313553c64cebea403210a2733367d0a58b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-046",
+      "type": "PROCEDURE",
+      "sha256": "773304292e5ebcc8936bad55e46e5396b6ea82f0b898e0b001d25a23625c0dd3",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "773304292e5ebcc8936bad55e46e5396b6ea82f0b898e0b001d25a23625c0dd3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-047",
+      "type": "PROCEDURE",
+      "sha256": "15111f7d93a8521238a27b1af87635a8a0a10abcfb4317eca16fc7e3c10372e8",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "15111f7d93a8521238a27b1af87635a8a0a10abcfb4317eca16fc7e3c10372e8"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-048",
+      "type": "PROCEDURE",
+      "sha256": "4721925e865b636e1d3fa6c7a232dcec127ea2448e83b93eb180b89282c0a975",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "4721925e865b636e1d3fa6c7a232dcec127ea2448e83b93eb180b89282c0a975"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-049",
+      "type": "PROCEDURE",
+      "sha256": "8fa59727351c370f5db54531b5cb68384f20bf3e6b02ba9aa56095cf138f0c2a",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "8fa59727351c370f5db54531b5cb68384f20bf3e6b02ba9aa56095cf138f0c2a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-050",
+      "type": "PROCEDURE",
+      "sha256": "6908c586b427894718836b9e5da89cb0e2de44dbddfb06cc8fffabb6e6bc73a6",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "6908c586b427894718836b9e5da89cb0e2de44dbddfb06cc8fffabb6e6bc73a6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-051",
+      "type": "PROCEDURE",
+      "sha256": "44ae554de99c899a198d41b5035cdbf5a6ed506085f445113882a97b5afa6657",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "44ae554de99c899a198d41b5035cdbf5a6ed506085f445113882a97b5afa6657"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-052",
+      "type": "PROCEDURE",
+      "sha256": "a1574c427c0cfe9b5e7eb0a756b0d07ed9f04782a4af59e31bb3424ea4f1000f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "a1574c427c0cfe9b5e7eb0a756b0d07ed9f04782a4af59e31bb3424ea4f1000f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-053",
+      "type": "PROCEDURE",
+      "sha256": "5f19be61744e1de37812bda461445a5f84882074a8a2156327e274dd2eb3410e",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "5f19be61744e1de37812bda461445a5f84882074a8a2156327e274dd2eb3410e"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-054",
+      "type": "PROCEDURE",
+      "sha256": "95af0b96451870c942960041c553f764ee6060a86f32ea19a14aed04d9f0d3f5",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "95af0b96451870c942960041c553f764ee6060a86f32ea19a14aed04d9f0d3f5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-055",
+      "type": "PROCEDURE",
+      "sha256": "dbc69c46a7f35b1827b98813a39428f791d45e506557f4b504ea30e92b820d30",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "dbc69c46a7f35b1827b98813a39428f791d45e506557f4b504ea30e92b820d30"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-056",
+      "type": "PROCEDURE",
+      "sha256": "f6e0d5135838d4ddb4386074639e235e3b1d2910f9653b3d651d6b9589edfef2",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "f6e0d5135838d4ddb4386074639e235e3b1d2910f9653b3d651d6b9589edfef2"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-057",
+      "type": "PROCEDURE",
+      "sha256": "6ca40fcc657022a637f8de47e49f2408cf97290bbe17a6b50619f71615f8c873",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "6ca40fcc657022a637f8de47e49f2408cf97290bbe17a6b50619f71615f8c873"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-058",
+      "type": "PROCEDURE",
+      "sha256": "0f25ade69d7f9653f2a4ed1f22a501c1ce84ab1f71505773e7e571b2f0b411bc",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "0f25ade69d7f9653f2a4ed1f22a501c1ce84ab1f71505773e7e571b2f0b411bc"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-059",
+      "type": "PROCEDURE",
+      "sha256": "e1b108d77bb214eadc1f76d04f92a3d28c36863bd7f14cf4000abd4f75ec9a5b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "e1b108d77bb214eadc1f76d04f92a3d28c36863bd7f14cf4000abd4f75ec9a5b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-060",
+      "type": "PROCEDURE",
+      "sha256": "bb3e8a656238d0abfe1ecaf54962130e1e0cfdcce69c6697aa6ffad0f1901cd3",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "bb3e8a656238d0abfe1ecaf54962130e1e0cfdcce69c6697aa6ffad0f1901cd3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-061",
+      "type": "PROCEDURE",
+      "sha256": "3952baef1157ccbec972bf9c50965339da325854d9efbb3eaa9f9300297ef8bb",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "3952baef1157ccbec972bf9c50965339da325854d9efbb3eaa9f9300297ef8bb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-062",
+      "type": "PROCEDURE",
+      "sha256": "3d2d92f4b5e7867294327bd5be04979b122172c93781c730ae9bec8f63e5ab99",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "3d2d92f4b5e7867294327bd5be04979b122172c93781c730ae9bec8f63e5ab99"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-063",
+      "type": "PROCEDURE",
+      "sha256": "52d986b3702026353b87d3401ee0842a5752cec322e312aeb1b9cc5300242fb0",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "52d986b3702026353b87d3401ee0842a5752cec322e312aeb1b9cc5300242fb0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-064",
+      "type": "PROCEDURE",
+      "sha256": "e3aa01a1f630846551af6fbf4cd0e627ec358859878eaff45885d351ce4a96be",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "e3aa01a1f630846551af6fbf4cd0e627ec358859878eaff45885d351ce4a96be"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-065",
+      "type": "PROCEDURE",
+      "sha256": "808e21951b5321e476beb7509b04e5f017d06a07c6638e03333aa65445de787b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "808e21951b5321e476beb7509b04e5f017d06a07c6638e03333aa65445de787b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-066",
+      "type": "PROCEDURE",
+      "sha256": "dd4c100791b8924de94ce5ad320ec08491979350b9e708d0fc6f20fd5098c3fe",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "dd4c100791b8924de94ce5ad320ec08491979350b9e708d0fc6f20fd5098c3fe"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-067",
+      "type": "PROCEDURE",
+      "sha256": "8634e529e7d2e16d295dc170622d44c8ad61af6c40b02316ce268c3b8e3d2abb",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "8634e529e7d2e16d295dc170622d44c8ad61af6c40b02316ce268c3b8e3d2abb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-068",
+      "type": "PROCEDURE",
+      "sha256": "c8231e026c0be749fa06c47aa366a866a4f11b9487f73f85a22747e8e13c54b0",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "c8231e026c0be749fa06c47aa366a866a4f11b9487f73f85a22747e8e13c54b0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-069",
+      "type": "PROCEDURE",
+      "sha256": "5a61a7cfcb543bf7ec59ab4a6848ea9c4295fcc3e90138d185a9baa2d7668e16",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "5a61a7cfcb543bf7ec59ab4a6848ea9c4295fcc3e90138d185a9baa2d7668e16"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-070",
+      "type": "PROCEDURE",
+      "sha256": "cbe963d5d0b04cdec22e0315602d0cd4771b6eb7663a6da85bb344c269183277",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 64,
+          "column": "procedure",
+          "sha256": "cbe963d5d0b04cdec22e0315602d0cd4771b6eb7663a6da85bb344c269183277"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-071",
+      "type": "PROCEDURE",
+      "sha256": "f457cfee2e9ea6ba624486f260b68d1d2231b1d8f6b39d14508d965d9dfb2ac4",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "f457cfee2e9ea6ba624486f260b68d1d2231b1d8f6b39d14508d965d9dfb2ac4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-072",
+      "type": "PROCEDURE",
+      "sha256": "8a16c62f091576ea23149a21e609248b2aad82f5c9eb2cb542d75bd400f96f90",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "8a16c62f091576ea23149a21e609248b2aad82f5c9eb2cb542d75bd400f96f90"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-073",
+      "type": "PROCEDURE",
+      "sha256": "8fa59727351c370f5db54531b5cb68384f20bf3e6b02ba9aa56095cf138f0c2a",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "8fa59727351c370f5db54531b5cb68384f20bf3e6b02ba9aa56095cf138f0c2a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-074",
+      "type": "PROCEDURE",
+      "sha256": "8a90917ed4a3922adc8c040d3ee061326b2ebdbfffbb2904006fb2ed3f0086c7",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "8a90917ed4a3922adc8c040d3ee061326b2ebdbfffbb2904006fb2ed3f0086c7"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-075",
+      "type": "PROCEDURE",
+      "sha256": "092491d9a97ea718f8f6e118bb9a207c991bb571049c5df4a7a452089efdbf52",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "092491d9a97ea718f8f6e118bb9a207c991bb571049c5df4a7a452089efdbf52"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-076",
+      "type": "PROCEDURE",
+      "sha256": "e8a251a9e24d632e51b8c82c2852d3ff9cf516303e8fe90b95c6e14681c6c5e4",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "e8a251a9e24d632e51b8c82c2852d3ff9cf516303e8fe90b95c6e14681c6c5e4"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-077",
+      "type": "PROCEDURE",
+      "sha256": "a9bd3ff4244b292d54ddc48a1548e06f23ce1cef4a83f34b1129ca1f1e694f3f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "a9bd3ff4244b292d54ddc48a1548e06f23ce1cef4a83f34b1129ca1f1e694f3f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-078",
+      "type": "PROCEDURE",
+      "sha256": "eb27b1f745248bbd6778dab4736e05fa8c7bd2f66b58b1fbc3fa8f7fb7385b71",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "eb27b1f745248bbd6778dab4736e05fa8c7bd2f66b58b1fbc3fa8f7fb7385b71"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-079",
+      "type": "PROCEDURE",
+      "sha256": "8e14dcbee9546cafff761601665a18761cad327394dbac65798ae913a3d3a69f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "8e14dcbee9546cafff761601665a18761cad327394dbac65798ae913a3d3a69f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-080",
+      "type": "PROCEDURE",
+      "sha256": "bf64a9e9eb8b37b451fa25b535f7de709a8f86bc6c97936259bdaa74f69259d8",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "bf64a9e9eb8b37b451fa25b535f7de709a8f86bc6c97936259bdaa74f69259d8"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-081",
+      "type": "PROCEDURE",
+      "sha256": "5f19be61744e1de37812bda461445a5f84882074a8a2156327e274dd2eb3410e",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "5f19be61744e1de37812bda461445a5f84882074a8a2156327e274dd2eb3410e"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-082",
+      "type": "PROCEDURE",
+      "sha256": "1d6fa8b0202548b543a3459051df5a4dcbea895d9fce368573a50dea2e283254",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "1d6fa8b0202548b543a3459051df5a4dcbea895d9fce368573a50dea2e283254"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-083",
+      "type": "PROCEDURE",
+      "sha256": "5f32bab72288dc4164643fca817943db10e9380e4bde706c8c0c0d979bfdaa2c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "5f32bab72288dc4164643fca817943db10e9380e4bde706c8c0c0d979bfdaa2c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-084",
+      "type": "PROCEDURE",
+      "sha256": "f2809d20b08ffad0fa9684fa7a4ea703f34393630e646e32ae15ccb86302b551",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "f2809d20b08ffad0fa9684fa7a4ea703f34393630e646e32ae15ccb86302b551"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-085",
+      "type": "PROCEDURE",
+      "sha256": "3374364b0abe26cf90802b5ab91456d6bd504d58210ed6aab2fda596c33e9a96",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "3374364b0abe26cf90802b5ab91456d6bd504d58210ed6aab2fda596c33e9a96"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-086",
+      "type": "PROCEDURE",
+      "sha256": "904df2142e4a2ec8876092f6ac263000fea5e05556b06362cc8ae0a7793b9746",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "904df2142e4a2ec8876092f6ac263000fea5e05556b06362cc8ae0a7793b9746"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-087",
+      "type": "PROCEDURE",
+      "sha256": "54b93b67ba91e51095cb679fbf594cb12da26d450a8d9f2288d1d69b4a3beed7",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "54b93b67ba91e51095cb679fbf594cb12da26d450a8d9f2288d1d69b4a3beed7"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-088",
+      "type": "PROCEDURE",
+      "sha256": "ec3da4e8af937ce90e3bef6692cdf78eba6f700442ff2f9abfda7b429b0ce0ed",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "ec3da4e8af937ce90e3bef6692cdf78eba6f700442ff2f9abfda7b429b0ce0ed"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-089",
+      "type": "PROCEDURE",
+      "sha256": "e035b7a0b5bc1191b0a1eaa68dd7e6952aacec27a7f60e9623bb863022238c9f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "e035b7a0b5bc1191b0a1eaa68dd7e6952aacec27a7f60e9623bb863022238c9f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-090",
+      "type": "PROCEDURE",
+      "sha256": "a5ccb9f1fe21431fa69035a0047cec018caed816cee3c686f07bd13a366b6794",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "a5ccb9f1fe21431fa69035a0047cec018caed816cee3c686f07bd13a366b6794"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-091",
+      "type": "PROCEDURE",
+      "sha256": "d40aeb33a4bfad7fed293736f3a4dbf183a97581471dde032333dfcd981a8b5f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "d40aeb33a4bfad7fed293736f3a4dbf183a97581471dde032333dfcd981a8b5f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-092",
+      "type": "PROCEDURE",
+      "sha256": "3c45f4d8c604a0da5522c937e65ece02106e5657702579fb23c6234883b42d2d",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "3c45f4d8c604a0da5522c937e65ece02106e5657702579fb23c6234883b42d2d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-093",
+      "type": "PROCEDURE",
+      "sha256": "7d47356504ad63fccc7650a7003f011fd10063fbd288afd8feb78a4c041170d6",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "7d47356504ad63fccc7650a7003f011fd10063fbd288afd8feb78a4c041170d6"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-094",
+      "type": "PROCEDURE",
+      "sha256": "f4f7ba2e27da124727413bc9f3c2c0ac3d3bf2effe6a3bcffe20f610fbd87fb1",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "f4f7ba2e27da124727413bc9f3c2c0ac3d3bf2effe6a3bcffe20f610fbd87fb1"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-095",
+      "type": "PROCEDURE",
+      "sha256": "f4484355832715808ff59f68de148f593ede7e7a4a2cbd48ae78f54f30ebacf7",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "f4484355832715808ff59f68de148f593ede7e7a4a2cbd48ae78f54f30ebacf7"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-096",
+      "type": "PROCEDURE",
+      "sha256": "2d642eebb12af7de2aa389ab642a8db6531d67801e5643d9b4770053103b2d7d",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "2d642eebb12af7de2aa389ab642a8db6531d67801e5643d9b4770053103b2d7d"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-097",
+      "type": "PROCEDURE",
+      "sha256": "b663ba335d94e798c183e6a510c87e9540512b38323daf420585ffc8424e7f01",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "b663ba335d94e798c183e6a510c87e9540512b38323daf420585ffc8424e7f01"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-procedure-098",
+      "type": "PROCEDURE",
+      "sha256": "e97262b90b2cf293a05135d9156bcbe52bfeb670ef32733e1b051ab2ebe3546c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 65,
+          "column": "procedure",
+          "sha256": "e97262b90b2cf293a05135d9156bcbe52bfeb670ef32733e1b051ab2ebe3546c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-001",
+      "type": "ATTITUDE",
+      "sha256": "3e5110752c7ff902321b08926a80c8065f04547094ea287cf42067a87f7387e0",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "attitude",
+          "sha256": "3e5110752c7ff902321b08926a80c8065f04547094ea287cf42067a87f7387e0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-002",
+      "type": "ATTITUDE",
+      "sha256": "e97641ce8a605bccbc3e37c9ece78deb73798ac81a628fc0bd566d79079dc8fa",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "attitude",
+          "sha256": "e97641ce8a605bccbc3e37c9ece78deb73798ac81a628fc0bd566d79079dc8fa"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-003",
+      "type": "ATTITUDE",
+      "sha256": "8b8f4ccc68dffd415ab3aa61719bc41f63d359f3a7ee168f51049aa2815d0851",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "attitude",
+          "sha256": "8b8f4ccc68dffd415ab3aa61719bc41f63d359f3a7ee168f51049aa2815d0851"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-004",
+      "type": "ATTITUDE",
+      "sha256": "7266f34603c55809dd876a853f6a55b5a965161f9e1cb1dc076f068ad4e4748a",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 61,
+          "column": "attitude",
+          "sha256": "7266f34603c55809dd876a853f6a55b5a965161f9e1cb1dc076f068ad4e4748a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-005",
+      "type": "ATTITUDE",
+      "sha256": "d39f660f3b80c6770fb9d5e7ce562c2584eca1139a6b91fac5e5b16d2b5689af",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "d39f660f3b80c6770fb9d5e7ce562c2584eca1139a6b91fac5e5b16d2b5689af"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-006",
+      "type": "ATTITUDE",
+      "sha256": "73e0e09faf85fe3962ea95e838d2d2ade0ec99e0ec3359c820e7eedf6b6a06bb",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "73e0e09faf85fe3962ea95e838d2d2ade0ec99e0ec3359c820e7eedf6b6a06bb"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-007",
+      "type": "ATTITUDE",
+      "sha256": "99945e540c624058e69152f27adeacd6afca9c3250bc97eab32ca7e329dfbe5f",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "99945e540c624058e69152f27adeacd6afca9c3250bc97eab32ca7e329dfbe5f"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-008",
+      "type": "ATTITUDE",
+      "sha256": "923ec41b581eb7857e2eceb083ed06517400f02862ac5655c0f34632a1e9414a",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "923ec41b581eb7857e2eceb083ed06517400f02862ac5655c0f34632a1e9414a"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-009",
+      "type": "ATTITUDE",
+      "sha256": "1eda6407f59007706e4ec99f97a5164041d5006bc34bc45c6100c3352f5c2175",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "1eda6407f59007706e4ec99f97a5164041d5006bc34bc45c6100c3352f5c2175"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-010",
+      "type": "ATTITUDE",
+      "sha256": "bbf2cd4dcaf15524ade84269f184a5514d8c62bbdf32c7a4dff9ec391a610660",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "bbf2cd4dcaf15524ade84269f184a5514d8c62bbdf32c7a4dff9ec391a610660"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-011",
+      "type": "ATTITUDE",
+      "sha256": "9c400ee699dfe506100d7e5bfc0fbef9808f461d7895a53d2786333a41e2b07b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "9c400ee699dfe506100d7e5bfc0fbef9808f461d7895a53d2786333a41e2b07b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-012",
+      "type": "ATTITUDE",
+      "sha256": "71fefd9d193e603905ce6b347fca015705d79b5efa9fec1b1719f6a1e18077a0",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "71fefd9d193e603905ce6b347fca015705d79b5efa9fec1b1719f6a1e18077a0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-013",
+      "type": "ATTITUDE",
+      "sha256": "9aad37e48dcec354bc216bdc15163465379cddfec4dcb67bc3f3eb8ee8f7971c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 62,
+          "column": "attitude",
+          "sha256": "9aad37e48dcec354bc216bdc15163465379cddfec4dcb67bc3f3eb8ee8f7971c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-014",
+      "type": "ATTITUDE",
+      "sha256": "13a1077262fc0d71ffa4243570e616ad5a8bc395430bc7f8c6962a50cdc418ff",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "13a1077262fc0d71ffa4243570e616ad5a8bc395430bc7f8c6962a50cdc418ff"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-015",
+      "type": "ATTITUDE",
+      "sha256": "140ecfec5fb5ab610e4a116cdbfe198bbd249da668400dfb30eb078c716c5336",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "140ecfec5fb5ab610e4a116cdbfe198bbd249da668400dfb30eb078c716c5336"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-016",
+      "type": "ATTITUDE",
+      "sha256": "6942f55ebc47eb54f84b33ec285bbda7afa3f53925ba75eeadd947debf73efae",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "6942f55ebc47eb54f84b33ec285bbda7afa3f53925ba75eeadd947debf73efae"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-017",
+      "type": "ATTITUDE",
+      "sha256": "cfbf88a0478d19aef20c1f95383623f21dd01b66d25354159e269579084a1405",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "cfbf88a0478d19aef20c1f95383623f21dd01b66d25354159e269579084a1405"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-018",
+      "type": "ATTITUDE",
+      "sha256": "94e3d7b17349eb742ba53c4c5d754ca8b0e57927f9eb2085f4f2213863ea8002",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "94e3d7b17349eb742ba53c4c5d754ca8b0e57927f9eb2085f4f2213863ea8002"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-019",
+      "type": "ATTITUDE",
+      "sha256": "64ea7562a22066bd8046737a3fb8720519f1ff91918e6914b6f448d4e76814b0",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "64ea7562a22066bd8046737a3fb8720519f1ff91918e6914b6f448d4e76814b0"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-020",
+      "type": "ATTITUDE",
+      "sha256": "fdf130c60b320aaea95d82339112142300e64e222476d2f25d924d66bc259275",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "fdf130c60b320aaea95d82339112142300e64e222476d2f25d924d66bc259275"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-021",
+      "type": "ATTITUDE",
+      "sha256": "c1b895b165f65b53c6381c355d3dfff0e5b6dd01950c4f775af13ef221d385ea",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "c1b895b165f65b53c6381c355d3dfff0e5b6dd01950c4f775af13ef221d385ea"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-attitude-022",
+      "type": "ATTITUDE",
+      "sha256": "d7d0ae05734310a2122b1362e322b03502d5cf84d5d67cdffdab60ad33b3dc7b",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 63,
+          "column": "attitude",
+          "sha256": "d7d0ae05734310a2122b1362e322b03502d5cf84d5d67cdffdab60ad33b3dc7b"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-1",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "0958a7999ce91b764cc5d7473103f3c0302967dd8f58ac7a8746017791c0ee1c",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "0958a7999ce91b764cc5d7473103f3c0302967dd8f58ac7a8746017791c0ee1c"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-2",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "390d39a67ee5560491c66534692c8a6313e4aa995497c952849578acc5f80518",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "390d39a67ee5560491c66534692c8a6313e4aa995497c952849578acc5f80518"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-3",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "ac43a814b9e883dd4169cf2a6b38371769d805059cf42f9f7336364fd37d6c02",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "ac43a814b9e883dd4169cf2a6b38371769d805059cf42f9f7336364fd37d6c02"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-4",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "9c2b6d8941f0688083edd5f7c46cb31e0712cef68b7d080437f46268e434ecb3",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "9c2b6d8941f0688083edd5f7c46cb31e0712cef68b7d080437f46268e434ecb3"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-5",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "5270cfc78851b6219d60f2703f37dd930a618f9c8b804314879076c712a3a5c5",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "5270cfc78851b6219d60f2703f37dd930a618f9c8b804314879076c712a3a5c5"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-6",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "938505688f680ab1fa12ae92222986f32c4e85928f0097bfafb536d2b8508886",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "938505688f680ab1fa12ae92222986f32c4e85928f0097bfafb536d2b8508886"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-7",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "5c97cc06754d94bb69fe092cd8c2a7b07977e98ca484c8f5d10ed6a0f93b6a75",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "5c97cc06754d94bb69fe092cd8c2a7b07977e98ca484c8f5d10ed6a0f93b6a75"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-8",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "0c783c213962301d55f5c5c70a5a173643ccc00d121edb0c9ab0b87b25282364",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "0c783c213962301d55f5c5c70a5a173643ccc00d121edb0c9ab0b87b25282364"
+        }
+      ]
+    },
+    {
+      "id": "technical-mf002-method-9",
+      "type": "TEACHING_STRATEGY",
+      "sha256": "e6b9fcf0104d67274978bc6bd5611a2f605b4738b8116d42bd6f3c9017327bac",
+      "parts": [
+        {
+          "programCode": "IFC007_3",
+          "pdfPage": 66,
+          "column": "method",
+          "sha256": "e6b9fcf0104d67274978bc6bd5611a2f605b4738b8116d42bd6f3c9017327bac"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Sin proveedor ni instrumentos de Ofimática conectados todavía.",
+    "Sin HTTP, navegador ni escrituras remotas de este módulo.",
+    "Esta revisión no acredita los demás módulos ni los demás programas técnicos."
+  ]
+}

@@ -4266,7 +4266,7 @@
               6
             ],
             "levelNotConfirmedFromCover": false,
-            "sourceReview": "IDENTIFICATION_STUDY_PLAN_AND_MF053_CONTENT_VISUALLY_REVIEWED_REMAINING_MODULES_PENDING",
+            "sourceReview": "IDENTIFICATION_STUDY_PLAN_MF053_AND_MF002_VISUALLY_REVIEWED_REMAINING_MODULES_PENDING",
             "provider": null,
             "instrumentReview": "NOT_STARTED",
             "programCode": "IFC006_3",
@@ -4282,7 +4282,14 @@
               16,
               17,
               18,
-              19
+              19,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55
             ]
           },
           {
@@ -4295,7 +4302,7 @@
               6
             ],
             "levelNotConfirmedFromCover": false,
-            "sourceReview": "IDENTIFICATION_AND_STUDY_PLAN_VISUALLY_REVIEWED_SUBJECT_CONTENTS_PENDING",
+            "sourceReview": "IDENTIFICATION_STUDY_PLAN_AND_MF002_VISUALLY_REVIEWED_REMAINING_MODULES_PENDING",
             "provider": null,
             "instrumentReview": "NOT_STARTED",
             "programCode": "IFC007_3",
@@ -4306,7 +4313,20 @@
             "pages": 88,
             "visuallyReviewedPdfPages": [
               1,
-              18
+              18,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66
             ]
           },
           {
@@ -5174,8 +5194,31 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 14,
-            "status": "INVENTORIED_NOT_IMPLEMENTED",
-            "provider": null
+            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+            "provider": null,
+            "contentReview": {
+              "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
+              "pdfPages": [
+                49,
+                50,
+                51,
+                52,
+                53,
+                54,
+                55
+              ],
+              "matrix": "docs/curriculum/cobertura-secundaria/technical-mf002-4-matriz.json",
+              "sharedModule": true,
+              "primarySourceProgram": "IFC007_3",
+              "programCodes": [
+                "IFC006_3",
+                "IFC007_3"
+              ],
+              "records": 210,
+              "literalParts": 302,
+              "provider": null,
+              "instrumentReview": "NOT_STARTED"
+            }
           },
           {
             "id": "IFC006_3-g4-MF_053_3",
@@ -5436,8 +5479,37 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 18,
-            "status": "INVENTORIED_NOT_IMPLEMENTED",
-            "provider": null
+            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+            "provider": null,
+            "contentReview": {
+              "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
+              "pdfPages": [
+                54,
+                55,
+                56,
+                57,
+                58,
+                59,
+                60,
+                61,
+                62,
+                63,
+                64,
+                65,
+                66
+              ],
+              "matrix": "docs/curriculum/cobertura-secundaria/technical-mf002-4-matriz.json",
+              "sharedModule": true,
+              "primarySourceProgram": "IFC007_3",
+              "programCodes": [
+                "IFC006_3",
+                "IFC007_3"
+              ],
+              "records": 210,
+              "literalParts": 302,
+              "provider": null,
+              "instrumentReview": "NOT_STARTED"
+            }
           },
           {
             "id": "IFC007_3-g4-MF_062_3",
@@ -5691,7 +5763,7 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "Continuar Ofimática MF_002_3 de4.º con las fuentes IFC006/IFC007 contrastadas; MF053 conserva46recorridosHTTP pendientes y persistencia personal bloqueada porDNS."
+    "Ofimática MF_002_3 de 4.º: fuente transcrita y revisada (210 registros/302 partes); continuar conservación de 142, contexto y proveedor. MF053 mantiene la verificación remota parcial por DNS."
   ],
   "push": false,
   "deploy": false,

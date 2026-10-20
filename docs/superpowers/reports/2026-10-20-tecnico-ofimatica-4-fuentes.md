@@ -1,6 +1,6 @@
 # Ofimática de cuarto: contraste de fuentes
 
-Preparación documental independiente mientras termina la verificación de MF053. Ofimática todavía no tiene proveedor, instrumentos revisados ni instalación en Development. Esta lectura no acredita su cobertura.
+Transcripción documental revisada mientras MF053 mantiene su verificación remota parcial por DNS. Ofimática todavía no tiene proveedor, instrumentos revisados ni instalación en Development. Esta lectura no acredita su cobertura.
 
 Se revisaron visualmente dos fuentes oficiales del módulo `MF_002_3`, nivel de cualificación 3, con duración de135horas:
 
@@ -21,4 +21,12 @@ Los ámbitos observados comprenden sistema operativo y periféricos; documentos,
 
 El mínimo impreso de200p.p.m. y el máximo de una falta por minuto enCE2.1 se conservarán como condiciones de la fuente, sin introducirlos automáticamente en cualquier actividad de procesamiento de textos. Las actitudes sobre interés, valores, sensibilidad o capacidad personal no serán criterios de personalidad. Las orientaciones al docente tampoco se convertirán automáticamente en productos del estudiante.
 
-Pendiente: transcribir RA/CE y las columnas adicionales con sus partes y páginas; resolver el ámbito compartido sin fuentes ambiguas; escribir contratos de contexto y pertinencia; implementar los cuatro formatos reutilizando el motor; leer los instrumentos completos; verificar backend, frontend, HTTP/DB y navegador personal. Primero se cierra la verificación de MF053. No hubo escrituras remotas de Ofimática, cambios de producción, despliegues ni push.
+La [matriz literal](../../curriculum/cobertura-secundaria/technical-mf002-4-matriz.json) contiene 210 registros y 302 partes: 9 RA, 67 CE, 5 bandas conceptuales, 98 unidades procedimentales, 22 actitudes y 9 orientaciones docentes. RA/CE conservan procedencia en ambos documentos; la tabla adicional y las orientaciones pertenecen a IFC007. Las bandas conservan sus subencabezados: el número de unidades transcritas no representa temas o criterios obligatorios. La [revisión de fuente](../../curriculum/cobertura-secundaria/technical-mf002-4-revision-fuente.json) registra huellas de textos y partes.
+
+La revisión corrigió espacios artificiales de la extracción —por ejemplo, «lo s» y «entre ga»— mediante la separación real entre fragmentos posicionados. No cambió letras, cifras ni signos del documento. La página 63 se volvió a inspeccionar para separar «Inserción o creación de tablas en un documento» de «Edición dentro de una tabla.»; se conservó la ausencia de punto del primer párrafo. Las erratas impresas, como «copywrigth» o «Configuración los dispositivos», permanecen literales.
+
+Verificación: cuatro pruebas fallaron inicialmente por ausencia de matriz; pasaron tras transcribir. Una quinta reprodujo los espacios artificiales y comprobó su corrección sin alterar erratas o continuaciones. Resultado final: **5 pruebas aprobadas**. Un intento del auxiliar local falló por la codificación de texto enviado por PowerShell antes de escribir la matriz; se ejecutó después desde un archivo UTF-8 y se conservaron los originales. No fue un fallo de la aplicación.
+
+Las suites y los cuatro builds finales del catálogo 142 siguen aprobados, sin cambios de aplicación en este bloque documental; no se repitieron sin motivo. El commit de MF053 es `08477b7c`. Su Worker permanece detenido tras dos fallos DNS; se conservan cuatro actividades QA, tres recorridos completos y el borrador personal sin guardar.
+
+Pendiente: resolver el ámbito compartido sin fuentes ambiguas; congelar y comprobar el catálogo 142; escribir contratos de contexto y pertinencia; implementar los cuatro formatos reutilizando el motor; leer los instrumentos completos; verificar backend, frontend, HTTP/DB y navegador personal. Este trabajo independiente continúa mientras se mantienen los pendientes de MF053. No hubo escrituras remotas de Ofimática, cambios de producción, despliegues ni push.
