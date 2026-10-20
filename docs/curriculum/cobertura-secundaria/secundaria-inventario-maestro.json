@@ -2057,10 +2057,10 @@
         495,
         496
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_EXTERNAL_DNS_BLOCKED",
+      "provider": "packages/shared/src/secondary-optative-math.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/optative-mt-6-matriz.json",
+      "currentRunVerification": "PARTIAL_17_OF_32_VERIFIED_18_SAVED_EXTERNAL_DNS_BLOCKED",
       "nonApplicable": [
         1,
         2,

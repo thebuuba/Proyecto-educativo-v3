@@ -1,0 +1,645 @@
+{
+  "subjectCode": "OPT-MT-6",
+  "subjectName": "Tigonometría, Cálculo Diferencial y Tecnología",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Matemática y Tecnología",
+  "cases": [
+    {
+      "id": "polar-concept",
+      "description": "Explica el sistema de coordenadas polares del ejemplo proporcionado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ea2f9456-33dd-5dff-8475-8a1c80b298f4",
+        "b71848dc-f857-5c5d-9795-47d67c29b7dd"
+      ],
+      "required": "polares",
+      "forbidden": "superficies cuádricas|derivada vectorial"
+    },
+    {
+      "id": "polar-graph-concept",
+      "description": "Interpreta la gráfica de la ecuación polar proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "43cac993-35e8-5d55-b696-a03776944d1a"
+      ],
+      "required": "polar",
+      "forbiddenEvidence": [
+        "representation"
+      ]
+    },
+    {
+      "id": "polar-circle",
+      "description": "Representa la circunferencia de ecuación polar dada con el intervalo angular y las unidades indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "25a9d2fc-db72-5b75-998b-38da1487a574"
+      ],
+      "required": "circunferencia",
+      "forbidden": "espiral|paraboloide|derivada"
+    },
+    {
+      "id": "polar-conic",
+      "description": "Explica la cónica definida por la ecuación polar dada y sus parámetros.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "25a9d2fc-db72-5b75-998b-38da1487a574"
+      ],
+      "required": "cónica",
+      "forbidden": "espiral|hiperboloide|derivada"
+    },
+    {
+      "id": "polar-spiral",
+      "description": "Grafica la espiral dada en coordenadas polares para el intervalo indicado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "25a9d2fc-db72-5b75-998b-38da1487a574"
+      ],
+      "required": "espiral",
+      "forbidden": "circunferencia|elipsoide|derivada"
+    },
+    {
+      "id": "quadric-concept",
+      "description": "Compara el paraboloide, el hiperboloide y el elipsoide de las ecuaciones proporcionadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f",
+        "92076807-d9ec-58b6-9d2d-7e7b7389e3c3"
+      ],
+      "required": "paraboloide",
+      "requiredAll": [
+        "hiperboloide",
+        "elipsoide"
+      ]
+    },
+    {
+      "id": "vector-concept",
+      "description": "Explica la función vectorial dada, sus componentes y el dominio indicado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "bdbabda4-40e4-5518-b870-ca375b90a668",
+        "46193abd-5d3e-521a-a1ad-47fa7224526f"
+      ],
+      "required": "vectorial",
+      "forbidden": "derivada|superficie cuádrica"
+    },
+    {
+      "id": "vector-derivative-concept",
+      "description": "Explica la derivada de la función vectorial dada y el significado de sus componentes.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "828a4c01-0395-547b-b47c-4978e379715b"
+      ],
+      "required": "derivada",
+      "forbidden": "ecuación polar|esferoide"
+    },
+    {
+      "id": "rectangular-to-polar-equation",
+      "description": "Transforma la ecuación rectangular proporcionada a coordenadas polares, indicando las equivalencias y las restricciones del dominio dadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "c39d1c64-563a-53e2-a633-4b775068eaeb"
+      ],
+      "required": "ecuación",
+      "forbidden": "convierte los puntos|deriva",
+      "requiredAll": [
+        "polares",
+        "dominio"
+      ]
+    },
+    {
+      "id": "polar-to-rectangular-equation",
+      "description": "Convierte la ecuación polar dada a su forma rectangular y comprueba la equivalencia bajo las restricciones proporcionadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "c39d1c64-563a-53e2-a633-4b775068eaeb"
+      ],
+      "required": "rectangular",
+      "requiredAll": [
+        "ecuación",
+        "equivalencia"
+      ]
+    },
+    {
+      "id": "polar-rectangular-graphs",
+      "description": "Compara las gráficas dadas de la misma curva en coordenadas polares y rectangulares.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "25ff2813-c983-594e-8fcb-a115db24b58f"
+      ],
+      "required": "polares",
+      "requiredAll": [
+        "rectangulares"
+      ],
+      "forbiddenEvidence": [
+        "representation"
+      ]
+    },
+    {
+      "id": "polar-problem",
+      "description": "Resuelve el problema ficticio con la ecuación polar dada y justifica la respuesta con los datos del caso.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "db9d1c3c-cde6-57c9-86f8-47c0005af7cc",
+        "061e74dd-1aa4-5135-8b02-9ca12c7d2cf5",
+        "7a2183a0-f8a3-5afb-a259-be466110370b",
+        "ba6c9374-4acc-5015-96b5-649aaf8d72fc"
+      ],
+      "required": "polar"
+    },
+    {
+      "id": "quadric-analysis",
+      "description": "Analiza la superficie cuádrica de la ecuación dada y explica sus características indicadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "92076807-d9ec-58b6-9d2d-7e7b7389e3c3",
+        "b18418fb-10c1-5a04-8768-caae26b9e783"
+      ],
+      "required": "cuádrica"
+    },
+    {
+      "id": "quadric-tech-choice",
+      "description": "Construye la gráfica del paraboloide de la ecuación dada con el software o el recurso web disponible, según tu elección.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "fcf89811-9cab-5af8-bdfa-9cf3d71bc5bf",
+        "e4d2c49f-2a33-5fe4-a6a2-fd2f9d8dbdd0"
+      ],
+      "required": "paraboloide",
+      "forbidden": "debe usar todos|debe instalar|elipsoide|hiperboloide"
+    },
+    {
+      "id": "quadric-problem",
+      "description": "Resuelve el problema ficticio de la superficie cuádrica usando la ecuación y los datos proporcionados.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "113eadfd-3703-55ad-8f7e-3182fd0b6d5a",
+        "da38bd24-10db-5dcf-974c-93f95a0bdb56",
+        "9e7f554c-8bc4-5024-bd0b-5274ffbd6230"
+      ],
+      "required": "cuádrica"
+    },
+    {
+      "id": "vector-application",
+      "description": "Aplica la función vectorial dada al caso de movimiento ficticio, conservando el dominio y las unidades indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "46193abd-5d3e-521a-a1ad-47fa7224526f"
+      ],
+      "required": "vectorial"
+    },
+    {
+      "id": "vector-derivative",
+      "description": "Calcula la derivada de la función vectorial dada por componentes y con el dominio indicado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92",
+        "47076277-02e1-5617-b3c4-aedf2415cfe4"
+      ],
+      "required": "derivada",
+      "requiredAll": [
+        "componentes",
+        "dominio"
+      ],
+      "forbiddenTopics": [
+        "vector-functions"
+      ]
+    },
+    {
+      "id": "group-polar-contribution",
+      "description": "En parejas, resuelve el problema de coordenadas polares y registra tu aportación matemática identificable al procedimiento común.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "103847e0-384b-5a76-853f-cc9498563d55"
+      ],
+      "required": "polares",
+      "forbidden": "solidaridad|paciencia|disfrute",
+      "participationMode": "GROUP",
+      "requiredAll": [
+        "aportación"
+      ]
+    },
+    {
+      "id": "group-quadric-contribution",
+      "description": "En equipo, construye la gráfica de la superficie cuádrica dada y documenta tu aportación matemática a la construcción compartida.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "1cd3f698-4d16-5189-93c5-17e27916eca6"
+      ],
+      "required": "cuádrica",
+      "forbidden": "solidaridad|interés personal",
+      "participationMode": "GROUP",
+      "requiredAll": [
+        "aportación"
+      ]
+    },
+    {
+      "id": "surface-equation",
+      "description": "Construye la ecuación de la superficie a partir de la ecuación rectangular y las condiciones proporcionadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "bf97d83b-ac18-57b0-817b-feceef697d07"
+      ],
+      "required": "ecuación",
+      "requiredAll": [
+        "superficie",
+        "rectangular"
+      ],
+      "requiredEvidence": [
+        "equation"
+      ],
+      "forbiddenTopics": [
+        "equation-conversion"
+      ],
+      "forbiddenEvidence": [
+        "representation"
+      ]
+    },
+    {
+      "id": "ruled-problem",
+      "description": "Resuelve el problema de la superficie reglada dada mediante su parametrización y las condiciones indicadas.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "fd82f6e0-246b-5d18-83db-4de2c0127ce0"
+      ],
+      "required": "reglada",
+      "forbidden": "toda superficie cuádrica es reglada"
+    },
+    {
+      "id": "spheroid-model",
+      "description": "Modela el esferoide del caso ficticio con los parámetros y el eje de revolución proporcionados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "8b80cd93-1a21-5da0-af1f-ca156228fca0"
+      ],
+      "required": "esferoide",
+      "forbidden": "cardioide|espiral"
+    },
+    {
+      "id": "cardioid-model",
+      "description": "Modela la cardioide de la ecuación polar dada y el intervalo angular indicado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "d06db7da-8c58-567b-9011-28eafe718b34"
+      ],
+      "required": "cardioide",
+      "forbidden": "esferoide",
+      "forbiddenTopics": [
+        "polar-graph",
+        "quadric-surfaces"
+      ],
+      "requiredAll": [
+        "curva plana"
+      ]
+    },
+    {
+      "id": "technology-verification",
+      "description": "Calcula la derivada vectorial del modelo dado y verifica el resultado con la herramienta tecnológica disponible.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "054c4180-6217-5897-90ca-33f2d47599f0"
+      ],
+      "required": "derivada",
+      "requiredEvidence": [
+        "verification"
+      ]
+    },
+    {
+      "id": "ruled-tech-model",
+      "description": "Modela la superficie reglada del problema dado con la herramienta tecnológica disponible y los parámetros proporcionados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "3862b781-a08b-5ad7-b179-89308827ef12"
+      ],
+      "required": "reglada",
+      "forbidden": "debe usar todos"
+    },
+    {
+      "id": "existing-project-results",
+      "description": "Interpreta los resultados del proyecto de investigación matemática ya realizado que se proporciona, con las gráficas de coordenadas polares y funciones vectoriales dadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "f927c34a-c28b-55bc-813f-0f2d2399203d"
+      ],
+      "required": "polares",
+      "requiredAll": [
+        "vectoriales"
+      ],
+      "forbiddenEvidence": [
+        "inquiry",
+        "representation"
+      ]
+    },
+    {
+      "id": "environment-given-model",
+      "description": "Modela el caso ambiental ficticio usando la ecuación polar dada, los datos agregados y los supuestos indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "beb8dbf9-0d1c-5e0c-8453-8fcadb6b9c2b"
+      ],
+      "required": "polar",
+      "forbidden": "recoge datos reales|encuesta privada"
+    },
+    {
+      "id": "community-proposal",
+      "description": "Propone una solución matemática para el caso comunitario ficticio usando la función vectorial y los datos dados; justifica sus alcances y límites.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "061b43a6-c224-5047-88fa-f394f81bea4e"
+      ],
+      "required": "vectorial",
+      "forbidden": "ejecuta una intervención real"
+    },
+    {
+      "id": "health-model-inquiry",
+      "description": "Investiga los modelos de superficies cuádricas de las fuentes proporcionadas para el caso ficticio de salud y compara sus supuestos matemáticos. No recopiles datos personales ni realices procedimientos clínicos.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "29cabba5-5eb1-5cc4-ab09-f5badc2e3235"
+      ],
+      "required": "cuádricas",
+      "forbidden": "datos de pacientes|procedimiento clínico obligatorio"
+    },
+    {
+      "id": "observed-autonomy",
+      "description": "Observa el grado de autonomía al resolver el problema de coordenadas polares con los datos dados.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "4f7fa700-d959-5990-9cd0-e4730ffedcfc"
+      ],
+      "required": "autonom|autónom",
+      "suggestedInstrumentType": "escala"
+    },
+    {
+      "id": "contrasting-viewpoints",
+      "description": "Investiga y contrasta los argumentos matemáticos de las dos soluciones de derivadas vectoriales proporcionadas, atribuyendo cada procedimiento a su fuente.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "0b9667ef-5a35-5f33-9b55-4969828f0a66"
+      ],
+      "required": "derivadas",
+      "requiredAll": [
+        "fuentes"
+      ]
+    },
+    {
+      "id": "group-research-contribution",
+      "description": "En equipo, investiga el modelo de coordenadas polares de las fuentes dadas y registra tu aportación verificable al trabajo compartido.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "88f3cad1-07cd-5387-a162-7be6686b037c"
+      ],
+      "required": "polares",
+      "forbidden": "solidaridad|moralidad|paciencia",
+      "participationMode": "GROUP",
+      "requiredAll": [
+        "aportación"
+      ]
+    },
+    {
+      "id": "paraboloid-only",
+      "description": "Interpreta la ecuación dada de paraboloide y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f"
+      ],
+      "required": "paraboloide",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "hyperboloid-only",
+      "description": "Interpreta la ecuación dada de hiperboloide y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f"
+      ],
+      "required": "hiperboloide",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "ellipsoid-only",
+      "description": "Interpreta la ecuación dada de elipsoide y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f"
+      ],
+      "required": "elipsoide",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "ruled-only",
+      "description": "Interpreta la ecuación dada de superficie reglada y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "fd82f6e0-246b-5d18-83db-4de2c0127ce0"
+      ],
+      "required": "superficie reglada",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "spheroid-only",
+      "description": "Interpreta la ecuación dada de esferoide y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8b80cd93-1a21-5da0-af1f-ca156228fca0"
+      ],
+      "required": "esferoide",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "cardioid-only",
+      "description": "Interpreta la ecuación dada de cardioide y los parámetros proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d06db7da-8c58-567b-9011-28eafe718b34"
+      ],
+      "required": "cardioide",
+      "forbiddenEvidence": [
+        "representation",
+        "calculation"
+      ]
+    },
+    {
+      "id": "polar-point-conversion",
+      "description": "Convierte el punto dado de coordenadas rectangulares a polares usando el intervalo angular indicado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "ea2f9456-33dd-5dff-8475-8a1c80b298f4"
+      ],
+      "required": "punto",
+      "forbidden": "transforma la ecuación",
+      "forbiddenTopics": [
+        "equation-conversion"
+      ]
+    },
+    {
+      "id": "equation-only-no-graph",
+      "description": "Convierte la ecuación polar proporcionada a rectangular. No dibujes la gráfica ni conviertas puntos.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "c39d1c64-563a-53e2-a633-4b775068eaeb"
+      ],
+      "required": "ecuación",
+      "forbiddenEvidence": [
+        "representation"
+      ]
+    },
+    {
+      "id": "given-chart-no-construction",
+      "description": "Analiza la gráfica polar proporcionada. No construyas otra gráfica.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "43cac993-35e8-5d55-b696-a03776944d1a"
+      ],
+      "required": "polar",
+      "forbiddenEvidence": [
+        "representation"
+      ],
+      "forbiddenTopics": [
+        "quadric-surfaces"
+      ]
+    },
+    {
+      "id": "vector-value-only",
+      "description": "Calcula el valor de la función vectorial en el parámetro dado. No derives ni grafiques.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "bdbabda4-40e4-5518-b870-ca375b90a668"
+      ],
+      "required": "vectorial",
+      "forbidden": "derivada",
+      "forbiddenEvidence": [
+        "representation"
+      ]
+    },
+    {
+      "id": "derivative-only-no-integral",
+      "description": "Deriva la función vectorial proporcionada. No integres ni construyas una superficie.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "828a4c01-0395-547b-b47c-4978e379715b",
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "required": "derivada",
+      "forbidden": "integral|superficie",
+      "forbiddenTopics": [
+        "vector-functions"
+      ]
+    },
+    {
+      "id": "polar-or-vector-alternative",
+      "description": "Resuelve el problema de coordenadas polares o calcula la derivada vectorial del caso dado, según la alternativa elegida.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "db9d1c3c-cde6-57c9-86f8-47c0005af7cc",
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "required": "alternativa elegida"
+    },
+    {
+      "id": "independent-polar-and-vector",
+      "description": "Convierte la ecuación rectangular a polar y calcula la derivada de la función vectorial dada.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "c39d1c64-563a-53e2-a633-4b775068eaeb",
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "required": "polar",
+      "requiredAll": [
+        "derivada"
+      ]
+    },
+    {
+      "id": "individual-no-collaboration",
+      "description": "Resuelve individualmente el problema de coordenadas polares dado.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "db9d1c3c-cde6-57c9-86f8-47c0005af7cc"
+      ],
+      "required": "polar",
+      "forbidden": "aportación|trabajo compartido|compañeros|solidaridad"
+    },
+    {
+      "id": "tools-alternative",
+      "description": "Grafica el elipsoide de la ecuación dada con una aplicación o con el recurso web disponible, según tu elección.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "fcf89811-9cab-5af8-bdfa-9cf3d71bc5bf"
+      ],
+      "required": "elipsoide",
+      "forbidden": "debe usar todos|instala|paga"
+    },
+    {
+      "id": "weighted-purpose",
+      "description": "Deriva la función vectorial dada. Se admite crédito parcial con los pesos por componente indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "required": "derivada",
+      "suggestedInstrumentType": "lista-ponderada"
+    },
+    {
+      "id": "checklist-purpose",
+      "description": "Identifica las coordenadas polares dadas y verifica su cumplimiento con sí o no.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "ea2f9456-33dd-5dff-8475-8a1c80b298f4"
+      ],
+      "required": "polares",
+      "suggestedInstrumentType": "lista-cotejo"
+    },
+    {
+      "id": "rubric-purpose",
+      "description": "Justifica la equivalencia de las representaciones polares y rectangulares proporcionadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "25ff2813-c983-594e-8fcb-a115db24b58f"
+      ],
+      "required": "polares",
+      "suggestedInstrumentType": "rubrica"
+    },
+    {
+      "id": "title-incompatible",
+      "description": "Calcula la derivada de la función vectorial dada.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "required": "derivada",
+      "forbidden": "interés compuesto|probabilidad condicional"
+    },
+    {
+      "id": "polar-quadric-connection",
+      "description": "Resuelve el problema comunitario ficticio conectando la ecuación polar proporcionada con la superficie cuádrica dada bajo los supuestos y los dominios indicados.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "ea2f9456-33dd-5dff-8475-8a1c80b298f4",
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f",
+        "113eadfd-3703-55ad-8f7e-3182fd0b6d5a",
+        "da38bd24-10db-5dcf-974c-93f95a0bdb56",
+        "9e7f554c-8bc4-5024-bd0b-5274ffbd6230"
+      ],
+      "required": "polar",
+      "requiredAll": [
+        "cuádrica"
+      ]
+    }
+  ]
+}

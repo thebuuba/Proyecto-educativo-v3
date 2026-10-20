@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
           if (fhrGrade) return 'instrumentos-fhr-' + fhrGrade[1]
           if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-optative-(?:hlm|hcs)-len-[456]\.ts$/.test(id)) return 'instrumentos-optativas-literatura'
           if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-optative-hcs-soc-[456]\.ts$/.test(id)) return 'instrumentos-optativas-sociales'
+          if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-optative-mt-[456]\.ts$/.test(id)) return 'instrumentos-optativas-matematica'
           if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/') || id.includes('node_modules/react-router')) return 'vendor'
           if (id.includes('node_modules/lucide-react')) return 'icons'
         },

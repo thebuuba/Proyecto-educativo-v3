@@ -3,6 +3,13 @@ import {readFileSync} from 'node:fs'
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
 
+test('Cálculo MT6 conserva su fuente literal y su evidencia independiente de MT4 yMT5',()=>{
+ const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-mt-6-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.subject,'Tigonometría, Cálculo Diferencial y Tecnología');assert.equal(row.exit,'Matemática y Tecnología');assert.equal(row.evidence,'docs/curriculum/cobertura-secundaria/optative-mt-6-matriz.json')
+ for(const grade of [4,5])assert.notEqual(row.evidence,inventory.scopes.find(s=>s.id===read(`optative-mt-${grade}-matriz.json`).scopeId).evidence)
+})
+
 test('Estadística MT5 conserva su evidencia propia y no acredita Cálculo MT6',()=>{
  const inventory=read('secundaria-inventario-maestro.json'),matrix=read('optative-mt-5-matriz.json'),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
  assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,matrix.provider);assert.equal(row.currentRunVerification,matrix.verification.httpDb)

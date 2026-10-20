@@ -4,12 +4,14 @@ import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import {resolveMathTaskForTopics,commonMathCriteria,commonMathSelections,type CommonMathTask} from './secondary-math-common'
 import {optativeMtFour} from './secondary-optative-mt-4'
 import {optativeMtFive} from './secondary-optative-mt-5'
+import {optativeMtSix} from './secondary-optative-mt-6'
+import {calculusVerbs,calculusRequirement,selectCalculusTopics,adaptCalculusTask,calculusMathCriteria} from './secondary-optative-calculus-evidence'
 import {statisticalVerbs,statisticalRequirement,selectStatisticalTopics,adaptStatisticalTask,statisticalMathCriteria} from './secondary-optative-statistics-evidence'
 
 export type OptativeMathTopic=CommonMathTopic&{sourceRecordIds:string[];priority:number}
 export type OptativeMathModule={id:string;grade:number;cycle:number;subjectCode:string;subjectName:string;optativeExitName:string;modalityCodes:string[];sourceScopeId:string;pdfPages:number[];policy:string;topics:OptativeMathTopic[]}
 export type OptativeMathTask=CommonMathTask&{module:OptativeMathModule}
-export const optativeMathModules:OptativeMathModule[]=[optativeMtFour,optativeMtFive]
+export const optativeMathModules:OptativeMathModule[]=[optativeMtFour,optativeMtFive,optativeMtSix]
 const additionalVerbs='registr(?:a|an|ar|e|en)|prepar(?:a|an|ar|e|en)|formul(?:a|an|ar|e|en)|concili(?:a|an|ar|e|en)'
 function selectTopics(text:string,topics:CommonMathTopic[]):CommonMathTopic[]{
  let matches=(topics as OptativeMathTopic[]).filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text))
@@ -32,18 +34,20 @@ export function resolveOptativeMathTask(title:string,description:string,context?
  if(!module)return null
  // A tool noun must not be read as the action «calcula» by the common parser.
  const statistics=module.subjectCode==='OPT-MT-5'
- const taskDescription=(statistics?statisticalRequirement(description):description).replace(/\bcalculadoras?\b/gi,'herramienta tecnológica').replace(/\bcálculos?\b/gi,'procedimiento')
+ const calculus=module.subjectCode==='OPT-MT-6'
+ const taskDescription=(statistics?statisticalRequirement(description):calculus?calculusRequirement(description):description).replace(/\bcalculadoras?\b/gi,'herramienta tecnológica').replace(/\bcálculos?\b/gi,'procedimiento')
  const heading=title.replace(/^\s*resoluci[oó]n de problemas\b/i,'Resuelve problemas')
- let task=resolveMathTaskForTopics(heading,taskDescription,module.grade,module.topics,{additionalVerbs:statistics?statisticalVerbs:additionalVerbs,selectTopics:statistics?selectStatisticalTopics:selectTopics,knownTopics:modules.flatMap(m=>m.topics)})
+ let task=resolveMathTaskForTopics(heading,taskDescription,module.grade,module.topics,{additionalVerbs:statistics?statisticalVerbs:calculus?calculusVerbs:additionalVerbs,selectTopics:statistics?selectStatisticalTopics:calculus?selectCalculusTopics:selectTopics,knownTopics:modules.flatMap(m=>m.topics)})
  if(!task)return null
  if(statistics)task=adaptStatisticalTask(task)
+ if(calculus)task=adaptCalculusTask(task)
  const operational=/\b(?:registr\w*|prepar\w*|formul\w*|concili\w*|elabor\w*|model\w*)\b/.test(task.actions[0]?.text??'')
- if(!statistics&&operational&&task.activityType==='ANALYSIS')task.activityType='EXERCISE_SET'
+ if(!statistics&&!calculus&&operational&&task.activityType==='ANALYSIS')task.activityType='EXERCISE_SET'
  return {...task,module}
 }
 /** Accounting products require traceable records, rather than a generic concept row. */
 export function optativeMathCriteria(task:OptativeMathTask):ContextualTopicCriterion[]{
- const rows=task.module.subjectCode==='OPT-MT-5'?statisticalMathCriteria(task):task.actions.flatMap(action=>{
+ const rows=task.module.subjectCode==='OPT-MT-5'?statisticalMathCriteria(task):task.module.subjectCode==='OPT-MT-6'?calculusMathCriteria(task):task.actions.flatMap(action=>{
   const mathematicalAction={...action,text:action.text.replace(/\bclasificacion\b/g,'categorías').replace(/\bcomprobacion\b/g,'contraste')}
   const operational=/^\s*(?:registr\w*|prepar\w*|formul\w*|concili\w*|elabor\w*|constru\w*)\b/.test(action.text)
   if(!operational||action.alternatives||action.steps)return commonMathCriteria({...task,actions:[mathematicalAction]})

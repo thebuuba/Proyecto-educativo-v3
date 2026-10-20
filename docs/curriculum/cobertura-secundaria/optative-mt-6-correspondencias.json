@@ -1,0 +1,634 @@
+{
+  "scopeId": "09e061a8-e3e7-55d8-a7ce-c24364f19401",
+  "sourceSha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      496,
+      497
+    ],
+    "reviewedCompetenciesAndIndicators": true,
+    "previousReview": "optativas-fuentes-revisadas.json"
+  },
+  "classification": [
+    {
+      "ordinal": 15,
+      "id": "ea2f9456-33dd-5dff-8475-8a1c80b298f4",
+      "type": "CONCEPT",
+      "literal": "• Sistemas de coordenadas polares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 16,
+      "id": "43cac993-35e8-5d55-b696-a03776944d1a",
+      "type": "CONCEPT",
+      "literal": "• Gráficas de ecuaciones en\ncoordenadas polares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 17,
+      "id": "25a9d2fc-db72-5b75-998b-38da1487a574",
+      "type": "CONCEPT",
+      "literal": "• Ecuaciones en coordenadas\npolares de las circunferencias,\ncónicas y espirales.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 18,
+      "id": "891e7e78-e9bb-5c88-8d03-b76b11f8652f",
+      "type": "CONCEPT",
+      "literal": "• Funciones cuádricas: (Paraboloides.\nHiperboloides, Elipsoides).",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 19,
+      "id": "bdbabda4-40e4-5518-b870-ca375b90a668",
+      "type": "CONCEPT",
+      "literal": "• Funciones vectoriales.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 20,
+      "id": "828a4c01-0395-547b-b47c-4978e379715b",
+      "type": "CONCEPT",
+      "literal": "• Derivadas de funciones vectoriales.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 21,
+      "id": "b71848dc-f857-5c5d-9795-47d67c29b7dd",
+      "type": "PROCEDURE",
+      "literal": "• Análisis y conceptualización del sistema de coordenadas polares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 22,
+      "id": "c39d1c64-563a-53e2-a633-4b775068eaeb",
+      "type": "PROCEDURE",
+      "literal": "• Transformación de ecuaciones rectangulares en sus\ncorrespondientes ecuaciones polares y viceversa.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 23,
+      "id": "25ff2813-c983-594e-8fcb-a115db24b58f",
+      "type": "PROCEDURE",
+      "literal": "• Comparación de gráficas de ecuaciones en coordenadas polares\nversus la representación gráfica en coordenadas rectangulares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 24,
+      "id": "db9d1c3c-cde6-57c9-86f8-47c0005af7cc",
+      "type": "PROCEDURE",
+      "literal": "• Resolución de problemas diversos relacionados con ecuaciones\nen coordenadas polares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 25,
+      "id": "92076807-d9ec-58b6-9d2d-7e7b7389e3c3",
+      "type": "PROCEDURE",
+      "literal": "• Análisis e interpretación de los conceptos sobre las diferentes\nsuperficies cuádricas.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 26,
+      "id": "fcf89811-9cab-5af8-bdfa-9cf3d71bc5bf",
+      "type": "PROCEDURE",
+      "literal": "• Uso de herramientas tecnológicas, software o cualquier\nrecurso web útil para la construcción y modelado de funciones\ncuádricas: (paraboloides, elipsoides e hiperboloides).",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 27,
+      "id": "113eadfd-3703-55ad-8f7e-3182fd0b6d5a",
+      "type": "PROCEDURE",
+      "literal": "• Resolución de problemas del contexto matemático y fuera de la\nmatemática que implique el cálculo de superficies cuádricas.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 28,
+      "id": "46193abd-5d3e-521a-a1ad-47fa7224526f",
+      "type": "PROCEDURE",
+      "literal": "• Interpretación y aplicación de funciones vectoriales en\nsituaciones dentro y fuera de la matemática.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 29,
+      "id": "5ee95c10-f20c-52bc-9f63-daa58c322a92",
+      "type": "PROCEDURE",
+      "literal": "• Cálculo de derivadas de funciones vectoriales y su aplicación en\nsituaciones problemáticas diversas.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Adaptar el concepto o procedimiento efectivamente pedido con datos,modelos,ecuaciones y convenciones proporcionados;no exigir todos los componentes o herramientas."
+    },
+    {
+      "ordinal": 30,
+      "id": "3381baaa-2526-52c6-81a1-4c3b928938d5",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Satisfacción al resolver\ntransformaciones de ecuaciones\nen coordenadas polares a\necuaciones en coordenada\nrectangulares.",
+      "pdfPage": 496,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 31,
+      "id": "103847e0-384b-5a76-853f-cc9498563d55",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Colaboración en la solución de\nproblemas relacionados con\ncoordenadas polares.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Contribución identificable a una solución o construcción gráfica compartida solo si la consigna pide colaboración;no imponer grupo,roles,solidaridad o rasgos personales."
+    },
+    {
+      "ordinal": 32,
+      "id": "6f7567e1-dd40-52c8-96da-84842ecd0aa2",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Interés al modelar superficies\ncuádricas con apoyo de\nherramientas tecnológicas.",
+      "pdfPage": 496,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 33,
+      "id": "414006c2-a399-5354-ba2d-299be48d2514",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Disfrute al graficar las diferentes\nfunciones cuádricas y establecer\nlas diferencias que existen entre\nuna y otra.",
+      "pdfPage": 496,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 34,
+      "id": "1cd3f698-4d16-5189-93c5-17e27916eca6",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Colaboración en el trabajo de\nequipo para la construcción de\ngraficas de las distintas superficies\ncuádricas.",
+      "pdfPage": 496,
+      "status": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "reason": "Contribución identificable a una solución o construcción gráfica compartida solo si la consigna pide colaboración;no imponer grupo,roles,solidaridad o rasgos personales."
+    },
+    {
+      "ordinal": 35,
+      "id": "3615bbd9-2273-5de9-9eab-054eb7cc1aa3",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Interés en la resolución de\nproblemas de la vida diaria que\nimplican derivadas de funciones\nvectoriales.",
+      "pdfPage": 496,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    },
+    {
+      "ordinal": 36,
+      "id": "13f4dd2e-906e-518b-a57c-d62179258972",
+      "type": "ATTITUDE_VALUE",
+      "literal": "• Valoración en la aplicación de\nherramientas tecnológica en la\nresolución de problemas que\nimpliquen los conocimientos de\ncoordenadas polares y cálculo de\nsuperficie.",
+      "pdfPage": 496,
+      "status": "PRIVATE_DISPOSITION",
+      "reason": "Estado privado de interés,satisfacción,valoración,apertura,disciplina o disfrute sin actuación delimitada:no puntuar personalidad."
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-15",
+      "label": "• Sistemas de coordenadas polares.",
+      "sourceRecordIds": [
+        "ea2f9456-33dd-5dff-8475-8a1c80b298f4"
+      ],
+      "caseIds": [
+        "polar-concept",
+        "polar-point-conversion",
+        "checklist-purpose",
+        "polar-quadric-connection"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-16",
+      "label": "• Gráficas de ecuaciones en coordenadas polares.",
+      "sourceRecordIds": [
+        "43cac993-35e8-5d55-b696-a03776944d1a"
+      ],
+      "caseIds": [
+        "polar-graph-concept",
+        "given-chart-no-construction"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-17",
+      "label": "• Ecuaciones en coordenadas polares de las circunferencias, cónicas y espirales.",
+      "sourceRecordIds": [
+        "25a9d2fc-db72-5b75-998b-38da1487a574"
+      ],
+      "caseIds": [
+        "polar-circle",
+        "polar-conic",
+        "polar-spiral"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-18",
+      "label": "• Funciones cuádricas: (Paraboloides. Hiperboloides, Elipsoides).",
+      "sourceRecordIds": [
+        "891e7e78-e9bb-5c88-8d03-b76b11f8652f"
+      ],
+      "caseIds": [
+        "quadric-concept",
+        "paraboloid-only",
+        "hyperboloid-only",
+        "ellipsoid-only",
+        "polar-quadric-connection"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-19",
+      "label": "• Funciones vectoriales.",
+      "sourceRecordIds": [
+        "bdbabda4-40e4-5518-b870-ca375b90a668"
+      ],
+      "caseIds": [
+        "vector-concept",
+        "vector-value-only"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-20",
+      "label": "• Derivadas de funciones vectoriales.",
+      "sourceRecordIds": [
+        "828a4c01-0395-547b-b47c-4978e379715b"
+      ],
+      "caseIds": [
+        "vector-derivative-concept",
+        "derivative-only-no-integral"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-21",
+      "label": "• Análisis y conceptualización del sistema de coordenadas polares.",
+      "sourceRecordIds": [
+        "b71848dc-f857-5c5d-9795-47d67c29b7dd"
+      ],
+      "caseIds": [
+        "polar-concept"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-22",
+      "label": "• Transformación de ecuaciones rectangulares en sus correspondientes ecuaciones polares y viceversa.",
+      "sourceRecordIds": [
+        "c39d1c64-563a-53e2-a633-4b775068eaeb"
+      ],
+      "caseIds": [
+        "rectangular-to-polar-equation",
+        "polar-to-rectangular-equation",
+        "equation-only-no-graph",
+        "independent-polar-and-vector"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-23",
+      "label": "• Comparación de gráficas de ecuaciones en coordenadas polares versus la representación gráfica en coordenadas rectangulares.",
+      "sourceRecordIds": [
+        "25ff2813-c983-594e-8fcb-a115db24b58f"
+      ],
+      "caseIds": [
+        "polar-rectangular-graphs",
+        "rubric-purpose"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-24",
+      "label": "• Resolución de problemas diversos relacionados con ecuaciones en coordenadas polares.",
+      "sourceRecordIds": [
+        "db9d1c3c-cde6-57c9-86f8-47c0005af7cc"
+      ],
+      "caseIds": [
+        "polar-problem",
+        "polar-or-vector-alternative",
+        "individual-no-collaboration"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-25",
+      "label": "• Análisis e interpretación de los conceptos sobre las diferentes superficies cuádricas.",
+      "sourceRecordIds": [
+        "92076807-d9ec-58b6-9d2d-7e7b7389e3c3"
+      ],
+      "caseIds": [
+        "quadric-concept",
+        "quadric-analysis"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-26",
+      "label": "• Uso de herramientas tecnológicas, software o cualquier recurso web útil para la construcción y modelado de funciones cuádricas: (paraboloides, elipsoides e hiperboloides).",
+      "sourceRecordIds": [
+        "fcf89811-9cab-5af8-bdfa-9cf3d71bc5bf"
+      ],
+      "caseIds": [
+        "quadric-tech-choice",
+        "tools-alternative"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-27",
+      "label": "• Resolución de problemas del contexto matemático y fuera de la matemática que implique el cálculo de superficies cuádricas.",
+      "sourceRecordIds": [
+        "113eadfd-3703-55ad-8f7e-3182fd0b6d5a"
+      ],
+      "caseIds": [
+        "quadric-problem",
+        "polar-quadric-connection"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-28",
+      "label": "• Interpretación y aplicación de funciones vectoriales en situaciones dentro y fuera de la matemática.",
+      "sourceRecordIds": [
+        "46193abd-5d3e-521a-a1ad-47fa7224526f"
+      ],
+      "caseIds": [
+        "vector-concept",
+        "vector-application"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-29",
+      "label": "• Cálculo de derivadas de funciones vectoriales y su aplicación en situaciones problemáticas diversas.",
+      "sourceRecordIds": [
+        "5ee95c10-f20c-52bc-9f63-daa58c322a92"
+      ],
+      "caseIds": [
+        "vector-derivative",
+        "derivative-only-no-integral",
+        "polar-or-vector-alternative",
+        "independent-polar-and-vector",
+        "weighted-purpose",
+        "title-incompatible"
+      ],
+      "adaptation": "Acción matemática efectivamente solicitada con ecuaciones,datos,parámetros,dominios,intervalos yconvenciones proporcionados,sin agregar otras curvas,sistemas o procedimientos."
+    },
+    {
+      "id": "source-31",
+      "label": "• Colaboración en la solución de problemas relacionados con coordenadas polares.",
+      "sourceRecordIds": [
+        "103847e0-384b-5a76-853f-cc9498563d55"
+      ],
+      "caseIds": [
+        "group-polar-contribution"
+      ],
+      "adaptation": "Aportación matemática identificable solo bajo consigna grupal explícita;no puntuar solidaridad,interés,disfrute o personalidad."
+    },
+    {
+      "id": "source-34",
+      "label": "• Colaboración en el trabajo de equipo para la construcción de graficas de las distintas superficies cuádricas.",
+      "sourceRecordIds": [
+        "1cd3f698-4d16-5189-93c5-17e27916eca6"
+      ],
+      "caseIds": [
+        "group-quadric-contribution"
+      ],
+      "adaptation": "Aportación matemática identificable solo bajo consigna grupal explícita;no puntuar solidaridad,interés,disfrute o personalidad."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "061e74dd-1aa4-5135-8b02-9ca12c7d2cf5",
+      "literal": "• Interpreta situaciones del contexto modeladas a través de coordenadas polares.",
+      "caseIds": [
+        "polar-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "7a2183a0-f8a3-5afb-a259-be466110370b",
+      "literal": "• Explica los procesos matemáticos referidos a diferentes escenarios de aplicación de coordenadas polares en situaciones\ndiversas.",
+      "caseIds": [
+        "polar-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "ba6c9374-4acc-5015-96b5-649aaf8d72fc",
+      "literal": "• Emplea argumentos válidos en la interpretación de situaciones de la comunidad sobre la base de los conocimientos en\ncoordenadas polares.",
+      "caseIds": [
+        "polar-problem"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "b18418fb-10c1-5a04-8768-caae26b9e783",
+      "literal": "• Aplica el razonamiento matemático para dar respuestas a situaciones relacionadas con superficies cuádricas.",
+      "caseIds": [
+        "quadric-analysis"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "e4d2c49f-2a33-5fe4-a6a2-fd2f9d8dbdd0",
+      "literal": "• Emplea juicio crítico para modelar situaciones del contexto, a partir de los gráficos de funciones relacionadas a las\nsuperficies cuádricas.",
+      "caseIds": [
+        "quadric-tech-choice"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "bf97d83b-ac18-57b0-817b-feceef697d07",
+      "literal": "• Aplica procesos lógicos para la construcción de la ecuación de superficie partiendo de la ecuación rectangular.",
+      "caseIds": [
+        "surface-equation"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "da38bd24-10db-5dcf-974c-93f95a0bdb56",
+      "literal": "• Resuelve situaciones problemáticas asociadas a superficies cuádricas y conectando con los conocimientos de\ncoordenadas polares.",
+      "caseIds": [
+        "quadric-problem",
+        "polar-quadric-connection"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "fd82f6e0-246b-5d18-83db-4de2c0127ce0",
+      "literal": "• Aplica la resolución de problemas para interpretar situaciones relativas al concepto de superficie reglada.",
+      "caseIds": [
+        "ruled-problem",
+        "ruled-only"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "8b80cd93-1a21-5da0-af1f-ca156228fca0",
+      "literal": "• Emplea la modelación matemática como forma de solucionar situaciones asociadas a la ecuación del esferoide y sus\ndiferentes casos.",
+      "caseIds": [
+        "spheroid-model",
+        "spheroid-only"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "d06db7da-8c58-567b-9011-28eafe718b34",
+      "literal": "• Modela situaciones referidas a la ecuación del cardiode asociados a diferentes casos dentro y fuera de la matemática.",
+      "caseIds": [
+        "cardioid-model",
+        "cardioid-only"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "9e7f554c-8bc4-5024-bd0b-5274ffbd6230",
+      "literal": "• Resuelve situaciones de superficies cuádricas y coordenadas polares que guarden relación con aspectos de interés para\nla comunidad.",
+      "caseIds": [
+        "quadric-problem",
+        "polar-quadric-connection"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "47076277-02e1-5617-b3c4-aedf2415cfe4",
+      "literal": "• Aplica criterios matemáticos para desarrollar problemas asociados a derivadas de funciones vectoriales y sus aplicaciones.",
+      "caseIds": [
+        "vector-derivative"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "054c4180-6217-5897-90ca-33f2d47599f0",
+      "literal": "• Maneja herramientas tecnológicas para el análisis de problemas referidos a derivadas de funciones vectoriales y cálculo\nde superficies y comprobar posibles soluciones.",
+      "caseIds": [
+        "technology-verification"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "3862b781-a08b-5ad7-b179-89308827ef12",
+      "literal": "• Modela con apoyo tecnológico diferentes problemas sobre superficie reglada, a fin de vincularlos a situaciones dentro y\nfuera de la matemática.",
+      "caseIds": [
+        "ruled-tech-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "f927c34a-c28b-55bc-813f-0f2d2399203d",
+      "literal": "• Utiliza herramientas tecnológicas para interpretar resultados de proyectos de investigación matemática en la que se\nimpliquen los conocimientos de coordenadas polares, superficie y funciones vectoriales.",
+      "caseIds": [
+        "existing-project-results"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "beb8dbf9-0d1c-5e0c-8453-8fcadb6b9c2b",
+      "literal": "• •Modela situaciones del medioambiente sobre la base de los conocimientos de coordenadas polares, superficies\ncuádricas y funciones vectoriales.",
+      "caseIds": [
+        "environment-given-model"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "061b43a6-c224-5047-88fa-f394f81bea4e",
+      "literal": "• Plantea propuestas para la comunidad y el medioambiente, a partir de los conocimientos de coordenadas polares,\nsuperficies cuádricas y funciones vectoriales.",
+      "caseIds": [
+        "community-proposal"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "29cabba5-5eb1-5cc4-ab09-f5badc2e3235",
+      "literal": "• Investiga posibles modelos de superficies cuádricas y funciones vectoriales en contextos relacionados con salud y\nmedioambiente.",
+      "caseIds": [
+        "health-model-inquiry"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "4f7fa700-d959-5990-9cd0-e4730ffedcfc",
+      "literal": "• Muestra autonomía en la toma de decisiones referidas al análisis de situaciones sobre coordenadas polares, superficies\ncuádricas y funciones vectoriales.",
+      "caseIds": [
+        "observed-autonomy"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "0b9667ef-5a35-5f33-9b55-4969828f0a66",
+      "literal": "• Investiga, respetando los diferentes puntos de vista, en la interpretación de problemas referidos al cálculo de superficie\ny derivadas de funciones vectoriales.",
+      "caseIds": [
+        "contrasting-viewpoints"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    },
+    {
+      "id": "88f3cad1-07cd-5387-a162-7be6686b037c",
+      "literal": "• Trabaja de manera solidaria con sus compañeros en la elaboración de proyectos de investigación que integren los\nconocimientos desarrollados en la asignatura.",
+      "caseIds": [
+        "group-research-contribution"
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptation": "Acción oaportación matemática expresamente pedida con casos/modelos/datos dados;sin ejecutar intervenciones reales ni puntuar estados privados."
+    }
+  ],
+  "adaptationNotes": [
+    "Asignación/importación«Tigonometría»vsencabezadomalla«Trigonometría»:ambos preservados con procedencia;no reconstruir fuente.",
+    "I46«cardiode»se conserva literal;adaptación matemática a cardioide,curva polar2D.",
+    "I44/50superficiereglada/I45esferoide/I46cardioide aportan anclas propias;no inferir que toda superficie cuádrica sea reglada.",
+    "Conservar equivalencia yrestricciones en conversiones,derivada porcomponentes cuando es pedida;no imponer graficar,integrar,convertirpuntos oecuaciones ajenos.",
+    "A31/A34 ycolaboraciónI57 son condicionadas a una consigna grupal,no personalidad."
+  ],
+  "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_EXTERNAL_DNS_BLOCKED",
+  "implementationStatus": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_EXTERNAL_DNS_BLOCKED"
+}

@@ -1,0 +1,1385 @@
+{
+  "catalog": "evaluation-2026.138",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "method": "Lectura completa reconstruida exactamente:16 objetos matemáticos,79 textos distintos mediante22 familias de cinco progresiones,68 consignas y21 paquetes de cuatro formatos y puntuaciones. Se leyeron todas las relaciones y representaciones de metadata, los enlaces de cada texto, las consignas completas y sus criterios. Contraste de17 anclas adaptables,21 indicadores y5 exclusiones. No se acredita pertinencia por inventario o tests solamente.",
+  "findingsFixed": [
+    "La derivada vectorial plural no era reconocida.",
+    "La comparación polar/rectangular perdía el segundo sistema.",
+    "Construir una ecuación de superficie pedía gráfica y conversión adicionales.",
+    "La consigna breve de conversión de un punto perdía su objeto.",
+    "El sustantivo gráfica tras Analiza se interpretaba como orden de graficar."
+  ],
+  "minorDeferred": [
+    "Algunas combinaciones conservan artículos poco naturales o cláusulas repetidas; no añaden requisitos ni cambian cifras.",
+    "La etiqueta gráfica de la ecuación polar también agrupa problemas y modelos de la ecuación; no añade un criterio de dibujo cuando la consigna no lo pide."
+  ],
+  "limits": [
+    "Muestras representativas; no todas las variantes de cada fila curricular.",
+    "Build, runtime, HTTP/DB y navegador pendientes al registrar esta lectura.",
+    "Modelos y datos proporcionados; sin intervenciones reales en salud o comunidad.",
+    "Tigonometría y cardiode se conservan en la fuente literal; la adaptación pedagógica usa los términos matemáticos indicados.",
+    "A31/A34 y aportaciones grupales solo se evalúan bajo consigna colaborativa expresa."
+  ],
+  "items": [
+    {
+      "caseId": "brief:polar-coordinates",
+      "instrumentType": "rubrica",
+      "sha256": "d93b52d9cd9adce57e3b03ada3a525f196dcc1ea47b41154c19922783e951978"
+    },
+    {
+      "caseId": "brief:polar-coordinates",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f54c8abc57af08bdfdb57a9715f564a99e0ad5be9aae151d58a2cb892b4f4a8f"
+    },
+    {
+      "caseId": "brief:polar-coordinates",
+      "instrumentType": "escala",
+      "sha256": "fc8b783844d8015086e0e849fcb4f2bb0a283c8d319e853db933f44978cca8a1"
+    },
+    {
+      "caseId": "brief:polar-coordinates",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4adc8bc9b805a63a77b14591cef2d897ac3af07758132f5f640805a2eef74104"
+    },
+    {
+      "caseId": "brief:polar-graph",
+      "instrumentType": "rubrica",
+      "sha256": "49a044289322d250d09ba3f9d826f245df5923adcbb64a61dd4ee7fe9126b2c5"
+    },
+    {
+      "caseId": "brief:polar-graph",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c50c662ab31539d3cf9eae505d787c88d43c43b1ce9e462aae82f687d74ac07a"
+    },
+    {
+      "caseId": "brief:polar-graph",
+      "instrumentType": "escala",
+      "sha256": "46886c227d25acef6f9d19e5416d9cfbe507b2545d334d176605dcd36ab4db3b"
+    },
+    {
+      "caseId": "brief:polar-graph",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7ecdb5d1b05d782f5cbb4549ee610b2b5cc1bc8cbb58dbc76b65d0d021e008d8"
+    },
+    {
+      "caseId": "brief:equation-conversion",
+      "instrumentType": "rubrica",
+      "sha256": "4f4648155772ac6c154f832aaac5072b8d15cdf256f4cfb69bf50c4837a5ea78"
+    },
+    {
+      "caseId": "brief:equation-conversion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "36660ad061f878e92fe46f0c9994120c2fd75526e27819812f150ad601801bf4"
+    },
+    {
+      "caseId": "brief:equation-conversion",
+      "instrumentType": "escala",
+      "sha256": "0929bab77615b9b52a53d2a95f7095470ed40cd2eeb8ace547a9799297fa7560"
+    },
+    {
+      "caseId": "brief:equation-conversion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1ca682484059d4355a2c59467ec45328fd87a86ed5eb31de69650225adf69505"
+    },
+    {
+      "caseId": "brief:point-conversion",
+      "instrumentType": "rubrica",
+      "sha256": "1dc287e80c537b36b44ffc513729572ffabcf6715b1f2f54c5ec8bfb9929a8cc"
+    },
+    {
+      "caseId": "brief:point-conversion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e643cb4ed18e001c5121b65c412c493bad900e30ef67a6956d483c2c25c2b18a"
+    },
+    {
+      "caseId": "brief:point-conversion",
+      "instrumentType": "escala",
+      "sha256": "ddbd88c3dd5d729757691757858eec61bacea97e6a42ae4ea6e09832958f733e"
+    },
+    {
+      "caseId": "brief:point-conversion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8a4ba945a7dc80442dca85094fb20c96f02ebda3246456e86f4f5a1c69919441"
+    },
+    {
+      "caseId": "brief:polar-circle",
+      "instrumentType": "rubrica",
+      "sha256": "0c33e385889146ab8ff20781824690d5f7384021f5d748929b3471c5ffc3a696"
+    },
+    {
+      "caseId": "brief:polar-circle",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cca98cfca0def86860fe8e00ffc9db4466762a0ea045d2af6520ec36e5630f1b"
+    },
+    {
+      "caseId": "brief:polar-circle",
+      "instrumentType": "escala",
+      "sha256": "19f991b36c5dc7e4a7d25459867f60f9a4686aa887ebd5a8d78c9078e8aa968d"
+    },
+    {
+      "caseId": "brief:polar-circle",
+      "instrumentType": "lista-ponderada",
+      "sha256": "97921cb1612ff7d4b01b7c30a96bb60551f7567b21a607cc1cdadeedc101a44d"
+    },
+    {
+      "caseId": "brief:polar-conic",
+      "instrumentType": "rubrica",
+      "sha256": "174f2f9633e35001252e21e7efb9f21d61f322d3b2d57e3b684baf86f1f0bbe1"
+    },
+    {
+      "caseId": "brief:polar-conic",
+      "instrumentType": "lista-cotejo",
+      "sha256": "09f14c32ed978fd706760bbf574334ee4e6a6347df4201d2c01f99fdaca44a35"
+    },
+    {
+      "caseId": "brief:polar-conic",
+      "instrumentType": "escala",
+      "sha256": "f6ab326e7d8690fae1b4a3b8dc14743ef21eb56a4dbf49d61b2d05c66518097c"
+    },
+    {
+      "caseId": "brief:polar-conic",
+      "instrumentType": "lista-ponderada",
+      "sha256": "daebb39a0af0350b83dc4a167ed673a7af2dece3ed490ded3bc3777976be9122"
+    },
+    {
+      "caseId": "brief:polar-spiral",
+      "instrumentType": "rubrica",
+      "sha256": "e0e59143d69157aa5d1b2263de39383588872241b14579ebc3936bd3c73f884e"
+    },
+    {
+      "caseId": "brief:polar-spiral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1b5fd2d5e19e2b91491c1114c7da7675ee459a28983b6fd252f39da1730fffcc"
+    },
+    {
+      "caseId": "brief:polar-spiral",
+      "instrumentType": "escala",
+      "sha256": "710aebd343b411a9989d9a9621c4e259be961f09a5624bc619eddf347a98d3f5"
+    },
+    {
+      "caseId": "brief:polar-spiral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6e7c0845983d74a95f740ef4a0887939a02641d5e232826e5c208526630134bd"
+    },
+    {
+      "caseId": "brief:quadric-surfaces",
+      "instrumentType": "rubrica",
+      "sha256": "2408ca5e73249f938f4de3cd61421987c5d73310422359bb5acb5873d5181bcd"
+    },
+    {
+      "caseId": "brief:quadric-surfaces",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cef870c42bdff26e8b521057025e54bc2a14ef9f6ef8a7b47110b91e93817cb7"
+    },
+    {
+      "caseId": "brief:quadric-surfaces",
+      "instrumentType": "escala",
+      "sha256": "7f95b880a4f272186f4299c43dc7947af125decca5a2ab0b3bdd2103183259cf"
+    },
+    {
+      "caseId": "brief:quadric-surfaces",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9d4eb83051f4a80113059eeec6fac649968fb17c0e618edb29f89c6acb0eb82"
+    },
+    {
+      "caseId": "brief:paraboloid",
+      "instrumentType": "rubrica",
+      "sha256": "47087c1079b2da79a3cab6d3d00018f2c2df56b4afe2ac762590fb89617222ef"
+    },
+    {
+      "caseId": "brief:paraboloid",
+      "instrumentType": "lista-cotejo",
+      "sha256": "671cac8d06339878b2f5ecd7b74e914df40ad4ae0d1f4eadcb33a83a0801da79"
+    },
+    {
+      "caseId": "brief:paraboloid",
+      "instrumentType": "escala",
+      "sha256": "78e9c180b80018a5743e9785d13370e328ff08056856c78f8a71c621cbb7b8b3"
+    },
+    {
+      "caseId": "brief:paraboloid",
+      "instrumentType": "lista-ponderada",
+      "sha256": "24b297ce5d28059edfb198b56793ff2c5317d89eca51e1bdba5f5bd631807345"
+    },
+    {
+      "caseId": "brief:hyperboloid",
+      "instrumentType": "rubrica",
+      "sha256": "e16b1cb3895cb170090b196a24a279dec109007bb39fad8dc5e557c6785b3f2a"
+    },
+    {
+      "caseId": "brief:hyperboloid",
+      "instrumentType": "lista-cotejo",
+      "sha256": "debf63be44badc2c0933aea46ba0cf73e9ab900d8348480935ba9b7cbd38b6fb"
+    },
+    {
+      "caseId": "brief:hyperboloid",
+      "instrumentType": "escala",
+      "sha256": "f86ecd6876150b186fcc6dcd7fe7b58a590d32f8b10c0b09d429c31dabc8d34c"
+    },
+    {
+      "caseId": "brief:hyperboloid",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92f2d3e054c335db94ef8943af65e8ec39688aee3ede49a916feb1489f419b61"
+    },
+    {
+      "caseId": "brief:ellipsoid",
+      "instrumentType": "rubrica",
+      "sha256": "566980bb1766a91714a2e4c6b6fdcac844594187ac3a9ad7dcef87e736ce06ef"
+    },
+    {
+      "caseId": "brief:ellipsoid",
+      "instrumentType": "lista-cotejo",
+      "sha256": "69c684c4a0a481e5fbaf17555af244037ec4a31b5f5a8894d4d35fe538c72574"
+    },
+    {
+      "caseId": "brief:ellipsoid",
+      "instrumentType": "escala",
+      "sha256": "b71274bdf0662909391d13a0c79df0bffba39f599466632bf5879eaaff6f8c72"
+    },
+    {
+      "caseId": "brief:ellipsoid",
+      "instrumentType": "lista-ponderada",
+      "sha256": "48bdbc64cfe966cfe2814c56588ab8e3486d1b2013300a042fd1acec8a47a322"
+    },
+    {
+      "caseId": "brief:vector-functions",
+      "instrumentType": "rubrica",
+      "sha256": "b9c1b70b1d38c47ed77850e3200114ae9a84c5e7aa138a3d07829d90e22aa2bf"
+    },
+    {
+      "caseId": "brief:vector-functions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d8373391c57f6022d4ccac6585c913960a661dd205f39ea52f844ebf81508af5"
+    },
+    {
+      "caseId": "brief:vector-functions",
+      "instrumentType": "escala",
+      "sha256": "61a8005ab2803f8635646c9f9baa01cf550335d1cf1f2f6e3cf68bd1c7dcf3ba"
+    },
+    {
+      "caseId": "brief:vector-functions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e1f56a22cb8b0e75ea394c2f99d5837d0f3b7039d17b79fced35e336a37f3bb2"
+    },
+    {
+      "caseId": "brief:vector-derivatives",
+      "instrumentType": "rubrica",
+      "sha256": "d370e17272f980998ed2a9c5ef48719801ac1906c7269d8a2dee5e822b2459c6"
+    },
+    {
+      "caseId": "brief:vector-derivatives",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d6a16a92a0b30ae9cfc235bd4c1423fdac87c39ef94e3713fc7771305553d876"
+    },
+    {
+      "caseId": "brief:vector-derivatives",
+      "instrumentType": "escala",
+      "sha256": "5453a7ab9d00d9e11da7dea8130afc732725a7a7a84af00c5a91220681f36333"
+    },
+    {
+      "caseId": "brief:vector-derivatives",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a2bf03ba9899603833e33492b5aead4073ec475b16bdadb73efb4089a5e5db06"
+    },
+    {
+      "caseId": "brief:ruled-surface",
+      "instrumentType": "rubrica",
+      "sha256": "e43a44c8debebc0d4855989729176f54fc912a3ec02607b6ab0e7848374199d1"
+    },
+    {
+      "caseId": "brief:ruled-surface",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2f8fa7ef7103b8266dde59143645ef90385eb92eee930d185ab458c0b2c96d80"
+    },
+    {
+      "caseId": "brief:ruled-surface",
+      "instrumentType": "escala",
+      "sha256": "f4a0cb009ddb81959ee4d1a9fd70b2f2f2e61468a5c20b3ffd635d1f0d840f2a"
+    },
+    {
+      "caseId": "brief:ruled-surface",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7b07b206c1cbdbda9cfa4c80d9b1462e4ae1b58212e5eae3962938f38df16ec3"
+    },
+    {
+      "caseId": "brief:spheroid",
+      "instrumentType": "rubrica",
+      "sha256": "a95e5e6c9b3996758cb4fb0cb36140f40288c1d727663d5d79620b6fcaf502c1"
+    },
+    {
+      "caseId": "brief:spheroid",
+      "instrumentType": "lista-cotejo",
+      "sha256": "83b38ac0a6f7b9819f2cd94c2d760c2b8e126d93d14cba322371329bdbfaaeaf"
+    },
+    {
+      "caseId": "brief:spheroid",
+      "instrumentType": "escala",
+      "sha256": "40c563326e981cff89bd145459de1c95780ec793ddc8c309dfd260b5a7236b03"
+    },
+    {
+      "caseId": "brief:spheroid",
+      "instrumentType": "lista-ponderada",
+      "sha256": "554a78c5531ca6a84ecd60880d66a8acdc1c9f75ace7e4417880e665f65103f9"
+    },
+    {
+      "caseId": "brief:cardioid",
+      "instrumentType": "rubrica",
+      "sha256": "33e029f83e733fa573d434e87a86e6868dce788af7fb3f6c3148ad450f0fb3bb"
+    },
+    {
+      "caseId": "brief:cardioid",
+      "instrumentType": "lista-cotejo",
+      "sha256": "16a009ba4fc088cdbaf0e04979b14fe29423f112bd5285628826b1a52544b1ff"
+    },
+    {
+      "caseId": "brief:cardioid",
+      "instrumentType": "escala",
+      "sha256": "f66bf348e967e2f2d85c86b1642e42acb7f517cdd637e6fea57345d726df0be2"
+    },
+    {
+      "caseId": "brief:cardioid",
+      "instrumentType": "lista-ponderada",
+      "sha256": "04eadcb88c1b42d7e2f3ef77ddd4c2374de7f5f44a2fe28d5e8812971102f7b6"
+    },
+    {
+      "caseId": "polar-concept",
+      "instrumentType": "rubrica",
+      "sha256": "e10968e1f972e4d18ae0d7c1c00b629995dee69c080116a781c4175e50fa298c"
+    },
+    {
+      "caseId": "polar-concept",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a186aef4857ffcf32aa4b3cd5bfcb17a5fd58b5a8c190df3130f9ea3de3b2ee0"
+    },
+    {
+      "caseId": "polar-concept",
+      "instrumentType": "escala",
+      "sha256": "b6b61ac01d5c1a81780c24f0dcf1123284db2fcea3bd86a4b13aef1e65f682ff"
+    },
+    {
+      "caseId": "polar-concept",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c953f221b25d53dbdc576f8ebc97a6150561014280e33d98925482ce312adb0c"
+    },
+    {
+      "caseId": "polar-graph-concept",
+      "instrumentType": "rubrica",
+      "sha256": "fdb59206d2a304e638253b97e8a9af3aa8746232affeeb1985f70be6dfd50c09"
+    },
+    {
+      "caseId": "polar-graph-concept",
+      "instrumentType": "lista-cotejo",
+      "sha256": "23e4da81d8180d3d27a8bb58d06485927fe66ba24f1d67a67d046d7a2901535a"
+    },
+    {
+      "caseId": "polar-graph-concept",
+      "instrumentType": "escala",
+      "sha256": "e34a49decee701e8a7a0cdae632e0227a4039a3b4d9648fec77cde21196715f5"
+    },
+    {
+      "caseId": "polar-graph-concept",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9e6111435f942036116eecb70561bf1f4f59659d0f33d15a036a2ed1b2beef98"
+    },
+    {
+      "caseId": "polar-circle",
+      "instrumentType": "rubrica",
+      "sha256": "91207d6ebfe1a5403beca74a946879d44a03e57e69d59c109bfc0b2706fa67a7"
+    },
+    {
+      "caseId": "polar-circle",
+      "instrumentType": "lista-cotejo",
+      "sha256": "07457002f12c7b566640c6c8dfa86b3ee47776e2d563a139a0af5325fc7ea1f0"
+    },
+    {
+      "caseId": "polar-circle",
+      "instrumentType": "escala",
+      "sha256": "43546166d9d0467c66f7c88c33f575ada3a061b5baac58bf8e45550d75578466"
+    },
+    {
+      "caseId": "polar-circle",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c58a2c0c013ea59e7d09a2c7936215dd6610e888981fccc60d7205f4f026d916"
+    },
+    {
+      "caseId": "polar-conic",
+      "instrumentType": "rubrica",
+      "sha256": "8ce1111cc03deb0bd615b1117ea9da83927359f6e4612977984c9b4658bd37e9"
+    },
+    {
+      "caseId": "polar-conic",
+      "instrumentType": "lista-cotejo",
+      "sha256": "caed22acf3117190e20e69510626781aa83b1b84eac9c291dffa636891107532"
+    },
+    {
+      "caseId": "polar-conic",
+      "instrumentType": "escala",
+      "sha256": "9d0ce562ba4e0bd308092b8e8e2b11a17640b04d402dac4bffd660a64c7b4ec9"
+    },
+    {
+      "caseId": "polar-conic",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9aa0de0af1587384122188e7d6252f85185b63d1bbac6f5580d7b8b0b1e29b25"
+    },
+    {
+      "caseId": "polar-spiral",
+      "instrumentType": "rubrica",
+      "sha256": "5162e57bbd292e225ec55dbb44b5d93d04f428cad5dfd51b758145434a9d25b3"
+    },
+    {
+      "caseId": "polar-spiral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "927d7d202fc9ed1b237f31774d8f6b37f7e6b130390d18c8d3d60a22db5ab664"
+    },
+    {
+      "caseId": "polar-spiral",
+      "instrumentType": "escala",
+      "sha256": "2db139bcd541894a6590b6c066065d7ed1b84c8f6792bae499e55ea97a0db712"
+    },
+    {
+      "caseId": "polar-spiral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bf231ed4ac8682e30ff9f6e20bc82e24306a1169ae45571f9cde69e860862e8c"
+    },
+    {
+      "caseId": "quadric-concept",
+      "instrumentType": "rubrica",
+      "sha256": "2a51bb2fc080b2978bfb69d90f0134945045244cdf4900c9360b07c85f5c9b5d"
+    },
+    {
+      "caseId": "quadric-concept",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3fa8c53636776542747984f875ae843b74760d7ae83ea2b82ea3db41d427f808"
+    },
+    {
+      "caseId": "quadric-concept",
+      "instrumentType": "escala",
+      "sha256": "080f757eda05a83b37681692f4931e95925fc2e3198a1a345396a84c0a3c1cd0"
+    },
+    {
+      "caseId": "quadric-concept",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0fb90b2869bbb9c0ba6e5a616833eae971a3d2308070829c488b0cd6ef1f4857"
+    },
+    {
+      "caseId": "vector-concept",
+      "instrumentType": "rubrica",
+      "sha256": "62b32856fa27b0df26dcdef868348e322953d755bb10fe2568b7a7ab711d9ca3"
+    },
+    {
+      "caseId": "vector-concept",
+      "instrumentType": "lista-cotejo",
+      "sha256": "181dc9a8a90e204a02a3bb2f4fb9ab5c1e0a4aae9883542afd4fde51df89fb26"
+    },
+    {
+      "caseId": "vector-concept",
+      "instrumentType": "escala",
+      "sha256": "3b698c4d3ef3baa0d85670e25bce1ea563a233a2b1c52685f6cad729b6916ac5"
+    },
+    {
+      "caseId": "vector-concept",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ca5efbe25143aa3be59b130127cea87ffb1ddbb7870c5b83beb1b6ce1de85f5e"
+    },
+    {
+      "caseId": "vector-derivative-concept",
+      "instrumentType": "rubrica",
+      "sha256": "8970d74d3a5d1b460db6b4418284e6c7780a7604679a7725f131ed40de6a9193"
+    },
+    {
+      "caseId": "vector-derivative-concept",
+      "instrumentType": "lista-cotejo",
+      "sha256": "48b0d188ac6c955978cba7bcffb26840edf93b2ad81a8785e5d60941cd0f35e8"
+    },
+    {
+      "caseId": "vector-derivative-concept",
+      "instrumentType": "escala",
+      "sha256": "91a60c60a965ff122fb0f1bfbedd03f6829a0f551af648adb6bca458b0d50865"
+    },
+    {
+      "caseId": "vector-derivative-concept",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7446951bb8c7bdbf9b713a71a4d19b6615a8e127449f68ddf69dfc548a71fc88"
+    },
+    {
+      "caseId": "rectangular-to-polar-equation",
+      "instrumentType": "rubrica",
+      "sha256": "702fd75118d264b9dcb304df93184b61bb6410e5c67e7f1a0aa2e4cebe8448a6"
+    },
+    {
+      "caseId": "rectangular-to-polar-equation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c33fb063bc35b2e5b379f6a1d9d6e81288db575100d1eb3bde213e3b5eb2dea2"
+    },
+    {
+      "caseId": "rectangular-to-polar-equation",
+      "instrumentType": "escala",
+      "sha256": "4375ff0578a613e54b699c96fba1c023ae36cdddd92447e0f9fd1afaeb27bd4e"
+    },
+    {
+      "caseId": "rectangular-to-polar-equation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dd5ca5c5fa577a87539900bd44665ec356d2f6a61b9f521bd581425ba4a72a04"
+    },
+    {
+      "caseId": "polar-to-rectangular-equation",
+      "instrumentType": "rubrica",
+      "sha256": "6a99809191182d18fc6f63dba317db7f33369d5d300ed7a55221f379b58bdd99"
+    },
+    {
+      "caseId": "polar-to-rectangular-equation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "46519ea22c12f392078eb07d3f2fcd10dd11886004befabbbfb8dab4ee392db6"
+    },
+    {
+      "caseId": "polar-to-rectangular-equation",
+      "instrumentType": "escala",
+      "sha256": "ac051aa7fabc493571a6aea2fbc066a46d9dc0251e699362307095f246b77477"
+    },
+    {
+      "caseId": "polar-to-rectangular-equation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1813c3d71370b524339595551841191b678b946a27db14d9d7eb2c3b66cf1bb0"
+    },
+    {
+      "caseId": "polar-rectangular-graphs",
+      "instrumentType": "rubrica",
+      "sha256": "c46cadf1c547ba435e67d82c79960bc20a4a27f80ea0fc1d7165d47d7730ee53"
+    },
+    {
+      "caseId": "polar-rectangular-graphs",
+      "instrumentType": "lista-cotejo",
+      "sha256": "be2e98b288dafd5a17c21235de40eabd6127dc9907eba21d0e2a49cac346e47e"
+    },
+    {
+      "caseId": "polar-rectangular-graphs",
+      "instrumentType": "escala",
+      "sha256": "e6326495b7fc9719ce1043d2b0277f35d0b7f70449c849feb01d57cebf56f4ec"
+    },
+    {
+      "caseId": "polar-rectangular-graphs",
+      "instrumentType": "lista-ponderada",
+      "sha256": "20b5a389a8006736e946c68cad01780804481ea0ab69784ccf07211a2c6e6b2c"
+    },
+    {
+      "caseId": "polar-problem",
+      "instrumentType": "rubrica",
+      "sha256": "3f326b964623f2f941e0dca246c1aa9ed093892cd96e36f8c2177046714a7613"
+    },
+    {
+      "caseId": "polar-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "09c0a629b9040e08c3736841de89f8617b0ce997ad48d02052c056f5cf57f126"
+    },
+    {
+      "caseId": "polar-problem",
+      "instrumentType": "escala",
+      "sha256": "7dd8d33f64cfca6c5971e157bb23ba8f63c2d09afbb89af0454229d9fb623840"
+    },
+    {
+      "caseId": "polar-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c7d619839e33ad8bebb3b5ed0575610592a066d0ae17f5294f0a912d124da201"
+    },
+    {
+      "caseId": "quadric-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "ae18f7f8e87818ec191590ed28891df9a5eaf7a4c303e660378ca843003ea088"
+    },
+    {
+      "caseId": "quadric-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1693c0799a5534d432d072187403b4c8586889537894c3e267654310e6139ea1"
+    },
+    {
+      "caseId": "quadric-analysis",
+      "instrumentType": "escala",
+      "sha256": "d41f34eb42c7fb29a6547e1b6f63bf984de1ffe6109ad7b4fc13e18ba2e5bf4f"
+    },
+    {
+      "caseId": "quadric-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f6708ab9ff623ad69b388b4be317d5fea5434f3692a79929f10e5d30bbf4613f"
+    },
+    {
+      "caseId": "quadric-tech-choice",
+      "instrumentType": "rubrica",
+      "sha256": "cd4326d29c9a248a33d9620bf29749903d42d87373695ebebb0abaa310d4bb42"
+    },
+    {
+      "caseId": "quadric-tech-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "050f8f39abdde666ee31f3ae736c0900235cb3856f8c7d9597c8b01636b5059d"
+    },
+    {
+      "caseId": "quadric-tech-choice",
+      "instrumentType": "escala",
+      "sha256": "1c255554e4b5d47381aebaf5b88c31497225f3fd91b2e5a782fe57c931633ce3"
+    },
+    {
+      "caseId": "quadric-tech-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "497ac0086863bdeff57340053134ddbc29f2dd8c09ea55ab5d885e56aa740c74"
+    },
+    {
+      "caseId": "quadric-problem",
+      "instrumentType": "rubrica",
+      "sha256": "4bd64ff1478a95a6f1b4eeca0eca62fb3bec13c5792c0ee737e31ea56f8905d7"
+    },
+    {
+      "caseId": "quadric-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1274fc289bd147e7a9bb3b66f935a1e4b01e3bfcf1c0c0dd5cd78fac2a420beb"
+    },
+    {
+      "caseId": "quadric-problem",
+      "instrumentType": "escala",
+      "sha256": "9347667ea50a5d2e1a77fabaa14154afb781a07833f9f2b74885eab898667410"
+    },
+    {
+      "caseId": "quadric-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "178af96e4fe3aa49c065574ae39f2ba35674012e323b27ab9c4f5b601551a9db"
+    },
+    {
+      "caseId": "vector-application",
+      "instrumentType": "rubrica",
+      "sha256": "d5c74856b83c1f20f8fb8df6ae014d652bca39d68ddb3f67079b362c19a3b5d3"
+    },
+    {
+      "caseId": "vector-application",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0a80190e00d9157d2ca585941b825ed1b74dc90042bc57691f822a5ba9480dac"
+    },
+    {
+      "caseId": "vector-application",
+      "instrumentType": "escala",
+      "sha256": "f16ff5349ef0c7b9893bc3988906a277993f845688eca72a26a50c944733f445"
+    },
+    {
+      "caseId": "vector-application",
+      "instrumentType": "lista-ponderada",
+      "sha256": "29a5f63a5b4406928f5ea915ece8131d459a87ec6a4ce89a5538f7c7f43b7206"
+    },
+    {
+      "caseId": "vector-derivative",
+      "instrumentType": "rubrica",
+      "sha256": "ab714720555782708db6d319b83e5d2fe3178db7d894c5b85a8a5740f82b11f4"
+    },
+    {
+      "caseId": "vector-derivative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c658be6709ebddb504c0a8e2688c633077b806a510b756456e6b539b25a496d8"
+    },
+    {
+      "caseId": "vector-derivative",
+      "instrumentType": "escala",
+      "sha256": "00bde20e1e7de4fc895a18372a30a2e6753afa16360f76df7d730adc331ecaba"
+    },
+    {
+      "caseId": "vector-derivative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "76d24785122bcb3b2756ec41bbc3ca11fed1bd737a66cdeb10ddc381b210f980"
+    },
+    {
+      "caseId": "group-polar-contribution",
+      "instrumentType": "rubrica",
+      "sha256": "31eeab2a210739a0954bada0f402203b68a009583f4814d13b77ac46938c7a8d"
+    },
+    {
+      "caseId": "group-polar-contribution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6a2cf141d81c386dbe1576dfaac3694a4d31add67075e45b7b517c3983e98a42"
+    },
+    {
+      "caseId": "group-polar-contribution",
+      "instrumentType": "escala",
+      "sha256": "b856606ff48efa9cdef6ee100b6684815afa30469248866394989fe513a62cbc"
+    },
+    {
+      "caseId": "group-polar-contribution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8f47cd4c8a36a712729f4fab512c2e95b923287e75f5e69c55384006c351ebc4"
+    },
+    {
+      "caseId": "group-quadric-contribution",
+      "instrumentType": "rubrica",
+      "sha256": "da76b8157663495a28dadb4e4b5b695e292bfafc59cc3e0c8948d2de26c49cb6"
+    },
+    {
+      "caseId": "group-quadric-contribution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7a3b43cd1ef60da6b4bfcefeee771c59893968bb4b68adceaa11444a7f956233"
+    },
+    {
+      "caseId": "group-quadric-contribution",
+      "instrumentType": "escala",
+      "sha256": "b165d8042da68d4cc6c85fb7edec191e81e11c1500bac778a70537b7984c56a6"
+    },
+    {
+      "caseId": "group-quadric-contribution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "35b626e34f6c3e476fd7b619ddb885aa134bc79906cfbde156e3860b0eaf0e6c"
+    },
+    {
+      "caseId": "surface-equation",
+      "instrumentType": "rubrica",
+      "sha256": "a70f6fbd147af568a0c3dac63789847c5c938ee1319e741fd12c64fd756caeed"
+    },
+    {
+      "caseId": "surface-equation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "49e996e251893e1a135871c8cb47fe87887a8fec2af9ee9829f71dc3c9f8d60e"
+    },
+    {
+      "caseId": "surface-equation",
+      "instrumentType": "escala",
+      "sha256": "885c455b8ae6c78801737c7777d0a9d034fdf231e76541ac20b774ffd09682f2"
+    },
+    {
+      "caseId": "surface-equation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "db73b6540a033545a3c9fdb45bc44a180f2ad330836bac0e3db5211be9062302"
+    },
+    {
+      "caseId": "ruled-problem",
+      "instrumentType": "rubrica",
+      "sha256": "7d62f1086474f9a0cc69c8dcc16330a87c32dc74d695b65a1f802754c98212b7"
+    },
+    {
+      "caseId": "ruled-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "db2e6b7f2f187122e4216f2e83c8a5cb58cedccd899756c830280bf4887ac635"
+    },
+    {
+      "caseId": "ruled-problem",
+      "instrumentType": "escala",
+      "sha256": "65c135ca66346002ce30d62afbc119be44203287483d541821ad0c4b6e7e1dcb"
+    },
+    {
+      "caseId": "ruled-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f46d36f7cbad62e44601e8a11fbb610ff34907d0f1682172fc96c8cc2f9e7b0d"
+    },
+    {
+      "caseId": "spheroid-model",
+      "instrumentType": "rubrica",
+      "sha256": "e35caa6245430806701aa2ee89e45f1b5407e569b163034dbe2e10f19aaa06b4"
+    },
+    {
+      "caseId": "spheroid-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bd80baf7b47f0d298c9c0b804c68833ebae3b1828993f4c8e8f8230e85dee29f"
+    },
+    {
+      "caseId": "spheroid-model",
+      "instrumentType": "escala",
+      "sha256": "282f1543336882d1f5c3a4e10f63c9608ac12ff82e7f1df0d6f63358b65055e7"
+    },
+    {
+      "caseId": "spheroid-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c17eb645ea0726df281a3743bf51ea23f58b30213e840f92041db9662d2c395a"
+    },
+    {
+      "caseId": "cardioid-model",
+      "instrumentType": "rubrica",
+      "sha256": "a7a458d44421bedd84b9ece5fef0a3603f4f8435c9e8be0c474619791ac5e288"
+    },
+    {
+      "caseId": "cardioid-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "249efb89f82e398aa53f896c34d51fedee3cffcad15ba02c4c79146712c39e73"
+    },
+    {
+      "caseId": "cardioid-model",
+      "instrumentType": "escala",
+      "sha256": "2e4884e5e76e4d03e0180fb549cd66d99ef62bfd0de760ac013ed00b547e5673"
+    },
+    {
+      "caseId": "cardioid-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ed8b9b1c203e1b5c706b58686d1295be53438b010322fe111c5dec435cf4e3f1"
+    },
+    {
+      "caseId": "technology-verification",
+      "instrumentType": "rubrica",
+      "sha256": "7c746353a769d758f49b48e6bbfcad493941da177d86a84ecb90ea2f93a9e25d"
+    },
+    {
+      "caseId": "technology-verification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "26ccead92a9d21d0b8f7d7b529701289f979655fdc02add2ca1eab70e76e7c65"
+    },
+    {
+      "caseId": "technology-verification",
+      "instrumentType": "escala",
+      "sha256": "f6159819d47ad8cbac0371c2b92dfcce41e15f7dfa9ae54070c402cdd59dc477"
+    },
+    {
+      "caseId": "technology-verification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "12be00fc83cb00ebf3d548cb426fac3c3914c2ec8aa00dcde2a004f0365471ed"
+    },
+    {
+      "caseId": "ruled-tech-model",
+      "instrumentType": "rubrica",
+      "sha256": "dd560e068ab5009cb41bb047a99b281a45df96faa6e884c57c765c4334e51214"
+    },
+    {
+      "caseId": "ruled-tech-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c597e075b42a0b8cbdbf159f77b93f5df4d0714a128eb62dcf6fdf8f4b69c5ff"
+    },
+    {
+      "caseId": "ruled-tech-model",
+      "instrumentType": "escala",
+      "sha256": "f3c80cb4acf90329018ccfa2020d80b2bc00213b65c54e9c1a28f07a3c07625e"
+    },
+    {
+      "caseId": "ruled-tech-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b3f4a11bcf979eac780271d6e3fd9461b36deebb0b845ce8aca073281563feb9"
+    },
+    {
+      "caseId": "existing-project-results",
+      "instrumentType": "rubrica",
+      "sha256": "87dc164678a8a83ebf72927818ef4e4cd47647a9878e5e8a55b0ab163141dccd"
+    },
+    {
+      "caseId": "existing-project-results",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f7bb2c8d441dad27fa2718c3c5d8628369ff0eccf32e4dbdfe67d77ee5d6495f"
+    },
+    {
+      "caseId": "existing-project-results",
+      "instrumentType": "escala",
+      "sha256": "2e4042095bf68f86f8bb376ee53de755f7013b232f2c1910b5b2152133c0b403"
+    },
+    {
+      "caseId": "existing-project-results",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f98964b72bdf5684090e24587cd2c55844296f047e78bce0ab7b8040db4d87d1"
+    },
+    {
+      "caseId": "environment-given-model",
+      "instrumentType": "rubrica",
+      "sha256": "5003f98b57f7077f80baa4c57c21aca2e4fdad9787c16b72b1b9b9001ec7ad0d"
+    },
+    {
+      "caseId": "environment-given-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1a913b7bedaed9d5a96139e4bd0d315f0afe264b7d60a425ad2c3f72f62c1ff0"
+    },
+    {
+      "caseId": "environment-given-model",
+      "instrumentType": "escala",
+      "sha256": "06c13abac4fbc9fd64f5a9de45ec00947e1a1ff6d3568f41bbf4879a757f146d"
+    },
+    {
+      "caseId": "environment-given-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b9dc05c5f89316e379a1dc76cf254f2e71eafbae8de506c7bfac8281b259eee4"
+    },
+    {
+      "caseId": "community-proposal",
+      "instrumentType": "rubrica",
+      "sha256": "1dd2f322e3b92fda07ca2b2a0ca4993ec3d0d9f73021164d9c46b8553ab3c00e"
+    },
+    {
+      "caseId": "community-proposal",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a5c10e95dfbdce577d63710a26736e15386e2416d9022c201488e526c61b1b22"
+    },
+    {
+      "caseId": "community-proposal",
+      "instrumentType": "escala",
+      "sha256": "e7681f82931cc6b0a17ad49f5ade2b61121886dbf12e6a729982e4231db3108b"
+    },
+    {
+      "caseId": "community-proposal",
+      "instrumentType": "lista-ponderada",
+      "sha256": "95b20e9b6f2eddb9d91e3aecffe19728a01f4e17082d8305bc0b2fcb2668074a"
+    },
+    {
+      "caseId": "health-model-inquiry",
+      "instrumentType": "rubrica",
+      "sha256": "167027b15878deb7db78107a1f57a24714de8145004e2287ab5c3f20b7efe4cb"
+    },
+    {
+      "caseId": "health-model-inquiry",
+      "instrumentType": "lista-cotejo",
+      "sha256": "daf650f95004a74ca6353d1ff4d0ac358c8c1adf691976354b97053989bf9d0a"
+    },
+    {
+      "caseId": "health-model-inquiry",
+      "instrumentType": "escala",
+      "sha256": "80291c98684ec8c4279fdabf9f422f0fec87bed601cff8755b961ecf037fd403"
+    },
+    {
+      "caseId": "health-model-inquiry",
+      "instrumentType": "lista-ponderada",
+      "sha256": "17da572ceebbc35c69a97cf1877591278126d621f92902c5c0af78447b722f1a"
+    },
+    {
+      "caseId": "observed-autonomy",
+      "instrumentType": "rubrica",
+      "sha256": "408dfc04e868c29b0f3deca991f943efd4101d27d85e79237d241578b28be25f"
+    },
+    {
+      "caseId": "observed-autonomy",
+      "instrumentType": "lista-cotejo",
+      "sha256": "419718cb3bd9355efd09b7c22eb560da0e4f614b7cb266b366e01a6ff1c585a2"
+    },
+    {
+      "caseId": "observed-autonomy",
+      "instrumentType": "escala",
+      "sha256": "507d5fb31ceff6c48cd1b4fc55bf4013f90120425c1705d5bbcd971fd397ce22"
+    },
+    {
+      "caseId": "observed-autonomy",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7edde99c34c3879a5670bb21fd364e3cee37142465098d874dae054466c9442c"
+    },
+    {
+      "caseId": "contrasting-viewpoints",
+      "instrumentType": "rubrica",
+      "sha256": "15c69279e9f4e2681ba9b9a92402f602aba3046e2da8a37d07075fba9f6b1511"
+    },
+    {
+      "caseId": "contrasting-viewpoints",
+      "instrumentType": "lista-cotejo",
+      "sha256": "deca14408a810770cecdc46b5dd49f082332564ee0bac28006c713a9c2208832"
+    },
+    {
+      "caseId": "contrasting-viewpoints",
+      "instrumentType": "escala",
+      "sha256": "85f8bc9a6e93d2bb6f5fe8a1b6962d351ea3094fa29a12b645a9ab055c8ffdf3"
+    },
+    {
+      "caseId": "contrasting-viewpoints",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5838241a690181d285a3856a6643f5ae583eab5d40af70d7531a1023265e181e"
+    },
+    {
+      "caseId": "group-research-contribution",
+      "instrumentType": "rubrica",
+      "sha256": "8ed57133aa8395e64b1661c05e3d6011ea7d65484e2eef5be3047459355698ff"
+    },
+    {
+      "caseId": "group-research-contribution",
+      "instrumentType": "lista-cotejo",
+      "sha256": "516c34744e1052fabce0c1b78a89ac074456aec958bfd6d0847cc6d0026048dd"
+    },
+    {
+      "caseId": "group-research-contribution",
+      "instrumentType": "escala",
+      "sha256": "e37405de51ee83015beca1ed3cef7c4a37c2d885781b2b9e9bde38d6c2a00475"
+    },
+    {
+      "caseId": "group-research-contribution",
+      "instrumentType": "lista-ponderada",
+      "sha256": "eff0964ad3a0a652ee6e182b675dc341acf9a7adeddaa75b6c3b6256f89de6e9"
+    },
+    {
+      "caseId": "paraboloid-only",
+      "instrumentType": "rubrica",
+      "sha256": "30984d5aca295d17e89332e34aa7e1be923f3b955321c19b907f0477836d3752"
+    },
+    {
+      "caseId": "paraboloid-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f0a7190bf93367316532cb82741e6c729b2cd9366657d35e8132409e0f38a88"
+    },
+    {
+      "caseId": "paraboloid-only",
+      "instrumentType": "escala",
+      "sha256": "4e8b9e4339705c7c666318d7f5cfd418a589193d8311edd1164924b6f987a0f0"
+    },
+    {
+      "caseId": "paraboloid-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b7c55b10cc9c1ce672593a0868823b92bdc6ddff7ccca9186aedbd7d757b8e7b"
+    },
+    {
+      "caseId": "hyperboloid-only",
+      "instrumentType": "rubrica",
+      "sha256": "e34296dec1064124bf300876a84a5bde4359bd070a8576e9a6a3a844a9fae483"
+    },
+    {
+      "caseId": "hyperboloid-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7ab7e52b56d39b44472ca375d77f7be865e0c30f2ca64a137143cc953da5793f"
+    },
+    {
+      "caseId": "hyperboloid-only",
+      "instrumentType": "escala",
+      "sha256": "568c76fa2f53ba3c26987133e5d9e62c1b5961b7d7be255b2aa81453ba6f2856"
+    },
+    {
+      "caseId": "hyperboloid-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f05566f1cb447c109d15c42b58c24ad3ce691b9f354c41e48b6258f4af1e1268"
+    },
+    {
+      "caseId": "ellipsoid-only",
+      "instrumentType": "rubrica",
+      "sha256": "af1dfee6b6ca11cd92b602271f3f2e6e182b82fc89b3ba29c24580b0bcbdcc7f"
+    },
+    {
+      "caseId": "ellipsoid-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "382cdd5e15f74ff4889d939fd51874d0ce187c58fd8530eccd0dc870d62617a6"
+    },
+    {
+      "caseId": "ellipsoid-only",
+      "instrumentType": "escala",
+      "sha256": "00bbc7ed956a20f145db0cf007ba6ab556cc38f042c70938af29a57ccddeecdb"
+    },
+    {
+      "caseId": "ellipsoid-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2a9aec4152ecda6e3ba923060f2b71387799ab4484ba59c581c85c3b8ac8a3d6"
+    },
+    {
+      "caseId": "ruled-only",
+      "instrumentType": "rubrica",
+      "sha256": "892e3839cfb4bb0a2203bde39d2f1bb314a0ec83a6302124cf30028762a9f37a"
+    },
+    {
+      "caseId": "ruled-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "40cab441ae73cc7a4c0ba6ebea4d0397552269d29e9be4c37bd2c2daef6ed46a"
+    },
+    {
+      "caseId": "ruled-only",
+      "instrumentType": "escala",
+      "sha256": "2c5f7b69a6d693706281bdc5ed5e5ced1a38a68b63937f79e4106d237fe12cf2"
+    },
+    {
+      "caseId": "ruled-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebe9e0f9e25ac7d42e66e52e567814e8f921fe54b489db1c7163ade052d20660"
+    },
+    {
+      "caseId": "spheroid-only",
+      "instrumentType": "rubrica",
+      "sha256": "50da91b0e4d05c0962e6ab20e613348863b5b64a9785d43114d2327b64b6b10e"
+    },
+    {
+      "caseId": "spheroid-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "96d65612486196d55acbab2ec59661e7eabd6354de4681bac02a14554286c2fb"
+    },
+    {
+      "caseId": "spheroid-only",
+      "instrumentType": "escala",
+      "sha256": "f8e806622ad2f1f1c02be1ff5ad3ad32398622bbb7300400396f0977ed8f85bb"
+    },
+    {
+      "caseId": "spheroid-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9e3978b2af77eeb9af26bc34ea61c4c7e71975804f0b992eb8afb342f2f2f91d"
+    },
+    {
+      "caseId": "cardioid-only",
+      "instrumentType": "rubrica",
+      "sha256": "14e90fefff6d35d3adb9b41214b7e938d9815ec367ee460c3fc21551e973f148"
+    },
+    {
+      "caseId": "cardioid-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ce1f5766d203763f4ba815fbdf0ad91508401a0840ea85447f768fea452ce7c1"
+    },
+    {
+      "caseId": "cardioid-only",
+      "instrumentType": "escala",
+      "sha256": "7e5931fa2b7f3d6d246dd9fca3a4aff5ff895de8ee92c8dfe0af73f013dee41d"
+    },
+    {
+      "caseId": "cardioid-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dfbb6c72f1a68715bc74fd1fd2882a3eb54a805bd849c502c8cf1f9f8dfe8322"
+    },
+    {
+      "caseId": "polar-point-conversion",
+      "instrumentType": "rubrica",
+      "sha256": "37af396b984b0c134aaef25d87a4421701202e5884073e78371f3ed3ae4addac"
+    },
+    {
+      "caseId": "polar-point-conversion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a360d9d615df6115c9b817e1f30536e33c23af0b2c7d13ab15e3637909530875"
+    },
+    {
+      "caseId": "polar-point-conversion",
+      "instrumentType": "escala",
+      "sha256": "ffa10ac7e663a8596c9ff6b5069a3963645ec6ea66388be199adb5c9f204896e"
+    },
+    {
+      "caseId": "polar-point-conversion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "06e32d3af12b29aebaf188b24d0d1c8437f2b9dc60376266b8742e7b4b2cdb61"
+    },
+    {
+      "caseId": "equation-only-no-graph",
+      "instrumentType": "rubrica",
+      "sha256": "c050674c9fb043b2c9b18ba6e2ae13840e1d025c7d1a487f7b214eb7a084faa5"
+    },
+    {
+      "caseId": "equation-only-no-graph",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f30bbb0ca72717caf90451fb097aa824d50d32dcc961c42dc4c325fca0515b20"
+    },
+    {
+      "caseId": "equation-only-no-graph",
+      "instrumentType": "escala",
+      "sha256": "0b62b2df847316323e2e95e23d8737fa737c20a5da5588d6b73ce2f364e1a5a8"
+    },
+    {
+      "caseId": "equation-only-no-graph",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cd28d10a848148df0501f21b301913e94251cebf6dd4336da81ca0d8f1fafa02"
+    },
+    {
+      "caseId": "given-chart-no-construction",
+      "instrumentType": "rubrica",
+      "sha256": "f4edbc8ae711b867bbfb6b1823c42a7f98c5c9c26bec5d6548638c4afe2c8d87"
+    },
+    {
+      "caseId": "given-chart-no-construction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ca517b7a248129940b956b186ed11c3adf7241a59c1596eb5c76a73867a0980b"
+    },
+    {
+      "caseId": "given-chart-no-construction",
+      "instrumentType": "escala",
+      "sha256": "53a680c14eb90b5a2af7c542d8d7968a060bb7e2f9e4af7b1985dc70025a12c9"
+    },
+    {
+      "caseId": "given-chart-no-construction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a68e6a074ffd895a798a86e1595ed8f9df09672a88a6dd3bd64dcde20b3a7ea1"
+    },
+    {
+      "caseId": "vector-value-only",
+      "instrumentType": "rubrica",
+      "sha256": "f5ae9de3323e9e6786777cc8af34f446af7d5febee694534c22d951f8d74a65b"
+    },
+    {
+      "caseId": "vector-value-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7226a0ff6e076a55f0873c8bb3151f55afa2d9ee35a0f1417dcca56ea617cbae"
+    },
+    {
+      "caseId": "vector-value-only",
+      "instrumentType": "escala",
+      "sha256": "446e55918528c5de1beaf0e27e0469e752ef159478c95e41a6ae9a9dca965d66"
+    },
+    {
+      "caseId": "vector-value-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "421574e7fcc38c847f4ef5befd69354238be9bde06cdfad41d156f2e7c038ae6"
+    },
+    {
+      "caseId": "derivative-only-no-integral",
+      "instrumentType": "rubrica",
+      "sha256": "73a83c33f51cdb5c86a8f93cd1570ff5126b4b6e6e91dcc6f1b615ded2c2ed32"
+    },
+    {
+      "caseId": "derivative-only-no-integral",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dc01587b27234c4fff97894f5ceeff820bf9f81ee1db085fe70d9d3ebd366519"
+    },
+    {
+      "caseId": "derivative-only-no-integral",
+      "instrumentType": "escala",
+      "sha256": "d4837b625e8ec56ff90d4c763d4de2e260d66400d63042765cf096b2d3cb7153"
+    },
+    {
+      "caseId": "derivative-only-no-integral",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d05a3947e93c6deccf3d91f348787c2547da7f5a07f03c12927cd13481774da4"
+    },
+    {
+      "caseId": "polar-or-vector-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "ab8619748757b24ad613e3b47f8af587e7cb5ececb2685630132257add115ac6"
+    },
+    {
+      "caseId": "polar-or-vector-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a28e5ec33a4937c506c171b13ffa319399be9401e564ec8bbf5f724e3455f482"
+    },
+    {
+      "caseId": "polar-or-vector-alternative",
+      "instrumentType": "escala",
+      "sha256": "7832fc60b459e4abd15f857028f74eb5508f6fb22e276c51b0783724f3ac8fcc"
+    },
+    {
+      "caseId": "polar-or-vector-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f86378b1d12240202b1309e5f0215f3b1848fc6533763ce03a3d894aa4380792"
+    },
+    {
+      "caseId": "independent-polar-and-vector",
+      "instrumentType": "rubrica",
+      "sha256": "f456515750d5f7332322f4a7b577f85d83c8f76ab7b107276872e3f6b4e3c8dd"
+    },
+    {
+      "caseId": "independent-polar-and-vector",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ca5816bf7c945b3e446e130cd5bc61c6e5cf7202fc33ca0c9324f210d946fc4c"
+    },
+    {
+      "caseId": "independent-polar-and-vector",
+      "instrumentType": "escala",
+      "sha256": "f71b41bd9ef9399c04992ce8db86676fbcfde86d099891cc85b45cb448472fcf"
+    },
+    {
+      "caseId": "independent-polar-and-vector",
+      "instrumentType": "lista-ponderada",
+      "sha256": "de14dbd118981d489bf71c2aa58517a38fa1fe4f34e364ef63b0e5ca3776bb85"
+    },
+    {
+      "caseId": "individual-no-collaboration",
+      "instrumentType": "rubrica",
+      "sha256": "7554ab5e965b11548509e8bf644102c662ce48ff803c83f56962f8c8e83e38db"
+    },
+    {
+      "caseId": "individual-no-collaboration",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1192aadc355c0037bd59da935e1fed4ac21a194d5f3c30e848e57b7880c89e89"
+    },
+    {
+      "caseId": "individual-no-collaboration",
+      "instrumentType": "escala",
+      "sha256": "d2694ca80726d716b16442dd4f1f1e72d3e3b464f6420c749286a7a85ff37e94"
+    },
+    {
+      "caseId": "individual-no-collaboration",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c5ea74c98cc3aa2dea5a0d754c22bb5451e69250a2f5cab8d20ffbe3564f245e"
+    },
+    {
+      "caseId": "tools-alternative",
+      "instrumentType": "rubrica",
+      "sha256": "26d39508c1758aa66f67d8b4953caac037361d2f8979381711ae6ee47762fb35"
+    },
+    {
+      "caseId": "tools-alternative",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e07428dc2346bf5a592d6c57edbd79ce1617880aa5b4141724127de775f0a87d"
+    },
+    {
+      "caseId": "tools-alternative",
+      "instrumentType": "escala",
+      "sha256": "a8dbe8e67285b62d3f749931821e006a11d4fd5fca67a146f26afa9f000df91d"
+    },
+    {
+      "caseId": "tools-alternative",
+      "instrumentType": "lista-ponderada",
+      "sha256": "45fd83c02e72f0b993250687c8d964ca65a4eadfa1854c61c3dbd9e4bfc9241f"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "1a57f70f8c69a33f8b1ae6e75432f6f89e907f4997418d79339dfec7ac8fcbf6"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "51dea3d000e04331f3c08e0612e803773a04c9fad1a1e57abbf9a3e6377667e1"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "escala",
+      "sha256": "c5815840bc48d011890f046fc7232f0529ff6777d900fde3f2e3f7040fa11ede"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fc562c36e94b703c30235fa9d949b123e50d7fc466e8ec37a2105bd2cd7539b2"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "a63131174cef579c87c433ff40eebc678c097c7649e8ef3325ae00f0b4243a8d"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bce5b5247beb66bc238102f88f89a5c863a064c21fd6a9477090dee3f502c684"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "escala",
+      "sha256": "b1787bdbd55a98e32274bbc7f7d3e83edab25e171f5833a6268ac80550331844"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "38ab480dad8cc762649ca4efb80ab6ebbbeb032e0ee501de4a1035324b5d321e"
+    },
+    {
+      "caseId": "rubric-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "c565f10e97eccfe7f88506e449e4d76c5e58bb4238abbefd6f201f20dbd91f34"
+    },
+    {
+      "caseId": "rubric-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "73d949712b8e771dd52efb5300673259a8323376d5dd29924fd5a26a69be080b"
+    },
+    {
+      "caseId": "rubric-purpose",
+      "instrumentType": "escala",
+      "sha256": "13513b80000bb4e307226f0c1e8aabb223081679dffea38048e2b0a3b28d24a8"
+    },
+    {
+      "caseId": "rubric-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0fa1d4d2793ad058d250568d895ac00996912331e9afd062fc10d144ec3802d6"
+    },
+    {
+      "caseId": "title-incompatible",
+      "instrumentType": "rubrica",
+      "sha256": "e779c1bacadabcf6932336c4af0a4d09d44f57941d48df718c2b00fd7827cc65"
+    },
+    {
+      "caseId": "title-incompatible",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9e1d5d27028c8e479d9ef08ea82bb58aa5c408e3b864374be19805841e50b981"
+    },
+    {
+      "caseId": "title-incompatible",
+      "instrumentType": "escala",
+      "sha256": "02b43c6b8ef7b9dc5c2937040198770032f30cfd7b8f931e5dd222bc4289d001"
+    },
+    {
+      "caseId": "title-incompatible",
+      "instrumentType": "lista-ponderada",
+      "sha256": "512afc0b8153f3f1eb12210e2b6f9bbb91b4d83b28580a3ac41dad1bd4de7f95"
+    },
+    {
+      "caseId": "polar-quadric-connection",
+      "instrumentType": "rubrica",
+      "sha256": "8f3e09b7f044a97a3a35a3c4b4e93703cee5e94a6187fcd9ee0eac218f3720ff"
+    },
+    {
+      "caseId": "polar-quadric-connection",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8ac7dacb6479e5c398069a73817f89ddb3b2e6d77a3689b2c982e6cd38d13577"
+    },
+    {
+      "caseId": "polar-quadric-connection",
+      "instrumentType": "escala",
+      "sha256": "2b23faa8f4536a34fa740e7580986f69bfb897b25a1dc936aa70ab0d7f46b837"
+    },
+    {
+      "caseId": "polar-quadric-connection",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7bf6eb55e62daf212098a8310e583efd7b54653b7a039381662213a37150d29f"
+    }
+  ]
+}

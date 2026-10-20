@@ -1,0 +1,38 @@
+{
+  "catalog": "evaluation-2026.138",
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION",
+  "browser": "Chrome",
+  "observed": [
+    "Pestaña personal conservada en /login; muestra Inicia sesión y la cuenta recordada.",
+    "Recarga intencional de esa pestaña de acceso sin campos introducidos; script DOM index-ChFXkJmQ.js coincide con build final.",
+    "Captura visual guardada en evidencia privada.",
+    "Continuar con la cuenta recordada abre un campo de contraseña vacío; no existe acceso automático. No se envió el formulario ni se modificaron credenciales."
+  ],
+  "notVerified": [
+    "Creador autenticado de Cálculo con cuenta personal.",
+    "Estrategia visible/AUTO/MANUAL, cuatro formatos, puntuación pendiente y17.35→20→17.35 por navegador.",
+    "Guardado/reapertura y cambio exclusivo de estrategia con la cuenta personal."
+  ],
+  "preservation": {
+    "passwordChanged": false,
+    "emailSent": false,
+    "storageCleared": false,
+    "cacheCleared": false,
+    "draftsDeleted": false,
+    "newPersonalActivity": false,
+    "newPersonalBaseline": false
+  },
+  "manualSteps": [
+    "Iniciar sesión en localhost:8787 con la cuenta propia de Development; no usar credenciales de producción.",
+    "Abrir sexto, salida Matemática y Tecnología, asignatura de Cálculo. Si falta un contexto QA separado personal, prepararlo tras recuperar el acceso; no usar ni modificar una actividad académica previa.",
+    "Consigna QA: Calcula la derivada de la función vectorial dada por componentes y con el dominio indicado. Revisar estrategia visible/automática y selección manual, instrumento completo y puntos vacíos.",
+    "Cambiar entre los cuatro formatos, conservar un criterio manual y comprobar17.35→20→17.35. Guardar una sola actividad QA identificable y reabrirla.",
+    "Cambiar únicamente la estrategia, guardar y reabrir; comparar exactamente instrumento, criterios, descriptores, puntos y snapshot. Registrar baseline una sola vez."
+  ],
+  "limits": [
+    "Una cuenta recordada no demuestra una sesión autenticada.",
+    "Las pruebas QA HTTP/DB son independientes y no sustituyen este recorrido.",
+    "Bloqueo externo documentado; continúan tareas independientes autorizadas."
+  ]
+}

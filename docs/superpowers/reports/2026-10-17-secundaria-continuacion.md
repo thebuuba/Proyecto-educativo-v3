@@ -1,5 +1,51 @@
 # Continuación del encargo integral de secundaria
 
+## Punto efectivo: Cálculo MT6 con código verificado y HTTP parcial; continuar CT4 independiente
+
+Rama `ampliacion-de-instrumentos-2`; último commit confirmado antes de este checkpoint6fb2ea0c59a6b36a6df5e05bbc97d807582e48e5(MT5). CommitLOCALMT6pendiente de Nodepostclosure/audit;consultargitlog ycommit-mt-six.json antes de duplicarlo. NO PUSH por orden403. No producción/main/merge/deploy/reset/esquema/deps/subagentes.
+
+CódigoMT6/lectura272 completos ycatálogo138instalado;bloqueNOcompletamentecerradoenHTTP/navegador. Backend84259/180/0,frontendactividades83132/113/0,4buildsfinales0(CFdry-run),Node44/0,lints0/9previas,74JSmax2044953/margen52199. PrimerfrontendbuildRED352bytes→chunkmetadataMT4/5/6GREEN. Sourcecompiled272exactos;14previas10492full,ING15176,MAT2888/SOC/ART/EFI/FHRexactos;137congelado=DB.36diferenciasoldartefactsyapresentes137,noregenerar.52contratos+16breves/79textos/22familias/21packsleídos yhuellas0pendientes. Fuente57/17anclas/21I/5exclusiones,idempotente7bae08c5-3493-5e56-a174-7749563068d4.
+
+HTTP8039TERMINÓ1tras13verificadas/14creadas/85requests,GET500ENOTFOUNDpooler yWorker19679exit1. DNS/PGreadvolvieronpasar,restartmismobuild;HTTP6804TERMINÓ1tras17verificadas/18creadas/139requests,segundoGET500conmismoENOTFOUND yWorker59402exit1. AmbosWorkerroots18292y55500TERMINADOS;actualmenteSINlistener8787. No reiniciarbuclesni declararproblemaresuelto;sinconfigDNS/credenciales/timeouts modificados. Runtime138últimoverificadoDevelopmentonlyantesdeincidencias,assetindex-ChFXkJmQ.js/mainSHA6d4e4c1320705ee3715997d051c7bda502fdbdc0d1262b64ec9a709fde2fcd28;logs138first/secondpreservados.
+
+Progresooptative-mt-6-evaluation-2026.138-source-7bae08c5-3493-5e56-a174-7749563068d4-products-sample-f0fd53a54dbc-http-progress.json:18IDsconservados,17fullverified,1guardadapendientedereapertura y14sincrear;NOrecrear.17muestrasrepresentan20de21I,4formatos,20/17.35/manual/pending/paridad/strategyexact.139requests/2HTTP500observados/2rechazos400esperadosmismoexcluido. Resultado públicoverificacion-httpPARCIAL ymatrizCONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_EXTERNAL_DNS_BLOCKED. No existefinal-checks138:usarpartial-checks-138.json. close-mt-six-partial-evidence/finalize-mt-six-partial-report YAejecutados,no repetir. Helpersclose-mt-six-evidence/preserve-history138para32/902SONSOLOPREPARADOS,NOejecutar bajoestadoactual.
+
+Historiareadonlyfinal71releases/888snapshots,70/870previos EXACTOS,18QA/18snapshots/cero duplicados.12baselinespersonalesplainverificadaspostQA96703TERMINÓ0,sin nuevas;personalesMT5/6sinactividad/baseline. PersonalChrome1statisticsFreshTab1796703313enpasswordvacíoHandoff,loginassetfinalconfirmado;noemail/passwordsubmit/cache/SW/storageborrados. Pública verificacion-navegadorBLOCK/manualsteps,QAnoespersonal.
+
+Nodepostclosure90014puedeestarACTIVOantesdecierre;leerresultado antesdeotro. audit138última34archivospúblicosUTF8/0secretos/diff0/privadosignorados;actualizartrasestedoc. Commitmensaje«Conecta los instrumentos de Cálculo de sexto»,LOCALconlimitaciónHTTPexplícita;no marcarplancompleto. DespuéscontinuarCT4independientesinpreguntas.
+
+CT4preparaciónYAhecha:clasificación352/258adapt149C106P3A/44Iliterales43observables/37exclusiones,noreclasificar/rerenderizar. Leídos15–352;detalleimagen502existenteconfirmóExploración214/Explotación215(la notaviejaerró),fuenteintacta. ct-four-topic-outline.json93grupos/258anclas(cero missing,complete-outlineYAejecutado);ct-four-critical-contracts-draft.json42consignas/43I,tiposDRAFTnoejecutados;ct-four-reuse-findings.json7probesdemuestranmodelo/simula/programa/aportaciónsincriterioespecífico yproyectodadoañadeinvestigación. commonScienceCriteria/Selectionsreutilizables;exponerresolverconfigurableaditivoantesregistroCT4,no copiarelemotor. Próximo:planpúblicoCT4/ledger,freeze138UNAveztrascommit6yantesmodificarregistro,contratosRED(corregirexpectativasporpropósitoreal,nomodelarfuenteaunparserincorrecto),metadata/facetas/adapterGREEN,instrumentoscompletos/gates;retomarremote/HTTPsoloconguard yconectividadestable. CT4referenciasprimariasOMS/NLM/NHGRI/MedlinePlus/FDAconsultadasprivado;ley64resultadooficialencontradoperoopenfalló,noafirmarvigenciaconsolidada. CT5/6preparacionespreviasexisten;no repetirclasificadores. Luegoespecializadas/backfillspersonales,encargointegralcontinúa.
+
+## Checkpoints históricos superados
+
+## Punto efectivo: HTTP MT6 reanudado tras fallo DNS local; conservar IDs
+
+HEAD `6fb2ea0c59a6b36a6df5e05bbc97d807582e48e5`, rama `ampliacion-de-instrumentos-2`,45 delante según referencia cacheada. CambiosMT6 sin commit todavía. NO PUSH; no producción/main/merge/deploy/reset/esquema/deps/subagentes. MT5 ya comprometido; no duplicar.
+
+MT6 Tasks1–5 verificadas:57registros/17anclas/21indicadores/5exclusiones;52contratos+16breves/272instrumentos/79textos/22familias/21packs,lectura yhuellas0pendientes. Backend84259/180/0 yfrontendactividades83132/113/0(NOwholefrontend). Cuatrobuildsfinales0inclCFdry-run;Node44/0(43fuente/inventario/historia+1precache),lints0/9previas. Primerbuildfrontendfallópor352bytes sobre2MiB;chunkmetadatapuraMT4/5/6 corrigióRED→GREEN,sin elevarlímite. Final74JS/max2044953/margen52199,todosprecargados. Fuente=compilado272;137congelado=DB;14previas/10492full,ING15176,MAT2888 ycomunesSOC/ART/EFI/FHRexactos.36diferenciasartefactosviejosyapresentesen137,no regenerar.12baselinespersonalespreviasverificadasplainantesQA,sin nuevas.
+
+Worker138ACTIVOroot55500/launcher62648/exec59402,start-local--built;137 detenido ylogs preservados. RuntimePGapp_backend_local/sinBYPASSRLS,Auth200,Storage200 yfrontendexclusivamenteeolgunypmtgrsyrjzcld. Entryindex-ChFXkJmQ.js/main2044953SHA6d4e4c1320705ee3715997d051c7bda502fdbdc0d1262b64ec9a709fde2fcd28;mathchunk52673SHA4d73ec504f42cf73ecae45cbf9084707b554eb4fd5d4e9fb73829864bcf8e7c8. No builds mientrasHTTP activo.
+
+Installer138exec35528TERMINÓ0CREATED/UNCHANGED,preservados70releases/870snapshots. Fuenteindividual+QAexec32561TERMINÓ0:MINERD_SECUNDARIA_2023_OPT_MT_6_V1/versión7bae08c5-3493-5e56-a174-7749563068d4,57/5CREATED/UNCHANGED,contextoQA6idempotente0cuentas. No repetir installers/source/context porquietud. HTTPexec8039TERMINÓ1;reanudadoexec6804ACTIVO,selecciónmt-six-http-selection.json32/21I. AntesdeotroHTTPleerprogreso;guardadoIDidempotente. Primerintento:13verificadas/14creadas/85requests,GETreapertura500/88.8ms ylogENOTFOUNDpooler;Worker19679terminó1. ID14e98846e3-5a0b-49eb-a17e-62b7a3cd4553preservado. DNSreadonlyposteriorresolvió yverify-development-runtimevolviópasartrasrestartmismobuild,sinconfigcredencialescambiadas. Logs138primeros ymt-six-http-first-failure.jsonpreservados. Finalesperado225requests/2rechazos400mismoexcluido/1HTTP500observado(y0trasrecuperación),71releases/902snapshots;comprobarno asumir. No borrar500nitimings. Noeditarfixture/proveedor/HTTPbundle nidist mientrascorre.
+
+PersonalMT6BLOQUEADOauth;Chrome1statisticsFreshTab1796703313loginHandoff,DOMassetfinalconfirmado,capturamt-six-personal-login-block.pngguardada ymostrada. Ningunaactividad/baselinepersonalMT5/6,no password/email/caché/SW/storageborrados. PúblicoMT6verificacion-navegadorBLOCK ymanualsteps,sin usarQAcomo personal. No nuevo contextopersonal6porahora.
+
+AlterminarHTTP:plainverify-personal-baselines138otra vez(12,sin--baseline),preserve-history138EXIGE71/902/32QA,verify-development-runtime(readonly,nocaptureguard138otravez),close-mt-six-evidencePREPARADOnoejecutadoYAadaptadoalarecuperación(225/1observado/2rechazos),noejecutarhasta32verificadas,finalizarInformeMT6/master/continuación,revisiónpropia,auditsecretosUTF8/diff,Nodepostclosure43,commitespañolLOCALysiguienteCT4. Losrecorders/refreshartefactosNOrepetir:reseteanHTTP.
+
+PreparaciónCT4independiente:clasificaciónexistente352/258adapt/44Iliterales43observables/37exclusiones NOrepetir. Leídos literales15–352;detalleimagen502existente confirmaExploración214/Explotación215,notaviejaerrada,fuenteintacta. ct-four-resumption-analysis.md contienearquitecturareutilizableScienceTaskForTopics ypendientes;ct-four-primary-references.md+ct-four-topic-outline.json93grupos/258anclas(solooutline,sinmetadata/contratos/coverage)ya guardados. No volverabindear2missing79/133:complete-ct-four-outlineYAejecutado. FuentesOMS/NLM/NHGRIconsultadas,páginaoficialley64searchencontróperoopenfalló,no afirmarvigenciacomprobada. Despuéscommit6planCT4/freeze138UNAvez/probe/contratosRED/implementaciónGREEN. LuegoCT5/CT6,especializadas/backfillspersonales.
+
+## Checkpoints históricos superados
+
+## Punto efectivo: MT5 comprometido; MT6 leído y entrando en gates138
+
+HEAD `6fb2ea0c59a6b36a6df5e05bbc97d807582e48e5`, rama `ampliacion-de-instrumentos-2`,45 commits locales por delante de la referencia disponible. MT5 cerrado y commit local verificado; no duplicarlo. NO PUSH por orden vigente sobre integraciones403. Sin producción, main, merge ni despliegue.
+
+MT6 Tasks1–3 completas;57registros/17anclas/21indicadores/5exclusiones.52contratos y16consignas breves generan272instrumentos. Lectura completa79textos/22familias/21packs, huellas registradas; corrección gráfica sustantivo RED→GREEN426backend/421frontend. Fuente/QA/HTTP6 allowlist individual; catálogo138 todavía NO instalado. Freeze137 ya existe: no repetir. Base histórica70releases/870snapshots y12baselines personales. MT5 personal sigue bloqueado por autenticación; no inventar una13.ªbaseline.
+
+Se conservan logs finales de Worker137 antes de detener únicamente su árbol propio; verificar procesos y resultados138 antes de repetir comandos. Próximos: gates138, comparaciones14optativas/10492instrumentos y comunes, runtime Development138, instalación individual idempotente,32muestrasHTTP, revisión y commit local. Luego CT4→CT5→CT6 y tareas independientes autorizadas. Preparaciones de las tresCT ya existentes, no reclasificar ni rerenderizar.
+
+## Checkpoints históricos superados
+
 ## Punto efectivo: MT5 cerrado por HTTP/DB; commit local y continuación con MT6
 
 Ramaampliacion-de-instrumentos-2,basef3b3069e890cb10083e07ba85d319dcaf5359c52. MT5Tasks1–7cerradasconruling explícitodeacceso personal;Task8auditoría/commitLOCALpendiente enestecheckpoint. Consultargitlog/commit-mt-five.jsonantesde repetiruncommit. NOPUSHporinstrucción403;sinproducción/main/merge/deploy/reset/esquemasremotos/deps/IA/subagentes.
