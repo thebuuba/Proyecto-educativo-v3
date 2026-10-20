@@ -55,7 +55,7 @@ export function AppLayout() {
             <main
               data-module={activeModule}
               data-route={location.pathname}
-              className="app-main content-density-compact min-w-0 px-4 sm:px-6 lg:px-8"
+              className={`app-main min-w-0 px-4 sm:px-6 lg:px-8 ${activeModule === 'horario' ? '' : 'content-density-compact'}`}
             >
               <Outlet />
             </main>

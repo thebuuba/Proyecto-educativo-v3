@@ -1,0 +1,23 @@
+import { PopupContext } from './popup-context';
+import * as React from 'react';
+import { Check } from 'lucide-react';
+import { CaretSortIcon } from './icons';
+import { Popup, PopupRoot } from './popup';
+import { cn } from './utils';
+const Context = React.createContext({ value: '', onValueChange: (_value: string) => {}, labels: new Map<string, React.ReactNode>(), disabled: false });
+export function Select({ value, defaultValue = '', onValueChange, children, disabled = false }: { value?: string; defaultValue?: string; onValueChange?: (value: string) => void; children: React.ReactNode; disabled?: boolean }) {
+  const [local, setLocal] = React.useState(defaultValue); const labels = new Map<string, React.ReactNode>();
+  const collect = (nodes: React.ReactNode) => React.Children.forEach(nodes, node => { if (React.isValidElement<{ value?: string; children?: React.ReactNode }>(node)) { if (node.type === SelectItem && node.props.value !== undefined) labels.set(node.props.value, node.props.children); else collect(node.props.children); } }); collect(children);
+  return <Context.Provider value={{ value: value ?? local, onValueChange: next => { setLocal(next); onValueChange?.(next); }, labels, disabled }}><PopupRoot>{children}</PopupRoot></Context.Provider>;
+}
+export function SelectValue({ placeholder }: { placeholder?: string }) { const { value, labels } = React.useContext(Context); return <span>{labels.get(value) ?? placeholder}</span>; }
+export const SelectTrigger = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(({ className, children, onClick, onKeyDown, ...props }, ref) => {
+  const { open, setOpen, triggerRef, id } = React.useContext(PopupContext); const { disabled } = React.useContext(Context);
+  return <button type="button" role="combobox" aria-expanded={open} aria-controls={open ? id : undefined} aria-haspopup="listbox" disabled={disabled} {...props} ref={node => { triggerRef.current = node; if (typeof ref === 'function') ref(node); else if (ref) ref.current = node; }} className={cn('flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1', className)} onClick={e => { onClick?.(e); if (!e.defaultPrevented) setOpen(!open); }} onKeyDown={e => { onKeyDown?.(e); if (!e.defaultPrevented && ['ArrowDown', 'ArrowUp'].includes(e.key)) { e.preventDefault(); setOpen(true); } }}>{children}<CaretSortIcon className="h-4 w-4 opacity-50" /></button>;
+});
+export function SelectContent({ children, className, position: _position, ...props }: React.HTMLAttributes<HTMLDivElement> & { position?: string }) { return <Popup role="listbox" {...props} className={cn('relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1', className)}><div className="p-1">{children}</div></Popup>; }
+export const SelectItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & { value: string; disabled?: boolean }>(({ value, disabled, children, className, ...props }, ref) => {
+  const context = React.useContext(Context); const { setOpen, triggerRef } = React.useContext(PopupContext);
+  const choose = () => { if (disabled) return; context.onValueChange(value); setOpen(false); triggerRef.current?.focus(); };
+  return <div {...props} ref={ref} role="option" tabIndex={-1} aria-selected={context.value === value} aria-disabled={disabled || undefined} data-disabled={disabled ? '' : undefined} className={cn('relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50', className)} onClick={choose} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); choose(); } }}><span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">{context.value === value && <Check className="h-4 w-4" />}</span>{children}</div>;
+});
