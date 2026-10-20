@@ -5137,7 +5137,8 @@
     "limits": [
       "Familias y documentos no son asignaturas ni ámbitos por grado.",
       "No inferir grado o modalidad aplicable del nombreBT/TB del archivo.",
-      "Comprobar especialmente el nivel de los programas Técnico Básico antes de incluirlos en secundaria."
+      "Comprobar especialmente el nivel de los programas Técnico Básico antes de incluirlos en secundaria.",
+      "Ordenanza06-2017:validación normativa2017 cotejada visualmente; no es fecha editorial impresa del PDF individual. CódigoFOLMF006en relación de módulos(PDF9)frenteMF005en tabla(PDF10),preservar discrepancia."
     ],
     "reviewedPrograms": [
       {
@@ -5224,11 +5225,15 @@
                 "Usar casos y datos proporcionados/ficticios; no exigir acceso a organizaciones o datos privados.",
                 "Las estrategias metodológicas son orientaciones docentes, no entregables automáticos."
               ],
-              "literalSourcePendingTranscription": true,
+              "literalSourcePendingTranscription": false,
               "provider": null,
               "instrumentReview": "NOT_STARTED",
               "httpDb": "NOT_RUN",
-              "browser": "NOT_RUN"
+              "browser": "NOT_RUN",
+              "literalRecords": 83,
+              "literalParts": 85,
+              "literalMatrix": "technical-ifc006-mf053-4-matriz.json",
+              "adaptations": "PENDING"
             }
           },
           {
@@ -5618,7 +5623,7 @@
         "identificationPdfPage": 1,
         "studyPlanPdfPage": 11,
         "grades": null,
-        "gradeMapping": "PENDING_EQUIVALENCE_OF_FIRST_SECOND_PROGRAM_YEARS",
+        "gradeMapping": "ENTRY_THIRD_SECONDARY_CONFIRMED_COMPLETE_TWO_YEAR_EQUIVALENCE_PENDING",
         "literalProgramYears": [
           "PRIMERO",
           "SEGUNDO"
@@ -5632,8 +5637,35 @@
         "browser": "NOT_RUN",
         "limits": [
           "Los añosPRIMERO/SEGUNDO son del programa; no se asignan a1.º/2.ºde secundaria sin normativa de equivalencia.",
-          "La revisión de nivel2 no demuestra que quede fuera del alcance; estado pendiente de correspondencia, sin implementar."
-        ]
+          "La revisión de nivel2 no demuestra que quede fuera del alcance; estado pendiente de correspondencia, sin implementar.",
+          "Ordenanza06-2017/artículo9/PDF5:ingreso al Técnico Básico en tercer grado de secundaria; segundo año aún sin equivalencia explícita revisada."
+        ],
+        "entrySecondaryGrade": 3,
+        "entryGradeEvidence": {
+          "normativeCode": "06-2017",
+          "article": 9,
+          "pdfPage": 5,
+          "visuallyReviewed": true
+        }
+      }
+    ],
+    "normativeSources": [
+      {
+        "code": "06-2017",
+        "year": 2017,
+        "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+        "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+        "pageCount": 15,
+        "visuallyReviewedPdfPages": [
+          1,
+          3,
+          4,
+          5,
+          9,
+          10
+        ],
+        "moduleAssignmentPdfPage": 10,
+        "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
       }
     ]
   },
@@ -5655,7 +5687,7 @@
   "next": [
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
-    "Continuar los72documentos técnicos aún sin revisar y las mallas completas deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
+    "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
     "Planificar e implementar el primer conjunto de asignatura/grado con fuente suficiente y registrar instrumentos completos,HTTP/DB y navegador."
   ],
   "push": false,

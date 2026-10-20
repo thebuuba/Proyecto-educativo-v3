@@ -27,6 +27,8 @@ Consigna corta frente a título incompatible; acciones independientes y negadas;
 
 Checkpoint20oct: CT6 confirmado localmente en `1b358c8f818c355d1f285da76a73d847c2b905c5`, catálogo141,36/36HTTP y recorrido personal verificados. Se revisaron13tablas de Artes2019 y tres programas IFC; matriz especializada separada con37conjuntos/301pertenencias artísticas y75documentos técnicos localizados. Cero proveedores especializados nuevos. MF_053_3 de4.º leído visualmente, transcripción/conexión pendientes. Fuente académica de Artes2024 bloqueada por certificado oficial; no se infiere vigencia2019. Detalle: plan e informe `2026-10-20-modalidades-especializadas-fuentes.md`. CT4/MT6 conservan sus verificaciones parciales. NO PUSH vigente.
 
+Siguientecheckpoint20oct: auditoría especializada confirmada en460e39c2. FuenteMF_053_3ya transcrita:83registros/85partes literales/4contratosRED→GREEN,0proveedores técnicos. Ordenanza06-2017visualmente revisada en1,3,4,5,9,10;tabla10corrobora4.º/270h,artículo9confirmaingresoTB3.ºsinresolveraúnsegundoaño. Plan concreto `2026-10-20-tecnico-ifc-mf053-4.md`:congelar141yresolvercontexto/versiones antes deproveedor142. Catálogo/Worker siguen141;0escriturasremotas.
+
 ### 1. Auditoría inicial e inventario maestro
 
 - [x] Revisar Git, fuentes, evidencia de Naturales y guard del entorno.

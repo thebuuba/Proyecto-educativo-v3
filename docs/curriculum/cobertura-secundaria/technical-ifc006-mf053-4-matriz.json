@@ -1,0 +1,1487 @@
+{
+  "moduleCode": "MF_053_3",
+  "subjectCode": "MF_053_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Análisis y Diseño de Sistemas Informáticos",
+  "level": "SECONDARY",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "annualHours": 270,
+  "weeklyHours": 6,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "boundary": "EnPDF19 solo estrategias metodológicas anteriores aMÓDULO2; excluirMF_054_3."
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf053-RA1.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA1.1",
+      "literal": "RA1.1: Planear las actividades de análisis para el ciclo de desarrollo de aplicaciones, siguiendo parámetros establecidos.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "RA1.1: Planear las actividades de análisis para el ciclo de desarrollo de aplicaciones, siguiendo parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.1",
+      "literal": "CE1.1.1 Analizar los procesos que se realizan dentro de una organización e identificar las características de la misma.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.1 Analizar los procesos que se realizan dentro de una organización e identificar las características de la misma."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.2",
+      "literal": "CE1.1.2 Identificar la estructura organizacional, sus dependencias, departamentos y sucursales partiendo de las características de ellas.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.2 Identificar la estructura organizacional, sus dependencias, departamentos y sucursales partiendo de las características de ellas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.3",
+      "literal": "CE1.1.3 Clasificar las actividades que se realizan según sus niveles directivos y procesos productivos de la organización.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.3 Clasificar las actividades que se realizan según sus niveles directivos y procesos productivos de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.4",
+      "literal": "CE1.1.4 Analizar la disponibilidad de los recursos necesarios para llevar a cabo los objetivos o metas señaladas: factibilidad económica, factibilidad técnica o tecnológica y factibilidad humana u operacional.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.4 Analizar la disponibilidad de los recursos necesarios para llevar a cabo los objetivos o metas señaladas: factibilidad económica, factibilidad técnica o tecnológica y factibilidad humana u operacional."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.5",
+      "literal": "CE1.1.5 Seleccionar el método de análisis a implementar: - Ciclo de vida clásico del sistema. - Análisis estructurado. - Prototipo del sistema.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.5 Seleccionar el método de análisis a implementar: - Ciclo de vida clásico del sistema. - Análisis estructurado. - Prototipo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.1.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.1.6",
+      "literal": "CE1.1.6 Identificar las técnicas de recolección de datos a implementar: - Entrevistas. - Cuestionarios. - Revisión de documentos. - Observación directa.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.1.6 Identificar las técnicas de recolección de datos a implementar: - Entrevistas. - Cuestionarios. - Revisión de documentos. - Observación directa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-RA1.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA1.2",
+      "literal": "RA1.2: Planificar las técnicas de investigación para recolectar los datos de mayor relevancia, según los requerimientos del usuario.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "RA1.2: Planificar las técnicas de investigación para recolectar los datos de mayor relevancia, según los requerimientos del usuario."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.2.1",
+      "literal": "CE1.2.1 Reconocer las técnicas de investigación, usando un lenguaje de acuerdo con el entorno de trabajo del usuario.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.2.1 Reconocer las técnicas de investigación, usando un lenguaje de acuerdo con el entorno de trabajo del usuario."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.2.2",
+      "literal": "CE1.2.2 En un supuesto práctico de análisis de sistemas, realizar lo siguiente: - Describir cuestionario. - Describir entrevista. - Aplicar entrevista. - Realizar revisión de documentos. - Realizar observación directa.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.2.2 En un supuesto práctico de análisis de sistemas, realizar lo siguiente: - Describir cuestionario. - Describir entrevista. - Aplicar entrevista. - Realizar revisión de documentos. - Realizar observación directa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.2.3",
+      "literal": "CE1.2.3 En un supuesto práctico, debidamente caracterizado, recolectar los siguientes datos: - Fechas. - Valores lógicos. - Numéricos. - Textos.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.2.3 En un supuesto práctico, debidamente caracterizado, recolectar los siguientes datos: - Fechas. - Valores lógicos. - Numéricos. - Textos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.2.4",
+      "literal": "CE1.2.4 En un supuesto práctico, tabular los resultados de: - Datos de entradas. - Procesos. - Salidas.",
+      "pdfPages": [
+        15
+      ],
+      "parts": [
+        {
+          "pdfPage": 15,
+          "text": "CE1.2.4 En un supuesto práctico, tabular los resultados de: - Datos de entradas. - Procesos. - Salidas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-RA1.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA1.3",
+      "literal": "RA1.3: Analizar y diseñar los diagramas, estructuras e interfaces del sistema de información, según los datos arrojados por la investigación.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "RA1.3: Analizar y diseñar los diagramas, estructuras e interfaces del sistema de información, según los datos arrojados por la investigación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.1",
+      "literal": "CE1.3.1 Comprender los resultados de la investigación para determinar los requerimientos de los usuarios (acceso al sistema, ingreso de datos, reportes, consultas, impresión, gráficos, confiabilidad de los resultados).",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.1 Comprender los resultados de la investigación para determinar los requerimientos de los usuarios (acceso al sistema, ingreso de datos, reportes, consultas, impresión, gráficos, confiabilidad de los resultados)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.2",
+      "literal": "CE1.3.2 Distinguir los elementos que componen los algoritmos computacionales, enumerar las fases de los algoritmos.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.2 Distinguir los elementos que componen los algoritmos computacionales, enumerar las fases de los algoritmos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.3",
+      "literal": "CE1.3.3 Explicar operadores y distinguir los tipos de operadores, así como su utilidad.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.3 Explicar operadores y distinguir los tipos de operadores, así como su utilidad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.4",
+      "literal": "CE1.3.4 En un supuesto práctico, identificar los requerimientos obtenidos para seleccionar los diferentes diagramas, tales como: de caso, de uso, de clases, de comportamiento, de objetos, de interacción, de procesos del sistema.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.4 En un supuesto práctico, identificar los requerimientos obtenidos para seleccionar los diferentes diagramas, tales como: de caso, de uso, de clases, de comportamiento, de objetos, de interacción, de procesos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.5",
+      "literal": "CE1.3.5 En casos prácticos, debidamente caracterizados, en los que se requiere la lógica de la programación, de acuerdo con unos estándares de calidad: - Identificar los tipos de expresiones. - Utilizar la jerarquización de archivo. - Identificar registro. - Generar reportes. - Verificar secuencia. - Depurar registros. - Reconocer arreglo. - Identificar características. - Describir vectores. - Identificar tipos de arreglos. - Reconocer clases, objetos, interfaces.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.5 En casos prácticos, debidamente caracterizados, en los que se requiere la lógica de la programación, de acuerdo con unos estándares de calidad: - Identificar los tipos de expresiones. - Utilizar la jerarquización de archivo. - Identificar registro. - Generar reportes. - Verificar secuencia. - Depurar registros. - Reconocer arreglo. - Identificar características. - Describir vectores. - Identificar tipos de arreglos. - Reconocer clases, objetos, interfaces."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-CE1.3.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE1.3.6",
+      "literal": "CE1.3.6 En un supuesto práctico, debidamente caracterizado, aplicar el proceso de diseño de sistemas: - Las interfaces gráficas. - Las entradas. - Las salidas. - Las estructuras básicas de las bases de datos del sistema.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "CE1.3.6 En un supuesto práctico, debidamente caracterizado, aplicar el proceso de diseño de sistemas: - Las interfaces gráficas. - Las entradas. - Las salidas. - Las estructuras básicas de las bases de datos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-organization",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Estructura organizacional.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Estructura organizacional."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-management-levels",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Niveles y funciones de una directivos en una organización.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Niveles y funciones de una directivos en una organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-analyst",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Funciones del analista de sistemas.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Funciones del analista de sistemas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-objectives",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Objetivos de la entidad.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Objetivos de la entidad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-resources",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Gestión de recursos en las organizaciones.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Gestión de recursos en las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-process-management",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Gestión de procesos en las organizaciones.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Gestión de procesos en las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-process-measurement",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Mediciones, análisis y mejora de los procesos.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Mediciones, análisis y mejora de los procesos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-systems",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Gestión de sistemas. - Sistemas de información. Tipos y clasificación. - Características y enfoque",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Gestión de sistemas. - Sistemas de información. Tipos y clasificación. - Características y enfoque"
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-users",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Análisis de sistemas. - Usuarios. - Tipos de usuarios.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Análisis de sistemas. - Usuarios. - Tipos de usuarios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-feasibility",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Estudios de factibilidad. Tipos de factibilidad.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Estudios de factibilidad. Tipos de factibilidad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-information-sources",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Recopilación de información. - Fuentes de Información externa y interna",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Recopilación de información. - Fuentes de Información externa y interna"
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-collection-techniques",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Medios de recopilación de Información. - Muestreo. - Encuesta. - Entrevistas. - Cuestionario. - Observación directa. - Revisión de documentos",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Medios de recopilación de Información. - Muestreo. - Encuesta. - Entrevistas. - Cuestionario. - Observación directa. - Revisión de documentos"
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-data-algorithm",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Datos . - Tipos de datos. - Clasificación de datos. - Algoritmo. - Elementos. - Fase. - Operadores. - Tipos.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Datos . - Tipos de datos. - Clasificación de datos. - Algoritmo. - Elementos. - Fase. - Operadores. - Tipos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-files-arrays",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Archivo. - Arreglos. - Características. - Vectores. - Clases.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Archivo. - Arreglos. - Características. - Vectores. - Clases."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-analysis-methods",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Métodos de análisis de sistemas de información. - Ciclo de vida clásico de desarrollo de sistemas. - Método del prototipo. - Análisis estructurado. - Modelo orientado a objetos.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Métodos de análisis de sistemas de información. - Ciclo de vida clásico de desarrollo de sistemas. - Método del prototipo. - Análisis estructurado. - Modelo orientado a objetos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-c-diagrams",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Diagramas. - Tipos. - Usos. - Símbolos. - Instrucciones. - Expresiones.",
+      "pdfPages": [
+        17,
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Diagramas. - Tipos. - Usos."
+        },
+        {
+          "pdfPage": 18,
+          "text": "- Símbolos. - Instrucciones. - Expresiones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-organization",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de la estructura interna y los procesos de una organización.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Identificación de la estructura interna y los procesos de una organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-management",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Relación de los niveles directivos y su función dentro de las organizaciones.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Relación de los niveles directivos y su función dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-objectives",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Organización de los objetivos de la entidad que servirán de punto de partida para el desarrollo del sistema.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Organización de los objetivos de la entidad que servirán de punto de partida para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-system-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los tipos de sistemas en los diferentes niveles productivos del país.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Identificación de los tipos de sistemas en los diferentes niveles productivos del país."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-needs",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Interpretación de análisis de sistemas determinando las necesidades del mismo.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Interpretación de análisis de sistemas determinando las necesidades del mismo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-users",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los usuarios y tipos de usuarios dentro y fuera de la organización.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de los usuarios y tipos de usuarios dentro y fuera de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-feasibility",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de estudio de factibilidad técnica, económica y operacional.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Realización de estudio de factibilidad técnica, económica y operacional."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-sources",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las fuentes de información internas y externas que influyen de manera directa en el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de las fuentes de información internas y externas que influyen de manera directa en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-sampling",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de muestra de datos sacando las variables que influyen en el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de muestra de datos sacando las variables que influyen en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-interview",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de entrevista como técnica de recolección de datos para el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Utilización de entrevista como técnica de recolección de datos para el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-questionnaire",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de cuestionario como técnica de recolección de datos para el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Aplicación de cuestionario como técnica de recolección de datos para el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-observation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de observación directa como técnica de recolección de datos para el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Aplicación de observación directa como técnica de recolección de datos para el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-document-review",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de revisión de documentos como técnica de recolección de datos para el sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Realización de revisión de documentos como técnica de recolección de datos para el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-data-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los tipos de datos que serán utilizados en el desarrollo del sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de los tipos de datos que serán utilizados en el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-tabulation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Recolección y tabulación de datos que serán utilizados en el desarrollo del sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Recolección y tabulación de datos que serán utilizados en el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-algorithm-elements",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los elementos de algoritmos para el desarrollo del sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de los elementos de algoritmos para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-algorithm-phases",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Enumeración de la fase de algoritmos para el desarrollo del sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Enumeración de la fase de algoritmos para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-operators",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los tipos de operadores que serán utilizados en el desarrollo del sistema.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Identificación de los tipos de operadores que serán utilizados en el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-symbols",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Enumeración de los tipos de símbolos para agilizar la actividad del programador.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Enumeración de los tipos de símbolos para agilizar la actividad del programador."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-instructions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los tipos de instrucciones que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Identificación de los tipos de instrucciones que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-expressions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de los de tipos de expresiones que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Utilización de los de tipos de expresiones que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-file-hierarchy",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de la jerarquización de archivos para agilizar los procesos en el desarrollo de sistemas.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Utilización de la jerarquización de archivos para agilizar los procesos en el desarrollo de sistemas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-records",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los registros que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Identificación de los registros que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-file-diagrams",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diagramación de los archivos que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Diagramación de los archivos que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-reports",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Generación de reportes que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Generación de reportes que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-sequences",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Verificación de secuencias para agilizar los procesos en el desarrollo de sistemas.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Verificación de secuencias para agilizar los procesos en el desarrollo de sistemas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-debug-records",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Depuración de registros para agilizar los procesos en el desarrollo de sistemas.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Depuración de registros para agilizar los procesos en el desarrollo de sistemas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-arrays",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de arreglos que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Utilización de arreglos que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-class-diagrams",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diagramación de las clases que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Diagramación de las clases que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-characteristics",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las características que se van a realizar en el sistema dentro de la organización.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Identificación de las características que se van a realizar en el sistema dentro de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-vectors",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Interpretación de vectores que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Interpretación de vectores que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-array-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de tipos de arreglos que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Identificación de tipos de arreglos que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-decision-tree",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración del árbol de decisión que se va a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Elaboración del árbol de decisión que se va a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-decision-table",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de tablas de decisión que se van a desarrollar en el sistema.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Realización de tablas de decisión que se van a desarrollar en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-diagrams",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de diagramas de procesos, flujos, clases, distribución, objetos y uso.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Elaboración de diagramas de procesos, flujos, clases, distribución, objetos y uso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-method-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Selección des método(s) de análisis de sistemas de información.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Selección des método(s) de análisis de sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-p-system-analysis",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de análisis del sistema dentro de las organizaciones.",
+      "pdfPages": [
+        18
+      ],
+      "parts": [
+        {
+          "pdfPage": 18,
+          "text": "Realización de análisis del sistema dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-safety",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de normas de seguridad y prevención de riesgos laborales.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Valoración de normas de seguridad y prevención de riesgos laborales."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-analysis",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición al desarrollo de la capacidad de análisis y de síntesis.",
+      "pdfPages": [
+        16
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Disposición al desarrollo de la capacidad de análisis y de síntesis."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-integrity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos.",
+      "pdfPages": [
+        16,
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 16,
+          "text": "Valoración de la importancia que tiene en un sistema"
+        },
+        {
+          "pdfPage": 17,
+          "text": "informático la integridad y seguridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-peers",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los juicios emitidos por sus compañeros.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Valoración de los juicios emitidos por sus compañeros."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-collection",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Sensibilización por la consecución de un medio de recopilación no contaminado.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Sensibilización por la consecución de un medio de recopilación no contaminado."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-a-tools",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los instrumentos en la recopilación de información.",
+      "pdfPages": [
+        17
+      ],
+      "parts": [
+        {
+          "pdfPage": 17,
+          "text": "Valoración de los instrumentos en la recopilación de información."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-m-explanation",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Explicación previa sobre analisis y el diseño de sistemas informaticos.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "Explicación previa sobre analisis y el diseño de sistemas informaticos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-m-presentation",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de ponencias basado en el ciclo de desarrollo de aplicaciones, tomando en cuanto en cuenta parámetros establecidos.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "Realización de ponencias basado en el ciclo de desarrollo de aplicaciones, tomando en cuanto en cuenta parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-m-practice",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas relacionadas con las técnicas de investigación para recopilación de datos.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "Realización de prácticas relacionadas con las técnicas de investigación para recopilación de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-m-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto en el laboratorio de informática, en donde expliquen el analisis y el diseño de diagramas, estructuras e interfaces del sistema de información.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "Realización de proyecto en el laboratorio de informática, en donde expliquen el analisis y el diseño de diagramas, estructuras e interfaces del sistema de información."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf053-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "No exigir todas las técnicas, diagramas ni productos del módulo en cada consigna.",
+    "Utilizar casos proporcionados y datos ficticios; no exigir acceso a datos privados o empresas.",
+    "El diseño no exige desarrollar, desplegar ni conectar software real.",
+    "No evaluar adhesión, personalidad o valores íntimos; seguridad/integridad solo como desempeño observable adaptado cuando proceda.",
+    "Las estrategias metodológicas no son entregables predeterminados.",
+    "Las correcciones de errores editoriales solo pertenecen a adaptaciones explícitas, nunca al literal."
+  ]
+}
