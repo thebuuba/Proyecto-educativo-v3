@@ -1292,6 +1292,7 @@ model ScheduleEntry {
   sectionSubjectId String       @map("section_subject_id") @db.Uuid
   sectionId        String       @map("section_id") @db.Uuid
   timeSlotId       String       @map("time_slot_id") @db.Uuid
+  needsPlacement   Boolean      @default(false) @map("needs_placement")
   dayOfWeek        Int          @map("day_of_week")
   room             String?
   status           RecordStatus @default(ACTIVE)

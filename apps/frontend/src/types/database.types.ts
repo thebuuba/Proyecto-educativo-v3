@@ -2092,6 +2092,7 @@ export type Database = {
           created_at: string
           day_of_week: number
           id: string
+          needs_placement: boolean
           room: string | null
           school_id: string
           school_year_id: string
@@ -2106,6 +2107,7 @@ export type Database = {
           created_at?: string
           day_of_week: number
           id?: string
+          needs_placement?: boolean
           room?: string | null
           school_id?: string
           school_year_id: string
@@ -2120,6 +2122,7 @@ export type Database = {
           created_at?: string
           day_of_week?: number
           id?: string
+          needs_placement?: boolean
           room?: string | null
           school_id?: string
           school_year_id?: string

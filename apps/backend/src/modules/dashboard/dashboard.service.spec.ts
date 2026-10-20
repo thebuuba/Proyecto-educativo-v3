@@ -59,7 +59,7 @@ describe('DashboardService', () => {
       distinct: ['sectionId'],
     }))
     expect(mocks.prisma.scheduleEntry.count).toHaveBeenCalledWith({ where: expect.objectContaining({
-      schoolYearId: 'year-1', dayOfWeek: 4, timeSlot: { ownerUserId: 'user-1' }, sectionSubject: { teacherId: 'teacher-1', status: 'ACTIVE' }, status: 'ACTIVE',
+      schoolYearId: 'year-1', needsPlacement: false, dayOfWeek: 4, timeSlot: { ownerUserId: 'user-1' }, sectionSubject: { teacherId: 'teacher-1', status: 'ACTIVE' }, status: 'ACTIVE',
     }) })
   })
 
@@ -70,7 +70,7 @@ describe('DashboardService', () => {
       studentIds: [], enrollmentIds: [], sectionIds: [],
     }, new Date('2026-10-01T15:00:00Z'))
     expect(mocks.prisma.scheduleEntry.findMany).toHaveBeenCalledWith(expect.objectContaining({
-      where: expect.objectContaining({ schoolId: 'school-1', timeSlot: { ownerUserId: 'user-1' } }),
+      where: expect.objectContaining({ schoolId: 'school-1', needsPlacement: false, timeSlot: { ownerUserId: 'user-1' } }),
     }))
   })
 

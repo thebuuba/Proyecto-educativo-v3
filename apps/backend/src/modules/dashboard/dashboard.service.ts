@@ -120,7 +120,7 @@ export class DashboardService {
         distinct: ['sectionId'],
       }),
       prisma.scheduleEntry.count({
-        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', ...(view === 'teacher' ? { timeSlot: { ownerUserId: user.id } } : {}), section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) }, dayOfWeek: getDashboardClock(now).dayOfWeek,
+        where: { schoolId: user.schoolId, schoolYearId: schoolYear.id, status: 'ACTIVE', needsPlacement: false, ...(view === 'teacher' ? { timeSlot: { ownerUserId: user.id } } : {}), section: { status: 'ACTIVE', grade: { status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', ...(scope.teacherId ? { teacherId: scope.teacherId } : {}) }, dayOfWeek: getDashboardClock(now).dayOfWeek,
           ...(period ? { OR: [{ academicPeriodId: period.id }, { academicPeriodId: null }] } : {}), ...sectionScope },
       }),
     ])
@@ -227,7 +227,7 @@ export class DashboardService {
       prisma.grade.count({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.section.count({ where: { schoolId, status: 'ACTIVE' } }),
       prisma.sectionSubject.count({ where: { schoolId, status: 'ACTIVE' } }),
-      prisma.scheduleEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
+      prisma.scheduleEntry.count({ where: { schoolId, status: 'ACTIVE', needsPlacement: false } }),
       prisma.attendanceDaily.count({ where: { schoolId } }),
       prisma.attendanceClass.count({ where: { schoolId } }),
       prisma.planningEntry.count({ where: { schoolId, status: 'ACTIVE' } }),
@@ -295,7 +295,7 @@ export class DashboardService {
     const { dayOfWeek, currentMinutes } = getDashboardClock(now)
     const entries = await prisma.scheduleEntry.findMany({
       where: {
-        schoolId, schoolYearId, dayOfWeek, status: 'ACTIVE',
+        schoolId, schoolYearId, dayOfWeek, status: 'ACTIVE', needsPlacement: false,
         ...(scope.view === 'teacher' ? { timeSlot: { ownerUserId: scope.ownerUserId } } : {}),
         ...(periodId ? { OR: [{ academicPeriodId: periodId }, { academicPeriodId: null }] } : {}),
         ...(scope.teacherId ? { sectionSubject: { teacherId: scope.teacherId } } : {}),

@@ -30,6 +30,7 @@ export type ScheduleWorkspace = {
   timeSlots: TimeSlot[]
   journeys?: ScheduleJourney[]
   entries: ScheduleEntry[]
+  pendingEntries?: ScheduleEntry[]
   sections: SectionOption[]
   teachers: TeacherOption[]
   subjects: SubjectOption[]

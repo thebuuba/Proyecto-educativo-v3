@@ -1,5 +1,7 @@
 import { isMotionReduced } from '@/hooks/useInterfacePreferences'
 import {
+  CalendarDays,
+  X,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -24,6 +26,7 @@ import { Select } from '@/components/ui/Select'
 import { FeedbackBanner } from '@/components/ui/SemanticUI'
 import type {
   SaveScheduleStructureInput,
+  ScheduleEntry,
   ScheduleBlockType,
   ScheduleJourneyKind,
   ScheduleStructureJourneyInput,
@@ -50,6 +53,7 @@ import {
   type ScheduleTemplateBlock,
 } from '@/modules/schedule/utils/scheduleStructure'
 import { cn } from '@/utils/cn'
+import './schedule-builder.css'
 
 const steps = ['Días', 'Jornadas', 'Horario', 'Asignación']
 const presets: Array<{ kind: ScheduleJourneyKind; name: string; start: string; end: string }> = [
@@ -84,6 +88,9 @@ type NonLectiveDraft = {
 }
 type OpenScheduleMenu = { key: string; anchor: HTMLElement }
 type Props = {
+  mode?: 'default' | 'polymet'
+  renderPreview?: (input: SaveScheduleStructureInput) => ReactNode
+  existingEntries?: ScheduleEntry[]
   initialJourneys?: ScheduleStructureJourneyInput[]
   initialSlots?: TimeSlot[]
   submitting: boolean
@@ -107,6 +114,9 @@ function emptyDraft(days: number[]): JourneyStructureDraft {
 }
 
 export function FlexibleScheduleWizard({
+  mode = 'default',
+  renderPreview,
+  existingEntries = [],
   initialJourneys = [],
   initialSlots = [],
   submitting,
@@ -115,6 +125,9 @@ export function FlexibleScheduleWizard({
   onCancel,
   onSummaryChange,
 }: Props) {
+  const polymet = mode === 'polymet'
+  const visibleSteps = polymet ? ['Días', 'Jornadas', 'Períodos', 'Guardar'] : steps
+  const [mobilePanel, setMobilePanel] = useState<'form' | 'preview'>('form')
   const inferredDays = [
     ...new Set(
       initialSlots
@@ -220,13 +233,19 @@ export function FlexibleScheduleWizard({
   )
 
   const materialized = useMemo(() => {
-    const journeyBlocks = journeys.flatMap((journey) =>
-        drafts[journey.id]
-          ? materializeJourneyDraft(journey.id, drafts[journey.id], initialSlots)
-          : [],
-      )
+    const journeyBlocks = journeys.flatMap((journey) => {
+      const draft = drafts[journey.id]
+      if (!draft) return []
+      return materializeJourneyDraft(journey.id, draft, initialSlots).map((block) => {
+        if (!polymet) return block
+        const template = (draft.dayOverrides[block.dayOfWeek] ?? draft.baseBlocks)[block.sequence - 1]
+        const original = initialSlots.find((slot) => slot.id === template.key)
+        const id = original ? initialSlots.find((slot) => slot.journeyId === journey.id && slot.dayOfWeek === block.dayOfWeek && slot.sequence === original.sequence)?.id : undefined
+        return { ...block, id }
+      })
+    })
     const gapBlocks = journeyGaps.flatMap((gap, gapIndex) =>
-      days.map((dayOfWeek) => {
+      days.filter((day) => !polymet || (drafts[gap.previousJourneyId]?.appliedDays.includes(day) && drafts[gap.nextJourneyId]?.appliedDays.includes(day))).map((dayOfWeek) => {
         const blockType = gapDayTypes[`${gap.key}:${dayOfWeek}`] ?? gapTypes[gap.key] ?? 'GAP'
         return {
           id: initialSlots.find(
@@ -245,7 +264,7 @@ export function FlexibleScheduleWizard({
       }),
     )
     return [...journeyBlocks, ...gapBlocks]
-  }, [days, drafts, gapDayTypes, gapTypes, initialSlots, journeyGaps, journeys])
+  }, [days, drafts, gapDayTypes, gapTypes, initialSlots, journeyGaps, journeys, polymet])
   const summary = useMemo<WizardSummary>(
     () => ({
       days: days.length,
@@ -260,9 +279,20 @@ export function FlexibleScheduleWizard({
   }, [onSummaryChange, summary])
 
   function toggleDay(day: number) {
+    if (polymet) setDrafts((current) => Object.fromEntries(Object.entries(current).map(([id, draft]) => [id, {
+      ...draft,
+      appliedDays: days.includes(day) ? draft.appliedDays.filter((item) => item !== day) : [...draft.appliedDays, day].sort(),
+    }])))
     setDays((current) =>
       current.includes(day) ? current.filter((item) => item !== day) : [...current, day].sort(),
     )
+  }
+  function selectDayPreset(nextDays: number[]) {
+    setDays(nextDays)
+    setDrafts((current) => Object.fromEntries(Object.entries(current).map(([id, draft]) => [id, {
+      ...draft,
+      appliedDays: [...nextDays],
+    }])))
   }
   function goToSaveError() {
     if (!error) return
@@ -318,6 +348,14 @@ export function FlexibleScheduleWizard({
   function updateDraft(id: string, patch: Partial<JourneyStructureDraft>) {
     setDrafts((current) => ({ ...current, [id]: { ...current[id], ...patch } }))
   }
+  function toggleJourneyDay(id: string, day: number) {
+    const appliedDays = drafts[id].appliedDays
+    updateDraft(id, {
+      appliedDays: appliedDays.includes(day)
+        ? appliedDays.filter((value) => value !== day)
+        : [...appliedDays, day].sort(),
+    })
+  }
   function generate(id: string) {
     const journey = journeys.find((item) => item.id === id)!
     const draft = drafts[id]
@@ -327,7 +365,7 @@ export function FlexibleScheduleWizard({
         journey.startTime,
         draft.durationMinutes,
         draft.periodCount,
-      ),
+      ).map((block, index) => polymet && draft.baseBlocks[index] ? { ...block, key: draft.baseBlocks[index].key } : block),
       dayOverrides: {},
       generatedDurationMinutes: draft.durationMinutes,
       generatedPeriodCount: draft.periodCount,
@@ -581,7 +619,7 @@ export function FlexibleScheduleWizard({
     step === 0
       ? days.length > 0
       : step === 1
-        ? journeys.length > 0 && journeyErrors.length === 0
+        ? journeys.length > 0 && journeyErrors.length === 0 && (!polymet || journeys.every((journey) => drafts[journey.id].appliedDays.length > 0))
         : step === 2
           ? materialized.some((block) => block.blockType === 'CLASS') &&
             structureErrors.length === 0 &&
@@ -602,22 +640,37 @@ export function FlexibleScheduleWizard({
       minutesFromScheduleTime(confirmJourney.startTime)
     : 0
   function next() {
-    if (step < 3) setStep((value) => value + 1)
+    if (step < 3) { setStep((value) => value + 1); setMobilePanel('form') }
     else onComplete({ journeys, blocks: materialized })
   }
 
+  const input = { journeys, blocks: materialized }
+  const activeEntries = existingEntries.filter((entry) => entry.status === 'active')
+  const retained = activeEntries.filter((entry) => !entry.needsPlacement && materialized.some((block) =>
+    block.id === entry.timeSlotId && block.dayOfWeek === entry.dayOfWeek && block.blockType === 'CLASS',
+  )).length
+
   return (
-    <section className="overflow-hidden rounded-3xl bg-card shadow-sm">
-      <header className="border-b border-border px-5 py-5 sm:px-7">
+    <section className={polymet ? 'schedule-builder' : 'overflow-hidden rounded-3xl bg-card shadow-sm'}>
+      <div className={polymet ? 'schedule-builder__topbar' : undefined}>
+      {polymet ? <header className="schedule-builder__header">
+        <div className="schedule-builder__identity"><span className="schedule-builder__icon"><CalendarDays size={21} /></span><div>
+          <h2>{initialJourneys.length ? 'Editar estructura' : 'Nuevo horario'}</h2>
+          <p>Configura tu semana y visualiza los cambios en tiempo real.</p>
+        </div></div>
+        <Button type="button" data-ui-action="close" variant="ghost" size="icon" aria-label="Cerrar constructor" disabled={submitting} onClick={onCancel}><X size={20} /></Button>
+      </header> : null}
+      <header className={polymet ? "schedule-builder__steps" : "border-b border-border px-5 py-5 sm:px-7"}>
         <p className="text-xs font-bold text-muted-foreground sm:hidden">
-          Paso {step + 1} de 4 · {steps[step]}
+          Paso {step + 1} de 4 · {visibleSteps[step]}
         </p>
         <div className="mt-2 grid grid-cols-4 gap-2" aria-label="Progreso de configuración">
-          {steps.map((label, index) => (
+          {visibleSteps.map((label, index) => (
             <button
               key={label}
               type="button"
-              disabled={index > step}
+              aria-current={index === step ? 'step' : undefined}
+              disabled={index > step || submitting}
               onClick={() => index < step && setStep(index)}
               className={cn(
                 'flex min-w-0 items-center gap-2 rounded-xl px-2 py-2 text-left text-xs font-bold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
@@ -641,7 +694,13 @@ export function FlexibleScheduleWizard({
           ))}
         </div>
       </header>
-      <div className="space-y-6 p-5 sm:p-7">
+      </div>
+      {polymet ? <div className="schedule-builder__mobile-tabs" aria-label="Panel del constructor">
+        <Button type="button" variant="ghost" aria-pressed={mobilePanel === 'form'} onClick={() => setMobilePanel('form')}>Configuración</Button>
+        <Button type="button" variant="ghost" aria-pressed={mobilePanel === 'preview'} onClick={() => setMobilePanel('preview')}>Vista previa</Button>
+      </div> : null}
+      <div className={polymet ? 'schedule-builder__body' : undefined} data-mobile-panel={mobilePanel}>
+      <div className={polymet ? 'schedule-builder__form space-y-6' : 'space-y-6 p-5 sm:p-7'}>
         {error ? (
           <FeedbackBanner tone="danger">
             <div className="flex flex-wrap items-center justify-between gap-3">
@@ -656,7 +715,7 @@ export function FlexibleScheduleWizard({
             </div>
           </FeedbackBanner>
         ) : null}
-        {step === 0 ? <DaysStep days={days} toggleDay={toggleDay} /> : null}
+        {step === 0 ? <DaysStep days={days} toggleDay={toggleDay} compact={polymet} onPreset={selectDayPreset} /> : null}
         {step === 1 ? (
           <>
             <JourneysStep
@@ -664,6 +723,24 @@ export function FlexibleScheduleWizard({
               addJourney={addJourney}
               updateJourney={updateJourney}
               removeJourney={removeJourney}
+              editableNames={polymet}
+              renderDays={polymet ? (journey) => (
+                <fieldset className="schedule-builder__journey-days">
+                  <legend>Días de esta jornada</legend>
+                  {scheduleDays.filter((day) => days.includes(day.dayOfWeek)).map((day) => (
+                    <label key={day.dayOfWeek}>
+                      <input
+                        type="checkbox"
+                        aria-label={`${day.name} en ${journey.name}`}
+                        checked={drafts[journey.id].appliedDays.includes(day.dayOfWeek)}
+                        onChange={() => toggleJourneyDay(journey.id, day.dayOfWeek)}
+                      />
+                      {day.short}
+                    </label>
+                  ))}
+                  {!drafts[journey.id].appliedDays.length ? <p className="text-destructive">Selecciona al menos un día.</p> : null}
+                </fieldset>
+              ) : undefined}
             />
             {journeyErrors.length ? (
               <FeedbackBanner tone="warning">
@@ -685,7 +762,8 @@ export function FlexibleScheduleWizard({
                   <JourneyPeriods
                     journey={journey}
                     draft={drafts[journey.id]}
-                    selectedDays={days}
+                    compact={polymet}
+                    selectedDays={polymet ? drafts[journey.id].appliedDays : days}
                     onDraft={updateDraft}
                     onGenerate={requestGenerate}
                     onAddClass={addPeriod}
@@ -745,8 +823,8 @@ export function FlexibleScheduleWizard({
         {step === 3 ? (
           <>
             <Heading
-              title="Asigna tus clases"
-              description="Selecciona qué curso y asignatura corresponde a cada clase."
+              title={polymet ? 'Tu horario está listo' : 'Asigna tus clases'}
+              description={polymet ? 'Revisa la estructura antes de guardar los cambios.' : 'Selecciona qué curso y asignatura corresponde a cada clase.'}
             />
             <div className="grid gap-3 sm:grid-cols-4">
               <Summary label="Días" value={summary.days} />
@@ -757,22 +835,28 @@ export function FlexibleScheduleWizard({
                 value={`${Math.floor(summary.lectiveMinutes / 60)} h ${summary.lectiveMinutes % 60} min`}
               />
             </div>
-            <p className="rounded-2xl bg-primary/5 p-4 text-sm text-muted-foreground">
+            {polymet ? <FeedbackBanner tone={activeEntries.length - retained ? 'warning' : 'info'}>
+              <p>{retained} {retained === 1 ? 'clase conservada' : 'clases conservadas'}</p>
+              <p>{activeEntries.length - retained} {activeEntries.length - retained === 1 ? 'clase pendiente' : 'clases pendientes'} de reubicar</p>
+              <p>Las clases de días o períodos retirados, o convertidos en descansos, se conservarán en revisión. No se borrará ninguna asignación.</p>
+            </FeedbackBanner> : <p className="rounded-2xl bg-primary/5 p-4 text-sm text-muted-foreground">
               Al continuar guardaremos la estructura y abriremos la vista semanal para asignar las
               clases.
-            </p>
+            </p>}
           </>
         ) : null}
       </div>
-      <footer className="flex items-center justify-between border-t border-border px-5 py-4 sm:px-7">
+      {polymet ? <aside className="schedule-builder__preview" aria-label="Vista previa del horario"><div className="schedule-builder__preview-heading"><h3>Vista previa</h3><p>Así se verá tu semana</p></div>{renderPreview?.(input)}</aside> : null}
+      </div>
+      <footer className={polymet ? 'schedule-builder__footer' : 'flex items-center justify-between border-t border-border px-5 py-4 sm:px-7'}>
         <div>
           {step > 0 ? (
-            <Button type="button" variant="ghost" onClick={() => setStep((value) => value - 1)}>
+            <Button type="button" variant="ghost" disabled={submitting} onClick={() => { setStep((value) => value - 1); setMobilePanel('form') }}>
               <ChevronLeft className="size-4" />
               Atrás
             </Button>
           ) : onCancel ? (
-            <Button data-ui-action="cancel" type="button" variant="ghost" onClick={onCancel}>
+            <Button data-ui-action={polymet ? undefined : 'cancel'} type="button" variant={polymet ? 'outline' : 'ghost'} disabled={submitting} onClick={onCancel}>
               Cancelar
             </Button>
           ) : null}
@@ -783,7 +867,7 @@ export function FlexibleScheduleWizard({
           loading={submitting}
           onClick={next}
         >
-          {step === 3 ? 'Guardar y asignar clases' : 'Continuar'}
+          {step === 3 ? (polymet ? (initialJourneys.length ? 'Guardar cambios' : 'Crear horario') : 'Guardar y asignar clases') : 'Continuar'}
           {step < 3 ? <ChevronRight className="size-4" /> : null}
         </Button>
       </footer>
@@ -1048,14 +1132,25 @@ export function FlexibleScheduleWizard({
   )
 }
 
-function DaysStep({ days, toggleDay }: { days: number[]; toggleDay: (day: number) => void }) {
+function DaysStep({ days, toggleDay, compact = false, onPreset }: { days: number[]; toggleDay: (day: number) => void; compact?: boolean; onPreset: (days: number[]) => void }) {
   return (
     <>
       <Heading
         title="¿Qué días impartes clases?"
         description="Selecciona los días en los que normalmente impartes clases."
       />
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+      {compact ? <>
+        <div className="schedule-builder__day-presets">
+          <Button type="button" variant="outline" size="sm" onClick={() => onPreset([1, 2, 3, 4, 5])}>Laborables</Button>
+          <Button type="button" variant="outline" size="sm" onClick={() => onPreset([1, 2, 3, 4, 5, 6])}>Laborables + sábado</Button>
+        </div>
+        <div className="schedule-builder__day-list">
+          {scheduleDays.map((day) => <label key={day.dayOfWeek} data-selected={days.includes(day.dayOfWeek)}>
+            <input type="checkbox" aria-label={day.name} checked={days.includes(day.dayOfWeek)} onChange={() => toggleDay(day.dayOfWeek)} />
+            <span>{day.name}</span><small>{day.short}</small>
+          </label>)}
+        </div>
+      </> : <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
         {scheduleDays.map((day) => {
           const selected = days.includes(day.dayOfWeek)
           return (
@@ -1076,17 +1171,21 @@ function DaysStep({ days, toggleDay }: { days: number[]; toggleDay: (day: number
             </button>
           )
         })}
-      </div>
+      </div>}
     </>
   )
 }
 
 function JourneysStep({
+  editableNames = false,
+  renderDays,
   journeys,
   addJourney,
   updateJourney,
   removeJourney,
 }: {
+  editableNames?: boolean
+  renderDays?: (journey: ScheduleStructureJourneyInput) => ReactNode
   journeys: ScheduleStructureJourneyInput[]
   addJourney: (preset: (typeof presets)[number]) => void
   updateJourney: (id: string, patch: Partial<ScheduleStructureJourneyInput>) => void
@@ -1129,7 +1228,7 @@ function JourneysStep({
           >
             <div className="flex items-start justify-between gap-3">
               <div>
-                {journey.kind === 'CUSTOM' ? (
+                {editableNames || journey.kind === 'CUSTOM' ? (
                   <label className="space-y-1">
                     <span className="text-xs font-bold text-muted-foreground">
                       Nombre de la jornada
@@ -1159,6 +1258,7 @@ function JourneysStep({
                 Eliminar
               </Button>
             </div>
+            {renderDays?.(journey)}
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               <Field label="Inicio">
                 <ScheduleTimeInput
@@ -1183,6 +1283,7 @@ function JourneysStep({
 }
 
 function JourneyPeriods({
+  compact = false,
   journey,
   draft,
   selectedDays,
@@ -1199,6 +1300,7 @@ function JourneyPeriods({
   onDeleteGlobal,
   onRestoreDay,
 }: {
+  compact?: boolean
   journey: ScheduleStructureJourneyInput
   draft: JourneyStructureDraft
   selectedDays: number[]
@@ -1242,12 +1344,12 @@ function JourneyPeriods({
       0,
     )
   useEffect(() => {
-    if (
+    if (!compact && (
       draft.appliedDays.length !== selectedDays.length ||
       selectedDays.some((day) => !draft.appliedDays.includes(day))
-    )
+    ))
       onDraft(journey.id, { appliedDays: [...selectedDays] })
-  }, [draft.appliedDays, journey.id, onDraft, selectedDays])
+  }, [compact, draft.appliedDays, journey.id, onDraft, selectedDays])
   return (
     <section
       data-schedule-review={journey.name}
@@ -1266,7 +1368,8 @@ function JourneyPeriods({
           </p>
         ) : null}
       </div>
-      <div className="grid gap-3 rounded-2xl bg-muted/30 p-4 sm:grid-cols-[13rem_10rem_auto]">
+      {compact ? <div className="schedule-builder__presets" aria-label="Duración sugerida">{[40, 45, 50, 60].map((minutes) => <Button key={minutes} type="button" size="sm" variant="outline" aria-pressed={draft.durationMinutes === minutes} onClick={() => onDraft(journey.id, { durationMinutes: minutes })}>{minutes} min</Button>)}</div> : null}
+      <div className={compact ? 'schedule-builder__generation' : 'grid gap-3 rounded-2xl bg-muted/30 p-4 sm:grid-cols-[13rem_10rem_auto]'}>
         <Field label="Duración base de cada clase">
           <div className="relative">
             <Input
@@ -1381,7 +1484,7 @@ function JourneyPeriods({
               Limpiar jornada
             </Button>
           </div>
-          <WeeklyPeriodGrid
+          {compact ? <CompactPeriodList journey={journey} draft={draft} days={selectedDays} onEdit={onEditCell} onEditGlobal={onEditGlobal} onDelete={onDeleteCell} onDeleteGlobal={onDeleteGlobal} onRestore={onRestoreDay} /> : <WeeklyPeriodGrid
             journey={journey}
             draft={draft}
             days={selectedDays}
@@ -1391,7 +1494,7 @@ function JourneyPeriods({
             onDelete={onDeleteCell}
             onDeleteGlobal={onDeleteGlobal}
             onRestore={onRestoreDay}
-          />
+          />}
         </>
       ) : (
         <div className="rounded-2xl border border-dashed border-border py-8 text-center">
@@ -1403,6 +1506,46 @@ function JourneyPeriods({
       )}
     </section>
   )
+}
+
+function CompactPeriodList({
+  journey, draft, days, onEdit, onEditGlobal, onDelete, onDeleteGlobal, onRestore,
+}: {
+  journey: ScheduleStructureJourneyInput
+  draft: JourneyStructureDraft
+  days: number[]
+  onEdit: (id: string, day: number, block: ScheduleTemplateBlock) => void
+  onEditGlobal: (id: string, block: ScheduleTemplateBlock) => void
+  onDelete: (id: string, day: number, sequence: number) => void
+  onDeleteGlobal: (id: string, sequence: number) => void
+  onRestore: (id: string, day: number) => void
+}) {
+  const [selectedDay, setSelectedDay] = useState(days[0] ?? 1)
+  const day = days.includes(selectedDay) ? selectedDay : days[0]
+  const blocks = draft.dayOverrides[day] ?? draft.baseBlocks
+  return <div>
+    <Field label="Ajustes por día">
+      <Select aria-label={`Ajustar día de ${journey.name}`} value={day} onChange={(event) => setSelectedDay(Number(event.target.value))}>
+        {scheduleDays.filter((item) => days.includes(item.dayOfWeek)).map((item) => <option key={item.dayOfWeek} value={item.dayOfWeek}>{item.name}{draft.dayOverrides[item.dayOfWeek] ? ' · Ajustado' : ''}</option>)}
+      </Select>
+    </Field>
+    {draft.dayOverrides[day] ? <Button type="button" variant="ghost" size="sm" onClick={() => onRestore(journey.id, day)}>Restaurar día</Button> : null}
+    <div className="schedule-builder__blocks">
+      {blocks.map((block) => <article key={block.key} className="schedule-builder__block">
+        <strong>{block.name}</strong><p>{formatScheduleRange(block.startTime, block.endTime)} · {blockTypeLabels[block.blockType]}</p>
+        <div className="schedule-builder__block-actions">
+          <Button type="button" size="sm" variant="ghost" aria-label={`Editar ${block.name} solo este día`} onClick={() => onEdit(journey.id, day, block)}><Pencil size={13} />Editar día</Button>
+          <details><summary className="cursor-pointer p-2 text-muted-foreground">Acciones</summary>
+            <div className="flex flex-col items-start">
+              <Button type="button" size="sm" variant="ghost" onClick={() => onEditGlobal(journey.id, block)}>Editar en toda la jornada</Button>
+              <Button type="button" size="sm" variant="ghost" onClick={() => onDelete(journey.id, day, block.sequence)}>Eliminar solo este día</Button>
+              <Button type="button" size="sm" variant="ghost" onClick={() => onDeleteGlobal(journey.id, block.sequence)}>Eliminar de todos los días</Button>
+            </div>
+          </details>
+        </div>
+      </article>)}
+    </div>
+  </div>
 }
 
 function WeeklyPeriodGrid({

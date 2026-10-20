@@ -3,6 +3,10 @@ import { IsNumber, IsOptional, IsString, MaxLength, Min, Max } from 'class-valid
 export class UpdateScheduleEntryDto {
   @IsOptional()
   @IsString()
+  sectionId?: string
+
+  @IsOptional()
+  @IsString()
   sectionSubjectId?: string
 
   @IsOptional()

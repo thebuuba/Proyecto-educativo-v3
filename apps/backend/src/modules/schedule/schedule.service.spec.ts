@@ -5,8 +5,8 @@ const mocks = vi.hoisted(() => ({
   prisma: {
     academicPeriod: { findFirst: vi.fn() },
     grade: { findMany: vi.fn() },
-    schoolYear: { findFirst: vi.fn() },
-    scheduleJourney: { findFirst: vi.fn() },
+    schoolYear: { findFirst: vi.fn(), findMany: vi.fn() },
+    scheduleJourney: { findFirst: vi.fn(), findMany: vi.fn() },
     scheduleEntry: {
       findMany: vi.fn(),
       findFirst: vi.fn(),
@@ -339,5 +339,96 @@ describe('ScheduleService personal ownership', () => {
       where: { id: 'bea-slot', schoolId: 'school-1', ownerUserId: 'ana' },
     })
     expect(mocks.prisma.scheduleEntry.create).not.toHaveBeenCalled()
+  })
+})
+
+
+describe('ScheduleService pending entries', () => {
+  const scope = { schoolId: 'school-1', ownerUserId: 'ana' }
+  const pending = { id: 'entry-1', timeSlotId: 'old-slot', sectionId: 'section-1', sectionSubjectId: 'subject-1', schoolYearId: 'year-1', dayOfWeek: 1, status: 'ACTIVE', needsPlacement: true }
+  beforeEach(() => {
+    vi.resetAllMocks()
+    __test__clearScheduleCache()
+    for (const catalog of ['sectionSubject', 'subject', 'teacher', 'section', 'grade', 'timeSlot', 'scheduleJourney'] as const) mocks.prisma[catalog].findMany.mockResolvedValue([])
+    mocks.prisma.schoolYear.findMany.mockResolvedValue([{ id: 'year-1', isCurrent: true }])
+  })
+
+  it('returns pending entries separately with historical hours, scoped to the current owner', async () => {
+    mocks.prisma.scheduleEntry.findMany.mockImplementation(async ({ where, select }) => {
+      if (select) return []
+      return where.needsPlacement && where.timeSlot.ownerUserId === 'ana' ? [pending] : []
+    })
+    mocks.prisma.timeSlot.findMany.mockImplementation(async ({ where }) => where.id ? [{ id: 'old-slot', name: 'Periodo anterior', startTime: '07:30', endTime: '08:10', status: 'INACTIVE' }] : [])
+    const service = new ScheduleService()
+    const workspace = await service.getWorkspace(scope)
+    expect(workspace.entries).toEqual([])
+    expect(workspace).toMatchObject({ pendingEntries: [{ id: 'entry-1', startTime: '07:30', endTime: '08:10', needsPlacement: true }] })
+    expect(await service.getWorkspace({ ...scope, ownerUserId: 'bea' })).toMatchObject({ pendingEntries: [] })
+  })
+
+  it('excludes pending assignments from regular lists', async () => {
+    mocks.prisma.scheduleEntry.findMany.mockResolvedValue([])
+    await new ScheduleService().findAll(scope)
+    expect(mocks.prisma.scheduleEntry.findMany).toHaveBeenCalledWith(expect.objectContaining({ where: expect.objectContaining({ needsPlacement: false }) }))
+  })
+
+  it('clears pending status when relocating to an active owned period', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValueOnce(pending).mockResolvedValue(null)
+    mocks.prisma.timeSlot.findFirst.mockResolvedValue({ id: 'new-slot', blockType: 'CLASS', dayOfWeek: 2, status: 'ACTIVE' })
+    mocks.prisma.scheduleEntry.update.mockImplementation(async ({ data }) => ({ ...pending, ...data }))
+    const result = await new ScheduleService().updateEntry(scope, pending.id, { timeSlotId: 'new-slot', dayOfWeek: 2 })
+    expect(result).toMatchObject({ needsPlacement: false, timeSlotId: 'new-slot', dayOfWeek: 2 })
+  })
+
+  it('changes a class course and validates its assignment against the target section', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValue(pending)
+    mocks.prisma.section.findFirst.mockImplementation(async ({ where }) => where.schoolId === scope.schoolId && where.id === 'section-2' ? { id: 'section-2' } : null)
+    mocks.prisma.sectionSubject.findFirst.mockImplementation(async ({ where }) => where.sectionId === 'section-2' ? { id: 'subject-2' } : null)
+    mocks.prisma.scheduleEntry.update.mockImplementation(async ({ data }) => ({ ...pending, ...data }))
+    expect(await new ScheduleService().updateEntry(scope, pending.id, { sectionId: 'section-2', sectionSubjectId: 'subject-2' })).toMatchObject({ sectionId: 'section-2', sectionSubjectId: 'subject-2' })
+  })
+
+  it('rejects a course from another school', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValue(pending)
+    mocks.prisma.section.findFirst.mockResolvedValue(null)
+    await expect(new ScheduleService().updateEntry(scope, pending.id, { sectionId: 'foreign-section' })).rejects.toThrow('Section not found')
+    expect(mocks.prisma.scheduleEntry.update).not.toHaveBeenCalled()
+  })
+
+  it('rejects changing only course when the existing assignment belongs to another course', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValue(pending)
+    mocks.prisma.section.findFirst.mockResolvedValue({ id: 'section-2' })
+    mocks.prisma.sectionSubject.findFirst.mockResolvedValue(null)
+    await expect(new ScheduleService().updateEntry(scope, pending.id, { sectionId: 'section-2' })).rejects.toThrow('Section subject not found')
+    expect(mocks.prisma.scheduleEntry.update).not.toHaveBeenCalled()
+  })
+
+  it('rejects a second class in the owners occupied period even for another course and teacher', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValueOnce(pending).mockImplementation(async ({ where }) => !where.sectionId && !where.sectionSubjectId && where.needsPlacement === false ? { id: 'another-course-entry', sectionId: 'section-2' } : null)
+    mocks.prisma.timeSlot.findFirst.mockResolvedValue({ id: 'new-slot', status: 'ACTIVE', blockType: 'CLASS', dayOfWeek: 1, startTime: '07:30', endTime: '08:10' })
+    mocks.prisma.timeSlot.findMany.mockResolvedValue([{ id: 'new-slot' }])
+    mocks.prisma.scheduleEntry.update.mockImplementation(async ({ data }) => ({ ...pending, ...data }))
+    await expect(new ScheduleService().updateEntry(scope, pending.id, { timeSlotId: 'new-slot' })).rejects.toThrow('Ya existe una clase asignada')
+    expect(mocks.prisma.scheduleEntry.update).not.toHaveBeenCalled()
+  })
+
+  it('groups pending assignments for review', async () => {
+    const entry = { ...pending, section: { id: 'section-1', name: 'A', status: 'ACTIVE', grade: { name: 'Primero', status: 'ACTIVE' } }, sectionSubject: { status: 'ACTIVE', subject: { name: 'Matematica', status: 'ACTIVE' } } }
+    mocks.prisma.scheduleEntry.findMany.mockResolvedValue([entry, { ...entry, id: 'entry-2' }])
+    expect(await new ScheduleService().getIntegrityIssues(scope, 'year-1')).toMatchObject([{ code: 'NEEDS_PLACEMENT', entryIds: ['entry-1', 'entry-2'], affectedClasses: 2 }])
+  })
+
+  it('allows editing a pending room without placing it in its historical period', async () => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValue(pending)
+    mocks.prisma.scheduleEntry.update.mockImplementation(async ({ data }) => ({ ...pending, ...data }))
+    expect(await new ScheduleService().updateEntry(scope, pending.id, { room: 'Sala 2' })).toMatchObject({ needsPlacement: true, room: 'Sala 2' })
+    expect(mocks.prisma.timeSlot.findFirst).not.toHaveBeenCalled()
+  })
+
+  it.each(['INACTIVE', 'ARCHIVED'])('rejects relocating pending entries to %s historical periods', async (status) => {
+    mocks.prisma.scheduleEntry.findFirst.mockResolvedValue(pending)
+    mocks.prisma.timeSlot.findFirst.mockResolvedValue({ id: 'old-slot', blockType: 'CLASS', dayOfWeek: 1, status })
+    await expect(new ScheduleService().updateEntry(scope, pending.id, { timeSlotId: 'old-slot' })).rejects.toThrow('Time slot not found')
+    expect(mocks.prisma.scheduleEntry.update).not.toHaveBeenCalled()
   })
 })

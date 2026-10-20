@@ -48,18 +48,22 @@ export class ScheduleService {
       orderBy: { startDate: 'desc' },
     })
     const currentSchoolYear = schoolYears.find((year) => year.isCurrent) ?? schoolYears[0] ?? null
-    const [journeys, timeSlots, sections, teachers, subjects, entries, integrityIssues] = await Promise.all([
+    const [journeys, timeSlots, sections, teachers, subjects, entries, pendingEntries, integrityIssues] = await Promise.all([
       this.getJourneys(scope),
       this.getTimeSlots(scope),
       this.getSections(schoolId),
       this.getTeachers(schoolId),
       this.getSubjects(schoolId),
       this.findEntries(scope, undefined, undefined, currentSchoolYear?.id),
+      prisma.scheduleEntry.findMany({
+        where: { schoolId, timeSlot: { ownerUserId: scope.ownerUserId }, needsPlacement: true, status: 'ACTIVE', ...(currentSchoolYear ? { schoolYearId: currentSchoolYear.id } : {}) },
+        orderBy: { dayOfWeek: 'asc' },
+      }).then((items) => this.withEntryLabels(scope, items)),
       currentSchoolYear
         ? this.getIntegrityIssues(scope, currentSchoolYear.id)
         : Promise.resolve([]),
     ])
-    return { currentSchoolYear, journeys, timeSlots, sections, teachers, subjects, entries, integrityIssues }
+    return { currentSchoolYear, journeys, timeSlots, sections, teachers, subjects, entries, pendingEntries, integrityIssues }
   }
 
   /** Detecta clases cuyo curso o asignatura fue archivado después de crear el horario. */
@@ -69,6 +73,7 @@ export class ScheduleService {
       where: { schoolId, timeSlot: { ownerUserId }, schoolYearId, status: 'ACTIVE' },
       select: {
         id: true,
+        needsPlacement: true,
         sectionSubjectId: true,
         section: {
           select: {
@@ -88,6 +93,7 @@ export class ScheduleService {
     })
 
     type IntegrityCode =
+      | 'NEEDS_PLACEMENT'
       | 'GRADE_ARCHIVED'
       | 'SECTION_ARCHIVED'
       | 'SUBJECT_ASSIGNMENT_ARCHIVED'
@@ -110,7 +116,10 @@ export class ScheduleService {
       const sectionName = entry.section.name
       const subjectName = entry.sectionSubject.subject.name
 
-      if (entry.section.grade.status !== 'ACTIVE') {
+      if (entry.needsPlacement) {
+        code = 'NEEDS_PLACEMENT'
+        message = `${subjectName} necesita un nuevo período en ${gradeName} ${sectionName}.`
+      } else if (entry.section.grade.status !== 'ACTIVE') {
         code = 'GRADE_ARCHIVED'
         message = `El grado ${gradeName} está archivado.`
       } else if (entry.section.status !== 'ACTIVE') {
@@ -227,7 +236,7 @@ export class ScheduleService {
     return optionCache.withCache(
       optionCacheKeys.schedule.timeSlots(schoolId, ownerUserId),
       async () => {
-        const slots = await prisma.timeSlot.findMany({ where: { schoolId, ownerUserId }, orderBy: { sequence: 'asc' } })
+        const slots = await prisma.timeSlot.findMany({ where: { schoolId, ownerUserId, status: 'ACTIVE' }, orderBy: { sequence: 'asc' } })
         return slots.map((slot) => ({
           ...slot,
           status: slot.status.toLowerCase(),
@@ -270,13 +279,9 @@ export class ScheduleService {
       }
       const incomingJourneyIds = new Set(journeyByKey.values())
       for (const journey of existingJourneys.filter((item) => !incomingJourneyIds.has(item.id))) {
-        const used = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlot: { ownerUserId, journeyId: journey.id } } })
-        if (used) throw new BadRequestException('No puedes eliminar una jornada que todavía tiene clases asignadas.')
-        await tx.timeSlot.deleteMany({ where: { schoolId, ownerUserId, journeyId: journey.id } })
-        await tx.scheduleJourney.delete({ where: { id: journey.id, schoolId, ownerUserId } })
+        await tx.scheduleJourney.update({ where: { id: journey.id, schoolId, ownerUserId }, data: { status: 'INACTIVE' } })
       }
       const existingSlots = await tx.timeSlot.findMany({ where: { schoolId, ownerUserId } })
-      const existingSlotIds = new Set(existingSlots.map((slot) => slot.id))
       const keptSlotIds = new Set<string>()
       const newSlots: Prisma.TimeSlotCreateManyInput[] = []
       const slotUpdates: Array<{ id: string; data: Prisma.TimeSlotUpdateInput }> = []
@@ -284,18 +289,9 @@ export class ScheduleService {
         const journeyId = journeyByKey.get(block.journeyKey)
         if (!journeyId) throw new BadRequestException('La jornada de un bloque no existe.')
         const data = { name: block.name.trim(), startTime: toTime(block.startTime), endTime: toTime(block.endTime), sequence: block.sequence, dayOfWeek: block.dayOfWeek, blockType: block.blockType, blockSource: block.blockSource ?? 'MANUAL', sourceKey: block.sourceKey ?? null, journeyId, status: 'ACTIVE' as const }
-        const reusableSlot = block.id && existingSlotIds.has(block.id)
-          ? existingSlots.find((slot) => slot.id === block.id)
-          : existingSlots.find((slot) =>
-              !keptSlotIds.has(slot.id) &&
-              (block.blockSource === 'INTER_JOURNEY_GAP'
-                ? slot.blockSource === 'INTER_JOURNEY_GAP' &&
-                  slot.sourceKey === block.sourceKey &&
-                  slot.dayOfWeek === block.dayOfWeek
-                : slot.journeyId === journeyId &&
-                  slot.dayOfWeek === block.dayOfWeek &&
-                  slot.sequence === block.sequence),
-            )
+        const reusableSlot = block.id
+          ? existingSlots.find((slot) => slot.id === block.id && !keptSlotIds.has(slot.id) && slot.status === 'ACTIVE' && slot.dayOfWeek === block.dayOfWeek && (slot.blockType !== 'CLASS' || block.blockType === 'CLASS'))
+          : undefined
         if (reusableSlot) {
           keptSlotIds.add(reusableSlot.id)
           slotUpdates.push({ id: reusableSlot.id, data })
@@ -308,12 +304,14 @@ export class ScheduleService {
 
       const obsoleteSlots = existingSlots.filter((slot) => !keptSlotIds.has(slot.id))
       if (obsoleteSlots.length) {
-        const assigned = await tx.scheduleEntry.findFirst({ where: { schoolId, timeSlot: { ownerUserId }, timeSlotId: { in: obsoleteSlots.map((slot) => slot.id) } } })
-        if (assigned) {
-          const slot = obsoleteSlots.find((item) => item.id === assigned.timeSlotId)
-          throw new BadRequestException(`El bloque ${slot?.name ?? 'seleccionado'} tiene una clase asignada. Muévela antes de eliminarlo.`)
-        }
-        await tx.timeSlot.deleteMany({ where: { schoolId, ownerUserId, id: { in: obsoleteSlots.map((slot) => slot.id) } } })
+        const obsoleteIds = obsoleteSlots.map((slot) => slot.id)
+        await tx.scheduleEntry.updateMany({
+          where: { schoolId, timeSlot: { ownerUserId }, timeSlotId: { in: obsoleteIds } },
+          data: { needsPlacement: true },
+        })
+        await Promise.all(obsoleteSlots.map((slot) => tx.timeSlot.update({
+          where: { id: slot.id, schoolId, ownerUserId }, data: { status: 'INACTIVE' },
+        })))
       }
     }, { timeout: 30_000 })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId, ownerUserId))
@@ -398,18 +396,36 @@ export class ScheduleService {
     if (!ts) throw new NotFoundException('Time slot not found')
     await this.assertJourneyOwned(scope, dto.journeyId)
 
-    const timeSlot = await prisma.timeSlot.update({
-      where: { id, schoolId, ownerUserId },
-      data: {
-        ...(dto.name && { name: dto.name }),
-        ...(dto.startTime && { startTime: toTime(dto.startTime) }),
-        ...(dto.endTime && { endTime: toTime(dto.endTime) }),
-        ...(dto.sequence !== undefined && { sequence: dto.sequence }),
-        ...(dto.dayOfWeek !== undefined && { dayOfWeek: dto.dayOfWeek }),
-        ...(dto.blockType !== undefined && { blockType: dto.blockType }),
-        ...(dto.journeyId !== undefined && { journeyId: dto.journeyId }),
-      },
-    })
+    if (ts.status !== 'ACTIVE') throw new NotFoundException('Time slot not found')
+    const data: Prisma.TimeSlotUncheckedUpdateInput = {
+      ...(dto.name && { name: dto.name }),
+      ...(dto.startTime && { startTime: toTime(dto.startTime) }),
+      ...(dto.endTime && { endTime: toTime(dto.endTime) }),
+      ...(dto.sequence !== undefined && { sequence: dto.sequence }),
+      ...(dto.dayOfWeek !== undefined && { dayOfWeek: dto.dayOfWeek }),
+      ...(dto.blockType !== undefined && { blockType: dto.blockType }),
+      ...(dto.journeyId !== undefined && { journeyId: dto.journeyId }),
+    }
+    const retiresClass = ts.blockType === 'CLASS' && (
+      (dto.blockType !== undefined && dto.blockType !== 'CLASS') ||
+      (dto.dayOfWeek !== undefined && dto.dayOfWeek !== ts.dayOfWeek)
+    )
+    const timeSlot = retiresClass
+      ? await prisma.$transaction(async (tx) => {
+          await tx.scheduleEntry.updateMany({ where: { schoolId, timeSlot: { ownerUserId }, timeSlotId: id }, data: { needsPlacement: true } })
+          await tx.timeSlot.update({ where: { id, schoolId, ownerUserId }, data: { status: 'INACTIVE' } })
+          return tx.timeSlot.create({ data: {
+            schoolId, ownerUserId, name: dto.name ?? ts.name,
+            startTime: dto.startTime ? toTime(dto.startTime) : ts.startTime,
+            endTime: dto.endTime ? toTime(dto.endTime) : ts.endTime,
+            sequence: dto.sequence ?? ts.sequence,
+            dayOfWeek: dto.dayOfWeek !== undefined ? dto.dayOfWeek : ts.dayOfWeek,
+            blockType: dto.blockType ?? ts.blockType,
+            journeyId: dto.journeyId !== undefined ? dto.journeyId : ts.journeyId,
+            blockSource: ts.blockSource, sourceKey: ts.sourceKey,
+          } })
+        })
+      : await prisma.timeSlot.update({ where: { id, schoolId, ownerUserId }, data })
     optionCache.invalidate(optionCacheKeys.schedule.timeSlots(schoolId, ownerUserId))
     return timeSlot
   }
@@ -449,7 +465,7 @@ export class ScheduleService {
     if (!schoolYear) throw new NotFoundException('School year not found')
     if (!section) throw new NotFoundException('Section not found')
     if (!sectionSubject) throw new NotFoundException('Section subject not found')
-    if (!timeSlot) throw new NotFoundException('Time slot not found')
+    if (!timeSlot || timeSlot.status !== 'ACTIVE') throw new NotFoundException('Time slot not found')
     if (timeSlot.blockType !== 'CLASS') throw new BadRequestException('Solo puedes asignar clases a períodos lectivos.')
     if (timeSlot.dayOfWeek !== null && timeSlot.dayOfWeek !== dto.dayOfWeek) throw new BadRequestException('El período seleccionado pertenece a otro día.')
     if (dto.academicPeriodId && !academicPeriod) throw new NotFoundException('Academic period not found')
@@ -481,24 +497,29 @@ export class ScheduleService {
     const { schoolId, ownerUserId } = scope
     const entry = await prisma.scheduleEntry.findFirst({ where: { id, schoolId, timeSlot: { ownerUserId } } })
     if (!entry) throw new NotFoundException('Schedule entry not found')
-    if (dto.sectionSubjectId) {
+    const targetSectionId = dto.sectionId ?? entry.sectionId
+    if (dto.sectionId) {
+      const section = await prisma.section.findFirst({ where: { id: dto.sectionId, schoolId } })
+      if (!section) throw new NotFoundException('Section not found')
+    }
+    if (dto.sectionSubjectId || dto.sectionId) {
       const sectionSubject = await prisma.sectionSubject.findFirst({
-        where: { id: dto.sectionSubjectId, schoolId, sectionId: entry.sectionId },
+        where: { id: dto.sectionSubjectId ?? entry.sectionSubjectId, schoolId, sectionId: targetSectionId },
       })
       if (!sectionSubject) throw new NotFoundException('Section subject not found')
     }
     if (dto.timeSlotId || dto.dayOfWeek !== undefined) {
       const timeSlot = await prisma.timeSlot.findFirst({ where: { id: dto.timeSlotId ?? entry.timeSlotId, schoolId, ownerUserId } })
-      if (!timeSlot) throw new NotFoundException('Time slot not found')
+      if (!timeSlot || timeSlot.status !== 'ACTIVE') throw new NotFoundException('Time slot not found')
       if (timeSlot.blockType !== 'CLASS') throw new BadRequestException('Solo puedes mover clases a períodos lectivos.')
       const targetDay = dto.dayOfWeek ?? entry.dayOfWeek
       if (timeSlot.dayOfWeek !== null && timeSlot.dayOfWeek !== targetDay) throw new BadRequestException('El período seleccionado pertenece a otro día.')
     }
-    await this.assertEntrySlotAvailable(
+    if (!entry.needsPlacement || dto.timeSlotId) await this.assertEntrySlotAvailable(
       scope,
       {
         schoolYearId: entry.schoolYearId,
-        sectionId: entry.sectionId,
+        sectionId: targetSectionId,
         sectionSubjectId: dto.sectionSubjectId ?? entry.sectionSubjectId,
         timeSlotId: dto.timeSlotId ?? entry.timeSlotId,
         dayOfWeek: dto.dayOfWeek ?? entry.dayOfWeek,
@@ -509,8 +530,9 @@ export class ScheduleService {
     const updated = await prisma.scheduleEntry.update({
       where: { id, schoolId, timeSlot: { ownerUserId } },
       data: {
+        ...(dto.sectionId && { sectionId: dto.sectionId }),
         ...(dto.sectionSubjectId && { sectionSubjectId: dto.sectionSubjectId }),
-        ...(dto.timeSlotId && { timeSlotId: dto.timeSlotId }),
+        ...(dto.timeSlotId && { timeSlotId: dto.timeSlotId, needsPlacement: false }),
         ...(dto.dayOfWeek !== undefined && { dayOfWeek: dto.dayOfWeek }),
         ...(dto.room !== undefined && { room: dto.room }),
       },
@@ -539,7 +561,7 @@ export class ScheduleService {
     filters: { sectionId?: string; schoolYearId?: string; teacherId?: string; gradeId?: string; sectionSubjectId?: string },
   ) {
     const { schoolId, ownerUserId } = scope
-    const where: Prisma.ScheduleEntryWhereInput = { schoolId, timeSlot: { ownerUserId } }
+    const where: Prisma.ScheduleEntryWhereInput = { schoolId, timeSlot: { ownerUserId }, needsPlacement: false }
     if (filters.sectionId) where.sectionId = filters.sectionId
     if (filters.sectionSubjectId) where.sectionSubjectId = filters.sectionSubjectId
     if (filters.schoolYearId) where.schoolYearId = filters.schoolYearId
@@ -560,7 +582,7 @@ export class ScheduleService {
     return where
   }
 
-  /** Evita duplicar clases en una celda y conflictos del mismo docente. */
+  /** Evita clases simultaneas en el horario personal, aunque sean de cursos diferentes. */
   private async assertEntrySlotAvailable(
     scope: ScheduleScope,
     input: {
@@ -577,46 +599,22 @@ export class ScheduleService {
     const targetSlot = await prisma.timeSlot.findFirst({ where: { id: input.timeSlotId, schoolId, ownerUserId } })
     if (!targetSlot) throw new NotFoundException('Time slot not found')
     const overlappingSlotIds = (await prisma.timeSlot.findMany({
-      where: { schoolId, ownerUserId, blockType: 'CLASS', startTime: { lt: targetSlot.endTime }, endTime: { gt: targetSlot.startTime }, OR: [{ dayOfWeek: input.dayOfWeek }, { dayOfWeek: null }] },
+      where: { schoolId, ownerUserId, status: 'ACTIVE', blockType: 'CLASS', startTime: { lt: targetSlot.endTime }, endTime: { gt: targetSlot.startTime }, OR: [{ dayOfWeek: input.dayOfWeek }, { dayOfWeek: null }] },
       select: { id: true },
     })).map((slot) => slot.id)
-    const sameSectionCell = await prisma.scheduleEntry.findFirst({
+    const occupiedCell = await prisma.scheduleEntry.findFirst({
       where: {
-        schoolId, timeSlot: { ownerUserId },
+        schoolId, timeSlot: { ownerUserId }, needsPlacement: false,
         schoolYearId: input.schoolYearId,
-        sectionId: input.sectionId,
         timeSlotId: { in: overlappingSlotIds },
         dayOfWeek: input.dayOfWeek,
         ...(idFilter && { id: idFilter }),
       },
     })
-    if (sameSectionCell) {
-      throw new BadRequestException('Ya existe una clase asignada para esa sección en ese bloque.')
+    if (occupiedCell) {
+      throw new BadRequestException('Ya existe una clase asignada en ese bloque.')
     }
 
-    const sectionSubject = await prisma.sectionSubject.findFirst({
-      where: { id: input.sectionSubjectId, schoolId },
-      select: { teacherId: true },
-    })
-    if (!sectionSubject?.teacherId) return
-
-    const teacherSectionSubjects = await prisma.sectionSubject.findMany({
-      where: { schoolId, teacherId: sectionSubject.teacherId },
-      select: { id: true },
-    })
-    const teacherConflict = await prisma.scheduleEntry.findFirst({
-      where: {
-        schoolId, timeSlot: { ownerUserId },
-        schoolYearId: input.schoolYearId,
-        timeSlotId: { in: overlappingSlotIds },
-        dayOfWeek: input.dayOfWeek,
-        sectionSubjectId: { in: teacherSectionSubjects.map((item) => item.id) },
-        ...(idFilter && { id: idFilter }),
-      },
-    })
-    if (teacherConflict) {
-      throw new BadRequestException('El docente ya tiene una clase asignada en ese bloque.')
-    }
   }
 
   /** Enriquece las entradas de horario con nombres descriptivos. */

@@ -26,10 +26,12 @@ try {
     'scripts/tests/fixtures/personal_schedule_legacy.sql',
     'supabase/migrations/20261020132243_personal_teacher_schedule.sql',
     'scripts/tests/fixtures/personal_schedule_ownership.sql',
+    'supabase/migrations/20261020144054_schedule_entries_needs_placement.sql',
+    'scripts/tests/fixtures/personal_schedule_pending.sql',
   ]) {
     sql(readFileSync(fileURLToPath(new URL(path, root)), 'utf8'))
   }
-  console.log('PASS: legacy assignment, independent structures, ambiguous-data preservation, owner RLS and foreign-reference rejection')
+  console.log('PASS: independent schedules, owner RLS, preserved assignments and pending placement migration')
 } catch (error) {
   process.stderr.write(error.stderr?.toString() || error.message)
   process.exitCode = 1

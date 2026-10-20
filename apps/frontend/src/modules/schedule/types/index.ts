@@ -72,6 +72,7 @@ export type UpdateTimeSlotInput = Partial<CreateTimeSlotInput>
 /** Entrada de horario que asigna una materia a un bloque y día */
 export type ScheduleEntry = {
   id: string
+  needsPlacement?: boolean
   schoolYearId: string
   academicPeriodId: string | null
   sectionSubjectId: string
@@ -92,7 +93,7 @@ export type ScheduleEntry = {
 }
 
 export type ScheduleIntegrityIssue = {
-  code: 'GRADE_ARCHIVED' | 'SECTION_ARCHIVED' | 'SUBJECT_ASSIGNMENT_ARCHIVED' | 'SUBJECT_ARCHIVED'
+  code: 'GRADE_ARCHIVED' | 'SECTION_ARCHIVED' | 'SUBJECT_ASSIGNMENT_ARCHIVED' | 'SUBJECT_ARCHIVED' | 'NEEDS_PLACEMENT'
   entryIds: string[]
   affectedClasses: number
   gradeName: string

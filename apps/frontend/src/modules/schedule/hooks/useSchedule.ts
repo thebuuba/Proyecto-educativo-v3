@@ -36,6 +36,8 @@ import type {
 import { createScopedTtlCache } from '@/utils/scopedTtlCache'
 
 type ScheduleCacheData = {
+  pendingEntries: ScheduleEntry[]
+  schoolYearName: string
   timeSlots: TimeSlot[]
   entries: ScheduleEntry[]
   sections: SectionOption[]
@@ -55,8 +57,14 @@ export function useSchedule() {
   const cached = scheduleCache.read(cacheScope)
   const [timeSlots, setTimeSlots] = useState<TimeSlot[]>(cached?.timeSlots ?? [])
   const [entries, setEntries] = useState<ScheduleEntry[]>(cached?.entries ?? [])
+  const [pendingEntries, setPendingEntries] = useState<ScheduleEntry[]>(
+    cached?.pendingEntries ?? [],
+  )
+  const [schoolYearName, setSchoolYearName] = useState(cached?.schoolYearName ?? '')
   const [journeys, setJourneys] = useState<ScheduleJourney[]>(cached?.journeys ?? [])
-  const [integrityIssues, setIntegrityIssues] = useState<ScheduleIntegrityIssue[]>(cached?.integrityIssues ?? [])
+  const [integrityIssues, setIntegrityIssues] = useState<ScheduleIntegrityIssue[]>(
+    cached?.integrityIssues ?? [],
+  )
   const [loading, setLoading] = useState(!cached)
   const [error, setError] = useState<string | null>(null)
   const [filters, setFilters] = useState<ScheduleFilters>({})
@@ -86,9 +94,7 @@ export function useSchedule() {
       setTimeSlots(data)
     } catch (error) {
       setError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron cargar los bloques horarios.',
+        error instanceof Error ? error.message : 'No se pudieron cargar los bloques horarios.',
       )
     }
   }, [])
@@ -105,63 +111,68 @@ export function useSchedule() {
       setEntries(data)
     } catch (error) {
       setError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron cargar las entradas de horario.',
+        error instanceof Error ? error.message : 'No se pudieron cargar las entradas de horario.',
       )
     }
   }, [])
 
   /** Carga los datos iniciales: año escolar, bloques, secciones, docentes, asignaturas */
-  const loadInitialData = useCallback(async (showLoading = true) => {
-    if (showLoading) setLoading(true)
-    setError(null)
+  const loadInitialData = useCallback(
+    async (showLoading = true) => {
+      if (showLoading) setLoading(true)
+      setError(null)
 
-    try {
-      const workspace = await getScheduleWorkspace()
-      const yearId = workspace.currentSchoolYear?.id ?? null
-      schoolYearIdRef.current = yearId
-      setSchoolYearId(yearId)
+      try {
+        const workspace = await getScheduleWorkspace()
+        const yearId = workspace.currentSchoolYear?.id ?? null
+        schoolYearIdRef.current = yearId
+        setSchoolYearId(yearId)
+        setSchoolYearName(workspace.currentSchoolYear?.name ?? '')
+        setPendingEntries(workspace.pendingEntries ?? [])
 
-      const slots = workspace.timeSlots
-      const sects = workspace.sections
-      const tchrs = workspace.teachers
-      const subjs = workspace.subjects
-      const entryData = workspace.entries
+        const slots = workspace.timeSlots
+        const sects = workspace.sections
+        const tchrs = workspace.teachers
+        const subjs = workspace.subjects
+        const entryData = workspace.entries
 
-      setTimeSlots(slots)
-      setSections(sects)
-      setTeachers(tchrs)
-      setSubjects(subjs)
-      setEntries(entryData)
-      setJourneys(workspace.journeys ?? [])
-      setIntegrityIssues(workspace.integrityIssues ?? [])
-      scheduleCache.write(cacheScope, {
-        timeSlots: slots,
-        entries: entryData,
-        sections: sects,
-        teachers: tchrs,
-        subjects: subjs,
-        schoolYearId: yearId,
-        journeys: workspace.journeys ?? [],
-        integrityIssues: workspace.integrityIssues ?? [],
-      })
-    } catch (error) {
-      setError(
-        error instanceof Error
-          ? error.message
-          : 'No se pudieron cargar los datos del horario.',
-      )
-    } finally {
-      if (showLoading) setLoading(false)
-    }
-  }, [cacheScope])
+        setTimeSlots(slots)
+        setSections(sects)
+        setTeachers(tchrs)
+        setSubjects(subjs)
+        setEntries(entryData)
+        setJourneys(workspace.journeys ?? [])
+        setIntegrityIssues(workspace.integrityIssues ?? [])
+        scheduleCache.write(cacheScope, {
+          pendingEntries: workspace.pendingEntries ?? [],
+          schoolYearName: workspace.currentSchoolYear?.name ?? '',
+          timeSlots: slots,
+          entries: entryData,
+          sections: sects,
+          teachers: tchrs,
+          subjects: subjs,
+          schoolYearId: yearId,
+          journeys: workspace.journeys ?? [],
+          integrityIssues: workspace.integrityIssues ?? [],
+        })
+      } catch (error) {
+        setError(
+          error instanceof Error ? error.message : 'No se pudieron cargar los datos del horario.',
+        )
+      } finally {
+        if (showLoading) setLoading(false)
+      }
+    },
+    [cacheScope],
+  )
 
   useEffect(() => {
     const freshCache = scheduleCache.read(cacheScope)
     if (freshCache) {
       setTimeSlots(freshCache.timeSlots)
       setEntries(freshCache.entries)
+      setPendingEntries(freshCache.pendingEntries ?? [])
+      setSchoolYearName(freshCache.schoolYearName ?? '')
       setJourneys(freshCache.journeys ?? [])
       setIntegrityIssues(freshCache.integrityIssues ?? [])
       setSections(freshCache.sections)
@@ -255,14 +266,13 @@ export function useSchedule() {
   }, [filters, refetchEntries])
 
   /** Actualiza los filtros del horario */
-  const updateFilters = useCallback(
-    (newFilters: ScheduleFilters) => {
-      setFilters(newFilters)
-    },
-    [],
-  )
+  const updateFilters = useCallback((newFilters: ScheduleFilters) => {
+    setFilters(newFilters)
+  }, [])
 
   return {
+    pendingEntries,
+    schoolYearName,
     timeSlots,
     journeys,
     integrityIssues,
