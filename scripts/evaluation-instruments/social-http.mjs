@@ -18,11 +18,12 @@ const hcsLanguage=['OPT-HCS-LEN-4','OPT-HCS-LEN-5','OPT-HCS-LEN-6'].includes(sub
 const hcsSocial=['OPT-HCS-SOC-4','OPT-HCS-SOC-5','OPT-HCS-SOC-6'].includes(subjectCode)&&[4,5,6].includes(grade)&&subjectCode===`OPT-HCS-SOC-${grade}`
 const mathOptative=['OPT-MT-4','OPT-MT-5','OPT-MT-6'].includes(subjectCode)&&subjectCode===`OPT-MT-${grade}`
 const scienceOptative=subjectCode===`OPT-CT-${grade}`&&[4,5,6].includes(grade)
+const technical=subjectCode==='MF_053_3'&&grade===4
 const optative=scienceOptative||mathOptative||hcsSocial||hcsLanguage||['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6'].includes(subjectCode)||optativeEnglish
-assert(scienceOptative||mathOptative||hcsSocial||hcsLanguage&&[4,5,6].includes(grade)&&subjectCode===`OPT-HCS-LEN-${grade}`||['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&(optativeEnglish?subjectCode===`OPT-HLM-ING-${grade}`&&[4,5,6].includes(grade):subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade)),'Solo se admiten ámbitos revisados explícitamente')
+assert(technical||scienceOptative||mathOptative||hcsSocial||hcsLanguage&&[4,5,6].includes(grade)&&subjectCode===`OPT-HCS-LEN-${grade}`||['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&(optativeEnglish?subjectCode===`OPT-HLM-ING-${grade}`&&[4,5,6].includes(grade):subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade)),'Solo se admiten ámbitos revisados explícitamente')
 assert(subjectCode!=='EFI'||[1,2,3,4,5,6].includes(grade),'EFI requiere un grado con contratos y fuente revisados')
 assert(subjectCode!=='FHR'||[1,2,3,4,5,6].includes(grade),'FHR requiere grado y contratos revisados')
-const family=scienceOptative?'optative-ct':mathOptative?'optative-mt':hcsSocial?'optative-hcs-soc':hcsLanguage?'optative-hcs-len':optativeEnglish?'optative-hlm-ing':optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=scienceOptative?(grade===6?'Optativa CT Física':grade===5?'Optativa CT Química':'Optativa CT Biología'):mathOptative?(grade===6?'Optativa MT Cálculo':grade===5?'Optativa MT Estadística':'Optativa MT Financiera'):hcsSocial?(grade===6?'Optativa HCS Ciudadanía':grade===5?'Optativa HCS Demografía':'Optativa HCS Filosofía'):hcsLanguage?(grade===6?'Optativa HCS Textos Profesionales':'Optativa HCS Literatura'):optativeEnglish?'Optativa HLM Inglés':optative?(grade===6?'Optativa HLM Periodismo':'Optativa HLM Literatura'):subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=scienceOptative?(grade===6?'Física y Computación':grade===5?'Química y Computación':'Biología y Computación'):mathOptative?(grade===6?'Tigonometría, Cálculo Diferencial y Tecnología':grade===5?'Estadística Probabilidad y Tecnología':'Matemática Financiera y Tecnología'):hcsSocial?(grade===6?'Ciudadanía y Democracia Participativa':grade===5?'Geografía Humana y Demografía':'Filosofía social y Pensamiento Dominicano'):hcsLanguage&&grade===6?'Análisis y Producción de Textos Científicos y Profesionales':optativeEnglish?englishOptativeNames[subjectCode]:optative?(grade===6?'Análisis y Producción de Textos Periodísticos y Publicitarios':'Apreciación y Producción Literarias'):subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=scienceOptative?'opt-ct':mathOptative?'opt-mt':hcsSocial?'opt-hcs-soc':hcsLanguage?'opt-hcs-len':optativeEnglish?'opt-hlm-ing':optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
+const family=technical?'technical-mf053':scienceOptative?'optative-ct':mathOptative?'optative-mt':hcsSocial?'optative-hcs-soc':hcsLanguage?'optative-hcs-len':optativeEnglish?'optative-hlm-ing':optative?'optative-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'art':'social',fileStem=technical?'technical-ifc006-mf053':optative?family:subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'physical':subjectCode==='ART'?'artistica':'sociales',qaLabel=technical?'Técnico MF053':scienceOptative?(grade===6?'Optativa CT Física':grade===5?'Optativa CT Química':'Optativa CT Biología'):mathOptative?(grade===6?'Optativa MT Cálculo':grade===5?'Optativa MT Estadística':'Optativa MT Financiera'):hcsSocial?(grade===6?'Optativa HCS Ciudadanía':grade===5?'Optativa HCS Demografía':'Optativa HCS Filosofía'):hcsLanguage?(grade===6?'Optativa HCS Textos Profesionales':'Optativa HCS Literatura'):optativeEnglish?'Optativa HLM Inglés':optative?(grade===6?'Optativa HLM Periodismo':'Optativa HLM Literatura'):subjectCode==='FHR'?'FHR':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Artística':'Sociales',subjectName=technical?'Análisis y Diseño de Sistemas Informáticos':scienceOptative?(grade===6?'Física y Computación':grade===5?'Química y Computación':'Biología y Computación'):mathOptative?(grade===6?'Tigonometría, Cálculo Diferencial y Tecnología':grade===5?'Estadística Probabilidad y Tecnología':'Matemática Financiera y Tecnología'):hcsSocial?(grade===6?'Ciudadanía y Democracia Participativa':grade===5?'Geografía Humana y Demografía':'Filosofía social y Pensamiento Dominicano'):hcsLanguage&&grade===6?'Análisis y Producción de Textos Científicos y Profesionales':optativeEnglish?englishOptativeNames[subjectCode]:optative?(grade===6?'Análisis y Producción de Textos Periodísticos y Publicitarios':'Apreciación y Producción Literarias'):subjectCode==='FHR'?'Formación Integral Humana y Religiosa':subjectCode==='EFI'?'Educación Física':subjectCode==='ART'?'Educación Artística':'Ciencias Sociales',templatePrefix=technical?'technical-mf053':scienceOptative?'opt-ct':mathOptative?'opt-mt':hcsSocial?'opt-hcs-soc':hcsLanguage?'opt-hcs-len':optativeEnglish?'opt-hlm-ing':optative?'opt-hlm-len':subjectCode==='FHR'?'fhr':subjectCode==='EFI'?'efi':subjectCode==='ART'?'art':'soc'
 const path='.wrangler/secondary-completion/',context=JSON.parse(readFileSync(path+`${family}-${grade}-context.json`,'utf8'))
 assert.equal(context.project,project)
 assert.equal(context.grade,grade)
@@ -44,7 +45,7 @@ const media=[
  {description:'Realiza un panel o una infografía sobre la expansión colonial en el Caribe.',sourceRecordIds:['c68b813b']},
  {description:'Redacta una noticia sobre las Revoluciones burguesas con titular, entrada, cuerpo, una foto proporcionada y pie de foto. Usa conectores de orden y temporales.',sourceRecordIds:['f0556291']},
 ]
-const contractPath=optative?`data/evaluation-instruments/${family}-${gradeName}-contracts.json`:subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
+const contractPath=technical?'data/evaluation-instruments/technical-ifc-mf053-four-contracts.json':optative?`data/evaluation-instruments/${family}-${gradeName}-contracts.json`:subjectCode==='FHR'?`data/evaluation-instruments/fhr-grade-${gradeName}-contracts.json`:subjectCode==='EFI'?`data/evaluation-instruments/physical-grade-${gradeName}-contracts.json`:subjectCode==='ART'?`data/evaluation-instruments/art-grade-${gradeName}-contracts.json`:grade===1?'data/evaluation-instruments/social-grade-one-'+(productMode?'product':'procedural')+'-contracts.json':`data/evaluation-instruments/social-grade-${gradeName}${proceduralMode?'-procedural':''}-contracts.json`
 const allContracts=mediaMode?[...media,...media]:JSON.parse(readFileSync(contractPath,'utf8')).cases
 const casesFlag=process.argv.indexOf('--cases'),selectedIds=casesFlag<0?null:process.argv[casesFlag+1]?.split(',')
 if(selectedIds){
@@ -54,7 +55,7 @@ if(selectedIds){
 }
 const procedural=selectedIds?selectedIds.map(id=>allContracts.find(c=>c.id===id)):allContracts
 if(subjectCode!=='SOC')assert(sourceMode&&productMode&&selectedIds&&!mediaMode&&!proceduralMode,'El área requiere fuente publicada y muestras explícitas de contratos revisados')
-const sourceCode=optative?`MINERD_SECUNDARIA_2023_${subjectCode.replaceAll('-','_')}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
+const sourceCode=technical?'MINERD_IFC006_MF053_4_NORM_2017_V1':optative?`MINERD_SECUNDARIA_2023_${subjectCode.replaceAll('-','_')}_V1`:`MINERD_SECUNDARIA_2023_${subjectCode}_COMUN_G${grade}_V1`
 const source=sourceMode?JSON.parse(readFileSync(path+sourceCode+'-source.json','utf8')):null
 if(source){assert.equal(source.project,project);assert.equal(source.code,sourceCode)}
 const selectionKey=selectedIds?'-sample-'+createHash('sha256').update(selectedIds.join(',')).digest('hex').slice(0,12):''
@@ -87,7 +88,7 @@ const descriptions=proceduralMode||productMode||mediaMode?procedural.map(c=>c.de
 ]
 const formats=productMode||mediaMode||proceduralMode&&grade>1?procedural.map((_,i)=>['rubrica','lista-cotejo','escala','lista-ponderada'][i%4]):proceduralMode?['rubrica','lista-cotejo','escala','lista-ponderada','lista-cotejo','rubrica','lista-ponderada','escala']:['rubrica','lista-cotejo','escala','lista-ponderada','rubrica','lista-cotejo','escala','lista-ponderada'].slice(0,sourceMode?4:8)
 const matrix=sourceMode?JSON.parse(readFileSync(`docs/curriculum/cobertura-secundaria/${fileStem}-${grade}-matriz.json`,'utf8')):null
-if(optative)assert.equal(subjectName,matrix.subjectName,'El nombre del contexto local debe coincidir con el ámbito efectivo')
+if(optative||technical)assert.equal(subjectName,matrix.subjectName,'El nombre del contexto local debe coincidir con el ámbito efectivo')
 const sourceRecords=matrix?.officialRecords??[]
 const sourcePrefixes=proceduralMode||productMode||mediaMode?procedural.map(c=>c.sourceRecordIds[0]):['03c0f43b','20638a76','055ff3a5','01b7176c']
 const scoreFor=i=>selectedIds?Math.floor(i/4)%2?17.35:20:i%2?17.35:20
@@ -97,6 +98,7 @@ try{
  cookie=login.response.headers.getSetCookie().find(s=>s.startsWith('aulabase_session='))?.split(';')[0];assert(cookie)
  const center=(await request('/activities/center?contextOnly=true')).data
  assert(center.sectionSubjects.some(s=>s.id===context.sectionSubjectId))
+ if(technical){const served=center.sectionSubjects.find(s=>s.id===context.sectionSubjectId);assert.equal(served.modalityCode,'technical_professional');assert.equal(served.optativeExitName,null);assert.equal(served.subjectCode,subjectCode)}
  if(optative){const served=center.sectionSubjects.find(s=>s.id===context.sectionSubjectId);assert.equal(served.modalityCode,'academic');assert.equal(served.optativeExitName,scienceOptative?'Ciencias y Tecnología':mathOptative?'Matemática y Tecnología':hcsLanguage||hcsSocial?'Humanidades y Ciencias Sociales':'Humanidades y Lenguas Modernas');assert.equal(served.subjectCode,subjectCode)}
   if(source)await request('/evaluation-instruments/recommend',{sectionSubjectId:context.sectionSubjectId,activityTitle:'QA referente excluido',description:descriptions[0],competencyBlock:'b1',maxScore:20,preferredInstrumentType:'rubrica',participationMode:'INDIVIDUAL',curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[source.metadata.excludedAssessmentElementIds[0]]},400)
  if(source&&(subjectCode==='OPT-MT-5'||subjectCode==='OPT-CT-4')){
@@ -143,17 +145,17 @@ try{
     assert.equal(automatic.instrumentType,'lista-cotejo');assert.equal(automatic.criteria.length,1)
    }
    const proposal=(await request('/evaluation-instruments/recommend',input)).data
-   assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(`${templatePrefix}-${grade}-`)||scienceOptative&&c.templateId.startsWith('delivery-format')))
+   assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(technical?`${templatePrefix}-`:`${templatePrefix}-${grade}-`)||(scienceOptative||technical)&&c.templateId.startsWith('delivery-format')))
    if(source){
     assert.equal(proposal.curriculumVersionId,source.versionId);assert.equal(proposal.curriculumScopeId,source.scopeId)
     assert.equal(proposal.selectedCurriculumElements.length,1)
     const ref=proposal.selectedCurriculumElements[0]
     assert.equal(ref.elementId,input.selectedCurriculumElementIds[0]);assert.equal(ref.scopeId,source.scopeId)
-    assert(ref.sources.every(s=>s.documentId===source.documentId&&matrix.pdfPages.includes(s.pdfPage)))
+    assert(ref.sources.every(s=>s.documentId===source.documentId&&(technical?matrix.sourceVisualReview.pages:matrix.pdfPages).includes(s.pdfPage)))
     assert(proposal.criteria.every(c=>!c.sourceReferences.length),'Adaptations are not literal official criteria')
    }
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)
-   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode,subjectName,...(optative?{cycle:2,modalityCode:context.modalityCode,optativeExitName:context.optativeExitName}:{})}})
+   const local=editableFallbackRecommendation({...input,instrumentType:format,academicContext:{level:'SECONDARY',grade,subjectCode,subjectName,...(optative||technical?{cycle:2,modalityCode:context.modalityCode,optativeExitName:context.optativeExitName}:{})}})
    assert.deepEqual(content(proposal),content(local))
    const pending=scoreInstrumentFields(recommendationToFields(proposal,name),format,null,proposal)
    assert.equal(pending[`${format}:points:0`],'')

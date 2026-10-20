@@ -1,4 +1,5 @@
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
+import {resolveTechnicalTask,technicalSelections} from '@aula/shared'
 import {resolveOptativeScienceTask,optativeScienceSelections} from '@aula/shared'
 import {resolveOptativeMathTask,optativeMathSelections} from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
@@ -7,6 +8,8 @@ import {languageInstrumentIntent,commonSecondaryEnglish,resolveCommonEnglishTask
 const observational = new Set(['NEWS_ANALYSIS','TOURIST_GUIDE_ANALYSIS','POSTER_ANALYSIS','READING_REPORT_ANALYSIS','DETECTIVE_STORY_ANALYSIS','CALLIGRAM_ANALYSIS','PORTFOLIO','OBSERVATION','LISTENING_COMPREHENSION'])
 /** Local equivalent of the installed catalog rules; cross-layer tests cover every catalog type. */
 export function automaticInstrumentType(activityType: string, context?: InstrumentAcademicContext | null, maxScore?: number | null, description = ''): InstrumentType {
+  const technical=resolveTechnicalTask('',description,context)
+  if(technical)return technicalSelections(technical,description).suggestedInstrumentType
   const optativeScience=resolveOptativeScienceTask('',description,context)
   if(optativeScience)return optativeScienceSelections(optativeScience,description).suggestedInstrumentType
   const optativeMath=resolveOptativeMathTask('',description,context)

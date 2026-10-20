@@ -35,14 +35,16 @@ test('respeta continuaciones y errores impresos sin crear temas por encabezado',
  assert(rows.every(r=>!['Contenidos','Conceptuales','Procedimentales','Actitudinales'].includes(r.literal)))
 })
 
-test('no convierte valores privados o estrategias docentes en instrumentos implementados',()=>{
+test('conserva exclusiones privadas y distingue implementación de pruebas reales',()=>{
  const m=source()
- assert.equal(m.implementation.provider,null);assert.equal(m.implementation.status,'SOURCE_REVIEWED_NOT_IMPLEMENTED')
- assert.equal(m.implementation.instrumentReview,'NOT_STARTED');assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts')
+ assert.equal(m.implementation.instrumentReview,'REVIEWED')
+ assert.equal(m.verification.fullReview.pending,0)
  const attitudes=m.officialRecords.filter(r=>r.type==='ATTITUDE'),methods=m.officialRecords.filter(r=>r.type==='TEACHING_STRATEGY')
  assert.equal(attitudes.length,6);assert.equal(methods.length,5)
  assert(attitudes.every(r=>r.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'))
  assert(methods.every(r=>r.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'))
+ assert([...attitudes,...methods].every(r=>r.adaptationIds.length===0))
  assert(m.limits.some(l=>l.includes('datos ficticios')))
  assert(m.limits.some(l=>l.includes('No exigir todas las técnicas')))
 })

@@ -286,3 +286,4 @@ export {optativeLanguageModules,resolveOptativeLanguageTask,optativeLanguageCrit
 
 export {optativeSocialModules,resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from './secondary-optative-social'
 export {optativeMathModules,resolveOptativeMathTask,optativeMathCriteria,optativeMathSelections} from './secondary-optative-math'
+export {technicalModules,resolveTechnicalTask,technicalCriteria,technicalSelections,adaptTechnicalScale} from './secondary-technical'

@@ -4,6 +4,7 @@ import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,adaptOptativeLanguageScale} from '@aula/shared'
 import { resolveCommonArtTask, commonArtCriteria, adaptArtScale } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialCriteria,adaptSocialScale} from '@aula/shared'
+import {resolveTechnicalTask,technicalCriteria,adaptTechnicalScale} from '@aula/shared'
 import {resolveOptativeScienceTask,optativeScienceCriteria,adaptOptativeScienceScale} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
@@ -74,6 +75,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if (art) return adaptArtScale(editableAuthoredRecommendation(commonArtCriteria(art), input, input.activityType ?? art.activityType, `educacion-artistica-comun-${art.grade}`), art)
   const social=resolveCommonSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(social)return adaptSocialScale(editableAuthoredRecommendation(commonSocialCriteria(social),input,input.activityType??social.activityType,`ciencias-sociales-comun-${social.grade}`))
+  const technical=resolveTechnicalTask(input.activityTitle,input.description??'',input.academicContext)
+  if(technical)return adaptTechnicalScale(editableAuthoredRecommendation(technicalCriteria(technical),input,input.activityType??technical.activityType,technical.module.id,{includeFileFormats:true,requestedOnly:true}),input.description??'',technical)
   const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',input.academicContext)
   if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id,optativeScience.grade===6?{includeFileFormats:true,requestedOnly:true}:undefined),input.description??'',optativeScience)
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)

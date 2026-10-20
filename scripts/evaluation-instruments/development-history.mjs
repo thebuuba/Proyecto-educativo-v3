@@ -1,7 +1,19 @@
 import {createRequire} from 'node:module'
 import {readFileSync} from 'node:fs'
 import {parseEnv} from 'node:util'
-import {developmentEnvironment} from '../cloudflare-development-environment.mjs'
+import assert from 'node:assert/strict'
+import {developmentEnvironment,developmentProjectRef} from '../cloudflare-development-environment.mjs'
+
+/** Compare the saved checkpoint to an effective Development read; never rebaseline it. */
+export function assertPreservedDevelopmentHistory(baseline,current){
+ if(baseline.project!==undefined)assert.equal(baseline.project,developmentProjectRef,'Checkpoint de otro proyecto')
+ for(const [kind,key]of [['releases','version'],['snapshots','id']]){
+  assert(Array.isArray(baseline[kind])&&Array.isArray(current[kind]),'Checkpoint de huellas incompleto')
+  const actual=new Map(current[kind].map(row=>[row[key],row]))
+  assert.equal(actual.size,current[kind].length,'Huellas duplicadas')
+  for(const prior of baseline[kind])assert.deepEqual(actual.get(prior[key]),prior,'Se alteró o perdió una huella histórica: '+kind+'/'+prior[key])
+ }
+}
 
 // Administrative fingerprints use one read-only PostgreSQL snapshot. They must not
 // depend on Prisma's interactive transaction lifetime or alter application timeouts.

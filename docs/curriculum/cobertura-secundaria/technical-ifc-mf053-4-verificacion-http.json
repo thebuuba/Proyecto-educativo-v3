@@ -1,0 +1,228 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "readOnly": true,
+  "catalog": "evaluation-2026.142",
+  "status": "PARTIAL_EXTERNAL_DNS_BLOCK",
+  "plannedSamples": 49,
+  "verifiedSamples": 3,
+  "savedActivities": 4,
+  "activities": [
+    {
+      "caseKey": "0",
+      "activityId": "80ce0fdf-e48a-4d73-b46b-4b6364df59b1",
+      "snapshotId": "60c37277-d972-41f5-8bf2-041429cdcdc5",
+      "format": "rubrica",
+      "score": 20,
+      "savedDefinitionExactlyPreserved": true,
+      "strategy": "CASE_STUDY",
+      "httpRoundTripVerified": true
+    },
+    {
+      "caseKey": "1",
+      "activityId": "15e67a5a-b169-4e7c-92a9-5d373b87b3cc",
+      "snapshotId": "5f3a5ba1-0b77-4231-a3e4-24baec450365",
+      "format": "lista-cotejo",
+      "score": 20,
+      "savedDefinitionExactlyPreserved": true,
+      "strategy": "CASE_STUDY",
+      "httpRoundTripVerified": true
+    },
+    {
+      "caseKey": "2",
+      "activityId": "d7bec961-3c9a-49ed-a89a-5e90e4889e34",
+      "snapshotId": "f76f8240-1364-492c-b951-f037ca2b64cc",
+      "format": "escala",
+      "score": 20,
+      "savedDefinitionExactlyPreserved": true,
+      "strategy": "CASE_STUDY",
+      "httpRoundTripVerified": true
+    },
+    {
+      "caseKey": "3",
+      "activityId": "a8ee4f7f-ac58-4af2-954b-cb16827fb23f",
+      "snapshotId": "9ee334a1-8ce1-4f28-ad9c-3f27a7d6739f",
+      "format": "lista-ponderada",
+      "score": 20,
+      "savedDefinitionExactlyPreserved": true,
+      "strategy": null,
+      "httpRoundTripVerified": false
+    }
+  ],
+  "personalActivities": 0,
+  "newPersonalBaselines": 0,
+  "preservedReleases": 74,
+  "preservedSnapshots": 981,
+  "currentReleases": 75,
+  "currentSnapshots": 985,
+  "duplicates": 0,
+  "observedHttp500": 2,
+  "clientTimeouts": 0,
+  "workerExit": 1,
+  "reason": "Second ENOTFOUND of Development pooler after one scoped restart; no third HTTP attempt or network changes.",
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2200.9572
+    },
+    {
+      "endpoint": "/activities/center?contextOnly=true",
+      "status": 200,
+      "ms": 2710.3390000000004
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 500,
+      "ms": 107.96600000000035
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 1640.4065000000003
+    },
+    {
+      "endpoint": "/activities/center?contextOnly=true",
+      "status": 200,
+      "ms": 2326.305
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 400,
+      "ms": 6695.313000000001
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8170.629399999998
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7238.763999999999
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4345.424200000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 3169.735200000003
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3773.7509999999966
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 1899.7530000000042
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8342.735700000005
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9742.316099999996
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4962.455900000008
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 3981.5448999999935
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3390.184199999989
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 3282.804900000003
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6877.223099999988
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6427.753799999991
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4250.502800000002
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 2461.7883999999904
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6090.252500000002
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 3421.5756999999867
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6674.479000000007
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6039.856
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5167.368900000001
+    },
+    {
+      "endpoint": "/activities?sectionSubjectId=2b8fb002-3061-4981-8708-0aa0fa8d6c6a",
+      "status": 200,
+      "ms": 3315.045499999993
+    },
+    {
+      "endpoint": "/activities",
+      "status": 500,
+      "ms": 47.583700000002864
+    }
+  ],
+  "coverage": "THREE_COMPLETE_HTTP_DB_SAMPLES_FOUR_PERSISTED_FORMATS_NOT_ALL_49",
+  "verifiedFormats": [
+    "rubrica",
+    "lista-cotejo",
+    "escala"
+  ],
+  "savedFormats": [
+    "rubrica",
+    "lista-cotejo",
+    "escala",
+    "lista-ponderada"
+  ],
+  "limits": [
+    "DosHTTP500 asociados a ENOTFOUND y terminación del Worker local; un único reinicio acotado, sin tercer intento.",
+    "Cuarta muestra ponderada creada y reabierta antes del fallo de actualización de estrategia; huella original exacta en DB, estrategia todavía null.",
+    "Solo20puntos en las cuatro muestras HTTP;17.35 se verifica localmente y en el borrador visual, aún no en persistencia de MF053.",
+    "Conservar los cuatroIDs y el progreso;46muestras de49 no han completado el recorrido.",
+    "No atribuir esta comprobación parcial a otras asignaturas o grados."
+  ]
+}

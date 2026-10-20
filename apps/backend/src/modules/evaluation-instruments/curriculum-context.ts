@@ -34,9 +34,16 @@ const generalSubjects: Record<string, string> = {
   LEN: 'Lengua Española', MAT: 'Matemática', SOC: 'Ciencias Sociales', NAT: 'Ciencias de la Naturaleza',
   ART: 'Educación Artística', EFI: 'Educación Física', FHR: 'Formación Integral Humana y Religiosa',
 }
+/** IFC006_3 PDF14–19; no other technical module has been reviewed yet. */
+export const reviewedTechnicalSubject = {code:'MF_053_3',programCode:'IFC006_3',name:'Análisis y Diseño de Sistemas Informáticos',grade:4,cycle:2,modalityCode:'technical_professional'} as const
+export function isReviewedTechnicalContext(context:AcademicContext) {
+  return context.level==='SECONDARY' && context.grade===reviewedTechnicalSubject.grade && context.cycle===reviewedTechnicalSubject.cycle
+    && context.subjectCode.trim().toUpperCase()===reviewedTechnicalSubject.code && context.modalityCode===reviewedTechnicalSubject.modalityCode && !context.optativeExitName
+}
 /** Audited code adapter. Source spelling is never modified in the curricular dataset. */
 function identity(context: AcademicContext) {
   const code = context.subjectCode.trim().toUpperCase()
+  if(code===reviewedTechnicalSubject.code)return {name:reviewedTechnicalSubject.name,exit:null,valid:isReviewedTechnicalContext(context),source:'REVIEWED_TECHNICAL_MODULE_CODE'}
   const opt = /^OPT-(HLM|HCS|MT|CT)(?:-(LEN|ING|SOC))?-([456])$/.exec(code)
   if (opt) {
     const exit = optativeExits[opt[1] as keyof typeof optativeExits]
@@ -67,11 +74,13 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
   const commonComponent = context.level === 'SECONDARY' && context.cycle === 2 && context.grade >= 4 && context.grade <= 6
     && ['technical_professional', 'arts'].includes(context.modalityCode ?? '')
     && key.source === 'STRUCTURED_SUBJECT_CODE' && !key.exit
-  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode) && !commonComponent) {
+  const technicalComponent=key.source==='REVIEWED_TECHNICAL_MODULE_CODE'
+  if (context.modalityCode && !['academic', 'general'].includes(context.modalityCode) && !commonComponent && !technicalComponent) {
     return { status: 'UNSUPPORTED_MODALITY', scope: null, candidates: [], reason: 'No se ha importado el currículo de esa modalidad.' }
   }
   const candidates = scopes.filter(scope => scope.grade === context.grade && scope.cycle === context.cycle
     && normalize(scope.subjectName ?? '') === normalize(key.name!)
+    && (!technicalComponent || normalize(scope.modalityName??'')==='tecnico profesional' && !scope.optativeExitName)
     && (!key.exit || scope.optativeExitName === key.exit))
   // A generic common subject stays common, even when an exit is configured on its section.
   const filtered = key.source === 'STRUCTURED_SUBJECT_CODE' && !key.exit ? candidates.filter(scope => !scope.optativeExitName) : candidates
@@ -85,6 +94,7 @@ export function resolveScope(context: AcademicContext, scopes: ScopeCandidate[],
     : commonComponent ? 'COMMON_ACADEMIC_COMPONENT' : key.source }
 }
 export function discipline(scope: ScopeCandidate | null, context: AcademicContext | null) {
+  if (context && isReviewedTechnicalContext(context)) return 'technical'
   const code = context?.subjectCode.trim().toUpperCase().replace(/^PRI-/, '') ?? ''
   if (/^(SOC|OPT-HCS-SOC)(?:-|$)/.test(code)) return 'social'
   if (/^(NAT|OPT-CT)(?:-|$)/.test(code)) return 'science'

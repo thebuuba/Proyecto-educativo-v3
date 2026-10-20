@@ -4,6 +4,7 @@ import {resolveCommonPhysicalTask,commonPhysicalSelections} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrSelections} from '@aula/shared'
 import { resolveCommonArtTask, commonArtSelections } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialSelections} from '@aula/shared'
+import {resolveTechnicalTask,technicalSelections} from '@aula/shared'
 import {resolveOptativeScienceTask,optativeScienceSelections} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
@@ -13,7 +14,7 @@ import { BadRequestException, ForbiddenException, HttpException, Injectable, Log
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogCurrent } from './catalog-current'
-import { academicContext, resolveScope, type AcademicContext } from './curriculum-context'
+import { academicContext, resolveScope, reviewedTechnicalSubject, isReviewedTechnicalContext, type AcademicContext } from './curriculum-context'
 import { assertValidRecommendation, detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions,resolveOptativeEnglishTask} from '@aula/shared'
@@ -29,6 +30,7 @@ export class EvaluationInstrumentsService {
     const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
     const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',resolved.context)
     const mathTask=resolveCommonMathTask(input.activityTitle,input.description??'',resolved.context)
+    const technical=resolveTechnicalTask(input.activityTitle,input.description??'',resolved.context)
     const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',resolved.context)
     const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',resolved.context)
     const englishTask=resolveOptativeEnglishTask(input.activityTitle,input.description??'',resolved.context)??resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
@@ -38,10 +40,10 @@ export class EvaluationInstrumentsService {
     const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',resolved.context)
     const fhrTask=resolveCommonFhrTask(input.activityTitle,input.description??'',resolved.context)
     const artTask = resolveCommonArtTask(input.activityTitle, input.description ?? '', resolved.context)
-    const scopedType = optativeScience?.activityType ?? optativeMath?.activityType ?? socialOptative?.activityType ?? optativeTask?.activityType ?? fhrTask?.activityType ?? physicalTask?.activityType ?? artTask?.activityType ?? socialTask?.activityType??commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const scopedType = technical?.activityType ?? optativeScience?.activityType ?? optativeMath?.activityType ?? socialOptative?.activityType ?? optativeTask?.activityType ?? fhrTask?.activityType ?? physicalTask?.activityType ?? artTask?.activityType ?? socialTask?.activityType??commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false, input.evaluationTechnique)
-    const selections = optativeScience ? optativeScienceSelections(optativeScience,input.description??'') : optativeMath ? optativeMathSelections(optativeMath,input.description??'') : socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
+    const selections = technical ? technicalSelections(technical,input.description??'') : optativeScience ? optativeScienceSelections(optativeScience,input.description??'') : optativeMath ? optativeMathSelections(optativeMath,input.description??'') : socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)
@@ -191,6 +193,14 @@ export class EvaluationInstrumentsService {
 export function versionAllowsContext(version: { importMetadata?: unknown }, context: AcademicContext) {
   const metadata = version.importMetadata && typeof version.importMetadata === 'object' && !Array.isArray(version.importMetadata)
     ? version.importMetadata as Record<string, unknown> : {}
+  // A historical complete academic catalog cannot capture a specialist module.
+  if(context.subjectCode.trim().toUpperCase()===reviewedTechnicalSubject.code || metadata.technicalModuleCode===reviewedTechnicalSubject.code) {
+    return isReviewedTechnicalContext(context) && metadata.technicalModuleCode===reviewedTechnicalSubject.code
+      && metadata.technicalProgramCode===reviewedTechnicalSubject.programCode && metadata.commonOnly===false
+      && Array.isArray(metadata.modalityCodes) && metadata.modalityCodes.includes(reviewedTechnicalSubject.modalityCode)
+      && Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.includes(reviewedTechnicalSubject.code)
+      && Array.isArray(metadata.grades) && metadata.grades.includes(reviewedTechnicalSubject.grade)
+  }
   if (metadata.commonOnly === true && context.optativeExitName) return false
   if ('grades' in metadata && (!Array.isArray(metadata.grades) || !metadata.grades.includes(context.grade))) return false
   if (!('subjectCodes' in metadata)) return true // Historical complete catalogs retain their policy.

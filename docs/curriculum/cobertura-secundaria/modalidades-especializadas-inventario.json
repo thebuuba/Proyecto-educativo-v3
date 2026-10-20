@@ -5127,7 +5127,7 @@
       "linkedDocuments": 75,
       "programCoversReviewed": 3,
       "gradeAssignmentsVerified": 6,
-      "connectedProviders": 0,
+      "connectedProviders": 1,
       "studyPlanTablesReviewed": 3,
       "programsWithVerifiedSecondaryGrades": 2,
       "programsWithUnresolvedGradeEquivalence": 1,
@@ -5186,10 +5186,10 @@
             "weeklyHours": 6,
             "annualHours": 270,
             "sourcePdfPage": 14,
-            "status": "INVENTORIED_NOT_IMPLEMENTED",
-            "provider": null,
+            "status": "CONNECTED_REVIEWED_RUNTIME_PARTIAL_DNS_BLOCK",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
-              "status": "SOURCE_CONTENT_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+              "status": "SOURCE_TRANSCRIBED_INSTRUMENTS_REVIEWED_RUNTIME_PARTIAL",
               "pdfPages": [
                 15,
                 16,
@@ -5226,15 +5226,18 @@
                 "Las estrategias metodológicas son orientaciones docentes, no entregables automáticos."
               ],
               "literalSourcePendingTranscription": false,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED",
-              "httpDb": "NOT_RUN",
-              "browser": "NOT_RUN",
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "296_FULL_DEFINITIONS_REVIEWED",
+              "httpDb": "PARTIAL_3_OF_49_VERIFIED_4_SAVED",
+              "browser": "PERSONAL_DRAFT_VISUALLY_VERIFIED_SERVER_PERSISTENCE_BLOCKED",
               "literalRecords": 83,
               "literalParts": 85,
               "literalMatrix": "technical-ifc006-mf053-4-matriz.json",
-              "adaptations": "PENDING"
-            }
+              "adaptations": 61
+            },
+            "catalog": "evaluation-2026.142",
+            "httpDb": "PARTIAL_3_OF_49_VERIFIED_4_SAVED",
+            "browser": "PERSONAL_DRAFT_VISUALLY_VERIFIED_SERVER_PERSISTENCE_BLOCKED"
           },
           {
             "id": "IFC006_3-g4-MF_056_3",
@@ -5390,11 +5393,11 @@
             "provider": null
           }
         ],
-        "status": "INVENTORIED_NOT_IMPLEMENTED",
-        "provider": null,
-        "instrumentReview": "NOT_STARTED",
-        "httpDb": "NOT_RUN",
-        "browser": "NOT_RUN",
+        "status": "PARTIALLY_IMPLEMENTED_ONE_MODULE",
+        "provider": "MF_053_3 only",
+        "instrumentReview": "MF053_REVIEWED_OTHER_MODULES_PENDING",
+        "httpDb": "PARTIAL_3_OF_49_VERIFIED_4_SAVED",
+        "browser": "PERSONAL_DRAFT_VISUALLY_VERIFIED_SERVER_PERSISTENCE_BLOCKED",
         "limits": [
           "Los contenidos de módulos comunes e Inglés Técnico requieren su fuente específica; la tabla no basta.",
           "No se atribuye cobertura de la optativa académica Física y Computación a estos módulos laborales."
@@ -5688,8 +5691,15 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "Planificar e implementar el primer conjunto de asignatura/grado con fuente suficiente y registrar instrumentos completos,HTTP/DB y navegador."
+    "Continuar Ofimática MF_002_3 de4.º con las fuentes IFC006/IFC007 contrastadas; MF053 conserva46recorridosHTTP pendientes y persistencia personal bloqueada porDNS."
   ],
   "push": false,
-  "deploy": false
+  "deploy": false,
+  "currentApplication": {
+    "catalog": "evaluation-2026.142",
+    "specializedProvidersAdded": 1,
+    "status": "CONNECTED_REVIEWED_RUNTIME_PARTIAL_DNS_BLOCK",
+    "developmentOnly": true,
+    "report": "docs/superpowers/reports/2026-10-20-tecnico-ifc-mf053-4.md"
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "catalog": "evaluation-2026.142",
+  "baseline": "evaluation-2026.141",
+  "newFullDefinitionsExact": 296,
+  "previousOptativeFullDefinitionsExact": 14488,
+  "previousOptatives": 18,
+  "englishFullDefinitionsExact": 15176,
+  "mathFullDefinitionsExact": 2888,
+  "commonScopesExact": [
+    "Sociales1–6",
+    "Artística1–6",
+    "Educación Física1–6",
+    "FHR1–6"
+  ],
+  "priorPersonalBaselinesPreserved": 13,
+  "newPersonalBaselines": 0,
+  "preservedReleases": 74,
+  "preservedSnapshots": 981,
+  "currentReleases": 75,
+  "currentSnapshots": 985,
+  "historicalSnapshotsChanged": false,
+  "historicalArtifactDifferencesAlreadyPresentIn141": 36,
+  "limits": [
+    "Comparación de definiciones e históricos; no recorridos visuales nuevos de ámbitos previos.",
+    "MT6/CT4 y recorridos personales anteriores mantienen sus pendientes."
+  ]
+}

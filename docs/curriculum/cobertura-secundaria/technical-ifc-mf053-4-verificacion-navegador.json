@@ -1,0 +1,37 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.142",
+  "status": "PERSONAL_DRAFT_VISUALLY_VERIFIED_SERVER_PERSISTENCE_BLOCKED",
+  "browser": "Chrome",
+  "session": "PERSONAL_DEVELOPMENT",
+  "entryAsset": "/assets/index-B07SDNje.js",
+  "course": "4.º Técnico Profesional QA MF053 Development",
+  "module": "MF_053_3",
+  "emptyFormControlsVisible": true,
+  "automaticStrategy": "CASE_STUDY",
+  "formatsVisible": [
+    "rubrica",
+    "lista-cotejo",
+    "escala",
+    "lista-ponderada"
+  ],
+  "pendingScoreInitiallyEmpty": true,
+  "exactScoreTransitions": [
+    17.35,
+    20,
+    17.35
+  ],
+  "manualTextPreserved": true,
+  "strategyOnlyDraftFieldsExactlyPreserved": 13,
+  "strategyTransition": "CASE_STUDY AUTO → PROBLEM_BASED MANUAL → CASE_STUDY AUTO",
+  "serverSaveAndReopen": false,
+  "newPersonalBaseline": false,
+  "draftPreserved": true,
+  "reason": "El Worker terminó por ENOTFOUND del pooler de Development; no se intentó guardar un borrador personal con el servidor caído.",
+  "limits": [
+    "El recorrido comenzó con el servidor activo y continuó con la alternativa local tras su caída; no se atribuyen los cuatro formatos visuales a respuestas del servidor.",
+    "Se verificó conservación exacta en DOM, no persistencia personal en DB.",
+    "No se borraron caché, service worker ni almacenamiento. Registro y caché internos del navegador no inspeccionados; asset DOM coincide con build.",
+    "Reanudar este mismo borrador, no crear una actividad personal duplicada."
+  ]
+}

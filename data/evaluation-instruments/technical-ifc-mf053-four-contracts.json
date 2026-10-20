@@ -1,0 +1,892 @@
+{
+  "subjectCode": "MF_053_3",
+  "subjectName": "Análisis y Diseño de Sistemas Informáticos",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "modalityCode": "technical_professional",
+  "cases": [
+    {
+      "id": "structure",
+      "description": "Identifica la estructura organizacional y las dependencias de la empresa ficticia a partir de la ficha dada.",
+      "topics": [
+        "organization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.2",
+        "ifc006-mf053-c-organization",
+        "ifc006-mf053-p-organization"
+      ]
+    },
+    {
+      "id": "management",
+      "description": "Clasifica las actividades de la ficha según los niveles directivos a los que corresponden.",
+      "topics": [
+        "management"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.3",
+        "ifc006-mf053-c-management-levels",
+        "ifc006-mf053-p-management"
+      ]
+    },
+    {
+      "id": "analyst",
+      "description": "Describe las funciones del analista de sistemas en el caso proporcionado.",
+      "topics": [
+        "analyst"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-analyst"
+      ]
+    },
+    {
+      "id": "objectives",
+      "description": "Organiza los objetivos de la entidad para el desarrollo del sistema del caso.",
+      "topics": [
+        "objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-objectives",
+        "ifc006-mf053-p-objectives"
+      ]
+    },
+    {
+      "id": "resources",
+      "description": "Analiza la gestión de recursos de la organización ficticia a partir de la ficha dada.",
+      "topics": [
+        "resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-resources"
+      ]
+    },
+    {
+      "id": "processes",
+      "description": "Analiza los procesos productivos de la organización ficticia e identifica su finalidad.",
+      "topics": [
+        "processes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.1",
+        "ifc006-mf053-CE1.1.3",
+        "ifc006-mf053-c-process-management",
+        "ifc006-mf053-p-organization"
+      ]
+    },
+    {
+      "id": "process-measurement",
+      "description": "Analiza los indicadores de procesos y propone una mejora de los procesos a partir de los datos proporcionados.",
+      "topics": [
+        "process-measurement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.1",
+        "ifc006-mf053-c-process-measurement"
+      ]
+    },
+    {
+      "id": "systems",
+      "description": "Clasifica los tipos de sistemas de información presentes en los casos proporcionados.",
+      "topics": [
+        "systems"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-systems",
+        "ifc006-mf053-p-system-types"
+      ]
+    },
+    {
+      "id": "users",
+      "description": "Identifica los usuarios internos y externos del sistema ficticio.",
+      "topics": [
+        "users"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-users",
+        "ifc006-mf053-p-users"
+      ]
+    },
+    {
+      "id": "needs",
+      "description": "Interpreta los requerimientos del usuario a partir de los resultados proporcionados del análisis del sistema.",
+      "topics": [
+        "requirements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.1",
+        "ifc006-mf053-c-users",
+        "ifc006-mf053-p-needs",
+        "ifc006-mf053-p-system-analysis"
+      ]
+    },
+    {
+      "id": "feasibility-economic",
+      "description": "Analiza la factibilidad económica del sistema ficticio según los costos y el presupuesto dados.",
+      "topics": [
+        "feasibility-economic"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "feasibility-technical",
+      "description": "Analiza la factibilidad técnica del sistema ficticio según las especificaciones y equipos descritos.",
+      "topics": [
+        "feasibility-technical"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "feasibility-operational",
+      "description": "Analiza la factibilidad operacional del sistema ficticio según las tareas y capacidades descritas.",
+      "topics": [
+        "feasibility-operational"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "feasibility-three",
+      "description": "Analiza la factibilidad económica, técnica y operacional del sistema ficticio.",
+      "topics": [
+        "feasibility-economic",
+        "feasibility-technical",
+        "feasibility-operational"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "feasibility-brief",
+      "description": "Estudio de factibilidad del sistema ficticio.",
+      "topics": [
+        "feasibility"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "classic",
+      "description": "Explica el ciclo de vida clásico para analizar el sistema del caso.",
+      "topics": [
+        "method-classic"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.5",
+        "ifc006-mf053-c-analysis-methods",
+        "ifc006-mf053-p-method-selection"
+      ]
+    },
+    {
+      "id": "structured",
+      "description": "Selecciona el análisis estructurado para el caso y justifica su adecuación a los requisitos dados.",
+      "topics": [
+        "method-structured"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.5",
+        "ifc006-mf053-c-analysis-methods",
+        "ifc006-mf053-p-method-selection"
+      ]
+    },
+    {
+      "id": "prototype",
+      "description": "Describe el método del prototipo a partir del sistema ficticio proporcionado.",
+      "topics": [
+        "method-prototype"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.5",
+        "ifc006-mf053-c-analysis-methods",
+        "ifc006-mf053-p-method-selection"
+      ]
+    },
+    {
+      "id": "oriented-objects",
+      "description": "Explica el modelo orientado a objetos en el análisis del caso dado.",
+      "topics": [
+        "method-objects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-analysis-methods",
+        "ifc006-mf053-p-method-selection"
+      ]
+    },
+    {
+      "id": "method-choice",
+      "description": "Selecciona un método de análisis para el sistema ficticio atendiendo a sus requisitos.",
+      "topics": [
+        "method-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.5",
+        "ifc006-mf053-c-analysis-methods",
+        "ifc006-mf053-p-method-selection"
+      ]
+    },
+    {
+      "id": "sources",
+      "description": "Identifica las fuentes internas y externas de información relevantes para el sistema del caso.",
+      "topics": [
+        "sources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-information-sources",
+        "ifc006-mf053-p-sources"
+      ]
+    },
+    {
+      "id": "sampling",
+      "description": "Selecciona una muestra de datos e identifica las variables que afectan al sistema del caso.",
+      "topics": [
+        "sampling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-sampling"
+      ]
+    },
+    {
+      "id": "interview-description",
+      "description": "Describe la entrevista como técnica para recopilar los datos requeridos por el sistema.",
+      "topics": [
+        "interview"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-interview"
+      ]
+    },
+    {
+      "id": "interview-design",
+      "description": "Diseña una entrevista para conocer los requisitos del usuario ficticio.",
+      "topics": [
+        "interview"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-interview"
+      ]
+    },
+    {
+      "id": "interview-application",
+      "description": "Aplica una entrevista simulada al usuario ficticio del sistema y registra las respuestas.",
+      "topics": [
+        "interview"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-interview"
+      ]
+    },
+    {
+      "id": "questionnaire-description",
+      "description": "Describe el cuestionario propuesto para obtener información del usuario ficticio.",
+      "topics": [
+        "questionnaire"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-questionnaire"
+      ]
+    },
+    {
+      "id": "questionnaire-design",
+      "description": "Diseña un cuestionario para recopilar los datos que requiere el sistema ficticio.",
+      "topics": [
+        "questionnaire"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-questionnaire"
+      ]
+    },
+    {
+      "id": "questionnaire-application",
+      "description": "Aplica un cuestionario en el caso simulado del sistema de inventario.",
+      "topics": [
+        "questionnaire"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-questionnaire"
+      ]
+    },
+    {
+      "id": "observation-design",
+      "description": "Diseña una observación directa del proceso simulado para identificar los datos necesarios.",
+      "topics": [
+        "observation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-observation"
+      ]
+    },
+    {
+      "id": "observation-application",
+      "description": "Aplica la observación directa al proceso simulado del caso.",
+      "topics": [
+        "observation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-observation"
+      ]
+    },
+    {
+      "id": "document-review",
+      "description": "Realiza una revisión de documentos proporcionados para extraer los datos requeridos por el sistema.",
+      "topics": [
+        "document-review"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-document-review"
+      ]
+    },
+    {
+      "id": "collection-selection",
+      "description": "Selecciona la técnica de recopilación de datos adecuada al usuario y al sistema ficticio.",
+      "topics": [
+        "collection-techniques"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-c-collection-techniques"
+      ]
+    },
+    {
+      "id": "data-types",
+      "description": "Clasifica los valores del caso según los tipos de datos solicitados: fechas, valores lógicos, numéricos y textos.",
+      "topics": [
+        "data-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.2.3",
+        "ifc006-mf053-c-data-algorithm",
+        "ifc006-mf053-p-data-types"
+      ]
+    },
+    {
+      "id": "tabulation",
+      "description": "Tabula los datos de entradas, procesos y salidas proporcionados para el sistema ficticio.",
+      "topics": [
+        "tabulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.2.4",
+        "ifc006-mf053-p-tabulation"
+      ]
+    },
+    {
+      "id": "algorithm-elements",
+      "description": "Identifica los elementos del algoritmo computacional proporcionado.",
+      "topics": [
+        "algorithm-elements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.2",
+        "ifc006-mf053-c-data-algorithm",
+        "ifc006-mf053-p-algorithm-elements"
+      ]
+    },
+    {
+      "id": "algorithm-phases",
+      "description": "Enumera las fases del algoritmo proporcionado para resolver el caso.",
+      "topics": [
+        "algorithm-phases"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.2",
+        "ifc006-mf053-c-data-algorithm",
+        "ifc006-mf053-p-algorithm-phases"
+      ]
+    },
+    {
+      "id": "operators",
+      "description": "Explica los operadores lógicos y su utilidad en las expresiones proporcionadas.",
+      "topics": [
+        "operators"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.3",
+        "ifc006-mf053-c-data-algorithm",
+        "ifc006-mf053-p-operators"
+      ]
+    },
+    {
+      "id": "symbols",
+      "description": "Identifica los tipos de símbolos utilizados en el diagrama proporcionado.",
+      "topics": [
+        "symbols"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-symbols"
+      ]
+    },
+    {
+      "id": "instructions",
+      "description": "Identifica los tipos de instrucciones del algoritmo proporcionado.",
+      "topics": [
+        "instructions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-instructions"
+      ]
+    },
+    {
+      "id": "expressions",
+      "description": "Utiliza expresiones lógicas para resolver las decisiones del sistema ficticio.",
+      "topics": [
+        "expressions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-expressions"
+      ]
+    },
+    {
+      "id": "file-hierarchy",
+      "description": "Representa la jerarquización de archivos del sistema ficticio.",
+      "topics": [
+        "file-hierarchy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-file-hierarchy"
+      ]
+    },
+    {
+      "id": "records",
+      "description": "Identifica los campos de los registros del archivo ficticio.",
+      "topics": [
+        "records"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-records"
+      ]
+    },
+    {
+      "id": "file-diagram",
+      "description": "Elabora un diagrama de archivos para el sistema ficticio descrito.",
+      "topics": [
+        "file-diagram"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-p-file-diagrams",
+        "ifc006-mf053-c-files-arrays"
+      ]
+    },
+    {
+      "id": "reports",
+      "description": "Genera reportes del sistema ficticio a partir de los datos proporcionados.",
+      "topics": [
+        "reports"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.1",
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-p-reports"
+      ]
+    },
+    {
+      "id": "sequences",
+      "description": "Verifica las secuencias del algoritmo proporcionado con las entradas del caso.",
+      "topics": [
+        "sequences"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-p-sequences"
+      ]
+    },
+    {
+      "id": "debugging",
+      "description": "Depura los registros del archivo ficticio siguiendo las reglas de validación indicadas.",
+      "topics": [
+        "debug-records"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-p-debug-records"
+      ]
+    },
+    {
+      "id": "arrays",
+      "description": "Utiliza un arreglo unidimensional para organizar los datos proporcionados.",
+      "topics": [
+        "arrays"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-arrays"
+      ]
+    },
+    {
+      "id": "vectors",
+      "description": "Describe un vector computacional mediante sus posiciones y valores en el ejemplo dado.",
+      "topics": [
+        "vectors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-vectors"
+      ]
+    },
+    {
+      "id": "array-types",
+      "description": "Identifica los tipos de arreglos del modelo proporcionado.",
+      "topics": [
+        "array-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-array-types"
+      ]
+    },
+    {
+      "id": "characteristics",
+      "description": "Identifica las características del sistema que responde a la organización ficticia.",
+      "topics": [
+        "characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-p-characteristics"
+      ]
+    },
+    {
+      "id": "classes",
+      "description": "Reconoce las clases del modelo de objetos proporcionado.",
+      "topics": [
+        "classes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays"
+      ]
+    },
+    {
+      "id": "objects",
+      "description": "Identifica los objetos del sistema en el modelo proporcionado.",
+      "topics": [
+        "objects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-analysis-methods"
+      ]
+    },
+    {
+      "id": "decision-tree",
+      "description": "Elabora el árbol de decisión para las reglas del sistema ficticio.",
+      "topics": [
+        "decision-tree"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-p-decision-tree"
+      ]
+    },
+    {
+      "id": "decision-table",
+      "description": "Elabora la tabla de decisión para las reglas del sistema ficticio.",
+      "topics": [
+        "decision-table"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-p-decision-table"
+      ]
+    },
+    {
+      "id": "use-case",
+      "description": "Dibuja el diagrama de casos de uso para el sistema ficticio.",
+      "topics": [
+        "diagram-use-case"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "class-diagram",
+      "description": "Elabora el diagrama de clases para el sistema ficticio.",
+      "topics": [
+        "diagram-class"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-class-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "behavior-diagram",
+      "description": "Representa un diagrama de comportamiento para el caso proporcionado.",
+      "topics": [
+        "diagram-behavior"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams"
+      ]
+    },
+    {
+      "id": "object-diagram",
+      "description": "Dibuja un diagrama de objetos del sistema ficticio.",
+      "topics": [
+        "diagram-object"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "interaction-diagram",
+      "description": "Elabora un diagrama de interacción para el caso proporcionado.",
+      "topics": [
+        "diagram-interaction"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams"
+      ]
+    },
+    {
+      "id": "process-diagram",
+      "description": "Elabora un diagrama de procesos del sistema ficticio.",
+      "topics": [
+        "diagram-process"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "flow-diagram",
+      "description": "Elabora un diagrama de flujo del algoritmo descrito.",
+      "topics": [
+        "diagram-flow"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "distribution-diagram",
+      "description": "Representa el diagrama de distribución de los componentes del sistema ficticio.",
+      "topics": [
+        "diagram-distribution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-c-diagrams",
+        "ifc006-mf053-p-diagrams"
+      ]
+    },
+    {
+      "id": "diagram-selection",
+      "description": "Selecciona los diagramas adecuados a los requerimientos del usuario ficticio.",
+      "topics": [
+        "diagram-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.4",
+        "ifc006-mf053-c-diagrams"
+      ]
+    },
+    {
+      "id": "interface",
+      "description": "Diseña una interfaz gráfica para el sistema ficticio. No programes ni despliegues la aplicación.",
+      "topics": [
+        "interface"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.6",
+        "ifc006-mf053-CE1.3.5"
+      ]
+    },
+    {
+      "id": "inputs",
+      "description": "Diseña las entradas del sistema ficticio según los requisitos proporcionados.",
+      "topics": [
+        "inputs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.6"
+      ]
+    },
+    {
+      "id": "outputs",
+      "description": "Diseña las salidas del sistema ficticio según los requisitos proporcionados.",
+      "topics": [
+        "outputs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.6"
+      ]
+    },
+    {
+      "id": "database",
+      "description": "Representa la estructura básica de la base de datos del sistema ficticio.",
+      "topics": [
+        "database"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.6"
+      ]
+    },
+    {
+      "id": "design-three",
+      "description": "Diseña la interfaz gráfica, las entradas del sistema y las salidas del sistema del caso ficticio.",
+      "topics": [
+        "interface",
+        "inputs",
+        "outputs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-CE1.3.6"
+      ]
+    },
+    {
+      "id": "alternative",
+      "description": "Diseña una entrevista o elabora un cuestionario para el usuario ficticio del sistema.",
+      "topics": [
+        "interview",
+        "questionnaire"
+      ],
+      "alternative": true,
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.6",
+        "ifc006-mf053-CE1.2.1",
+        "ifc006-mf053-CE1.2.2",
+        "ifc006-mf053-c-collection-techniques",
+        "ifc006-mf053-p-interview",
+        "ifc006-mf053-p-questionnaire"
+      ]
+    },
+    {
+      "id": "optional",
+      "description": "Diseña una interfaz gráfica del sistema. Opcionalmente puedes consultar un diagrama de clases. No programes la aplicación.",
+      "topics": [
+        "interface"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-CE1.3.6"
+      ]
+    },
+    {
+      "id": "report-only",
+      "description": "Redacta un informe sobre la factibilidad técnica del sistema ficticio.",
+      "topics": [
+        "feasibility-technical"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.1.4",
+        "ifc006-mf053-c-feasibility",
+        "ifc006-mf053-p-feasibility"
+      ]
+    },
+    {
+      "id": "manual-file-frequency",
+      "description": "Identifica los campos de los registros del archivo de frecuencias proporcionado.",
+      "topics": [
+        "records"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-p-records"
+      ]
+    },
+    {
+      "id": "alternative-shared-verb",
+      "description": "Elabora un árbol de decisión o una tabla de decisión con las reglas proporcionadas.",
+      "topics": [
+        "decision-tree",
+        "decision-table"
+      ],
+      "alternative": true,
+      "sourceRecordIds": [
+        "ifc006-mf053-p-decision-tree",
+        "ifc006-mf053-p-decision-table"
+      ]
+    },
+    {
+      "id": "classes-objects",
+      "description": "Identifica las clases y objetos del modelo proporcionado.",
+      "topics": [
+        "classes",
+        "objects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf053-CE1.3.5",
+        "ifc006-mf053-c-files-arrays",
+        "ifc006-mf053-c-analysis-methods"
+      ]
+    }
+  ]
+}
