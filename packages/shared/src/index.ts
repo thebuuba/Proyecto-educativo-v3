@@ -271,6 +271,7 @@ export type { TeachingStrategy, TeachingStrategyOrigin, TeachingStrategyContext 
 export * from './secondary-french'
 export * from './secondary-math-common'
 export * from './secondary-science-common'
+export * from './secondary-optative-science'
 export {socialGradeTwoTopics} from './secondary-social-grade-2'
 export {socialGradeThreeTopics} from './secondary-social-grade-3'
 export {socialGradeFourTopics} from './secondary-social-grade-4'

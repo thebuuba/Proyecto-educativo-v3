@@ -1,0 +1,5809 @@
+{
+  "subjectCode": "OPT-CT-4",
+  "subjectName": "Biología y Computación",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Ciencias y Tecnología",
+  "coverageStatus": "CONNECTED_CONTRACTS_GREEN_FULL_REVIEW_AND_RUNTIME_PENDING",
+  "cases": [
+    {
+      "id": "health-report",
+      "description": "Elabora un informe de la fisiología humana usando el caso ficticio y las fuentes proporcionadas. Explica las relaciones solicitadas con lenguaje científico.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f498561f-b283-52e8-99cf-abf879875652"
+      ],
+      "requiredEvidence": [
+        "report"
+      ],
+      "forbiddenEvidence": [],
+      "requiredTopic": "disease-groups"
+    },
+    {
+      "id": "health-results-oral",
+      "description": "Presenta oralmente los resultados de la investigación de salud ya realizada que se proporciona y discute qué respaldan sus evidencias.",
+      "activityType": "ORAL_PRESENTATION",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "756d5ccf-9800-5953-8743-6dfb8d441ee6"
+      ],
+      "requiredEvidence": [
+        "oral",
+        "analysis"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "disease-evidence-debate",
+      "description": "Debate las explicaciones de la enfermedad del caso ficticio comparando las evidencias y las categorías del extracto de clasificación proporcionado. No diagnostiques a ninguna persona ni propongas tratamientos propios.",
+      "activityType": "DEBATE",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "15e886bf-73b7-5831-95c9-9828c9216926"
+      ],
+      "requiredEvidence": [
+        "argument"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "balanced-diet-design",
+      "description": "Diseña un ejemplo ficticio de dieta equilibrada bajo las referencias y condiciones proporcionadas y explica las relaciones con los mecanismos nervioso y endocrino del modelo dado.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "337fad94-0d4d-5217-94a6-dc394c8d4961"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": [],
+      "requiredText": [
+        "nervioso",
+        "endocrino"
+      ]
+    },
+    {
+      "id": "genetics-neurobiology-problem",
+      "description": "Resuelve el problema simulado de neurobiología usando las relaciones de genética, selección natural y ecosistema indicadas en el modelo y los datos proporcionados.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "1c607c65-facf-5ec3-9b09-abdd05025eef"
+      ],
+      "requiredEvidence": [
+        "problem-reasoning"
+      ],
+      "forbiddenEvidence": [],
+      "requiredTopic": "biological-reasoning",
+      "forbiddenText": [
+        "algoritmo",
+        "programa solicitado"
+      ]
+    },
+    {
+      "id": "blood-report",
+      "description": "Interpreta el hemograma ficticio comparando los datos con las unidades y los rangos de referencia de la ficha proporcionada. No establezcas un diagnóstico ni uses análisis médicos personales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "c08cd07d-e307-5572-8dd6-c6ee78bbd58a"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "measurement",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "physiology-simulation",
+      "description": "Simula el sistema de fisiología humana descrito usando la herramienta y los parámetros proporcionados; registra sus resultados sin atribuir al modelo certeza clínica.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "dd1e5f16-1388-537a-adb3-e48571c94b01"
+      ],
+      "requiredEvidence": [
+        "simulation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "health-experiment-plan",
+      "description": "Diseña un modelo educativo del experimento de fisiología humana del caso ficticio y justifica las variables y los controles pedidos. No ejecutes procedimientos clínicos reales.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "79ce5e70-1f17-5409-a369-e4346d12d3ca"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "health-proposal",
+      "description": "Elabora una propuesta de salud para el caso comunitario ficticio relacionando las medidas indicadas con la evidencia dada y delimitando sus alcances. No ejecutes una intervención.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "372bbd59-3668-56f9-8293-f1d9e0bff050"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "organ-prototype",
+      "description": "Construye una maqueta del órgano indicado con los materiales educativos disponibles y usa los datos cualitativos y cuantitativos proporcionados para explicar el mecanismo de funcionamiento solicitado.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6ed1a452-ebdb-5231-9d1a-89412f94481b"
+      ],
+      "requiredEvidence": [
+        "representation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "health-risk-identification",
+      "description": "Identifica los riesgos y las precauciones de los equipos, materiales e higiene del escenario de salud ficticio proporcionado.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5001a6dc-477d-5c89-ac45-779d59469166"
+      ],
+      "requiredEvidence": [
+        "identification"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "experiment-precaution-plan",
+      "description": "Diseña el plan del experimento biológico simulado e identifica las precauciones de la ficha dada para evitar daños a personas, animales y ambiente. No manipules seres vivos ni sustancias.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "8c50a680-1bea-5d18-bd64-f8cb11a7753b"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "health-group-plan",
+      "description": "En equipo, elabora el plan del proyecto educativo de salud del caso ficticio y registra tu aportación verificable al reparto de acciones del trabajo compartido.",
+      "activityType": "PROJECT",
+      "participationMode": "GROUP",
+      "sourceRecordIds": [
+        "968c0188-b01d-5548-ac65-8748f9a3b305"
+      ],
+      "requiredEvidence": [
+        "contribution"
+      ],
+      "forbiddenEvidence": [
+        "observation"
+      ]
+    },
+    {
+      "id": "career-case-analysis",
+      "description": "Analiza el plan profesional ficticio y la entrevista a un profesional de biología proporcionados e identifica las relaciones entre las acciones y las metas del caso. No reveles proyectos ni datos personales.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ee89cebd-8f9f-505e-9e47-c68f1ecbffee"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "given-health-project-presentation",
+      "description": "Presenta oralmente el proyecto de salud ya realizado que se proporciona en el idioma elegido y explica sus evidencias y límites. No realices otra investigación.",
+      "activityType": "ORAL_PRESENTATION",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "714aea9f-f538-5f37-b0a4-8ff7b5acd3aa"
+      ],
+      "requiredEvidence": [
+        "oral"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "biological-model-prediction",
+      "description": "Modela el sistema biológico sencillo del caso dado y predice su comportamiento bajo los parámetros proporcionados, indicando los límites del modelo.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "be319a65-c25a-554f-be0b-589e380a1d2b"
+      ],
+      "requiredEvidence": [
+        "model",
+        "prediction"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "genomics-or-proteomics",
+      "description": "Analiza y representa los datos genómicos o analiza y representa los datos proteómicos proporcionados, según la alternativa elegida.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7d3bed3-3d36-5780-bfc0-e3395ecf36b2"
+      ],
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "forbiddenEvidence": [
+        "analysis",
+        "representation",
+        "data-interpretation"
+      ],
+      "expectedCriteria": 1,
+      "requiredText": [
+        "datos genómicos",
+        "datos proteómicos"
+      ]
+    },
+    {
+      "id": "biological-classification-algorithm",
+      "description": "Aplica el algoritmo de aprendizaje automático proporcionado para clasificar el dataset biológico ficticio y contrasta sus salidas con las etiquetas de referencia dadas. No entrenes otro modelo ni uses datos personales.",
+      "activityType": "EXERCISE_SET",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6bed8ebc-48e6-5996-b2b0-ff51a10b015d"
+      ],
+      "requiredEvidence": [
+        "algorithm-application"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "biological-simulation",
+      "description": "Simula el sistema biológico con la herramienta disponible y los parámetros dados; compara los resultados con el comportamiento de referencia proporcionado.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "c61ac424-87ce-51aa-80fa-21ee7c619953"
+      ],
+      "requiredEvidence": [
+        "simulation",
+        "comparison"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "structural-bioinformatics-explanation",
+      "description": "Explica la bioinformática estructural del modelo molecular proporcionado. No añadas análisis de redes ni otra simulación.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5cba000a-8505-592a-8ff7-68d7ef06d610"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "computational-ethics-case",
+      "description": "Analiza el caso ficticio de investigación en biología computacional y justifica las decisiones de procedencia, privacidad y límites de los datos bajo las reglas dadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "7ebdd994-619e-5480-8a09-6eef9d306525"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "medical-biotech-application",
+      "description": "Explica la aplicación de la biología computacional a la biotecnología médica descrita en las fuentes proporcionadas, distinguiendo el resultado del modelo de una eficacia clínica demostrada.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "c675aee4-ca88-5fdd-a344-53bf0725a992"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "sequence-function-prediction",
+      "description": "Analiza las secuencias de ADN y proteínas proporcionadas y formula una predicción limitada de función usando la evidencia y los resultados del software dados. No afirmes identidad de función solo por similitud.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "eba25d88-73ea-5d87-84dd-6c2c2166c223"
+      ],
+      "requiredEvidence": [
+        "prediction"
+      ],
+      "forbiddenEvidence": [],
+      "requiredText": [
+        "ADN",
+        "proteínas"
+      ]
+    },
+    {
+      "id": "biological-database-query",
+      "description": "Diseña la consulta de la base de datos biológica ficticia proporcionada y explica qué registros responden a la pregunta dada. No solicites acceso a bases controladas ni cargues datos de estudiantes.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ab25d020-e1c4-50ff-9333-f28d490a8c61"
+      ],
+      "requiredEvidence": [
+        "query-design"
+      ],
+      "forbiddenEvidence": [
+        "observation",
+        "research"
+      ]
+    },
+    {
+      "id": "environmental-model-simulation",
+      "description": "Simula el sistema ambiental del modelo dado usando las condiciones y los parámetros proporcionados; interpreta sus resultados y limitaciones.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "a87f7496-9c61-5bd0-8f31-1498d818ec57"
+      ],
+      "requiredEvidence": [
+        "simulation",
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "sensor-reading",
+      "description": "Interpreta los registros del sensor ambiental proporcionados con sus unidades, referencias y condiciones de medición dadas. No instales sensores ni recojas otras mediciones.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "9daff3f9-bff4-59fd-bbf6-a2057634f1a5"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "measurement",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "gis-thematic-map",
+      "description": "Elabora el mapa temático del SIG con las capas y referencias proporcionadas e identifica las áreas críticas según el criterio del caso dado.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "8af8a271-6343-5242-9593-ae55182eb797"
+      ],
+      "requiredEvidence": [
+        "map"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "environmental-data-analysis",
+      "description": "Analiza el dataset ambiental proporcionado usando la herramienta disponible e identifica los patrones respaldados por sus datos. No recolectes otra muestra.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f67f3bac-90e2-5ff6-a15f-d241dad7fcd8"
+      ],
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "measurement",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ]
+    },
+    {
+      "id": "environmental-privacy-case",
+      "description": "Analiza los impactos de privacidad de la tecnología ambiental del caso ficticio y justifica las medidas indicadas sobre ubicación y acceso a los datos.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "96a9683d-3a27-5ddd-aed3-5505101aa635"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "emerging-environmental-prototype",
+      "description": "Diseña un prototipo educativo de la tecnología ambiental del caso ficticio y explica sus entradas, salidas y límites. No despliegues dispositivos ni servicios.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fe45e11d-1257-55d1-91f6-a4246a26ce60"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "green-technology-plan",
+      "description": "Elabora un plan de sostenibilidad y tecnología verde para el caso ficticio usando los recursos y restricciones dados y justifica sus decisiones con la evidencia proporcionada.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3bfdd241-fb59-5bad-afa9-48294b1b2bd2"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "environmental-group-contribution",
+      "description": "En equipo, elabora el modelo del proyecto ambiental computacional dado y documenta una aportación técnica identificable al trabajo compartido.",
+      "activityType": "PROJECT",
+      "participationMode": "GROUP",
+      "sourceRecordIds": [
+        "6eac9499-599e-5e38-b655-5854baf05e0f"
+      ],
+      "requiredEvidence": [
+        "contribution"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "environmental-computing-concept",
+      "description": "Explica los conceptos y la tecnología del modelo de medioambiente computacional proporcionado, sin elaborar otro proyecto.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "72f5b806-0581-5621-b663-b5301e0f7205"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "environmental-technology-discussion",
+      "description": "Debate el papel de la tecnología del caso ambiental dado usando las evidencias proporcionadas y contrasta sus límites, sin exigir acuerdo con una postura.",
+      "activityType": "DEBATE",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "cacbcf6f-c6f2-58bb-97ec-5dcfc60067e5"
+      ],
+      "requiredEvidence": [
+        "argument"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "biotech-implications",
+      "description": "Analiza las implicaciones científicas y éticas del proceso biotecnológico ficticio bajo las fuentes y reglas proporcionadas. No atribuyas legalidad actual fuera del texto dado.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "132b898b-92ee-565d-a1c3-34189d047e7b"
+      ],
+      "requiredEvidence": [
+        "analysis"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "medical-biotech-essay",
+      "description": "Elabora un ensayo científico sobre las aplicaciones biotecnológicas médicas y los avances dominicanos descritos en las fuentes proporcionadas; propone opciones educativas de desarrollo justificadas.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "4890759d-fa20-53d0-ac17-cb1a37fa3d85"
+      ],
+      "requiredEvidence": [
+        "report",
+        "design"
+      ],
+      "forbiddenEvidence": [],
+      "requiredTopic": "medical-biotechnology"
+    },
+    {
+      "id": "given-community-biotech-report",
+      "description": "Elabora un informe del proyecto de biotecnología ambiental simulado que se proporciona y presenta oralmente sus resultados al equipo; distingue las acciones modeladas de las realizadas.",
+      "activityType": "REPORT",
+      "participationMode": "GROUP",
+      "sourceRecordIds": [
+        "c00e7f45-a330-5176-9c09-b14d35ccef52"
+      ],
+      "requiredEvidence": [
+        "report",
+        "oral"
+      ],
+      "forbiddenEvidence": [
+        "project",
+        "research"
+      ],
+      "requiredTopic": "environmental-biotechnology"
+    },
+    {
+      "id": "given-plant-biotech-research",
+      "description": "Analiza la investigación experimental simulada de biotecnología vegetal proporcionada, discute sus resultados en seminario y redacta el reporte científico. No ejecutes otro experimento.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3b42929c-7e6c-541b-9eaa-dfdb5de67e36",
+        "7aff9e50-6239-5617-a30d-6d1a748a818a"
+      ],
+      "requiredEvidence": [
+        "data-interpretation",
+        "oral",
+        "report"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "animal-biotech-essay-or-debate",
+      "description": "Elabora un ensayo o debate la investigación de biotecnología animal ya proporcionada, según la alternativa elegida; prepara el producto sin publicarlo.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6c243188-5e50-536c-a9bf-8cdf3a820298"
+      ],
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "transgenic-essay-or-debate",
+      "description": "Elabora un ensayo o debate la investigación bibliográfica proporcionada sobre animales y vegetales transgénicos, según la alternativa elegida. No publiques ni realices modificaciones genéticas.",
+      "activityType": "REPORT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3de6ee4a-5f40-5129-b02f-95a56f3eec53"
+      ],
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "forbiddenEvidence": [
+        "research"
+      ]
+    },
+    {
+      "id": "biotech-enterprise-model",
+      "description": "Diseña el modelo del producto y la empresa biotecnológica ficticios usando los datos dados y evalúa su impacto bajo los criterios de sostenibilidad proporcionados. No registres empresas ni vendas productos.",
+      "activityType": "PROJECT",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "51b8c9db-ffa2-5845-be36-160d1d92330f"
+      ],
+      "requiredEvidence": [
+        "design"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "biotech-evidence-debate",
+      "description": "Debate las afirmaciones de biotecnología del dossier proporcionado y distingue evidencia científica, especulación y seudociencia justificando sus alcances sin calificar creencias personales.",
+      "activityType": "DEBATE",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "28914440-bdd3-5a21-a6f0-e66d7334bb42"
+      ],
+      "requiredEvidence": [
+        "argument"
+      ],
+      "forbiddenEvidence": []
+    },
+    {
+      "id": "source:health-system",
+      "description": "Explica sistema de salud y organización con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2d8d53c3-6d9c-5916-b291-fde065c7433f",
+        "c3a26059-df60-5cd9-a5ec-4014f1f0b046",
+        "aa3dbb50-92e5-5740-97e4-977e90464ed6",
+        "ce868278-45ab-5250-84af-869025bb1d3f",
+        "41e4bae5-bd74-5072-a20a-9f10fba65a89",
+        "910ad9de-63bf-5d39-868a-0d5f052042d4"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "health-system"
+    },
+    {
+      "id": "source:medicine-history",
+      "description": "Explica historia de la medicina con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6d952c51-ef3d-5a2b-9793-e639f5ddfe31",
+        "5beafeb2-480b-551d-82d4-f3329bece4a5"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "medicine-history"
+    },
+    {
+      "id": "source:epidemics",
+      "description": "Explica epidemias con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f2f693c5-a78e-5337-a3f6-7407679f1044"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "epidemics"
+    },
+    {
+      "id": "source:medical-specialties",
+      "description": "Explica especialidades médicas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "0bb00065-be72-55f0-a68c-f95e18ce4ee0"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "medical-specialties"
+    },
+    {
+      "id": "source:disease-groups",
+      "description": "Explica enfermedades y sistemas afectados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "disease-groups"
+    },
+    {
+      "id": "source:mental-health",
+      "description": "Explica trastornos mentales en fuentes y casos ficticios con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "mental-health"
+    },
+    {
+      "id": "source:method-phases",
+      "description": "Explica acciones de indagación pedidas; sin p6 inventada con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fb950645-2f36-5dbf-a2dd-201f34ac1d36",
+        "c0bc3a96-1109-53cb-b61f-0786b5f53474",
+        "42f1c1d0-e660-54b3-89a2-4b64b82890f2",
+        "bcc6bc0a-d827-56da-8fe0-a6869489022a",
+        "7e091070-637f-5e22-8b96-fd26445e429f",
+        "f39a2610-d03b-5aa7-a6b8-d1f61b30660f"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "method-phases"
+    },
+    {
+      "id": "source:lab-report-reading",
+      "description": "Explica lectura de análisis médicos ficticios y referencias dadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "c5552d9b-7899-5117-a6bf-42894cc8931d",
+        "32965eab-a343-5e72-9631-26c80a89066e",
+        "e81784b4-61d8-541a-9bfe-fdfb2aa3ee3d",
+        "4075f2e0-9d51-5e8e-8957-abc1716e1127",
+        "bc38b3b2-376e-542b-ac4a-e06754af1014"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "lab-report-reading"
+    },
+    {
+      "id": "source:symptoms-prevention",
+      "description": "Explica síntomas y prevención en fichas profesionales dadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "e8d980fd-aad6-5d6a-aa92-bb9741bcfd32"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "symptoms-prevention"
+    },
+    {
+      "id": "source:molecular-cell-biology",
+      "description": "Explica biología molecular y celular con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "36c5b156-1321-50a9-8192-b4cb03487998",
+        "6499fb78-cfde-5204-bff2-73358d21ac20"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "molecular-cell-biology"
+    },
+    {
+      "id": "source:biological-sequences",
+      "description": "Explica secuencias genómicas y proteómicas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-sequences"
+    },
+    {
+      "id": "source:clinical-data-systems",
+      "description": "Explica sistemas y datos clínicos/epidemiológicos ficticios con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5f3808b6-090a-57fd-9d02-418c6769b3c4",
+        "4e72185e-976e-5641-b6a7-1595d9edb023",
+        "7e401e6a-a581-5385-bd55-7a4695d7c283"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "clinical-data-systems"
+    },
+    {
+      "id": "source:biological-data-storage",
+      "description": "Explica almacenamiento e integración de datos biológicos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "566bfe81-9b12-5ef5-a8ba-57b0a993dc7d",
+        "2f47284d-35f6-5f31-90c1-157bd3fe6fdb"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-data-storage"
+    },
+    {
+      "id": "source:biological-models",
+      "description": "Explica modelado y simulación de sistemas biológicos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "168b67b9-7a8a-5ebd-ab26-8fa73d70b25c",
+        "1d590222-a3ef-52b5-aeeb-03296af586d8",
+        "6a5c5484-4e54-544b-a4d5-4bea4f090192",
+        "d9667178-a460-530e-996b-bbedcbe86caf",
+        "882a3e68-3a61-5ade-b732-f7b4695ec074"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-models"
+    },
+    {
+      "id": "source:protein-structure",
+      "description": "Explica predicción de estructura y modelado molecular con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "4bf38ee2-b0b7-51cf-8cfc-37c05168bb2b",
+        "739bc79b-e022-5be8-aa42-40bf7ce3f177",
+        "13e01157-116b-5edf-808e-9ca6ab7b0d29"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "protein-structure"
+    },
+    {
+      "id": "source:genetic-variants",
+      "description": "Explica variantes genéticas y límites de inferencia con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33ece383-3950-53c4-b213-61a67a227218"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "genetic-variants"
+    },
+    {
+      "id": "source:gene-therapy",
+      "description": "Explica biotecnología y terapia génica como conceptos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "7c6ed9ca-5f9c-56f9-9830-9ead1fcac6e0"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "gene-therapy"
+    },
+    {
+      "id": "source:research-ethics",
+      "description": "Explica análisis concreto de ética/procedencia/privacidad con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "70815c0c-b449-570c-97a8-cc1e609ebb5f",
+        "02668f5b-af8f-54a0-bc6e-2719d68afbad",
+        "6afbe4d7-9671-57a6-8e9a-79b624734753",
+        "bc4683ed-83e7-5a1c-9182-2574cf72cc13",
+        "6a6b961d-1aa1-5329-a89a-00bc1f762910",
+        "22d830d8-cfce-55b8-b989-011fd03d1491"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "research-ethics"
+    },
+    {
+      "id": "source:injury-poisoning",
+      "description": "Explica traumatismos, intoxicaciones y accidentes ficticios con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "injury-poisoning"
+    },
+    {
+      "id": "source:violence-prevention",
+      "description": "Explica prevención de violencia en casos ficticios con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "aa94017a-58aa-5568-b118-1e9e965649a5",
+        "552f9ebc-769f-5555-b775-78480eaed2b1",
+        "cc95dc71-c90e-5688-8e97-3e2d16cb8c64",
+        "107b1c65-43e0-5aed-90c9-f7cfd4ab4059",
+        "5ce60e28-260e-5f11-bc61-bd0d2961e3db",
+        "66ba6ba3-cb0b-5c2b-928f-5ba73cd7b310"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "violence-prevention"
+    },
+    {
+      "id": "source:biotech-experiment-design",
+      "description": "Explica diseño experimental o simulación biotecnológica según consigna con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "254eb057-c649-57d5-a15b-ae53603d09d8"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-experiment-design"
+    },
+    {
+      "id": "source:biological-visualization",
+      "description": "Explica representación y análisis de datos biológicos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "dcbfe83c-da87-5d91-8991-ec3f54eeed74",
+        "596b1f34-bb2e-5ddb-83b2-dbcf8fa26eb8",
+        "ef9f37a3-f805-5bfc-900f-813ccca4627c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-visualization"
+    },
+    {
+      "id": "source:biological-programming",
+      "description": "Explica programación y resolución de problemas biológicos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6825f7d9-f49b-50d4-89ee-30147200269b",
+        "be98aa78-c24a-5bf4-97c0-cc7f18a48793",
+        "60e04df4-9348-5f86-97ce-653cd745cafd",
+        "196037ff-a40d-5fa0-a448-c3c93f7a413f",
+        "0a0a2247-7b97-5375-9317-2a3574910deb"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-programming"
+    },
+    {
+      "id": "source:blood-pressure-reading",
+      "description": "Explica lectura/simulación educativa de presión arterial con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "620e7b6b-37c4-547f-a144-949f69b77228"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "blood-pressure-reading"
+    },
+    {
+      "id": "source:respiratory-sounds",
+      "description": "Explica interpretación de registro respiratorio proporcionado con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "415e4477-1275-5d57-866e-ebd3e7cdfebd"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "content"
+      ],
+      "requiredTopic": "respiratory-sounds"
+    },
+    {
+      "id": "source:insulin-information",
+      "description": "Explica tipos y administración de insulina en ficha profesional; sin aplicación real con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "debc5fef-1657-5645-b529-4f523c9f44b6"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "insulin-information"
+    },
+    {
+      "id": "source:glucose-meter-model",
+      "description": "Explica modelo educativo o lectura ficticia de glucómetro con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b43d7355-d186-53e5-86ae-98badf19220f"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "glucose-meter-model"
+    },
+    {
+      "id": "source:oral-rehydration-model",
+      "description": "Explica análisis del modelo o ficha proporcionada de suero oral con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "139981d6-2a0b-552e-abf0-502f7dcdb183"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "oral-rehydration-model"
+    },
+    {
+      "id": "source:wound-care-information",
+      "description": "Explica cuidado de heridas en caso educativo proporcionado con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba6276f5-45f1-5217-aae8-c9ba6c706675"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "wound-care-information"
+    },
+    {
+      "id": "source:vaccination-information",
+      "description": "Explica vacunación con fuente profesional dada con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "e6d89d25-869c-5b85-bb5a-98979a189083"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "vaccination-information"
+    },
+    {
+      "id": "source:balanced-diet-model",
+      "description": "Explica dieta equilibrada ficticia bajo referencias dadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5cce500d-e5ae-5cbe-980d-56cc5b74af40"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "balanced-diet-model"
+    },
+    {
+      "id": "source:health-risk-prevention",
+      "description": "Explica riesgos y accidentes en escenarios dados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "0370fd83-1e80-50ce-9ea8-475d384ec5d7",
+        "d36f89fc-a8e9-581d-940c-a4e7a8cbde08"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "health-risk-prevention"
+    },
+    {
+      "id": "source:first-aid-simulation",
+      "description": "Explica primeros auxilios mediante análisis o simulación guiada con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6fd32c2e-ee25-51e1-a9c3-4e2f07411cbb",
+        "326645eb-fb8c-5d85-bbd3-64a7e4c35f73",
+        "08d21389-df9d-5978-81a8-e902f893c813",
+        "ed2dc011-09a3-5974-9213-2de2dd3836ec"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "first-aid-simulation"
+    },
+    {
+      "id": "source:pregnancy-development",
+      "description": "Explica embarazo y desarrollo fetal en modelos/fuentes con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "53217691-8f28-517a-8603-e38680192172",
+        "8991a23b-54f8-5d02-9ea3-2f6cdc129339",
+        "7c50906a-d9fb-5d32-8389-9f791ed7b668"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "pregnancy-development"
+    },
+    {
+      "id": "source:abortion-evidence",
+      "description": "Explica argumentación con evidencia sobre aborto sin adhesión personal con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f65b3d2b-e351-54cf-9b7d-f7ce749e3bc0"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "abortion-evidence"
+    },
+    {
+      "id": "source:pregnancy-complications",
+      "description": "Explica complicaciones del embarazo descritas en fuentes con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23802fc9-967f-5c49-9524-a81cd3f84d27",
+        "3e144f17-5624-5faa-8f5e-6bab4c2439f3",
+        "e4643eb4-e73d-5d60-a7fc-4a7e68a84325"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "pregnancy-complications"
+    },
+    {
+      "id": "source:donation-information",
+      "description": "Explica donación sin requerir participación ni datos privados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2092103c-3755-5930-91c3-1ec12441c145",
+        "56df65a8-2d04-59c3-8232-86871a53db38",
+        "8b9412e0-1fec-5cd9-ba02-9bfcc995636a",
+        "0cfb8205-570c-54d9-9a27-c13d96af1df3",
+        "c3a65d48-f5f9-5cfe-a658-da900d303b28"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "donation-information"
+    },
+    {
+      "id": "source:biological-machine-learning",
+      "description": "Explica modelos de clasificación/predicción con datos proporcionados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "a0ef8c36-59f7-5ddd-a9fb-559e102dc4fe",
+        "41377fff-edb3-5e4b-83ff-abed457a0074"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-machine-learning"
+    },
+    {
+      "id": "source:phylogenetic-tree",
+      "description": "Explica árbol filogenético y evidencia de secuencias con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "63d886e5-60bd-503a-b858-698d3c31440d"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "phylogenetic-tree"
+    },
+    {
+      "id": "source:protein-function-inference",
+      "description": "Explica predicción de función como inferencia limitada con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bf00d526-1800-52b5-9856-46f361072769"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "protein-function-inference"
+    },
+    {
+      "id": "source:biological-networks",
+      "description": "Explica redes biológicas y dinámica con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "9432b461-7744-5092-948e-56c64622f38b",
+        "ed5cb4fe-d289-558e-a5ed-2246b8f36c10"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biological-networks"
+    },
+    {
+      "id": "source:scientific-communication",
+      "description": "Explica comunicación de resultados dados o propios según consigna con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "10abdc91-13d9-5218-a339-ad056d78a5ed"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "scientific-communication"
+    },
+    {
+      "id": "source:requested-ict",
+      "description": "Explica tic solo cuando la consigna lo requiere con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "9d8c5f75-a85e-572f-b47f-4a5874b57952"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "requested-ict"
+    },
+    {
+      "id": "source:drug-design-model",
+      "description": "Explica diseño de fármaco como modelo educativo con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "aa70a4b2-50bf-5f2f-b4eb-1ab0040e5dca",
+        "8a6a5c8a-2f21-5577-87a0-aa38b2154270"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "drug-design-model"
+    },
+    {
+      "id": "source:enzyme-ligand",
+      "description": "Explica interacción enzima/ligando con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "00c8664b-5384-59b7-9b88-5842afe6941b",
+        "039cee62-429f-5f7f-8c4b-951912fc946c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "enzyme-ligand"
+    },
+    {
+      "id": "source:enzyme-inhibition",
+      "description": "Explica inhibición enzimática en modelos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3d7326a7-20b6-5aa1-a866-20970e62b1ca",
+        "bc415ecd-781a-5062-9301-b996c6f34d69"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "enzyme-inhibition"
+    },
+    {
+      "id": "source:metabolic-pathways",
+      "description": "Explica rutas metabólicas y metabolismo de fármacos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fdbeb13c-3c48-59bd-8fdb-cc9602c72b08",
+        "5e9b024c-fb10-59c6-98f3-14553d5408ab",
+        "730d523a-c1df-5d14-a17d-4b62bac5445b"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "metabolic-pathways"
+    },
+    {
+      "id": "source:molecular-docking",
+      "description": "Explica acoplamiento molecular e inferencias limitadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "0c3b75a8-2857-5b6c-b43c-e0eaf142359f",
+        "8c42001f-42ef-55db-9946-e758c874ac74"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "molecular-docking"
+    },
+    {
+      "id": "source:green-technology",
+      "description": "Explica sostenibilidad y tecnología verde con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2634a1bb-c5fc-58bc-bd40-fcba8133de30",
+        "81bb443c-0f47-5309-b6e8-0a745622064c",
+        "d3ad5d38-ab30-5b9a-8f6a-f75ad1c3f2a1",
+        "f087baa2-3410-5f04-b979-3fb402de8c56"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "green-technology"
+    },
+    {
+      "id": "source:environmental-privacy",
+      "description": "Explica ética y privacidad ambiental con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "afd85adf-4336-5cd1-929e-67c66c1b9a31",
+        "aec5bd33-fd66-5581-a6ae-d1256b6fd37b"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-privacy"
+    },
+    {
+      "id": "source:emerging-environmental-technology",
+      "description": "Explica tecnologías emergentes ambientales con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2cd1bd72-b523-5a3e-bd1f-aece0449ee19"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "emerging-environmental-technology"
+    },
+    {
+      "id": "source:pollution-sources",
+      "description": "Explica origen y fuentes de contaminación; naturaleza/origen separados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "22af5d2d-4222-503c-b112-7e290cfbe98b",
+        "75b17498-adeb-51b9-9396-0d91a4ade35b",
+        "462fc598-f26d-5467-b904-bd5dd1d9afa7",
+        "09c9ee7c-ed34-565a-860d-3fbb75a3f755",
+        "65079dac-dfdf-5662-b866-446666f1b604",
+        "a48f6f58-6edc-5a2b-932e-e6a7ed26db72",
+        "cdc3f37f-2002-584b-b7aa-df3562664a85",
+        "c6b9e9cb-540f-5ead-a621-e7bd63b493ce"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "pollution-sources"
+    },
+    {
+      "id": "source:environmental-sensors",
+      "description": "Explica sensores y adquisición de datos proporcionados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "76f9955f-9b05-53b9-bc4d-34874a864416",
+        "bf444c48-3001-5ca7-9eea-33b96c5ea271"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-sensors"
+    },
+    {
+      "id": "source:environmental-monitoring",
+      "description": "Explica monitoreo y gestión ambiental con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "11a60343-0ee2-54d1-b3de-7905fa684a86"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-monitoring"
+    },
+    {
+      "id": "source:gis-maps",
+      "description": "Explica sig y mapas temáticos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "040cffe3-ffb8-52cd-8bad-6f67cd702033",
+        "d1524d48-06b9-5538-b897-87f70382493b"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "gis-maps"
+    },
+    {
+      "id": "source:environmental-impact-model",
+      "description": "Explica evaluación de impacto con software/datos dados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "4e75e40d-a2fe-58fd-b2f4-0179445251f5"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-impact-model"
+    },
+    {
+      "id": "source:environmental-simulation",
+      "description": "Explica simulación ambiental con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bb99d0c5-f072-5ad7-a433-52aedfe63e1c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-simulation"
+    },
+    {
+      "id": "source:environmental-data",
+      "description": "Explica análisis y gestión de datos ambientales con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "c0955a89-2bae-50b0-8105-9d170125ac56",
+        "e66a3afb-5d2e-5322-b0fc-9e004ecb9722"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-data"
+    },
+    {
+      "id": "source:environmental-project",
+      "description": "Explica proyecto ambiental educativo según consigna con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f15fb90f-849a-54e7-bb4a-612ba77d958c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-project"
+    },
+    {
+      "id": "source:soil-pollution",
+      "description": "Explica contaminación del suelo con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "d1e8ff55-bb43-59f1-bcb4-dc9da588828a"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "soil-pollution"
+    },
+    {
+      "id": "source:water-pollution",
+      "description": "Explica contaminación del agua con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "626f6970-5367-5a8b-93f6-a394388975fa"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "water-pollution"
+    },
+    {
+      "id": "source:air-pollution",
+      "description": "Explica contaminación del aire con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "e164d32d-02fb-5674-8365-9ed9711bf759"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "air-pollution"
+    },
+    {
+      "id": "source:waste-management",
+      "description": "Explica residuos y manejo en modelos, sin manipulación peligrosa con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fddc704e-9db2-5c62-86ff-9d3d14efefb8",
+        "065a47d7-c6f6-5112-bb30-1c0156f945e1",
+        "4c389801-36c3-557a-8434-7db1c58455e0",
+        "fda54726-7207-5c4d-81a3-2b22b1db89e5",
+        "6b86c64b-2c7f-563d-baaa-85743a123db7",
+        "7e13832c-1787-520e-90af-59d47ad8cfac",
+        "0142980e-49b5-5f8f-8427-00456d870b46"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "waste-management"
+    },
+    {
+      "id": "source:environmental-conservation",
+      "description": "Explica conservación ambiental y biodiversidad con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2606b1cb-1697-5c3c-bee1-5a8db51f0e83",
+        "4e3701cf-644e-5333-ba39-e7a1a60c5efc",
+        "e622302c-951f-5f4f-91d4-975f482f1cdd",
+        "98710c20-fbce-5eef-8fd2-1f2f42ccc38b"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-conservation"
+    },
+    {
+      "id": "source:agricultural-systems",
+      "description": "Explica sistemas de cultivo y producción agrícola con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "1f418c81-41df-5678-a3c3-2028a064da37",
+        "8ba4b3bd-687b-5c51-9846-07c9f995af21",
+        "a98af27d-19c2-592b-8553-c65b317edd96",
+        "5388c9d0-cec4-5e15-a655-a647fabb07b1"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "agricultural-systems"
+    },
+    {
+      "id": "source:marine-resources",
+      "description": "Explica recursos marinos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "a31b19e4-76ac-52c9-b4ef-33a1a62775da"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "marine-resources"
+    },
+    {
+      "id": "source:food-biotechnology",
+      "description": "Explica biotecnología alimentaria con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "1b422eee-dae6-5740-8899-7748e3fb7b04",
+        "23a1eb91-d979-5de3-b2fe-0ec52f376d9e"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "food-biotechnology"
+    },
+    {
+      "id": "source:natural-resources",
+      "description": "Explica recursos naturales con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3ebf69d0-aa89-5035-80e7-36c8c16c34f4"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "natural-resources"
+    },
+    {
+      "id": "source:water-resources",
+      "description": "Explica recursos hídricos, ciclo, calidad y cuencas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "water-resources"
+    },
+    {
+      "id": "source:mineral-resources",
+      "description": "Explica exploración y explotación minera distintas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "mineral-resources"
+    },
+    {
+      "id": "source:atmosphere-climate",
+      "description": "Explica atmósfera, efecto invernadero y clima con facetas pedidas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "atmosphere-climate"
+    },
+    {
+      "id": "source:energy-sustainability",
+      "description": "Explica fuentes de energía y eficiencia con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "energy-sustainability"
+    },
+    {
+      "id": "source:natural-risk-models",
+      "description": "Explica riesgos naturales y respuesta en escenarios proporcionados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "natural-risk-models"
+    },
+    {
+      "id": "source:environmental-legislation",
+      "description": "Explica análisis de texto legal ambiental proporcionado con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "9bc5a837-4146-5092-ad1b-55325780438d",
+        "7d404587-906f-56b5-822e-e2b51227595c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "environmental-legislation"
+    },
+    {
+      "id": "source:climate-reports",
+      "description": "Explica ipcc y comunicaciones nacionales dadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "1b5443fb-97e7-54ba-89c3-4060cc4a75cf",
+        "8b626e2d-b116-5d24-a4a0-65955e202d66"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "climate-reports"
+    },
+    {
+      "id": "source:biotechnology-history",
+      "description": "Explica biotecnología e historia con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "8be16661-21ba-567a-a4f3-718c29fa9d87",
+        "2d2b3b0a-4318-59b2-b5dc-df73c37b43dd"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotechnology-history"
+    },
+    {
+      "id": "source:pesticide-comparison",
+      "description": "Explica plaguicidas y alternativas en fuentes; sin aplicación real con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b3467e56-e59e-5727-9d01-2e40a6a0c6b9"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "pesticide-comparison"
+    },
+    {
+      "id": "source:biotech-processes",
+      "description": "Explica procesos biotecnológicos y sus implicaciones con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3c9ebd7b-c2c5-58f9-8de5-67f6b852cd77",
+        "7920ca3f-7689-5b2e-9d4c-fbfe7b2b75ed",
+        "bae8be2e-ea13-59cf-a489-6843dd4f1282",
+        "796425a6-9bf1-5f74-85be-61581dae5077",
+        "bd1a3ffb-76c0-50d0-8720-ad944c5fe6fb",
+        "2a97cefb-7c34-5d47-94c1-e0963525b94d",
+        "5524a983-4bef-5bee-b26d-5982d703e8d5"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-processes"
+    },
+    {
+      "id": "source:cell-models",
+      "description": "Explica células animales/vegetales y modelos solicitados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5c19e224-242c-5e8e-9da3-53db6188bdb9"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "cell-models"
+    },
+    {
+      "id": "source:microorganism-models",
+      "description": "Explica microorganismos y aplicaciones en modelos seguros con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "67ead2d2-fb3c-51a6-b44a-668261d8a354",
+        "19131511-0090-5181-8a15-cea1e9e806f2"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "content",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation"
+      ],
+      "requiredTopic": "microorganism-models"
+    },
+    {
+      "id": "source:bioreactions",
+      "description": "Explica biorreacciones y actividad enzimática con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6eadfd60-6dfd-58cc-a599-ecf0c586486c",
+        "116b1275-c48b-581f-a98c-a7450079462a",
+        "bad269ea-7201-5fcb-b686-4b47adc5cd16",
+        "4d9008f0-df73-5a4c-af7d-7f3b2bffa802"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "bioreactions"
+    },
+    {
+      "id": "source:microbial-growth-model",
+      "description": "Explica crecimiento microbiano/producto con datos proporcionados con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "3b7d9c5c-bc2e-591e-9b5c-c2c2c96692aa",
+        "08de4e42-4448-50a5-b48e-b14424321ed9"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "microbial-growth-model"
+    },
+    {
+      "id": "source:immobilized-biocatalysts",
+      "description": "Explica biocatalizadores y su inmovilización con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "149ef47b-51c9-54a9-a423-32b913c10a88"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "immobilized-biocatalysts"
+    },
+    {
+      "id": "source:process-efficiency",
+      "description": "Explica eficiencia del proceso con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "51834f12-ea0a-59a4-babe-c8c0c682b373"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "process-efficiency"
+    },
+    {
+      "id": "source:bioreactor-models",
+      "description": "Explica biorreactores sólidos/líquidos/fotobiorreactores según consigna con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7a95d26-c6be-5197-bbf8-c7258237b648",
+        "12a1f2ef-49a7-5768-9b04-ab7a194beed2",
+        "1741da91-58e6-5ef5-b720-7d5576a9074c"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "bioreactor-models"
+    },
+    {
+      "id": "source:biotech-process-control",
+      "description": "Explica variables, monitoreo y control de procesos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "98b0dfad-4e53-5643-8849-c2697d218656",
+        "007dccf3-4994-5bd6-b174-1b34e1931b23",
+        "3da723a6-ad5e-5147-b431-7d3f3f065abd",
+        "357e7cac-3244-5f3b-81fa-43955aae5ce6",
+        "cf361f1c-73e0-5956-9205-6c9fc4772122"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-process-control"
+    },
+    {
+      "id": "source:biotech-separation",
+      "description": "Explica separación, concentración y purificación en modelos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "648db5e3-2361-551e-b692-b5b6275d1734",
+        "926b88d9-ee57-5eaa-b868-89a3df7521b2",
+        "1315514d-a469-5e90-807d-0a887e58adae"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-separation"
+    },
+    {
+      "id": "source:biotech-product-design",
+      "description": "Explica diseño/mejora de producto y proceso simulado con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "0d83f97d-b68c-572f-ad43-fa95526b059c",
+        "9691cf44-6b9d-537f-bdec-7dc84de1f6be",
+        "28a13ac4-7d5c-5dd3-9ff5-db6cadfc14d8",
+        "9aab8c41-3d57-5f41-a5cb-ddfc126770c9"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-product-design"
+    },
+    {
+      "id": "source:biotech-market-model",
+      "description": "Explica distribución/comercialización y empresa simuladas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "17ab6303-ef42-51bc-bf6e-6f3fb87f3690",
+        "2a641b19-a610-59fa-97d6-781c9f625f8d",
+        "61b7654b-1b1f-5990-b8f3-aa187c1c7585"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-market-model"
+    },
+    {
+      "id": "source:bioremediation-model",
+      "description": "Explica tratamiento de aguas, biorremediación y ogm como modelos con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "18fa06c7-ca52-5b00-a61b-37bd02e74ab6"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "bioremediation-model"
+    },
+    {
+      "id": "source:animal-biotechnology",
+      "description": "Explica biotecnología animal y producto simulado con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f91e1439-cfbe-5782-a04f-430d572b2554"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "animal-biotechnology"
+    },
+    {
+      "id": "source:biotech-implications",
+      "description": "Explica implicaciones éticas, legales, económicas y sostenibilidad dadas con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b4534ad4-d1af-5a10-b76b-44ec3977fb27",
+        "e63212ab-7d6f-5aa8-8d94-47e6333cb34b",
+        "da484a18-eddd-5ced-913c-207be54f2354"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "biotech-implications"
+    },
+    {
+      "id": "source:transgenic-organisms",
+      "description": "Explica animales y vegetales transgénicos con evidencia con las fuentes y los modelos proporcionados.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "249c30cf-3439-5971-b1ac-1e8e86708a80",
+        "3405bd53-bda6-582a-b312-4dc8f12f0fcb"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "analysis",
+        "data-interpretation",
+        "argument",
+        "observation",
+        "content"
+      ],
+      "requiredTopic": "transgenic-organisms"
+    },
+    {
+      "id": "facet:disease-groups:1",
+      "description": "Explica enfermedades infecciosas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades infecciosas"
+      ],
+      "forbiddenText": [
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:2",
+      "description": "Explica enfermedades endocrinas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades endocrinas"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:3",
+      "description": "Explica enfermedades nutricionales en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades nutricionales"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:4",
+      "description": "Explica enfermedades del sistema nervioso en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades del sistema nervioso"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:5",
+      "description": "Explica enfermedades del sistema circulatorio en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades del sistema circulatorio"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:6",
+      "description": "Explica enfermedades del sistema respiratorio en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades del sistema respiratorio"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:7",
+      "description": "Explica enfermedades del sistema digestivo en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades del sistema digestivo"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades de la piel",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:8",
+      "description": "Explica enfermedades de la piel en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades de la piel"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades del sistema músculo-esquelético"
+      ]
+    },
+    {
+      "id": "facet:disease-groups:9",
+      "description": "Explica enfermedades del sistema músculo-esquelético en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ba18ee90-867b-59c5-9563-b6b5fcab3079",
+        "eae8789d-a4f2-5ebc-8d19-03a09fa56187",
+        "c24f8357-0f3a-5ba1-96fb-7604030c1065",
+        "3b5c88a2-ba53-5fc8-ad7f-e0aa8d4a4a64",
+        "aa78551a-1f6c-5042-9b39-d9bc3ae3f8d9",
+        "6e48f959-b969-5b30-b756-a807a99c8c3b",
+        "c8659c61-6f71-5574-8576-a1b17210317c",
+        "74ac55d0-45aa-5213-b04e-a659d9863b3d"
+      ],
+      "requiredTopic": "disease-groups",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "enfermedades del sistema músculo-esquelético"
+      ],
+      "forbiddenText": [
+        "enfermedades infecciosas",
+        "enfermedades endocrinas",
+        "enfermedades nutricionales",
+        "enfermedades del sistema nervioso",
+        "enfermedades del sistema circulatorio",
+        "enfermedades del sistema respiratorio",
+        "enfermedades del sistema digestivo",
+        "enfermedades de la piel"
+      ]
+    },
+    {
+      "id": "facet:mental-health:1",
+      "description": "Explica esquizofrenia en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "esquizofrenia"
+      ],
+      "forbiddenText": [
+        "depresión",
+        "trastorno afectivo bipolar",
+        "ansiedad generalizada",
+        "anorexia",
+        "bulimia nerviosa"
+      ]
+    },
+    {
+      "id": "facet:mental-health:2",
+      "description": "Explica depresión en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "depresión"
+      ],
+      "forbiddenText": [
+        "esquizofrenia",
+        "trastorno afectivo bipolar",
+        "ansiedad generalizada",
+        "anorexia",
+        "bulimia nerviosa"
+      ]
+    },
+    {
+      "id": "facet:mental-health:3",
+      "description": "Explica trastorno afectivo bipolar en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "trastorno afectivo bipolar"
+      ],
+      "forbiddenText": [
+        "esquizofrenia",
+        "depresión",
+        "ansiedad generalizada",
+        "anorexia",
+        "bulimia nerviosa"
+      ]
+    },
+    {
+      "id": "facet:mental-health:4",
+      "description": "Explica ansiedad generalizada en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "ansiedad generalizada"
+      ],
+      "forbiddenText": [
+        "esquizofrenia",
+        "depresión",
+        "trastorno afectivo bipolar",
+        "anorexia",
+        "bulimia nerviosa"
+      ]
+    },
+    {
+      "id": "facet:mental-health:5",
+      "description": "Explica anorexia en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "anorexia"
+      ],
+      "forbiddenText": [
+        "esquizofrenia",
+        "depresión",
+        "trastorno afectivo bipolar",
+        "ansiedad generalizada",
+        "bulimia nerviosa"
+      ]
+    },
+    {
+      "id": "facet:mental-health:6",
+      "description": "Explica bulimia nerviosa en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ],
+      "requiredTopic": "mental-health",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "bulimia nerviosa"
+      ],
+      "forbiddenText": [
+        "esquizofrenia",
+        "depresión",
+        "trastorno afectivo bipolar",
+        "ansiedad generalizada",
+        "anorexia"
+      ]
+    },
+    {
+      "id": "facet:injury-poisoning:1",
+      "description": "Explica traumatismos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredTopic": "injury-poisoning",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "traumatismos"
+      ],
+      "forbiddenText": [
+        "envenenamientos",
+        "accidentes de tránsito",
+        "intoxicación por fármacos",
+        "intoxicación por sustancias no medicinales"
+      ]
+    },
+    {
+      "id": "facet:injury-poisoning:2",
+      "description": "Explica envenenamientos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredTopic": "injury-poisoning",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "envenenamientos"
+      ],
+      "forbiddenText": [
+        "traumatismos",
+        "accidentes de tránsito",
+        "intoxicación por fármacos",
+        "intoxicación por sustancias no medicinales"
+      ]
+    },
+    {
+      "id": "facet:injury-poisoning:3",
+      "description": "Explica accidentes de tránsito en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredTopic": "injury-poisoning",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "accidentes de tránsito"
+      ],
+      "forbiddenText": [
+        "traumatismos",
+        "envenenamientos",
+        "intoxicación por fármacos",
+        "intoxicación por sustancias no medicinales"
+      ]
+    },
+    {
+      "id": "facet:injury-poisoning:4",
+      "description": "Explica intoxicación por fármacos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredTopic": "injury-poisoning",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "intoxicación por fármacos"
+      ],
+      "forbiddenText": [
+        "traumatismos",
+        "envenenamientos",
+        "accidentes de tránsito",
+        "intoxicación por sustancias no medicinales"
+      ]
+    },
+    {
+      "id": "facet:injury-poisoning:5",
+      "description": "Explica intoxicación por sustancias no medicinales en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b62684ab-d1e6-52be-937b-f491593faae6",
+        "cbf1f610-fb4d-58c6-9f50-801396237b00",
+        "53af8c5e-a466-5968-b3b4-8ea4e02721b2",
+        "2252db7a-7b04-5c74-88ca-00d278a0b8cd",
+        "3d827cbe-492d-5ae0-9d92-d6275dfb8536"
+      ],
+      "requiredTopic": "injury-poisoning",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "intoxicación por sustancias no medicinales"
+      ],
+      "forbiddenText": [
+        "traumatismos",
+        "envenenamientos",
+        "accidentes de tránsito",
+        "intoxicación por fármacos"
+      ]
+    },
+    {
+      "id": "facet:pregnancy-complications:1",
+      "description": "Explica hipertensión en el embarazo en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23802fc9-967f-5c49-9524-a81cd3f84d27",
+        "3e144f17-5624-5faa-8f5e-6bab4c2439f3",
+        "e4643eb4-e73d-5d60-a7fc-4a7e68a84325"
+      ],
+      "requiredTopic": "pregnancy-complications",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "hipertensión en el embarazo"
+      ],
+      "forbiddenText": [
+        "sepsis puerperal",
+        "malformaciones congénitas",
+        "anomalías cromosómicas"
+      ]
+    },
+    {
+      "id": "facet:pregnancy-complications:2",
+      "description": "Explica sepsis puerperal en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23802fc9-967f-5c49-9524-a81cd3f84d27",
+        "3e144f17-5624-5faa-8f5e-6bab4c2439f3",
+        "e4643eb4-e73d-5d60-a7fc-4a7e68a84325"
+      ],
+      "requiredTopic": "pregnancy-complications",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "sepsis puerperal"
+      ],
+      "forbiddenText": [
+        "hipertensión en el embarazo",
+        "malformaciones congénitas",
+        "anomalías cromosómicas"
+      ]
+    },
+    {
+      "id": "facet:pregnancy-complications:3",
+      "description": "Explica malformaciones congénitas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23802fc9-967f-5c49-9524-a81cd3f84d27",
+        "3e144f17-5624-5faa-8f5e-6bab4c2439f3",
+        "e4643eb4-e73d-5d60-a7fc-4a7e68a84325"
+      ],
+      "requiredTopic": "pregnancy-complications",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "malformaciones congénitas"
+      ],
+      "forbiddenText": [
+        "hipertensión en el embarazo",
+        "sepsis puerperal",
+        "anomalías cromosómicas"
+      ]
+    },
+    {
+      "id": "facet:pregnancy-complications:4",
+      "description": "Explica anomalías cromosómicas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23802fc9-967f-5c49-9524-a81cd3f84d27",
+        "3e144f17-5624-5faa-8f5e-6bab4c2439f3",
+        "e4643eb4-e73d-5d60-a7fc-4a7e68a84325"
+      ],
+      "requiredTopic": "pregnancy-complications",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "anomalías cromosómicas"
+      ],
+      "forbiddenText": [
+        "hipertensión en el embarazo",
+        "sepsis puerperal",
+        "malformaciones congénitas"
+      ]
+    },
+    {
+      "id": "facet:waste-management:1",
+      "description": "Explica residuos sólidos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fddc704e-9db2-5c62-86ff-9d3d14efefb8",
+        "065a47d7-c6f6-5112-bb30-1c0156f945e1",
+        "4c389801-36c3-557a-8434-7db1c58455e0",
+        "fda54726-7207-5c4d-81a3-2b22b1db89e5",
+        "6b86c64b-2c7f-563d-baaa-85743a123db7",
+        "7e13832c-1787-520e-90af-59d47ad8cfac",
+        "0142980e-49b5-5f8f-8427-00456d870b46"
+      ],
+      "requiredTopic": "waste-management",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "residuos sólidos"
+      ],
+      "forbiddenText": [
+        "residuos médicos",
+        "residuos radiactivos",
+        "residuos peligrosos"
+      ]
+    },
+    {
+      "id": "facet:waste-management:2",
+      "description": "Explica residuos médicos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fddc704e-9db2-5c62-86ff-9d3d14efefb8",
+        "065a47d7-c6f6-5112-bb30-1c0156f945e1",
+        "4c389801-36c3-557a-8434-7db1c58455e0",
+        "fda54726-7207-5c4d-81a3-2b22b1db89e5",
+        "6b86c64b-2c7f-563d-baaa-85743a123db7",
+        "7e13832c-1787-520e-90af-59d47ad8cfac",
+        "0142980e-49b5-5f8f-8427-00456d870b46"
+      ],
+      "requiredTopic": "waste-management",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "residuos médicos"
+      ],
+      "forbiddenText": [
+        "residuos sólidos",
+        "residuos radiactivos",
+        "residuos peligrosos"
+      ]
+    },
+    {
+      "id": "facet:waste-management:3",
+      "description": "Explica residuos radiactivos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fddc704e-9db2-5c62-86ff-9d3d14efefb8",
+        "065a47d7-c6f6-5112-bb30-1c0156f945e1",
+        "4c389801-36c3-557a-8434-7db1c58455e0",
+        "fda54726-7207-5c4d-81a3-2b22b1db89e5",
+        "6b86c64b-2c7f-563d-baaa-85743a123db7",
+        "7e13832c-1787-520e-90af-59d47ad8cfac",
+        "0142980e-49b5-5f8f-8427-00456d870b46"
+      ],
+      "requiredTopic": "waste-management",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "residuos radiactivos"
+      ],
+      "forbiddenText": [
+        "residuos sólidos",
+        "residuos médicos",
+        "residuos peligrosos"
+      ]
+    },
+    {
+      "id": "facet:waste-management:4",
+      "description": "Explica residuos peligrosos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "fddc704e-9db2-5c62-86ff-9d3d14efefb8",
+        "065a47d7-c6f6-5112-bb30-1c0156f945e1",
+        "4c389801-36c3-557a-8434-7db1c58455e0",
+        "fda54726-7207-5c4d-81a3-2b22b1db89e5",
+        "6b86c64b-2c7f-563d-baaa-85743a123db7",
+        "7e13832c-1787-520e-90af-59d47ad8cfac",
+        "0142980e-49b5-5f8f-8427-00456d870b46"
+      ],
+      "requiredTopic": "waste-management",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "residuos peligrosos"
+      ],
+      "forbiddenText": [
+        "residuos sólidos",
+        "residuos médicos",
+        "residuos radiactivos"
+      ]
+    },
+    {
+      "id": "facet:water-resources:1",
+      "description": "Explica ciclo del agua en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredTopic": "water-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "ciclo del agua"
+      ],
+      "forbiddenText": [
+        "calidad del agua",
+        "manejo de cuencas",
+        "distribución del agua",
+        "escorrentía"
+      ]
+    },
+    {
+      "id": "facet:water-resources:2",
+      "description": "Explica calidad del agua en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredTopic": "water-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "calidad del agua"
+      ],
+      "forbiddenText": [
+        "ciclo del agua",
+        "manejo de cuencas",
+        "distribución del agua",
+        "escorrentía"
+      ]
+    },
+    {
+      "id": "facet:water-resources:3",
+      "description": "Explica manejo de cuencas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredTopic": "water-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "manejo de cuencas"
+      ],
+      "forbiddenText": [
+        "ciclo del agua",
+        "calidad del agua",
+        "distribución del agua",
+        "escorrentía"
+      ]
+    },
+    {
+      "id": "facet:water-resources:4",
+      "description": "Explica distribución del agua en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredTopic": "water-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "distribución del agua"
+      ],
+      "forbiddenText": [
+        "ciclo del agua",
+        "calidad del agua",
+        "manejo de cuencas",
+        "escorrentía"
+      ]
+    },
+    {
+      "id": "facet:water-resources:5",
+      "description": "Explica escorrentía en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "ec716785-d617-5c9b-aaa7-a8ce28e8ee87",
+        "abf9578d-712e-525d-9f6c-1f569b6a5f2f",
+        "7cad7699-9ff0-5c21-9949-5f4df4e1c568",
+        "882c56af-5f29-565a-b3db-eae94eb0a1c9",
+        "f096bf66-7af9-5921-9048-75628c3b3294"
+      ],
+      "requiredTopic": "water-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "escorrentía"
+      ],
+      "forbiddenText": [
+        "ciclo del agua",
+        "calidad del agua",
+        "manejo de cuencas",
+        "distribución del agua"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:1",
+      "description": "Explica capas de la atmósfera en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "capas de la atmósfera"
+      ],
+      "forbiddenText": [
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:2",
+      "description": "Explica composición química de la atmósfera en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "composición química de la atmósfera"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:3",
+      "description": "Explica energía en la atmósfera en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "energía en la atmósfera"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:4",
+      "description": "Explica efecto invernadero en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "efecto invernadero"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:5",
+      "description": "Explica circulación del aire en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "circulación del aire"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:6",
+      "description": "Explica variabilidad climática en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "variabilidad climática"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:7",
+      "description": "Explica calentamiento global en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "calentamiento global"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "cambio climático",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:8",
+      "description": "Explica cambio climático en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "cambio climático"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "capa de ozono",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:9",
+      "description": "Explica capa de ozono en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "capa de ozono"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "temperatura en diferentes zonas"
+      ]
+    },
+    {
+      "id": "facet:atmosphere-climate:10",
+      "description": "Explica temperatura en diferentes zonas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ],
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "temperatura en diferentes zonas"
+      ],
+      "forbiddenText": [
+        "capas de la atmósfera",
+        "composición química de la atmósfera",
+        "energía en la atmósfera",
+        "efecto invernadero",
+        "circulación del aire",
+        "variabilidad climática",
+        "calentamiento global",
+        "cambio climático",
+        "capa de ozono"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:1",
+      "description": "Explica huracanes en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "huracanes"
+      ],
+      "forbiddenText": [
+        "deslizamientos",
+        "inundaciones",
+        "terremotos",
+        "tsunamis",
+        "sistema de emergencia"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:2",
+      "description": "Explica deslizamientos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "deslizamientos"
+      ],
+      "forbiddenText": [
+        "huracanes",
+        "inundaciones",
+        "terremotos",
+        "tsunamis",
+        "sistema de emergencia"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:3",
+      "description": "Explica inundaciones en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "inundaciones"
+      ],
+      "forbiddenText": [
+        "huracanes",
+        "deslizamientos",
+        "terremotos",
+        "tsunamis",
+        "sistema de emergencia"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:4",
+      "description": "Explica terremotos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "terremotos"
+      ],
+      "forbiddenText": [
+        "huracanes",
+        "deslizamientos",
+        "inundaciones",
+        "tsunamis",
+        "sistema de emergencia"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:5",
+      "description": "Explica tsunamis en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "tsunamis"
+      ],
+      "forbiddenText": [
+        "huracanes",
+        "deslizamientos",
+        "inundaciones",
+        "terremotos",
+        "sistema de emergencia"
+      ]
+    },
+    {
+      "id": "facet:natural-risk-models:6",
+      "description": "Explica sistema de emergencia en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "33154dfb-ffe8-5256-82c0-3e2845024407",
+        "bf0d7b8a-7eea-5a30-980f-f792ef75d508",
+        "68b8db31-c159-5894-8215-7ed3d947b40b",
+        "1299b324-a54a-5c81-80a6-7618ffca576b",
+        "c4235289-8378-51c4-90bc-8e25b2f915f3",
+        "ced38c67-b281-5eff-9bbc-655ac5c8f424",
+        "1ad6cfa9-7a27-54bc-808a-202e4c4f8e0a",
+        "f6f927f4-dc6f-53bb-ab5c-2911b47e59d3",
+        "c902db71-2be3-5595-802a-7d9592e08187"
+      ],
+      "requiredTopic": "natural-risk-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "sistema de emergencia"
+      ],
+      "forbiddenText": [
+        "huracanes",
+        "deslizamientos",
+        "inundaciones",
+        "terremotos",
+        "tsunamis"
+      ]
+    },
+    {
+      "id": "facet:mineral-resources:1",
+      "description": "Explica exploración minera en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ],
+      "requiredTopic": "mineral-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "exploración minera"
+      ],
+      "forbiddenText": [
+        "explotación minera",
+        "recursos mineros dominicanos",
+        "mercado mundial de recursos mineros"
+      ]
+    },
+    {
+      "id": "facet:mineral-resources:2",
+      "description": "Explica explotación minera en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ],
+      "requiredTopic": "mineral-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "explotación minera"
+      ],
+      "forbiddenText": [
+        "exploración minera",
+        "recursos mineros dominicanos",
+        "mercado mundial de recursos mineros"
+      ]
+    },
+    {
+      "id": "facet:mineral-resources:3",
+      "description": "Explica recursos mineros dominicanos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ],
+      "requiredTopic": "mineral-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "recursos mineros dominicanos"
+      ],
+      "forbiddenText": [
+        "exploración minera",
+        "explotación minera",
+        "mercado mundial de recursos mineros"
+      ]
+    },
+    {
+      "id": "facet:mineral-resources:4",
+      "description": "Explica mercado mundial de recursos mineros en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ],
+      "requiredTopic": "mineral-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "mercado mundial de recursos mineros"
+      ],
+      "forbiddenText": [
+        "exploración minera",
+        "explotación minera",
+        "recursos mineros dominicanos"
+      ]
+    },
+    {
+      "id": "facet:energy-sustainability:1",
+      "description": "Explica energía no renovable en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredTopic": "energy-sustainability",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "energía no renovable"
+      ],
+      "forbiddenText": [
+        "energía renovable",
+        "eficiencia energética",
+        "historia del uso de energía",
+        "demanda de energía dominicana"
+      ]
+    },
+    {
+      "id": "facet:energy-sustainability:2",
+      "description": "Explica energía renovable en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredTopic": "energy-sustainability",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "energía renovable"
+      ],
+      "forbiddenText": [
+        "energía no renovable",
+        "eficiencia energética",
+        "historia del uso de energía",
+        "demanda de energía dominicana"
+      ]
+    },
+    {
+      "id": "facet:energy-sustainability:3",
+      "description": "Explica eficiencia energética en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredTopic": "energy-sustainability",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "eficiencia energética"
+      ],
+      "forbiddenText": [
+        "energía no renovable",
+        "energía renovable",
+        "historia del uso de energía",
+        "demanda de energía dominicana"
+      ]
+    },
+    {
+      "id": "facet:energy-sustainability:4",
+      "description": "Explica historia del uso de energía en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredTopic": "energy-sustainability",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "historia del uso de energía"
+      ],
+      "forbiddenText": [
+        "energía no renovable",
+        "energía renovable",
+        "eficiencia energética",
+        "demanda de energía dominicana"
+      ]
+    },
+    {
+      "id": "facet:energy-sustainability:5",
+      "description": "Explica demanda de energía dominicana en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "bc7c5430-ab48-5096-8a04-00623b01d6f3",
+        "89fde1fc-d3a2-5b26-98aa-a71f9f4d3bca",
+        "d2e003a3-7875-5fdf-bcfe-5cab5b0a1185",
+        "d99968ac-be12-547f-8159-8ea5d66cff77"
+      ],
+      "requiredTopic": "energy-sustainability",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "demanda de energía dominicana"
+      ],
+      "forbiddenText": [
+        "energía no renovable",
+        "energía renovable",
+        "eficiencia energética",
+        "historia del uso de energía"
+      ]
+    },
+    {
+      "id": "facet:bioreactor-models:1",
+      "description": "Explica biorreactor en fase sólida en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7a95d26-c6be-5197-bbf8-c7258237b648",
+        "12a1f2ef-49a7-5768-9b04-ab7a194beed2",
+        "1741da91-58e6-5ef5-b720-7d5576a9074c"
+      ],
+      "requiredTopic": "bioreactor-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "biorreactor en fase sólida"
+      ],
+      "forbiddenText": [
+        "biorreactor en fase líquida",
+        "fotobiorreactor"
+      ]
+    },
+    {
+      "id": "facet:bioreactor-models:2",
+      "description": "Explica biorreactor en fase líquida en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7a95d26-c6be-5197-bbf8-c7258237b648",
+        "12a1f2ef-49a7-5768-9b04-ab7a194beed2",
+        "1741da91-58e6-5ef5-b720-7d5576a9074c"
+      ],
+      "requiredTopic": "bioreactor-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "biorreactor en fase líquida"
+      ],
+      "forbiddenText": [
+        "biorreactor en fase sólida",
+        "fotobiorreactor"
+      ]
+    },
+    {
+      "id": "facet:bioreactor-models:3",
+      "description": "Explica fotobiorreactor en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7a95d26-c6be-5197-bbf8-c7258237b648",
+        "12a1f2ef-49a7-5768-9b04-ab7a194beed2",
+        "1741da91-58e6-5ef5-b720-7d5576a9074c"
+      ],
+      "requiredTopic": "bioreactor-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "fotobiorreactor"
+      ],
+      "forbiddenText": [
+        "biorreactor en fase sólida",
+        "biorreactor en fase líquida"
+      ]
+    },
+    {
+      "id": "facet:biological-sequences:1",
+      "description": "Explica secuencias de ADN en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "secuencias de ADN"
+      ],
+      "forbiddenText": [
+        "secuencias de proteínas",
+        "datos genómicos",
+        "datos proteómicos",
+        "alineamiento de secuencias"
+      ]
+    },
+    {
+      "id": "facet:biological-sequences:2",
+      "description": "Explica secuencias de proteínas en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "secuencias de proteínas"
+      ],
+      "forbiddenText": [
+        "secuencias de ADN",
+        "datos genómicos",
+        "datos proteómicos",
+        "alineamiento de secuencias"
+      ]
+    },
+    {
+      "id": "facet:biological-sequences:3",
+      "description": "Explica datos genómicos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "datos genómicos"
+      ],
+      "forbiddenText": [
+        "secuencias de ADN",
+        "secuencias de proteínas",
+        "datos proteómicos",
+        "alineamiento de secuencias"
+      ]
+    },
+    {
+      "id": "facet:biological-sequences:4",
+      "description": "Explica datos proteómicos en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "datos proteómicos"
+      ],
+      "forbiddenText": [
+        "secuencias de ADN",
+        "secuencias de proteínas",
+        "datos genómicos",
+        "alineamiento de secuencias"
+      ]
+    },
+    {
+      "id": "facet:biological-sequences:5",
+      "description": "Explica alineamiento de secuencias en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "alineamiento de secuencias"
+      ],
+      "forbiddenText": [
+        "secuencias de ADN",
+        "secuencias de proteínas",
+        "datos genómicos",
+        "datos proteómicos"
+      ]
+    },
+    {
+      "id": "facet:cell-models:1",
+      "description": "Explica célula animal en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5c19e224-242c-5e8e-9da3-53db6188bdb9"
+      ],
+      "requiredTopic": "cell-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "célula animal"
+      ],
+      "forbiddenText": [
+        "célula vegetal"
+      ]
+    },
+    {
+      "id": "facet:cell-models:2",
+      "description": "Explica célula vegetal en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "5c19e224-242c-5e8e-9da3-53db6188bdb9"
+      ],
+      "requiredTopic": "cell-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "célula vegetal"
+      ],
+      "forbiddenText": [
+        "célula animal"
+      ]
+    },
+    {
+      "id": "facet:medical-biotechnology:1",
+      "description": "Explica aplicaciones médicas de la biotecnología en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "23a1eb91-d979-5de3-b2fe-0ec52f376d9e"
+      ],
+      "requiredTopic": "medical-biotechnology",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "aplicaciones médicas de la biotecnología"
+      ],
+      "forbiddenText": []
+    },
+    {
+      "id": "facet:plant-biotechnology:1",
+      "description": "Explica biotecnología vegetal en el modelo educativo ficticio usando únicamente las fuentes proporcionadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "18fa06c7-ca52-5b00-a61b-37bd02e74ab6"
+      ],
+      "requiredTopic": "plant-biotechnology",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming",
+        "observation"
+      ],
+      "requiredText": [
+        "biotecnología vegetal"
+      ],
+      "forbiddenText": []
+    },
+    {
+      "id": "negative:ozone-without-greenhouse",
+      "description": "Explica capa de ozono con las fuentes dadas, sin efecto invernadero.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "requiredTopic": "atmosphere-climate",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "capa de ozono"
+      ],
+      "forbiddenText": [
+        "efecto invernadero"
+      ],
+      "sourceRecordIds": [
+        "6f8b9d01-6aa0-593f-ad67-7f6d3fc8c30b",
+        "7013bc1f-8c2e-5573-8d54-ef123642e40c",
+        "e4617663-71be-54d7-9231-93fc486fe4ab",
+        "a25047cd-7a2f-50ae-bb4d-ba6edfb526e3",
+        "979d3003-283e-5657-8eed-fba963cfacf1",
+        "69e61649-dc72-5224-a7dd-4ce67d8aa866"
+      ]
+    },
+    {
+      "id": "negative:mining-exploration-only",
+      "description": "Explica exploración minera con las fuentes dadas, sin explotación minera.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "requiredTopic": "mineral-resources",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "exploración minera"
+      ],
+      "forbiddenText": [
+        "explotación minera"
+      ],
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ]
+    },
+    {
+      "id": "negative:animal-cell-only",
+      "description": "Explica célula animal con las fuentes dadas, sin célula vegetal.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "requiredTopic": "cell-models",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "célula animal"
+      ],
+      "forbiddenText": [
+        "célula vegetal"
+      ],
+      "sourceRecordIds": [
+        "5c19e224-242c-5e8e-9da3-53db6188bdb9"
+      ]
+    },
+    {
+      "id": "negative:dna-without-proteins",
+      "description": "Explica secuencias de ADN con las fuentes dadas, sin secuencias de proteínas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "requiredText": [
+        "secuencias de ADN"
+      ],
+      "forbiddenText": [
+        "secuencias de proteínas"
+      ],
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "id": "independent-mental-explanations",
+      "description": "Explica la esquizofrenia del caso ficticio con la ficha profesional dada y explica la depresión del segundo caso con su ficha proporcionada.",
+      "activityType": "ANALYSIS",
+      "requiredTopic": "mental-health",
+      "requiredText": [
+        "esquizofrenia",
+        "depresión"
+      ],
+      "requiredEvidence": [
+        "explanation"
+      ],
+      "sourceRecordIds": [
+        "45270feb-1f3f-57b8-a67e-b6e843e23166",
+        "df265cb9-ccad-59b5-897e-3d70a61182c3",
+        "8ee1d7de-63d5-5999-8dc9-d4312c9366df",
+        "72598f9c-544d-54b1-9880-ef057fec601e",
+        "31e0fac5-0f6b-59df-9bbf-474f3c5e4773"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "id": "given-biological-program-analysis",
+      "description": "Analiza el programa biológico proporcionado y explica cómo sus entradas y salidas responden al algoritmo dado. No programes ni depures otro programa.",
+      "activityType": "ANALYSIS",
+      "requiredEvidence": [
+        "analysis",
+        "explanation"
+      ],
+      "sourceRecordIds": [
+        "6825f7d9-f49b-50d4-89ee-30147200269b",
+        "be98aa78-c24a-5bf4-97c0-cc7f18a48793",
+        "60e04df4-9348-5f86-97ce-653cd745cafd",
+        "196037ff-a40d-5fa0-a448-c3c93f7a413f",
+        "0a0a2247-7b97-5375-9317-2a3574910deb"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "id": "given-biological-simulation-analysis",
+      "description": "Analiza los resultados de la simulación del sistema biológico proporcionada y explica los límites de sus parámetros. No simules otro sistema.",
+      "activityType": "ANALYSIS",
+      "requiredEvidence": [
+        "data-interpretation",
+        "explanation"
+      ],
+      "sourceRecordIds": [
+        "168b67b9-7a8a-5ebd-ab26-8fa73d70b25c",
+        "1d590222-a3ef-52b5-aeeb-03296af586d8",
+        "6a5c5484-4e54-544b-a4d5-4bea4f090192",
+        "d9667178-a460-530e-996b-bbedcbe86caf",
+        "882a3e68-3a61-5ade-b732-f7b4695ec074"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "id": "given-plant-investigation-analysis",
+      "description": "Analiza los resultados de la investigación en biotecnología vegetal ya realizada y proporcionada. No investigues ni ejecutes otro experimento.",
+      "activityType": "ANALYSIS",
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "sourceRecordIds": [
+        "18fa06c7-ca52-5b00-a61b-37bd02e74ab6"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "id": "explicit-mining-comparison",
+      "description": "Compara la exploración minera y la explotación minera del caso proporcionado usando sus evidencias y condiciones dadas.",
+      "activityType": "COMPARISON",
+      "requiredEvidence": [
+        "comparison"
+      ],
+      "requiredText": [
+        "exploración minera",
+        "explotación minera"
+      ],
+      "sourceRecordIds": [
+        "b90128c7-43cc-5690-be41-10bf3dd030bb",
+        "e590935f-0ef9-5bb6-8aca-8172116e56d0",
+        "8b23ef9b-65d7-5892-86ad-44cd724f0fb7",
+        "cfd141fa-71c5-5eb6-be61-27f119ed29e9"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "research",
+        "experiment-procedure"
+      ],
+      "id": "explicit-independent-simulation-programming",
+      "description": "Simula el sistema biológico con las entradas dadas y programa su algoritmo biológico bajo los casos proporcionados.",
+      "activityType": "PROJECT",
+      "requiredEvidence": [
+        "simulation",
+        "programming"
+      ],
+      "sourceRecordIds": [
+        "168b67b9-7a8a-5ebd-ab26-8fa73d70b25c",
+        "1d590222-a3ef-52b5-aeeb-03296af586d8",
+        "6a5c5484-4e54-544b-a4d5-4bea4f090192",
+        "d9667178-a460-530e-996b-bbedcbe86caf",
+        "882a3e68-3a61-5ade-b732-f7b4695ec074",
+        "6825f7d9-f49b-50d4-89ee-30147200269b",
+        "be98aa78-c24a-5bf4-97c0-cc7f18a48793",
+        "60e04df4-9348-5f86-97ce-653cd745cafd",
+        "196037ff-a40d-5fa0-a448-c3c93f7a413f",
+        "0a0a2247-7b97-5375-9317-2a3574910deb"
+      ]
+    },
+    {
+      "participationMode": "INDIVIDUAL",
+      "forbiddenEvidence": [
+        "simulation",
+        "programming"
+      ],
+      "id": "explicit-alternative-simulation-programming",
+      "description": "Simula el sistema biológico con las entradas dadas o programa el algoritmo biológico con los casos proporcionados; desarrolla solamente la alternativa elegida.",
+      "activityType": "PROJECT",
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "sourceRecordIds": [
+        "168b67b9-7a8a-5ebd-ab26-8fa73d70b25c",
+        "1d590222-a3ef-52b5-aeeb-03296af586d8",
+        "6a5c5484-4e54-544b-a4d5-4bea4f090192",
+        "d9667178-a460-530e-996b-bbedcbe86caf",
+        "882a3e68-3a61-5ade-b732-f7b4695ec074",
+        "6825f7d9-f49b-50d4-89ee-30147200269b",
+        "be98aa78-c24a-5bf4-97c0-cc7f18a48793",
+        "60e04df4-9348-5f86-97ce-653cd745cafd",
+        "196037ff-a40d-5fa0-a448-c3c93f7a413f",
+        "0a0a2247-7b97-5375-9317-2a3574910deb"
+      ]
+    },
+    {
+      "id": "respiratory-given-register-analysis",
+      "description": "Analiza el registro respiratorio educativo proporcionado bajo las referencias de la ficha profesional dada.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "requiredTopic": "respiratory-sounds",
+      "requiredEvidence": [
+        "data-interpretation"
+      ],
+      "forbiddenEvidence": [
+        "observation",
+        "research",
+        "experiment-procedure",
+        "simulation",
+        "programming"
+      ],
+      "sourceRecordIds": [
+        "415e4477-1275-5d57-866e-ebd3e7cdfebd"
+      ]
+    },
+    {
+      "id": "uppercase-genomics-alternative",
+      "description": "Analiza y representa los datos genómicos O Analiza y representa los datos proteómicos proporcionados, según la alternativa elegida.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "f7d3bed3-3d36-5780-bfc0-e3395ecf36b2"
+      ],
+      "requiredEvidence": [
+        "alternative"
+      ],
+      "forbiddenEvidence": [
+        "analysis",
+        "representation",
+        "data-interpretation"
+      ],
+      "expectedCriteria": 1,
+      "requiredText": [
+        "datos genómicos",
+        "datos proteómicos"
+      ]
+    },
+    {
+      "id": "protein-dna-shorthand-analysis",
+      "description": "Analiza las secuencias de proteínas y ADN proporcionadas y señala las diferencias en las posiciones indicadas.",
+      "activityType": "ANALYSIS",
+      "participationMode": "INDIVIDUAL",
+      "sourceRecordIds": [
+        "2c92736c-f3b3-522b-a153-f4154a77c968",
+        "aec3cd50-a7e5-5de6-b1f6-4d530345c04e",
+        "3c756c86-6cf5-51dc-bcca-86b8bda072c3",
+        "f7e0a123-9608-5e56-baa2-0fa0b8b060ed",
+        "831acf52-22ea-5f0d-a350-d4028857c44d",
+        "3fb06c2f-41f2-5787-b5b5-7e460c116169",
+        "fa9feaa3-e2c0-589c-b36e-c47da32dba6c",
+        "722a07be-fca5-54ce-9198-5c6aca19dbc1",
+        "89378d54-f8f7-5336-a85c-77ea0f77a700",
+        "fce05c2b-d6ea-5be8-966c-fd73a5dca16a"
+      ],
+      "requiredTopic": "biological-sequences",
+      "requiredEvidence": [
+        "analysis",
+        "identification"
+      ],
+      "requiredText": [
+        "ADN",
+        "proteínas"
+      ],
+      "forbiddenEvidence": [
+        "research",
+        "programming",
+        "simulation",
+        "experiment-procedure"
+      ]
+    }
+  ]
+}

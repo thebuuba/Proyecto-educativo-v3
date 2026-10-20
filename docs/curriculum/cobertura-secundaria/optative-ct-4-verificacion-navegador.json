@@ -1,0 +1,38 @@
+{
+  "catalog": "evaluation-2026.139",
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "BLOCKED_PERSONAL_AUTHENTICATION",
+  "browser": "Chrome",
+  "observed": [
+    "La pestaña personal conservada en localhost:8787/login pide contraseña; el campo permanece vacío.",
+    "El script DOM index-BGRlQSSe.js coincide con el build final139.",
+    "Captura visual conservada en evidencia privada; al reanudar no cambió el árbol de accesibilidad y sigue enfocado el campo Contraseña.",
+    "No se envió formulario, correo o contraseña. Una cuenta recordada no acredita sesión activa."
+  ],
+  "notVerified": [
+    "Creador autenticado personal de Biología y Computación4.",
+    "Estrategia visible/AUTO/MANUAL e instrumento completo por navegador.",
+    "Puntos pendientes, manuales,17.35→20→17.35,guardado/reapertura y cambio exclusivo de estrategia en la cuenta personal."
+  ],
+  "preservation": {
+    "passwordChanged": false,
+    "emailSent": false,
+    "storageCleared": false,
+    "cacheCleared": false,
+    "draftsDeleted": false,
+    "newPersonalActivity": false,
+    "newPersonalBaseline": false
+  },
+  "manualSteps": [
+    "Iniciar sesión en localhost:8787 con la cuenta propia de Development, sin utilizar credenciales de producción.",
+    "Abrir cuarto, modalidad Académica, salida Ciencias y Tecnología, Biología y Computación. Preparar un contexto QA personal separado solo después de recuperar el acceso; no modificar actividades previas.",
+    "Consigna QA: Elabora un informe de la fisiología humana usando el caso ficticio y las fuentes proporcionadas. Explica las relaciones solicitadas con lenguaje científico. Revisar estrategia visible y sugerencia automática cuando tenga fundamento; cambiarla manualmente.",
+    "Revisar los cuatro formatos completos, dejar puntuación inicialmente vacía, introducir17.35→20→17.35 y conservar un criterio editado manualmente.",
+    "Guardar una sola actividad QA identificable y reabrir. Cambiar únicamente la estrategia, guardar y reabrir; comparar exactamente instrumento, criterios, descriptores, puntuación y snapshot. Registrar la baseline una sola vez después de verificar."
+  ],
+  "limits": [
+    "QA HTTP/DB se documenta por separado y no sustituye el recorrido personal.",
+    "No se borró caché,service worker,almacenamiento,borradores ni datos.",
+    "Continúan las tareas independientes autorizadas sin solicitar nuevos enlaces de acceso."
+  ]
+}

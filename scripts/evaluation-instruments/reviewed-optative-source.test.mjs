@@ -4,6 +4,22 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
+test('Biología CT4 conserva352registros,258anclas y37exclusiones, incluido el indicador privado',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-ct-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-CT-4','4',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr)
+ const manifest=JSON.parse(run.stdout),m=JSON.parse(readFileSync(path,'utf8'))
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_CT_4_V1')
+ assert.equal(manifest.elements,352);assert.equal(manifest.excludedFromAssessment,37);assert.equal(m.contents.length,258)
+ assert.equal(m.criticalIndicators.length,44)
+ const observable=m.criticalIndicators.filter(r=>r.assessmentPolicy==='OBSERVABLE_CONTENT_TO_ADAPT'),privateRows=m.criticalIndicators.filter(r=>r.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION')
+ assert.equal(observable.length,43);assert(observable.every(r=>r.caseIds.length));assert.equal(privateRows.length,1);assert.equal(privateRows[0].caseIds.length,0)
+ const excluded=new Set(m.explicitExclusions.map(r=>r.id));assert(excluded.has(privateRows[0].id))
+ assert(manifest.metadata.excludedAssessmentElementIds.includes(manifest.elementIdMap[privateRows[0].id]))
+ const fixtures=JSON.parse(readFileSync('data/evaluation-instruments/optative-ct-four-contracts.json','utf8'))
+ for(const task of fixtures.cases)for(const id of task.sourceRecordIds)assert(!excluded.has(id),task.id)
+ for(const args of [['OPT-CT-4','5',path,'--optative'],['OPT-CT-5','5',path,'--optative'],['OPT-CT-6','6',path,'--optative'],['OPT-CT-4','4',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
 test('Cálculo MT6 conserva57registros,17anclas,21indicadores y5exclusiones sin reparar literales',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-mt-6-matriz.json',run=spawnSync(process.execPath,[script,'OPT-MT-6','6',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr)

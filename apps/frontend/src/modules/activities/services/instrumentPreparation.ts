@@ -4,6 +4,7 @@ import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,adaptOptativeLanguageScale} from '@aula/shared'
 import { resolveCommonArtTask, commonArtCriteria, adaptArtScale } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialCriteria,adaptSocialScale} from '@aula/shared'
+import {resolveOptativeScienceTask,optativeScienceCriteria,adaptOptativeScienceScale} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceCriteria,adaptScienceScale} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchCriteria } from '@aula/shared'
 import {resolveOptativeMathTask,optativeMathCriteria} from '@aula/shared'
@@ -73,6 +74,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if (art) return adaptArtScale(editableAuthoredRecommendation(commonArtCriteria(art), input, input.activityType ?? art.activityType, `educacion-artistica-comun-${art.grade}`), art)
   const social=resolveCommonSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(social)return adaptSocialScale(editableAuthoredRecommendation(commonSocialCriteria(social),input,input.activityType??social.activityType,`ciencias-sociales-comun-${social.grade}`))
+  const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',input.academicContext)
+  if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id),input.description??'',optativeScience)
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)
   if(commonScience)return adaptScienceScale(editableAuthoredRecommendation(commonScienceCriteria(commonScience),input,input.activityType??commonScience.activityType,`ciencias-naturaleza-comun-${commonScience.grade}`),input.description??'')
   const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',input.academicContext)

@@ -1,5 +1,12 @@
 import assert from 'node:assert/strict'
 import {readFileSync} from 'node:fs'
+
+test('Biología CT4 tiene evidencia propia sin dar por hechas Química CT5 o Física CT6',()=>{
+ const directory='docs/curriculum/cobertura-secundaria/',inventory=JSON.parse(readFileSync(directory+'secundaria-inventario-maestro.json','utf8')),matrix=JSON.parse(readFileSync(directory+'optative-ct-4-matriz.json','utf8')),row=inventory.scopes.find(s=>s.id===matrix.scopeId)
+ assert(row);assert.equal(row.status,matrix.status);assert.equal(row.provider,'packages/shared/src/secondary-optative-science.ts');assert.equal(row.currentRunVerification,matrix.verification.httpDb)
+ assert.equal(row.exit,'Ciencias y Tecnología');assert.equal(row.grade,4);assert.equal(matrix.contents.length,258)
+ for(const other of inventory.scopes.filter(s=>s.exit===row.exit&&[5,6].includes(s.grade)))assert.equal(other.provider,null)
+})
 import {test} from 'node:test'
 const read=p=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/'+p,'utf8'))
 

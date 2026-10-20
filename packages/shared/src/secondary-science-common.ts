@@ -110,8 +110,13 @@ export function resolveCommonScienceTask(title:string,description:string,context
  const codes=['NAT-TU','NAT-VIDA','NAT-FISICAS','NAT-BIO','NAT-QUI','NAT-FIS'],code=context.subjectCode.trim().toUpperCase()
  if(code!=='NAT'&&code!==codes[context.grade-1])return null
  const topics=commonScienceTopicsByGrade[context.grade];if(!topics)return null
+ return resolveScienceTaskForTopics(title,description,context.grade,topics)
+}
+type ScienceTaskOptions={additionalVerbs?:string;selectTopics?:(text:string,topics:CommonScienceTopic[])=>CommonScienceTopic[]}
+/** Shares the scientific parser; callers retain responsibility for their academic-context guard. */
+export function resolveScienceTaskForTopics(title:string,description:string,grade:number,topics:CommonScienceTopic[],options:ScienceTaskOptions={}):CommonScienceTask|null{
  const text=scienceRequirementText(description.trim()||title)
- const find=(part:string)=>topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+ const find=(part:string)=>options.selectTopics?options.selectTopics(part,topics):topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
   .filter(t=>t.grade!==6||t.id!=='heat-temperature'||!/movimiento de atomos y moleculas/.test(part)||/calor|transferencia/.test(part))
   .filter(t=>t.grade!==5||t.id!=='element-families'||!/puente de hidrogeno/.test(part))
   .filter(t=>t.id!=='ecosystems'||!/flujo de energia/.test(part)||/estructura|funcion|sucesion|componentes|interacciones/.test(part))
@@ -119,14 +124,15 @@ export function resolveCommonScienceTask(title:string,description:string,context
   .filter(t=>t.id!=='solutions'||!/mezcla|coloide/.test(part)||/concentracion|solubilidad/.test(part)).map(t=>focusedTopic(t,part))
  // A nonempty description never inherits a former title's scientific subject.
  const selected=find(text);if(!selected.length)return null
- const split=new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${actionVerb}\\b)`,'g')
+ const verbs=options.additionalVerbs?`(?:${actionVerb}|${options.additionalVerbs})`:actionVerb
+ const split=new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${verbs}\\b)`,'g')
  let previous=selected
  const actions=text.split(split).filter(Boolean).map(part=>{const own=find(part);previous=own.length?own:previous;return{text:part,topics:previous}})
  const designedProduct=actions.some(a=>constructsDevice(a.text)||designs(a.text))
- const cellModel=(context.grade===2||context.grade===4||context.grade===5)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
- const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text)||context.grade===5&&balances(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
+ const cellModel=(grade===2||grade===4||grade===5)&&actions.some(a=>represents(a.text)&&/maqueta|modelo/.test(a.text)&&!cognitiveBefore(a.text,/\b(?:dibuj\w*|represent\w*|constru\w*|elabor\w*)\b/))
+ const activityType=actions.some(a=>procedure(a.text))?'LAB_PRACTICE':/\b(?:redact\w*|elabor\w*|escrib\w*)\b.*\binforme\b/.test(text)?'REPORT':investigates(text)?'RESEARCH':designedProduct||cellModel?'PROJECT':/\b(?:debat\w*|debate)\b/.test(text)?'DEBATE':oralRequested(text)?'ORAL_PRESENTATION':actions.some(a=>computes(a.text)||solves(a.text)||grade===5&&balances(a.text))?'EXERCISE_SET':/\b(?:elabor\w*|desarroll\w*)\b.*\bproyecto\b/.test(text)?'PROJECT':/\b(?:observ\w*|registr\w*)\b/.test(text)&&!explanation(text)?'OBSERVATION':actions.some(a=>compares(a.text)&&!contrastsHypothesis(a.text))?'COMPARISON':'ANALYSIS'
  const technique=activityType==='LAB_PRACTICE'||activityType==='OBSERVATION'?'observacion-sistematica':activityType==='DEBATE'?'debate':activityType==='ORAL_PRESENTATION'?'presentacion':activityType==='RESEARCH'||activityType==='PROJECT'?'proyecto':'analisis-producciones'
- return{grade:context.grade,actions,activityType,technique}
+ return{grade,actions,activityType,technique}
 }
 type Levels=ContextualTopicCriterion['progressionLevels']
 /** Each row has an observable success condition and distinct, non-personal progression. */

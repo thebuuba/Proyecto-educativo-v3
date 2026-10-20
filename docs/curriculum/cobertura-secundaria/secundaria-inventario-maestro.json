@@ -2095,10 +2095,10 @@
         503,
         504
       ],
-      "status": "PENDING",
-      "provider": null,
-      "evidence": null,
-      "currentRunVerification": "NOT_RETESTED",
+      "status": "CONNECTED_INSTRUMENTS_REVIEWED_HTTP_PARTIAL_CONNECTION_BLOCKED",
+      "provider": "packages/shared/src/secondary-optative-science.ts",
+      "evidence": "docs/curriculum/cobertura-secundaria/optative-ct-4-matriz.json",
+      "currentRunVerification": "PARTIAL_19_OF_42_VERIFIED_CONNECTION_BLOCKED",
       "nonApplicable": [
         1,
         2,

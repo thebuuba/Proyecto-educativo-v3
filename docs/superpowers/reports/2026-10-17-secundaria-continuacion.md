@@ -1,5 +1,52 @@
 # Continuación del encargo integral de secundaria
 
+
+
+
+## Punto efectivo: CT4 con código verificado y HTTP parcial; continuar CT5
+
+Rama ampliacion-de-instrumentos-2. Base CT4:6a5ea75cda009b96e4b616300780f97eb458c44f; commit LOCAL CT4 pendiente de auditoría en este checkpoint. Antes de repetir, consultar git log ycommit-ct-four.json. NO PUSH por orden vigente sobre integraciones403. Sin producción,main,merge,despliegue,reset,migraciones,nuevas dependencias ni subagentes.
+
+Biología y Computación4: catálogo139/fuente individual352registros/37exclusiones/contextoQA instalados CREATED/UNCHANGED e idempotentes.97agrupaciones,258anclas de contenido+I313observable;219contratos+97breves,1264instrumentos completos leídos con huellas,0lecturas pendientes. Focales1760backend/1753frontend+7propósito. Backend86028/183/0,frontendactividades84885/114/0,cuatrobuilds0inclCloudflaredry-run,Node46/0,lints0/9advertenciasprevias.75JS/max2063915/margen33237/todosprecargados. Fuente=compilado1264;15optativas10764,ING15176,MAT2888ycomunes exactos a138.36diferencias deartefactos antiguos ya estaban en138;no regenerar históricos.
+
+HTTP PARCIAL:19de42muestras verificadas/19de43I,19actividades existentes y20IDs preparados;126respuestas/0HTTP500recibidos porcliente/1HTTP500tardío enservidor/2timeoutscliente.68310terminó1 después de1muestra por timeout30s duranteinterpretación(servidor20035458ms). Runtime y12baselinesreadonly pasaron;UNA recuperación45370terminó1 durantel20.ºguardado(servidor500239263ms,Connection terminated unexpectedly). Causa profunda no establecida;noENOTFOUND observado aquí. No tercerintento,ni cambioDNS/credenciales/config/timeouts. Progreso exacto optative-ct-4-evaluation-2026.139-source-73286e0d-30f3-56e9-ac65-329876b5ae9c-products-sample-d8f5f2e9bde3-http-progress.json. IDs ylogs preservados;20.ºIDbfaf8f1b-dd61-4000-95fb-261dcf15aec7NOexiste segúnconsultaPGreadonly;conservarlo para recuperación futura idempotente,sincrearloahora.
+
+Historiareadonly final72releases/907snapshots:71/888previosEXACTOS,19QA/19snapshotsnuevos,0duplicados.12baselinespersonalesplainpostQApasaron,sin nuevas. Runtime volvióverificarse POST_HTTP:PGapp_backend_local/sinBYPASSRLS,Auth200,Storage200,frontendDevelopmentexclusivamenteeolgunypmtgrsyrjzcld;entryindex-BGRlQSSe.js,mainSHA9f58e8a507019fb8d4e91212403d1453237746b8f6eedfa39709612c09ef9c48. Worker139exec50766/launcher49308 sigueactivo;antes debuildsCT5,verificar ydetener SOLOsuárbolpropio. NingúnHTTP/installer activo. Runtime139HTTPlogsarchivados. Evidencia AUTORITATIVA partial-checks-139.json yverificacion-http pública PARCIAL;NOexistefinal-checks139. Helpers close-ct-four-evidence/preserve-history139 sonPREPARADOSpara42/930yNOejecutados:no usarlosbajoestadoactual.
+
+NavegadorpersonalChrome1statisticsFreshTab1796703313enloginContraseñavacía,Handoff. AXreanudada sin cambios,DOMassetfinalconfirmado,capturaprivadact-four-personal-password-required.png. verificacion-navegadorBLOCK/manualsteps. Noemail/passwordsubmit/cache/SW/storage/borradores borrados,0actividad/baselinepersonalCT4. MT5/6tambiénsinbaselinepersonal nueva;MT6mantiene17/32HTTP/18guardadas/dosDNS,IDsintactos,no heredaCT4.
+
+Próximo:leerNodepostclosure58053 antesdeotro,audit139UTF8/secretos/ignorados/diff,commitCT4español LOCAL conlimitación explícita. DespuésCT5→CT6→especializadas/backfillsautorizados,sinpreguntas. No repetir autores/classificadores/renders ni generadoresdeartefactosCT4,queresetearíanHTTP. Revisión propia sin independenciaexterna;menores editoriales registrados eninforme2026-10-20-optativa-ct-biologia-4.md.
+
+CT5preparaciónYAhecha:117anclas57C55P5A/37I,188registros,10headers+fragment40+9private.71topics/117anclas enct-five-topic-outline.json;37criticaldrafts/152contratosborrador(37+71+44facetas),metadata privada enct-five-metadata-draft.json. No publicar como cobertura implementada. Probeinyectómetadata sinregistro:34de37tasks/3vacíos,0conectados;fallos deobjeto/privacidad/acciones nominales enct-five-reuse-findings.json,análisisct-five-resumption-analysis.md yreferenciasprimariasFDA/NCCIH ct-five-primary-references.md. NOrepetir autores. Falta planpúblicoCT5/freeze139UNAveztrascommitCT4/contratosRED/implementaciónGREEN/lecturacompleta/gates/runtime/QAHTTP ypersonal si sesión. No codificar categorías preliminares DESIGN/SIMULATION/PROGRAMMING como nuevos tipos:sonacciones dePROJECT;problemasEXERCISE_SET. Datos/modelos/fichas dados,sin clínica,químicapeligrosa,consumo,visitas,compras,deps oIA.
+
+## Checkpoints históricos superados
+
+## Punto efectivo: CT4 verificado localmente y catálogo139/fuente/QA instalados; HTTP en recuperación acotada
+
+Rama ampliacion-de-instrumentos-2, HEAD 6a5ea75cda009b96e4b616300780f97eb458c44f, 46 commits delante según referencias cacheadas. CT4 aún sin commit. NO PUSH por orden vigente sobre integraciones de despliegue; no producción/main/merge/deploy/reset/esquema/deps/subagentes.
+
+CT4 Biología y Computación:352registros,258contenidos adaptables,43indicadores observables/44literales y37exclusiones.97agrupaciones con258anclas de contenido+I313observable adicional.219contratos+97breves/1264instrumentos;lectura y huellas completas,322textos/25familias/310referencias/13packs más cuatro formatos especiales de entrega. Focales1760backend/1753frontend+7propósito,regresiones de nominales/alternativas/objetos/frecuencias corregidas. Minor diferidos en revisión pública.
+
+Gates finales139 PASARON:backend86028/183/0,frontendactivities84885/114/0,shared/backend/frontend/Cloudflarebuild0(CFdry-run),Node45+precache1=46/0,lints0/9advertenciasprevias. PrimerfrontendbuildRED3imports;segundoRED2112217bytes/15065sobre2MiB→chunkmetadataCT4GREEN.75JSmax2063915/margen33237/todosprecargados. Fuente=compilado1264exactos;15previas10764/ING15176/MAT2888ycomunesexactos;138congelado=DB;12baselinespersonalesplainpreservadas,sin nuevas. No repetir suites/builds sin cambios.
+
+Worker139 ACTIVO exec50766/launcher49308, puerto8787. PostgreSQLapp_backend_local/sinBYPASSRLS,Auth200,Storage200 yfrontendexclusivamente eolgunypmtgrsyrjzcld. Entryindex-BGRlQSSe.js,mainSHA9f58e8a507019fb8d4e91212403d1453237746b8f6eedfa39709612c09ef9c48;chunkcientífico48740SHAe6ef335dfb5be1ee220dad70721b089eee5e9284dabedcd434069a7bbaf1064e. Runtime139verified/local-checks139 guardados. Instalador139exec68649 TERMINÓ0CREATED/UNCHANGED,preservadas71releases/888snapshots. NOrepetir. Fuente/contextoQAexec6097TERMINÓ0:sourceCREATED/UNCHANGED yQAprimero/segundo0;no duplicar. HTTP42muestras/43I iniciado:exec68310 terminó1 por TimeoutError tras1muestra guardada/verificada y10respuestas HTTP,0HTTP500. Interpretación siguiente respondió200tras35458ms en log;la petición cliente agotó30s. No confundir con los ENOTFOUND deMT6. Runtime readonly posterior pasó y12baselines personales pasaron;exec45370 reanudó UNAvez con mismo progreso/IDs,sin cambiar timeouts/configuración. Consultar proceso/progreso antes de otra ejecución;no bucles. No builds ni editar motores/fixtures/HTTP mientras su ejecución esté activa.
+
+PersonalChrome1statisticsFreshTab1796703313loginpasswordvacíoHandoff;assetfinalDOMconfirmado,captura privadact-four-personal-password-required.pngguardada yembebida. Noemail/password/caché/SW/storageborrados,noactividad/baselinepersonalCT4. MT6HTTPsigue17/32verificadas,18guardadas/dosDNS;IDsintactos,no reiniciarbucles ni llamar completo ese bloque.
+
+Próximo:leer HTTPexec45370 yconservarIDs;historia72releases/888baseesperada verificada antes deguardar muestra,12baselinesplainpostQA yruntimefinal. Si accesoexternobloquea,documentarsinreintentosindiscriminados ycontinuarindependientes. Actualizarinforme2026-10-20-optativa-ct-biologia-4.md,master/continuación/ledger,audit ycommit LOCALespañol. Después CT5→CT6/especializadas/backfillspersonales, sinpreguntas. Source/readers/autores yaejecutados no repetir para noresetear evidenciasHTTP.
+
+## Checkpoints históricos superados
+
+## Punto efectivo: CT4 en implementación; MT6 ya comprometido localmente
+
+Rama `ampliacion-de-instrumentos-2`, HEAD `6a5ea75cda009b96e4b616300780f97eb458c44f` («Conecta los instrumentos de Cálculo de sexto»), 46 commits delante según referencias cacheadas. No repetir ese commit. NO PUSH por instrucción vigente sobre integraciones de despliegue. Sin producción, main, merge, despliegue ni subagentes.
+
+CT4 Biología y Computación sigue en implementación y lectura. Fuente352registros,258contenidos adaptables,43indicadores observables y37exclusiones;metadata97agrupacionescon258anclasdecontenido+I313. Hay218contratos tras añadir objetos,negativas,acciones independientes y alternativas. Últimos fallos de lectura corregidos con regresiones;se verifica todavía una variante de alternativa con mayúsculas. Catálogo139soloencódigo,138congelado exacto. Artefactos ycontinuación de lectura todavía intermedios;NOdeclarar cobertura completa ni instalar antes de regenerar,terminar lectura ypasar gates. Ledger `.superpowers/sdd/2026-10-20-optativa-ct-biologia-4/progress.md`;evidencias privadas `.wrangler/secondary-completion/ct-four-*`.
+
+No hay test/build/installer ni listener8787 activos al reanudar. Dist corresponde todavía a138. MT6 mantiene HTTP parcial17/32,18 actividades guardadas con IDs conservados y dos fallos DNS documentados; navegador personal bloqueado por autenticación. No reiniciar bucles, recrear actividades ni baselines. Continuar CT4 y después CT5/CT6 y demás tareas independientes autorizadas.
+
+## Checkpoints históricos superados
+
 ## Punto efectivo: Cálculo MT6 con código verificado y HTTP parcial; continuar CT4 independiente
 
 Rama `ampliacion-de-instrumentos-2`; último commit confirmado antes de este checkpoint6fb2ea0c59a6b36a6df5e05bbc97d807582e48e5(MT5). CommitLOCALMT6pendiente de Nodepostclosure/audit;consultargitlog ycommit-mt-six.json antes de duplicarlo. NO PUSH por orden403. No producción/main/merge/deploy/reset/esquema/deps/subagentes.
