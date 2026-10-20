@@ -32,18 +32,20 @@ Presentación como archivo frente a exposición oral; procesador de texto frente
 - [x] Transcribir por columnas y continuaciones con partes literales verificables. No contar cada subencabezado como tema ni corregir errores de la fuente. Conservar ambas procedencias de RA/CE.
 - [x] Registrar políticas: actitudes privadas excluidas; orientaciones docentes fuera de entregables; seguridad observable solo cuando proceda. Condición200p.p.m./una falta por minuto conservada, sin requisito automático.
 - [x] GREEN y revisión documental:210registros/302partes;5pruebas aprobadas. Corregidos espacios de extracción por posición de fragmentos y separación de dos procedimientos enPDF63, sin corregir erratas impresas.
-- [ ] Inventario, informe, auditoría y commit local del bloque documental.
+- [x] Inventario, informe, auditoría y commit local del bloque documental: `20d49102`.
 
 ## Task2: contexto y conservación de142
 
 **Archivos:** `catalog-v142.ts`, `catalog-current.ts`, `curriculum-context.ts`, `evaluation-instruments.service.ts`, contratos de contexto técnico y comparación de definiciones.
 
-- [ ] Congelar142 una sola vez desde fuente/compilado y lectura de DB verificable. Conservar75releases/985snapshots actuales y los baselines anteriores; no regenerarlos.
-- [ ] RED: MF002/cuarto/ciclo2/técnico resuelve un ámbito documental único; académico, Artes, primaria, otros grados y salidas optativas se rechazan. MF053 conserva exactamente sus296definiciones y contexto.
-- [ ] Sustituir la identidad técnica única por una lista explícita de módulos revisados; no habilitar cualquier códigoMF ni resolver nombres difusos. La metadata declara las procedencias revisadas sin fingir que el contexto incluye un programa.
-- [ ] GREEN de contexto/servicio/catálogos. Si la lectura remota está bloqueada, continuar fuente y pruebas locales; no publicar un catálogo sin conservación verificable.
+- [x] Congelar142 una sola vez desde fuente/compilado y lectura de DB verificable. Conservados75releases/985snapshots y15.176definiciones deInglés; no regenerar estas referencias.
+- [x] RED: MF002/cuarto/ciclo2/técnico resuelve un ámbito documental único; académico, Artes, primaria, otros grados y salidas optativas se rechazan. MF053 conserva exactamente sus296definiciones y contexto.
+- [x] Sustituir la identidad técnica única por una lista explícita de módulos revisados; no habilitar cualquier códigoMF ni resolver nombres difusos. La metadata declara las procedencias revisadas sin fingir que el contexto incluye un programa.
+- [x] GREEN:831focalizadas,90.128backend/191archivos,buildsbackend/frontend/Cloudflare0(dry-run),lint0,fuente5/5,precaché1/1. Payload142 y296definiciones MF053 fuente/compilado exactos. Ninguna escritura remota.
 
 ## Task3: proveedor y lectura de instrumentos
+
+Preparados91contratos esperados/81adaptaciones en `data/evaluation-instruments/technical-mf002-four-contracts.json`. Aún sin proveedor, conexión ni lectura de instrumentos. Siguiente: ejecutar RED contra esos contratos antes de modificar el proveedor compartido. No presentar esta lista como cobertura.
 
 **Archivos:** `packages/shared/src/secondary-technical-mf002-4.ts`, `secondary-technical.ts`, contratos `data/evaluation-instruments/technical-mf002-four-contracts.json`, backend/frontend specs, artefactos completos y revisión.
 

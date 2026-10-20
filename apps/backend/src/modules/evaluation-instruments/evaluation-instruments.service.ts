@@ -194,12 +194,19 @@ export function versionAllowsContext(version: { importMetadata?: unknown }, cont
   const metadata = version.importMetadata && typeof version.importMetadata === 'object' && !Array.isArray(version.importMetadata)
     ? version.importMetadata as Record<string, unknown> : {}
   // A historical complete academic catalog cannot capture a specialist module.
-  if(context.subjectCode.trim().toUpperCase()===reviewedTechnicalSubject.code || metadata.technicalModuleCode===reviewedTechnicalSubject.code) {
-    return isReviewedTechnicalContext(context) && metadata.technicalModuleCode===reviewedTechnicalSubject.code
-      && metadata.technicalProgramCode===reviewedTechnicalSubject.programCode && metadata.commonOnly===false
-      && Array.isArray(metadata.modalityCodes) && metadata.modalityCodes.includes(reviewedTechnicalSubject.modalityCode)
-      && Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.includes(reviewedTechnicalSubject.code)
-      && Array.isArray(metadata.grades) && metadata.grades.includes(reviewedTechnicalSubject.grade)
+  if(/^MF_/.test(context.subjectCode.trim().toUpperCase()) || typeof metadata.technicalModuleCode==='string') {
+    const subject=reviewedTechnicalSubject(context.subjectCode)
+    if(!subject || !isReviewedTechnicalContext(context))return false
+    // The first installed module predates the plural provenance field. Preserve
+    // its exact manifest; shared modules require every reviewed source, no extras.
+    const programs=metadata.technicalProgramCodes??(subject.programCodes.length===1?[metadata.technicalProgramCode]:null)
+    return metadata.technicalModuleCode===subject.code
+      && metadata.technicalProgramCode===subject.programCode && metadata.commonOnly===false
+      && Array.isArray(programs) && programs.length===subject.programCodes.length
+      && subject.programCodes.every(code=>programs.includes(code))
+      && Array.isArray(metadata.modalityCodes) && metadata.modalityCodes.includes(subject.modalityCode)
+      && Array.isArray(metadata.subjectCodes) && metadata.subjectCodes.includes(subject.code)
+      && Array.isArray(metadata.grades) && metadata.grades.includes(subject.grade)
   }
   if (metadata.commonOnly === true && context.optativeExitName) return false
   if ('grades' in metadata && (!Array.isArray(metadata.grades) || !metadata.grades.includes(context.grade))) return false

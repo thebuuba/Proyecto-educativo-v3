@@ -1,0 +1,663 @@
+{
+  "subjectCode": "MF_002_3",
+  "subjectName": "Ofimática",
+  "primarySourceProgram": "IFC007_3",
+  "sourcePrograms": [
+    "IFC006_3",
+    "IFC007_3"
+  ],
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "EXPECTED_CONTRACTS_PROVIDER_PENDING",
+  "cases": [
+    {
+      "id": "hardware",
+      "description": "Describe las funciones del hardware del equipo informático de la ficha.",
+      "topics": [
+        "hardware"
+      ]
+    },
+    {
+      "id": "hardware-software",
+      "description": "Distingue hardware y software del equipo de la ficha.",
+      "topics": [
+        "hardware",
+        "software"
+      ]
+    },
+    {
+      "id": "software-types",
+      "description": "Clasifica el software de sistema y el software de aplicación de la lista dada.",
+      "topics": [
+        "software"
+      ]
+    },
+    {
+      "id": "os-interface",
+      "description": "Identifica escritorio, ventanas y barras de tareas del sistema operativo mostrado.",
+      "topics": [
+        "os-interface"
+      ]
+    },
+    {
+      "id": "os-settings",
+      "description": "Configura las opciones del sistema operativo y el panel de control del equipo simulado.",
+      "topics": [
+        "os-settings"
+      ]
+    },
+    {
+      "id": "os-tools",
+      "description": "Utiliza los accesorios y herramientas del sistema operativo del entorno simulado.",
+      "topics": [
+        "os-tools"
+      ]
+    },
+    {
+      "id": "os-commands",
+      "description": "Aplica los comandos del sistema operativo solicitados en el entorno de práctica.",
+      "topics": [
+        "os-commands"
+      ]
+    },
+    {
+      "id": "peripherals",
+      "description": "Identifica los periféricos y explica su función en el equipo informático de la ficha.",
+      "topics": [
+        "peripherals"
+      ]
+    },
+    {
+      "id": "connect-peripherals",
+      "description": "Conecta y desconecta el teclado y la impresora del equipo de práctica según el manual dado.",
+      "topics": [
+        "peripheral-connection"
+      ]
+    },
+    {
+      "id": "antivirus",
+      "description": "Compara antivirus y cortafuegos del equipo del caso.",
+      "topics": [
+        "antivirus-firewall"
+      ]
+    },
+    {
+      "id": "storage-maintenance",
+      "description": "Explica la reparación, desfragmentación y respaldo de disco del caso; no ejecutes cambios sobre archivos reales.",
+      "topics": [
+        "storage-maintenance"
+      ]
+    },
+    {
+      "id": "keyboard",
+      "description": "Transcribe el párrafo dado con el teclado alfanumérico y corrige los errores detectados.",
+      "topics": [
+        "keyboard",
+        "text-correction"
+      ]
+    },
+    {
+      "id": "typing-speed",
+      "description": "Practica mecanografía con el texto dado y registra velocidad y precisión con la condición de 200 p.p.m. y máximo una falta por minuto.",
+      "topics": [
+        "keyboard"
+      ]
+    },
+    {
+      "id": "workspace",
+      "description": "Describe la organización del espacio de trabajo informático y las medidas ergonómicas de la ficha adaptada.",
+      "topics": [
+        "workspace"
+      ]
+    },
+    {
+      "id": "document",
+      "description": "Crea un documento de texto con los datos ficticios proporcionados.",
+      "topics": [
+        "document"
+      ]
+    },
+    {
+      "id": "document-template",
+      "description": "Elabora una plantilla de memorando en el procesador de textos con los campos solicitados.",
+      "topics": [
+        "document-template"
+      ]
+    },
+    {
+      "id": "text-format",
+      "description": "Aplica fuente, párrafos, sangrías y tabulaciones al documento de texto según el modelo dado.",
+      "topics": [
+        "text-format"
+      ]
+    },
+    {
+      "id": "page-format",
+      "description": "Configura márgenes, orientación, encabezados, pies y numeración de páginas del documento según la ficha.",
+      "topics": [
+        "page-format"
+      ]
+    },
+    {
+      "id": "text-correction",
+      "description": "Corrige ortografía y gramática del documento de texto proporcionado mediante buscar y reemplazar cuando proceda.",
+      "topics": [
+        "text-correction"
+      ]
+    },
+    {
+      "id": "word-customize",
+      "description": "Personaliza la cinta de opciones, el acceso rápido y los atajos del procesador de textos según la ficha.",
+      "topics": [
+        "word-customize"
+      ]
+    },
+    {
+      "id": "word-tables",
+      "description": "Inserta una tabla en el documento de texto y organiza los datos dados en sus celdas.",
+      "topics": [
+        "word-tables"
+      ]
+    },
+    {
+      "id": "word-table-structure",
+      "description": "Modifica filas, columnas, bordes y celdas de la tabla del documento de texto según el modelo.",
+      "topics": [
+        "word-table-structure"
+      ]
+    },
+    {
+      "id": "word-table-formula",
+      "description": "Aplica una fórmula y ordena los datos de la tabla del procesador de textos según la ficha.",
+      "topics": [
+        "word-table-formula"
+      ]
+    },
+    {
+      "id": "word-images",
+      "description": "Inserta una imagen y ajusta su posición en el documento de texto sin alterar la información.",
+      "topics": [
+        "word-images"
+      ]
+    },
+    {
+      "id": "word-diagrams",
+      "description": "Crea un diagrama de formas en el procesador de textos que represente las relaciones dadas.",
+      "topics": [
+        "word-diagrams"
+      ]
+    },
+    {
+      "id": "word-watermark",
+      "description": "Añade una marca de agua al documento según el modelo.",
+      "topics": [
+        "word-watermark"
+      ]
+    },
+    {
+      "id": "word-equation",
+      "description": "Inserta los símbolos y la ecuación dados en el documento de texto.",
+      "topics": [
+        "word-equation"
+      ]
+    },
+    {
+      "id": "word-screenshot",
+      "description": "Inserta la captura de pantalla proporcionada en el documento de texto.",
+      "topics": [
+        "word-screenshot"
+      ]
+    },
+    {
+      "id": "word-outline",
+      "description": "Reorganiza el esquema de títulos y los bloques de creación del documento.",
+      "topics": [
+        "word-outline"
+      ]
+    },
+    {
+      "id": "word-columns",
+      "description": "Distribuye el texto en columnas periodísticas según el diseño solicitado.",
+      "topics": [
+        "word-columns"
+      ]
+    },
+    {
+      "id": "mail-merge",
+      "description": "Combina la carta modelo con los datos ficticios para preparar correspondencia personalizada.",
+      "topics": [
+        "mail-merge"
+      ]
+    },
+    {
+      "id": "labels",
+      "description": "Prepara sobres y etiquetas con los datos ficticios dados y comprueba la vista previa.",
+      "topics": [
+        "labels"
+      ]
+    },
+    {
+      "id": "word-comments",
+      "description": "Añade y revisa comentarios del documento de texto proporcionado.",
+      "topics": [
+        "word-comments"
+      ]
+    },
+    {
+      "id": "word-changes",
+      "description": "Gestiona el control de cambios del documento según las revisiones solicitadas.",
+      "topics": [
+        "word-changes"
+      ]
+    },
+    {
+      "id": "word-comparison",
+      "description": "Compara y combina las dos versiones del documento de texto proporcionadas.",
+      "topics": [
+        "word-comparison"
+      ]
+    },
+    {
+      "id": "word-protection",
+      "description": "Explica la protección de un documento de texto y sus permisos usando el caso ficticio.",
+      "topics": [
+        "word-protection"
+      ]
+    },
+    {
+      "id": "file-export",
+      "description": "Guarda el documento en los formatos de archivo solicitados y comprueba que conserve su contenido.",
+      "topics": [
+        "file-export"
+      ]
+    },
+    {
+      "id": "web-document",
+      "description": "Prepara un documento web con el texto y las secciones indicadas; no lo publiques.",
+      "topics": [
+        "web-document"
+      ]
+    },
+    {
+      "id": "blog-entry",
+      "description": "Redacta una entrada de blog como borrador con los datos dados; no publiques ni crees cuentas.",
+      "topics": [
+        "blog-entry"
+      ]
+    },
+    {
+      "id": "word-links",
+      "description": "Inserta los hipervínculos indicados en el documento de texto y comprueba sus destinos.",
+      "topics": [
+        "word-links"
+      ]
+    },
+    {
+      "id": "word-references",
+      "description": "Añade campos, marcadores y referencias cruzadas al documento largo según la ficha.",
+      "topics": [
+        "word-references"
+      ]
+    },
+    {
+      "id": "word-contents",
+      "description": "Crea una tabla de contenidos vinculada a los títulos del documento.",
+      "topics": [
+        "word-contents"
+      ]
+    },
+    {
+      "id": "word-index",
+      "description": "Crea un índice de términos del documento según las entradas solicitadas.",
+      "topics": [
+        "word-index"
+      ]
+    },
+    {
+      "id": "word-bibliography",
+      "description": "Añade las fuentes dadas y compila la bibliografía del documento.",
+      "topics": [
+        "word-bibliography"
+      ]
+    },
+    {
+      "id": "spreadsheet-cells",
+      "description": "Organiza los datos ficticios en celdas y aplica su formato en la hoja de cálculo.",
+      "topics": [
+        "spreadsheet-cells"
+      ]
+    },
+    {
+      "id": "spreadsheet-formulas",
+      "description": "Calcula el total de la tabla mediante fórmulas de la hoja de cálculo y verifica el resultado.",
+      "topics": [
+        "spreadsheet-formulas"
+      ]
+    },
+    {
+      "id": "spreadsheet-functions",
+      "description": "Aplica la función PROMEDIO en la hoja de cálculo a los datos ficticios dados.",
+      "topics": [
+        "spreadsheet-functions"
+      ]
+    },
+    {
+      "id": "spreadsheet-lookup",
+      "description": "Utiliza la función de búsqueda y referencia solicitada para localizar datos en la hoja de cálculo.",
+      "topics": [
+        "spreadsheet-functions"
+      ]
+    },
+    {
+      "id": "spreadsheet-chart",
+      "description": "Elabora un gráfico de barras a partir del rango dado en la hoja de cálculo.",
+      "topics": [
+        "spreadsheet-chart"
+      ]
+    },
+    {
+      "id": "spreadsheet-template",
+      "description": "Crea una plantilla de presupuesto en la hoja de cálculo con los campos dados.",
+      "topics": [
+        "spreadsheet-template"
+      ]
+    },
+    {
+      "id": "conditional-format",
+      "description": "Aplica formato condicional a la hoja de cálculo para señalar los valores que cumplen la regla dada.",
+      "topics": [
+        "conditional-format"
+      ]
+    },
+    {
+      "id": "data-validation",
+      "description": "Configura validación de datos en las celdas según los límites indicados en la hoja de cálculo.",
+      "topics": [
+        "data-validation"
+      ]
+    },
+    {
+      "id": "autofilter",
+      "description": "Filtra la lista de datos de la hoja de cálculo con el autofiltro según el criterio dado.",
+      "topics": [
+        "autofilter"
+      ]
+    },
+    {
+      "id": "advanced-filter",
+      "description": "Aplica un filtro avanzado con el rango de criterios dado y extrae los registros solicitados.",
+      "topics": [
+        "advanced-filter"
+      ]
+    },
+    {
+      "id": "external-data",
+      "description": "Importa los datos externos a una tabla de la hoja de cálculo y verifica su correspondencia con la fuente dada.",
+      "topics": [
+        "external-data"
+      ]
+    },
+    {
+      "id": "pivot-table",
+      "description": "Crea una tabla dinámica con los datos ficticios y las agrupaciones solicitadas.",
+      "topics": [
+        "pivot-table"
+      ]
+    },
+    {
+      "id": "spreadsheet-export",
+      "description": "Exporta los datos de la hoja de cálculo al formato solicitado sin perder los registros indicados.",
+      "topics": [
+        "spreadsheet-export"
+      ]
+    },
+    {
+      "id": "spreadsheet-protection",
+      "description": "Explica cómo proteger la hoja de cálculo y el libro del caso sin revelar contraseñas.",
+      "topics": [
+        "spreadsheet-protection"
+      ]
+    },
+    {
+      "id": "workbooks",
+      "description": "Crea, duplica y organiza las hojas del libro de cálculo de práctica según la ficha.",
+      "topics": [
+        "workbooks"
+      ]
+    },
+    {
+      "id": "spreadsheet-comments",
+      "description": "Añade comentarios y revisa los cambios del libro compartido de cálculo del caso.",
+      "topics": [
+        "spreadsheet-comments"
+      ]
+    },
+    {
+      "id": "macros-explanation",
+      "description": "Explica para qué sirve la macro de hoja de cálculo de la ficha; no la ejecutes.",
+      "topics": [
+        "macros"
+      ]
+    },
+    {
+      "id": "spreadsheet-print",
+      "description": "Configura la vista previa de impresión de la hoja de cálculo; no imprimas.",
+      "topics": [
+        "spreadsheet-print"
+      ]
+    },
+    {
+      "id": "slides",
+      "description": "Elabora una presentación de diapositivas con la información ficticia dada.",
+      "topics": [
+        "slides"
+      ]
+    },
+    {
+      "id": "slide-format",
+      "description": "Aplica el patrón, la distribución del texto y el fondo solicitados a las diapositivas.",
+      "topics": [
+        "slide-format"
+      ]
+    },
+    {
+      "id": "slide-graphics",
+      "description": "Inserta el gráfico y el diagrama proporcionados en las diapositivas.",
+      "topics": [
+        "slide-graphics"
+      ]
+    },
+    {
+      "id": "slide-media",
+      "description": "Inserta el sonido y el videoclip proporcionados en las diapositivas según la ficha.",
+      "topics": [
+        "slide-media"
+      ]
+    },
+    {
+      "id": "slide-animation",
+      "description": "Aplica las animaciones y transiciones indicadas a la presentación de diapositivas.",
+      "topics": [
+        "slide-animation"
+      ]
+    },
+    {
+      "id": "slide-timing",
+      "description": "Configura la duración y el orden de aparición de las diapositivas según los tiempos dados.",
+      "topics": [
+        "slide-timing"
+      ]
+    },
+    {
+      "id": "slide-notes",
+      "description": "Escribe las notas del orador y comentarios solicitados para las diapositivas dadas.",
+      "topics": [
+        "slide-notes"
+      ]
+    },
+    {
+      "id": "slide-config",
+      "description": "Configura una presentación personalizada y expórtala a vídeo según las opciones de la ficha.",
+      "topics": [
+        "slide-config"
+      ]
+    },
+    {
+      "id": "slide-review",
+      "description": "Comprueba y corrige los errores de la presentación de diapositivas antes de guardar la versión solicitada.",
+      "topics": [
+        "slide-review"
+      ]
+    },
+    {
+      "id": "browser-search",
+      "description": "Distingue navegador, buscador y metabuscador según las funciones de la ficha.",
+      "topics": [
+        "browser-search"
+      ]
+    },
+    {
+      "id": "web-search",
+      "description": "Busca la información indicada en las fuentes web proporcionadas y justifica la selección.",
+      "topics": [
+        "web-search"
+      ]
+    },
+    {
+      "id": "files-folders",
+      "description": "Organiza archivos y carpetas ficticios con nombres y accesos directos según las indicaciones.",
+      "topics": [
+        "files-folders"
+      ]
+    },
+    {
+      "id": "files-safety",
+      "description": "Explica cómo copiar y mover los archivos ficticios conservando su integridad; no borres archivos reales.",
+      "topics": [
+        "files-safety"
+      ]
+    },
+    {
+      "id": "copyright",
+      "description": "Identifica las condiciones de autoría y licencias de las fuentes digitales proporcionadas.",
+      "topics": [
+        "copyright"
+      ]
+    },
+    {
+      "id": "bookmarks",
+      "description": "Organiza favoritos e historial del navegador de práctica para recuperar las fuentes dadas.",
+      "topics": [
+        "bookmarks"
+      ]
+    },
+    {
+      "id": "browser-security",
+      "description": "Analiza los riesgos y niveles de seguridad del navegador de Internet del caso.",
+      "topics": [
+        "browser-security"
+      ]
+    },
+    {
+      "id": "email-draft",
+      "description": "Redacta un correo simulado con asunto, destinatario ficticio y archivo adjunto según la ficha.",
+      "topics": [
+        "email-draft"
+      ]
+    },
+    {
+      "id": "email-agenda",
+      "description": "Organiza los contactos ficticios y la agenda electrónica de práctica con las fechas dadas.",
+      "topics": [
+        "email-agenda"
+      ]
+    },
+    {
+      "id": "email-archive",
+      "description": "Clasifica y archiva los mensajes de correo simulados según las reglas dadas.",
+      "topics": [
+        "email-archive"
+      ]
+    },
+    {
+      "id": "email-security",
+      "description": "Explica las medidas de seguridad y protección de datos del correo electrónico del caso.",
+      "topics": [
+        "email-security"
+      ]
+    },
+    {
+      "id": "ftp",
+      "description": "Describe el procedimiento de transferencia de ficheros FTP de la ficha sin conectarte a un servidor.",
+      "topics": [
+        "ftp"
+      ]
+    },
+    {
+      "id": "software-help",
+      "description": "Utiliza el manual de ayuda de la aplicación ofimática para resolver la incidencia descrita.",
+      "topics": [
+        "software-help"
+      ]
+    },
+    {
+      "id": "document-negative",
+      "description": "Elabora una plantilla de carta en el procesador de textos. No insertes gráficos ni imágenes. Opcionalmente puedes consultar una presentación de diapositivas.",
+      "topics": [
+        "document-template"
+      ]
+    },
+    {
+      "id": "slides-no-oral",
+      "description": "Crea diapositivas con los datos dados. No expongas oralmente ni añadas sonido.",
+      "topics": [
+        "slides"
+      ]
+    },
+    {
+      "id": "formula-only",
+      "description": "Aplica una fórmula de suma en la hoja de cálculo. No crees gráficos ni tablas dinámicas.",
+      "topics": [
+        "spreadsheet-formulas"
+      ]
+    },
+    {
+      "id": "mail-no-send",
+      "description": "Prepara la combinación de correspondencia con los datos ficticios. No envíes correos ni imprimas etiquetas.",
+      "topics": [
+        "mail-merge"
+      ]
+    },
+    {
+      "id": "alternative-product",
+      "description": "Crea una tabla en el procesador de textos o elabora un gráfico en la hoja de cálculo con los datos dados.",
+      "topics": [
+        "word-tables",
+        "spreadsheet-chart"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "independent-products",
+      "description": "Crea una tabla en el procesador de textos y elabora un gráfico en la hoja de cálculo con los datos dados.",
+      "topics": [
+        "word-tables",
+        "spreadsheet-chart"
+      ]
+    },
+    {
+      "id": "manual-weights",
+      "description": "Elabora una plantilla de carta con crédito parcial y pesos por componente.",
+      "topics": [
+        "document-template"
+      ]
+    }
+  ],
+  "negativeDescriptions": [
+    "Describe el sistema circulatorio.",
+    "Explica las clases de palabras del párrafo.",
+    "Analiza los vectores del dengue.",
+    "Comenta la entrevista de trabajo en inglés."
+  ]
+}

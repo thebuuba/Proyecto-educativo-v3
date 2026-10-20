@@ -34,16 +34,24 @@ const generalSubjects: Record<string, string> = {
   LEN: 'Lengua Española', MAT: 'Matemática', SOC: 'Ciencias Sociales', NAT: 'Ciencias de la Naturaleza',
   ART: 'Educación Artística', EFI: 'Educación Física', FHR: 'Formación Integral Humana y Religiosa',
 }
-/** IFC006_3 PDF14–19; no other technical module has been reviewed yet. */
-export const reviewedTechnicalSubject = {code:'MF_053_3',programCode:'IFC006_3',name:'Análisis y Diseño de Sistemas Informáticos',grade:4,cycle:2,modalityCode:'technical_professional'} as const
+/** Explicitly reviewed modules. Program codes describe source provenance, not student enrolment. */
+const reviewedTechnicalSubjects = [
+  {code:'MF_053_3',programCode:'IFC006_3',programCodes:['IFC006_3'],name:'Análisis y Diseño de Sistemas Informáticos',grade:4,cycle:2,modalityCode:'technical_professional'},
+  {code:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],name:'Ofimática',grade:4,cycle:2,modalityCode:'technical_professional'},
+] as const
+export function reviewedTechnicalSubject(code:string) {
+  return reviewedTechnicalSubjects.find(subject=>subject.code===code.trim().toUpperCase())
+}
 export function isReviewedTechnicalContext(context:AcademicContext) {
-  return context.level==='SECONDARY' && context.grade===reviewedTechnicalSubject.grade && context.cycle===reviewedTechnicalSubject.cycle
-    && context.subjectCode.trim().toUpperCase()===reviewedTechnicalSubject.code && context.modalityCode===reviewedTechnicalSubject.modalityCode && !context.optativeExitName
+  const subject=reviewedTechnicalSubject(context.subjectCode)
+  return !!subject && context.level==='SECONDARY' && context.grade===subject.grade && context.cycle===subject.cycle
+    && context.modalityCode===subject.modalityCode && !context.optativeExitName
 }
 /** Audited code adapter. Source spelling is never modified in the curricular dataset. */
 function identity(context: AcademicContext) {
   const code = context.subjectCode.trim().toUpperCase()
-  if(code===reviewedTechnicalSubject.code)return {name:reviewedTechnicalSubject.name,exit:null,valid:isReviewedTechnicalContext(context),source:'REVIEWED_TECHNICAL_MODULE_CODE'}
+  const technical=reviewedTechnicalSubject(code)
+  if(technical)return {name:technical.name,exit:null,valid:isReviewedTechnicalContext(context),source:'REVIEWED_TECHNICAL_MODULE_CODE'}
   const opt = /^OPT-(HLM|HCS|MT|CT)(?:-(LEN|ING|SOC))?-([456])$/.exec(code)
   if (opt) {
     const exit = optativeExits[opt[1] as keyof typeof optativeExits]

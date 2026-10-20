@@ -1,6 +1,16 @@
 # Continuación del encargo integral de secundaria
 
-## Punto vigente: fuente de Ofimática revisada; siguiente contexto y conservación de 142
+## Punto vigente: contexto de Ofimática verificado; siguiente proveedor
+
+Fuente confirmada en `20d49102c6e8b6283e6f59856b7f7add3fc9f9c9` (53 commits adelantados respecto de la referencia remota guardada). Task2 terminada localmente: lista explícita MF053/MF002, ámbito único de cuarto técnico y procedencia IFC007 principal más IFC006. No hay campo de programa en la matrícula; no afirmar esa validación.
+
+142 congelado UNA vez mediante `freeze-142.mjs` (sesión37643 terminó0); nunca repetir/sobrescribir. Payload instalado exacto, 75 releases/985 snapshots y15.176definiciones deInglés conservados. Referencias: `technical-mf002-base-142.json`, `history-before-evaluation-2026.143.json`, `english-common-142-baseline-before-143.json`, `english-compiled-142-frozen.cjs`, `freeze-142-proof.json`. Todavía NO existe catálogo143 ni instalación nueva.
+
+Contexto:19RED/11compatibles→831focalizadasGREEN. Runner2788 `run-mf002-context-gates.mjs` TERMINÓ0: backend90.128/191archivos, buildsbackend/frontend/Cloudflare0,lint0. CloudflareDRYRUN, ningún despliegue. Nodefuente5/5 yprecaché1/1 (76assets,máximo1.908.851). Comparador `verify-mf002-context-preservation.mjs` YA ejecutado: payload142 y296instrumentosMF053 exactos fuente/compilado/ejemplos; no repetir el recorder. Informe `2026-10-20-tecnico-ofimatica-4.md`.
+
+Preparados91contratos esperados/81adaptaciones en `technical-mf002-four-contracts.json`; NO proveedor ni instrumentos deOfimática todavía. Siguiente: RED sobre contratos, reutilizar el motor técnico con prefijo específico conservando IDs deMF053; después revisión completa, conexión yrelease143. No iniciar otra asignatura. NO PUSH vigente, sin Worker activo, borrador eIDs deMF053 conservados.
+
+## Checkpoint documental anterior, superado por el contexto
 
 MF053 quedó confirmado en `08477b7c31e4d273f08fa8edbf99be57d548407a`, con 52 commits locales adelantados respecto de la referencia remota guardada. Árbol limpio tras ese commit. NO PUSH vigente; no consultar integraciones ni cambiar despliegues. El checkpoint inferior de MF053 conserva la incidencia DNS y los IDs válidos, pero su mención a commit pendiente quedó superada.
 
