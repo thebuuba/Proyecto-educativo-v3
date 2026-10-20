@@ -48,7 +48,11 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.135')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.136')
+    expect(evaluationCatalogCurrent.optativeMathModules.map(m=>m.subjectCode)).toEqual(['OPT-MT-4'])
+    const frozen135=evaluationCatalogForVersion('evaluation-2026.135')!
+    expect(frozen135.optativeMathModules).toBeUndefined()
+    expect(evaluationCatalogCurrent.optativeSocialModules).toEqual(frozen135.optativeSocialModules)
     const frozen133=evaluationCatalogForVersion('evaluation-2026.133')!
     expect(frozen133.optativeSocialModules!.map(m=>m.subjectCode)).toEqual(['OPT-HCS-SOC-4'])
     expect(evaluationCatalogCurrent.optativeSocialModules[0]).toEqual(frozen133.optativeSocialModules![0])

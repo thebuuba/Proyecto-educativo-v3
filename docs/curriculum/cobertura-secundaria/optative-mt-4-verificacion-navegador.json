@@ -1,0 +1,48 @@
+{
+  "status": "PERSONAL_DEVELOPMENT_QA_CONTEXT_COMPLETE",
+  "context": "4.º secundaria QA MT Development / QA MT Development",
+  "originalDataUnchanged": true,
+  "account": "PERSONAL_EXISTING_DEVELOPMENT",
+  "newAccounts": 0,
+  "newStudents": 0,
+  "runtimeEntry": "/assets/index-D-tExqz_.js",
+  "observed": {
+    "strategyVisible": true,
+    "initialScoreEmpty": true,
+    "automaticStrategy": "CASE_STUDY",
+    "automaticActivity": "EXERCISE_SET",
+    "automaticInstrument": "rubrica",
+    "fourCompleteFormatsRead": true,
+    "manualFormatAndParticipationPreserved": true,
+    "pointsLoop": [
+      17.35,
+      20,
+      17.35
+    ],
+    "weightedTotalPercent": 100,
+    "manualCriterionPreserved": true,
+    "saveAndReopen": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "manualStrategy": "PROBLEM_BASED",
+    "manualStrategyOrigin": "MANUAL",
+    "instrumentDomFieldsCompared": 31,
+    "reloadVerified": true,
+    "instrumentDatabaseHashUnchanged": true,
+    "activityId": "6fe63963-0f3b-46ca-92c9-5babbcc9f9ab",
+    "instrumentId": "7848b87a-8ffe-4b19-ae69-3bbcd2707e9e",
+    "snapshotId": "17e4ea36-8b70-43db-9854-9559d258692f",
+    "instrumentHash": "2c0113bcbc8fc664aef5438c910e463c",
+    "newActivities": 1,
+    "newSnapshots": 1,
+    "activityWrites": 2
+  },
+  "pending": [],
+  "limitations": [
+    "La captura de página completa agotó el tiempo de CDP;se capturó el viewport del instrumento con sus cinco filas ytotal.Los textos completos se leyeron en los31camposDOM yse compararon exactamente.",
+    "Algunas esperas del navegador agotaron3segundos antes de terminar la carga;se inspeccionó el estado ycontinuó sin repetir guardados.",
+    "El enlace de edición incluye el título en su nombre accesible;se localizó por búsqueda exacta en el listado,no se atribuye un fallo al enlace.",
+    "ContextoQAseparado en la escuela personal;no acredita todas las variantes curriculares."
+  ],
+  "viewportScreenshotAvailable": true,
+  "screenshotExcludedFromGit": true
+}

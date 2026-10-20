@@ -4,6 +4,20 @@ import {test} from 'node:test'
 import {readFileSync} from 'node:fs'
 const script='scripts/evaluation-instruments/reviewed-common-source.mjs',matrix='docs/curriculum/cobertura-secundaria/optative-hlm-len-4-matriz.json'
 
+test('Matemática Financiera MT4 conserva98registros,51anclas,21indicadores y12exclusiones',()=>{
+ const path='docs/curriculum/cobertura-secundaria/optative-mt-4-matriz.json',run=spawnSync(process.execPath,[script,'OPT-MT-4','4',path,'--optative'],{encoding:'utf8'})
+ assert.equal(run.status,0,run.stderr)
+ const manifest=JSON.parse(run.stdout),m=JSON.parse(readFileSync(path,'utf8'))
+ assert.equal(manifest.project,'eolgunypmtgrsyrjzcld');assert.equal(manifest.code,'MINERD_SECUNDARIA_2023_OPT_MT_4_V1')
+ assert.equal(manifest.elements,98);assert.equal(manifest.excludedFromAssessment,12)
+ assert.deepEqual(manifest.metadata.optativeExitNames,['Matemática y Tecnología'])
+ assert.equal(m.contents.length,51);assert.equal(m.criticalIndicators.length,21)
+ assert.match(m.criticalIndicators.find(r=>r.literal.includes('balanza general')).literal,/balanza general/)
+ const excluded=new Set(m.explicitExclusions.map(r=>r.id)),fixtures=JSON.parse(readFileSync('data/evaluation-instruments/optative-mt-four-contracts.json','utf8'))
+ for(const task of fixtures.cases)for(const id of task.sourceRecordIds)assert(!excluded.has(id))
+ for(const args of [['OPT-MT-4','5',path,'--optative'],['OPT-MT-5','5',path,'--optative'],['OPT-MT-4','4',path]])assert.notEqual(spawnSync(process.execPath,[script,...args],{encoding:'utf8'}).status,0)
+})
+
 test('Ciudadanía y Democracia Participativa HCS sexto conserva97registros,47anclas y21indicadores',()=>{
  const path='docs/curriculum/cobertura-secundaria/optative-hcs-soc-6-matriz.json',run=spawnSync(process.execPath,[script,'OPT-HCS-SOC-6','6',path,'--optative'],{encoding:'utf8'})
  assert.equal(run.status,0,run.stderr);const manifest=JSON.parse(run.stdout)

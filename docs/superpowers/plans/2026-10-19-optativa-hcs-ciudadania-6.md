@@ -87,4 +87,4 @@ Scope `ec62cee2-b76d-5582-8cf1-7762b9e5b4fd`, nombre oficial **Ciudadanía y Dem
 
 ### Task 8: cierre y continuidad
 
-- [ ] Cerrar informe,matriz/inventario ycontinuación con pruebas separadas de fuente,tests,HTTP ybrowser;revisión propia,UTF‑8/secretos/QA/respaldos/diff,commit español LOCAL yhash/árbol. NO PUSH. Continuar Matemática yTecnología4→5→6,Ciencias yTecnología yresto del encargo sinpreguntasrutinarias.
+- [x] Cerrar informe,matriz/inventario ycontinuación con pruebas separadas de fuente,tests,HTTP ybrowser;revisión propia,UTF‑8/secretos/QA/respaldos/diff,commit español LOCAL `901d7942fe6c14e72b596a067489ec17a48b445f`,árbol limpio. NO PUSH. Continuar Matemática yTecnología4→5→6,Ciencias yTecnología yresto del encargo sinpreguntasrutinarias.

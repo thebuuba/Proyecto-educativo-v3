@@ -6,6 +6,7 @@ import { resolveCommonArtTask, commonArtSelections } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialSelections} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
+import {resolveOptativeMathTask,optativeMathSelections} from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
 import { scientificTaskType,resolveEvaluationTask,resolveCommonEnglishTask,commonEnglishSelections,resolveOptativeEnglishTask } from '@aula/shared'
@@ -30,6 +31,8 @@ export function activityDefaultSuggestions(title: string, description: string, c
   if(social)return{activityType:social.activityType,technique:social.technique,instrument:commonSocialSelections(social,description).suggestedInstrumentType}
   const commonScience=resolveCommonScienceTask(title,description,context)
   if(commonScience)return {activityType:commonScience.activityType,technique:commonScience.technique,instrument:commonScienceSelections(commonScience,description).suggestedInstrumentType}
+  const optativeMath=resolveOptativeMathTask(title,description,context)
+  if(optativeMath)return {activityType:optativeMath.activityType,technique:optativeMath.technique,instrument:optativeMathSelections(optativeMath,description).suggestedInstrumentType}
   const math=resolveCommonMathTask(title,description,context)
   if(math)return {activityType:math.activityType,technique:math.technique,instrument:commonMathSelections(math,description).suggestedInstrumentType}
   const french=resolveCommonFrenchTask(title,description,context)

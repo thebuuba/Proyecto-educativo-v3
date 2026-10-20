@@ -31,22 +31,27 @@ export type CommonMathTask = { grade:number; actions:MathAction[]; activityType:
 export function resolveCommonMathTask(title:string,description:string,context?:InstrumentAcademicContext|null):CommonMathTask|null {
   if(context?.level!=='SECONDARY'||context.subjectCode.trim().toUpperCase()!=='MAT'||context.optativeExitName)return null
   const topics=commonMathTopicsByGrade[context.grade];if(!topics)return null
+  return resolveMathTaskForTopics(title,description,context.grade,topics)
+}
+/** Pure composition; each public resolver enforces its own academic guard. */
+export function resolveMathTaskForTopics(title:string,description:string,grade:number,topics:CommonMathTopic[],policy:{additionalVerbs?:string;selectTopics?:(text:string,topics:CommonMathTopic[])=>CommonMathTopic[];knownTopics?:CommonMathTopic[]}={}):CommonMathTask|null {
+  const context={grade},actionVerb=policy.additionalVerbs?`(?:${verb}|${policy.additionalVerbs})`:verb
   const text=mathRequirementText(description.trim()||title), heading=mathRequirementText(title)
-  const find=(part:string)=>topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
-  if(!text||!new RegExp(`\\b${verb}\\b|\\bejercicios?\\b`).test(text)&&!find(text).length)return null
+  const find=(part:string)=>policy.selectTopics?policy.selectTopics(part,topics):topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(part)&&(!t.exclude||!new RegExp(t.exclude).test(part)))
+  if(!text||!new RegExp(`\\b${actionVerb}\\b|\\bejercicios?\\b`).test(text)&&!find(text).length)return null
   const global=find(text)
   // Arithmetic is already meaningful evidence; a missing number set must not import an old title's context.
   const operations=[['suma','sum\\w*|adicion\\w*'],['resta','rest\\w*|sustraccion\\w*'],['multiplicación','multiplic\\w*|multipliqu\\w*'],['división','divisi\\w*|divid\\w*']].filter(([,pattern])=>new RegExp(`\\b(?:${pattern})\\b`).test(text)).map(([name])=>name)
   const arithmetic:CommonMathTopic={id:'arithmetic',grade:context.grade,label:'operaciones aritméticas',match:'',pages:[],relation:`el valor de los operandos, los signos y las propiedades de ${operations.length?mathList(operations):'las operaciones solicitadas'}`,representation:'representa únicamente las operaciones y los datos solicitados'}
   const arithmeticRequested=/\b(?:operaciones aritmeticas|multiplic\w*|multipliqu\w*|resta\w*|sustraccion\w*|divisi\w*|divid\w*|suma\w*|adicion\w*)\b/.test(text)
   const fallback=global.length?global:arithmeticRequested?[arithmetic]:find(heading)
-  if(!global.length&&Object.values(commonMathTopicsByGrade).flat().some(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)))return null
+  if(!global.length&&(policy.knownTopics??Object.values(commonMathTopicsByGrade).flat()).some(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)))return null
   if(!fallback.length)return null
-  const split=new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${verb}\\b)`,'g')
+  const split=new RegExp(`(?:[.;\\n]\\s*|\\s+(?:y|e|luego|despues)\\s+)(?=(?:(?:los estudiantes|cada estudiante)\\s+)?${actionVerb}\\b)`,'g')
   const parse=(value:string,inherited:CommonMathTopic[]):MathAction[]=>{
     // Adjacent verbs share their following object: analizar y corregir los errores.
-    value=value.replace(new RegExp(`\\b(${verb})\\s+(?:y|e)\\s+(?=${verb}\\b)`,'g'),'$1 ')
-    const alternatives=value.split(new RegExp(`\\s+(?:o bien|o)\\s+(?=${verb}\\b)`))
+    value=value.replace(new RegExp(`\\b(${actionVerb})\\s+(?:y|e)\\s+(?=${actionVerb}\\b)`,'g'),'$1 ')
+    const alternatives=value.split(new RegExp(`\\s+(?:o bien|o)\\s+(?=${actionVerb}\\b)`))
     if(alternatives.length>1)return [{text:value,topics:inherited,alternatives:alternatives.map(branch=>({text:branch,topics:find(branch).length?find(branch):inherited,steps:parse(branch,find(branch).length?find(branch):inherited)}))}]
     let previous=inherited
     return value.split(split).filter(Boolean).map(part=>{const own=find(part);previous=own.length?own:previous;return {text:part,topics:previous}})
@@ -64,7 +69,7 @@ function actionCriteria(action:MathAction):ContextualTopicCriterion[]{
   for(const t of action.topics){
     const text=action.text, thermometer=t.id==='temperature'&&/termometr\w*|escala/.test(text)
     const label=thermometer?'temperatura señalada en el termómetro':t.label
-    const relation=/\b(?:origen|historia|etimolog\w*)\b/.test(text)?`el origen o significado histórico solicitado de ${label}`
+    const relation=t.originIsHistorical!==false&&/\b(?:origen|historia|etimolog\w*)\b/.test(text)?`el origen o significado histórico solicitado de ${label}`
       :t.id==='temperature'&&!thermometer?'los valores de temperatura proporcionados y los cambios que exige la operación solicitada'
       :/esfera/.test(text)&&/desarrollo plano/.test(text)?'la curvatura de la esfera y la imposibilidad de extender su superficie en un plano sin distorsión':t.relation
     const add=(key:string,title:string,levels:Levels,weight=3)=>rows.push(criterion(t,key,title,levels,weight))

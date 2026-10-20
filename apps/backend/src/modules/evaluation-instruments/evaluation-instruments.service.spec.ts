@@ -1,3 +1,4 @@
+import optativeMtFour from '../../../../../data/evaluation-instruments/optative-mt-four-contracts.json'
 import optativeHcsCitizenship from '../../../../../data/evaluation-instruments/optative-hcs-soc-six-contracts.json'
 import optativeHcsDemography from '../../../../../data/evaluation-instruments/optative-hcs-soc-five-contracts.json'
 import optativeHcsPhilosophy from '../../../../../data/evaluation-instruments/optative-hcs-soc-four-contracts.json'
@@ -91,7 +92,7 @@ describe('API service security and version policy', () => {
     row.subject.code = code; row.subject.name = code === 'FRA' ? 'Francés' : code === 'ING' ? 'Inglés' : 'Lengua Española'
     return row
   }
-  for (const fixture of [optativeHcsCitizenship,optativeHcsDemography,optativeHcsPhilosophy,optativeHcsSix,optativeHcsFive,optativeHcsFour,optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour,optativeHlmEnglishFive,optativeHlmEnglishSix]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
+  for (const fixture of [optativeMtFour,optativeHcsCitizenship,optativeHcsDemography,optativeHcsPhilosophy,optativeHcsSix,optativeHcsFive,optativeHcsFour,optativeHlmFour,optativeHlmFive,optativeHlmSix,optativeHlmEnglishFour,optativeHlmEnglishFive,optativeHlmEnglishSix]) for (const task of fixture.cases) it(`interpreta y recomienda ${fixture.subjectCode}: ${task.id}`, async () => {
     const row = secondary(fixture.subjectCode)
     row.grade.sequence = fixture.grade
     row.grade.academicCycle.code = 'secundario_segundo_ciclo'

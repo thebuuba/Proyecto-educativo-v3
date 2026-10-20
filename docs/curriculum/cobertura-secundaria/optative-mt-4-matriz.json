@@ -1,0 +1,2161 @@
+{
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD"
+  },
+  "grade": 4,
+  "subjectCode": "OPT-MT-4",
+  "subjectName": "Matemática Financiera y Tecnología",
+  "optativeExitName": "Matemática y Tecnología",
+  "modalityCode": "academic",
+  "scopeId": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+  "pdfPages": [
+    491,
+    492,
+    493
+  ],
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      491,
+      492,
+      493
+    ],
+    "reviewedCompetenciesAndIndicators": true
+  },
+  "status": "CONNECTED_REPRESENTATIVE_INSTRUMENTS_HTTP_DB_AND_PERSONAL_BROWSER_QA_CONTEXT_VERIFIED",
+  "provider": "packages/shared/src/secondary-optative-math.ts",
+  "providerCatalog": "evaluation-2026.136",
+  "officialRecords": [
+    {
+      "id": "2352bdb6-41e3-5492-8719-7f338bd813dd",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Comunica sus ideas haciendo uso del análisis financiero a partir de la interpretación de situaciones\ndiversas, con el propósito de viabilizar el uso de los conocimientos de las finanzas.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "8ca05875-d792-5a0a-89c2-e06db2dc5600",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Comunicativa",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "0999ceec-82f5-57bf-a361-d2206d92abe1",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Razona y argumenta lógicamente sobre procesos implicados en situaciones de finanzas, para dar\nsoluciones a situaciones del entorno y de la comunidad.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "d2f48888-039f-5255-b9a5-3eaf143e29c4",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Pensamiento Lógico, Creativo y\nCrítico",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "319f76d6-adbd-5233-baf3-ad06becc965c",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Resuelve problemas de tipo financiero a partir del análisis de situaciones de la vida diaria, para mejor\nprovecho de la familia, el entorno y la comunidad.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "3f516177-1ead-5351-8b2a-79062d339dc1",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Resolución de Problemas",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "2d50ef81-633c-5056-a818-47ad48575a4e",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Modela e interpreta problemas y situaciones referidos al campo de las finanzas, a fin de tener una\nadecuada administración de los recursos que maneja.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "3f4a4c23-6c9b-5bc9-9eaa-85ed4a741e00",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ética y Ciudadana",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "e9c23f84-0c86-5494-8ba2-6b6b3049aac7",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica herramientas tecnológicas en la resolución de problemas financieros, a fin de tomar decisiones\nen situaciones del contexto comunitario.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "3d7f7fa5-c233-5aeb-a2b8-ae3f63aeb964",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Científica y Tecnológica",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "347555ea-0712-5265-92a8-b724767708af",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Aplica el análisis financiero a partir de modelos matemáticos como forma de contribuir de manera\nresponsable a la preservación del medioambiente.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "552a4b17-c5b5-5297-8cd3-3edd05c93820",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Ambiental y de la Salud",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "cdf21bac-6878-5da9-9ceb-d401e6444279",
+      "type": "SPECIFIC_COMPETENCY",
+      "text": "Muestra autonomía y apertura en la interpretación de situaciones y problemas sobre las finanzas,\nrespetando diferentes criterios de resolución para efectivos aprendizajes.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "c8753b95-167e-54be-8453-0e4e8c60f7c0",
+      "type": "FUNDAMENTAL_COMPETENCY",
+      "text": "Desarrollo Personal y Espiritual",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+      "type": "CONCEPT",
+      "text": "• Progresiones que faciliten entender\nlas fórmulas del interés compuesto.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "2b386065-50e5-57c0-ac51-b3314c71ae8d",
+      "type": "CONCEPT",
+      "text": "• Tipos de progresiones y su\nclasificación",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "318baa7e-00f9-50e2-8c41-6a67422191af",
+      "type": "CONCEPT",
+      "text": "• El ahorro",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+      "type": "CONCEPT",
+      "text": "• Interés Compuesto",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+      "type": "CONCEPT",
+      "text": "• Monto Compuesto",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "141bd282-2048-5637-8538-f099531141a2",
+      "type": "CONCEPT",
+      "text": "• Descuento",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060",
+      "type": "CONCEPT",
+      "text": "• Préstamos",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+      "type": "CONCEPT",
+      "text": "• Tarjetas de crédito",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+      "type": "CONCEPT",
+      "text": "• Intereses sobre saldos insolutos",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "74582de9-16be-541b-a04e-f603cd7f7548",
+      "type": "CONCEPT",
+      "text": "• Tabla de amortización",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+      "type": "CONCEPT",
+      "text": "• Valor Presente y Valor futuro",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "9e0ada14-6833-56e2-a998-c3b7954f547e",
+      "type": "CONCEPT",
+      "text": "• Anualidades y tipos",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "61f6da1e-07f0-573e-9aa9-05a06f24b96f",
+      "type": "CONCEPT",
+      "text": "• Ciclo contable",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+      "type": "CONCEPT",
+      "text": "• Clasificación de las cuentas y sus\norígenes",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "5ab031a3-3e38-5c61-96a7-0fd8855f7d50",
+      "type": "CONCEPT",
+      "text": "• Activo",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "d87ba364-ff78-5159-a372-97883bd01407",
+      "type": "CONCEPT",
+      "text": "• Pasivo",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "a7972766-2fe3-5bee-9dff-dc37186edadd",
+      "type": "CONCEPT",
+      "text": "• Capital",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "5bbc0a11-d46e-5b21-9199-fd38fbabec51",
+      "type": "CONCEPT",
+      "text": "• Concepto de ingresos, costos y\ngastos",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "626b76ec-aa3d-51b2-a369-22927aea9262",
+      "type": "CONCEPT",
+      "text": "• Concepto de cuentas de débito y\ncuentas de crédito",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "12ae3f67-6496-51c9-913f-ff4771b77ae7",
+      "type": "CONCEPT",
+      "text": "• Libro del diario general",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "27a1004f-1602-5e7e-baae-f790c47c76bc",
+      "type": "CONCEPT",
+      "text": "• Libro del mayor general",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "0d8f73ab-15b6-5a2d-93bd-aaeb6d44b3b5",
+      "type": "CONCEPT",
+      "text": "• Balance de comprobación",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "2c9c1cff-b3a0-5076-b002-d4cff774f103",
+      "type": "CONCEPT",
+      "text": "• Estados Financieros",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "a127f158-0598-5508-b013-26fb7abbb48a",
+      "type": "CONCEPT",
+      "text": "• Estado de Resultado",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "b65f2825-1d93-5ebf-be4b-d639f5f15f8b",
+      "type": "CONCEPT",
+      "text": "• Estado de situación",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "dfc7e90c-0140-5637-be36-ca5e20c751ef",
+      "type": "CONCEPT",
+      "text": "• Presupuesto y sus etapas",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "f05dd609-cf6a-5161-97a0-30286f70d263",
+      "type": "PROCEDURE",
+      "text": "• Clasificación de las progresiones.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "762fbdcd-a23c-51bd-98e4-93cd8c5cc494",
+      "type": "PROCEDURE",
+      "text": "• Resolución de problemas que impliquen tipos de\nprogresiones.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "9aff2842-7b19-5e33-ac3c-b182656321c8",
+      "type": "PROCEDURE",
+      "text": "• Resolución de problemas que impliquen la\naplicación de interés compuesto.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "ff658d99-6359-5cc4-9629-c289dea53268",
+      "type": "PROCEDURE",
+      "text": "• Uso de la calculadora o de cualquier otra herramienta\ntecnológica para resolver problemas que impliquen\ninterés compuesto e interés sobre saldos insolutos.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "7cdc6fcb-cee8-5e0b-bdc6-a29c6fe536eb",
+      "type": "PROCEDURE",
+      "text": "• Cálculo e interpretación de descuento.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+      "type": "PROCEDURE",
+      "text": "• Argumentación de resultados obtenidos en la\nresolución de problemas que impliquen interés\ncompuesto e interés sobre saldo insoluto.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "a7ad272c-dade-51fe-b937-cf2af8dac9bf",
+      "type": "PROCEDURE",
+      "text": "• Cálculo e interpretación de intereses sobre saldos\ninsolutos en préstamos de la vida cotidiana.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a",
+      "type": "PROCEDURE",
+      "text": "• Uso de la tarjeta de crédito y sus implicaciones con el\ninterés compuesto y saldos insolutos.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "7754dc7b-abca-5310-ab1d-1aa6e339ba74",
+      "type": "PROCEDURE",
+      "text": "• Elaboración e interpretación de tablas de\namortización.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+      "type": "PROCEDURE",
+      "text": "• Análisis y resolución de situaciones referidas al\nahorro, tarjetas de crédito y préstamos.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "0645bab0-78c4-59bc-b53d-ad76eace1ab9",
+      "type": "PROCEDURE",
+      "text": "• Aplicación y despeje del valor presente y valor futuro\nen la fórmula del monto compuesto en situaciones\ndiversas",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "907b9b3c-a05f-5291-85bd-937c88cf770a",
+      "type": "PROCEDURE",
+      "text": "• Establecimiento de diferencia entre el monto\ncompuesto y la anualidad.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "87e917f8-3847-51a9-bce8-78f3442ff605",
+      "type": "PROCEDURE",
+      "text": "• Cálculo del monto y la renta de una anualidad en\nsituaciones de la vida diaria",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "fcf4e0ed-94f5-5f7d-8268-98aff08939a4",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés en la resolución de problemas de la\nvida diaria que implican interés compuesto\ne interés sobre saldo insoluto.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "4511a7d4-00af-5458-9779-1f6972825238",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de la importancia de la\ncalculadora o cualquier otra herramienta\ntecnológica en la resolución de problemas.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "4e7f2f24-0dbf-59a9-81b5-f6290b68294e",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés en descubrir el comportamiento de\nla cuota mensual sobre un determinado\npréstamo.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "06994ab9-522f-545d-a89f-665d72d26f38",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés en conocer el buen uso y manejo de\npréstamos y tarjetas de crédito, a partir de\nlos conocimientos adquiridos sobre interés\ncompuesto.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "baaa002b-e6b4-553e-90e3-ed80a435e15c",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés en la resolución de problemas que\nimpliquen cálculo de monto, valor presente,\nvalor futuro y renta de una anualidad.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "f03eb649-b083-547e-94ec-cafcba59b397",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración de los conceptos de educación\nfinanciera en situaciones de la vida diaria\nasociadas al ahorro, tarjetas de crédito y\npréstamos.",
+      "pdfPage": 491,
+      "printedPage": "490"
+    },
+    {
+      "id": "f759f757-3cc4-533e-90ad-b1954c92582e",
+      "type": "PROCEDURE",
+      "text": "• Resolución de problemas del contexto que\nimpliquen el cálculo del monto compuesto, valor\npresente, valor futuro y las anualidades.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+      "type": "PROCEDURE",
+      "text": "• Uso de herramientas tecnológicas para facilitar la\nmodelación y el cálculo del monto compuesto y las\nanualidades.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "afde0107-6816-5243-a7f6-4b777444a9d8",
+      "type": "PROCEDURE",
+      "text": "• Análisis de situaciones del contexto donde se\nidentifique y reconozca el origen de las cuentas.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "5f3cc134-cb99-5468-8e9b-1ddc78d09cb8",
+      "type": "PROCEDURE",
+      "text": "• Interpretación del ciclo contable asociado a\nsituaciones de la vida cotidiana.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "13255055-5c8b-511c-b4bf-2a5b83806db6",
+      "type": "PROCEDURE",
+      "text": "• Explicación y análisis sobre clasificación de las\ncuentas y sus orígenes.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "96ffb06d-6a42-5e70-87a8-de7a74721079",
+      "type": "PROCEDURE",
+      "text": "• Identificación y aplicación en el contexto cotidiano\nde los conceptos y procesos básicos de los activos,\npasivos y capital.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "0f67507e-c627-5f53-9202-117f97e64774",
+      "type": "PROCEDURE",
+      "text": "• Identificación y registro de transacciones en los libros\ndel diario general y mayor general.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "26181e70-9e1d-5466-9654-31f7128330b9",
+      "type": "PROCEDURE",
+      "text": "• Elaboración de los registros y conciliación del\nbalance de comprobación en eventos propios del\ncontexto.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "ff00828e-75fa-5a12-9cb9-60ab4a7201fa",
+      "type": "PROCEDURE",
+      "text": "• Determinación de la ganancia o pérdida neta a través\nde la elaboración del estado de resultado.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "c2a3afa3-9f1c-56c2-b028-7391a013981e",
+      "type": "PROCEDURE",
+      "text": "• Preparación de un estado de situación o balance\ngeneral para tomar decisiones con respecto a sus\nfinanzas.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "b19da910-ca67-5471-9513-6104647546b1",
+      "type": "PROCEDURE",
+      "text": "• Realización de un proyecto que implique los estados\nfinancieros de una empresa (colmado, tienda,\nferretería, entre otros) real o ficticia.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "9712d910-5d64-5cb2-b569-ed43ded2387c",
+      "type": "PROCEDURE",
+      "text": "• Formulación de un presupuesto personal\nreconociendo cada una de sus etapas.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "900df5ac-36ac-5352-8a3e-d991796579d8",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Persevera en la resolución de problemas\nque impliquen cálculo de monto, valor\npresente, valor futuro y renta de una\nanualidad.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "1984541b-b4ac-57ed-92ae-6afa712524f9",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Aprecio de la importancia del ciclo contable\nen su vida cotidiana.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "cba468ae-6c8d-54d6-8649-e7e599cb98ca",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Interés hacia la identificación y registro de\nlas transacciones en los libros contables.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "4e21bb05-141e-51d4-a30c-3854ed8a6305",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Curiosidad e interés en la elaboración de los\nestados financieros.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "d88108b4-b1d7-5ab9-80f5-8887f4c06b82",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Disfrute al resolver problemas de monto\ncompuesto, valor presente, valor futuro y\nanualidad, haciendo uso de herramientas\ntecnológicas.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "fd67e503-e5db-5b57-b1a0-c0ee761392fc",
+      "type": "ATTITUDE_VALUE",
+      "text": "• Valoración del trabajo en equipo para\nsimular situaciones que impliquen monto\ncompuesto, valor presente, valor futuro y\nanualidades.",
+      "pdfPage": 492,
+      "printedPage": "491"
+    },
+    {
+      "id": "0e773920-fab9-569a-9a0e-98c39fb83966",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Resuelve problemas que impliquen los tipos de progresiones.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "0eeb3c46-88f9-5ee9-857b-27adf9352e30",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Utiliza herramientas tecnológicas tales como, calculadora científica, softwares especializados en estadística, GeoGebra,\nMatlab, Hojas de cálculo, entre otros para el análisis y la resolución de problemas de la Matemática Financiera.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "afe0d1da-9d4e-5694-96ed-99d3a2662844",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Reconoce los intereses generados al realizar préstamos diversos y hace las comprobaciones haciendo uso de calculadora\nen la que sea posible realizar dichos cálculos.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "643d2c95-4c29-52f9-861a-80dfb5ad59ab",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica los intereses sobre saldos insolutos en situaciones de la vida cotidiana haciendo uso de la calculadora y otros\nprogramas o softwares.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "1f5b7e00-511a-57f7-921c-c3feeb3c22b9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Calculo de interés compuesto sobre saldo insoluto en situaciones de la vida cotidiana.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Resuelve problemas de interés compuesto que impliquen préstamos y tarjetas de crédito y los comprueba a través de\nsoftware apropiado.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "e9018f8b-2657-5f51-bd87-4ef40733419f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpreta y aplica el concepto de monto compuesto.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "6112fad5-8a6e-5579-accb-bdc342324c03",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Determina monto compuesto, valor presente, valor futuro en diferentes situaciones de la vida diaria.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "2c05acbc-93b3-54a2-8036-65cd4afda0a3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Resuelve problemas del contexto que implican monto compuesto, valor presente, valor futuro y anualidades con o sin\nherramientas tecnológicas.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "b29669aa-2c75-5fc4-9487-53d624c48019",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Explica los beneficios de ahorrar para el futuro.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "0fb3cd37-c80f-57e3-be81-775791b8d44e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpreta el buen uso de las tarjetas de crédito para una mejor administración personal.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "36eb05c2-8be4-5655-85ab-6abba12d8df3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Aplica el razonamiento lógico para reconocer las consecuencias del buen manejo de los préstamos financieros.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "f7ca0d83-18d4-572d-8ccb-ce436c4fa1da",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Construye y explica una tabla de amortización.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "00496db5-540d-5806-8979-1862604a210a",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Presenta los resultados de investigaciones de determinados proyectos acerca del ciclo contable.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "da8a6858-b583-5683-b94f-04770d343859",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Aplica los conceptos de activo, pasivo y capital en situaciones de la vida cotidiana.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "edf8399a-1e62-5e36-a83b-7a56d29e7392",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Realiza el registro de transacciones en los libros contables del diario general y mayor general para tomar decisiones\nfinancieras en temas de interés.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "4e9fb2ce-0118-5d70-a5fa-1437c866e43c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Toma decisiones financieras para resolver situaciones de la comunidad, a partir del registro y conciliación de cuentas del\nmayor general en la balanza de comprobación.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "9138a84d-4ba4-5d2b-879e-475884b9acda",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Interpreta situaciones relacionadas con salud, medioambiente entre otras, mediante la elaboración del estado de\nresultado para conocer su nivel de rentabilidad.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "03e47e3d-7b4f-5adb-bf61-31f5a9603ed5",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora el estado de situación o balanza general para conocer la posición financiera de una empresa o micro empresa.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "f9b260b8-347c-5593-b5eb-aa50ec11465c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Formula presupuesto familiar o personal que incluye los ingresos, gastos y beneficios, si los hay.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    },
+    {
+      "id": "d5071340-4693-5abd-842d-22d81f48fcbd",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "text": "• Elabora un proyecto donde se realicen los estados financieros de una empresa real o ficticia.",
+      "pdfPage": 493,
+      "printedPage": "492"
+    }
+  ],
+  "topics": [
+    {
+      "id": "progressions",
+      "grade": 4,
+      "label": "progresiones",
+      "match": "progresion(?:es)?",
+      "relation": "la regla y el orden de los términos de la progresión indicada, según los datos dados",
+      "representation": "representa únicamente progresiones con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+        "2b386065-50e5-57c0-ac51-b3314c71ae8d",
+        "f05dd609-cf6a-5161-97a0-30286f70d263",
+        "762fbdcd-a23c-51bd-98e4-93cd8c5cc494",
+        "0e773920-fab9-569a-9a0e-98c39fb83966"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "saving",
+      "grade": 4,
+      "label": "ahorro",
+      "match": "ahorro|ahorrar",
+      "relation": "el objetivo, plazo y recursos ficticios disponibles para el ahorro solicitado, sin exigir información privada",
+      "representation": "representa únicamente ahorro con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af",
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+        "b29669aa-2c75-5fc4-9487-53d624c48019"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "compound-interest",
+      "grade": 4,
+      "label": "interés compuesto",
+      "match": "interes(?:es)? compuest(?:o|os)",
+      "relation": "el capital, la tasa por período y el número de períodos dados, distinguiendo el interés generado del capital y del monto, sin suponer una tasa nominal o efectiva no indicada",
+      "representation": "representa únicamente interés compuesto con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "9aff2842-7b19-5e33-ac3c-b182656321c8",
+        "ff658d99-6359-5cc4-9629-c289dea53268",
+        "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+        "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "compound-amount",
+      "grade": 4,
+      "label": "monto compuesto",
+      "match": "monto(?:s)? compuest(?:o|os)",
+      "relation": "el monto compuesto solicitado y su relación con el capital, la tasa y los períodos dados, distinguiendo la cantidad final del interés generado",
+      "representation": "representa únicamente monto compuesto con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "907b9b3c-a05f-5291-85bd-937c88cf770a",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+        "e9018f8b-2657-5f51-bd87-4ef40733419f",
+        "6112fad5-8a6e-5579-accb-bdc342324c03"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "discount",
+      "grade": 4,
+      "label": "descuento",
+      "match": "descuentos?",
+      "relation": "el valor descontado, la tasa, el plazo y la convención de descuento proporcionada, sin sustituirla por otra no indicada",
+      "representation": "representa únicamente descuento con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491
+      ],
+      "sourceRecordIds": [
+        "141bd282-2048-5637-8538-f099531141a2",
+        "7cdc6fcb-cee8-5e0b-bdc6-a29c6fe536eb"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "loans",
+      "grade": 4,
+      "label": "préstamos",
+      "match": "prestamos?",
+      "relation": "el capital prestado, los cargos, los plazos y las condiciones ficticias proporcionadas, sin asumir condiciones de un producto financiero real",
+      "representation": "representa únicamente préstamos con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060",
+        "a7ad272c-dade-51fe-b937-cf2af8dac9bf",
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+        "afe0d1da-9d4e-5694-96ed-99d3a2662844",
+        "36eb05c2-8be4-5655-85ab-6abba12d8df3"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "cards",
+      "grade": 4,
+      "label": "tarjetas de crédito",
+      "match": "tarjetas? de credito",
+      "relation": "los cargos, pagos, plazos y condiciones ficticias de las tarjetas de crédito dadas, distinguiendo el saldo y los cargos sin solicitar números de cuenta",
+      "representation": "representa únicamente tarjetas de crédito con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a",
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+        "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79",
+        "0fb3cd37-c80f-57e3-be81-775791b8d44e"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "declining-interest",
+      "grade": 4,
+      "label": "intereses sobre saldos insolutos",
+      "match": "interes(?:es)? sobre (?:el |los )?saldos? insolutos?|saldos? insolutos?",
+      "relation": "la tasa y el saldo insoluto de cada período dado, distinguiendo el interés del período de la amortización del capital y conservando la convención indicada",
+      "representation": "representa únicamente intereses sobre saldos insolutos con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+        "ff658d99-6359-5cc4-9629-c289dea53268",
+        "d1b750ef-c6e6-55b1-bb9f-f465266c722d",
+        "a7ad272c-dade-51fe-b937-cf2af8dac9bf",
+        "643d2c95-4c29-52f9-861a-80dfb5ad59ab",
+        "1f5b7e00-511a-57f7-921c-c3feeb3c22b9"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "amortization",
+      "grade": 4,
+      "label": "tabla de amortización",
+      "match": "tablas? de amortizacion|amortizacion",
+      "relation": "el período, la cuota, el interés, el capital amortizado y el saldo de cada fila, según la convención, los datos y el redondeo dados",
+      "representation": "representa únicamente tabla de amortización con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        493
+      ],
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548",
+        "7754dc7b-abca-5310-ab1d-1aa6e339ba74",
+        "f7ca0d83-18d4-572d-8ccb-ce436c4fa1da"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "present-value",
+      "grade": 4,
+      "label": "valor presente",
+      "match": "valor(?:es)? presentes?",
+      "relation": "el valor presente solicitado y su equivalencia en la fecha indicada con la tasa, los períodos y la convención dados, sin inventar valores faltantes",
+      "representation": "representa únicamente valor presente con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+        "0645bab0-78c4-59bc-b53d-ad76eace1ab9",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "6112fad5-8a6e-5579-accb-bdc342324c03",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "future-value",
+      "grade": 4,
+      "label": "valor futuro",
+      "match": "valor(?:es)? futuros?",
+      "relation": "el valor futuro solicitado en la fecha indicada con la tasa, los períodos y la convención dados, sin inventar valores faltantes",
+      "representation": "representa únicamente valor futuro con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+        "0645bab0-78c4-59bc-b53d-ad76eace1ab9",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "6112fad5-8a6e-5579-accb-bdc342324c03",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "annuities",
+      "grade": 4,
+      "label": "anualidades",
+      "match": "anualidad(?:es)?",
+      "relation": "los pagos, el monto y la renta que solicite la tarea de anualidades, conservando la tasa, el plazo y el momento de los pagos dados, sin asumir una anualidad vencida o anticipada no indicada",
+      "representation": "representa únicamente anualidades con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "907b9b3c-a05f-5291-85bd-937c88cf770a",
+        "87e917f8-3847-51a9-bce8-78f3442ff605",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "accounting-cycle",
+      "grade": 4,
+      "label": "ciclo contable",
+      "match": "ciclo contable",
+      "relation": "el orden, la finalidad y las relaciones entre las etapas del ciclo contable que se indiquen en el caso ficticio",
+      "representation": "representa únicamente ciclo contable con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "61f6da1e-07f0-573e-9aa9-05a06f24b96f",
+        "5f3cc134-cb99-5468-8e9b-1ddc78d09cb8",
+        "00496db5-540d-5806-8979-1862604a210a"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "account-classification",
+      "grade": 4,
+      "label": "clasificación y origen de las cuentas",
+      "match": "clasificacion de (?:las )?cuentas|origen de (?:las )?cuentas|origenes de (?:las )?cuentas|cuentas dadas",
+      "relation": "la naturaleza y el origen de las cuentas proporcionadas y la clasificación solicitada en el caso ficticio",
+      "representation": "representa únicamente clasificación y origen de las cuentas con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492
+      ],
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+        "afde0107-6816-5243-a7f6-4b777444a9d8",
+        "13255055-5c8b-511c-b4bf-2a5b83806db6"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "assets",
+      "grade": 4,
+      "label": "activo",
+      "match": "activos?",
+      "relation": "los recursos y derechos del activo de la empresa ficticia según las transacciones dadas",
+      "representation": "representa únicamente activo con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "5ab031a3-3e38-5c61-96a7-0fd8855f7d50",
+        "96ffb06d-6a42-5e70-87a8-de7a74721079",
+        "da8a6858-b583-5683-b94f-04770d343859"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "liabilities",
+      "grade": 4,
+      "label": "pasivo",
+      "match": "pasivos?",
+      "relation": "las obligaciones del pasivo de la empresa ficticia según las transacciones dadas",
+      "representation": "representa únicamente pasivo con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "d87ba364-ff78-5159-a372-97883bd01407",
+        "96ffb06d-6a42-5e70-87a8-de7a74721079",
+        "da8a6858-b583-5683-b94f-04770d343859"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "equity",
+      "grade": 4,
+      "label": "capital contable",
+      "match": "capital contable|capital de (?:la )?empresa|activo[^.;]*pasivo[^.;]*capital",
+      "relation": "la participación del capital contable y su relación con el activo y el pasivo del caso ficticio, sin confundirlo con un capital invertido a interés",
+      "representation": "representa únicamente capital contable con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "a7972766-2fe3-5bee-9dff-dc37186edadd",
+        "96ffb06d-6a42-5e70-87a8-de7a74721079",
+        "da8a6858-b583-5683-b94f-04770d343859"
+      ],
+      "priority": 2
+    },
+    {
+      "id": "income-costs-expenses",
+      "grade": 4,
+      "label": "ingresos, costos y gastos",
+      "match": "ingresos?[, y]+costos?|costos?[, y]+gastos?",
+      "relation": "la naturaleza de los ingresos, costos y gastos dados, manteniendo sus diferencias según el caso ficticio",
+      "representation": "representa únicamente ingresos, costos y gastos con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491
+      ],
+      "sourceRecordIds": [
+        "5bbc0a11-d46e-5b21-9199-fd38fbabec51"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "debit-credit",
+      "grade": 4,
+      "label": "cuentas de débito y crédito",
+      "match": "debitos?|creditos?",
+      "relation": "el lado de débito o crédito de las cuentas proporcionadas según su naturaleza y las transacciones dadas",
+      "representation": "representa únicamente cuentas de débito y crédito con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491
+      ],
+      "sourceRecordIds": [
+        "626b76ec-aa3d-51b2-a369-22927aea9262"
+      ],
+      "priority": 1
+    },
+    {
+      "id": "journal",
+      "grade": 4,
+      "label": "diario general",
+      "match": "(?:libro (?:del )?)?diario(?: general)?",
+      "relation": "la fecha, las cuentas, las contrapartidas y los importes de las transacciones ficticias dadas, conservando el equilibrio entre débitos y créditos y sus referencias",
+      "representation": "representa únicamente diario general con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7",
+        "0f67507e-c627-5f53-9202-117f97e64774",
+        "edf8399a-1e62-5e36-a83b-7a56d29e7392"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "ledger",
+      "grade": 4,
+      "label": "mayor general",
+      "match": "(?:libro (?:del )?)?mayor general",
+      "relation": "los movimientos de cada cuenta, sus referencias y su saldo según los registros ficticios proporcionados, sin duplicar ni omitir transacciones",
+      "representation": "representa únicamente mayor general con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "27a1004f-1602-5e7e-baae-f790c47c76bc",
+        "0f67507e-c627-5f53-9202-117f97e64774",
+        "edf8399a-1e62-5e36-a83b-7a56d29e7392"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "trial-balance",
+      "grade": 4,
+      "label": "balance de comprobación",
+      "match": "balance de comprobacion|balanza de comprobacion",
+      "relation": "los saldos de las cuentas proporcionadas y la igualdad de los totales de débito y crédito, contrastándolos con sus registros sin inventar una diferencia",
+      "representation": "representa únicamente balance de comprobación con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "0d8f73ab-15b6-5a2d-93bd-aaeb6d44b3b5",
+        "26181e70-9e1d-5466-9654-31f7128330b9",
+        "4e9fb2ce-0118-5d70-a5fa-1437c866e43c"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "financial-statements",
+      "grade": 4,
+      "label": "estados financieros",
+      "match": "estados financieros",
+      "relation": "los estados financieros expresamente indicados por la pauta y la coherencia de sus cifras con los registros ficticios proporcionados, sin exigir otros productos",
+      "representation": "representa únicamente estados financieros con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "2c9c1cff-b3a0-5076-b002-d4cff774f103",
+        "b19da910-ca67-5471-9513-6104647546b1",
+        "d5071340-4693-5abd-842d-22d81f48fcbd"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "income-statement",
+      "grade": 4,
+      "label": "estado de resultado",
+      "match": "estado de resultados?|ganancia o perdida neta|rentabilidad",
+      "relation": "los ingresos, costos, gastos y el resultado neto del período dado, distinguiendo una ganancia de una pérdida con los registros ficticios proporcionados",
+      "representation": "representa únicamente estado de resultado con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "a127f158-0598-5508-b013-26fb7abbb48a",
+        "ff00828e-75fa-5a12-9cb9-60ab4a7201fa",
+        "9138a84d-4ba4-5d2b-879e-475884b9acda"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "financial-position",
+      "grade": 4,
+      "label": "estado de situación",
+      "match": "estado de situacion|balance general|balanza general",
+      "relation": "la posición financiera en la fecha indicada y la igualdad entre activo, pasivo y capital contable del caso ficticio, conservando las cuentas y valores dados",
+      "representation": "representa únicamente estado de situación con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "b65f2825-1d93-5ebf-be4b-d639f5f15f8b",
+        "c2a3afa3-9f1c-56c2-b028-7391a013981e",
+        "03e47e3d-7b4f-5adb-bf61-31f5a9603ed5"
+      ],
+      "priority": 3
+    },
+    {
+      "id": "budget",
+      "grade": 4,
+      "label": "presupuesto",
+      "match": "presupuestos?",
+      "relation": "los ingresos, gastos, beneficios si existen y las etapas indicadas para el presupuesto del personaje o familia ficticios, conservando el período y los recursos dados",
+      "representation": "representa únicamente presupuesto con los datos y condiciones dados, conservando sus referencias y magnitudes",
+      "pages": [
+        491,
+        492,
+        493
+      ],
+      "sourceRecordIds": [
+        "dfc7e90c-0140-5637-be36-ca5e20c751ef",
+        "9712d910-5d64-5cb2-b569-ed43ded2387c",
+        "f9b260b8-347c-5593-b5eb-aa50ec11465c"
+      ],
+      "priority": 3
+    }
+  ],
+  "contents": [
+    {
+      "id": "source-15",
+      "label": "Progresiones que faciliten entender las fórmulas del interés compuesto.",
+      "sourceRecordIds": [
+        "03b86d8a-c3b3-5915-ad1e-fb223f8707e6"
+      ],
+      "caseIds": [
+        "concept-progresiones",
+        "solve-progressions"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-16",
+      "label": "Tipos de progresiones y su clasificación",
+      "sourceRecordIds": [
+        "2b386065-50e5-57c0-ac51-b3314c71ae8d"
+      ],
+      "caseIds": [
+        "concept-tipos-progresiones",
+        "classify-progressions"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-17",
+      "label": "El ahorro",
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af"
+      ],
+      "caseIds": [
+        "concept-ahorro",
+        "compare-financial-situations",
+        "saving-benefits",
+        "independent-finance-accounting-comparison"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-18",
+      "label": "Interés Compuesto",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee"
+      ],
+      "caseIds": [
+        "concept-interes",
+        "compound-interest-problem",
+        "technology-choice",
+        "interest-argument",
+        "software-verification",
+        "interest-only",
+        "no-calculation",
+        "independent-tasks",
+        "autonomy-purpose"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-19",
+      "label": "Monto Compuesto",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa"
+      ],
+      "caseIds": [
+        "concept-monto",
+        "amount-annuity-difference",
+        "financial-context-problem",
+        "financial-model",
+        "interpret-amount",
+        "amount-only",
+        "annuity-comparison-not-other-object",
+        "financial-context-problem-target-guard",
+        "financial-model-target-guard"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-20",
+      "label": "Descuento",
+      "sourceRecordIds": [
+        "141bd282-2048-5637-8538-f099531141a2"
+      ],
+      "caseIds": [
+        "concept-descuento",
+        "discount-calculate-interpret",
+        "justification-purpose"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-21",
+      "label": "Préstamos",
+      "sourceRecordIds": [
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060"
+      ],
+      "caseIds": [
+        "concept-prestamos",
+        "compare-financial-situations",
+        "loan-verification-calculator",
+        "written-analysis",
+        "independent-finance-accounting-comparison"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-22",
+      "label": "Tarjetas de crédito",
+      "sourceRecordIds": [
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace"
+      ],
+      "caseIds": [
+        "concept-tarjetas",
+        "card-implications",
+        "compare-financial-situations",
+        "software-verification",
+        "card-without-accounting-credit",
+        "independent-finance-accounting-comparison"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-23",
+      "label": "Intereses sobre saldos insolutos",
+      "sourceRecordIds": [
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8"
+      ],
+      "caseIds": [
+        "concept-saldos",
+        "technology-choice",
+        "interest-argument",
+        "declining-balance",
+        "explain-balance-interest"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-24",
+      "label": "Tabla de amortización",
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548"
+      ],
+      "caseIds": [
+        "concept-tabla",
+        "amortization-table",
+        "weighted-purpose",
+        "build-and-interpret-amortization"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-25",
+      "label": "Valor Presente y Valor futuro",
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97"
+      ],
+      "caseIds": [
+        "concept-vp-vf",
+        "present-future",
+        "financial-context-problem",
+        "present-only",
+        "future-only",
+        "financial-context-problem-target-guard"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-26",
+      "label": "Anualidades y tipos",
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e"
+      ],
+      "caseIds": [
+        "concept-anualidades",
+        "amount-annuity-difference",
+        "annuity-amount-rent",
+        "financial-context-problem",
+        "financial-model",
+        "annuity-amount-only",
+        "annuity-rent-only",
+        "annuity-comparison-not-other-object",
+        "financial-context-problem-target-guard",
+        "financial-model-target-guard"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-27",
+      "label": "Ciclo contable",
+      "sourceRecordIds": [
+        "61f6da1e-07f0-573e-9aa9-05a06f24b96f"
+      ],
+      "caseIds": [
+        "concept-ciclo",
+        "accounting-cycle",
+        "cycle-investigation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-28",
+      "label": "Clasificación de las cuentas y sus orígenes",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905"
+      ],
+      "caseIds": [
+        "concept-cuentas",
+        "account-origins",
+        "account-classification",
+        "checklist-purpose",
+        "accounts-not-history",
+        "classify-only-not-origin"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-29",
+      "label": "Activo",
+      "sourceRecordIds": [
+        "5ab031a3-3e38-5c61-96a7-0fd8855f7d50"
+      ],
+      "caseIds": [
+        "concept-activo",
+        "accounting-equation",
+        "single-asset-not-whole-equation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-30",
+      "label": "Pasivo",
+      "sourceRecordIds": [
+        "d87ba364-ff78-5159-a372-97883bd01407"
+      ],
+      "caseIds": [
+        "concept-pasivo",
+        "accounting-equation",
+        "single-asset-not-whole-equation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-31",
+      "label": "Capital",
+      "sourceRecordIds": [
+        "a7972766-2fe3-5bee-9dff-dc37186edadd"
+      ],
+      "caseIds": [
+        "concept-capital",
+        "accounting-equation",
+        "single-asset-not-whole-equation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-32",
+      "label": "Concepto de ingresos, costos y gastos",
+      "sourceRecordIds": [
+        "5bbc0a11-d46e-5b21-9199-fd38fbabec51"
+      ],
+      "caseIds": [
+        "concept-ingresos-costos-gastos"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-33",
+      "label": "Concepto de cuentas de débito y cuentas de crédito",
+      "sourceRecordIds": [
+        "626b76ec-aa3d-51b2-a369-22927aea9262"
+      ],
+      "caseIds": [
+        "concept-debito-credito"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-34",
+      "label": "Libro del diario general",
+      "sourceRecordIds": [
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7"
+      ],
+      "caseIds": [
+        "concept-diario",
+        "journal-ledger",
+        "independent-tasks",
+        "registration-only"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-35",
+      "label": "Libro del mayor general",
+      "sourceRecordIds": [
+        "27a1004f-1602-5e7e-baae-f790c47c76bc"
+      ],
+      "caseIds": [
+        "concept-mayor",
+        "journal-ledger"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-36",
+      "label": "Balance de comprobación",
+      "sourceRecordIds": [
+        "0d8f73ab-15b6-5a2d-93bd-aaeb6d44b3b5"
+      ],
+      "caseIds": [
+        "concept-comprobacion",
+        "trial-balance-reconciliation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-37",
+      "label": "Estados Financieros",
+      "sourceRecordIds": [
+        "2c9c1cff-b3a0-5076-b002-d4cff774f103"
+      ],
+      "caseIds": [
+        "concept-estados",
+        "business-project"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-38",
+      "label": "Estado de Resultado",
+      "sourceRecordIds": [
+        "a127f158-0598-5508-b013-26fb7abbb48a"
+      ],
+      "caseIds": [
+        "concept-resultado",
+        "profit-loss",
+        "health-environment-result"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-39",
+      "label": "Estado de situación",
+      "sourceRecordIds": [
+        "b65f2825-1d93-5ebf-be4b-d639f5f15f8b"
+      ],
+      "caseIds": [
+        "concept-situacion",
+        "financial-position"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-40",
+      "label": "Presupuesto y sus etapas",
+      "sourceRecordIds": [
+        "dfc7e90c-0140-5637-be36-ca5e20c751ef"
+      ],
+      "caseIds": [
+        "concept-presupuesto",
+        "budget",
+        "budget-family-fiction"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-41",
+      "label": "Clasificación de las progresiones.",
+      "sourceRecordIds": [
+        "f05dd609-cf6a-5161-97a0-30286f70d263"
+      ],
+      "caseIds": [
+        "classify-progressions"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-42",
+      "label": "Resolución de problemas que impliquen tipos de progresiones.",
+      "sourceRecordIds": [
+        "762fbdcd-a23c-51bd-98e4-93cd8c5cc494"
+      ],
+      "caseIds": [
+        "solve-progressions"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-43",
+      "label": "Resolución de problemas que impliquen la aplicación de interés compuesto.",
+      "sourceRecordIds": [
+        "9aff2842-7b19-5e33-ac3c-b182656321c8"
+      ],
+      "caseIds": [
+        "compound-interest-problem"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-44",
+      "label": "Uso de la calculadora o de cualquier otra herramienta tecnológica para resolver problemas que impliquen interés compuesto e interés sobre saldos insolutos.",
+      "sourceRecordIds": [
+        "ff658d99-6359-5cc4-9629-c289dea53268"
+      ],
+      "caseIds": [
+        "technology-choice"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-45",
+      "label": "Cálculo e interpretación de descuento.",
+      "sourceRecordIds": [
+        "7cdc6fcb-cee8-5e0b-bdc6-a29c6fe536eb"
+      ],
+      "caseIds": [
+        "discount-calculate-interpret"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-46",
+      "label": "Argumentación de resultados obtenidos en la resolución de problemas que impliquen interés compuesto e interés sobre saldo insoluto.",
+      "sourceRecordIds": [
+        "d1b750ef-c6e6-55b1-bb9f-f465266c722d"
+      ],
+      "caseIds": [
+        "interest-argument"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-47",
+      "label": "Cálculo e interpretación de intereses sobre saldos insolutos en préstamos de la vida cotidiana.",
+      "sourceRecordIds": [
+        "a7ad272c-dade-51fe-b937-cf2af8dac9bf"
+      ],
+      "caseIds": [
+        "declining-balance"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-48",
+      "label": "Uso de la tarjeta de crédito y sus implicaciones con el interés compuesto y saldos insolutos.",
+      "sourceRecordIds": [
+        "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a"
+      ],
+      "caseIds": [
+        "card-implications",
+        "card-without-accounting-credit"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-49",
+      "label": "Elaboración e interpretación de tablas de amortización.",
+      "sourceRecordIds": [
+        "7754dc7b-abca-5310-ab1d-1aa6e339ba74"
+      ],
+      "caseIds": [
+        "amortization-table",
+        "build-and-interpret-amortization"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-50",
+      "label": "Análisis y resolución de situaciones referidas al ahorro, tarjetas de crédito y préstamos.",
+      "sourceRecordIds": [
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9"
+      ],
+      "caseIds": [
+        "compare-financial-situations",
+        "independent-finance-accounting-comparison"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-51",
+      "label": "Aplicación y despeje del valor presente y valor futuro en la fórmula del monto compuesto en situaciones diversas",
+      "sourceRecordIds": [
+        "0645bab0-78c4-59bc-b53d-ad76eace1ab9"
+      ],
+      "caseIds": [
+        "present-future"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-52",
+      "label": "Establecimiento de diferencia entre el monto compuesto y la anualidad.",
+      "sourceRecordIds": [
+        "907b9b3c-a05f-5291-85bd-937c88cf770a"
+      ],
+      "caseIds": [
+        "amount-annuity-difference",
+        "annuity-comparison-not-other-object"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-53",
+      "label": "Cálculo del monto y la renta de una anualidad en situaciones de la vida diaria",
+      "sourceRecordIds": [
+        "87e917f8-3847-51a9-bce8-78f3442ff605"
+      ],
+      "caseIds": [
+        "annuity-amount-rent",
+        "annuity-amount-only",
+        "annuity-rent-only"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-60",
+      "label": "Resolución de problemas del contexto que impliquen el cálculo del monto compuesto, valor presente, valor futuro y las anualidades.",
+      "sourceRecordIds": [
+        "f759f757-3cc4-533e-90ad-b1954c92582e"
+      ],
+      "caseIds": [
+        "financial-context-problem",
+        "financial-context-problem-target-guard"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-61",
+      "label": "Uso de herramientas tecnológicas para facilitar la modelación y el cálculo del monto compuesto y las anualidades.",
+      "sourceRecordIds": [
+        "6a863d5c-1034-5f71-b7f7-2d43df084c17"
+      ],
+      "caseIds": [
+        "financial-model",
+        "financial-model-target-guard"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-62",
+      "label": "Análisis de situaciones del contexto donde se identifique y reconozca el origen de las cuentas.",
+      "sourceRecordIds": [
+        "afde0107-6816-5243-a7f6-4b777444a9d8"
+      ],
+      "caseIds": [
+        "account-origins",
+        "accounts-not-history"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-63",
+      "label": "Interpretación del ciclo contable asociado a situaciones de la vida cotidiana.",
+      "sourceRecordIds": [
+        "5f3cc134-cb99-5468-8e9b-1ddc78d09cb8"
+      ],
+      "caseIds": [
+        "accounting-cycle"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-64",
+      "label": "Explicación y análisis sobre clasificación de las cuentas y sus orígenes.",
+      "sourceRecordIds": [
+        "13255055-5c8b-511c-b4bf-2a5b83806db6"
+      ],
+      "caseIds": [
+        "account-classification",
+        "classify-only-not-origin"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-65",
+      "label": "Identificación y aplicación en el contexto cotidiano de los conceptos y procesos básicos de los activos, pasivos y capital.",
+      "sourceRecordIds": [
+        "96ffb06d-6a42-5e70-87a8-de7a74721079"
+      ],
+      "caseIds": [
+        "accounting-equation",
+        "single-asset-not-whole-equation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-66",
+      "label": "Identificación y registro de transacciones en los libros del diario general y mayor general.",
+      "sourceRecordIds": [
+        "0f67507e-c627-5f53-9202-117f97e64774"
+      ],
+      "caseIds": [
+        "journal-ledger"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-67",
+      "label": "Elaboración de los registros y conciliación del balance de comprobación en eventos propios del contexto.",
+      "sourceRecordIds": [
+        "26181e70-9e1d-5466-9654-31f7128330b9"
+      ],
+      "caseIds": [
+        "trial-balance-reconciliation"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-68",
+      "label": "Determinación de la ganancia o pérdida neta a través de la elaboración del estado de resultado.",
+      "sourceRecordIds": [
+        "ff00828e-75fa-5a12-9cb9-60ab4a7201fa"
+      ],
+      "caseIds": [
+        "profit-loss"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-69",
+      "label": "Preparación de un estado de situación o balance general para tomar decisiones con respecto a sus finanzas.",
+      "sourceRecordIds": [
+        "c2a3afa3-9f1c-56c2-b028-7391a013981e"
+      ],
+      "caseIds": [
+        "financial-position"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-70",
+      "label": "Realización de un proyecto que implique los estados financieros de una empresa (colmado, tienda, ferretería, entre otros) real o ficticia.",
+      "sourceRecordIds": [
+        "b19da910-ca67-5471-9513-6104647546b1"
+      ],
+      "caseIds": [
+        "business-project"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    },
+    {
+      "id": "source-71",
+      "label": "Formulación de un presupuesto personal reconociendo cada una de sus etapas.",
+      "sourceRecordIds": [
+        "9712d910-5d64-5cb2-b569-ed43ded2387c"
+      ],
+      "caseIds": [
+        "budget"
+      ],
+      "adaptation": "Acción matemática o contable solicitada con datos ficticios,convención ycondiciones dadas,sin productos adicionales ni datos financieros privados."
+    }
+  ],
+  "criticalIndicators": [
+    {
+      "id": "0e773920-fab9-569a-9a0e-98c39fb83966",
+      "literal": "• Resuelve problemas que impliquen los tipos de progresiones.",
+      "caseIds": [
+        "classify-progressions",
+        "solve-progressions"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "0eeb3c46-88f9-5ee9-857b-27adf9352e30",
+      "literal": "• Utiliza herramientas tecnológicas tales como, calculadora científica, softwares especializados en estadística, GeoGebra,\nMatlab, Hojas de cálculo, entre otros para el análisis y la resolución de problemas de la Matemática Financiera.",
+      "caseIds": [
+        "technology-choice",
+        "financial-model",
+        "financial-model-target-guard"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "afe0d1da-9d4e-5694-96ed-99d3a2662844",
+      "literal": "• Reconoce los intereses generados al realizar préstamos diversos y hace las comprobaciones haciendo uso de calculadora\nen la que sea posible realizar dichos cálculos.",
+      "caseIds": [
+        "loan-verification-calculator"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "643d2c95-4c29-52f9-861a-80dfb5ad59ab",
+      "literal": "• Explica los intereses sobre saldos insolutos en situaciones de la vida cotidiana haciendo uso de la calculadora y otros\nprogramas o softwares.",
+      "caseIds": [
+        "explain-balance-interest"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "1f5b7e00-511a-57f7-921c-c3feeb3c22b9",
+      "literal": "• Calculo de interés compuesto sobre saldo insoluto en situaciones de la vida cotidiana.",
+      "caseIds": [
+        "declining-balance"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79",
+      "literal": "• Resuelve problemas de interés compuesto que impliquen préstamos y tarjetas de crédito y los comprueba a través de\nsoftware apropiado.",
+      "caseIds": [
+        "compound-interest-problem",
+        "software-verification"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "e9018f8b-2657-5f51-bd87-4ef40733419f",
+      "literal": "• Interpreta y aplica el concepto de monto compuesto.",
+      "caseIds": [
+        "interpret-amount"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "6112fad5-8a6e-5579-accb-bdc342324c03",
+      "literal": "• Determina monto compuesto, valor presente, valor futuro en diferentes situaciones de la vida diaria.",
+      "caseIds": [
+        "present-future"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "2c05acbc-93b3-54a2-8036-65cd4afda0a3",
+      "literal": "• Resuelve problemas del contexto que implican monto compuesto, valor presente, valor futuro y anualidades con o sin\nherramientas tecnológicas.",
+      "caseIds": [
+        "annuity-amount-rent",
+        "financial-context-problem",
+        "annuity-amount-only",
+        "annuity-rent-only",
+        "financial-context-problem-target-guard"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "b29669aa-2c75-5fc4-9487-53d624c48019",
+      "literal": "• Explica los beneficios de ahorrar para el futuro.",
+      "caseIds": [
+        "saving-benefits"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "0fb3cd37-c80f-57e3-be81-775791b8d44e",
+      "literal": "• Interpreta el buen uso de las tarjetas de crédito para una mejor administración personal.",
+      "caseIds": [
+        "card-implications",
+        "card-without-accounting-credit"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "36eb05c2-8be4-5655-85ab-6abba12d8df3",
+      "literal": "• Aplica el razonamiento lógico para reconocer las consecuencias del buen manejo de los préstamos financieros.",
+      "caseIds": [
+        "compare-financial-situations",
+        "independent-finance-accounting-comparison"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "f7ca0d83-18d4-572d-8ccb-ce436c4fa1da",
+      "literal": "• Construye y explica una tabla de amortización.",
+      "caseIds": [
+        "amortization-table",
+        "build-and-interpret-amortization"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "00496db5-540d-5806-8979-1862604a210a",
+      "literal": "• Presenta los resultados de investigaciones de determinados proyectos acerca del ciclo contable.",
+      "caseIds": [
+        "cycle-investigation"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "da8a6858-b583-5683-b94f-04770d343859",
+      "literal": "• Aplica los conceptos de activo, pasivo y capital en situaciones de la vida cotidiana.",
+      "caseIds": [
+        "accounting-equation",
+        "single-asset-not-whole-equation"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "edf8399a-1e62-5e36-a83b-7a56d29e7392",
+      "literal": "• Realiza el registro de transacciones en los libros contables del diario general y mayor general para tomar decisiones\nfinancieras en temas de interés.",
+      "caseIds": [
+        "journal-ledger"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "4e9fb2ce-0118-5d70-a5fa-1437c866e43c",
+      "literal": "• Toma decisiones financieras para resolver situaciones de la comunidad, a partir del registro y conciliación de cuentas del\nmayor general en la balanza de comprobación.",
+      "caseIds": [
+        "trial-balance-reconciliation"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "9138a84d-4ba4-5d2b-879e-475884b9acda",
+      "literal": "• Interpreta situaciones relacionadas con salud, medioambiente entre otras, mediante la elaboración del estado de\nresultado para conocer su nivel de rentabilidad.",
+      "caseIds": [
+        "profit-loss",
+        "health-environment-result"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "03e47e3d-7b4f-5adb-bf61-31f5a9603ed5",
+      "literal": "• Elabora el estado de situación o balanza general para conocer la posición financiera de una empresa o micro empresa.",
+      "caseIds": [
+        "financial-position"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "f9b260b8-347c-5593-b5eb-aa50ec11465c",
+      "literal": "• Formula presupuesto familiar o personal que incluye los ingresos, gastos y beneficios, si los hay.",
+      "caseIds": [
+        "budget",
+        "budget-family-fiction"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    },
+    {
+      "id": "d5071340-4693-5abd-842d-22d81f48fcbd",
+      "literal": "• Elabora un proyecto donde se realicen los estados financieros de una empresa real o ficticia.",
+      "caseIds": [
+        "business-project"
+      ],
+      "adaptation": "Adaptar solo la acción pedida con datos yconvenciones dadas;herramientas según consigna yacceso;I96conserva balanza general literal."
+    }
+  ],
+  "explicitExclusions": [
+    {
+      "id": "fcf4e0ed-94f5-5f7d-8268-98aff08939a4",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "4511a7d4-00af-5458-9779-1f6972825238",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "4e7f2f24-0dbf-59a9-81b5-f6290b68294e",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "06994ab9-522f-545d-a89f-665d72d26f38",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "baaa002b-e6b4-553e-90e3-ed80a435e15c",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "f03eb649-b083-547e-94ec-cafcba59b397",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "900df5ac-36ac-5352-8a3e-d991796579d8",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "1984541b-b4ac-57ed-92ae-6afa712524f9",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "cba468ae-6c8d-54d6-8649-e7e599cb98ca",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "4e21bb05-141e-51d4-a30c-3854ed8a6305",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "d88108b4-b1d7-5ab9-80f5-8887f4c06b82",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    },
+    {
+      "id": "fd67e503-e5db-5b57-b1a0-c0ee761392fc",
+      "reason": "PRIVATE_DISPOSITION",
+      "explanation": "Interés,valoración,aprecio,curiosidad,perseverancia o disfrute sin actuación delimitada:no puntuar estados privados. Cálculo,comprobación,simulación y proyectos conservan sus anclas C/P/I."
+    }
+  ],
+  "verification": {
+    "automatedFixtures": 108,
+    "fullInstrumentsGenerated": 432,
+    "fullReview": {
+      "reviewedWithMatchingDigest": 432,
+      "pending": 0
+    },
+    "httpDb": "AUTHENTICATED_32_PERSISTED_SAMPLES_ALL_21_INDICATORS_FOUR_FORMATS_20_AND_17_35",
+    "browser": "PERSONAL_DEVELOPMENT_QA_CONTEXT_COMPLETE",
+    "testCounts": {
+      "backend": 83016,
+      "backendFiles": 178,
+      "frontendActivities": 82034,
+      "frontendFiles": 111,
+      "frontendAffectedFinal": 3555,
+      "frontendAffectedFiles": 3,
+      "wholeFrontendSuite": false
+    },
+    "timingsMs": {
+      "interpret": 5489,
+      "recommend": 5605,
+      "activityWrite": 3938
+    },
+    "priorScopeRegressions": "optative-mt-4-regresiones-previas.json",
+    "report": "docs/superpowers/reports/2026-10-19-optativa-mt-financiera-4.md"
+  },
+  "limits": [
+    "26 agrupaciones temáticas, con 51 contenidos y procedimientos adaptados; no equivalen a ese número de temas independientes.",
+    "Se evalúan las acciones matemáticas o contables pedidas con datos ficticios y convenciones proporcionadas;sin ingresos privados o contrataciones reales.",
+    "Herramientas según consigna yacceso;no se imponen todos los programas o productos contables.",
+    "Las adaptaciones de AulaBase no son transcripciones de indicadores oficiales.",
+    "Las muestras no acreditan todas las variantes de cada fila curricular ni ejecución real de clase."
+  ],
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_SECUNDARIA_2023_OPT_MT_4_V1",
+    "versionId": "d1735c6e-0b1a-5840-aa0f-973e6a00499f",
+    "scopeId": "f47f60f9-7e4f-5f32-9f29-24de1e1dfa72",
+    "result": "UNCHANGED",
+    "elements": 98,
+    "excludedFromAssessment": 12,
+    "sourceRowsAndSpansMatched": true
+  }
+}

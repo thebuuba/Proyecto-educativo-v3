@@ -1,2 +1,2 @@
-export type CommonMathTopic = { id: string; grade: number; label: string; match: string; exclude?: string; pages: number[]; relation: string; representation: string }
+export type CommonMathTopic = { id: string; grade: number; label: string; match: string; exclude?: string; pages: number[]; relation: string; representation: string; originIsHistorical?: boolean }
 export const mathTopic = (grade: number, pages: number[], id: string, label: string, match: string, relation: string, representation: string, exclude?: string): CommonMathTopic => ({ id,grade,label,match,relation,representation,pages,...(exclude?{exclude}:{}) })

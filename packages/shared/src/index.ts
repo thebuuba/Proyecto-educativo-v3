@@ -284,3 +284,4 @@ export {commonFhrModules,resolveCommonFhrTask,commonFhrCriteria,commonFhrSelecti
 export {optativeLanguageModules,resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from './secondary-optative-language'
 
 export {optativeSocialModules,resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from './secondary-optative-social'
+export {optativeMathModules,resolveOptativeMathTask,optativeMathCriteria,optativeMathSelections} from './secondary-optative-math'

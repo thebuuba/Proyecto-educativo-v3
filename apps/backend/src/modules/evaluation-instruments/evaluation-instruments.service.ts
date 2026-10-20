@@ -6,6 +6,7 @@ import { resolveCommonArtTask, commonArtSelections } from '@aula/shared'
 import {resolveCommonSocialTask,commonSocialSelections} from '@aula/shared'
 import {resolveCommonScienceTask,commonScienceSelections} from '@aula/shared'
 import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
+import {resolveOptativeMathTask,optativeMathSelections} from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 import { BadRequestException, ForbiddenException, HttpException, Injectable, Logger, NotFoundException, ServiceUnavailableException } from '@nestjs/common'
 import { prisma } from '@aula/database'
@@ -25,6 +26,7 @@ export class EvaluationInstrumentsService {
     const resolved = await this.resolve(user, input, true)
     try {deliveryConditions(input.description??'')}catch(error){if(error instanceof TaskRequirementError)throw new BadRequestException(error.message);throw error}
     const frenchTask=resolveCommonFrenchTask(input.activityTitle,input.description??'',resolved.context)
+    const optativeMath=resolveOptativeMathTask(input.activityTitle,input.description??'',resolved.context)
     const mathTask=resolveCommonMathTask(input.activityTitle,input.description??'',resolved.context)
     const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',resolved.context)
     const englishTask=resolveOptativeEnglishTask(input.activityTitle,input.description??'',resolved.context)??resolveCommonEnglishTask(input.activityTitle,input.description??'',resolved.context)
@@ -34,10 +36,10 @@ export class EvaluationInstrumentsService {
     const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',resolved.context)
     const fhrTask=resolveCommonFhrTask(input.activityTitle,input.description??'',resolved.context)
     const artTask = resolveCommonArtTask(input.activityTitle, input.description ?? '', resolved.context)
-    const scopedType = socialOptative?.activityType ?? optativeTask?.activityType ?? fhrTask?.activityType ?? physicalTask?.activityType ?? artTask?.activityType ?? socialTask?.activityType??commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
+    const scopedType = optativeMath?.activityType ?? socialOptative?.activityType ?? optativeTask?.activityType ?? fhrTask?.activityType ?? physicalTask?.activityType ?? artTask?.activityType ?? socialTask?.activityType??commonScience?.activityType??mathTask?.activityType??frenchTask?.activityType??englishTask?.activityType??detectSecondaryLanguageActivity(input.activityTitle, input.description ?? '', resolved.context)
     const detected = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === scopedType)
       ?? detectActivityType(input.activityTitle, input.description ?? '', evaluationCatalogCurrent, false, input.evaluationTechnique)
-    const selections = socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
+    const selections = optativeMath ? optativeMathSelections(optativeMath,input.description??'') : socialOptative ? optativeSocialSelections(socialOptative) : optativeTask ? optativeLanguageSelections(optativeTask) : fhrTask ? commonFhrSelections(fhrTask) : physicalTask ? commonPhysicalSelections(physicalTask) : artTask ? commonArtSelections(artTask) : socialTask?commonSocialSelections(socialTask,input.description??''):commonScience?commonScienceSelections(commonScience,input.description??''):mathTask?commonMathSelections(mathTask,input.description??''):frenchTask?commonFrenchSelections(frenchTask,input.description??''):englishTask?commonEnglishSelections(englishTask,input.description??''):scopedType ? firstSecondaryLanguageSelections(scopedType, input.description ?? '') : suggestedSelections(detected.id, resolved.context, input.description ?? '')
     const type = input.pedagogicalActivityType ?? detected.id
     const ranked = rankCurriculum(input.activityTitle, input.description ?? '', type, input.competencyBlock,
       resolved.resolution.scope, resolved.rows)

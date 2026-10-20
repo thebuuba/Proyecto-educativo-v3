@@ -1,0 +1,890 @@
+{
+  "subjectCode": "OPT-MT-4",
+  "subjectName": "Matemática Financiera y Tecnología",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "academic",
+  "optativeExitName": "Matemática y Tecnología",
+  "cases": [
+    {
+      "id": "concept-progresiones",
+      "description": "Explica las progresiones y su relación con el interés compuesto.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "03b86d8a-c3b3-5915-ad1e-fb223f8707e6"
+      ],
+      "required": "progresiones"
+    },
+    {
+      "id": "concept-tipos-progresiones",
+      "description": "Explica los tipos de progresiones dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2b386065-50e5-57c0-ac51-b3314c71ae8d"
+      ],
+      "required": "progresiones"
+    },
+    {
+      "id": "concept-ahorro",
+      "description": "Explica el ahorro con los datos de un personaje ficticio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af"
+      ],
+      "required": "ahorro"
+    },
+    {
+      "id": "concept-interes",
+      "description": "Explica el interés compuesto del ejemplo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee"
+      ],
+      "required": "interés compuesto"
+    },
+    {
+      "id": "concept-monto",
+      "description": "Explica el monto compuesto del ejemplo dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa"
+      ],
+      "required": "monto compuesto"
+    },
+    {
+      "id": "concept-descuento",
+      "description": "Explica el descuento según la convención dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "141bd282-2048-5637-8538-f099531141a2"
+      ],
+      "required": "descuento"
+    },
+    {
+      "id": "concept-prestamos",
+      "description": "Explica los préstamos de los casos ficticios dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060"
+      ],
+      "required": "préstamos"
+    },
+    {
+      "id": "concept-tarjetas",
+      "description": "Explica las tarjetas de crédito de los casos ficticios dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace"
+      ],
+      "required": "tarjetas de crédito"
+    },
+    {
+      "id": "concept-saldos",
+      "description": "Explica los intereses sobre saldos insolutos del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8"
+      ],
+      "required": "saldos insolutos"
+    },
+    {
+      "id": "concept-tabla",
+      "description": "Explica la tabla de amortización dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548"
+      ],
+      "required": "amortización"
+    },
+    {
+      "id": "concept-vp-vf",
+      "description": "Explica el valor presente y el valor futuro de los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97"
+      ],
+      "required": "valor presente"
+    },
+    {
+      "id": "concept-anualidades",
+      "description": "Explica los tipos de anualidades dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e"
+      ],
+      "required": "anualidades"
+    },
+    {
+      "id": "concept-ciclo",
+      "description": "Explica el ciclo contable del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "61f6da1e-07f0-573e-9aa9-05a06f24b96f"
+      ],
+      "required": "ciclo contable"
+    },
+    {
+      "id": "concept-cuentas",
+      "description": "Explica la clasificación de las cuentas y su origen en los ejemplos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905"
+      ],
+      "required": "cuentas"
+    },
+    {
+      "id": "concept-activo",
+      "description": "Explica el activo de la empresa ficticia dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5ab031a3-3e38-5c61-96a7-0fd8855f7d50"
+      ],
+      "required": "activo"
+    },
+    {
+      "id": "concept-pasivo",
+      "description": "Explica el pasivo de la empresa ficticia dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "d87ba364-ff78-5159-a372-97883bd01407"
+      ],
+      "required": "pasivo"
+    },
+    {
+      "id": "concept-capital",
+      "description": "Explica el capital de la empresa ficticia dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a7972766-2fe3-5bee-9dff-dc37186edadd"
+      ],
+      "required": "capital"
+    },
+    {
+      "id": "concept-ingresos-costos-gastos",
+      "description": "Explica los ingresos, costos y gastos del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5bbc0a11-d46e-5b21-9199-fd38fbabec51"
+      ],
+      "required": "costos"
+    },
+    {
+      "id": "concept-debito-credito",
+      "description": "Explica las cuentas de débito y crédito del caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "626b76ec-aa3d-51b2-a369-22927aea9262"
+      ],
+      "required": "débito"
+    },
+    {
+      "id": "concept-diario",
+      "description": "Explica el libro diario general dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7"
+      ],
+      "required": "diario"
+    },
+    {
+      "id": "concept-mayor",
+      "description": "Explica el libro mayor general dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "27a1004f-1602-5e7e-baae-f790c47c76bc"
+      ],
+      "required": "mayor"
+    },
+    {
+      "id": "concept-comprobacion",
+      "description": "Explica el balance de comprobación dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "0d8f73ab-15b6-5a2d-93bd-aaeb6d44b3b5"
+      ],
+      "required": "comprobación"
+    },
+    {
+      "id": "concept-estados",
+      "description": "Explica los estados financieros dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2c9c1cff-b3a0-5076-b002-d4cff774f103"
+      ],
+      "required": "estados financieros"
+    },
+    {
+      "id": "concept-resultado",
+      "description": "Explica el estado de resultado dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a127f158-0598-5508-b013-26fb7abbb48a"
+      ],
+      "required": "resultado"
+    },
+    {
+      "id": "concept-situacion",
+      "description": "Explica el estado de situación dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b65f2825-1d93-5ebf-be4b-d639f5f15f8b"
+      ],
+      "required": "situación"
+    },
+    {
+      "id": "concept-presupuesto",
+      "description": "Explica las etapas del presupuesto del personaje ficticio dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "dfc7e90c-0140-5637-be36-ca5e20c751ef"
+      ],
+      "required": "presupuesto"
+    },
+    {
+      "id": "classify-progressions",
+      "description": "Clasifica las progresiones dadas según sus términos y su regla.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "2b386065-50e5-57c0-ac51-b3314c71ae8d",
+        "f05dd609-cf6a-5161-97a0-30286f70d263",
+        "0e773920-fab9-569a-9a0e-98c39fb83966"
+      ],
+      "required": "progresiones",
+      "forbidden": "amortización"
+    },
+    {
+      "id": "solve-progressions",
+      "description": "Resuelve los problemas de progresiones con los términos y las condiciones dados.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "03b86d8a-c3b3-5915-ad1e-fb223f8707e6",
+        "762fbdcd-a23c-51bd-98e4-93cd8c5cc494",
+        "0e773920-fab9-569a-9a0e-98c39fb83966"
+      ],
+      "required": "progresiones"
+    },
+    {
+      "id": "compound-interest-problem",
+      "description": "Resuelve el problema de interés compuesto de un préstamo ficticio con capital, tasa efectiva por período y número de períodos dados. Comprueba el resultado con el método indicado.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "9aff2842-7b19-5e33-ac3c-b182656321c8",
+        "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79"
+      ],
+      "required": "interés compuesto",
+      "forbidden": "interés simple"
+    },
+    {
+      "id": "technology-choice",
+      "description": "Calcula el interés compuesto o calcula los intereses sobre saldos insolutos del caso ficticio dado, usando calculadora o una hoja de cálculo según tu elección.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+        "ff658d99-6359-5cc4-9629-c289dea53268",
+        "0eeb3c46-88f9-5ee9-857b-27adf9352e30"
+      ],
+      "required": "alternativa elegida",
+      "forbidden": "debes usar GeoGebra|debes usar Matlab"
+    },
+    {
+      "id": "discount-calculate-interpret",
+      "description": "Calcula el descuento con los datos y la convención dados e interpreta su significado en el caso ficticio.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "141bd282-2048-5637-8538-f099531141a2",
+        "7cdc6fcb-cee8-5e0b-bdc6-a29c6fe536eb"
+      ],
+      "required": "descuento"
+    },
+    {
+      "id": "interest-argument",
+      "description": "Justifica los resultados dados de interés compuesto y de intereses sobre saldos insolutos del préstamo ficticio.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+        "d1b750ef-c6e6-55b1-bb9f-f465266c722d"
+      ],
+      "required": "saldos insolutos"
+    },
+    {
+      "id": "declining-balance",
+      "description": "Calcula los intereses sobre saldos insolutos del préstamo ficticio e interpreta el cargo con la tasa, los saldos y los períodos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+        "a7ad272c-dade-51fe-b937-cf2af8dac9bf",
+        "1f5b7e00-511a-57f7-921c-c3feeb3c22b9"
+      ],
+      "required": "saldos insolutos"
+    },
+    {
+      "id": "card-implications",
+      "description": "Analiza las implicaciones de las tarjetas de crédito usando las condiciones ficticias proporcionadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a",
+        "0fb3cd37-c80f-57e3-be81-775791b8d44e"
+      ],
+      "required": "tarjetas de crédito",
+      "forbidden": "número de tu tarjeta|ingresos reales"
+    },
+    {
+      "id": "amortization-table",
+      "description": "Construye la tabla de amortización del préstamo ficticio con cuota y convención dadas. Interpreta el capital amortizado, el interés y el saldo.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548",
+        "7754dc7b-abca-5310-ab1d-1aa6e339ba74",
+        "f7ca0d83-18d4-572d-8ccb-ce436c4fa1da"
+      ],
+      "required": "amortización"
+    },
+    {
+      "id": "compare-financial-situations",
+      "description": "Compara el ahorro, los préstamos y las tarjetas de crédito de los casos ficticios dados para la pregunta indicada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af",
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060",
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+        "36eb05c2-8be4-5655-85ab-6abba12d8df3"
+      ],
+      "required": "ahorro"
+    },
+    {
+      "id": "present-future",
+      "description": "Calcula el valor presente y el valor futuro con las tasas y períodos dados, despejando la incógnita de cada caso ficticio.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+        "0645bab0-78c4-59bc-b53d-ad76eace1ab9",
+        "6112fad5-8a6e-5579-accb-bdc342324c03"
+      ],
+      "required": "valor presente"
+    },
+    {
+      "id": "amount-annuity-difference",
+      "description": "Compara el monto compuesto y la anualidad con los datos ficticios proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "907b9b3c-a05f-5291-85bd-937c88cf770a"
+      ],
+      "required": "anualidad"
+    },
+    {
+      "id": "annuity-amount-rent",
+      "description": "Calcula el monto y la renta de la anualidad con la convención de pagos y los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "87e917f8-3847-51a9-bce8-78f3442ff605",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "required": "anualidad"
+    },
+    {
+      "id": "financial-context-problem",
+      "description": "Resuelve los problemas ficticios de monto compuesto, valor presente, valor futuro y anualidades utilizando las condiciones dadas para cada uno.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "required": "valor futuro"
+    },
+    {
+      "id": "financial-model",
+      "description": "Modela el monto compuesto y las anualidades del caso ficticio con la herramienta tecnológica elegida y los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+        "0eeb3c46-88f9-5ee9-857b-27adf9352e30"
+      ],
+      "required": "modelo|Modela"
+    },
+    {
+      "id": "account-origins",
+      "description": "Analiza el origen de las cuentas de los casos ficticios proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+        "afde0107-6816-5243-a7f6-4b777444a9d8"
+      ],
+      "required": "cuentas"
+    },
+    {
+      "id": "accounting-cycle",
+      "description": "Interpreta el ciclo contable del negocio ficticio presentado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "61f6da1e-07f0-573e-9aa9-05a06f24b96f",
+        "5f3cc134-cb99-5468-8e9b-1ddc78d09cb8"
+      ],
+      "required": "ciclo contable"
+    },
+    {
+      "id": "account-classification",
+      "description": "Explica la clasificación de las cuentas y su origen según los casos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+        "13255055-5c8b-511c-b4bf-2a5b83806db6"
+      ],
+      "required": "cuentas"
+    },
+    {
+      "id": "accounting-equation",
+      "description": "Identifica activo, pasivo y capital en las transacciones ficticias dadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5ab031a3-3e38-5c61-96a7-0fd8855f7d50",
+        "d87ba364-ff78-5159-a372-97883bd01407",
+        "a7972766-2fe3-5bee-9dff-dc37186edadd",
+        "96ffb06d-6a42-5e70-87a8-de7a74721079",
+        "da8a6858-b583-5683-b94f-04770d343859"
+      ],
+      "required": "activo"
+    },
+    {
+      "id": "journal-ledger",
+      "description": "Registra las transacciones ficticias dadas en el diario general y en el mayor general conservando sus referencias.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7",
+        "27a1004f-1602-5e7e-baae-f790c47c76bc",
+        "0f67507e-c627-5f53-9202-117f97e64774",
+        "edf8399a-1e62-5e36-a83b-7a56d29e7392"
+      ],
+      "required": "registro|Registra",
+      "forbidden": "estado de resultado|presupuesto|ciclo completo"
+    },
+    {
+      "id": "trial-balance-reconciliation",
+      "description": "Elabora el balance de comprobación con las cuentas ficticias dadas y concilia sus saldos con los registros suministrados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "0d8f73ab-15b6-5a2d-93bd-aaeb6d44b3b5",
+        "26181e70-9e1d-5466-9654-31f7128330b9",
+        "4e9fb2ce-0118-5d70-a5fa-1437c866e43c"
+      ],
+      "required": "comprobación",
+      "forbidden": "inventar un error"
+    },
+    {
+      "id": "profit-loss",
+      "description": "Elabora el estado de resultado del negocio ficticio con los ingresos, costos y gastos dados. Determina la ganancia o pérdida neta.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "a127f158-0598-5508-b013-26fb7abbb48a",
+        "ff00828e-75fa-5a12-9cb9-60ab4a7201fa",
+        "9138a84d-4ba4-5d2b-879e-475884b9acda"
+      ],
+      "required": "resultado",
+      "forbidden": "balance general|presupuesto"
+    },
+    {
+      "id": "financial-position",
+      "description": "Prepara el estado de situación o balance general de la empresa ficticia con las cuentas dadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "b65f2825-1d93-5ebf-be4b-d639f5f15f8b",
+        "c2a3afa3-9f1c-56c2-b028-7391a013981e",
+        "03e47e3d-7b4f-5adb-bf61-31f5a9603ed5"
+      ],
+      "required": "situación",
+      "forbidden": "estado de resultado|rentabilidad"
+    },
+    {
+      "id": "business-project",
+      "description": "Elabora un proyecto de estados financieros del colmado ficticio con los registros proporcionados y los productos indicados en la pauta.",
+      "activityType": "PROJECT",
+      "sourceRecordIds": [
+        "2c9c1cff-b3a0-5076-b002-d4cff774f103",
+        "b19da910-ca67-5471-9513-6104647546b1",
+        "d5071340-4693-5abd-842d-22d81f48fcbd"
+      ],
+      "required": "estados financieros",
+      "forbidden": "abrir una cuenta|ingresos reales"
+    },
+    {
+      "id": "budget",
+      "description": "Formula un presupuesto personal del personaje ficticio con ingresos, gastos y etapas dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "dfc7e90c-0140-5637-be36-ca5e20c751ef",
+        "9712d910-5d64-5cb2-b569-ed43ded2387c",
+        "f9b260b8-347c-5593-b5eb-aa50ec11465c"
+      ],
+      "required": "presupuesto",
+      "forbidden": "tus ingresos reales"
+    },
+    {
+      "id": "loan-verification-calculator",
+      "description": "Identifica los intereses del préstamo ficticio dado y comprueba el cálculo con una calculadora disponible.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060",
+        "afe0d1da-9d4e-5694-96ed-99d3a2662844"
+      ],
+      "required": "intereses|préstamo"
+    },
+    {
+      "id": "explain-balance-interest",
+      "description": "Explica los intereses sobre saldos insolutos de los ejemplos ficticios usando los resultados dados en una hoja de cálculo.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5e5dd577-203f-56b6-8610-8ff405fdefa8",
+        "643d2c95-4c29-52f9-861a-80dfb5ad59ab"
+      ],
+      "required": "saldos insolutos"
+    },
+    {
+      "id": "software-verification",
+      "description": "Resuelve el problema ficticio de interés compuesto de una tarjeta de crédito y comprueba el resultado con la herramienta disponible.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "a6bc7ff0-8802-5b93-9bca-f9616ffa7a79"
+      ],
+      "required": "interés compuesto"
+    },
+    {
+      "id": "interpret-amount",
+      "description": "Interpreta el monto compuesto del ejemplo dado sin calcular otro valor.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "e9018f8b-2657-5f51-bd87-4ef40733419f"
+      ],
+      "required": "monto compuesto",
+      "forbiddenEvidence": [
+        "calculation"
+      ]
+    },
+    {
+      "id": "saving-benefits",
+      "description": "Explica los beneficios del ahorro para el personaje ficticio usando el caso dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af",
+        "b29669aa-2c75-5fc4-9487-53d624c48019"
+      ],
+      "required": "ahorro"
+    },
+    {
+      "id": "cycle-investigation",
+      "description": "Investiga el ciclo contable del negocio ficticio a partir de los materiales dados y presenta por escrito los resultados y las fuentes consultadas.",
+      "activityType": "RESEARCH",
+      "sourceRecordIds": [
+        "61f6da1e-07f0-573e-9aa9-05a06f24b96f",
+        "00496db5-540d-5806-8979-1862604a210a"
+      ],
+      "required": "ciclo contable"
+    },
+    {
+      "id": "health-environment-result",
+      "description": "Interpreta el estado de resultado dado de un proyecto ambiental ficticio para establecer su rentabilidad.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "a127f158-0598-5508-b013-26fb7abbb48a",
+        "9138a84d-4ba4-5d2b-879e-475884b9acda"
+      ],
+      "required": "resultado",
+      "forbidden": "diagnóstico clínico|medicación"
+    },
+    {
+      "id": "budget-family-fiction",
+      "description": "Elabora el presupuesto de una familia ficticia con ingresos, gastos y beneficios dados, si los hay.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "dfc7e90c-0140-5637-be36-ca5e20c751ef",
+        "f9b260b8-347c-5593-b5eb-aa50ec11465c"
+      ],
+      "required": "presupuesto"
+    },
+    {
+      "id": "interest-only",
+      "description": "Calcula el interés compuesto con los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee"
+      ],
+      "required": "interés compuesto",
+      "forbidden": "interés simple|tarjeta|diario general"
+    },
+    {
+      "id": "amount-only",
+      "description": "Calcula el monto compuesto con los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa"
+      ],
+      "required": "monto compuesto",
+      "forbidden": "anualidad|préstamo|tarjeta"
+    },
+    {
+      "id": "present-only",
+      "description": "Calcula el valor presente con las condiciones dadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97"
+      ],
+      "required": "valor presente",
+      "forbidden": "valor futuro"
+    },
+    {
+      "id": "future-only",
+      "description": "Calcula el valor futuro con las condiciones dadas.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97"
+      ],
+      "required": "valor futuro",
+      "forbidden": "valor presente"
+    },
+    {
+      "id": "no-calculation",
+      "description": "Explica el interés compuesto del ejemplo dado. No calcules otro interés ni prepares una tabla de amortización.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee"
+      ],
+      "required": "interés compuesto",
+      "forbidden": "amortización",
+      "forbiddenEvidence": [
+        "calculation",
+        "result"
+      ]
+    },
+    {
+      "id": "independent-tasks",
+      "description": "Calcula el interés compuesto con los datos dados. Registra las transacciones ficticias en el diario general.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee",
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7"
+      ],
+      "required": "diario",
+      "requiredAll": [
+        "interés compuesto",
+        "diario"
+      ]
+    },
+    {
+      "id": "registration-only",
+      "description": "Registra las transacciones ficticias dadas solo en el diario general.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "12ae3f67-6496-51c9-913f-ff4771b77ae7"
+      ],
+      "required": "diario",
+      "forbidden": "mayor general|balance de comprobación|resultado neto"
+    },
+    {
+      "id": "written-analysis",
+      "description": "Analiza las condiciones dadas de un préstamo ficticio. Entrega el análisis por escrito.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060"
+      ],
+      "required": "préstamo",
+      "forbidden": "exposición oral|presentación oral"
+    },
+    {
+      "id": "weighted-purpose",
+      "description": "Construye la tabla de amortización dada. Se admite crédito parcial por componentes con los pesos indicados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548"
+      ],
+      "required": "amortización",
+      "suggestedInstrumentType": "lista-ponderada"
+    },
+    {
+      "id": "checklist-purpose",
+      "description": "Clasifica las cuentas dadas; verifica su cumplimiento con sí o no.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905"
+      ],
+      "required": "cuentas",
+      "suggestedInstrumentType": "lista-cotejo"
+    },
+    {
+      "id": "autonomy-purpose",
+      "description": "Observa el grado de autonomía al calcular el interés compuesto del caso ficticio dado.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "8138bab4-0cfc-5edb-adc7-73b93ff3c1ee"
+      ],
+      "required": "autonomía|autónom",
+      "suggestedInstrumentType": "escala"
+    },
+    {
+      "id": "justification-purpose",
+      "description": "Justifica el descuento calculado del ejemplo dado usando la convención proporcionada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "141bd282-2048-5637-8538-f099531141a2"
+      ],
+      "required": "descuento",
+      "suggestedInstrumentType": "rubrica"
+    },
+    {
+      "id": "card-without-accounting-credit",
+      "description": "Explica las tarjetas de crédito del ejemplo ficticio dado.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "55ca3a5a-172d-5ba2-8cf1-4816e4ceea6a",
+        "0fb3cd37-c80f-57e3-be81-775791b8d44e"
+      ],
+      "required": "tarjetas de crédito",
+      "forbidden": "cuentas de débito|lado de débito|cuentas de crédito"
+    },
+    {
+      "id": "accounts-not-history",
+      "description": "Explica la clasificación de las cuentas y su origen en las transacciones ficticias dadas.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+        "afde0107-6816-5243-a7f6-4b777444a9d8"
+      ],
+      "required": "cuentas",
+      "forbidden": "histórico|historia"
+    },
+    {
+      "id": "classify-only-not-origin",
+      "description": "Clasifica las cuentas dadas según su naturaleza.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "b7e149d7-0408-5023-aadc-dc7dc65d0905",
+        "13255055-5c8b-511c-b4bf-2a5b83806db6"
+      ],
+      "required": "cuentas",
+      "forbidden": "histórico|origen"
+    },
+    {
+      "id": "independent-finance-accounting-comparison",
+      "description": "Compara el ahorro y el presupuesto del personaje ficticio con los datos dados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "318baa7e-00f9-50e2-8c41-6a67422191af",
+        "e84aa8a7-e1b7-563a-a848-bbbfdcf6c060",
+        "356ed7aa-27e1-56a5-a693-22f290fb2ace",
+        "46f5c52b-2dc6-5aff-a8a5-79352646b2a9",
+        "36eb05c2-8be4-5655-85ab-6abba12d8df3"
+      ],
+      "required": "ahorro",
+      "requiredAll": [
+        "ahorro",
+        "presupuesto"
+      ]
+    },
+    {
+      "id": "build-and-interpret-amortization",
+      "description": "Construye e interpreta la tabla de amortización con los datos ficticios dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "74582de9-16be-541b-a04e-f603cd7f7548",
+        "7754dc7b-abca-5310-ab1d-1aa6e339ba74",
+        "f7ca0d83-18d4-572d-8ccb-ce436c4fa1da"
+      ],
+      "required": "amortización",
+      "requiredEvidence": [
+        "production",
+        "interpretation"
+      ]
+    },
+    {
+      "id": "annuity-amount-only",
+      "description": "Calcula solo el monto de la anualidad con los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "87e917f8-3847-51a9-bce8-78f3442ff605",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "required": "monto",
+      "forbidden": "renta"
+    },
+    {
+      "id": "annuity-rent-only",
+      "description": "Calcula solo la renta de la anualidad con los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "87e917f8-3847-51a9-bce8-78f3442ff605",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "required": "renta",
+      "forbidden": "monto"
+    },
+    {
+      "id": "single-asset-not-whole-equation",
+      "description": "Identifica el activo de la empresa ficticia dada.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "5ab031a3-3e38-5c61-96a7-0fd8855f7d50",
+        "d87ba364-ff78-5159-a372-97883bd01407",
+        "a7972766-2fe3-5bee-9dff-dc37186edadd",
+        "96ffb06d-6a42-5e70-87a8-de7a74721079",
+        "da8a6858-b583-5683-b94f-04770d343859"
+      ],
+      "required": "activo",
+      "forbidden": "pasivo|capital contable"
+    },
+    {
+      "id": "annuity-comparison-not-other-object",
+      "description": "Compara el monto compuesto y la anualidad con los datos ficticios proporcionados.",
+      "activityType": "ANALYSIS",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "907b9b3c-a05f-5291-85bd-937c88cf770a"
+      ],
+      "required": "anualidad",
+      "forbidden": "monto de la anualidad"
+    },
+    {
+      "id": "financial-context-problem-target-guard",
+      "description": "Resuelve los problemas ficticios de monto compuesto, valor presente, valor futuro y anualidades utilizando las condiciones dadas para cada uno.",
+      "activityType": "PROBLEM_SOLVING",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "7b9d5f3b-c3f0-5c91-8c7b-2882a7ff3e97",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "f759f757-3cc4-533e-90ad-b1954c92582e",
+        "2c05acbc-93b3-54a2-8036-65cd4afda0a3"
+      ],
+      "required": "valor futuro",
+      "forbidden": "monto de la anualidad"
+    },
+    {
+      "id": "financial-model-target-guard",
+      "description": "Modela el monto compuesto y las anualidades del caso ficticio con la herramienta tecnológica elegida y los datos dados.",
+      "activityType": "EXERCISE_SET",
+      "sourceRecordIds": [
+        "9409f52c-3bbc-5614-b0b2-c698c45803fa",
+        "9e0ada14-6833-56e2-a998-c3b7954f547e",
+        "6a863d5c-1034-5f71-b7f7-2d43df084c17",
+        "0eeb3c46-88f9-5ee9-857b-27adf9352e30"
+      ],
+      "required": "modelo|Modela",
+      "forbidden": "monto de la anualidad"
+    }
+  ]
+}

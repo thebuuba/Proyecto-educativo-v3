@@ -1,0 +1,77 @@
+{
+  "catalog": "evaluation-2026.136",
+  "baseline": "evaluation-2026.135",
+  "commonEnglishIdentical": 15176,
+  "commonMathIdentical": 2888,
+  "previousOptatives": 12,
+  "fullDefinitionsExactToFrozen135": 9532,
+  "scopes": [
+    {
+      "code": "OPT-HCS-SOC-6",
+      "fullDefinitionsExactToFrozen135": 412,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-4",
+      "fullDefinitionsExactToFrozen135": 480,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HCS-SOC-5",
+      "fullDefinitionsExactToFrozen135": 608,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-4",
+      "fullDefinitionsExactToFrozen135": 312,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-5",
+      "fullDefinitionsExactToFrozen135": 300,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HCS-LEN-6",
+      "fullDefinitionsExactToFrozen135": 600,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HLM-LEN-4",
+      "fullDefinitionsExactToFrozen135": 288,
+      "olderArtifactDifferencesAlreadyPresentIn135": 12
+    },
+    {
+      "code": "OPT-HLM-LEN-5",
+      "fullDefinitionsExactToFrozen135": 272,
+      "olderArtifactDifferencesAlreadyPresentIn135": 16
+    },
+    {
+      "code": "OPT-HLM-LEN-6",
+      "fullDefinitionsExactToFrozen135": 436,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HLM-ING-4",
+      "fullDefinitionsExactToFrozen135": 1532,
+      "olderArtifactDifferencesAlreadyPresentIn135": 8
+    },
+    {
+      "code": "OPT-HLM-ING-5",
+      "fullDefinitionsExactToFrozen135": 2200,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    },
+    {
+      "code": "OPT-HLM-ING-6",
+      "fullDefinitionsExactToFrozen135": 2092,
+      "olderArtifactDifferencesAlreadyPresentIn135": 0
+    }
+  ],
+  "historicalArtifactDifferenceCountAlreadyIn135": 36,
+  "priorPersonalBaselinesPreserved": 11,
+  "historicalSnapshotsChanged": false,
+  "limits": [
+    "Las comparaciones de definiciones no equivalen a nuevos recorridos visuales de los ámbitos anteriores.",
+    "No se regeneraron artefactos antiguos ni sobrescribieron baselines."
+  ]
+}

@@ -1,0 +1,2185 @@
+{
+  "catalog": "evaluation-2026.136",
+  "reviewer": "Autor; revisión propia sin subagentes",
+  "method": "Lectura por familias y variables:26relaciones matemáticas/contables,patrones completos de cinco progresiones,117textos distintos,108consignas y25paquetes de cuatroformatos/puntuaciones. Reconstrucción exacta de432instrumentos;deltas finales de anualidades releídos. Correspondencias51anclas/21indicadores y12exclusiones conservadas. No se acredita pertinencia por tests o inventario solamente.",
+  "findingsFixed": [
+    "Calculadora y cálculo se interpretaban como verbo calcular.",
+    "Crédito de tarjetas añadía débito/crédito contable.",
+    "Origen contable se interpretaba como historia.",
+    "Clasificación/comprobación como sustantivos añadían acciones.",
+    "Prioridad temática omitía objetos en comparaciones.",
+    "Elaboración combinada omitía interpretación.",
+    "Cálculo de monto o renta exigía la otra magnitud.",
+    "Monto compuesto contagiaba el objeto de anualidad vecina."
+  ],
+  "minorDeferred": [
+    "Algunas combinaciones conservan artículos o cláusulas repetidos,por ejemplo «de el monto» y«sin inventar valores faltantes» duplicado;no añaden requisitos ni cambian cifras."
+  ],
+  "limits": [
+    "Muestras representativas,no todas las variantes de cada fila curricular.",
+    "Build,runtime,HTTP/DB ynavegador pendientes alregistrar lectura.",
+    "Datos ficticios,convenciones proporcionadas,sin cuentas o finanzas privadas ni contrataciones reales."
+  ],
+  "items": [
+    {
+      "caseId": "brief:progressions",
+      "instrumentType": "rubrica",
+      "sha256": "9ff741b653b6910d3161b0ca1b88c9dfba96124d0cfd619981960b7ec371a01f"
+    },
+    {
+      "caseId": "brief:progressions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "408f893daa1ee2bf778aaf4ae1ece2374a41e6a7679e6e5e97aa4c7df813dbfc"
+    },
+    {
+      "caseId": "brief:progressions",
+      "instrumentType": "escala",
+      "sha256": "3c9c3650545860402b70cf54b3cdb4bd9f0162a08e44142d3abc35e3b0a154fa"
+    },
+    {
+      "caseId": "brief:progressions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a373663486b0999a192407f1577f21b819a4472aeb63ba4adf91eff721cdd042"
+    },
+    {
+      "caseId": "brief:saving",
+      "instrumentType": "rubrica",
+      "sha256": "975f9c55491348bd0402250431935dce31df1db0908b4a94876c91dd5d893020"
+    },
+    {
+      "caseId": "brief:saving",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f2486c82f58945015e0ae27438fccb4647f9615aa27d929644c06ddc592c78f7"
+    },
+    {
+      "caseId": "brief:saving",
+      "instrumentType": "escala",
+      "sha256": "8e25fb92575ef47636bd996ac3be58e49d9c1d6e4a23f515692d6d8495184685"
+    },
+    {
+      "caseId": "brief:saving",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fcfa75ee86aecdb60239793bdd70bd336f7dab11db1b46ef5c9455d7f6caf982"
+    },
+    {
+      "caseId": "brief:compound-interest",
+      "instrumentType": "rubrica",
+      "sha256": "017b3f433e4157382aa3f37eb38d56a8e2868eb61b08a58fe7747ddacbdc58f7"
+    },
+    {
+      "caseId": "brief:compound-interest",
+      "instrumentType": "lista-cotejo",
+      "sha256": "988827ba24362b1c02cdda13ff886a8a1043b9343a43b94121ed36f3d60cc431"
+    },
+    {
+      "caseId": "brief:compound-interest",
+      "instrumentType": "escala",
+      "sha256": "e24db8da9e4e2d417984cf5c47c26b4c227388f20d4b01c1d98f6f7340705287"
+    },
+    {
+      "caseId": "brief:compound-interest",
+      "instrumentType": "lista-ponderada",
+      "sha256": "366fd2fa25a79a1f5fe1dca1b696967ceabc390fe3ed4e80f1948ee4425eec46"
+    },
+    {
+      "caseId": "brief:compound-amount",
+      "instrumentType": "rubrica",
+      "sha256": "0235105ca77610e45182fc54b48fb377498fa797e13712d3958df43f6dd71e9b"
+    },
+    {
+      "caseId": "brief:compound-amount",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3588a9cfc07f9319148c9a7b89fc99348c64e7d02dbbdb56eed8b88d1f86f160"
+    },
+    {
+      "caseId": "brief:compound-amount",
+      "instrumentType": "escala",
+      "sha256": "6ad77f38fb354d7f7440c5b5451c4e2f69be6aefde79deb9afe622588a9c1e34"
+    },
+    {
+      "caseId": "brief:compound-amount",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dfe2a878451ebabd14aea898a705ae5eec5fef6047ba40b836c855ac40b7af7c"
+    },
+    {
+      "caseId": "brief:discount",
+      "instrumentType": "rubrica",
+      "sha256": "8aa358e13ef5fbe3d4aae1bec3a20fe828dc16d0ef0e43d957c4c959b0796d26"
+    },
+    {
+      "caseId": "brief:discount",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c2949ceb046e9d38e4cbf9ae1ea55947443b4fc084e0a07fbe44908872f63b2"
+    },
+    {
+      "caseId": "brief:discount",
+      "instrumentType": "escala",
+      "sha256": "fb80c16fef92c9200a708309e6ab1b1119dd3e9549d0f9cb603e38e113a71d5c"
+    },
+    {
+      "caseId": "brief:discount",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d6b6f879eb99ec7ca7c6548da2c07997618c35b74e10fc6f9babe78d95b223da"
+    },
+    {
+      "caseId": "brief:loans",
+      "instrumentType": "rubrica",
+      "sha256": "dde20a73f3ccc497c4d68e29b4da63c4cbb5c32684929c86b1caca672c9bb815"
+    },
+    {
+      "caseId": "brief:loans",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c5fa2e3ff7596b67e55a9f9348b6eca5366fd90beb745acd1e5b6f9415d85b9d"
+    },
+    {
+      "caseId": "brief:loans",
+      "instrumentType": "escala",
+      "sha256": "ac9e2b6f6c78048072a7a6aa0b63cf33b0680942fe1ac9d75a6e58c2256a2394"
+    },
+    {
+      "caseId": "brief:loans",
+      "instrumentType": "lista-ponderada",
+      "sha256": "4db180c2fbff76f68eaa0de69c41e4797ac88da4cc0c697ca06e99e13794ba98"
+    },
+    {
+      "caseId": "brief:cards",
+      "instrumentType": "rubrica",
+      "sha256": "93888c1fccf69713bf7bbb39489a1ef24b643fb306de88a3cf8b4ec16b630223"
+    },
+    {
+      "caseId": "brief:cards",
+      "instrumentType": "lista-cotejo",
+      "sha256": "194a4610cead0f22670e958693d2765edc474113e9bf773122f17bbc9abc521f"
+    },
+    {
+      "caseId": "brief:cards",
+      "instrumentType": "escala",
+      "sha256": "6dd7dbcdc6e203514b5d4df09959a3b466b50abfc84e0c7c7983c3b85fff5121"
+    },
+    {
+      "caseId": "brief:cards",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c3653adbcfdbdb11927c338e8814a1b563ab0ab8c48a5daeec19a63a3ebd2d2"
+    },
+    {
+      "caseId": "brief:declining-interest",
+      "instrumentType": "rubrica",
+      "sha256": "68c320565dec548f0e7d7485e660751ca66aad21845b66384e4c3b48ec867b9b"
+    },
+    {
+      "caseId": "brief:declining-interest",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c5bcc41a26167bc2c03f74edc9a4bc38eb1d7cbc34f060fcabf8cdc9aefee7c7"
+    },
+    {
+      "caseId": "brief:declining-interest",
+      "instrumentType": "escala",
+      "sha256": "5eb224f7f20451f2ab1d79b70db3f3dc735519d4629afbf86a9a3d6e2e038a83"
+    },
+    {
+      "caseId": "brief:declining-interest",
+      "instrumentType": "lista-ponderada",
+      "sha256": "506f8208d098fd204e8d66edfec57c6e08e0f01d88c763a79e277345a222385a"
+    },
+    {
+      "caseId": "brief:amortization",
+      "instrumentType": "rubrica",
+      "sha256": "806d809debca3d21981d456c5711faef6b8b7734543270da61d2f58cf41f3092"
+    },
+    {
+      "caseId": "brief:amortization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f1a60c6991645640adf1f6ef8e0637a10a39fa09e9f4dec26e499bbea9dfc6ac"
+    },
+    {
+      "caseId": "brief:amortization",
+      "instrumentType": "escala",
+      "sha256": "d64c95ce8dd46ea03d9eb5820f0027392761d3207ab4d7bb1129e994df5eff80"
+    },
+    {
+      "caseId": "brief:amortization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "086c83f95b68f6ddbd9cc96c6fc7b910958732ff23bd8f3812af72dcb2a19784"
+    },
+    {
+      "caseId": "brief:present-value",
+      "instrumentType": "rubrica",
+      "sha256": "960f0ff62b499435d46f24439c14cd54b0b0b05307ab4f4863daa2d556ae925f"
+    },
+    {
+      "caseId": "brief:present-value",
+      "instrumentType": "lista-cotejo",
+      "sha256": "979f5a7fc02ecee9c34b3f3cdbe2d2d43681ed1a9a246d55b3dabfa747fd87a5"
+    },
+    {
+      "caseId": "brief:present-value",
+      "instrumentType": "escala",
+      "sha256": "942f99982acd788df95eeeb481c8f5ff57b4494ff69b1e19c66246c75b73a644"
+    },
+    {
+      "caseId": "brief:present-value",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f24ff862f313b2adf776dff6a7fa4f7d7d8b9888faaaa66e72ebbce9d33b7338"
+    },
+    {
+      "caseId": "brief:future-value",
+      "instrumentType": "rubrica",
+      "sha256": "0d64593ac110e168acb1e3a7eb39899d3e1f0845a12bc3aeaf5917470f6b2b0a"
+    },
+    {
+      "caseId": "brief:future-value",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1375c8d39364b597d3db069c3272227cb3083cfc41091de76aaa1f8bca47ce29"
+    },
+    {
+      "caseId": "brief:future-value",
+      "instrumentType": "escala",
+      "sha256": "c56e44af0caf56d4b226441c3f21ba1c7dca531953b354ca3c05bb5ccf03734b"
+    },
+    {
+      "caseId": "brief:future-value",
+      "instrumentType": "lista-ponderada",
+      "sha256": "936a6e5b800b934220d6a7041f780f0e7bed05edcc6f27a2e42a5c4620bdbf44"
+    },
+    {
+      "caseId": "brief:annuities",
+      "instrumentType": "rubrica",
+      "sha256": "d670a8e3e481924b151a972803812cd0bd1a66fde4b532ed8851067a02abfd19"
+    },
+    {
+      "caseId": "brief:annuities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4b465cf7de8a3fd7b3078d167c0be2c5ab0e5988d8d36d1b444ab83cbb089171"
+    },
+    {
+      "caseId": "brief:annuities",
+      "instrumentType": "escala",
+      "sha256": "ce09292517dd34f01619e6b2be50be5ae9a0a422fdfbd3dc67339437362df97c"
+    },
+    {
+      "caseId": "brief:annuities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "92aa10600355e4574d7e0789eb22a1ca28eb0f127c388f6740c1f44c4b4a8c18"
+    },
+    {
+      "caseId": "brief:accounting-cycle",
+      "instrumentType": "rubrica",
+      "sha256": "9796052b64684a3243bc73a9d5408ba9480efc3806d7c098793a1188f3b5ee73"
+    },
+    {
+      "caseId": "brief:accounting-cycle",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a051a9691f32d9d5283bdf8234ca36fc1cbc359a0219e0d5b948a0bcef51cb6a"
+    },
+    {
+      "caseId": "brief:accounting-cycle",
+      "instrumentType": "escala",
+      "sha256": "ad4c2031922be25e69f42278e506dc0aca70ffe9cece90a90be8ec14b5fdb518"
+    },
+    {
+      "caseId": "brief:accounting-cycle",
+      "instrumentType": "lista-ponderada",
+      "sha256": "135fcbc081fc518c8f226e09e4bfb2e2a19f4850fc934ebac9ce422e3a7f8371"
+    },
+    {
+      "caseId": "brief:account-classification",
+      "instrumentType": "rubrica",
+      "sha256": "98d82c7bc0084e8bb83c6586dea7898fe34cf0b7c05d2c5f2ed04bb7685bb06f"
+    },
+    {
+      "caseId": "brief:account-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c64d3236fc1951b506d9485919c01dd7deb631d458cf13b355b1250c20cac0e9"
+    },
+    {
+      "caseId": "brief:account-classification",
+      "instrumentType": "escala",
+      "sha256": "fe4df14982cda1ccf2f8b97ab05f8f286df4b5c1372adb0af30c8c7b71f93680"
+    },
+    {
+      "caseId": "brief:account-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "982c8b3b6620f5a067957742d2dbc0458720a95db86d9986325da7f3b79f2bdb"
+    },
+    {
+      "caseId": "brief:assets",
+      "instrumentType": "rubrica",
+      "sha256": "af8a612982540089cd2fe6182a33ce04b95abe07513d54205d071ff58b32fc89"
+    },
+    {
+      "caseId": "brief:assets",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41486f306c09c285b31a902aff21469d87e85031edf490515ff120bac4827edc"
+    },
+    {
+      "caseId": "brief:assets",
+      "instrumentType": "escala",
+      "sha256": "eb5dff8e6f8c3bfd9b2843ee22fbcd0e68c66b7aa5ebaeab2d489afe80b22243"
+    },
+    {
+      "caseId": "brief:assets",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e532b010990571b14b10f4196f3a7b789e6796fe5a83313c4b91caf043b1d871"
+    },
+    {
+      "caseId": "brief:liabilities",
+      "instrumentType": "rubrica",
+      "sha256": "40467a6bf661e85f5cd4fdbfa970db815a415ce3c451be7e1d79b24397e7c911"
+    },
+    {
+      "caseId": "brief:liabilities",
+      "instrumentType": "lista-cotejo",
+      "sha256": "774231c9716446816c2c643fe763ba5042ac6399a8ebda6ec4875c65744e95fb"
+    },
+    {
+      "caseId": "brief:liabilities",
+      "instrumentType": "escala",
+      "sha256": "891045aefdc921b170df9399eaccf4b14c7af6c8d7abd9b9997e3f8d736ba3a1"
+    },
+    {
+      "caseId": "brief:liabilities",
+      "instrumentType": "lista-ponderada",
+      "sha256": "83af0315f6a6f07ce7bc3fa5946df4a3d902f513229cb1c1932450f89bb42af4"
+    },
+    {
+      "caseId": "brief:equity",
+      "instrumentType": "rubrica",
+      "sha256": "9de123b42c1fda9bec09f9319ef7ff29fac2612bde464b59fc8ae72a847e396b"
+    },
+    {
+      "caseId": "brief:equity",
+      "instrumentType": "lista-cotejo",
+      "sha256": "374e5924666481701de2d44b2de1baa6b6f6510450d1ce24a95f848937cf0439"
+    },
+    {
+      "caseId": "brief:equity",
+      "instrumentType": "escala",
+      "sha256": "bf0cb6ffa906ca86894fb36a20d7d1f831314ae3532e7a4592a71dad719f9875"
+    },
+    {
+      "caseId": "brief:equity",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b0c3a75e517524f3a6176e5def127258230d4b34f1ba70129863010f8c074452"
+    },
+    {
+      "caseId": "brief:income-costs-expenses",
+      "instrumentType": "rubrica",
+      "sha256": "e5c1889df2cbc46a6cb39ab2e26e20a02b612b66ce2c397fd0961660ae0cd034"
+    },
+    {
+      "caseId": "brief:income-costs-expenses",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1b22a0b4d3c766c38f79c91c3f9a8bee1e5762106cf7f96397ec31ef9e3aabd1"
+    },
+    {
+      "caseId": "brief:income-costs-expenses",
+      "instrumentType": "escala",
+      "sha256": "f1705afc39f4e04e068827b718593b4a19293caa20655a903d8afd608a4af8f0"
+    },
+    {
+      "caseId": "brief:income-costs-expenses",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b43b7dad4f5586729f95bbff757877fdac7037f882a25a19b49d0b8e09e0826d"
+    },
+    {
+      "caseId": "brief:debit-credit",
+      "instrumentType": "rubrica",
+      "sha256": "17a0c42b63d9ccbd61a2deb5f5f613e6da6f01db11d0050e9a0b402f3bf1a6f8"
+    },
+    {
+      "caseId": "brief:debit-credit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "18a2a7dd884ead43ad3616fa39322b617a6fa725f6811346193dcc8c7557d35e"
+    },
+    {
+      "caseId": "brief:debit-credit",
+      "instrumentType": "escala",
+      "sha256": "e276450ea39a6a932fc6fe8f41a2fd6180c8cd3ae70016b93765a048033c0a68"
+    },
+    {
+      "caseId": "brief:debit-credit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0a29579a5ed9a22d4b53a99b7d55325ceb941467d1175d47d137d8813c88417d"
+    },
+    {
+      "caseId": "brief:journal",
+      "instrumentType": "rubrica",
+      "sha256": "c0bfad6d7f7d23e6e440178bc2455d5ff80eb1f4d1c61b64a9be9d4162afc357"
+    },
+    {
+      "caseId": "brief:journal",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a77037063b908464f2c5c322e05976bff9eed20030c032bed654acf53c2421a1"
+    },
+    {
+      "caseId": "brief:journal",
+      "instrumentType": "escala",
+      "sha256": "bd996192d02f9ec4c9c86ebb8451dfe557056002c9aa3c6201e06a8874eedd0e"
+    },
+    {
+      "caseId": "brief:journal",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9b28a8498a8200540f72d6ec7400fa3e6b6bc3b6ce8a946ac7044932ef4e8e52"
+    },
+    {
+      "caseId": "brief:ledger",
+      "instrumentType": "rubrica",
+      "sha256": "ad8a4f4df667020c2a74887c5186182ba610f4316a2ce8bb2ed4d3b501da2666"
+    },
+    {
+      "caseId": "brief:ledger",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6326b681c4015c41b7f915721aed686f82b9d1f925761b8def1e9b7f2def7b41"
+    },
+    {
+      "caseId": "brief:ledger",
+      "instrumentType": "escala",
+      "sha256": "1bd21c6e325fdf0c1730733a791e8101373870504e7a6b15710118677626afbf"
+    },
+    {
+      "caseId": "brief:ledger",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6bdd2784592a1c556c7373bebc98215d447e4c75bd57220a5cb892fdc5c4f4e6"
+    },
+    {
+      "caseId": "brief:trial-balance",
+      "instrumentType": "rubrica",
+      "sha256": "81190a4788a033a5caec6c67ff4438e21afa64d4a2483d941858097cf2220bdf"
+    },
+    {
+      "caseId": "brief:trial-balance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a4b7e1025eecf6c4fe61273a6a740b2e0333dafd358e34f3a268f39fdc5216e1"
+    },
+    {
+      "caseId": "brief:trial-balance",
+      "instrumentType": "escala",
+      "sha256": "95a924d4c12bf8d63f5bde58bc4e498cc530cd202e5abd069321edf081b334dc"
+    },
+    {
+      "caseId": "brief:trial-balance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1a691fdb56690f7873626fd84933e5815cceaf0c45514c2af3f6b8287410b145"
+    },
+    {
+      "caseId": "brief:financial-statements",
+      "instrumentType": "rubrica",
+      "sha256": "3b685eef48077d8d29a616c2b4f2267490a0c2dae6cc4edbef8209ae70b13778"
+    },
+    {
+      "caseId": "brief:financial-statements",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e9dab94a757f81696ca776b6c3ff47586666039214a37e6337b067951fc5f8df"
+    },
+    {
+      "caseId": "brief:financial-statements",
+      "instrumentType": "escala",
+      "sha256": "63c769ddc5f85c3ea773875c6d1adad7f884fdb78aaecef3a7db27f3c1fbd9f7"
+    },
+    {
+      "caseId": "brief:financial-statements",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9faf6fc13ec5d308123820d712de9828fe0809f6ac1ac940d588430d79efbe66"
+    },
+    {
+      "caseId": "brief:income-statement",
+      "instrumentType": "rubrica",
+      "sha256": "739d1ad2161252503bcda49ed682d07061468645e33d2b0a3c735de2d93b874f"
+    },
+    {
+      "caseId": "brief:income-statement",
+      "instrumentType": "lista-cotejo",
+      "sha256": "492b40a3270a5aa8f44ab59363ba4538ee38a857033bdd7692108d02f2ec5ba8"
+    },
+    {
+      "caseId": "brief:income-statement",
+      "instrumentType": "escala",
+      "sha256": "3869eedebee9fb287f494c95cd60716fc09a16e3a269c2bbe3fcacf0cf3f325a"
+    },
+    {
+      "caseId": "brief:income-statement",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2dc452f81356ae2657decfe3428673e77d1f2f9bb9f7ac8febca7906ac805739"
+    },
+    {
+      "caseId": "brief:financial-position",
+      "instrumentType": "rubrica",
+      "sha256": "cc8a6d65b823b6069dd67a2b79f27bbd5f962648d7289922817e414741dfef23"
+    },
+    {
+      "caseId": "brief:financial-position",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2e1dab2f2b2bcc3f70f87a681673deb1c7c8841ad37d002baa0730b3fbe66599"
+    },
+    {
+      "caseId": "brief:financial-position",
+      "instrumentType": "escala",
+      "sha256": "9a01bbff84f9001b76b40270cc322b5d37185f1097c187b67181329edb3254eb"
+    },
+    {
+      "caseId": "brief:financial-position",
+      "instrumentType": "lista-ponderada",
+      "sha256": "016d6a94b92b1b6af0fe35a39e549337ecf6ff3201a4b11b0de77d57ccbbf92c"
+    },
+    {
+      "caseId": "brief:budget",
+      "instrumentType": "rubrica",
+      "sha256": "3cdd527dcf33da3a8e6997de4f26eab4e79f0079ebe2f5ee15db864fa65f9094"
+    },
+    {
+      "caseId": "brief:budget",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7f0e5e198ff355c6b3e4f5275e5616a7f8340f392b401a3b3e8458f70f7059ab"
+    },
+    {
+      "caseId": "brief:budget",
+      "instrumentType": "escala",
+      "sha256": "a7834dacb624fde9bfa655979c047c6469d88a079d8b791b5a998deef89b0954"
+    },
+    {
+      "caseId": "brief:budget",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b679272787dc3962e186bd7e67bb2cce3ba4a07d9863e80a80caebc9ace303ee"
+    },
+    {
+      "caseId": "concept-progresiones",
+      "instrumentType": "rubrica",
+      "sha256": "01fa08bf660786e9a8ece7fcc36719a098587522bbe088db8d5b909430edeade"
+    },
+    {
+      "caseId": "concept-progresiones",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6dc3c01be6725804698006c97688c1ba1ab4c343a0cbf4ea1e68b16b4ab83dec"
+    },
+    {
+      "caseId": "concept-progresiones",
+      "instrumentType": "escala",
+      "sha256": "66ad95d280bebac5789e3d39f0e03aec368a1e6eed9e798f0df06146ab024761"
+    },
+    {
+      "caseId": "concept-progresiones",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5b416d05d8d7580c7131b35e69a46844bf4cd6834ed10cb410f5bfe8f16873bb"
+    },
+    {
+      "caseId": "concept-tipos-progresiones",
+      "instrumentType": "rubrica",
+      "sha256": "9fde932992fd9c78743072cb96e341cd707c6daa9705a4db6ab66c6fbf5b7388"
+    },
+    {
+      "caseId": "concept-tipos-progresiones",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e718cbd52f1b7ca5177590d8da564f0d7f475dd3333f9011c1e739b85d6ef7d8"
+    },
+    {
+      "caseId": "concept-tipos-progresiones",
+      "instrumentType": "escala",
+      "sha256": "09eb72470d79f893a02e9bef0b035465081aa23c3187ce3d0ccba4c1cc6271fd"
+    },
+    {
+      "caseId": "concept-tipos-progresiones",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9b70db86ed0b9db7dd908b1c7774977f51151000b5e8000f2a42d6bb1e86ffd9"
+    },
+    {
+      "caseId": "concept-ahorro",
+      "instrumentType": "rubrica",
+      "sha256": "b8ab3808714adef427c2e7c73d4216380c2dbe9d25ae9e0a0ad87bb99c21f976"
+    },
+    {
+      "caseId": "concept-ahorro",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c18085bf4c88b3884597d8c54a01feb8a49fe878d68735dd247229e237f1e8d5"
+    },
+    {
+      "caseId": "concept-ahorro",
+      "instrumentType": "escala",
+      "sha256": "a372138285891da10a1040b091062b48665f8ce29dfe1502e0df89004fefd8c2"
+    },
+    {
+      "caseId": "concept-ahorro",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6fc80337e35e4261a3c49e3b9bff9e68756db66887fd0ed898001fd4467fefd8"
+    },
+    {
+      "caseId": "concept-interes",
+      "instrumentType": "rubrica",
+      "sha256": "638f8e8be8ecaa1a604ca79bd97800b876d3a5113e97900451a5470e7e5042b7"
+    },
+    {
+      "caseId": "concept-interes",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4f5c807e7bfe2a9e50ac2bc2fc400703e9d00f715a5a63c537c8f2781165ab2c"
+    },
+    {
+      "caseId": "concept-interes",
+      "instrumentType": "escala",
+      "sha256": "39572788f42bb58131ea7778ceaff79ec67f86078d677ca3f0bcadc3d0ffec04"
+    },
+    {
+      "caseId": "concept-interes",
+      "instrumentType": "lista-ponderada",
+      "sha256": "75a202ab08ea42abd9504e30fc83964a55cc6750f1f565c224a8d702d2c55165"
+    },
+    {
+      "caseId": "concept-monto",
+      "instrumentType": "rubrica",
+      "sha256": "08158ea53b9b99cdd7436dbc03fbecfa8fc8bac3c38f7c6f6779db8ffadcc46d"
+    },
+    {
+      "caseId": "concept-monto",
+      "instrumentType": "lista-cotejo",
+      "sha256": "37b9d6264deaf196d24ad3c7e004dd2eb80e8a62faaeb301ecd061f94e26ec0d"
+    },
+    {
+      "caseId": "concept-monto",
+      "instrumentType": "escala",
+      "sha256": "9fb3f70b864bcb3c936984fed7b4f235f0165fd30295556f1db2f6c7def69c16"
+    },
+    {
+      "caseId": "concept-monto",
+      "instrumentType": "lista-ponderada",
+      "sha256": "37fed29dbf74f940b102334891ea3acddc1ae770f5bfa541da1c2d4b2bcc9365"
+    },
+    {
+      "caseId": "concept-descuento",
+      "instrumentType": "rubrica",
+      "sha256": "f1b8151c716b83ed023cba1ce64f75a20c9cb5ae839b5737a4f6ff1e3aebd040"
+    },
+    {
+      "caseId": "concept-descuento",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bf19ff257fb90dc44d678942e044aece4f53711d736488ada963af05be04a0b2"
+    },
+    {
+      "caseId": "concept-descuento",
+      "instrumentType": "escala",
+      "sha256": "abaaa253aaa760e59667984842345a777d003f5b33fb18b26219cf8f43cab099"
+    },
+    {
+      "caseId": "concept-descuento",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1616a1ada9bf35a572078a901c70306e359e32c10f15b473799dea39ebbd1018"
+    },
+    {
+      "caseId": "concept-prestamos",
+      "instrumentType": "rubrica",
+      "sha256": "d73f7c26e9d6d53177853c170be927613e900acb0a2b88e909cb240c9b55860d"
+    },
+    {
+      "caseId": "concept-prestamos",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f0be22ee41730fed5eaddee2284263d5dae6a943a0f3d3569bc2eff80ae7033c"
+    },
+    {
+      "caseId": "concept-prestamos",
+      "instrumentType": "escala",
+      "sha256": "b155d7f91f7b97128a7edcb5635e088e09e50d6526e461b05577686e89bc1a40"
+    },
+    {
+      "caseId": "concept-prestamos",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0c9dbf041541eb502c37ec2877ce003c6007d71d2cfdc5a68d4017392224e19e"
+    },
+    {
+      "caseId": "concept-tarjetas",
+      "instrumentType": "rubrica",
+      "sha256": "915298668a6c3f5bea244a47bbe4935c4b8e6130c8e1efb8352a7de6520e51b2"
+    },
+    {
+      "caseId": "concept-tarjetas",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d36279225a700af49aed17cef984a47b1b93fa28127d77e82a3882c4e46bbf45"
+    },
+    {
+      "caseId": "concept-tarjetas",
+      "instrumentType": "escala",
+      "sha256": "39e1f30019e0d76ae0c4f8182cef5ea9163bde8863b87b73bc0aae4e32f8d7c3"
+    },
+    {
+      "caseId": "concept-tarjetas",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cbd0035ba21918e7d7f582f9a4919b8e68218e53af4cf7790497659b9508e94b"
+    },
+    {
+      "caseId": "concept-saldos",
+      "instrumentType": "rubrica",
+      "sha256": "b628b77347c543433170b50adefe8359936fb31d492501a1cee6edf5b8aedcf3"
+    },
+    {
+      "caseId": "concept-saldos",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ac4eea5c412996f01328df2c14d12494c4061964195c1b29c847cf3a22baf499"
+    },
+    {
+      "caseId": "concept-saldos",
+      "instrumentType": "escala",
+      "sha256": "5905c977092f9489a6fc4d85b139f0d13c360bb9d43be7e4427ced0f84ab7d2f"
+    },
+    {
+      "caseId": "concept-saldos",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5710e7d2b72ee89df7b6c389c164b3a0d934803171bc851715672a073ed3b7a6"
+    },
+    {
+      "caseId": "concept-tabla",
+      "instrumentType": "rubrica",
+      "sha256": "29b9f59d5c5fe10d7ab350c3c97e3d01bc6277b46f82e8fde8d67b89f4783bf7"
+    },
+    {
+      "caseId": "concept-tabla",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3a943578a7373d7b20c0ba9a7f33347a011d05ce05b05914f3a2c83799ffadd8"
+    },
+    {
+      "caseId": "concept-tabla",
+      "instrumentType": "escala",
+      "sha256": "2a0ef376616a5e80b112577c2da019347d4e917a41659e7c7c37846140202ac1"
+    },
+    {
+      "caseId": "concept-tabla",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2ce57bb8e2ad41adf7b5698f2ad80cc55dc44cb5f9bf90f95e4e872d5af6a715"
+    },
+    {
+      "caseId": "concept-vp-vf",
+      "instrumentType": "rubrica",
+      "sha256": "55f848efc7a59258b2d4e0db2201acb77a44dbb157024c9396cc486883336318"
+    },
+    {
+      "caseId": "concept-vp-vf",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9c0e40291e420acb1ebbbbe242005b72480e5be2e11c668fd4d2b774a7953d37"
+    },
+    {
+      "caseId": "concept-vp-vf",
+      "instrumentType": "escala",
+      "sha256": "61208162d2de2a78ce7eb21b52d76c67fab2f2aee895e76028c7cc63772a7c1c"
+    },
+    {
+      "caseId": "concept-vp-vf",
+      "instrumentType": "lista-ponderada",
+      "sha256": "08ec430e5173ef734d321b2d4f7b80dae10abceef64bcaf820f683c00b68b7ce"
+    },
+    {
+      "caseId": "concept-anualidades",
+      "instrumentType": "rubrica",
+      "sha256": "358a59a6a21419bc0b3c3875b131e193739e5daa79dadd5790b41057b77d3358"
+    },
+    {
+      "caseId": "concept-anualidades",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8f3f77dae3eed3d133b8d0bcad730d1663023014bbc621fb1f6bac3e9e79187"
+    },
+    {
+      "caseId": "concept-anualidades",
+      "instrumentType": "escala",
+      "sha256": "1dbef0da75b716a7b4a651187a31d5ba20720688c510769e9d35c67591d25433"
+    },
+    {
+      "caseId": "concept-anualidades",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c7a61525a3d67ee3e4c96d4cedb086597eb6c4a14712744aac682f80990bbd9f"
+    },
+    {
+      "caseId": "concept-ciclo",
+      "instrumentType": "rubrica",
+      "sha256": "35cd18d7b3267ef916eebe90cd65537bbaad62eb11be64739d1c46ca9abea014"
+    },
+    {
+      "caseId": "concept-ciclo",
+      "instrumentType": "lista-cotejo",
+      "sha256": "53157cb960b59e87a44688a204313cb05316201715cede10010831e7aaa02b81"
+    },
+    {
+      "caseId": "concept-ciclo",
+      "instrumentType": "escala",
+      "sha256": "7a2a9ccbe5aa19e6190fac2a30c8120f5bee745dd584eb259646b18d6bfb8b90"
+    },
+    {
+      "caseId": "concept-ciclo",
+      "instrumentType": "lista-ponderada",
+      "sha256": "13798d1e2344b51330c37018443d0c368e7d675ef9975c61e32c2e754e28dfed"
+    },
+    {
+      "caseId": "concept-cuentas",
+      "instrumentType": "rubrica",
+      "sha256": "55dd55f0e9fb8873c266d4675fb40287e4fc4bd0cd70e281387e0573ff00008a"
+    },
+    {
+      "caseId": "concept-cuentas",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fd4c46657dbc469c18a165afd27d3ac48b48066f185a23995ac3681736e25856"
+    },
+    {
+      "caseId": "concept-cuentas",
+      "instrumentType": "escala",
+      "sha256": "f015e910b38c10361cb7fd658ef284fc2e89dc9e384747f29d9ec283adb2a56e"
+    },
+    {
+      "caseId": "concept-cuentas",
+      "instrumentType": "lista-ponderada",
+      "sha256": "82bbdf9549dc0ee5d466e06fb1e354a6defeb7ec8e6f5811f243f047e7bd258d"
+    },
+    {
+      "caseId": "concept-activo",
+      "instrumentType": "rubrica",
+      "sha256": "6392f6957b45753da5a7a80f97cf10f4ee67bb44952c9859b291682839258832"
+    },
+    {
+      "caseId": "concept-activo",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0f8fa49650057ae0b95f41a60bd7b4da26c0cea53f11d3b7b9f56ea6e48c841a"
+    },
+    {
+      "caseId": "concept-activo",
+      "instrumentType": "escala",
+      "sha256": "6f68ed352153d824ed6c3f744b3eead49bcd30a9834d2b9df3b763570a9f1112"
+    },
+    {
+      "caseId": "concept-activo",
+      "instrumentType": "lista-ponderada",
+      "sha256": "167deef697ee7d7d1e53278350ea7f0d7c8523e125470b326e5b60448e3f82ce"
+    },
+    {
+      "caseId": "concept-pasivo",
+      "instrumentType": "rubrica",
+      "sha256": "5d6add4466b8fd70cd4739a196b36f34d19c3f37ac401922873019a1e5506763"
+    },
+    {
+      "caseId": "concept-pasivo",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6f758a6cf0229da29bfc77ce726b77b7ec29b62d3f24e8454d31e22e0ad86242"
+    },
+    {
+      "caseId": "concept-pasivo",
+      "instrumentType": "escala",
+      "sha256": "0682247f3b6de59053911d4fc6d703676be53097e316bb18e77997a9d65d2b63"
+    },
+    {
+      "caseId": "concept-pasivo",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b3145572a7cdebbd127ad59916717e8f6a2536ad8425b94de6836445f2cf7e7e"
+    },
+    {
+      "caseId": "concept-capital",
+      "instrumentType": "rubrica",
+      "sha256": "7d3c2f9ee9635bd19adc61bb7cc3080806f8c3556ab55deb7ff64af0714aedb4"
+    },
+    {
+      "caseId": "concept-capital",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c2f7f35f422202b7f286621019b1d1440e2bd27385cde24bdf6f878da25dec24"
+    },
+    {
+      "caseId": "concept-capital",
+      "instrumentType": "escala",
+      "sha256": "98fda7babe1007a3627b47ac317b8a9d4828b5b0dd30c4915d8a147948447ba7"
+    },
+    {
+      "caseId": "concept-capital",
+      "instrumentType": "lista-ponderada",
+      "sha256": "11a85276eb1fcb5d0b83675f5b044f42647ee713acd8251ce9bcff66f5125c6b"
+    },
+    {
+      "caseId": "concept-ingresos-costos-gastos",
+      "instrumentType": "rubrica",
+      "sha256": "998883646be963b53a960c616a8810113229748570a8735dc54a2f4bfcc1ec81"
+    },
+    {
+      "caseId": "concept-ingresos-costos-gastos",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2e882e78bd5b24ca4ba5a4cea9558d056160961100d4999452dee2c5f9b068f1"
+    },
+    {
+      "caseId": "concept-ingresos-costos-gastos",
+      "instrumentType": "escala",
+      "sha256": "5e57244d913481a6627dc4bd082ab29e4dc4c0d81dd6037d2b7c61a0495cc173"
+    },
+    {
+      "caseId": "concept-ingresos-costos-gastos",
+      "instrumentType": "lista-ponderada",
+      "sha256": "58cea550167590bbc560e50b0b317474664f71b2b23c4c1bbf9bbb872aa454f2"
+    },
+    {
+      "caseId": "concept-debito-credito",
+      "instrumentType": "rubrica",
+      "sha256": "2b27ea6eba6e60fd4dbe9ed832b90ea8c66d3b5cb76c415573a34e379e806c4e"
+    },
+    {
+      "caseId": "concept-debito-credito",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9df93f32d801171a3030b546d97660c82cda9a9851f27355b183ae99b12c9368"
+    },
+    {
+      "caseId": "concept-debito-credito",
+      "instrumentType": "escala",
+      "sha256": "aca33886742a209d1375042a454271494bc4e5f9b8e4d9f09488bb5b823cd443"
+    },
+    {
+      "caseId": "concept-debito-credito",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6c586cdc2e915a856b77b18ad5c2aa4ee3fefc3e6451e7bd14f034b9bf57f225"
+    },
+    {
+      "caseId": "concept-diario",
+      "instrumentType": "rubrica",
+      "sha256": "b86694daddffb5a93fac6f06dc1eba94d2fcb2fb4de4d2b2967843a113e4e244"
+    },
+    {
+      "caseId": "concept-diario",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b97447379ef0c9d1e2fce99a2b86f9743ab944872e49e42436b62d709d5150fe"
+    },
+    {
+      "caseId": "concept-diario",
+      "instrumentType": "escala",
+      "sha256": "823ac256fd567a0a9d338dc1dbc5409c20448ea4d4a984ee473d9f12fb68494f"
+    },
+    {
+      "caseId": "concept-diario",
+      "instrumentType": "lista-ponderada",
+      "sha256": "81b683d89289a26f0f585fd70fc75e33e195aa7ac4a6d03853b90d725f34a123"
+    },
+    {
+      "caseId": "concept-mayor",
+      "instrumentType": "rubrica",
+      "sha256": "814ce75bbbe85530345c0b315ae24926aaa13585f139dc7532441b730fe58d45"
+    },
+    {
+      "caseId": "concept-mayor",
+      "instrumentType": "lista-cotejo",
+      "sha256": "50e1513e0b947f01f6801ea0c6fb80f9aad20bee899826ba30e1b1fd97593794"
+    },
+    {
+      "caseId": "concept-mayor",
+      "instrumentType": "escala",
+      "sha256": "8b6eaa32094023709d1b72336fb3095e9c99bad96412003635a218a4c55a2536"
+    },
+    {
+      "caseId": "concept-mayor",
+      "instrumentType": "lista-ponderada",
+      "sha256": "71a38871e1294045c58a3cac9bce23485010b119900c59da341f5099cfba7581"
+    },
+    {
+      "caseId": "concept-comprobacion",
+      "instrumentType": "rubrica",
+      "sha256": "f01832cdf354ee4d3d538ac69b2cd723e6930a9144623a27f283776e1b4be792"
+    },
+    {
+      "caseId": "concept-comprobacion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3a67f4c28406de7d85b9832c687d75f63cee290f9acd08a762437aacc58209ee"
+    },
+    {
+      "caseId": "concept-comprobacion",
+      "instrumentType": "escala",
+      "sha256": "3f8aaeaa897a44eff0a3b906984741920b6b6beccb02e2c1f1f56566a6314ace"
+    },
+    {
+      "caseId": "concept-comprobacion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ce8d3db9b4bf66592e55bf03e413215c7cab13770c7488f21deb08e4f2d6a320"
+    },
+    {
+      "caseId": "concept-estados",
+      "instrumentType": "rubrica",
+      "sha256": "4e79bf225bee58d007e627460bdcc15f6203af530683b6ba6730946125f7a59d"
+    },
+    {
+      "caseId": "concept-estados",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1e44a8154c8b0fa615741f1e6633db19f6ff3a373fe9b9e15d16fd48a092302e"
+    },
+    {
+      "caseId": "concept-estados",
+      "instrumentType": "escala",
+      "sha256": "5ff6c2899692c32aa6d27ed0d46ed41b928d883fc3b8d5d7cb8fe9e78938bc30"
+    },
+    {
+      "caseId": "concept-estados",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6b6546fffe3155121561978ca6b0856b3386e7fbebbd859235542d731a8ff08c"
+    },
+    {
+      "caseId": "concept-resultado",
+      "instrumentType": "rubrica",
+      "sha256": "8172d2d7aab38ed9553a4698b5696be1fec4632688cbc00078c06d64713e07c7"
+    },
+    {
+      "caseId": "concept-resultado",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fd5413e9be651e2530d8d333b3d966497a57d579d911330eec441ab70a24aeaf"
+    },
+    {
+      "caseId": "concept-resultado",
+      "instrumentType": "escala",
+      "sha256": "b25b039e719be9562587d82edb8fddd5a91e63b79d302abd82620a9f1c854572"
+    },
+    {
+      "caseId": "concept-resultado",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9ea557bc0fae6e728693b3fd761ec1b8909ec10a19cc8d3e64a9b1e07ea26183"
+    },
+    {
+      "caseId": "concept-situacion",
+      "instrumentType": "rubrica",
+      "sha256": "ba04be58048a2885e3be68e99204d2fedd2ecec532a2553e8325113c8d8e1fec"
+    },
+    {
+      "caseId": "concept-situacion",
+      "instrumentType": "lista-cotejo",
+      "sha256": "8b65eacc9e826e9180d3683125a5c859627d42895eb7ff86fc78c93550c8233b"
+    },
+    {
+      "caseId": "concept-situacion",
+      "instrumentType": "escala",
+      "sha256": "2179ca51b4dacaf0b9f87f57a081aed27dede79f9b6b6ae0faa8fdb7f5244ed9"
+    },
+    {
+      "caseId": "concept-situacion",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d11f94f7f3d437cd5aeb7bae941cbc2b8cd7782a140797c832787c02367bda91"
+    },
+    {
+      "caseId": "concept-presupuesto",
+      "instrumentType": "rubrica",
+      "sha256": "cf6e81c880d807afc4e1c3374773a321aa40454e6f06182d594b7546a06593e6"
+    },
+    {
+      "caseId": "concept-presupuesto",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b602fe2b6bc18a62b362a68bbfd754c40151f490539a09adc7d082641e1f8b11"
+    },
+    {
+      "caseId": "concept-presupuesto",
+      "instrumentType": "escala",
+      "sha256": "f5710c90cf5ddbd26c2a3077276a462101c386184374a46b3a5da402c1a7e1e7"
+    },
+    {
+      "caseId": "concept-presupuesto",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2ba2845b5140e52279c205ac955aaf97e75df2edd896af0945173b4dae98f2d"
+    },
+    {
+      "caseId": "classify-progressions",
+      "instrumentType": "rubrica",
+      "sha256": "8d5d46429bbc2be77fb8ee2a8343a852dd6922b123041f8d48c59b387c599330"
+    },
+    {
+      "caseId": "classify-progressions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "70dd15901213c3835b8c9e699f089f5b008ebf79fffc809c1d23a6ed903a9985"
+    },
+    {
+      "caseId": "classify-progressions",
+      "instrumentType": "escala",
+      "sha256": "d8229e3b2c87fc7303db0d684cfc16e08e8771f5f810ea611d7512f5df34acda"
+    },
+    {
+      "caseId": "classify-progressions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f00be7bf36d3440b80b1880dc5d665b3808ce40dda234cba93eef5c5788c72bc"
+    },
+    {
+      "caseId": "solve-progressions",
+      "instrumentType": "rubrica",
+      "sha256": "2c30fd999b4b18f639e4a4e126d91af39ae591c59b227e21dd7ef821ec25f50a"
+    },
+    {
+      "caseId": "solve-progressions",
+      "instrumentType": "lista-cotejo",
+      "sha256": "681faeea53a8a9e753f7339467a4ec9033216743f71af4507ee8154ab722a977"
+    },
+    {
+      "caseId": "solve-progressions",
+      "instrumentType": "escala",
+      "sha256": "9f1bd3148f20d099809230aba95cdd3ed817bac9a453ff36d5e6d0bfd5d2a0f6"
+    },
+    {
+      "caseId": "solve-progressions",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e42f4dd65ad0eb3cf440f60dcfca7d5753f96c55fdf0fee5958ee7d6d85aa7c9"
+    },
+    {
+      "caseId": "compound-interest-problem",
+      "instrumentType": "rubrica",
+      "sha256": "d4a368830fc4f906ca39dc3b633317c3f065d027dc8905ef5b31952354b3e0f4"
+    },
+    {
+      "caseId": "compound-interest-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b7212ffe48ef131e386455a82e8f684210b5060bee46505524a4a3bbc8e127a9"
+    },
+    {
+      "caseId": "compound-interest-problem",
+      "instrumentType": "escala",
+      "sha256": "b315513947639641c8fee30a6d475467c145ca0a33fd47267d9dd8385d5e2f8c"
+    },
+    {
+      "caseId": "compound-interest-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "65b954bbb01de92e8b71033b7965b1b0ac07098506f6510fa069bcfe769b60cc"
+    },
+    {
+      "caseId": "technology-choice",
+      "instrumentType": "rubrica",
+      "sha256": "70ef7bc113b7a0127f9814859f3921be696ddf097eb8c4aa1383e7f35847a40a"
+    },
+    {
+      "caseId": "technology-choice",
+      "instrumentType": "lista-cotejo",
+      "sha256": "320855ca80d0836064f962436747cfd97348bf41ba63cad8aa15bebaf04de55c"
+    },
+    {
+      "caseId": "technology-choice",
+      "instrumentType": "escala",
+      "sha256": "a09d333d202ea045fb71ae749cc318db635de16babe32a8238488eb5e4ed90a2"
+    },
+    {
+      "caseId": "technology-choice",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7515b599b0fd219032eb7671b2025fe2819f29cbfee7bad1e1ddc7758e129849"
+    },
+    {
+      "caseId": "discount-calculate-interpret",
+      "instrumentType": "rubrica",
+      "sha256": "53a68a985975a497d2964b7998c6dc4aa11a752559859f0c8cb0b76a9eb431da"
+    },
+    {
+      "caseId": "discount-calculate-interpret",
+      "instrumentType": "lista-cotejo",
+      "sha256": "4c129b90331908843c93baea4e922d01eb815ba6ba8fcd89a3d4357401ce04e4"
+    },
+    {
+      "caseId": "discount-calculate-interpret",
+      "instrumentType": "escala",
+      "sha256": "84ffe5ba64450ecb26200abcb06a5f226fc22817c8585ea832fdd1c4d7faffbb"
+    },
+    {
+      "caseId": "discount-calculate-interpret",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c2167b8c8f1c3f6ec41a91a268a2bcd2ea6508ec32d4a2588de33fcf507754da"
+    },
+    {
+      "caseId": "interest-argument",
+      "instrumentType": "rubrica",
+      "sha256": "6768bf8bc985a774a6ffb2d17407797ce4707196df113557c5d1bc598da97d89"
+    },
+    {
+      "caseId": "interest-argument",
+      "instrumentType": "lista-cotejo",
+      "sha256": "9907b861dc56ba828a0e2842510bfc3d6a80a90dbb70c79b50c3c9f549982cc2"
+    },
+    {
+      "caseId": "interest-argument",
+      "instrumentType": "escala",
+      "sha256": "1cba57f92bb3714abd8247f591c7bd83f70c4dfb5606a277464fff587c49d073"
+    },
+    {
+      "caseId": "interest-argument",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0c720e10a127b5a07c108f178fccb86f2ea0b4e308cdd798665b29259daf4a2d"
+    },
+    {
+      "caseId": "declining-balance",
+      "instrumentType": "rubrica",
+      "sha256": "7daed1026feac269ffb3b92af4790775e9aa4a28779f619eeab76dc45e34bc8c"
+    },
+    {
+      "caseId": "declining-balance",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3eaffac7157bcd8dca8db0ff687be39ce3d17ab854ab259343bdf684e750c659"
+    },
+    {
+      "caseId": "declining-balance",
+      "instrumentType": "escala",
+      "sha256": "ea1b94d13d66c5ec898f7095a947dbbe9fb59e82340a77c20103e67bef880a4c"
+    },
+    {
+      "caseId": "declining-balance",
+      "instrumentType": "lista-ponderada",
+      "sha256": "57669012e06cd2ec7152f1feb63ce44c60b9ead6beef6edfe6e5dfb33a88e974"
+    },
+    {
+      "caseId": "card-implications",
+      "instrumentType": "rubrica",
+      "sha256": "97b306d9bc62f5c066d35713d6888ba9eed3671965204d213bb3906afb00a23d"
+    },
+    {
+      "caseId": "card-implications",
+      "instrumentType": "lista-cotejo",
+      "sha256": "57f11253777c0cce13128019a1e002165821edef3ac23fdec7a171929fd08103"
+    },
+    {
+      "caseId": "card-implications",
+      "instrumentType": "escala",
+      "sha256": "68dc77c46b657032db9e546febeb2233b387b85d791791866c16605aa128221c"
+    },
+    {
+      "caseId": "card-implications",
+      "instrumentType": "lista-ponderada",
+      "sha256": "792f45686e9722178e41ff1ae18a4512baae48e2f909cb2c6c0d1a7ff573e0ff"
+    },
+    {
+      "caseId": "amortization-table",
+      "instrumentType": "rubrica",
+      "sha256": "26fb821023d546263ae23aec214743c4209407a8d02ae737aeb4178a4bd1479c"
+    },
+    {
+      "caseId": "amortization-table",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8b9e721abab46a6020274fa7878b703c331b2ce8e5517b5817013adc7324c4a"
+    },
+    {
+      "caseId": "amortization-table",
+      "instrumentType": "escala",
+      "sha256": "f82c1b24cde51d2105238cf55fd216a62a3c39c583c290db32a464fed6b04b27"
+    },
+    {
+      "caseId": "amortization-table",
+      "instrumentType": "lista-ponderada",
+      "sha256": "338c6f70eb89d2b99961837684d1ab4e5cc7f0b479bad4e9382110404b289276"
+    },
+    {
+      "caseId": "compare-financial-situations",
+      "instrumentType": "rubrica",
+      "sha256": "0bdc29a9c0410203851f5bdaa1f93d5004e76d8ea567cd725a8fa2bad3de3269"
+    },
+    {
+      "caseId": "compare-financial-situations",
+      "instrumentType": "lista-cotejo",
+      "sha256": "6c5f4ccf38eec3085a4a048086d6fd55485e754a7cfc94ae20cbe84d89b369b7"
+    },
+    {
+      "caseId": "compare-financial-situations",
+      "instrumentType": "escala",
+      "sha256": "87e42ca6ae2b2dc970ac7ad6028bfbf03d23905f5c47ca9383c5a90c2bfed21b"
+    },
+    {
+      "caseId": "compare-financial-situations",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2c283319d0fce65ad2f940b6796275203225bb101c67633e99d74904a7401eb5"
+    },
+    {
+      "caseId": "present-future",
+      "instrumentType": "rubrica",
+      "sha256": "5c5359c29343ae999aca9e7ff9bb09759e68a5fb5b25b5f0a226d94674ce017a"
+    },
+    {
+      "caseId": "present-future",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cb63c7439ed11d385b79dfa20c752884cce1a865c4a52adb37e3911bfe5e2e27"
+    },
+    {
+      "caseId": "present-future",
+      "instrumentType": "escala",
+      "sha256": "615c9e73198eafbd6559be2d3725aa9dfbfcf17bb2a31f577a97e5c2736490d2"
+    },
+    {
+      "caseId": "present-future",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7f29d2f6ec450f6ecbb515b18750e087b81a21b6dde8c8864c79cddb97830405"
+    },
+    {
+      "caseId": "amount-annuity-difference",
+      "instrumentType": "rubrica",
+      "sha256": "37f9ab9179a1801f897f946dabf4627d1490b52b9fab72778d953749a76c5d08"
+    },
+    {
+      "caseId": "amount-annuity-difference",
+      "instrumentType": "lista-cotejo",
+      "sha256": "eab47d4f3d295d459aac9c3b1a182fe7ecad347e6a46961b9c1d53a726412d02"
+    },
+    {
+      "caseId": "amount-annuity-difference",
+      "instrumentType": "escala",
+      "sha256": "4246c476e043c4b5b357b8b07517e0fbfc8dc3d2587987f55748bcc216283372"
+    },
+    {
+      "caseId": "amount-annuity-difference",
+      "instrumentType": "lista-ponderada",
+      "sha256": "795305d510d8293781f10c793aad014539743e0cb48ac4e72c70975abfcadc41"
+    },
+    {
+      "caseId": "annuity-amount-rent",
+      "instrumentType": "rubrica",
+      "sha256": "277540cf67cb9b2800efc369b32d186e581f8e56c462b175af6e48e8da3c8a5d"
+    },
+    {
+      "caseId": "annuity-amount-rent",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f95c94ba4416609f7b908ecfab7b49fed0b6748f93c2d9c74203491bae511e7"
+    },
+    {
+      "caseId": "annuity-amount-rent",
+      "instrumentType": "escala",
+      "sha256": "1446360ca56060dead7d1f1fb8e8876123ae47fe26f50847aec26d77560a924d"
+    },
+    {
+      "caseId": "annuity-amount-rent",
+      "instrumentType": "lista-ponderada",
+      "sha256": "14e8ea194ccca8a77b176cafdd5367762779d5ba4f3a40826d69dd05fb3ecfa7"
+    },
+    {
+      "caseId": "financial-context-problem",
+      "instrumentType": "rubrica",
+      "sha256": "e894d954ef7020b0dda01e9eec774367d86e1ced9f762270885a957eaa560e8b"
+    },
+    {
+      "caseId": "financial-context-problem",
+      "instrumentType": "lista-cotejo",
+      "sha256": "bfecda5fbd2c05a871954a30bfdd139679bf152586ce3d11f69e7729b9d56e8b"
+    },
+    {
+      "caseId": "financial-context-problem",
+      "instrumentType": "escala",
+      "sha256": "4d9848e82c95f6f9f796a4b6d3bd96623fc3e8f95dcfa09409a67d68788e1e9d"
+    },
+    {
+      "caseId": "financial-context-problem",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3f26df2c5d89a377f0882970886f41874ad1ba69d1e110d962318c313b365b61"
+    },
+    {
+      "caseId": "financial-model",
+      "instrumentType": "rubrica",
+      "sha256": "6047ef3e882756ed095d473cb12e2cc2bfcc35c33d843b5833f2ba0b813c275f"
+    },
+    {
+      "caseId": "financial-model",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d745888d03f398b5aca78e71410b4bd2c56b2915e4ef17714dfd7caa9125af68"
+    },
+    {
+      "caseId": "financial-model",
+      "instrumentType": "escala",
+      "sha256": "071981a4c3102ceed45e4e0ab32c8e5c2507550243621d56e324893e952d5c84"
+    },
+    {
+      "caseId": "financial-model",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e2c33a125ab885e90ec24113e0eec353705af27cf1cc2756bf749ed6c940cf66"
+    },
+    {
+      "caseId": "account-origins",
+      "instrumentType": "rubrica",
+      "sha256": "46b6c1f5a81579f60456371ff850869e82f2805431988a9578e62dc1466778e8"
+    },
+    {
+      "caseId": "account-origins",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5de191d02718c299c1314f6d6ecee096db3f4ce78d88a2ca4501dc209252157a"
+    },
+    {
+      "caseId": "account-origins",
+      "instrumentType": "escala",
+      "sha256": "b7685e28ecfa7637de620d7d272b959d140d9886985712d6448ba881d7798a41"
+    },
+    {
+      "caseId": "account-origins",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8669d1364f98be0df86136eb9037fe933847ca1b86ce1baf5c9bdf5e56daf2f6"
+    },
+    {
+      "caseId": "accounting-cycle",
+      "instrumentType": "rubrica",
+      "sha256": "8686763052c5495278f0acb9fea914eca7487e02a9841995c5f37d0e30dbfd7c"
+    },
+    {
+      "caseId": "accounting-cycle",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2eff752504ebccf2f84ffc0b51d95f557f8038ac5932d72a820b76ef2e6e3a04"
+    },
+    {
+      "caseId": "accounting-cycle",
+      "instrumentType": "escala",
+      "sha256": "b0841bf95fb8e6778e64e413070d88ed6a508606555845cf4e2f42898e6d8b4d"
+    },
+    {
+      "caseId": "accounting-cycle",
+      "instrumentType": "lista-ponderada",
+      "sha256": "dbed8ef7ddc0e2b508c5421b159c4e92c51fc4d48296432917b1525dd0bbc73f"
+    },
+    {
+      "caseId": "account-classification",
+      "instrumentType": "rubrica",
+      "sha256": "8c08e270c66b6dc657954e078afec2d0cc799c640f11780666f8fdfd86f69c48"
+    },
+    {
+      "caseId": "account-classification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "be66eac77459f61da469481aefd41710fbe67e0f0596fa6f2ad4857e1d446ae6"
+    },
+    {
+      "caseId": "account-classification",
+      "instrumentType": "escala",
+      "sha256": "815af0453fa26d2f1b5d6ce9d47f30e7c1becd55219a9a1ac9de8a0cd75a23f5"
+    },
+    {
+      "caseId": "account-classification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7633abd89e4799183c3e9bd2793da02ed67d3a9a780a86c0193307e006919646"
+    },
+    {
+      "caseId": "accounting-equation",
+      "instrumentType": "rubrica",
+      "sha256": "aac3feaa7ae829ed1d638a871724cca97b0e5e839a905f1aeb7e063f32f2e235"
+    },
+    {
+      "caseId": "accounting-equation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5f3f87239832473c3da074ec2587f2aa95057c3dc758d51a5650816fb966fedb"
+    },
+    {
+      "caseId": "accounting-equation",
+      "instrumentType": "escala",
+      "sha256": "ab5dfc62757d0f8a2664d499d924e935698d8e095ec1abcb0449d37cce8be769"
+    },
+    {
+      "caseId": "accounting-equation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3e506f07b9921088e896ec93f9ba2a9269a9474fb8011e8efe26244ea6b170e0"
+    },
+    {
+      "caseId": "journal-ledger",
+      "instrumentType": "rubrica",
+      "sha256": "469091fa99d4ed2001c7ceedeef81adcb4fe1a769e60cff321e87a7280364641"
+    },
+    {
+      "caseId": "journal-ledger",
+      "instrumentType": "lista-cotejo",
+      "sha256": "672948c8b8ec2a535283d33e080183e5e687a7f5c20ee7b5a9c3e1144f7396f5"
+    },
+    {
+      "caseId": "journal-ledger",
+      "instrumentType": "escala",
+      "sha256": "a1ed73e7f37ae605474f0def9466af2480e16e6572c80ee25fc720bb8d498e67"
+    },
+    {
+      "caseId": "journal-ledger",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a3db1539f140b1a85dfd23410e529cb4eede414cbdfbd57b5c34373a5493c8b5"
+    },
+    {
+      "caseId": "trial-balance-reconciliation",
+      "instrumentType": "rubrica",
+      "sha256": "a4c7e6d3a3072e65748bfe5f46c8bb583de63f22861d18a2ecfc0367ff753e63"
+    },
+    {
+      "caseId": "trial-balance-reconciliation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "0972e54f2561492c30a5fbdbac15b6b0298b2bc2362340e3b14a0f9b0a7f9cb9"
+    },
+    {
+      "caseId": "trial-balance-reconciliation",
+      "instrumentType": "escala",
+      "sha256": "0541c23e4dc88cb1757d30f16285c46e1c834fc43853fce7cd79e9ad16a5435e"
+    },
+    {
+      "caseId": "trial-balance-reconciliation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "376ef0175ec240252516ee41c7ffaf4b9145baa462aa2427bbe180c5b68dd29f"
+    },
+    {
+      "caseId": "profit-loss",
+      "instrumentType": "rubrica",
+      "sha256": "5b555e323b40bac9c8748fd48c82e83694bbd75987a3ffeb57fd28c0d8bbabd3"
+    },
+    {
+      "caseId": "profit-loss",
+      "instrumentType": "lista-cotejo",
+      "sha256": "7233d8decae97c144939f50872c3c6be3eeeb3579dbb52685450ca4abbeabec9"
+    },
+    {
+      "caseId": "profit-loss",
+      "instrumentType": "escala",
+      "sha256": "7039f3e4966d69da332d9a6b4b0584644c3f22d3d5ccb0b3adf6b3b2f5b0e082"
+    },
+    {
+      "caseId": "profit-loss",
+      "instrumentType": "lista-ponderada",
+      "sha256": "3c9cf58618a60bfbfffe2ab122c00f5e06552ab13c5f2088ba1449d1f7e10e17"
+    },
+    {
+      "caseId": "financial-position",
+      "instrumentType": "rubrica",
+      "sha256": "7e42247be6a97ce107dd8937c650566e75810ad31bc8389509394590b9eefaad"
+    },
+    {
+      "caseId": "financial-position",
+      "instrumentType": "lista-cotejo",
+      "sha256": "92ea5600b2f2ce875fe92351b53244c06f12028da776defbec09f82c4067aa85"
+    },
+    {
+      "caseId": "financial-position",
+      "instrumentType": "escala",
+      "sha256": "4bd70545ac8e43c1d18003c823904700d07c506c9b7d3c752e37aa8feae0d1e5"
+    },
+    {
+      "caseId": "financial-position",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2e4dd6649d5184fc3cfc4cc23f54c26a448a1258fc027dd9992a1ab34147897e"
+    },
+    {
+      "caseId": "business-project",
+      "instrumentType": "rubrica",
+      "sha256": "3230843d5f1524fd83cb762440356ef0cf2476f478268d6e4684dad2075a18a3"
+    },
+    {
+      "caseId": "business-project",
+      "instrumentType": "lista-cotejo",
+      "sha256": "41ce5a80b7774b7ed687b64ce566896b16296e1487a269928fd7e6f3d53cdadd"
+    },
+    {
+      "caseId": "business-project",
+      "instrumentType": "escala",
+      "sha256": "0d15711d1ca893755201de0aa15fa9a5ab1f1e7e1b02541f28e3862eaef22a2c"
+    },
+    {
+      "caseId": "business-project",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d3b0d604457d77ecec5a5b2e73cb488e59361e411647cb7294e2b172b6e48a95"
+    },
+    {
+      "caseId": "budget",
+      "instrumentType": "rubrica",
+      "sha256": "4b72d0f6100a1505e42f870b1ce21228b9810e375101df9611f53606c28708a3"
+    },
+    {
+      "caseId": "budget",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2cd07c3fbb7d38be1e20ec43e56c1418d4db250a74bff5af3faffa3ee4a1a5a3"
+    },
+    {
+      "caseId": "budget",
+      "instrumentType": "escala",
+      "sha256": "0a2a8a639b22ceef3de5e82d55041ad50c7e9b7ca424582b11e02e115b8ddcb6"
+    },
+    {
+      "caseId": "budget",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5e591330946783956d0b9342801da1f0274d6677a88349d6967b84fdc64e64ca"
+    },
+    {
+      "caseId": "loan-verification-calculator",
+      "instrumentType": "rubrica",
+      "sha256": "d4d1fbe33260fba1504dba192b8320083c210a51dee92009d6f94b172614826d"
+    },
+    {
+      "caseId": "loan-verification-calculator",
+      "instrumentType": "lista-cotejo",
+      "sha256": "505ca11b4dd77bbf60076523be4ae3b4f89e539cfe64373d326aac52ae0ed057"
+    },
+    {
+      "caseId": "loan-verification-calculator",
+      "instrumentType": "escala",
+      "sha256": "839eaa3a70596b8ac0ef0f7bfb90733d5d08c7de498ffee94c709a4490d5085d"
+    },
+    {
+      "caseId": "loan-verification-calculator",
+      "instrumentType": "lista-ponderada",
+      "sha256": "70591009bc8695a651fce78904f1d2c4a1fdae3a90da89dbe1948600ddc2ce9d"
+    },
+    {
+      "caseId": "explain-balance-interest",
+      "instrumentType": "rubrica",
+      "sha256": "188b7ec5b9cf926ba911c6816f8807d2931f42d8c06abeadec7774fc6a1d4bdf"
+    },
+    {
+      "caseId": "explain-balance-interest",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f8f251a21a91b7ce93b281841a29b72e530814a002116fc11735014ba0b45546"
+    },
+    {
+      "caseId": "explain-balance-interest",
+      "instrumentType": "escala",
+      "sha256": "23e72ee21fb6589bbaa677ea2d811c49f54a83a240a67c585b098948fd402f18"
+    },
+    {
+      "caseId": "explain-balance-interest",
+      "instrumentType": "lista-ponderada",
+      "sha256": "2b645319bd1538a17d9ec59db5f37b6adf9984f734ce69c4873b0121cc928c89"
+    },
+    {
+      "caseId": "software-verification",
+      "instrumentType": "rubrica",
+      "sha256": "0c513e800143f559da272fc58b6a44c6a3c40d9d1ed0b2a7e4b4b5a943915076"
+    },
+    {
+      "caseId": "software-verification",
+      "instrumentType": "lista-cotejo",
+      "sha256": "cfeddb9ee048c658880e170a030aacc66855db4ef09c49f2eb8c24e66dff5207"
+    },
+    {
+      "caseId": "software-verification",
+      "instrumentType": "escala",
+      "sha256": "971c9568e9b1ba3fbd7ba2918205dd5c5fce2eee75a3b740614cedfed1233b47"
+    },
+    {
+      "caseId": "software-verification",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f7e75c9780eba7c9111d3b23a4ee92ce7ffd24034190e92106468bf8fb8632c3"
+    },
+    {
+      "caseId": "interpret-amount",
+      "instrumentType": "rubrica",
+      "sha256": "39ff0074c98d648b6257aa5802ca0460d7618b58ac7805eec0cfe8d817845aee"
+    },
+    {
+      "caseId": "interpret-amount",
+      "instrumentType": "lista-cotejo",
+      "sha256": "dc3a5e6ad1de9471d2ca4532e7bfd13eea8dd8ff09aa3714499ec5cb61f9b7af"
+    },
+    {
+      "caseId": "interpret-amount",
+      "instrumentType": "escala",
+      "sha256": "6a9d495d734d1604015d98ac8707247ba7854897927c798f10692c5acaf15240"
+    },
+    {
+      "caseId": "interpret-amount",
+      "instrumentType": "lista-ponderada",
+      "sha256": "7808e77a41dde5a2b68ef82b24f385c07f085d8946aecaa985e25d8c33242817"
+    },
+    {
+      "caseId": "saving-benefits",
+      "instrumentType": "rubrica",
+      "sha256": "a52a90fe733b4c862c0b0f386425f78773a7c6c2ba6524be26275fa8cb2e95c3"
+    },
+    {
+      "caseId": "saving-benefits",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f157ec743d075d11a6e07645b79b15b82c69aa31397635d9c61a86dfc235877"
+    },
+    {
+      "caseId": "saving-benefits",
+      "instrumentType": "escala",
+      "sha256": "9ab100d4ec7450fc5d323a50bede8224b2cec329fc82d3f09a9840b48ffa9164"
+    },
+    {
+      "caseId": "saving-benefits",
+      "instrumentType": "lista-ponderada",
+      "sha256": "161dea5783a9d8b1da6a4f6ffa8ecea9b21d22193625724c5892f0af0eec2dd8"
+    },
+    {
+      "caseId": "cycle-investigation",
+      "instrumentType": "rubrica",
+      "sha256": "32d5c6db08cd07354f7760a8e8372e42abac1cd8059d5eb979e4c30cc95471dc"
+    },
+    {
+      "caseId": "cycle-investigation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "3053947eb4691a7c9e1042af5c5b95fcac4dd6b0b2c0f01c093841381268e66e"
+    },
+    {
+      "caseId": "cycle-investigation",
+      "instrumentType": "escala",
+      "sha256": "f69a22a76584f8152831fba0fb5952f5f22ac21ef66f8a44636f6766d58a20ba"
+    },
+    {
+      "caseId": "cycle-investigation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ae9e93d51df47bdf0b13d6374212bf50c84d9180168b2000df6ab86f0b57f03a"
+    },
+    {
+      "caseId": "health-environment-result",
+      "instrumentType": "rubrica",
+      "sha256": "76baacecd7e0c1cc365d057594c5f615c43cf16fe24cbfda30ec17e36fa87c30"
+    },
+    {
+      "caseId": "health-environment-result",
+      "instrumentType": "lista-cotejo",
+      "sha256": "b5968a19e5be1e0a807e90ff5e9a628cb666a373985d36839786ad04ea3f2dca"
+    },
+    {
+      "caseId": "health-environment-result",
+      "instrumentType": "escala",
+      "sha256": "6c8e7959248691e1659af62ff9fe4f0748cdff48572c2fbd064246cdd4dc2361"
+    },
+    {
+      "caseId": "health-environment-result",
+      "instrumentType": "lista-ponderada",
+      "sha256": "028d7c7014ef7991d2ce779573936ae5e533414a74e05bdeecf75600e2049846"
+    },
+    {
+      "caseId": "budget-family-fiction",
+      "instrumentType": "rubrica",
+      "sha256": "079c10bf10386f5be60aa7be3a675f224ea293b864dbff149bc70d80897d80d8"
+    },
+    {
+      "caseId": "budget-family-fiction",
+      "instrumentType": "lista-cotejo",
+      "sha256": "96e7bc1439df896a07e234fb3d3ab3a84f7b838303264e332b1ab8e9a2772492"
+    },
+    {
+      "caseId": "budget-family-fiction",
+      "instrumentType": "escala",
+      "sha256": "5233e3ed2af6aa41c9c330797888c43ec291af2718dc71e1004b3602b85e6f4e"
+    },
+    {
+      "caseId": "budget-family-fiction",
+      "instrumentType": "lista-ponderada",
+      "sha256": "0a765ac3580feac28443a34dd2690e75ae6ddde159bd25011b9526fc26bb0102"
+    },
+    {
+      "caseId": "interest-only",
+      "instrumentType": "rubrica",
+      "sha256": "361feb343c99a064a1ad86d1607c88b0853c919c40be9b56a33f1e238b1a5a67"
+    },
+    {
+      "caseId": "interest-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c4c23a3cb5dc4f632715c2ea6b2b317240758210621bc5ca14e2c9aec1732adf"
+    },
+    {
+      "caseId": "interest-only",
+      "instrumentType": "escala",
+      "sha256": "91c943b9e7f1b55a00308f48681ff5c82234855fb7c1b6299be035b2c1250810"
+    },
+    {
+      "caseId": "interest-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1eac6122e0e2d1516f5740d7ce9694f643898267de20cf7ef59535b82bbe6ae2"
+    },
+    {
+      "caseId": "amount-only",
+      "instrumentType": "rubrica",
+      "sha256": "ce81f4080278e76a1a9aa946d8b3b261e2cc8a24412d6eedb225c963bd50da7d"
+    },
+    {
+      "caseId": "amount-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "348a742aff93418755bf0c7f513b0be2c2fb956e2ef69f6105e9913647ec9256"
+    },
+    {
+      "caseId": "amount-only",
+      "instrumentType": "escala",
+      "sha256": "a06b7709e7c8d6ab5a21da60a51709758b085544487ac24c40b82e6eb8e1be3b"
+    },
+    {
+      "caseId": "amount-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5fa77dd80d5baa8d9868a752ad3c8f4b5c4459e0d03af1c8e1e940ce732c6011"
+    },
+    {
+      "caseId": "present-only",
+      "instrumentType": "rubrica",
+      "sha256": "a3899f6f0cb4c5f36ffc09cd2c4d153df5366d97c3dc543fe8156186e9614703"
+    },
+    {
+      "caseId": "present-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "1f57b21d6214eb1819611becf0b24dba22c2707b091393e28f3a6b9224f06d8f"
+    },
+    {
+      "caseId": "present-only",
+      "instrumentType": "escala",
+      "sha256": "8b78d745c3873c5b1a211db17775016a99f609b54b1348e185dcc4974ed28e35"
+    },
+    {
+      "caseId": "present-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "a8210ee7f1f658d986c61290b77c7bb9bd5213197ada7886c4090f7b8cb91160"
+    },
+    {
+      "caseId": "future-only",
+      "instrumentType": "rubrica",
+      "sha256": "78de387f94e2f9338a7ba8aba03bb044e48bd6a212b28a9d572077f99e57a5a6"
+    },
+    {
+      "caseId": "future-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d1723f966d6868ddb1b20c6654b9f598d2b9f0e0ce5d60afbbb31a6288370d14"
+    },
+    {
+      "caseId": "future-only",
+      "instrumentType": "escala",
+      "sha256": "4b3ca0dad2038b7157055c1066a5dc9508aac400512e65f32afb0eb51fc82ef6"
+    },
+    {
+      "caseId": "future-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "d7639bcc63b356564d2042dc584a31357c079866e4b490c6c1c9c09a7826e299"
+    },
+    {
+      "caseId": "no-calculation",
+      "instrumentType": "rubrica",
+      "sha256": "a53e9adff2a048979bdb2a7a0c885203cbd332941446c5bbb40de9fb8577c4fa"
+    },
+    {
+      "caseId": "no-calculation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c329bfe6377f439e168513f2e701b3f308c4cdb2c178140461565561f0b24079"
+    },
+    {
+      "caseId": "no-calculation",
+      "instrumentType": "escala",
+      "sha256": "29718f8a2ba61ab0bb791389a3f6f5c14248ffaea89f207784320dc85fd84802"
+    },
+    {
+      "caseId": "no-calculation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "388a4e91a93c7b82158d5240393cb110fce27298835800c4eb56e5006689aefc"
+    },
+    {
+      "caseId": "independent-tasks",
+      "instrumentType": "rubrica",
+      "sha256": "91d18b38b11f9c8a47b4d66d75d94bd3809d92d02a9714d38f194c2754856109"
+    },
+    {
+      "caseId": "independent-tasks",
+      "instrumentType": "lista-cotejo",
+      "sha256": "fd4b150dde5bbe67b4836dda5b207ac868dc8d98a58eb611ca20b8c4ed51a84d"
+    },
+    {
+      "caseId": "independent-tasks",
+      "instrumentType": "escala",
+      "sha256": "a1f22ba9daeb26cf004dd37b33754f3f8b7479c1501ecc7c590b9ae33b0b89ef"
+    },
+    {
+      "caseId": "independent-tasks",
+      "instrumentType": "lista-ponderada",
+      "sha256": "39983a046826047a79ea7d0aca05e25ee5761c5fe1d74087fbd768fb7c32c617"
+    },
+    {
+      "caseId": "registration-only",
+      "instrumentType": "rubrica",
+      "sha256": "dcbfc335256482164bdf32e4585b560bd6b089856a9b5498f8d94dbc971e5360"
+    },
+    {
+      "caseId": "registration-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a9b760099d0eb26d81c0c5af8571a7748bdb88101ce94133eb2aac452b379ab6"
+    },
+    {
+      "caseId": "registration-only",
+      "instrumentType": "escala",
+      "sha256": "aec4e3a3ed347fdbd083201a683b697448b0ec23e3c3dfa962479dcfbedea2ba"
+    },
+    {
+      "caseId": "registration-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "8500f5aac38bcb4e2f2302b12c6a8ca982e5287d8447849dbf3dc700e8b1f47c"
+    },
+    {
+      "caseId": "written-analysis",
+      "instrumentType": "rubrica",
+      "sha256": "1ffa159d5098395adf6b4b482fe9c99f056778b3ef1dce1ceb41b9a02dc18570"
+    },
+    {
+      "caseId": "written-analysis",
+      "instrumentType": "lista-cotejo",
+      "sha256": "29def7251163d4a7ce9512ad51c7274319f72308499553d184bce100008a213a"
+    },
+    {
+      "caseId": "written-analysis",
+      "instrumentType": "escala",
+      "sha256": "ecf623d7791133bedd4849084714e990276858663dba0b71b0bb30b9f62933d0"
+    },
+    {
+      "caseId": "written-analysis",
+      "instrumentType": "lista-ponderada",
+      "sha256": "c630a5bd607aac49aad6cff92d3dce1a539d3d6885bece31adc761154a8e7e7a"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "defa401e33b2734669e6aeff0a8deb56bc9d9b766cfcb9cb0790be62e42839b0"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "e2ec9144f9cae94732f7f66dc349922e4c5183123ff1ee91a92b281d6dacdbe7"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "escala",
+      "sha256": "42f8571d676363102757fae2ae7ba25e0516b194c188c2460eefc24c6aca0c85"
+    },
+    {
+      "caseId": "weighted-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "e9757c2553831c1521c401ba91a610be2b8a1fbee160bc4c9051fa882eda50cc"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "1e1eeb2af5049b9f0a6d5beee753345ed8f51a00c9e6b6c2dd369d1af3a024ee"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "5f7ddbcc7391fcf1bfe2bc7ea43dc942945b9db0100508afdf9697bb7079d047"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "escala",
+      "sha256": "14a2a2e0ef709f806ba05485810f5d3f98c49b3d41f6fa101a7db4b17fb55c45"
+    },
+    {
+      "caseId": "checklist-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "f9b23f7cf0aee3655512cd02252065cd1a12323a97d49efa70b19c7dea4df36c"
+    },
+    {
+      "caseId": "autonomy-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "5e32688b074f5f6100e0a95c641aaa2a12a17b3a07da3fdbe07b3aebc76dcc39"
+    },
+    {
+      "caseId": "autonomy-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "32fbf2e04bf41799956d5d692b7947c65ed1dddd52e34fd331e9bdf67448770c"
+    },
+    {
+      "caseId": "autonomy-purpose",
+      "instrumentType": "escala",
+      "sha256": "f0992649f9f6ddc2cd498c3ae0f5ea70f4fc35e00e393bc5215a69ba98179215"
+    },
+    {
+      "caseId": "autonomy-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "6db37389fd32cc26693382ccbc0068cbde35a7e660882a12982bcded1ab7c166"
+    },
+    {
+      "caseId": "justification-purpose",
+      "instrumentType": "rubrica",
+      "sha256": "900e29a4dc9738e0e850ce2e2fc288e36801877994fb30361b85d242467e9d7a"
+    },
+    {
+      "caseId": "justification-purpose",
+      "instrumentType": "lista-cotejo",
+      "sha256": "867ab944357ad7aa076027b4b46da268f8a9efd6bd4cf7281531c78f7be38101"
+    },
+    {
+      "caseId": "justification-purpose",
+      "instrumentType": "escala",
+      "sha256": "f06c18acc43aab8e2342a2155cfa32eaf0a0b6e0e4d04c62863c34452d109e7b"
+    },
+    {
+      "caseId": "justification-purpose",
+      "instrumentType": "lista-ponderada",
+      "sha256": "64ee01eaec4386774b87fab45ae74aaa121edb0456682134b01a3dd611a4dc67"
+    },
+    {
+      "caseId": "card-without-accounting-credit",
+      "instrumentType": "rubrica",
+      "sha256": "3c6ff9dafdba125ce02e12410fcf43f17d40e5fef5940cb750e919f2644ab96d"
+    },
+    {
+      "caseId": "card-without-accounting-credit",
+      "instrumentType": "lista-cotejo",
+      "sha256": "c3af59c40f856aefeb14bea90214ab4f73f0e5f6dcdbb465c7ed2785f7f63bb6"
+    },
+    {
+      "caseId": "card-without-accounting-credit",
+      "instrumentType": "escala",
+      "sha256": "e4a00d93593937ed6f62db3eb36f86749292ab82b51237bfe8d04fbd6ea00f7b"
+    },
+    {
+      "caseId": "card-without-accounting-credit",
+      "instrumentType": "lista-ponderada",
+      "sha256": "9072a49c190df17254744bd89e5462abbcff49e9f15718ecc26ccb678d0d65dc"
+    },
+    {
+      "caseId": "accounts-not-history",
+      "instrumentType": "rubrica",
+      "sha256": "6c42f7c79fe0b7aba52f9ad8f82f06dceaf42c1e7776bc9c12a716b9dcf175d6"
+    },
+    {
+      "caseId": "accounts-not-history",
+      "instrumentType": "lista-cotejo",
+      "sha256": "f60fc6826d60e6c943332a27aa3138619d26c2f84657ddda02284b16ad354087"
+    },
+    {
+      "caseId": "accounts-not-history",
+      "instrumentType": "escala",
+      "sha256": "81db82611a897448aba70f5920085aee8977d8eec7aa897d58827fdecc8b9985"
+    },
+    {
+      "caseId": "accounts-not-history",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fa282afef9e6d3a199b47dacc052c116a110f0f49f0e4a17b1de9c5ebfe6f58d"
+    },
+    {
+      "caseId": "classify-only-not-origin",
+      "instrumentType": "rubrica",
+      "sha256": "3215684f7d3c0b1d03264c025cce1250abc961805d7e6b98cb4fb74943f42a04"
+    },
+    {
+      "caseId": "classify-only-not-origin",
+      "instrumentType": "lista-cotejo",
+      "sha256": "40767cf2074789f258fcfa09f7396b96329953e63b0e891a2c43e171c3265928"
+    },
+    {
+      "caseId": "classify-only-not-origin",
+      "instrumentType": "escala",
+      "sha256": "c5d010ddb649ca25cff0b418860be7b4939778cb1c8f4aa9deeb384372b2717b"
+    },
+    {
+      "caseId": "classify-only-not-origin",
+      "instrumentType": "lista-ponderada",
+      "sha256": "bd52242b0a05cd44bfe38af81fc7af3bf136be7b942028ebdd158c7a68d1ea21"
+    },
+    {
+      "caseId": "independent-finance-accounting-comparison",
+      "instrumentType": "rubrica",
+      "sha256": "21aa8db88912c6a42fd781b10efa806eaeb461395f7a35cfd2856ac3fdb3888d"
+    },
+    {
+      "caseId": "independent-finance-accounting-comparison",
+      "instrumentType": "lista-cotejo",
+      "sha256": "960a8b5514d7c1e805ec2a6a7f3f610a780687ef2ee744d1d386b7027dbbc98a"
+    },
+    {
+      "caseId": "independent-finance-accounting-comparison",
+      "instrumentType": "escala",
+      "sha256": "ae8ad1cefbb8f153703b6fe6c0bed349c5b61624de278acabcff51e3b7298e85"
+    },
+    {
+      "caseId": "independent-finance-accounting-comparison",
+      "instrumentType": "lista-ponderada",
+      "sha256": "186f2d3806ed88359f3640f70dbc3a27dfb3fd17779d6f27c380e9022fc85237"
+    },
+    {
+      "caseId": "build-and-interpret-amortization",
+      "instrumentType": "rubrica",
+      "sha256": "d44f024e428079c918e724c796bcbfff9378b19f1d312b6a38d237e850c31b86"
+    },
+    {
+      "caseId": "build-and-interpret-amortization",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d1c543ddd7281d3b0a31f3700269ce0c72ab2d8484470aafbda8dc9e0fcdf0b8"
+    },
+    {
+      "caseId": "build-and-interpret-amortization",
+      "instrumentType": "escala",
+      "sha256": "3fbf934d11cfac6ebfe66724c8baeeb96ed2864c3296bdf3b7f76c6da34ce776"
+    },
+    {
+      "caseId": "build-and-interpret-amortization",
+      "instrumentType": "lista-ponderada",
+      "sha256": "fc3337482b4194e40fcf86dae67de4ef81384a781c9c3411327c5eded16f64e0"
+    },
+    {
+      "caseId": "annuity-amount-only",
+      "instrumentType": "rubrica",
+      "sha256": "b373c066effb4c9c8990e53c34e5e69bba5ce1b0aaea20a975236556a9f39f4d"
+    },
+    {
+      "caseId": "annuity-amount-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "ce09ad23d8f27248184495e03618ccd0ac7b00bea9efbfa1d1998ae1fe52a531"
+    },
+    {
+      "caseId": "annuity-amount-only",
+      "instrumentType": "escala",
+      "sha256": "9d3e7469b00897698610207b2fa46e058f840d4dad336d02a2ddf9315d48d490"
+    },
+    {
+      "caseId": "annuity-amount-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "b2843eeb2a047fe779687d7708914ce72b4440c059ea1b0f544e8524fd305401"
+    },
+    {
+      "caseId": "annuity-rent-only",
+      "instrumentType": "rubrica",
+      "sha256": "bb5865f8111ae9027232ac90df4185ddf5c5a1677b367cb6a4da48aa7bd985b6"
+    },
+    {
+      "caseId": "annuity-rent-only",
+      "instrumentType": "lista-cotejo",
+      "sha256": "a97967f6386d56b17d18aa5e470e92fbd9cf9f7e5a9115b439278e3269e1d940"
+    },
+    {
+      "caseId": "annuity-rent-only",
+      "instrumentType": "escala",
+      "sha256": "49d1fc28ffddd1c96f64aeb6411cfbb4fb4baafbd89ce65d3b0e1a252891bbab"
+    },
+    {
+      "caseId": "annuity-rent-only",
+      "instrumentType": "lista-ponderada",
+      "sha256": "32a4ee4fdab9427d710feeac305f155adbde7d295f461a842b1186fbc8836e5c"
+    },
+    {
+      "caseId": "single-asset-not-whole-equation",
+      "instrumentType": "rubrica",
+      "sha256": "aca3a43c219347153d4b054f0d84737b3bc67bcbc9ff0e584009ea60076f36d6"
+    },
+    {
+      "caseId": "single-asset-not-whole-equation",
+      "instrumentType": "lista-cotejo",
+      "sha256": "95da7eb1986c873d88018960e5ab14af6a26ab14cde3949e6c76248742ebfaa8"
+    },
+    {
+      "caseId": "single-asset-not-whole-equation",
+      "instrumentType": "escala",
+      "sha256": "9cd2550b2706fce79cc082c2717246ddbd6d922d533b5e84d5e8bbe6abc075ef"
+    },
+    {
+      "caseId": "single-asset-not-whole-equation",
+      "instrumentType": "lista-ponderada",
+      "sha256": "ebb8adbfcf6c1081cb6a8ce24647c2c00afe71fa2d3258d01986929a5b739ea7"
+    },
+    {
+      "caseId": "annuity-comparison-not-other-object",
+      "instrumentType": "rubrica",
+      "sha256": "bb525e16e2c2425198ccf88ea86e7de58b9dfb13d6f89d00b7be1a247f43fc7b"
+    },
+    {
+      "caseId": "annuity-comparison-not-other-object",
+      "instrumentType": "lista-cotejo",
+      "sha256": "d6e539fccc2752546542a2338d61e6f4547f42a0f24f7131b23d42a43677082f"
+    },
+    {
+      "caseId": "annuity-comparison-not-other-object",
+      "instrumentType": "escala",
+      "sha256": "b99dc95a38f378ec0ca4ff2ebce88e7fdcd71263eb9df7e19fe226a67746726e"
+    },
+    {
+      "caseId": "annuity-comparison-not-other-object",
+      "instrumentType": "lista-ponderada",
+      "sha256": "1d593234ecdeca51687d56c7f2498a57f1349af93da5d425d4fe0e85df88aaa7"
+    },
+    {
+      "caseId": "financial-context-problem-target-guard",
+      "instrumentType": "rubrica",
+      "sha256": "5a63e3d97a0566faf2a99774adafa14c6a6e5299f68f15bf88781751421789ea"
+    },
+    {
+      "caseId": "financial-context-problem-target-guard",
+      "instrumentType": "lista-cotejo",
+      "sha256": "2fc50f3348e8a29eb8f0660da1903243441a1a4f259ddd7908bd57b0a525f490"
+    },
+    {
+      "caseId": "financial-context-problem-target-guard",
+      "instrumentType": "escala",
+      "sha256": "bbdfda0de97c289f6212960b69aa83709e7786f68b42cfe868155285c33b3e34"
+    },
+    {
+      "caseId": "financial-context-problem-target-guard",
+      "instrumentType": "lista-ponderada",
+      "sha256": "5a7a7c57604b6788cf197b2dc5ba1b358b469c9b094fbe650d51c8a54d51d845"
+    },
+    {
+      "caseId": "financial-model-target-guard",
+      "instrumentType": "rubrica",
+      "sha256": "293e99b7d7e2bb9859055f03ce590cbc9d7761da50a9345c532e1d1e9101ce73"
+    },
+    {
+      "caseId": "financial-model-target-guard",
+      "instrumentType": "lista-cotejo",
+      "sha256": "de29586ebc314dcb1a61b38ba0c80eb36f9f8c90f8e6f42631eed300c7163271"
+    },
+    {
+      "caseId": "financial-model-target-guard",
+      "instrumentType": "escala",
+      "sha256": "5852c05e37399f7c75e2dd34ab862248e77b89634b28f5e84baa86726925ac46"
+    },
+    {
+      "caseId": "financial-model-target-guard",
+      "instrumentType": "lista-ponderada",
+      "sha256": "cd0f4717542e0864398bb3a90e0accba36011f283adeb507d29d04008cbce51c"
+    }
+  ]
+}
