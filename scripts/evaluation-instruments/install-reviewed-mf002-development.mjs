@@ -9,35 +9,11 @@ import {developmentEnvironment,developmentProjectRef} from '../cloudflare-develo
 import {readDevelopmentHistory} from './development-history.mjs'
 import {mf002SourceManifest} from './reviewed-mf002-source.mjs'
 
-/** New reviewed source only. Existing versions are verified, never updated. */
+import {installReviewedTechnicalSource} from './install-reviewed-technical-source.mjs'
+
+/** Existing source versions are verified, never repaired or overwritten. */
 export async function installMf002Source(prisma,manifest){
- assert.equal(manifest.project,developmentProjectRef)
- assert.equal(manifest.code,'MINERD_IFC007_MF002_4_NORM_2017_V1')
- const versionId=manifest.version.id
- const existing=await prisma.curriculumVersion.findUnique({where:{code:manifest.code}})
- if(existing){
-  assert.equal(existing.id,versionId);assert.equal(existing.status,'PUBLISHED')
-  assert.deepEqual(Object.fromEntries(Object.keys(manifest.version).map(key=>[key,existing[key]])),manifest.version)
- }else{
-  await prisma.$transaction(async tx=>{
-   await tx.curriculumVersion.create({data:{...manifest.version,status:'DRAFT'}})
-   await tx.curriculumDocument.createMany({data:manifest.documents})
-   await tx.curriculumScope.create({data:manifest.scope})
-   await tx.curriculumElement.createMany({data:manifest.elements})
-   await tx.curriculumSourceSpan.createMany({data:manifest.spans})
-   await tx.curriculumVersion.update({where:{id:versionId},data:{status:'VALIDATED',validatedAt:new Date()}})
-   await tx.curriculumVersion.update({where:{id:versionId},data:{status:'PUBLISHED',publishedAt:new Date()}})
-  },{timeout:120000})
- }
- for(const [model,expected]of [
-  ['curriculumDocument',manifest.documents],['curriculumScope',[manifest.scope]],['curriculumElement',manifest.elements],['curriculumSourceSpan',manifest.spans],
- ]){
-  const keys=Object.keys(expected[0]),select=Object.fromEntries(keys.map(key=>[key,true]))
-  const actual=await prisma[model].findMany({where:{versionId},select})
-  const ordered=rows=>rows.map(row=>JSON.stringify(Object.fromEntries(keys.map(key=>[key,row[key]])))).sort()
-  assert.deepEqual(ordered(actual),ordered(expected),model)
- }
- return existing?'UNCHANGED':'CREATED'
+ return installReviewedTechnicalSource(prisma,manifest,'MINERD_IFC007_MF002_4_NORM_2017_V1')
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
