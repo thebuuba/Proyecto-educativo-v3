@@ -1,5 +1,23 @@
 # Continuación del encargo integral de secundaria
 
+## Estado vigente: Ofimática parcial por DNS; continuar MF054
+
+Rama ampliacion-de-instrumentos-2. HEAD 7c22d86db850bcc77e7c9923f71b739fa2575bc0; 56 commits adelantados respecto de la referencia remota guardada. NO PUSH vigente. No producción, despliegue, merge/main, reset, migraciones de esquema, cuentas o estudiantes nuevos ni subagentes.
+
+Ofimática MF002: catálogo 143 y fuente instalados CREATED/UNCHANGED en Development eolgunypmtgrsyrjzcld. 81 adaptaciones, 95 consignas, 380 instrumentos revisados; artefacto privado v4 final. Backend 91.010/193 archivos, frontend actividades 89.553/118, cuatro builds y lints terminados0. No repetir suites sin cambios. Las 376 definiciones iniciales y296MF053 permanecen exactas; payload142 congelado intacto. Código confirmado; este checkpoint documental está pendiente de commit.
+
+HTTP 89915 terminó1 después de35 muestras por DNS ENOTFOUND del pooler/ECONNRESET. Consulta privada mf002-http-preserved-first-dns-stop.json confirmó35 actividades exactas. Se hizo UNA recuperación: runtime57654/launcher17532, cuatroservicios/bytes Development aprobados; runner78527 reanudó solo pendientes, sin recrear35IDs. Terminó1 después de completar36 al repetirse ENOTFOUND/ECONNRESET. Ambos procesos ya finalizaron, sin listener8787. NO tercer intento ni reinicios en bucle. Logs de ambas incidencias archivados; no tocar red/config/timeouts.
+
+Autoridad de progreso: technical-mf002-4-evaluation-2026.143-source-a326c59a-9acb-5ee7-8cde-25837c465ac1-products-sample-28dcf0efc525-http-progress.json. 36/95 verificadas,36 persistidas, nueve por formato,223 respuestas,0HTTP500 y2fallos de transporte. No hay ID37 preparado. Resumen seguro mf002-http-progress-summary.mjs. Consulta second-dns-stop confirma36 definiciones exactas/0duplicados y conservación75releases/985snapshots→76/1021. Trece baselines plain posteriores aprobados en personal-baselines-preserved-post-mf002.json; no regenerar. Fuente, catálogo, contextos, capturas de runtime, recorders y archivadores YA ejecutados: no repetir.
+
+Personal MF002 bloqueado: ComputerUse no pudo verificar URL deChrome; no se completó guardado/reapertura personal. No borrar caché, SW, almacenamiento ni borradores. Pasos manuales y consigna CASE_STUDY con dosfilas8.68+8.67 en informe2026-10-20-tecnico-ofimatica-4.md. MF053 conserva su borrador y cuatroIDs/3de49 recorridos previos; no reutilizar pruebas QA como evidencia personal.
+
+MF054 / Desarrollo de Aplicaciones y Sistemas de Información: quinto técnico IFC006_3,8hsemana/360anuales, cualificación3. PDF19–22 leídas completas;68textos y70partes transcritos y revisados:4RA,15CE,4bandasC,31P,9A,5orientaciones. Pruebas fuente4RED→4GREEN. Matriz technical-ifc006-mf054-5-matriz.json, revisión technical-ifc-mf054-5-revision-fuente.json y plan/informe2026-10-21-tecnico-ifc-mf054-5 preparados. RA2.3 continúa19→20 ybandaModularidad21→22; excluir MF053 antes yMF055 después. Erratas conservadas. CERO proveedor/instrumentos/escriturasMF054 aún. transcribe-mf054.mjs yrecord-mf054-source-review.mjs YA ejecutados, no repetir.
+
+Siguiente: auditar y confirmar el checkpoint documental; después congelar143 UNA vez antes de modificar aplicación paraMF054, usando lecturas verificadas y conservando36IDs/snapshots y13baselines. Resolver contexto explícito MF054/quinto/técnico con RED→GREEN, luego proveedor/cuatroformatos y revisión completa según plan. Si el entorno sigue inestable, continuar tareas independientes sin afirmar cierre remoto deMF002. El encargo integral sigue pendiente.
+
+## Checkpoints anteriores de Ofimática, superados por el estado vigente
+
 ## Punto vigente: Ofimática implementada en fuente; comprobaciones finales en curso
 
 ESTADOVIGENTEREVISADO: gates46339TERMINARON0:backend91.010/193,frontactividades89.553/118,4buildsylints0,Cloudflaredry-run. `local-checks-143-personal-fixed.json` y`source-compiled-143-personal-fixed.json` autoridadfinal;380MF002/296MF053 exactos/frozen142intacto. No repetir suites sin cambios. Node16/0posteriorainstalación. Artefactov4final109textos95consignas380formatos,376previosexactos.

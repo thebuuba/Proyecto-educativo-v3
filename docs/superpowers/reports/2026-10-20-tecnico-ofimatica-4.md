@@ -1,6 +1,6 @@
 # Ofimática de cuarto: implementación local y verificación
 
-Ofimática MF_002_3 de cuarto técnico tiene 81 adaptaciones, 95 consignas y 380 instrumentos completos revisados. La fuente está instalada en Development. El catálogo143 revisado está instalado idempotentemente enDevelopment, junto con contextos QA ypersonal separados. Las95pruebasHTTP/DB están enejecución; el recorrido personal sigue bloqueado por la herramienta de navegador.
+Ofimática MF_002_3 de cuarto técnico tiene 81 adaptaciones, 95 consignas y 380 instrumentos completos revisados. La fuente está instalada en Development. El catálogo143 revisado está instalado idempotentemente enDevelopment, junto con contextos QA ypersonal separados. La verificación HTTP/DB quedó parcial: 36 de 95 recorridos completos. El recorrido personal sigue bloqueado por la herramienta de navegador.
 
 La implementación inicial quedó en el commit local 4dd1572569a15def5cd12e0ba8fd0fd0df8535b1. El ajuste posterior de justificación se guarda en un segundo commit local después de sus verificaciones. Los pushes continúan retenidos por instrucción del usuario.
 
@@ -33,6 +33,18 @@ La comparación anterior al ajuste confirmó296definiciones MF053,15.176deInglé
 El Worker se inició con logs nuevos. PostgreSQL app_backend_local/sin bypass, Auth200, Storage200 y assets servidos se verificaron exclusivamente en Development eolgunypmtgrsyrjzcld. Los76assetsJS estaban precargados, con un máximo de1.908.851bytes, inferior a2MiB. La comprobación final se repitió sobre elbuildcorregido: entrada /assets/index-CIegXYrw.js ychunk técnico instrumentos-tecnicos-COWcEdwZ.js de254.673bytes, SHA256 9756d1c9a7e14470af65d8ec96f3c7d58fd9b1281e336ab88a9dac9cbe3d2ebc. Losassetsservidoscoinciden conelbuild ysoloDevelopment.
 
 ComputerUse no pudo determinar con seguridad la URL deChrome y detuvo la automatización. No se completó la prueba personal ni se modificaron caché, serviceworker, almacenamiento o borradores. La sesión visual queda pendiente; las pruebas HTTP no la sustituyen.
+
+## Verificación remota parcial tras la recuperación
+
+Se completaron **36 de 95 recorridos**, con 36 actividades persistidas y reabiertas: nueve por cada formato. Se comprobaron los puntos pendientes, los totales 20 y 17.35, texto manual, paridad servidor/alternativa local, trazabilidad a la fuente y cambio exclusivo de estrategia sin alterar instrumento ni snapshot. Las 59 muestras restantes siguen pendientes.
+
+La primera ejecución terminó después de 35 muestras por ENOTFOUND del pooler y ECONNRESET en el cliente. Se leyeron de nuevo las 35 actividades y sus definiciones, se conservaron los logs y se hizo una única recuperación con el mismo build y el mismo registro de IDs. Los cuatro servicios de Development se verificaron antes de continuar. La muestra 36 terminó; después reapareció el mismo fallo DNS. Ambos procesos terminaron con código 1 y localhost quedó sin listener. No se modificaron red ni timeouts y no se hizo un tercer intento.
+
+La consulta posterior confirmó 36 definiciones exactas, cero duplicados y ningún dato personal nuevo. Los 75 releases y 985 snapshots anteriores permanecen intactos; el total es de 76 releases y 1.021 snapshots. Los 13 baselines personales anteriores se compararon de nuevo sin regenerarlos. Los cuatro IDs y el borrador personal de MF053 siguen conservados.
+
+Se registraron 223 respuestas HTTP, ninguna con estado 500, y dos fallos de transporte. Eso no equivale a ausencia de incidencias: los fallos DNS cerraron el Worker. En esta muestra parcial, las medianas fueron 10.545 ms para interpretación, 7.975 ms para recomendación y 4.326 ms para guardado. No son una comparación válida de rendimiento con otras asignaturas. [Evidencia HTTP/DB](../../curriculum/cobertura-secundaria/technical-mf002-4-verificacion-http.json).
+
+El bloqueo externo no impide trabajo documental independiente. Se revisó y transcribió la fuente MF054 de quinto técnico, sin modificar el catálogo instalado. Su implementación permanece pendiente.
 
 ## Prueba personal pendiente
 

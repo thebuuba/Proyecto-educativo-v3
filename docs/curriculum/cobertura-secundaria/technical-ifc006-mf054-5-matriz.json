@@ -1,0 +1,1237 @@
+{
+  "moduleCode": "MF_054_3",
+  "subjectCode": "MF_054_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Desarrollo de Aplicaciones y Sistemas de Información",
+  "level": "SECONDARY",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 360,
+  "weeklyHours": 8,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      19,
+      20,
+      21,
+      22
+    ],
+    "boundary": "EnPDF19 desdeMÓDULO2 MF_054_3; enPDF22 hasta la última orientación antes deMÓDULO3 MF_055_3.",
+    "continuations": [
+      "RA2.3:PDF19→20",
+      "Banda conceptual Modularidad/Bloques/Acceso/Programación periféricos:PDF21→22"
+    ]
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf054-RA2.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA2.1",
+      "literal": "RA2.1: Evaluar y aplicar los lenguajes de programación y los motores de base de datos de acuerdo con los parámetros establecidos para desarrollar aplicaciones informáticas.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "RA2.1: Evaluar y aplicar los lenguajes de programación y los motores de base de datos de acuerdo con los parámetros establecidos para desarrollar aplicaciones informáticas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.1.1",
+      "literal": "CE2.1.1 Identificar los lenguajes de programación, tomando en cuenta el licenciamiento que posee la organización.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.1.1 Identificar los lenguajes de programación, tomando en cuenta el licenciamiento que posee la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.1.2",
+      "literal": "CE2.1.2 Seleccionar el lenguaje de programación que se adapte a los requerimientos del sistema.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.1.2 Seleccionar el lenguaje de programación que se adapte a los requerimientos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.1.3",
+      "literal": "CE2.1.3 Seleccionar los motores de base de datos según los requerimientos del sistema, tomando en cuenta el licenciamiento que posee la organización.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.1.3 Seleccionar los motores de base de datos según los requerimientos del sistema, tomando en cuenta el licenciamiento que posee la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.1.4",
+      "literal": "CE2.1.4 En un supuesto práctico, elaborar aplicaciones para distintas plataformas, como son: - Herramientas de sistemas. - Aplicaciones de escritorio. - Para la web.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.1.4 En un supuesto práctico, elaborar aplicaciones para distintas plataformas, como son: - Herramientas de sistemas. - Aplicaciones de escritorio. - Para la web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-RA2.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA2.2",
+      "literal": "RA2.2: Construir la estructura general de la aplicación informática, según lo establecido en el proceso de análisis y diseño.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "RA2.2: Construir la estructura general de la aplicación informática, según lo establecido en el proceso de análisis y diseño."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.2.1",
+      "literal": "CE2.2.1 Utilizar las salidas del sistema de acuerdo con el diseño establecido en la fase de análisis y diseño del sistema.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.2.1 Utilizar las salidas del sistema de acuerdo con el diseño establecido en la fase de análisis y diseño del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.2.2",
+      "literal": "CE2.2.2 Manipular las entradas del sistema de acuerdo con el diseño establecido en la fase de análisis y diseño del sistema.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.2.2 Manipular las entradas del sistema de acuerdo con el diseño establecido en la fase de análisis y diseño del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.2.3",
+      "literal": "CE2.2.3 En un supuesto práctico, debidamente caracterizado, elaborar: - Menú desplegable. - Menú en cascada. - Menú con botones de chequeo. - Menú flotante. - Menú de navegación. - Menú contextual. - Menú emergente. - Menú de opciones y barra de acción. - Otros.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.2.3 En un supuesto práctico, debidamente caracterizado, elaborar: - Menú desplegable. - Menú en cascada. - Menú con botones de chequeo. - Menú flotante. - Menú de navegación. - Menú contextual. - Menú emergente. - Menú de opciones y barra de acción. - Otros."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.2.4",
+      "literal": "CE2.2.4 Aplicar las estructuras básicas de base de datos del sistema.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.2.4 Aplicar las estructuras básicas de base de datos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-RA2.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA2.3",
+      "literal": "RA2.3: Crear las estrategias de acceso a los distintos módulos de la aplicación, según lo establecido en el proceso de análisis y diseño, para implementación de los criterios de acceso.",
+      "pdfPages": [
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "RA2.3: Crear las estrategias de acceso a"
+        },
+        {
+          "pdfPage": 20,
+          "text": "los distintos módulos de la aplicación, según lo establecido en el proceso de análisis y diseño, para implementación de los criterios de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.3.1",
+      "literal": "CE2.3.1 Reconocer los criterios de accesos y las credenciales a usar en los distintos módulos de las bases de datos.",
+      "pdfPages": [
+        19
+      ],
+      "parts": [
+        {
+          "pdfPage": 19,
+          "text": "CE2.3.1 Reconocer los criterios de accesos y las credenciales a usar en los distintos módulos de las bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.3.2",
+      "literal": "CE2.3.2 Desarrollar las estructuras básicas de base de datos implementando los criterios de acceso.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.3.2 Desarrollar las estructuras básicas de base de datos implementando los criterios de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.3.3",
+      "literal": "CE2.3.3 Codificar las sentencias de programación implementado los criterios de acceso.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.3.3 Codificar las sentencias de programación implementado los criterios de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.3.4",
+      "literal": "CE2.3.4 Aplicar las mejores prácticas y los patrones de diseño empleados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.3.4 Aplicar las mejores prácticas y los patrones de diseño empleados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-RA2.4",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA2.4",
+      "literal": "RA2.4: Desarrollar soluciones para las distintas excepciones dadas o producidas en el ambiente de desarrollo.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "RA2.4: Desarrollar soluciones para las distintas excepciones dadas o producidas en el ambiente de desarrollo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.4.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.4.1",
+      "literal": "CE2.4.1 En un supuesto práctico, ejecutar la aplicación e identificar y organizar las excepciones en los diferentes módulos, tales como: - Captura de datos. - Producción de reportes. - Procesos de cálculos. - Comunicación. - Consultas.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.4.1 En un supuesto práctico, ejecutar la aplicación e identificar y organizar las excepciones en los diferentes módulos, tales como: - Captura de datos. - Producción de reportes. - Procesos de cálculos. - Comunicación. - Consultas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.4.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.4.2",
+      "literal": "CE2.4.2 Desarrollar las estructuras básicas de bases de datos implementando el manejo de excepciones.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.4.2 Desarrollar las estructuras básicas de bases de datos implementando el manejo de excepciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-CE2.4.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE2.4.3",
+      "literal": "CE2.4.3 Codificar las sentencias de programación que permitan la implementación de manejo de excepciones.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "CE2.4.3 Codificar las sentencias de programación que permitan la implementación de manejo de excepciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-c-system-design",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Diseño de sistemas de información. - Tipos y características. - Entradas, salidas y procesos. - Dispositivos de entrada y de salida. - Reportes de salida del sistema. - Datos de entrada. - Método de entrada. - Formato de entrada. - Registros. - Procesos. - Tipos de procesos. - Actualización de procesos. - Consultas. - Reportes. - Validación. - Patrones de diseño.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Diseño de sistemas de información. - Tipos y características. - Entradas, salidas y procesos. - Dispositivos de entrada y de salida. - Reportes de salida del sistema. - Datos de entrada. - Método de entrada. - Formato de entrada. - Registros. - Procesos. - Tipos de procesos. - Actualización de procesos. - Consultas. - Reportes. - Validación. - Patrones de diseño."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-c-languages",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Lenguajes de programación. - Origen, evolución y características. - Clasificación. - Tipos de programación. - Fundamentos. - Entornos. - Ambiente. - Elementos. - Librerías y componentes. - Principios y patrones. - Recursos.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Lenguajes de programación. - Origen, evolución y características. - Clasificación. - Tipos de programación. - Fundamentos. - Entornos. - Ambiente. - Elementos. - Librerías y componentes. - Principios y patrones. - Recursos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-c-modularity",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Modularidad. - Funciones y métodos. - Interfaces. Bloques. - Condiciones. - Iteraciones. - Recursividad. Acceso. - Criterios. - Credenciales. - Niveles. Programación periféricos. - Tipos. - Características. - Comunicación.",
+      "pdfPages": [
+        21,
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Modularidad. - Funciones y métodos. - Interfaces. Bloques. - Condiciones. - Iteraciones. - Recursividad. Acceso. - Criterios."
+        },
+        {
+          "pdfPage": 22,
+          "text": "- Credenciales. - Niveles. Programación periféricos. - Tipos. - Características. - Comunicación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-c-access-exceptions",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Criterios de acceso. - Estructura tecnológica. - Identificación y autentificación. - Control de acceso. - Credenciales. - Registro de acceso. - Copias de respaldo. Excepciones. - Manejo.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Criterios de acceso. - Estructura tecnológica. - Identificación y autentificación. - Control de acceso. - Credenciales. - Registro de acceso. - Copias de respaldo. Excepciones. - Manejo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-devices",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de dispositivos y sus características que serán diseñados en el sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Utilización de dispositivos y sus características que serán diseñados en el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-outputs-analysis",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Salida de un sistema para un mejor análisis del proceso.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Salida de un sistema para un mejor análisis del proceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-outputs-design",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización del diseño de las salidas del sistema de información.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Realización del diseño de las salidas del sistema de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-devices-comparison",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Comparación de dispositivos de entrada y sus características.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Comparación de dispositivos de entrada y sus características."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-input-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de datos de entrada, métodos y formatos que serán diseñados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Identificación de datos de entrada, métodos y formatos que serán diseñados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-records-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los registros que serán diseñados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Identificación de los registros que serán diseñados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-input-design",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de diseño de las entradas del sistema de información que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Elaboración de diseño de las entradas del sistema de información que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-records-design",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diseño de registros que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Diseño de registros que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-process-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de tipos de procesos que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Identificación de tipos de procesos que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-process-design",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de diseño de los procesos del sistema de información que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Realización de diseño de los procesos del sistema de información que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-database-structure",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Estructura básica de la base de datos que será utilizada para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Estructura básica de la base de datos que será utilizada para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-database-design",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diseño de la estructura básica de las bases de datos que serán utilizadas para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Diseño de la estructura básica de las bases de datos que serán utilizadas para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-patterns",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de distintos patrones de diseño que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Aplicación de distintos patrones de diseño que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-practices",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de mejores prácticas que serán utilizadas para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Aplicación de mejores prácticas que serán utilizadas para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-reports",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de reportes que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Realización de reportes que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-validation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Validación de las entradas, las salidas y los procesos que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Validación de las entradas, las salidas y los procesos que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-queries",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de consultas que serán utilizadas para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Realización de consultas que serán utilizadas para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-languages-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los distintos lenguajes de programación que serán utilizados para el desarrollo del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Identificación de los distintos lenguajes de programación que serán utilizados para el desarrollo del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-languages-comparison",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Comparación de los lenguajes de programación y sus características.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Comparación de los lenguajes de programación y sus características."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-outputs-development",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Desarrollo de las salidas del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Desarrollo de las salidas del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-output-reports",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de reportes de salidas del sistema.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Identificación de reportes de salidas del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-input-development",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Desarrollo de las entradas del sistema, los procesos y reportes.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Desarrollo de las entradas del sistema, los procesos y reportes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-structured",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Desarrollo de programa de forma estructurada.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Desarrollo de programa de forma estructurada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-modular",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de programas de forma modular.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Elaboración de programas de forma modular."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-menus",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Desarrollo de los menús (desplegable, en cascada, con botones de chequeo, flotante, de navegación, contextual, emergente, de opciones y barra de acción, otros).",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Desarrollo de los menús (desplegable, en cascada, con botones de chequeo, flotante, de navegación, contextual, emergente, de opciones y barra de acción, otros)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-objects",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de aplicaciones utilizando lenguaje de programación orientado a objeto.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Elaboración de aplicaciones utilizando lenguaje de programación orientado a objeto."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-access-control",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación y creación de controles de acceso.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Identificación y creación de controles de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-access-records",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de los registros de acceso que definen las entradas a los distintos módulos del sistema.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Elaboración de los registros de acceso que definen las entradas a los distintos módulos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-credentials",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de las credenciales del sistema para mayor seguridad del mismo.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Elaboración de las credenciales del sistema para mayor seguridad del mismo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-backup",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de proceso de respaldo de datos para asegurar la información dentro de las organizaciones.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Aplicación de proceso de respaldo de datos para asegurar la información dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-p-exceptions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación y desarrollo de las excepciones del sistema.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Identificación y desarrollo de las excepciones del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-documentation",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia de documentar procedimientos técnicos complejos.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Valoración de la importancia de documentar procedimientos técnicos complejos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-sharing",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia de compartir información como fundamento sinérgico del trabajo colectivo.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Valoración de la importancia de compartir información como fundamento sinérgico del trabajo colectivo."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-learning",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Interés por el conocimiento y adiestramiento en herramientas metodológicas basadas en NTIC.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Interés por el conocimiento y adiestramiento en herramientas metodológicas basadas en NTIC."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-clients",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Orientación a clientes y a resultados.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Orientación a clientes y a resultados."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-team",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Realización de trabajo en equipo y pensamiento crítico.",
+      "pdfPages": [
+        20
+      ],
+      "parts": [
+        {
+          "pdfPage": 20,
+          "text": "Realización de trabajo en equipo y pensamiento crítico."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-analysis",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición al desarrollo de la capacidad de análisis y de síntesis.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Disposición al desarrollo de la capacidad de análisis y de síntesis."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-integrity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-collection",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Sensibilización por la consecución de un medio de recopilación no contaminado.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Sensibilización por la consecución de un medio de recopilación no contaminado."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-a-tools",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los instrumentos en la recopilación de información.",
+      "pdfPages": [
+        21
+      ],
+      "parts": [
+        {
+          "pdfPage": 21,
+          "text": "Valoración de los instrumentos en la recopilación de información."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Detección de conocimientos en relacion con los lenguajes de programación y los motores de base de datos.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Detección de conocimientos en relacion con los lenguajes de programación y los motores de base de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-m-presentation",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de ponencias sobre la elaboracion de una estructura general de aplicaciones informática.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Realización de ponencias sobre la elaboracion de una estructura general de aplicaciones informática."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-m-access-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto basado en las estrategias de acceso a los distintos módulos de la aplicación, según parametros establecidos en el proceso de análisis y diseños.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Realización de proyecto basado en las estrategias de acceso a los distintos módulos de la aplicación, según parametros establecidos en el proceso de análisis y diseños."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-m-coding-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto en el laboratorio de informática, en la codificación de las sentencias de programación.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Realización de proyecto en el laboratorio de informática, en la codificación de las sentencias de programación."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf054-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        22
+      ],
+      "parts": [
+        {
+          "pdfPage": 22,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Credenciales y controles de acceso se adaptan con usuarios y datos ficticios; no solicitar credenciales personales ni acceso a sistemas de producción.",
+    "No imponer todos los lenguajes, plataformas, menús, patrones o módulos del programa a cada consigna.",
+    "Reconocer y seleccionar herramientas no exige programar una aplicación completa.",
+    "La programación se evalúa solo cuando la consigna la solicita; el análisis y diseño no implican despliegue real ni servicios de pago.",
+    "Preservar actitudes y orientaciones como documentos, sin evaluar interés, personalidad o adhesión privada.",
+    "Las erratas impresas se conservan; cualquier corrección pertenece solo a adaptaciones pedagógicas explícitas."
+  ]
+}

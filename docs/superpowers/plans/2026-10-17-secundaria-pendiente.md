@@ -25,7 +25,7 @@ Consigna corta frente a título incompatible; acciones independientes y negadas;
 
 ## Bloques
 
-**Ofimática instalada, 20oct:** fuente ycatálogo143 revisado CREATED/UNCHANGED enDevelopment;81adaptaciones/95consignas/380instrumentos completos revisados. Backend91.010/frontend89.553,cuatrobuildsylints0,Node16/0. ContextosQAypersonalidempotentes,0cuentas/estudiantesnuevos. CuatroserviciosyassetsDevelopmentconfirmados. HTTP95en ejecución; navegadorbloqueadoporURLno verificable.75releases/985snapshots previospreservados antesdeHTTP;13baselinespersonalesintactos. MF053mantienesusIDsyverificaciónparcial. NO PUSH. Ver2026-10-20-tecnico-ofimatica-4.md.
+**Ofimática y siguiente fuente, 21oct:** catálogo143/fuente/contextos instalados idempotentemente en Development;380instrumentos revisados. HTTP parcial36/95, nueve por formato,36actividades exactas. DosfallosDNS trasuna recuperación; sinlistener8787, sinmásreinicios. Historial75releases/985snapshots previo intacto→76/1021;13baselines personales preservados. PersonalbloqueadoporherramientaURL. FuenteMF054/quinto transcrita yvisualmente revisada:68registros/70partes,4pruebasNode aprobadas, proveedor pendiente. NO PUSH. ContinuarMF054independiente segúnplan2026-10-21-tecnico-ifc-mf054-5.md.
 
 **Avance documental de Ofimática, 20oct:** MF053 confirmado en `08477b7c`. Fuente MF_002_3 de4.º revisada enIFC006 eIFC007:210registros/302partes,5pruebas aprobadas, duplicados y erratas impresas conservados. Plan `2026-10-20-tecnico-ofimatica-4.md`. No hay proveedor de Ofimática todavía; siguiente: conservación de142 y contexto explícito del módulo. El bloqueo DNS deMF053 continúa sin reinicios en bucle; su borrador eIDs se mantienen.
 

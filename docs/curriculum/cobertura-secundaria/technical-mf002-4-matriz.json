@@ -5762,11 +5762,11 @@
     ]
   },
   "implementation": {
-    "status": "INSTALLED_PENDING_HTTP_AND_PERSONAL_VERIFICATION",
+    "status": "CONNECTED_REVIEWED_RUNTIME_PARTIAL_DNS_BLOCK",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.143",
     "instrumentReview": "REVIEWED",
-    "httpDb": "RUNNING",
+    "httpDb": "PARTIAL_36_OF_95_VERIFIED_36_SAVED",
     "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL",
     "sourceVersionId": "a326c59a-9acb-5ee7-8cde-25837c465ac1"
   },
@@ -7623,7 +7623,7 @@
       "evidence": "technical-mf002-4-revision.json"
     },
     "automated": "BACKEND_91010_FRONTEND_89553_FOUR_BUILDS_AND_LINTS_PASSED",
-    "httpDb": "RUNNING",
+    "httpDb": "PARTIAL_36_OF_95_VERIFIED_36_SAVED",
     "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
   }
 }

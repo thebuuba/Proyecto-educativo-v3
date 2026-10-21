@@ -1,0 +1,45 @@
+{
+  "moduleCode": "MF_054_3",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "pages": [
+    19,
+    20,
+    21,
+    22
+  ],
+  "method": "Lectura visual completa de las cuatro páginas y lectura posterior de los68registros transcritos. Cotejo de las70partes con la extracción del PDF verificado. Columnas y continuaciones se separaron según las tablas visibles; no se infiere revisión por conteos.",
+  "boundary": "EnPDF19 desdeMÓDULO2 MF_054_3; enPDF22 hasta la última orientación antes deMÓDULO3 MF_055_3.",
+  "continuations": [
+    "RA2.3:PDF19→20",
+    "Banda conceptual Modularidad/Bloques/Acceso/Programación periféricos:PDF21→22"
+  ],
+  "records": 68,
+  "parts": 70,
+  "types": {
+    "LEARNING_OUTCOME": 4,
+    "EVALUATION_CRITERION": 15,
+    "CONCEPT": 4,
+    "PROCEDURE": 31,
+    "ATTITUDE": 9,
+    "TEACHING_STRATEGY": 5
+  },
+  "datasetSha256": "027763794f6dc5434400b64709fd4f5ab955a0713469651ec57816aa212ee7a3",
+  "editorialPolicy": "Conservar implementado, autentificación, relacion, elaboracion yparametros como aparecen; no corregir la fuente impresa.",
+  "qualifications": "Nivel de cualificación3; grado5 confirmado por tablaPDF14, no inferido del código.",
+  "implementation": false,
+  "instrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "limits": [
+    "Credenciales y controles de acceso se adaptan con usuarios y datos ficticios; no solicitar credenciales personales ni acceso a sistemas de producción.",
+    "No imponer todos los lenguajes, plataformas, menús, patrones o módulos del programa a cada consigna.",
+    "Reconocer y seleccionar herramientas no exige programar una aplicación completa.",
+    "La programación se evalúa solo cuando la consigna la solicita; el análisis y diseño no implican despliegue real ni servicios de pago.",
+    "Preservar actitudes y orientaciones como documentos, sin evaluar interés, personalidad o adhesión privada.",
+    "Las erratas impresas se conservan; cualquier corrección pertenece solo a adaptaciones pedagógicas explícitas."
+  ]
+}
