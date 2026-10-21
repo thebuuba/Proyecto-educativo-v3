@@ -1,0 +1,86 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "source": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_IFC006_MF054_5_NORM_2017_V1",
+    "versionId": "63fa4788-ef04-574e-b2b0-12a927fe3eb8",
+    "scopeId": "c1333931-e5a0-5390-bd12-defd021de2df",
+    "result": "CREATED_UNCHANGED",
+    "elements": 59,
+    "sourceSpans": 60,
+    "documentaryRecords": 9,
+    "literalRecords": 68,
+    "literalParts": 70,
+    "excludedFromAssessment": 9
+  },
+  "catalog": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.144",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 76,
+    "preservedSnapshots": 1021,
+    "currentReleases": 77,
+    "currentSnapshots": 1021,
+    "sourceEqualsCompiled": true,
+    "previousPayloadsUnchanged": true,
+    "historyMethod": "IMMUTABLE_SAVED_FINGERPRINTS_ALL_PRIOR_RELEASES_AND_SNAPSHOTS"
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.144",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-TVJfGAwo.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-TVJfGAwo.js",
+        "sha256": "4499c66df18dc18e093cc9d20e1beb884b024cfb409b84ef37ea2e45d49bbb92"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-U18iuLo6.js",
+        "sha256": "8cab30085039732d787688f5d7e020ab9e047be95946da9d79d662bb415d3f80"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CyPSpsAE.js",
+        "sha256": "520254432e5c06d1d6bec52818bbbebeed51d55b14624088dafd2fd317fc3b50"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-B-R8fAnz.js",
+        "sha256": "5b84a76d91cd602bb39423453986792ff241612b34c28341254d17f1d91fa08f"
+      },
+      {
+        "path": "/assets/PlanningPage-CZsG6zJl.js",
+        "sha256": "21d05f719c6e87d456563d37a923816fb2dc595d7e092064dad394b5f9940a0b"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "384542c98868deb1bfa7e8c1a36989f936a5d7d8ce2315e271be30f32cecde20"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "qaContextCreated": true,
+  "personalContextCreated": true,
+  "newAccounts": 0,
+  "newStudents": 0,
+  "personalActivitySaved": false,
+  "push": false,
+  "deploy": false
+}

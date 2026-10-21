@@ -1,0 +1,49 @@
+{
+  "moduleCode": "MF_056_3",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "pages": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "method": "Lectura visual completa de seis páginas y lectura de los34textosRA/CE transcritos; lectura manual de las otras48entradas al transcribir las columnas. Las83partes se cotejaron de nuevo con el PDF verificado. No se infiere lectura de los conteos.",
+  "boundary": "EnPDF24 desdeMÓDULO4 MF_056_3; enPDF29 hasta la última orientación antes deMÓDULO5 MF_057_3.",
+  "continuations": [
+    "Banda procedimentalDML27→28, sin contenido conceptual adicional en la celda vacía de28.",
+    "Banda conceptualAltaDisponibilidad28→29."
+  ],
+  "records": 82,
+  "parts": 83,
+  "types": {
+    "LEARNING_OUTCOME": 4,
+    "EVALUATION_CRITERION": 30,
+    "CONCEPT": 4,
+    "PROCEDURE": 28,
+    "ATTITUDE": 10,
+    "TEACHING_STRATEGY": 6
+  },
+  "datasetSha256": "a8cf03ded098d2e088706d29a78f1806595e348727578c7d03887c507755f4c0",
+  "editorialPolicy": "Preservar Boice Codd, order bye, propuestasde, clausulas y los decimales impresos. El ejemplo union bajo De unión externa no se corrige en el literal; su adaptación pedagógica necesita tratamiento explícito.",
+  "ruling": "La banda procedimental DML sigue en28, pero la celda conceptual está vacía: no añadir una continuación conceptual ficticia. El primer borrador del plan/prueba se corrigió después de leer las tablas y antes de transcribir.",
+  "qualifications": "Cualificación3; grado4 confirmado por tablaPDF14.315horas/sietesemanales.",
+  "implementation": false,
+  "instrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "limits": [
+    "Operaciones de datos y acceso solo con datos ficticios y bases de práctica expresamente indicadas; no operaciones destructivas en producción ni cuentas personales.",
+    "Diseñar, describir o proponer no exige aplicar una estrategia real de alta disponibilidad ni contratar infraestructura.",
+    "No imponer todos los gestores, modelos, objetos, consultas y estrategias en cada consigna.",
+    "Actitudes privadas y orientaciones docentes son documentación; visitas a empresas o internet no son entregables por defecto.",
+    "Preservar erratas literales como Boice Codd, order bye y propuestasde. Las adaptaciones deberán distinguirlas del contenido técnico enseñado.",
+    "El ejemplo union bajo De unión externa se conserva literalmente; no atribuir equivalencia de operaciones ni tratar el pseudocódigo con puntos suspensivos comoSQL ejecutable.",
+    "Las cifras impresas de disponibilidad conservan sus puntos y comas; no corregir silenciosamente la fuente."
+  ]
+}

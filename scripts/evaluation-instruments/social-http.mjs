@@ -7,6 +7,7 @@ import {developmentEnvironment,developmentProjectRef as project} from '../cloudf
 import {editableFallbackRecommendation,recommendationToFields,alignRecommendationWithFields} from '../../apps/frontend/src/modules/activities/services/instrumentPreparation.ts'
 import {scoreInstrumentFields} from '../../apps/frontend/src/modules/activities/services/instrumentScoring.ts'
 import {validateInstrumentDefinition} from '../../packages/shared/src/index.ts'
+import {reviewedTechnicalHttpScope,reviewedTechnicalElementIds} from './technical-http-scope.mjs'
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
 const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(process.argv[gradeFlag+1])
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
@@ -18,10 +19,7 @@ const hcsLanguage=['OPT-HCS-LEN-4','OPT-HCS-LEN-5','OPT-HCS-LEN-6'].includes(sub
 const hcsSocial=['OPT-HCS-SOC-4','OPT-HCS-SOC-5','OPT-HCS-SOC-6'].includes(subjectCode)&&[4,5,6].includes(grade)&&subjectCode===`OPT-HCS-SOC-${grade}`
 const mathOptative=['OPT-MT-4','OPT-MT-5','OPT-MT-6'].includes(subjectCode)&&subjectCode===`OPT-MT-${grade}`
 const scienceOptative=subjectCode===`OPT-CT-${grade}`&&[4,5,6].includes(grade)
-const technicalConfig=grade===4?{
- MF_053_3:{family:'technical-mf053',fileStem:'technical-ifc006-mf053',label:'Técnico MF053',name:'Análisis y Diseño de Sistemas Informáticos',contract:'technical-ifc-mf053-four-contracts.json',source:'MINERD_IFC006_MF053_4_NORM_2017_V1'},
- MF_002_3:{family:'technical-mf002',fileStem:'technical-mf002',label:'Técnico MF002',name:'Ofimática',contract:'technical-mf002-four-contracts.json',source:'MINERD_IFC007_MF002_4_NORM_2017_V1'},
-}[subjectCode]:null
+const technicalConfig=reviewedTechnicalHttpScope(subjectCode,grade)
 const technical=Boolean(technicalConfig)
 const optative=scienceOptative||mathOptative||hcsSocial||hcsLanguage||['OPT-HLM-LEN-4','OPT-HLM-LEN-5','OPT-HLM-LEN-6'].includes(subjectCode)||optativeEnglish
 assert(technical||scienceOptative||mathOptative||hcsSocial||hcsLanguage&&[4,5,6].includes(grade)&&subjectCode===`OPT-HCS-LEN-${grade}`||['SOC','ART','EFI','FHR'].includes(subjectCode)||optative&&(optativeEnglish?subjectCode===`OPT-HLM-ING-${grade}`&&[4,5,6].includes(grade):subjectCode===`OPT-HLM-LEN-${grade}`&&[4,5,6].includes(grade)),'Solo se admiten ámbitos revisados explícitamente')
@@ -134,8 +132,9 @@ try{
     assert.equal(interpretation.curriculumScopeId,source.scopeId)
     assert(interpretation.curriculumCandidates.every(c=>!source.metadata.excludedAssessmentElementIds.includes(c.elementId)))
     const record=sourceRecords.find(r=>r.id.startsWith(sourcePrefixes[i]));assert(record)
-    const importedId=source.elementIdMap[record.id];assert(importedId)
-    Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:[importedId]})
+    const importedIds=technical?reviewedTechnicalElementIds(record,source):[source.elementIdMap[record.id]]
+    assert(importedIds.every(Boolean))
+    Object.assign(input,{curriculumVersionId:source.versionId,curriculumScopeId:source.scopeId,selectedCurriculumElementIds:importedIds})
    }
    if(optative&&['poetry-figures-only','epic-figures-only','column-underlining'].includes(procedural[i]?.id)){
     const {preferredInstrumentType,...automaticInput}=input
@@ -152,13 +151,15 @@ try{
    assert.equal(proposal.catalogVersion,catalog);assert(proposal.criteria.every(c=>c.templateId.startsWith(technical?`${templatePrefix}-`:`${templatePrefix}-${grade}-`)||(scienceOptative||technical)&&c.templateId.startsWith('delivery-format')))
    if(source){
     assert.equal(proposal.curriculumVersionId,source.versionId);assert.equal(proposal.curriculumScopeId,source.scopeId)
-    assert.equal(proposal.selectedCurriculumElements.length,1)
+    assert.equal(proposal.selectedCurriculumElements.length,input.selectedCurriculumElementIds.length)
     const ref=proposal.selectedCurriculumElements[0]
+    if(ref){
     assert.equal(ref.elementId,input.selectedCurriculumElementIds[0]);assert.equal(ref.scopeId,source.scopeId)
     if(subjectCode==='MF_002_3'){
      assert(ref.sources.length>0)
      assert(ref.sources.every(s=>source.metadata.sourceDocuments.some(d=>d.id===s.documentId&&d.pages.includes(s.pdfPage))))
-    }else assert(ref.sources.every(s=>s.documentId===source.documentId&&(technical?matrix.sourceVisualReview.pages:matrix.pdfPages).includes(s.pdfPage)))
+    }else assert(ref.sources.every(s=>s.documentId===(source.documentId??source.documentIds?.[0])&&(technical?matrix.sourceVisualReview.pages:matrix.pdfPages).includes(s.pdfPage)))
+    }
     assert(proposal.criteria.every(c=>!c.sourceReferences.length),'Adaptations are not literal official criteria')
    }
    assert.equal(interpretation.suggestedActivityType,proposal.activityType)

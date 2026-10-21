@@ -28,5 +28,5 @@ test('las adaptaciones enlazan todos los procedimientos y CE sin evaluar actitud
  assert.equal(review.reviewer,'SELF_REVIEW_NO_SUBAGENTS')
  assert.equal(matrix.implementation.httpDb,'NOT_RUN')
  assert.equal(matrix.implementation.browser,'NOT_RUN')
- assert.equal(review.runtimeInstalled,false)
+ assert.equal(review.runtimeInstalled,true)
 })

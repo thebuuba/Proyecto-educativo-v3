@@ -4,7 +4,7 @@
   "grade": 5,
   "catalog": "evaluation-2026.144",
   "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "independence": "Revisión propia; no se utilizaron subagentes por instrucción del usuario.",
   "method": "Lectura completa de los57textos y63ensamblajes de v1; relectura de los dos textos y dos tipos modificados en v2; lectura de los dos textos y ensamblajes nuevos de v3. Lectura del paquete completo de cuatro formatos de funciones y comprobación exacta de los260instrumentos frente a los59textos completos, ensamblajes, niveles y reglas de formato leídos. No se deduce pertinencia del conteo o de HTTP200.",
@@ -48,7 +48,7 @@
     "sourceParityVerifiedByContracts": "BACKEND_91641_FRONTEND_ACTIVITIES_90074_FOCAL_FINAL_1282_GREEN"
   },
   "limits": [
-    "No instalado ni probado porHTTP/DB enMF054.",
+    "Fuente y catálogo144 instalados solo enDevelopment; recorridoHTTP/DB en curso, navegador personal pendiente.",
     "Navegador personal pendiente; no se reutilizan las pruebas QA como prueba personal.",
     "No acredita cobertura integral de secundaria.",
     "Adaptaciones pedagógicas deAulaBase; no rúbricas literales del currículo."

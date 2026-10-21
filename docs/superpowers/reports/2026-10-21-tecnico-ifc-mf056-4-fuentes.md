@@ -1,0 +1,15 @@
+# Diseño y Desarrollo de Base de Datos de 4.º: fuente revisada
+
+Se revisó la fuente oficial de **MF_056_3**, del programa **IFC006_3**, mientras continuaban las pruebas HTTP de MF054. Su presencia en cuarto de secundaria Técnico Profesional está confirmada por la tabla del PDF14: siete horas semanales y315anuales. El nivel3 es de cualificación, no el grado escolar.
+
+Documento: [Bachillerato Técnico en Desarrollo y Administración de Aplicaciones Informáticas](https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf),74páginas. SHA256: `70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9`. Edición editorial desconocida;2017 corresponde a la Ordenanza06-2017, conservada separadamente como validación normativa.
+
+Se leyeron visualmente las seis páginas24–29, desde el título de MÓDULO4 al final de24 hasta las seis orientaciones anteriores a MÓDULO5 en29. Se excluyeron el texto de MF055 anterior y MF057 posterior. La transcripción conserva **82registros y83partes**: cuatroRA,30CE, cuatrobandas conceptuales,28procedimientos, diezactitudes y seisorientaciones. Todas las partes se cotejaron con el documento verificado; también se leyó completa la transcripción de RA/CE. La revisión es propia, sin subagentes.
+
+La banda procedimental DML continúa entre27 y28, pero la celda conceptual está vacía al inicio de28. El primer borrador del plan y de la prueba confundía esa continuidad de tabla con una nueva parte conceptual; se corrigió antes de transcribir. La banda conceptual de alta disponibilidad sí continúa entre28 y29. No se añadieron fragmentos a celdas vacías.
+
+Se preservaron las formulaciones impresas, incluyendo «Boice Codd», «order bye», «propuestasde», «clausulas» y las mezclas de punto y coma decimal en disponibilidad. El ejemplo con `union` bajo «De unión externa» permanece literal: esto documenta lo impreso y no valida una equivalencia técnica ni sintaxis ejecutable. Las futuras adaptaciones deberán distinguir el texto oficial de la explicación correcta.
+
+No se convertirán las actitudes privadas en calificaciones de interés, personalidad o supuesta capacidad. Las orientaciones sobre visitas a empresas, internet y laboratorio no se impondrán como entregables. Operaciones de acceso, creación o eliminación se adaptarán solo a bases de práctica con datos ficticios cuando la consigna las solicite. Describir o proponer alta disponibilidad no exigirá montarla realmente.
+
+Pruebas documentales: **cuatro RED por ausencia de matriz → cuatro GREEN**. [Matriz literal](../../curriculum/cobertura-secundaria/technical-ifc006-mf056-4-matriz.json), [revisión de fuente](../../curriculum/cobertura-secundaria/technical-ifc-mf056-4-revision-fuente.json) y [plan](../plans/2026-10-21-tecnico-ifc-mf056-4.md). **Cero proveedor, instrumentos completos o escrituras remotas de MF056**. No se modificaron el catálogo144, los builds ni los datos del recorrido MF054 por esta lectura. No hubo push, producción, despliegue ni merge.

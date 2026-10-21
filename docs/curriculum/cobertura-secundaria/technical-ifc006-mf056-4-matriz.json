@@ -1,0 +1,1473 @@
+{
+  "moduleCode": "MF_056_3",
+  "subjectCode": "MF_056_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Diseño y Desarrollo de Base de Datos",
+  "level": "SECONDARY",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 315,
+  "weeklyHours": 7,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "boundary": "EnPDF24 desdeMÓDULO4 MF_056_3; enPDF29 hasta la última orientación antes deMÓDULO5 MF_057_3.",
+    "continuations": [
+      "Banda procedimentalDML27→28, sin contenido conceptual adicional en la celda vacía de28.",
+      "Banda conceptualAltaDisponibilidad28→29."
+    ]
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf056-RA4.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA4.1",
+      "literal": "RA4.1: Diseñar bases de datos para responder a los requerimientos de desarrollo bajo un modelo establecido, aplicando criterios de normalización de datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "RA4.1: Diseñar bases de datos para responder a los requerimientos de desarrollo bajo un modelo establecido, aplicando criterios de normalización de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.1",
+      "literal": "CE4.1.1 Describir los diferentes tipos de sistemas de base de datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.1 Describir los diferentes tipos de sistemas de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.2",
+      "literal": "CE4.1.2 Distinguir la diferencia entre registros, campos y datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.2 Distinguir la diferencia entre registros, campos y datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.3",
+      "literal": "CE4.1.3 Describir el modelo Entidad-Relación.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.3 Describir el modelo Entidad-Relación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.4",
+      "literal": "CE4.1.4 Utilizar el modelo Entidad-Relación.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.4 Utilizar el modelo Entidad-Relación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.5",
+      "literal": "CE4.1.5 Describir gestores de base de datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.5 Describir gestores de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.6",
+      "literal": "CE4.1.6 Establecer modelo de datos seleccionado para la resolución del problema planteado. Entre los más comunes conocidos podemos encontrar: - Modelo relacional. - Modelo entidad-relación. - Modelo de datos jerárquico. - Modelo de datos en red.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.6 Establecer modelo de datos seleccionado para la resolución del problema planteado. Entre los más comunes conocidos podemos encontrar: - Modelo relacional. - Modelo entidad-relación. - Modelo de datos jerárquico. - Modelo de datos en red."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.7",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.7",
+      "literal": "CE4.1.7 Describir el Lenguaje de Marcas Extendido (XML).",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.7 Describir el Lenguaje de Marcas Extendido (XML)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.8",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.8",
+      "literal": "CE4.1.8 Describir las reglas de normalización en el modelo de base de datos de las entidades definidas (Forma Normal de Boice Codd - FNBC). - Evitar la redundancia de los datos. - Evitar problemas de actualización de los datos en las tablas. - Proteger la integridad de los datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.8 Describir las reglas de normalización en el modelo de base de datos de las entidades definidas (Forma Normal de Boice Codd - FNBC). - Evitar la redundancia de los datos. - Evitar problemas de actualización de los datos en las tablas. - Proteger la integridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.9",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.9",
+      "literal": "CE4.1.9 Describir SQL.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.9 Describir SQL."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.10",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.10",
+      "literal": "CE4.1.10 Describir las características del lenguaje de consultas SQL: - Tipos de datos. - Transact-SQL. - Lenguaje de Definición de Datos (DDL). - Lenguaje de Manipulación de Datos (DML). - Lenguaje de Control de Datos (DCL).",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.10 Describir las características del lenguaje de consultas SQL: - Tipos de datos. - Transact-SQL. - Lenguaje de Definición de Datos (DDL). - Lenguaje de Manipulación de Datos (DML). - Lenguaje de Control de Datos (DCL)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.11",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.11",
+      "literal": "CE4.1.11 Entender el álgebra relacional.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.11 Entender el álgebra relacional."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.12",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.12",
+      "literal": "CE4.1.12 Aplicar las reglas de normalización en el modelo de base de datos de las entidades definidas (preferiblemente hasta el tercer nivel). - Evitar la redundancia de los datos. - Evitar problemas de actualización de los datos en las tablas. - Proteger la integridad de los datos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.12 Aplicar las reglas de normalización en el modelo de base de datos de las entidades definidas (preferiblemente hasta el tercer nivel). - Evitar la redundancia de los datos. - Evitar problemas de actualización de los datos en las tablas. - Proteger la integridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.13",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.13",
+      "literal": "CE4.1.13 En un supuesto práctico, debidamente caracterizado: - Utilizar los diferentes tipos de datos que se aplican en una base de datos numéricos, carácter, fecha, lógico, etc. - Crear la base de datos. - Crear los objetos (tablas, índices o claves, consultas, formularios, funciones, procedimientos almacenados, disparador, etc.). - Realizar inserción de una o varias filas usando insert into. - Modificar una o varias filas usando Update . - Eliminar una o varias filas usando Delete . - Crear o eliminar índice utilizando create index o drop index. - Relacionar las tablas. - Eliminar objetos.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.13 En un supuesto práctico, debidamente caracterizado: - Utilizar los diferentes tipos de datos que se aplican en una base de datos numéricos, carácter, fecha, lógico, etc. - Crear la base de datos. - Crear los objetos (tablas, índices o claves, consultas, formularios, funciones, procedimientos almacenados, disparador, etc.). - Realizar inserción de una o varias filas usando insert into. - Modificar una o varias filas usando Update . - Eliminar una o varias filas usando Delete . - Crear o eliminar índice utilizando create index o drop index. - Relacionar las tablas. - Eliminar objetos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.1.14",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.1.14",
+      "literal": "CE4.1.14 Determinar la configuración de los dispositivos, procesos y espacio físico de acuerdo con las características del Sistema de Gestión de Base de Datos, Sistema Operativo, Hardware, necesidades de almacenamiento y requerimientos de servicio.",
+      "pdfPages": [
+        25
+      ],
+      "parts": [
+        {
+          "pdfPage": 25,
+          "text": "CE4.1.14 Determinar la configuración de los dispositivos, procesos y espacio físico de acuerdo con las características del Sistema de Gestión de Base de Datos, Sistema Operativo, Hardware, necesidades de almacenamiento y requerimientos de servicio."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-RA4.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA4.2",
+      "literal": "RA4.2: Diseñar diccionario de datos y documentación general para apoyar la gestión de administración de bases de datos, de acuerdo con el modelo establecido.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "RA4.2: Diseñar diccionario de datos y documentación general para apoyar la gestión de administración de bases de datos, de acuerdo con el modelo establecido."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.2.1",
+      "literal": "CE4.2.1 Fundamentar documentación de las propiedades de la base de datos.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.2.1 Fundamentar documentación de las propiedades de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.2.2",
+      "literal": "CE4.2.2 Describir las funciones, los procedimientos almacenados y las vistas creadas en la base de datos según las características y datos de acuerdo con el modelo establecido.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.2.2 Describir las funciones, los procedimientos almacenados y las vistas creadas en la base de datos según las características y datos de acuerdo con el modelo establecido."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.2.3",
+      "literal": "CE4.2.3 Explicar las funciones, los procedimientos almacenados y las vistas creadas en la base de datos según las características y los datos, de acuerdo con el modelo establecido.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.2.3 Explicar las funciones, los procedimientos almacenados y las vistas creadas en la base de datos según las características y los datos, de acuerdo con el modelo establecido."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.2.4",
+      "literal": "CE4.2.4 Diseñar la estructura del diccionario de datos.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.2.4 Diseñar la estructura del diccionario de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.2.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.2.5",
+      "literal": "CE4.2.5 En un supuesto práctico, debidamente caracterizado: - Crear los diccionarios de datos a cada una de las entidades de la base de datos. - Explicar los diccionarios de datos creados. - Elaborar la documentación necesaria a cada diccionario de datos, con las descripciones de lugar.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.2.5 En un supuesto práctico, debidamente caracterizado: - Crear los diccionarios de datos a cada una de las entidades de la base de datos. - Explicar los diccionarios de datos creados. - Elaborar la documentación necesaria a cada diccionario de datos, con las descripciones de lugar."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-RA4.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA4.3",
+      "literal": "RA4.3: Crear consultas ( Queries ) de datos para apoyar el desarrollo de las aplicaciones, de acuerdo con los requerimientos del diseño establecido.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "RA4.3: Crear consultas ( Queries ) de datos para apoyar el desarrollo de las aplicaciones, de acuerdo con los requerimientos del diseño establecido."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.1",
+      "literal": "CE4.3.1 Determinar el objetivo de las consultas ( Queries ) y sus relaciones con los datos (tablas, vistas), según los requerimientos establecidos en el diseño del modelo de datos asociado a la aplicación y al sistema de información.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.1 Determinar el objetivo de las consultas ( Queries ) y sus relaciones con los datos (tablas, vistas), según los requerimientos establecidos en el diseño del modelo de datos asociado a la aplicación y al sistema de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.2",
+      "literal": "CE4.3.2 Describir las consultas ( Queries ) necesarias de acuerdo con los requerimientos establecidos en el diseño del modelo de datos asociado a la aplicación y al sistema de información establecidos.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.2 Describir las consultas ( Queries ) necesarias de acuerdo con los requerimientos establecidos en el diseño del modelo de datos asociado a la aplicación y al sistema de información establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.3",
+      "literal": "CE4.3.3 Definir las consultas ( Queries ), funciones y los procedimientos almacenados que se operarán para el uso de los reportes o análisis de datos del sistema.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.3 Definir las consultas ( Queries ), funciones y los procedimientos almacenados que se operarán para el uso de los reportes o análisis de datos del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.4",
+      "literal": "CE4.3.4 Describir select y su sintaxis.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.4 Describir select y su sintaxis."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.5",
+      "literal": "CE4.3.5 Describir cada una de las clausulas ( order by, distinct/all, top, where, group by ).",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.5 Describir cada una de las clausulas ( order by, distinct/all, top, where, group by )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.6",
+      "literal": "CE4.3.6 Crear consultas utilizando la sentencia select combinada con las clausulas ( from, order by, distinct/all, top, where, group by ).",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.6 Crear consultas utilizando la sentencia select combinada con las clausulas ( from, order by, distinct/all, top, where, group by )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.3.7",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.3.7",
+      "literal": "CE4.3.7 En un supuesto práctico, debidamente caracterizado, en la creación de consultas: - Crear consultas usando diferentes criterios de selección (filtrar, organizar). - Crear consultas usando diferentes criterios de acción (creación, eliminación, actualización). - Crear consultas multitablas mediante el operador unión. - Crear consultas para apoyar la toma de decisiones.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.3.7 En un supuesto práctico, debidamente caracterizado, en la creación de consultas: - Crear consultas usando diferentes criterios de selección (filtrar, organizar). - Crear consultas usando diferentes criterios de acción (creación, eliminación, actualización). - Crear consultas multitablas mediante el operador unión. - Crear consultas para apoyar la toma de decisiones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-RA4.4",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA4.4",
+      "literal": "RA4.4: Proponer estrategia de alta disponibilidad de los servicios de bases de datos para asegurar la continuidad del negocio, cumpliendo con los requerimientos establecidos.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "RA4.4: Proponer estrategia de alta disponibilidad de los servicios de bases de datos para asegurar la continuidad del negocio, cumpliendo con los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.4.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.4.1",
+      "literal": "CE4.4.1 Determinar el alcance de la alta disponibilidad y tolerancia a fallos de los servicios de bases de datos de acuerdo con los requerimientos establecidos y los recursos presentes.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.4.1 Determinar el alcance de la alta disponibilidad y tolerancia a fallos de los servicios de bases de datos de acuerdo con los requerimientos establecidos y los recursos presentes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.4.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.4.2",
+      "literal": "CE4.4.2 Describir la estrategia de alta disponibilidad de base datos, según los recursos disponibles y los requerimientos establecidos: - Failover Clustering. - Real Application Clustering. - Database Mirroring. - Database Replication. - Log Shipping. - Always On Availability Groups.",
+      "pdfPages": [
+        26
+      ],
+      "parts": [
+        {
+          "pdfPage": 26,
+          "text": "CE4.4.2 Describir la estrategia de alta disponibilidad de base datos, según los recursos disponibles y los requerimientos establecidos: - Failover Clustering. - Real Application Clustering. - Database Mirroring. - Database Replication. - Log Shipping. - Always On Availability Groups."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.4.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.4.3",
+      "literal": "CE4.4.3 Determinar la estrategia adecuada al escenario planteado de acuerdo con los requerimientos establecidos y recursos presentes. Los valores comunes de disponibilidad, típicamente enunciado como número de \"nueves\" para sistemas altamente disponibles, son: - 99,9% = 43.8 minutos/mes u 8,76 horas/año (\"tres nueves\"). - 99,99% = 4.38 minutos/mes o 52.6 minutos/año (\"cuatro nueves\"). - 99,999% = 0.44 minutos/mes o 5.26 minutos/año (\"cinco nueves\").",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "CE4.4.3 Determinar la estrategia adecuada al escenario planteado de acuerdo con los requerimientos establecidos y recursos presentes. Los valores comunes de disponibilidad, típicamente enunciado como número de \"nueves\" para sistemas altamente disponibles, son: - 99,9% = 43.8 minutos/mes u 8,76 horas/año (\"tres nueves\"). - 99,99% = 4.38 minutos/mes o 52.6 minutos/año (\"cuatro nueves\"). - 99,999% = 0.44 minutos/mes o 5.26 minutos/año (\"cinco nueves\")."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-CE4.4.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE4.4.4",
+      "literal": "CE4.4.4 En un supuesto práctico, debidamente caracterizado en la gestión de alta disponibilidad: - Analizar y determinar estrategia a utilizar según requerimientos de alta disponibilidad, hardware y software . - Aplicar estrategia de alta disponibilidad según selección y requerimiento.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "CE4.4.4 En un supuesto práctico, debidamente caracterizado en la gestión de alta disponibilidad: - Analizar y determinar estrategia a utilizar según requerimientos de alta disponibilidad, hardware y software . - Aplicar estrategia de alta disponibilidad según selección y requerimiento."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-c-databases",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Base de datos. - Tipos de bases de datos. - Gestores de bases de datos. - Modelo entidad/relación. Archivo. - Registro. - Campos. - Datos (tipos de datos). Información. Tablas. - Índice y clave. - Vistas. - Consultas ( query ). - Funciones. - Relaciones. SQL. - Transact-SQL (DML, DDL, DCL). - Sentencias o comandos. - Cláusulas. - Sentencia de definición de datos (DDL).",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Base de datos. - Tipos de bases de datos. - Gestores de bases de datos. - Modelo entidad/relación. Archivo. - Registro. - Campos. - Datos (tipos de datos). Información. Tablas. - Índice y clave. - Vistas. - Consultas ( query ). - Funciones. - Relaciones. SQL. - Transact-SQL (DML, DDL, DCL). - Sentencias o comandos. - Cláusulas. - Sentencia de definición de datos (DDL)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-c-dml",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Sentencias de manipulación de datos (DML). - Insert . - Select. - Update. - Delete.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Sentencias de manipulación de datos (DML). - Insert . - Select. - Update. - Delete."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-c-queries-dictionary",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Consultas ( query ). - Procedimientos almacenados. - Disparadores ( Triggers ). - Funciones. Diccionario de datos. - Nombre. - Tipo de datos. - Tamaño del campo. - Alias. - Contenido. - Organización. Consultas de selección. - Filtrar (operadores: de relación, lógicos, aritméticos, etc.). - Organizar ( order bye, distinct/all, Group by, Having ). Criterios de acceso a datos. Consultas de acción.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Consultas ( query ). - Procedimientos almacenados. - Disparadores ( Triggers ). - Funciones. Diccionario de datos. - Nombre. - Tipo de datos. - Tamaño del campo. - Alias. - Contenido. - Organización. Consultas de selección. - Filtrar (operadores: de relación, lógicos, aritméticos, etc.). - Organizar ( order bye, distinct/all, Group by, Having ). Criterios de acceso a datos. Consultas de acción."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-c-availability",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Alta disponibilidad. - Failover Clustering. - Real Application Clustering. - Database Mirroring. - Database Replication. - Log shipping. - Always On Availability Groups. Características. Confiabilidad. Ventajas y desventajas.",
+      "pdfPages": [
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Alta disponibilidad. - Failover Clustering. - Real Application Clustering."
+        },
+        {
+          "pdfPage": 29,
+          "text": "- Database Mirroring. - Database Replication. - Log shipping. - Always On Availability Groups. Características. Confiabilidad. Ventajas y desventajas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-database-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de tipos de bases de datos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Identificación de tipos de bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-managers-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los gestores de bases de datos para su implementación.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Identificación de los gestores de bases de datos para su implementación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-managers-functions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diferenciación y funcionalidad de gestores de bases de datos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Diferenciación y funcionalidad de gestores de bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-feasibility",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación de factibilidad dependiendo de la necesidad y configuración de los dispositivos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Determinación de factibilidad dependiendo de la necesidad y configuración de los dispositivos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-entity-relationship",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización del modelo entidad/relación.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Utilización del modelo entidad/relación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-data-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Comparación de diferentes tipos de datos que conforman la información.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Comparación de diferentes tipos de datos que conforman la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-database-structure",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Estructura básica de una base de datos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Estructura básica de una base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-statement-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Clasificación de los comandos o sentencias (DML, DDL, DCL).",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Clasificación de los comandos o sentencias (DML, DDL, DCL)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-statements-clauses",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Comparación entre sentencias y cláusulas.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Comparación entre sentencias y cláusulas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-database-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de bases de datos, tablas, índices, funciones, procedimientos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Creación de bases de datos, tablas, índices, funciones, procedimientos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-structure-changes",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de cambios en la estructura de la base de datos (modificar, agregar, eliminar).",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Realización de cambios en la estructura de la base de datos (modificar, agregar, eliminar)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-normalization",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Sigue las reglas de normalización para evitar la redundancia de datos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Sigue las reglas de normalización para evitar la redundancia de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-objects",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de los diferentes objetos que se manipularán en la base de datos (tablas, relación, vistas y formularios).",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Creación de los diferentes objetos que se manipularán en la base de datos (tablas, relación, vistas y formularios)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-data-maintenance",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de mantenimiento a los datos en la base de datos (agregar, modificar, eliminar, visualizar).",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Aplicación de mantenimiento a los datos en la base de datos (agregar, modificar, eliminar, visualizar)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-document-database",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los criterios necesarios para desarrollar y diseñar una base de datos de gestión documental.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Identificación de los criterios necesarios para desarrollar y diseñar una base de datos de gestión documental."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-institutional-processes",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Procesos institucionales, sus principales necesidades y propuestasde uso de bases de datos.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Procesos institucionales, sus principales necesidades y propuestasde uso de bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-query-type",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Tipo de consulta a crear según la información solicitada.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Tipo de consulta a crear según la información solicitada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-query-objective",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación del objetivo de las consultas.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Determinación del objetivo de las consultas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-data-organization",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Organización de los datos a partir de un criterio específico o solicitud de información.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Organización de los datos a partir de un criterio específico o solicitud de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-query-maintenance",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de mantenimiento a la base de datos según los resultados de la consulta ( update, insert, delete, select ).",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Aplicación de mantenimiento a la base de datos según los resultados de la consulta ( update, insert, delete, select )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-tables",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación o eliminación de tablas ( Create, drop ).",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Creación o eliminación de tablas ( Create, drop )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-record-deletion",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Eliminación de registros.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Eliminación de registros."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-access",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de los criterios de acceso a datos: - Creación usuarios y roles. - Login. - Niveles de acceso. - Seguridad de acceso.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Aplicación de los criterios de acceso a datos: - Creación usuarios y roles. - Login. - Niveles de acceso. - Seguridad de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-action-queries",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de consultas de acción: - Create, drop, delete. - Actualización ( Update ). - De unión interna ( Select … from … inner join … on … ) - De unión externa ( select … from … where … union select … .from … where ). - Referencias cruzadas ( join, Inner join, union, group by ).",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Aplicación de consultas de acción: - Create, drop, delete. - Actualización ( Update ). - De unión interna ( Select … from … inner join … on … ) - De unión externa ( select … from … where … union select … .from … where ). - Referencias cruzadas ( join, Inner join, union, group by )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-availability",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Alta disponibilidad y tolerancia a fallos de los servicios de la base de datos.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Alta disponibilidad y tolerancia a fallos de los servicios de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-availability-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Selección de la estrategia a utilizar según los recursos disponibles y los requerimientos definidos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Selección de la estrategia a utilizar según los recursos disponibles y los requerimientos definidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-availability-feasibility",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Demostración de la factibilidad de la estrategia seleccionada y explicación de por qué descarta a las demás.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Demostración de la factibilidad de la estrategia seleccionada y explicación de por qué descarta a las demás."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-p-availability-application",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de la estrategia seleccionada según los recursos disponibles y requerimientos establecidos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Aplicación de la estrategia seleccionada según los recursos disponibles y requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-manager-usefulness",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la utilidad de un sistema gestor de bases de datos.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Valoración de la utilidad de un sistema gestor de bases de datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-organization",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración y reconocimiento y de las técnicas de organización y gestión.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Valoración y reconocimiento y de las técnicas de organización y gestión."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-distributed-usefulness",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la utilidad de las bases de datos distribuidas.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Valoración de la utilidad de las bases de datos distribuidas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-adaptation",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Asimilación para adaptarse a nuevas situaciones.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Asimilación para adaptarse a nuevas situaciones."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-security-interest",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Interés por el cumplimiento de los requisitos de seguridad.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Interés por el cumplimiento de los requisitos de seguridad."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-query-options",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de las ventajas e inconvenientes de las distintas opciones válidas para llevar a cabo una consulta determinada.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Valoración de las ventajas e inconvenientes de las distintas opciones válidas para llevar a cabo una consulta determinada."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-risk-prevention",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de normas de seguridad y prevención de riesgos laborales.",
+      "pdfPages": [
+        27
+      ],
+      "parts": [
+        {
+          "pdfPage": 27,
+          "text": "Valoración de normas de seguridad y prevención de riesgos laborales."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-analysis",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición al desarrollo de la capacidad de análisis y de síntesis.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Disposición al desarrollo de la capacidad de análisis y de síntesis."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-integrity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-a-collection",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los instrumentos en la recopilación de información.",
+      "pdfPages": [
+        28
+      ],
+      "parts": [
+        {
+          "pdfPage": 28,
+          "text": "Valoración de los instrumentos en la recopilación de información."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Detección de conocimientos, capacidades y competencias del estudiante sobre programa de aplicación relacionada con base de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Detección de conocimientos, capacidades y competencias del estudiante sobre programa de aplicación relacionada con base de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-dictionary-practice",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en grupos reducidos, en donde el estudiante crea diccionarios de datos a cada una de las entidades de la base de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Realización de prácticas en grupos reducidos, en donde el estudiante crea diccionarios de datos a cada una de las entidades de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-database-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización proyecto sobre la elaboración y modificación de bases de datos y los diferentes objetos que la componen.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Realización proyecto sobre la elaboración y modificación de bases de datos y los diferentes objetos que la componen."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-visits",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Visita del estudiante a empresas de su entorno para que analicen sus necesidades y diseñen bases de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Visita del estudiante a empresas de su entorno para que analicen sus necesidades y diseñen bases de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-laboratory",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en el laboratorio de informática relacionado con programa de aplicación de base de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Realización de prácticas en el laboratorio de informática relacionado con programa de aplicación de base de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf056-m-internet",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Utilización del internet para la investigación, con el entorno de base de datos, tanto en el diseño como para la implementación.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "Utilización del internet para la investigación, con el entorno de base de datos, tanto en el diseño como para la implementación."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Operaciones de datos y acceso solo con datos ficticios y bases de práctica expresamente indicadas; no operaciones destructivas en producción ni cuentas personales.",
+    "Diseñar, describir o proponer no exige aplicar una estrategia real de alta disponibilidad ni contratar infraestructura.",
+    "No imponer todos los gestores, modelos, objetos, consultas y estrategias en cada consigna.",
+    "Actitudes privadas y orientaciones docentes son documentación; visitas a empresas o internet no son entregables por defecto.",
+    "Preservar erratas literales como Boice Codd, order bye y propuestasde. Las adaptaciones deberán distinguirlas del contenido técnico enseñado.",
+    "El ejemplo union bajo De unión externa se conserva literalmente; no atribuir equivalencia de operaciones ni tratar el pseudocódigo con puntos suspensivos comoSQL ejecutable.",
+    "Las cifras impresas de disponibilidad conservan sus puntos y comas; no corregir silenciosamente la fuente."
+  ]
+}

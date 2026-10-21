@@ -2323,7 +2323,7 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "CONNECTED_REVIEWED_RUNTIME_QA_IN_PROGRESS",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.144",
     "instrumentReview": "REVIEWED",
@@ -2348,5 +2348,30 @@
     "automated": "BACKEND_91641_FRONTEND_ACTIVITIES_90074_FOCAL_FINAL_1282_GREEN_BUILDS_0_LINT_0",
     "httpDb": "NOT_RUN",
     "browser": "NOT_RUN"
+  },
+  "sourcePublication": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "code": "MINERD_IFC006_MF054_5_NORM_2017_V1",
+    "versionId": "63fa4788-ef04-574e-b2b0-12a927fe3eb8",
+    "scopeId": "c1333931-e5a0-5390-bd12-defd021de2df",
+    "result": "CREATED_UNCHANGED",
+    "elements": 59,
+    "sourceSpans": 60,
+    "documentaryRecords": 9,
+    "literalRecords": 68,
+    "literalParts": 70,
+    "excludedFromAssessment": 9
+  },
+  "runtime": {
+    "catalog": "evaluation-2026.144",
+    "project": "eolgunypmtgrsyrjzcld",
+    "installed": true,
+    "auth": 200,
+    "storage": 200,
+    "postgresRole": "app_backend_local",
+    "bypassRls": false,
+    "frontendEntry": "/assets/index-TVJfGAwo.js",
+    "matchesBuild": true,
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
   }
 }
