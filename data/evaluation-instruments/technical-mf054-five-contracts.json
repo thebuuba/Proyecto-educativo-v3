@@ -1,0 +1,679 @@
+{
+  "subjectCode": "MF_054_3",
+  "subjectName": "Desarrollo de Aplicaciones y Sistemas de Información",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "EXPECTED_CONTRACTS_NOT_IMPLEMENTED_NOT_COVERAGE",
+  "cases": [
+    {
+      "id": "language-identification",
+      "description": "Identifica los lenguajes de programación de la ficha según sus características.",
+      "topics": [
+        "language-identification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.1",
+        "ifc006-mf054-p-languages-identification",
+        "ifc006-mf054-c-languages"
+      ]
+    },
+    {
+      "id": "language-selection",
+      "description": "Selecciona el lenguaje de programación adecuado para los requisitos dados y justifica tu decisión.",
+      "topics": [
+        "language-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.2",
+        "ifc006-mf054-c-languages"
+      ]
+    },
+    {
+      "id": "language-license",
+      "description": "Comprueba el licenciamiento de los lenguajes de programación según la documentación proporcionada.",
+      "topics": [
+        "language-license"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.1"
+      ]
+    },
+    {
+      "id": "database-engine",
+      "description": "Selecciona el motor de base de datos que responde a los requisitos del sistema ficticio.",
+      "topics": [
+        "database-engine"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.3"
+      ]
+    },
+    {
+      "id": "database-license",
+      "description": "Compara el licenciamiento de los motores de base de datos de la ficha.",
+      "topics": [
+        "database-license"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.3"
+      ]
+    },
+    {
+      "id": "system-tools",
+      "description": "Desarrolla la herramienta de sistema descrita en la ficha para el entorno local de práctica.",
+      "topics": [
+        "system-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.4"
+      ]
+    },
+    {
+      "id": "desktop-app",
+      "description": "Desarrolla la aplicación de escritorio de práctica según los requisitos dados.",
+      "topics": [
+        "desktop-app"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.4"
+      ]
+    },
+    {
+      "id": "web-app",
+      "description": "Desarrolla la aplicación web de práctica según el diseño proporcionado, sin desplegarla.",
+      "topics": [
+        "web-app"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.4"
+      ]
+    },
+    {
+      "id": "input-devices",
+      "description": "Compara los dispositivos de entrada del sistema de la ficha según sus características.",
+      "topics": [
+        "input-devices"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-devices-comparison",
+        "ifc006-mf054-p-devices",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "output-devices",
+      "description": "Selecciona los dispositivos de salida del sistema de la ficha según las necesidades dadas.",
+      "topics": [
+        "output-devices"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-devices",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "input-data",
+      "description": "Identifica los datos de entrada necesarios para el proceso ficticio descrito.",
+      "topics": [
+        "input-data"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-input-identification",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "input-method",
+      "description": "Diseña el método de entrada del sistema para recoger los datos proporcionados.",
+      "topics": [
+        "input-method"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-input-design",
+        "ifc006-mf054-p-input-identification",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "input-format",
+      "description": "Diseña el formato de entrada del sistema de acuerdo con los campos y reglas dados.",
+      "topics": [
+        "input-format"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-input-design",
+        "ifc006-mf054-p-input-identification",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "output-screen",
+      "description": "Desarrolla la salida en pantalla del sistema según el diseño proporcionado.",
+      "topics": [
+        "output-screen"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.1",
+        "ifc006-mf054-p-outputs-development",
+        "ifc006-mf054-p-outputs-design",
+        "ifc006-mf054-p-outputs-analysis"
+      ]
+    },
+    {
+      "id": "output-report",
+      "description": "Identifica los reportes de salida necesarios para el sistema ficticio.",
+      "topics": [
+        "output-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-output-reports",
+        "ifc006-mf054-p-reports",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "records",
+      "description": "Diseña los registros del sistema con los campos y tipos de datos proporcionados.",
+      "topics": [
+        "records"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-records-identification",
+        "ifc006-mf054-p-records-design",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "process-types",
+      "description": "Identifica los tipos de procesos del sistema descritos en la ficha.",
+      "topics": [
+        "process-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-process-types",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "process-design",
+      "description": "Diseña los procesos del sistema de acuerdo con las entradas y salidas dadas.",
+      "topics": [
+        "process-design"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-process-design",
+        "ifc006-mf054-p-input-development",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "database-structure",
+      "description": "Diseña la estructura básica de la base de datos del sistema con los requisitos proporcionados.",
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.4",
+        "ifc006-mf054-p-database-structure",
+        "ifc006-mf054-p-database-design"
+      ]
+    },
+    {
+      "id": "validation",
+      "description": "Codifica la validación de las entradas y salidas del sistema de práctica según las reglas dadas.",
+      "topics": [
+        "validation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-validation",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "queries",
+      "description": "Desarrolla las consultas a la base de datos de práctica para obtener los resultados indicados.",
+      "topics": [
+        "queries"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-queries",
+        "ifc006-mf054-c-system-design"
+      ]
+    },
+    {
+      "id": "structured-program",
+      "description": "Desarrolla un programa de forma estructurada para resolver el caso ficticio proporcionado.",
+      "topics": [
+        "structured-program"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-structured"
+      ]
+    },
+    {
+      "id": "modular-program",
+      "description": "Elabora un programa modular de práctica según la división de responsabilidades proporcionada.",
+      "topics": [
+        "modular-program"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-modular",
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "object-program",
+      "description": "Elabora una aplicación orientada a objetos de práctica según las clases del diseño dado.",
+      "topics": [
+        "object-program"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-objects"
+      ]
+    },
+    {
+      "id": "functions",
+      "description": "Codifica las funciones del programa de práctica con las entradas y resultados especificados.",
+      "topics": [
+        "functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity",
+        "ifc006-mf054-p-modular"
+      ]
+    },
+    {
+      "id": "methods",
+      "description": "Codifica los métodos de las clases del programa de práctica según el diseño dado.",
+      "topics": [
+        "methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity",
+        "ifc006-mf054-p-objects"
+      ]
+    },
+    {
+      "id": "interfaces",
+      "description": "Diseña las interfaces entre los módulos del programa según el contrato proporcionado.",
+      "topics": [
+        "interfaces"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity",
+        "ifc006-mf054-p-modular"
+      ]
+    },
+    {
+      "id": "conditions",
+      "description": "Codifica las condiciones del programa de práctica a partir de las reglas dadas.",
+      "topics": [
+        "conditions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity",
+        "ifc006-mf054-p-structured"
+      ]
+    },
+    {
+      "id": "iterations",
+      "description": "Codifica las iteraciones del programa de práctica para procesar los datos ficticios dados.",
+      "topics": [
+        "iterations"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity",
+        "ifc006-mf054-p-structured"
+      ]
+    },
+    {
+      "id": "recursion",
+      "description": "Explica el funcionamiento de la recursividad en el programa de práctica proporcionado.",
+      "topics": [
+        "recursion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "peripheral-communication",
+      "description": "Describe la comunicación con periféricos en el programa del caso ficticio.",
+      "topics": [
+        "peripheral-communication"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "design-patterns",
+      "description": "Aplica el patrón de diseño indicado al programa de práctica según sus responsabilidades.",
+      "topics": [
+        "design-patterns"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.4",
+        "ifc006-mf054-p-patterns"
+      ]
+    },
+    {
+      "id": "development-practices",
+      "description": "Revisa el código proporcionado según las buenas prácticas de desarrollo indicadas en la ficha.",
+      "topics": [
+        "development-practices"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.4",
+        "ifc006-mf054-p-practices"
+      ]
+    },
+    {
+      "id": "access-policy",
+      "description": "Reconoce los criterios de acceso a los módulos del sistema ficticio según la ficha.",
+      "topics": [
+        "access-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.1",
+        "ifc006-mf054-c-access-exceptions"
+      ]
+    },
+    {
+      "id": "access-database",
+      "description": "Desarrolla la estructura de base de datos de práctica implementando los criterios de acceso dados.",
+      "topics": [
+        "access-database"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.2"
+      ]
+    },
+    {
+      "id": "access-code",
+      "description": "Codifica los controles de acceso a los módulos del programa de práctica según la política dada.",
+      "topics": [
+        "access-code"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.3",
+        "ifc006-mf054-p-access-control"
+      ]
+    },
+    {
+      "id": "access-levels",
+      "description": "Distingue los niveles de acceso del sistema ficticio y los permisos previstos para cada nivel.",
+      "topics": [
+        "access-levels"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.1",
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "access-log",
+      "description": "Elabora el registro de acceso a los módulos del sistema de práctica con los datos ficticios dados.",
+      "topics": [
+        "access-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-access-records",
+        "ifc006-mf054-c-access-exceptions"
+      ]
+    },
+    {
+      "id": "credentials",
+      "description": "Elabora las credenciales ficticias del sistema de práctica según las reglas proporcionadas.",
+      "topics": [
+        "credentials"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-credentials",
+        "ifc006-mf054-CE2.3.1"
+      ]
+    },
+    {
+      "id": "backup",
+      "description": "Aplica el proceso de respaldo a los datos ficticios del entorno de práctica según el procedimiento dado.",
+      "topics": [
+        "backup"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-backup",
+        "ifc006-mf054-c-access-exceptions"
+      ]
+    },
+    {
+      "id": "exception-identification",
+      "description": "Identifica las excepciones del programa de práctica usando las salidas y datos de prueba proporcionados.",
+      "topics": [
+        "exception-identification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.4.1",
+        "ifc006-mf054-p-exceptions"
+      ]
+    },
+    {
+      "id": "exception-classification",
+      "description": "Organiza las excepciones observadas en el programa de práctica según los módulos indicados.",
+      "topics": [
+        "exception-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.4.1",
+        "ifc006-mf054-p-exceptions"
+      ]
+    },
+    {
+      "id": "exception-database",
+      "description": "Desarrolla la estructura de base de datos de práctica implementando el manejo de excepciones solicitado.",
+      "topics": [
+        "exception-database"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.4.2"
+      ]
+    },
+    {
+      "id": "exception-code",
+      "description": "Codifica el manejo de excepciones del programa de práctica según los casos de prueba dados.",
+      "topics": [
+        "exception-code"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.4.3",
+        "ifc006-mf054-p-exceptions"
+      ]
+    },
+    {
+      "id": "menu-dropdown",
+      "description": "Desarrolla el menú desplegable del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-dropdown"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-cascade",
+      "description": "Desarrolla el menú en cascada del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-cascade"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-checkbox",
+      "description": "Desarrolla el menú con botones de chequeo del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-checkbox"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-floating",
+      "description": "Desarrolla el menú flotante del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-floating"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-navigation",
+      "description": "Desarrolla el menú de navegación del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-navigation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-context",
+      "description": "Desarrolla el menú contextual del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-context"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-popup",
+      "description": "Desarrolla el menú emergente del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-popup"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "menu-action-bar",
+      "description": "Desarrolla el menú de opciones y barra de acción del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-action-bar"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "language-brief",
+      "description": "Selecciona el lenguaje de programación según los requisitos dados.",
+      "topics": [
+        "language-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.2"
+      ]
+    },
+    {
+      "id": "database-brief",
+      "description": "Selecciona un motor de base de datos según la ficha.",
+      "topics": [
+        "database-engine"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.1.3"
+      ]
+    },
+    {
+      "id": "menu-only",
+      "description": "Desarrolla el menú contextual del programa de práctica. No implementes un menú desplegable ni una barra de acción.",
+      "topics": [
+        "menu-context"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3"
+      ]
+    },
+    {
+      "id": "input-no-report",
+      "description": "Diseña el formato de entrada del sistema. No desarrolles reportes ni consultas.",
+      "topics": [
+        "input-format"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-p-input-design"
+      ]
+    },
+    {
+      "id": "code-not-execution",
+      "description": "Explica el manejo de excepciones en el código de práctica proporcionado. No ejecutes el programa.",
+      "topics": [
+        "exception-code"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.4.3"
+      ]
+    },
+    {
+      "id": "optional-credentials",
+      "description": "Reconoce los criterios de acceso del sistema ficticio. Opcionalmente puedes consultar un ejemplo de credenciales.",
+      "topics": [
+        "access-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.3.1"
+      ]
+    },
+    {
+      "id": "alternative-implementation",
+      "description": "Codifica las condiciones o las iteraciones del programa de práctica según la ficha.",
+      "topics": [
+        "conditions",
+        "iterations"
+      ],
+      "alternative": true,
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "independent-implementation",
+      "description": "Codifica las condiciones y las iteraciones del programa de práctica según la ficha.",
+      "topics": [
+        "conditions",
+        "iterations"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Codifica las funciones del programa de práctica con crédito parcial y pesos por componente.",
+      "topics": [
+        "functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-c-modularity"
+      ]
+    }
+  ],
+  "negativeDescriptions": [
+    "Analiza la factibilidad económica del sistema sin desarrollar aplicaciones.",
+    "Realiza una entrevista de trabajo simulada en inglés.",
+    "Compara dos versiones del documento de texto en el procesador de textos."
+  ]
+}
