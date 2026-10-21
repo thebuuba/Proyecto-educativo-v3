@@ -1,0 +1,41 @@
+{
+  "moduleCode": "MF_059_3",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "pages": [
+    39,
+    40,
+    41,
+    42
+  ],
+  "method": "Lectura visual completa de cuatropáginas,15RA/CE en tablas y30entradas restantes al transcribir columnas;47partes cotejadas conPDF verificado. No se infiere lectura por conteo.",
+  "boundary": "DesdeMÓDULO7 MF_059_3 enPDF39 hasta la última orientación antes deMÓDULO8 MF_060_3 en42.",
+  "continuations": [
+    "CE7.3.3 entre40/41; banda conceptual de estructura entre41/42."
+  ],
+  "records": 45,
+  "parts": 47,
+  "types": {
+    "LEARNING_OUTCOME": 3,
+    "EVALUATION_CRITERION": 12,
+    "CONCEPT": 3,
+    "PROCEDURE": 15,
+    "ATTITUDE": 7,
+    "TEACHING_STRATEGY": 5
+  },
+  "datasetSha256": "c40f7715665409440370be7cae1bf70874404e37b2dd7a52dcb6746934348ff1",
+  "implementation": false,
+  "instrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "limits": [
+    "Usar datos ficticios y recursos dados, sin publicación real, cuentas, visitas a empresas ni despliegues automáticos.",
+    "HTML y versiones es un encabezado literal del documento; la adaptación no debe enseñarPHP,Java,JavaScript yASP como versiones deHTML.",
+    "SWF,flash yplugins se conservan como tecnologías históricas impresas; no imponer instalación o ejecución de componentes obsoletos.",
+    "No imponer todos los medios, formatos, controles, navegadores o requisitos de accesibilidad en cada consigna; distinguir describir, seleccionar, diseñar y comprobar.",
+    "Las sieteactitudes privadas y cincoorientaciones docentes son documentales, no criterios de personalidad ni entregables automáticos."
+  ]
+}

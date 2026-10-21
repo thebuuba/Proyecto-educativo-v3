@@ -1,0 +1,844 @@
+{
+  "moduleCode": "MF_059_3",
+  "subjectCode": "MF_059_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Diseño de Portales Web y Recursos Multimedia",
+  "level": "SECONDARY",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 270,
+  "weeklyHours": 6,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      39,
+      40,
+      41,
+      42
+    ],
+    "boundary": "DesdeMÓDULO7 MF_059_3 enPDF39 hasta la última orientación antes deMÓDULO8 MF_060_3 en42.",
+    "continuations": [
+      "CE7.3.3 entre40/41; banda conceptual de estructura entre41/42."
+    ]
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf059-RA7.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA7.1",
+      "literal": "RA7.1: Determinar las herramientas de desarrollo web para el diseño de la aplicación, según metodología definida y requerimientos de la institución.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "RA7.1: Determinar las herramientas de desarrollo web para el diseño de la aplicación, según metodología definida y requerimientos de la institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.1.1",
+      "literal": "CE7.1.1 Describir las necesidades del cliente, manejo y seguridad de la información, actualización de los datos, en base al diseño y al levantamiento de la información.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.1.1 Describir las necesidades del cliente, manejo y seguridad de la información, actualización de los datos, en base al diseño y al levantamiento de la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.1.2",
+      "literal": "CE7.1.2 Clasificar los objetivos para los que se está diseñando la página web, imágenes y elementos que contendrá el diseño, según la naturaleza de la organización o empresa.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.1.2 Clasificar los objetivos para los que se está diseñando la página web, imágenes y elementos que contendrá el diseño, según la naturaleza de la organización o empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.1.3",
+      "literal": "CE7.1.3 Reconocer la capacidad de los equipos tecnológicos que servirán como base para el manejo de las informaciones, según la magnitud de la información.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.1.3 Reconocer la capacidad de los equipos tecnológicos que servirán como base para el manejo de las informaciones, según la magnitud de la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.1.4",
+      "literal": "CE7.1.4 Escoger las herramientas adecuadas para el diseño web, tales como software y hardware, según requerimientos de los usuarios.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.1.4 Escoger las herramientas adecuadas para el diseño web, tales como software y hardware, según requerimientos de los usuarios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-RA7.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA7.2",
+      "literal": "RA7.2: Elaborar trabajos para medios impresos, audiovisuales y digitales, según criterios técnicos y requerimientos de la institución.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "RA7.2: Elaborar trabajos para medios impresos, audiovisuales y digitales, según criterios técnicos y requerimientos de la institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.2.1",
+      "literal": "CE7.2.1 Reconocer y diseñar la apariencia de los elementos visuales o impresos, tales como pantallas, documentos y formularios, de acuerdo con los requerimientos establecidos.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.2.1 Reconocer y diseñar la apariencia de los elementos visuales o impresos, tales como pantallas, documentos y formularios, de acuerdo con los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.2.2",
+      "literal": "CE7.2.2 En un caso práctico, identificar y diseñar las dimensiones de pantalla e impresos, colores, márgenes y tipografía. Además, realizar lo siguiente: - Aplicar formato a la página. - Aplicar alineación al texto de una página. - Aplicar cambio de color. - Aplicar cambio de tamaño. - Utilizar tipos de letras. - Aplicar fondo de color.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.2.2 En un caso práctico, identificar y diseñar las dimensiones de pantalla e impresos, colores, márgenes y tipografía. Además, realizar lo siguiente: - Aplicar formato a la página. - Aplicar alineación al texto de una página. - Aplicar cambio de color. - Aplicar cambio de tamaño. - Utilizar tipos de letras. - Aplicar fondo de color."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.2.3",
+      "literal": "CE7.2.3 Modificar imágenes y animaciones adecuándolas a la utilidad para el diseño, según la propuesta presentada.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.2.3 Modificar imágenes y animaciones adecuándolas a la utilidad para el diseño, según la propuesta presentada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.2.4",
+      "literal": "CE7.2.4 En un caso práctico debidamente caracterizado, según la propuesta presentada, realizar lo siguiente: - Inserción de imágenes: formatos y atributos. - Incluir imágenes en las páginas. - Atributos de las imágenes. - Propiedades de ubicación de las imágenes. - Creación de un mapa con una imagen. - Establecer diferentes partes en la imagen. - Vincular las diferentes partes de la imagen. - Inserción de elementos multimedia: audio, video y programas. - Recursos necesarios para el funcionamiento de los elementos multimedia. - Etiquetas y propiedades para la inserción de audio. - Etiquetas y propiedades para la inserción de video. - Etiquetas y propiedades para la inserción de programas. - Configuración de los recursos para audio. - Configuración de los recursos para video.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.2.4 En un caso práctico debidamente caracterizado, según la propuesta presentada, realizar lo siguiente: - Inserción de imágenes: formatos y atributos. - Incluir imágenes en las páginas. - Atributos de las imágenes. - Propiedades de ubicación de las imágenes. - Creación de un mapa con una imagen. - Establecer diferentes partes en la imagen. - Vincular las diferentes partes de la imagen. - Inserción de elementos multimedia: audio, video y programas. - Recursos necesarios para el funcionamiento de los elementos multimedia. - Etiquetas y propiedades para la inserción de audio. - Etiquetas y propiedades para la inserción de video. - Etiquetas y propiedades para la inserción de programas. - Configuración de los recursos para audio. - Configuración de los recursos para video."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-RA7.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA7.3",
+      "literal": "RA7.3: Jerarquizar y diseñar la aplicación web, para definir el orden de inicio de la aplicación, según los requerimientos de la institución.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "RA7.3: Jerarquizar y diseñar la aplicación web, para definir el orden de inicio de la aplicación, según los requerimientos de la institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.3.1",
+      "literal": "CE7.3.1 Elaborar diagrama de navegación entre pantallas y accesos a las mismas que permita el enlace entre los elementos de la web, según los requerimientos del cliente.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.3.1 Elaborar diagrama de navegación entre pantallas y accesos a las mismas que permita el enlace entre los elementos de la web, según los requerimientos del cliente."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.3.2",
+      "literal": "CE7.3.2 Determinar la jerarquía de las ventanas del diseño, acceso, utilidades e información.",
+      "pdfPages": [
+        40
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.3.2 Determinar la jerarquía de las ventanas del diseño, acceso, utilidades e información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.3.3",
+      "literal": "CE7.3.3 En un caso práctico debidamente caracterizado, según prioridad establecida o iniciación. - Identificar la sintaxis a utilizar para asignar el estilo a las etiquetas. - Probar las páginas utilizando varios navegadores web. - Aplicar criterios de manejo y accesibilidad. - Documentar el fichero creado. - Accesibilidad web, ventajas de la accesibilidad. - Definición de accesibilidad. - Aplicabilidad de la accesibilidad. - Identificar las ventajas de la accesibilidad. - Facilidad de acceso. - Mejoras en la navegación. - Independencia de los navegadores - Importancia de la usabilidad. - Definir usabilidad. - Interacción web-individuo. - Aplicabilidad de la usabilidad. - Recursos sobre usabilidad. - Aplicaciones para verificar la accesibilidad de sitios web (estándares). - Recursos web estándares. - Utilizar los recursos en las páginas web. - Comprobar la accesibilidad en las páginas web. - Diseñar sitios web usables. - Describir sitios web usables. - Estudio de la estructura y diseño de los sitios web usables. - Adaptación de sitios web usables. - Utilizar sitios web usables.",
+      "pdfPages": [
+        40,
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 40,
+          "text": "CE7.3.3 En un caso práctico debidamente caracterizado, según prioridad establecida o iniciación."
+        },
+        {
+          "pdfPage": 41,
+          "text": "- Identificar la sintaxis a utilizar para asignar el estilo a las etiquetas. - Probar las páginas utilizando varios navegadores web. - Aplicar criterios de manejo y accesibilidad. - Documentar el fichero creado. - Accesibilidad web, ventajas de la accesibilidad. - Definición de accesibilidad. - Aplicabilidad de la accesibilidad. - Identificar las ventajas de la accesibilidad. - Facilidad de acceso. - Mejoras en la navegación. - Independencia de los navegadores - Importancia de la usabilidad. - Definir usabilidad. - Interacción web-individuo. - Aplicabilidad de la usabilidad. - Recursos sobre usabilidad. - Aplicaciones para verificar la accesibilidad de sitios web (estándares). - Recursos web estándares. - Utilizar los recursos en las páginas web. - Comprobar la accesibilidad en las páginas web. - Diseñar sitios web usables. - Describir sitios web usables. - Estudio de la estructura y diseño de los sitios web usables. - Adaptación de sitios web usables. - Utilizar sitios web usables."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-CE7.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE7.3.4",
+      "literal": "CE7.3.4: Diseñar aplicaciones web, según los requerimientos de la institución.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "CE7.3.4: Diseñar aplicaciones web, según los requerimientos de la institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-c-html",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "HTML y versiones. - DHTML. - XML. - XHTML. - PHP. - Java. - JavaScript. - Tecnología ASP. - Tecnologías de desarrollo de Aplicaciones Web. - Caracteres especiales.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "HTML y versiones. - DHTML. - XML. - XHTML. - PHP. - Java. - JavaScript. - Tecnología ASP. - Tecnologías de desarrollo de Aplicaciones Web. - Caracteres especiales."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-c-structure",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Estructura del documento. - Tags . - Enlaces. - URLs. (Tipos). - Anclas (Tipos). - Listas. - Imágenes. - Formato. - Formulario. - Controles avanzados para un formulario. - Mapa. - Tablas. - Videos.",
+      "pdfPages": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Estructura del documento. - Tags . - Enlaces. - URLs. (Tipos)."
+        },
+        {
+          "pdfPage": 42,
+          "text": "- Anclas (Tipos). - Listas. - Imágenes. - Formato. - Formulario. - Controles avanzados para un formulario. - Mapa. - Tablas. - Videos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-c-multimedia",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Sonidos y multimedia. - SWF. - Elementos multimedia. - Animación flash . - Formato de sonido. - MP3, WAV, MIDI.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Sonidos y multimedia. - SWF. - Elementos multimedia. - Animación flash . - Formato de sonido. - MP3, WAV, MIDI."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-tools-characteristics",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las características generales de programas de diseño web.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Identificación de las características generales de programas de diseño web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-publication-explanation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Explicación de publicación y los tipos.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Explicación de publicación y los tipos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-workspace-comparison",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Comparación de la característica de la ventana trabajo de diseño.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Comparación de la característica de la ventana trabajo de diseño."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-templates",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Preparación de publicaciones a partir de plantillas.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Preparación de publicaciones a partir de plantillas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-page-format",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de formato a publicación y configuración de página.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Aplicación de formato a publicación y configuración de página."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-versions-editors",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de versiones, editores y convertidores y utilización de caracteres extendidos en HTML y de control.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Identificación de versiones, editores y convertidores y utilización de caracteres extendidos en HTML y de control."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-structure",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de la estructura básica de una página web.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Elaboración de la estructura básica de una página web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-tags-links",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de tags y creación de enlaces.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Utilización de tags y creación de enlaces."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-urls-anchors",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación tipos de URLs y Anclas.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Identificación tipos de URLs y Anclas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-lists-images-format",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de tipos de listas y de imágenes, alineación con respecto al texto, aplicación de cambio de color, tamaños, tipos de letras y fondo de color e imagen.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Identificación de tipos de listas y de imágenes, alineación con respecto al texto, aplicación de cambio de color, tamaños, tipos de letras y fondo de color e imagen."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-forms",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de cajas de texto, opciones. Además, utilización de botones del formulario, otros elementos.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Identificación de cajas de texto, opciones. Además, utilización de botones del formulario, otros elementos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-tag-manipulation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Manipulación de etiquetas, elementos y desactivación de los elementos.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Manipulación de etiquetas, elementos y desactivación de los elementos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-maps-tables",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de mapa, manipulación de filas, celdas y título de la tabla.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Utilización de mapa, manipulación de filas, celdas y título de la tabla."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-multimedia",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de recursos multimedia: animaciones, sonido y video.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Aplicación de recursos multimedia: animaciones, sonido y video."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-p-external-files",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de ficheros externos, multimedia online , plugins y objetos incrustados.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Identificación de ficheros externos, multimedia online , plugins y objetos incrustados."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-free-software",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia social del software libre.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Valoración de la importancia social del software libre."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-licenses",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Toma de conciencia de las implicaciones de licencias y derechos de autor en el uso de herramientas de programación.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Toma de conciencia de las implicaciones de licencias y derechos de autor en el uso de herramientas de programación."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-quality",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los criterios de calidad y seguridad en la evaluación de herramientas.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Valoración de los criterios de calidad y seguridad en la evaluación de herramientas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-text-errors",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración del efecto negativo de un texto con errores.",
+      "pdfPages": [
+        41
+      ],
+      "parts": [
+        {
+          "pdfPage": 41,
+          "text": "Valoración del efecto negativo de un texto con errores."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-cleanliness",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Higiene y limpieza en la entrega de los trabajos.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Higiene y limpieza en la entrega de los trabajos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-messages",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Rechazo al envío de mensajes que no respeten las normas ortográficas o gramaticales.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Rechazo al envío de mensajes que no respeten las normas ortográficas o gramaticales."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-a-innovation",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición e iniciativa para la innovación y aportación de ideas.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Disposición e iniciativa para la innovación y aportación de ideas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Detección de conocimientos, capacidades y competencias sobre las herramientas de los programas de aplicación para el diseño de páginas web.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Detección de conocimientos, capacidades y competencias sobre las herramientas de los programas de aplicación para el diseño de páginas web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-m-laboratory",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto en el laboratorio de informática, en donde el estudiante elabore páginas web, siguiendo parámetros establecidos.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Realización de proyecto en el laboratorio de informática, en donde el estudiante elabore páginas web, siguiendo parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-m-visits",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Visitas a empresa para realizar un levantamiento de información con el objetivo de diseñarle página web.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Visitas a empresa para realizar un levantamiento de información con el objetivo de diseñarle página web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-m-internet",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Utilización del internet, como herramienta de trabajo para la publicación de páginas web.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Utilización del internet, como herramienta de trabajo para la publicación de páginas web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf059-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Usar datos ficticios y recursos dados, sin publicación real, cuentas, visitas a empresas ni despliegues automáticos.",
+    "HTML y versiones es un encabezado literal del documento; la adaptación no debe enseñarPHP,Java,JavaScript yASP como versiones deHTML.",
+    "SWF,flash yplugins se conservan como tecnologías históricas impresas; no imponer instalación o ejecución de componentes obsoletos.",
+    "No imponer todos los medios, formatos, controles, navegadores o requisitos de accesibilidad en cada consigna; distinguir describir, seleccionar, diseñar y comprobar.",
+    "Las sieteactitudes privadas y cincoorientaciones docentes son documentales, no criterios de personalidad ni entregables automáticos."
+  ]
+}
