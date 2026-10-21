@@ -8,6 +8,7 @@ import {editableFallbackRecommendation,recommendationToFields,alignRecommendatio
 import {scoreInstrumentFields} from '../../apps/frontend/src/modules/activities/services/instrumentScoring.ts'
 import {validateInstrumentDefinition} from '../../packages/shared/src/index.ts'
 import {reviewedTechnicalHttpScope,reviewedTechnicalElementIds} from './technical-http-scope.mjs'
+import {httpWriteAlreadyVerified} from './http-progress.mjs'
 Object.assign(process.env,developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8'))))
 const gradeFlag=process.argv.indexOf('--grade'),grade=gradeFlag<0?1:Number(process.argv[gradeFlag+1])
 assert(Number.isInteger(grade)&&grade>=1&&grade<=6)
@@ -118,11 +119,7 @@ try{
  for(const [i,format] of formats.entries()){
   const caseKey=String(i)
   let write=progress.writes.find(w=>w.caseKey===caseKey)
-  if(write){
-   assert.equal(write.input.description,descriptions[i],'El fixture cambió: no reutilizar una escritura anterior para otra consigna')
-   assert.equal(write.format,format)
-   assert.equal(write.input.maxScore,scoreFor(i))
-  }
+  if(httpWriteAlreadyVerified(write,{description:descriptions[i],format,score:scoreFor(i)}))continue
   if(!write){
    const score=scoreFor(i),description=descriptions[i],name=`QA ${qaLabel} ${grade}.º · ${format} · ${randomUUID().slice(0,8)}`
    const input={sectionSubjectId:context.sectionSubjectId,activityTitle:name,description,competencyBlock:'b1',maxScore:score,preferredInstrumentType:format,participationMode:'INDIVIDUAL'}
