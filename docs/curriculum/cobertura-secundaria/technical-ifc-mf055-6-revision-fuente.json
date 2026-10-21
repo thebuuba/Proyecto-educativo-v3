@@ -1,0 +1,42 @@
+{
+  "moduleCode": "MF_055_3",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "pages": [
+    22,
+    23,
+    24
+  ],
+  "method": "Lectura visual completa de trespáginas; lectura de14RA/CE al extraer el texto y de31entradas restantes durante su transcripción literal. Las45partes se cotejaron con elPDF verificado. No se infiere revisión por conteo.",
+  "boundary": "DesdeMÓDULO3 MF_055_3 al final dePDF22 hasta la última orientación antes deMÓDULO4 MF_056_3 en24.",
+  "continuations": [
+    "Las columnas procedimental y actitudinal continúan23→24; la celda conceptual al inicio de24 está vacía."
+  ],
+  "records": 45,
+  "parts": 45,
+  "types": {
+    "LEARNING_OUTCOME": 3,
+    "EVALUATION_CRITERION": 11,
+    "CONCEPT": 3,
+    "PROCEDURE": 17,
+    "ATTITUDE": 6,
+    "TEACHING_STRATEGY": 5
+  },
+  "datasetSha256": "27725b18ff36e2a185af3993106917917831e01f40ada409536de39375cd4e9a",
+  "editorialPolicy": "Preservar puerta en marcha, desarollado y sección de clase en el literal. Las adaptaciones son diferentes del texto oficial.",
+  "qualifications": "Cualificación3; sexto confirmado por tablaPDF14,135horas/tressemanales.",
+  "implementation": false,
+  "instrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "limits": [
+    "Pruebas, instalaciones, correcciones y copias se limitan a sistemas de práctica y datos ficticios expresamente indicados; no autorizan despliegues reales, cambios de producción ni copias de datos personales.",
+    "Identificar, seleccionar o explicar no exige ejecutar todas las pruebas, instalaciones o copias de seguridad listadas.",
+    "Recepción y documentación se adaptarán solo a los entregables solicitados, sin imponer manuales adicionales por defecto.",
+    "Las seisactitudes quedan como documentación privada y las cincoorientaciones son docentes, no entregables automáticos ni criterios de personalidad.",
+    "Conservar literalmente puerta en marcha, desarollado y sección de clase, distinguiendo el texto oficial de su adaptación pedagógica."
+  ]
+}

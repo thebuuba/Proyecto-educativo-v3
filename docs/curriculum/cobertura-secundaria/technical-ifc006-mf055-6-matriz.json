@@ -1,0 +1,833 @@
+{
+  "moduleCode": "MF_055_3",
+  "subjectCode": "MF_055_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Implementación y Mantenimiento de Aplicaciones y Sistemas Informáticos",
+  "level": "SECONDARY",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 135,
+  "weeklyHours": 3,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      22,
+      23,
+      24
+    ],
+    "boundary": "DesdeMÓDULO3 MF_055_3 al final dePDF22 hasta la última orientación antes deMÓDULO4 MF_056_3 en24.",
+    "continuations": [
+      "Las columnas procedimental y actitudinal continúan23→24; la celda conceptual al inicio de24 está vacía."
+    ]
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf055-RA3.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA3.1",
+      "literal": "RA3.1 Aplicar procesos y técnicas de prueba de la aplicación o sistema desarrollado para asegurar su calidad y funcionalidad, según el tipo de prueba seleccionada.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "RA3.1 Aplicar procesos y técnicas de prueba de la aplicación o sistema desarrollado para asegurar su calidad y funcionalidad, según el tipo de prueba seleccionada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.1.1",
+      "literal": "CE3.1.1 Reconocer los parámetros que rigen la calidad de la organización.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.1.1 Reconocer los parámetros que rigen la calidad de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.1.2",
+      "literal": "CE3.1.2 Seleccionar el tipo de prueba (de códigos, unitarias, integración, sistemas, aceptación, caja blanca y caja negra) que se realizarán al sistema.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.1.2 Seleccionar el tipo de prueba (de códigos, unitarias, integración, sistemas, aceptación, caja blanca y caja negra) que se realizarán al sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.1.3",
+      "literal": "CE3.1.3 En un supuesto práctico, implementar la prueba seleccionada de: - Códigos. - Unitarias. - Integración. - Sistemas. - Aceptación. - Caja blanca y caja negra, cumpliendo los criterios de calidad.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.1.3 En un supuesto práctico, implementar la prueba seleccionada de: - Códigos. - Unitarias. - Integración. - Sistemas. - Aceptación. - Caja blanca y caja negra, cumpliendo los criterios de calidad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-RA3.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA3.2",
+      "literal": "RA3.2: Analizar el tipo de implementación a ejecutar, para la puesta en marcha de la aplicación o sistema desarrollado.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "RA3.2: Analizar el tipo de implementación a ejecutar, para la puesta en marcha de la aplicación o sistema desarrollado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.2.1",
+      "literal": "CE3.2.1 Seleccionar el tipo de instalación (directa, en paralelo, en localidades individuales, por fases) de acuerdo con los parámetros establecidos.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.2.1 Seleccionar el tipo de instalación (directa, en paralelo, en localidades individuales, por fases) de acuerdo con los parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.2.2",
+      "literal": "CE3.2.2 Realizar la instalación seleccionada (directa, en paralelo, en localidades individuales, por fases) de acuerdo con las políticas de la organización.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.2.2 Realizar la instalación seleccionada (directa, en paralelo, en localidades individuales, por fases) de acuerdo con las políticas de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.2.3",
+      "literal": "CE3.2.3 Realizar la recepción de los entregables de los procesos de codificación, prueba e instalación.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.2.3 Realizar la recepción de los entregables de los procesos de codificación, prueba e instalación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-RA3.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA3.3",
+      "literal": "RA3.3: Analizar errores para asegurar el funcionamiento de la aplicación y realizar copia de respaldo.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "RA3.3: Analizar errores para asegurar el funcionamiento de la aplicación y realizar copia de respaldo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.3.1",
+      "literal": "CE3.3.1 Realizar las pruebas diagnósticas al sistema según los parámetros establecidos por el departamento de desarrollo.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.3.1 Realizar las pruebas diagnósticas al sistema según los parámetros establecidos por el departamento de desarrollo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.3.2",
+      "literal": "CE3.3.2 Verificar los resultados de las pruebas diagnósticas e identificar posibles errores del sistema.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.3.2 Verificar los resultados de las pruebas diagnósticas e identificar posibles errores del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.3.3",
+      "literal": "CE3.3.3 Citar los errores encontrados en el sistema de acuerdo con los procedimientos del departamento de desarrollo.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.3.3 Citar los errores encontrados en el sistema de acuerdo con los procedimientos del departamento de desarrollo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.3.4",
+      "literal": "CE3.3.4 Corregir los errores (sintaxis, tamaño del campo, tipos de variables, desbordamiento, referencias) encontrados en el sistema de acuerdo con los procedimientos establecidos por el departamento de desarrollo.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.3.4 Corregir los errores (sintaxis, tamaño del campo, tipos de variables, desbordamiento, referencias) encontrados en el sistema de acuerdo con los procedimientos establecidos por el departamento de desarrollo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-CE3.3.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE3.3.5",
+      "literal": "CE3.3.5 Aplicar copias de seguridad (completa, incremental y diferencial) de acuerdo con políticas de la empresa.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "CE3.3.5 Aplicar copias de seguridad (completa, incremental y diferencial) de acuerdo con políticas de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-c-tests",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Técnicas de pruebas. - Gestión de la calidad. - Calidad de los servicios. - Medición de la calidad. - Conceptos, principios, niveles y sistema. - Pruebas y tipos.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Técnicas de pruebas. - Gestión de la calidad. - Calidad de los servicios. - Medición de la calidad. - Conceptos, principios, niveles y sistema. - Pruebas y tipos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-c-implementation",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Tipos de implementación. - Instalaciones. Tipos de instalaciones. - Entregables. Tipos de entregables. - Documentación.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Tipos de implementación. - Instalaciones. Tipos de instalaciones. - Entregables. Tipos de entregables. - Documentación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-c-errors-backup",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Corrección de errores y copia de respaldo al sistema. - Prueba diagnóstica. - Errores de sintaxis. - Error de tamaño del campo. - Errores de tipos de variables. Copias de seguridad ( backup ). - Completa. - Incremental. - Diferencial, de acuerdo con la política de la organización.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Corrección de errores y copia de respaldo al sistema. - Prueba diagnóstica. - Errores de sintaxis. - Error de tamaño del campo. - Errores de tipos de variables. Copias de seguridad ( backup ). - Completa. - Incremental. - Diferencial, de acuerdo con la política de la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-quality-parameters",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los parámetros de calidad de las organizaciones públicas y privadas.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Identificación de los parámetros de calidad de las organizaciones públicas y privadas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-test-techniques",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las diferentes técnicas de prueba de sistemas.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Identificación de las diferentes técnicas de prueba de sistemas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-black-box",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de prueba de caja negra dentro de las organizaciones.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Aplicación de prueba de caja negra dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-white-box",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de prueba de caja blanca dentro de las organizaciones.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Realización de prueba de caja blanca dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-code-test",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Implementación de prueba de código dentro de las organizaciones.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Implementación de prueba de código dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-unit-test",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de prueba unitaria dentro de las organizaciones.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Realización de prueba unitaria dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-integration-test",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de prueba de integración al sistema dentro de las organizaciones.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Aplicación de prueba de integración al sistema dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-system-test",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de pruebas al sistema dentro de las organizaciones.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Aplicación de pruebas al sistema dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-acceptance-test",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de prueba de aceptación dentro de las organizaciones.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Realización de prueba de aceptación dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-installation-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de tipos de instalaciones dentro de las organizaciones.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Identificación de tipos de instalaciones dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-implementation-phase",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de fase de implementación dentro de las organizaciones.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Realización de fase de implementación dentro de las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-deliverables-explanation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Explicación de los entregables y la documentación que utiliza el sistema.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Explicación de los entregables y la documentación que utiliza el sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-deliverables-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Elaboración de los entregables para los usuarios que utilizan de forma directa el sistema de Información.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Elaboración de los entregables para los usuarios que utilizan de forma directa el sistema de Información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-deliverables-reception",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de la recepción de los entregables del sistema.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Realización de la recepción de los entregables del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-errors-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los errores que se presenten en el sistema de información.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Identificación de los errores que se presenten en el sistema de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-errors-correction",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Implementación de la corrección de errores que se adapte a la organización.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Implementación de la corrección de errores que se adapte a la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-p-protection-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Selección del tipo de protección que utiliza la empresa.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Selección del tipo de protección que utiliza la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-risk-prevention",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de normas de seguridad y prevención de riesgos laborales.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Valoración de normas de seguridad y prevención de riesgos laborales."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-analysis",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición al desarrollo de la capacidad de análisis y de síntesis.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Disposición al desarrollo de la capacidad de análisis y de síntesis."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-integrity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos.",
+      "pdfPages": [
+        23
+      ],
+      "parts": [
+        {
+          "pdfPage": 23,
+          "text": "Valoración de la importancia que tiene en un sistema informático la integridad y seguridad de los datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-peer-judgments",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los juicios emitidos por sus compañeros.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Valoración de los juicios emitidos por sus compañeros."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-collection-environment",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Sensibilización por la consecución de un medio de recopilación no contaminado.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Sensibilización por la consecución de un medio de recopilación no contaminado."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-a-collection-tools",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de los instrumentos en la recopilación de información.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Valoración de los instrumentos en la recopilación de información."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Explicación previa relacionado con procesos y técnicas de prueba de la aplicación o sistema desarrollado.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Explicación previa relacionado con procesos y técnicas de prueba de la aplicación o sistema desarrollado."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-m-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto basado en el tipo de implementación a ejecutar, para la puerta en marcha de una aplicación o sistema desarollado.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Realización de proyecto basado en el tipo de implementación a ejecutar, para la puerta en marcha de una aplicación o sistema desarollado."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-m-case-study",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Estudio de casos en el análisis de errores para asegurar el funcionamiento de la aplicación.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Estudio de casos en el análisis de errores para asegurar el funcionamiento de la aplicación."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-m-laboratory",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en el laboratorio de informática para manipular los diferentes tipos de copias de seguridad.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Realización de prácticas en el laboratorio de informática para manipular los diferentes tipos de copias de seguridad."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf055-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        24
+      ],
+      "parts": [
+        {
+          "pdfPage": 24,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Pruebas, instalaciones, correcciones y copias se limitan a sistemas de práctica y datos ficticios expresamente indicados; no autorizan despliegues reales, cambios de producción ni copias de datos personales.",
+    "Identificar, seleccionar o explicar no exige ejecutar todas las pruebas, instalaciones o copias de seguridad listadas.",
+    "Recepción y documentación se adaptarán solo a los entregables solicitados, sin imponer manuales adicionales por defecto.",
+    "Las seisactitudes quedan como documentación privada y las cincoorientaciones son docentes, no entregables automáticos ni criterios de personalidad.",
+    "Conservar literalmente puerta en marcha, desarollado y sección de clase, distinguiendo el texto oficial de su adaptación pedagógica."
+  ]
+}
