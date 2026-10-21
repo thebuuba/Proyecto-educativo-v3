@@ -1,0 +1,798 @@
+{
+  "moduleCode": "MF_058_3",
+  "subjectCode": "MF_058_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Análisis y Diseño de Reporte",
+  "level": "SECONDARY",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 135,
+  "weeklyHours": 3,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      37,
+      38,
+      39
+    ],
+    "boundary": "DesdeMÓDULO6 MF_058_3 enPDF37 hasta la última orientación antes deMÓDULO7 MF_059_3 en39.",
+    "continuations": [
+      "RA6.2 entre37/38; banda conceptual de secciones/funciones y procedimiento de secciones entre38/39."
+    ],
+    "emptyBullet": "La viñeta vacía de actitud al final de39 no contiene texto y no genera un registro."
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf058-RA6.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA6.1",
+      "literal": "RA6.1: Clasificar los requerimientos de información de los diversos usuarios para producir reportes empresariales, siguiendo parámetros establecidos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "RA6.1: Clasificar los requerimientos de información de los diversos usuarios para producir reportes empresariales, siguiendo parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.1.1",
+      "literal": "CE6.1.1 Analizar los reportes empresariales, según la dimensión de tiempo y espacio y las necesidades de información de los distintos usuarios.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "CE6.1.1 Analizar los reportes empresariales, según la dimensión de tiempo y espacio y las necesidades de información de los distintos usuarios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.1.2",
+      "literal": "CE6.1.2 En un supuesto práctico, analizar las informaciones requeridas para determinar: - Tipo del reporte (internos o externos). - Métodos o tecnologías del reporte (impresos, información desplegada en diversos tipos de pantallas, audio, micro formas, o para almacenamiento). - Orden de las informaciones (cronológico y por costos). - Estructura general del reporte (títulos, líneas de detalles o valores repetitivos, grupos de totales y subtotales y pie de páginas).",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "CE6.1.2 En un supuesto práctico, analizar las informaciones requeridas para determinar: - Tipo del reporte (internos o externos). - Métodos o tecnologías del reporte (impresos, información desplegada en diversos tipos de pantallas, audio, micro formas, o para almacenamiento). - Orden de las informaciones (cronológico y por costos). - Estructura general del reporte (títulos, líneas de detalles o valores repetitivos, grupos de totales y subtotales y pie de páginas)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.1.3",
+      "literal": "CE6.1.3 Clasificar las herramientas de diseño de reportes a fin de seleccionar la más adecuada.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "CE6.1.3 Clasificar las herramientas de diseño de reportes a fin de seleccionar la más adecuada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-RA6.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA6.2",
+      "literal": "RA6.2: Aplicar los conocimientos recibidos para el proceso de creación de reportes empresariales funcionales y oportunos, según requerimientos del usuario, siguiendo parámetros establecidos para garantizar la gestión y flujo de la información en la organización.",
+      "pdfPages": [
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "RA6.2: Aplicar los conocimientos recibidos"
+        },
+        {
+          "pdfPage": 38,
+          "text": "para el proceso de creación de reportes empresariales funcionales y oportunos, según requerimientos del usuario, siguiendo parámetros establecidos para garantizar la gestión y flujo de la información en la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.2.1",
+      "literal": "CE6.2.1 En un supuesto práctico, realizar el proceso de creación y estructuración del proyecto de reportes.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "CE6.2.1 En un supuesto práctico, realizar el proceso de creación y estructuración del proyecto de reportes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.2.2",
+      "literal": "CE6.2.2 Especificar el mecanismo a implementar para la conexión a la base de datos ( ActiveX Data Objects (ADO), Data Access Object (DAO), y Object Linking and Embedding for Databases (OLE/DB)).",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.2.2 Especificar el mecanismo a implementar para la conexión a la base de datos ( ActiveX Data Objects (ADO), Data Access Object (DAO), y Object Linking and Embedding for Databases (OLE/DB))."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.2.3",
+      "literal": "CE6.2.3 Agregar las tablas que contienen los datos a distribuir en el informe, según las especificaciones y los requerimientos establecidos, para crear las secciones de: - Encabezado de reporte. - Encabezados de páginas. - Línea de detalles. - Pie de páginas. - Pie de reportes. - Encabezados de grupos. - Pie de grupos.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.2.3 Agregar las tablas que contienen los datos a distribuir en el informe, según las especificaciones y los requerimientos establecidos, para crear las secciones de: - Encabezado de reporte. - Encabezados de páginas. - Línea de detalles. - Pie de páginas. - Pie de reportes. - Encabezados de grupos. - Pie de grupos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.2.4",
+      "literal": "CE6.2.4 Aplicar los formatos necesarios a los informes adjuntándolos a los estilos de diseños definidos por la organización.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.2.4 Aplicar los formatos necesarios a los informes adjuntándolos a los estilos de diseños definidos por la organización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.2.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.2.5",
+      "literal": "CE6.2.5 Realizar grupos de totales y subtotales según requerimientos de la organización y resumen de datos.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.2.5 Realizar grupos de totales y subtotales según requerimientos de la organización y resumen de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-RA6.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA6.3",
+      "literal": "RA6.3: Presentar o entregar reportes que cumplan los requerimientos de información, según criterios definidos por la organización, para garantizar la portabilidad de la información contenida.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "RA6.3: Presentar o entregar reportes que cumplan los requerimientos de información, según criterios definidos por la organización, para garantizar la portabilidad de la información contenida."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.3.1",
+      "literal": "CE6.3.1 Crear los mecanismos que permitan el acceso a los reportes desde los diversos medios disponibles en la organización, tales como impresión, presentación, almacenamiento, publicación y grabación en discos compactos.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.3.1 Crear los mecanismos que permitan el acceso a los reportes desde los diversos medios disponibles en la organización, tales como impresión, presentación, almacenamiento, publicación y grabación en discos compactos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-CE6.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE6.3.2",
+      "literal": "CE6.3.2 Establecer la realización de la salida apropiada a los reportes, ya sea para imprimirlos, mostrarlos en pantalla, publicarlos en la web, almacenarlos.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "CE6.3.2 Establecer la realización de la salida apropiada a los reportes, ya sea para imprimirlos, mostrarlos en pantalla, publicarlos en la web, almacenarlos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-c-reports-tools",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Los reportes - Tipos. - Partes. - Vistas. - Ejecución. Programas generadores de reportes - Características. - Compañías distribuidoras. - Descargas e instalación. Gestión de reportes - Proyecto de reporte. - Conecta a la bases de datos. - Tablas y relaciones. - Métodos o tecnologías de reportes.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Los reportes - Tipos. - Partes. - Vistas. - Ejecución. Programas generadores de reportes - Características. - Compañías distribuidoras. - Descargas e instalación. Gestión de reportes - Proyecto de reporte. - Conecta a la bases de datos. - Tablas y relaciones. - Métodos o tecnologías de reportes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-c-sections-functions",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Secciones de un reporte - Encabezado de reporte. - Encabezados de páginas. - Línea de detalles. - Pie de páginas. - Pie de reportes. - Encabezados de grupos. - Detalles del reporte. - Pie de grupos. - Formatos de reportes. - Grupos y totales. - Filtros de reportes. - Ordenar datos en el reporte. - Gráficos de datos. Propiedades y funciones - Fórmulas. - Tipos de funciones. - Mensajes. - Jerarquías. - Recursividad. - Procedimientos. Matrices - Listas. Accesos a los reportes - Mostrar los datos. - Publicar el reporte. - Almacenar los datos del reporte.",
+      "pdfPages": [
+        38,
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Secciones de un reporte - Encabezado de reporte. - Encabezados de páginas."
+        },
+        {
+          "pdfPage": 39,
+          "text": "- Línea de detalles. - Pie de páginas. - Pie de reportes. - Encabezados de grupos. - Detalles del reporte. - Pie de grupos. - Formatos de reportes. - Grupos y totales. - Filtros de reportes. - Ordenar datos en el reporte. - Gráficos de datos. Propiedades y funciones - Fórmulas. - Tipos de funciones. - Mensajes. - Jerarquías. - Recursividad. - Procedimientos. Matrices - Listas. Accesos a los reportes - Mostrar los datos. - Publicar el reporte. - Almacenar los datos del reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-manager-installation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Instalación de programas gestores de reportes.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Instalación de programas gestores de reportes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-project-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de proyectos de reportes.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Creación de proyectos de reportes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-connection-specification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Especificación de las informaciones de conexión a las bases de datos.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Especificación de las informaciones de conexión a las bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-datasets-queries",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de conjuntos de datos o consultas para el informe.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Creación de conjuntos de datos o consultas para el informe."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-tables-addition",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Adición de tablas al proyecto de reporte.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Adición de tablas al proyecto de reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-data-format",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de formatos de fechas, números, monedas, estilos de millares y porcentajes.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Aplicación de formatos de fechas, números, monedas, estilos de millares y porcentajes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-text-style",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diseño de estilos y formatos de textos y ancho de columnas.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Diseño de estilos y formatos de textos y ancho de columnas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-groups",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Generación de grupos de datos en un reporte.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Generación de grupos de datos en un reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-totals",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de totales diarios y generales en un reporte.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Creación de totales diarios y generales en un reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-filters",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de filtros a los datos del reporte.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Aplicación de filtros a los datos del reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-data-manipulation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Manipulación de datos del reporte.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Manipulación de datos del reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-charts",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de reportes gráficos.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Creación de reportes gráficos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-formulas",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Operación de fórmulas.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Operación de fórmulas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-functions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Manipulación de diversas funciones.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Manipulación de diversas funciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-messages",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Configuración de mensajes como respuesta a diferentes eventos del reporte.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Configuración de mensajes como respuesta a diferentes eventos del reporte."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-access",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Generación de los mecanismos de accesos según el objetivo final de los reportes (impresión, publicación, almacenamiento).",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Generación de los mecanismos de accesos según el objetivo final de los reportes (impresión, publicación, almacenamiento)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-p-sections",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Generación de las diversas secciones de los reportes según el tipo y la cantidad de información deseada.",
+      "pdfPages": [
+        38,
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Generación de las diversas secciones de los reportes según el"
+        },
+        {
+          "pdfPage": 39,
+          "text": "tipo y la cantidad de información deseada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-a-report-management",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración en la importancia de gestión de reportes en los procesos empresariales.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Valoración en la importancia de gestión de reportes en los procesos empresariales."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-a-designer-responsibility",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Conciencia de la responsabilidad del diseñador de reportes, en los procesos de administración de las informaciones en las organizaciones.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Conciencia de la responsabilidad del diseñador de reportes, en los procesos de administración de las informaciones en las organizaciones."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-a-confidentiality",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Cuidado en el aseguramiento de la confidencialidad de la información.",
+      "pdfPages": [
+        38
+      ],
+      "parts": [
+        {
+          "pdfPage": 38,
+          "text": "Cuidado en el aseguramiento de la confidencialidad de la información."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-a-collection",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Sensibilización por la consecución de un medio de recopilación no contaminado.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Sensibilización por la consecución de un medio de recopilación no contaminado."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-a-integrity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Adopción de medidas para mantener la integridad y consistencia de la información.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Adopción de medidas para mantener la integridad y consistencia de la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_ONLY_IF_EXPLICIT_TASK",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Explicación previa en relación con los requerimientos de información de los diversos usuarios para producir reportes empresariales.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Explicación previa en relación con los requerimientos de información de los diversos usuarios para producir reportes empresariales."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-m-tools",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en grupos reducidos, en donde el estudiante clasifique herramientas para el diseño de reportes teniendo como propósito seleccionar la más adecuada.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Realización de prácticas en grupos reducidos, en donde el estudiante clasifique herramientas para el diseño de reportes teniendo como propósito seleccionar la más adecuada."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-m-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto basado en la creación de reportes empresariales apropiados, según requerimientos del usuario, seguiendo parámetros establecidos.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Realización de proyecto basado en la creación de reportes empresariales apropiados, según requerimientos del usuario, seguiendo parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-m-laboratory",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto en el laboratorio de informática, en donde presente reportes que cumplan con los requrimientos de informacion de una organización.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Realización de proyecto en el laboratorio de informática, en donde presente reportes que cumplan con los requrimientos de informacion de una organización."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf058-m-internet",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Utilización del internet para publicar reportes en la web.",
+      "pdfPages": [
+        39
+      ],
+      "parts": [
+        {
+          "pdfPage": 39,
+          "text": "Utilización del internet para publicar reportes en la web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Usar datos ficticios y conexiones de práctica expresamente solicitadas, sin credenciales, bases o reportes reales.",
+    "Publicar, imprimir, presentar o almacenar son alternativas según la consigna; la orientación docente de internet no impone publicación, cuentas o servicios reales.",
+    "No exigir todos los tipos, secciones, funciones, matrices y salidas en cada tarea; describir y seleccionar no exige crearlos todos.",
+    "Cuatroactitudes privadas quedan documentales; la medida de integridad solo se adapta como acción si se pide expresamente, no como personalidad.",
+    "Conservar seguiendo, requrimientos, informacion y Conecta a la bases de datos en los literales, distinguiéndolos de la adaptación pedagógica."
+  ]
+}

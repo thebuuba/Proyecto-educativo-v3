@@ -1,0 +1,41 @@
+{
+  "moduleCode": "MF_058_3",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "pages": [
+    37,
+    38,
+    39
+  ],
+  "method": "Lectura visual de trespáginas,13RA/CE en sus tablas y29entradas al transcribir las columnas;45partes cotejadas conPDF verificado. No se infiere lectura por conteo.",
+  "boundary": "DesdeMÓDULO6 MF_058_3 enPDF37 hasta la última orientación antes deMÓDULO7 MF_059_3 en39.",
+  "continuations": [
+    "RA6.2 entre37/38; banda conceptual de secciones/funciones y procedimiento de secciones entre38/39."
+  ],
+  "emptyBullet": "La viñeta vacía de actitud al final de39 no contiene texto y no genera un registro.",
+  "records": 42,
+  "parts": 45,
+  "types": {
+    "LEARNING_OUTCOME": 3,
+    "EVALUATION_CRITERION": 10,
+    "CONCEPT": 2,
+    "PROCEDURE": 17,
+    "ATTITUDE": 5,
+    "TEACHING_STRATEGY": 5
+  },
+  "datasetSha256": "36417e95df354371769d434d7d3c02551a99ad54ca852ab39423a7e76d18991e",
+  "implementation": false,
+  "instrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "limits": [
+    "Usar datos ficticios y conexiones de práctica expresamente solicitadas, sin credenciales, bases o reportes reales.",
+    "Publicar, imprimir, presentar o almacenar son alternativas según la consigna; la orientación docente de internet no impone publicación, cuentas o servicios reales.",
+    "No exigir todos los tipos, secciones, funciones, matrices y salidas en cada tarea; describir y seleccionar no exige crearlos todos.",
+    "Cuatroactitudes privadas quedan documentales; la medida de integridad solo se adapta como acción si se pide expresamente, no como personalidad.",
+    "Conservar seguiendo, requrimientos, informacion y Conecta a la bases de datos en los literales, distinguiéndolos de la adaptación pedagógica."
+  ]
+}
