@@ -5,7 +5,7 @@
   "grade": 5,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "EXPECTED_CONTRACTS_NOT_IMPLEMENTED_NOT_COVERAGE",
+  "status": "IMPLEMENTED_IN_SOURCE_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "language-identification",
@@ -668,6 +668,39 @@
       ],
       "sourceRecordIds": [
         "ifc006-mf054-c-modularity"
+      ]
+    },
+    {
+      "id": "menu-general",
+      "description": "Desarrolla un menú del programa de práctica según el diseño dado.",
+      "topics": [
+        "menu-general"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-CE2.2.3",
+        "ifc006-mf054-p-menus"
+      ]
+    },
+    {
+      "id": "language-comparison",
+      "description": "Compara los lenguajes de programación de la ficha según sus características.",
+      "topics": ["language-identification"],
+      "sourceRecordIds": ["ifc006-mf054-p-languages-comparison", "ifc006-mf054-c-languages"]
+    },
+    {
+      "id": "functions-execution",
+      "description": "Ejecuta las funciones del programa de práctica con los datos de prueba dados.",
+      "topics": ["functions"],
+      "sourceRecordIds": ["ifc006-mf054-c-modularity", "ifc006-mf054-p-modular"]
+    },
+    {
+      "id": "program-structure",
+      "description": "Construye la estructura general de la aplicación de práctica según el diseño proporcionado.",
+      "topics": [
+        "program-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf054-RA2.2"
       ]
     }
   ],

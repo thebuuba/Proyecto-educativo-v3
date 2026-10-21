@@ -48,14 +48,22 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.143')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.144')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()
     const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogCurrent
-    expect(technicalModules).toHaveLength(2)
+    expect(technicalModules).toHaveLength(3)
     expect(technicalModules[0]).toMatchObject({moduleCode:'MF_053_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[1]).toMatchObject({moduleCode:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],grade:4,cycle:2,modalityCode:'technical_professional'})
+    expect(technicalModules[2]).toMatchObject({moduleCode:'MF_054_3',programCode:'IFC006_3',grade:5,cycle:2,modalityCode:'technical_professional'})
+    const frozen143=evaluationCatalogForVersion('evaluation-2026.143')!
+    expect(frozen143.version).toBe('evaluation-2026.143')
+    expect(frozen143.technicalModules).toEqual(technicalModules.slice(0,2))
+    const {version:version143,technicalModules:technical143,...rest143}=frozen143
+    expect(version143).not.toBe(currentVersion)
+    expect(technical143).toHaveLength(2)
+    expect(JSON.parse(JSON.stringify({...currentWithoutScience,optativeScienceModules}))).toEqual(JSON.parse(JSON.stringify(rest143)))
     const frozen142=evaluationCatalogForVersion('evaluation-2026.142')!
     expect(frozen142.technicalModules).toEqual(technicalModules.slice(0,1))
     const {version:version142,technicalModules:technical142,...rest142}=frozen142

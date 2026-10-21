@@ -13,6 +13,8 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  let text=withoutResources(description).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
   .replace(/\bno se (?:pide|requiere|exige)\b[^.;]*/g,'')
  if(options.requestedOnly)text=text
+  .replace(/\b(?:opcionalmente|si lo deseas|como apoyo|como recurso)\b[^.;]*/g,'')
+  .replace(/\b(?:puedes?|podran|podras)\s+(?:consult\w*|utiliz\w*|usar\w*)[^.;]*/g,'')
   .replace(/\b(?:sin\s+|no\s+(?:(?:se|deben?|es necesario|hay que)\s+)*)(?:program\w*|simul\w*|constru\w*|disen\w*|entreg\w*|elabor\w*|ejecut\w*|crea\w*)\b[^.;]*/g,'')
   .replace(new RegExp(`\\b${number}\\s+paginas?\\s+(?:web|html)\\b`,'g'),'producto web')
  const conditions:Condition[]=[],add=(key:string,label:string)=>{if(!conditions.some(c=>c.key===key&&c.label===label))conditions.push({key,label})}
