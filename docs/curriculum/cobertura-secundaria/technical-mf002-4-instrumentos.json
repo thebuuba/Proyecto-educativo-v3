@@ -21024,5 +21024,311 @@
       }
     ],
     "sha256": "e995992fe45295a0d131ba6b921b5e93b05fbf39fd9c5c7ba02772b9472cf70c"
+  },
+  {
+    "id": "compare-documents-justify/rubrica",
+    "description": "Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.",
+    "activityType": "COMPARISON",
+    "instrumentType": "rubrica",
+    "participationMode": "INDIVIDUAL",
+    "totalScore": 17.35,
+    "totalScoreUnits": 1735,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Destacado",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Logrado",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "En proceso",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Inicial",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "technical-mf002-word-comparison-comparison",
+        "title": "Comparación de documentos",
+        "description": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "progressionLevels": [
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "technical-mf002-word-comparison-justification",
+        "title": "Justificación: Comparación de documentos",
+        "description": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "progressionLevels": [
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "sha256": "92669eaa7c44df2dabd6069c7206fa36ffc92dcac6331b83c0e4ad083bac4955"
+  },
+  {
+    "id": "compare-documents-justify/lista-cotejo",
+    "description": "Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.",
+    "activityType": "COMPARISON",
+    "instrumentType": "lista-cotejo",
+    "participationMode": "INDIVIDUAL",
+    "totalScore": 17.35,
+    "totalScoreUnits": 1735,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "technical-mf002-word-comparison-comparison",
+        "title": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+        "description": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "progressionLevels": [
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "technical-mf002-word-comparison-justification",
+        "title": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+        "description": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "progressionLevels": [
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ],
+    "sha256": "350df062d1b02c9a0b1ab75abf08a19b09ea396cff34a2b1c8d75a42b301a2ad"
+  },
+  {
+    "id": "compare-documents-justify/escala",
+    "description": "Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.",
+    "activityType": "COMPARISON",
+    "instrumentType": "escala",
+    "participationMode": "INDIVIDUAL",
+    "totalScore": 17.35,
+    "totalScoreUnits": 1735,
+    "levels": [
+      {
+        "id": "L4",
+        "label": "Completo",
+        "proportion": 1
+      },
+      {
+        "id": "L3",
+        "label": "Suficiente",
+        "proportion": 0.6666666666666666
+      },
+      {
+        "id": "L2",
+        "label": "Parcial",
+        "proportion": 0.3333333333333333
+      },
+      {
+        "id": "L1",
+        "label": "Aún no logrado",
+        "proportion": 0
+      }
+    ],
+    "criteria": [
+      {
+        "templateId": "technical-mf002-word-comparison-comparison",
+        "title": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+        "description": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "progressionLevels": [
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+            "scoreUnits": 868
+          },
+          {
+            "levelId": "L3",
+            "text": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+            "scoreUnits": 579
+          },
+          {
+            "levelId": "L2",
+            "text": "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      },
+      {
+        "templateId": "technical-mf002-word-comparison-justification",
+        "title": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+        "description": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "progressionLevels": [
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": [
+          {
+            "levelId": "L4",
+            "text": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+            "scoreUnits": 867
+          },
+          {
+            "levelId": "L3",
+            "text": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+            "scoreUnits": 578
+          },
+          {
+            "levelId": "L2",
+            "text": "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+            "scoreUnits": 289
+          },
+          {
+            "levelId": "L1",
+            "text": "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada.",
+            "scoreUnits": 0
+          }
+        ]
+      }
+    ],
+    "sha256": "fe259994bd27e8d3473d695e85e2a8501948fce6c53a8340c8c3a93ef48f53d8"
+  },
+  {
+    "id": "compare-documents-justify/lista-ponderada",
+    "description": "Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.",
+    "activityType": "COMPARISON",
+    "instrumentType": "lista-ponderada",
+    "participationMode": "INDIVIDUAL",
+    "totalScore": 17.35,
+    "totalScoreUnits": 1735,
+    "levels": [],
+    "criteria": [
+      {
+        "templateId": "technical-mf002-word-comparison-comparison",
+        "title": "Comparación de documentos",
+        "description": "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Parcial (50%): La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+        "maxScore": 8.68,
+        "maxScoreUnits": 868,
+        "progressionLevels": [
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "Compara los casos solicitados atendiendo a la identificación de diferencias relevantes entre las versiones del documento proporcionadas. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con la identificación de diferencias relevantes entre las versiones del documento proporcionadas.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      },
+      {
+        "templateId": "technical-mf002-word-comparison-justification",
+        "title": "Justificación: Comparación de documentos",
+        "description": "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Parcial (50%): La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+        "maxScore": 8.67,
+        "maxScoreUnits": 867,
+        "progressionLevels": [
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "Justifica la decisión solicitada apoyándose en las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada. Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.",
+          "La evidencia de comparación de documentos conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.",
+          "La evidencia de comparación de documentos presenta una contradicción con las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada.",
+          "No se presenta evidencia reconocible de comparación de documentos para la acción solicitada."
+        ],
+        "relativeWeight": 3,
+        "descriptors": []
+      }
+    ],
+    "sha256": "b1f9f05485428de5fc4fe260fc49e2896cbf4b1f652005fa6d7e46f6c0b64641"
   }
 ]

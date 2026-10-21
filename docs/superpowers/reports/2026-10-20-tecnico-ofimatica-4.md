@@ -1,30 +1,53 @@
 # Ofimática de cuarto: implementación local y verificación
 
-El proveedor de `MF_002_3` está conectado en el código del catálogo **143**, con 81 adaptaciones y 94 consignas. **La fuente está instalada; el catálogo está en proceso de instalación y las pruebas HTTP/DB y personales siguen pendientes.** Los apartados inferiores conservan la evidencia del contexto 142 como antecedente.
+Ofimática MF_002_3 de cuarto técnico tiene 81 adaptaciones, 95 consignas y 380 instrumentos completos revisados. La fuente está instalada en Development. El catálogo143 revisado está instalado idempotentemente enDevelopment, junto con contextos QA ypersonal separados. Las95pruebasHTTP/DB están enejecución; el recorrido personal sigue bloqueado por la herramienta de navegador.
 
-La lectura completa encontró y corrigió errores que los contratos iniciales no detectaban: sustantivos interpretados como verbos, acciones omitidas al compartir objeto, confusión entre insertar y ordenar tablas, comparación que exigía combinación, gráfico dinámico sin evidencia gráfica y registro de frecuencia sin referencia a las observaciones. Las 20 regresiones disciplinares quedaron aprobadas junto con los contratos de Ofimática y MF053: 1.565 pruebas focalizadas.
+La implementación inicial quedó en el commit local 4dd1572569a15def5cd12e0ba8fd0fd0df8535b1. El ajuste posterior de justificación se guarda en un segundo commit local después de sus verificaciones. Los pushes continúan retenidos por instrucción del usuario.
 
-Se revisaron los 108 textos completos con sus cinco niveles y los 94 ensamblajes finales, releyendo cada cambio. También se leyó el paquete de cuatro formatos de tablas en documentos y la escala de frecuencia. La correspondencia exacta de los 376 instrumentos con los textos, niveles, pesos y reglas de formato leídos está registrada en [la revisión](../../curriculum/cobertura-secundaria/technical-mf002-4-revision.json); los [ejemplos completos](../../curriculum/cobertura-secundaria/technical-mf002-4-instrumentos.json) permiten revisar cada resultado. Son adaptaciones pedagógicas de AulaBase, separadas de los literales.
+## Correcciones y revisión de pertinencia
 
-Se conserva el motor compartido y el prefijo de MF053. Los verbos y ajustes de Ofimática se limitan a ese módulo. Los puntos siguen pendientes hasta que el docente los elige; los contratos cubren 20 y 17.35, formatos manuales y paridad entre servidor y alternativa local. No se modificaron componentes del creador.
+La lectura detectó sustantivos interpretados como verbos, acciones perdidas al compartir objeto y evidencias repetidas para acciones diferentes. Se corrigieron, entre otros, la distinción entre insertar una tabla y ordenar sus datos, aplicar una fórmula y organizar registros, transcribir y registrar mediciones, comparar y combinar documentos, y producir tablas o gráficos dinámicos.
 
-El manifest puro `reviewed-mf002-source.mjs` conserva dos documentos, un ámbito de cuarto técnico, 192 elementos, 271 referencias de página y 18 registros documentales adicionales con 31 partes: en total, los 210 literales y 302 partes revisados. Las 22 actitudes quedan excluidas de evaluación. El año 2017 corresponde a validación normativa; la edición editorial sigue desconocida.
+La preparación del caso personal detectó una variante adicional: comparar documentos y justificar una decisión todavía exigía combinarlos. Se reprodujo con una prueba fallida y se corrigió la relación usada por la justificación. Las 1.575 pruebas focalizadas posteriores pasaron. Los 376 instrumentos anteriores permanecieron exactamente iguales; se añadieron los cuatro formatos de la nueva consigna.
 
-El instalador separado `install-reviewed-mf002-development.mjs` exige los dos PDF con sus hashes revisados, variables exclusivamente Development y rol sin bypass de RLS. Crea una fuente nueva en una transacción; una fuente existente se compara íntegra y nunca se repara ni sobrescribe. Comprueba que catálogos y snapshots no cambien. Fuente, manifests e instalador:16pruebasNode aprobadas. Se corrigió una validación insuficiente de la versión existente; un fallo adicional fue la inicialización del almacén simulado de la prueba, sin afectar datos remotos. Su ejecución individual terminó CREATED/UNCHANGED, como se detalla abajo.
+Se leyeron 109 textos completos con cinco niveles y 95 ensamblajes. Se revisaron un paquete de cuatro formatos de tablas, la escala de frecuencia y los cuatro formatos de la nueva justificación. La correspondencia exacta con las definiciones completas está registrada en [la revisión](../../curriculum/cobertura-secundaria/technical-mf002-4-revision.json) y en los [ejemplos completos](../../curriculum/cobertura-secundaria/technical-mf002-4-instrumentos.json). Las adaptaciones pedagógicas se distinguen de los literales oficiales.
 
-Comprobaciones finales terminadas: **91.000/91.000 backend** (193archivos) y **89.545/89.545 actividades frontend** (118archivos). Builds shared,backend,frontend yCloudflare yambos lints terminaron0. Cloudflare ejecutó solo dry-run. La primera suite backend tuvo90.997aprobadas y tres expectativas del catálogo actual todavía fijadas en142; se corrigieron únicamente a143 y se repitió la suite completa, conservando los asserts históricos.
+Se conserva el motor compartido, los identificadores de MF053, el creador vertical, las selecciones manuales y los puntos pendientes. No se impone envío real de correo, publicación, ejecución de macros ni cuentas o credenciales reales.
 
-Los376instrumentos MF002 coinciden exactamente entre fuente, backend compilado y ejemplos revisados. Los296 deMF053 permanecen idénticos. Se conservan el payload142 completo, los campos anteriores del catálogo,15.176definiciones deInglés,2.888deMatemática y14.488de las18optativas. Las36diferencias contra artefactos antiguos de optativas ya existían en142; no son cambios introducidos por143. Precaché:76assetsJS incluidos, máximo1.908.851bytes, dentro de2MiB. Trecebaselines personales comprobados sin regenerarlos.
+## Fuente e instalación
 
-El Worker143 se inició con logs nuevos, sin reemplazar el borrador ni los logs anteriores. PostgreSQL app_backend_local/sin bypass,Auth200,Storage200 yfrontendservido coinciden exclusivamente conDevelopment. Entrada `/assets/index-Bi58UcaR.js`; chunk técnico254.693bytes, igual al build porSHA256. El entorno que se sirve quedó recompilado.
+IFC007 es la fuente principal; IFC006 corrobora la asignación y los RA/CE. Un módulo común no se duplica por figurar en ambos programas. No existe un programa de matrícula en el contexto actual y no se afirma validarlo.
 
-La fuente se instaló CREATED y despuésUNCHANGED enDevelopment, conservando75releases/985snapshots. Versión `a326c59a-9acb-5ee7-8cde-25837c465ac1`, ámbito `c6e5481a-89fb-5e4f-8532-5c3a7e9a1503`. La instalación del catálogo y los contextos QA/personal siguen en curso; no afirmar su cierre hasta comprobar el resultado.
+El manifest conserva dos documentos y un ámbito de cuarto técnico: 192 elementos, 271 referencias de página y 18 registros documentales con 31 partes adicionales. Se mantienen los 210 literales y 302 partes revisados, incluidos los códigos duplicados impresos. Las 22 actitudes se excluyen de evaluación; los RA y orientaciones docentes se preservan como metadata sin falsear sus tipos. El año 2017 es normativo; la edición editorial permanece desconocida.
 
-La herramienta visual disponible no pudo determinar con seguridad laURL actual deChrome y detuvo ComputerUse. No se completó el recorrido personal ni se tocaron almacenamiento, serviceworker o borradores. La igualdad de assets está comprobada porHTTP; caché y registro deSW en la sesión personal siguen pendientes. Continuar las pruebas HTTP/DB independientes.
+El instalador individual exige ambos PDF y sus hashes, variables Development y un rol sin bypass de RLS. Crea en una transacción y comprueba una versión existente sin repararla ni sobrescribirla. Fuente, manifest e instalador tienen 16 pruebas Node aprobadas. La fuente quedó CREATED y luego UNCHANGED, conservando 75 releases y 985 snapshots. Versión: a326c59a-9acb-5ee7-8cde-25837c465ac1; ámbito: c6e5481a-89fb-5e4f-8532-5c3a7e9a1503.
 
-Pendientes: terminar la instalación del catálogo ycontextos, ejecutar94muestrasHTTP/DB yel recorrido personal, comprobarhistoricos después deescrituras yactualizar elcierre. El adaptadorHTTPreutiliza el procedimientoexistente, conlistaexplícitaMF053/MF002; suverificacióndeprocedenciaadmite ambosdocumentos revisados(192elementos/271referenciasvalidadas offline). ContinúanconservadoselborradorpersonalyloscuatroIDsQAdeMF053,cuyaspruebasremotasquedaronparcialesporDNS. Pushretenidoporinstruccióndelusuario.
+Al descubrir la variante de justificación se confirmó mediante lectura que143 aún no existía en la base. Se detuvo únicamente el proceso identificado de instalación del catálogo y se volvió a confirmar su ausencia. No se retiró ni modificó ninguna versión publicada. La fuente ya instalada y los datos anteriores permanecen intactos.
+
+## Verificaciones y entorno
+
+Antes del ajuste adicional pasaron 91.000 pruebas backend, 89.545 de actividades frontend, los builds shared/backend/frontend/Cloudflare y los lints. Cloudflare ejecutó solo dry-run. Después del ajuste pasaron **91.010 pruebas backend** (193archivos), **89.553 de actividades frontend** (118archivos), loscuatrobuildsylints. Cloudflare fue dry-run, sin despliegue. El primer fallo general anterior se limitó a tres expectativas del número de catálogo: se actualizaron a143 conservando los asserts históricos y se repitió la suite.
+
+La comparación anterior al ajuste confirmó296definiciones MF053,15.176deInglés,2.888deMatemática y14.488de18optativas exactas a142, además del payload142 completo y sus campos anteriores. Las36diferencias frente a artefactos antiguos ya existían en142. La comparación compilada posterior al ajuste confirmó los380instrumentosMF002 y296MF053 exactos a los ejemplos revisados y elpayload142 completo intacto. Los13baselines personales se verificaron sin regenerarlos.
+
+El Worker se inició con logs nuevos. PostgreSQL app_backend_local/sin bypass, Auth200, Storage200 y assets servidos se verificaron exclusivamente en Development eolgunypmtgrsyrjzcld. Los76assetsJS estaban precargados, con un máximo de1.908.851bytes, inferior a2MiB. La comprobación final se repitió sobre elbuildcorregido: entrada /assets/index-CIegXYrw.js ychunk técnico instrumentos-tecnicos-COWcEdwZ.js de254.673bytes, SHA256 9756d1c9a7e14470af65d8ec96f3c7d58fd9b1281e336ab88a9dac9cbe3d2ebc. Losassetsservidoscoinciden conelbuild ysoloDevelopment.
+
+ComputerUse no pudo determinar con seguridad la URL deChrome y detuvo la automatización. No se completó la prueba personal ni se modificaron caché, serviceworker, almacenamiento o borradores. La sesión visual queda pendiente; las pruebas HTTP no la sustituyen.
+
+## Prueba personal pendiente
+
+Después de confirmar el catálogo y el contexto, entrar con la cuenta propia de Development al curso separado «4.º Técnico Profesional QA MF002 Development», asignatura Ofimática.
+
+1. Abrir el creador vacío y comprobar los cuatro controles y los puntos pendientes.
+2. Usar el título «QA Development · Comparación de documentos · MF002 · 20oct» y la descripción «Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.»
+3. Comprobar la estrategia automática «Estudio de caso», el instrumento completo y los cuatro formatos mediante selección manual. Volver a rúbrica, introducir17.35 y comprobar8.68+8.67; probar20 y regresar a17.35.
+4. Editar manualmente un criterio, guardar y reabrir. Cambiar únicamente la estrategia a una opción manual y verificar que textos, puntos, pesos e instrumento permanezcan exactamente iguales después de guardar y reabrir.
+5. Conservar esa actividad como evidencia identificable. No borrar datos ni almacenamiento para repetir la prueba.
+
+La consigna y la estrategia se comprobaron de forma local; no se presentan como recorrido visual realizado. La instalación revisada delcatálogo terminó CREATED/UNCHANGED y loscontextos QA/personal pasaron dosveces, sin alterar datosanteriores ni crear cuentas oestudiantes. Antes deHTTP se comprobaron75releases/985snapshots previos exactos y76releases actuales. Faltan completar95muestrasHTTP/DB, repetir conservación después deesas escrituras yelrecorrido personal. El borrador y los cuatro IDs QA deMF053 se conservan. Este bloque no cierra el encargo integral ni las demás modalidades especializadas.
 
 ## Antecedente verificado: contexto y congelación de142
+
 
 La fuente de `MF_002_3` quedó transcrita y revisada en el commit local `20d49102c6e8b6283e6f59856b7f7add3fc9f9c9`. Este bloque prepara la resolución del contexto técnico y conserva el catálogo 142. **Ofimática todavía no tiene proveedor conectado ni instrumentos completos revisados.**
 

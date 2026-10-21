@@ -5762,12 +5762,13 @@
     ]
   },
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "INSTALLED_PENDING_HTTP_AND_PERSONAL_VERIFICATION",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.143",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "RUNNING",
+    "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL",
+    "sourceVersionId": "a326c59a-9acb-5ee7-8cde-25837c465ac1"
   },
   "adaptations": [
     {
@@ -6500,7 +6501,7 @@
       "grade": 4,
       "label": "Comparación de documentos",
       "match": "versiones del documento|compar\\w*[^.;]*documentos|combina\\w*[^.;]*documentos",
-      "relation": "la identificación de diferencias entre las versiones dadas y la conservación de los cambios indicados al combinarlas",
+      "relation": "las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada",
       "pages": [
         56,
         57,
@@ -7617,12 +7618,12 @@
   "verification": {
     "fullReview": {
       "status": "REVIEWED",
-      "instruments": 376,
+      "instruments": 380,
       "pending": 0,
       "evidence": "technical-mf002-4-revision.json"
     },
-    "automated": "FOCAL_GREEN_FINAL_GATES_PENDING",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "automated": "BACKEND_91010_FRONTEND_89553_FOUR_BUILDS_AND_LINTS_PASSED",
+    "httpDb": "RUNNING",
+    "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
   }
 }

@@ -5147,7 +5147,7 @@
       "linkedDocuments": 75,
       "programCoversReviewed": 3,
       "gradeAssignmentsVerified": 6,
-      "connectedProviders": 1,
+      "connectedProviders": 2,
       "studyPlanTablesReviewed": 3,
       "programsWithVerifiedSecondaryGrades": 2,
       "programsWithUnresolvedGradeEquivalence": 1,
@@ -5194,7 +5194,7 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 14,
-            "status": "IMPLEMENTED_IN_SOURCE_REVIEWED_PENDING_INSTALLATION",
+            "status": "CONNECTED_REVIEWED_HTTP_RUNNING_PERSONAL_BLOCKED",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
@@ -5217,14 +5217,19 @@
               "records": 210,
               "literalParts": 302,
               "provider": "packages/shared/src/secondary-technical.ts",
-              "instrumentReview": "376_FULL_DEFINITIONS_REVIEWED",
+              "instrumentReview": "380_FULL_DEFINITIONS_REVIEWED",
               "adaptations": 81,
-              "cases": 94,
-              "uniqueCompleteCriteria": 108,
-              "httpDb": "NOT_RUN",
-              "browser": "NOT_RUN"
+              "cases": 95,
+              "uniqueCompleteCriteria": 109,
+              "httpDb": "RUNNING",
+              "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
             },
-            "catalogInSource": "evaluation-2026.143"
+            "catalogInSource": "evaluation-2026.143",
+            "sourceInstallation": "CREATED_UNCHANGED_DEVELOPMENT",
+            "sourceVersionId": "a326c59a-9acb-5ee7-8cde-25837c465ac1",
+            "catalog": "evaluation-2026.143",
+            "httpDb": "RUNNING",
+            "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
           },
           {
             "id": "IFC006_3-g4-MF_053_3",
@@ -5485,7 +5490,7 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 18,
-            "status": "IMPLEMENTED_IN_SOURCE_REVIEWED_PENDING_INSTALLATION",
+            "status": "CONNECTED_REVIEWED_HTTP_RUNNING_PERSONAL_BLOCKED",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
@@ -5514,14 +5519,19 @@
               "records": 210,
               "literalParts": 302,
               "provider": "packages/shared/src/secondary-technical.ts",
-              "instrumentReview": "376_FULL_DEFINITIONS_REVIEWED",
+              "instrumentReview": "380_FULL_DEFINITIONS_REVIEWED",
               "adaptations": 81,
-              "cases": 94,
-              "uniqueCompleteCriteria": 108,
-              "httpDb": "NOT_RUN",
-              "browser": "NOT_RUN"
+              "cases": 95,
+              "uniqueCompleteCriteria": 109,
+              "httpDb": "RUNNING",
+              "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
             },
-            "catalogInSource": "evaluation-2026.143"
+            "catalogInSource": "evaluation-2026.143",
+            "sourceInstallation": "CREATED_UNCHANGED_DEVELOPMENT",
+            "sourceVersionId": "a326c59a-9acb-5ee7-8cde-25837c465ac1",
+            "catalog": "evaluation-2026.143",
+            "httpDb": "RUNNING",
+            "browser": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL"
           },
           {
             "id": "IFC007_3-g4-MF_062_3",
@@ -5775,12 +5785,12 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "Ofimática MF_002_3 de4.º: proveedor143 y376instrumentos revisados en fuente; instalación idempotente y recorridos HTTP/DB y personales pendientes. MF053 conserva3/49recorridos y cuatroIDs; recuperar pendientes sin duplicar."
+    "Ofimática MF_002_3 de4.º: proveedor143 y380instrumentos revisados en fuente; instalación idempotente y recorridos HTTP/DB y personales pendientes. MF053 conserva3/49recorridos y cuatroIDs; recuperar pendientes sin duplicar."
   ],
   "push": false,
   "deploy": false,
   "currentApplication": {
-    "catalog": "evaluation-2026.142",
+    "catalog": "evaluation-2026.143",
     "specializedProvidersAdded": 1,
     "status": "CONNECTED_REVIEWED_RUNTIME_PARTIAL_DNS_BLOCK",
     "developmentOnly": true,

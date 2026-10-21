@@ -45,7 +45,7 @@ Presentación como archivo frente a exposición oral; procesador de texto frente
 
 ## Task3: proveedor y lectura de instrumentos
 
-Implementados94contratos/81adaptaciones en `data/evaluation-instruments/technical-mf002-four-contracts.json`. Lectura final376instrumentos/108textos/94ensamblajes registrada. Catálogo143 solo en fuente, sin instalación ni prueba remota aún.
+Implementados95contratos/81adaptaciones en `data/evaluation-instruments/technical-mf002-four-contracts.json`. Lectura final380instrumentos/109textos/95ensamblajes registrada. Fuente instalada idempotentemente; catálogo143 aún no instalado y pruebas remotas de instrumentos pendientes. La variante adicional de justificación se corrigió antes de publicar143;376definiciones previas exactas.
 
 **Archivos:** `packages/shared/src/secondary-technical-mf002-4.ts`, `secondary-technical.ts`, contratos `data/evaluation-instruments/technical-mf002-four-contracts.json`, backend/frontend specs, artefactos completos y revisión.
 
@@ -53,7 +53,7 @@ Implementados94contratos/81adaptaciones en `data/evaluation-instruments/technica
 - [x] Incluir cada procedimiento y condición observable pertinente, con anclas RA/CE/C/P y exclusiones. Contratos de consignas breves y desarrolladas, cuatro formatos, puntuación pendiente/20/17.35, acciones independientes, alternativas, negaciones, manuales y título incompatible.
 - [x] Reutilizar `resolveTechnicalTask`, `technicalCriteria`, `technicalSelections` y `adaptTechnicalScale`; hacer el prefijo del módulo explícito conservando todos los IDs deMF053. Ajustes al analizador compartido solo por regresiones demostradas.
 - [x] Leer los instrumentos completos de todas las consignas y formatos; corregir con RED→GREEN; registrar textos, ensamblajes y huellas. No cerrar por conteos.
-- [ ] Comprobar paridad servidor/alternativa local y sugerencias por propósito. Las orientaciones docentes, software comercial y envío/publicación no se imponen por defecto.
+- [x] Comprobar paridad servidor/alternativa local y sugerencias por propósito en contratos. Las orientaciones docentes, software comercial y envío/publicación no se imponen por defecto. La prueba autenticada sigue pendiente.
 
 ## Task4: instalación individual y pruebas reales
 

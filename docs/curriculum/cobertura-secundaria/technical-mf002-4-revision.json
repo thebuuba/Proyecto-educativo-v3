@@ -9,7 +9,7 @@
   "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "independence": "Menor independencia: revisión propia, conforme a la prohibición de subagentes.",
-  "method": "Lectura de todos los textos completos y ensamblajes iniciales; relectura de 48 textos modificados en v2 y cuatro en v3, además de los nuevos ensamblajes. Resultado:108 textos completos/94 consignas. Lectura del paquete de cuatro formatos de tablas y de la escala de frecuencia. Verificación exacta de los 376 instrumentos contra los textos, niveles, puntuaciones y reglas de formato leídos. No se infiere pertinencia del conteo ni de HTTP200.",
+  "method": "Lectura de todos los textos completos y ensamblajes iniciales; relectura de 48 textos modificados en v2 y cuatro en v3, además de los nuevos ensamblajes. Resultado:109 textos completos/95 consignas. Relectura adicional de la justificación sin combinar documentos y de sus cuatroformatos; las376definiciones previas permanecen exactas. Lectura del paquete de cuatro formatos de tablas y de la escala de frecuencia. Verificación exacta de los 380 instrumentos contra los textos, niveles, puntuaciones y reglas de formato leídos. No se infiere pertinencia del conteo ni de HTTP200.",
   "sourcePages": [
     54,
     55,
@@ -26,9 +26,9 @@
     66
   ],
   "topics": 81,
-  "cases": 94,
-  "fullInstruments": 376,
-  "uniqueCompleteCriteria": 108,
+  "cases": 95,
+  "fullInstruments": 380,
+  "uniqueCompleteCriteria": 109,
   "pendingInstrumentReading": 0,
   "corrections": [
     "Las palabras tabulaciones, creación y archivo no introducen acciones ficticias.",
@@ -1948,6 +1948,26 @@
     {
       "id": "files-observed-frequency/lista-ponderada",
       "sha256": "e995992fe45295a0d131ba6b921b5e93b05fbf39fd9c5c7ba02772b9472cf70c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-justify/rubrica",
+      "sha256": "92669eaa7c44df2dabd6069c7206fa36ffc92dcac6331b83c0e4ad083bac4955",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-justify/lista-cotejo",
+      "sha256": "350df062d1b02c9a0b1ab75abf08a19b09ea396cff34a2b1c8d75a42b301a2ad",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-justify/escala",
+      "sha256": "fe259994bd27e8d3473d695e85e2a8501948fce6c53a8340c8c3a93ef48f53d8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-justify/lista-ponderada",
+      "sha256": "b1f9f05485428de5fc4fe260fc49e2896cbf4b1f652005fa6d7e46f6c0b64641",
       "status": "REVIEWED"
     }
   ]

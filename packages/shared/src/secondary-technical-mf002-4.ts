@@ -764,7 +764,7 @@ export const technicalMf002Four:TechnicalModule={
       "grade": 4,
       "label": "Comparación de documentos",
       "match": "versiones del documento|compar\\w*[^.;]*documentos|combina\\w*[^.;]*documentos",
-      "relation": "la identificación de diferencias entre las versiones dadas y la conservación de los cambios indicados al combinarlas",
+      "relation": "las diferencias identificadas entre las versiones dadas y su relación con la decisión solicitada",
       "pages": [
         56,
         57,

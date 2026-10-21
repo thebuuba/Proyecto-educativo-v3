@@ -1,0 +1,28 @@
+{
+  "moduleCode": "MF_002_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.143",
+  "project": "eolgunypmtgrsyrjzcld",
+  "status": "BLOCKED_BROWSER_URL_NOT_VERIFIABLE_BY_TOOL",
+  "account": "PERSONAL_DEVELOPMENT_NOT_TESTED",
+  "observed": "La herramienta no pudo determinar con seguridad laURL deChrome y detuvoComputerUse. No se realizó el recorrido personal.",
+  "servedBuildVerifiedByHttp": true,
+  "entry": "/assets/index-CIegXYrw.js",
+  "technicalAssets": [
+    {
+      "path": "/assets/instrumentos-tecnicos-COWcEdwZ.js",
+      "bytes": 254673,
+      "sha256": "9756d1c9a7e14470af65d8ec96f3c7d58fd9b1281e336ab88a9dac9cbe3d2ebc"
+    }
+  ],
+  "personalSessionCache": "NOT_INSPECTED",
+  "serviceWorkerRegistration": "NOT_INSPECTED",
+  "personalSaveReopen": "NOT_RUN",
+  "storageCleared": false,
+  "existingDraftsPreserved": true,
+  "manualSteps": "docs/superpowers/reports/2026-10-20-tecnico-ofimatica-4.md#prueba-personal-pendiente",
+  "limitations": [
+    "La comprobación HTTP de assets no sustituye una prueba en la sesión personal.",
+    "Los recorridos QA no acreditan el funcionamiento visual con la cuenta personal."
+  ]
+}

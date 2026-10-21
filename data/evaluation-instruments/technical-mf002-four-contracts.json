@@ -1239,6 +1239,18 @@
         "technical-mf002-ce8-5-1",
         "technical-mf002-concept-5"
       ]
+    },
+    {
+      "id": "compare-documents-justify",
+      "description": "Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.",
+      "topics": [
+        "word-comparison"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-051",
+        "technical-mf002-concept-2"
+      ]
     }
   ],
   "negativeDescriptions": [

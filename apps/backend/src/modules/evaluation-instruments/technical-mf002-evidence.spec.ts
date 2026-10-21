@@ -44,6 +44,11 @@ describe('Ofimática: lectura disciplinar de los instrumentos',()=>{
  it('comparar documentos no exige combinarlos cuando no se pide',()=>{
   expect(JSON.stringify(rows('Compara las dos versiones del documento de texto proporcionadas.'))).not.toMatch(/combinarlas|combina|Combina/)
  })
+ it('justificar la comparación tampoco exige combinar los documentos',()=>{
+  const criteria=rows('Compara las dos versiones del documento de texto del caso concreto y justifica tu decisión con los datos dados.')
+  expect(criteria.map(r=>r.templateId)).toEqual(['technical-mf002-word-comparison-comparison','technical-mf002-word-comparison-justification'])
+  expect(JSON.stringify(criteria)).not.toMatch(/combinarlas|combina|Combina/)
+ })
  it('crear, duplicar y organizar hojas con objeto compartido conserva las tres acciones',()=>{
   const criteria=rows('Crea, duplica y organiza las hojas del libro de cálculo de práctica según la ficha.')
   expect(criteria.map(r=>r.templateId)).toEqual(['technical-mf002-workbooks-creation','technical-mf002-workbooks-application','technical-mf002-workbooks-sequence'])

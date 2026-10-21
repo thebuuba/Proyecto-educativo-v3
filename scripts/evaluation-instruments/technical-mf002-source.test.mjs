@@ -53,7 +53,10 @@ test('conserva condiciones literales sin convertir actitudes y orientaciones en 
  assert(attitudes.every(r=>r.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'&&r.adaptationIds.length===0))
  assert(strategies.every(r=>r.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'&&r.adaptationIds.length===0))
  assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.implementation.instrumentReview,'REVIEWED')
- assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ for(const kind of ['httpDb','browser']){
+  assert.equal(typeof m.implementation[kind],'string');assert(m.implementation[kind].length>0)
+  assert.equal(m.implementation[kind],m.verification[kind])
+ }
  assert(m.limits.some(s=>s.includes('200')&&s.includes('automático')))
  assert(m.limits.some(s=>s.includes('correo')&&s.includes('envío real')))
 })
