@@ -48,13 +48,20 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.142')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.143')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()
     const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogCurrent
-    expect(technicalModules).toHaveLength(1)
+    expect(technicalModules).toHaveLength(2)
     expect(technicalModules[0]).toMatchObject({moduleCode:'MF_053_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
+    expect(technicalModules[1]).toMatchObject({moduleCode:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],grade:4,cycle:2,modalityCode:'technical_professional'})
+    const frozen142=evaluationCatalogForVersion('evaluation-2026.142')!
+    expect(frozen142.technicalModules).toEqual(technicalModules.slice(0,1))
+    const {version:version142,technicalModules:technical142,...rest142}=frozen142
+    expect(version142).toBe('evaluation-2026.142')
+    expect(technical142).toHaveLength(1)
+    expect(JSON.parse(JSON.stringify({...currentWithoutScience,optativeScienceModules}))).toEqual(JSON.parse(JSON.stringify(rest142)))
     const frozen141=evaluationCatalogForVersion('evaluation-2026.141')!
     expect(frozen141.technicalModules).toBeUndefined()
     const {version:version141,...rest141}=frozen141

@@ -25,7 +25,7 @@ Consigna corta frente a título incompatible; acciones independientes y negadas;
 
 ## Bloques
 
-**Contexto de Ofimática, 20oct:** fuente confirmada en `20d49102`; catálogo142 congelado y contrastado con Development (75releases/985snapshots). Lista explícita MF053/MF002, procedencia IFC006/IFC007 validada como fuente, sin atribuir programa a matrículas.831focalizadas y90.128backend aprobadas; buildsbackend/frontend/Cloudflare0(dry-run),lint0;296definicionesMF053 exactas.91contratos preparados, proveedorOfimática todavía pendiente. Ver `2026-10-20-tecnico-ofimatica-4.md`.
+**Ofimática en fuente, 20oct:** después del contexto confirmado en `b48b49a7`, proveedor MF002/cuarto técnico conectado al catálogo143:81adaptaciones/94consignas/376instrumentos completos revisados.20regresiones disciplinares corregidas;1565focalizadas y91.000backend aprobadas. Actividades frontend y builds finales en curso. Manifest puro de ambas fuentes,11pruebasNode; sin instalación ni escrituras remotas. Preflight reciente PG/Auth/Storage Development aprobado, frontend servido pendiente. Una única implementación para IFC006/IFC007; no se atribuye programa a matrículas. MF053 conserva su estado remoto parcial y susIDs. NO PUSH. Ver `2026-10-20-tecnico-ofimatica-4.md`.
 
 **Avance documental de Ofimática, 20oct:** MF053 confirmado en `08477b7c`. Fuente MF_002_3 de4.º revisada enIFC006 eIFC007:210registros/302partes,5pruebas aprobadas, duplicados y erratas impresas conservados. Plan `2026-10-20-tecnico-ofimatica-4.md`. No hay proveedor de Ofimática todavía; siguiente: conservación de142 y contexto explícito del módulo. El bloqueo DNS deMF053 continúa sin reinicios en bucle; su borrador eIDs se mantienen.
 

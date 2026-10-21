@@ -1,0 +1,1954 @@
+{
+  "moduleCode": "MF_002_3",
+  "programCodes": [
+    "IFC006_3",
+    "IFC007_3"
+  ],
+  "grade": 4,
+  "catalog": "evaluation-2026.143",
+  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "independence": "Menor independencia: revisión propia, conforme a la prohibición de subagentes.",
+  "method": "Lectura de todos los textos completos y ensamblajes iniciales; relectura de 48 textos modificados en v2 y cuatro en v3, además de los nuevos ensamblajes. Resultado:108 textos completos/94 consignas. Lectura del paquete de cuatro formatos de tablas y de la escala de frecuencia. Verificación exacta de los 376 instrumentos contra los textos, niveles, puntuaciones y reglas de formato leídos. No se infiere pertinencia del conteo ni de HTTP200.",
+  "sourcePages": [
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66
+  ],
+  "topics": 81,
+  "cases": 94,
+  "fullInstruments": 376,
+  "uniqueCompleteCriteria": 108,
+  "pendingInstrumentReading": 0,
+  "corrections": [
+    "Las palabras tabulaciones, creación y archivo no introducen acciones ficticias.",
+    "Comprueba y reorganiza conservan su acción; crear, duplicar y organizar preservan las tres acciones con objeto compartido.",
+    "Insertar tablas, ordenar registros, aplicar fórmulas y registrar mediciones tienen evidencias separadas.",
+    "Comparar documentos no exige combinarlos. Una tabla dinámica no exige un gráfico y el gráfico conserva la representación.",
+    "Exportar con pronombre conserva su acción; la frecuencia registra las observaciones.",
+    "Hardware/software y buscador/metabuscador se limitan al contraste pedido.",
+    "No se imponen200p.p.m., envío real, ejecución de macros, credenciales o publicación."
+  ],
+  "formatReview": {
+    "formats": [
+      "rubrica",
+      "lista-cotejo",
+      "escala",
+      "lista-ponderada"
+    ],
+    "totalScore": 17.35,
+    "allocations": [
+      [
+        17.35
+      ],
+      [
+        8.68,
+        8.67
+      ],
+      [
+        5.79,
+        5.78,
+        5.78
+      ]
+    ],
+    "manualFormats": true,
+    "sourceParityVerifiedByContracts": "FINAL_SUITE_PENDING"
+  },
+  "limits": [
+    "Sin pruebas HTTP/DB o navegador MF002 aún.",
+    "No acredita otras materias técnicas ni la cobertura integral de secundaria.",
+    "Progresiones pedagógicas de AulaBase; no son rúbricas literales del currículo."
+  ],
+  "instruments": [
+    {
+      "id": "hardware/rubrica",
+      "sha256": "2bd206407209db19fe94e4f788da42fdd1859cd4e9e67d3a59cf5740cb5c1fc9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware/lista-cotejo",
+      "sha256": "8b2d8de101302dd7152d32ea09d87eeff4b39bebea7b2ab80f078913ed22ae53",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware/escala",
+      "sha256": "c54150ce28cf60dcd929cf5512a09719a8ed3ea445033a733a84cb4f6c893cb5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware/lista-ponderada",
+      "sha256": "fb9c71299a901ebdc13645a44ef8cdd1a0e4dbf973d33cc3dc4af2bd22cb19ad",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware-software/rubrica",
+      "sha256": "0be40d00a6148731f0d2f6960cc822a89a9348e47dd48efc98f34381d50adb78",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware-software/lista-cotejo",
+      "sha256": "7bc91d121f34b2959271836aa6ba93816ac73030ef409e8962ba9b38884c4e89",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware-software/escala",
+      "sha256": "c8851aa9cbd559d95a3e77b418bd7902912333117a4e8b68dce92e64b87dd5a1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "hardware-software/lista-ponderada",
+      "sha256": "76bf7510a33dff33bea942448a69bcba8e09444364761fee055db4bea6a80649",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-types/rubrica",
+      "sha256": "47358e48ca34155a914e1c52e0e73f1d5ad7507da3d60be9c07888d7d99b2bf0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-types/lista-cotejo",
+      "sha256": "f62cda6aae8ffef99784e8df81eb5b7c507fb6d8054e32cbb9018f816c5d38d7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-types/escala",
+      "sha256": "e8c003815811c1e510b0785c8c3af59cfcdb8c8bdff3430fb062e3f59b9695e7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-types/lista-ponderada",
+      "sha256": "49e8af1b357360a981807dbdad9a34f9b2c98f74af346cee7d6417ea852c9c80",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-interface/rubrica",
+      "sha256": "2454eeafbd233a9cf06a64dbda952fd8d65621ef02e8b792f7e767467a8ed253",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-interface/lista-cotejo",
+      "sha256": "abe19ea58a23a17e2d7d2080776c2544b391a086c1982bbe13a0683656ae89a0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-interface/escala",
+      "sha256": "64d82ab154931775e30947914ab002b0e40f3a9861b7f1db8668157ea417b185",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-interface/lista-ponderada",
+      "sha256": "27560732a18f945c24db56fc358ffe99828275f0357b0c33b157ea0d3e6bc5da",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-settings/rubrica",
+      "sha256": "2b16efe41329b68778b66bf5d957942d4eb0b30591e7bf5c2c776f964973bdb8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-settings/lista-cotejo",
+      "sha256": "3f602391d1cdc0e365f1ec127139466cb147ac8ba9e16e2da987cd79d2363e3e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-settings/escala",
+      "sha256": "77335d99146fcbc56856c30c4a98161ad5c225a16b73c9a659deaa18a29864c0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-settings/lista-ponderada",
+      "sha256": "415e723684cd909c50bdf813c52b0793175ab36d0a13621a2d059911852ab77f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-tools/rubrica",
+      "sha256": "9de7b1245520e58add6389dd87a5cacf5d6eeefe52925270c9c6adc64841f28f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-tools/lista-cotejo",
+      "sha256": "f352c50fb997c6dac619eb768cacc585337b9a9b61723d7bf275d49bce946da4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-tools/escala",
+      "sha256": "a619d13f5fb944ea830f00c44d6d346543264dad9601b467f13f555d6f3a0cd1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-tools/lista-ponderada",
+      "sha256": "6be595a9f91d36ef4a7514a8c804367ddfd286720805aae8f00145c70e2383ab",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-commands/rubrica",
+      "sha256": "c5f75c319212f723bef1d3a088758164d93a085e2cd5eca7a13e9a0911502dfb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-commands/lista-cotejo",
+      "sha256": "c97ecb72f31ddf4243d71a337d8e08b72d4b0769aca15e5f47bcdbb4ce0aa850",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-commands/escala",
+      "sha256": "97fe5b7dd1a6bc607f0d07c000cdb9c2b3a3e8c684a936227c92681ee7c23ce4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "os-commands/lista-ponderada",
+      "sha256": "8bbc95f23b93c4275723bea7c2b35a98f27fe553e2f91cec682c98db5c3333d9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "peripherals/rubrica",
+      "sha256": "7c882e0f32f3a3a623e00b3fcc9f6b353e7ad9c22219f10c52a7ecd34e960abe",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "peripherals/lista-cotejo",
+      "sha256": "eb6e8aeb0efc781fe63431a8b3b8221f9d681a69c00601c2320cfcdb62f2cd1f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "peripherals/escala",
+      "sha256": "34ea110d8a5fe8427017fb30ada1b7406d4010e769b75fc4cff5dcb3c28cb256",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "peripherals/lista-ponderada",
+      "sha256": "7034e873778c477cd14064fb9dd8a68b8ceffb333f1456bf5aca5ab88e710590",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "connect-peripherals/rubrica",
+      "sha256": "b4205803b77ed3fc2af4033552bd152d4c57d97b3c0da4d2d460502da85398b2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "connect-peripherals/lista-cotejo",
+      "sha256": "676189800a217ef29c0a7eb96b3ae850316d23eee53063baffc7030e83c80fc1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "connect-peripherals/escala",
+      "sha256": "ac694543ccb6aea4bb27fa1ccb18b908de31ef56918fd808e6545268869f2135",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "connect-peripherals/lista-ponderada",
+      "sha256": "48ae60f80a484b9080ea2547b1652e813acfa9c231df223f81722322d59e4fbb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "antivirus/rubrica",
+      "sha256": "306b5eea222cd095171be8cf9c0465c972e9ffc32b16b713c17947ca8e5a597a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "antivirus/lista-cotejo",
+      "sha256": "f7bc3831ea5abf601185b3364b1c1439e9663c807b97c835f53a1cfcd133be45",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "antivirus/escala",
+      "sha256": "27f1acae90678ccccbd4ecdc21f56a0653e4c47df4d0bd733911d8c50ced6ad1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "antivirus/lista-ponderada",
+      "sha256": "a1589df4193cff57a06208a08e8d46db2c686a38aa19575ba8f704f409b5bc93",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "storage-maintenance/rubrica",
+      "sha256": "78beafff130c1f81d1d66a34fbc63711c155850db56d7e585e1f1495eb1bc64b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "storage-maintenance/lista-cotejo",
+      "sha256": "3af468f0a807e8ac4255c892f806b508e70420b636e86b14d1435733f43c060b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "storage-maintenance/escala",
+      "sha256": "76627306168685c5d7fecdac87022b8dac46c1300bf62c81ea7f0cf29b3dc4de",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "storage-maintenance/lista-ponderada",
+      "sha256": "5f67052d8bd2dec5ea83e4f9747d5428f38c359f88ae8f528e3c34e11f323f3d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "keyboard/rubrica",
+      "sha256": "1055d0755b02acdc3f339399f49b50b4ef62ab7a5d3bbfb95a85487b24bda3da",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "keyboard/lista-cotejo",
+      "sha256": "76641955b001282e9e530b905567ce5f7e3ccc21771b3664a9b5adcb2fe7fca5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "keyboard/escala",
+      "sha256": "c67fa0b00d1312a43bea2032b016f63fed86acb83b40a12f90476beebf0bae6a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "keyboard/lista-ponderada",
+      "sha256": "45f47bb19353dd6d731b5253778099e86d6023d22c72472671795953104ab18a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "typing-speed/rubrica",
+      "sha256": "160d11e8258feeb310a08b762b69394026a37d225943e5ca5dff9f7ae15fa914",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "typing-speed/lista-cotejo",
+      "sha256": "7125089894ee4f4b35b1cb70dac198d75326250b471d901007ebc519535b47ca",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "typing-speed/escala",
+      "sha256": "62402d7c244644d002bf64e3ed388e2b9f551085a08f1c65511d82abec40642d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "typing-speed/lista-ponderada",
+      "sha256": "bcdbae91f3a5e60a51d45f886224ec5ceaa2f1a691b238b911e56c8414fd3f0c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workspace/rubrica",
+      "sha256": "ad763aa9a2d180033b7759a4f4576c27e434f2d4eaa234fc0c8358f0c4b61b8c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workspace/lista-cotejo",
+      "sha256": "3d434e3e2763d518d04465bb523e8d9ac5e110263fa7b98f281ea2c35d306220",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workspace/escala",
+      "sha256": "ec9c6f9beaa523298abeb7819ac863e4104837dae23545ad3ed739e0e9fa50c3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workspace/lista-ponderada",
+      "sha256": "18deca1cfc6f20ef8c9a6ef29ffba5ebf2aaf9cd1a0afb8170638d634b47506b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document/rubrica",
+      "sha256": "fadc652bc41c7b4b8e1842891c768c05371b305a5b9f170664ec4249fb9b4e4a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document/lista-cotejo",
+      "sha256": "467de4583ec0cafe4da2b983f6049abe56a79b118746e665952dd9fa2c262972",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document/escala",
+      "sha256": "c1ae1954cede9be6085cdb54a99402369e892b60cf130e9266959fa045a984b1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document/lista-ponderada",
+      "sha256": "9cd600bdf51ae2dead6c373d68cbd605ba16ff78492778e3d382a7ae1b88866c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-template/rubrica",
+      "sha256": "26e3f5e34bce8264c3848e31282ead4fe4325d9ecd20f1b39e073f8f929fde69",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-template/lista-cotejo",
+      "sha256": "06502b9814b4628af0013216eabeb92a9951c77bded78ea102678f7e8059cc74",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-template/escala",
+      "sha256": "a89a0c1d1701cd12cb3ffe5b3c1460af5597931877b4e61d3cc9c0f10668a324",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-template/lista-ponderada",
+      "sha256": "25058a75abfe1defae58bccd7210d8f6104ba3e6c6802ff9756a870eb4ea0e2a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-format/rubrica",
+      "sha256": "76f5c0c3856b0f511f6c7c0833710fca2a3ba930d8bc3d5cb93fad670c544d6b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-format/lista-cotejo",
+      "sha256": "dd313d788afa14280b8208848c19abce3c53863d4df6f7a4223e53a58be66938",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-format/escala",
+      "sha256": "3b14a3ff62509f666e863cb2255c7655030dbbc187c9a51906bfaf26b8bf9317",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-format/lista-ponderada",
+      "sha256": "156795abd58951183f6a94ac36c1ee2e042469b314fd8210f0649e5b3564529b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "page-format/rubrica",
+      "sha256": "8be7f4cf645046af0422b076c5cce6fd7d66194b8e52d315960abe866fda2aeb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "page-format/lista-cotejo",
+      "sha256": "a55e603b20fc7a84ff2dfa50ddacc446de595e52bf67aa780913a28636025979",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "page-format/escala",
+      "sha256": "2ccf55844514b69d572a61c69ee8ee75613399b14db1978e28c5ea1a33aa00f5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "page-format/lista-ponderada",
+      "sha256": "00fc87e5072d848e003caa8919d95f8fbd642c83fb09348782acd75cf8c0cc4b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-correction/rubrica",
+      "sha256": "e62248a14c1f45fc9e60e60b5d5723adee800f09b6363cd16d50161e5f8a6847",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-correction/lista-cotejo",
+      "sha256": "e8ba01036c84ec953767ed7e5f6c38b4d66be6a617c2709202e05fa0d88a26be",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-correction/escala",
+      "sha256": "f5d6b20722b3178ea1d6edcd4b5329cba001c042b4f7359a00e65e822d5b9f13",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "text-correction/lista-ponderada",
+      "sha256": "e15acda695e999434f4f5ed3b17c45a43dd02f4fe0f676f9ae1760db27d20d10",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-customize/rubrica",
+      "sha256": "324eba275a546e4048e8b8fbc558983b1a5945db5583e7c33c82e935f8884423",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-customize/lista-cotejo",
+      "sha256": "91241d3a485e667236d3266e00749c774f29e72cfd9db9f64c60406d5b91d136",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-customize/escala",
+      "sha256": "cd263161669df19f4064c4988944207d70b9079fea7d24ed2b3de275935456e9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-customize/lista-ponderada",
+      "sha256": "9207ef592cac131123cd27a11a3fa24351847ea9cecca9ddd83ab6bd1b52d6b4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-tables/rubrica",
+      "sha256": "5376ea01c0e6e56a169c60e23ae0f49b4d2d4c895ff8b426c8237e13d19314bf",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-tables/lista-cotejo",
+      "sha256": "ae82562f367ab404b4a9d96fb75981995f6f85f8f490fc0d35be49a2a756e90c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-tables/escala",
+      "sha256": "897765bee425adca37627685b897735d3241826b1f334a597c3b9714b04e95f2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-tables/lista-ponderada",
+      "sha256": "0b9d548923bdad6145a2bb88207e3c1e716515a1f56c4766d4e51ec2ae7dab78",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-structure/rubrica",
+      "sha256": "57de41d5e4e61eff98533c45deb6f183ea364d5ccd7b0f07acbb088b7efa10ee",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-structure/lista-cotejo",
+      "sha256": "3698207159bec7da442bab8264f8132a58159101be3b7e7381ccc35c0225924e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-structure/escala",
+      "sha256": "3fd2465843835b174380988eff18d3f12cd1bec1415c5da69fd3095a34541eb4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-structure/lista-ponderada",
+      "sha256": "85df79506f4d9e58d03408b7e311684abecf371ea8e64ea0c20149bf53f4be5b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-formula/rubrica",
+      "sha256": "5e54398f4ac2f8ed67b2dbf1c70a2680099ebf9f121842779f4ea39cccc2052a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-formula/lista-cotejo",
+      "sha256": "c90aa117acf7959ec375fdf2ae1cfe713da602f41c64f0bd3f1ac52b50222ef9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-formula/escala",
+      "sha256": "a7f1f6f2261a0799d3b867f73cb7f8f5be3b36d360e5628341b9d039ab9c5dbe",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-table-formula/lista-ponderada",
+      "sha256": "778d8ac1731e7b40e7cdac234698de4fa179097fef8abbae75e09317aaa392e1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-images/rubrica",
+      "sha256": "13a398b9c824f8ac977cce8498087571caaeae574ccd47f261530cefaeff6a81",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-images/lista-cotejo",
+      "sha256": "a2ecc6974a948515dd9f0cbb231301d7edba85ea25cf984950bc932829408bee",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-images/escala",
+      "sha256": "da36d1a66844d49dae268771c850170f54fd671fe3c457da2c7fd4c8b2df022a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-images/lista-ponderada",
+      "sha256": "a0875bc900ca70c0a000a160e35a80cb71d481260cdcb7f3298827f8634fcfd2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-diagrams/rubrica",
+      "sha256": "73f57116c2580e8c6fe5efd0b77493dc7dda19d9ebf61761fc62fba53db38124",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-diagrams/lista-cotejo",
+      "sha256": "df41114d8f5d4ef244fd2344da0e9eefaccab1c9341553bdc6c57f2bf29d3c40",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-diagrams/escala",
+      "sha256": "01e22dfe25ca16c48deff590406e04bbf5e27df8bfc42d3c2a5e9afb5ef3b01e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-diagrams/lista-ponderada",
+      "sha256": "75861697bc2e3f81c934c5ea77f6ef27fd8156e0761d5ad28b4b31cb1f9b6347",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-watermark/rubrica",
+      "sha256": "176bad3b05ae52e72a53fc79c895eb41713ee90f5b7e9fc45a64471966fb11a2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-watermark/lista-cotejo",
+      "sha256": "7af52b1916ea347314dfb451cfacdc8e36d5610bb9dc8cb679c23ad314a0325b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-watermark/escala",
+      "sha256": "c5da55a1ab12b2f703778e8392d1f76d5f4c241ae024cc55b46906212511f276",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-watermark/lista-ponderada",
+      "sha256": "999af8b27026feada1accb25ba8a6df32ed26716d0a83c2fe47185aa6064f4f1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-equation/rubrica",
+      "sha256": "c1298258a955d566e4779af441ed1f35c92a3cd00ee47712b896764a8b133315",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-equation/lista-cotejo",
+      "sha256": "5ac4e8ecd6eeec0aa37f46296fc0542c65a237bc838f89b08d70daee3e4b08a2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-equation/escala",
+      "sha256": "fac504fc81c824c142789fe755fd200f007f60d9d7f477192edb168904a6f04b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-equation/lista-ponderada",
+      "sha256": "4b22b854ba083a4c1b02431a0b13c3f59a0e35e6b7d30d15c91dcd9b859180bb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-screenshot/rubrica",
+      "sha256": "4d4c7ca5d8aa85dfd9831a72977b5dce1b9e2790545f06d0612c103e48e3ce1c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-screenshot/lista-cotejo",
+      "sha256": "60b2093a2de8b52009212338e917ef070d606fd4de43e84bbff6ff55ff633564",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-screenshot/escala",
+      "sha256": "78ef21f5f37d778307242b693820ee30cd66cf3c84ff5ba7b9fb7152f291ec57",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-screenshot/lista-ponderada",
+      "sha256": "5cf73bff7fa6997325cc0cceffc298bb9f54380e4ae453f90dff50fe11f25f3b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-outline/rubrica",
+      "sha256": "47edf713711d3616d379d624026b6d5150e23b3b4eefdff180d70f6431c0dfa6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-outline/lista-cotejo",
+      "sha256": "97e73e9e000293f7654b90254c67a7c1a5bf91288f94b9c0a5e1988e6495e6ce",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-outline/escala",
+      "sha256": "f9624e5d243a3f37b5eacc8cbfda892baf7476e71dce0f6c6cfa7045bd20e9ca",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-outline/lista-ponderada",
+      "sha256": "1f48bff0f555f7d2b0c94f5f5d7d2cdd8f78d145aad903579585d947a89f5692",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-columns/rubrica",
+      "sha256": "ad9da344087096c9c62f26b3c2a7075b2648c0f4c9f3f3a76789a8c7734750d6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-columns/lista-cotejo",
+      "sha256": "2c2131b8f2fe0bc5028eba29870e5712d6ec86072465950b5e256e9fa85f830d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-columns/escala",
+      "sha256": "0f03e98ffb2ea6349a53af21ad3c8453e109e6ae67cd1a88a56f92f34c520ca6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-columns/lista-ponderada",
+      "sha256": "28ecaa5fb2c1066f4480436fe5f4f87a5eed3459a86e35ee59a163a3aeb96530",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-merge/rubrica",
+      "sha256": "0dc1c54db764905fce02fcb2b9a6c20f1acb06b5257f642d011ce46442f144c8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-merge/lista-cotejo",
+      "sha256": "d4874fa95e6de42b9e99d8a3d48fc079e770e77f6ba34136adc69f7753beb66a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-merge/escala",
+      "sha256": "5506822fbe0a54ec6a99395ef7ccc901c75b4d50bf86f79a922058314be0b385",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-merge/lista-ponderada",
+      "sha256": "695fbbf3e49045cde85ea3afff9e5b902eaec7519d55b654dc1bd0774e9eafab",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "labels/rubrica",
+      "sha256": "84a77be67ba3badc8bceee2d4665d55b2aafbadd4a93d0eab09ee36f34ff14de",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "labels/lista-cotejo",
+      "sha256": "5204ce73e153919e63cd52379752de47ca80af1df704603207d724aa7935e3d3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "labels/escala",
+      "sha256": "fba91da292a9b342e73f24f2f1ff8bfd69861f83df22a41175767a4442bff5a2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "labels/lista-ponderada",
+      "sha256": "82a77054898a2b443b045e11032b0f17ffbf055e55a10e75b09bda553ff9c011",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comments/rubrica",
+      "sha256": "a6ef34ee7c042e8f0f66c1ddc2659c8dd5a39b6f276fb057c61b8aea1c55cc50",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comments/lista-cotejo",
+      "sha256": "802d5e8edbe4387b43a3d7a50ce3a57d68858be742f6d8b35a8ad22c0f85d8e0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comments/escala",
+      "sha256": "af7ec9191012f3592ca5a7668f3edb25b04519b65fd52ab8bf0a19a06cb767ee",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comments/lista-ponderada",
+      "sha256": "118e1fdb5cad4c135e552cf85037529ddfa289101d1a78151563a980205a2038",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-changes/rubrica",
+      "sha256": "a57d6cc979a6b5c8a1b15413dc950caa70f35c9a17e13d7e74d60c2ace18eecd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-changes/lista-cotejo",
+      "sha256": "68a3fdd0633b47751f1fabb0b70d6ca64d2e448b8e02f6de4a443fb874a25186",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-changes/escala",
+      "sha256": "7f006b816b4bb859d5cc954d1aeae323f34c3767f28e2434bdbcb6c9360929d9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-changes/lista-ponderada",
+      "sha256": "18e36f9ceeb96c429229d507e7c51f069fdc0778b4d5652d187f827f35475da6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comparison/rubrica",
+      "sha256": "bdbbb36501ea3dc380b42d7fc7cbf9e487a4f9b04c8fbf444136b0fb9cd01228",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comparison/lista-cotejo",
+      "sha256": "834871204694b86c24d8f7105314f02912be559d3db8af0fbf3495133de9323d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comparison/escala",
+      "sha256": "30c0e09a64b482065a7e4163e8331de580c4040e802171d75aa0aea908970197",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-comparison/lista-ponderada",
+      "sha256": "d214a18be1454e569188673b9f859516f7a28cc325323beefce5ae37c52d67b6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-protection/rubrica",
+      "sha256": "e3e7655157b12079b29e32aa5b7417c4e5794ad59af732493c60aa12512a6063",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-protection/lista-cotejo",
+      "sha256": "7f162c492e26994198b2b6291e27ce351238f8d1c3df472e734f7f172cdff912",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-protection/escala",
+      "sha256": "9b4dae8b5550fcf8acbc31634593d45b04585ed90ba23c3eb2ab76c8acc47ace",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-protection/lista-ponderada",
+      "sha256": "6e2625eea512ebbeb1cb41d23db05142993fa697c5539f2f406cdb043befcb50",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "file-export/rubrica",
+      "sha256": "abba503665eacb73a007ed12fc96e15ff493a1790025eb3bbd97b78a5a61cd7d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "file-export/lista-cotejo",
+      "sha256": "efa968da9882c12bfa4117a14914c662c37f0d1dc365f234e413ba2083431d89",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "file-export/escala",
+      "sha256": "259cb0059ed8cef199e8e80f2c6f7927b455b5784fe12d0cb39a5e54ce4bbb1c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "file-export/lista-ponderada",
+      "sha256": "edbb29e2e16e30ceabcb515c6c3f3b24369d9895dc29f86d1859adcee0e7bfac",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-document/rubrica",
+      "sha256": "0bed2fa02ce4f75ed5c05e8e65cf82d70039825a27ae823a68ac997a9290bc64",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-document/lista-cotejo",
+      "sha256": "aa517c2b1f3337bcaa58e7a1614d8b71d3642f553cd2b7e75fa9d5e5ab9946cb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-document/escala",
+      "sha256": "7be0fc612d4ab026d5e067a58c9796da84dd8362fd91253095b99b46edd8db79",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-document/lista-ponderada",
+      "sha256": "8aa8c9f0e68652a52f28cd627e2955696a60a0b1010b1c78d6f20e10bcfc2405",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "blog-entry/rubrica",
+      "sha256": "5a0c10789814cc844ec89cb57804af4ce559f5a5e9e0d285acf526cae29778e7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "blog-entry/lista-cotejo",
+      "sha256": "f5e126eb6a36b7c1b09ab8c8835b2c00843b9b76c54d413cbbf0ef1dee487b42",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "blog-entry/escala",
+      "sha256": "dc9d37999dcd948ee87b3bf73374a7c2afa9181d2529003f1338cab7d33b76bf",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "blog-entry/lista-ponderada",
+      "sha256": "c27cf2a2cb7a983caba03d23acf799ba66bf43e88d43d3a5ee5da27f84860825",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-links/rubrica",
+      "sha256": "af9a3493bcdf2ce5495d2f4cfa6973ce0e91e6770c815d3cf63fa2b1758ba514",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-links/lista-cotejo",
+      "sha256": "b675ac6336011e06bc5ae89a8f4d24da4160ded24567538a8bea32c0deb47ac8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-links/escala",
+      "sha256": "c07c7cb2373f26aac28c777f3071f390842b9f697c7cfbd76da85b79c85a2f05",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-links/lista-ponderada",
+      "sha256": "fe772feaa46284ba31866b64ac8d385a9185a66727d8af525487509d6a5f20a7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-references/rubrica",
+      "sha256": "247ec339f8a2087086d45a998caa5538c3732c27ec59ebdcd730b9e40fa3f6fe",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-references/lista-cotejo",
+      "sha256": "3c7aa41a14e50ded264bc40700161250a71876fea57755c5e62b3648f051948e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-references/escala",
+      "sha256": "71dee8f268ffe2c641b056c881a042bf0338ce22ae7bfe3c52fb866f7b59dcfb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-references/lista-ponderada",
+      "sha256": "fd8e75479d5d5295012cf1a0297399e28e74452ade2581b6bab1b8d611600424",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-contents/rubrica",
+      "sha256": "360a45111140e026f9cfc9005d96eb0f4ea3b7f335eb7795048d800606eb8cd5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-contents/lista-cotejo",
+      "sha256": "d75a5eb740350794d72c8f5bd02a3b257a15eb0cb6142cc1b18fed0c01aef85f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-contents/escala",
+      "sha256": "0d28c123c01aeb1d1cc7a77b3c735c1f909284c15b7395edede5ef3be05eb477",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-contents/lista-ponderada",
+      "sha256": "697779fda3b4b01a48a7cac0894103bd89d8eec43a92ea5c34dba17a16521ec6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-index/rubrica",
+      "sha256": "6f246ba705a34f4c096dc6fd0d1c73e1377cf77973babc2856e95ae43e6bc584",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-index/lista-cotejo",
+      "sha256": "1740c0999a2b649b473563cfa6514097594e6f8c290b7d70dcc9d6d3c2030185",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-index/escala",
+      "sha256": "8399490524c21d68d34914f1d3f9bb240a797bce8cdf6f12950c5b7f98764dfd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-index/lista-ponderada",
+      "sha256": "a5b3c05ed290e23d4756fb5c5e099a26b3082c7d12e21681214aaeff0eec3548",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-bibliography/rubrica",
+      "sha256": "bf819f2850c4268fe9cd56bd30f638d3083319263435bba26270210a804b31b7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-bibliography/lista-cotejo",
+      "sha256": "4cf6b0a64739f153bc7e4b8cf4f098056a765b50da0dcbaa29347c1ba02fe2ad",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-bibliography/escala",
+      "sha256": "7a4714cdf5d4296d2ec9a2dcbc8495e6b291ed1f416d219d738341c94f5c105a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "word-bibliography/lista-ponderada",
+      "sha256": "1739bdb89d96f6fbee3bc3b9c8172cb277acdba516d8db82470d378f0ad592b1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-cells/rubrica",
+      "sha256": "94f0dd44ebae25639349dfa12ae410456e0c78dab2f787d8121441238f6fd491",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-cells/lista-cotejo",
+      "sha256": "e524af8d854fae7519e8b6e9c295615e089105fe602a75cb4c91fa0708cd3b6b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-cells/escala",
+      "sha256": "69dbdd41a1cbd48f8be9f20d8651973bbe589412dde16f3d999967a43ba3c148",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-cells/lista-ponderada",
+      "sha256": "62c0f2074f2a838d3476e1a7d3adcbde0b2f41dc48984cc86538f5be55c51bb3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-formulas/rubrica",
+      "sha256": "585af93d7a07759b871ab2d742d88b97038b10ffd195646dafe25c18f05c21db",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-formulas/lista-cotejo",
+      "sha256": "4e41a43db65a7f3c9b544d230cbdc8437cb6658efcb7b1a22a830db80204ded4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-formulas/escala",
+      "sha256": "93e9e7814b46ea086db77e8ecf7cd6f54c731af60b292febfc1209a42b602480",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-formulas/lista-ponderada",
+      "sha256": "d11ece9f97ccd68fd97a7302fc95d2e58895e721a98905d47d7831e4523c8570",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-functions/rubrica",
+      "sha256": "2aa1cf9a5c8df4c5e005cbceb4e35f6a1f32d5930f0281343ed6dfc2c0be5150",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-functions/lista-cotejo",
+      "sha256": "382b5ec6823503965d2c6cdc93b0fce55fe4f75a707dd6c1ade76598ad853499",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-functions/escala",
+      "sha256": "95689e84d3ab0d311d637bbc7c5b0d1b87eb565bbedc33a4c9a28a0d83492ba4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-functions/lista-ponderada",
+      "sha256": "411cecd68258418121672a7f760f7a202124ec24e2e46c262cb35a2e03372571",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-lookup/rubrica",
+      "sha256": "22e399a63bb1ba3039304907c75454ab4b6bf385b744b89c7bd18c9980905ef5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-lookup/lista-cotejo",
+      "sha256": "f1369ae898f7379ecd7c135bef58dc0bfe5ee98573bfaa62fb96b0b398887512",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-lookup/escala",
+      "sha256": "1445a673f3406a4f6e5d663b92030886d6c298405c72bc9fe9c7e4d145b63578",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-lookup/lista-ponderada",
+      "sha256": "375ec5648af1c5ccc19de508823c5d4d4c8ca2b2df8ca19dd693387bdda78636",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-chart/rubrica",
+      "sha256": "ed514ac7acbf40b8caeee61031fadc9744288590c904b465a2a79a15cfbff33b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-chart/lista-cotejo",
+      "sha256": "6c96e3429bb7f492adafa0f46c25e42c88dc104e3d2a237f435b30940c9e4600",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-chart/escala",
+      "sha256": "4a462a2f4c571d4135bb33a2774da7065e9b06fe9f7620f9988ae17c5105929c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-chart/lista-ponderada",
+      "sha256": "bd556858531a311e9a9acd1961733d901a0d20095c60b0f576305d5398c0d23a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-template/rubrica",
+      "sha256": "5b139d5c495d0bc83915e01aef54074042acd4a94610569b3993ca4eaab01a77",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-template/lista-cotejo",
+      "sha256": "e146a15747b45f463ded9409eb51f96bda81af2d369eec67207485ef8b7537a7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-template/escala",
+      "sha256": "ba7ced0207cde68ae04a7ad048cdd8fa95030af2ad6ec54bddc980c533e97267",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-template/lista-ponderada",
+      "sha256": "afeaaa46032c3d1eded88f22c35c9e860f32a8864cc29fdeeac5ac985201558d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "conditional-format/rubrica",
+      "sha256": "45ba226d387c17645b84862eabc40f9811a47f07922b5701f62a29a1f81435ab",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "conditional-format/lista-cotejo",
+      "sha256": "a3effdc86b37b6f03de5242960e2aa97d1e393b8534b51faae0b29d664c80f99",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "conditional-format/escala",
+      "sha256": "b89397538a444c198752846d435dd16adb2f797711e850bf6cb891bc8ad6b2b7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "conditional-format/lista-ponderada",
+      "sha256": "d6d39edd15adde541917c50dcb256e3bc76e1a57eabe6d0d69db7ffc4420cd80",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "data-validation/rubrica",
+      "sha256": "417f0add90270686ecfe54783f48e00bbe8c693f2c379821e96222213472e29f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "data-validation/lista-cotejo",
+      "sha256": "23bc3b3cf98553c61e941a9633195563ca18c16509d871a82fea7386288fec15",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "data-validation/escala",
+      "sha256": "514e18832d261b7d45e0903dcfdf62737afba98d8c1ed9f85901b1ddeac23fe0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "data-validation/lista-ponderada",
+      "sha256": "c7baf6af227778b88afda1b3474a8009c8eafa99167a9898c622559e12abc984",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "autofilter/rubrica",
+      "sha256": "d4a42e059fae2c23ee030179e76053eae9ffeb4408f245ee9130e178826cb00f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "autofilter/lista-cotejo",
+      "sha256": "dd8c24ff0ebc2938d6b8962511eb0456c0c7a05330ba0008f6445ba416357b3b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "autofilter/escala",
+      "sha256": "5d5a2e32da1da7ae8e623b93967796f44bfdefeadc1e913b65dcb74b106adc23",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "autofilter/lista-ponderada",
+      "sha256": "ab8e32c2d488b6a698932e45e9f101632dac5f3404b811d48091694bf58f8938",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "advanced-filter/rubrica",
+      "sha256": "edb446e565e6141d320639826064cbb4bf87210e19c580fb38a66bf69e1d4e6b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "advanced-filter/lista-cotejo",
+      "sha256": "964919d4895ac7f3c2acba2f37f0226a9e0548558a6eb56b6d444051b1a29955",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "advanced-filter/escala",
+      "sha256": "3e0aada4a990d638a9f2761b55153916940653b5c8571ebd33f648885028c49f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "advanced-filter/lista-ponderada",
+      "sha256": "5a239d6ee86a6e57c973930436418a8e9e23356db1be9c0d31cd2b541dac02e4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "external-data/rubrica",
+      "sha256": "0d8a2bd0818f0185471b7a10c501013f8fb24abdf867ac9b38145c443a13ee87",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "external-data/lista-cotejo",
+      "sha256": "ea5133c6950a825c7bc86325900b64135a1333e097209fbae83b88a78f12c1cc",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "external-data/escala",
+      "sha256": "47f3f169a54af818e426dccd227633c4e6302a5cf3f7da8198c11077bc5fcc39",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "external-data/lista-ponderada",
+      "sha256": "ff8915e4c247da541b130983ed114422575df1b5138369d0c72d7d2cf05d0b93",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-table/rubrica",
+      "sha256": "e32ba7438887c1cd353c90488fd4591dd61a103b8aecabe64ffe4a65f3f7196e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-table/lista-cotejo",
+      "sha256": "87df6db11e46f1379a9892b16668b7418f8bffec3df7e0948626495c0250e6b0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-table/escala",
+      "sha256": "8db5761e2768a6cb9823856df7394a10ed86fb75f21b1afffab6a1ea2b5177a3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-table/lista-ponderada",
+      "sha256": "902d1a77e6830d6a400a2bf776f85361d7257f485df39c9af7dd6d4d8b91faa6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-export/rubrica",
+      "sha256": "5e5d5fb4a3fd0f16e3fbe488215cc5a2704b0b736e1bcefc81170ec49da83287",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-export/lista-cotejo",
+      "sha256": "97879869e4191fcbd17861867be56c8742751c6b2ae070e48a2de2f4db6cb031",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-export/escala",
+      "sha256": "2a321c3bb7cf53c1e7641031bf5631773beb146dd9551dda0219acb8b1a29713",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-export/lista-ponderada",
+      "sha256": "733bdfbd9df02f6e3ff80170f9542f6d10b10b802115116ae812dc07092c1578",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-protection/rubrica",
+      "sha256": "64740af7f1b8929e70e8d6b6d59067d0c9159055a79e189222be6e8d6d928ed5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-protection/lista-cotejo",
+      "sha256": "448b6134fa034a4e5b77175fb4ba813193c8c7c09ac3023cf1dd76c41270155d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-protection/escala",
+      "sha256": "c4e062feaeba9007625d5b7c9f94951e95a83849c2d14fd52a8770b024310623",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-protection/lista-ponderada",
+      "sha256": "99f6164bbdb8dcf2ab64c5ae5fdb350989a23e031fe0cdc140bb9ae30f2eaf2e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workbooks/rubrica",
+      "sha256": "796b8efb1a4c2962228c04c0cde8cb189f432b6b2865aba39dd6c8543877ad1e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workbooks/lista-cotejo",
+      "sha256": "e777af2720063fe5531df0ea80c700e4469956ce93fbd702cd5b428187d65151",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workbooks/escala",
+      "sha256": "f494fafeb2fea23cbfdd088e806c4b767412f53abfbbd9ac246b053a9fcfd725",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "workbooks/lista-ponderada",
+      "sha256": "0cae5387505a6be34f96f5dc691e6126b30dea8675f4476ec07adbd3b6ab116d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-comments/rubrica",
+      "sha256": "9ca7edac2f7a82355e4b547696f13311e60d84109d0371ec4d484fe2310fdfd2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-comments/lista-cotejo",
+      "sha256": "8ca707928bbec1374f71a9107b6ef0e0cdd43a508dada63dc9edc6731b69b0cd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-comments/escala",
+      "sha256": "8c9e390ea32a1da888f621d0c5c41a4412726e95b2bb374e6c35991769a890b2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-comments/lista-ponderada",
+      "sha256": "9d862b014ccef38a2c007eb96d2f77e10131ff14ed8e26bf3bd9dddf3179d032",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "macros-explanation/rubrica",
+      "sha256": "5502ccfc4cc3d2c65b16c3328510216dd453f0076840236da07759b279aec9e2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "macros-explanation/lista-cotejo",
+      "sha256": "fe07fb115f3be3a40b3ec08ed8290302faa1f54a241779610b1e079a4a25f4be",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "macros-explanation/escala",
+      "sha256": "10d16c90349d2bebb58bff3e4d55af1cd5eaa1b19c5fdcf53b029a2c4af16824",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "macros-explanation/lista-ponderada",
+      "sha256": "7760e843194f252a121007810ed4639e9aa131860b48616e85a69d0c284f0a81",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-print/rubrica",
+      "sha256": "b6b53294f3158f6cb7b2704473c27b7721b01b71aea72bd357807fe5edf063c8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-print/lista-cotejo",
+      "sha256": "b4ac36bb2e1821c19714691ec77caf848b137a1c92e2e478e047d7b4e375f733",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-print/escala",
+      "sha256": "856d211ff81bd29db6a452827e570efafc2d5135aa8face935e5e863c6b2e027",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "spreadsheet-print/lista-ponderada",
+      "sha256": "5d7aec8b6e46d7c1e1ff397394d043294eadde58f7e124348e040ef2d48d56a4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides/rubrica",
+      "sha256": "43d442601958d4f80b0a6fff1210bb5c2ee673615752c1d7649fe505ecbd41b7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides/lista-cotejo",
+      "sha256": "50a41d1c8fed96152a913f1031a42f4bf081c6f7206ce4e0104a17526a0786a7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides/escala",
+      "sha256": "e7cf626663281f767a071957cd163d01b888f0b49f5c0e4da062edc502d41b64",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides/lista-ponderada",
+      "sha256": "afb2101b4ca554a67f20ceeb8a3b21dbbbc16f7c641722bf84a47a89aba42d0e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-format/rubrica",
+      "sha256": "8dae0b16054755f53f41497ce4e3986a5f5d4b99ae6c2ea7de0b00a1b95b4ec7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-format/lista-cotejo",
+      "sha256": "4c50513f00101e1ffd78d86158840f425cc2457df6559cfb4176069c5be91240",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-format/escala",
+      "sha256": "19c2dce91fc5e5d08c840e7b505a437a087c24d6e7987428557340d999a65e09",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-format/lista-ponderada",
+      "sha256": "cb5d8bf2d55f2d6cfcea67fa849d8e933e38d45ea7c99de17389dbf74a8b6b27",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-graphics/rubrica",
+      "sha256": "0befea0c9179fd58fd59867bca9979ee9e57aa8de9fa93d6f8881039eabd4b12",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-graphics/lista-cotejo",
+      "sha256": "6bccb86248fa5390f311aac847fb12334cdca45b0b89fb8ebfc051a7f62c2878",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-graphics/escala",
+      "sha256": "3ded92b23754b25e2ac78326ca43f57cd9c3f6ba655bae7c0962f2e34c1d5afd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-graphics/lista-ponderada",
+      "sha256": "9f4fddbb702fbf451a1fb99b39ab012a8cae295eeb10201c85c6fb015cd07f9e",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-media/rubrica",
+      "sha256": "a5b4b27a4f1ac767679cc6c7e54bc50a88ec332d3b9210bcf16ccd23db1879cd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-media/lista-cotejo",
+      "sha256": "4634855131c38ae0aac2e4eadb010ed812db3314fbed8798398c57bb4071ddf4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-media/escala",
+      "sha256": "4a7e734c58780148508fec5e981e120f297884acfdf6abd5001daa27d2aa3aa2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-media/lista-ponderada",
+      "sha256": "04cc53dc3c3f4454b3f09e83a69818516f63484046b780760ffd338ac5e490f7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-animation/rubrica",
+      "sha256": "6d5820cd60a6b300d678747430d3fd66dc47402a875f73412289fc0f09ed1ae5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-animation/lista-cotejo",
+      "sha256": "dd916a0df65c13e88854aa81df49f59a37c86fa6a5382e4fdcce48574db15dbc",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-animation/escala",
+      "sha256": "f80bc99074a3ce8c263155164f194ba3ec8fd8f10c995727d000ab5bc5619193",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-animation/lista-ponderada",
+      "sha256": "ab47bbf3b1f1dafd7b3cf07e8e39eb1c21e8209073c8b5cc04e0aeb9dd583155",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-timing/rubrica",
+      "sha256": "59e0dd7e656199d872e4584e1459a0a14741250f951943dc7dafe016a521188b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-timing/lista-cotejo",
+      "sha256": "83cabf42db6e1f7bd6c5a81b34982ecba70049a78a72ead8d1f0e57b2184f751",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-timing/escala",
+      "sha256": "7fc9e16e8ebd4bb07de89a741df9e3136dc6e152f2e288bd4ba62aab871515e3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-timing/lista-ponderada",
+      "sha256": "fe7cff501ddf30bfb6eee17407debd33f5e509090ba0bfafbdff18e7171cf873",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-notes/rubrica",
+      "sha256": "31624ddeef5e6dd6adc53cab4ce00fe1a703c7cc70c25e2a822549256f48213d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-notes/lista-cotejo",
+      "sha256": "4bda09764bfbe5d31c52196f62583fb7eee8a687b51950115ee9f5b9944206f7",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-notes/escala",
+      "sha256": "003f7f523fa4cca899c899125d865a40857a5fbdae0369c1adb3492fe5559903",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-notes/lista-ponderada",
+      "sha256": "7066ff906cc021831ada473e71ec803e0354539a8a1bd420a1d307cf39a96ce3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-config/rubrica",
+      "sha256": "f6ff8b5289c7ce56763e7a2a6e40fd4267ef9b49773546dc5c3f2dbf3352a29f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-config/lista-cotejo",
+      "sha256": "0bf6dea7259c31b12088e569c834a094289156ea4a0cf281e281d528c7a1abc8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-config/escala",
+      "sha256": "b53ad9abe198d2f8d41c1b3af19b7c80bafd6b91c56a6fe44d6881db94f3e1a6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-config/lista-ponderada",
+      "sha256": "10e93bffc73b7d89cb07565a3411db809803975e4eba2ed117f860d6c4059d73",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-review/rubrica",
+      "sha256": "13904d00541674944dc047a07a18e9c97e452e84f74749bb7aa98311ea8cffd3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-review/lista-cotejo",
+      "sha256": "54664107b408126a878d15bf8e7931913e5045fa8f54781bc7af4c63f545b5dd",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-review/escala",
+      "sha256": "a1efc3fa24fc267f40a9c564812789f4ba04e5b7b43cb9adb05e5e12cd57430f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slide-review/lista-ponderada",
+      "sha256": "98a5e421cf2427d74963c635760840fcb2d281a5b3921624575bd14a86649234",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-search/rubrica",
+      "sha256": "0b59d7dee17b0464be85aa3c85427b28d3d4a2fbb577b4777e87e84832cfbd88",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-search/lista-cotejo",
+      "sha256": "24288c499ae271a2f686c07878d5b4b446cca7b13716fa309f63af330e123afa",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-search/escala",
+      "sha256": "540a0b5a5d3322f82dd8373d4a5bf5ad060544398e4a647049c2a37e64f07e6d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-search/lista-ponderada",
+      "sha256": "94e874a3370b06a515a5110d6eac9aaf11d3c44acb8f80caa6030997352da9bf",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-search/rubrica",
+      "sha256": "7d9a3d17c436cebf1233b6209de3432c5066924b3c2966b31483c788dc26ba61",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-search/lista-cotejo",
+      "sha256": "d8c127014f4993cd295ed4786c4329c3014147bd869436ae3a6c39148d591124",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-search/escala",
+      "sha256": "d40c180f937050b2d2ab38f505d1eaf38f7494a60bc2600f53d30f3b9b2a74a0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "web-search/lista-ponderada",
+      "sha256": "923be4afff0a76e0dfc9b6d9fb1d700501b465514510430698531521335160d9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-folders/rubrica",
+      "sha256": "ece9387e0cba44972f25d00330c0773fd836d3b4d688d315bef3ef9930ea7a71",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-folders/lista-cotejo",
+      "sha256": "f3039f1b71737e0adb91057ae657362fd1026c7a002638cce11230094c953e91",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-folders/escala",
+      "sha256": "eaa9335a9c08b77fa0c78ab0b56119b9dcb27c7dbd02c71e767f9009791976ba",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-folders/lista-ponderada",
+      "sha256": "d840d1bd6e04addf7b325c5699db41a2d0b8b59cf87607e75b87259e5617e72f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-safety/rubrica",
+      "sha256": "29ad6909ef1faa9849d4637876a4a567e45812c5e61f99cf889dab5a2632cddf",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-safety/lista-cotejo",
+      "sha256": "862de447b88cb9054087b4ac8566cfac3aebb7cdbdc082bea9b5fa6a3d9d3da1",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-safety/escala",
+      "sha256": "0fafaa9c64863f7111b68e613046606c1f35f13be519bd66f26b874a46f1ccfa",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-safety/lista-ponderada",
+      "sha256": "5dd00136017573140940e69e46e4d5341aadbc0affc2c5096fd3d1d39170926d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "copyright/rubrica",
+      "sha256": "193f4e15ec65483980afc791f87d21ee6f4cbe323dadef169cb6c2a9ed05e7b6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "copyright/lista-cotejo",
+      "sha256": "5e2c27c4c926e2db1f047550706b50bdfb16bdcb7534e03f95f5981bc50d3a3f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "copyright/escala",
+      "sha256": "3791eafd3ef1abdb7a5ff61da15a9e2ca48f26568af43c3258441b4ae4b4cb24",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "copyright/lista-ponderada",
+      "sha256": "d5b48c4b04ecc739a28b57472b00523860662e0b44e6fec7a121c904be0f8611",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "bookmarks/rubrica",
+      "sha256": "d8ca80b9ae152c5ceaf67a474c05101f981f4ba02f404144f7160c04e2e104e2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "bookmarks/lista-cotejo",
+      "sha256": "93b573ca71695fe40ed42b84ebd571fec5a2de6c6e8d190d71facbfad04a3a1d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "bookmarks/escala",
+      "sha256": "ab7a28ddc2709765d6b62acc6d1ce877729712e326b0fc4c823101fd7e25ff71",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "bookmarks/lista-ponderada",
+      "sha256": "c69fb518d133486bf38ad338b3af741659d255b003528d5e43e68457a7739456",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-security/rubrica",
+      "sha256": "df4954ac703a4d4f40aa47a24653190dfefa0664ac7f7df3d32c43d15bad7903",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-security/lista-cotejo",
+      "sha256": "2ab653f93084ddb7fa3029a6573f9ee07ed1aa3c7b11a91e94267703d8bdcf86",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-security/escala",
+      "sha256": "4ff9db1e804d7994d5437bb9eb27f56d39761f52cb205925d1d5853404acaac9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "browser-security/lista-ponderada",
+      "sha256": "5da797bfaa39d23e47eb49fecfc84f8dcfd38cc771e4be01562de6c7261d4e07",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-draft/rubrica",
+      "sha256": "eb147b18967b790c75c6a80e78095927b88e05da6fca083677748a8a0ee4f5aa",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-draft/lista-cotejo",
+      "sha256": "f7af6ddfa28ffd4d57cda27a955d5b3efbbf0a7cf32dfea5dc40d23d251189b3",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-draft/escala",
+      "sha256": "34caa62a961bf33fd28a39230c0f7a6c90ffd82fbb72c9f48ca07b2202600669",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-draft/lista-ponderada",
+      "sha256": "7f979964141b100d5c6d8afbcc65b2f83c1ef38a46df74b57378800e2bd121d2",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-agenda/rubrica",
+      "sha256": "e0ce15f70040b81b66f858ab36875f24c8eba05a0861e086e62c874e1a2d5165",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-agenda/lista-cotejo",
+      "sha256": "3e14a2b820535a1b2282a41481c8cfdaff5a1dbd56a4b3171fba0139d0dc116c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-agenda/escala",
+      "sha256": "c2bef285a48a17d69e16eb08abb1f98638ff27e34a2982b20cb1d9b6d52ada67",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-agenda/lista-ponderada",
+      "sha256": "739b560a6b3e8a4a41d146fd0d663246ba446f1305eddf3220e98076d8bd3336",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-archive/rubrica",
+      "sha256": "7e37e30f1a687e107f2e28fb16af9c71e9c66025b6d7ca72377bd022ac41ed55",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-archive/lista-cotejo",
+      "sha256": "153fed2ec1a36f690b2d9ccc20503ffec77ca6b66b7bc0b2d30c69916f08a4f4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-archive/escala",
+      "sha256": "202ba22ec9b9226f2e8f9a29553be79c0e80e4272e7aed3f2cb5ea688aa68d9d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-archive/lista-ponderada",
+      "sha256": "b335073d1e4ef7f10b4dc1a476840b2d305d4e7f6417fccaca950d8b2346483c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-security/rubrica",
+      "sha256": "5850e77ef43302f453dda6e1809f988ee54995bdd5cb7aef207aad68a7f9d4e9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-security/lista-cotejo",
+      "sha256": "97e8f2a40bb8fd5abb66fd99426a3da38e968c5b5f85b6d9b8d8fbe5cb1d4a58",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-security/escala",
+      "sha256": "0e1e3a570e6d343578aa059c3331b47866a71aa67c1393d05fe76d671e324578",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "email-security/lista-ponderada",
+      "sha256": "ae260dda94ba05a3ade7da10e26497d383d24a1bf0c63403c9a67dbbaf0b39d6",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "ftp/rubrica",
+      "sha256": "9fb3f69bb559c2403d8f1465a7d7a2202d67057eb9a42e2f794a28e0f4f3ce11",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "ftp/lista-cotejo",
+      "sha256": "8194b673758bbe8111defbb109a4ab364fdb5885658c577107f30c1871ffa03d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "ftp/escala",
+      "sha256": "e2ecf0649a181ce4f376ff4b0c41371163424b20847df69c7d92c664c368dff5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "ftp/lista-ponderada",
+      "sha256": "554885e25c29acb8feeb2bfd6f02d0b29b3f66258c9c9a3f4d67e4d6a2d72ffb",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-help/rubrica",
+      "sha256": "792ebf9c715f077679adb810585c0b92eb8ba4d1ae661cc63372db8e61613321",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-help/lista-cotejo",
+      "sha256": "5aa760d772ee00094707ef2f0f40ed5fc43f9314f672be34ff4a27cfb303b32b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-help/escala",
+      "sha256": "10abe3086b7afb55fbf2fc86c5487f84539c0d2575c8e6e81f22a9f2dbab6627",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "software-help/lista-ponderada",
+      "sha256": "416f079ed0b462fa7808a508ee59e1d2004fa76ab0a02411c1f748ddd0dbb2f0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-negative/rubrica",
+      "sha256": "9b53acc2894fc6da2f6dcb0e14f154e9c452570e002d2b5556512f949eedb70f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-negative/lista-cotejo",
+      "sha256": "bbd508f5199cec1826960d680b4335f21154c5bc6d50691626d2a32a2c64b200",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-negative/escala",
+      "sha256": "d3a87f94505edb63a1126c5b101c43577280cb686a39151730548fca0f2f217c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "document-negative/lista-ponderada",
+      "sha256": "4371b1ad89796197ca11261c265c6f19050005ceaa51657e54b31b961486a301",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides-no-oral/rubrica",
+      "sha256": "5c4bbce8adf18d42c4ea6445ab46cef4301625a196b90d01ea498d7fd5af04a4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides-no-oral/lista-cotejo",
+      "sha256": "a58eb0b654ae29bf1a6829069d91d01be2dd3f4d1849000bfcea8b4d307ebb68",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides-no-oral/escala",
+      "sha256": "fef556284eae4c8a373a0da2bae8423ce22d0595c7bab4f4d8005fbb11f0ff0f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "slides-no-oral/lista-ponderada",
+      "sha256": "c3df3b9de33d173a8328bcf2c6bc5a683b303b9f70613e637a46fa99cb198e5b",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "formula-only/rubrica",
+      "sha256": "cd8ace0a055141ce70b7c398f734e54d88412047253e85c6397136d103d362d0",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "formula-only/lista-cotejo",
+      "sha256": "eb30e133b92b532379e9ba4572ea4c403d78bc934025c79b3af9e99428c5eb22",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "formula-only/escala",
+      "sha256": "9b8ce6d76c61988fbd374745b3ec789c91237bb0b9ca0029628b33a6429516c9",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "formula-only/lista-ponderada",
+      "sha256": "a7df919c8cf2f56d5c17a4a03810d66a286a1c3c64f0c109928f852d65b8a28c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-no-send/rubrica",
+      "sha256": "77bef235d9be7da5c39dfba64eb00e7439370c268bfdfe9c7ca0ed31456e5ba4",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-no-send/lista-cotejo",
+      "sha256": "e61b892f844f33cdf790807f1220aa246b90c135bb7b34ecdbf34b525e8c58ed",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-no-send/escala",
+      "sha256": "04349670ade32f965af6203908a89c5f96f22578ce58e7a17474d339846ba750",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "mail-no-send/lista-ponderada",
+      "sha256": "05dcb613150f5cc74b6e214b35f93a5c9ae6ebb9e8f7a345cbba99ea3530916d",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "alternative-product/rubrica",
+      "sha256": "a05b963df3a9832c2f9f4f5713e169154e5cc07a240bffcef9bb633cd03e5e74",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "alternative-product/lista-cotejo",
+      "sha256": "5d5ed3754d5205b5115ba389302f395ce20d90997a1d68d8758e6060ba576a14",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "alternative-product/escala",
+      "sha256": "a6ea82f0079d75d83b9cef5dbff6edab328efea55aa4812f9e126d75dc998f5f",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "alternative-product/lista-ponderada",
+      "sha256": "41806ade30f56685fd697762bc551ad29751b0866c07c5375b14f69ea3435612",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "independent-products/rubrica",
+      "sha256": "57caa24f85a622bb06eae2304051c6bfdb77d6c7cb017860e272f5cae643039a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "independent-products/lista-cotejo",
+      "sha256": "1976ff19b8acebaa8338206ede7c5de2b3f985b5f7c29abb716adaa7367008f5",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "independent-products/escala",
+      "sha256": "ccba0acf61d60d43239829c741440f9a530dd9f006a08ee745e05a529dfb676c",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "independent-products/lista-ponderada",
+      "sha256": "bd1ac25627837c210edc0dec5148007877b51b4587e00b24bb5ae72c655b2148",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "manual-weights/rubrica",
+      "sha256": "00c50631315e7f1ac84092ceb923d889d567a57ffe282f0a95ad06d572888cda",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "manual-weights/lista-cotejo",
+      "sha256": "889625605065af64bf45909037ae40becf295d2b46f33f1b015debd9b53d1e62",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "manual-weights/escala",
+      "sha256": "1a3d6d11c7b785d8364d23c560191aca0dacb77dcf73bc695ddf3b2174ace6aa",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "manual-weights/lista-ponderada",
+      "sha256": "80bc0167b275b62751c882c9b35f5aaaadbb06f0c0888d75248e5d223fe04a16",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-only/rubrica",
+      "sha256": "0056fc42f640356e42687be0d35571a720ceb7c652b5720dc5fa886e5fa64f84",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-only/lista-cotejo",
+      "sha256": "0bc085365356e5d45e67b4a7d4a50a1644f0bc681d77635eed68a530c8db9915",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-only/escala",
+      "sha256": "5bb38cb9b336fa6b9921159df97d9428b94cf4bbc46b8c4df6d506e289f7ff5a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "compare-documents-only/lista-ponderada",
+      "sha256": "aaf1f58a0bc7426c6a185dc218501d58ffe998e0ce9ad34273d0b549e11e3538",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-chart-only/rubrica",
+      "sha256": "ebfce09e9377ee9d1b52cde0e98cd2cb4648df8de450c0fbf33261302e392ff8",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-chart-only/lista-cotejo",
+      "sha256": "0184ed44282605bfe0e0a9e982faefc89a6696e5e2a4169b705e64dc1c565e6a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-chart-only/escala",
+      "sha256": "df304c084f0c10715a4bc46a45458cfbb32f4ce9fb0cf3d5261bc492e0ea7a46",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "pivot-chart-only/lista-ponderada",
+      "sha256": "c3fb93d26bbe76ef2d21b4028ddd53e1697792e24cdf3c219ed30e95f514b1ae",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-observed-frequency/rubrica",
+      "sha256": "b945c3e2b253d4f847d331a9f5571bb8c5852e2b22fcb621b92eb5622ca95b6a",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-observed-frequency/lista-cotejo",
+      "sha256": "7f7ebd06afc9cbc13c8ee60d1a55850e535ebebc53694119d0bb0d9112fb6137",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-observed-frequency/escala",
+      "sha256": "c0b19ee778c66a20b62d1a5fe32feffa9e3efda6194dbee0b7883bab9797c2ea",
+      "status": "REVIEWED"
+    },
+    {
+      "id": "files-observed-frequency/lista-ponderada",
+      "sha256": "e995992fe45295a0d131ba6b921b5e93b05fbf39fd9c5c7ba02772b9472cf70c",
+      "status": "REVIEWED"
+    }
+  ]
+}

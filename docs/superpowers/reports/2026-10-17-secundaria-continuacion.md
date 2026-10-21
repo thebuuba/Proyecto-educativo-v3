@@ -1,6 +1,24 @@
 # Continuación del encargo integral de secundaria
 
-## Punto vigente: contexto de Ofimática verificado; siguiente proveedor
+## Punto vigente: Ofimática implementada en fuente; comprobaciones finales en curso
+
+Reanudaciónactual: gates143 TERMINARON0:91.000backend/193archivos,89.545actividadesfrontend/118archivos,4buildsylints0;76JS/max1.908.851precargados. Sourcecompiled143 exacto376MF002+296MF053;ING15.176/MAT2.888/18optativas14.488exactos142. Comparadores17235/77735 yrunner65111 TERMINARON0; no repetir. `local-checks-143.json` autoridad.13baselines personales read-only0, sin regenerar.
+
+Worker143 ACTIVO sesión85596/launcher63484,logs `runtime-143-*` nuevos. Runtime143frontend/index-Bi58UcaR.js ychunkinstrumentos-tecnicos-ESY-UGwp.js254.693bytes SHA85c2ae9e161d98c1243f2aa64ce20aedfabb4ce3982fa11e11dfd6fbdd214ef4;PGapp_backend_local/noBYPASS/Auth200/Storage200/frontendbytesDevelopmentexclusivo. `runtime-143-verified.json` guardcompleto;expected-catalog.jsonactualizado143sin tocar142.
+
+INSTALADOR ACTIVO sesión43387, `install-mf002-143.mjs`; comprobar antes de repetir. Fuente YA CREATED/UNCHANGED,versióna326c59a-9acb-5ee7-8cde-25837c465ac1/scopec6e5481a-89fb-5e4f-8532-5c3a7e9a1503,192elementos271spans+18documentales31partes,210literales302partes,22excluidos. Catálogo143AÚNENPROCESO de comparación dehistóricos, ningún bloqueoSQLobservado (lecturarecienteidle). DespuéspreparaQA/personalMF002dosveces. Consultar mf002-install-commands.json ylogs; no duplicar. HTTP94TODAVÍANOiniciado. Contextos/run-mf002-http yselección YApreparados, no regenerar. AdaptadorHTTPampliado explícitamenteMF002 yverificacióndedosdocumentos:192elementos271spansoffline0/nodecheck0;MF053mismaconfiguraciónprevia.
+
+HerramientabrowserCUAanterior no disponible enestas herramientas; se aplicócomputer-usecon@oai/sky. Chrome722168devuelveaccessibilitynullycapturaotraapp; rerelecciónyactivaciónfallaron con “could not determine the current browser URL on Windows with enough confidence to enforce policy”. ComputerUseDETENIDO, no másentradasUIesteturno. NopersonalMF002ni auth/caché/SW/storage/borradoreditados. ContinuarHTTP/DBindependiente ydocumentarlimitación. Noafirmarnavegadorverificado.
+
+HEAD `b48b49a7`; cambios de proveedor sin commit. NO PUSH vigente. Catálogo fuente143, todavía no instalado ni servido. Proveedor MF002 con81adaptaciones y94consignas;376instrumentos revisados mediante108textos completos,94ensamblajes y correspondencia exacta de los cuatroformatos. Prueba pública `technical-mf002-4-revision.json`. Lectura descubrió20defectos y se corrigieron con RED→GREEN; último focal1565/1565. MF053 mantiene sus IDs; comparación completa posterior al build pendiente.
+
+Primer runner81529 terminó1:90.997/91.000; tresexpectativas del catálogo actual conservaban142 en tests históricos Sociales. Actualizadas solo a143, preservando asserts de releases anteriores. Runner corregido `run-final-gates-143-corrected.mjs`, sesión65111, backend91.000/91.000 aprobado; actividadesfrontend y builds EN CURSO. Hace shared/backend/frontend/Cloudflarebuild y lints. Cloudflare solo dry-run. Consultar `final-gates-143-corrected-commands.json` antes de repetir. Artefactos privados mf002-review-v1/v2/v3 preservados; v3 es autoridad final. Recorders prepare-mf002-review-recorder/record-mf002-review y record-mf002-provider-inventory YA ejecutados, no repetir. No regenerar freeze142, baselines ni historial.
+
+Manifest puro `scripts/evaluation-instruments/reviewed-mf002-source.mjs` listo, sin instalador:192elementos/271spans+18registrosdocumentales/31partes,11pruebasNode finales0; orden de documentos RED→GREEN. `mf002-development-preflight.json` reciente:PGapp_backend_local/noBYPASS,Auth200,Storage200 exclusivamenteDev; todavía sinfrontendservido/Worker. No afirmar que DNS siga bloqueando ahora, aunque su estabilidad y runtimefaltan. Comparadores143 preparadosperoNOejecutados:verify-143-source-compiled,compare-english-common-143,compare-math-common-143,verify-prior-full-optatives-143. Auditoría temprana21archivos0secretos/UTF8/diff0, repetir trasdocumentaciónfinal.
+
+Pendientes: suite/build final y conservación; arrancar/verificar nuevo runtime143sin pisarlogs anteriores ni borrador; instalador individual+fuente/catálogo/contextos idempotentestrasguards; HTTP/navegador MF002; informe ycommitlocal. Ninguna escritura remota nueva, borrador personal y cuatro IDs MF053 conservados. No declarar cobertura remota ni integral.
+
+## Checkpoint de contexto, superado por el proveedor en fuente
 
 Fuente confirmada en `20d49102c6e8b6283e6f59856b7f7add3fc9f9c9` (53 commits adelantados respecto de la referencia remota guardada). Task2 terminada localmente: lista explícita MF053/MF002, ámbito único de cuarto técnico y procedencia IFC007 principal más IFC006. No hay campo de programa en la matrícula; no afirmar esa validación.
 

@@ -9,13 +9,19 @@
   "grade": 4,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "EXPECTED_CONTRACTS_PROVIDER_PENDING",
+  "status": "IMPLEMENTED_IN_SOURCE_INSTRUMENTS_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "hardware",
       "description": "Describe las funciones del hardware del equipo informático de la ficha.",
       "topics": [
         "hardware"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-1-1",
+        "technical-mf002-ce1-2-1",
+        "technical-mf002-ce1-8-1",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -24,6 +30,13 @@
       "topics": [
         "hardware",
         "software"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-1-1",
+        "technical-mf002-ce1-2-1",
+        "technical-mf002-ce1-8-1",
+        "technical-mf002-concept-1",
+        "technical-mf002-ce1-3-1"
       ]
     },
     {
@@ -31,6 +44,11 @@
       "description": "Clasifica el software de sistema y el software de aplicación de la lista dada.",
       "topics": [
         "software"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-2-1",
+        "technical-mf002-ce1-3-1",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -38,6 +56,14 @@
       "description": "Identifica escritorio, ventanas y barras de tareas del sistema operativo mostrado.",
       "topics": [
         "os-interface"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-7-1",
+        "technical-mf002-ce1-10-1",
+        "technical-mf002-procedure-001",
+        "technical-mf002-procedure-002",
+        "technical-mf002-procedure-003",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -45,6 +71,12 @@
       "description": "Configura las opciones del sistema operativo y el panel de control del equipo simulado.",
       "topics": [
         "os-settings"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-4-1",
+        "technical-mf002-ce1-11-1",
+        "technical-mf002-procedure-004",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -52,6 +84,13 @@
       "description": "Utiliza los accesorios y herramientas del sistema operativo del entorno simulado.",
       "topics": [
         "os-tools"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-4-1",
+        "technical-mf002-ce1-8-1",
+        "technical-mf002-procedure-005",
+        "technical-mf002-procedure-006",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -59,6 +98,11 @@
       "description": "Aplica los comandos del sistema operativo solicitados en el entorno de práctica.",
       "topics": [
         "os-commands"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-11-1",
+        "technical-mf002-procedure-008",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -66,6 +110,10 @@
       "description": "Identifica los periféricos y explica su función en el equipo informático de la ficha.",
       "topics": [
         "peripherals"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-5-1",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -73,6 +121,11 @@
       "description": "Conecta y desconecta el teclado y la impresora del equipo de práctica según el manual dado.",
       "topics": [
         "peripheral-connection"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-6-1",
+        "technical-mf002-ce1-11-1",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -80,6 +133,10 @@
       "description": "Compara antivirus y cortafuegos del equipo del caso.",
       "topics": [
         "antivirus-firewall"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-9-1",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -87,6 +144,11 @@
       "description": "Explica la reparación, desfragmentación y respaldo de disco del caso; no ejecutes cambios sobre archivos reales.",
       "topics": [
         "storage-maintenance"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce1-11-1",
+        "technical-mf002-procedure-007",
+        "technical-mf002-concept-1"
       ]
     },
     {
@@ -95,6 +157,17 @@
       "topics": [
         "keyboard",
         "text-correction"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-1-1",
+        "technical-mf002-concept-2",
+        "technical-mf002-ce2-5-1",
+        "technical-mf002-procedure-015",
+        "technical-mf002-procedure-038",
+        "technical-mf002-procedure-039",
+        "technical-mf002-procedure-040",
+        "technical-mf002-procedure-041",
+        "technical-mf002-procedure-042"
       ]
     },
     {
@@ -102,6 +175,10 @@
       "description": "Practica mecanografía con el texto dado y registra velocidad y precisión con la condición de 200 p.p.m. y máximo una falta por minuto.",
       "topics": [
         "keyboard"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-1-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -109,6 +186,10 @@
       "description": "Describe la organización del espacio de trabajo informático y las medidas ergonómicas de la ficha adaptada.",
       "topics": [
         "workspace"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-1-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -116,6 +197,11 @@
       "description": "Crea un documento de texto con los datos ficticios proporcionados.",
       "topics": [
         "document"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-5-1",
+        "technical-mf002-procedure-009",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -123,6 +209,12 @@
       "description": "Elabora una plantilla de memorando en el procesador de textos con los campos solicitados.",
       "topics": [
         "document-template"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-3-1",
+        "technical-mf002-procedure-047",
+        "technical-mf002-procedure-048",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -130,6 +222,13 @@
       "description": "Aplica fuente, párrafos, sangrías y tabulaciones al documento de texto según el modelo dado.",
       "topics": [
         "text-format"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-4-1",
+        "technical-mf002-ce2-5-1",
+        "technical-mf002-procedure-010",
+        "technical-mf002-procedure-021",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -137,6 +236,16 @@
       "description": "Configura márgenes, orientación, encabezados, pies y numeración de páginas del documento según la ficha.",
       "topics": [
         "page-format"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-6-1",
+        "technical-mf002-procedure-016",
+        "technical-mf002-procedure-022",
+        "technical-mf002-procedure-025",
+        "technical-mf002-procedure-035",
+        "technical-mf002-procedure-036",
+        "technical-mf002-procedure-037",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -144,6 +253,17 @@
       "description": "Corrige ortografía y gramática del documento de texto proporcionado mediante buscar y reemplazar cuando proceda.",
       "topics": [
         "text-correction"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-1-1",
+        "technical-mf002-ce2-5-1",
+        "technical-mf002-procedure-015",
+        "technical-mf002-procedure-038",
+        "technical-mf002-procedure-039",
+        "technical-mf002-procedure-040",
+        "technical-mf002-procedure-041",
+        "technical-mf002-procedure-042",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -151,6 +271,10 @@
       "description": "Personaliza la cinta de opciones, el acceso rápido y los atajos del procesador de textos según la ficha.",
       "topics": [
         "word-customize"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-7-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -158,6 +282,16 @@
       "description": "Inserta una tabla en el documento de texto y organiza los datos dados en sus celdas.",
       "topics": [
         "word-tables"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-1-1",
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-011",
+        "technical-mf002-procedure-026",
+        "technical-mf002-procedure-027",
+        "technical-mf002-procedure-028",
+        "technical-mf002-procedure-029",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -165,6 +299,14 @@
       "description": "Modifica filas, columnas, bordes y celdas de la tabla del documento de texto según el modelo.",
       "topics": [
         "word-table-structure"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-030",
+        "technical-mf002-procedure-031",
+        "technical-mf002-procedure-032",
+        "technical-mf002-procedure-033",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -172,6 +314,11 @@
       "description": "Aplica una fórmula y ordena los datos de la tabla del procesador de textos según la ficha.",
       "topics": [
         "word-table-formula"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-034",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -179,6 +326,12 @@
       "description": "Inserta una imagen y ajusta su posición en el documento de texto sin alterar la información.",
       "topics": [
         "word-images"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-1-1",
+        "technical-mf002-ce3-2-1",
+        "technical-mf002-procedure-020",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -186,6 +339,11 @@
       "description": "Crea un diagrama de formas en el procesador de textos que represente las relaciones dadas.",
       "topics": [
         "word-diagrams"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-011",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -193,6 +351,10 @@
       "description": "Añade una marca de agua al documento según el modelo.",
       "topics": [
         "word-watermark"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -200,6 +362,10 @@
       "description": "Inserta los símbolos y la ecuación dados en el documento de texto.",
       "topics": [
         "word-equation"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -207,6 +373,10 @@
       "description": "Inserta la captura de pantalla proporcionada en el documento de texto.",
       "topics": [
         "word-screenshot"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -214,6 +384,10 @@
       "description": "Reorganiza el esquema de títulos y los bloques de creación del documento.",
       "topics": [
         "word-outline"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -221,6 +395,13 @@
       "description": "Distribuye el texto en columnas periodísticas según el diseño solicitado.",
       "topics": [
         "word-columns"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-5-1",
+        "technical-mf002-procedure-023",
+        "technical-mf002-procedure-024",
+        "technical-mf002-procedure-025",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -228,6 +409,17 @@
       "description": "Combina la carta modelo con los datos ficticios para preparar correspondencia personalizada.",
       "topics": [
         "mail-merge"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-8-1",
+        "technical-mf002-ce3-4-1",
+        "technical-mf002-ce3-5-1",
+        "technical-mf002-ce3-6-1",
+        "technical-mf002-procedure-012",
+        "technical-mf002-procedure-043",
+        "technical-mf002-procedure-044",
+        "technical-mf002-procedure-046",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -235,6 +427,14 @@
       "description": "Prepara sobres y etiquetas con los datos ficticios dados y comprueba la vista previa.",
       "topics": [
         "labels"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-4-2",
+        "technical-mf002-procedure-017",
+        "technical-mf002-procedure-018",
+        "technical-mf002-procedure-019",
+        "technical-mf002-procedure-045",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -242,6 +442,11 @@
       "description": "Añade y revisa comentarios del documento de texto proporcionado.",
       "topics": [
         "word-comments"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-049",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -249,6 +454,11 @@
       "description": "Gestiona el control de cambios del documento según las revisiones solicitadas.",
       "topics": [
         "word-changes"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-050",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -256,6 +466,11 @@
       "description": "Compara y combina las dos versiones del documento de texto proporcionadas.",
       "topics": [
         "word-comparison"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-051",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -263,6 +478,11 @@
       "description": "Explica la protección de un documento de texto y sus permisos usando el caso ficticio.",
       "topics": [
         "word-protection"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-052",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -270,6 +490,11 @@
       "description": "Guarda el documento en los formatos de archivo solicitados y comprueba que conserve su contenido.",
       "topics": [
         "file-export"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-1-1",
+        "technical-mf002-procedure-014",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -277,6 +502,10 @@
       "description": "Prepara un documento web con el texto y las secciones indicadas; no lo publiques.",
       "topics": [
         "web-document"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-2-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -284,6 +513,10 @@
       "description": "Redacta una entrada de blog como borrador con los datos dados; no publiques ni crees cuentas.",
       "topics": [
         "blog-entry"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-3-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -291,6 +524,11 @@
       "description": "Inserta los hipervínculos indicados en el documento de texto y comprueba sus destinos.",
       "topics": [
         "word-links"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-4-1",
+        "technical-mf002-procedure-013",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -298,6 +536,10 @@
       "description": "Añade campos, marcadores y referencias cruzadas al documento largo según la ficha.",
       "topics": [
         "word-references"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-4-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -305,6 +547,10 @@
       "description": "Crea una tabla de contenidos vinculada a los títulos del documento.",
       "topics": [
         "word-contents"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-4-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -312,6 +558,10 @@
       "description": "Crea un índice de términos del documento según las entradas solicitadas.",
       "topics": [
         "word-index"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-4-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -319,6 +569,10 @@
       "description": "Añade las fuentes dadas y compila la bibliografía del documento.",
       "topics": [
         "word-bibliography"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce4-4-1",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -326,6 +580,20 @@
       "description": "Organiza los datos ficticios en celdas y aplica su formato en la hoja de cálculo.",
       "topics": [
         "spreadsheet-cells"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-1-1",
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-053",
+        "technical-mf002-procedure-054",
+        "technical-mf002-procedure-055",
+        "technical-mf002-procedure-056",
+        "technical-mf002-procedure-057",
+        "technical-mf002-procedure-058",
+        "technical-mf002-procedure-059",
+        "technical-mf002-procedure-060",
+        "technical-mf002-procedure-061",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -333,6 +601,11 @@
       "description": "Calcula el total de la tabla mediante fórmulas de la hoja de cálculo y verifica el resultado.",
       "topics": [
         "spreadsheet-formulas"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-063",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -340,6 +613,12 @@
       "description": "Aplica la función PROMEDIO en la hoja de cálculo a los datos ficticios dados.",
       "topics": [
         "spreadsheet-functions"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-ce6-5-1",
+        "technical-mf002-procedure-065",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -347,6 +626,12 @@
       "description": "Utiliza la función de búsqueda y referencia solicitada para localizar datos en la hoja de cálculo.",
       "topics": [
         "spreadsheet-functions"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-ce6-5-1",
+        "technical-mf002-procedure-065",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -354,6 +639,11 @@
       "description": "Elabora un gráfico de barras a partir del rango dado en la hoja de cálculo.",
       "topics": [
         "spreadsheet-chart"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-5-1",
+        "technical-mf002-procedure-064",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -361,6 +651,11 @@
       "description": "Crea una plantilla de presupuesto en la hoja de cálculo con los campos dados.",
       "topics": [
         "spreadsheet-template"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-4-1",
+        "technical-mf002-procedure-078",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -368,6 +663,11 @@
       "description": "Aplica formato condicional a la hoja de cálculo para señalar los valores que cumplen la regla dada.",
       "topics": [
         "conditional-format"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-056",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -375,6 +675,11 @@
       "description": "Configura validación de datos en las celdas según los límites indicados en la hoja de cálculo.",
       "topics": [
         "data-validation"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-058",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -382,6 +687,13 @@
       "description": "Filtra la lista de datos de la hoja de cálculo con el autofiltro según el criterio dado.",
       "topics": [
         "autofilter"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-6-1",
+        "technical-mf002-ce6-1-1",
+        "technical-mf002-ce6-2-1",
+        "technical-mf002-procedure-066",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -389,6 +701,10 @@
       "description": "Aplica un filtro avanzado con el rango de criterios dado y extrae los registros solicitados.",
       "topics": [
         "advanced-filter"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce6-4-1",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -396,6 +712,10 @@
       "description": "Importa los datos externos a una tabla de la hoja de cálculo y verifica su correspondencia con la fuente dada.",
       "topics": [
         "external-data"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce6-3-1",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -403,6 +723,11 @@
       "description": "Crea una tabla dinámica con los datos ficticios y las agrupaciones solicitadas.",
       "topics": [
         "pivot-table"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce6-6-1",
+        "technical-mf002-procedure-080",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -410,6 +735,10 @@
       "description": "Exporta los datos de la hoja de cálculo al formato solicitado sin perder los registros indicados.",
       "topics": [
         "spreadsheet-export"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-6-1",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -417,6 +746,13 @@
       "description": "Explica cómo proteger la hoja de cálculo y el libro del caso sin revelar contraseñas.",
       "topics": [
         "spreadsheet-protection"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-2-1",
+        "technical-mf002-ce5-6-1",
+        "technical-mf002-procedure-075",
+        "technical-mf002-procedure-076",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -424,6 +760,17 @@
       "description": "Crea, duplica y organiza las hojas del libro de cálculo de práctica según la ficha.",
       "topics": [
         "workbooks"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-ce5-7-1",
+        "technical-mf002-procedure-062",
+        "technical-mf002-procedure-067",
+        "technical-mf002-procedure-068",
+        "technical-mf002-procedure-069",
+        "technical-mf002-procedure-070",
+        "technical-mf002-procedure-071",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -431,6 +778,13 @@
       "description": "Añade comentarios y revisa los cambios del libro compartido de cálculo del caso.",
       "topics": [
         "spreadsheet-comments"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-2-1",
+        "technical-mf002-procedure-073",
+        "technical-mf002-procedure-074",
+        "technical-mf002-procedure-077",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -438,6 +792,11 @@
       "description": "Explica para qué sirve la macro de hoja de cálculo de la ficha; no la ejecutes.",
       "topics": [
         "macros"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-1-1",
+        "technical-mf002-procedure-072",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -445,6 +804,11 @@
       "description": "Configura la vista previa de impresión de la hoja de cálculo; no imprimas.",
       "topics": [
         "spreadsheet-print"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-079",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -452,6 +816,15 @@
       "description": "Elabora una presentación de diapositivas con la información ficticia dada.",
       "topics": [
         "slides"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-1-1",
+        "technical-mf002-ce7-4-1",
+        "technical-mf002-ce7-5-1",
+        "technical-mf002-procedure-081",
+        "technical-mf002-procedure-082",
+        "technical-mf002-procedure-084",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -459,6 +832,13 @@
       "description": "Aplica el patrón, la distribución del texto y el fondo solicitados a las diapositivas.",
       "topics": [
         "slide-format"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-5-1",
+        "technical-mf002-procedure-083",
+        "technical-mf002-procedure-086",
+        "technical-mf002-procedure-087",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -466,6 +846,15 @@
       "description": "Inserta el gráfico y el diagrama proporcionados en las diapositivas.",
       "topics": [
         "slide-graphics"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-5-1",
+        "technical-mf002-ce7-8-1",
+        "technical-mf002-procedure-085",
+        "technical-mf002-procedure-089",
+        "technical-mf002-procedure-090",
+        "technical-mf002-procedure-091",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -473,6 +862,11 @@
       "description": "Inserta el sonido y el videoclip proporcionados en las diapositivas según la ficha.",
       "topics": [
         "slide-media"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-8-1",
+        "technical-mf002-procedure-093",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -480,6 +874,13 @@
       "description": "Aplica las animaciones y transiciones indicadas a la presentación de diapositivas.",
       "topics": [
         "slide-animation"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-7-1",
+        "technical-mf002-ce7-9-1",
+        "technical-mf002-ce7-10-1",
+        "technical-mf002-procedure-092",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -487,6 +888,10 @@
       "description": "Configura la duración y el orden de aparición de las diapositivas según los tiempos dados.",
       "topics": [
         "slide-timing"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-7-1",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -494,6 +899,10 @@
       "description": "Escribe las notas del orador y comentarios solicitados para las diapositivas dadas.",
       "topics": [
         "slide-notes"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-9-1",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -501,6 +910,11 @@
       "description": "Configura una presentación personalizada y expórtala a vídeo según las opciones de la ficha.",
       "topics": [
         "slide-config"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-10-1",
+        "technical-mf002-procedure-088",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -508,6 +922,12 @@
       "description": "Comprueba y corrige los errores de la presentación de diapositivas antes de guardar la versión solicitada.",
       "topics": [
         "slide-review"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-2-1",
+        "technical-mf002-ce7-3-1",
+        "technical-mf002-ce7-7-1",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -515,6 +935,13 @@
       "description": "Distingue navegador, buscador y metabuscador según las funciones de la ficha.",
       "topics": [
         "browser-search"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-1-1",
+        "technical-mf002-ce8-3-1",
+        "technical-mf002-procedure-094",
+        "technical-mf002-procedure-095",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -522,6 +949,10 @@
       "description": "Busca la información indicada en las fuentes web proporcionadas y justifica la selección.",
       "topics": [
         "web-search"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-6-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -529,6 +960,10 @@
       "description": "Organiza archivos y carpetas ficticios con nombres y accesos directos según las indicaciones.",
       "topics": [
         "files-folders"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-5-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -536,6 +971,12 @@
       "description": "Explica cómo copiar y mover los archivos ficticios conservando su integridad; no borres archivos reales.",
       "topics": [
         "files-safety"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-7-1",
+        "technical-mf002-ce8-6-1",
+        "technical-mf002-concept-3",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -543,6 +984,11 @@
       "description": "Identifica las condiciones de autoría y licencias de las fuentes digitales proporcionadas.",
       "topics": [
         "copyright"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-4-1",
+        "technical-mf002-ce8-6-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -550,6 +996,10 @@
       "description": "Organiza favoritos e historial del navegador de práctica para recuperar las fuentes dadas.",
       "topics": [
         "bookmarks"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-6-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -557,6 +1007,11 @@
       "description": "Analiza los riesgos y niveles de seguridad del navegador de Internet del caso.",
       "topics": [
         "browser-security"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-2-1",
+        "technical-mf002-procedure-096",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -564,6 +1019,12 @@
       "description": "Redacta un correo simulado con asunto, destinatario ficticio y archivo adjunto según la ficha.",
       "topics": [
         "email-draft"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce9-1-1",
+        "technical-mf002-ce9-4-1",
+        "technical-mf002-procedure-097",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -571,6 +1032,11 @@
       "description": "Organiza los contactos ficticios y la agenda electrónica de práctica con las fechas dadas.",
       "topics": [
         "email-agenda"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce9-1-1",
+        "technical-mf002-ce9-3-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -578,6 +1044,10 @@
       "description": "Clasifica y archiva los mensajes de correo simulados según las reglas dadas.",
       "topics": [
         "email-archive"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce9-5-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -585,6 +1055,10 @@
       "description": "Explica las medidas de seguridad y protección de datos del correo electrónico del caso.",
       "topics": [
         "email-security"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce9-2-1",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -592,6 +1066,11 @@
       "description": "Describe el procedimiento de transferencia de ficheros FTP de la ficha sin conectarte a un servidor.",
       "topics": [
         "ftp"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-6-1",
+        "technical-mf002-procedure-098",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -599,6 +1078,16 @@
       "description": "Utiliza el manual de ayuda de la aplicación ofimática para resolver la incidencia descrita.",
       "topics": [
         "software-help"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-2-1",
+        "technical-mf002-ce5-8-1",
+        "technical-mf002-ce7-6-1",
+        "technical-mf002-ce9-6-1",
+        "technical-mf002-concept-2",
+        "technical-mf002-concept-3",
+        "technical-mf002-concept-4",
+        "technical-mf002-concept-5"
       ]
     },
     {
@@ -606,6 +1095,12 @@
       "description": "Elabora una plantilla de carta en el procesador de textos. No insertes gráficos ni imágenes. Opcionalmente puedes consultar una presentación de diapositivas.",
       "topics": [
         "document-template"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-3-1",
+        "technical-mf002-procedure-047",
+        "technical-mf002-procedure-048",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -613,6 +1108,15 @@
       "description": "Crea diapositivas con los datos dados. No expongas oralmente ni añadas sonido.",
       "topics": [
         "slides"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce7-1-1",
+        "technical-mf002-ce7-4-1",
+        "technical-mf002-ce7-5-1",
+        "technical-mf002-procedure-081",
+        "technical-mf002-procedure-082",
+        "technical-mf002-procedure-084",
+        "technical-mf002-concept-4"
       ]
     },
     {
@@ -620,6 +1124,11 @@
       "description": "Aplica una fórmula de suma en la hoja de cálculo. No crees gráficos ni tablas dinámicas.",
       "topics": [
         "spreadsheet-formulas"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce5-3-1",
+        "technical-mf002-procedure-063",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -627,6 +1136,17 @@
       "description": "Prepara la combinación de correspondencia con los datos ficticios. No envíes correos ni imprimas etiquetas.",
       "topics": [
         "mail-merge"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-8-1",
+        "technical-mf002-ce3-4-1",
+        "technical-mf002-ce3-5-1",
+        "technical-mf002-ce3-6-1",
+        "technical-mf002-procedure-012",
+        "technical-mf002-procedure-043",
+        "technical-mf002-procedure-044",
+        "technical-mf002-procedure-046",
+        "technical-mf002-concept-2"
       ]
     },
     {
@@ -636,7 +1156,20 @@
         "word-tables",
         "spreadsheet-chart"
       ],
-      "alternative": true
+      "alternative": true,
+      "sourceRecordIds": [
+        "technical-mf002-ce3-1-1",
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-011",
+        "technical-mf002-procedure-026",
+        "technical-mf002-procedure-027",
+        "technical-mf002-procedure-028",
+        "technical-mf002-procedure-029",
+        "technical-mf002-concept-2",
+        "technical-mf002-ce5-5-1",
+        "technical-mf002-procedure-064",
+        "technical-mf002-concept-3"
+      ]
     },
     {
       "id": "independent-products",
@@ -644,6 +1177,19 @@
       "topics": [
         "word-tables",
         "spreadsheet-chart"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-1-1",
+        "technical-mf002-ce3-3-1",
+        "technical-mf002-procedure-011",
+        "technical-mf002-procedure-026",
+        "technical-mf002-procedure-027",
+        "technical-mf002-procedure-028",
+        "technical-mf002-procedure-029",
+        "technical-mf002-concept-2",
+        "technical-mf002-ce5-5-1",
+        "technical-mf002-procedure-064",
+        "technical-mf002-concept-3"
       ]
     },
     {
@@ -651,6 +1197,47 @@
       "description": "Elabora una plantilla de carta con crédito parcial y pesos por componente.",
       "topics": [
         "document-template"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce2-3-1",
+        "technical-mf002-procedure-047",
+        "technical-mf002-procedure-048",
+        "technical-mf002-concept-2"
+      ]
+    },
+    {
+      "id": "compare-documents-only",
+      "description": "Compara las dos versiones del documento de texto proporcionadas.",
+      "topics": [
+        "word-comparison"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce3-5-2",
+        "technical-mf002-procedure-051",
+        "technical-mf002-concept-2"
+      ]
+    },
+    {
+      "id": "pivot-chart-only",
+      "description": "Crea un gráfico dinámico en la hoja de cálculo con los datos dados.",
+      "topics": [
+        "pivot-table"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce6-6-1",
+        "technical-mf002-procedure-080",
+        "technical-mf002-concept-3"
+      ]
+    },
+    {
+      "id": "files-observed-frequency",
+      "description": "Observa la organización de archivos y carpetas de práctica y registra la frecuencia de cumplimiento de las reglas dadas.",
+      "topics": [
+        "files-folders"
+      ],
+      "sourceRecordIds": [
+        "technical-mf002-ce8-5-1",
+        "technical-mf002-concept-5"
       ]
     }
   ],

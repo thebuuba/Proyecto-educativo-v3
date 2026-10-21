@@ -4,25 +4,27 @@ import {resolveScienceTaskForTopics,scienceRequirementText,adaptScienceScale} fr
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentRecommendation,InstrumentType} from './instrument-recommendation'
 import {technicalMf053Four} from './secondary-technical-mf053-4'
+import {technicalMf002Four} from './secondary-technical-mf002-4'
 
 export type TechnicalTopic=CommonScienceTopic&{
- sourceRecordIds:string[];requires?:string;fallbackGroup?:string;application?:string
+ sourceRecordIds:string[];requires?:string;fallbackGroup?:string;application?:string;suppresses?:string[];relationsByMode?:Record<string,string>
 }
 export type TechnicalModule={
  id:string;programCode:string;moduleCode:string;grade:number;cycle:number;modalityCode:string;
  subjectName:string;sourceScopeId:string;pdfPages:number[];policy:string;topics:TechnicalTopic[]
+ programCodes?:string[];templatePrefix?:string;additionalVerbs?:string
 }
 type TechnicalAction={text:string;topics:TechnicalTopic[]}
 export type TechnicalTask={
  module:TechnicalModule;grade:number;actions:TechnicalAction[];activityType:string;technique:string;alternatives?:TechnicalTask[]
 }
-export const technicalModules:TechnicalModule[]=[technicalMf053Four]
+export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four]
 const technicalVerbs='disen\\w*|seleccion\\w*|aplic\\w*|apliqu\\w*|tabul\\w*|depur\\w*|gener\\w*|diagram\\w*|jerarqui\\w*|enumer\\w*|distingu\\w*|reconoc\\w*|utiliz\\w*|program\\w*|desplieg\\w*|implement\\w*|organiz\\w*|justific\\w*|propon\\w*|propong\\w*'
 const alternativeVerbs=`${technicalVerbs}|elabor\\w*|dibuj\\w*|represent\\w*|analiz\\w*|describ\\w*|explic\\w*|compar\\w*|identific\\w*`
-const affirmative=(value:string)=>scienceRequirementText(value)
+const affirmative=(value:string,additionalVerbs='')=>scienceRequirementText(value)
  .replace(/\b(?:opcionalmente|si lo deseas|como apoyo|como recurso)\b[^.;\n]*/g,'')
  .replace(/\b(?:puedes?|podran|podras)\s+(?:consult\w*|utiliz\w*|usar\w*)[^.;\n]*/g,'')
- .replace(new RegExp(`\\b(?:no\\s+(?:(?:se|deben?|es necesario)\\s+)?|sin\\s+)(?:${technicalVerbs})[^.;\\n]*`,'g'),'').trim()
+ .replace(new RegExp(`\\b(?:no\\s+(?:(?:se|deben?|es necesario)\\s+)?|sin\\s+)(?:${additionalVerbs||technicalVerbs})\\b[^.;\\n]*`,'g'),'').trim()
 
 const fallbackMembers:Record<string,(topic:TechnicalTopic)=>boolean>={
  feasibility:t=>t.id.startsWith('feasibility-'),
@@ -34,8 +36,9 @@ const fallbackMembers:Record<string,(topic:TechnicalTopic)=>boolean>={
  'system-detail':t=>!['systems','requirements'].includes(t.id),
 }
 function selectTopics(text:string,topics:TechnicalTopic[]) {
- const selected=topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)&&(!t.requires||new RegExp(t.requires).test(text)))
- return selected.filter(t=>!t.fallbackGroup||!selected.some(fallbackMembers[t.fallbackGroup]))
+ const selected=topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)&&(!t.requires||new RegExp(t.requires).test(text))&&(!t.exclude||!new RegExp(t.exclude).test(text)))
+ const suppressed=new Set(selected.flatMap(t=>t.suppresses??[]))
+ return selected.filter(t=>!suppressed.has(t.id)&&(!t.fallbackGroup||!selected.some(fallbackMembers[t.fallbackGroup])))
 }
 export function resolveTechnicalTask(title:string,description:string,context?:InstrumentAcademicContext|null,modules:TechnicalModule[]=technicalModules):TechnicalTask|null{
  if(context?.level!=='SECONDARY'||context.optativeExitName)return null
@@ -43,21 +46,27 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
   &&m.grade===context.grade&&(context.cycle==null?context.grade>=4:context.cycle===m.cycle)
   &&m.modalityCode===context.modalityCode)
  if(!module)return null
- const requirement=affirmative(description.trim()?description:title)
+ let requirement=affirmative(description.trim()?description:title,module.additionalVerbs)
+ // A comma between explicit office actions can share the same final object.
+ // Preserve ordinary lists of fields and the parser behaviour of older modules.
+ if(module.moduleCode==='MF_002_3')requirement=requirement.replace(new RegExp(`,\\s*(?=(?:${module.additionalVerbs})\\b)`,'g'),' y ')
  if(!requirement)return null
  const parse=(text:string):TechnicalTask|null=>{
   const parsed=resolveScienceTaskForTopics('',text,module.grade,module.topics,{
-   additionalVerbs:technicalVerbs,selectTopics:(part,topics)=>selectTopics(part,topics as TechnicalTopic[]),
+   additionalVerbs:module.additionalVerbs??technicalVerbs,selectTopics:(part,topics)=>selectTopics(part,topics as TechnicalTopic[]),
   })
   if(!parsed)return null
   // Reuse the action parser, not its science-specific purpose heuristics.
-  const modes=parsed.actions.map(a=>modeFor(a.text))
-  const report=parsed.actions.some(a=>['evidence','representation'].includes(modeFor(a.text))
+  const mode=(text:string)=>modeFor(text,module)
+  const modes=parsed.actions.map(a=>mode(a.text))
+  const report=parsed.actions.some(a=>['evidence','representation','creation'].includes(mode(a.text))
    &&/\b(?:redact\w*|elabor\w*|escrib\w*|present\w*)\s+(?:(?:un|el)\s+)?informe\b/.test(a.text))
-  const oral=parsed.actions.some(a=>modeFor(a.text)==='evidence'&&/\b(?:expon\w*|expone\w*|present\w*\s+oralmente)\b/.test(a.text))
-  const design=modes.some(mode=>mode==='design'||mode==='representation')
-  const application=parsed.actions.some(a=>modeFor(a.text)==='application'&&a.topics.some(t=>['interview','questionnaire','observation'].includes(t.id)))
-  const activityType=report?'REPORT':oral?'ORAL_PRESENTATION':design?'PROJECT':application?'OBSERVATION':modes.includes('calculation')?'EXERCISE_SET':modes.includes('comparison')?'COMPARISON':'ANALYSIS'
+  const oral=parsed.actions.some(a=>mode(a.text)==='evidence'&&/\b(?:expon\w*|expone\w*|present\w*\s+oralmente)\b/.test(a.text))
+  const design=modes.some(mode=>mode==='design'||mode==='representation'||mode==='creation')
+  const application=parsed.actions.some(a=>mode(a.text)==='application'&&a.topics.some(t=>['interview','questionnaire','observation'].includes(t.id)))
+  const officeObservation=module.moduleCode==='MF_002_3'&&modes.includes('observation')
+  const officePractice=module.moduleCode==='MF_002_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
+  const activityType=report?'REPORT':oral?'ORAL_PRESENTATION':design?'PROJECT':application||officeObservation?'OBSERVATION':modes.includes('calculation')||officePractice?'EXERCISE_SET':modes.includes('comparison')?'COMPARISON':'ANALYSIS'
   const technique=activityType==='PROJECT'?'proyecto':activityType==='OBSERVATION'?'observacion-sistematica':activityType==='ORAL_PRESENTATION'?'presentacion':'analisis-producciones'
   return{...parsed,actions:parsed.actions as TechnicalAction[],activityType,technique,module}
  }
@@ -65,7 +74,7 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  if(!task)return null
  const branches=requirement.split(/\s+(?:o bien|o)\s+/)
  if(branches.length>1){
-  const verb=new RegExp(`\\b(?:${alternativeVerbs})\\b`)
+  const verb=new RegExp(`\\b(?:${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''})\\b`)
   const inheritedVerb=branches[0].match(verb)?.[0]
   const alternatives=branches.map(branch=>parse(!verb.test(branch)&&inheritedVerb?`${inheritedVerb} ${branch}`:branch))
   if(alternatives.every((branch):branch is TechnicalTask=>branch!==null))task.alternatives=alternatives
@@ -73,7 +82,7 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  return task
 }
 
-type Mode='identification'|'description'|'explanation'|'comparison'|'selection'|'design'|'application'|'analysis'|'classification'|'sequence'|'tabulation'|'debugging'|'verification'|'representation'|'recording'|'justification'|'proposal'|'calculation'|'evidence'
+type Mode='identification'|'description'|'explanation'|'comparison'|'selection'|'design'|'application'|'analysis'|'classification'|'sequence'|'tabulation'|'debugging'|'verification'|'representation'|'recording'|'justification'|'proposal'|'calculation'|'evidence'|'creation'|'configuration'|'correction'|'observation'|'retrieval'
 const modeRules:[Mode,RegExp][]=[
  ['description',/\bdescrib\w*\b/],['explanation',/\bexplic\w*\b/],
  ['identification',/\b(?:identific\w*|reconoc\w*|senal\w*|enumer\w*)\b/],
@@ -89,7 +98,17 @@ const modeRules:[Mode,RegExp][]=[
  ['representation',/\b(?:dibuj\w*|represent\w*|diagram\w*|elabor\w*)\b/],
  ['application',/\b(?:aplic\w*|apliqu\w*|utiliz\w*|genera\w*|realiz\w*)\b/],
 ]
-const modeFor=(text:string):Mode=>modeRules.map(([mode,pattern])=>({mode,index:text.search(pattern)}))
+const officeModeRules:[Mode,RegExp][]=[
+ ['creation',/\b(?:cre(?:a|an|ar|e|en|ando|ara|aran)|prepar(?:a|an|ar|e|en|ando|ara|aran)|redact\w*|escrib\w*)\b/],
+ ['sequence',/\breorganiz(?:a|an|ar|e|en|ando|ara|aran)\b/],
+ ['verification',/\bcomprueb(?:a|an|e|en)\b/],
+ ['observation',/\bobserv(?:a|an|ar|e|en|ando)\b/],
+ ['retrieval',/\bbusc(?:a|an|ar|ando)\b|\bbusqu(?:e|en)\b/],
+ ['configuration',/\b(?:configur\w*|personaliz\w*)\b/],
+ ['correction',/\b(?:corrig\w*)\b/],
+ ['application',/\b(?:insert\w*|anad\w*|combin\w*|guard\w*|gestion\w*|distribu\w*|filtr\w*|import\w*|export\w*|duplic\w*|archiv\w*|conect\w*|desconect\w*|transcrib\w*|practic\w*|practiqu\w*|modific\w*|envi\w*|imprim\w*|publi\w*)\b/],
+]
+const modeFor=(text:string,module?:TechnicalModule):Mode=>[...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
  .filter(r=>r.index>=0).sort((a,b)=>a.index-b.index)[0]?.mode??'evidence'
 const modeWords:Record<Mode,[string,string]>={
  identification:['Identificación','Identifica'],description:['Descripción','Describe'],explanation:['Explicación','Explica'],
@@ -102,44 +121,64 @@ const modeWords:Record<Mode,[string,string]>={
  proposal:['Propuesta','La propuesta responde a'],
  calculation:['Resolución','Resuelve el caso manteniendo'],
  representation:['Representación','La representación conserva'],evidence:['Evidencia','La evidencia solicitada muestra'],
+ creation:['Creación','El producto creado muestra'],configuration:['Configuración','Configura las opciones solicitadas manteniendo'],correction:['Corrección','Corrige los elementos indicados manteniendo'],
+ observation:['Observación','Observa y comprueba'],retrieval:['Búsqueda','Localiza información que responde a'],
 }
-function actionCriteria(action:TechnicalAction):ContextualTopicCriterion[]{
- const mode=modeFor(action.text),[label,verb]=modeWords[mode]
+function actionCriteria(action:TechnicalAction,module:TechnicalModule):ContextualTopicCriterion[]{
+ const mode=modeFor(action.text,module),[actionLabel,verb]=modeWords[mode]
  return action.topics.map(topic=>{
-  let relation=topic.relation
+  let relation=topic.relationsByMode?.[mode]??topic.relation
+  let label=topic.label
   if(topic.id==='interview'&&mode==='application')relation='la correspondencia entre las preguntas formuladas, las respuestas escuchadas y la información requerida por el sistema'
   if(['interview','questionnaire'].includes(topic.id)&&mode==='recording')relation='la fidelidad del registro a las respuestas del usuario, distinguiendo datos ausentes de interpretaciones del analista'
   if(topic.id==='processes'&&mode==='identification'&&/finalidad/.test(action.text))relation='la finalidad del proceso dentro de la organización del caso'
   if(topic.id==='sampling'&&mode==='identification'&&/variables/.test(action.text))relation='las variables presentes en la muestra que aportan información relevante para el sistema'
   if(topic.id==='process-measurement'&&mode==='analysis')relation='la correspondencia entre los indicadores del proceso y los datos proporcionados'
   if(topic.id==='process-measurement'&&mode==='proposal')relation='la necesidad de mejora identificada en los datos e indicadores del proceso'
+  if(module.moduleCode==='MF_002_3'&&topic.id==='software'&&mode==='comparison'&&/\bhardware\b/.test(action.text)&&!/software de sistema|software de aplicacion/.test(action.text)){
+   relation='la función de los programas frente a los componentes físicos del equipo del caso'
+   label='Software del equipo'
+  }
+  if(module.moduleCode==='MF_002_3'&&topic.id==='workbooks'&&mode==='application'&&/\bduplic/.test(action.text))relation='la fidelidad de la copia o duplicado a las hojas originales, conservando los datos que deben mantenerse'
+  if(module.moduleCode==='MF_002_3'&&topic.id==='slide-config'&&mode==='application'&&/\bexport/.test(action.text))relation='la correspondencia entre el archivo exportado y el contenido, secuencia y opciones de salida indicados'
+  if(module.moduleCode==='MF_002_3'&&topic.id==='browser-search'&&/\bmetabuscador/.test(action.text))relation='la distinción entre acceso a páginas, búsqueda mediante un índice y consulta conjunta de varios buscadores, según las herramientas de la ficha'
+  if(module.moduleCode==='MF_002_3'&&topic.id==='files-folders'&&mode==='recording'&&/\bfrecuencia\b/.test(action.text))relation='la correspondencia entre la frecuencia registrada y las observaciones del cumplimiento de las reglas dadas'
+  if(module.moduleCode==='MF_002_3'&&topic.id==='pivot-table'){
+   const table=/tablas? dinamicas?/.test(action.text),chart=/graficos? dinamicos?/.test(action.text)
+   if(table&&!chart)label='Tablas dinámicas'
+   if(chart&&!table){
+    label='Gráficos dinámicos'
+    relation='la correspondencia entre los campos y agrupaciones solicitados y su representación gráfica a partir de los datos dados'
+   }
+  }
   const success=mode==='application'&&topic.application?topic.application
    :mode==='recording'&&['interview','questionnaire'].includes(topic.id)?`Registra las respuestas conservando ${relation}.`
    :`${verb} ${relation}.`
   const progressionLevels:ContextualTopicCriterion['progressionLevels']=[
    success,
    `${success} Una imprecisión menor necesita ajuste, pero permite comprobar la relación solicitada.`,
-   `La evidencia de ${topic.label.toLowerCase()} conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.`,
-   `La evidencia de ${topic.label.toLowerCase()} presenta una contradicción con ${relation}.`,
-   `No se presenta evidencia reconocible de ${topic.label.toLowerCase()} para la acción solicitada.`,
+   `La evidencia de ${label.toLowerCase()} conserva parte de la relación solicitada, pero omite un elemento necesario para comprobarla.`,
+   `La evidencia de ${label.toLowerCase()} presenta una contradicción con ${relation}.`,
+   `No se presenta evidencia reconocible de ${label.toLowerCase()} para la acción solicitada.`,
   ]
-  return{templateId:`technical-mf053-${topic.id}-${mode}`,title:topic.label.startsWith(label)?topic.label:`${label}: ${topic.label}`,observable:success,progressionLevels,weight:3}
+  return{templateId:`${module.templatePrefix??'technical-mf053'}-${topic.id}-${mode}`,title:label.startsWith(actionLabel)?label:`${actionLabel}: ${label}`,observable:success,progressionLevels,weight:3}
  })
 }
 export function technicalCriteria(task:TechnicalTask):ContextualTopicCriterion[]{
  if(task.alternatives){
   const branches=task.alternatives.map(technicalCriteria)
   const progressionLevels=[0,1,2,3,4].map(index=>`En la alternativa elegida: ${branches.map(rows=>rows.map(r=>r.progressionLevels[index]).join(' ')).join(' O BIEN: ')}`) as ContextualTopicCriterion['progressionLevels']
-  return[{templateId:'technical-mf053-alternative',title:'Alternativa técnica solicitada',observable:progressionLevels[0],progressionLevels,weight:3}]
+  return[{templateId:`${task.module.templatePrefix??'technical-mf053'}-alternative`,title:'Alternativa técnica solicitada',observable:progressionLevels[0],progressionLevels,weight:3}]
  }
- return [...new Map(task.actions.flatMap(actionCriteria).map(row=>[row.templateId,row])).values()]
+ return [...new Map(task.actions.flatMap(action=>actionCriteria(action,task.module)).map(row=>[row.templateId,row])).values()]
 }
 export function technicalSelections(task:TechnicalTask,description:string){
- const text=affirmative(description)
- const observed=task.actions.some(a=>a.topics.some(t=>t.id==='observation')&&modeFor(a.text)==='application')
+ const text=affirmative(description,task.module.additionalVerbs)
+ const observed=task.actions.some(a=>a.topics.some(t=>t.id==='observation')&&modeFor(a.text,task.module)==='application'
+  ||task.module.moduleCode==='MF_002_3'&&modeFor(a.text,task.module)==='observation')
  const suggestedInstrumentType:InstrumentType=/credito parcial|ponder\w*|puntos por|pesos por/.test(text)?'lista-ponderada'
   :observed&&/frecuencia|regularidad/.test(text)?'escala'
-  :task.actions.some(a=>['analysis','explanation','comparison','design','justification','proposal'].includes(modeFor(a.text)))||['REPORT','ORAL_PRESENTATION'].includes(task.activityType)?'rubrica':'lista-cotejo'
+  :task.actions.some(a=>['analysis','explanation','comparison','design','justification','proposal'].includes(modeFor(a.text,task.module)))||['REPORT','ORAL_PRESENTATION'].includes(task.activityType)?'rubrica':'lista-cotejo'
  return{suggestedInstrumentType,suggestedEvaluationTechnique:task.technique}
 }
 export function adaptTechnicalScale(proposal:InstrumentRecommendation,description:string,task:TechnicalTask){

@@ -5194,8 +5194,8 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 14,
-            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
-            "provider": null,
+            "status": "IMPLEMENTED_IN_SOURCE_REVIEWED_PENDING_INSTALLATION",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
               "pdfPages": [
@@ -5216,9 +5216,15 @@
               ],
               "records": 210,
               "literalParts": 302,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED"
-            }
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "376_FULL_DEFINITIONS_REVIEWED",
+              "adaptations": 81,
+              "cases": 94,
+              "uniqueCompleteCriteria": 108,
+              "httpDb": "NOT_RUN",
+              "browser": "NOT_RUN"
+            },
+            "catalogInSource": "evaluation-2026.143"
           },
           {
             "id": "IFC006_3-g4-MF_053_3",
@@ -5479,8 +5485,8 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 18,
-            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
-            "provider": null,
+            "status": "IMPLEMENTED_IN_SOURCE_REVIEWED_PENDING_INSTALLATION",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "TRANSCRIBED_COLUMN_AND_CONTINUATION_REVIEWED",
               "pdfPages": [
@@ -5507,9 +5513,15 @@
               ],
               "records": 210,
               "literalParts": 302,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED"
-            }
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "376_FULL_DEFINITIONS_REVIEWED",
+              "adaptations": 81,
+              "cases": 94,
+              "uniqueCompleteCriteria": 108,
+              "httpDb": "NOT_RUN",
+              "browser": "NOT_RUN"
+            },
+            "catalogInSource": "evaluation-2026.143"
           },
           {
             "id": "IFC007_3-g4-MF_062_3",
@@ -5763,7 +5775,7 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "Ofimática MF_002_3 de 4.º: fuente transcrita y revisada (210 registros/302 partes); continuar conservación de 142, contexto y proveedor. MF053 mantiene la verificación remota parcial por DNS."
+    "Ofimática MF_002_3 de4.º: proveedor143 y376instrumentos revisados en fuente; instalación idempotente y recorridos HTTP/DB y personales pendientes. MF053 conserva3/49recorridos y cuatroIDs; recuperar pendientes sin duplicar."
   ],
   "push": false,
   "deploy": false,

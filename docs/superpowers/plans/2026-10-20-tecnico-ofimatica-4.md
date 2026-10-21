@@ -45,19 +45,19 @@ Presentación como archivo frente a exposición oral; procesador de texto frente
 
 ## Task3: proveedor y lectura de instrumentos
 
-Preparados91contratos esperados/81adaptaciones en `data/evaluation-instruments/technical-mf002-four-contracts.json`. Aún sin proveedor, conexión ni lectura de instrumentos. Siguiente: ejecutar RED contra esos contratos antes de modificar el proveedor compartido. No presentar esta lista como cobertura.
+Implementados94contratos/81adaptaciones en `data/evaluation-instruments/technical-mf002-four-contracts.json`. Lectura final376instrumentos/108textos/94ensamblajes registrada. Catálogo143 solo en fuente, sin instalación ni prueba remota aún.
 
 **Archivos:** `packages/shared/src/secondary-technical-mf002-4.ts`, `secondary-technical.ts`, contratos `data/evaluation-instruments/technical-mf002-four-contracts.json`, backend/frontend specs, artefactos completos y revisión.
 
-- [ ] RED de familias: sistema operativo/periféricos; documentos, plantillas y formato; tablas/objetos/correspondencia; colaboración/revisión/referencias; hojas de cálculo, funciones y gráficos; filtros/listas/tablas dinámicas; presentaciones; búsqueda/archivos; correo/agenda/transferencia.
-- [ ] Incluir cada procedimiento y condición observable pertinente, con anclas RA/CE/C/P y exclusiones. Contratos de consignas breves y desarrolladas, cuatro formatos, puntuación pendiente/20/17.35, acciones independientes, alternativas, negaciones, manuales y título incompatible.
-- [ ] Reutilizar `resolveTechnicalTask`, `technicalCriteria`, `technicalSelections` y `adaptTechnicalScale`; hacer el prefijo del módulo explícito conservando todos los IDs deMF053. Ajustes al analizador compartido solo por regresiones demostradas.
-- [ ] Leer los instrumentos completos de todas las consignas y formatos; corregir con RED→GREEN; registrar textos, ensamblajes y huellas. No cerrar por conteos.
+- [x] RED de familias: sistema operativo/periféricos; documentos, plantillas y formato; tablas/objetos/correspondencia; colaboración/revisión/referencias; hojas de cálculo, funciones y gráficos; filtros/listas/tablas dinámicas; presentaciones; búsqueda/archivos; correo/agenda/transferencia.
+- [x] Incluir cada procedimiento y condición observable pertinente, con anclas RA/CE/C/P y exclusiones. Contratos de consignas breves y desarrolladas, cuatro formatos, puntuación pendiente/20/17.35, acciones independientes, alternativas, negaciones, manuales y título incompatible.
+- [x] Reutilizar `resolveTechnicalTask`, `technicalCriteria`, `technicalSelections` y `adaptTechnicalScale`; hacer el prefijo del módulo explícito conservando todos los IDs deMF053. Ajustes al analizador compartido solo por regresiones demostradas.
+- [x] Leer los instrumentos completos de todas las consignas y formatos; corregir con RED→GREEN; registrar textos, ensamblajes y huellas. No cerrar por conteos.
 - [ ] Comprobar paridad servidor/alternativa local y sugerencias por propósito. Las orientaciones docentes, software comercial y envío/publicación no se imponen por defecto.
 
 ## Task4: instalación individual y pruebas reales
 
-- [ ] Manifest determinista, trazabilidad de ambas fuentes, correspondencia explícita de año normativo frente a edición desconocida. Preservar los RA y orientaciones en metadata cuando el esquema no admite esos tipos.
+- [x] Manifest determinista puro, trazabilidad de ambas fuentes, correspondencia explícita de año normativo frente a edición desconocida. Preservar los RA y orientaciones en metadata cuando el esquema no admite esos tipos. Instalador individual preparado y probado sin DB;16Node aprobadas.
 - [ ] Pasar suites/builds obligatorios, lints afectados, Node y precaché antes de instalar; comparar todos los ámbitos anteriores y recompilar el entorno habitual.
 - [ ] Con servidor estable y cuatro servicios verificados, instalar solo la fuente y el catálogo revisados, con segunda ejecuciónUNCHANGED. ContextoQA separado, cuentas existentes, sin estudiantes.
 - [ ] Elegir muestras por CE/familia; HTTP autenticado de cuatro formatos,20/17.35/pending/manuales/guardar/reabrir/estrategia-only exacta. Preservar progreso eIDs ante fallos.
