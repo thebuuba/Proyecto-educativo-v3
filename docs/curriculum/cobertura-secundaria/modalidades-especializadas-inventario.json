@@ -5383,10 +5383,10 @@
             "weeklyHours": 8,
             "annualHours": 360,
             "sourcePdfPage": 14,
-            "status": "CONNECTED_REVIEWED_RUNTIME_QA_IN_PROGRESS",
+            "status": "CONNECTED_REVIEWED_HTTP65_PERSONAL_RUBRIC_LIST_TIMEOUT",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
-              "status": "SOURCE_TRANSCRIBED_INSTRUMENTS_REVIEWED_RUNTIME_IN_PROGRESS",
+              "status": "SOURCE_INSTRUMENTS_HTTP65_PERSONAL_RUBRIC_REVIEWED",
               "pdfPages": [
                 19,
                 20,
@@ -5400,11 +5400,11 @@
               "instrumentReview": "REVIEWED",
               "fullInstruments": 260,
               "cases": 65,
-              "httpDb": "IN_PROGRESS",
+              "httpDb": "VERIFIED_65_REPRESENTATIVE_CASES",
               "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_EXACT_LIST_TIMEOUT"
             },
             "catalog": "evaluation-2026.144",
-            "httpDb": "IN_PROGRESS",
+            "httpDb": "VERIFIED_65_REPRESENTATIVE_CASES",
             "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_EXACT_LIST_TIMEOUT"
           },
           {
@@ -5885,14 +5885,14 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "MF054 quinto: fuente ycatálogo144 instalados CREATED/UNCHANGED;HTTP/DB65muestras en curso, personalpendiente. MF00236/95 yMF0533/49conservados; no reiniciar sus recorridos ni regenerar IDs."
+    "MF054:65muestrasHTTP/DB y rúbrica personal verificadas; conservar incidencias429/listado. ContinuarMF056/cuarto, sin reintentosMF00236/95 niMF0533/49 ni rebaseline."
   ],
   "push": false,
   "deploy": false,
   "currentApplication": {
     "catalog": "evaluation-2026.144",
     "specializedProvidersAdded": 3,
-    "status": "MF054_RUNTIME_QA_IN_PROGRESS_MF053_MF002_PARTIAL",
+    "status": "MF054_HTTP65_PERSONAL_RUBRIC_MF053_MF002_PARTIAL",
     "developmentOnly": true,
     "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf054-5.md"
   },

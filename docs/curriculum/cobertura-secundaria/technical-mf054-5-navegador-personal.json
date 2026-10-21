@@ -41,7 +41,7 @@
     "newBaselines": 0,
     "remoteWrites": false
   },
-  "httpDbSampling": "IN_PROGRESS_65_CASES",
+  "httpDbSampling": "VERIFIED_65_REPRESENTATIVE_CASES",
   "limits": [
     "Dos tiempos de espera del listado general; reapertura por ruta directa del editor. No se declara corregido el rendimiento del listado.",
     "Cuatro formatos revisados localmente; esta prueba visual personal usa rúbrica.",

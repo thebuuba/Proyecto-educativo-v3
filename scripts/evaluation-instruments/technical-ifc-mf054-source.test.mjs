@@ -33,6 +33,6 @@ test('actitudes y orientaciones no se convierten en entregables ni en pruebas de
  assert(r.filter(x=>x.type==='ATTITUDE').every(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'&&x.adaptationIds.length===0))
  assert(r.filter(x=>x.type==='TEACHING_STRATEGY').every(x=>x.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'))
  assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.implementation.instrumentReview,'REVIEWED')
- assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.httpDb,'VERIFIED_65_REPRESENTATIVE_CASES');assert.equal(m.implementation.browser,'PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_EXACT_LIST_TIMEOUT')
  assert(m.limits.some(x=>x.includes('credenciales')&&x.includes('fictici')))
 })

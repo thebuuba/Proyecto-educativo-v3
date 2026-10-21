@@ -1,0 +1,737 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.144",
+  "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "coverage": {
+    "availableContracts": 65,
+    "selectedCaseIds": [
+      "language-identification",
+      "language-selection",
+      "language-license",
+      "database-engine",
+      "database-license",
+      "system-tools",
+      "desktop-app",
+      "web-app",
+      "input-devices",
+      "output-devices",
+      "input-data",
+      "input-method",
+      "input-format",
+      "output-screen",
+      "output-report",
+      "records",
+      "process-types",
+      "process-design",
+      "database-structure",
+      "validation",
+      "queries",
+      "structured-program",
+      "modular-program",
+      "object-program",
+      "functions",
+      "methods",
+      "interfaces",
+      "conditions",
+      "iterations",
+      "recursion",
+      "peripheral-communication",
+      "design-patterns",
+      "development-practices",
+      "access-policy",
+      "access-database",
+      "access-code",
+      "access-levels",
+      "access-log",
+      "credentials",
+      "backup",
+      "exception-identification",
+      "exception-classification",
+      "exception-database",
+      "exception-code",
+      "menu-dropdown",
+      "menu-cascade",
+      "menu-checkbox",
+      "menu-floating",
+      "menu-navigation",
+      "menu-context",
+      "menu-popup",
+      "menu-action-bar",
+      "language-brief",
+      "database-brief",
+      "menu-only",
+      "input-no-report",
+      "code-not-execution",
+      "optional-credentials",
+      "alternative-implementation",
+      "independent-implementation",
+      "weighted-components",
+      "menu-general",
+      "language-comparison",
+      "functions-execution",
+      "program-structure"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "sourceScope": "c1333931-e5a0-5390-bd12-defd021de2df",
+  "curriculumVersionId": "63fa4788-ef04-574e-b2b0-12a927fe3eb8",
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "f3560e13-9918-4e4c-b3dd-fb3e10f1bf43",
+      "snapshotId": "4dc8bc1c-d99f-46ef-b84a-23505c52f4ca",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f19d6d24133f8c3935225589dfb11cfc8d96966de055f4f27d8f1dd230bdf54a"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "58c0516a-cc7f-4788-874f-fd91eda986bb",
+      "snapshotId": "bb26474f-3670-4e37-bc1a-5fbd8d0e815d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "fb0ef5368a7af347be968c95aac9d7beeaf2b48e658d278fe206bea6498145ac"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "b4c3c08b-adbf-4f5a-86b7-9f3a5d50765b",
+      "snapshotId": "6261faaa-2f37-478c-b60d-af438e70108f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a00a688c050b75b1d3df18b99ad56135a1ee07167ec319a6d261a04ac6f57aeb"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "07012832-e991-4536-8c60-fe56731f194c",
+      "snapshotId": "b1f661af-250e-4b82-b4fb-1e3b006d2d8c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "fa7c72c7ff21a5a830622116fd9b011245c59731beddb49162bbc668a762572c"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "6074d97a-e9ed-420d-8599-79ec9cd1f6b7",
+      "snapshotId": "0f3e25ea-41b3-47e0-9eee-9bebc2445527",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7ba699e1360f03554a3d7aaf1b4d203e487405485b48fffa23156c830723355e"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "8b6411f4-89bc-42e9-8380-34f0b26edc3f",
+      "snapshotId": "2befe81a-ba87-40cf-94f1-04ac2be3d921",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ada6dbacf36c352884385a107b8e215a3c9828f0662fd8de51221e827513b5f6"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "3f0c830e-42e2-428c-a2e5-facb5dc4af84",
+      "snapshotId": "9ac9ccad-72aa-4dc7-a92b-059483d03ac9",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "819075318354678940b537474ef34b317cd8134bd4c03fb642491bdaad24cac4"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "9a47e6d0-4340-40e5-bdde-ce05f451d0cb",
+      "snapshotId": "a212de46-d513-4ad3-993f-185603282da4",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4b6d38c23b9712a00c133a37f128d364593b077c6e3cd2e68495deedfa9e3aa4"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "0b7d115a-245b-4111-98de-eb31ef88b1ce",
+      "snapshotId": "97f74305-f83f-4641-b08f-4850bd6019a6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a760e2aebcf26537f73808f0b3e8eadec48be20367dc040e18cd17453852255a"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "b41e5c89-eace-4e9e-896e-f99d61439510",
+      "snapshotId": "8792c940-7cee-4758-b6cc-836cb302ef20",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2fcac398153e634b1a46e0b4d92f0adfd209a1e2c8b4a4bd96d4e62f12a1641f"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "27b4926c-0787-42fd-9682-a3180827c1d0",
+      "snapshotId": "2dbd9927-d302-4ff1-a970-3512f05b6857",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a10f2f1b13a636bb2c961c14bffcbb1a0a1f91c962f1336426aa18883c3b83a9"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "2df26bf1-e21c-401a-970c-74a75c71937d",
+      "snapshotId": "861ce2e9-c094-40c3-b522-3018198885d8",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1b01d186b5c9d8e83d3662151ea5b48f832a320b82c6d9a6abd807f5c6b53483"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "1fb2d228-933b-43f2-bfc4-625f129bf537",
+      "snapshotId": "b7c5a7fe-d429-451c-b496-6e64e7ea3893",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "af767951225729bd8d804b46f3fed2df6acada20a34c9c98b95190f0d2686125"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "fb5d00ff-a639-42b5-8e5f-2664f4a4e4e1",
+      "snapshotId": "498a4b92-de59-4250-97f5-6b338b34d42f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "da9755a3ad8096343b43a52428fc08ee9a0e7275c6860764522cc750363a8081"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "5907a10c-306a-49e4-9a0c-1162f0c5260c",
+      "snapshotId": "2710959a-b763-47b9-991f-e84b963851ac",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d4108d98ac21cce7d5de154837e2cdf89608fa67785eccbd35efefbce1a8d0a6"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "98c8f868-46a0-4c49-88d2-b11889f74d2c",
+      "snapshotId": "77cd2470-1518-437f-9a2f-7fef38576a3c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1bed978dd580c538c058919f03939e4b92d3b139656ade4986c22655c9b6c2b6"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "dd9ffd14-18d9-481e-8e72-d66c23e84bf2",
+      "snapshotId": "76511380-e1f9-4309-b64a-c1e3a61cc241",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f49127a23c280c12eca9c46363fd7e88e372bf1f5f3e3c6bc02014c0f171daf2"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "2004c1ee-d5f3-4f82-bd92-357a0146c07d",
+      "snapshotId": "93330d88-c789-40d1-aedc-bc3a6ed15022",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "78316aec2ce477353ed41676cfa165cdf02741888b8ce56d3b11c65af99981dd"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "153881ee-1fb5-4534-8d37-5b192dfc0364",
+      "snapshotId": "6b575dad-baa0-4685-8370-b17aaf403c2b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "666ea33af57ce279276e3ad98a39c9da399e73eff76e9447056671759e687545"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "6091a350-609c-469b-b9a2-157afab9386d",
+      "snapshotId": "bc8bb056-b891-4ddc-91e6-ce045ca69f27",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "cc1ec6db4f24c07d6ff032c55e2fef4080b8729f4d0d9617ee8ace9e0facd7d0"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "e0e604a0-ba14-4db6-9fca-0ad973f057f6",
+      "snapshotId": "331050ff-6a46-49d6-9f46-7a16e48fe608",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "bc1cbc7d42c4cd648d9af5819ab0660cd064934b11555a05cf691576556367f3"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "47675f76-b3c6-4bb4-8638-dffcf76654c5",
+      "snapshotId": "16f25b5d-50fb-4af5-b47c-dde8a23b8ed7",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d88c9c43c00efd3f39d4b7e8823c1d6538f0f7ab55bdcfdce92d34d7b5ada05f"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "3daebcf2-aae1-4ba1-918b-064c08a92e8f",
+      "snapshotId": "b5271a8e-cf41-488d-9245-a2422f6a704e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b925d6b70ef506abfca32fd306eb49371b9a9ad9eac58bdc08874959b7376d5b"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "5c22f979-1d7d-4d6d-8436-520e36ab951c",
+      "snapshotId": "b4c4a4c4-406a-4cce-b274-edd9ef3f0b17",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f457e2ae3eec8626a06a70d1157d12dfd71fbe9a8e23f9bdc03e55581f3044b3"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "ace108ea-fad4-446c-9ef7-8e9b0e714d76",
+      "snapshotId": "cea63af2-c078-4ee2-8b87-90c1cedad9ee",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "17f72b3965ecf1ab76fe20708af7fc1a4f8ad2e74ba0e9c687be212e053c4cb2"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "9c3de076-9fcf-4dcc-a5b2-bdae248d6216",
+      "snapshotId": "4aa0b367-ec1c-4aa0-b4ad-5c81204fbc8c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1ade1d999478208f2fb4a39f0ecb74bf7ec7115954b980bbd401235be6ee44de"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "817f3df0-b51f-44fa-81f5-9e2e49dc3170",
+      "snapshotId": "32b7b51f-a12c-441c-a4c1-31ecf439760c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "60f047a8fc15512471ddb5e71fe6f20885f6a20ffc8209c4891d43a83888e069"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "11168de7-6d43-475a-b4bf-871ae850ed03",
+      "snapshotId": "1e1b5140-8a67-4fde-b5b8-ea24d85d349e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "da161e20e461b2e695fd0ab001a8c158cd5410a685306273feadc4cc722c2149"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "4c66650a-fb4a-43a5-9730-b1eeb2658a51",
+      "snapshotId": "62f92af8-e5af-41d1-9151-27dd60580428",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "403aa50916dcaf9c08cca51ff67f56693a41231e097de74700ebf86f73f90fc8"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "95fc4e47-f592-4ae3-afb1-98a91783f777",
+      "snapshotId": "5b574ba1-4d13-4a91-94ab-d37b92911f6e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "8be71be3e7262f180fa56dd42f74e26012e73bca5d0bfb328119337c296920e4"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "3e1bf39a-436b-49ec-8eaf-73e7d6beddd1",
+      "snapshotId": "7895328c-35df-406d-9c12-cbb15946df87",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7e0bd07e457d6619c042cadad819bdf20534eb1c2b9467a1aacfe3a071e0c333"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "479b482d-5328-46b5-a6a9-511ed7518c03",
+      "snapshotId": "2826ed03-b6e2-4e8e-b172-e2bbed665172",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "93fcc258016e2b0fd4a71d24d2ffd34e6c8efaefdb473b5b6616afd66943f6a1"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "b472a3b1-4a5f-49dc-beb1-ff4282513ffa",
+      "snapshotId": "f4f1ecd7-593d-4a02-a5c4-deeaa4b18b41",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "bc1a77e042a9676febe2f5b13b708babe63d0cd75aba8851d20353c0cc2d83ad"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "3f902db2-8a5d-44a1-9f21-913ab01240ae",
+      "snapshotId": "c1abb3c9-dcb0-4713-8f16-64ad5b610bad",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "400af968b82235f4607223801e5a5af88f8452770568dfd680f94b2049572040"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "87df3436-261b-4c8c-9def-c0b26028fa2d",
+      "snapshotId": "f49bdc42-6ba1-4962-ad6b-cec202072c57",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "fe27e242c31eef80d6c74018a23e67c04fa374b874e40b06a2748581f5f2fe57"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "c497ed21-a54b-44d5-98e7-c8e00fde43b0",
+      "snapshotId": "92db4f89-5631-45e8-a725-bcadd67e45bf",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9be3daddadd46aac5fdce7fb02258a0520bde809e57cf312c768d46737a55d7c"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "772406c7-a471-44cb-ab7e-5ccd58f70b42",
+      "snapshotId": "873830b5-f608-4fca-9ad4-0dac3576c2ba",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "67932223059bc2bc5526d6bc1ac220f22204757bd4728501e6542d94e7d5fdb5"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "525d396b-b4db-4e2f-a6ea-cb8abd4c33f4",
+      "snapshotId": "637769f3-45b3-4857-988e-6d667327ef8b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1dc48005ec1910f93e2f65358aee32c8c6963157553915fc2dda6d7e4eb62ae3"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "0c54fbe3-d129-4a28-9bb5-4d78cfb3d610",
+      "snapshotId": "3d15eef7-321e-4b95-8a73-07cbda41c486",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "dc1c1334d3119c8f57cd6004243f01cd4ce8d26c93aa8d51a7fcd9877d6ae8fc"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "6922a052-142a-4a6f-9442-cafc80d6670d",
+      "snapshotId": "9aaff86d-3829-41c5-9243-56a8cabf9022",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9ecb7072e17591d0ecfc605e98bd21a1001a583cb931eed3d0267eca7485eb5f"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "1699c3ae-b2fe-443c-8a79-f3de1a46d6b4",
+      "snapshotId": "3dfb3238-9e5a-449a-ba90-e4051ca48f3c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "39cdaa5ccfdbf1af88ea59bdeeac25b5b8d6b878e4d8187e6fdaa395858a3d0d"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "9e5f269e-27e0-4c4b-8a86-9aa3459bd92d",
+      "snapshotId": "2164afa8-7e7a-4d19-9bd4-814ecd6e208d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "63625bae5b360c063873232c3eb20ddeff957db1f6e1806849781f41431c4f81"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "e10316c9-25e8-4e65-938e-6fec59e126cf",
+      "snapshotId": "2f835e0b-be81-473f-9f69-4666cebc94cf",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2c1e35e8392f6de677ec2996a3fdf512b3cd11aa0b7f66e55c0283890494434c"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "853d108a-4a45-49cd-9825-36b08e90b403",
+      "snapshotId": "079a5f71-d374-40bb-afe2-70b1a6d2617a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "261d0bcbdaa281f011b5daf7b3c378ecda673202e66abd2b8e9b67b4b17b55f0"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "f132f0b9-f89e-4765-b5a3-3f06d1dd1ef2",
+      "snapshotId": "1a39daaa-f685-42d1-8b41-c6117753250b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4a16a22128867354c3c0916b4fec853a0c450055aced9ceb2b0bd75d13c0dfed"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "65ebebaf-5577-4499-aaae-a9e6379348ed",
+      "snapshotId": "ee686238-2ca2-4ae6-a8e9-377de44055ee",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4698a401db9191fba613989d25d52ea6ac642427570aa4cc8d4b2fdc4bc6ec83"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "2f05a2cb-5e07-4162-99d4-4417d8b92009",
+      "snapshotId": "9e04fbac-4db6-4dcd-b401-8dd20938bed0",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c3a173c8a62be2f05049c5d0f12357b16df163ec32411cbc2a6f78a33bb45248"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "e392139b-3690-413a-aab2-fe306ef240e3",
+      "snapshotId": "49d9d957-2e7b-49f5-ad2d-17de040b00e6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c2d194d2d15b3508f4b2229b5c04ec7bb293dd2cb91213d3598e13fb8df41036"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "8a012a61-6cc5-419a-a363-10ec95848eea",
+      "snapshotId": "6e0b4a18-4f25-4a82-9eca-e4c0bed6609e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "12b875319e3f0bb8b78d55f94e4c12d60994c05dce04391eeb8c846efcd69331"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "2252a699-f321-44e5-b0be-4c8aa7296917",
+      "snapshotId": "6e3e4d17-e45a-4bb8-bc63-f94b68419d1d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "15b9b251588ae39070385edb9486535cee71a2f1972a5cb3ed83eda7c53d9838"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "a81df7d2-8a2f-417a-9ea4-ac78e6c8ef3a",
+      "snapshotId": "98d8f42e-774d-4c75-b3ec-effd6ff2bf1f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "abc8d2ce742e753f0e4abe150f73fefca9e16dff7d1911950fd3169b82df564f"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "420a0394-e05f-4fcc-a4cf-49b738b7c1f2",
+      "snapshotId": "d5bc120a-960f-405f-b8ca-b4614b5a87cf",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c50ae5d57242e9d5972f1b5a44c45728f295425af779a668d7458fb158a526a6"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "0a16e83d-6351-43d8-b5b4-6f8e60aa1a26",
+      "snapshotId": "b232cb98-d80f-4c9c-a20d-c93067d5b6f3",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2249f7367cf8e2b5049203011e4a1a7b14a7852809d9c5f33a7f52fc70845bf0"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "8a46f33f-b2ef-4dbc-aede-bf68078ba0f4",
+      "snapshotId": "6c919d89-a6d7-40ff-b77a-bde471f68263",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "54f4a64aad8f77b34676a9b96a23bbb50eebcbf8ff29b077d5cd1d73b59f9595"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "068ecc9b-74c7-4939-aaf4-784dbf5df97f",
+      "snapshotId": "26c8b087-5222-460e-9868-42ebc72c7fe4",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f43d54da2ad092ec761753df644eb2add1211557e57e915c5f03314dfe61f888"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "9a64174a-239a-4d5e-999d-a8bacc7c580c",
+      "snapshotId": "8a9567e2-d602-466f-aade-0f1a017fc11c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "71bb3b36737d55344a62e005cc05b2832923a19df437ff27bd07d9d79b905653"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "aae682e6-e7f3-4862-bb12-008f0a699f8f",
+      "snapshotId": "0dd9aad3-b0ad-4e4b-914d-3ff43f86a1ef",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2e5fba9a55a9a446938e86929bdbd480a5ac95354c05141a364f614459e1b430"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "39aaf741-775f-40a0-b0c3-191faae8e68f",
+      "snapshotId": "16bace04-9388-41fc-b892-669d0cf4085b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "de7b6417be968841c98ba6b6a34ac2a7cfcca9480ec896bc23acaac233cf4bed"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "c2fdc481-aab5-4835-a5c7-3d1542e2ef97",
+      "snapshotId": "93d8b895-f58b-470b-bbad-1fb3d3f3bc1f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "88f0154611ff7f22a078dc88453a62c955503c7c22192ee909732b75bbcf66b0"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "38d8306b-df0f-4415-9511-d797b89b11a1",
+      "snapshotId": "13b5a7d6-a6a3-4f44-9f4f-a5cb39a4a4d0",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "662b8604c1e7e6327a0ed20608005eeccfb117995d81154fc022777be8b368ce"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "800d00cc-c58c-4e12-bf72-304ccfd22663",
+      "snapshotId": "4ed43b44-67ab-4e68-958d-152c0329d64b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "3fc98ce67fe359c2538b82abf73df98bfbbffd66bfd8acdb98009f4e9aaeed4d"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "f2066867-eabe-444c-bb9c-9fb2c6cfe79b",
+      "snapshotId": "9ef710e5-f27f-4a74-8048-e195945e78bb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "e95e075a85217f329d37cd87ba1aeb93bfa7d5a4946219d88f34dab2f525e1d7"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "74e69256-322d-405b-af93-55d96ffef84b",
+      "snapshotId": "3723c9eb-5084-44ca-b639-b9a40bc9d373",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "734cc0a9299457b16e50edaee23555091cdcf7a027f7adbb1997a952d08dc012"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "effd6312-39df-4d7b-b958-9c12b9300925",
+      "snapshotId": "d49429ee-9b96-4d5e-aced-8e3f18655145",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "e5cd608220a4b9d90754402b6b2041c6f7fdaf24a0d696f7d95126b85613234c"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "4aa1e7b8-b2e2-45b5-a7ff-47f57091801c",
+      "snapshotId": "d2844474-2a93-4b5d-9f20-1f298b8b0181",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "174fcc24232459b14b64c3d230d99c17d539f46f6bee5ee0a7d1cc954ac8bff7"
+    }
+  ],
+  "timing": {
+    "/auth/login": {
+      "requests": 3,
+      "statuses": {
+        "201": 3
+      },
+      "successfulMedianMs": 1761,
+      "successfulP95Ms": 2144,
+      "maxMs": 2144
+    },
+    "/activities/center": {
+      "requests": 3,
+      "statuses": {
+        "200": 3
+      },
+      "successfulMedianMs": 2162,
+      "successfulP95Ms": 2345,
+      "maxMs": 2345
+    },
+    "/evaluation-instruments/recommend": {
+      "requests": 68,
+      "statuses": {
+        "200": 65,
+        "400": 3
+      },
+      "successfulMedianMs": 6019,
+      "successfulP95Ms": 7779,
+      "maxMs": 8947
+    },
+    "/evaluation-instruments/interpret": {
+      "requests": 65,
+      "statuses": {
+        "200": 65
+      },
+      "successfulMedianMs": 10900,
+      "successfulP95Ms": 13477,
+      "maxMs": 14292
+    },
+    "/activities": {
+      "requests": 299,
+      "statuses": {
+        "200": 168,
+        "201": 130,
+        "429": 1
+      },
+      "successfulMedianMs": 3590,
+      "successfulP95Ms": 9681,
+      "maxMs": 15580
+    }
+  },
+  "responseCount": 438,
+  "http500": 0,
+  "http429": 1,
+  "history": {
+    "preservedReleases": 76,
+    "preservedSnapshots": 1021,
+    "currentReleases": 77,
+    "currentSnapshots": 1087,
+    "newSnapshots": 66,
+    "qaSaved": 65,
+    "personalSaved": 1,
+    "duplicates": 0
+  },
+  "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_EXACT_LIST_TIMEOUT",
+  "limits": [
+    "65muestras seleccionadas; no todas las combinaciones de propósito, formato y puntuación.",
+    "Un429interrumpió el primer recorrido. Se preservaron49actividades/48verificaciones antes de reanudar.",
+    "La primera reanudación releyó casos completos y se detuvo intencionalmente; el helper corregido omite checkpoints completos validados.",
+    "Dos tiempos de espera del listado personal; reapertura directa del editor verificada. No se afirma resuelto el rendimiento ni la causa del429."
+  ],
+  "push": false,
+  "deploy": false
+}

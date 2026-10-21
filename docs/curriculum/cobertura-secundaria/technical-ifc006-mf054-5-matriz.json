@@ -2323,12 +2323,12 @@
     }
   ],
   "implementation": {
-    "status": "CONNECTED_REVIEWED_RUNTIME_QA_IN_PROGRESS",
+    "status": "CONNECTED_REVIEWED_HTTP65_PERSONAL_RUBRIC_LIST_TIMEOUT",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.144",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "VERIFIED_65_REPRESENTATIVE_CASES",
+    "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_EXACT_LIST_TIMEOUT"
   },
   "limits": [
     "Credenciales y controles de acceso se adaptan con usuarios y datos ficticios; no solicitar credenciales personales ni acceso a sistemas de producción.",
