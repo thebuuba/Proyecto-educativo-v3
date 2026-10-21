@@ -1,0 +1,102 @@
+{
+  "moduleCode": "MF_056_3",
+  "grade": 4,
+  "modalityCode": "technical_professional",
+  "status": "CONTEXT_REVIEWED_PROVIDER_PENDING",
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalogUnchanged": "evaluation-2026.144",
+  "freeze": {
+    "frozen": "evaluation-2026.144",
+    "matchesInstalled": true,
+    "sourceUnchangedSinceVerifiedBuild": true,
+    "fields": [
+      "technicalModules",
+      "version"
+    ],
+    "commonDefinitions": 15176,
+    "releases": 77,
+    "snapshots": 1087,
+    "priorHistoryPreserved": true,
+    "remoteWrites": false
+  },
+  "tests": {
+    "initialFailures": 6,
+    "initialCompatible": 20,
+    "focusedPassed": 108,
+    "backendPassed": 91667,
+    "backendFiles": 197,
+    "failures": 0,
+    "inventoryPassed": 26
+  },
+  "gates": [
+    {
+      "name": "mf056-context-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf056-context-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-context-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-context-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-context-lint",
+      "exit": 0
+    }
+  ],
+  "preservation": {
+    "catalog": "evaluation-2026.144",
+    "currentPayloadUnchanged": true,
+    "frozen144Exact": true,
+    "results": [
+      {
+        "module": "technical-ifc-mf053",
+        "fullDefinitions": 296,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf002",
+        "fullDefinitions": 380,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf054",
+        "fullDefinitions": 260,
+        "sourceCompiledReviewedExact": true
+      }
+    ],
+    "remoteWrites": false
+  },
+  "runtime": {
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-TVJfGAwo.js",
+      "matchesBuild": true
+    },
+    "assetsExactlyMatchBuild": true
+  },
+  "provider": null,
+  "instrumentsReviewed": 0,
+  "remoteWrites": false,
+  "push": false,
+  "deploy": false
+}

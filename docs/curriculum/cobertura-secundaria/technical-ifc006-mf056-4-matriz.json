@@ -1455,7 +1455,7 @@
   ],
   "adaptations": [],
   "implementation": {
-    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "status": "CONTEXT_REVIEWED_PROVIDER_PENDING",
     "provider": null,
     "instrumentReview": "NOT_STARTED",
     "httpDb": "NOT_RUN",
@@ -1469,5 +1469,11 @@
     "Preservar erratas literales como Boice Codd, order bye y propuestasde. Las adaptaciones deberán distinguirlas del contenido técnico enseñado.",
     "El ejemplo union bajo De unión externa se conserva literalmente; no atribuir equivalencia de operaciones ni tratar el pseudocódigo con puntos suspensivos comoSQL ejecutable.",
     "Las cifras impresas de disponibilidad conservan sus puntos y comas; no corregir silenciosamente la fuente."
-  ]
+  ],
+  "contextReview": {
+    "proof": "docs/curriculum/cobertura-secundaria/technical-mf056-4-contexto.json",
+    "focusedPassed": 108,
+    "backendPassed": 91667,
+    "provider": null
+  }
 }
