@@ -1,0 +1,2059 @@
+{
+  "moduleCode": "MF_057_3",
+  "subjectCode": "MF_057_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Administración de Base de Datos",
+  "level": "SECONDARY",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 405,
+  "weeklyHours": 9,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "boundary": "DesdeMÓDULO5 MF_057_3 enPDF29 hasta la última orientación antes deMÓDULO6 MF_058_3 en37.",
+    "continuations": [
+      "CE5.1.3 entre29/30;RA5.3 entre30/31;CE5.6.4 entre31/32.",
+      "Bandas conceptuales32/33,33/34,34/35,35/36; actitud usuarios32/33; prueba servidores36/37."
+    ],
+    "renderRuling": "Render36WASM leído de nuevo: muestra Identificación del hardware y software; no hay un fragmento incompleto. El primer borrador del plan/prueba se corrigió antes de transcribir."
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf057-RA5.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.1",
+      "literal": "RA5.1 Describir las funciones y objetivos de la administración de la base de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "RA5.1 Describir las funciones y objetivos de la administración de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.1.1",
+      "literal": "CE5.1.1 Definir Administrador de Base de Datos (ABD - DBA).",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "CE5.1.1 Definir Administrador de Base de Datos (ABD - DBA)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.1.2",
+      "literal": "CE5.1.2 Describir las funciones del DBA. - Administrar la estructura de la base de datos. - Administrar la actividad de los datos. - Administrar el sistema manejador de base de datos. - Establecer el Diccionario de Datos. - Asegurar la confiabilidad de la base de datos. - Confirmar la seguridad de la base de datos.",
+      "pdfPages": [
+        29
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "CE5.1.2 Describir las funciones del DBA. - Administrar la estructura de la base de datos. - Administrar la actividad de los datos. - Administrar el sistema manejador de base de datos. - Establecer el Diccionario de Datos. - Asegurar la confiabilidad de la base de datos. - Confirmar la seguridad de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.1.3",
+      "literal": "CE5.1.3 Describir la documentación necesaria que debe recibir y entregar un DBA. - Estructura de una base de datos. - Creación de una base de datos. - Creación de diccionario de datos. - Creación de usuarios y privilegios.",
+      "pdfPages": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 29,
+          "text": "CE5.1.3 Describir la documentación necesaria que debe recibir y entregar un DBA. - Estructura de una base de datos. - Creación de una base de datos. - Creación de diccionario de datos."
+        },
+        {
+          "pdfPage": 30,
+          "text": "- Creación de usuarios y privilegios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.1.4",
+      "literal": "CE5.1.4 Identificar los recursos o herramientas necesarias para la administración de base de datos. - Medios de almacenamientos. - Sistema operativo. - Gestor de base de datos. - Conectividad (Internet, Intranet, Red de Área Local (LAN), Red de Área Amplia (WAN)).",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.1.4 Identificar los recursos o herramientas necesarias para la administración de base de datos. - Medios de almacenamientos. - Sistema operativo. - Gestor de base de datos. - Conectividad (Internet, Intranet, Red de Área Local (LAN), Red de Área Amplia (WAN))."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.2",
+      "literal": "RA5.2 Crear los parámetros de acceso y seguridad para apoyar la gestión de administración de bases de datos, que cumplan con los requerimientos establecidos.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "RA5.2 Crear los parámetros de acceso y seguridad para apoyar la gestión de administración de bases de datos, que cumplan con los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.1",
+      "literal": "CE5.2.1 Describir los mecanismos de acceso que se utilizan para entrar a las bases de datos: - Conectividad abierta de bases de datos ( Open Data Base Connectivity (ODBC)). - Objetos de datos activos ( ActiveX Data Objects (ADO)). - Conectividad de base de datos Java ( Java Data Base Connectivity (JDBC)). - Etc.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.1 Describir los mecanismos de acceso que se utilizan para entrar a las bases de datos: - Conectividad abierta de bases de datos ( Open Data Base Connectivity (ODBC)). - Objetos de datos activos ( ActiveX Data Objects (ADO)). - Conectividad de base de datos Java ( Java Data Base Connectivity (JDBC)). - Etc."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.2",
+      "literal": "CE5.2.2 Analizar o modificar la estructura de la base de datos. - Tablas. - Vistas o consultas. - Procedimientos almacenados. - Disparadores. - Esquema conceptual.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.2 Analizar o modificar la estructura de la base de datos. - Tablas. - Vistas o consultas. - Procedimientos almacenados. - Disparadores. - Esquema conceptual."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.3",
+      "literal": "CE5.2.3 Generar los documentos necesarios de la base de datos creada o modificada.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.3 Generar los documentos necesarios de la base de datos creada o modificada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.4",
+      "literal": "CE5.2.4 Administrar las actividades de los datos para garantizar que los usuarios trabajen en forma cooperativa y complementaria al procesar informaciones en la base de datos. - Proporciona estándar de los datos. - Guía de acción. - Procedimientos de control. - Documentación de los datos.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.4 Administrar las actividades de los datos para garantizar que los usuarios trabajen en forma cooperativa y complementaria al procesar informaciones en la base de datos. - Proporciona estándar de los datos. - Guía de acción. - Procedimientos de control. - Documentación de los datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.5",
+      "literal": "CE5.2.5 Crear roles con los permisos a los objetos de la base de datos de acuerdo con los perfiles de los usuarios que utilizarán las aplicaciones.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.5 Crear roles con los permisos a los objetos de la base de datos de acuerdo con los perfiles de los usuarios que utilizarán las aplicaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.6",
+      "literal": "CE5.2.6 Describir la configuración de la seguridad para los usuarios (políticas de contraseñas, duración cambio de contraseñas, reintentos de accesos).",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.6 Describir la configuración de la seguridad para los usuarios (políticas de contraseñas, duración cambio de contraseñas, reintentos de accesos)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.2.7",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.2.7",
+      "literal": "CE5.2.7 En un supuesto práctico, debidamente caracterizado: - Crear una base de datos. - Crear los roles con los permisos a los objetos. - Crear usuarios de bases de datos para las aplicaciones y para los usuarios de las aplicaciones. - Aplicar los roles y la configuración de la seguridad previamente definida. - Ejecutar prácticas de migración de datos.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.2.7 En un supuesto práctico, debidamente caracterizado: - Crear una base de datos. - Crear los roles con los permisos a los objetos. - Crear usuarios de bases de datos para las aplicaciones y para los usuarios de las aplicaciones. - Aplicar los roles y la configuración de la seguridad previamente definida. - Ejecutar prácticas de migración de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.3",
+      "literal": "RA5.3 Ejecutar el respaldo de datos ( Backup ) para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos.",
+      "pdfPages": [
+        30,
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "RA5.3 Ejecutar el respaldo de datos ( Backup ) para asegurar la continuidad del negocio, cumpliendo"
+        },
+        {
+          "pdfPage": 31,
+          "text": "los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.3.1",
+      "literal": "CE5.3.1 identificar el esquema y la frecuencia de los respaldos más apropiados (respaldos completos, respaldos del log , respaldos diferenciales y respaldos incrementales).",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.3.1 identificar el esquema y la frecuencia de los respaldos más apropiados (respaldos completos, respaldos del log , respaldos diferenciales y respaldos incrementales)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.3.2",
+      "literal": "CE5.3.2 Describir y crear alertas de notificaciones que envíen mensajes para dar seguimiento a la realización de los respaldos.",
+      "pdfPages": [
+        30
+      ],
+      "parts": [
+        {
+          "pdfPage": 30,
+          "text": "CE5.3.2 Describir y crear alertas de notificaciones que envíen mensajes para dar seguimiento a la realización de los respaldos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.3.3",
+      "literal": "CE5.3.3 En un supuesto práctico, debidamente caracterizado: - Implementar la estrategia de respaldo ( Backup ). - Implementar la estrategia de restauración de datos.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.3.3 En un supuesto práctico, debidamente caracterizado: - Implementar la estrategia de respaldo ( Backup ). - Implementar la estrategia de restauración de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.4",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.4",
+      "literal": "RA5.4 Implementar el almacenamiento adecuado para apoyar la gestión de administración de bases de datos, de acuerdo con lo establecido.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "RA5.4 Implementar el almacenamiento adecuado para apoyar la gestión de administración de bases de datos, de acuerdo con lo establecido."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.4.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.4.1",
+      "literal": "CE5.4.1 Crear los arreglos de discos que serán utilizados según el diseño realizado.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.4.1 Crear los arreglos de discos que serán utilizados según el diseño realizado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.4.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.4.2",
+      "literal": "CE5.4.2 Aplicar al servidor de bases de datos los arreglos de discos creados.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.4.2 Aplicar al servidor de bases de datos los arreglos de discos creados."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.4.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.4.3",
+      "literal": "CE5.4.3 Configurar la base de datos para que utilice los arreglos de discos. - Colocar los archivos de data en el disco de data. - Colocar los archivos log en el disco de log . - Colocar los archivos temporales en el disco de temporal.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.4.3 Configurar la base de datos para que utilice los arreglos de discos. - Colocar los archivos de data en el disco de data. - Colocar los archivos log en el disco de log . - Colocar los archivos temporales en el disco de temporal."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.4.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.4.4",
+      "literal": "CE5.4.4 Configurar la base de datos para que realice los respaldos en el disco o en los discos de respaldo.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.4.4 Configurar la base de datos para que realice los respaldos en el disco o en los discos de respaldo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.5",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.5",
+      "literal": "RA5.5 Monitorear y controlar el funcionamiento de las bases de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "RA5.5 Monitorear y controlar el funcionamiento de las bases de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.5.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.5.1",
+      "literal": "CE5.5.1 Establecer alertas para las notificaciones del comportamiento de las bases de datos en: - Los eventos del porcentaje de espacio libre en los archivos de datos. - Los eventos en el log . - Los bloqueos de las transacciones. - La falta de espacio en los discos. - El alto uso de recursos del sistema (CPU y Memoria). - El servicio del motor de bases de datos no disponible.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.5.1 Establecer alertas para las notificaciones del comportamiento de las bases de datos en: - Los eventos del porcentaje de espacio libre en los archivos de datos. - Los eventos en el log . - Los bloqueos de las transacciones. - La falta de espacio en los discos. - El alto uso de recursos del sistema (CPU y Memoria). - El servicio del motor de bases de datos no disponible."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.5.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.5.2",
+      "literal": "CE5.5.2 Monitorear las bases de datos utilizando las herramientas de manejo de bases de datos: - Las consultas de larga duración. - Consultas que causan bloqueos. - Utilización de los recursos del sistema. - Espacio en disco.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.5.2 Monitorear las bases de datos utilizando las herramientas de manejo de bases de datos: - Las consultas de larga duración. - Consultas que causan bloqueos. - Utilización de los recursos del sistema. - Espacio en disco."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.5.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.5.3",
+      "literal": "CE5.5.3 En un supuesto práctico, debidamente caracterizado, automatizar los procesos que respondan a las alertas generadas para minimizar los tiempos de respuestas del monitoreo, que son: - Crecimiento automático de los archivos de datos. - La ejecución de limpieza de archivos de respaldos viejos. - Envío de alertas por correo electrónico o minimensajes.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.5.3 En un supuesto práctico, debidamente caracterizado, automatizar los procesos que respondan a las alertas generadas para minimizar los tiempos de respuestas del monitoreo, que son: - Crecimiento automático de los archivos de datos. - La ejecución de limpieza de archivos de respaldos viejos. - Envío de alertas por correo electrónico o minimensajes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.6",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.6",
+      "literal": "RA5.6 Aplicar mantenimiento y actualizaciones de las base de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "RA5.6 Aplicar mantenimiento y actualizaciones de las base de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.6.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.6.1",
+      "literal": "CE5.6.1 Revisar periódicamente las actualizaciones disponibles del motor de bases de datos y del sistema operativo.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.6.1 Revisar periódicamente las actualizaciones disponibles del motor de bases de datos y del sistema operativo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.6.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.6.2",
+      "literal": "CE5.6.2 Determinar la necesidad de aplicar las actualizaciones disponibles del motor de bases de datos y del sistema operativo.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.6.2 Determinar la necesidad de aplicar las actualizaciones disponibles del motor de bases de datos y del sistema operativo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.6.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.6.3",
+      "literal": "CE5.6.3 Analizar en cuál ambiente conviene realizar las actualizaciones del motor de bases de datos o del sistema operativo. - De prueba. - De producción.",
+      "pdfPages": [
+        31
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.6.3 Analizar en cuál ambiente conviene realizar las actualizaciones del motor de bases de datos o del sistema operativo. - De prueba. - De producción."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.6.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.6.4",
+      "literal": "CE5.6.4 En un supuesto práctico, debidamente caracterizado: - Realizar pruebas de actualizaciones al motor de bases de datos y del sistema operativo en ambientes de pruebas para asegurar el correcto funcionamiento de las bases de datos y las aplicaciones que acceden a ellas. - Aplicar las actualizaciones al motor de bases de datos y del sistema operativo en ambientes de producción para asegurar el correcto funcionamiento de las bases de datos y las aplicaciones que acceden a ellas.",
+      "pdfPages": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 31,
+          "text": "CE5.6.4 En un supuesto práctico, debidamente caracterizado: - Realizar pruebas de actualizaciones al motor de bases de datos y del sistema operativo en ambientes de pruebas para asegurar el correcto funcionamiento de las bases de datos y las aplicaciones que acceden a ellas. - Aplicar las actualizaciones al motor de bases de datos y del sistema operativo en ambientes de producción para asegurar el correcto funcionamiento de las bases de datos y las aplicaciones que acceden a"
+        },
+        {
+          "pdfPage": 32,
+          "text": "ellas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-RA5.7",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA5.7",
+      "literal": "RA5.7 Realizar mantenimiento preventivo y correctivo a las base de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "RA5.7 Realizar mantenimiento preventivo y correctivo a las base de datos para asegurar la continuidad del negocio, cumpliendo los requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.7.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.7.1",
+      "literal": "CE5.7.1 Crear planes de mantenimiento para la ejecución del proceso de reindexación/recreación de los índices, actualización de estadísticas y ejecución de revisión de consistencia interna de las tablas.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "CE5.7.1 Crear planes de mantenimiento para la ejecución del proceso de reindexación/recreación de los índices, actualización de estadísticas y ejecución de revisión de consistencia interna de las tablas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.7.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.7.2",
+      "literal": "CE5.7.2 Documentar los planes de mantenimientos creados para futuras consultas.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "CE5.7.2 Documentar los planes de mantenimientos creados para futuras consultas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.7.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.7.3",
+      "literal": "CE5.7.3 Realizar revisiones de la comunicación entre los servidores de aplicación y los servidores de bases de datos para asegurar que no existan fallas en las redes.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "CE5.7.3 Realizar revisiones de la comunicación entre los servidores de aplicación y los servidores de bases de datos para asegurar que no existan fallas en las redes."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.7.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.7.4",
+      "literal": "CE5.7.4 Verificar los tiempos de respuestas entre los servidores para asegurar la óptima calidad de la comunicación.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "CE5.7.4 Verificar los tiempos de respuestas entre los servidores para asegurar la óptima calidad de la comunicación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-CE5.7.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE5.7.5",
+      "literal": "CE5.7.5 En un supuesto práctico, debidamente caracterizado: - Ejecutar comandos de recuperación de tablas. - Ejecutar comandos de eliminación de bloqueos. - Ejecutar comandos de actualización de estadísticas. - Hacer recuperación de data en un punto en el tiempo. - Verificar la consistencia de las tablas. - Verificar la consistencia de los discos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "CE5.7.5 En un supuesto práctico, debidamente caracterizado: - Ejecutar comandos de recuperación de tablas. - Ejecutar comandos de eliminación de bloqueos. - Ejecutar comandos de actualización de estadísticas. - Hacer recuperación de data en un punto en el tiempo. - Verificar la consistencia de las tablas. - Verificar la consistencia de los discos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-c-administration",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Administración de base de datos. - Funciones del DBA. - Esquema conceptual. - Esquema interno. - Documentos. Diccionario de datos. Usuarios y privilegios. - Usuarios - Administradores de la base de datos. - Especializados. - Programadores de aplicaciones. - Accesos normales. Privilegios - Usuario. - Administrador. - Especiales. - Sistema. Recursos y herramientas. -Medios de almacenamientos. - Sistemas operativos. - Gestores de bases de datos. - Conectividad. Métodos de acceso. - ODBC. - ADO. - DAO. - JDBC. - ISAPI. - CGI. - RDO. - RDS. - Entre otros.",
+      "pdfPages": [
+        32,
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Administración de base de datos. - Funciones del DBA. - Esquema conceptual. - Esquema interno. - Documentos. Diccionario de datos. Usuarios y privilegios. - Usuarios - Administradores de la base de datos. - Especializados. - Programadores de aplicaciones. - Accesos normales. Privilegios - Usuario. - Administrador. - Especiales. - Sistema. Recursos y herramientas. -Medios de almacenamientos. - Sistemas operativos. - Gestores de bases de datos. - Conectividad. Métodos de acceso. - ODBC. - ADO."
+        },
+        {
+          "pdfPage": 33,
+          "text": "- DAO. - JDBC. - ISAPI. - CGI. - RDO. - RDS. - Entre otros."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-c-structure",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Estructura de una base de datos - Tipos de datos. - Campos. - Tablas. - Vistas. - Consultas Estructuras de información: Tablas. - Búsqueda de información en las tablas y vistas. - Captura de datos para las tablas: formularios. - Resumen de información: informes. Lista de acciones: macros, módulos, procedimientos almacenados, trigger . - Rol. - Create role … authorization … - Alter role. - Alter authorization. - Drop role. - Create approle. - Alter approle. - Drop approle. Esquema. - Conceptual . - Lógico . - Físico . - Objeto .",
+      "pdfPages": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Estructura de una base de datos - Tipos de datos. - Campos. - Tablas. - Vistas. - Consultas Estructuras de información: Tablas. - Búsqueda de información en las tablas y vistas. - Captura de datos para las tablas: formularios. - Resumen de información: informes."
+        },
+        {
+          "pdfPage": 34,
+          "text": "Lista de acciones: macros, módulos, procedimientos almacenados, trigger . - Rol. - Create role … authorization … - Alter role. - Alter authorization. - Drop role. - Create approle. - Alter approle. - Drop approle. Esquema. - Conceptual . - Lógico . - Físico . - Objeto ."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-c-backup-storage-monitoring",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Respaldo. - Completo. - Log. - Diferenciales. - Incrementales Alertas y notificaciones. - Eventos en la base de datos. - Rendimiento de base de datos - Correo electrónico de base de datos. - Asignar rol de correo electrónico y permisos. Respaldo y restauración de base de datos. - Archivos a copiar. - Depósito del sistema de ficheros. - Control de cambios. - Incremental a nivel de bloque. - Incremental o diferencial binaria. - Copia de seguridad de datos - en uso (ficheros abiertos, ficheros bloqueados, bases de datos en producción). - Redundancia. - Des-duplicación. - Limitaciones. - Implementación. - Horarios. - Restauración de copias de seguridad. Arreglo de discos - Tipos. Programas para la definición de arreglos. Servidor de base de datos. Monitoreo y control de las bases de datos. - Espacio libre en los archivos de datos. - Eventos en el log . - Bloqueos de las transacciones. - Espacio en los discos. - Uso de recursos del sistema (CPU, Memoria). - Servicio del motor de bases de datos no disponible. - Consultas de larga duración.",
+      "pdfPages": [
+        34,
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Respaldo. - Completo. - Log. - Diferenciales. - Incrementales Alertas y notificaciones. - Eventos en la base de datos. - Rendimiento de base de datos - Correo electrónico de base de datos. - Asignar rol de correo electrónico y permisos. Respaldo y restauración de base de datos. - Archivos a copiar. - Depósito del sistema de ficheros. - Control de cambios. - Incremental a nivel de bloque. - Incremental o diferencial binaria. - Copia de seguridad de datos - en uso (ficheros abiertos, ficheros bloqueados, bases de datos en producción). - Redundancia. - Des-duplicación. - Limitaciones."
+        },
+        {
+          "pdfPage": 35,
+          "text": "- Implementación. - Horarios. - Restauración de copias de seguridad. Arreglo de discos - Tipos. Programas para la definición de arreglos. Servidor de base de datos. Monitoreo y control de las bases de datos. - Espacio libre en los archivos de datos. - Eventos en el log . - Bloqueos de las transacciones. - Espacio en los discos. - Uso de recursos del sistema (CPU, Memoria). - Servicio del motor de bases de datos no disponible. - Consultas de larga duración."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-c-maintenance",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Revisión. - Sistema operativo. - Sistema gestor de base de datos. - Antivirus. - Actualizaciones - Parchos. - Tipos de actualizaciones (de prueba, de producción). - Herramientas para mantenimiento de sistema gestor de base de datos. Mantenimiento preventivo y correctivo. - Reindexación o recreación de índices. - Tiempo de respuesta. - Comandos de recuperación de tablas. - Comandos de eliminación de bloqueos.",
+      "pdfPages": [
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Revisión. - Sistema operativo. - Sistema gestor de base de datos. - Antivirus. - Actualizaciones - Parchos. - Tipos de actualizaciones (de prueba, de producción). - Herramientas para mantenimiento de sistema gestor de base de datos. Mantenimiento preventivo y correctivo. - Reindexación o recreación de índices."
+        },
+        {
+          "pdfPage": 36,
+          "text": "- Tiempo de respuesta. - Comandos de recuperación de tablas. - Comandos de eliminación de bloqueos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-dba-functions",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Funciones de un administrador de base de datos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Funciones de un administrador de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-database-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de bases de datos debidamente estructurada.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Creación de bases de datos debidamente estructurada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-dictionary-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de los diccionarios de datos para cada objeto de la base de datos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Creación de los diccionarios de datos para cada objeto de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-user-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los diferentes usuarios que puede crear.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Identificación de los diferentes usuarios que puede crear."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-privilege-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de privilegios que puede otorgar a cada usuario.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Identificación de privilegios que puede otorgar a cada usuario."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-tools-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los diferentes recursos y herramientas que puede utilizar en la administración de base de datos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Identificación de los diferentes recursos y herramientas que puede utilizar en la administración de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-resources",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Recursos que utilizará en la administración de base de datos.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Recursos que utilizará en la administración de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-manager-administration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Administración del Sistema Manejador de Base de Datos (estadísticas del sistema, problemas potenciales, tiempo de respuestas, precisión de los datos, facilidad de uso, actividad de los usuarios, etc).",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Administración del Sistema Manejador de Base de Datos (estadísticas del sistema, problemas potenciales, tiempo de respuestas, precisión de los datos, facilidad de uso, actividad de los usuarios, etc)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-user-privileges",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Privilegios de Usuario ( select, insert, update, alter, create, drop ).",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Privilegios de Usuario ( select, insert, update, alter, create, drop )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-administrator-privileges",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Privilegios del Administrador ( file, process, reload, grant, revoke, shutdown ).",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Privilegios del Administrador ( file, process, reload, grant, revoke, shutdown )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-special-privileges",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Privilegios Especiales ( all, usage ).",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Privilegios Especiales ( all, usage )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-system-privileges",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Privilegios de Sistema ( create session, create table, create sequence, create view, create trigger, create procedure, execute any procedure, create user, create role, drop user ).",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Privilegios de Sistema ( create session, create table, create sequence, create view, create trigger, create procedure, execute any procedure, create user, create role, drop user )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-access-application",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de distintos métodos de acces o: ODBC ( Open Database Connectivity - Conectividad abierta de bases de datos). - ADO ( ActiveX Data Objects – Objeto de datos activo). - DAO ( Data Access Objects - Objetos de acceso a datos) - JDBC ( Java Data Base Connectivity -Conectividad de base de datos Java). - ISAPI ( Internet Server Application Programming Interface -Interfaz de programación de aplicaciones para servidores de Internet). - CGI ( Common Gateway Interface -Interfaz de puerta de enlace común). - RDO ( Remote Data Object – Objeto de dato remoto). - RDS ( Remote Data Service – Servicio de datos remoto).",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Aplicación de distintos métodos de acces o: ODBC ( Open Database Connectivity - Conectividad abierta de bases de datos). - ADO ( ActiveX Data Objects – Objeto de datos activo). - DAO ( Data Access Objects - Objetos de acceso a datos) - JDBC ( Java Data Base Connectivity -Conectividad de base de datos Java). - ISAPI ( Internet Server Application Programming Interface -Interfaz de programación de aplicaciones para servidores de Internet). - CGI ( Common Gateway Interface -Interfaz de puerta de enlace común). - RDO ( Remote Data Object – Objeto de dato remoto). - RDS ( Remote Data Service – Servicio de datos remoto)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-data-activities",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Administración de las actividades de los datos (vinculación con los usuarios, seguridad e integridad, respaldo y recuperación, desempeño y cambios en los requerimientos, estructura de almacenamiento, organización física, método de acceso).",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Administración de las actividades de los datos (vinculación con los usuarios, seguridad e integridad, respaldo y recuperación, desempeño y cambios en los requerimientos, estructura de almacenamiento, organización física, método de acceso)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-reliability",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Asegurar la confiabilidad de la base de datos.",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Asegurar la confiabilidad de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-dictionary-establishment",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Establecer el diccionario de datos.",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Establecer el diccionario de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-security-confirmation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Confirmar la seguridad de la base de datos.",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Confirmar la seguridad de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-access-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los diferentes métodos de acceso a bases de datos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Identificación de los diferentes métodos de acceso a bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-access-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación de cuál método de acceso utilizar dependiendo de la configuración y el gestor de base de datos instalado.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Determinación de cuál método de acceso utilizar dependiendo de la configuración y el gestor de base de datos instalado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-access-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de los documentos necesarios para el método de acceso seleccionado y la estructura de las bases de datos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Creación de los documentos necesarios para el método de acceso seleccionado y la estructura de las bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-data-activities-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentación de las actividades que se realizaran con los datos, dependiendo del uso.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Documentación de las actividades que se realizaran con los datos, dependiendo del uso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-users-roles",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de usuarios y asignación de diferentes roles dependiendo del gestor de base de datos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Creación de usuarios y asignación de diferentes roles dependiendo del gestor de base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-roles-changes",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Reestructuración y eliminación de los roles de los usuarios.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Reestructuración y eliminación de los roles de los usuarios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-documents-activities",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentos y actividades de los datos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Documentos y actividades de los datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-schema",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación del esquema y respaldo a utilizar según requerimientos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Identificación del esquema y respaldo a utilizar según requerimientos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-alert-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las diferentes alertas y notificaciones que se pueden crear en el gestor de base de datos seleccionado.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Identificación de las diferentes alertas y notificaciones que se pueden crear en el gestor de base de datos seleccionado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-alert-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación alertas y notificaciones partiendo de las actividades de los datos y los usuarios.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Creación alertas y notificaciones partiendo de las actividades de los datos y los usuarios."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los diferentes respaldos ( backup ) que se pueden realizar partiendo del sistema gestor de base de datos seleccionado.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Identificación de los diferentes respaldos ( backup ) que se pueden realizar partiendo del sistema gestor de base de datos seleccionado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-options",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diferentes respaldos que se pueden realizar partiendo del sistema gestor de base de datos seleccionado.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Diferentes respaldos que se pueden realizar partiendo del sistema gestor de base de datos seleccionado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Selección del tipo de respaldo más apropiado según necesidad.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Selección del tipo de respaldo más apropiado según necesidad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-limits",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de limitaciones que puede tener al crear el respaldo.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Identificación de limitaciones que puede tener al crear el respaldo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-time",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación de la mejor hora para realizar el respaldo.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Determinación de la mejor hora para realizar el respaldo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de respaldo siguiendo los estándares establecidos.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Creación de respaldo siguiendo los estándares establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-backup-restoration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Restauración de copias de seguridad.",
+      "pdfPages": [
+        34
+      ],
+      "parts": [
+        {
+          "pdfPage": 34,
+          "text": "Restauración de copias de seguridad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-disk-types",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de los diferentes arreglos de discos que se pueden utilizar: - Arreglo redundante de discos independientes (RAID). - Tipos de arreglos. - Arreglo de Disco RAIDø ( striping ). - Arreglo de Disco RAID1 ( Mirroring ). - Arreglo de Disco RAID5 (distribuido con paridad). - Arreglo de Disco Raid10 (0+1) (distribuido y espejo).",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Identificación de los diferentes arreglos de discos que se pueden utilizar: - Arreglo redundante de discos independientes (RAID). - Tipos de arreglos. - Arreglo de Disco RAIDø ( striping ). - Arreglo de Disco RAID1 ( Mirroring ). - Arreglo de Disco RAID5 (distribuido con paridad). - Arreglo de Disco Raid10 (0+1) (distribuido y espejo)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-disk-tools",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de programas usados para la definición de arreglos de disco.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Identificación de programas usados para la definición de arreglos de disco."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-disk-selection",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Selección del tipo de arreglo de discos más conveniente, según disponibilidad de la empresa.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Selección del tipo de arreglo de discos más conveniente, según disponibilidad de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-database-disk-configuration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Configuración de bases de datos para que utilicen los arreglos de discos: - Archivos de data en disco de data. - Archivos log en disco de log . - Archivos temporales en disco de temporal. - Archivos de respaldo en disco de respaldo.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Configuración de bases de datos para que utilicen los arreglos de discos: - Archivos de data en disco de data. - Archivos log en disco de log . - Archivos temporales en disco de temporal. - Archivos de respaldo en disco de respaldo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-disk-configuration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Configuración de los arreglos de discos.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Configuración de los arreglos de discos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-database-array-configuration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Configuración de la base de datos para el uso de arreglos.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Configuración de la base de datos para el uso de arreglos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-monitor-alert-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las alertas sobre el comportamiento de las bases de datos.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Identificación de las alertas sobre el comportamiento de las bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-monitor-alert-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentación de las alertas y notificaciones que deben ser creadas.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Documentación de las alertas y notificaciones que deben ser creadas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-monitor-alert-creation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Creación de las alertas y notificaciones del comportamiento de las bases de datos.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Creación de las alertas y notificaciones del comportamiento de las bases de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-monitor-tools",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Utilización de las herramientas de manejo de bases de datos para monitorear.",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Utilización de las herramientas de manejo de bases de datos para monitorear."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-review-periods",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Establecimientos de los períodos de revisión de los servidores (hardware y software).",
+      "pdfPages": [
+        35
+      ],
+      "parts": [
+        {
+          "pdfPage": 35,
+          "text": "Establecimientos de los períodos de revisión de los servidores (hardware y software)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-hardware-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación del hardware y software que requieren mantenimiento o actualización.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Identificación del hardware y software que requieren mantenimiento o actualización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-maintenance-tools",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diferentes herramientas disponibles para la aplicación de mantenimiento y actualización.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Diferentes herramientas disponibles para la aplicación de mantenimiento y actualización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-maintenance-need",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación de la necesidad de aplicar el mantenimiento o actualización disponible.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Determinación de la necesidad de aplicar el mantenimiento o actualización disponible."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-maintenance-environment",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Determinación del ambiente en el que se realizarán los mantenimientos y actualizaciones.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Determinación del ambiente en el que se realizarán los mantenimientos y actualizaciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-maintenance-application",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de mantenimiento y actualizaciones a los servidores (hardware y software): - Monitoreo constante del sistema. - Documentación de las diferentes actividades del sistema. - Reindexación o recreación de índices. - Verificación de consultas. - Planes de nuevas consultas. - Comunicación entre servidores. - Tiempo de respuesta entre servidores o estaciones de trabajo. - Comandos de recuperación de tablas. - Comandos de eliminación de bloqueos. - Documentación de los mantenimientos y actualizaciones realizados.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Realización de mantenimiento y actualizaciones a los servidores (hardware y software): - Monitoreo constante del sistema. - Documentación de las diferentes actividades del sistema. - Reindexación o recreación de índices. - Verificación de consultas. - Planes de nuevas consultas. - Comunicación entre servidores. - Tiempo de respuesta entre servidores o estaciones de trabajo. - Comandos de recuperación de tablas. - Comandos de eliminación de bloqueos. - Documentación de los mantenimientos y actualizaciones realizados."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-system-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentación constante de las diferentes actividades del sistema.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Documentación constante de las diferentes actividades del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-statistics-identification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de datos estadísticos para determinar las acciones futuras a realizar.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Identificación de datos estadísticos para determinar las acciones futuras a realizar."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-index-verification",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Verificación de los índices para determinar si es necesario la reindexación o la recreación de los mismos.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Verificación de los índices para determinar si es necesario la reindexación o la recreación de los mismos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-query-planning",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Planeación de nuevas consultas para uso futuro y buen funcionamiento del sistema.",
+      "pdfPages": [
+        36
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Planeación de nuevas consultas para uso futuro y buen funcionamiento del sistema."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-server-corrections",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de correcciones de lugar a partir de las pruebas realizadas.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Realización de correcciones de lugar a partir de las pruebas realizadas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-statistics-scheduling",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Programación de análisis periódicos de los datos estadísticos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Programación de análisis periódicos de los datos estadísticos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-statistics-update",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Actualización de los datos estadísticos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Actualización de los datos estadísticos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-correction-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentación de las correcciones hechas para uso futuro.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Documentación de las correcciones hechas para uso futuro."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-p-server-tests",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de pruebas a los servidores para comprobar si mantienen comunicación y el tiempo de respuesta.",
+      "pdfPages": [
+        36,
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 36,
+          "text": "Aplicación de pruebas a los servidores para comprobar si"
+        },
+        {
+          "pdfPage": 37,
+          "text": "mantienen comunicación y el tiempo de respuesta."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-automation",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia de automatizar tareas administrativas.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Valoración de la importancia de automatizar tareas administrativas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-planning",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición a la planificación de las propias tareas y a la autoevaluación de lo conseguido.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Disposición a la planificación de las propias tareas y a la autoevaluación de lo conseguido."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-integrity-1",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Adopción de medidas para mantener la integridad y consistencia de la información.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Adopción de medidas para mantener la integridad y consistencia de la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_ONLY_IF_EXPLICIT_TASK",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-security-interest",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Interés por el cumplimiento de los requisitos de seguridad.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Interés por el cumplimiento de los requisitos de seguridad."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-integrity-2",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Adopción de medidas para mantener la integridad y consistencia de la información.",
+      "pdfPages": [
+        32
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Adopción de medidas para mantener la integridad y consistencia de la información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_ONLY_IF_EXPLICIT_TASK",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-users",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Interés por atender la demanda de los usuarios referentes al monitoreo y control de base de datos.",
+      "pdfPages": [
+        32,
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 32,
+          "text": "Interés por atender la demanda de los usuarios"
+        },
+        {
+          "pdfPage": 33,
+          "text": "referentes al monitoreo y control de base de datos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-incidents",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia de registrar por escritorio todas las incidencias, así como las soluciones aportadas.",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Valoración de la importancia de registrar por escritorio todas las incidencias, así como las soluciones aportadas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-a-maintenance",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de las normas en la aplicación de mantenimiento preventivo y correctivo.",
+      "pdfPages": [
+        33
+      ],
+      "parts": [
+        {
+          "pdfPage": 33,
+          "text": "Valoración de las normas en la aplicación de mantenimiento preventivo y correctivo."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Explicación previa de las funciones y objetivos de la administración de la base de datos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Explicación previa de las funciones y objetivos de la administración de la base de datos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-access",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas donde el estudiante crea los parámetros de acceso y seguridad para apoyar la gestión de administración de bases de datos, tomando parámetros establecidos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Realización de prácticas donde el estudiante crea los parámetros de acceso y seguridad para apoyar la gestión de administración de bases de datos, tomando parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-backup",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en el laboratorio de informática en la configuración de base de datos en donde el estudiante realice los respaldos en el disco o en los discos de respaldo.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Realización de prácticas en el laboratorio de informática en la configuración de base de datos en donde el estudiante realice los respaldos en el disco o en los discos de respaldo."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-project",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de proyecto basado en la administración y modificación de bases de datos, siguiendo parámetros establecidos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Realización de proyecto basado en la administración y modificación de bases de datos, siguiendo parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-case-study",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Estudio de casos, en relación con el mantenimiento y actualizaciones de las bases de datos, siguiendo un orden establecidos.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Estudio de casos, en relación con el mantenimiento y actualizaciones de las bases de datos, siguiendo un orden establecidos."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf057-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        37
+      ],
+      "parts": [
+        {
+          "pdfPage": 37,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Las menciones curriculares de producción, permisos, usuarios, migraciones, copias, restauración, notificaciones y eliminación no autorizan acciones reales sobre AulaBase, sus cuentas o sistemas externos.",
+    "Las futuras actividades deben usar datos ficticios y entorno de práctica explícito; describir o seleccionar no exige ejecutar todos los procedimientos enumerados.",
+    "Conservar por escritorio, acces o, Parchos y Raid10 (0+1) literalmente; no enseñar como equivalentes configuraciones distintas ni convertir ejemplos con puntos suspensivos en comandos ejecutables.",
+    "Las dosocurrencias de adopción de medidas de integridad son condicionalmente observables solo cuando la tarea las pide. Se preservan separadas; no califican disposición o personalidad.",
+    "Las otrasseisactitudes privadas y las seisorientaciones docentes no son entregables automáticos."
+  ]
+}

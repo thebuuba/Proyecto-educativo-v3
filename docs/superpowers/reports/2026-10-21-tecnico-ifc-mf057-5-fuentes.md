@@ -1,0 +1,15 @@
+# Administración de Base de Datos de quinto: fuente revisada
+
+MF_057_3 del programaIFC006_3 corresponde a quinto Técnico Profesional: nuevehoras semanales/405anuales según la tablaPDF14. Cualificación3 no es tercero. [Documento oficial](https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf),74páginas, SHA256`70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9`. Edición desconocida; Ordenanza06-2017 como validación normativa separada.
+
+Se leyeron visualmente las nuevepáginas29–37 desde el encabezadoMÓDULO5 hasta las seisorientaciones anteriores aMÓDULO6. La transcripción conserva **114registros/123partes**: sieteRA,30CE, cuatrobandas conceptuales,59procedimientos, ochoactitudes y seisorientaciones. Los37RA/CE se leyeron en sus tablas y las otras77entradas durante su transcripción. Todas las123partes se cotejaron con elPDF verificado.
+
+Se preservanCE5.1.3 entre29/30,RA5.3 entre30/31,CE5.6.4 entre31/32; bandas conceptuales32/33,33/34,34/35,35/36; actitud sobre usuarios32/33 y prueba de servidores36/37. La segunda banda de conceptos incluye la lista de acciones y esquemas de34; la tercera contiene respaldo, discos y monitoreo, respetando sus límites impresos.
+
+El primer render de36 ocultaba visualmente «Identificación» y llevó al borrador del plan/prueba a suponer un fragmento incompleto. La extracción conservaba el verbo; se releyó un render conWASM que muestra la frase completa y se corrigió el supuesto antes de transcribir. No se añadió ni omitió el verbo. Se conservan otrasformulaciones impresas: «acces o», «por escritorio», «Parchos» y «Raid10 (0+1)». Su adaptación posterior no debe enseñar como equivalentes configuraciones distintas ni tratar pseudocódigo como comandos ejecutables.
+
+Se conservan las dosocurrencias idénticas de «Adopción de medidas para mantener la integridad y consistencia de la información», conIDs distintos. Solo serían adaptables como acción observable si la tarea las pide; no califican personalidad. Las otrasseisactitudes privadas y las seisorientaciones son documentales.
+
+**Las menciones curriculares a producción no autorizan cambios reales.** Prácticas futuras de usuarios, permisos, migración, respaldos, restauración, eliminación o notificaciones se limitarán a datos ficticios y entorno de prueba expresamente indicado. Describir o seleccionar no exige ejecutar todas las opciones. No se crean cuentas reales ni se envían notificaciones por revisar esta fuente.
+
+Pruebas: cuatrofallos esperados por matriz ausente→cuatroaprobadas; conjunto Node técnico **51/51**, cero fallos. Revisión propia, sin subagentes. [Matriz](../../curriculum/cobertura-secundaria/technical-ifc006-mf057-5-matriz.json), [revisión](../../curriculum/cobertura-secundaria/technical-ifc-mf057-5-revision-fuente.json), [plan](../plans/2026-10-21-tecnico-ifc-mf057-5.md). **Cero proveedor, instrumentos completos, instalación o escrituras remotasMF057**. El catálogo144 y sus assets permanecen sin cambios duranteHTTP deMF054. Sin push, despliegue, producción, merge, cuentas o borrados.
