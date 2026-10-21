@@ -1,6 +1,18 @@
 # Continuación del encargo integral de secundaria
 
-## Estado vigente: Ofimática parcial por DNS; continuar MF054
+## Estado vigente: MF054 personal verificado; HTTP144 activo; contratos esperados MF056
+
+HEAD anterior3bf8b165dd9cfa681e2f0ceb0842c0c095073334, ramaampliacion-de-instrumentos-2,61commits locales delante según referencia guardada. NO PUSH vigente. Sinproducción/main/merge/despliegue/integraciones/reset/migraciones/cuentas/estudiantes/subagentes. No repetir suites generales/builds finales de aplicación sin cambios afectados:91.641backend/90.074frontend,builds0 y comparaciones144 ya registradas.
+
+HTTP144 sesión13810 SIGUE ACTIVA:30/65verificadas al checkpoint,183respuestas/0HTTP500. NO lanzar otro runner, compilar ni reiniciar Worker49089/launcher73228. Progreso autoritativo con sample9798f50276a2; consultar mf054-progress-summary.mjs. El avance real posterior prevalece sobre este conteo. No tocar MF00236/95/MF0533/49 ni regenerar susIDs.
+
+PERSONAL MF054 COMPLETO PARA RÚBRICA: Chrome2/mf054PersonalTab1796703369, nuevo asset144, estrategia visibleCASE_STUDYAUTO/puntos iniciales vacíos;17.35/2criterios4niveles/criterioQAmanual. SelecciónmanualPROBLEM_BASED→AUTO exacta antesdeguardar. Una actividad4e47e529-5127-4851-b8c7-1460bb6064aa guardada/reabierta; cambioSOLOPROBLEM_BASEDMANUAL guardado/recargado conserva13campos exactos/instrumentofbc5f544-2250-4035-8efc-c7ccfc76b356/snapshot3503efda-dc45-42da-9b1b-937d74710dc7/hash0ad030f2a32b54df7802c93e44aa4a81. personal-mf054-five-baseline.json CAPTURADAUNA VEZ; NO--baseline otra vez. Verificadorplain y13baselines previas terminaron0;personal-baselines-preserved-144.json. Navegadorpersonaljson/screenshotprivados y prueba pública registrados.
+
+Limitación: Activities/listado global agotótimeoutDOSveces, no bucle;logcenter20022756ms no prueba causalidad. Reapertura por ruta directa del editor completada. No afirmar listado arreglado ni borrarcaché/SW/storage. BorradorviejoMF053/tab1796703352 preservado,singuardar/recargar. No más creaciónpersonalMF054. La pestañaMF054 estáguardada ymarcadaDeliverable. Releer documentaciónCUA trascompactación/reusarbindings.
+
+MF056/Cuarto:82registros83partesfuente ya revisados en3bf8b165;78contratosesperados/48aspectos leídos,archivoausenteRED→GREEN,42Node/0. NOproveedor/instrumentos/cuatroformatos/escriturasMF056 todavía. Scripts prepare-mf056-contracts/transcribe/record-source YAejecutados, no repetir. No tocarcatalog144mientrasHTTPactivo. Siguiente: completarHTTP144/historia/performance ycommitlocal; después freeze144UNAvez/contexto/proveedorMF056 conRED→GREEN ylecturacompletadeinstrumentos. Mientras tanto tareas documentales independientes autorizadas. El encargo integral sigue incompleto.
+
+## Antecedentes del estado instalado144
 
 MF054 INSTALADO Y HTTP ACTIVO: commitsproveedord1159303 e instaladorc732de37. Guard de sololectura respondióbien; NUEVO Worker144 sesión49089/launcher73228, localhost8787,entryindex-TVJfGAwo.js/chunkinstrumentos-tecnicos-B-R8fAnz.js/SWexactos. runtime-144-mf054-verified.json confirmaPGapp_backend_local sinBYPASS/Auth200/Storage200/frontendDevelopment. Fuente63fa4788-ef04-574e-b2b0-12a927fe3eb8/scopec1333931-e5a0-5390-bd12-defd021de2df CREATED/UNCHANGED;catálogo144CREATED/UNCHANGED,76releasesprevios1021snapshotspreservados→77/1021antesdeQA. Instala4890TERMINÓ0;contexts48234TERMINÓ0ambosmodos/idempotencia,datospreviosexactos/cero cuentas estudiantes. QAassignmentc33331ab-61f1-48db-a9d9-654aef7ef4a0;personalassignmentbf948b87-02e1-4ddf-9c77-d8e042318e36.
 

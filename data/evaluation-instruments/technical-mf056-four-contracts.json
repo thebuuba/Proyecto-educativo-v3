@@ -1,0 +1,847 @@
+{
+  "subjectCode": "MF_056_3",
+  "subjectName": "Diseño y Desarrollo de Base de Datos",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "database-types",
+      "description": "Describe los tipos de bases de datos de la ficha según sus características.",
+      "topics": [
+        "database-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.1",
+        "ifc006-mf056-p-database-types"
+      ]
+    },
+    {
+      "id": "records-fields-data",
+      "description": "Distingue registros, campos y datos en la tabla ficticia proporcionada.",
+      "topics": [
+        "records-fields-data"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.2",
+        "ifc006-mf056-c-databases"
+      ]
+    },
+    {
+      "id": "entity-model-description",
+      "description": "Describe el modelo entidad-relación del caso ficticio proporcionado.",
+      "topics": [
+        "entity-relationship"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.3"
+      ]
+    },
+    {
+      "id": "entity-model-application",
+      "description": "Aplica el modelo entidad-relación a los requisitos del caso ficticio.",
+      "topics": [
+        "entity-relationship"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.4",
+        "ifc006-mf056-p-entity-relationship"
+      ]
+    },
+    {
+      "id": "managers-description",
+      "description": "Describe los gestores de bases de datos de la ficha y su función.",
+      "topics": [
+        "database-managers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.5",
+        "ifc006-mf056-p-managers-identification"
+      ]
+    },
+    {
+      "id": "managers-comparison",
+      "description": "Compara las funciones de los gestores de bases de datos de la ficha.",
+      "topics": [
+        "database-managers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-managers-functions"
+      ]
+    },
+    {
+      "id": "model-relational",
+      "description": "Diseña el modelo de datos relacional para los requisitos del caso ficticio.",
+      "topics": [
+        "data-model"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.6"
+      ]
+    },
+    {
+      "id": "model-hierarchical",
+      "description": "Diseña el modelo de datos jerárquico para los requisitos del caso ficticio.",
+      "topics": [
+        "data-model"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.6"
+      ]
+    },
+    {
+      "id": "model-network",
+      "description": "Diseña el modelo de datos en red para los requisitos del caso ficticio.",
+      "topics": [
+        "data-model"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.6"
+      ]
+    },
+    {
+      "id": "xml-description",
+      "description": "Describe el documento XML proporcionado y su estructura.",
+      "topics": [
+        "xml"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.7"
+      ]
+    },
+    {
+      "id": "normalization-description",
+      "description": "Describe las reglas de normalización y la forma normal de Boyce-Codd para la relación de la ficha.",
+      "topics": [
+        "normalization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.8"
+      ]
+    },
+    {
+      "id": "normalization-application",
+      "description": "Aplica la normalización hasta la tercera forma normal al modelo de datos ficticio proporcionado.",
+      "topics": [
+        "normalization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.12",
+        "ifc006-mf056-p-normalization"
+      ]
+    },
+    {
+      "id": "sql-description",
+      "description": "Describe el lenguaje SQL de acuerdo con el ejemplo proporcionado.",
+      "topics": [
+        "sql-language"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.9"
+      ]
+    },
+    {
+      "id": "statement-families",
+      "description": "Clasifica las sentencias SQL dadas en DDL, DML y DCL según su función.",
+      "topics": [
+        "statement-families"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.10",
+        "ifc006-mf056-p-statement-types"
+      ]
+    },
+    {
+      "id": "transact-sql",
+      "description": "Describe las características de Transact-SQL en los ejemplos dados.",
+      "topics": [
+        "transact-sql"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.10",
+        "ifc006-mf056-c-databases"
+      ]
+    },
+    {
+      "id": "data-types",
+      "description": "Compara los tipos de datos de los campos ficticios dados según la información que deben conservar.",
+      "topics": [
+        "data-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-data-types"
+      ]
+    },
+    {
+      "id": "relational-algebra",
+      "description": "Explica el álgebra relacional del ejemplo de la ficha y el resultado de sus operaciones.",
+      "topics": [
+        "relational-algebra"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.11"
+      ]
+    },
+    {
+      "id": "database-creation",
+      "description": "Crea la base de datos de práctica indicada con los requisitos ficticios proporcionados.",
+      "topics": [
+        "database-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-database-creation"
+      ]
+    },
+    {
+      "id": "table-creation",
+      "description": "Crea la tabla de práctica con los campos y restricciones del modelo dado.",
+      "topics": [
+        "tables"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-tables"
+      ]
+    },
+    {
+      "id": "index-creation",
+      "description": "Crea el índice de la tabla ficticia de práctica según la necesidad dada.",
+      "topics": [
+        "indexes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13"
+      ]
+    },
+    {
+      "id": "key-design",
+      "description": "Diseña las claves de la tabla ficticia a partir de las reglas dadas.",
+      "topics": [
+        "keys"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-c-databases"
+      ]
+    },
+    {
+      "id": "view-creation",
+      "description": "Crea la vista de la base de datos de práctica para la información solicitada.",
+      "topics": [
+        "views"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-objects"
+      ]
+    },
+    {
+      "id": "queries-creation",
+      "description": "Crea la consulta SQL de la base de datos de práctica para obtener la información solicitada.",
+      "topics": [
+        "queries"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.6",
+        "ifc006-mf056-p-query-type"
+      ]
+    },
+    {
+      "id": "queries-description",
+      "description": "Describe la consulta SQL dada según la información que obtiene del modelo ficticio.",
+      "topics": [
+        "queries"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.2"
+      ]
+    },
+    {
+      "id": "form-creation",
+      "description": "Crea el formulario de la base de datos de práctica según los campos y reglas del modelo dado.",
+      "topics": [
+        "database-forms"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-objects"
+      ]
+    },
+    {
+      "id": "functions-creation",
+      "description": "Crea la función de la base de datos de práctica con los parámetros y resultados especificados.",
+      "topics": [
+        "database-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13"
+      ]
+    },
+    {
+      "id": "stored-procedure",
+      "description": "Crea el procedimiento almacenado de la base de datos de práctica para las operaciones dadas.",
+      "topics": [
+        "stored-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-database-creation"
+      ]
+    },
+    {
+      "id": "trigger",
+      "description": "Crea el disparador de la base de datos de práctica para el evento y las reglas dadas.",
+      "topics": [
+        "triggers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "insert-rows",
+      "description": "Inserta las filas ficticias dadas en la tabla de práctica mediante INSERT INTO.",
+      "topics": [
+        "insert"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-data-maintenance"
+      ]
+    },
+    {
+      "id": "update-rows",
+      "description": "Modifica mediante UPDATE únicamente las filas de la base de datos de práctica que cumplen la condición dada.",
+      "topics": [
+        "update"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-data-maintenance"
+      ]
+    },
+    {
+      "id": "delete-rows",
+      "description": "Elimina mediante DELETE únicamente los registros ficticios de la tabla de práctica que cumplen la condición dada.",
+      "topics": [
+        "delete"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-record-deletion"
+      ]
+    },
+    {
+      "id": "index-removal",
+      "description": "Elimina el índice indicado de la base de datos de práctica usando DROP INDEX.",
+      "topics": [
+        "indexes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13"
+      ]
+    },
+    {
+      "id": "relationships",
+      "description": "Relaciona las tablas ficticias según las claves y restricciones del modelo proporcionado.",
+      "topics": [
+        "table-relationships"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-c-databases"
+      ]
+    },
+    {
+      "id": "objects-removal",
+      "description": "Elimina solo los objetos expresamente indicados de la base de datos ficticia de práctica.",
+      "topics": [
+        "object-removal"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-p-structure-changes"
+      ]
+    },
+    {
+      "id": "configuration",
+      "description": "Determina la configuración de dispositivos, procesos y espacio físico del sistema gestor según los recursos y necesidades ficticios dados.",
+      "topics": [
+        "database-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.14",
+        "ifc006-mf056-p-feasibility"
+      ]
+    },
+    {
+      "id": "dictionary-design",
+      "description": "Diseña la estructura del diccionario de datos para el modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.4",
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-creation",
+      "description": "Crea el diccionario de datos para las entidades de la base de datos ficticia proporcionada.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.5"
+      ]
+    },
+    {
+      "id": "dictionary-explanation",
+      "description": "Explica el diccionario de datos creado para el modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.5"
+      ]
+    },
+    {
+      "id": "dictionary-documentation",
+      "description": "Elabora la documentación de las propiedades y campos del diccionario de datos ficticio proporcionado.",
+      "topics": [
+        "dictionary-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.1",
+        "ifc006-mf056-CE4.2.5"
+      ]
+    },
+    {
+      "id": "functions-description",
+      "description": "Describe las funciones, procedimientos almacenados y vistas de la base de datos ficticia proporcionada.",
+      "topics": [
+        "database-functions",
+        "stored-procedures",
+        "views"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.2"
+      ]
+    },
+    {
+      "id": "functions-explanation",
+      "description": "Explica las funciones, procedimientos almacenados y vistas del modelo de datos ficticio proporcionado.",
+      "topics": [
+        "database-functions",
+        "stored-procedures",
+        "views"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.3"
+      ]
+    },
+    {
+      "id": "query-objective",
+      "description": "Determina el objetivo de la consulta dada y su relación con las tablas y vistas del modelo ficticio.",
+      "topics": [
+        "query-objective"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.1",
+        "ifc006-mf056-p-query-objective"
+      ]
+    },
+    {
+      "id": "select-syntax",
+      "description": "Describe la sentencia SELECT y su sintaxis en la consulta proporcionada.",
+      "topics": [
+        "select-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.4"
+      ]
+    },
+    {
+      "id": "clause-from",
+      "description": "Explica el efecto de la cláusula FROM en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-order-by",
+      "description": "Explica el efecto de la cláusula ORDER BY en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-distinct",
+      "description": "Explica el efecto de la cláusula DISTINCT en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-all",
+      "description": "Explica el efecto de la cláusula ALL en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-top",
+      "description": "Explica el efecto de la cláusula TOP en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-where",
+      "description": "Explica el efecto de la cláusula WHERE en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-group-by",
+      "description": "Explica el efecto de la cláusula GROUP BY en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.5",
+        "ifc006-mf056-CE4.3.6"
+      ]
+    },
+    {
+      "id": "clause-having",
+      "description": "Explica el efecto de la cláusula HAVING en la consulta SQL ficticia proporcionada.",
+      "topics": [
+        "query-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "selection-query",
+      "description": "Crea una consulta de selección que filtre y organice los datos ficticios de acuerdo con los requisitos dados.",
+      "topics": [
+        "selection-query"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.7",
+        "ifc006-mf056-p-data-organization"
+      ]
+    },
+    {
+      "id": "action-query",
+      "description": "Crea la consulta de acción de la base de datos de práctica para el cambio expresamente solicitado.",
+      "topics": [
+        "action-query"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.7",
+        "ifc006-mf056-p-action-queries"
+      ]
+    },
+    {
+      "id": "inner-join",
+      "description": "Crea la consulta INNER JOIN entre las tablas ficticias de la base de datos de práctica según las claves dadas.",
+      "topics": [
+        "inner-join"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-action-queries"
+      ]
+    },
+    {
+      "id": "union-query",
+      "description": "Crea la consulta UNION de los resultados ficticios de la base de datos de práctica según las columnas compatibles indicadas.",
+      "topics": [
+        "union-query"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.7",
+        "ifc006-mf056-p-action-queries"
+      ]
+    },
+    {
+      "id": "decision-query",
+      "description": "Crea la consulta de la base de datos ficticia que aporte la información requerida para la decisión del caso.",
+      "topics": [
+        "decision-query"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.7"
+      ]
+    },
+    {
+      "id": "document-database",
+      "description": "Identifica los criterios necesarios para diseñar la base de datos de gestión documental del caso ficticio.",
+      "topics": [
+        "document-database"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-document-database"
+      ]
+    },
+    {
+      "id": "institutional-needs",
+      "description": "Analiza los procesos y necesidades de información de la institución ficticia para proponer el uso de una base de datos.",
+      "topics": [
+        "institutional-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-institutional-processes"
+      ]
+    },
+    {
+      "id": "users-roles",
+      "description": "Crea los usuarios y roles ficticios de la base de datos de práctica con los permisos dados.",
+      "topics": [
+        "users-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-access"
+      ]
+    },
+    {
+      "id": "login",
+      "description": "Aplica el acceso de prueba mediante el login ficticio de la base de datos de práctica según las reglas dadas.",
+      "topics": [
+        "database-login"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-access"
+      ]
+    },
+    {
+      "id": "access-levels",
+      "description": "Compara los niveles de acceso a la base de datos ficticia según los permisos proporcionados.",
+      "topics": [
+        "access-levels"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-access"
+      ]
+    },
+    {
+      "id": "access-security",
+      "description": "Aplica la seguridad de acceso a los datos ficticios del entorno de práctica según la política dada.",
+      "topics": [
+        "access-security"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-access"
+      ]
+    },
+    {
+      "id": "availability-scope",
+      "description": "Determina el alcance de la alta disponibilidad y la tolerancia a fallos de la base de datos del escenario ficticio según sus requisitos.",
+      "topics": [
+        "availability-scope"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.1",
+        "ifc006-mf056-p-availability"
+      ]
+    },
+    {
+      "id": "availability-failover",
+      "description": "Describe la estrategia Failover Clustering de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-rac",
+      "description": "Describe la estrategia Real Application Clustering de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-mirroring",
+      "description": "Describe la estrategia Database Mirroring de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-replication",
+      "description": "Describe la estrategia Database Replication de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-log-shipping",
+      "description": "Describe la estrategia Log Shipping de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-always-on",
+      "description": "Describe la estrategia Always On Availability Groups de la base de datos ficticia según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2",
+        "ifc006-mf056-c-availability"
+      ]
+    },
+    {
+      "id": "availability-selection",
+      "description": "Selecciona la estrategia de alta disponibilidad de la base de datos adecuada al escenario ficticio según los requisitos y recursos proporcionados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.3",
+        "ifc006-mf056-p-availability-selection"
+      ]
+    },
+    {
+      "id": "availability-feasibility",
+      "description": "Justifica la factibilidad de la estrategia de alta disponibilidad de la base de datos elegida y explica por qué descarta las otras del caso ficticio.",
+      "topics": [
+        "availability-feasibility"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-availability-feasibility"
+      ]
+    },
+    {
+      "id": "availability-application",
+      "description": "Aplica la estrategia de alta disponibilidad seleccionada en el entorno de base de datos de práctica indicado según los recursos y requisitos dados.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.4",
+        "ifc006-mf056-p-availability-application"
+      ]
+    },
+    {
+      "id": "availability-values",
+      "description": "Interpreta los porcentajes y tiempos de disponibilidad de la base de datos de la ficha para el escenario ficticio, sin configurar sistemas.",
+      "topics": [
+        "availability-values"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.3"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Crea la tabla de la base de datos ficticia y describe la sentencia SELECT del ejemplo proporcionado.",
+      "topics": [
+        "tables",
+        "select-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13",
+        "ifc006-mf056-CE4.3.4"
+      ]
+    },
+    {
+      "id": "alternative-actions",
+      "description": "Crea la vista o el procedimiento almacenado de la base de datos de práctica según la alternativa elegida.",
+      "topics": [
+        "views",
+        "stored-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "negated-delete",
+      "description": "Describe la consulta SELECT de la ficha. No elimines registros ni ejecutes DELETE.",
+      "topics": [
+        "queries"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.2"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Diseña el diccionario de datos del modelo ficticio. Opcionalmente puedes consultar un ejemplo de formulario.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.2.4"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Crea la tabla ficticia de práctica según el modelo dado, con crédito parcial y pesos por componente.",
+      "topics": [
+        "tables"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.13"
+      ]
+    }
+  ],
+  "negativeDescriptions": [
+    "Realiza una entrevista de trabajo simulada en inglés.",
+    "Compara dos versiones de un documento de texto en Ofimática.",
+    "Analiza la factibilidad económica del sistema sin diseñar bases de datos."
+  ]
+}

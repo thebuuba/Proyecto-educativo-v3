@@ -80,7 +80,18 @@
   "personalContextCreated": true,
   "newAccounts": 0,
   "newStudents": 0,
-  "personalActivitySaved": false,
+  "personalActivitySaved": true,
   "push": false,
-  "deploy": false
+  "deploy": false,
+  "personalVerification": {
+    "activityId": "4e47e529-5127-4851-b8c7-1460bb6064aa",
+    "instrumentId": "fbc5f544-2250-4035-8efc-c7ccfc76b356",
+    "snapshotId": "3503efda-dc45-42da-9b1b-937d74710dc7",
+    "instrumentHash": "0ad030f2a32b54df7802c93e44aa4a81",
+    "strategy": "PROBLEM_BASED",
+    "origin": "MANUAL",
+    "strategyOnlyInstrumentExactlyUnchanged": true,
+    "previousBaselinesPreserved": 13,
+    "listTimeouts": 2
+  }
 }

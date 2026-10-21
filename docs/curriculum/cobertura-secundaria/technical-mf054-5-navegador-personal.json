@@ -1,0 +1,52 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "url": "http://localhost:8787/actividades/crear?sectionSubjectId=bf948b87-02e1-4ddf-9c77-d8e042318e36&activityId=4e47e529-5127-4851-b8c7-1460bb6064aa",
+  "account": "PERSONAL_DEVELOPMENT",
+  "activityId": "4e47e529-5127-4851-b8c7-1460bb6064aa",
+  "strategyVisible": true,
+  "initialStrategy": "CASE_STUDY",
+  "manualStrategy": "PROBLEM_BASED",
+  "pointsInitiallyEmpty": true,
+  "points": 17.35,
+  "manualCriterionPreserved": true,
+  "fields": 13,
+  "manualBeforeSaveExact": true,
+  "autoBeforeSaveExact": true,
+  "reopenedExact": true,
+  "savedStrategyOnlyExact": true,
+  "savedAndReopened": true,
+  "listCenterTimeouts": 2,
+  "directEditorReopenSucceeded": true,
+  "cacheOrStorageCleared": false,
+  "otherDraftModified": false,
+  "screenshot": "PRIVATE_IGNORED_ARTIFACT",
+  "db": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "4e47e529-5127-4851-b8c7-1460bb6064aa",
+    "instrumentId": "fbc5f544-2250-4035-8efc-c7ccfc76b356",
+    "snapshotId": "3503efda-dc45-42da-9b1b-937d74710dc7",
+    "instrumentHash": "0ad030f2a32b54df7802c93e44aa4a81",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.144",
+    "strategy": "PROBLEM_BASED",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true
+  },
+  "previousPersonalBaselines": {
+    "count": 13,
+    "exact": true,
+    "newBaselines": 0,
+    "remoteWrites": false
+  },
+  "httpDbSampling": "IN_PROGRESS_65_CASES",
+  "limits": [
+    "Dos tiempos de espera del listado general; reapertura por ruta directa del editor. No se declara corregido el rendimiento del listado.",
+    "Cuatro formatos revisados localmente; esta prueba visual personal usa rúbrica.",
+    "No se inspeccionaron ni borraron los registros de caché y serviceworker."
+  ],
+  "push": false,
+  "deploy": false
+}
