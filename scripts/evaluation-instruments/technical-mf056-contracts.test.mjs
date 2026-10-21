@@ -15,3 +15,9 @@ test('las consignas esperadas MF056 enlazan solo contenido oficial revisado y aÃ
  assert.equal(m.implementation.provider,null);assert.equal(m.adaptations.length,0)
  assert(f.negativeDescriptions.length>=3)
 })
+
+test('MF056 no deja criterios oficiales ni procedimientos sin una consigna esperada',()=>{
+ const f=read('data/evaluation-instruments/technical-mf056-four-contracts.json'),m=read('docs/curriculum/cobertura-secundaria/technical-ifc006-mf056-4-matriz.json'),refs=new Set(f.cases.flatMap(c=>c.sourceRecordIds))
+ const missing=m.officialRecords.filter(r=>['EVALUATION_CRITERION','PROCEDURE'].includes(r.type)&&!refs.has(r.id)).map(r=>r.id)
+ assert.deepEqual(missing,[])
+})
