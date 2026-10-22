@@ -1,3 +1,4 @@
+import {evaluationCatalogV145} from './catalog-v145'
 import {evaluationCatalogV144} from './catalog-v144'
 import {evaluationCatalogV143} from './catalog-v143'
 import {evaluationCatalogV142} from './catalog-v142'
@@ -279,6 +280,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { technicalModules?:typeof technicalModules; optativeScienceModules?:typeof optativeScienceModules; optativeMathModules?:typeof optativeMathModules; optativeSocialModules?:typeof optativeSocialModules; optativeEnglishModules?:typeof optativeEnglishModules; optativeLanguageModules?:typeof optativeLanguageModules; fhrCommonModules?:typeof commonFhrModules; physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV145.version)return evaluationCatalogV145
   if(version===evaluationCatalogV144.version)return evaluationCatalogV144
   if(version===evaluationCatalogV143.version)return evaluationCatalogV143
   if(version===evaluationCatalogV142.version)return evaluationCatalogV142

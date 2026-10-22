@@ -61,7 +61,7 @@ beforeEach(() => {
 })
 afterEach(() => { vi.unstubAllGlobals() })
 describe('API service security and version policy', () => {
-  for (const code of ['MF_053_3','MF_002_3','MF_054_3','MF_056_3']) it(`filtra la búsqueda de ${code} en PostgreSQL sin descargar las otras fuentes`, async () => {
+  for (const code of ['MF_053_3','MF_002_3','MF_054_3','MF_056_3','MF_059_3']) it(`filtra la búsqueda de ${code} en PostgreSQL sin descargar las otras fuentes`, async () => {
     const subject=reviewedTechnicalSubject(code)!
     const base=assignment()
     mocks.sectionSubject.findFirst.mockResolvedValue({...base,

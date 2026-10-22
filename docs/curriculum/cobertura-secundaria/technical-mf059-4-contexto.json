@@ -1,0 +1,96 @@
+{
+  "moduleCode": "MF_059_3",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "LOCAL_CONTEXT_VERIFIED_PROVIDER_NOT_IMPLEMENTED",
+  "frozenCatalog": "evaluation-2026.145",
+  "freeze": {
+    "frozen": "evaluation-2026.145",
+    "project": "eolgunypmtgrsyrjzcld",
+    "matchesInstalled": true,
+    "sourceUnchangedSinceVerifiedBuild": true,
+    "fields": [
+      "technicalModules",
+      "version"
+    ],
+    "commonDefinitions": 15176,
+    "releases": 78,
+    "snapshots": 1103,
+    "priorHistoryPreserved": true,
+    "mf056QaActivitiesPreserved": 15,
+    "remoteWrites": false
+  },
+  "tests": {
+    "initialRed": 6,
+    "initialCompatible": 20,
+    "focalGreen": 134,
+    "backendGreen": 92563,
+    "backendFiles": 200
+  },
+  "gates": [
+    {
+      "name": "mf059-context-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf059-context-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-context-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-context-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-context-lint",
+      "exit": 0
+    }
+  ],
+  "preservation": {
+    "catalog": "evaluation-2026.145",
+    "currentPayloadUnchanged": true,
+    "frozen145Exact": true,
+    "results": [
+      {
+        "module": "technical-ifc-mf053",
+        "fullDefinitions": 296,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf002",
+        "fullDefinitions": 380,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf054",
+        "fullDefinitions": 260,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf056",
+        "fullDefinitions": 368,
+        "sourceCompiledReviewedExact": true
+      }
+    ],
+    "remoteWrites": false
+  },
+  "sourceInstalled": false,
+  "catalog146Created": false,
+  "provider": null,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "localRuntime": "STOPPED_INTENTIONALLY_BEFORE_BUILDS_NOT_RESTORED_IN_THIS_CONTEXT_PHASE",
+  "remoteWrites": false,
+  "deploy": false,
+  "push": false,
+  "limits": [
+    "Los códigosIFC006 describen la procedencia de la fuente; no existe un campo de programa de matrícula que permita afirmar su validación.",
+    "Contexto local admitido no equivale a proveedor, instrumentos completos o fuente instalada.",
+    "La fuente y los futuros recorridosMF059 permanecen pendientes."
+  ]
+}
