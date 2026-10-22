@@ -1,0 +1,180 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalogBuild": "evaluation-2026.146",
+  "checkpoint": "BEFORE_INDIVIDUAL_SOURCE_OR_CATALOG_INSTALLATION",
+  "catalogInstalledAtThisCheckpoint": false,
+  "sourceInstalledAtThisCheckpoint": false,
+  "backend": {
+    "passed": 93499,
+    "failed": 0,
+    "files": 202
+  },
+  "frontend": {
+    "passed": 91612,
+    "failed": 0,
+    "files": 121
+  },
+  "nodeTestsAtThisCheckpoint": 103,
+  "gates": [
+    {
+      "name": "mf059-provider-verified-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-frontend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-shared-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-backend-lint",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-frontend-lint",
+      "exit": 0
+    },
+    {
+      "name": "mf059-provider-verified-shared-lint",
+      "exit": 0
+    }
+  ],
+  "preservation": {
+    "catalog": "evaluation-2026.146",
+    "currentPayloadMatchesReviewed": true,
+    "frozen145Exact": true,
+    "priorTechnicalDefinitions": 1304,
+    "newReviewedDefinitions": 400,
+    "results": [
+      {
+        "module": "technical-ifc-mf053",
+        "fullDefinitions": 296,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf002",
+        "fullDefinitions": 380,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf054",
+        "fullDefinitions": 260,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf056",
+        "fullDefinitions": 368,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf059",
+        "fullDefinitions": 400,
+        "sourceCompiledReviewedExact": true
+      }
+    ],
+    "remoteWrites": false
+  },
+  "commonPreservation": {
+    "english": 15176,
+    "math": 2888,
+    "academicOptatives": 14488,
+    "preexistingArtifactDifferences": 36
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.146",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CbCMfNVx.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CbCMfNVx.js",
+        "sha256": "839fb2d5aea435ba2f6c9226cd4aaaebb67893a592e76e3e9147b0efa3a56e35",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DljXzsel.js",
+        "sha256": "e404610a81766eb98b1c801992a7913f07ea77f7290127b3cf3b4d2e4b6b504b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CLL7dCnn.js",
+        "sha256": "0d68318758396121b9d7ed62bf182245847935693bd68151572de2e2bbf86065",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-C9zt6p3E.js",
+        "sha256": "9f406e50a592789151fed8d22b35987d355cac6c0552926c175b1967fce45073",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CeYn-CIf.js",
+        "sha256": "efa64320e6c594f24e8fa929e8a0f71457fc51ab92c6fdfd9ebf2f6c70351668",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "d514d5c719a3dd4109ba3816d3609a301c06f27233a5f57eb8aa5b373f5ff9f7",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "precaching": {
+    "assets": 76,
+    "largestBytes": 1909015,
+    "maximumBytes": 2097152,
+    "allPrecached": true
+  },
+  "sourceManifest": {
+    "elements": 37,
+    "spans": 39,
+    "documentaryRecords": 8,
+    "literalRecords": 45,
+    "literalParts": 47,
+    "excludedAttitudes": 7,
+    "status": "PREPARED_NOT_EXECUTED",
+    "testsWithPriorInstallers": 26
+  },
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "review": "SELF_REVIEW_NO_SUBAGENTS",
+  "remoteWrites": false,
+  "deploy": false,
+  "push": false,
+  "limits": [
+    "ComprobaciónHTTP de assets y destinos; no inspecciona registro ni almacenamiento del serviceworker de la pestaña personal.",
+    "Los103tests incluyen manifiestos e instaladores simulados, sin ejecutarlos contra DB.",
+    "Este checkpoint es previo a la instalación individual; no acredita los recorridosMF059."
+  ]
+}

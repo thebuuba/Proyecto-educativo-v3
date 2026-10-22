@@ -5350,8 +5350,8 @@
             "weeklyHours": 6,
             "annualHours": 270,
             "sourcePdfPage": 14,
-            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
-            "provider": null,
+            "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
               "pdfPages": [
@@ -5363,16 +5363,22 @@
               "matrix": "docs/curriculum/cobertura-secundaria/technical-ifc006-mf059-4-matriz.json",
               "records": 45,
               "literalParts": 47,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED"
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "technical-mf059-4-revision.json",
+              "fullInstrumentsReviewed": 400,
+              "httpDb": "NOT_RUN",
+              "browser": "NOT_RUN"
             },
             "expectedContracts": {
               "file": "data/evaluation-instruments/technical-mf059-four-contracts.json",
-              "cases": 94,
+              "cases": 100,
               "topicGroups": 85,
               "review": "technical-mf059-4-contratos-esperados.json",
               "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
-            }
+            },
+            "catalog": "evaluation-2026.146",
+            "httpDb": "NOT_RUN",
+            "browser": "NOT_RUN"
           },
           {
             "id": "IFC006_3-g4-english",
@@ -5950,13 +5956,13 @@
     "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf056-4.md"
   },
   "currentSourceCandidate": {
-    "catalog": "evaluation-2026.145",
-    "specializedProvidersAdded": 4,
-    "newModule": "MF_056_3",
-    "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_PARTIAL",
-    "runtimeInstalled": true,
+    "catalog": "evaluation-2026.146",
+    "specializedProvidersAdded": 5,
+    "newModule": "MF_059_3",
+    "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+    "runtimeInstalled": false,
     "developmentOnly": true,
-    "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf056-4.md"
+    "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf059-4.md"
   },
   "localRuntimeBuild": {
     "catalog": "evaluation-2026.145",

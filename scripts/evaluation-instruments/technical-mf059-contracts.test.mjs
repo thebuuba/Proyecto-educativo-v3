@@ -5,12 +5,13 @@ const target='data/evaluation-instruments/technical-mf059-four-contracts.json'
 const fixture=()=>{assert(existsSync(target),'Faltan las consignas esperadas MF059');return JSON.parse(readFileSync(target,'utf8'))}
 const matrix=()=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-ifc006-mf059-4-matriz.json','utf8'))
 
-test('MF059 prepara consignas propias de cuarto técnico sin afirmar instrumentos implementados',()=>{
+test('MF059 enlaza consignas propias de cuarto técnico a instrumentos revisados, sin afirmar pruebas remotas',()=>{
  const f=fixture(),m=matrix(),records=new Map(m.officialRecords.map(r=>[r.id,r]))
  assert.equal(f.subjectCode,'MF_059_3');assert.equal(f.grade,4);assert.equal(f.cycle,2);assert.equal(f.programCode,'IFC006_3');assert.equal(f.modalityCode,'technical_professional')
- assert.equal(f.status,'SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED');assert.equal(new Set(f.cases.map(c=>c.id)).size,f.cases.length)
+ assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA');assert.equal(new Set(f.cases.map(c=>c.id)).size,f.cases.length)
  for(const c of f.cases){assert(c.description.trim());assert(c.topics.length);assert(c.sourceRecordIds.length);for(const id of c.sourceRecordIds){assert(records.has(id),id);assert(!['ATTITUDE','TEACHING_STRATEGY'].includes(records.get(id).type),id)}}
- assert.equal(m.implementation.provider,null);assert.equal(m.adaptations.length,0);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ const review=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-mf059-4-revision.json','utf8'))
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,85);assert.equal(review.fullInstruments,400);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
 })
 test('todoslosCE yprocedimientosMF059 tienen almenos uncontrato esperado con referencia explícita',()=>{
  const f=fixture(),m=matrix(),refs=new Set(f.cases.flatMap(c=>c.sourceRecordIds))

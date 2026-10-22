@@ -5,7 +5,7 @@
   "grade": 4,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "client-needs",
@@ -977,6 +977,67 @@
       "sourceRecordIds": [
         "ifc006-mf059-c-html"
       ]
+    },
+    {
+      "id": "sound-format-mp3",
+      "description": "Describe el formato de sonido MP3 de la ficha para el recurso web.",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ]
+    },
+    {
+      "id": "sound-format-wav",
+      "description": "Describe el formato de sonido WAV de la ficha para el recurso web.",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ]
+    },
+    {
+      "id": "sound-format-midi",
+      "description": "Describe el formato de sonido MIDI de la ficha para el recurso web.",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ]
+    },
+    {
+      "id": "historical-php",
+      "description": "Clasifica PHP de la ficha histórica según su función en el desarrollo web.",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ]
+    },
+    {
+      "id": "historical-javascript",
+      "description": "Clasifica JavaScript de la ficha histórica según su función en el desarrollo web.",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ]
+    },
+    {
+      "id": "alternative-sound-format",
+      "description": "Describe el formato de sonido MP3 o MIDI de la ficha para el recurso web según la alternativa elegida.",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "alternative": true
     }
   ],
   "negativeDescriptions": [
@@ -985,7 +1046,7 @@
     "Compara dos documentos de texto en Ofimática sin diseñar un portal web."
   ],
   "limits": [
-    "Consignas esperadas; todavía no hay proveedor ni instrumentos MF059 implementados.",
+    "Proveedor implementado y revisado en fuente; instalación y pruebasMF059HTTP/DB/navegador todavía pendientes.",
     "Las sieteactitudes y cincoorientaciones siguen documentales; no se evalúan rasgos personales.",
     "Sin despliegue, publicación real, cuentas o instalación deplugins por defecto; las referencias históricas no recomiendan ejecutarlos."
   ]

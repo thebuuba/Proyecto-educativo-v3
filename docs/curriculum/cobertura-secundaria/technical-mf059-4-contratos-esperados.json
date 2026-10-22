@@ -2,14 +2,14 @@
   "moduleCode": "MF_059_3",
   "programCode": "IFC006_3",
   "grade": 4,
-  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
-  "cases": 94,
+  "cases": 100,
   "expectedTopicGroups": 85,
   "sourceEvaluationCriteriaReferenced": 12,
   "sourceProceduresReferenced": 15,
-  "fixtureSha256": "a8c2ea9987d28d841866eb8836de029086bf66fd4d1a3f5cae77cea18ae46631",
+  "fixtureSha256": "f50608620562de42e28fe1920a8a088ac017a251fd2630655d80c024639f9a68",
   "red": 3,
   "green": 3,
   "method": "Lectura de las94consignas redactadas frente a los45literales previamente revisados. Separar losrequisitos de cada acción; la existencia del contrato no demuestra generación ni pertinencia de instrumentos todavía ausentes.",
@@ -22,7 +22,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "information-handling",
@@ -32,7 +32,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "information-security",
@@ -42,7 +42,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "information-updates",
@@ -52,7 +52,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "objectives-classification",
@@ -62,7 +62,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "visual-elements-classification",
@@ -72,7 +72,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "equipment-capacity",
@@ -82,7 +82,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "software-selection",
@@ -92,7 +92,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "hardware-selection",
@@ -102,7 +102,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tools-characteristics",
@@ -112,7 +112,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-tools-characteristics"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "publication-explanation",
@@ -122,7 +122,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-publication-explanation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "workspace-comparison",
@@ -132,7 +132,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-workspace-comparison"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "templates-preparation",
@@ -142,7 +142,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-templates"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "page-format",
@@ -153,7 +153,7 @@
         "ifc006-mf059-p-page-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "html-versions",
@@ -164,7 +164,7 @@
         "ifc006-mf059-p-versions-editors",
         "ifc006-mf059-c-html"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "html-editors",
@@ -174,7 +174,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-versions-editors"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "html-converters",
@@ -184,7 +184,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-versions-editors"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "html-characters",
@@ -195,7 +195,7 @@
         "ifc006-mf059-p-versions-editors",
         "ifc006-mf059-c-html"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "html-structure",
@@ -206,7 +206,7 @@
         "ifc006-mf059-p-structure",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tags-identification",
@@ -217,7 +217,7 @@
         "ifc006-mf059-p-tags-links",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "links-creation",
@@ -227,7 +227,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-tags-links"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "url-types",
@@ -238,7 +238,7 @@
         "ifc006-mf059-p-urls-anchors",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "anchor-types",
@@ -249,7 +249,7 @@
         "ifc006-mf059-p-urls-anchors",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "lists-identification",
@@ -260,7 +260,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-formats",
@@ -271,7 +271,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "text-alignment",
@@ -282,7 +282,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "text-color",
@@ -293,7 +293,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "font-size",
@@ -304,7 +304,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "typography",
@@ -315,7 +315,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "page-background-color",
@@ -326,7 +326,7 @@
         "ifc006-mf059-p-lists-images-format",
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "page-background-image",
@@ -336,7 +336,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-lists-images-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "visual-layout",
@@ -346,7 +346,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "printed-layout",
@@ -356,7 +356,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "screen-dimensions",
@@ -366,7 +366,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "print-dimensions",
@@ -376,7 +376,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "design-colors",
@@ -386,7 +386,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "page-margins",
@@ -396,7 +396,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-modification",
@@ -406,7 +406,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "animation-modification",
@@ -416,7 +416,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "images-insertion",
@@ -426,7 +426,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-attributes",
@@ -436,7 +436,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-placement",
@@ -447,7 +447,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-lists-images-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-map-regions",
@@ -457,7 +457,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-map-links",
@@ -467,7 +467,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "audio-insertion",
@@ -478,7 +478,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "video-insertion",
@@ -489,7 +489,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "embedded-programs",
@@ -499,7 +499,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "audio-resources",
@@ -509,7 +509,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "video-resources",
@@ -519,7 +519,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "forms-textbox",
@@ -530,7 +530,7 @@
         "ifc006-mf059-p-forms",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "forms-options",
@@ -540,7 +540,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-forms"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "forms-buttons",
@@ -550,7 +550,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-forms"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "forms-controls",
@@ -562,7 +562,7 @@
         "ifc006-mf059-p-forms",
         "ifc006-mf059-c-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tags-manipulation",
@@ -572,7 +572,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-tag-manipulation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "elements-disable",
@@ -582,7 +582,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-tag-manipulation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-map",
@@ -592,7 +592,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-maps-tables"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "table-rows",
@@ -602,7 +602,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-maps-tables"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "table-cells",
@@ -612,7 +612,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-maps-tables"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "table-caption",
@@ -622,7 +622,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-maps-tables"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "animation-application",
@@ -632,7 +632,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "external-files",
@@ -642,7 +642,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-external-files"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "online-multimedia",
@@ -652,7 +652,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-external-files"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "plugins-description",
@@ -662,7 +662,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-external-files"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "embedded-objects",
@@ -672,7 +672,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-external-files"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "navigation-diagram",
@@ -682,7 +682,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "window-hierarchy",
@@ -692,7 +692,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "style-syntax",
@@ -702,7 +702,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "browser-testing",
@@ -712,7 +712,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "source-documentation",
@@ -722,7 +722,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "accessibility-definition",
@@ -732,7 +732,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "accessibility-advantages",
@@ -742,7 +742,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "accessibility-verification",
@@ -752,7 +752,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "accessibility-application",
@@ -762,7 +762,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "accessibility-resources",
@@ -772,7 +772,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-definition",
@@ -782,7 +782,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-design",
@@ -792,7 +792,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-description",
@@ -802,7 +802,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-analysis",
@@ -812,7 +812,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-adaptation",
@@ -822,7 +822,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "usability-use",
@@ -832,7 +832,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "web-design",
@@ -842,7 +842,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "web-technologies",
@@ -852,7 +852,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-c-html"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "sound-formats",
@@ -862,7 +862,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-c-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "independent-actions",
@@ -874,7 +874,7 @@
         "ifc006-mf059-CE7.3.1",
         "ifc006-mf059-CE7.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-media",
@@ -886,7 +886,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-tools",
@@ -897,7 +897,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.1.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "conjunction-media",
@@ -909,7 +909,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-audio",
@@ -920,7 +920,7 @@
         "ifc006-mf059-CE7.2.4",
         "ifc006-mf059-p-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-publication",
@@ -930,7 +930,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "optional-resource",
@@ -940,7 +940,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "weighted-components",
@@ -950,7 +950,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-CE7.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "score-pending",
@@ -960,7 +960,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-p-structure"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "historical-flash",
@@ -970,7 +970,7 @@
       "sourceRecordIds": [
         "ifc006-mf059-c-multimedia"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "historical-languages",
@@ -980,16 +980,78 @@
       "sourceRecordIds": [
         "ifc006-mf059-c-html"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "sound-format-mp3",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "sound-format-wav",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "sound-format-midi",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "historical-php",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "historical-javascript",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "alternative-sound-format",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     }
   ],
-  "provider": null,
-  "fullInstrumentsReviewed": 0,
+  "provider": "packages/shared/src/secondary-technical.ts",
+  "fullInstrumentsReviewed": 400,
   "remoteWrites": false,
   "limits": [
     "No acredita instrumentos implementados ni todas las variantes de propósito/formato/puntuación.",
     "Las referencias impresasHTML/PHP/Java/JavaScript/ASP ySWF/Flash se mantienen documentales; no imponer tecnologías históricas.",
     "Describir publicación no autoriza publicar un sitio ni crear cuentas.",
     "Las sieteactitudes y cincoorientaciones continúan documentales."
-  ]
+  ],
+  "initialCases": 94,
+  "additionalCases": 6
 }

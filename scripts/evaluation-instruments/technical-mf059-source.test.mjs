@@ -17,5 +17,5 @@ test('tecnologías históricas y actitudes no se convierten en exigencias implí
  assert(r.find(x=>x.id==='ifc006-mf059-c-html').literal.includes('PHP. - Java. - JavaScript.'))
  assert(r.find(x=>x.id==='ifc006-mf059-c-multimedia').literal.includes('SWF.'));assert(r.find(x=>x.id==='ifc006-mf059-c-multimedia').literal.includes('flash'))
  assert(r.filter(x=>x.type==='ATTITUDE').every(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'))
- assert.equal(m.implementation.provider,null);assert.equal(m.adaptations.length,0);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN');assert(m.limits.some(x=>x.includes('datos ficticios')))
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,85);assert.equal(m.verification.fullReview.pending,0);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN');assert(m.limits.some(x=>x.includes('datos ficticios')))
 })
