@@ -1,10 +1,10 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {reviewedTechnicalHttpScope,reviewedTechnicalElementIds} from './technical-http-scope.mjs'
-test('selecciona solo los tres módulos técnicos revisados y su grado exacto',()=>{
- const expected=[['MF_053_3',4,'technical-ifc-mf053-four-contracts.json'],['MF_002_3',4,'technical-mf002-four-contracts.json'],['MF_054_3',5,'technical-mf054-five-contracts.json']]
+test('selecciona solo los cuatro módulos técnicos revisados y su grado exacto',()=>{
+ const expected=[['MF_053_3',4,'technical-ifc-mf053-four-contracts.json'],['MF_002_3',4,'technical-mf002-four-contracts.json'],['MF_054_3',5,'technical-mf054-five-contracts.json'],['MF_056_3',4,'technical-mf056-four-contracts.json']]
  for(const [code,grade,contract]of expected){
-  const scope=reviewedTechnicalHttpScope(code,grade);assert.equal(scope.contract,contract)
+  const scope=reviewedTechnicalHttpScope(code,grade);assert(scope,code+' no está registrado');assert.equal(scope.contract,contract)
   assert(scope.source.includes(code.split('_').slice(0,2).join('')))
   for(const other of [1,2,3,4,5,6].filter(g=>g!==grade))assert.equal(reviewedTechnicalHttpScope(code,other),null)
  }
