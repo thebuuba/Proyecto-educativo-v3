@@ -5489,10 +5489,10 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 14,
-            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
-            "provider": null,
+            "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
-              "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+              "status": "LITERAL_SOURCE_AND_INSTRUMENTS_REVIEWED_PENDING_RUNTIME_QA",
               "pdfPages": [
                 37,
                 38,
@@ -5501,16 +5501,22 @@
               "matrix": "docs/curriculum/cobertura-secundaria/technical-ifc006-mf058-5-matriz.json",
               "records": 42,
               "literalParts": 45,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED"
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "technical-mf058-5-revision.json",
+              "fullInstrumentsReviewed": 288,
+              "httpDb": "NOT_RUN",
+              "browser": "NOT_RUN"
             },
             "expectedContracts": {
               "file": "data/evaluation-instruments/technical-mf058-five-contracts.json",
-              "cases": 62,
+              "cases": 72,
               "topicGroups": 54,
               "review": "technical-mf058-5-contratos-esperados.json",
-              "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
-            }
+              "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA"
+            },
+            "catalog": "evaluation-2026.149",
+            "httpDb": "NOT_RUN",
+            "browser": "NOT_RUN"
           },
           {
             "id": "IFC006_3-g5-english",
@@ -5992,24 +5998,26 @@
     "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf055-6.md"
   },
   "currentSourceCandidate": {
-    "catalog": "evaluation-2026.148",
-    "specializedProvidersAdded": 7,
-    "newModule": "MF_055_3",
-    "status": "REPRESENTATIVE_HTTP_DB_VERIFIED_PERSONAL_AUTH_REQUIRED",
-    "runtimeInstalled": true,
+    "catalog": "evaluation-2026.149",
+    "specializedProvidersAdded": 8,
+    "newModule": "MF_058_3",
+    "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+    "runtimeInstalled": false,
     "developmentOnly": true,
-    "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf055-6.md"
+    "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf058-5.md",
+    "automated": "FINAL_LOCAL_GATES_PASSED"
   },
   "localRuntimeBuild": {
     "catalogBuild": "evaluation-2026.148",
     "catalogInstalled": true,
     "sourceInstalled": true,
-    "serving": true,
+    "serving": false,
     "project": "eolgunypmtgrsyrjzcld",
     "evidence": "technical-mf055-6-comprobaciones-locales.json",
     "runtimeEvidence": "technical-mf055-6-entorno-local.json",
     "installation": "technical-mf055-6-instalacion.json",
     "httpDb": "REPRESENTATIVE_QA_PASSED",
-    "browser": "AUTHENTICATION_REQUIRED"
+    "browser": "AUTHENTICATION_REQUIRED",
+    "stopReason": "Worker148 propio detenido tras preservar QA y antes del build final149; runtime149 aún no iniciado"
   }
 }

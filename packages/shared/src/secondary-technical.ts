@@ -10,6 +10,7 @@ import {technicalMf056Four} from './secondary-technical-mf056-4'
 import {technicalMf059Four} from './secondary-technical-mf059-4'
 import {technicalMf057Five} from './secondary-technical-mf057-5'
 import {technicalMf055Six} from './secondary-technical-mf055-6'
+import {technicalMf058Five} from './secondary-technical-mf058-5'
 
 export type TechnicalTopic=CommonScienceTopic&{
  sourceRecordIds:string[];requires?:string;fallbackGroup?:string;application?:string;suppresses?:string[];relationsByMode?:Record<string,string>
@@ -23,7 +24,7 @@ type TechnicalAction={text:string;topics:TechnicalTopic[]}
 export type TechnicalTask={
  module:TechnicalModule;grade:number;actions:TechnicalAction[];activityType:string;technique:string;alternatives?:TechnicalTask[]
 }
-export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five,technicalMf055Six]
+export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five,technicalMf055Six,technicalMf058Five]
 const technicalVerbs='disen\\w*|seleccion\\w*|aplic\\w*|apliqu\\w*|tabul\\w*|depur\\w*|gener\\w*|diagram\\w*|jerarqui\\w*|enumer\\w*|distingu\\w*|reconoc\\w*|utiliz\\w*|program\\w*|desplieg\\w*|implement\\w*|organiz\\w*|justific\\w*|propon\\w*|propong\\w*'
 const alternativeVerbs=`${technicalVerbs}|elabor\\w*|dibuj\\w*|represent\\w*|analiz\\w*|describ\\w*|explic\\w*|compar\\w*|identific\\w*`
 const affirmative=(value:string,additionalVerbs='')=>scienceRequirementText(value)
@@ -57,6 +58,7 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  if(module.moduleCode==='MF_002_3')requirement=requirement.replace(new RegExp(`,\\s*(?=(?:${module.additionalVerbs})\\b)`,'g'),' y ')
  // MIDI names a format here; the shared science parser also recognizes «mid…» as measuring.
  if(module.moduleCode==='MF_059_3')requirement=requirement.replace(/\b(y|e)\s+midi\b/g,'$1 formato midi')
+ if(module.moduleCode==='MF_058_3')requirement=requirement.replace(/\bsin\s+(?:reportes?|informes?)[^.;\n]*/g,'')
  if(!requirement)return null
  const parse=(text:string):TechnicalTask|null=>{
   const parsed=resolveScienceTaskForTopics('',text,module.grade,module.topics,{
@@ -76,11 +78,13 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
    ||module.moduleCode==='MF_059_3'&&modes.includes('verification')
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['verification','observation'].includes(mode))
    ||module.moduleCode==='MF_055_3'&&modes.includes('verification')
+   ||module.moduleCode==='MF_058_3'&&modes.every(mode=>['execution','verification','observation'].includes(mode))
   const officePractice=module.moduleCode==='MF_002_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
    ||['MF_054_3','MF_056_3'].includes(module.moduleCode)&&modes.includes('application')
    ||module.moduleCode==='MF_059_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_055_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
+   ||module.moduleCode==='MF_058_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
   const activityType=report?'REPORT':oral?'ORAL_PRESENTATION':design?'PROJECT':application||officeObservation?'OBSERVATION':modes.includes('calculation')||officePractice?'EXERCISE_SET':modes.includes('comparison')?'COMPARISON':'ANALYSIS'
   const technique=activityType==='PROJECT'?'proyecto':activityType==='OBSERVATION'?'observacion-sistematica':activityType==='ORAL_PRESENTATION'?'presentacion':'analisis-producciones'
   return{...parsed,actions:parsed.actions as TechnicalAction[],activityType,technique,module}
@@ -90,11 +94,17 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  const branches=requirement.split(/\s+(?:o bien|o)\s+/)
  if(branches.length>1){
   // Product nouns such as «programa» and «diseño» must not replace an inherited action.
-  const verbs=['MF_054_3','MF_056_3','MF_059_3','MF_057_3','MF_055_3'].includes(module.moduleCode)?`${module.additionalVerbs}|elabor(?:a|an|ar|e|en|ando)|represent(?:a|an|ar|e|en|ando)|dibuj(?:a|an|ar|e|en|ando)`:`${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''}`
+  const verbs=['MF_054_3','MF_056_3','MF_059_3','MF_057_3','MF_055_3','MF_058_3'].includes(module.moduleCode)?`${module.additionalVerbs}|elabor(?:a|an|ar|e|en|ando)|represent(?:a|an|ar|e|en|ando)|dibuj(?:a|an|ar|e|en|ando)`:`${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''}`
   const verb=new RegExp(`\\b(?:${verbs})\\b`)
   const inheritedVerb=branches[0].match(verb)?.[0]
-  const alternatives=branches.map(branch=>parse(!verb.test(branch)&&inheritedVerb?`${inheritedVerb} ${branch}`:branch))
-  if(alternatives.every((branch):branch is TechnicalTask=>branch!==null))task.alternatives=alternatives
+  const alternatives=branches.map(branch=>{
+   const nounBranch=module.moduleCode==='MF_058_3'&&/^(?:un|una|el|la|los|las)\b/.test(branch)
+   return parse((nounBranch||!verb.test(branch))&&inheritedVerb?`${inheritedVerb} ${branch}`:branch)
+  })
+  if(alternatives.every((branch):branch is TechnicalTask=>branch!==null)){
+   // Choosing an order inside one report requirement must not duplicate that same evidence.
+   if(module.moduleCode!=='MF_058_3'||new Set(alternatives.map(branch=>JSON.stringify(branch.actions.map(a=>({mode:modeFor(a.text,module),topics:a.topics.map(t=>t.id)}))))).size>1)task.alternatives=alternatives
+  }
  }
  return task
 }
@@ -164,7 +174,15 @@ const maintenanceModeRules:[Mode,RegExp][]=[
  ['application',/\b(?:instal|implement|ejecut)(?:a|an|ar|e|en|ando)\b/],
  ['application',/\brecib(?:e|en|ir|a|an|iendo)\b/],
 ]
-const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:module?.moduleCode==='MF_055_3'?maintenanceModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:['MF_057_3','MF_055_3'].includes(module?.moduleCode??'')?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
+const reportModeRules:[Mode,RegExp][]=[
+ ['creation',/\bestructur(?:a|an|ar|e|en|ando)\b/],
+ ['selection',/\bdetermin(?:a|an|ar|e|en)\b/],
+ ['design',/\b(?:especific|defin)(?:a|an|ar|e|en|ir)\b/],
+ ['execution',/\bejecut(?:a|an|ar|e|en|ando)\b/],
+ ['configuration',/\bajust(?:a|an|ar|e|en|ando)\b/],
+ ['application',/\b(?:oper|agreg|almacen|mostr|muestr|instal)(?:a|an|ar|e|en|ando)\b/],
+]
+const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:module?.moduleCode==='MF_055_3'?maintenanceModeRules:module?.moduleCode==='MF_058_3'?reportModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:['MF_057_3','MF_055_3','MF_058_3'].includes(module?.moduleCode??'')?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
  .filter(r=>r.index>=0).sort((a,b)=>a.index-b.index)[0]?.mode??'evidence'
 const modeWords:Record<Mode,[string,string]>={
  identification:['Identificación','Identifica'],description:['Descripción','Describe'],explanation:['Explicación','Explica'],
@@ -186,7 +204,7 @@ function actionCriteria(action:TechnicalAction,module:TechnicalModule):Contextua
  const alternativeFacets:{id:string;members:string[]}[]=[]
  const criteria=action.topics.flatMap(topic=>{
   const facets=topic.facets?.filter(f=>new RegExp(f.match).test(action.text))
-  if(module.moduleCode==='MF_056_3'&&facets&&facets.length>1){
+  if(['MF_056_3','MF_058_3'].includes(module.moduleCode)&&facets&&facets.length>1){
    const positions=facets.map(f=>action.text.search(new RegExp(f.match))).sort((a,b)=>a-b)
    if(/\bo\b/.test(action.text.slice(positions[0],positions.at(-1))))alternativeFacets.push({id:`${module.templatePrefix}-${topic.id}-alternative`,members:facets.map(f=>`${module.templatePrefix}-${topic.id}-${f.id}-${mode}`)})
   }
@@ -194,6 +212,10 @@ function actionCriteria(action:TechnicalAction,module:TechnicalModule):Contextua
  }).map(topic=>{
   let relation=topic.relationsByMode?.[mode]??topic.relation
   let label=topic.label
+  if(module.moduleCode==='MF_058_3'&&topic.id==='report-needs'){
+   const scope=[/\bperiodo\b/.test(action.text)?'el período':null,/\bterritorial\b/.test(action.text)?'el ámbito territorial':null].filter(Boolean)
+   if(scope.length)relation=`la relación entre la información requerida por los usuarios ficticios, ${scope.join(' y ')} y las condiciones proporcionadas para el reporte`
+  }
   if(topic.id==='interview'&&mode==='application')relation='la correspondencia entre las preguntas formuladas, las respuestas escuchadas y la información requerida por el sistema'
   if(['interview','questionnaire'].includes(topic.id)&&mode==='recording')relation='la fidelidad del registro a las respuestas del usuario, distinguiendo datos ausentes de interpretaciones del analista'
   if(topic.id==='processes'&&mode==='identification'&&/finalidad/.test(action.text))relation='la finalidad del proceso dentro de la organización del caso'

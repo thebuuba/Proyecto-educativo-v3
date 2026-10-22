@@ -2,21 +2,21 @@
   "moduleCode": "MF_058_3",
   "programCode": "IFC006_3",
   "grade": 5,
-  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
   "literalRecordsSha256": "36417e95df354371769d434d7d3c02551a99ad54ca852ab39423a7e76d18991e",
-  "cases": 62,
+  "cases": 72,
   "expectedTopicGroups": 54,
   "sourceEvaluationCriteriaReferenced": 10,
   "sourceProceduresReferenced": 17,
-  "fixtureSha256": "bb74716ea46841eb5c9d5b8618eebd3ea01c042e43ca7b4b63a263c589754778",
+  "fixtureSha256": "d132ccf29fe8c929e2da91a75c6910daab07e859672da1523c72770f4573b486",
   "red": {
     "missingFixture": 2,
     "missingEvidence": 1
   },
   "green": 3,
-  "method": "Lectura completa de las62 consignas y referencias en bloques0–30 y31–61 frente a la fuente42registros/45partes ya revisada. Separadas selección y ejecución, conexiones individuales, siete secciones, cinco formatos, totales diarios/generales, datos/filtros/orden, fórmulas/funciones/eventos y salida elegida. Corregidas dos repeticiones de redacción en encabezado y pie del reporte; referencias intactas. No se acreditan instrumentos completos todavía ausentes.",
+  "method": "Lectura completa de las62 consignas y referencias en bloques0–30 y31–61 frente a la fuente42registros/45partes ya revisada. Separadas selección y ejecución, conexiones individuales, siete secciones, cinco formatos, totales diarios/generales, datos/filtros/orden, fórmulas/funciones/eventos y salida elegida. Corregidas dos repeticiones de redacción en encabezado y pie del reporte; referencias intactas. No se acreditan instrumentos completos todavía ausentes. Revisión posterior: diezconsignas adicionales leídas, alternativas y acciones independientes;72consignas/54grupos e instrumentos completos revisados.",
   "casesReviewed": [
     {
       "id": "report-needs",
@@ -27,7 +27,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-type",
@@ -38,7 +38,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-medium",
@@ -49,7 +49,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-order",
@@ -60,7 +60,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-structure",
@@ -71,7 +71,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tools-classification",
@@ -82,7 +82,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-views",
@@ -93,7 +93,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-reports-tools"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "report-execution",
@@ -104,7 +104,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-reports-tools"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "manager-installation",
@@ -115,7 +115,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-manager-installation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "project-creation",
@@ -127,7 +127,7 @@
         "ifc006-mf058-CE6.2.1",
         "ifc006-mf058-p-project-creation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "connection-ado",
@@ -139,7 +139,7 @@
         "ifc006-mf058-CE6.2.2",
         "ifc006-mf058-p-connection-specification"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "connection-dao",
@@ -151,7 +151,7 @@
         "ifc006-mf058-CE6.2.2",
         "ifc006-mf058-p-connection-specification"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "connection-oledb",
@@ -163,7 +163,7 @@
         "ifc006-mf058-CE6.2.2",
         "ifc006-mf058-p-connection-specification"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "connection-selection",
@@ -174,7 +174,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "dataset-creation",
@@ -185,7 +185,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-datasets-queries"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "query-creation",
@@ -196,7 +196,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-datasets-queries"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-dataset-query",
@@ -208,7 +208,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-datasets-queries"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tables-addition",
@@ -220,7 +220,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-tables-addition"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "table-relations",
@@ -231,7 +231,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-reports-tools"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-report-header",
@@ -243,7 +243,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-page-header",
@@ -255,7 +255,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-details",
@@ -267,7 +267,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-page-footer",
@@ -279,7 +279,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-report-footer",
@@ -291,7 +291,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-group-header",
@@ -303,7 +303,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "section-group-footer",
@@ -315,7 +315,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "format-dates",
@@ -327,7 +327,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-data-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "format-numbers",
@@ -339,7 +339,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-data-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "format-currency",
@@ -351,7 +351,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-data-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "format-thousands",
@@ -363,7 +363,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-data-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "format-percentages",
@@ -375,7 +375,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-data-format"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "text-style",
@@ -387,7 +387,7 @@
         "ifc006-mf058-CE6.2.4",
         "ifc006-mf058-p-text-style"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "column-width",
@@ -398,7 +398,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-text-style"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "groups",
@@ -409,7 +409,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-groups"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "totals",
@@ -420,7 +420,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.2.5"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "daily-totals",
@@ -431,7 +431,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-totals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "general-total",
@@ -442,7 +442,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-totals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "filters",
@@ -453,7 +453,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-filters"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "data-order",
@@ -464,7 +464,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "data-manipulation",
@@ -475,7 +475,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-data-manipulation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "charts",
@@ -486,7 +486,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-charts"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "formulas",
@@ -497,7 +497,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-formulas"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "functions",
@@ -508,7 +508,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "messages",
@@ -519,7 +519,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-messages"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "function-types",
@@ -530,7 +530,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "hierarchies",
@@ -541,7 +541,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "recursion",
@@ -552,7 +552,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "procedures",
@@ -563,7 +563,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "matrices-lists",
@@ -574,7 +574,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "access-mechanism",
@@ -586,7 +586,7 @@
         "ifc006-mf058-CE6.3.1",
         "ifc006-mf058-p-access"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "output-print",
@@ -598,7 +598,7 @@
         "ifc006-mf058-CE6.3.2",
         "ifc006-mf058-p-access"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "output-screen",
@@ -610,7 +610,7 @@
         "ifc006-mf058-CE6.3.2",
         "ifc006-mf058-c-sections-functions"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "output-web-simulation",
@@ -622,7 +622,7 @@
         "ifc006-mf058-CE6.3.2",
         "ifc006-mf058-p-access"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "output-storage",
@@ -634,7 +634,7 @@
         "ifc006-mf058-CE6.3.2",
         "ifc006-mf058-p-access"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "output-cd-simulation",
@@ -645,7 +645,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "independent-actions",
@@ -658,7 +658,7 @@
         "ifc006-mf058-CE6.1.1",
         "ifc006-mf058-p-filters"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-sections",
@@ -671,7 +671,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "conjunction-sections",
@@ -684,7 +684,7 @@
         "ifc006-mf058-CE6.2.3",
         "ifc006-mf058-p-sections"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-publication",
@@ -696,7 +696,7 @@
         "ifc006-mf058-CE6.3.2",
         "ifc006-mf058-p-access"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "optional-resource",
@@ -707,7 +707,7 @@
       "sourceRecordIds": [
         "ifc006-mf058-p-filters"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "weighted-components",
@@ -720,7 +720,7 @@
         "ifc006-mf058-p-filters",
         "ifc006-mf058-p-formulas"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "score-pending",
@@ -731,11 +731,121 @@
       "sourceRecordIds": [
         "ifc006-mf058-CE6.3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "report-structure-brief",
+      "descriptionSha256": "c6c6e9db667dc7d46c0af77079ab5191540432084f6eb63d8b379a91962ebb1c",
+      "topics": [
+        "report-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "report-needs-brief",
+      "descriptionSha256": "e02c3951452609262fc86c33f374c461e78f7c1756e618f4e5cbd03ef9e79976",
+      "topics": [
+        "report-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.1"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "tools-classification-only",
+      "descriptionSha256": "529feb4d2be7d92a0c77af0272c768fed907f52a6993879abadb4a261f299503",
+      "topics": [
+        "tools-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.3"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "tools-selection-only",
+      "descriptionSha256": "bd894d7396b8520b67661f83a0003b960dcf0529b9e5df4a359c062f3d9515bb",
+      "topics": [
+        "tools-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.3"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "matrix-only",
+      "descriptionSha256": "719b952fb2f2da3b5b1c25d26a901512b6002254d7a35bc52a05c9524eb2db08",
+      "topics": [
+        "matrices-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "list-only",
+      "descriptionSha256": "14a3e9a9e30e01deb5478501e0e493880b4c0718e0e84823b79250c5c57726c4",
+      "topics": [
+        "matrices-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "matrices-plural",
+      "descriptionSha256": "147c86d83b9e74f107337beb823e7037400fc0572ebd364e55d6dab1c3006854",
+      "topics": [
+        "matrices-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "subtotals-only",
+      "descriptionSha256": "837c82563097ad919e23989728913a14ba087dfbad83ae2eb245557762b815ad",
+      "topics": [
+        "totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.5"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "totals-only",
+      "descriptionSha256": "6e3d3554f94afa0b3b5da79e5074db6bd2fca5076d5f447535e2fbd1e298c509",
+      "topics": [
+        "totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.5"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "alternative-totals",
+      "descriptionSha256": "78349bd3f5985a130d51ce2b3bb4414e3892f55fa6b3cb4c5fb3e56d8ea8761b",
+      "topics": [
+        "totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.5"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     }
   ],
-  "provider": null,
-  "fullInstrumentsReviewed": 0,
+  "provider": "packages/shared/src/secondary-technical.ts",
+  "fullInstrumentsReviewed": 288,
   "httpDb": "NOT_RUN",
   "browser": "NOT_RUN",
   "remoteWrites": false,
@@ -744,5 +854,8 @@
     "La publicación web se limita a una simulación local; no se requieren servicios externos ni cuentas.",
     "Cada consigna exige únicamente las acciones y variantes elegidas, sin imponer todas las tecnologías, secciones, formatos o salidas del currículo.",
     "Inventario y contratos esperados no acreditan proveedor, instrumentos completos, instalación ni pruebas de usuario."
-  ]
+  ],
+  "initialFixtureSha256": "bb74716ea46841eb5c9d5b8618eebd3ea01c042e43ca7b4b63a263c589754778",
+  "initialCases": 62,
+  "additionalCases": 10
 }

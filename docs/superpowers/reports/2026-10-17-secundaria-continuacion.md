@@ -1,5 +1,19 @@
 # Continuación del encargo integral de secundaria
 
+## Estado vigente 22 de octubre: MF058149 verificado localmente, instalación pendiente
+
+Continúa el encargo integral sin repetir cierres anteriores. HEAD4ec756fb, rama `ampliacion-de-instrumentos-2`,89commits locales pendientes de push según refguardada. NO PUSH, producción, despliegues, merge/main, resets, borrados, cuentas ni subagentes.
+
+MF058, Análisis y Diseño de Reporte dequinto, candidato149:54grupos/72consignas/288instrumentos;80textos completos revisados. Congelación148 YAejecutada una sola vez (`freeze-148-proof.json`,81releases/1.169snapshots,15baselines personales); no repetir ni sobrescribir. FuentePDF37–39 42/45 conservada. Contexto backend técnicoquinto y proveedor nuevo, catálogo148 congelado. Backendfocal714/714 yfrontend577/577, archivos `mf058-provider-reviewed-backend.json`/`mf058-provider-reviewed-frontend.json`. No atribuir gates148 al código149.
+
+Revisiónv1 completa64textos/62ensamblajes, v2 trecetextos nuevos/modificados yonceensamblajes (58textos exactos), v3 nuevetextos ydiezensamblajes (71textos exactos); paqueteindependent-actions leído completo cuatroformatos finales. `record-mf058-provider-review.mjs` YAejecutado una vez, publica288definiciones/textos/revisión/matriz/inventario. No repetir. Fuente/contratos Node en transición por actualización del estado de proveedor; el primer cierre marcó5/6 por una expectativa antigua deproveedornulo, corregida antes del siguiente pase. Sin ejecuciónremotaMF058.
+
+Hallazgos importantes conRED→GREEN:10regresiones depertinencia,2dealcance/plural,1deaccióncomprobación y6depropósitomixto. Las primeras pruebas depropósito anteriores ya tenían19fallosreales. Una escritura auxiliar PS dañó cinco tildes denuevasconsignas; corregida yrepetidas focales. Decisión rutinaria: separarcomprobar de aplicar/configurar/crear, manteniendo EXERCISE_SET en prácticasmixtas; limitar toda regla nueva aMF058 para preservarproveedoresanteriores. No duplicar motores/UI/campos.
+
+Gates34505 terminó0,9/9:96.005backend/93.679frontendactivities, shared/backend/frontend/cloudflarebuild y3lints; Cloudflare dryrun sin despliegue. Worker148 propio49102 detenidoCtrlC0listener8787 antesdebuild. Fuente/compilado/ejemplos2736exactos (2448previos+288nuevos),frozen148exact; Inglés15176/Mat2888/optativas14488exactas148,36diferencias históricas sin nuevas.76assetsJStodosprecache/máximo1909015bytes. Manifiesto/instalador individualMF05834elementos/36spans+8documentales9partes=42/45,5Aexcluidas;3manifestRED→GREEN y3installerRED→GREEN; técnicaNode151/151. Auditoría28archivos/5valoresprivados/cero hallazgos. `record-mf058-final-local-gates.mjs` YAejecutado, no repetir. Runtime149no iniciado; ningúnremotoMF058.
+
+Siguiente: commitlocalauditado delproveedor; sustituir guard `MF058_VERIFIED_PROVIDER_COMMIT` de `install-mf058-catalog-149.mjs` por ese hashreal. Iniciar`start-local-149-mf058.mjs`, comprobar`verify-runtime-149-mf058.mjs` ylecturapreinstall; después instaladorindividualuna vez/contextosidempotentes/QArepresentativa, manteniendo baselines. Navegaciónpersonal pendienteAuth. No repetir ejecutoresMF055/MF057 ni baselines. Informe `2026-10-22-tecnico-ifc-mf058-5.md`; plan `2026-10-21-tecnico-ifc-mf058-5.md`. Losauxiliaresruntime/preinstall/instalación149 estánPREPARADOS,noejecutados. Finalreview:self-review por prohibiciónexpresa desubagentes; hallazgosimportantes corregidos conRED→GREEN.
+
 ## Estado vigente 22 de octubre: MF055148 con QA representativo completo y preservado
 
 Rama `ampliacion-de-instrumentos-2`. ProveedorMF055 **16de35dfb7e70a16609356ae3bc718799f942ad4**, conexión **a2e28985f7ebe9ccc4a8a9c4e48e4ab9a197a6a8**,88commits locales delante de refguardada antes de este cierre. NO PUSH vigente; no cambiarintegraciones/producción/main, no desplegar/reset/borrar/migrar/cuentas/subagentes. Los nuevos cambios del cierre son Node ydocumentación; builds/gates35177 siguen vigentes sin cambiosapps/packages posteriores.
