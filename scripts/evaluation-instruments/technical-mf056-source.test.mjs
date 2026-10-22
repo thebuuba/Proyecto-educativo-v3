@@ -29,7 +29,7 @@ test('diezactitudes y seisorientaciones permanecen documentales, sin cobertura f
  assert.equal(r.filter(x=>x.type==='ATTITUDE').length,10);assert.equal(r.filter(x=>x.type==='TEACHING_STRATEGY').length,6)
  assert(r.filter(x=>x.type==='ATTITUDE').every(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'&&x.adaptationIds.length===0))
  assert(r.filter(x=>x.type==='TEACHING_STRATEGY').every(x=>x.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'&&x.adaptationIds.length===0))
- assert.equal(m.implementation.provider,null);assert.equal(m.implementation.instrumentReview,'NOT_STARTED')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.implementation.instrumentReview,'REVIEWED')
  assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
  assert(m.limits.some(s=>s.includes('datos ficticios')))
 })

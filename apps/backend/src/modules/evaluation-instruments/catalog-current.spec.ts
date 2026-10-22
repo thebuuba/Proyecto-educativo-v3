@@ -48,15 +48,19 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.144')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.145')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()
     const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogCurrent
-    expect(technicalModules).toHaveLength(3)
+    expect(technicalModules).toHaveLength(4)
     expect(technicalModules[0]).toMatchObject({moduleCode:'MF_053_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[1]).toMatchObject({moduleCode:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[2]).toMatchObject({moduleCode:'MF_054_3',programCode:'IFC006_3',grade:5,cycle:2,modalityCode:'technical_professional'})
+    expect(technicalModules[3]).toMatchObject({moduleCode:'MF_056_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
+    const frozen144=evaluationCatalogForVersion('evaluation-2026.144')!
+    expect(frozen144.version).toBe('evaluation-2026.144')
+    expect(frozen144.technicalModules).toEqual(technicalModules.slice(0,3))
     const frozen143=evaluationCatalogForVersion('evaluation-2026.143')!
     expect(frozen143.version).toBe('evaluation-2026.143')
     expect(frozen143.technicalModules).toEqual(technicalModules.slice(0,2))

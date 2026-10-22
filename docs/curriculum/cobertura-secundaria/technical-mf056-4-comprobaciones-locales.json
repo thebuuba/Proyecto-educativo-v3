@@ -1,0 +1,162 @@
+{
+  "moduleCode": "MF_056_3",
+  "catalogBuild": "evaluation-2026.145",
+  "status": "LOCAL_TESTS_BUILD_PRESERVATION_RUNTIME_VERIFIED_PENDING_INSTALLATION_QA",
+  "project": "eolgunypmtgrsyrjzcld",
+  "tests": {
+    "backend": 92531,
+    "backendFiles": 199,
+    "frontendActivities": 90811,
+    "frontendFiles": 120,
+    "frontendFinalFocal": 737,
+    "sourceAndInstallAndReviewAndPrecache": 74,
+    "inventory": 26,
+    "failures": 0
+  },
+  "gates": [
+    {
+      "name": "mf056-provider-corrected-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-frontend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-shared-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-backend-lint",
+      "exit": 0
+    },
+    {
+      "name": "mf056-provider-corrected-frontend-lint",
+      "exit": 0
+    }
+  ],
+  "preservation": {
+    "catalog": "evaluation-2026.145",
+    "currentPayloadMatchesReviewed": true,
+    "frozen144Exact": true,
+    "priorTechnicalDefinitions": 936,
+    "newReviewedDefinitions": 368,
+    "results": [
+      {
+        "module": "technical-ifc-mf053",
+        "fullDefinitions": 296,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf002",
+        "fullDefinitions": 380,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf054",
+        "fullDefinitions": 260,
+        "sourceCompiledReviewedExact": true
+      },
+      {
+        "module": "technical-mf056",
+        "fullDefinitions": 368,
+        "sourceCompiledReviewedExact": true
+      }
+    ],
+    "remoteWrites": false,
+    "englishExact": 15176,
+    "mathExact": 2888,
+    "optativeExact": 14488,
+    "historicalExampleDifferencesAlreadyPresent": 36
+  },
+  "assets": {
+    "javascript": 76,
+    "largestBytes": 1909015,
+    "maximumBytes": 2097152,
+    "allPrecached": true
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.145",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-Dgk2uIil.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-Dgk2uIil.js",
+        "sha256": "a4e90850b355f22179618b540236cff4c9d0ff0be4381370ac35e80eddc684f3",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-C1J2ge6Y.js",
+        "sha256": "2877dc3d64fc2805796bae356e4ae4360bd9737cee98f8939d28bc7cfa16dc9c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-syHY1UNE.js",
+        "sha256": "8ab06745bc9b492135db5f75319455f52217967bc1396a6fc15495faba38c10e",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-Vty29MJf.js",
+        "sha256": "54bc240267fe69989223e066bb5d1d194db324167082e245285ec43727c0d05d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DgfK4IO2.js",
+        "sha256": "034df682efb6afda972a7e2b6555ed58e60e37396b4557d70f6c2ffc866ca259",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "a61803a50a389ece6324748b965eb52b576e6b943f2849508b26fceda8824035",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "sourceManifest": {
+    "code": "MINERD_IFC006_MF056_4_NORM_2017_V1",
+    "elements": 72,
+    "spans": 73,
+    "documentaryRecords": 10,
+    "literalRecords": 82,
+    "literalParts": 83,
+    "excludedFromAssessment": 10,
+    "tests": 9,
+    "installed": false
+  },
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "push": false,
+  "deploy": false
+}

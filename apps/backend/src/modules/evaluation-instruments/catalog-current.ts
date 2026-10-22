@@ -176,7 +176,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.144',
+  version: 'evaluation-2026.145',
   technicalModules,
   optativeScienceModules,
   optativeMathModules,

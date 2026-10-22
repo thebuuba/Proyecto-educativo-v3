@@ -5306,10 +5306,10 @@
             "weeklyHours": 7,
             "annualHours": 315,
             "sourcePdfPage": 14,
-            "status": "CONTEXT_REVIEWED_PROVIDER_PENDING",
-            "provider": null,
+            "status": "IMPLEMENTED_IN_SOURCE_REVIEWED_PENDING_INSTALLATION",
+            "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
-              "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+              "status": "LITERAL_SOURCE_AND_LOCAL_INSTRUMENTS_REVIEWED",
               "pdfPages": [
                 24,
                 25,
@@ -5321,15 +5321,21 @@
               "matrix": "docs/curriculum/cobertura-secundaria/technical-ifc006-mf056-4-matriz.json",
               "records": 82,
               "literalParts": 83,
-              "provider": null,
-              "instrumentReview": "NOT_STARTED"
+              "provider": "packages/shared/src/secondary-technical.ts",
+              "instrumentReview": "368_FULL_DEFINITIONS_REVIEWED",
+              "adaptations": 51,
+              "cases": 92,
+              "uniqueCompleteCriteria": 94,
+              "httpDb": "NOT_RUN",
+              "browser": "NOT_RUN"
             },
             "contextReview": {
               "proof": "docs/curriculum/cobertura-secundaria/technical-mf056-4-contexto.json",
               "focusedPassed": 108,
               "backendPassed": 91667,
               "provider": null
-            }
+            },
+            "catalogInSource": "evaluation-2026.145"
           },
           {
             "id": "IFC006_3-g4-MF_059_3",
@@ -5891,7 +5897,7 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "MF054:65muestrasHTTP/DB y rúbrica personal verificadas; conservar incidencias429/listado. ContinuarMF056/cuarto, sin reintentosMF00236/95 niMF0533/49 ni rebaseline."
+    "MF056/cuarto: proveedor145 y368instrumentos revisados; tests/builds/preservación/runtime local aprobados. Manifiesto e instalador individual probados localmente, sin ejecutar; falta instalación idempotente y recorridosHTTP/DB/personales. Conservar MF05465/65 y personal, MF00236/95 yMF0533/49 sin recrearIDs ni baselines."
   ],
   "push": false,
   "deploy": false,
@@ -5903,12 +5909,21 @@
     "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf054-5.md"
   },
   "currentSourceCandidate": {
-    "catalog": "evaluation-2026.144",
-    "specializedProvidersAdded": 3,
-    "newModule": "MF_054_3",
+    "catalog": "evaluation-2026.145",
+    "specializedProvidersAdded": 4,
+    "newModule": "MF_056_3",
     "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
-    "runtimeInstalled": true,
+    "runtimeInstalled": false,
     "developmentOnly": true,
-    "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf054-5.md"
+    "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf056-4.md"
+  },
+  "localRuntimeBuild": {
+    "catalog": "evaluation-2026.145",
+    "project": "eolgunypmtgrsyrjzcld",
+    "proof": "docs/curriculum/cobertura-secundaria/technical-mf056-4-comprobaciones-locales.json",
+    "catalogInstalled": false,
+    "sourceInstalled": false,
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
   }
 }

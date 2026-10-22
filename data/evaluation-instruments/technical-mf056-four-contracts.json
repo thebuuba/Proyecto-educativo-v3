@@ -5,7 +5,7 @@
   "grade": 4,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "database-types",
@@ -831,26 +831,44 @@
     {
       "id": "database-structure",
       "description": "Diseña la estructura básica de la base de datos del caso ficticio según los requisitos dados.",
-      "topics": ["database-structure"],
-      "sourceRecordIds": ["ifc006-mf056-p-database-structure"]
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-database-structure"
+      ]
     },
     {
       "id": "statements-clauses",
       "description": "Compara las sentencias y cláusulas SQL de la ficha según su función en las consultas dadas.",
-      "topics": ["statements-clauses"],
-      "sourceRecordIds": ["ifc006-mf056-p-statements-clauses"]
+      "topics": [
+        "statements-clauses"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-statements-clauses"
+      ]
     },
     {
       "id": "reporting-objects-definition",
       "description": "Define las consultas, funciones y procedimientos almacenados que utilizará el informe del sistema ficticio según sus necesidades de información.",
-      "topics": ["queries", "database-functions", "stored-procedures"],
-      "sourceRecordIds": ["ifc006-mf056-CE4.3.3"]
+      "topics": [
+        "queries",
+        "database-functions",
+        "stored-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.3.3"
+      ]
     },
     {
       "id": "query-maintenance",
       "description": "Aplica el mantenimiento de los datos de práctica según los resultados de la consulta y los cambios expresamente solicitados en la ficha.",
-      "topics": ["query-maintenance"],
-      "sourceRecordIds": ["ifc006-mf056-p-query-maintenance"]
+      "topics": [
+        "query-maintenance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-p-query-maintenance"
+      ]
     },
     {
       "id": "weighted-components",
@@ -860,6 +878,109 @@
       ],
       "sourceRecordIds": [
         "ifc006-mf056-CE4.1.13"
+      ]
+    },
+    {
+      "id": "dictionary-name",
+      "description": "Explica la propiedad nombre del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-type",
+      "description": "Explica la propiedad tipo del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-size",
+      "description": "Explica la propiedad tamaño del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-alias",
+      "description": "Explica la propiedad alias del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-content",
+      "description": "Explica la propiedad contenido del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "dictionary-organization",
+      "description": "Explica la propiedad organización del diccionario de datos del modelo ficticio proporcionado.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ]
+    },
+    {
+      "id": "model-alternative",
+      "description": "Diseña el modelo de datos relacional o jerárquico para el caso ficticio.",
+      "topics": [
+        "data-model"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.6"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "availability-alternative",
+      "description": "Describe la estrategia Database Mirroring o Database Replication de la base de datos ficticia.",
+      "topics": [
+        "availability-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.4.2"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "dictionary-alternative",
+      "description": "Explica la propiedad nombre o alias del diccionario de datos del modelo ficticio.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-c-queries-dictionary"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "model-conjunction",
+      "description": "Diseña el modelo de datos relacional y jerárquico para el caso ficticio.",
+      "topics": [
+        "data-model"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf056-CE4.1.6"
       ]
     }
   ],
