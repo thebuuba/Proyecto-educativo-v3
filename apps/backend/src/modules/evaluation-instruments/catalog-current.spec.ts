@@ -1,8 +1,26 @@
 import { describe, expect, it } from 'vitest'
 import { createHash } from 'node:crypto'
 import { evaluationCatalogCurrent, evaluationCatalogForVersion } from './catalog-current'
+import {catalogFingerprint} from './catalog-fingerprint'
 
 describe('generic product criteria release', () => {
+  it('conserva el payload150 instalado y limita151 a los tres reconocedores revisados',()=>{
+    const frozen=evaluationCatalogForVersion('evaluation-2026.150')!
+    expect(catalogFingerprint(frozen)).toBe('5d1cb38fcfc472fbeca75efc8fe0492bd09aa0da2f32b40695c7c970128ef13a')
+    const expected=structuredClone(frozen)
+    expected.version='evaluation-2026.151'
+    const priorScience=expected.scienceCommonModules.find(m=>m.grade===5)!.topics.find(t=>t.id==='periodic-position')!
+    const currentScience=evaluationCatalogCurrent.scienceCommonModules.find(m=>m.grade===5)!.topics.find(t=>t.id==='periodic-position')!
+    expect(priorScience.match).not.toBe(currentScience.match)
+    priorScience.match=currentScience.match
+    for(const id of ['document','text-format']){
+      const previous=expected.technicalModules.find(m=>m.moduleCode==='MF_002_3')!.topics.find(t=>t.id===id)!
+      const current=evaluationCatalogCurrent.technicalModules.find(m=>m.moduleCode==='MF_002_3')!.topics.find(t=>t.id===id)!
+      expect(previous.match).not.toBe(current.match)
+      previous.match=current.match
+    }
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify(expected)))
+  })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
     ['evaluation-2026.47','main','ed791831aee8eb8772dbb6f745eb356b566491651713b8661f864cc50edb2181'],
@@ -39,7 +57,7 @@ describe('generic product criteria release', () => {
     expect(previous.activityTypes.find(item => item.id === 'PROJECT')?.triggers).not.toContain('modelo')
   })
 
-  it('preserves both historical lineages and the frozen92 release while combining all common modules', () => {
+  it('preserves both historical lineages and releases through the frozen150 baseline', () => {
     const legacy = evaluationCatalogForVersion('evaluation-2026.47', 'main')!
     const curricular = evaluationCatalogForVersion('evaluation-2026.47')!
     const previous = evaluationCatalogForVersion('evaluation-2026.92')!
@@ -48,11 +66,11 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.150')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.151')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()
-    const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogCurrent
+    const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogForVersion('evaluation-2026.150')!
     expect(technicalModules).toHaveLength(9)
     expect(technicalModules[0]).toMatchObject({moduleCode:'MF_053_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[1]).toMatchObject({moduleCode:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],grade:4,cycle:2,modalityCode:'technical_professional'})

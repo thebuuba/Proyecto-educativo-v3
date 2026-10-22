@@ -132,6 +132,7 @@ const modeRules:[Mode,RegExp][]=[
  ['application',/\b(?:aplic\w*|apliqu\w*|utiliz\w*|genera\w*|realiz\w*)\b/],
 ]
 const officeModeRules:[Mode,RegExp][]=[
+ ['creation',/\bentreg(?:a|an|ar|ue|uen|ara|aran)\b(?=[^.;]*\bdocumento\b[^.;]*\bcon\b)/],
  ['creation',/\b(?:cre(?:a|an|ar|e|en|ando|ara|aran)|prepar(?:a|an|ar|e|en|ando|ara|aran)|redact\w*|escrib\w*)\b/],
  ['sequence',/\breorganiz(?:a|an|ar|e|en|ando|ara|aran)\b/],
  ['verification',/\bcomprueb(?:a|an|e|en)\b/],

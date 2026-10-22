@@ -11,7 +11,7 @@ import { resolveCommonFrenchTask, commonFrenchSelections } from '@aula/shared'
 import {resolveOptativeMathTask,optativeMathSelections} from '@aula/shared'
 import {resolveCommonMathTask,commonMathSelections} from '@aula/shared'
 type ActivityDefaults = { activityType: string; technique: string; instrument: string }
-import { scientificTaskType,resolveEvaluationTask,resolveCommonEnglishTask,commonEnglishSelections,resolveOptativeEnglishTask } from '@aula/shared'
+import { scientificTaskType,resolveEvaluationTask,resolveCommonEnglishTask,commonEnglishSelections,resolveOptativeEnglishTask,detectSecondaryLanguageActivity,firstSecondaryLanguageTechnique } from '@aula/shared'
 import type { InstrumentAcademicContext } from '@aula/shared'
 import { automaticInstrumentType } from './automaticInstrumentType'
 
@@ -45,6 +45,8 @@ export function activityDefaultSuggestions(title: string, description: string, c
   if(french)return {activityType:french.activityType,technique:french.technique,instrument:commonFrenchSelections(french,description).suggestedInstrumentType}
   const english=resolveOptativeEnglishTask(title,description,context)??resolveCommonEnglishTask(title,description,context)
   if(english)return {activityType:english.activityType,technique:english.technique,instrument:commonEnglishSelections(english,description).suggestedInstrumentType}
+  const language=detectSecondaryLanguageActivity(title,description,context??null)
+  if(language)return {activityType:language,technique:firstSecondaryLanguageTechnique(language),instrument:automaticInstrumentType(language,context,maxScore,description)}
   const result=detectActivityDefaults(title,description)
   return result ? {...result,instrument:automaticInstrumentType(result.activityType,context,maxScore,description)} : null
 }

@@ -1,0 +1,155 @@
+{
+  "catalog": "evaluation-2026.151",
+  "status": "LOCAL_INTENT_CORRECTION_VERIFIED_PEDAGOGICAL_REVIEW_INCOMPLETE",
+  "bankSha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817",
+  "changed": [
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "escala"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-ponderada"
+    }
+  ],
+  "unchangedOutputs": 44,
+  "reservedCasesExecuted": 0,
+  "readCompletely": {
+    "cases": [
+      "B-NAT5-tabla-reconstruida",
+      "B-LEN1-informe-retirado",
+      "B-MF0024-formato"
+    ],
+    "formats": [
+      "rubrica",
+      "lista-cotejo",
+      "escala",
+      "lista-ponderada"
+    ]
+  },
+  "review": [
+    {
+      "id": "B-LEN1-informe-retirado",
+      "resolved": [
+        "Producción de informe, no análisis de uno ya escrito",
+        "No reaparecen Arial12/interlineado/sangría/límite de páginas/fragmentos retirados"
+      ],
+      "remaining": [
+        "Distinguir organización pedagógica sugerida de requisitos particulares",
+        "La escala usa descriptores generales de cumplimiento; ponderada incluye50% como decisión de formato, no petición del docente"
+      ]
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "resolved": [
+        "Activa contenido de quinto y exposición oral"
+      ],
+      "remaining": [
+        "La explicación de grupos/períodos queda comprimida dentro de posición",
+        "Predicciones/tendencias aparecen sin pedirse",
+        "Dos criterios repiten contenido científico y los niveles usan imprecisión genérica"
+      ],
+      "acceptedPedagogically": false
+    },
+    {
+      "id": "B-MF0024-formato",
+      "resolved": [
+        "Activa Ofimática y entrega de producto; distingue análisis de documento proporcionado"
+      ],
+      "remaining": [
+        "Word, título, tamaño12, sangría y color no quedan íntegramente cubiertos",
+        "El criterio general de formato duplica las condiciones explícitas",
+        "No se proporcionó un modelo pese a mencionarlo",
+        "Dos niveles parciales del formato se solapan"
+      ],
+      "acceptedPedagogically": false
+    }
+  ],
+  "tests": {
+    "intentRed": 16,
+    "intentGreen": 18,
+    "affectedBackend": 1886,
+    "frontendParity": 1037,
+    "frontendLanguageAndStrategy": 8720,
+    "backendFull": 97193,
+    "backendFiles": 215,
+    "builds": [
+      {
+        "name": "backend-build",
+        "exit": 0,
+        "ms": 11418
+      },
+      {
+        "name": "frontend-build",
+        "exit": 0,
+        "ms": 29661
+      },
+      {
+        "name": "cloudflare-build",
+        "exit": 0,
+        "ms": 37938
+      },
+      {
+        "name": "backend-lint",
+        "exit": 0,
+        "ms": 3735
+      },
+      {
+        "name": "frontend-lint",
+        "exit": 0,
+        "ms": 2575
+      }
+    ]
+  },
+  "qaLanguage": {
+    "createdSubject": true,
+    "createdAssignment": true,
+    "newAccounts": 0,
+    "newStudents": 0,
+    "oldRowsPreserved": true
+  },
+  "http": "PENDING_CATALOG_INSTALLATION",
+  "browser": "PERSONAL_AUTH_REQUIRED",
+  "newCurricularProviders": 0,
+  "push": false
+}

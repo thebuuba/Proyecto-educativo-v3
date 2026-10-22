@@ -269,7 +269,7 @@ export const technicalMf002Four:TechnicalModule={
       "id": "document",
       "grade": 4,
       "label": "Documento de texto",
-      "match": "documento de texto|procesador de textos|procesador de palabras",
+      "match": "documentos? de texto|documentos? (?:de|en) (?:microsoft )?word|procesador de textos|procesador de palabras",
       "relation": "la fidelidad a los datos proporcionados y su organización en el documento de texto solicitado",
       "pages": [
         55,
@@ -311,7 +311,7 @@ export const technicalMf002Four:TechnicalModule={
       "id": "text-format",
       "grade": 4,
       "label": "Formato del texto",
-      "match": "fuente|parrafos|sangrias|tabulaciones|formato de texto",
+      "match": "fuente|fuentes (?:tipograficas|de letra)|parrafos?|sangrias?|tabulaciones?|formato de texto|interlineado|arial|calibri|times new roman",
       "relation": "la aplicación de las opciones de texto solicitadas según el modelo, manteniendo el contenido legible",
       "pages": [
         55,

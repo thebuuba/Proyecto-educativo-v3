@@ -1,7 +1,7 @@
 import type {EvaluationCatalog} from './catalog-current'
 import {evaluationCatalogV149} from './catalog-v149'
 /** Catálogo 150 contrastado con Development antes de la auditoría realista; no reescribir. */
-export const evaluationCatalogV150={...evaluationCatalogV149,version:'evaluation-2026.150',technicalModules:[...evaluationCatalogV149.technicalModules,{
+export const evaluationCatalogV150={...evaluationCatalogV149,version:'evaluation-2026.150',technicalModules:[...evaluationCatalogV149.technicalModules!,{
   "id": "mf060-6",
   "programCode": "IFC006_3",
   "moduleCode": "MF_060_3",

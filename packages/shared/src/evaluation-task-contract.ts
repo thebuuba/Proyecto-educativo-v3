@@ -7,7 +7,7 @@ export function resolveEvaluationTask(title:string,description:string) {
     || /\bpreguntas\s+para\s+analiz\w*\b/.test(task)
     || /\b(?:analiz\w*|interpret\w*)\b.*\b(?:present\w*|entreg\w*|elabor\w*)\s+(?:(?:un|el|su)\s+)?(?:informe|trabajo escrito)\b/.test(task)
   const writtenExplanation=/\bexplicacion\s+escrita\b|\bexplic\w*\s+por\s+escrito\b/.test(task)
-  const report=/\b(?:elabor\w*|redact\w*|escrib\w*|prepar\w*|entreg\w*|hacen|hace|hacer|haran)\s+(?:(?:un|el|su)\s+)?(?:informe|trabajo escrito)\b/.test(task)
+  const report=/\b(?:elabor\w*|redact\w*|escrib\w*|prepar\w*|entreg\w*|hacen|hace|hacer|hagan|haga|hagamos|haced|haz|haran)\s+(?:(?:un|el|su)\s+)?(?:informe|trabajo escrito)\b/.test(task)
   const creation=/\b(?:escrib\w*|redact\w*|cre\w*|elabor\w*)\s+(?:(?:un|una|el|la|su)\s+)?(?:narracion|novela|cuento)\b/.test(task)
   const oral=/\boralmente\b|\b(?:exposicion|presentacion|comentario|produccion)\s+(?:sera\s+)?oral\b|\bexpon(?:dr\w*|er\w*|en|e)\b|\b(?:present\w*|explic\w*)\b.*\bante\s+(?:(?:sus|los)\s+)?(?:companeros|audiencia|publico)\b/.test(task)
   const comparison=/\b(?:compar(?:an|en|ar|aran)|contrast(?:an|en|ar|aran))\b/.test(task)

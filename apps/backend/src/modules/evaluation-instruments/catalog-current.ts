@@ -1,3 +1,4 @@
+import {evaluationCatalogV150} from './catalog-v150'
 import {evaluationCatalogV149} from './catalog-v149'
 import {evaluationCatalogV148} from './catalog-v148'
 import {evaluationCatalogV147} from './catalog-v147'
@@ -181,7 +182,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.150',
+  version: 'evaluation-2026.151',
   technicalModules,
   optativeScienceModules,
   optativeMathModules,
@@ -284,6 +285,7 @@ export const evaluationCatalogCurrent = {
 }
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { technicalModules?:typeof technicalModules; optativeScienceModules?:typeof optativeScienceModules; optativeMathModules?:typeof optativeMathModules; optativeSocialModules?:typeof optativeSocialModules; optativeEnglishModules?:typeof optativeEnglishModules; optativeLanguageModules?:typeof optativeLanguageModules; fhrCommonModules?:typeof commonFhrModules; physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
+  if(version===evaluationCatalogV150.version)return evaluationCatalogV150
   if(version===evaluationCatalogV149.version)return evaluationCatalogV149
   if(version===evaluationCatalogV148.version)return evaluationCatalogV148
   if(version===evaluationCatalogV147.version)return evaluationCatalogV147
