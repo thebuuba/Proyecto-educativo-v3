@@ -1,0 +1,561 @@
+{
+  "moduleCode": "MF_061_3",
+  "subjectCode": "MF_061_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Formación en Centros de Trabajo",
+  "level": "SECONDARY",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 360,
+  "weeklyHours": 8,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "tableStructure": "LEARNING_OUTCOMES_AND_CRITERIA_ONLY",
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      47,
+      48
+    ],
+    "boundary": "DesdeMÓDULO9 MF_061_3 en47 hastaCE9.5.4 al final de48; en49 comienzan los módulos comunes conOfimática.",
+    "continuations": [],
+    "absence": "No se imprime una tabla C/P/A ni orientaciones metodológicas separadas para este módulo en las páginas revisadas."
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf061-RA9.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA9.1",
+      "literal": "RA9.1: Actuar de forma responsable y respetuosa en el entorno de trabajo, siguiendo las políticas y normas de la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "RA9.1: Actuar de forma responsable y respetuosa en el entorno de trabajo, siguiendo las políticas y normas de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.1.1",
+      "literal": "CE9.1.1 Analizar las repercusiones de su actividad en el sistema productivo y en el centro de trabajo.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.1.1 Analizar las repercusiones de su actividad en el sistema productivo y en el centro de trabajo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.1.2",
+      "literal": "CE9.1.2 Interpretar y ejecutar con diligencia las instrucciones recibidas, responsabilizándose del trabajo asignado y comunicándose eficazmente con la persona adecuada en cada momento.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.1.2 Interpretar y ejecutar con diligencia las instrucciones recibidas, responsabilizándose del trabajo asignado y comunicándose eficazmente con la persona adecuada en cada momento."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.1.3",
+      "literal": "CE9.1.3 Organizar el propio trabajo de acuerdo con las instrucciones y procedimientos establecidos, cumpliendo las tareas en orden de prioridad y actuando bajo criterios de seguridad y calidad en las intervenciones.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.1.3 Organizar el propio trabajo de acuerdo con las instrucciones y procedimientos establecidos, cumpliendo las tareas en orden de prioridad y actuando bajo criterios de seguridad y calidad en las intervenciones."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.1.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.1.4",
+      "literal": "CE9.1.4 Mantener área de trabajo con orden y limpieza, siguiendo normas de higiene y seguridad en la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.1.4 Mantener área de trabajo con orden y limpieza, siguiendo normas de higiene y seguridad en la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.1.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.1.5",
+      "literal": "CE9.1.5 Cumplir con los requerimientos y normas de la empresa, demostrando un buen hacer profesional y finalizando su trabajo en el tiempo adecuado.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.1.5 Cumplir con los requerimientos y normas de la empresa, demostrando un buen hacer profesional y finalizando su trabajo en el tiempo adecuado."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-RA9.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA9.2",
+      "literal": "RA9.2: Participar a su nivel en la creación de bases de datos y en el mantenimiento, tomando en consideración las políticas establecidas por la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "RA9.2: Participar a su nivel en la creación de bases de datos y en el mantenimiento, tomando en consideración las políticas establecidas por la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.1",
+      "literal": "CE9.2.1 Crear bases de datos, utilizando herramientas de tablas, índices, funciones, procedimientos, siguiendo las especificaciones de diseño recibidas, y documentar las actuaciones realizadas y los resultados obtenidos.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.1 Crear bases de datos, utilizando herramientas de tablas, índices, funciones, procedimientos, siguiendo las especificaciones de diseño recibidas, y documentar las actuaciones realizadas y los resultados obtenidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.2",
+      "literal": "CE9.2.2 Aplicar mantenimiento a la base de datos según los resultados de la consulta ( update, insert, delete, select ).",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.2 Aplicar mantenimiento a la base de datos según los resultados de la consulta ( update, insert, delete, select )."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.3",
+      "literal": "CE9.2.3 Verificar el funcionamiento de la base de datos, tomando en consideración las reglas de la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.3 Verificar el funcionamiento de la base de datos, tomando en consideración las reglas de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.4",
+      "literal": "CE9.2.4 Interpretar la documentación técnica de la base de datos, identificando sus características funcionales y la compatibilidad, siguiendo políticas de la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.4 Interpretar la documentación técnica de la base de datos, identificando sus características funcionales y la compatibilidad, siguiendo políticas de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.5",
+      "literal": "CE9.2.5 Documentar el análisis de los resultados obtenidos de las pruebas realizadas. Siguiendo las normas establecidas por la empresa.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.5 Documentar el análisis de los resultados obtenidos de las pruebas realizadas. Siguiendo las normas establecidas por la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.2.6",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.2.6",
+      "literal": "CE9.2.6 Administrar las actividades de los datos para garantizar que los usuarios trabajen en forma cooperativa y complementaria al procesar datos en la base de datos.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "CE9.2.6 Administrar las actividades de los datos para garantizar que los usuarios trabajen en forma cooperativa y complementaria al procesar datos en la base de datos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-RA9.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA9.3",
+      "literal": "RA9.3: Participar a su nivel en el mantenimiento de portales de información, siguiendo los procedimientos establecidos.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "RA9.3: Participar a su nivel en el mantenimiento de portales de información, siguiendo los procedimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.3.1",
+      "literal": "CE9.3.1 Elaborar páginas web, utilizando herramientas editoras e integrando textos, elementos gráficos, banners , elementos multimedia y scripts , siguiendo las especificaciones de diseño recibidas y documentar las actuaciones realizadas y los resultados obtenidos.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.3.1 Elaborar páginas web, utilizando herramientas editoras e integrando textos, elementos gráficos, banners , elementos multimedia y scripts , siguiendo las especificaciones de diseño recibidas y documentar las actuaciones realizadas y los resultados obtenidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.3.2",
+      "literal": "CE9.3.2 Comprobar que el funcionamiento de las aplicaciones de los sitios móviles sea el correcto y que se ajustan a las guías de calidad establecidas por la operadora, las actuaciones realizadas y los resultados obtenidos.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.3.2 Comprobar que el funcionamiento de las aplicaciones de los sitios móviles sea el correcto y que se ajustan a las guías de calidad establecidas por la operadora, las actuaciones realizadas y los resultados obtenidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.3.3",
+      "literal": "CE9.3.3 En el mantenimiento de portales de información, utilizando distintos navegadores y versiones de los mismos: - Verificar el funcionamiento de páginas web dinámicas, generadas a partir de scripts de servidor en dichos navegadores. - Interpretar la documentación técnica de los navegadores, identificando sus características funcionales y la compatibilidad con los scripts de servidor, además de los estándares soportados por cada navegador.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.3.3 En el mantenimiento de portales de información, utilizando distintos navegadores y versiones de los mismos: - Verificar el funcionamiento de páginas web dinámicas, generadas a partir de scripts de servidor en dichos navegadores. - Interpretar la documentación técnica de los navegadores, identificando sus características funcionales y la compatibilidad con los scripts de servidor, además de los estándares soportados por cada navegador."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.3.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.3.4",
+      "literal": "CE9.3.4 Documentar el análisis de los resultados obtenidos de las pruebas realizadas.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.3.4 Documentar el análisis de los resultados obtenidos de las pruebas realizadas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-RA9.4",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA9.4",
+      "literal": "RA9.4: Realizar la asistencia al usuario, participando en la resolución de los problemas que se presentan en la operación de aplicaciones ofimáticas, siguiendo parámetros de la empresa.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "RA9.4: Realizar la asistencia al usuario, participando en la resolución de los problemas que se presentan en la operación de aplicaciones ofimáticas, siguiendo parámetros de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.4.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.4.1",
+      "literal": "CE9.4.1 Interpretar guías de operación, repositorios y catálogos de averías de un sistema informático. En la asistencia a un usuario final en la operación de su equipo/sistema informático monousuario en el tiempo adecuado. Realizar informe de la incidencia reportada siguiendo el protocolo de la empresa.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.4.1 Interpretar guías de operación, repositorios y catálogos de averías de un sistema informático. En la asistencia a un usuario final en la operación de su equipo/sistema informático monousuario en el tiempo adecuado. Realizar informe de la incidencia reportada siguiendo el protocolo de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.4.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.4.2",
+      "literal": "CE9.4.2 Identificar el tipo de incidencia teniendo en cuenta las explicaciones del usuario final y siguiendo el protocolo de comunicación interpersonal establecido por la empresa.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.4.2 Identificar el tipo de incidencia teniendo en cuenta las explicaciones del usuario final y siguiendo el protocolo de comunicación interpersonal establecido por la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.4.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.4.3",
+      "literal": "CE9.4.3 Realizar la copia de seguridad de la información en caso necesario. Identificar dónde se produce el fallo, mediante herramientas de diagnóstico. Sustituir o reparar los componentes causantes del fallo de tipo hardware. Reparar los componentes de la aplicación causantes del fallo de software.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.4.3 Realizar la copia de seguridad de la información en caso necesario. Identificar dónde se produce el fallo, mediante herramientas de diagnóstico. Sustituir o reparar los componentes causantes del fallo de tipo hardware. Reparar los componentes de la aplicación causantes del fallo de software."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.4.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.4.4",
+      "literal": "CE9.4.4 Restaurar, si fuese necesario, las copias de seguridad de la información. Realizar pruebas de funcionamiento.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.4.4 Restaurar, si fuese necesario, las copias de seguridad de la información. Realizar pruebas de funcionamiento."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.4.5",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.4.5",
+      "literal": "CE9.4.5 Documentar las actuaciones realizadas y los resultados obtenidos, tomando en consideración las políticas de la empresa.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.4.5 Documentar las actuaciones realizadas y los resultados obtenidos, tomando en consideración las políticas de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-RA9.5",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA9.5",
+      "literal": "RA9.5: Implementar y ofrecer soluciones tecnológicas requeridas en la gestión empresarial.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "RA9.5: Implementar y ofrecer soluciones tecnológicas requeridas en la gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.5.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.5.1",
+      "literal": "CE9.5.1 Aplicar la instalación e implementación de la herramienta tecnológica seleccionada para la gestión de los procesos de negocio.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.5.1 Aplicar la instalación e implementación de la herramienta tecnológica seleccionada para la gestión de los procesos de negocio."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.5.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.5.2",
+      "literal": "CE9.5.2 Reproducir escenarios donde las nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información ofrezcan mejora de los procesos de gestión empresarial.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.5.2 Reproducir escenarios donde las nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información ofrezcan mejora de los procesos de gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.5.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.5.3",
+      "literal": "CE9.5.3 Configurar distintas aplicaciones de gestión empresarial y de apoyo a las TIC usadas para fortalecer los servicios del negocio o institución.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.5.3 Configurar distintas aplicaciones de gestión empresarial y de apoyo a las TIC usadas para fortalecer los servicios del negocio o institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf061-CE9.5.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE9.5.4",
+      "literal": "CE9.5.4 Elaborar documentación en los distintos procesos de copia de seguridad realizados, para preservar la operación adecuada de las herramientas tecnológicas implementadas para la gestión empresarial.",
+      "pdfPages": [
+        48
+      ],
+      "parts": [
+        {
+          "pdfPage": 48,
+          "text": "CE9.5.4 Elaborar documentación en los distintos procesos de copia de seguridad realizados, para preservar la operación adecuada de las herramientas tecnológicas implementadas para la gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "La lectura no acredita prácticas laborales reales, una estancia en empresa ni evaluación en un centro de trabajo.",
+    "No acceder a empresas reales ni ejecutar operaciones, instalaciones, copias, restauraciones, reparaciones o publicaciones en producción.",
+    "No evaluar personalidad, responsabilidad o respeto como rasgos privados; adaptar únicamente desempeños observables y normas expresamente proporcionadas.",
+    "Mantener las condiciones participar a su nivel, según políticas e instrucciones, y los condicionales en caso necesario o si fuese necesario; no imponer todas las intervenciones en cada consigna.",
+    "No inventar contenidos C/P/A a partir de los CE ni equiparar la ausencia de una tabla a ausencia de capacidades del módulo.",
+    "Usar casos y recursos ficticios cuando corresponda, sin datos personales de usuarios, empleados, estudiantes o empresas."
+  ]
+}
