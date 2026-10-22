@@ -829,5 +829,12 @@
     "Recepción y documentación se adaptarán solo a los entregables solicitados, sin imponer manuales adicionales por defecto.",
     "Las seisactitudes quedan como documentación privada y las cincoorientaciones son docentes, no entregables automáticos ni criterios de personalidad.",
     "Conservar literalmente puerta en marcha, desarollado y sección de clase, distinguiendo el texto oficial de su adaptación pedagógica."
-  ]
+  ],
+  "expectedContracts": {
+    "file": "data/evaluation-instruments/technical-mf055-six-contracts.json",
+    "cases": 44,
+    "topicGroups": 34,
+    "review": "technical-mf055-6-contratos-esperados.json",
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
+  }
 }

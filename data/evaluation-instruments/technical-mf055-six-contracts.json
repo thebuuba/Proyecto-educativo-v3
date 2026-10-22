@@ -1,0 +1,494 @@
+{
+  "subjectCode": "MF_055_3",
+  "subjectName": "Implementación y Mantenimiento de Aplicaciones y Sistemas Informáticos",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "quality-parameters",
+      "description": "Identifica los parámetros de calidad de la aplicación según la ficha de la organización ficticia.",
+      "topics": [
+        "quality-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.1",
+        "ifc006-mf055-p-quality-parameters"
+      ]
+    },
+    {
+      "id": "quality-measurement",
+      "description": "Analiza la medición de calidad del servicio de la aplicación según los parámetros y resultados proporcionados.",
+      "topics": [
+        "quality-measurement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-c-tests"
+      ]
+    },
+    {
+      "id": "test-techniques",
+      "description": "Identifica las técnicas de prueba de sistemas descritas en la ficha proporcionada.",
+      "topics": [
+        "test-techniques"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-test-techniques"
+      ]
+    },
+    {
+      "id": "test-selection",
+      "description": "Selecciona el tipo de prueba de la aplicación entre las opciones dadas según el propósito y los parámetros de calidad del caso ficticio.",
+      "topics": [
+        "test-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.2"
+      ]
+    },
+    {
+      "id": "test-code",
+      "description": "Aplica la prueba de código a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-code"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-code-test"
+      ]
+    },
+    {
+      "id": "test-unit",
+      "description": "Aplica la prueba unitaria a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-unit"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-unit-test"
+      ]
+    },
+    {
+      "id": "test-integration",
+      "description": "Aplica la prueba de integración a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-integration-test"
+      ]
+    },
+    {
+      "id": "test-system",
+      "description": "Aplica la prueba de sistema a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-system"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-system-test"
+      ]
+    },
+    {
+      "id": "test-acceptance",
+      "description": "Aplica la prueba de aceptación a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-acceptance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-acceptance-test"
+      ]
+    },
+    {
+      "id": "test-white-box",
+      "description": "Aplica la prueba de caja blanca a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-white-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-white-box"
+      ]
+    },
+    {
+      "id": "test-black-box",
+      "description": "Aplica la prueba de caja negra a la aplicación de práctica según el caso, los datos ficticios y los criterios de calidad proporcionados, sin usar servicios reales.",
+      "topics": [
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-black-box"
+      ]
+    },
+    {
+      "id": "test-comparison",
+      "description": "Compara las pruebas de caja blanca y caja negra de la ficha según la información disponible y el propósito indicado.",
+      "topics": [
+        "test-white-box",
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.2",
+        "ifc006-mf055-p-test-techniques"
+      ]
+    },
+    {
+      "id": "installation-types",
+      "description": "Identifica los tipos de instalación de aplicaciones descritos en los casos ficticios proporcionados.",
+      "topics": [
+        "installation-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-installation-types"
+      ]
+    },
+    {
+      "id": "installation-selection",
+      "description": "Selecciona el tipo de instalación de la aplicación entre las opciones dadas según los parámetros de la organización ficticia.",
+      "topics": [
+        "installation-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.1"
+      ]
+    },
+    {
+      "id": "installation-direct",
+      "description": "Realiza la instalación directa de la aplicación en la simulación según las políticas de la organización ficticia, sin desplegar ni modificar sistemas reales.",
+      "topics": [
+        "installation-direct"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ]
+    },
+    {
+      "id": "installation-parallel",
+      "description": "Realiza la instalación en paralelo de la aplicación en la simulación según las políticas de la organización ficticia, sin desplegar ni modificar sistemas reales.",
+      "topics": [
+        "installation-parallel"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ]
+    },
+    {
+      "id": "installation-sites",
+      "description": "Realiza la instalación en localidades individuales de la aplicación en la simulación según las políticas de la organización ficticia, sin desplegar ni modificar sistemas reales.",
+      "topics": [
+        "installation-sites"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ]
+    },
+    {
+      "id": "installation-phased",
+      "description": "Realiza la instalación por fases de la aplicación en la simulación según las políticas de la organización ficticia, sin desplegar ni modificar sistemas reales.",
+      "topics": [
+        "installation-phased"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ]
+    },
+    {
+      "id": "implementation-analysis",
+      "description": "Analiza el tipo de implementación de la aplicación del caso ficticio según las condiciones de puesta en marcha dadas, sin instalarla.",
+      "topics": [
+        "implementation-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.2",
+        "ifc006-mf055-c-implementation"
+      ]
+    },
+    {
+      "id": "deliverables-explanation",
+      "description": "Explica la función de los entregables y de la documentación de la aplicación según los ejemplos proporcionados.",
+      "topics": [
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-explanation"
+      ]
+    },
+    {
+      "id": "deliverables-creation",
+      "description": "Elabora los entregables para los usuarios ficticios de la aplicación según las necesidades y el contenido solicitados en la ficha.",
+      "topics": [
+        "deliverables-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-creation"
+      ]
+    },
+    {
+      "id": "deliverables-reception",
+      "description": "Realiza la recepción de los entregables de codificación, prueba e instalación de la aplicación de práctica según las condiciones de aceptación dadas.",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ]
+    },
+    {
+      "id": "diagnostic-test",
+      "description": "Aplica la prueba diagnóstica a la aplicación de práctica según los parámetros y los datos ficticios proporcionados.",
+      "topics": [
+        "diagnostic-test"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.1"
+      ]
+    },
+    {
+      "id": "diagnostic-results",
+      "description": "Verifica los resultados de la prueba diagnóstica de la aplicación ficticia para identificar los errores según los valores esperados dados.",
+      "topics": [
+        "diagnostic-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2",
+        "ifc006-mf055-p-errors-identification"
+      ]
+    },
+    {
+      "id": "errors-citation",
+      "description": "Cita los errores encontrados en la aplicación ficticia según los resultados y el procedimiento de registro proporcionados.",
+      "topics": [
+        "errors-citation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.3"
+      ]
+    },
+    {
+      "id": "error-syntax",
+      "description": "Corrige el error de sintaxis señalado en la aplicación de práctica según el comportamiento esperado y el procedimiento dados, conservando el funcionamiento ajeno al error.",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ]
+    },
+    {
+      "id": "error-field-size",
+      "description": "Corrige el error de tamaño del campo señalado en la aplicación de práctica según el comportamiento esperado y el procedimiento dados, conservando el funcionamiento ajeno al error.",
+      "topics": [
+        "error-field-size"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ]
+    },
+    {
+      "id": "error-variable-type",
+      "description": "Corrige el error de tipo de variable señalado en la aplicación de práctica según el comportamiento esperado y el procedimiento dados, conservando el funcionamiento ajeno al error.",
+      "topics": [
+        "error-variable-type"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ]
+    },
+    {
+      "id": "error-overflow",
+      "description": "Corrige el error de desbordamiento señalado en la aplicación de práctica según el comportamiento esperado y el procedimiento dados, conservando el funcionamiento ajeno al error.",
+      "topics": [
+        "error-overflow"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ]
+    },
+    {
+      "id": "error-reference",
+      "description": "Corrige el error de referencia señalado en la aplicación de práctica según el comportamiento esperado y el procedimiento dados, conservando el funcionamiento ajeno al error.",
+      "topics": [
+        "error-reference"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ]
+    },
+    {
+      "id": "error-analysis",
+      "description": "Analiza los errores de la aplicación ficticia a partir de los resultados diagnósticos proporcionados, sin modificar el código.",
+      "topics": [
+        "error-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.3",
+        "ifc006-mf055-p-errors-identification"
+      ]
+    },
+    {
+      "id": "protection-selection",
+      "description": "Selecciona el tipo de protección de la aplicación entre las opciones descritas según la política de la empresa ficticia.",
+      "topics": [
+        "protection-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-protection-selection"
+      ]
+    },
+    {
+      "id": "backup-full",
+      "description": "Realiza la copia de seguridad completa de la aplicación de práctica según la política dada y usando solo datos ficticios, sin conectarte a sistemas reales.",
+      "topics": [
+        "backup-full"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ]
+    },
+    {
+      "id": "backup-incremental",
+      "description": "Realiza la copia de seguridad incremental de la aplicación de práctica según la política dada y usando solo datos ficticios, sin conectarte a sistemas reales.",
+      "topics": [
+        "backup-incremental"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ]
+    },
+    {
+      "id": "backup-differential",
+      "description": "Realiza la copia de seguridad diferencial de la aplicación de práctica según la política dada y usando solo datos ficticios, sin conectarte a sistemas reales.",
+      "topics": [
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ]
+    },
+    {
+      "id": "backup-comparison",
+      "description": "Compara las copias de seguridad completa, incremental y diferencial de la aplicación según las secuencias documentales proporcionadas.",
+      "topics": [
+        "backup-full",
+        "backup-incremental",
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-c-errors-backup"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Aplica la prueba unitaria al módulo de práctica y explica los entregables de la aplicación según la ficha proporcionada.",
+      "topics": [
+        "test-unit",
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-unit-test",
+        "ifc006-mf055-p-deliverables-explanation"
+      ]
+    },
+    {
+      "id": "alternative-tests",
+      "description": "Aplica la prueba de caja blanca o de caja negra a la aplicación de práctica según la alternativa elegida y los criterios de calidad dados.",
+      "topics": [
+        "test-white-box",
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "conjunction-tests",
+      "description": "Aplica la prueba unitaria y la de integración a la aplicación de práctica según los casos y criterios proporcionados.",
+      "topics": [
+        "test-unit",
+        "test-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3"
+      ]
+    },
+    {
+      "id": "negated-installation",
+      "description": "Analiza el tipo de implementación de la aplicación ficticia según las condiciones dadas. No instales ni despliegues la aplicación.",
+      "topics": [
+        "implementation-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.2"
+      ]
+    },
+    {
+      "id": "negated-backup",
+      "description": "Verifica los resultados de la prueba diagnóstica de la aplicación ficticia para identificar errores. No crees copias de seguridad ni corrijas el código.",
+      "topics": [
+        "diagnostic-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Corrige el error de sintaxis del código de práctica según el resultado esperado. Opcionalmente puedes consultar un video de ejemplo.",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Elabora los entregables de la aplicación ficticia según las necesidades indicadas, con pesos por componente y crédito parcial.",
+      "topics": [
+        "deliverables-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-creation"
+      ]
+    },
+    {
+      "id": "score-pending",
+      "description": "Identifica los parámetros de calidad de la aplicación según la ficha de la organización ficticia.",
+      "topics": [
+        "quality-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.1"
+      ],
+      "maxScore": null
+    }
+  ],
+  "negativeDescriptions": [
+    "Realiza una entrevista de trabajo simulada en inglés.",
+    "Diseña un diagrama entidad-relación para una base de datos ficticia, sin probar ni instalar aplicaciones.",
+    "Explica los movimientos artísticos del siglo XX a partir de las imágenes dadas."
+  ],
+  "limits": [
+    "Consignas esperadas con datos ficticios; todavía no existe proveedor MF055 ni instrumentos completos.",
+    "Instalación e implementación curriculares no autorizan despliegue real ni cambios en producción o servicios externos.",
+    "Aplicar un tipo de prueba o instalación no obliga a ejecutar todos los tipos enumerados en la fuente.",
+    "Las copias usan solo la aplicación de práctica y datos ficticios; no se copian datos ni cuentas reales.",
+    "Las seisactitudes y cincoorientaciones docentes siguen documentales; no se califican disposiciones privadas ni se impone un proyecto, video o laboratorio como producto por defecto."
+  ]
+}

@@ -5545,6 +5545,13 @@
               "literalParts": 45,
               "provider": null,
               "instrumentReview": "NOT_STARTED"
+            },
+            "expectedContracts": {
+              "file": "data/evaluation-instruments/technical-mf055-six-contracts.json",
+              "cases": 44,
+              "topicGroups": 34,
+              "review": "technical-mf055-6-contratos-esperados.json",
+              "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
             }
           },
           {

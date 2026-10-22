@@ -1,0 +1,547 @@
+{
+  "moduleCode": "MF_055_3",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "literalRecordsSha256": "27725b18ff36e2a185af3993106917917831e01f40ada409536de39375cd4e9a",
+  "cases": 44,
+  "expectedTopicGroups": 34,
+  "sourceEvaluationCriteriaReferenced": 11,
+  "sourceProceduresReferenced": 17,
+  "fixtureSha256": "8614590fb217456cfed319eed289bdf00b3322f2f9aa07cb27284d74d7f7dedd",
+  "red": {
+    "missingFixture": 2,
+    "missingEvidence": 1
+  },
+  "green": 3,
+  "method": "Lectura completa de las 44 consignas y sus referencias en bloques 0–22 y 23–43, frente a la fuente ya revisada. Las pruebas e instalaciones elegidas no imponen todos los tipos; diagnóstico, identificación, cita y corrección de errores conservan acciones diferentes. No se encontraron hallazgos importantes adicionales en esta revisión de contratos, sin afirmar calidad de instrumentos aún ausentes.",
+  "casesReviewed": [
+    {
+      "id": "quality-parameters",
+      "descriptionSha256": "b2665302e667f8a64b9c5554fb6f924f3316c6479f90264e71fc7ed885a733d8",
+      "topics": [
+        "quality-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.1",
+        "ifc006-mf055-p-quality-parameters"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "quality-measurement",
+      "descriptionSha256": "83f229435f6e22e8fe0e90252e92a0c05606b4ced0255a7c83e5e29f62849ccc",
+      "topics": [
+        "quality-measurement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-c-tests"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-techniques",
+      "descriptionSha256": "ca2166150542cade7daf64b12509393682690f67e98cc8990bc62799efa78a22",
+      "topics": [
+        "test-techniques"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-test-techniques"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-selection",
+      "descriptionSha256": "d03c373991d5d6292fbc7a528086883b8cab0bbcd7ccd9b8686a92000d8fccaf",
+      "topics": [
+        "test-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-code",
+      "descriptionSha256": "4057e8e40a788c74d599d87f5e2970fb98f231254e3e937afc048acb670ff134",
+      "topics": [
+        "test-code"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-code-test"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-unit",
+      "descriptionSha256": "31eafb3072a22a458bf063e275a71d3e2a3439f9c424f0dc5cd840fc2076955a",
+      "topics": [
+        "test-unit"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-unit-test"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-integration",
+      "descriptionSha256": "0492633578ecbb531db73b859af051b2af826b09358f6a7e62ab2058a0e45c21",
+      "topics": [
+        "test-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-integration-test"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-system",
+      "descriptionSha256": "5a45f050b8dc2fa390d52f7b0e9129963146120fb1a87a3f6598711f701f0230",
+      "topics": [
+        "test-system"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-system-test"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-acceptance",
+      "descriptionSha256": "b9c4bb538de6b525e575900be8069df0ca4d54d3914ff17f0a47fa15be47ad94",
+      "topics": [
+        "test-acceptance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-acceptance-test"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-white-box",
+      "descriptionSha256": "ac2e0e34e3555091b751403ff740a6b64b3f45356d546c356982e5787fd88c36",
+      "topics": [
+        "test-white-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-white-box"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-black-box",
+      "descriptionSha256": "67b73ac159626cbd1dfd32055f9bf5cfb307d500eea7c980307b06f01ab6e0ab",
+      "topics": [
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-black-box"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-comparison",
+      "descriptionSha256": "77cbc83c9f143b7f3b481b9c43356c56e7b7ecab331ea9083d81d89b15f13a9f",
+      "topics": [
+        "test-white-box",
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.2",
+        "ifc006-mf055-p-test-techniques"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-types",
+      "descriptionSha256": "d69f354b82d66464c35391c8ab08df596d9b9b44199895d329c3339044d15d4f",
+      "topics": [
+        "installation-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-installation-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-selection",
+      "descriptionSha256": "054b88ead3690985d46e6587b8e3a1978eec653f77dda22fa745d886a210fff5",
+      "topics": [
+        "installation-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-direct",
+      "descriptionSha256": "e8a96fd2e80d5754f93fcef7a4d65ee1f9ed242efc69da53824211030f3440d2",
+      "topics": [
+        "installation-direct"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-parallel",
+      "descriptionSha256": "ad986cddaa9ebe4b1cf5437511cae070db2c08f40c9c4691b0a2735850d9b15d",
+      "topics": [
+        "installation-parallel"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-sites",
+      "descriptionSha256": "2f2c062f0d776375b6ca114f850647e8f099679fa9e996ea49ebb5a5108fad3a",
+      "topics": [
+        "installation-sites"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-phased",
+      "descriptionSha256": "e73eeb78b8050a7932be0003a50ba4ed7ef47a02df3b5d88c7779cef249c6a4e",
+      "topics": [
+        "installation-phased"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "implementation-analysis",
+      "descriptionSha256": "cfa23de30303f4fb2c237e7530162b551296a5cf2e51c44c92402fa9c46eab93",
+      "topics": [
+        "implementation-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.2",
+        "ifc006-mf055-c-implementation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "deliverables-explanation",
+      "descriptionSha256": "51e350a1265e0a8bb7db5ff2716446192c8c0d1f3a0e181cbb9dd1cea491eb11",
+      "topics": [
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-explanation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "deliverables-creation",
+      "descriptionSha256": "a7c7667137de69c0fe0d99450fa2788f5cfcbfb713c2d8f4ea4aa6d5a7593831",
+      "topics": [
+        "deliverables-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "deliverables-reception",
+      "descriptionSha256": "def721b0737edf858c15913466ca3a446104aa6c7a33639505726ff14e01dab0",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "diagnostic-test",
+      "descriptionSha256": "b179fc826b37f99befdd1bb00171db847c77469cd9746c1483f5895456f7e60e",
+      "topics": [
+        "diagnostic-test"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "diagnostic-results",
+      "descriptionSha256": "575623126cf717f6a6e1115a2e5c8ab66555f81d6336835d9d9e8a3deabf3c0b",
+      "topics": [
+        "diagnostic-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2",
+        "ifc006-mf055-p-errors-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "errors-citation",
+      "descriptionSha256": "32d47e3e75834c11531885e4fc5e40dc1eb96a01b467fbe50fc0d70f00561478",
+      "topics": [
+        "errors-citation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-syntax",
+      "descriptionSha256": "924b8c8f3c52d2310989139ea4b8c94c45b61f7a4428e1811c9d629a49e2631f",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-field-size",
+      "descriptionSha256": "9e0da14f90b92c4942b91fbc137cef2c92e8fdb3b393d374dd9ee681906a1d99",
+      "topics": [
+        "error-field-size"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-variable-type",
+      "descriptionSha256": "13da9aa8ab1e65303c1d16be4646ac50f26a8e59958210bb756e225cce5ba961",
+      "topics": [
+        "error-variable-type"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-overflow",
+      "descriptionSha256": "364cce00c88391a6df2b1b45fbadc068e892339cb935d3e52a37181b7306287d",
+      "topics": [
+        "error-overflow"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-reference",
+      "descriptionSha256": "06f82dbdc9e80d9c8b7ffd85bbdd4f675575b323df4b9c227d7662931b09a6f4",
+      "topics": [
+        "error-reference"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4",
+        "ifc006-mf055-p-errors-correction"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "error-analysis",
+      "descriptionSha256": "57c9c8c029f396801c1bff7a788b8f9afa0741abc1e25f0188a78fd92ae011d6",
+      "topics": [
+        "error-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.3",
+        "ifc006-mf055-p-errors-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "protection-selection",
+      "descriptionSha256": "3e5f4550921dc3b186a6343cc10850a3204aa52010e0fea8a4e17f16180b5dd0",
+      "topics": [
+        "protection-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-protection-selection"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-full",
+      "descriptionSha256": "dce18db62066ddb483287eb17ef6bd4228fac8c2703a38c1423a995fab2e938f",
+      "topics": [
+        "backup-full"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-incremental",
+      "descriptionSha256": "94be3fe8bd2fc17f6e289c283b5dd49f5a533c2bd0d721244b83c0aa92aa0610",
+      "topics": [
+        "backup-incremental"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-differential",
+      "descriptionSha256": "f000c24825f772d602b53dd60b35b97d136a856143030c6ab622e190954ead69",
+      "topics": [
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-comparison",
+      "descriptionSha256": "d611236c658e601427aab7e68368c95685b2245ecd043b7cd3eb041e87653b1d",
+      "topics": [
+        "backup-full",
+        "backup-incremental",
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-c-errors-backup"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "independent-actions",
+      "descriptionSha256": "e3d424837524ead2151c7f6939ed12caec563c13bcf94a6ee8f6dadda1078732",
+      "topics": [
+        "test-unit",
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-unit-test",
+        "ifc006-mf055-p-deliverables-explanation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-tests",
+      "descriptionSha256": "2af9832f0f688accb1308f2afa6dc1c9c76c45cd2e15c9b75e5790023e3206fa",
+      "topics": [
+        "test-white-box",
+        "test-black-box"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "conjunction-tests",
+      "descriptionSha256": "cb6254b6e75af5a9ae40bb4883c781eaaa759ece5b63e067ae8ca4be77e30e2b",
+      "topics": [
+        "test-unit",
+        "test-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-installation",
+      "descriptionSha256": "d9b8ab90205b5fd45f591bfbb486316e68bf7f4edfa5b97d9c980b38262412e1",
+      "topics": [
+        "implementation-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-RA3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-backup",
+      "descriptionSha256": "3da8b10c4edbe8b2b352fb6019ea45710fed33e734455d0c7c008d587f7c9aaf",
+      "topics": [
+        "diagnostic-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "optional-resource",
+      "descriptionSha256": "9e58fdfe51ba66e12f27bb4234378ad953ce74dd9a735a960fb98d5e6d3eb920",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weighted-components",
+      "descriptionSha256": "59db4aaa36c61d928e21d259237f0e653098081b53dab13b974b4151e0daf18a",
+      "topics": [
+        "deliverables-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "score-pending",
+      "descriptionSha256": "b2665302e667f8a64b9c5554fb6f924f3316c6479f90264e71fc7ed885a733d8",
+      "topics": [
+        "quality-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    }
+  ],
+  "provider": null,
+  "fullInstrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "limits": [
+    "Consignas esperadas con datos ficticios; todavía no existe proveedor MF055 ni instrumentos completos.",
+    "Instalación e implementación curriculares no autorizan despliegue real ni cambios en producción o servicios externos.",
+    "Aplicar un tipo de prueba o instalación no obliga a ejecutar todos los tipos enumerados en la fuente.",
+    "Las copias usan solo la aplicación de práctica y datos ficticios; no se copian datos ni cuentas reales.",
+    "Las seisactitudes y cincoorientaciones docentes siguen documentales; no se califican disposiciones privadas ni se impone un proyecto, video o laboratorio como producto por defecto."
+  ]
+}
