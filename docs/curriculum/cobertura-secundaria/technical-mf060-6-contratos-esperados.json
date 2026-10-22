@@ -2,22 +2,22 @@
   "moduleCode": "MF_060_3",
   "programCode": "IFC006_3",
   "grade": 6,
-  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
   "literalRecordsSha256": "39c65f467e9418ccadc552fd422570dfa423da3cbfd32c5b587480f63e2daae4",
-  "cases": 97,
+  "cases": 118,
   "expectedTopicGroups": 90,
   "sourceEvaluationCriteriaReferenced": 20,
   "sourceProceduresReferenced": 26,
   "sourceConceptBandsReferenced": 5,
-  "fixtureSha256": "e777203b9fa33ba3c9035eba56d3393c0f104c21fddca8881ab79e6c804c10e9",
+  "fixtureSha256": "25e4dacf540f5347fa067a038f9a3524478aa648c0afdb4cfcc2be1141ea7de6",
   "red": {
     "missingFixture": 2,
     "missingEvidence": 1
   },
   "green": 3,
-  "method": "Relectura completa de70registros/75partes de la fuente ya revisada visualmente; lectura de las97consignas generadas y referencias en bloques0–33,34–67y68–96. Se contrastaron seleccionar/instalar/integrar/programar/configurar/comprobar/documentar/proponer/planear; medios opcionales, operaciones y salidas elegidas. Alternativa breve con objeto final compartido conservada como requisito del futuro parser, no sustituida por redacción artificial. No se acreditan proveedor ni instrumentos ausentes.",
+  "method": "Relectura completa de70registros/75partes de la fuente ya revisada visualmente; lectura de las97consignas generadas y referencias en bloques0–33,34–67y68–96. Se contrastaron seleccionar/instalar/integrar/programar/configurar/comprobar/documentar/proponer/planear; medios opcionales, operaciones y salidas elegidas. Alternativa breve con objeto final compartido conservada como requisito del futuro parser, no sustituida por redacción artificial. No se acreditan proveedor ni instrumentos ausentes. Revisión posterior:21consignas adicionales leídas y472instrumentos completos revisados;118consignas/90grupos.",
   "casesReviewed": [
     {
       "id": "language-selection",
@@ -28,7 +28,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "compatibility-tests",
@@ -39,7 +39,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "required-application",
@@ -50,7 +50,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "browser-selection",
@@ -61,7 +61,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-environment",
@@ -72,7 +72,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-parameters",
@@ -83,7 +83,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "process-documentation",
@@ -95,7 +95,7 @@
         "ifc006-mf060-CE8.1.3",
         "ifc006-mf060-p-process-documentation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "query-integration",
@@ -106,7 +106,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "search-integration",
@@ -117,7 +117,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "database-integration",
@@ -128,7 +128,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "browser-compatibility",
@@ -139,7 +139,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "search-engine-selection",
@@ -150,7 +150,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "descriptors",
@@ -161,7 +161,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "automatic-publication-simulation",
@@ -173,7 +173,7 @@
         "ifc006-mf060-CE8.2.2",
         "ifc006-mf060-p-publication-tools"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "manual-publication-simulation",
@@ -185,7 +185,7 @@
         "ifc006-mf060-CE8.2.2",
         "ifc006-mf060-p-publication-procedures"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "periodic-functionality",
@@ -196,7 +196,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "element-programming",
@@ -207,7 +207,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "element-configuration",
@@ -218,7 +218,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "component-functionality",
@@ -229,7 +229,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "component-quality",
@@ -240,7 +240,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "component-usability",
@@ -251,7 +251,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "debugging-tools",
@@ -262,7 +262,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "debugging-functions",
@@ -273,7 +273,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-complement",
@@ -284,7 +284,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "music-complement",
@@ -295,7 +295,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "video-complement",
@@ -306,7 +306,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "content-complement",
@@ -317,7 +317,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "virtual-machine",
@@ -328,7 +328,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "server-installation-simulation",
@@ -340,7 +340,7 @@
         "ifc006-mf060-CE8.3.1",
         "ifc006-mf060-p-deployment"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-requirements",
@@ -351,7 +351,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "server-directories",
@@ -362,7 +362,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "affected-resources",
@@ -373,7 +373,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "server-services",
@@ -384,7 +384,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "configuration-parameters",
@@ -395,7 +395,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "security-parameters",
@@ -406,7 +406,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-packages",
@@ -417,7 +417,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-verification",
@@ -428,7 +428,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "execution",
@@ -439,7 +439,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "database-storage-tests",
@@ -450,7 +450,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "user-training",
@@ -461,7 +461,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "user-instructions",
@@ -472,7 +472,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "business-characteristics",
@@ -485,7 +485,7 @@
         "ifc006-mf060-p-business-management",
         "ifc006-mf060-c-history-business"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "institutional-objectives",
@@ -498,7 +498,7 @@
         "ifc006-mf060-p-institutional-objectives",
         "ifc006-mf060-c-history-business"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "automation-requirements",
@@ -510,7 +510,7 @@
         "ifc006-mf060-CE8.4.1",
         "ifc006-mf060-p-institutional-processes"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "technology-update-sources",
@@ -523,7 +523,7 @@
         "ifc006-mf060-p-technology-updates",
         "ifc006-mf060-c-updates-proposals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "weaknesses-threats",
@@ -535,7 +535,7 @@
         "ifc006-mf060-CE8.4.3",
         "ifc006-mf060-p-weaknesses-threats"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "technology-timing",
@@ -546,7 +546,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.4.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "forum-analysis",
@@ -557,7 +557,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.5.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "improvement-scenarios",
@@ -569,7 +569,7 @@
         "ifc006-mf060-CE8.5.2",
         "ifc006-mf060-p-use-scenarios"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "implementation-organization",
@@ -580,7 +580,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.5.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "planning-meeting",
@@ -591,7 +591,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.6.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "scheduled-task",
@@ -602,7 +602,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.6.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "progress-report",
@@ -613,7 +613,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.6.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "progress-minutes",
@@ -624,7 +624,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.6.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "development-policies",
@@ -635,7 +635,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-development-policies"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "style-resources",
@@ -647,7 +647,7 @@
         "ifc006-mf060-p-resources",
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "configuration-resources",
@@ -659,7 +659,7 @@
         "ifc006-mf060-p-resources",
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "image-resources",
@@ -671,7 +671,7 @@
         "ifc006-mf060-p-resources",
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "document-resources",
@@ -683,7 +683,7 @@
         "ifc006-mf060-p-resources",
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "library-resources",
@@ -695,7 +695,7 @@
         "ifc006-mf060-p-resources",
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "security-levels",
@@ -706,7 +706,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-resources-components"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "programming-standards",
@@ -717,7 +717,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-standards"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "identification",
@@ -728,7 +728,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-access-techniques"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "authentication",
@@ -739,7 +739,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-access-techniques"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "authorization",
@@ -750,7 +750,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-access-techniques"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "certificates",
@@ -761,7 +761,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-certificates"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "deployment-characteristics",
@@ -772,7 +772,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-deployment-characteristics"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "publication-procedures",
@@ -783,7 +783,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-publication-procedures"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "domain-hierarchy",
@@ -794,7 +794,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-domains"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "dns",
@@ -805,7 +805,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-domains"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "network-scopes",
@@ -816,7 +816,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-domains"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "firewall",
@@ -827,7 +827,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-domains"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "ict-history",
@@ -838,7 +838,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-history-business"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "business-ict-strategy",
@@ -849,7 +849,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-c-history-business"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "ict-service-cases",
@@ -860,7 +860,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-ict-cases"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "research-innovation",
@@ -872,7 +872,7 @@
         "ifc006-mf060-p-research-innovation",
         "ifc006-mf060-c-updates-proposals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "innovation-process",
@@ -884,7 +884,7 @@
         "ifc006-mf060-p-innovation-processes",
         "ifc006-mf060-c-updates-proposals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "innovation-importance",
@@ -895,7 +895,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-innovation-importance"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "proposal-methods",
@@ -907,7 +907,7 @@
         "ifc006-mf060-p-proposals",
         "ifc006-mf060-c-updates-proposals"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "information-systems",
@@ -918,7 +918,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-information-systems"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "erp-application",
@@ -930,7 +930,7 @@
         "ifc006-mf060-p-management-applications",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "crm-application",
@@ -942,7 +942,7 @@
         "ifc006-mf060-p-management-applications",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "srm-application",
@@ -954,7 +954,7 @@
         "ifc006-mf060-p-management-applications",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "cms-application",
@@ -966,7 +966,7 @@
         "ifc006-mf060-p-management-applications",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "business-intelligence",
@@ -978,7 +978,7 @@
         "ifc006-mf060-p-management-applications",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "open-source",
@@ -989,7 +989,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-open-cloud-saas"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "cloud-computing",
@@ -1001,7 +1001,7 @@
         "ifc006-mf060-p-open-cloud-saas",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "saas",
@@ -1013,7 +1013,7 @@
         "ifc006-mf060-p-open-cloud-saas",
         "ifc006-mf060-c-management-applications"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "management-configuration",
@@ -1024,7 +1024,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-application-configuration"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "tools-context",
@@ -1035,7 +1035,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-p-tools-context"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-code-configuration",
@@ -1047,7 +1047,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-user-support",
@@ -1059,7 +1059,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-publication",
@@ -1070,7 +1070,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "optional-resource",
@@ -1081,7 +1081,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "independent-actions",
@@ -1096,7 +1096,7 @@
         "ifc006-mf060-CE8.2.1",
         "ifc006-mf060-CE8.2.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "score-pending",
@@ -1107,7 +1107,7 @@
       "sourceRecordIds": [
         "ifc006-mf060-CE8.6.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "weighted-components",
@@ -1120,11 +1120,256 @@
         "ifc006-mf060-CE8.2.1",
         "ifc006-mf060-CE8.2.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "debugging-function-creation-only",
+      "descriptionSha256": "af7835d627688fa2237a43214f82434f0875ee08a0d07637b9ab68da62e03efd",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "debugging-function-existing-use",
+      "descriptionSha256": "7f3a4454ba3740066eb4074c2d11ad448b18781a52984fc0495bba860d09a97e",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "debugging-tools-plural",
+      "descriptionSha256": "837f32f28a897b2a29f83063a4d388643ac4c61b7fa3b139ad362bbf16317c7d",
+      "topics": [
+        "debugging-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "configuration-server-only",
+      "descriptionSha256": "eda7bc5e494b513f3d551aa99f1120f63df93f348dd4b68986f3bcf76c1f0874",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "configuration-client-only",
+      "descriptionSha256": "12c0b2ed53b3478a397486a7d64dcab19199f943c2212bb3b31bfab61dc1b67b",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "intranet-only",
+      "descriptionSha256": "9ee72906a6b6d0dcc0aa25f17cfa893e4688d0d83bc9129c698ec6bc506fb201",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "internet-only",
+      "descriptionSha256": "f83b3ebae9ebd21374eda27767df5e337acf0cc2e23800ae4bbcc222a094229d",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "network-scope-pair",
+      "descriptionSha256": "120abb0328c59e01a60d072387a005936ac807df382f0b8e2c52fe529053a8d2",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "required-application-brief",
+      "descriptionSha256": "381eae7a8624861df75403bcc9f05411d119c0acadcb387578db83a7372adda2",
+      "topics": [
+        "required-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "server-installation-brief",
+      "descriptionSha256": "80d58606029d4874f7e1eabf22313cff43311a05317590ecdaae83ccf4f86fc6",
+      "topics": [
+        "server-installation-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1",
+        "ifc006-mf060-p-deployment"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "installation-verification-brief",
+      "descriptionSha256": "7328dd99e102f4463dfd1e051569699db9864d616d29225fe0f13c4d8250cebb",
+      "topics": [
+        "installation-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "business-characteristics-only",
+      "descriptionSha256": "f3d0e0e3611aaa940c4f7206649776d2071e57e8747153361efee5b7eefdd4f4",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "business-types-only",
+      "descriptionSha256": "ec28b5cd9d310720b3c5042b866840ad1ed3900e37690ac9ed6eb0864fb7837c",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "vision-mission",
+      "descriptionSha256": "aa82217c86afab45f143dceddcc2f2d97c114764b10b0a2e6eeadd31da3e8fdd",
+      "topics": [
+        "institutional-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-objectives",
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "proposal-method-construction-only",
+      "descriptionSha256": "df8efb1f518ce62346fa99a556a0956401953cf84bf922757c2d3e0d1a862e7f",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "proposal-method-presentation-only",
+      "descriptionSha256": "d3e01d1746dfa89f7d54e99927c0c75db989eff597e5c810f89db85d0ead0c98",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "erp-application-analysis",
+      "descriptionSha256": "8f3eaf450d72809b75c8aef7683bccd2677fa288574c82cd479b6476ae9269f8",
+      "topics": [
+        "erp-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "crm-application-analysis",
+      "descriptionSha256": "84b62cef6122d7f16f6401e54ba49b6609978ae79f4b298dc58c11b8d82d25eb",
+      "topics": [
+        "crm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "srm-application-analysis",
+      "descriptionSha256": "5f1ef176d4be78c8a0c4821900c0e1ffb73c700a1c8ddc98f5ed73683b04152d",
+      "topics": [
+        "srm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "cms-application-analysis",
+      "descriptionSha256": "2fb0aed369443b81f4aa601541269616165bed8e26225386a1cdbed7cdba1cfe",
+      "topics": [
+        "cms-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "business-intelligence-analysis",
+      "descriptionSha256": "47ef191c6a9857f5b3892e1e7edb87ffebbf98b4e42e939b1c983984ae9ef519",
+      "topics": [
+        "business-intelligence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     }
   ],
-  "provider": null,
-  "fullInstrumentsReviewed": 0,
+  "provider": "packages/shared/src/secondary-technical.ts",
+  "fullInstrumentsReviewed": 472,
   "httpDb": "NOT_RUN",
   "browser": "NOT_RUN",
   "remoteWrites": false,
@@ -1136,5 +1381,8 @@
     "Actitudes privadas y orientaciones docentes no generan criterios automáticos. No evaluar compromiso personal con plazos.",
     "Los20CE/26P/5bandas conceptuales tienen referencias; esto no acredita agotar todos sus subtemas, variantes o instrumentos.",
     "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots."
-  ]
+  ],
+  "initialFixtureSha256": "e777203b9fa33ba3c9035eba56d3393c0f104c21fddca8881ab79e6c804c10e9",
+  "initialCases": 97,
+  "additionalCases": 21
 }

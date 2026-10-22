@@ -5,7 +5,7 @@ export class TaskRequirementError extends RangeError {
  constructor(detail:string){super(`Requisitos de entrega contradictorios: ${detail}. Revisa la consigna; se conservaron tus cambios.`);this.name='TaskRequirementError'}
 }
 type Condition={key:string;label:string}
-export type DeliveryOptions={includeFileFormats?:boolean;requestedOnly?:boolean}
+export type DeliveryOptions={includeFileFormats?:boolean;requestedOnly?:boolean;ignoreSelectedSourceArticle?:boolean}
 const numbers:Record<string,number>={un:1,una:1,uno:1,dos:2,tres:3,cuatro:4,cinco:5,seis:6,siete:7,ocho:8,nueve:9,diez:10,once:11,doce:12,trece:13,catorce:14,quince:15,dieciseis:16,diecisiete:17,dieciocho:18,diecinueve:19,veinte:20}
 const number='(?:\\d+(?:[.,]\\d+)?|'+Object.keys(numbers).join('|')+')'
 const value=(n:string)=>numbers[n]??Number(n.replace(',','.'))
@@ -62,6 +62,7 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  const quantities=new Map<string,{unit:string;min:number[];max:number[];exact:number[]}>()
  for(const m of text.matchAll(new RegExp(`\\b(${number})\\s+(ejemplos?|parrafos?|oraciones?|fuentes?|citas?|imagenes?|apartados?)\\b`,'g'))){
   const clauseBefore=text.slice(0,m.index).split(/[.;]/).at(-1)??'',after=text.slice(m.index!+m[0].length)
+  if(options.ignoreSelectedSourceArticle&&m[1]==='una'&&m[2]==='fuente'&&/\bseleccion[a-z]*\b/.test(clauseBefore)&&!/\b(?:inclu|entreg|anad|incorpor)[a-z]*\b/.test(clauseBefore))continue
   // Analizar insumos numerados ya dados no exige producir otra entrega con esa cantidad.
   if(/^\s+(?:proporcionad[oa]s?|dad[oa]s?)\b/.test(after)&&/\b(?:analiz|analic|compar|contrast|explic|expliqu|identific|identifiqu|evalu|valor|seleccion|le)[a-z]*\b/.test(clauseBefore)&&!/\b(?:inclu|entreg|anad|incorpor)[a-z]*\b/.test(clauseBefore))continue
   const prefix=text.slice(Math.max(0,m.index!-12),m.index)

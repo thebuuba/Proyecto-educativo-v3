@@ -5,7 +5,7 @@
   "grade": 6,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "language-selection",
@@ -1016,6 +1016,230 @@
         "ifc006-mf060-CE8.2.3"
       ],
       "maxScore": 17.35
+    },
+    {
+      "id": "debugging-function-creation-only",
+      "description": "Crea la función de depuración solicitada para el código web de práctica según la ficha.",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "debugging-function-existing-use",
+      "description": "Utiliza la función de depuración existente para comprobar el fallo del código web de práctica.",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "debugging-tools-plural",
+      "description": "Selecciona las herramientas de depuración de los navegadores de las fichas para localizar el fallo web del caso.",
+      "topics": [
+        "debugging-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "configuration-server-only",
+      "description": "Especifica los parámetros de configuración del servidor de práctica según los requisitos proporcionados.",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "configuration-client-only",
+      "description": "Especifica los parámetros de configuración del cliente de práctica según los requisitos proporcionados.",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "intranet-only",
+      "description": "Explica el alcance de la Intranet de la empresa ficticia según la ficha.",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "internet-only",
+      "description": "Explica el alcance de Internet según la ficha del caso ficticio.",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "network-scope-pair",
+      "description": "Compara Intranet y Extranet según el alcance y seguridad de las fichas del caso.",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "required-application-brief",
+      "description": "Instala la aplicación complementaria en el laboratorio de práctica según la ficha del autor.",
+      "topics": [
+        "required-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ]
+    },
+    {
+      "id": "server-installation-brief",
+      "description": "Instala el diseño web en el servidor de práctica según la ficha del laboratorio.",
+      "topics": [
+        "server-installation-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1",
+        "ifc006-mf060-p-deployment"
+      ]
+    },
+    {
+      "id": "installation-verification-brief",
+      "description": "Verifica la instalación y distribución de la aplicación web de práctica según los resultados de la ficha.",
+      "topics": [
+        "installation-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "business-characteristics-only",
+      "description": "Identifica las características de gestión empresarial de la empresa ficticia según la ficha.",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "business-types-only",
+      "description": "Identifica los tipos de gestión empresarial de las fichas del caso.",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "vision-mission",
+      "description": "Diferencia visión y misión en los ejemplos de la empresa ficticia.",
+      "topics": [
+        "institutional-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-objectives",
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "proposal-method-construction-only",
+      "description": "Construye el método de formulación de propuestas tecnológicas solicitado para el caso ficticio.",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "proposal-method-presentation-only",
+      "description": "Presenta el método de formulación de propuestas tecnológicas proporcionado para el caso ficticio.",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "erp-application-analysis",
+      "description": "Analiza el componente de ERP de la ficha del caso empresarial ficticio según los requerimientos proporcionados.",
+      "topics": [
+        "erp-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "crm-application-analysis",
+      "description": "Analiza el componente de CRM de la ficha del caso empresarial ficticio según los requerimientos proporcionados.",
+      "topics": [
+        "crm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "srm-application-analysis",
+      "description": "Analiza el componente de SRM de la ficha del caso empresarial ficticio según los requerimientos proporcionados.",
+      "topics": [
+        "srm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "cms-application-analysis",
+      "description": "Analiza el componente de CMS de la ficha del caso empresarial ficticio según los requerimientos proporcionados.",
+      "topics": [
+        "cms-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "business-intelligence-analysis",
+      "description": "Analiza el componente de inteligencia de negocio de la ficha del caso empresarial ficticio según los requerimientos proporcionados.",
+      "topics": [
+        "business-intelligence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
     }
   ],
   "negativeDescriptions": [
@@ -1030,6 +1254,7 @@
     "Seleccionar, explicar, programar, configurar, comprobar, documentar, proponer y planear conservan sus evidencias propias; no exigir todos los subapartados de un CE en cada tarea.",
     "Actitudes privadas y orientaciones docentes no generan criterios automáticos. No evaluar compromiso personal con plazos.",
     "Los20CE/26P/5bandas conceptuales tienen referencias; esto no acredita agotar todos sus subtemas, variantes o instrumentos.",
-    "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots."
+    "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots.",
+    "Proveedor y472instrumentos revisados en fuente; instalación y pruebasMF060HTTP/DB/navegador pendientes."
   ]
 }

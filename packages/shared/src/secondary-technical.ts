@@ -11,6 +11,7 @@ import {technicalMf059Four} from './secondary-technical-mf059-4'
 import {technicalMf057Five} from './secondary-technical-mf057-5'
 import {technicalMf055Six} from './secondary-technical-mf055-6'
 import {technicalMf058Five} from './secondary-technical-mf058-5'
+import {technicalMf060Six} from './secondary-technical-mf060-6'
 
 export type TechnicalTopic=CommonScienceTopic&{
  sourceRecordIds:string[];requires?:string;fallbackGroup?:string;application?:string;suppresses?:string[];relationsByMode?:Record<string,string>
@@ -24,7 +25,7 @@ type TechnicalAction={text:string;topics:TechnicalTopic[]}
 export type TechnicalTask={
  module:TechnicalModule;grade:number;actions:TechnicalAction[];activityType:string;technique:string;alternatives?:TechnicalTask[]
 }
-export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five,technicalMf055Six,technicalMf058Five]
+export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five,technicalMf055Six,technicalMf058Five,technicalMf060Six]
 const technicalVerbs='disen\\w*|seleccion\\w*|aplic\\w*|apliqu\\w*|tabul\\w*|depur\\w*|gener\\w*|diagram\\w*|jerarqui\\w*|enumer\\w*|distingu\\w*|reconoc\\w*|utiliz\\w*|program\\w*|desplieg\\w*|implement\\w*|organiz\\w*|justific\\w*|propon\\w*|propong\\w*'
 const alternativeVerbs=`${technicalVerbs}|elabor\\w*|dibuj\\w*|represent\\w*|analiz\\w*|describ\\w*|explic\\w*|compar\\w*|identific\\w*`
 const affirmative=(value:string,additionalVerbs='')=>scienceRequirementText(value)
@@ -70,7 +71,8 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
   const modes=parsed.actions.map(a=>mode(a.text))
   const report=parsed.actions.some(a=>['evidence','representation','creation'].includes(mode(a.text))
    &&/\b(?:redact\w*|elabor\w*|escrib\w*|present\w*)\s+(?:(?:un|el)\s+)?informe\b/.test(a.text))
-  const oral=parsed.actions.some(a=>mode(a.text)==='evidence'&&/\b(?:expon\w*|expone\w*|present\w*\s+oralmente)\b/.test(a.text))
+   ||module.moduleCode==='MF_060_3'&&parsed.actions.some(a=>mode(a.text)==='creation'&&/\b(?:reporte de avance|minuta)\b/.test(a.text))
+  const oral=parsed.actions.some(a=>mode(a.text)==='evidence'&&(/\b(?:expon\w*|expone\w*|present\w*\s+oralmente)\b/.test(a.text)||module.moduleCode==='MF_060_3'&&/\breunion simulada\b/.test(a.text)))
   const design=modes.some(mode=>mode==='design'||mode==='representation'||mode==='creation'||mode==='development'||mode==='coding')
   const application=parsed.actions.some(a=>mode(a.text)==='application'&&a.topics.some(t=>['interview','questionnaire','observation'].includes(t.id)))
   const officeObservation=module.moduleCode==='MF_002_3'&&modes.includes('observation')
@@ -79,12 +81,14 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['verification','observation'].includes(mode))
    ||module.moduleCode==='MF_055_3'&&modes.includes('verification')
    ||module.moduleCode==='MF_058_3'&&modes.every(mode=>['execution','verification','observation'].includes(mode))
+   ||module.moduleCode==='MF_060_3'&&modes.every(mode=>['execution','verification','observation'].includes(mode))
   const officePractice=module.moduleCode==='MF_002_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
    ||['MF_054_3','MF_056_3'].includes(module.moduleCode)&&modes.includes('application')
    ||module.moduleCode==='MF_059_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_055_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_058_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
+   ||module.moduleCode==='MF_060_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
   const activityType=report?'REPORT':oral?'ORAL_PRESENTATION':design?'PROJECT':application||officeObservation?'OBSERVATION':modes.includes('calculation')||officePractice?'EXERCISE_SET':modes.includes('comparison')?'COMPARISON':'ANALYSIS'
   const technique=activityType==='PROJECT'?'proyecto':activityType==='OBSERVATION'?'observacion-sistematica':activityType==='ORAL_PRESENTATION'?'presentacion':'analisis-producciones'
   return{...parsed,actions:parsed.actions as TechnicalAction[],activityType,technique,module}
@@ -97,7 +101,9 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
   const verbs=['MF_054_3','MF_056_3','MF_059_3','MF_057_3','MF_055_3','MF_058_3'].includes(module.moduleCode)?`${module.additionalVerbs}|elabor(?:a|an|ar|e|en|ando)|represent(?:a|an|ar|e|en|ando)|dibuj(?:a|an|ar|e|en|ando)`:`${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''}`
   const verb=new RegExp(`\\b(?:${verbs})\\b`)
   const inheritedVerb=branches[0].match(verb)?.[0]
+  const sharedObject=module.moduleCode==='MF_060_3'?branches.map(branch=>branch.match(new RegExp(`^(?:${verbs})\\b\\s+(.+)$`))?.[1]).find(Boolean):undefined
   const alternatives=branches.map(branch=>{
+   if(sharedObject&&new RegExp(`^(?:${verbs})$`).test(branch))return parse(`${branch} ${sharedObject}`)
    const nounBranch=module.moduleCode==='MF_058_3'&&/^(?:un|una|el|la|los|las)\b/.test(branch)
    return parse((nounBranch||!verb.test(branch))&&inheritedVerb?`${inheritedVerb} ${branch}`:branch)
   })
@@ -182,7 +188,22 @@ const reportModeRules:[Mode,RegExp][]=[
  ['configuration',/\bajust(?:a|an|ar|e|en|ando)\b/],
  ['application',/\b(?:oper|agreg|almacen|mostr|muestr|instal)(?:a|an|ar|e|en|ando)\b/],
 ]
-const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:module?.moduleCode==='MF_055_3'?maintenanceModeRules:module?.moduleCode==='MF_058_3'?reportModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:['MF_057_3','MF_055_3','MF_058_3'].includes(module?.moduleCode??'')?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
+const solutionModeRules:[Mode,RegExp][]=[
+ ['selection',/\bdefine(?=[^.;]*\btecnologia mas adecuada\b)/],
+ ['design',/\b(?:defin|especific)(?:e|en|ir|a|an|ar)\b|\bestablec(?:e|en|er|a|an)\b/],
+ ['creation',/\bdocument(?:a|an|ar|e|en|ando)\b/],
+ ['coding',/\bprogram(?:a|an|ar|e|en|ando)\b/],
+ ['development',/\b(?:desarroll|adapt)(?:a|an|ar|e|en|ando)\b|\bconstru(?:ye|yen|ir|ya|yan)\b/],
+ ['verification',/\bconfirm(?:a|an|ar|e|en|ando)\b|\brealiza(?=[^.;]*\bpruebas\b)/],
+ ['execution',/\bejecut(?:a|an|ar|e|en|ando)\b|\brealiza(?=[^.;]*\bentrenamiento\b)/],
+ ['application',/\b(?:integr|simul|instal)(?:a|an|ar|e|en|ando)\b|\binclu(?:ye|yen|ir|ya|yan)\b/],
+ ['identification',/\bindic(?:a|an|ar|ando)\b/],
+ ['analysis',/\b(?:examin|relacion)(?:a|an|ar|e|en|ando)\b/],
+ ['comparison',/\bdiferenci(?:a|an|ar|e|en|ando)\b/],
+ ['representation',/\breproduc(?:e|en|ir|iendo)\b|\breproduzc(?:a|an)\b/],
+ ['evidence',/\bpresent(?:a|an|ar|e|en|ando)\b/],
+]
+const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:module?.moduleCode==='MF_055_3'?maintenanceModeRules:module?.moduleCode==='MF_058_3'?reportModeRules:module?.moduleCode==='MF_060_3'?solutionModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:['MF_057_3','MF_055_3','MF_058_3','MF_060_3'].includes(module?.moduleCode??'')?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
  .filter(r=>r.index>=0).sort((a,b)=>a.index-b.index)[0]?.mode??'evidence'
 const modeWords:Record<Mode,[string,string]>={
  identification:['Identificación','Identifica'],description:['Descripción','Describe'],explanation:['Explicación','Explica'],

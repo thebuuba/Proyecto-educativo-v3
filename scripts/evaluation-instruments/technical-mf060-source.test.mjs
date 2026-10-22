@@ -24,6 +24,6 @@ test('actitudes y tecnologías históricas no se convierten en productos o insta
  assert.equal(a.find(r=>r.id.endsWith('a-deadlines')).assessmentPolicy,'CONDITIONAL_OBSERVABLE_WHEN_EXPLICIT')
  assert(m.officialRecords.find(r=>r.id.endsWith('m-prior')).literal.includes('el desarrolla'))
  assert(m.limits.some(s=>s.includes('plugins')));assert(m.limits.some(s=>s.includes('despliegues')))
- assert.equal(m.implementation.provider,null);assert.equal(m.adaptations.length,0)
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,90)
  assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
 })
