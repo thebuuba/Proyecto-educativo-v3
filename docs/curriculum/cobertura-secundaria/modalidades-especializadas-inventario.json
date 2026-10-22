@@ -5150,13 +5150,16 @@
       "linkedDocuments": 75,
       "programCoversReviewed": 3,
       "gradeAssignmentsVerified": 6,
-      "connectedProviders": 3,
-      "installedDevelopmentProviders": 3,
+      "connectedProviders": 9,
+      "installedDevelopmentProviders": 9,
       "studyPlanTablesReviewed": 3,
       "programsWithVerifiedSecondaryGrades": 2,
       "programsWithUnresolvedGradeEquivalence": 1,
       "recordedVocationalModuleMemberships": 24,
-      "recordedLanguageSubjectMemberships": 6
+      "recordedLanguageSubjectMemberships": 6,
+      "representativeHttpVerifiedProviders": 4,
+      "partialHttpProviders": 4,
+      "httpBlockedBeforeCompletionProviders": 1
     },
     "limits": [
       "Familias y documentos no son asignaturas ni ámbitos por grado.",

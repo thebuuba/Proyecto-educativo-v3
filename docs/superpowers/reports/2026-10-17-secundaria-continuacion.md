@@ -1,6 +1,16 @@
 # Continuación del encargo integral de secundaria
 
-## Estado vigente 22 de octubre: conexión MF060 registrada; contratos MF061 revisados
+## Estado vigente 22 de octubre: contratos MF061 confirmados; resumen técnico corregido
+
+HEAD **86856ad9e474ead7654a407fa32ded2ebf163e29** confirma49contratosMF061/42grupos; conexiónMF0605c91ac4d/proveedor32de5107. Ramaampliacion-de-instrumentos-2,95commits locales delante de refguardada,NO PUSH. **MF061Node41215terminó0,173/173**, no repetir. Apps/packages idénticos32de5107; gates1509/9 vigentes, no recompilar. MF060 sigue0/16 por accesoPostgreSQL/timeout; despuésdelpreservador57701fallido NOhubonuevosDBqueries ni reintentos. Ningún ejecutorQA/instalador/DBprobe activo. Runtime15076041ACTIVO; Chrome2tab1796703483login/handoff. No cerrar/reiniciarni tocar tabMF0561796703445.
+
+Auditoría documental independiente encontró`technicalProfessional.counts.connectedProviders=3` e`installedDevelopmentProviders=3` obsoletos frentea9módulos únicos ya registrados/instalados. **DosregresionesRED→GREEN**en`technical-specialized-inventory.test.mjs`; helper `update-technical-provider-rollup.mjs` YAejecutadoUNAvez. Resumenahora9conectados/9instalados,peroQA:4representativas(MF054/MF057/MF055/MF058),4parciales(MF002/MF053/MF056/MF059),1bloqueada(MF060). MF002cuentauna vez aunquepertenezcaadosprogramas;MF061sinproveedorno se cuenta. No nuevasasignaturasimplementadas,DB oclaimsdecoberturacompleta.
+
+**Node66360TERMINÓ0,175/175**, logUTF16`technical-rollup-node-final.log`; ningún test/QA/instalador/DBprobe activo. Pendienteauditoría/commitlocaldeesteajustedocumental. Despuésdecommit mantenerlista exactadependientes e informes. Antesdecatálogo151/verificaciónMF060, accesoestableDevelopment e historiareal/freeze150/15baselinesafterpendientes, sinrecapturar. Fuentes independientesrestantes segúninventario; no confundircontratosoinventario conproveedores/instrumentos/QAverificados. Restriccionesproducción/main/despliegue/reset/cuentas/subagentes siguen.
+
+### Checkpoint anterior, superado por el estado vigente
+
+## Estado anterior 22 de octubre: conexión MF060 registrada; contratos MF061 revisados
 
 HEAD **5c91ac4d7997782f2d636b0dbab84407e5e08001** registra instalación MF060 y su bloqueo; proveedor **32de51079f981c49dc7e7a9107c284a1054897c5**. Rama `ampliacion-de-instrumentos-2`,94commits locales adelante de refguardada antesdelcommitMF061; NO PUSH/producción/main/despliegue/reset/cuentas/subagentes. Árbol limpio despuésde5c91ac4d; nuevos cambios solo documentales y pruebas/fixture MF061.
 
