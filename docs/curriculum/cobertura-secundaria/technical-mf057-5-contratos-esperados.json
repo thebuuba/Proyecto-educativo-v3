@@ -1,0 +1,1588 @@
+{
+  "moduleCode": "MF_057_3",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "literalRecordsSha256": "cefe819fb94a3744f6f6fb7649c49cd9f400048ac333c3762e0abb0d4f533c2a",
+  "cases": 136,
+  "expectedTopicGroups": 115,
+  "sourceEvaluationCriteriaReferenced": 30,
+  "sourceProceduresReferenced": 59,
+  "fixtureSha256": "bb830daf9439c5f4f53d5291ec67210ec51142ae61565035779f1e5f35472bc6",
+  "red": {
+    "missingFixture": 3,
+    "overbroadReference": 1,
+    "missingEvidence": 1
+  },
+  "green": 5,
+  "method": "Lectura completa de las 136 consignas y sus referencias en cuatro bloques: 0–34, 35–69, 70–104 y 105–135; contraste con los 30 CE y 59 procedimientos ya leídos. Se retiró una referencia al método de acceso no solicitado en documentación general. Esta lectura no acredita instrumentos todavía ausentes.",
+  "casesReviewed": [
+    {
+      "id": "dba-definition",
+      "descriptionSha256": "5c358de7867c168c0f13361dcd36e453f4adc8b8f4571488c7627c3117aa4683",
+      "topics": [
+        "dba-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "dba-functions",
+      "descriptionSha256": "855be1cb433e7978e05e95842bcc0d6e32dfcdc7fb0e5943a7bf5431e6f27310",
+      "topics": [
+        "dba-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.2",
+        "ifc006-mf057-p-dba-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "structure-management",
+      "descriptionSha256": "ff74fddb0b75c9ccd87a1b8a82402accb95a9fad9a00a085c909c24e8dfc2c9a",
+      "topics": [
+        "structure-management"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "data-activities",
+      "descriptionSha256": "3eb249120624cac8ede5109c113a48e4ad69564c64858f9c83d42f5decb0851f",
+      "topics": [
+        "data-activities"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.4",
+        "ifc006-mf057-p-data-activities"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "manager-administration",
+      "descriptionSha256": "22142b8211ddc266fd39a6a0c72c3a8865ad27365881b240b4bd6e39e9a8b065",
+      "topics": [
+        "manager-administration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-manager-administration",
+        "ifc006-mf057-CE5.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "dictionary-creation",
+      "descriptionSha256": "1a24d7cee29507aa82a2ea74ea566cad7d3e74ff909c7fe08a2c0ee7c0ac639c",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dictionary-creation",
+        "ifc006-mf057-p-dictionary-establishment",
+        "ifc006-mf057-CE5.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "reliability",
+      "descriptionSha256": "17543877378b076548745cc866a387d715ea9414f2ef0dd9d756f2860b4a60bd",
+      "topics": [
+        "database-reliability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-reliability",
+        "ifc006-mf057-CE5.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "security-confirmation",
+      "descriptionSha256": "5b12899b0bb046ecc681ed36d5c8d882c91d1f13de0b64bd3431c7fda722fa98",
+      "topics": [
+        "database-security"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-security-confirmation",
+        "ifc006-mf057-CE5.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "dba-documentation",
+      "descriptionSha256": "b89df8fda7bf8491cf9f7390fc9aabc863f0d21f99ab521a470141e82410cb0d",
+      "topics": [
+        "dba-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "resources-identification",
+      "descriptionSha256": "2af2038148da44463595208f9e880a3ec9ceddbca387be500ff89e0e514dbcb2",
+      "topics": [
+        "administration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.4",
+        "ifc006-mf057-p-tools-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "resources-selection",
+      "descriptionSha256": "06cd19a37dd2d6d25aa6f152e2ca8ef323c26b8c0c8ac9eb76fc8f10dd080bf1",
+      "topics": [
+        "administration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-resources",
+        "ifc006-mf057-CE5.1.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-description",
+      "descriptionSha256": "e817400cc3f3316138a9ddecc62eeebc53a9e32c3a747bfd6b018d87ae5a817f",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-identification",
+      "descriptionSha256": "7e35cdfe6c85f2d38b53198e043a08a357913d299f4ebe1b29f68b76ea7284f8",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-selection",
+      "descriptionSha256": "835bf3b8ea76a2ed3e336262af7e6f0bf9528b253c87882d4d45d5181c681f84",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-selection"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-odbc",
+      "descriptionSha256": "68ef6510653c025fb1d534e5102f52fce2e8159bb8901e3dc8e3614a216f16a6",
+      "topics": [
+        "access-odbc"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-ado",
+      "descriptionSha256": "49cb2d6028b167e1f5e9278134f7bb2aa7bb4ecbc491b64b34c8e20e80c3bb61",
+      "topics": [
+        "access-ado"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-dao",
+      "descriptionSha256": "9dc241467b5226985747318ab946e6bfe89c3e911ef6d6325dea1094eab90596",
+      "topics": [
+        "access-dao"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-jdbc",
+      "descriptionSha256": "7bae9054bda8eeaf07bf8dc6a6274851ddb57afe367ad9e408611b42a1f83313",
+      "topics": [
+        "access-jdbc"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-isapi",
+      "descriptionSha256": "e1bd7f5aea2e376f0bed41a9b6e2f8cf681041b2bb66ebeb5750de1c4aee8672",
+      "topics": [
+        "access-isapi"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-cgi",
+      "descriptionSha256": "1b2b334a5c98387a2586a4dbec6e77434e6782a9c8af49b02d61ff7ca04293b1",
+      "topics": [
+        "access-cgi"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-rdo",
+      "descriptionSha256": "ff41352017390e94dea056f0af8c0fc5e8013bc4c8bd9b97f2f023009db10c11",
+      "topics": [
+        "access-rdo"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-rds",
+      "descriptionSha256": "991ceded0317bc7283a90f23e498d75989f27255e082f8c546dccfb1456f2861",
+      "topics": [
+        "access-rds"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-analysis",
+      "descriptionSha256": "12cd5006f9aae86c3df4186b46e768187eb0e80ca66a6fdac14d2e9e84e1b9c5",
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-modification",
+      "descriptionSha256": "c06d9743ac73f20e128d69fd51164df1ca518aff689ec578235708bbb89ba6cc",
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "stored-procedure",
+      "descriptionSha256": "5954f4432174543cb4bb6ef166f2c36b6384fb4115b8baa5db6893355cb8e12d",
+      "topics": [
+        "stored-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-trigger",
+      "descriptionSha256": "9531ac86976a6217336eb4a274aa423c77555c501edc90411b77410c82cf012d",
+      "topics": [
+        "database-triggers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "conceptual-schema",
+      "descriptionSha256": "9d29d0562b0945369df8ca6caa3f4c79126b198b54d29e4ddd7b810465aab439",
+      "topics": [
+        "conceptual-schema"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-documentation",
+      "descriptionSha256": "6cc5a0c6f3bef0dcccd7ca710b21681f77cf1dd4347c10550bce236aad4a2506",
+      "topics": [
+        "database-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-documentation",
+      "descriptionSha256": "8b60f437d8a63aa08c866cb68df4fefc30a732074396fefbb9dea7680a21f91e",
+      "topics": [
+        "access-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-documentation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "data-activities-documentation",
+      "descriptionSha256": "4afedd8abb011c5898155dfae84ae7eb01556b72668d3849fcb3737884cfbc86",
+      "topics": [
+        "data-activities-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-data-activities-documentation",
+        "ifc006-mf057-p-documents-activities",
+        "ifc006-mf057-CE5.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "roles-creation",
+      "descriptionSha256": "e45ee9cab3209f518826779cb73ed2b82df501008690e87ea53677c2ed28d382",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "security-policy-description",
+      "descriptionSha256": "4e23c3e749b8b348647c9ee94f675a5d45eec14b00167e824263c9aef28c063c",
+      "topics": [
+        "security-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.6"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-creation",
+      "descriptionSha256": "173074f4bd84ec810d04095463791b3f44797d26c3fe8b7ba82f8b81e4f760b0",
+      "topics": [
+        "database-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7",
+        "ifc006-mf057-p-database-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "users-creation",
+      "descriptionSha256": "573c210eeeadb698b138167ee8fc380d3df46ce4ef09f470d4b8a2442202577d",
+      "topics": [
+        "database-users"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7",
+        "ifc006-mf057-p-users-roles"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-types",
+      "descriptionSha256": "2291063d9ab4c9d67e17c4990b5ce90ef8d3bcd098eb9bddabf0237be7c08fa4",
+      "topics": [
+        "user-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-identification",
+        "ifc006-mf057-c-administration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "privileges-identification",
+      "descriptionSha256": "f909166edfa9814cb14136b5f0ee93a34fb104db36297175251d0120dc8a9bf5",
+      "topics": [
+        "database-privileges"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-privilege-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "roles-modification",
+      "descriptionSha256": "0324c5bde5c24c828ddc6d1548aefe70477590bf476270ebd40600e6176536b6",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-roles-changes"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "roles-removal",
+      "descriptionSha256": "e59146e55e2e3d2337aefdd7cedba0c07612ffe91f2ae987abf6331bbdb076ba",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-roles-changes"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "security-application",
+      "descriptionSha256": "76f5659375508388ed029bb9377770f57eb64821ee475aca6bd87b52f1a9a13d",
+      "topics": [
+        "security-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "data-migration",
+      "descriptionSha256": "f71517dbd991a66c8a7418af8501b5cde85da9e78618affbe08b694afcf69c8f",
+      "topics": [
+        "data-migration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-select",
+      "descriptionSha256": "5515cb84144013f89f43980be7c37bb1c9773b5f9ce0406b1f29a8bb05ee5d2c",
+      "topics": [
+        "user-select"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-insert",
+      "descriptionSha256": "d5327336ef4b178531e58c780f81d6090f19bd7b60b1520162af9d3ab2bc2800",
+      "topics": [
+        "user-insert"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-update",
+      "descriptionSha256": "11af80568224b34d52596765c370cb3ce3d6af19a2636f2617718ddc930ca6de",
+      "topics": [
+        "user-update"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-alter",
+      "descriptionSha256": "f3d34bd4a81db8124cfeae7c48c49f91a1693e83dee2ff80067ef4bf322ff559",
+      "topics": [
+        "user-alter"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-create",
+      "descriptionSha256": "a266134118da51e540a5e58531f95c07a56e047000ca72cc3980f5f77068e655",
+      "topics": [
+        "user-create"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-drop",
+      "descriptionSha256": "08e7512a0127b1fbaeda098dc61756594ff32b4ac422c0914aa5e582c5d0f9b7",
+      "topics": [
+        "user-drop"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-file",
+      "descriptionSha256": "06f056970499e8715087a0c6ceed313c16fe1ad8e852d9ffdd03cd8e8b99cda5",
+      "topics": [
+        "admin-file"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-process",
+      "descriptionSha256": "4187c2ffb4e7dc50a4dcf3ace5a6a8f32fb5e0e0bcb8b96faa8de9f013796a60",
+      "topics": [
+        "admin-process"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-reload",
+      "descriptionSha256": "2e77cc18a383cc5322638f41c9d0946635365c2f386498c964f0c4818d91467a",
+      "topics": [
+        "admin-reload"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-grant",
+      "descriptionSha256": "a3d8094c22169deb8366fcbce6cc94d5c1734a88a1d7fc3f770dc5ed111ae658",
+      "topics": [
+        "admin-grant"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-revoke",
+      "descriptionSha256": "583d067337e2097a0c0382b76aad03c963a8426f6ecfb0a2f69b97d48a08a509",
+      "topics": [
+        "admin-revoke"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "admin-shutdown",
+      "descriptionSha256": "d68f5cc974f8525381c27d82437a8b4107543663f43c67a60ce99966dbc45c39",
+      "topics": [
+        "admin-shutdown"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "special-all",
+      "descriptionSha256": "d6b6dcc0f689fe7dbd540e6788af53b55a83f7332a6671ead81bf506f200148d",
+      "topics": [
+        "special-all"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-special-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "special-usage",
+      "descriptionSha256": "78a69d56ea052edd473a3849e0732f5a4f3875f490f63aac5d511803c7f9e7a4",
+      "topics": [
+        "special-usage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-special-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-session",
+      "descriptionSha256": "b90e6294f29adfeacd20ad5564de1d8510e9fc0fc56a634ffd6230f20591dc0a",
+      "topics": [
+        "system-create-session"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-table",
+      "descriptionSha256": "f8d9716af5b6388e8ecc68369559699cb20e8c1920fe570298f5d79c1ec14577",
+      "topics": [
+        "system-create-table"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-sequence",
+      "descriptionSha256": "a962e9cdfa9df96f3176cab1db94d25c73b797d4db2253f7669c457c88a77d57",
+      "topics": [
+        "system-create-sequence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-view",
+      "descriptionSha256": "d2e43510e90720b5ea108e35961ef84f283acf97050671a97470b2719957d2e8",
+      "topics": [
+        "system-create-view"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-trigger",
+      "descriptionSha256": "9b922ad0934dcc77730c40cc5077cb7f009ea0874218c3cdb11203a2998d4a6f",
+      "topics": [
+        "system-create-trigger"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-procedure",
+      "descriptionSha256": "047a53b029f1e1edd1af9cc05365715ad323215c803a27986a34c8f47aa87b01",
+      "topics": [
+        "system-create-procedure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-execute-any-procedure",
+      "descriptionSha256": "d1262edfadcdc577adc14d82a71239f8448505925a0f538f5f5911d561792334",
+      "topics": [
+        "system-execute-any-procedure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-user",
+      "descriptionSha256": "acb6e1eb9aa115a2ea30007a23cde954af646b3f9e8b1a94dbc8a0d89a564797",
+      "topics": [
+        "system-create-user"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-create-role",
+      "descriptionSha256": "e58c081440dec9d7008a78571702bc64cc1f658e82bc28a11aef198eedf6b9e1",
+      "topics": [
+        "system-create-role"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-drop-user",
+      "descriptionSha256": "0952cba1229606f292da097b9d3d83a1aa3551c4000af06833df0730e63f0975",
+      "topics": [
+        "system-drop-user"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-schema",
+      "descriptionSha256": "a0361068662ee971dc650842a88768c913fd52aa4865ee486d214bdf38050608",
+      "topics": [
+        "backup-schema"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-schema"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-description",
+      "descriptionSha256": "a294933ab20e10233138866520a4221d6d6b54b2098707102997dced9d983e30",
+      "topics": [
+        "backup-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification",
+        "ifc006-mf057-p-backup-options"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-full",
+      "descriptionSha256": "47378e71f0848d2ccb1d41c111a10824b79c144223a2e868c4687906b8025779",
+      "topics": [
+        "backup-full"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-log",
+      "descriptionSha256": "7ff6c51e8879a6578807abbad3f759ca595902f826e358a22b5f2af7c1f5bfcf",
+      "topics": [
+        "backup-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-differential",
+      "descriptionSha256": "d1d1bf5c69662d1093817661007a40747f718189ed8b6b29dab5856dc9c3cb58",
+      "topics": [
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-incremental",
+      "descriptionSha256": "09184a11107a63567e24c129bc8f94a37843372a20c2734a5016baf88b9712d9",
+      "topics": [
+        "backup-incremental"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-selection",
+      "descriptionSha256": "d9d962fa9c23c8feee9c3eebd71dad8eed45b4955db7e9dde561fc5df845f9bd",
+      "topics": [
+        "backup-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-selection"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-limits",
+      "descriptionSha256": "cc9dfd3a1fd4ab5d11be9dfc88af20953c4069db85e8b951d28ad975e39262cf",
+      "topics": [
+        "backup-limits"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-limits"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-time",
+      "descriptionSha256": "68e3fa81aed6b22c1e3da97cf07324bb30702824973b4de23d6f76af1658665e",
+      "topics": [
+        "backup-time"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-time"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-alert-description",
+      "descriptionSha256": "1c6df73daebfe9a4a3145ae14e79e486cf53b3411c2d5c817780688df3193f1c",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-alert-identification",
+      "descriptionSha256": "11286cee3e5286573308cee88378a1b2cc2d150f5c76da1876b1471876f715c8",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-alert-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-alert-creation",
+      "descriptionSha256": "ad04401b7bc38507cb0e86bf6c7efb884f51b52e1e6641644db9c89c4754314e",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.2",
+        "ifc006-mf057-p-backup-alert-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-creation",
+      "descriptionSha256": "edc06afbc99172e0b852136eb0521bda63bbda7e6a27010b671fb0930e3b129a",
+      "topics": [
+        "backup-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3",
+        "ifc006-mf057-p-backup-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-restoration",
+      "descriptionSha256": "63f6477501c6eadbaaee81f104d1adb61048c4c549c7a306792afcdc9c7f4082",
+      "topics": [
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3",
+        "ifc006-mf057-p-backup-restoration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-types",
+      "descriptionSha256": "510d9c93001a4ab13920551c95d86af6ca1618f0939b7824c48aff7b1c9d4955",
+      "topics": [
+        "disk-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "raid-zero",
+      "descriptionSha256": "10fa501640db072c78b795b73d012f2faada854bf89b8939b4a16d52af070cf7",
+      "topics": [
+        "raid-zero"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "raid-one",
+      "descriptionSha256": "f4a10815c1ca4a5628b61d2cfc270a8f62cf3a98b4dab10e9d4981e2281c9bd8",
+      "topics": [
+        "raid-one"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "raid-five",
+      "descriptionSha256": "841a20ccfacde91e08b3a5dcd9e54913b5035b1b95fb6aee910e0d8f78fc9156",
+      "topics": [
+        "raid-five"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "raid-ten-distinction",
+      "descriptionSha256": "2763d17aac0680dc795d398f3ddb59d48d01b37994c9315c4f22395d443c49a0",
+      "topics": [
+        "raid-ten-distinction"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-tools",
+      "descriptionSha256": "820c69e4e3103b7918075db987545ed9baa1beb687ca536f88b506ada56135b4",
+      "topics": [
+        "disk-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-selection",
+      "descriptionSha256": "e99b7158831b2434baa35bccfae30e1bb7df7f46b0a97ce5d330170e8f30b2e6",
+      "topics": [
+        "disk-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-selection"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-creation",
+      "descriptionSha256": "cedb260c264146f66568fc6d128f2d19bc8f0466d1256dc34aecdaa73cd711fc",
+      "topics": [
+        "disk-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.1",
+        "ifc006-mf057-p-disk-configuration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-server-application",
+      "descriptionSha256": "e1559bf3bdbb35e62a5b7efdaf039526d10ba550038976a35bde763c1a66fa33",
+      "topics": [
+        "disk-server-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-layout",
+      "descriptionSha256": "9a1db3f8f799b5b94ee5b19d033e10aac3cb05e8a43e54a784dc564dbf8e7195",
+      "topics": [
+        "database-disk-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.3",
+        "ifc006-mf057-p-database-disk-configuration",
+        "ifc006-mf057-p-database-array-configuration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "backup-disk-configuration",
+      "descriptionSha256": "af856164ce82de5872e1da5af50229b2b1f9615d446292d4b471f138fbb7a0ec",
+      "topics": [
+        "backup-disk-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.4",
+        "ifc006-mf057-p-database-disk-configuration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-alert-identification",
+      "descriptionSha256": "45cf04b51f2ab9a6e2811453e672cfe061058634fb7604e1d2bb186551d5f59b",
+      "topics": [
+        "monitor-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-monitor-alert-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-alert-documentation",
+      "descriptionSha256": "b61df93dab97e42eac5c44d9b72abd674e6c8ca9fb321d237e13dade3deda288",
+      "topics": [
+        "monitor-alert-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-monitor-alert-documentation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-alert-creation",
+      "descriptionSha256": "a699526a5e74ee7a3b5055cd27be18028f7da32bc5829ae7fd2c9edb7f69c26a",
+      "topics": [
+        "monitor-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1",
+        "ifc006-mf057-p-monitor-alert-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-data-space",
+      "descriptionSha256": "18b1f6add91782cd0256650627e3e3db8b35c2c18bf57f134787363f83be8b5f",
+      "topics": [
+        "monitor-data-space"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-log-events",
+      "descriptionSha256": "0c8dff7e39e5b4ed3e0bc749c7ccd53b292346641645e274b939f47f1e1318ef",
+      "topics": [
+        "monitor-log-events"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-transaction-locks",
+      "descriptionSha256": "9946f13c51d11952ca2fe99c490e8f68e12b032350a21b5cd8acd141b3328904",
+      "topics": [
+        "monitor-transaction-locks"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-disk-space",
+      "descriptionSha256": "d03fff499f0a437cd5683abaec8e0f58e52a128c13cf811aba7e455891f97c95",
+      "topics": [
+        "monitor-disk-space"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-system-resources",
+      "descriptionSha256": "35cbcf0634132040a7d5f9e5b2f4c6904c44ce6050eef812c2549289365fb34b",
+      "topics": [
+        "monitor-system-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitor-engine-unavailable",
+      "descriptionSha256": "3433ae0316b72605f5b845f5d96704639ed7f5300c46f2ce15055be90251aa2c",
+      "topics": [
+        "monitor-engine-unavailable"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "monitoring",
+      "descriptionSha256": "454e7517634c03b662fe1872c2f14fc7f8644549dacf820c625ecf4be1ff2494",
+      "topics": [
+        "database-monitoring"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.2",
+        "ifc006-mf057-p-monitor-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alert-response-automation",
+      "descriptionSha256": "d720b93999b0bd6ca72531f704898cd8f3add272c2d9f6b96c63bccd65f63acd",
+      "topics": [
+        "alert-response-automation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "old-backup-cleanup",
+      "descriptionSha256": "98c69b99ae08226e58d8d87200939c753f9b05d331988fbf0abce04821ffcd99",
+      "topics": [
+        "old-backup-cleanup"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "notification-automation",
+      "descriptionSha256": "7b14cb933ed503b2b28830c6301327c3f30995186719ba57fd0bc2a8bcf70c5c",
+      "topics": [
+        "notification-automation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "updates-review",
+      "descriptionSha256": "dae2d97fe8fcd8e9ee32d80536ff970d34805cf1c23790eb51ebf532e2a52da9",
+      "topics": [
+        "updates-review"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "review-periods",
+      "descriptionSha256": "46f8169380f546002b19f83c01ad6502aeb6c06367ccc55696e0463176c4d8d4",
+      "topics": [
+        "review-periods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-review-periods"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "hardware-identification",
+      "descriptionSha256": "17a4d629102c149ce6c2010c3de947ef53bbab7195e8214c329370b7eb3c8828",
+      "topics": [
+        "maintenance-components"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-hardware-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "maintenance-tools",
+      "descriptionSha256": "cbfb6e50c8d8f2eca5a68f5e152bbb2cf5fe0bab0ea85ec0495ad15722771c64",
+      "topics": [
+        "maintenance-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-maintenance-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "updates-need",
+      "descriptionSha256": "8b5e52dc6d8bebca05340456ff0dad89333c6d4b7775cb5dcb15e3f92f5f699a",
+      "topics": [
+        "updates-need"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.2",
+        "ifc006-mf057-p-maintenance-need"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "updates-environment",
+      "descriptionSha256": "52a52e0bfcf63da25a731903e2e503471bdd27c1fe2cd5257364e7cb540d6575",
+      "topics": [
+        "updates-environment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.3",
+        "ifc006-mf057-p-maintenance-environment"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "updates-testing",
+      "descriptionSha256": "5ca60e1ccea449e20b8c54ab4d68e7187ebd3b6f4d8f6cac84b75fed8606f2ab",
+      "topics": [
+        "updates-testing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.4",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "production-case-analysis",
+      "descriptionSha256": "878bd3e083e4a87bff0f9826f4076ddcf7a26cd99d50f93be2a1fcfe97989d4f",
+      "topics": [
+        "production-update-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "maintenance-plan",
+      "descriptionSha256": "ad3e78884741003e9a71259e1ddbb884ba171be7755c788c351bba831079d60f",
+      "topics": [
+        "maintenance-plan"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "maintenance-plan-documentation",
+      "descriptionSha256": "303299cf4e71701528d2edf5ce7211bcc1828e3f494c5c0ea25a2a819b4b23b8",
+      "topics": [
+        "maintenance-plan-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-communication",
+      "descriptionSha256": "69bfd48523942de44c17f86a48c8648c049fd2d5d5c38a5cd71bf8e79b732f1e",
+      "topics": [
+        "server-communication"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.3",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-response",
+      "descriptionSha256": "f84a217f7b019aca74083c392930d57c9041e3c25a326eddb65a67c8b0eed7d3",
+      "topics": [
+        "server-response"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.4",
+        "ifc006-mf057-p-server-tests"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-recovery",
+      "descriptionSha256": "a806b7aec66b70b3b19216fec8796822ab1c4b31b4de90ed84f812358f3a285c",
+      "topics": [
+        "table-recovery"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "lock-removal",
+      "descriptionSha256": "4e709f0e440255d00f0cacd9d77fb9027cfbf0ad8a0646626da82d3edbe965cf",
+      "topics": [
+        "lock-removal"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "statistics-update",
+      "descriptionSha256": "286df99e45f08519945bcece9019ced0ef6328f59f9dfbba548c13a6d78808f0",
+      "topics": [
+        "database-statistics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-statistics-update"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "point-in-time-recovery",
+      "descriptionSha256": "1700d4f1c84be5d788e752e341fe03159c5731a63bf1dc9cce257429cd073548",
+      "topics": [
+        "point-in-time-recovery"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-consistency",
+      "descriptionSha256": "d344e63677e77f4b574a10fd7945f25973918887ad7e07d6debd1da542e5fc86",
+      "topics": [
+        "table-consistency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "disk-consistency",
+      "descriptionSha256": "e582f5e91000d073a46d5f626637995b6c48bd46d916220ef2528f6d0bc1b14c",
+      "topics": [
+        "disk-consistency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "system-documentation",
+      "descriptionSha256": "f3fe2a7ca45c09d5f823357abdc6873e351dcf5522442104598cef40211d6392",
+      "topics": [
+        "system-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-documentation",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "statistics-identification",
+      "descriptionSha256": "0f25274b26842e1dd4e291559fc962cb3092010e85066cc0a1934b9e27a290ce",
+      "topics": [
+        "database-statistics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-statistics-identification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "index-verification",
+      "descriptionSha256": "f24e1e546c3688c8b9d1c73b91b341b330e8dfbd029bcc23551b5ded9c3a8443",
+      "topics": [
+        "database-indexes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-index-verification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "query-planning",
+      "descriptionSha256": "68873e3eadc14bd8823989bc5eda07839f12b5b2cd301408ea07f095db3f4eff",
+      "topics": [
+        "query-planning"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-query-planning",
+        "ifc006-mf057-p-maintenance-application"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-corrections",
+      "descriptionSha256": "4b34e1bd13507825cc3fbd2102b9945c08251d06b555b23d178560cd09e3116f",
+      "topics": [
+        "server-corrections"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-server-corrections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "statistics-scheduling",
+      "descriptionSha256": "3441b9e1e0365edfafe46aa8d116bb7cbf236e4fc74e5e6970981b3987f0051f",
+      "topics": [
+        "statistics-scheduling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-statistics-scheduling"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "correction-documentation",
+      "descriptionSha256": "c9a0ed520f34ced9a347333fcf18dc699557b4a7f210b20d51729152ca35c2e8",
+      "topics": [
+        "correction-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-correction-documentation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-tests",
+      "descriptionSha256": "b95a1af613419e081877486165bb60f4f6bd32ccbaf93bddc071ba6c1ebb39cc",
+      "topics": [
+        "server-communication",
+        "server-response"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-server-tests"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "independent-actions",
+      "descriptionSha256": "6a2e50dac0b32e83f51f7e56a0525dc727852138d1ff7b4b785472b756bfa8ed",
+      "topics": [
+        "dba-functions",
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dba-functions",
+        "ifc006-mf057-p-dictionary-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-backup",
+      "descriptionSha256": "cc52603463c75431608c2e9425411343bf72e95044d1029b14d68bc54642f9e4",
+      "topics": [
+        "backup-creation",
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "conjunction-backup",
+      "descriptionSha256": "79229da230f9865a1a80aa06dfa9f2aa5c0fb3560a3df4aadb6c7e4d3c62fe32",
+      "topics": [
+        "backup-creation",
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-restoration",
+      "descriptionSha256": "6300ecaa7e2bf3e00cf2830e7b07e73298fc8505301feaee7e5dfe63ec6c6c34",
+      "topics": [
+        "backup-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-roles",
+      "descriptionSha256": "89c1c4b65b66e5f3e23e67900d46305bd1a70497105588cf6edfbb29971819e2",
+      "topics": [
+        "security-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.6"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "optional-resource",
+      "descriptionSha256": "5cf6ad0ce9279ca6b523bb634f5362fc196bb90f6e9e739e8e1f3552d7e04509",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dictionary-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weighted-components",
+      "descriptionSha256": "2aa4c6717419acba2b12573f97d0a96790f888b494e5f86e41ed8c8e9d8007ae",
+      "topics": [
+        "maintenance-plan"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "score-pending",
+      "descriptionSha256": "db46be3e82e6490fba1f8ef2b671e050fc80c7b3781974067ae546327336f556",
+      "topics": [
+        "dba-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dba-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    }
+  ],
+  "reviewFindings": [
+    {
+      "caseId": "database-documentation",
+      "finding": "La referencia p-access-documentation añadía un método de acceso no pedido.",
+      "resolution": "Conservar únicamente CE5.2.3; la consigna independiente access-documentation conserva p-access-documentation.",
+      "regression": "la documentación general MF057 no arrastra el método de acceso no solicitado"
+    }
+  ],
+  "provider": null,
+  "fullInstrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "limits": [
+    "Consignas esperadas con datos ficticios; no hay proveedor ni instrumentos MF057 implementados.",
+    "Las menciones de producción, cuentas, permisos, migraciones, respaldos, restauración y eliminación no autorizan operaciones reales sobre AulaBase ni otros sistemas.",
+    "Las prácticas de configuración usan simulación o entorno de práctica explícito; describir o identificar permisos no requiere ejecutarlos ni crear cuentas.",
+    "La errata literal Raid10 (0+1) se conserva en la fuente; la adaptación distingue RAID10 de RAID0+1 según los diagramas dados, sin enseñar equivalencia.",
+    "Los métodos de acceso y privilegios de la fuente son ejemplos documentales, dependientes del gestor; no exigir todos ni instalar tecnologías históricas por defecto.",
+    "Las ochoactitudes y seisorientaciones no son entregables automáticos; las dosmedidas de integridad solo se considerarían ante petición explícita y observable."
+  ]
+}

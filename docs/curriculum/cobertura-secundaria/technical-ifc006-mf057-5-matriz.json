@@ -2055,5 +2055,12 @@
     "Conservar por escritorio, acces o, Parchos y Raid10 (0+1) literalmente; no enseñar como equivalentes configuraciones distintas ni convertir ejemplos con puntos suspensivos en comandos ejecutables.",
     "Las dosocurrencias de adopción de medidas de integridad son condicionalmente observables solo cuando la tarea las pide. Se preservan separadas; no califican disposición o personalidad.",
     "Las otrasseisactitudes privadas y las seisorientaciones docentes no son entregables automáticos."
-  ]
+  ],
+  "expectedContracts": {
+    "file": "data/evaluation-instruments/technical-mf057-five-contracts.json",
+    "cases": 136,
+    "topicGroups": 115,
+    "review": "technical-mf057-5-contratos-esperados.json",
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
+  }
 }

@@ -1,5 +1,17 @@
 # Continuación del encargo integral de secundaria
 
+## Estado vigente: MF057 contratos revisados; MF059 QA activo
+
+Rama `ampliacion-de-instrumentos-2`; último commit confirmado `3c35011419d7a52a70e8d75f3894f1727cfbf88f`, 80 locales por delante de la referencia remota guardada. Sin push/fetch, despliegues, main, producción, cuentas o subagentes. Árbol previo limpio. Nuevo bloque MF057 pendiente de commit local: 136 consignas / 115 grupos esperados, leídas completas por bloques 0–34/35–69/70–104/105–135, 30 CE y 59 procedimientos referenciados. Fuente 114/123 ya revisada; no repetir transcripción ni recorder. `prepare-mf057-contracts.mjs` y `record-mf057-expected-contracts.mjs` YA ejecutados una vez; no sobrescribir.
+
+Tres RED por fixture ausente → GREEN, una referencia excesiva al método de acceso retirada con regresión RED→GREEN, una evidencia ausente RED→GREEN. Fuente+contratos 9/9; conjunto `technical*.test.mjs` 102/102 en sesión 87138 TERMINADA0. MF057 sigue SIN proveedor/instrumentos/HTTP/DB/browser. Matriz/inventario enlazan contratos sin afirmar implementación. Informe `2026-10-21-tecnico-ifc-mf057-5-contratos.md`. No cambios de aplicación; siguen vigentes los gates finales MF059 de 59785. No recompilar ni reiniciar el Worker146 durante QA.
+
+Único HTTP MF059 **87371 ACTIVO**; Worker146 **83267 / launcher38988**. Última lectura: 28/100 verificadas, 29 preparadas/reabiertas inicialmente, 175 respuestas, cero 500/429. Autoridad sigue el archivo de progreso/samplee97c9239a299; consultar `mf059-progress-summary.mjs`, no crear otro ejecutor ni nuevas IDs/baselines. Si falla, preservar IDs/instrumentos/snapshots/historia en solo lectura antes de continuar; sin bucle de reintentos. MF059 personal sigue bloqueado por autenticación (pestaña 1796703433 en login, contraseña vacía), no por indisponibilidad del navegador. No enviar otro enlace sin nueva instrucción, usar QA en la sesión personal ni tocar producción 1796703102. Quince baselines anteriores ya preservados antes del QA; no capturar nuevos.
+
+Siguiente: auditar diff/credenciales y guardar el bloque MF057 en commit español LOCAL. Mientras siga QA146, avanzar contratos MF055 de sexto u otro bloque de fuente ya revisada, sin modificar aplicación/catálogo servido. Proveedor MF057 y catálogo147 solo después de cerrar/preservar146 y congelar individualmente146 con historia verificada. NO PUSH sigue vigente.
+
+### Checkpoint anterior de instalación, superado por el estado anterior
+
 ## Estado vigente: MF059 instalado, QA100 activo, personal sin autenticación
 
 Proveedor/manifiesto confirmados en `27fdaa7795190d9733ac8eadb17cf8b9e01db6ca`,79commits locales delante segúnrefremotaguardada. NO PUSH. Backend93.499/FE91.612/buildsfinales0 vigentes; no cambiosdeaplicación posteriores. Fuente/catálogo146 YAinstalados por34371TERMINÓ0: fuenteCREATED/UNCHANGED, catálogoCREATED/UNCHANGED,78releases/1.103snapshotsprevios exactos→79/1.103antesdeQA. IDsource171ca600-9dde-5fb6-89a3-50e0c8365fab/scope6ee66a51-ca01-5f9c-b084-2e3af732e076,37elementos39spans+8documentales45/47,7Aexcluidas. No repetirinstall-mf059-individual/source/catalog,freeze145 orecorders.

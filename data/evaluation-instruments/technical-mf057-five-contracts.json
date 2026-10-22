@@ -1,0 +1,1434 @@
+{
+  "subjectCode": "MF_057_3",
+  "subjectName": "Administración de Base de Datos",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "dba-definition",
+      "description": "Define el papel del administrador de bases de datos (DBA) en el caso ficticio proporcionado.",
+      "topics": [
+        "dba-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.1"
+      ]
+    },
+    {
+      "id": "dba-functions",
+      "description": "Describe las funciones del DBA indicadas en la ficha de la organización ficticia.",
+      "topics": [
+        "dba-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.2",
+        "ifc006-mf057-p-dba-functions"
+      ]
+    },
+    {
+      "id": "structure-management",
+      "description": "Describe cómo administra el DBA la estructura de la base de datos del caso ficticio.",
+      "topics": [
+        "structure-management"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.2"
+      ]
+    },
+    {
+      "id": "data-activities",
+      "description": "Administra las actividades de los datos del caso de práctica siguiendo los estándares, la guía de acción y los procedimientos de control proporcionados.",
+      "topics": [
+        "data-activities"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.4",
+        "ifc006-mf057-p-data-activities"
+      ]
+    },
+    {
+      "id": "manager-administration",
+      "description": "Analiza las estadísticas y los problemas potenciales del sistema gestor de bases de datos de la ficha para determinar la acción administrativa pertinente.",
+      "topics": [
+        "manager-administration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-manager-administration",
+        "ifc006-mf057-CE5.1.2"
+      ]
+    },
+    {
+      "id": "dictionary-creation",
+      "description": "Crea el diccionario de datos de los objetos de la base de datos ficticia proporcionada.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dictionary-creation",
+        "ifc006-mf057-p-dictionary-establishment",
+        "ifc006-mf057-CE5.1.2"
+      ]
+    },
+    {
+      "id": "reliability",
+      "description": "Comprueba la confiabilidad de la base de datos ficticia a partir de las condiciones y los resultados de las pruebas dados.",
+      "topics": [
+        "database-reliability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-reliability",
+        "ifc006-mf057-CE5.1.2"
+      ]
+    },
+    {
+      "id": "security-confirmation",
+      "description": "Verifica la seguridad de la base de datos de práctica según los permisos y las condiciones indicados, sin modificar cuentas reales.",
+      "topics": [
+        "database-security"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-security-confirmation",
+        "ifc006-mf057-CE5.1.2"
+      ]
+    },
+    {
+      "id": "dba-documentation",
+      "description": "Describe la documentación que recibe y entrega el DBA sobre la estructura, la creación, el diccionario de datos y los usuarios de la base de datos ficticia.",
+      "topics": [
+        "dba-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.3"
+      ]
+    },
+    {
+      "id": "resources-identification",
+      "description": "Identifica los medios de almacenamiento, el sistema operativo, el gestor y la conectividad necesarios para administrar la base de datos del caso ficticio.",
+      "topics": [
+        "administration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.1.4",
+        "ifc006-mf057-p-tools-identification"
+      ]
+    },
+    {
+      "id": "resources-selection",
+      "description": "Selecciona los recursos de administración de bases de datos entre las opciones dadas según las necesidades del caso ficticio.",
+      "topics": [
+        "administration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-resources",
+        "ifc006-mf057-CE5.1.4"
+      ]
+    },
+    {
+      "id": "access-description",
+      "description": "Describe los mecanismos ODBC, ADO y JDBC de acceso a bases de datos según las fichas proporcionadas.",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.1"
+      ]
+    },
+    {
+      "id": "access-identification",
+      "description": "Identifica los métodos de acceso a bases de datos presentes en los ejemplos de la ficha.",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-identification"
+      ]
+    },
+    {
+      "id": "access-selection",
+      "description": "Selecciona el método de acceso a la base de datos según la configuración y el gestor indicados en el caso ficticio.",
+      "topics": [
+        "access-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-selection"
+      ]
+    },
+    {
+      "id": "access-odbc",
+      "description": "Aplica el método de acceso ODBC en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-odbc"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-ado",
+      "description": "Aplica el método de acceso ADO en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-ado"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-dao",
+      "description": "Aplica el método de acceso DAO en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-dao"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-jdbc",
+      "description": "Aplica el método de acceso JDBC en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-jdbc"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-isapi",
+      "description": "Aplica el método de acceso ISAPI en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-isapi"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-cgi",
+      "description": "Aplica el método de acceso CGI en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-cgi"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-rdo",
+      "description": "Aplica el método de acceso RDO en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-rdo"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "access-rds",
+      "description": "Aplica el método de acceso RDS en la simulación de bases de datos proporcionada según la configuración indicada, sin instalar programas ni conectarte a sistemas reales.",
+      "topics": [
+        "access-rds"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-application"
+      ]
+    },
+    {
+      "id": "database-analysis",
+      "description": "Analiza la estructura de tablas y vistas de la base de datos ficticia proporcionada según los requisitos dados, sin modificarla.",
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2"
+      ]
+    },
+    {
+      "id": "database-modification",
+      "description": "Modifica la estructura de la tabla de la base de datos de práctica según el cambio de campos solicitado, conservando los datos ficticios existentes.",
+      "topics": [
+        "database-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2"
+      ]
+    },
+    {
+      "id": "stored-procedure",
+      "description": "Analiza la función del procedimiento almacenado proporcionado en la base de datos ficticia, sin ejecutarlo.",
+      "topics": [
+        "stored-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ]
+    },
+    {
+      "id": "database-trigger",
+      "description": "Modifica el disparador de la base de datos de práctica para responder al evento indicado, sin afectar sistemas reales.",
+      "topics": [
+        "database-triggers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ]
+    },
+    {
+      "id": "conceptual-schema",
+      "description": "Analiza el esquema conceptual de la base de datos ficticia según los requisitos de información dados.",
+      "topics": [
+        "conceptual-schema"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.2",
+        "ifc006-mf057-c-structure"
+      ]
+    },
+    {
+      "id": "database-documentation",
+      "description": "Genera la documentación de la estructura y de los cambios solicitados de la base de datos de práctica.",
+      "topics": [
+        "database-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.3"
+      ]
+    },
+    {
+      "id": "access-documentation",
+      "description": "Documenta el método de acceso seleccionado y la estructura de la base de datos ficticia según la ficha proporcionada.",
+      "topics": [
+        "access-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-access-documentation"
+      ]
+    },
+    {
+      "id": "data-activities-documentation",
+      "description": "Documenta las actividades que se realizarán con los datos ficticios según el uso indicado, sin ejecutarlas.",
+      "topics": [
+        "data-activities-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-data-activities-documentation",
+        "ifc006-mf057-p-documents-activities",
+        "ifc006-mf057-CE5.2.4"
+      ]
+    },
+    {
+      "id": "roles-creation",
+      "description": "Crea los roles de la base de datos de práctica y asigna los permisos de los objetos según los perfiles ficticios indicados, sin usar cuentas reales.",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.5"
+      ]
+    },
+    {
+      "id": "security-policy-description",
+      "description": "Describe la configuración de seguridad de los usuarios ficticios: política de contraseñas, duración, cambio y reintentos de acceso según la ficha.",
+      "topics": [
+        "security-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.6"
+      ]
+    },
+    {
+      "id": "database-creation",
+      "description": "Crea la base de datos de práctica con la estructura solicitada y datos ficticios, sin conectar servicios reales.",
+      "topics": [
+        "database-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7",
+        "ifc006-mf057-p-database-creation"
+      ]
+    },
+    {
+      "id": "users-creation",
+      "description": "Crea los usuarios ficticios de la simulación de bases de datos y asigna los roles indicados según el perfil de uso.",
+      "topics": [
+        "database-users"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7",
+        "ifc006-mf057-p-users-roles"
+      ]
+    },
+    {
+      "id": "user-types",
+      "description": "Identifica los tipos de usuarios de bases de datos de los perfiles ficticios proporcionados.",
+      "topics": [
+        "user-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-identification",
+        "ifc006-mf057-c-administration"
+      ]
+    },
+    {
+      "id": "privileges-identification",
+      "description": "Identifica los privilegios que corresponden a cada usuario ficticio según las acciones permitidas en la ficha.",
+      "topics": [
+        "database-privileges"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-privilege-identification"
+      ]
+    },
+    {
+      "id": "roles-modification",
+      "description": "Reestructura los roles del ejemplo de bases de datos según los nuevos perfiles ficticios indicados.",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-roles-changes"
+      ]
+    },
+    {
+      "id": "roles-removal",
+      "description": "Elimina únicamente el rol señalado en la simulación aislada de bases de datos según el caso ficticio, sin borrar usuarios ni datos.",
+      "topics": [
+        "database-roles"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-roles-changes"
+      ]
+    },
+    {
+      "id": "security-application",
+      "description": "Aplica los roles y la configuración de seguridad indicados a los usuarios ficticios de la simulación, sin cambiar contraseñas reales.",
+      "topics": [
+        "security-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7"
+      ]
+    },
+    {
+      "id": "data-migration",
+      "description": "Ejecuta la migración de los datos ficticios entre las dos bases de práctica proporcionadas según el mapeo indicado, conservando el origen.",
+      "topics": [
+        "data-migration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.7"
+      ]
+    },
+    {
+      "id": "user-select",
+      "description": "Identifica el alcance del privilegio SELECT para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-select"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "user-insert",
+      "description": "Identifica el alcance del privilegio INSERT para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-insert"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "user-update",
+      "description": "Identifica el alcance del privilegio UPDATE para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-update"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "user-alter",
+      "description": "Identifica el alcance del privilegio ALTER para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-alter"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "user-create",
+      "description": "Identifica el alcance del privilegio CREATE para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-create"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "user-drop",
+      "description": "Identifica el alcance del privilegio DROP para el usuario ficticio de la base de datos según la ficha, sin ejecutar comandos.",
+      "topics": [
+        "user-drop"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-user-privileges"
+      ]
+    },
+    {
+      "id": "admin-file",
+      "description": "Describe la función del privilegio administrativo FILE de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-file"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "admin-process",
+      "description": "Describe la función del privilegio administrativo PROCESS de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-process"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "admin-reload",
+      "description": "Describe la función del privilegio administrativo RELOAD de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-reload"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "admin-grant",
+      "description": "Describe la función del privilegio administrativo GRANT de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-grant"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "admin-revoke",
+      "description": "Describe la función del privilegio administrativo REVOKE de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-revoke"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "admin-shutdown",
+      "description": "Describe la función del privilegio administrativo SHUTDOWN de bases de datos del ejemplo documental, sin ejecutarlo ni modificar permisos reales.",
+      "topics": [
+        "admin-shutdown"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-administrator-privileges"
+      ]
+    },
+    {
+      "id": "special-all",
+      "description": "Identifica el alcance del privilegio especial ALL del ejemplo de bases de datos según la ficha, sin otorgar permisos.",
+      "topics": [
+        "special-all"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-special-privileges"
+      ]
+    },
+    {
+      "id": "special-usage",
+      "description": "Identifica el alcance del privilegio especial USAGE del ejemplo de bases de datos según la ficha, sin otorgar permisos.",
+      "topics": [
+        "special-usage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-special-privileges"
+      ]
+    },
+    {
+      "id": "system-create-session",
+      "description": "Identifica el alcance del privilegio de sistema CREATE SESSION de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-session"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-table",
+      "description": "Identifica el alcance del privilegio de sistema CREATE TABLE de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-table"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-sequence",
+      "description": "Identifica el alcance del privilegio de sistema CREATE SEQUENCE de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-sequence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-view",
+      "description": "Identifica el alcance del privilegio de sistema CREATE VIEW de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-view"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-trigger",
+      "description": "Identifica el alcance del privilegio de sistema CREATE TRIGGER de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-trigger"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-procedure",
+      "description": "Identifica el alcance del privilegio de sistema CREATE PROCEDURE de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-procedure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-execute-any-procedure",
+      "description": "Identifica el alcance del privilegio de sistema EXECUTE ANY PROCEDURE de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-execute-any-procedure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-user",
+      "description": "Identifica el alcance del privilegio de sistema CREATE USER de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-user"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-create-role",
+      "description": "Identifica el alcance del privilegio de sistema CREATE ROLE de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-create-role"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "system-drop-user",
+      "description": "Identifica el alcance del privilegio de sistema DROP USER de bases de datos según la ficha proporcionada, sin ejecutar comandos ni crear o eliminar cuentas.",
+      "topics": [
+        "system-drop-user"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-privileges"
+      ]
+    },
+    {
+      "id": "backup-schema",
+      "description": "Identifica el esquema y la frecuencia de respaldo de la base de datos ficticia según los requerimientos y las ventanas disponibles.",
+      "topics": [
+        "backup-schema"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-schema"
+      ]
+    },
+    {
+      "id": "backup-description",
+      "description": "Describe los respaldos de bases de datos completos, del log, diferenciales e incrementales según los ejemplos documentales dados.",
+      "topics": [
+        "backup-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification",
+        "ifc006-mf057-p-backup-options"
+      ]
+    },
+    {
+      "id": "backup-full",
+      "description": "Identifica el respaldo completo de bases de datos en la secuencia de copias ficticias proporcionada según sus características dadas.",
+      "topics": [
+        "backup-full"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ]
+    },
+    {
+      "id": "backup-log",
+      "description": "Identifica el respaldo del log de bases de datos en la secuencia de copias ficticias proporcionada según sus características dadas.",
+      "topics": [
+        "backup-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ]
+    },
+    {
+      "id": "backup-differential",
+      "description": "Identifica el respaldo diferencial de bases de datos en la secuencia de copias ficticias proporcionada según sus características dadas.",
+      "topics": [
+        "backup-differential"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ]
+    },
+    {
+      "id": "backup-incremental",
+      "description": "Identifica el respaldo incremental de bases de datos en la secuencia de copias ficticias proporcionada según sus características dadas.",
+      "topics": [
+        "backup-incremental"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.1",
+        "ifc006-mf057-p-backup-identification"
+      ]
+    },
+    {
+      "id": "backup-selection",
+      "description": "Selecciona el tipo de respaldo de bases de datos más apropiado entre las opciones dadas según la necesidad del caso ficticio.",
+      "topics": [
+        "backup-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-selection"
+      ]
+    },
+    {
+      "id": "backup-limits",
+      "description": "Identifica las limitaciones del respaldo de la base de datos ficticia según el espacio, el tiempo y las condiciones indicados.",
+      "topics": [
+        "backup-limits"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-limits"
+      ]
+    },
+    {
+      "id": "backup-time",
+      "description": "Determina el horario del respaldo de la base de datos ficticia según el uso y las ventanas de disponibilidad indicados.",
+      "topics": [
+        "backup-time"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-time"
+      ]
+    },
+    {
+      "id": "backup-alert-description",
+      "description": "Describe las alertas de seguimiento de los respaldos de bases de datos del ejemplo documental, sin enviar mensajes.",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.2"
+      ]
+    },
+    {
+      "id": "backup-alert-identification",
+      "description": "Identifica las alertas y notificaciones de respaldo disponibles en el gestor de bases de datos de la ficha.",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-backup-alert-identification"
+      ]
+    },
+    {
+      "id": "backup-alert-creation",
+      "description": "Crea una alerta de seguimiento del respaldo de la base de datos en la simulación según el evento y el destinatario ficticios, sin enviar correos ni mensajes reales.",
+      "topics": [
+        "backup-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.2",
+        "ifc006-mf057-p-backup-alert-creation"
+      ]
+    },
+    {
+      "id": "backup-creation",
+      "description": "Implementa el respaldo de la base de datos de práctica según la estrategia y los estándares indicados, usando solo datos ficticios.",
+      "topics": [
+        "backup-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3",
+        "ifc006-mf057-p-backup-creation"
+      ]
+    },
+    {
+      "id": "backup-restoration",
+      "description": "Restaura la copia de seguridad de la base de datos ficticia en el destino de práctica indicado, conservando el origen y sin usar datos reales.",
+      "topics": [
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3",
+        "ifc006-mf057-p-backup-restoration"
+      ]
+    },
+    {
+      "id": "disk-types",
+      "description": "Identifica los tipos de arreglos de discos del material de bases de datos según los diagramas proporcionados.",
+      "topics": [
+        "disk-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ]
+    },
+    {
+      "id": "raid-zero",
+      "description": "Describe el arreglo RAID0 del servidor de bases de datos según el diagrama proporcionado, sin configurar discos reales.",
+      "topics": [
+        "raid-zero"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ]
+    },
+    {
+      "id": "raid-one",
+      "description": "Describe el arreglo RAID1 del servidor de bases de datos según el diagrama proporcionado, sin configurar discos reales.",
+      "topics": [
+        "raid-one"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ]
+    },
+    {
+      "id": "raid-five",
+      "description": "Describe el arreglo RAID5 del servidor de bases de datos según el diagrama proporcionado, sin configurar discos reales.",
+      "topics": [
+        "raid-five"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ]
+    },
+    {
+      "id": "raid-ten-distinction",
+      "description": "Compara los diagramas RAID10 y RAID0+1 de la ficha de almacenamiento de bases de datos, distinguiendo su organización y sin tratarlos como equivalentes por la errata de la fuente.",
+      "topics": [
+        "raid-ten-distinction"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-types"
+      ]
+    },
+    {
+      "id": "disk-tools",
+      "description": "Identifica los programas para definir arreglos de discos del servidor de bases de datos a partir de las funciones descritas en la ficha, sin instalar software.",
+      "topics": [
+        "disk-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-tools"
+      ]
+    },
+    {
+      "id": "disk-selection",
+      "description": "Selecciona el arreglo de discos del servidor de bases de datos entre las opciones dadas según la disponibilidad y las necesidades de la empresa ficticia.",
+      "topics": [
+        "disk-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-disk-selection"
+      ]
+    },
+    {
+      "id": "disk-creation",
+      "description": "Crea el arreglo de discos en el simulador de almacenamiento del servidor de bases de datos según el diseño proporcionado, sin modificar discos físicos.",
+      "topics": [
+        "disk-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.1",
+        "ifc006-mf057-p-disk-configuration"
+      ]
+    },
+    {
+      "id": "disk-server-application",
+      "description": "Aplica el arreglo de discos creado al servidor simulado de bases de datos según la configuración indicada.",
+      "topics": [
+        "disk-server-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.2"
+      ]
+    },
+    {
+      "id": "disk-layout",
+      "description": "Configura en la simulación de bases de datos la ubicación de los archivos de datos, log y temporales en los discos correspondientes según el diseño dado.",
+      "topics": [
+        "database-disk-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.3",
+        "ifc006-mf057-p-database-disk-configuration",
+        "ifc006-mf057-p-database-array-configuration"
+      ]
+    },
+    {
+      "id": "backup-disk-configuration",
+      "description": "Configura en la simulación de bases de datos el destino de los respaldos en el disco indicado, sin crear ni eliminar copias reales.",
+      "topics": [
+        "backup-disk-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.4.4",
+        "ifc006-mf057-p-database-disk-configuration"
+      ]
+    },
+    {
+      "id": "monitor-alert-identification",
+      "description": "Identifica las alertas del comportamiento de la base de datos ficticia según los eventos registrados en la ficha.",
+      "topics": [
+        "monitor-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-monitor-alert-identification"
+      ]
+    },
+    {
+      "id": "monitor-alert-documentation",
+      "description": "Documenta las alertas y notificaciones que necesita la base de datos ficticia según los eventos y las condiciones indicados.",
+      "topics": [
+        "monitor-alert-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-monitor-alert-documentation"
+      ]
+    },
+    {
+      "id": "monitor-alert-creation",
+      "description": "Crea las alertas de la base de datos en la simulación para los eventos indicados, con destinatarios ficticios y sin enviar mensajes reales.",
+      "topics": [
+        "monitor-alerts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1",
+        "ifc006-mf057-p-monitor-alert-creation"
+      ]
+    },
+    {
+      "id": "monitor-data-space",
+      "description": "Establece en la simulación la alerta de bases de datos para el porcentaje de espacio libre en los archivos de datos según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-data-space"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitor-log-events",
+      "description": "Establece en la simulación la alerta de bases de datos para los eventos del log según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-log-events"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitor-transaction-locks",
+      "description": "Establece en la simulación la alerta de bases de datos para los bloqueos de las transacciones según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-transaction-locks"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitor-disk-space",
+      "description": "Establece en la simulación la alerta de bases de datos para la falta de espacio en disco según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-disk-space"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitor-system-resources",
+      "description": "Establece en la simulación la alerta de bases de datos para el alto uso de CPU y memoria según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-system-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitor-engine-unavailable",
+      "description": "Establece en la simulación la alerta de bases de datos para la indisponibilidad del motor de bases de datos según el umbral y la condición dados, sin enviar notificaciones reales.",
+      "topics": [
+        "monitor-engine-unavailable"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.1"
+      ]
+    },
+    {
+      "id": "monitoring",
+      "description": "Monitorea la base de datos de práctica mediante la herramienta proporcionada para detectar consultas de larga duración, bloqueos y uso de recursos según los límites dados.",
+      "topics": [
+        "database-monitoring"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.2",
+        "ifc006-mf057-p-monitor-tools"
+      ]
+    },
+    {
+      "id": "alert-response-automation",
+      "description": "Automatiza la respuesta a la alerta de crecimiento de archivos en la simulación de bases de datos según la regla dada, sin modificar sistemas reales.",
+      "topics": [
+        "alert-response-automation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ]
+    },
+    {
+      "id": "old-backup-cleanup",
+      "description": "Analiza la regla de limpieza de respaldos antiguos del caso ficticio de bases de datos y determina qué copias conservar según la política dada, sin borrar archivos.",
+      "topics": [
+        "old-backup-cleanup"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ]
+    },
+    {
+      "id": "notification-automation",
+      "description": "Configura la simulación de envío de alertas de bases de datos según los eventos y destinatarios ficticios, sin enviar correos ni mensajes reales.",
+      "topics": [
+        "notification-automation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.5.3"
+      ]
+    },
+    {
+      "id": "updates-review",
+      "description": "Revisa la ficha de actualizaciones disponibles del motor de bases de datos y del sistema operativo según el período indicado, sin descargar ni instalar software.",
+      "topics": [
+        "updates-review"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.1"
+      ]
+    },
+    {
+      "id": "review-periods",
+      "description": "Establece los períodos de revisión del hardware y software del servidor de bases de datos según el uso y las condiciones de la ficha.",
+      "topics": [
+        "review-periods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-review-periods"
+      ]
+    },
+    {
+      "id": "hardware-identification",
+      "description": "Identifica el hardware y el software del servidor de bases de datos que requieren mantenimiento o actualización según el diagnóstico dado.",
+      "topics": [
+        "maintenance-components"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-hardware-identification"
+      ]
+    },
+    {
+      "id": "maintenance-tools",
+      "description": "Selecciona las herramientas de mantenimiento del servidor de bases de datos entre las opciones documentales según la tarea indicada, sin instalarlas.",
+      "topics": [
+        "maintenance-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-maintenance-tools"
+      ]
+    },
+    {
+      "id": "updates-need",
+      "description": "Determina si es necesario aplicar la actualización del motor de bases de datos y del sistema operativo según las incidencias y compatibilidades de la ficha, sin instalarla.",
+      "topics": [
+        "updates-need"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.2",
+        "ifc006-mf057-p-maintenance-need"
+      ]
+    },
+    {
+      "id": "updates-environment",
+      "description": "Analiza en qué ambiente conviene realizar la actualización de bases de datos del caso ficticio según los riesgos y requisitos dados, sin modificar ningún entorno real.",
+      "topics": [
+        "updates-environment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.3",
+        "ifc006-mf057-p-maintenance-environment"
+      ]
+    },
+    {
+      "id": "updates-testing",
+      "description": "Prueba la actualización del motor de bases de datos y del sistema operativo en el entorno de práctica simulado según el protocolo y las aplicaciones ficticias indicados.",
+      "topics": [
+        "updates-testing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.4",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "production-case-analysis",
+      "description": "Analiza el plan de aplicación de actualizaciones en el ambiente de producción ficticio de la ficha de bases de datos según las pruebas y los requisitos dados, sin ejecutar actualizaciones en sistemas reales.",
+      "topics": [
+        "production-update-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.6.4"
+      ]
+    },
+    {
+      "id": "maintenance-plan",
+      "description": "Crea el plan de mantenimiento de la base de datos ficticia para reindexación, actualización de estadísticas y revisión de consistencia interna según el diagnóstico dado.",
+      "topics": [
+        "maintenance-plan"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.1"
+      ]
+    },
+    {
+      "id": "maintenance-plan-documentation",
+      "description": "Documenta el plan de mantenimiento de bases de datos proporcionado para futuras consultas según las actividades y los períodos indicados.",
+      "topics": [
+        "maintenance-plan-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.2"
+      ]
+    },
+    {
+      "id": "server-communication",
+      "description": "Revisa la comunicación entre el servidor de aplicaciones y el de bases de datos del entorno simulado según los resultados de red proporcionados.",
+      "topics": [
+        "server-communication"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.3",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "server-response",
+      "description": "Verifica los tiempos de respuesta entre los servidores de aplicaciones y bases de datos del entorno simulado según el umbral dado.",
+      "topics": [
+        "server-response"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.4",
+        "ifc006-mf057-p-server-tests"
+      ]
+    },
+    {
+      "id": "table-recovery",
+      "description": "Ejecuta la recuperación de la tabla ficticia en el simulador de bases de datos según el procedimiento indicado, sin usar datos reales.",
+      "topics": [
+        "table-recovery"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "lock-removal",
+      "description": "Elimina el bloqueo de la transacción ficticia en el simulador de bases de datos según el diagnóstico dado, conservando las operaciones válidas.",
+      "topics": [
+        "lock-removal"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "statistics-update",
+      "description": "Actualiza las estadísticas de la base de datos de práctica según el procedimiento indicado, sin modificar sistemas reales.",
+      "topics": [
+        "database-statistics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5",
+        "ifc006-mf057-p-statistics-update"
+      ]
+    },
+    {
+      "id": "point-in-time-recovery",
+      "description": "Recupera la base de datos ficticia al punto en el tiempo indicado usando la simulación y las copias proporcionadas, conservando el origen.",
+      "topics": [
+        "point-in-time-recovery"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ]
+    },
+    {
+      "id": "table-consistency",
+      "description": "Verifica la consistencia de las tablas de la base de datos ficticia según los resultados y las reglas de integridad dados.",
+      "topics": [
+        "table-consistency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ]
+    },
+    {
+      "id": "disk-consistency",
+      "description": "Verifica la consistencia de los discos del servidor simulado de bases de datos según el diagnóstico y las condiciones indicados, sin reparar discos reales.",
+      "topics": [
+        "disk-consistency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.5"
+      ]
+    },
+    {
+      "id": "system-documentation",
+      "description": "Documenta las actividades del sistema de bases de datos ficticio según los registros proporcionados.",
+      "topics": [
+        "system-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-system-documentation",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "statistics-identification",
+      "description": "Identifica los datos estadísticos de la base de datos del caso ficticio que permiten decidir las acciones futuras solicitadas.",
+      "topics": [
+        "database-statistics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-statistics-identification"
+      ]
+    },
+    {
+      "id": "index-verification",
+      "description": "Verifica los índices de la base de datos de práctica para determinar si requieren reindexación o recreación según las condiciones dadas.",
+      "topics": [
+        "database-indexes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-index-verification"
+      ]
+    },
+    {
+      "id": "query-planning",
+      "description": "Planifica las nuevas consultas de la base de datos ficticia según las necesidades futuras indicadas y las condiciones de funcionamiento dadas.",
+      "topics": [
+        "query-planning"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-query-planning",
+        "ifc006-mf057-p-maintenance-application"
+      ]
+    },
+    {
+      "id": "server-corrections",
+      "description": "Realiza en la simulación las correcciones del servidor de bases de datos que se derivan de las pruebas proporcionadas, conservando lo que ya funciona.",
+      "topics": [
+        "server-corrections"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-server-corrections"
+      ]
+    },
+    {
+      "id": "statistics-scheduling",
+      "description": "Programa el análisis periódico de los datos estadísticos de la base de datos en la simulación según los períodos y las condiciones indicados.",
+      "topics": [
+        "statistics-scheduling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-statistics-scheduling"
+      ]
+    },
+    {
+      "id": "correction-documentation",
+      "description": "Documenta las correcciones del servidor de bases de datos del caso ficticio para futuras consultas según las pruebas y los cambios proporcionados.",
+      "topics": [
+        "correction-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-correction-documentation"
+      ]
+    },
+    {
+      "id": "server-tests",
+      "description": "Aplica las pruebas de comunicación y tiempo de respuesta entre los servidores simulados de bases de datos según el protocolo y los límites proporcionados.",
+      "topics": [
+        "server-communication",
+        "server-response"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-server-tests"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Describe las funciones del DBA del caso ficticio y crea el diccionario de datos de la base de datos de práctica proporcionada.",
+      "topics": [
+        "dba-functions",
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dba-functions",
+        "ifc006-mf057-p-dictionary-creation"
+      ]
+    },
+    {
+      "id": "alternative-backup",
+      "description": "Implementa el respaldo o restaura la copia de la base de datos ficticia en la simulación según la alternativa elegida y la estrategia indicada.",
+      "topics": [
+        "backup-creation",
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "conjunction-backup",
+      "description": "Implementa el respaldo y restaura la copia de la base de datos ficticia en la simulación según la estrategia indicada, conservando el origen.",
+      "topics": [
+        "backup-creation",
+        "backup-restoration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ]
+    },
+    {
+      "id": "negated-restoration",
+      "description": "Implementa el respaldo de la base de datos de práctica según la estrategia dada. No restaures copias ni elimines archivos.",
+      "topics": [
+        "backup-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.3.3"
+      ]
+    },
+    {
+      "id": "negated-roles",
+      "description": "Describe la configuración de seguridad de los usuarios ficticios de la base de datos según la ficha. No crees usuarios ni roles y no cambies contraseñas.",
+      "topics": [
+        "security-policy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.2.6"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Crea el diccionario de datos de la base de datos ficticia proporcionada. Opcionalmente puedes consultar un video de ejemplo.",
+      "topics": [
+        "data-dictionary"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dictionary-creation"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Crea el plan de mantenimiento de la base de datos ficticia según el diagnóstico dado, con pesos por componente y crédito parcial.",
+      "topics": [
+        "maintenance-plan"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-CE5.7.1"
+      ]
+    },
+    {
+      "id": "score-pending",
+      "description": "Describe las funciones del DBA del caso ficticio según la ficha proporcionada.",
+      "topics": [
+        "dba-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf057-p-dba-functions"
+      ],
+      "maxScore": null
+    }
+  ],
+  "negativeDescriptions": [
+    "Realiza una entrevista de trabajo simulada en inglés.",
+    "Diseña una página HTML de un portal web ficticio, sin administrar bases de datos.",
+    "Redacta un texto sobre hábitos saludables sin utilizar ni analizar sistemas informáticos."
+  ],
+  "limits": [
+    "Consignas esperadas con datos ficticios; no hay proveedor ni instrumentos MF057 implementados.",
+    "Las menciones de producción, cuentas, permisos, migraciones, respaldos, restauración y eliminación no autorizan operaciones reales sobre AulaBase ni otros sistemas.",
+    "Las prácticas de configuración usan simulación o entorno de práctica explícito; describir o identificar permisos no requiere ejecutarlos ni crear cuentas.",
+    "La errata literal Raid10 (0+1) se conserva en la fuente; la adaptación distingue RAID10 de RAID0+1 según los diagramas dados, sin enseñar equivalencia.",
+    "Los métodos de acceso y privilegios de la fuente son ejemplos documentales, dependientes del gestor; no exigir todos ni instalar tecnologías históricas por defecto.",
+    "Las ochoactitudes y seisorientaciones no son entregables automáticos; las dosmedidas de integridad solo se considerarían ante petición explícita y observable."
+  ]
+}
