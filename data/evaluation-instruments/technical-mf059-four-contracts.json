@@ -1,0 +1,992 @@
+{
+  "subjectCode": "MF_059_3",
+  "subjectName": "Diseño de Portales Web y Recursos Multimedia",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "client-needs",
+      "description": "Describe las necesidades del cliente ficticio para el portal web a partir de la ficha proporcionada.",
+      "topics": [
+        "client-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ]
+    },
+    {
+      "id": "information-handling",
+      "description": "Describe el manejo de la información del portal web según el flujo indicado en el caso ficticio.",
+      "topics": [
+        "information-handling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ]
+    },
+    {
+      "id": "information-security",
+      "description": "Analiza la seguridad de la información del portal web según los riesgos descritos en el caso ficticio.",
+      "topics": [
+        "information-security"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ]
+    },
+    {
+      "id": "information-updates",
+      "description": "Describe la actualización de datos del portal web según los cambios solicitados en el caso ficticio.",
+      "topics": [
+        "information-updates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ]
+    },
+    {
+      "id": "objectives-classification",
+      "description": "Clasifica los objetivos del diseño de la página web según la naturaleza de la organización ficticia descrita.",
+      "topics": [
+        "web-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.2"
+      ]
+    },
+    {
+      "id": "visual-elements-classification",
+      "description": "Clasifica las imágenes y los elementos visuales del diseño web según su función en la propuesta proporcionada.",
+      "topics": [
+        "visual-elements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.2"
+      ]
+    },
+    {
+      "id": "equipment-capacity",
+      "description": "Identifica la capacidad del equipo tecnológico del diseño web para manejar el volumen de información indicado en la ficha.",
+      "topics": [
+        "equipment-capacity"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.3"
+      ]
+    },
+    {
+      "id": "software-selection",
+      "description": "Selecciona el software de diseño web de las opciones dadas que responda a los requisitos del usuario ficticio.",
+      "topics": [
+        "software-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ]
+    },
+    {
+      "id": "hardware-selection",
+      "description": "Selecciona el hardware para el diseño web de las opciones dadas según los requisitos del usuario ficticio.",
+      "topics": [
+        "hardware-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ]
+    },
+    {
+      "id": "tools-characteristics",
+      "description": "Identifica las características de los programas de diseño web de las fichas proporcionadas.",
+      "topics": [
+        "tool-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tools-characteristics"
+      ]
+    },
+    {
+      "id": "publication-explanation",
+      "description": "Explica los tipos de publicación web de la ficha, sin publicar ningún sitio ni crear cuentas.",
+      "topics": [
+        "publication-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-publication-explanation"
+      ]
+    },
+    {
+      "id": "workspace-comparison",
+      "description": "Compara la ventana de trabajo de los editores de diseño web mostrados según las herramientas visibles.",
+      "topics": [
+        "workspace"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-workspace-comparison"
+      ]
+    },
+    {
+      "id": "templates-preparation",
+      "description": "Prepara la publicación digital de práctica a partir de la plantilla dada, conservando el contenido solicitado, sin publicarla en internet.",
+      "topics": [
+        "templates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-templates"
+      ]
+    },
+    {
+      "id": "page-format",
+      "description": "Aplica el formato y la configuración de página indicados a la publicación digital de práctica.",
+      "topics": [
+        "page-format"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-page-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "html-versions",
+      "description": "Identifica las versiones de HTML que aparecen en la ficha histórica proporcionada.",
+      "topics": [
+        "html-versions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors",
+        "ifc006-mf059-c-html"
+      ]
+    },
+    {
+      "id": "html-editors",
+      "description": "Compara los editores HTML dados según sus funciones descritas, sin instalar programas.",
+      "topics": [
+        "html-editors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors"
+      ]
+    },
+    {
+      "id": "html-converters",
+      "description": "Identifica la función de los convertidores HTML descritos en la ficha proporcionada.",
+      "topics": [
+        "html-converters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors"
+      ]
+    },
+    {
+      "id": "html-characters",
+      "description": "Utiliza los caracteres especiales HTML indicados para representar correctamente los símbolos del texto de práctica.",
+      "topics": [
+        "html-characters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors",
+        "ifc006-mf059-c-html"
+      ]
+    },
+    {
+      "id": "html-structure",
+      "description": "Elabora la estructura básica del documento HTML de práctica según el contenido dado.",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "tags-identification",
+      "description": "Identifica las etiquetas HTML del fragmento proporcionado según la función de cada una.",
+      "topics": [
+        "html-tags"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tags-links",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "links-creation",
+      "description": "Crea los enlaces de la página HTML de práctica hacia los destinos proporcionados.",
+      "topics": [
+        "html-links"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tags-links"
+      ]
+    },
+    {
+      "id": "url-types",
+      "description": "Identifica los tipos de URL presentes en los ejemplos de enlaces web de la ficha.",
+      "topics": [
+        "url-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-urls-anchors",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "anchor-types",
+      "description": "Identifica los tipos de anclas HTML de los fragmentos proporcionados.",
+      "topics": [
+        "anchor-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-urls-anchors",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "lists-identification",
+      "description": "Identifica los tipos de listas HTML de los fragmentos dados según su organización.",
+      "topics": [
+        "html-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "image-formats",
+      "description": "Compara los formatos de las imágenes del diseño web de la ficha según la finalidad indicada.",
+      "topics": [
+        "image-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "text-alignment",
+      "description": "Aplica la alineación indicada al texto de la página web de práctica.",
+      "topics": [
+        "text-alignment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "text-color",
+      "description": "Cambia el color del texto de la página web de práctica según la especificación dada.",
+      "topics": [
+        "text-color"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "font-size",
+      "description": "Aplica el tamaño de letra solicitado al texto de la página web de práctica.",
+      "topics": [
+        "font-size"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "typography",
+      "description": "Selecciona la tipografía de la página web entre las opciones dadas según el requisito de lectura indicado.",
+      "topics": [
+        "typography"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "page-background-color",
+      "description": "Aplica el fondo de color indicado a la página web de práctica.",
+      "topics": [
+        "background-color"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "page-background-image",
+      "description": "Aplica la imagen de fondo dada a la página web de práctica según el diseño solicitado.",
+      "topics": [
+        "background-image"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format"
+      ]
+    },
+    {
+      "id": "visual-layout",
+      "description": "Diseña la apariencia de la pantalla del portal web de práctica según la distribución de elementos solicitada.",
+      "topics": [
+        "visual-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ]
+    },
+    {
+      "id": "printed-layout",
+      "description": "Diseña la apariencia del documento impreso del proyecto web según la distribución de elementos solicitada.",
+      "topics": [
+        "printed-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ]
+    },
+    {
+      "id": "screen-dimensions",
+      "description": "Diseña las dimensiones de la pantalla web para el dispositivo indicado en el caso de práctica.",
+      "topics": [
+        "screen-dimensions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "print-dimensions",
+      "description": "Diseña las dimensiones del impreso del proyecto web según el tamaño de salida solicitado.",
+      "topics": [
+        "print-dimensions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "design-colors",
+      "description": "Diseña los colores de los elementos de la pantalla web según la paleta proporcionada por el cliente ficticio.",
+      "topics": [
+        "design-colors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "page-margins",
+      "description": "Aplica los márgenes indicados al diseño de la página web de práctica.",
+      "topics": [
+        "page-margins"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ]
+    },
+    {
+      "id": "image-modification",
+      "description": "Modifica la imagen proporcionada para adecuarla al espacio y la finalidad indicados del diseño web.",
+      "topics": [
+        "image-modification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.3"
+      ]
+    },
+    {
+      "id": "animation-modification",
+      "description": "Modifica la animación de práctica según el cambio de duración y secuencia solicitado en la propuesta web.",
+      "topics": [
+        "animation-modification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.3"
+      ]
+    },
+    {
+      "id": "images-insertion",
+      "description": "Inserta la imagen dada en la página HTML de práctica según el lugar solicitado.",
+      "topics": [
+        "image-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "image-attributes",
+      "description": "Aplica los atributos indicados a la imagen HTML proporcionada en la página de práctica.",
+      "topics": [
+        "image-attributes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "image-placement",
+      "description": "Configura la ubicación de la imagen respecto al texto de la página web según la propuesta dada.",
+      "topics": [
+        "image-placement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-lists-images-format"
+      ]
+    },
+    {
+      "id": "image-map-regions",
+      "description": "Define las regiones del mapa de imagen HTML de práctica según las zonas señaladas en el recurso dado.",
+      "topics": [
+        "image-map-regions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "image-map-links",
+      "description": "Vincula las regiones del mapa de imagen HTML con los destinos proporcionados.",
+      "topics": [
+        "image-map-links"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "audio-insertion",
+      "description": "Inserta el audio dado en la página web de práctica usando las etiquetas y propiedades solicitadas.",
+      "topics": [
+        "audio-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ]
+    },
+    {
+      "id": "video-insertion",
+      "description": "Inserta el video dado en la página web de práctica usando las etiquetas y propiedades solicitadas.",
+      "topics": [
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ]
+    },
+    {
+      "id": "embedded-programs",
+      "description": "Describe la inserción de programas en una página web según el ejemplo documental dado, sin instalar plugins ni ejecutar componentes externos.",
+      "topics": [
+        "embedded-programs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "audio-resources",
+      "description": "Configura los recursos de audio de la página web de práctica con los archivos y opciones proporcionados.",
+      "topics": [
+        "audio-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "video-resources",
+      "description": "Configura los recursos de video de la página web de práctica con los archivos y opciones proporcionados.",
+      "topics": [
+        "video-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "forms-textbox",
+      "description": "Identifica las cajas de texto del formulario HTML de práctica y la información que recibe cada una.",
+      "topics": [
+        "form-textbox"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "forms-options",
+      "description": "Identifica las opciones del formulario HTML de práctica según las alternativas de entrada dadas.",
+      "topics": [
+        "form-options"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms"
+      ]
+    },
+    {
+      "id": "forms-buttons",
+      "description": "Utiliza los botones del formulario HTML de práctica según las acciones indicadas en el ejemplo dado.",
+      "topics": [
+        "form-buttons"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms"
+      ]
+    },
+    {
+      "id": "forms-controls",
+      "description": "Diseña los controles del formulario HTML de práctica según los campos solicitados por el usuario ficticio.",
+      "topics": [
+        "form-controls"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1",
+        "ifc006-mf059-p-forms",
+        "ifc006-mf059-c-structure"
+      ]
+    },
+    {
+      "id": "tags-manipulation",
+      "description": "Modifica las etiquetas HTML del fragmento dado según el cambio de estructura solicitado.",
+      "topics": [
+        "tag-manipulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tag-manipulation"
+      ]
+    },
+    {
+      "id": "elements-disable",
+      "description": "Desactiva el elemento del formulario HTML indicado en la consigna, conservando los demás controles del ejemplo.",
+      "topics": [
+        "element-disabling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tag-manipulation"
+      ]
+    },
+    {
+      "id": "image-map",
+      "description": "Utiliza el mapa de imagen HTML proporcionado para acceder a los destinos indicados en la práctica.",
+      "topics": [
+        "image-map"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ]
+    },
+    {
+      "id": "table-rows",
+      "description": "Modifica las filas de la tabla HTML de práctica según la estructura solicitada, conservando los datos dados.",
+      "topics": [
+        "table-rows"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ]
+    },
+    {
+      "id": "table-cells",
+      "description": "Modifica las celdas de la tabla HTML de práctica según la distribución solicitada, conservando su contenido.",
+      "topics": [
+        "table-cells"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ]
+    },
+    {
+      "id": "table-caption",
+      "description": "Aplica el título indicado a la tabla HTML de práctica según el contenido que representa.",
+      "topics": [
+        "table-caption"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ]
+    },
+    {
+      "id": "animation-application",
+      "description": "Aplica la animación dada al recurso multimedia web de práctica según la secuencia indicada.",
+      "topics": [
+        "animation-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-multimedia"
+      ]
+    },
+    {
+      "id": "external-files",
+      "description": "Identifica los ficheros externos de la página web proporcionada según sus referencias en el documento.",
+      "topics": [
+        "external-files"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ]
+    },
+    {
+      "id": "online-multimedia",
+      "description": "Describe los recursos multimedia en línea de la página web de la ficha y sus dependencias, sin conectarte a servicios externos.",
+      "topics": [
+        "online-multimedia"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ]
+    },
+    {
+      "id": "plugins-description",
+      "description": "Describe la función histórica de los plugins en el ejemplo de página web de la ficha, sin instalarlos ni ejecutarlos.",
+      "topics": [
+        "plugins-description"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ]
+    },
+    {
+      "id": "embedded-objects",
+      "description": "Identifica los objetos incrustados en el fragmento HTML documental proporcionado.",
+      "topics": [
+        "embedded-objects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ]
+    },
+    {
+      "id": "navigation-diagram",
+      "description": "Elabora el diagrama de navegación entre las pantallas del portal web ficticio según los accesos solicitados.",
+      "topics": [
+        "navigation-diagram"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1"
+      ]
+    },
+    {
+      "id": "window-hierarchy",
+      "description": "Determina la jerarquía de las ventanas del portal web ficticio según la prioridad de acceso a la información indicada.",
+      "topics": [
+        "window-hierarchy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.2"
+      ]
+    },
+    {
+      "id": "style-syntax",
+      "description": "Identifica la sintaxis utilizada para asignar estilos a las etiquetas HTML del ejemplo proporcionado.",
+      "topics": [
+        "style-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "browser-testing",
+      "description": "Prueba la página web local de práctica en los dos navegadores indicados para comprobar el comportamiento solicitado, sin publicarla.",
+      "topics": [
+        "browser-testing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "source-documentation",
+      "description": "Documenta el fichero HTML de práctica describiendo la estructura y las decisiones de diseño solicitadas.",
+      "topics": [
+        "source-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "accessibility-definition",
+      "description": "Define la accesibilidad web con relación al ejemplo de barrera de acceso proporcionado.",
+      "topics": [
+        "accessibility-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "accessibility-advantages",
+      "description": "Explica las ventajas de la accesibilidad web en los ejemplos dados de acceso y navegación.",
+      "topics": [
+        "accessibility-advantages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "accessibility-verification",
+      "description": "Comprueba la accesibilidad de la página web de práctica mediante la herramienta y las condiciones indicadas, sin añadir otros requisitos.",
+      "topics": [
+        "accessibility-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "accessibility-application",
+      "description": "Aplica el criterio de accesibilidad web indicado para corregir la barrera de acceso del ejemplo de práctica.",
+      "topics": [
+        "accessibility-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "accessibility-resources",
+      "description": "Identifica los recursos web estándares de accesibilidad descritos en la ficha y la función de cada uno.",
+      "topics": [
+        "accessibility-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-definition",
+      "description": "Define la usabilidad web según la interacción entre la persona y el sitio del ejemplo dado.",
+      "topics": [
+        "usability-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-design",
+      "description": "Diseña un sitio web usable para la tarea y el recorrido de usuario indicados en el caso ficticio.",
+      "topics": [
+        "usability-design"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-description",
+      "description": "Describe la usabilidad del sitio web mostrado según la tarea del usuario indicada.",
+      "topics": [
+        "usability-description"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-analysis",
+      "description": "Analiza la estructura y el diseño del sitio web según la tarea y los problemas de usabilidad descritos en el caso ficticio.",
+      "topics": [
+        "usability-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-adaptation",
+      "description": "Adapta el sitio web de práctica para resolver el problema de usabilidad señalado, conservando los elementos que no requieren cambios.",
+      "topics": [
+        "usability-adaptation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "usability-use",
+      "description": "Utiliza el sitio web de práctica para realizar el recorrido de usuario indicado y comprobar su usabilidad.",
+      "topics": [
+        "usability-use"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ]
+    },
+    {
+      "id": "web-design",
+      "description": "Diseña la aplicación web ficticia según los requisitos de la institución dados en la ficha, sin publicarla ni crear cuentas.",
+      "topics": [
+        "web-design"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.4"
+      ]
+    },
+    {
+      "id": "web-technologies",
+      "description": "Compara las tecnologías de desarrollo web de la ficha según la función descrita para cada una.",
+      "topics": [
+        "web-technologies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ]
+    },
+    {
+      "id": "sound-formats",
+      "description": "Compara los formatos de sonido MP3, WAV y MIDI de la ficha para el recurso web según sus características dadas.",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Elabora el diagrama de navegación del portal web y describe los atributos de la imagen HTML proporcionada.",
+      "topics": [
+        "navigation-diagram",
+        "image-attributes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1",
+        "ifc006-mf059-CE7.2.4"
+      ]
+    },
+    {
+      "id": "alternative-media",
+      "description": "Inserta el audio o el video dado en la página web de práctica según la alternativa elegida.",
+      "topics": [
+        "audio-insertion",
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "alternative-tools",
+      "description": "Selecciona el software o el hardware para el diseño web según la alternativa elegida y los requisitos dados.",
+      "topics": [
+        "software-selection",
+        "hardware-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "conjunction-media",
+      "description": "Inserta el audio y el video dados en la página web de práctica según la ubicación indicada para cada recurso.",
+      "topics": [
+        "audio-insertion",
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ]
+    },
+    {
+      "id": "negated-audio",
+      "description": "Inserta el video dado en la página web de práctica. No insertes audio ni animaciones.",
+      "topics": [
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ]
+    },
+    {
+      "id": "negated-publication",
+      "description": "Elabora la estructura básica HTML de la página de práctica. No publiques el sitio ni crees cuentas de alojamiento.",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Elabora el diagrama de navegación del portal web ficticio. Opcionalmente puedes consultar un video de ejemplo.",
+      "topics": [
+        "navigation-diagram"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Diseña la apariencia de la pantalla web de práctica según los requisitos dados, con crédito parcial y pesos por componente.",
+      "topics": [
+        "visual-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ]
+    },
+    {
+      "id": "score-pending",
+      "description": "Elabora la estructura básica HTML de la página de práctica según el contenido dado.",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure"
+      ],
+      "maxScore": null
+    },
+    {
+      "id": "historical-flash",
+      "description": "Describe el formato SWF y la animación Flash de la ficha histórica de recursos web, sin instalar ni ejecutar software.",
+      "topics": [
+        "historical-flash"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ]
+    },
+    {
+      "id": "historical-languages",
+      "description": "Clasifica HTML, PHP, Java, JavaScript y ASP de la ficha histórica según su función en el desarrollo web, sin tratarlos como versiones de HTML.",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ]
+    }
+  ],
+  "negativeDescriptions": [
+    "Realiza una entrevista de trabajo simulada en inglés.",
+    "Diseña el modelo entidad-relación de una base de datos ficticia, sin crear páginas web.",
+    "Compara dos documentos de texto en Ofimática sin diseñar un portal web."
+  ],
+  "limits": [
+    "Consignas esperadas; todavía no hay proveedor ni instrumentos MF059 implementados.",
+    "Las sieteactitudes y cincoorientaciones siguen documentales; no se evalúan rasgos personales.",
+    "Sin despliegue, publicación real, cuentas o instalación deplugins por defecto; las referencias históricas no recomiendan ejecutarlos."
+  ]
+}

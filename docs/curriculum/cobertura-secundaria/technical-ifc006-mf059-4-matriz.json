@@ -840,5 +840,12 @@
     "SWF,flash yplugins se conservan como tecnologías históricas impresas; no imponer instalación o ejecución de componentes obsoletos.",
     "No imponer todos los medios, formatos, controles, navegadores o requisitos de accesibilidad en cada consigna; distinguir describir, seleccionar, diseñar y comprobar.",
     "Las sieteactitudes privadas y cincoorientaciones docentes son documentales, no criterios de personalidad ni entregables automáticos."
-  ]
+  ],
+  "expectedContracts": {
+    "file": "data/evaluation-instruments/technical-mf059-four-contracts.json",
+    "cases": 94,
+    "topicGroups": 85,
+    "review": "technical-mf059-4-contratos-esperados.json",
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
+  }
 }

@@ -1,5 +1,13 @@
 # Continuación del encargo integral de secundaria
 
+## Estado vigente: contratos esperadosMF059 preparados, contexto pendiente
+
+Corrección de búsqueda confirmada en `25667698e35a5353d4329af82fb356c65b30b47e`, árbol limpio al iniciar esta fase,76commits locales adelantados según referencia remota guardada. NO PUSH. Worker25750/launcher61172 sigueactivo; no hay ejecutorHTTP. MF05615/92 yquincebaselines conservados, sin reintentos.
+
+MF059/cuarto: plan refinado,94consignas esperadas/85grupos con12CE15P referenciados. TresRED por archivoausente→tresGREEN. `prepare-mf059-contracts.mjs` y `record-mf059-expected-contracts.mjs` YAejecutadosUNAvez, no repetir/sobrescribir. Público `technical-mf059-4-contratos-esperados.json`, matriz/inventario conexpectedContracts, nuevoreporteMF059. Todavía0proveedor/adaptaciones/instrumentosMF059. Nodefinal2104 consultar antesdecommit. Siguiente conservar145UNAvez mediante sololectura, despuéscontexto/proveedor. No reutilizarfreeze144 ni baselines personales. No producción/main/despliegues/reset/cuentas/subagentes.
+
+### Checkpoint anteriorMF056, conservado
+
 ## Estado vigente: búsqueda técnica corregida, QA15/92 preservado tras cierre de conexión
 
 HTTP70475 TERMINÓ1. Llegó a15/92verificadas/15guardadas/101respuestas, un500 y cero429. La última recomendación llevaba versión explícita y falló por `Connection terminated unexpectedly` en21.674s; NO pasa porversionForContext. Causa del cierre aún no establecida. No ejecutar otro retry, reiniciar Worker ni cambiar red/timeouts. Worker25750/launcher61172 sigue ACTIVO y sirve el build verificado exclusivamenteDevelopment.

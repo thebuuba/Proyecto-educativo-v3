@@ -1,0 +1,995 @@
+{
+  "moduleCode": "MF_059_3",
+  "programCode": "IFC006_3",
+  "grade": 4,
+  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "cases": 94,
+  "expectedTopicGroups": 85,
+  "sourceEvaluationCriteriaReferenced": 12,
+  "sourceProceduresReferenced": 15,
+  "fixtureSha256": "a8c2ea9987d28d841866eb8836de029086bf66fd4d1a3f5cae77cea18ae46631",
+  "red": 3,
+  "green": 3,
+  "method": "Lectura de las94consignas redactadas frente a los45literales previamente revisados. Separar losrequisitos de cada acción; la existencia del contrato no demuestra generación ni pertinencia de instrumentos todavía ausentes.",
+  "casesReviewed": [
+    {
+      "id": "client-needs",
+      "topics": [
+        "client-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "information-handling",
+      "topics": [
+        "information-handling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "information-security",
+      "topics": [
+        "information-security"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "information-updates",
+      "topics": [
+        "information-updates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "objectives-classification",
+      "topics": [
+        "web-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "visual-elements-classification",
+      "topics": [
+        "visual-elements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "equipment-capacity",
+      "topics": [
+        "equipment-capacity"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "software-selection",
+      "topics": [
+        "software-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "hardware-selection",
+      "topics": [
+        "hardware-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tools-characteristics",
+      "topics": [
+        "tool-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tools-characteristics"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "publication-explanation",
+      "topics": [
+        "publication-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-publication-explanation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "workspace-comparison",
+      "topics": [
+        "workspace"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-workspace-comparison"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "templates-preparation",
+      "topics": [
+        "templates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-templates"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "page-format",
+      "topics": [
+        "page-format"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-page-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "html-versions",
+      "topics": [
+        "html-versions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors",
+        "ifc006-mf059-c-html"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "html-editors",
+      "topics": [
+        "html-editors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "html-converters",
+      "topics": [
+        "html-converters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "html-characters",
+      "topics": [
+        "html-characters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-versions-editors",
+        "ifc006-mf059-c-html"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "html-structure",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tags-identification",
+      "topics": [
+        "html-tags"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tags-links",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "links-creation",
+      "topics": [
+        "html-links"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tags-links"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "url-types",
+      "topics": [
+        "url-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-urls-anchors",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "anchor-types",
+      "topics": [
+        "anchor-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-urls-anchors",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "lists-identification",
+      "topics": [
+        "html-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-formats",
+      "topics": [
+        "image-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "text-alignment",
+      "topics": [
+        "text-alignment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "text-color",
+      "topics": [
+        "text-color"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "font-size",
+      "topics": [
+        "font-size"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "typography",
+      "topics": [
+        "typography"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "page-background-color",
+      "topics": [
+        "background-color"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format",
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "page-background-image",
+      "topics": [
+        "background-image"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-lists-images-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "visual-layout",
+      "topics": [
+        "visual-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "printed-layout",
+      "topics": [
+        "printed-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "screen-dimensions",
+      "topics": [
+        "screen-dimensions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "print-dimensions",
+      "topics": [
+        "print-dimensions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "design-colors",
+      "topics": [
+        "design-colors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "page-margins",
+      "topics": [
+        "page-margins"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-modification",
+      "topics": [
+        "image-modification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "animation-modification",
+      "topics": [
+        "animation-modification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "images-insertion",
+      "topics": [
+        "image-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-attributes",
+      "topics": [
+        "image-attributes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-placement",
+      "topics": [
+        "image-placement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-lists-images-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-map-regions",
+      "topics": [
+        "image-map-regions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-map-links",
+      "topics": [
+        "image-map-links"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "audio-insertion",
+      "topics": [
+        "audio-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "video-insertion",
+      "topics": [
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "embedded-programs",
+      "topics": [
+        "embedded-programs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "audio-resources",
+      "topics": [
+        "audio-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "video-resources",
+      "topics": [
+        "video-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "forms-textbox",
+      "topics": [
+        "form-textbox"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "forms-options",
+      "topics": [
+        "form-options"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "forms-buttons",
+      "topics": [
+        "form-buttons"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-forms"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "forms-controls",
+      "topics": [
+        "form-controls"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1",
+        "ifc006-mf059-p-forms",
+        "ifc006-mf059-c-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tags-manipulation",
+      "topics": [
+        "tag-manipulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tag-manipulation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "elements-disable",
+      "topics": [
+        "element-disabling"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-tag-manipulation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-map",
+      "topics": [
+        "image-map"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-rows",
+      "topics": [
+        "table-rows"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-cells",
+      "topics": [
+        "table-cells"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-caption",
+      "topics": [
+        "table-caption"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-maps-tables"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "animation-application",
+      "topics": [
+        "animation-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "external-files",
+      "topics": [
+        "external-files"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "online-multimedia",
+      "topics": [
+        "online-multimedia"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "plugins-description",
+      "topics": [
+        "plugins-description"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "embedded-objects",
+      "topics": [
+        "embedded-objects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-external-files"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "navigation-diagram",
+      "topics": [
+        "navigation-diagram"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "window-hierarchy",
+      "topics": [
+        "window-hierarchy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "style-syntax",
+      "topics": [
+        "style-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "browser-testing",
+      "topics": [
+        "browser-testing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "source-documentation",
+      "topics": [
+        "source-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "accessibility-definition",
+      "topics": [
+        "accessibility-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "accessibility-advantages",
+      "topics": [
+        "accessibility-advantages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "accessibility-verification",
+      "topics": [
+        "accessibility-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "accessibility-application",
+      "topics": [
+        "accessibility-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "accessibility-resources",
+      "topics": [
+        "accessibility-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-definition",
+      "topics": [
+        "usability-definition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-design",
+      "topics": [
+        "usability-design"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-description",
+      "topics": [
+        "usability-description"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-analysis",
+      "topics": [
+        "usability-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-adaptation",
+      "topics": [
+        "usability-adaptation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "usability-use",
+      "topics": [
+        "usability-use"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "web-design",
+      "topics": [
+        "web-design"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "web-technologies",
+      "topics": [
+        "web-technologies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "sound-formats",
+      "topics": [
+        "sound-formats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "independent-actions",
+      "topics": [
+        "navigation-diagram",
+        "image-attributes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1",
+        "ifc006-mf059-CE7.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-media",
+      "topics": [
+        "audio-insertion",
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-tools",
+      "topics": [
+        "software-selection",
+        "hardware-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.1.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "conjunction-media",
+      "topics": [
+        "audio-insertion",
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-audio",
+      "topics": [
+        "video-insertion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.4",
+        "ifc006-mf059-p-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-publication",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "optional-resource",
+      "topics": [
+        "navigation-diagram"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weighted-components",
+      "topics": [
+        "visual-layout"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-CE7.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "score-pending",
+      "topics": [
+        "html-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-p-structure"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "historical-flash",
+      "topics": [
+        "historical-flash"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-multimedia"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "historical-languages",
+      "topics": [
+        "historical-languages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf059-c-html"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    }
+  ],
+  "provider": null,
+  "fullInstrumentsReviewed": 0,
+  "remoteWrites": false,
+  "limits": [
+    "No acredita instrumentos implementados ni todas las variantes de propósito/formato/puntuación.",
+    "Las referencias impresasHTML/PHP/Java/JavaScript/ASP ySWF/Flash se mantienen documentales; no imponer tecnologías históricas.",
+    "Describir publicación no autoriza publicar un sitio ni crear cuentas.",
+    "Las sieteactitudes y cincoorientaciones continúan documentales."
+  ]
+}
