@@ -3963,12 +3963,13 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.147",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "installation": "technical-mf057-5-instalacion.json"
   },
   "limits": [
     "Las menciones curriculares de producción, permisos, usuarios, migraciones, copias, restauración, notificaciones y eliminación no autorizan acciones reales sobre AulaBase, sus cuentas o sistemas externos.",
@@ -3992,7 +3993,9 @@
       "evidence": "technical-mf057-5-revision.json"
     },
     "automated": "LOCAL_GATES_PASSED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "httpEvidence": "technical-mf057-5-verificacion-http.json",
+    "browserEvidence": "technical-mf057-5-navegador-personal.json"
   }
 }

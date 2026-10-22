@@ -25,7 +25,8 @@ test('MF057 conserva quinto técnico y separa instrumentos locales de pruebas re
     }
   }
   assert.equal(m.implementation.provider, 'packages/shared/src/secondary-technical.ts'); assert.equal(m.adaptations.length, 115)
-  assert.equal(m.implementation.httpDb, 'NOT_RUN'); assert.equal(m.implementation.browser, 'NOT_RUN')
+  const review = JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-mf057-5-revision.json', 'utf8'))
+  assert.equal(m.implementation.httpDb, review.httpDb); assert.equal(m.implementation.browser, review.browser)
 })
 
 test('cada CE y procedimiento MF057 tiene una consigna explícita sin usar actitudes como relleno', () => {

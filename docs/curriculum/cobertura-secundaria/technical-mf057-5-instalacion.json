@@ -1,0 +1,75 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_057_3",
+  "grade": 5,
+  "catalog": "evaluation-2026.147",
+  "status": "INSTALLED_IDEMPOTENT_DEVELOPMENT",
+  "source": {
+    "code": "MINERD_IFC006_MF057_5_NORM_2017_V1",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "versionId": "ac3b7b05-d160-56f5-b176-0531e03b53a0",
+    "scopeId": "1344f7ef-a291-5f26-bb35-7a07613b51a6",
+    "elements": 101,
+    "spans": 109,
+    "documentaryRecords": 13,
+    "literalRecords": 114,
+    "literalParts": 123,
+    "excludedFromAssessment": 8
+  },
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.147",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 79,
+    "preservedSnapshots": 1137,
+    "finalReleases": 80,
+    "finalSnapshots": 1137,
+    "sourceEqualsCompiled": true,
+    "frozen146Exact": true,
+    "previousPayloadsUnchanged": true,
+    "payloadEquality": "POSTGRESQL_JSONB_EQUALITY_PARAMETERIZED",
+    "newAccounts": 0,
+    "newActivities": 0,
+    "deploy": false,
+    "push": false
+  },
+  "contexts": {
+    "executions": 4,
+    "modes": [
+      {
+        "mode": "qa",
+        "sectionSubjectId": "4e56b4d4-0800-4e8c-90d9-2d4dcc215cc3",
+        "grade": 5,
+        "moduleCode": "MF_057_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      },
+      {
+        "mode": "personal",
+        "sectionSubjectId": "aa9bacef-536e-4503-9921-b182b68abfa0",
+        "grade": 5,
+        "moduleCode": "MF_057_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      }
+    ],
+    "originalDataUnchanged": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "deploy": false,
+  "push": false
+}

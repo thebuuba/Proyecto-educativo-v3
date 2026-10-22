@@ -25,5 +25,5 @@ test('dosactitudes de medidas son condicionales y no se confunden con personalid
  const measures=a.filter(x=>x.assessmentPolicy==='OBSERVABLE_ONLY_IF_EXPLICIT_TASK');assert.equal(measures.length,2);assert.equal(measures[0].literal,measures[1].literal);assert.notEqual(measures[0].id,measures[1].id)
  assert.equal(a.filter(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION').length,6)
  const orientations=r.filter(x=>x.type==='TEACHING_STRATEGY');assert.equal(orientations.length,6);assert(orientations.every(x=>x.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'))
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,115);assert.equal(m.verification.fullReview.pending,0);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN');assert(m.limits.some(x=>x.includes('datos ficticios')))
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,115);assert.equal(m.verification.fullReview.pending,0);assert.equal(m.implementation.httpDb,m.verification.httpDb);assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED');assert(m.limits.some(x=>x.includes('datos ficticios')))
 })

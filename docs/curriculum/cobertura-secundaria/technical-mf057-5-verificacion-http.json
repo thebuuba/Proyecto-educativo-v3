@@ -1,0 +1,32 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_057_3",
+  "grade": 5,
+  "catalog": "evaluation-2026.147",
+  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
+  "planned": 16,
+  "preparedIds": 1,
+  "knownSavedAndInitiallyReopened": 1,
+  "verified": 1,
+  "responses": 10,
+  "http500": 0,
+  "http429": 0,
+  "authoritativeProgress": "technical-mf057-5-evaluation-2026.147-source-ac3b7b05-d160-56f5-b176-0531e03b53a0-products-sample-c4384a05d1c1-http-progress.json",
+  "verifiedSamples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "60de4ee7-6634-40f6-be90-2863ed4fd6e2",
+      "snapshotId": "3b0b2956-7bc2-4a63-87aa-4ab5e603e7e8",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4d22a04e6d4347723a7519424cdfdefb78f405357ccad20b1b5aa7a849421443"
+    }
+  ],
+  "personalEvidence": "technical-mf057-5-navegador-personal.json",
+  "limits": [
+    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
+  ]
+}
