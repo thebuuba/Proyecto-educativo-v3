@@ -2,7 +2,7 @@
   "moduleCode": "MF_058_3",
   "programCode": "IFC006_3",
   "grade": 5,
-  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_REPRESENTATIVE_QA_PASSED_PERSONAL_AUTH_REQUIRED",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
   "literalRecordsSha256": "36417e95df354371769d434d7d3c02551a99ad54ca852ab39423a7e76d18991e",
@@ -10,7 +10,7 @@
   "expectedTopicGroups": 54,
   "sourceEvaluationCriteriaReferenced": 10,
   "sourceProceduresReferenced": 17,
-  "fixtureSha256": "d132ccf29fe8c929e2da91a75c6910daab07e859672da1523c72770f4573b486",
+  "fixtureSha256": "87619a919e149fbb72cc8e9d58471bbf9569fed78808530a57bbdbd7458a9e4b",
   "red": {
     "missingFixture": 2,
     "missingEvidence": 1
@@ -846,8 +846,8 @@
   ],
   "provider": "packages/shared/src/secondary-technical.ts",
   "fullInstrumentsReviewed": 288,
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "REPRESENTATIVE_QA_PASSED",
+  "browser": "AUTHENTICATION_REQUIRED",
   "remoteWrites": false,
   "limits": [
     "Usar datos ficticios y conexiones de práctica sin credenciales reales.",

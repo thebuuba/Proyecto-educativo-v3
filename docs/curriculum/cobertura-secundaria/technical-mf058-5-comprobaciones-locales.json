@@ -1,0 +1,90 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.149",
+  "applicationCommit": "4d037e65f070a141d48c8dfa84ef4d48af2de5b5",
+  "gates": {
+    "catalog": "evaluation-2026.149",
+    "gates": 9,
+    "backendTests": 96005,
+    "frontendActivityTests": 93679,
+    "nodeTechnicalTests": 151,
+    "frozen148Exact": true,
+    "priorTechnicalDefinitions": 2448,
+    "newTechnicalDefinitions": 288,
+    "englishDefinitions": 15176,
+    "mathDefinitions": 2888,
+    "optativeDefinitions": 14488,
+    "jsAssets": 76,
+    "allJsPrecached": true,
+    "maximumAssetBytes": 1909015,
+    "deploy": false,
+    "push": false,
+    "remoteWrites": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.149",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DWcd921Q.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DWcd921Q.js",
+        "sha256": "bc382410ac10cd17dbef84973be87270dc6120770aa6a9631624f5e3e13caaa8",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Cp-XbZqB.js",
+        "sha256": "e4c6f027a4a2f1bf16fc8c5a6791c164f91ec5796fbaf4f190b4b559c6e99c54",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CE0hJmD0.js",
+        "sha256": "312e8536049fd7ac95c6996461254935a6a1a172a983a16a79591eb0fe094c2a",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-C2-QSM26.js",
+        "sha256": "5493ebe150322caa4fb1dcd4f506b73cd76b06fe867498974079f1f0e7cca207",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DK51I80W.js",
+        "sha256": "0e1be091d9e673e6094165fa38e12710994a7810d44c6a8d97e021d273162ce9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "971d54b588368e806209c6e5234e5454250f5d650c69e27f7f8f85e770610ef0",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "sourceManifest": "scripts/evaluation-instruments/reviewed-mf058-source.mjs",
+  "installation": "technical-mf058-5-instalacion.json",
+  "browser": "technical-mf058-5-navegador-personal.json",
+  "limits": [
+    "HTTP comprueba assets ySW servidos idénticos al build; no inspecciona caché ni registroSW del navegador.",
+    "Headers de assets combinan no-store e immutable; comportamiento preexistente documentado, sin cambio en esta intervención.",
+    "El navegador personal redirige a login; no se completó el recorrido del creador.",
+    "No se ejecutaron cambios de esquema, migraciones, resets, despliegues o pushes."
+  ],
+  "remoteWritesByRecorder": false
+}

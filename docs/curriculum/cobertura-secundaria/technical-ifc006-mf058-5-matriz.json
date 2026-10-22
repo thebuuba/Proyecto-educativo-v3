@@ -1698,12 +1698,13 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "REPRESENTATIVE_HTTP_DB_VERIFIED_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.149",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "REPRESENTATIVE_QA_PASSED",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "installation": "technical-mf058-5-instalacion.json"
   },
   "limits": [
     "Usar datos ficticios y conexiones de práctica expresamente solicitadas, sin credenciales, bases o reportes reales.",
@@ -1727,7 +1728,9 @@
       "evidence": "technical-mf058-5-revision.json"
     },
     "automated": "FINAL_LOCAL_GATES_PASSED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "REPRESENTATIVE_QA_PASSED",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "httpEvidence": "technical-mf058-5-verificacion-http.json",
+    "browserEvidence": "technical-mf058-5-navegador-personal.json"
   }
 }

@@ -5,7 +5,7 @@
   "grade": 5,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+  "status": "REPRESENTATIVE_QA_PASSED_PERSONAL_AUTH_REQUIRED",
   "cases": [
     {
       "id": "report-needs",
@@ -779,6 +779,6 @@
     "La publicación web se limita a una simulación local; no se requieren servicios externos ni cuentas.",
     "Cada consigna exige únicamente las acciones y variantes elegidas, sin imponer todas las tecnologías, secciones, formatos o salidas del currículo.",
     "Inventario y contratos esperados no acreditan proveedor, instrumentos completos, instalación ni pruebas de usuario.",
-    "Proveedor y288instrumentos revisados en fuente; instalación y pruebasMF058HTTP/DB/navegador pendientes."
+    "Proveedor e instrumentos revisados; fuente y catálogo149 instalados enDevelopment,16muestrasHTTP/DB completas conQA. Navegador personal pendiente deautenticación."
   ]
 }

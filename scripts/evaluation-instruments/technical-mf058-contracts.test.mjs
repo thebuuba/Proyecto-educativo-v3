@@ -5,12 +5,12 @@ import {createHash} from 'node:crypto'
 const path='data/evaluation-instruments/technical-mf058-five-contracts.json'
 const fixture=()=>{assert(existsSync(path),'Faltan consignas MF058');return JSON.parse(readFileSync(path,'utf8'))}
 const matrix=()=>JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-ifc006-mf058-5-matriz.json','utf8'))
-test('MF058 conserva quinto técnico con referencias observables y proveedor revisado pendiente de runtime',()=>{
- const f=fixture(),m=matrix(),records=new Map(m.officialRecords.map(r=>[r.id,r]));assert.equal(f.subjectCode,'MF_058_3');assert.equal(f.programCode,'IFC006_3');assert.equal(f.grade,5);assert.equal(f.cycle,2);assert.equal(f.modalityCode,'technical_professional');assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA')
+test('MF058 conserva quinto técnico con referencias observables y QA representativa diferenciada del navegador personal',()=>{
+ const f=fixture(),m=matrix(),records=new Map(m.officialRecords.map(r=>[r.id,r]));assert.equal(f.subjectCode,'MF_058_3');assert.equal(f.programCode,'IFC006_3');assert.equal(f.grade,5);assert.equal(f.cycle,2);assert.equal(f.modalityCode,'technical_professional');assert.equal(f.status,'REPRESENTATIVE_QA_PASSED_PERSONAL_AUTH_REQUIRED')
  assert.equal(new Set(f.cases.map(c=>c.id)).size,f.cases.length)
  for(const c of f.cases){assert(c.description.trim());assert(c.topics.length);assert(c.sourceRecordIds.length);for(const id of c.sourceRecordIds){assert(records.has(id),id);assert(!['ATTITUDE','TEACHING_STRATEGY'].includes(records.get(id).type),id)}}
  const refs=new Set(f.cases.flatMap(c=>c.sourceRecordIds));assert.deepEqual(m.officialRecords.filter(r=>['EVALUATION_CRITERION','PROCEDURE'].includes(r.type)&&!refs.has(r.id)).map(r=>r.id),[])
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,54);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,54);assert.equal(m.implementation.httpDb,'REPRESENTATIVE_QA_PASSED');assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED')
 })
 test('MF058 distingue secciones, conexión, formatos, datos y salida realmente pedida',()=>{
  const f=fixture(),map=new Map(f.cases.map(c=>[c.id,c]))
@@ -26,7 +26,7 @@ test('la revisión MF058 vincula las72 consignas e instrumentos sin acreditar pr
  for(const [i,c]of f.cases.entries()){assert.equal(p.casesReviewed[i].descriptionSha256,hash(c.description));assert.deepEqual(p.casesReviewed[i].sourceRecordIds,c.sourceRecordIds)}
  assert.equal(p.provider,'packages/shared/src/secondary-technical.ts');assert.equal(p.fullInstrumentsReviewed,288);assert.equal(p.remoteWrites,false)
  const review=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-mf058-5-revision.json','utf8')),examples=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-mf058-5-instrumentos.json','utf8'))
- assert.equal(review.pendingInstrumentReading,0);assert.equal(review.httpDb,'NOT_RUN');assert.equal(review.browser,'NOT_RUN');assert.equal(review.runtimeInstalled,false)
+ assert.equal(review.pendingInstrumentReading,0);assert.equal(review.httpDb,'REPRESENTATIVE_QA_PASSED');assert.equal(review.browser,'AUTHENTICATION_REQUIRED');assert.equal(review.runtimeInstalled,true)
  assert.equal(examples.length,288);assert.equal(review.uniqueCompleteCriteria,80)
  for(const example of examples){const {sha256,...definition}=example;assert.equal(hash(JSON.stringify(definition)),sha256);assert(review.instruments.some(i=>i.id===example.id&&i.sha256===sha256))}
 })

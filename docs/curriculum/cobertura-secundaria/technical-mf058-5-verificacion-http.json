@@ -1,0 +1,248 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_058_3",
+  "grade": 5,
+  "catalog": "evaluation-2026.149",
+  "status": "REPRESENTATIVE_QA_COMPLETE_PERSONAL_AUTHENTICATION_PENDING",
+  "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
+  "planned": 16,
+  "preparedIds": 16,
+  "knownSavedAndInitiallyReopened": 16,
+  "verified": 16,
+  "responses": 99,
+  "http500": 0,
+  "http429": 0,
+  "authoritativeProgress": "technical-mf058-5-evaluation-2026.149-source-553bf2b9-91b8-5635-84cd-12472b2ed263-products-sample-7e0a18fb3b32-http-progress.json",
+  "verifiedSamples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "37cb57f5-6469-4240-ad11-5dab6cef38cb",
+      "snapshotId": "cdf1931b-bab9-45c0-886f-e32ccfea33a1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b4ffe829ef68e72cd34e57d212ad75314b49ccdbc294cd3c241038ad2146ee0e"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "b6aa682c-63a4-4ad2-a2a3-d23c6d63c6ad",
+      "snapshotId": "b3aebbbb-84d5-4d47-a47f-a0f0df094fb7",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "753e9af76c15295d50f7dff9b3c546a1572018d266c9d38f1b2e326413bf3dfc"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "6a43b4a7-16bb-4caa-8890-9020692b2128",
+      "snapshotId": "83363cdc-929d-4046-90af-cffe1c93d37d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "5e111edd11a3a39eccfa1d3bbfba4b7d07c13e25f56c8b583188ae56ce390955"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "ab004edf-8172-4b79-999a-929a378f1533",
+      "snapshotId": "2b6c3864-d765-4617-a572-09e12cd9b6e5",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f2d37446f6e0e36bf64e469c1ac6bb48bb726249138cb95a7c2f060153082e0e"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "6456d28e-a5a7-4026-9728-65ee7788ef21",
+      "snapshotId": "aa33b622-5da5-44c8-bf02-9ab61323ced4",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "41f7098a91383eec9691c102812e006ff5750b090903537f920fa3723fd0ce12"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "6a39c09c-cf30-4031-8c95-46f46ab02d50",
+      "snapshotId": "63d5a992-3d01-4afa-acc1-50cccdfc695d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "33c8adaecb1b236542b1fea2978e73852bb00123265054b9b9905f8def5680c4"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "431738a3-3a6a-442e-8f71-abe51adfed0a",
+      "snapshotId": "2549177a-fe6b-438f-8dc3-ad1b78eede9a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "082a049876fda8ed36cff4b2163737c6b8e40fddf01fb578ee46ac4a89dc18b3"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "b067d4b7-199e-4b7a-bfb1-2c8f3c270323",
+      "snapshotId": "439ae84b-87c9-4ea7-a557-3322613834d2",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2091990061dfa9df34e0e650f5daa92af4d95746ac9d409287083a2559773a19"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "1f470132-2a99-46c5-bb4d-bd57fc25f0b3",
+      "snapshotId": "5a8927e2-0f4c-4585-b6d5-81ce398af7da",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "50c16fd9e4c7fb8680bab86f92653918f4e81726f8191613bbc015529860de44"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "945ff71e-99d1-4b0b-9b16-ab27a8dc6090",
+      "snapshotId": "3bb57f98-3a14-4202-befc-5d8747b3ac9c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b1a89b4f0f4a1df1758009c55268e064cdfe119ed7d2fb2a15682029f232da68"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "f63edcac-5dfa-45cb-a57a-bc6fe3540ead",
+      "snapshotId": "0c3ed8ed-0fa7-4b7a-8a7a-b55fbeb96717",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0380984e18120f47331c8a6e3e15131da5828c135a2338268e23821d9fabca4c"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "730bdd90-de4a-4d9c-83c2-81d838719697",
+      "snapshotId": "903a8a5e-9822-4bd7-9aa2-9ed962089414",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f27bf762d84efe6754c990e6867c8b3cc85cd1adfa3f0ac8bfcb0abd8c4cfc10"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "bed13930-d526-409a-a268-106af6f9fb62",
+      "snapshotId": "1c7ae3bd-b611-45f3-9cdd-18440958b46b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b930478fef8ba044d64d1e52ebefb78ae8345d7a020bc4510e6ea642a7b535f1"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "e12233b4-31b6-4deb-a7d7-09af5bfc49a4",
+      "snapshotId": "630e1c1e-c417-4c2b-93ea-1571bacae8eb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c4513399b616938b9d811644e33477202264d686b5e886b8310fb19250170d8f"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "2f683502-0161-4251-9d39-77f4df4c7d35",
+      "snapshotId": "fda0c64a-c608-4c7d-92ff-caf84c41fc02",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "96590bc0fb58723c717e7dfbed1e01bbd520d0c174d45bc97bc2aba7fc3d6cf3"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "e8ece898-20e6-48b0-a629-e47cc4e715f7",
+      "snapshotId": "7c07b736-7f15-4151-8898-7dd00752fd75",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2ac2995141ed33754bcab52fe1ab899d33695f81693cc334314d1a9017cc8483"
+    }
+  ],
+  "personalEvidence": "technical-mf058-5-navegador-personal.json",
+  "limits": [
+    "Dieciséis muestras representativas autenticadasQA; no todas las72consignas ni sus combinaciones porHTTP.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación.",
+    "Las pruebas locales de72consignas/cuatroformatos y su lectura completa se documentan aparte.",
+    "No se repitieron ejecutores ni se recrearonIDs; preservación posterior en lotes de4 y quincebaselines existentes por solo lectura."
+  ],
+  "executorStopped": true,
+  "coverage": {
+    "availableContracts": 72,
+    "selectedCaseIds": [
+      "report-needs-brief",
+      "tools-classification",
+      "report-structure",
+      "connection-ado",
+      "alternative-dataset-query",
+      "section-group-header",
+      "format-dates",
+      "subtotals-only",
+      "alternative-totals",
+      "filters",
+      "formulas",
+      "messages",
+      "output-web-simulation",
+      "output-storage",
+      "independent-actions",
+      "report-execution"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "latency": {
+    "responses": 99,
+    "minMs": 1966,
+    "medianMs": 5775,
+    "p95Ms": 10833,
+    "maxMs": 11918,
+    "timeoutsObserved": 0,
+    "limits": "Medición de esta ejecución de16muestras; no demuestra resolución de la latencia observada enMF056/MF059 ni caracteriza todas las condiciones de red.",
+    "byOperation": [
+      {
+        "operation": "interpretation",
+        "requests": 16,
+        "medianMs": 7766,
+        "p95Ms": 11918,
+        "maxMs": 11918
+      },
+      {
+        "operation": "recommendation",
+        "requests": 16,
+        "medianMs": 7824,
+        "p95Ms": 10833,
+        "maxMs": 10833
+      },
+      {
+        "operation": "saveAndStrategyUpdate",
+        "requests": 32,
+        "medianMs": 5355,
+        "p95Ms": 6697,
+        "maxMs": 11819
+      },
+      {
+        "operation": "reopen",
+        "requests": 32,
+        "medianMs": 3583,
+        "p95Ms": 8091,
+        "maxMs": 8128
+      }
+    ]
+  },
+  "preservation": {
+    "readOnly": true,
+    "exactActivities": 16,
+    "preservedReleases": 81,
+    "preservedSnapshots": 1169,
+    "currentReleases": 82,
+    "currentSnapshots": 1185,
+    "duplicates": 0,
+    "strategyOnlyInstrumentUnchanged": true
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0,
+    "readOnly": true
+  },
+  "personalCreatorVerified": false
+}

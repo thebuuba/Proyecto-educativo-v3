@@ -15,5 +15,5 @@ test('conserva contenido de reportes y trata actitudes y orientaciones sin entre
  const m=source(),r=m.officialRecords;assert.equal(r.filter(x=>x.type==='CONCEPT').length,2);assert.equal(r.filter(x=>x.type==='PROCEDURE').length,17)
  assert.equal(r.filter(x=>x.type==='ATTITUDE').length,5);assert.equal(r.filter(x=>x.assessmentPolicy==='OBSERVABLE_ONLY_IF_EXPLICIT_TASK').length,1);assert.equal(r.filter(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION').length,4)
  assert.equal(r.filter(x=>x.type==='TEACHING_STRATEGY').length,5);assert(r.every(x=>x.literal.trim()&&x.literal.trim()!=='-'))
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,54);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN');assert(m.limits.some(x=>x.includes('datos ficticios')))
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,54);assert.equal(m.implementation.httpDb,'REPRESENTATIVE_QA_PASSED');assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED');assert(m.limits.some(x=>x.includes('datos ficticios')))
 })

@@ -3,8 +3,8 @@
   "programCode": "IFC006_3",
   "grade": 5,
   "catalog": "evaluation-2026.149",
-  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "status": "REVIEWED_INSTALLED_REPRESENTATIVE_QA_VERIFIED_PERSONAL_AUTH_REQUIRED",
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "method": "Lectura completa de64textos/62ensamblajesv1; después13textos y11ensamblajes nuevos/modificadosv2 (58textos exactos); después9textos y10ensamblajesv3 (71textos exactos). Leído el paquete independent-actions completo en los cuatroformatos finales;288definiciones contrastadas exactamente contra textos, ensamblajes, niveles y reglas de formato leídos. La pertinencia se revisa frente a la fuente y la consigna, no se infiere del conteo.",
   "sourcePages": [
@@ -47,12 +47,12 @@
       5.78
     ]
   },
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "REPRESENTATIVE_QA_PASSED",
+  "browser": "AUTHENTICATION_REQUIRED",
   "automated": "FINAL_LOCAL_GATES_PASSED",
   "limits": [
-    "Catálogo149 candidato en fuente, no instalado ni servido. localhost sigue sirviendo148.",
-    "Pruebas autenticadasMF058HTTP/DB y navegador personal pendientes; la QA anterior no las sustituye.",
+    "Catálogo148 yfuenteMF058 instalados idempotentemente soloenDevelopment.",
+    "Dieciséis muestras HTTP/DB completas con QA; recorrido visual personal bloqueado por autenticación. No acredita todas las variantes porHTTP.",
     "Adaptaciones deAulaBase, no rúbricas oficiales; datos ficticios y conexión de práctica, sin publicación real o credenciales.",
     "Las54adaptaciones/72consignas no agotan todas las combinaciones curriculares."
   ],
