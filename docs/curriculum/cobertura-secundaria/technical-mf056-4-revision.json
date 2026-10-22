@@ -3,7 +3,7 @@
   "programCode": "IFC006_3",
   "grade": 4,
   "catalog": "evaluation-2026.145",
-  "status": "REVIEWED_INSTALLED_PERSONAL_VERIFIED_HTTP_IN_PROGRESS",
+  "status": "REVIEWED_INSTALLED_PERSONAL_VERIFIED_HTTP_PARTIAL",
   "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "independence": "Revisión propia; no se utilizaron subagentes por instrucción del usuario.",
@@ -77,7 +77,7 @@
     "sourceParityVerifiedByContracts": "BACKEND_92531_FRONTEND_ACTIVITIES_90811_FOCAL_737_GREEN"
   },
   "limits": [
-    "HTTP/DB incompleto y con un timeout del cliente; avance en la evidenciaHTTP.",
+    "HTTP/DB parcial15/92: dos timeouts previos y una pérdida de conexión500 posterior a la corrección medida; ejecutor detenido, datos preservados.",
     "Navegador personal verificado: cuatroformatos visibles y una rúbrica guardada/reabierta con estrategia sola exacta.",
     "No acredita cobertura integral de secundaria.",
     "Adaptaciones pedagógicas de AulaBase; no rúbricas literales del currículo."
@@ -1924,5 +1924,6 @@
       "status": "REVIEWED"
     }
   ],
-  "localVerification": "technical-mf056-4-comprobaciones-locales.json"
+  "localVerification": "technical-mf056-4-comprobaciones-locales.json",
+  "performanceEvidence": "technical-mf056-4-busqueda-versiones.json"
 }

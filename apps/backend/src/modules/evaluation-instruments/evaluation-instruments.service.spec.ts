@@ -12,6 +12,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { validate } from 'class-validator'
 import { plainToInstance } from 'class-transformer'
 import { EvaluationInstrumentsService } from './evaluation-instruments.service'
+import { reviewedTechnicalSubject } from './curriculum-context'
 import { RecommendInstrumentDto } from './recommend-instrument.dto'
 import { evaluationCatalogCurrent } from './catalog-current'
 import { diagnoseEvaluationCatalog, seedEvaluationCatalog } from './catalog-operations'
@@ -60,6 +61,32 @@ beforeEach(() => {
 })
 afterEach(() => { vi.unstubAllGlobals() })
 describe('API service security and version policy', () => {
+  for (const code of ['MF_053_3','MF_002_3','MF_054_3','MF_056_3']) it(`filtra la búsqueda de ${code} en PostgreSQL sin descargar las otras fuentes`, async () => {
+    const subject=reviewedTechnicalSubject(code)!
+    const base=assignment()
+    mocks.sectionSubject.findFirst.mockResolvedValue({...base,
+      grade:{...base.grade,sequence:subject.grade,academicLevel:{id:'secondary',code:'secundario'},academicCycle:{code:'secundario_segundo_ciclo',levelId:'secondary'},defaultModality:{code:subject.modalityCode}},
+      subject:{...base.subject,code:subject.code,name:subject.name}})
+    const version={id:'technical-version',level:'SECONDARY',status:'PUBLISHED',importMetadata:{technicalModuleCode:code,technicalProgramCode:subject.programCode,technicalProgramCodes:[...subject.programCodes],grades:[subject.grade],subjectCodes:[code],modalityCodes:[subject.modalityCode],commonOnly:false}}
+    mocks.curriculumVersion.findFirst.mockImplementation(async({where})=>where.importMetadata?.equals===code?version:null)
+    const result=await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad',description:'Describe el contenido proporcionado.'})
+    expect(result.curriculumVersionId).toBe(version.id)
+    expect(mocks.curriculumVersion.findFirst).toHaveBeenCalledWith(expect.objectContaining({where:{level:'SECONDARY',status:'PUBLISHED',importMetadata:{path:['technicalModuleCode'],equals:code}}}))
+    expect(mocks.curriculumVersion.findMany).not.toHaveBeenCalled()
+  })
+  it('filtra la búsqueda técnica también al recuperar una versión anterior compatible', async () => {
+    const subject=reviewedTechnicalSubject('MF_056_3')!,base=assignment()
+    mocks.sectionSubject.findFirst.mockResolvedValue({...base,grade:{...base.grade,sequence:4,academicLevel:{id:'secondary',code:'secundario'},academicCycle:{code:'secundario_segundo_ciclo',levelId:'secondary'},defaultModality:{code:subject.modalityCode}},subject:{...base.subject,code:subject.code,name:subject.name}})
+    const version={id:'compatible-technical-version',level:'SECONDARY',status:'PUBLISHED',importMetadata:{technicalModuleCode:subject.code,technicalProgramCode:subject.programCode,technicalProgramCodes:[...subject.programCodes],grades:[4],subjectCodes:[subject.code],modalityCodes:[subject.modalityCode],commonOnly:false}}
+    const incompatible={...version,id:'incompatible-version',importMetadata:{...version.importMetadata,technicalProgramCode:'ANOTHER_PROGRAM'}}
+    mocks.curriculumVersion.findFirst.mockResolvedValue(incompatible)
+    mocks.curriculumVersion.findMany.mockResolvedValue([incompatible,version])
+    const result=await new EvaluationInstrumentsService().interpret(user,{sectionSubjectId:input.sectionSubjectId,activityTitle:'Actividad'})
+    expect(result.curriculumVersionId).toBe(version.id)
+    const query=expect.objectContaining({where:{level:'SECONDARY',status:'PUBLISHED',importMetadata:{path:['technicalModuleCode'],equals:subject.code}}})
+    expect(mocks.curriculumVersion.findFirst).toHaveBeenCalledWith(query)
+    expect(mocks.curriculumVersion.findMany).toHaveBeenCalledWith(query)
+  })
   it('diagnoses and seeds the new release without replacing installed historical releases', async () => {
     mocks.evaluationCatalogRelease.findUnique.mockResolvedValueOnce(null).mockResolvedValueOnce(null)
     mocks.evaluationCatalogRelease.create.mockResolvedValue({})

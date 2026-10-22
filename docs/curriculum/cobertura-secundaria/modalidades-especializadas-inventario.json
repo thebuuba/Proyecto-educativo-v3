@@ -5306,7 +5306,7 @@
             "weeklyHours": 7,
             "annualHours": 315,
             "sourcePdfPage": 14,
-            "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_IN_PROGRESS",
+            "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_PARTIAL",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "LITERAL_SOURCE_AND_LOCAL_INSTRUMENTS_REVIEWED",
@@ -5326,8 +5326,9 @@
               "adaptations": 51,
               "cases": 92,
               "uniqueCompleteCriteria": 94,
-              "httpDb": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
-              "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT"
+              "httpDb": "PARTIAL_CONNECTION_LOSS_AFTER_VERIFIED_VERSION_FILTER",
+              "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+              "performanceEvidence": "technical-mf056-4-busqueda-versiones.json"
             },
             "contextReview": {
               "proof": "docs/curriculum/cobertura-secundaria/technical-mf056-4-contexto.json",
@@ -5337,7 +5338,7 @@
             },
             "catalogInSource": "evaluation-2026.145",
             "catalog": "evaluation-2026.145",
-            "httpDb": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
+            "httpDb": "PARTIAL_CONNECTION_LOSS_AFTER_VERIFIED_VERSION_FILTER",
             "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT"
           },
           {
@@ -5930,14 +5931,14 @@
     "Leer las mallas completas por asignatura/grado antes de implementar; las tablas de presencia ya están transcritas.",
     "Recuperar copia oficial verificable del componente académico2024 y determinar relación con2019.",
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
-    "MF056/cuarto: fuente/catálogo145/contextosQA-personal instalados idempotentes y recorrido personal completado. HTTP92en curso, con timeout original y reanudación única del mismo progreso; preservar IDs y baselines. No recompilar/reiniciar ni otroejecutor. No repetirMF05465/65,MF00236/95 oMF0533/49."
+    "MF056/cuarto: catálogo145 instalado y personal completo. HTTP15/92,15actividades exactas, dos timeouts previos y un500por cierre de conexión después de corregir/medir la consulta amplia. Ejecutor detenido, sin más reintentos hasta investigar acceso.78releases/1103snapshots y15baselines personales preservados; continuar trabajo independiente autorizado, sin recrear IDs."
   ],
   "push": false,
   "deploy": false,
   "currentApplication": {
     "catalog": "evaluation-2026.145",
     "specializedProvidersAdded": 4,
-    "status": "MF056_PERSONAL_VERIFIED_HTTP_IN_PROGRESS_PRIOR_PARTIALS_PRESERVED",
+    "status": "MF056_PERSONAL_VERIFIED_HTTP_PARTIAL_PRIOR_PARTIALS_PRESERVED",
     "developmentOnly": true,
     "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf056-4.md"
   },
@@ -5945,7 +5946,7 @@
     "catalog": "evaluation-2026.145",
     "specializedProvidersAdded": 4,
     "newModule": "MF_056_3",
-    "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_IN_PROGRESS",
+    "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_PARTIAL",
     "runtimeInstalled": true,
     "developmentOnly": true,
     "report": "docs/superpowers/reports/2026-10-21-tecnico-ifc-mf056-4.md"
@@ -5956,7 +5957,8 @@
     "proof": "docs/curriculum/cobertura-secundaria/technical-mf056-4-comprobaciones-locales.json",
     "catalogInstalled": true,
     "sourceInstalled": true,
-    "httpDb": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
-    "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT"
+    "httpDb": "PARTIAL_CONNECTION_LOSS_AFTER_VERIFIED_VERSION_FILTER",
+    "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "performanceEvidence": "technical-mf056-4-busqueda-versiones.json"
   }
 }

@@ -1,0 +1,101 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.145",
+  "change": "Filter only reviewed technical contexts by exact technicalModuleCode in PostgreSQL; keep full compatibility checks and ordering",
+  "regressionTests": {
+    "red": 5,
+    "green": 5
+  },
+  "backendTests": {
+    "passed": 92536,
+    "failed": 0,
+    "files": 199
+  },
+  "beforeNode": {
+    "interpretMs": [
+      15140,
+      19545,
+      28099
+    ],
+    "broadVersionQueryMs": [
+      7843,
+      11807,
+      19170
+    ],
+    "publishedVersions": 54,
+    "metadataBytes": 249567,
+    "moduleVersions": 1,
+    "moduleMetadataBytes": 28628
+  },
+  "afterNode": {
+    "interpretMs": [
+      10070,
+      5696,
+      6745
+    ],
+    "broadVersionQueries": 0
+  },
+  "postBuildHttp": {
+    "interpretMs": [
+      10808,
+      7034,
+      10195
+    ],
+    "everyResponse200": true,
+    "sourceAndScopeExact": true,
+    "clientTimeoutMs": 30000,
+    "activityWrites": 0
+  },
+  "preservation": {
+    "compiled145Exact": true,
+    "frozen144Exact": true,
+    "personalBaselinesExact": 15,
+    "newBaselines": 0,
+    "priorReleasesExact": 77,
+    "priorSnapshotsExact": 1087,
+    "qaActivitiesAtSecondTimeout": 10,
+    "currentSnapshotsAtSecondTimeout": 1098,
+    "duplicates": 0
+  },
+  "runtime": {
+    "postgresRole": "app_backend_local",
+    "bypassRls": false,
+    "authProject": "eolgunypmtgrsyrjzcld",
+    "storageProject": "eolgunypmtgrsyrjzcld",
+    "frontendProject": "eolgunypmtgrsyrjzcld",
+    "entry": "/assets/index-Dgk2uIil.js",
+    "assetsMatchBuild": true
+  },
+  "gates": [
+    {
+      "name": "mf056-version-filter-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf056-version-filter-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-version-filter-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-version-filter-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf056-version-filter-lint",
+      "exit": 0
+    }
+  ],
+  "review": "SELF_REVIEW_NO_SUBAGENTS",
+  "coverage92Complete": false,
+  "deploy": false,
+  "push": false,
+  "limits": [
+    "Las mediciones Node excluyen middleware y Worker; se distinguen de las tres solicitudesHTTP reales.",
+    "Se eliminó un coste medido de búsqueda; no acredita latencia estable de red, catálogo, otras consultas o todos los contextos.",
+    "Las92muestras siguen pendientes de cierre; el progreso autenticado prevalece sobre este checkpoint.",
+    "Los15baselines se comprobaron en solo lectura, sin regenerarlos ni modificar actividades personales."
+  ]
+}

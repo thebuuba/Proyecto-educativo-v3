@@ -216,7 +216,11 @@ export function versionAllowsContext(version: { importMetadata?: unknown }, cont
 }
 
 async function versionForContext(context: AcademicContext, status: 'PUBLISHED' | 'DRAFT') {
-  const query = { where: { level: context.level, status }, orderBy: [{ editionYear: 'desc' as const }, ...(status === 'PUBLISHED' ? [{ publishedAt: 'desc' as const }] : []), { id: 'asc' as const }] }
+  const technical = isReviewedTechnicalContext(context) ? reviewedTechnicalSubject(context.subjectCode) : null
+  // Every compatible technical version requires this exact code; do not transfer unrelated sources.
+  const query = { where: { level: context.level, status,
+    ...(technical ? { importMetadata: { path: ['technicalModuleCode'], equals: technical.code } } : {}),
+  }, orderBy: [{ editionYear: 'desc' as const }, ...(status === 'PUBLISHED' ? [{ publishedAt: 'desc' as const }] : []), { id: 'asc' as const }] }
   const latest = await prisma.curriculumVersion.findFirst(query)
   if (!latest || versionAllowsContext(latest, context)) return latest
   return (await prisma.curriculumVersion.findMany(query)).find(version => versionAllowsContext(version, context)) ?? null

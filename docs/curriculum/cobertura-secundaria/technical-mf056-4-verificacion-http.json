@@ -3,19 +3,19 @@
   "moduleCode": "MF_056_3",
   "grade": 4,
   "catalog": "evaluation-2026.145",
-  "status": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
+  "status": "PARTIAL_CONNECTION_LOSS_AFTER_VERIFIED_VERSION_FILTER",
   "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
   "planned": 92,
-  "preparedIds": 9,
-  "knownSavedAndInitiallyReopened": 9,
-  "verified": 9,
-  "responses": 61,
-  "http500": 0,
+  "preparedIds": 15,
+  "knownSavedAndInitiallyReopened": 15,
+  "verified": 15,
+  "responses": 101,
+  "http500": 1,
   "http429": 0,
-  "knownTransportTimeouts": 1,
+  "knownTransportTimeouts": 2,
   "lateServerInterpret": {
     "status": 200,
-    "ms": 42762,
+    "ms": 30904,
     "clientTimeoutMs": 30000
   },
   "firstInterruptionPreservation": {
@@ -129,11 +129,278 @@
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
       "hash": "7b8bff4e09826d8c37d39f9f0ac749d9c30ced5e8ee6db1ff7c20320992009e1"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "8c9cda4a-474b-4a35-8fb2-ed03c0595ae7",
+      "snapshotId": "4100e411-82d7-4b29-8110-1ec562ab6e57",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "dfca6b760b9f1a9ea312888e5cfd46fe7434a81716830e716e87bdbd658e2825"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "a16c19a0-b905-400e-af81-b7980a04f81f",
+      "snapshotId": "3d9f39d0-dd79-44e3-ab82-f68d2a7c9ba1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6ea5b9c5c5d2a24da1c75128374e7099efb9f2b895f7b70bd7c0bf34beb4ccd9"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "269bf42f-0d83-42ca-8b0d-38278d236db3",
+      "snapshotId": "7b4bd973-543f-48fd-b36a-58e368d5f828",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0b2307cc019631ed67c9e20c5a8f1ad2df9f85963cb20fd0e8ac7583c1c0f028"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "0af5c140-64d6-4b59-9496-ca77b6fa99a4",
+      "snapshotId": "3acaf05d-1677-44b3-96cb-a9d804a15e1d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "cf28294cc38d1bec616deb7f0506a7d02d98c238eda54eda2300295cd36b7dc2"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "b421a0c0-8a03-4723-a08c-784b78f4b20f",
+      "snapshotId": "fa09a2fd-a9b2-4d81-b994-8ee6c9f347a2",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b71796b3625df4bf3f6901cf632da6787e629189392efd752592146134b20a7a"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "f07b644f-74c2-45b1-a2c3-dd4146ec6d42",
+      "snapshotId": "6612e764-9991-422d-9a3f-c8634834b636",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0c8a8ec1160c1e59e28ddefe2d7cb684777580372af0f67b0ab99b2cc85aab03"
     }
   ],
   "personalEvidence": "technical-mf056-4-navegador-personal.json",
   "limits": [
-    "Muestreo incompleto; no acredita92recorridos ni todas las combinaciones de propósito/formato/puntuación.",
-    "La causa de la latencia no está establecida; no se alteraron timeouts, red, límites o protecciones."
-  ]
+    "Quince de92recorridos completos; no acredita92muestras ni todas las combinaciones.",
+    "La búsqueda amplia técnica se corrigió y midió; posteriormente una recomendación con versión explícita perdió la conexión y devolvió500. No pasa por la búsqueda implícita corregida.",
+    "El ejecutor se detuvo. No se reinicia en bucle, no se elevan timeouts ni se modifican red o protecciones. La causa del cierre de conexión no está establecida."
+  ],
+  "priorLateServerInterpretMs": 42762,
+  "secondInterruptionPreservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "verified": 10,
+    "saved": 10,
+    "activities": [
+      {
+        "id": "d4277194-c005-4d4d-baa9-9918adcd831e",
+        "snapshotId": "87e93e13-48ee-4212-83b2-9b7baef4bb3b",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "011d3484-28e2-46de-b1f3-d0ad84a5a982",
+        "snapshotId": "48ae9f2a-589b-4223-a45c-9a0e4f4078ad",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "ba34f0a0-c15d-4be9-aec9-0cb826ebf0fe",
+        "snapshotId": "bce7aaf1-5867-4fd8-9229-e8c58dd7cd28",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "e7e3d358-7022-43eb-8ddf-143b5863498c",
+        "snapshotId": "71b549ca-f31b-4108-ba10-8a878ba3f1de",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "fedbe8ec-f928-4d9e-a58c-4de254ffe11b",
+        "snapshotId": "11c024ef-6ba0-45c6-a161-1af01aa9958c",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "c83b8cce-8c51-45ad-b732-8dd9fc125292",
+        "snapshotId": "a7b77d15-2ee2-4320-8c6e-0b913f6e99d1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "d776b258-ecd2-49a6-a68e-88d09561f421",
+        "snapshotId": "5466214b-3904-4d5f-98fc-c70cdc8adb3f",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "d81689a0-4503-46cf-9ca6-c8aec5268c8b",
+        "snapshotId": "ee7517f1-a80b-4649-ad6a-f9ec71130720",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "4a501503-fd17-487d-9a09-f03285ecfd9f",
+        "snapshotId": "10ddaaa3-b214-4858-a77f-5358364ebb5c",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "8c9cda4a-474b-4a35-8fb2-ed03c0595ae7",
+        "snapshotId": "4100e411-82d7-4b29-8110-1ec562ab6e57",
+        "httpVerified": true,
+        "exact": true
+      }
+    ],
+    "preservedReleases": 77,
+    "preservedSnapshots": 1087,
+    "currentReleases": 78,
+    "currentSnapshots": 1098,
+    "duplicates": 0,
+    "http429": 0,
+    "http500": 0,
+    "lastCaseStrategySaved": true,
+    "lastCaseHttpReopenPending": false,
+    "transportTimeout": true,
+    "lateServerInterpretStatus": 200,
+    "lateServerInterpretMs": 30904,
+    "knownTransportTimeouts": 2,
+    "planned": 92,
+    "remoteWrites": false
+  },
+  "resumedAfterMeasuredFix": true,
+  "performanceEvidence": "technical-mf056-4-busqueda-versiones.json",
+  "executorActive": false,
+  "latestFailure": {
+    "endpoint": "/evaluation-instruments/recommend",
+    "status": 500,
+    "ms": 21674,
+    "errorClass": "Error",
+    "message": "Connection terminated unexpectedly",
+    "rootCauseEstablished": false
+  },
+  "finalInterruptionPreservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "verified": 15,
+    "saved": 15,
+    "activities": [
+      {
+        "id": "d4277194-c005-4d4d-baa9-9918adcd831e",
+        "snapshotId": "87e93e13-48ee-4212-83b2-9b7baef4bb3b",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "011d3484-28e2-46de-b1f3-d0ad84a5a982",
+        "snapshotId": "48ae9f2a-589b-4223-a45c-9a0e4f4078ad",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "ba34f0a0-c15d-4be9-aec9-0cb826ebf0fe",
+        "snapshotId": "bce7aaf1-5867-4fd8-9229-e8c58dd7cd28",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "e7e3d358-7022-43eb-8ddf-143b5863498c",
+        "snapshotId": "71b549ca-f31b-4108-ba10-8a878ba3f1de",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "fedbe8ec-f928-4d9e-a58c-4de254ffe11b",
+        "snapshotId": "11c024ef-6ba0-45c6-a161-1af01aa9958c",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "c83b8cce-8c51-45ad-b732-8dd9fc125292",
+        "snapshotId": "a7b77d15-2ee2-4320-8c6e-0b913f6e99d1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "d776b258-ecd2-49a6-a68e-88d09561f421",
+        "snapshotId": "5466214b-3904-4d5f-98fc-c70cdc8adb3f",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "d81689a0-4503-46cf-9ca6-c8aec5268c8b",
+        "snapshotId": "ee7517f1-a80b-4649-ad6a-f9ec71130720",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "4a501503-fd17-487d-9a09-f03285ecfd9f",
+        "snapshotId": "10ddaaa3-b214-4858-a77f-5358364ebb5c",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "8c9cda4a-474b-4a35-8fb2-ed03c0595ae7",
+        "snapshotId": "4100e411-82d7-4b29-8110-1ec562ab6e57",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "a16c19a0-b905-400e-af81-b7980a04f81f",
+        "snapshotId": "3d9f39d0-dd79-44e3-ab82-f68d2a7c9ba1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "269bf42f-0d83-42ca-8b0d-38278d236db3",
+        "snapshotId": "7b4bd973-543f-48fd-b36a-58e368d5f828",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "0af5c140-64d6-4b59-9496-ca77b6fa99a4",
+        "snapshotId": "3acaf05d-1677-44b3-96cb-a9d804a15e1d",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "b421a0c0-8a03-4723-a08c-784b78f4b20f",
+        "snapshotId": "fa09a2fd-a9b2-4d81-b994-8ee6c9f347a2",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "f07b644f-74c2-45b1-a2c3-dd4146ec6d42",
+        "snapshotId": "6612e764-9991-422d-9a3f-c8634834b636",
+        "httpVerified": true,
+        "exact": true
+      }
+    ],
+    "preservedReleases": 77,
+    "preservedSnapshots": 1087,
+    "currentReleases": 78,
+    "currentSnapshots": 1103,
+    "duplicates": 0,
+    "http429": 0,
+    "http500": 1,
+    "lastCaseStrategySaved": true,
+    "lastCaseHttpReopenPending": false,
+    "transportTimeout": true,
+    "lateServerInterpretStatus": 200,
+    "lateServerInterpretMs": 30904,
+    "knownTransportTimeouts": 2,
+    "planned": 92,
+    "latestFailureEndpoint": "/evaluation-instruments/recommend",
+    "latestFailureClass": "Connection terminated unexpectedly",
+    "latestFailureMs": 21674,
+    "executorStopped": true,
+    "remoteWrites": false
+  }
 }
