@@ -1,0 +1,1140 @@
+{
+  "moduleCode": "MF_060_3",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "literalRecordsSha256": "39c65f467e9418ccadc552fd422570dfa423da3cbfd32c5b587480f63e2daae4",
+  "cases": 97,
+  "expectedTopicGroups": 90,
+  "sourceEvaluationCriteriaReferenced": 20,
+  "sourceProceduresReferenced": 26,
+  "sourceConceptBandsReferenced": 5,
+  "fixtureSha256": "e777203b9fa33ba3c9035eba56d3393c0f104c21fddca8881ab79e6c804c10e9",
+  "red": {
+    "missingFixture": 2,
+    "missingEvidence": 1
+  },
+  "green": 3,
+  "method": "Relectura completa de70registros/75partes de la fuente ya revisada visualmente; lectura de las97consignas generadas y referencias en bloques0–33,34–67y68–96. Se contrastaron seleccionar/instalar/integrar/programar/configurar/comprobar/documentar/proponer/planear; medios opcionales, operaciones y salidas elegidas. Alternativa breve con objeto final compartido conservada como requisito del futuro parser, no sustituida por redacción artificial. No se acreditan proveedor ni instrumentos ausentes.",
+  "casesReviewed": [
+    {
+      "id": "language-selection",
+      "descriptionSha256": "9199ba45fc7d0c44143a298e9be848e4497040455ede4152c36bbb60320855e7",
+      "topics": [
+        "language-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "compatibility-tests",
+      "descriptionSha256": "05439c042526dee54bb2d5837da78d927e7f8e74f8f1919d91759931dda1daf8",
+      "topics": [
+        "compatibility-tests"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "required-application",
+      "descriptionSha256": "1a80067e3858b224de8f523e620591bafcbcba5d6e558fa292c8caa0afe6bdab",
+      "topics": [
+        "required-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "browser-selection",
+      "descriptionSha256": "902b825591cce21367694bbcd057675c5e65a2e1d2b306eda3489c582c3b22d8",
+      "topics": [
+        "browser-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-environment",
+      "descriptionSha256": "9196fa3cbef4457377ebbcf021fcc6ac2ff0a16b1229b729290b5c34b08a6e11",
+      "topics": [
+        "test-environment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "test-parameters",
+      "descriptionSha256": "47ee1f11f041eb3330af19830175beef2750b2e4e3451281286a322ff2d09b03",
+      "topics": [
+        "test-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "process-documentation",
+      "descriptionSha256": "dfd7371244a3d71786be4ee6a4521ec000b2be22b0702976375a79b43b0db847",
+      "topics": [
+        "process-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3",
+        "ifc006-mf060-p-process-documentation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "query-integration",
+      "descriptionSha256": "a0d5c514a1311e55db60511f319ad546db89cbc8fc71bf084c9643f99a1120ed",
+      "topics": [
+        "query-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "search-integration",
+      "descriptionSha256": "d6d41bdecd77d5f76e832c5f5858687200a143f8c6add969abf19ba72e107f48",
+      "topics": [
+        "search-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-integration",
+      "descriptionSha256": "92e299854771efed2fef1ff0d0a29c7f8c51820f9bfaa2c257ce8b9ff4ca83b6",
+      "topics": [
+        "database-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "browser-compatibility",
+      "descriptionSha256": "440a30c3e796d4a20911a3927a6183dae36638838a1e1a8a6eee71d268986283",
+      "topics": [
+        "browser-compatibility"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "search-engine-selection",
+      "descriptionSha256": "23b98f8e0da3c6549c0291d856982b9a26dd1944ed28728c7b9913c23410387a",
+      "topics": [
+        "search-engine-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "descriptors",
+      "descriptionSha256": "5288a678befb51ab5af0f61861da7a2dfedb6a4b3a66b07daa1ebb2af0e5ee94",
+      "topics": [
+        "descriptors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "automatic-publication-simulation",
+      "descriptionSha256": "2cbdb3499d515b273e686e997325540b8578bb418bf02d4f558223d98e36cd03",
+      "topics": [
+        "automatic-publication-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2",
+        "ifc006-mf060-p-publication-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "manual-publication-simulation",
+      "descriptionSha256": "2b0b88d6aeeb4d5b958b3ef16a3eb115654ec751ed2b7c398711cbeb0ac80920",
+      "topics": [
+        "manual-publication-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2",
+        "ifc006-mf060-p-publication-procedures"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "periodic-functionality",
+      "descriptionSha256": "1fc055b2618d26219e86c2122d0ff11b26e86df40b3d9ae82b91ac63a5e384fc",
+      "topics": [
+        "periodic-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "element-programming",
+      "descriptionSha256": "54dcc857e03295fa838f560ef1d931a34dbb046861d837bf0e842e9346948ce3",
+      "topics": [
+        "element-programming"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "element-configuration",
+      "descriptionSha256": "4242550c925163235a9a9152105c70dc06c9bc2497af3321c2aa48665ee4825f",
+      "topics": [
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "component-functionality",
+      "descriptionSha256": "c5290effbee14be38a582641ec2c97c1d54f42ed5cfac42cce2df8c483959e49",
+      "topics": [
+        "component-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "component-quality",
+      "descriptionSha256": "597b6099da99a8de5296f554b90cb29f77a8023c08ab0a311d1aa9501aea2e86",
+      "topics": [
+        "component-quality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "component-usability",
+      "descriptionSha256": "6965192b97f7f37e67cd95cee59e4e25b7bf8420786d8559212a7447ce34385f",
+      "topics": [
+        "component-usability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "debugging-tools",
+      "descriptionSha256": "2275909cb32120ed26625233086cc9afd6885af0a4b525e3e03ff711a5763af9",
+      "topics": [
+        "debugging-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "debugging-functions",
+      "descriptionSha256": "d256e02f3dee9a254ebe310911aa08f9a8cadf607869631969c6ef473654ade7",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-complement",
+      "descriptionSha256": "ac47d005e43d8195091f61530792ad21e75d0719b7c9d8dfba599ed3d2897049",
+      "topics": [
+        "image-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "music-complement",
+      "descriptionSha256": "8770dd6efc355dbe381cd7d74530e59035f3b305f2596d4c9868b3faf0c063bc",
+      "topics": [
+        "music-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "video-complement",
+      "descriptionSha256": "5186705edb0f7df2c75047c1ef40a5a6860dac2098203a63fa451811d13c78e8",
+      "topics": [
+        "video-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "content-complement",
+      "descriptionSha256": "16e3fab5b5670eb03881f3fc851b6c213cf58907103f2ecf7308a6e80b1a8219",
+      "topics": [
+        "content-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "virtual-machine",
+      "descriptionSha256": "893bebbfca6fd0494f5dc1a305bebc86dc127bf2f983f381ee45c1af5f0ab0cf",
+      "topics": [
+        "virtual-machine"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-installation-simulation",
+      "descriptionSha256": "2acd9c500b3df2757a1b8917bc721108554e635eef031fae16ebd9fc4220db0b",
+      "topics": [
+        "server-installation-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1",
+        "ifc006-mf060-p-deployment"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-requirements",
+      "descriptionSha256": "694919d61abda384576bbbcc5abc68785f8bf3a4a6b68b202b3b4f55f37ddf1a",
+      "topics": [
+        "installation-requirements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-directories",
+      "descriptionSha256": "dc00a9ffe6e8ecffca106eaa2dee4f2437d6e5611b75454925c3f96e3a52b2a7",
+      "topics": [
+        "server-directories"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "affected-resources",
+      "descriptionSha256": "7ada5fc71f15abf7608d11a228e0bea38af2ddefa3187430c1997e5e2d2e8e90",
+      "topics": [
+        "affected-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "server-services",
+      "descriptionSha256": "80677a6e8d60384f6e4bd365e95e97e19e16fd4b42060b6dcf1da1929218af0f",
+      "topics": [
+        "server-services"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "configuration-parameters",
+      "descriptionSha256": "9cf75f5394cbeedeb2efec3dd4383235873ccd9fb2770cf4c0296aee5985aebf",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "security-parameters",
+      "descriptionSha256": "c84fe2618d2a8caad59eb758019c14629e51d1339375e16b00772278148fe670",
+      "topics": [
+        "security-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-packages",
+      "descriptionSha256": "88d4b7bef0de9318c93b042dca821b8e67084fe034250fd0aaed290317d98f4c",
+      "topics": [
+        "installation-packages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "installation-verification",
+      "descriptionSha256": "f3076118ae1a065a4e9971f302b19df6fe56611ff60627c3f0b6dacab7479a12",
+      "topics": [
+        "installation-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "execution",
+      "descriptionSha256": "cfff93c138b972f1407d749d88fe924cd00cfd95d7c0b6b9ef319f53c2a0366b",
+      "topics": [
+        "execution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "database-storage-tests",
+      "descriptionSha256": "2a9cb6cf324c0391465543e4da4291e4f237ebc3bd4b2f05c2a78ce7508f7274",
+      "topics": [
+        "database-storage-tests"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-training",
+      "descriptionSha256": "ef4870cc2ed0cb34402141a7c78267721b765a4ca55a8006225aaee023506974",
+      "topics": [
+        "user-training"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "user-instructions",
+      "descriptionSha256": "e3aeaed3882448d1ccdc4ba5b3a99230795aeb505d7cf7421dffc0ee3cf2db55",
+      "topics": [
+        "user-instructions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "business-characteristics",
+      "descriptionSha256": "cfec4b9176342ead495766e73704a128e3d61b89215409bf9c24e5bd9adc200e",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "institutional-objectives",
+      "descriptionSha256": "d0f7e94df9956226580973e631b43fc6d665ee11bdba90520193b20ee54ee58b",
+      "topics": [
+        "institutional-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-objectives",
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "automation-requirements",
+      "descriptionSha256": "fee6653acf8a1ed61170eee9bf608c05095f6db45194a24a321735931712b974",
+      "topics": [
+        "automation-requirements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-processes"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "technology-update-sources",
+      "descriptionSha256": "932a0c2d644a49f1fad2e353a4ca648dd34a91eeb6ba2dd2818d89e961292b90",
+      "topics": [
+        "technology-update-sources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.2",
+        "ifc006-mf060-p-technology-updates",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weaknesses-threats",
+      "descriptionSha256": "1aaa8af3b7a3f051c581c70012b4fefff35adac6f3f9ae007a2f6665eae4df14",
+      "topics": [
+        "weaknesses-threats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.3",
+        "ifc006-mf060-p-weaknesses-threats"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "technology-timing",
+      "descriptionSha256": "b2320b692d81a867c8c4efce4f7a9209ce176d67c39231f172309e8c2effb084",
+      "topics": [
+        "technology-timing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "forum-analysis",
+      "descriptionSha256": "671c6cf0aad347cc7a5a4c0c402ecf5c904268f6fac244f14944f50e405189ac",
+      "topics": [
+        "forum-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "improvement-scenarios",
+      "descriptionSha256": "97705f27788eb2d804ea51da69dc65f77afb4b5898ebbd3c75f5b3e863079b8f",
+      "topics": [
+        "improvement-scenarios"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.2",
+        "ifc006-mf060-p-use-scenarios"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "implementation-organization",
+      "descriptionSha256": "f10ee7d3358b2bd16da57d24a4d9d6be39bb77275c26d0f6b4f867a433b490c3",
+      "topics": [
+        "implementation-organization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "planning-meeting",
+      "descriptionSha256": "fac43bdad452616a691b35af26fa0b7f8174e81b6aba95791bc09295c4155190",
+      "topics": [
+        "planning-meeting"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "scheduled-task",
+      "descriptionSha256": "ed0050121a80a678a9563508b48828db0408747b8dbbc443af13e1979c8f85e1",
+      "topics": [
+        "scheduled-task"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "progress-report",
+      "descriptionSha256": "ea7cb0f8d7f9e907a76181a6d08cec6e8a736242c22c42fc5594db6a505cdba5",
+      "topics": [
+        "progress-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "progress-minutes",
+      "descriptionSha256": "5139d946f045d34b894dab8e6444323d3e2efe8eeb47e323e2c3f92fcdc7843a",
+      "topics": [
+        "progress-minutes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "development-policies",
+      "descriptionSha256": "80fe1affbf8cdd4ebad57e922f75b52893277093052404a103638eae9cd08dad",
+      "topics": [
+        "development-policies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-development-policies"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "style-resources",
+      "descriptionSha256": "9634e0b7058c98872e6fc095a72ad94b718c75a09014f40859b10c118bc8fc2e",
+      "topics": [
+        "style-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "configuration-resources",
+      "descriptionSha256": "775a96e265c3e27484231ec813b8074e078e95c5d6a0e7d9282b80f50a374260",
+      "topics": [
+        "configuration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "image-resources",
+      "descriptionSha256": "3f69afb79b9b23615f9647fd19b73e186234fecc187201cc780a28131792c2c6",
+      "topics": [
+        "image-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "document-resources",
+      "descriptionSha256": "c396dd5a19e68076b51f4a26d615bbc91fa335f86d66ef061dd3af9619164eaf",
+      "topics": [
+        "document-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "library-resources",
+      "descriptionSha256": "fa09db1edf038c46dcc61bfa915973aed76380a976d83afcda5e29395c34850e",
+      "topics": [
+        "library-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "security-levels",
+      "descriptionSha256": "d624f35be9dc475b6585f8a354b3e08a029950d2377d6017ba945231abd8ccea",
+      "topics": [
+        "security-levels"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-resources-components"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "programming-standards",
+      "descriptionSha256": "ba068d35c1538e1dd20163c2c3e8d77ae87ccd801bdfa2a5094696a0ab4fa068",
+      "topics": [
+        "programming-standards"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-standards"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "identification",
+      "descriptionSha256": "c3d848c571139caa25ba24428e8cf430c4442d3f74b21f610b61d37d2c0c7f83",
+      "topics": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "authentication",
+      "descriptionSha256": "3024f275febd5c92ff900b4ddd869494533b737d36bb630b15a9b591c636d187",
+      "topics": [
+        "authentication"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "authorization",
+      "descriptionSha256": "496e67031e0cfc98d43bcc49f9969c56407d1151415c7cca5d233f1560857571",
+      "topics": [
+        "authorization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "certificates",
+      "descriptionSha256": "8bf8e87ec290cf822f9b45eb85c3427dc2a8646ff04271d68e0247f036405f29",
+      "topics": [
+        "certificates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-certificates"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "deployment-characteristics",
+      "descriptionSha256": "057cee0b772c12537335f7aea8e981b55717ba520d75a0db2f4f79f7236a0b64",
+      "topics": [
+        "deployment-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-deployment-characteristics"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "publication-procedures",
+      "descriptionSha256": "af53d9838fe1b643eda9ae9fbd99ffe9d4cb1630a7e6f0a2c17c08ff294c752c",
+      "topics": [
+        "publication-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-publication-procedures"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "domain-hierarchy",
+      "descriptionSha256": "a0254631469c63a84e4ba383f5964c817bc6ac95c53cd47fcf4cb5cbc029d717",
+      "topics": [
+        "domain-hierarchy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "dns",
+      "descriptionSha256": "9b0c45204adc7171353dc6e8d572c3b727e0ae14e52fa0ed2e8c4924721f1bdb",
+      "topics": [
+        "dns"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "network-scopes",
+      "descriptionSha256": "5caab33e9e67b5b2de9d0cbb48f5f2dc08507fec29dfe2996eaa1d74fca4dd65",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "firewall",
+      "descriptionSha256": "f74f6c081689c8d1168cb1375a0ee3b631311ba3469546ac349701da925e5ef6",
+      "topics": [
+        "firewall"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "ict-history",
+      "descriptionSha256": "fc6fd84e4a1df27251a9189b05e8d101270ea65b133ff8edd89597179514b8da",
+      "topics": [
+        "ict-history"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "business-ict-strategy",
+      "descriptionSha256": "bfe9afdbebd0421ded5227fe859be78bbe2576ce0fc0bffe858e93576aedb4c9",
+      "topics": [
+        "business-ict-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-history-business"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "ict-service-cases",
+      "descriptionSha256": "5d866efe23f6722583398286cd5f0a3a807127619e13d660325ca0ceed77f61d",
+      "topics": [
+        "ict-service-cases"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-ict-cases"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "research-innovation",
+      "descriptionSha256": "c89d3da0dda6f6a670b910e95f3a480caf092d20bc9a4fd2d735f747e5f6a958",
+      "topics": [
+        "research-innovation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-research-innovation",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "innovation-process",
+      "descriptionSha256": "9abbb65c241c900c32b587f3d02af80f66cea49c1fad61126ee537d6c17eb3cd",
+      "topics": [
+        "innovation-process"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-innovation-processes",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "innovation-importance",
+      "descriptionSha256": "3cf95ad01d2019451d1cd9565eb159017fb6a02b549a71508bdb966344227558",
+      "topics": [
+        "innovation-importance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-innovation-importance"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "proposal-methods",
+      "descriptionSha256": "c49f7b3f528ef87417c45aa91718492c724fdc86450921b9f53574ca0d2f12fb",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "information-systems",
+      "descriptionSha256": "5cc1fea4a5f950aa671123aed7b1464aeb2a729f49fe6b7e72767cf541f6ae88",
+      "topics": [
+        "information-systems"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-information-systems"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "erp-application",
+      "descriptionSha256": "d3e26cd11855cf74aa96f98526d0386b1451bb9486aae485dc79e0ce94b28fc5",
+      "topics": [
+        "erp-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "crm-application",
+      "descriptionSha256": "8ca22556ac1ff12fa33179ecdc06626aa6722bea7321293b0498ae7971bc115a",
+      "topics": [
+        "crm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "srm-application",
+      "descriptionSha256": "692613e52eefb89b660f77edfebc0c78bb221e21673cb2b46cabf5a419f56baa",
+      "topics": [
+        "srm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "cms-application",
+      "descriptionSha256": "7196e4bf77b392c1e5d6a7d057ec18f6135617ac18c271a8354d826a34692278",
+      "topics": [
+        "cms-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "business-intelligence",
+      "descriptionSha256": "6c011dd974db102ead0a1afa46e50c6872f29b3ed5144f85084e89105532d408",
+      "topics": [
+        "business-intelligence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "open-source",
+      "descriptionSha256": "7bc635fd6ababfdf74a417bc6b5538d1201a5d48fa4866c4f21a9f20959cc2c0",
+      "topics": [
+        "open-source"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "cloud-computing",
+      "descriptionSha256": "0537df6982931a665af92ad337c178a83051ac6c828b2e171938d370eb5d0c39",
+      "topics": [
+        "cloud-computing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "saas",
+      "descriptionSha256": "8752dd61ff5e2efe14f982a8d1b889e08f7dbf0acc5e7e1810c12b9408ecce13",
+      "topics": [
+        "saas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas",
+        "ifc006-mf060-c-management-applications"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "management-configuration",
+      "descriptionSha256": "3b9331c8f5e53b1da1a9d423a1f2709f84f73ed1813b19ed2c6d223b8da03751",
+      "topics": [
+        "management-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-application-configuration"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tools-context",
+      "descriptionSha256": "e77fe8a733a360eac030af44902257a4dc0177cd993557269f748c605a541d7d",
+      "topics": [
+        "tools-context"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-tools-context"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-code-configuration",
+      "descriptionSha256": "d26229b1f1ec2446f4eee92cdc3510887949eab398e38cf4572338fe15c9cc11",
+      "topics": [
+        "element-programming",
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-user-support",
+      "descriptionSha256": "c99af0517d8b8c23d2046193b959df32d81068961b1b2168fb5f147a9a061856",
+      "topics": [
+        "user-training",
+        "user-instructions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-publication",
+      "descriptionSha256": "acad575ebfee759513ef575df33dab5d19ee352977f72e0e329bef6a18764467",
+      "topics": [
+        "server-directories"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "optional-resource",
+      "descriptionSha256": "0f2f1e2ab7a5fe6c5692b11f226e6dd4338b5fb72547aed14c89fc7b270195d9",
+      "topics": [
+        "security-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "independent-actions",
+      "descriptionSha256": "d6952b85ed940c3e335568029caee229904527da3147c7e14fcec58be1d54736",
+      "topics": [
+        "language-selection",
+        "query-integration",
+        "component-usability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.1",
+        "ifc006-mf060-CE8.2.1",
+        "ifc006-mf060-CE8.2.4"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "score-pending",
+      "descriptionSha256": "769a52d6f66c4db0fa179d6347aa96657dddcb1ffbc52c05ef54ee9e73eb04f5",
+      "topics": [
+        "progress-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weighted-components",
+      "descriptionSha256": "9c33913c5309969c08167aef6b773d53079c9bb2a8eae78846eb89d81e8da0e5",
+      "topics": [
+        "search-integration",
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1",
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    }
+  ],
+  "provider": null,
+  "fullInstrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "limits": [
+    "Contratos esperados con datos y recursos ficticios; no equivalen a proveedor conectado ni instrumentos completos revisados.",
+    "No ejecutar publicaciones, despliegues, compras o instalaciones en producción; prácticas simuladas o laboratorio indicado, sin credenciales reales.",
+    "Tecnologías históricas y marcas permanecen como contexto documental, no obligaciones de instalar software obsoleto o debilitar seguridad.",
+    "Seleccionar, explicar, programar, configurar, comprobar, documentar, proponer y planear conservan sus evidencias propias; no exigir todos los subapartados de un CE en cada tarea.",
+    "Actitudes privadas y orientaciones docentes no generan criterios automáticos. No evaluar compromiso personal con plazos.",
+    "Los20CE/26P/5bandas conceptuales tienen referencias; esto no acredita agotar todos sus subtemas, variantes o instrumentos.",
+    "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots."
+  ]
+}

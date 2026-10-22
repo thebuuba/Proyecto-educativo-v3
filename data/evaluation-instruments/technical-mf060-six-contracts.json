@@ -1,0 +1,1035 @@
+{
+  "subjectCode": "MF_060_3",
+  "subjectName": "Desarrollo e Implementación de Soluciones Web y Multimedia",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "language-selection",
+      "description": "Selecciona el lenguaje de programación web más adecuado al diseño del caso ficticio y explica su ajuste a los requisitos; no programes la aplicación.",
+      "topics": [
+        "language-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.1"
+      ]
+    },
+    {
+      "id": "compatibility-tests",
+      "description": "Realiza las pruebas de compatibilidad indicadas entre el sistema de práctica y el software proporcionado, usando los resultados esperados de la ficha.",
+      "topics": [
+        "compatibility-tests"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.2"
+      ]
+    },
+    {
+      "id": "required-application",
+      "description": "Simula la instalación de la aplicación complementaria indicada en el laboratorio aislado según la ficha del autor; no instales Java o plugins obsoletos en equipos reales.",
+      "topics": [
+        "required-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ]
+    },
+    {
+      "id": "browser-selection",
+      "description": "Selecciona los navegadores de prueba a partir de la matriz de requisitos proporcionada; no descargues navegadores ni complementos.",
+      "topics": [
+        "browser-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ]
+    },
+    {
+      "id": "test-environment",
+      "description": "Define los entornos de prueba de la aplicación web ficticia según los requerimientos dados; no configures producción.",
+      "topics": [
+        "test-environment"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ]
+    },
+    {
+      "id": "test-parameters",
+      "description": "Identifica los parámetros que deben verificarse durante las pruebas de la aplicación web del caso.",
+      "topics": [
+        "test-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3"
+      ]
+    },
+    {
+      "id": "process-documentation",
+      "description": "Documenta los procesos realizados en la práctica web con el registro proporcionado y el procedimiento de la empresa ficticia.",
+      "topics": [
+        "process-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.3",
+        "ifc006-mf060-p-process-documentation"
+      ]
+    },
+    {
+      "id": "query-integration",
+      "description": "Integra la consulta proporcionada en el diseño web de práctica conservando los campos y condiciones indicados.",
+      "topics": [
+        "query-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ]
+    },
+    {
+      "id": "search-integration",
+      "description": "Integra la búsqueda solicitada en el diseño web de práctica según los criterios y resultados ficticios de la ficha.",
+      "topics": [
+        "search-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ]
+    },
+    {
+      "id": "database-integration",
+      "description": "Integra la base de datos de práctica en el diseño web según el esquema y los requisitos proporcionados, sin usar bases reales.",
+      "topics": [
+        "database-integration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1"
+      ]
+    },
+    {
+      "id": "browser-compatibility",
+      "description": "Confirma la compatibilidad del diseño web de práctica con los navegadores indicados usando la matriz de resultados proporcionada; no añadas navegadores no solicitados.",
+      "topics": [
+        "browser-compatibility"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ]
+    },
+    {
+      "id": "search-engine-selection",
+      "description": "Selecciona los buscadores adecuados para las páginas ficticias según las características de las fichas, sin crear cuentas.",
+      "topics": [
+        "search-engine-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ]
+    },
+    {
+      "id": "descriptors",
+      "description": "Incluye los descriptores indicados en las páginas web de práctica usando las etiquetas apropiadas del ejemplo.",
+      "topics": [
+        "descriptors"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ]
+    },
+    {
+      "id": "automatic-publication-simulation",
+      "description": "Simula la publicación automática de las páginas de práctica con la herramienta proporcionada; no publiques en internet ni modifiques producción.",
+      "topics": [
+        "automatic-publication-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2",
+        "ifc006-mf060-p-publication-tools"
+      ]
+    },
+    {
+      "id": "manual-publication-simulation",
+      "description": "Simula la publicación manual de las páginas de práctica que no admite el procedimiento automático; respeta el procedimiento y seguridad del caso ficticio.",
+      "topics": [
+        "manual-publication-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2",
+        "ifc006-mf060-p-publication-procedures"
+      ]
+    },
+    {
+      "id": "periodic-functionality",
+      "description": "Verifica la funcionalidad de la página de práctica en los períodos indicados, utilizando el registro ficticio de las comprobaciones proporcionado.",
+      "topics": [
+        "periodic-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.2"
+      ]
+    },
+    {
+      "id": "element-programming",
+      "description": "Programa el elemento del sitio web de práctica solicitado y enlázalo según el diseño proporcionado; no configures otros elementos.",
+      "topics": [
+        "element-programming"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ]
+    },
+    {
+      "id": "element-configuration",
+      "description": "Configura el elemento del sitio web de práctica solicitado y su enlace según el diseño; no desarrolles código adicional.",
+      "topics": [
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ]
+    },
+    {
+      "id": "component-functionality",
+      "description": "Verifica el funcionamiento del componente añadido al diseño web frente a las especificaciones de la ficha.",
+      "topics": [
+        "component-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "component-quality",
+      "description": "Verifica el componente web de práctica usando únicamente los criterios de calidad proporcionados.",
+      "topics": [
+        "component-quality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "component-usability",
+      "description": "Verifica la usabilidad del componente web con los casos y criterios proporcionados; no evalúes preferencias estéticas personales.",
+      "topics": [
+        "component-usability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "debugging-tools",
+      "description": "Selecciona la herramienta de depuración del navegador indicada para localizar el fallo web del caso, a partir de las fichas disponibles.",
+      "topics": [
+        "debugging-tools"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "debugging-functions",
+      "description": "Crea y utiliza la función de depuración solicitada en el código web de práctica para comprobar el fallo indicado.",
+      "topics": [
+        "debugging-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "image-complement",
+      "description": "Describe la función del complemento para imágenes de la ficha del navegador de práctica; no instales software.",
+      "topics": [
+        "image-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "music-complement",
+      "description": "Describe la función del complemento para música del ejemplo web proporcionado, sin instalarlo.",
+      "topics": [
+        "music-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "video-complement",
+      "description": "Describe la función del complemento para video del ejemplo web proporcionado, sin instalarlo.",
+      "topics": [
+        "video-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "content-complement",
+      "description": "Describe el complemento para contenidos del navegador del caso y su función en la aplicación de práctica.",
+      "topics": [
+        "content-complement"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "virtual-machine",
+      "description": "Explica la función de la máquina virtual en el entorno web del esquema proporcionado; no crees máquinas ni cambies la seguridad del equipo.",
+      "topics": [
+        "virtual-machine"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "server-installation-simulation",
+      "description": "Simula la instalación del diseño web en el servidor de laboratorio indicado siguiendo los acuerdos del cliente ficticio, sin desplegar en servicios reales.",
+      "topics": [
+        "server-installation-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1",
+        "ifc006-mf060-p-deployment"
+      ]
+    },
+    {
+      "id": "installation-requirements",
+      "description": "Establece los requisitos de instalación y distribución de la aplicación web de práctica según el caso proporcionado.",
+      "topics": [
+        "installation-requirements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "server-directories",
+      "description": "Define la estructura de directorios del servidor simulado para ubicar los documentos y componentes de la aplicación web.",
+      "topics": [
+        "server-directories"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "affected-resources",
+      "description": "Identifica los recursos afectados por el desarrollo web del caso utilizando el inventario ficticio dado.",
+      "topics": [
+        "affected-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "server-services",
+      "description": "Indica los servicios necesarios en el servidor simulado para ejecutar la aplicación web descrita; no actives servicios reales.",
+      "topics": [
+        "server-services"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "configuration-parameters",
+      "description": "Especifica los parámetros de configuración del servidor y del cliente de práctica según el diseño web, sin credenciales personales.",
+      "topics": [
+        "configuration-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "security-parameters",
+      "description": "Establece los parámetros de seguridad de la aplicación web ficticia conforme a los requisitos del caso; no debilites protecciones del equipo.",
+      "topics": [
+        "security-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "installation-packages",
+      "description": "Crea y configura el paquete de instalación de práctica solicitado para distribuir la aplicación web del caso, sin publicarlo.",
+      "topics": [
+        "installation-packages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "installation-verification",
+      "description": "Verifica el proceso simulado de instalación y distribución de la aplicación web usando los resultados y requisitos proporcionados.",
+      "topics": [
+        "installation-verification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "execution",
+      "description": "Ejecuta el diseño web en el entorno de práctica según el procedimiento técnico proporcionado.",
+      "topics": [
+        "execution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.2"
+      ]
+    },
+    {
+      "id": "database-storage-tests",
+      "description": "Realiza las pruebas de almacenamiento de la aplicación web con los datos ficticios y los parámetros dados en la base de práctica.",
+      "topics": [
+        "database-storage-tests"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.2"
+      ]
+    },
+    {
+      "id": "user-training",
+      "description": "Realiza una simulación de entrenamiento del usuario final sobre la aplicación web del caso ficticio siguiendo los requisitos de la institución.",
+      "topics": [
+        "user-training"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ]
+    },
+    {
+      "id": "user-instructions",
+      "description": "Redacta las instrucciones de ejecución de la aplicación web para el usuario ficticio según el procedimiento proporcionado; no organices una capacitación adicional.",
+      "topics": [
+        "user-instructions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ]
+    },
+    {
+      "id": "business-characteristics",
+      "description": "Identifica las características y tipos de gestión empresarial en las fichas de las organizaciones ficticias.",
+      "topics": [
+        "business-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-business-management",
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "institutional-objectives",
+      "description": "Diferencia meta, visión, misión y objetivos institucionales a partir de los ejemplos de la empresa ficticia.",
+      "topics": [
+        "institutional-objectives"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-objectives",
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "automation-requirements",
+      "description": "Analiza los procesos institucionales del caso y sus requerimientos de automatización con los datos ficticios proporcionados.",
+      "topics": [
+        "automation-requirements"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.1",
+        "ifc006-mf060-p-institutional-processes"
+      ]
+    },
+    {
+      "id": "technology-update-sources",
+      "description": "Examina los medios de actualización tecnológica proporcionados y selecciona una fuente pertinente al problema del caso; no compres cursos ni visites empresas.",
+      "topics": [
+        "technology-update-sources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.2",
+        "ifc006-mf060-p-technology-updates",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "weaknesses-threats",
+      "description": "Identifica las debilidades y amenazas de la implementación tecnológica descrita usando las evidencias del caso ficticio.",
+      "topics": [
+        "weaknesses-threats"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.3",
+        "ifc006-mf060-p-weaknesses-threats"
+      ]
+    },
+    {
+      "id": "technology-timing",
+      "description": "Define la tecnología más adecuada al horizonte temporal dado para la solución informática de la empresa ficticia según las fichas proporcionadas.",
+      "topics": [
+        "technology-timing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.4.4"
+      ]
+    },
+    {
+      "id": "forum-analysis",
+      "description": "Explica cómo participar en un foro de intercambio sobre nuevas tecnologías a partir de una conversación ficticia proporcionada; no publiques ni crees cuentas.",
+      "topics": [
+        "forum-analysis"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.1"
+      ]
+    },
+    {
+      "id": "improvement-scenarios",
+      "description": "Reproduce el escenario simulado donde la nueva tecnología mejora el proceso de gestión empresarial descrito, usando los datos ficticios dados.",
+      "topics": [
+        "improvement-scenarios"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.2",
+        "ifc006-mf060-p-use-scenarios"
+      ]
+    },
+    {
+      "id": "implementation-organization",
+      "description": "Organiza la implementación de la nueva tecnología en la empresa ficticia con los recursos y dependencias proporcionados.",
+      "topics": [
+        "implementation-organization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.5.3"
+      ]
+    },
+    {
+      "id": "planning-meeting",
+      "description": "Presenta en una reunión simulada la planificación de la solución tecnológica seleccionada para la empresa ficticia.",
+      "topics": [
+        "planning-meeting"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.1"
+      ]
+    },
+    {
+      "id": "scheduled-task",
+      "description": "Aplica la tarea asignada en el cronograma de implementación simulado según las dependencias y condiciones dadas; no ejecutes tareas en producción.",
+      "topics": [
+        "scheduled-task"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.2"
+      ]
+    },
+    {
+      "id": "progress-report",
+      "description": "Prepara el reporte de avance de la implementación tecnológica con los registros ficticios proporcionados, sin inventar tareas realizadas.",
+      "topics": [
+        "progress-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ]
+    },
+    {
+      "id": "progress-minutes",
+      "description": "Prepara la minuta de la reunión ficticia de seguimiento de la implementación con los acuerdos y responsables de la ficha.",
+      "topics": [
+        "progress-minutes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ]
+    },
+    {
+      "id": "development-policies",
+      "description": "Elabora la política de desarrollo y pruebas para el caso web ficticio diferenciando desarrollo, preproducción y producción; no cambies configuraciones reales.",
+      "topics": [
+        "development-policies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-development-policies"
+      ]
+    },
+    {
+      "id": "style-resources",
+      "description": "Organiza las hojas de estilo de la aplicación web de práctica según la estructura solicitada, conservando sus referencias.",
+      "topics": [
+        "style-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "configuration-resources",
+      "description": "Organiza los ficheros de configuración de práctica según el esquema dado, sin copiar secretos o credenciales reales.",
+      "topics": [
+        "configuration-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "image-resources",
+      "description": "Organiza las imágenes proporcionadas de la aplicación web de práctica conservando sus rutas y referencias.",
+      "topics": [
+        "image-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "document-resources",
+      "description": "Organiza los documentos proporcionados de la aplicación web de práctica según las rutas solicitadas.",
+      "topics": [
+        "document-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "library-resources",
+      "description": "Organiza las bibliotecas de componentes proporcionadas en el proyecto web de práctica según sus dependencias y referencias.",
+      "topics": [
+        "library-resources"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-resources",
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "security-levels",
+      "description": "Compara los niveles de seguridad web descritos en el caso usando los permisos y recursos ficticios de la ficha.",
+      "topics": [
+        "security-levels"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-resources-components"
+      ]
+    },
+    {
+      "id": "programming-standards",
+      "description": "Aplica los estándares de programación web indicados al fragmento de código de práctica proporcionado.",
+      "topics": [
+        "programming-standards"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-standards"
+      ]
+    },
+    {
+      "id": "identification",
+      "description": "Aplica la técnica de identificación indicada en el caso web ficticio usando los identificadores proporcionados, sin datos personales.",
+      "topics": [
+        "identification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ]
+    },
+    {
+      "id": "authentication",
+      "description": "Aplica la técnica de autenticación en el simulador del caso web usando credenciales ficticias proporcionadas, sin cuentas reales.",
+      "topics": [
+        "authentication"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ]
+    },
+    {
+      "id": "authorization",
+      "description": "Aplica el control de autorización del caso web de práctica según la matriz de roles y recursos ficticios dada.",
+      "topics": [
+        "authorization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-access-techniques"
+      ]
+    },
+    {
+      "id": "certificates",
+      "description": "Explica cómo el certificado digital proporcionado interviene en la identificación y autenticación del caso web; no emitas certificados ni compartas claves.",
+      "topics": [
+        "certificates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-certificates"
+      ]
+    },
+    {
+      "id": "deployment-characteristics",
+      "description": "Describe las características del proceso de despliegue web simulado de la ficha, sin ejecutar un despliegue.",
+      "topics": [
+        "deployment-characteristics"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-deployment-characteristics"
+      ]
+    },
+    {
+      "id": "publication-procedures",
+      "description": "Analiza los procedimientos empresariales y de seguridad de la publicación web del caso ficticio; no publiques páginas.",
+      "topics": [
+        "publication-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-publication-procedures"
+      ]
+    },
+    {
+      "id": "domain-hierarchy",
+      "description": "Representa la jerarquía de los dominios ficticios proporcionados según el esquema del caso.",
+      "topics": [
+        "domain-hierarchy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "dns",
+      "description": "Explica la función del servicio DNS en la resolución del dominio ficticio según el recorrido de la ficha.",
+      "topics": [
+        "dns"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "network-scopes",
+      "description": "Compara Intranet, Internet y Extranet para el caso ficticio atendiendo a su alcance y las consideraciones de seguridad dadas.",
+      "topics": [
+        "network-scopes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "firewall",
+      "description": "Propón una regla de cortafuegos para el servicio web ficticio según los requisitos de acceso del caso; no cambies reglas reales.",
+      "topics": [
+        "firewall"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-domains"
+      ]
+    },
+    {
+      "id": "ict-history",
+      "description": "Analiza la evolución de las TIC en las últimas décadas con los hitos y fuentes de la ficha, sin inventar fechas.",
+      "topics": [
+        "ict-history"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "business-ict-strategy",
+      "description": "Explica la relación entre la estrategia empresarial y las TIC en el caso ficticio con las metas y procesos proporcionados.",
+      "topics": [
+        "business-ict-strategy"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-c-history-business"
+      ]
+    },
+    {
+      "id": "ict-service-cases",
+      "description": "Identifica cómo las TIC fortalecieron los servicios del negocio ficticio usando las evidencias del caso.",
+      "topics": [
+        "ict-service-cases"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-ict-cases"
+      ]
+    },
+    {
+      "id": "research-innovation",
+      "description": "Propón una innovación del proceso empresarial a partir de los resultados de investigación proporcionados, sin exigir una investigación nueva.",
+      "topics": [
+        "research-innovation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-research-innovation",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "innovation-process",
+      "description": "Construye y adapta el proceso de innovación de la empresa ficticia según las restricciones proporcionadas.",
+      "topics": [
+        "innovation-process"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-innovation-processes",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "innovation-importance",
+      "description": "Argumenta la importancia de la innovación para competir y evolucionar utilizando las evidencias de la empresa ficticia.",
+      "topics": [
+        "innovation-importance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-innovation-importance"
+      ]
+    },
+    {
+      "id": "proposal-methods",
+      "description": "Construye y presenta el método de formulación de propuestas tecnológicas solicitado para el caso ficticio.",
+      "topics": [
+        "proposal-methods"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-proposals",
+        "ifc006-mf060-c-updates-proposals"
+      ]
+    },
+    {
+      "id": "information-systems",
+      "description": "Identifica y diferencia los tipos de sistemas de información de las fichas según los procesos de las empresas ficticias.",
+      "topics": [
+        "information-systems"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-information-systems"
+      ]
+    },
+    {
+      "id": "erp-application",
+      "description": "Desarrolla el componente de gestión ERP de práctica indicado usando los procesos institucionales ficticios de la ficha; no añadas CRM o SRM.",
+      "topics": [
+        "erp-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "crm-application",
+      "description": "Desarrolla el componente CRM de práctica solicitado para el caso de servicio al consumidor ficticio.",
+      "topics": [
+        "crm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "srm-application",
+      "description": "Desarrolla el componente SRM de práctica solicitado para el caso de relación con proveedores ficticios.",
+      "topics": [
+        "srm-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "cms-application",
+      "description": "Desarrolla el portal CMS de práctica solicitado con los contenidos ficticios y requerimientos proporcionados, sin publicarlo en internet.",
+      "topics": [
+        "cms-application"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "business-intelligence",
+      "description": "Desarrolla la aplicación de inteligencia de negocio de práctica solicitada usando los datos ficticios y el objetivo de la ficha.",
+      "topics": [
+        "business-intelligence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-management-applications",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "open-source",
+      "description": "Identifica ventajas y desventajas del Open Source para el caso empresarial ficticio a partir de las fichas, sin instalar programas.",
+      "topics": [
+        "open-source"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas"
+      ]
+    },
+    {
+      "id": "cloud-computing",
+      "description": "Identifica ventajas y desventajas del Cloud Computing para el caso empresarial ficticio con las fichas dadas, sin contratar servicios.",
+      "topics": [
+        "cloud-computing"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "saas",
+      "description": "Identifica ventajas y desventajas de SaaS para el caso empresarial ficticio con las condiciones proporcionadas, sin crear cuentas.",
+      "topics": [
+        "saas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-open-cloud-saas",
+        "ifc006-mf060-c-management-applications"
+      ]
+    },
+    {
+      "id": "management-configuration",
+      "description": "Configura la aplicación de gestión empresarial de práctica según las necesidades y parámetros del negocio ficticio, sin modificar sistemas reales.",
+      "topics": [
+        "management-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-application-configuration"
+      ]
+    },
+    {
+      "id": "tools-context",
+      "description": "Relaciona la herramienta tecnológica proporcionada con las condiciones concretas del entorno empresarial ficticio descrito en la ficha.",
+      "topics": [
+        "tools-context"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-p-tools-context"
+      ]
+    },
+    {
+      "id": "alternative-code-configuration",
+      "description": "Programa o configura el elemento del sitio web de práctica según la alternativa elegida y el diseño proporcionado; no realices ambas opciones.",
+      "topics": [
+        "element-programming",
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "alternative-user-support",
+      "description": "Realiza el entrenamiento simulado del usuario final o redacta sus instrucciones de ejecución según la alternativa elegida para la aplicación web de práctica.",
+      "topics": [
+        "user-training",
+        "user-instructions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.3"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "negated-publication",
+      "description": "Define la estructura de directorios del servidor simulado para la aplicación web. No publiques páginas ni despliegues en internet.",
+      "topics": [
+        "server-directories"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Especifica los parámetros de seguridad de la aplicación web ficticia según la ficha. Opcionalmente puedes consultar el manual de certificados digitales; no debes emitir certificados.",
+      "topics": [
+        "security-parameters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.3.1"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Selecciona el lenguaje de programación web para el caso ficticio. Después integra la consulta proporcionada en el diseño de práctica y verifica la usabilidad del componente según la ficha.",
+      "topics": [
+        "language-selection",
+        "query-integration",
+        "component-usability"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.1.1",
+        "ifc006-mf060-CE8.2.1",
+        "ifc006-mf060-CE8.2.4"
+      ]
+    },
+    {
+      "id": "score-pending",
+      "description": "Prepara el reporte de avance de la implementación con los registros ficticios proporcionados; deja la puntuación pendiente hasta que se indique el total.",
+      "topics": [
+        "progress-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.6.3"
+      ],
+      "maxScore": null
+    },
+    {
+      "id": "weighted-components",
+      "description": "Integra la búsqueda solicitada en el diseño web de práctica y configura el elemento indicado según el diseño proporcionado. Usa los datos ficticios de la ficha.",
+      "topics": [
+        "search-integration",
+        "element-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf060-CE8.2.1",
+        "ifc006-mf060-CE8.2.3"
+      ],
+      "maxScore": 17.35
+    }
+  ],
+  "negativeDescriptions": [
+    "Interpreta un poema francés sobre una ciudad.",
+    "Analiza las capas de la atmósfera sin desarrollar una aplicación web.",
+    "Redacta una entrevista de trabajo en inglés; no programes ni configures soluciones web."
+  ],
+  "limits": [
+    "Contratos esperados con datos y recursos ficticios; no equivalen a proveedor conectado ni instrumentos completos revisados.",
+    "No ejecutar publicaciones, despliegues, compras o instalaciones en producción; prácticas simuladas o laboratorio indicado, sin credenciales reales.",
+    "Tecnologías históricas y marcas permanecen como contexto documental, no obligaciones de instalar software obsoleto o debilitar seguridad.",
+    "Seleccionar, explicar, programar, configurar, comprobar, documentar, proponer y planear conservan sus evidencias propias; no exigir todos los subapartados de un CE en cada tarea.",
+    "Actitudes privadas y orientaciones docentes no generan criterios automáticos. No evaluar compromiso personal con plazos.",
+    "Los20CE/26P/5bandas conceptuales tienen referencias; esto no acredita agotar todos sus subtemas, variantes o instrumentos.",
+    "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots."
+  ]
+}

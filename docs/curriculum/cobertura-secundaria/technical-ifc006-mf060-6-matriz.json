@@ -1286,5 +1286,12 @@
     "Nueve actitudes conservadas documentalmente: ocho privadas; plazos solo observable si la consigna y un registro proporcionado lo hacen explícito, sin inferir compromiso personal.",
     "Cuatro orientaciones docentes no son entregables automáticos.",
     "Conservar desarrolla, la viñeta -Cloud Computing y demás formulaciones impresas sin atribuirles precisión técnica automática."
-  ]
+  ],
+  "expectedContracts": {
+    "file": "data/evaluation-instruments/technical-mf060-six-contracts.json",
+    "cases": 97,
+    "topicGroups": 90,
+    "review": "technical-mf060-6-contratos-esperados.json",
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
+  }
 }

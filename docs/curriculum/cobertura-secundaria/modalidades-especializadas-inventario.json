@@ -5605,6 +5605,13 @@
               "literalParts": 75,
               "provider": null,
               "instrumentReview": "NOT_STARTED"
+            },
+            "expectedContracts": {
+              "file": "data/evaluation-instruments/technical-mf060-six-contracts.json",
+              "cases": 97,
+              "topicGroups": 90,
+              "review": "technical-mf060-6-contratos-esperados.json",
+              "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
             }
           },
           {
@@ -5987,7 +5994,8 @@
     "MF059/cuarto:33/100muestras HTTP completas;34actividades/instrumentos/snapshots exactos tras timeout de reapertura final. Ejecutor detenido y preservación completada; no repetirQA ni recrearIDs. Diagnóstico de latencia documentado, causa exacta de transporte no aislada; navegador personal pendiente de autenticación.",
     "MF057/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,79releases/1.137snapshots previos conservados→80/1.153;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
     "MF055/sexto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,80releases/1.153snapshots previos conservados→81/1.169;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
-    "MF058/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,81releases/1.169snapshots previos conservados→82/1.185;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs."
+    "MF058/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,81releases/1.169snapshots previos conservados→82/1.185;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
+    "MF060/sexto:fuente70/75y97consignas/90grupos esperados leídos;20CE/26P/5bandasC referidos. Falta proveedor, instrumentos completos y pruebasDevelopment. No equivale a cobertura implementada; conservarruntime149 e historia MF058."
   ],
   "push": false,
   "deploy": false,
