@@ -1,3 +1,13 @@
+# Checkpoint vigente: QA recuperada y referencia 150 preservada
+
+Commit de estabilidad **841c620d** ya local; pushes suspendidos. **QA 20393 terminó con código 0, 16/16**, 101 respuestas, ninguna 500/429. Preservación 18604 terminó con código 0: 83 releases/1.201 snapshots; 82/1.185 originales exactos y 16 actividades sin duplicados. Cambiar solo la estrategia conservó exactamente el instrumento. La comprobación de quince referencias personales, sesión 31961, terminó con código 0 después de QA, sin recapturas. **Freeze 150, sesión 9693, terminó con código 0**; no repetir: catalog-v150.ts, realistic-audit-base-150.json, english-common-150-baseline-before-151.json, english-compiled-150-frozen.cjs, history-before-evaluation-2026.151.json, freeze-150-proof.json. Todo exacto frente a Development y al payload esperado; 15.176 definiciones inglesas previas iguales. No existe instalación 151 ni corrección pedagógica todavía.
+
+Tests del editor, sesión 94192: código 0, 73 pruebas en 5 archivos. Estrategias A/B locales: Inglés 6.º y Francés 1.º seleccionan SIMULATION; los otros 12 casos carecen de fundamento para inferir una estrategia de enseñanza. Los C reservados NO se ejecutaron. Navegador 1796703522 sigue con contraseña vacía y handoff; no borrar almacenamiento. Las 97.174 pruebas de estabilidad están vigentes; nuevas correcciones requieren pruebas focalizadas y gates correspondientes. Runtime 1358 sigue en 8787; verificar listener antes de actuar. Ningún ejecutor QA, instalador o preservador activo.
+
+Siguiente: regresiones de requisitos naturales y correcciones compartidas sobre el catálogo 151 candidato. Mantener 150 congelado y los originales. No añadir MF061 ni otros módulos. Cubrir cuatro formatos, lectura completa y antes/después, HTTP/DB y visual por contexto; actualizar el banco por temas e informes sin declarar completa la auditoría.
+
+## Checkpoints anteriores (históricos)
+
 # Auditoría realista vigente: estabilidad y banco inicial
 
 Nuevo encargo literal: docs/superpowers/specs/2026-10-22-auditoria-actividades-realistas.md. Complementa el integral, prioriza estabilidad y calidad de TODOS los proveedores implementados, sin ampliar módulos. **Pushes suspendidos de nuevo**; commits locales, sin producción/main/despliegue/migraciones remotas/IA nueva/dependencias/subagentes. Rama ampliacion-de-instrumentos-2; punto de partida f7d1be7a publicado y árbol limpio. Informes anteriores debajo son históricos; no usar sus PIDs ni bloqueos como estado vigente.

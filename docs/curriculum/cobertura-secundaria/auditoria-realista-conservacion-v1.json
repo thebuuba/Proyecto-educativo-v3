@@ -1,0 +1,190 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.150",
+  "verification": "REPRESENTATIVE_HTTP_DB_QA_COMPLETED",
+  "coverage": {
+    "availableContracts": 118,
+    "selectedCaseIds": [
+      "language-selection",
+      "required-application-brief",
+      "alternative-code-configuration",
+      "debugging-function-creation-only",
+      "debugging-function-existing-use",
+      "debugging-tools-plural",
+      "configuration-server-only",
+      "installation-verification-brief",
+      "network-scope-pair",
+      "business-characteristics-only",
+      "vision-mission",
+      "proposal-method-presentation-only",
+      "erp-application-analysis",
+      "automatic-publication-simulation",
+      "independent-actions",
+      "progress-report"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "samples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4b7f39a36fdebeabd72aed88c63cd73a8bd729fdab9b86cfffe2230939abc7ce"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0f33796458009feebb357bb7867dbf22d014bdd11fd86e530981d60649848053"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c053183bb7aea4d493a4f361ec9132deb71552c5625bd859274b95c574c2c3db"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1024acddf5828621e06c395f48c4053460c7badd52cbd7a273e110abfc57f3ba"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6c96bbce62425598e8bd17215372c484bea646c8955ef4ef493ebf79d85845c7"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4d7c799f4e1e76fc0dea59f292d3ff5f8037900a11f38bd1b4f932e62523eea9"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d0054c0036f1c836b4025e83cd0d92b79643cb872ebe9c138f51cbd7f8f636e4"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "348ddd1be76cb840db3252c4b706ce42a42aefd26800ae2f92d8b8b7805aafba"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "443c9818a430d45d3d6ab16d73aa714c1b4e388a73f7492397494c24c065c991"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "fef594fffd1b1810854ed7ddd87acee313bf5afb8faf221ff9e9b3d4c5e726dc"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f651075d9a89e76a4d1114aaaf6a1d4826a4e5c582e3ab52b807cc4ecb4f9fe7"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "dc32dc01f96ab6fd6de45bb80203433d1aa5b77132a7dc9d4b667f0964a39565"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "5d564a9dc397c713b27c6c6cf1a1b5c39b737fcffc0fea8d782dc0365ce84c15"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b6b25caec1ce5eb0ecc05dc06e7d4d657c592bbae6ec85fb3a46dda64f56246d"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b1b04b4ac40efde5958b0e105e350550291fdef858b03a26be25fae5edbef030"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "e1134b7a635c7b063a5cf931abbe33e266f2384091196554d80f5f3ac3f96e38"
+    }
+  ],
+  "latency": {
+    "responses": 101,
+    "minMs": 2113,
+    "medianMs": 4984,
+    "p95Ms": 8601,
+    "maxMs": 12951
+  },
+  "http500": 0,
+  "http429": 0,
+  "preservation": {
+    "readOnly": true,
+    "verified": 16,
+    "saved": 16,
+    "priorReleases": 82,
+    "priorSnapshots": 1185,
+    "currentReleases": 83,
+    "currentSnapshots": 1201,
+    "duplicates": 0,
+    "personalOriginalBaselinesExact": 15,
+    "newPersonalBaselines": 0
+  },
+  "freeze": {
+    "frozen": "evaluation-2026.150",
+    "project": "eolgunypmtgrsyrjzcld",
+    "verifiedApplicationCommit": "841c620d",
+    "matchesInstalled": true,
+    "expectedPayloadExact": true,
+    "commonDefinitions": 15176,
+    "commonDefinitionsUnchangedFrom149": true,
+    "releases": 83,
+    "snapshots": 1201,
+    "priorHistoryPreserved": true,
+    "mf060QaActivitiesPreserved": 16,
+    "personalOriginalBaselinesExact": 15,
+    "remoteWrites": false,
+    "frozenSourceEqualsInstalledPayload": true
+  },
+  "editorUnitTests": {
+    "files": 5,
+    "tests": 73,
+    "passed": true,
+    "scope": "strategy, add, complete, capacity; mocked component tests, not browser"
+  },
+  "limits": [
+    "Representative QA recovery of existing MF060, not complete audit of realistic bank or118contracts",
+    "Personal browser remains unauthenticated",
+    "Variable latency; no guarantee about previous intermittent network errors",
+    "Original failed progress preserved before resume, no duplicate creations or historical recapture"
+  ]
+}

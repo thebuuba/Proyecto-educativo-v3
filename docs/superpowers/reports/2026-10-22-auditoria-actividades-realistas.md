@@ -69,7 +69,7 @@ El índice `auditoria-realista-proveedores.json` registra **81 ámbitos implemen
 - Backend completo final: **97.174 pruebas, 214 archivos, aprobados**. La ejecución previa de 97.167 fue anterior a sustituir la primera solución y no es la validación final.
 - Backend build y `pnpm cloudflare:build` finales: exit 0; este último también recompiló el frontend. El frontend build explícito anterior pasó y no hubo cambios frontend posteriores. Lint final corregido: exit 0. Cloudflare fue únicamente `--dry-run`.
 - HTTP final: login 201/5849 ms, interpretaciones 200/7214 y 13525 ms, recomendación 200/10061 ms. La interpretación repetida fue idéntica y se devolvió el catálogo 150 esperado. **La latencia continúa variable**, sin evidencia suficiente para declarar resuelta toda la inestabilidad.
-- QA MF060 reanudado una sola vez después de la preservación: diario original, selección original de 16 casos e IDs conciliados. Sigue en ejecución; sus resultados no sustituyen la auditoría del nuevo banco pedagógico. No reiniciar Worker, recompilar ni lanzar otro escritor durante ese recorrido.
+- QA MF060 finalizado: 16/16 muestras originales guardadas/reabiertas, 101 respuestas sin 500/429, cuatro formatos con 20/17.35, texto manual conservado y estrategia manual sin alterar instrumento. Se reanudó una sola vez el diario original, preservando el fallo previo; no se duplicaron IDs. Es recuperación representativa del proveedor existente, no auditoría completa de las nuevas consignas.
 - Navegador Chrome disponible. La cuenta recordada exige contraseña; pestaña `1796703522`, localhost:8787/login. No se enviaron correos ni se cambiaron credenciales. Prueba visual personal del creador todavía pendiente.
 - Añadir/completar, estrategia automática, puntuación inicialmente vacía, 20/17.35, cambios de formato y guardado/reapertura requieren comprobación específica con estas consignas. Las pruebas anteriores no sustituyen la nueva auditoría.
 - Resto de proveedores/temas implementados: pendiente de ampliar banco con tareas distintas, fuentes cuando hagan falta y muestreo HTTP/visual justificado. MF061 y artes solo inventariadas están fuera de esta auditoría.
@@ -77,3 +77,13 @@ El índice `auditoria-realista-proveedores.json` registra **81 ámbitos implemen
 ## Límite de publicación
 
 Sin push, merge, despliegue, cambio de producción, Hyperdrive, secretos, integraciones, cuentas, reset, borrado de datos ni migraciones remotas. Los cambios de este bloque se guardarán en commits locales una vez verificados. Los resultados del encargo integral previo permanecen históricos; esta auditoría no certifica todo aquel trabajo.
+
+## Checkpoint posterior: recuperación QA preservada y catálogo 150 congelado
+
+La consulta posterior confirmó **83 releases y 1.201 snapshots**. Los 82 releases y 1.185 snapshots anteriores se compararon contra el original y siguen exactos; los 16 nuevos pertenecen a las 16 actividades QA, sin duplicados. Quince referencias personales originales volvieron a pasar después de las escrituras, sin recapturarlas. Evidencia pública: `auditoria-realista-conservacion-v1.json`.
+
+Se creó una referencia NUEVA previa al catálogo 151 y se congeló el payload 150 en `catalog-v150.ts`, contrastado completo con Development, el payload esperado y el módulo generado. El motor compilado también se conservó en almacenamiento privado. Las 15.176 definiciones inglesas previas coinciden con su referencia 149; esta comparación fija el punto de partida y no aprueba las futuras correcciones pedagógicas. Los archivos originales de historia y catálogos anteriores no se sobrescribieron.
+
+Los cinco archivos focalizados de estrategia/añadir/completar/capacidad pasaron **73 pruebas**. Son pruebas de componentes y lógica con dobles, no recorridos visuales. En el banco A/B la regla selecciona SIMULATION para entrevista inglesa y diálogo francés con intercambio de roles. Los doce casos restantes carecen de fundamento suficiente para inferir una estrategia de enseñanza; una exposición estudiantil no se interpreta como explicación docente. No se añadió una propuesta arbitraria. Falta contrastar estas consignas con HTTP y el borrador real; el navegador personal sigue en login.
+
+Commit inicial de estabilidad y banco: `841c620d`. Sin push. Los defectos pedagógicos listados arriba todavía requieren corrección.
