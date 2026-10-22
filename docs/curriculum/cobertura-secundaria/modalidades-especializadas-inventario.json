@@ -5644,6 +5644,14 @@
               "placementVerified": false,
               "provider": null,
               "instrumentReview": "NOT_STARTED"
+            },
+            "expectedContracts": {
+              "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+              "cases": 49,
+              "topicGroups": 42,
+              "evidence": "technical-mf061-6-contratos-esperados.json",
+              "fixture": "data/evaluation-instruments/technical-mf061-six-contracts.json",
+              "provider": null
             }
           },
           {
@@ -6001,7 +6009,8 @@
     "MF057/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,79releases/1.137snapshots previos conservados→80/1.153;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
     "MF055/sexto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,80releases/1.153snapshots previos conservados→81/1.169;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
     "MF058/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,81releases/1.169snapshots previos conservados→82/1.185;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
-    "MF060/sexto:fuente70/75y97consignas/90grupos esperados leídos;20CE/26P/5bandasC referidos. Falta proveedor, instrumentos completos y pruebasDevelopment. No equivale a cobertura implementada; conservarruntime149 e historia MF058."
+    "MF060/sexto:proveedor32de5107 yconexion5c91ac4d;catalogo150 instalado,472instrumentos revisados,QA0/16 bloqueada por timeout y accesoPostgreSQL. Ultima historia confirmada83/1185 antes del sondeo positivo500; comprobacionposterior y15baselinesposteriores pendientes. No repetir ejecutores ni cambiar timeout.",
+    "MF061/sexto:49consignas/42grupos esperados revisados contra29registros/24CE, sin proveedor ni instrumentos. Antesdeimplementar151, verificar/congelar150 cuando se recupere acceso estable; no recapturar baselines."
   ],
   "push": false,
   "deploy": false,

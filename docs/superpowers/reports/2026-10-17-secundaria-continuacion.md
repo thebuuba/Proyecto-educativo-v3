@@ -1,6 +1,18 @@
 # Continuación del encargo integral de secundaria
 
-## Estado vigente 22 de octubre: MF060150 instalado; HTTP detenido antes de crear actividades
+## Estado vigente 22 de octubre: conexión MF060 registrada; contratos MF061 revisados
+
+HEAD **5c91ac4d7997782f2d636b0dbab84407e5e08001** registra instalación MF060 y su bloqueo; proveedor **32de51079f981c49dc7e7a9107c284a1054897c5**. Rama `ampliacion-de-instrumentos-2`,94commits locales adelante de refguardada antesdelcommitMF061; NO PUSH/producción/main/despliegue/reset/cuentas/subagentes. Árbol limpio despuésde5c91ac4d; nuevos cambios solo documentales y pruebas/fixture MF061.
+
+MF060 permanece en **0/16QA**; primer ejecutor43159 ysondeo70830 YAterminaron1. Timeout cliente30s enreferenteexcluido,400esperadoWorker34083ms; sondeopositivo500/20049ms por`Connection terminated due to connection timeout`. Diagnóstico64543 terminó0,últimaconfirmación83releases/1185snapshots/0QAantesdelsondeo. Preservaciónposterior57701terminó1alprimerconteo,sinwrites;15baselinesafterNOejecutados. No repetir reintentos,recorders,instaladores orecapturas. PersonalAuth pendiente. Runtime150 **76041/launcher45920 ACTIVO**, listener61224;PG/Auth/Storage/frontendDevelopment verificados antesdelbloqueo. Chrome2tab1796703483 login/entry150/handoff; preservarMF056tab1796703445. Gates1509/9 ydefinicionesprevias/nuevas exactas no requierenrepetición:apps/packages idénticos32de5107.
+
+MF061sexto FormaciónenCentrosdeTrabajo: **49consignas/42grupos esperados**, referidos a los24CEde29registros/29partesPDF47–48. Relecturacompletafuente0–14/15–28yconsignas0–24/25–48 eneste turno. `prepare-mf061-expected-contracts.mjs` y `record-mf061-expected-contracts.mjs` YAejecutadosUNAvez; no repetir. DosREDporfixtureausente yuno porevidenciaausente→tresGREEN. Fuente literal sin cambios,provider:null/0instrumentos/HTTPDBbrowserNOT_RUN. Fixture/matriz/evidenciapública/inventario/plan/informeactualizados; **no es cobertura implementada**.
+
+**Node técnico41215 TERMINÓ0,173/173**, `mf061-contracts-node-final.log` UTF16. Ningún test/ejecutorQA/instalador/DBprobe activo. La prueba `technical-mf061-contracts.test.mjs` focal3/3ya pasó. Siguiente: cerrarcommitlocalcontratos; antesdeimplementar151 recuperar accesoestable ycongelar150 UNAvez con historiareal ybaselinesexistentes, sin sobrescribirningúncheckpoint. MientrascontinúeelbloqueodeDB, solo tareas documentales independientes: restantes tablas de programas técnicos yfuentesdeArtes según inventario. No dar por completoelencargointegral ni latenciaresuelta.
+
+### Checkpoint anterior, superado por el estado vigente
+
+## Estado anterior 22 de octubre: MF060150 instalado; HTTP detenido antes de crear actividades
 
 Proveedor **32de51079f981c49dc7e7a9107c284a1054897c5**, ramaampliacion-de-instrumentos-2,93commits locales adelante de refguardada; NO PUSH/producción/main/despliegue/reset/cuentas/subagentes. Gates1509/9 ypreservación2736previas+472nuevas exactas completadas; detalles abajo. Apps/packages no cambiaron despuésdelcommit; no repetirbuilds. Cambios nuevos:allowlistHTTP9módulos con1RED→GREEN ydocumentación/pruebas deconexión.
 

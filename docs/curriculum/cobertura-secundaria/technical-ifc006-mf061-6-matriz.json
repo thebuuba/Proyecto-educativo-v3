@@ -557,5 +557,13 @@
     "Mantener las condiciones participar a su nivel, según políticas e instrucciones, y los condicionales en caso necesario o si fuese necesario; no imponer todas las intervenciones en cada consigna.",
     "No inventar contenidos C/P/A a partir de los CE ni equiparar la ausencia de una tabla a ausencia de capacidades del módulo.",
     "Usar casos y recursos ficticios cuando corresponda, sin datos personales de usuarios, empleados, estudiantes o empresas."
-  ]
+  ],
+  "expectedContracts": {
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+    "cases": 49,
+    "topicGroups": 42,
+    "evidence": "technical-mf061-6-contratos-esperados.json",
+    "fixture": "data/evaluation-instruments/technical-mf061-six-contracts.json",
+    "provider": null
+  }
 }

@@ -1,0 +1,521 @@
+{
+  "subjectCode": "MF_061_3",
+  "subjectName": "Formación en Centros de Trabajo",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "activity-effects",
+      "description": "Analiza las repercusiones de la actividad informática descrita en el sistema productivo y en el centro de trabajo ficticio, usando los datos del caso.",
+      "topics": [
+        "activity-effects"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.1"
+      ]
+    },
+    {
+      "id": "instructions-interpretation",
+      "description": "Interpreta las instrucciones de la orden de trabajo ficticia y explica qué actuación corresponde; no ejecutes la tarea.",
+      "topics": [
+        "instructions-interpretation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.2"
+      ]
+    },
+    {
+      "id": "instructions-execution",
+      "description": "Ejecuta en el entorno de práctica las instrucciones proporcionadas para la tarea ficticia, sin redactar otro informe.",
+      "topics": [
+        "instructions-execution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.2"
+      ]
+    },
+    {
+      "id": "communication-handoff",
+      "description": "Simula la comunicación de una incidencia de trabajo a la persona adecuada según el protocolo proporcionado; comunica los datos necesarios sin usar contactos reales.",
+      "topics": [
+        "communication-handoff"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.2"
+      ]
+    },
+    {
+      "id": "task-priorities",
+      "description": "Ordena las tareas de la orden de trabajo ficticia según las prioridades indicadas en sus instrucciones. No ejecutes las intervenciones.",
+      "topics": [
+        "task-priorities"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.3"
+      ]
+    },
+    {
+      "id": "safe-work-sequence",
+      "description": "Organiza la secuencia de intervención informática de práctica según los procedimientos de seguridad y calidad proporcionados. No añadas tareas ajenas al caso.",
+      "topics": [
+        "safe-work-sequence"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.3"
+      ]
+    },
+    {
+      "id": "work-area-conditions",
+      "description": "Comprueba el orden, limpieza e higiene del área de trabajo representada en la ficha ficticia según las normas de seguridad proporcionadas; no evalúes rasgos personales.",
+      "topics": [
+        "work-area-conditions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.4"
+      ]
+    },
+    {
+      "id": "requirements-compliance",
+      "description": "Verifica si el producto de trabajo ficticio cumple los requerimientos y normas expresos de la ficha; no valores la personalidad ni añadas un plazo.",
+      "topics": [
+        "requirements-compliance"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.5"
+      ]
+    },
+    {
+      "id": "deadline-record",
+      "description": "Compara las horas de finalización del registro ficticio con los plazos expresos de cada tarea e identifica cuáles se completaron dentro del tiempo previsto.",
+      "topics": [
+        "deadline-record"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.1.5"
+      ]
+    },
+    {
+      "id": "database-tables",
+      "description": "Crea las tablas de la base de datos de práctica según el diseño proporcionado. No añadas índices, funciones ni procedimientos.",
+      "topics": [
+        "database-tables"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.1"
+      ]
+    },
+    {
+      "id": "database-indexes",
+      "description": "Crea los índices solicitados sobre las tablas proporcionadas de la base de datos de práctica según el diseño; no crees nuevas tablas.",
+      "topics": [
+        "database-indexes"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.1"
+      ]
+    },
+    {
+      "id": "database-functions",
+      "description": "Crea la función de la base de datos de práctica indicada en la ficha según las especificaciones recibidas; no añadas procedimientos almacenados.",
+      "topics": [
+        "database-functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.1"
+      ]
+    },
+    {
+      "id": "database-procedures",
+      "description": "Crea el procedimiento almacenado solicitado para la base de datos de práctica con los parámetros indicados; no añadas funciones.",
+      "topics": [
+        "database-procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.1"
+      ]
+    },
+    {
+      "id": "database-build-log",
+      "description": "Documenta las actuaciones y resultados de creación de la base de datos ficticia ya realizados, usando el registro proporcionado; no vuelvas a ejecutarlos.",
+      "topics": [
+        "database-build-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.1"
+      ]
+    },
+    {
+      "id": "update-operation",
+      "description": "Aplica UPDATE a los registros ficticios de la base de datos de práctica según las condiciones de la ficha. No insertes ni elimines registros.",
+      "topics": [
+        "update-operation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.2"
+      ]
+    },
+    {
+      "id": "insert-operation",
+      "description": "Aplica INSERT para incorporar los registros ficticios autorizados a la base de datos de práctica según la ficha.",
+      "topics": [
+        "insert-operation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.2"
+      ]
+    },
+    {
+      "id": "delete-operation",
+      "description": "Aplica DELETE exclusivamente a los registros ficticios señalados en la base de datos de práctica; comprueba la condición antes de la ejecución simulada.",
+      "topics": [
+        "delete-operation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.2"
+      ]
+    },
+    {
+      "id": "select-operation",
+      "description": "Ejecuta la consulta SELECT solicitada para obtener los datos ficticios de la base de datos de práctica; no modifiques registros.",
+      "topics": [
+        "select-operation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.2"
+      ]
+    },
+    {
+      "id": "database-functionality",
+      "description": "Verifica el funcionamiento de la base de datos de práctica con los casos de prueba y reglas de la empresa ficticia proporcionados.",
+      "topics": [
+        "database-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.3"
+      ]
+    },
+    {
+      "id": "database-documentation",
+      "description": "Interpreta la documentación técnica de la base de datos ficticia e identifica sus características funcionales y compatibilidad según las políticas dadas. No cambies su configuración.",
+      "topics": [
+        "database-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.4"
+      ]
+    },
+    {
+      "id": "database-test-results",
+      "description": "Documenta el análisis de los resultados de las pruebas de base de datos ficticia proporcionados según las normas de la ficha. No ejecutes nuevas pruebas.",
+      "topics": [
+        "database-test-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.5"
+      ]
+    },
+    {
+      "id": "cooperative-data-tasks",
+      "description": "Organiza las actividades de procesamiento de datos de los usuarios ficticios para que sus tareas sean cooperativas y complementarias según el caso; no crees usuarios ni cambies permisos reales.",
+      "topics": [
+        "cooperative-data-tasks"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.6"
+      ]
+    },
+    {
+      "id": "web-page",
+      "description": "Elabora en el editor de práctica una página web con el texto y la imagen proporcionados según el diseño ficticio. No añadas banners, vídeos ni scripts.",
+      "topics": [
+        "web-page"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.1"
+      ]
+    },
+    {
+      "id": "web-work-log",
+      "description": "Documenta las actuaciones y resultados de elaboración de la página web de práctica ya registrados en la ficha; no crees otra página.",
+      "topics": [
+        "web-work-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.1"
+      ]
+    },
+    {
+      "id": "mobile-app-quality",
+      "description": "Comprueba el funcionamiento de la aplicación del sitio móvil de práctica según los casos de prueba y la guía de calidad proporcionados; usa las evidencias ficticias del caso.",
+      "topics": [
+        "mobile-app-quality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.2"
+      ]
+    },
+    {
+      "id": "dynamic-page-check",
+      "description": "Verifica el funcionamiento de la página dinámica de práctica generada por el script de servidor en los navegadores y versiones indicados en la ficha. No instales navegadores obsoletos.",
+      "topics": [
+        "dynamic-page-check"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.3"
+      ]
+    },
+    {
+      "id": "browser-documentation",
+      "description": "Interpreta la documentación técnica de los navegadores proporcionada para identificar funciones, compatibilidad con scripts de servidor y estándares soportados en el caso ficticio; no ejecutes pruebas.",
+      "topics": [
+        "browser-documentation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.3"
+      ]
+    },
+    {
+      "id": "portal-test-results",
+      "description": "Documenta el análisis de los resultados de pruebas del portal ficticio entregados en la ficha; no publiques ni modifiques el sitio.",
+      "topics": [
+        "portal-test-results"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.3.4"
+      ]
+    },
+    {
+      "id": "support-guide",
+      "description": "Interpreta la guía de operación y el catálogo de averías proporcionados para determinar el procedimiento de asistencia del equipo ficticio. No intervengas en un dispositivo real.",
+      "topics": [
+        "support-guide"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.1"
+      ]
+    },
+    {
+      "id": "incident-report",
+      "description": "Realiza el informe de la incidencia ficticia reportada según el protocolo y los datos proporcionados; no diagnostiques otra incidencia.",
+      "topics": [
+        "incident-report"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.1"
+      ]
+    },
+    {
+      "id": "incident-classification",
+      "description": "Identifica el tipo de incidencia a partir de las explicaciones del usuario ficticio y comunica la clasificación según el protocolo proporcionado.",
+      "topics": [
+        "incident-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.2"
+      ]
+    },
+    {
+      "id": "diagnostic-localization",
+      "description": "Localiza el fallo del equipo ficticio utilizando los resultados de las herramientas de diagnóstico proporcionados. No repares ni sustituyas componentes.",
+      "topics": [
+        "diagnostic-localization"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ]
+    },
+    {
+      "id": "backup-when-needed",
+      "description": "El diagnóstico ficticio indica que el resguardo es necesario. Simula la copia de seguridad de la información de práctica según el protocolo de asistencia; no uses datos personales.",
+      "topics": [
+        "backup-when-needed"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ]
+    },
+    {
+      "id": "hardware-repair",
+      "description": "Simula la reparación del componente hardware que causa el fallo del equipo ficticio según el diagnóstico y las instrucciones dadas. No intervengas en hardware real ni repares software.",
+      "topics": [
+        "hardware-repair"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ]
+    },
+    {
+      "id": "software-repair",
+      "description": "Simula la reparación del componente software causante del fallo de la aplicación ficticia según el diagnóstico proporcionado. No modifiques aplicaciones reales ni sustituyas hardware.",
+      "topics": [
+        "software-repair"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ]
+    },
+    {
+      "id": "restore-when-needed",
+      "description": "La ficha de diagnóstico ficticio requiere recuperar la información. Simula la restauración de la copia de seguridad de práctica según el procedimiento proporcionado.",
+      "topics": [
+        "restore-when-needed"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.4"
+      ]
+    },
+    {
+      "id": "functionality-test",
+      "description": "Realiza las pruebas de funcionamiento del equipo ficticio según los casos y resultados esperados de la ficha; no restaures copias cuando el diagnóstico no lo requiere.",
+      "topics": [
+        "functionality-test"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.4"
+      ]
+    },
+    {
+      "id": "support-work-log",
+      "description": "Documenta las actuaciones de asistencia y los resultados del caso ficticio con los registros dados y las políticas de la empresa; no inventes intervenciones.",
+      "topics": [
+        "support-work-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.5"
+      ]
+    },
+    {
+      "id": "business-installation",
+      "description": "Simula la instalación e implementación de la herramienta tecnológica seleccionada para el proceso de negocio ficticio según la ficha, sin instalar ni desplegar servicios reales.",
+      "topics": [
+        "business-installation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.5.1"
+      ]
+    },
+    {
+      "id": "business-improvement-scenario",
+      "description": "Reproduce un escenario ficticio que muestre cómo la tecnología proporcionada mejora el proceso de gestión empresarial descrito, utilizando los datos del caso.",
+      "topics": [
+        "business-improvement-scenario"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.5.2"
+      ]
+    },
+    {
+      "id": "business-configuration",
+      "description": "Configura la aplicación de gestión empresarial de práctica con los parámetros proporcionados para fortalecer el servicio del negocio ficticio; no cambies permisos ni servicios reales.",
+      "topics": [
+        "business-configuration"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.5.3"
+      ]
+    },
+    {
+      "id": "business-backup-log",
+      "description": "Elabora la documentación del proceso de copia de seguridad ya realizado para la herramienta de gestión empresarial ficticia, usando su registro. No ejecutes otro respaldo.",
+      "topics": [
+        "business-backup-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.5.4"
+      ]
+    },
+    {
+      "id": "alternative-hardware-software",
+      "description": "Simula la reparación del componente hardware o del componente software causante del fallo ficticio según la ficha; elige una alternativa, sin intervenir en equipos o aplicaciones reales.",
+      "topics": [
+        "hardware-repair",
+        "software-repair"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "backup-not-needed",
+      "description": "Explica la decisión de respaldo del caso ficticio: el protocolo indica que no es necesario hacer una copia de seguridad. No ejecutes copias ni inventes una pérdida de datos.",
+      "topics": [
+        "backup-when-needed"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.3"
+      ],
+      "conditional": true
+    },
+    {
+      "id": "restore-not-needed",
+      "description": "Explica la decisión de restauración del caso ficticio: el diagnóstico indica que no es necesaria. No restaures información ni ejecutes nuevas pruebas.",
+      "topics": [
+        "restore-when-needed"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.4"
+      ],
+      "conditional": true
+    },
+    {
+      "id": "independent-actions",
+      "description": "Identifica el tipo de incidencia según el relato del usuario ficticio. Después documenta las actuaciones y resultados proporcionados según el protocolo de asistencia.",
+      "topics": [
+        "incident-classification",
+        "support-work-log"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.2",
+        "ifc006-mf061-CE9.4.5"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Interpreta la guía de operación proporcionada para la asistencia del equipo ficticio. Puedes usar un esquema como apoyo opcional; no lo entregues como producto obligatorio.",
+      "topics": [
+        "support-guide"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.4.1"
+      ]
+    },
+    {
+      "id": "score-pending",
+      "description": "Verifica el funcionamiento de la base de datos de práctica según las reglas y casos de prueba proporcionados.",
+      "topics": [
+        "database-functionality"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.3"
+      ],
+      "maxScore": null
+    },
+    {
+      "id": "negated-operations",
+      "description": "Aplica INSERT a los registros ficticios indicados de la base de datos de práctica. No ejecutes UPDATE ni DELETE y no añadas una consulta SELECT.",
+      "topics": [
+        "insert-operation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf061-CE9.2.2"
+      ]
+    }
+  ],
+  "negativeDescriptions": [
+    "Resuelve una ecuación cuadrática con los datos proporcionados.",
+    "Compara los procesos de independencia del Caribe.",
+    "Describe la respiración celular."
+  ],
+  "limits": [
+    "Contratos esperados de actividades con datos ficticios y entornos de práctica; no acreditan estancia, asistencia ni desempeño real en una empresa.",
+    "Las disposiciones de responsabilidad y buen hacer no se convierten en rasgos de personalidad ni criterios automáticos; solo se evalúan acciones y evidencias explícitas.",
+    "Copias y restauraciones son condicionales: no se exige ejecutarlas cuando el diagnóstico proporcionado no las requiere.",
+    "No se modifican equipos, permisos, datos ni producción. No se crean cuentas ni se despliegan servicios.",
+    "La fuente imprime5RA/24CE; no se inventan bandas conceptuales, procedimentales o actitudinales separadas.",
+    "No hay proveedor, instrumentos generados ni pruebas HTTP/DB o navegador MF061 por estos contratos."
+  ]
+}
