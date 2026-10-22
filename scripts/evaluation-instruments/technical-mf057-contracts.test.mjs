@@ -10,11 +10,11 @@ const fixture = () => {
 }
 const matrix = () => JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-ifc006-mf057-5-matriz.json', 'utf8'))
 
-test('MF057 conserva quinto técnico y separa contratos de instrumentos aún ausentes', () => {
+test('MF057 conserva quinto técnico y separa instrumentos locales de pruebas remotas pendientes', () => {
   const f = fixture(), m = matrix(), records = new Map(m.officialRecords.map(r => [r.id, r]))
   assert.equal(f.subjectCode, 'MF_057_3'); assert.equal(f.programCode, 'IFC006_3')
   assert.equal(f.grade, 5); assert.equal(f.cycle, 2); assert.equal(f.modalityCode, 'technical_professional')
-  assert.equal(f.status, 'SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED')
+  assert.equal(f.status, 'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA')
   assert.equal(new Set(f.cases.map(c => c.id)).size, f.cases.length)
   for (const c of f.cases) {
     assert(c.description.trim(), c.id); assert(c.topics.length, c.id); assert(c.sourceRecordIds.length, c.id)
@@ -24,7 +24,7 @@ test('MF057 conserva quinto técnico y separa contratos de instrumentos aún aus
       assert(!['ATTITUDE', 'TEACHING_STRATEGY'].includes(records.get(id).type), id)
     }
   }
-  assert.equal(m.implementation.provider, null); assert.equal(m.adaptations.length, 0)
+  assert.equal(m.implementation.provider, 'packages/shared/src/secondary-technical.ts'); assert.equal(m.adaptations.length, 115)
   assert.equal(m.implementation.httpDb, 'NOT_RUN'); assert.equal(m.implementation.browser, 'NOT_RUN')
 })
 
@@ -55,7 +55,7 @@ test('la documentación general MF057 no arrastra el método de acceso no solici
   assert.deepEqual(f.cases.find(c => c.id === 'access-documentation').sourceRecordIds, ['ifc006-mf057-p-access-documentation'])
 })
 
-test('la revisión MF057 identifica cada consigna leída y conserva cero instrumentos implementados', () => {
+test('la revisión MF057 identifica cada consigna leída y sus instrumentos locales revisados', () => {
   const path = 'docs/curriculum/cobertura-secundaria/technical-mf057-5-contratos-esperados.json'
   assert(existsSync(path), 'Falta la revisión de contratos MF057')
   const p = JSON.parse(readFileSync(path, 'utf8')), f = fixture()
@@ -67,5 +67,5 @@ test('la revisión MF057 identifica cada consigna leída y conserva cero instrum
     assert.equal(p.casesReviewed[index].descriptionSha256, createHash('sha256').update(c.description).digest('hex'), c.id)
     assert.deepEqual(p.casesReviewed[index].sourceRecordIds, c.sourceRecordIds)
   }
-  assert.equal(p.provider, null); assert.equal(p.fullInstrumentsReviewed, 0); assert.equal(p.remoteWrites, false)
+  assert.equal(p.provider, 'packages/shared/src/secondary-technical.ts'); assert.equal(p.fullInstrumentsReviewed, 544); assert.equal(p.remoteWrites, false)
 })

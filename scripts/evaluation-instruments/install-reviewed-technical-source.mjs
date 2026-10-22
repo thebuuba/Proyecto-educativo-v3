@@ -3,7 +3,7 @@ import {developmentProjectRef} from '../cloudflare-development-environment.mjs'
 
 /** Insert one reviewed source atomically; an existing source is verified without repair. */
 export async function installReviewedTechnicalSource(prisma,manifest,expectedCode){
- assert(['MINERD_IFC007_MF002_4_NORM_2017_V1','MINERD_IFC006_MF054_5_NORM_2017_V1','MINERD_IFC006_MF056_4_NORM_2017_V1','MINERD_IFC006_MF059_4_NORM_2017_V1'].includes(expectedCode))
+ assert(['MINERD_IFC007_MF002_4_NORM_2017_V1','MINERD_IFC006_MF054_5_NORM_2017_V1','MINERD_IFC006_MF056_4_NORM_2017_V1','MINERD_IFC006_MF059_4_NORM_2017_V1','MINERD_IFC006_MF057_5_NORM_2017_V1'].includes(expectedCode))
  assert.equal(manifest.project,developmentProjectRef)
  assert.equal(manifest.code,expectedCode)
  const versionId=manifest.version.id,documents=manifest.documents??[manifest.document]

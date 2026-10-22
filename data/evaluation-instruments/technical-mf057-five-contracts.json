@@ -5,7 +5,7 @@
   "grade": 5,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "dba-definition",
@@ -1424,7 +1424,7 @@
     "Redacta un texto sobre hábitos saludables sin utilizar ni analizar sistemas informáticos."
   ],
   "limits": [
-    "Consignas esperadas con datos ficticios; no hay proveedor ni instrumentos MF057 implementados.",
+    "Proveedor implementado y revisado en fuente con datos ficticios; instalación y pruebas MF057 HTTP/DB/navegador todavía pendientes.",
     "Las menciones de producción, cuentas, permisos, migraciones, respaldos, restauración y eliminación no autorizan operaciones reales sobre AulaBase ni otros sistemas.",
     "Las prácticas de configuración usan simulación o entorno de práctica explícito; describir o identificar permisos no requiere ejecutarlos ni crear cuentas.",
     "La errata literal Raid10 (0+1) se conserva en la fuente; la adaptación distingue RAID10 de RAID0+1 según los diagramas dados, sin enseñar equivalencia.",

@@ -48,17 +48,20 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.146')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.147')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()
     const {version:currentVersion,optativeScienceModules,technicalModules,...currentWithoutScience}=evaluationCatalogCurrent
-    expect(technicalModules).toHaveLength(5)
+    expect(technicalModules).toHaveLength(6)
     expect(technicalModules[0]).toMatchObject({moduleCode:'MF_053_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[1]).toMatchObject({moduleCode:'MF_002_3',programCode:'IFC007_3',programCodes:['IFC006_3','IFC007_3'],grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[2]).toMatchObject({moduleCode:'MF_054_3',programCode:'IFC006_3',grade:5,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[3]).toMatchObject({moduleCode:'MF_056_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
     expect(technicalModules[4]).toMatchObject({moduleCode:'MF_059_3',programCode:'IFC006_3',grade:4,cycle:2,modalityCode:'technical_professional'})
+    expect(technicalModules[5]).toMatchObject({moduleCode:'MF_057_3',programCode:'IFC006_3',grade:5,cycle:2,modalityCode:'technical_professional'})
+    const frozen146=evaluationCatalogForVersion('evaluation-2026.146')!
+    expect(frozen146.technicalModules).toEqual(technicalModules.slice(0,5))
     const frozen145=evaluationCatalogForVersion('evaluation-2026.145')!
     expect(frozen145.technicalModules).toEqual(technicalModules.slice(0,4))
     const frozen144=evaluationCatalogForVersion('evaluation-2026.144')!
