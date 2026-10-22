@@ -1,0 +1,93 @@
+{
+  "version": "realistic-audit-2026-10-22-v1",
+  "author": "Codex; autor común de pruebas y correcciones, sin independencia externa ni subagentes",
+  "scope": "Primer bloque prioritario; no representa todavía todos los temas ni proveedores implementados",
+  "policy": "Originales y expectativas fijados antes de generar. No sustituirlos para acomodar resultados. C reservado hasta terminar correcciones obtenidas de A/B; redactado sin consultar activadores de esos casos.",
+  "cases": [
+    {
+      "id": "A-ING6-entrevista", "set": "A", "provenance": "Literal facilitado por el docente en el chat: título, descripción e Inglés de sexto", "subjectCode": "ING", "subjectName": "Inglés", "grade": 6, "topic": "Entrevista de trabajo", "family": "Interacción oral", "title": "Una entrevista de trabajo en inglés.",
+      "description": "En parejas, los estudiantes realizarán una entrevista de trabajo simulada en inglés. Uno entrevistará y el otro responderá sobre la experiencia y las capacidades de un personaje ficticio. Luego intercambiarán los roles.",
+      "expected": { "explicit": ["Preguntar durante una entrevista laboral en inglés", "Responder sobre experiencia y capacidades del personaje ficticio", "Intercambiar los roles"], "pedagogical": ["Interacción pertinente y comprensible", "Uso del inglés adecuado a preguntas y respuestas"], "optional": [], "alternatives": [], "excluded": ["Experiencia laboral real del estudiante", "Currículum escrito", "Pronunciación nativa"], "ambiguities": ["No se fijan duración ni cantidad de preguntas"], "groups": [["preguntas", "respuestas pertinentes"], ["experiencia", "capacidades"], ["interacción", "ambos roles"], ["comprensibilidad del inglés"]] }
+    },
+    {
+      "id": "B-NAT1-solar-exacta", "set": "B", "provenance": "Caso sintético literal del encargo; grado primero elegido para la prueba", "subjectCode": "NAT", "subjectName": "Ciencias de la Naturaleza", "grade": 1, "topic": "Sistema solar", "family": "Exposición", "title": "Actividad de ciencias",
+      "description": "Los estudiantes realizarán una exposición sobre el sistema solar. Presentarán todos los planetas y explicarán qué es cada uno. La exposición durará cinco minutos y utilizarán material de apoyo.",
+      "expected": { "explicit": ["Presentar todos los planetas", "Explicar científicamente qué es cada planeta", "Exponer oralmente", "Duración de cinco minutos", "Utilizar material de apoyo"], "pedagogical": ["Comunicación oral comprensible", "Usar el apoyo para explicar"], "optional": [], "alternatives": [], "excluded": ["Una fila obligatoria por planeta", "Tolerancia temporal inventada", "Maqueta obligatoria", "Bibliografía no solicitada"], "ambiguities": ["El material no está especificado"], "groups": [["cobertura de planetas"], ["explicación científica"], ["comunicación oral"], ["duración exacta"], ["material y uso pertinente"]] }
+    },
+    {
+      "id": "B-NAT1-solar-maxima", "set": "B", "provenance": "Variante sintética de límite; no se cuenta como nueva familia", "subjectCode": "NAT", "subjectName": "Ciencias de la Naturaleza", "grade": 1, "topic": "Sistema solar", "family": "Exposición", "title": "Actividad de ciencias",
+      "description": "Expongan todos los planetas del sistema solar y expliquen qué son. Máximo cinco minutos. Usen material de apoyo.",
+      "expected": { "explicit": ["Todos los planetas y su explicación", "Exposición oral", "Duración no superior a cinco minutos", "Material de apoyo"], "pedagogical": ["Claridad oral", "Precisión científica"], "optional": [], "alternatives": [], "excluded": ["Exigir exactamente cinco minutos", "Penalizar una duración menor por sí sola", "Intervalo de tolerancia"], "ambiguities": [], "groups": [["cobertura"], ["explicación"], ["comunicación"], ["duración máxima"], ["apoyo"]] }
+    },
+    {
+      "id": "B-NAT1-solar-aproximada", "set": "B", "provenance": "Variante sintética de aproximación", "subjectCode": "NAT", "subjectName": "Ciencias de la Naturaleza", "grade": 1, "topic": "Sistema solar", "family": "Exposición", "title": "Actividad de ciencias",
+      "description": "Exposición de todos los planetas del sistema solar, explicando qué es cada uno, en aproximadamente cinco minutos y con material de apoyo.",
+      "expected": { "explicit": ["Todos los planetas y explicación", "Exposición oral", "Duración aproximada de cinco minutos", "Material de apoyo"], "pedagogical": ["Claridad y precisión"], "optional": [], "alternatives": [], "excluded": ["Cinco minutos exactos", "Tolerancia numérica inventada"], "ambiguities": ["El docente no cuantifica aproximadamente"], "groups": [["cobertura"], ["explicación"], ["comunicación"], ["duración aproximada"], ["apoyo"]] }
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida", "set": "B", "provenance": "Reconstrucción indicada en el encargo; todavía no se ha recuperado un borrador literal", "subjectCode": "NAT", "subjectName": "Ciencias de la Naturaleza", "grade": 5, "topic": "Tabla periódica", "family": "Exposición", "title": "Trabajo de química",
+      "description": "Los estudiantes realizarán una exposición sobre la tabla periódica, explicando sus grupos, períodos y por qué los elementos ocupan su posición.",
+      "expected": { "explicit": ["Exposición oral", "Explicar grupos", "Explicar períodos", "Explicar la posición de los elementos"], "pedagogical": ["Relaciones científicas correctas entre organización y ubicación", "Comunicación oral"], "optional": [], "alternatives": [], "excluded": ["Número fijo de filas", "Reducir todo a posición", "Maqueta o diapositivas obligatorias", "Todos los elementos memorizados"], "ambiguities": ["No se exige duración ni producto escrito"], "groups": [["grupos y períodos con ambas evidencias identificables"], ["razón de la ubicación"], ["comunicación oral"]] }
+    },
+    {
+      "id": "B-MAT1-operaciones", "set": "B", "provenance": "Consigna de prueba del encargo; grado primero seleccionado para regresión", "subjectCode": "MAT", "subjectName": "Matemática", "grade": 1, "topic": "Operaciones", "family": "Ejercitación", "title": "Trabajo de hoy",
+      "description": "Los estudiantes resolverán ejercicios de multiplicación, resta y división.",
+      "expected": { "explicit": ["Resolver multiplicaciones", "Resolver restas", "Resolver divisiones"], "pedagogical": ["Corrección de operaciones y resultados"], "optional": [], "alternatives": [], "excluded": ["Temperatura", "Unidades físicas", "Contexto financiero", "Justificación obligatoria no solicitada"], "ambiguities": ["No se especifica conjunto numérico ni cantidad"], "groups": [["multiplicación"], ["resta"], ["división"]] }
+    },
+    {
+      "id": "B-MAT1-explicar", "set": "B", "provenance": "Variante sintética con evidencia de procedimiento", "subjectCode": "MAT", "subjectName": "Matemática", "grade": 1, "topic": "Operaciones", "family": "Explicación de procedimientos", "title": "Temperaturas de la semana",
+      "description": "Resuelvan multiplicaciones, restas y divisiones. Expliquen los pasos y justifiquen cómo comprueban el resultado. Se reconocerá el procedimiento correcto aunque el resultado final tenga un error.",
+      "expected": { "explicit": ["Tres operaciones solicitadas", "Explicación de pasos", "Justificar comprobación", "Reconocer procedimiento correcto con resultado erróneo"], "pedagogical": ["Coherencia matemática"], "optional": [], "alternatives": [], "excluded": ["Temperaturas heredadas del título", "Porcentaje de crédito parcial inventado", "Valorar dos veces idéntica justificación"], "ambiguities": ["No se indica cuánto crédito parcial"], "groups": [["procedimiento de operaciones"], ["resultados"], ["explicación y comprobación con evidencias distintas"]] }
+    },
+    {
+      "id": "B-FRA1-dialogo", "set": "B", "provenance": "Caso prioritario literal del encargo; no atribuido a actividad real del docente", "subjectCode": "FRA", "subjectName": "Francés", "grade": 1, "topic": "Presentación personal", "family": "Interacción oral", "title": "Presentación",
+      "description": "En parejas, los estudiantes se saludarán en francés y realizarán un diálogo breve para preguntar y responder su nombre, edad y lugar de residencia. Luego intercambiarán los roles.",
+      "expected": { "explicit": ["Saludo en francés", "Preguntar nombre, edad y residencia", "Responder nombre, edad y residencia", "Intercambiar roles"], "pedagogical": ["Interacción comprensible", "Uso lingüístico adecuado al nivel"], "optional": [], "alternatives": [], "excluded": ["Pronunciación nativa", "Monólogo en lugar de intercambio", "Cooperativo inferido solo por estar en pareja"], "ambiguities": ["No se especifica duración"], "groups": [["saludo"], ["preguntas y los tres datos"], ["respuestas y los tres datos"], ["interacción y alternancia"], ["comprensibilidad"]] }
+    },
+    {
+      "id": "B-LEN1-informe-breve", "set": "B", "provenance": "Consigna breve del encargo", "subjectCode": "LEN", "subjectName": "Lengua Española", "grade": 1, "topic": "Informe de lectura", "family": "Informe", "title": "Actividad",
+      "description": "Hacer un informe de lectura del texto trabajado.",
+      "expected": { "explicit": ["Informe de lectura del texto trabajado"], "pedagogical": ["Comprensión del texto", "Organización del informe", "Expresión escrita comprensible"], "optional": [], "alternatives": [], "excluded": ["Tres páginas", "Bibliografía obligatoria", "Exposición oral", "Autor inventado"], "ambiguities": ["No se identifica el texto"], "groups": [["comprensión"], ["organización"], ["expresión escrita"]] }
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado", "set": "B", "provenance": "Sintético desarrollado por Codex antes de ejecutar", "subjectCode": "LEN", "subjectName": "Lengua Española", "grade": 1, "topic": "Informe de lectura", "family": "Informe", "title": "Informe de lectura",
+      "description": "Entreguen un informe de lectura en Word de máximo dos páginas. Incluyan título, introducción, desarrollo y conclusión. Expliquen la idea central y justifiquen su interpretación con dos fragmentos del texto. Usen Arial 12, interlineado 1.5 y sangría al comenzar los párrafos. Identifiquen el texto y su autor. No harán exposición oral.",
+      "expected": { "explicit": ["Documento Word, máximo dos páginas", "Título", "Introducción, desarrollo y conclusión", "Idea central", "Interpretación justificada con dos fragmentos", "Arial 12, interlineado 1.5 y sangría", "Identificar texto y autor"], "pedagogical": ["Coherencia de la interpretación", "Expresión escrita"], "optional": [], "alternatives": [], "excluded": ["Exposición oral", "Dos páginas exactas", "Bibliografía adicional", "Una fila puntuable por ajuste tipográfico"], "ambiguities": [], "groups": [["presentación: Word, título, límite de páginas y formato"], ["organización: tres secciones"], ["comprensión e interpretación"], ["evidencias: dos fragmentos y relación con interpretación"], ["identificación de la fuente"]] }
+    },
+    {
+      "id": "B-LEN1-informe-retirado", "set": "B", "provenance": "Edición sintética que retira requisitos del caso desarrollado", "editOf": "B-LEN1-informe-desarrollado", "subjectCode": "LEN", "subjectName": "Lengua Española", "grade": 1, "topic": "Informe de lectura", "family": "Informe", "title": "Informe de lectura",
+      "description": "Hagan un informe de lectura del texto trabajado. No hay límite de páginas ni formato tipográfico obligatorio. No incluyan referencias adicionales.",
+      "expected": { "explicit": ["Informe de lectura"], "pedagogical": ["Comprensión", "Organización", "Expresión escrita"], "optional": [], "alternatives": [], "excluded": ["Arial 12", "Interlineado 1.5", "Sangría obligatoria", "Dos páginas", "Dos fragmentos obligatorios", "Referencias adicionales"], "ambiguities": [], "groups": [["comprensión"], ["organización"], ["expresión escrita"]] }
+    },
+    {
+      "id": "B-MF0024-formato", "set": "B", "provenance": "Sintético del ejemplo de agrupación; Ofimática implementada", "subjectCode": "MF_002_3", "subjectName": "Ofimática", "grade": 4, "modalityCode": "technical_professional", "topic": "Documento de texto", "family": "Producción digital", "title": "Documento",
+      "description": "Entregar un documento de Word con título, Arial 12, interlineado 1.5, sangría y el color indicado.",
+      "expected": { "explicit": ["Documento Word", "Título", "Arial 12", "Interlineado 1.5", "Sangría", "Color indicado"], "pedagogical": ["Aplicación coherente del formato pedido"], "optional": [], "alternatives": [], "excluded": ["Introducción/desarrollo/conclusión obligatorios", "Color inventado", "Cinco criterios de rúbrica por cinco ajustes", "Un único Sí/No que pretenda diagnosticar cada fallo"], "ambiguities": ["El color y el tamaño de sangría no se concretan"], "groups": [["formato: título, fuente, tamaño, interlineado, sangría y color"], ["entrega en Word"]] }
+    },
+    {
+      "id": "B-NAT1-alternativa", "set": "B", "provenance": "Sintético con alternativa de producto", "subjectCode": "NAT", "subjectName": "Ciencias de la Naturaleza", "grade": 1, "topic": "Sistema solar", "family": "Representación o exposición", "title": "Trabajo del sistema solar",
+      "description": "Elijan entre hacer un afiche con todos los planetas y una explicación breve, o exponerlos oralmente con apoyo visual. No tienen que entregar ambos productos.",
+      "expected": { "explicit": ["Todos los planetas y explicación", "Elegir un producto"], "pedagogical": ["Precisión científica", "Claridad del producto elegido"], "optional": [], "alternatives": ["Afiche con explicación o exposición oral apoyada visualmente"], "excluded": ["Exigir los dos productos", "Evaluar comunicación oral si se elige afiche"], "ambiguities": ["El producto elegido todavía no consta"], "groups": [["contenido científico"], ["claridad según producto elegido"]] }
+    },
+    {
+      "id": "B-LEN1-contradiccion", "set": "B", "provenance": "Sintético contradictorio", "subjectCode": "LEN", "subjectName": "Lengua Española", "grade": 1, "topic": "Informe de lectura", "family": "Informe", "title": "Informe",
+      "description": "Entreguen un informe de lectura de tres páginas y de máximo dos páginas.",
+      "expected": { "explicit": ["Informe de lectura"], "pedagogical": ["Comprensión y organización"], "optional": [], "alternatives": [], "excluded": ["Aceptar silenciosamente ambos límites", "Elegir arbitrariamente uno"], "ambiguities": ["Tres páginas contradice máximo dos; debe informarse y permitir corrección"], "groups": [["contenido del informe"], ["longitud en conflicto, sin puntuación inventada"]] }
+    },
+    {
+      "id": "C-SOC3-mapa", "set": "C", "provenance": "Reservado sintético, redactado antes de consultar activadores", "subjectCode": "SOC", "subjectName": "Ciencias Sociales", "grade": 3, "topic": "Interpretación de mapas", "family": "Comparación", "title": "Para mañana",
+      "description": "Miren los dos mapas que vimos. Escriban qué cambió en las fronteras y usen algo de cada mapa para sostener su respuesta; no hay que dibujar otro.",
+      "expected": { "explicit": ["Comparar cambios de fronteras", "Usar evidencia de cada mapa", "Respuesta escrita"], "pedagogical": ["Lectura espacial correcta", "Relación entre conclusión y evidencias"], "optional": [], "alternatives": [], "excluded": ["Dibujar otro mapa", "Fechas o territorios inventados", "Bibliografía obligatoria"], "ambiguities": ["No se identifican mapas ni épocas"], "groups": [["lectura comparativa"], ["sustento con ambos mapas"], ["claridad escrita"]] }
+    },
+    {
+      "id": "C-EFI4-ajuste", "set": "C", "provenance": "Reservado sintético, lenguaje habitual", "subjectCode": "EFI", "subjectName": "Educación Física", "grade": 4, "topic": "Práctica y mejora motriz", "family": "Práctica reflexiva", "title": "La práctica",
+      "description": "Por parejas prueben el pase que trabajamos, observen al compañero y denle una sugerencia concreta. Cambien de turno y vuelvan a intentar aplicando la sugerencia. No comparen quién es más fuerte.",
+      "expected": { "explicit": ["Ejecutar el pase trabajado", "Observar y dar sugerencia concreta", "Cambiar turnos", "Reintentar con sugerencia"], "pedagogical": ["Seguridad y control del movimiento acordes a la tarea"], "optional": [], "alternatives": [], "excluded": ["Fuerza corporal comparada", "Técnica de un deporte inventado", "Cooperativo automático solo por pareja"], "ambiguities": ["No se identifica el tipo de pase"], "groups": [["ejecución"], ["observación y sugerencia"], ["aplicación en reintento"], ["turnos y práctica segura"]] }
+    },
+    {
+      "id": "C-FHR6-decision", "set": "C", "provenance": "Reservado sintético, sin datos personales", "subjectCode": "FHR", "subjectName": "Formación Integral Humana y Religiosa", "grade": 6, "topic": "Decisiones éticas", "family": "Análisis de caso", "title": "Una decisión",
+      "description": "Lean la situación ficticia de discriminación del material. Cada uno proponga una respuesta respetuosa y explique a quién ayuda y qué consecuencia podría tener. No cuenten experiencias personales.",
+      "expected": { "explicit": ["Leer el caso ficticio", "Proponer respuesta respetuosa", "Explicar beneficiarios y consecuencia posible", "Trabajo individual"], "pedagogical": ["Fundamento ético y relación con el caso"], "optional": [], "alternatives": [], "excluded": ["Experiencias íntimas", "Evaluar creencias privadas", "Acción comunitaria obligatoria"], "ambiguities": ["Caso no incluido en la consigna"], "groups": [["análisis del caso"], ["respuesta fundamentada"], ["beneficiarios y consecuencias"]] }
+    }
+  ]
+}

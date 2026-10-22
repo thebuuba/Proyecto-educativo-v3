@@ -1,3 +1,19 @@
+# Auditoría realista vigente: estabilidad y banco inicial
+
+Nuevo encargo literal: docs/superpowers/specs/2026-10-22-auditoria-actividades-realistas.md. Complementa el integral, prioriza estabilidad y calidad de TODOS los proveedores implementados, sin ampliar módulos. **Pushes suspendidos de nuevo**; commits locales, sin producción/main/despliegue/migraciones remotas/IA nueva/dependencias/subagentes. Rama ampliacion-de-instrumentos-2; punto de partida f7d1be7a publicado y árbol limpio. Informes anteriores debajo son históricos; no usar sus PIDs ni bloqueos como estado vigente.
+
+Corrección terminada de transferencia del catálogo: helper SHA-256 con representación JSONB PostgreSQL 17 verificada contra TODO el catálogo150 instalado y tres vectores adicionales. Cada petición verifica integridad contra huella del código, sin caché/TTL ni aprendizaje remoto; parámetros 83B frente a 2.519.005B. Backend 97.174 pruebas/214 archivos, backend/frontend builds y Cloudflare dry-run aprobados; lint corregido y siete pruebas del helper aprobadas. No repetir gates sin cambios nuevos. HTTP interpret 7,2/13,5s y recommend10,1s: latencia variable, no declarar conexión totalmente resuelta. Detalles/evidencia pública en informe y auditoria-realista-estabilidad-v1.json.
+
+Development exclusivamente eolgunypmtgrsyrjzcld, PG app_backend_local/no bypass, Auth/Storage/frontend comprobados. Runtime session1358/launcher50604, listener66140 al último reload; verificar procesos antes de actuar. Sin key de IA local. Navegador Chrome1/tab1796703522 muestra contraseña vacía; personal AUTH_REQUIRED, ningún correo/reset/caché borrada.
+
+Antes de QA: preservados82releases/1185snapshots exactos contra history-before-evaluation-2026.150.json, actuales83/1185, ceroMF060. Quince baselines personales originales pasaron. Tras esto se reanudó UNA vez el diario MF060 original con misma selección16 e IDs persistidos. **Session20393 activa**; último checkpoint9verificados/10preparados/61respuestas/0HTTP500/429. Ya hay actividades creadas: no interpretar cero histórico como estado actual. NO recompilar/reiniciar/lanzar escritor mientras corre. Consultar mf060-progress-summary.mjs y al finalizar verificar resultado real y preservación; no reintentar ciegamente si falla.
+
+Banco inicial17casos A1literal/B13/C3reservados, congelado SHA f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817 UTF-8/LF antes de salidas. C no ejecutados; mismo autor, sin independencia externa. 56salidas locales A/B,4rechazos de contradicción, lectura parcial. Índice81ámbitos=54comunes+18optativos+9técnicos; **NO cobertura auditada completa**. Defectos reproducidos: solar pierde planetas/tiempo/apoyo; tabla periódica enumera grupos/períodos sin activar regla específica; Hagan informe se clasifica análisis; Word/informe pierde condiciones; alternativa afiche/oral impone oral; inglés sexto omite intercambio de roles. Progresiones científicas repiten nivel superior con imprecisión. Detalles y mapas en banco/informe. Sin cambios pedagógicos todavía.
+
+Siguiente: terminar/preservar QA MF060 y registrar resultados sin recapturas; commit local del bloque verificado. Antes de cambiar salidas, congelar150 UNA sola vez en NUEVOS archivos tras verificar fuente=compilado=DB e historia actual; no ejecutar freeze149 ni reemplazar referencias. Después regresiones de fallos compartidos, banco por temas, estrategia/añadir-completar y revisión humana de cuatro formatos; continuar autónomamente. No reanudar MF061: solo inventariado, fuera del nuevo alcance.
+
+## Historial anterior del encargo integral
+
 # Continuación del encargo integral de secundaria
 
 ## Estado vigente 22 de octubre: contratos MF061 confirmados; resumen técnico corregido

@@ -1,0 +1,12 @@
+{
+  "file": "data/evaluation-instruments/realistic-audit-bank-v1.json",
+  "sha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817",
+  "encoding": "UTF-8; CRLF normalized to LF before hashing",
+  "frozenBeforeExecution": true,
+  "baseCommit": "f7d1be7a5292c91d698ac3359b808a247758edd4",
+  "sets": {
+    "A": 1,
+    "B": 13,
+    "C": 3
+  }
+}

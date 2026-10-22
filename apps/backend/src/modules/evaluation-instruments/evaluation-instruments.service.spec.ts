@@ -314,13 +314,43 @@ describe('API service security and version policy', () => {
     mocks.$queryRaw.mockRejectedValue(Object.assign(new Error('relation does not exist'), { code: 'P2010', meta: { code: '42P01' } }))
     await expect(new EvaluationInstrumentsService().recommend(user, input)).rejects.toMatchObject({ status: 503 })
   })
-  it('compara todo el payload mediante parámetros sin descargarlo por petición', async () => {
+  it('valida todo el contenido sin transferir el catálogo incluso en la primera petición', async () => {
     await new EvaluationInstrumentsService().recommend(user, input)
     expect(mocks.evaluationCatalogRelease.findUnique).not.toHaveBeenCalled()
-    const [query, payload, version] = mocks.$queryRaw.mock.calls[0]
-    expect(query.join('?')).toContain('payload = ?::jsonb')
-    expect(JSON.parse(payload)).toEqual(evaluationCatalogCurrent)
+    const [query, fingerprint, version] = mocks.$queryRaw.mock.calls[0]
+    expect(fingerprint.length).toBe(64)
+    expect(query.join('?')).toContain("encode(sha256(convert_to(payload::text, 'UTF8')), 'hex') = ?")
     expect(version).toBe(evaluationCatalogCurrent.version)
+  })
+  it('valida por huella en cada petición después de autorizar el contexto', async () => {
+    const service = new EvaluationInstrumentsService()
+    await service.interpret(user, input)
+    await service.recommend(user, input)
+    const [query, expected, version] = mocks.$queryRaw.mock.calls[1]
+    expect(query.join('?')).toContain("encode(sha256(convert_to(payload::text, 'UTF8')), 'hex') = ?")
+    expect(expected.length).toBe(64)
+    expect(expected).toBe(mocks.$queryRaw.mock.calls[0][1])
+    expect(version).toBe(evaluationCatalogCurrent.version)
+    expect(mocks.sectionSubject.findFirst).toHaveBeenCalledTimes(2)
+    expect(mocks.sectionSubject.findFirst.mock.invocationCallOrder[1]).toBeLessThan(mocks.$queryRaw.mock.invocationCallOrder[1])
+  })
+  for (const rows of [[], [{ identical: false }]]) it(`rechaza catálogo eliminado o alterado tras validarlo: ${JSON.stringify(rows)}`, async () => {
+    const service = new EvaluationInstrumentsService()
+    mocks.$queryRaw.mockResolvedValueOnce([{ identical: true, fingerprint: 'b'.repeat(64) }]).mockResolvedValueOnce(rows)
+    await service.interpret(user, input)
+    await expect(service.recommend(user, input)).rejects.toMatchObject({ status: 503 })
+    expect(mocks.$queryRaw.mock.calls[1][1].length).toBe(64)
+  })
+  it('la huella esperada procede del código y no aprende un catálogo remoto incompatible', async () => {
+    const service = new EvaluationInstrumentsService()
+    mocks.$queryRaw.mockResolvedValueOnce([{ identical: false, fingerprint: 'c'.repeat(64) }])
+    await expect(service.interpret(user, input)).rejects.toMatchObject({ status: 503 })
+    mocks.$queryRaw.mockResolvedValue([{ identical: true, fingerprint: 'd'.repeat(64) }])
+    await service.interpret(user, input)
+    await new EvaluationInstrumentsService().interpret(user, input)
+    const expected = mocks.$queryRaw.mock.calls[0][1]
+    expect(expected.length).toBe(64)
+    for (const call of mocks.$queryRaw.mock.calls) expect(call[1]).toBe(expected)
   })
   it('seed idempotente; no sobrescribe release diferente', async () => {
     expect(await seedEvaluationCatalog(mocks as never)).toBe('UNCHANGED')

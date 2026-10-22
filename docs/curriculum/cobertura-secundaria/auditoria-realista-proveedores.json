@@ -1,0 +1,1100 @@
+{
+  "catalog": "evaluation-2026.150",
+  "method": "Extracted provider identities only from compiled current catalog; no activation expressions. Historical examples are not reclassified as this audit.",
+  "counts": {
+    "COMMON": 54,
+    "OPTATIVE": 18,
+    "TECHNICAL": 9
+  },
+  "excluded": [
+    "MF061: source/contracts only",
+    "Specialized arts without connected providers"
+  ],
+  "scopes": [
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 1,
+      "providerIds": [
+        "matematica-comun-1"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-MAT1-operaciones",
+          "set": "B"
+        },
+        {
+          "id": "B-MAT1-explicar",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 2,
+      "providerIds": [
+        "matematica-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 3,
+      "providerIds": [
+        "matematica-comun-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 4,
+      "providerIds": [
+        "matematica-comun-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 5,
+      "providerIds": [
+        "matematica-comun-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "MAT",
+      "grade": 6,
+      "providerIds": [
+        "matematica-comun-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 1,
+      "providerIds": [
+        "ciencias-naturaleza-comun-1"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-NAT1-solar-exacta",
+          "set": "B"
+        },
+        {
+          "id": "B-NAT1-solar-maxima",
+          "set": "B"
+        },
+        {
+          "id": "B-NAT1-solar-aproximada",
+          "set": "B"
+        },
+        {
+          "id": "B-NAT1-alternativa",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 2,
+      "providerIds": [
+        "ciencias-naturaleza-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 3,
+      "providerIds": [
+        "ciencias-naturaleza-comun-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 4,
+      "providerIds": [
+        "ciencias-naturaleza-comun-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 5,
+      "providerIds": [
+        "ciencias-naturaleza-comun-5"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-NAT5-tabla-reconstruida",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "NAT",
+      "grade": 6,
+      "providerIds": [
+        "ciencias-naturaleza-comun-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 1,
+      "providerIds": [
+        "ciencias-sociales-comun-1"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 2,
+      "providerIds": [
+        "ciencias-sociales-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 3,
+      "providerIds": [
+        "ciencias-sociales-comun-3"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "C-SOC3-mapa",
+          "set": "C"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 4,
+      "providerIds": [
+        "ciencias-sociales-comun-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 5,
+      "providerIds": [
+        "ciencias-sociales-comun-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "SOC",
+      "grade": 6,
+      "providerIds": [
+        "ciencias-sociales-comun-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 1,
+      "providerIds": [
+        "educacion-artistica-comun-1"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 2,
+      "providerIds": [
+        "educacion-artistica-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 3,
+      "providerIds": [
+        "educacion-artistica-comun-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 4,
+      "providerIds": [
+        "educacion-artistica-comun-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 5,
+      "providerIds": [
+        "educacion-artistica-comun-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ART",
+      "grade": 6,
+      "providerIds": [
+        "educacion-artistica-comun-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 1,
+      "providerIds": [
+        "educacion-fisica-comun-1"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 2,
+      "providerIds": [
+        "educacion-fisica-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 3,
+      "providerIds": [
+        "educacion-fisica-comun-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 4,
+      "providerIds": [
+        "educacion-fisica-comun-4"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "C-EFI4-ajuste",
+          "set": "C"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 5,
+      "providerIds": [
+        "educacion-fisica-comun-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "EFI",
+      "grade": 6,
+      "providerIds": [
+        "educacion-fisica-comun-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 1,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-1"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 2,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 3,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 4,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 5,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FHR",
+      "grade": 6,
+      "providerIds": [
+        "formacion-humana-religiosa-comun-6"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "C-FHR6-decision",
+          "set": "C"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 1,
+      "providerIds": [
+        "frances-comunicacion-1"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-FRA1-dialogo",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 2,
+      "providerIds": [
+        "frances-comunicacion-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 3,
+      "providerIds": [
+        "frances-comunicacion-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 4,
+      "providerIds": [
+        "frances-comunicacion-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 5,
+      "providerIds": [
+        "frances-comunicacion-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "FRA",
+      "grade": 6,
+      "providerIds": [
+        "frances-comunicacion-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 1,
+      "providerIds": [
+        "ingles-comunicacion-1"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 2,
+      "providerIds": [
+        "ingles-comunicacion-2"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 3,
+      "providerIds": [
+        "ingles-comunicacion-3"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 4,
+      "providerIds": [
+        "ingles-comunicacion-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 5,
+      "providerIds": [
+        "ingles-comunicacion-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "ING",
+      "grade": 6,
+      "providerIds": [
+        "ingles-comunicacion-6"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "A-ING6-entrevista",
+          "set": "A"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 1,
+      "providerIds": [
+        "lengua-secundaria-1-la-noticia",
+        "lengua-secundaria-1-guia-turistica",
+        "lengua-secundaria-1-informe-de-lectura",
+        "el-afiche",
+        "cuento-policiaco",
+        "caligrama"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-LEN1-informe-breve",
+          "set": "B"
+        },
+        {
+          "id": "B-LEN1-informe-desarrollado",
+          "set": "B"
+        },
+        {
+          "id": "B-LEN1-informe-retirado",
+          "set": "B"
+        },
+        {
+          "id": "B-LEN1-contradiccion",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 2,
+      "providerIds": [
+        "guia-turistica",
+        "articulo-expositivo",
+        "informe-de-lectura",
+        "cuento-amor-amistad",
+        "decima-espinela",
+        "lengua-secundaria-2-la-noticia"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 3,
+      "providerIds": [
+        "entrevista",
+        "cronica",
+        "catalogo",
+        "informe-experimento",
+        "articulo-opinion",
+        "cuento-social",
+        "madrigal"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 4,
+      "providerIds": [
+        "cronica",
+        "instructivo",
+        "informe-investigacion",
+        "articulo-opinion",
+        "discurso-agradecimiento",
+        "novela",
+        "soneto"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 5,
+      "providerIds": [
+        "carta-autopresentacion",
+        "resena",
+        "ensayo-argumentativo",
+        "discurso-recibimiento-despedida",
+        "novela",
+        "poesia-satirica",
+        "entremes-teatral",
+        "novela-analisis-fragmento"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "COMMON",
+      "subjectCode": "LEN",
+      "grade": 6,
+      "providerIds": [
+        "informe-investigacion",
+        "reportaje",
+        "ensayo-argumentativo",
+        "discurso-graduacion",
+        "novela",
+        "poesia-social",
+        "monologo"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-CT-4",
+      "grade": 4,
+      "providerIds": [
+        "biologia-computacion-optativa-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-CT-5",
+      "grade": 5,
+      "providerIds": [
+        "quimica-computacion-optativa-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-CT-6",
+      "grade": 6,
+      "providerIds": [
+        "fisica-computacion-optativa-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-MT-4",
+      "grade": 4,
+      "providerIds": [
+        "matematica-tecnologia-optativa-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-MT-5",
+      "grade": 5,
+      "providerIds": [
+        "estadistica-probabilidad-tecnologia-optativa-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-MT-6",
+      "grade": 6,
+      "providerIds": [
+        "trigonometria-calculo-diferencial-tecnologia-optativa-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-SOC-4",
+      "grade": 4,
+      "providerIds": [
+        "optativa-hcs-soc-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-SOC-5",
+      "grade": 5,
+      "providerIds": [
+        "optativa-hcs-soc-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-SOC-6",
+      "grade": 6,
+      "providerIds": [
+        "optativa-hcs-soc-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-ING-4",
+      "grade": 4,
+      "providerIds": [
+        "optativa-hlm-ingles-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-ING-5",
+      "grade": 5,
+      "providerIds": [
+        "optativa-hlm-ingles-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-ING-6",
+      "grade": 6,
+      "providerIds": [
+        "optativa-hlm-ingles-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-LEN-4",
+      "grade": 4,
+      "providerIds": [
+        "optativa-hlm-len-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-LEN-5",
+      "grade": 5,
+      "providerIds": [
+        "optativa-hlm-len-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HLM-LEN-6",
+      "grade": 6,
+      "providerIds": [
+        "optativa-hlm-len-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-LEN-4",
+      "grade": 4,
+      "providerIds": [
+        "optativa-hcs-len-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-LEN-5",
+      "grade": 5,
+      "providerIds": [
+        "optativa-hcs-len-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "OPTATIVE",
+      "subjectCode": "OPT-HCS-LEN-6",
+      "grade": 6,
+      "providerIds": [
+        "optativa-hcs-len-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_053_3",
+      "grade": 4,
+      "providerIds": [
+        "ifc006-mf053-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_002_3",
+      "grade": 4,
+      "providerIds": [
+        "mf002-4"
+      ],
+      "bankCoverage": "INITIAL_CASES_NOT_TOPIC_COMPLETE",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": [
+        {
+          "id": "B-MF0024-formato",
+          "set": "B"
+        }
+      ]
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_054_3",
+      "grade": 5,
+      "providerIds": [
+        "mf054-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_056_3",
+      "grade": 4,
+      "providerIds": [
+        "mf056-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_059_3",
+      "grade": 4,
+      "providerIds": [
+        "mf059-4"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_057_3",
+      "grade": 5,
+      "providerIds": [
+        "mf057-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_055_3",
+      "grade": 6,
+      "providerIds": [
+        "mf055-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_058_3",
+      "grade": 5,
+      "providerIds": [
+        "mf058-5"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    },
+    {
+      "kind": "TECHNICAL",
+      "subjectCode": "MF_060_3",
+      "grade": 6,
+      "providerIds": [
+        "mf060-6"
+      ],
+      "bankCoverage": "PENDING",
+      "http": "PENDING",
+      "browser": "PENDING",
+      "initialCases": []
+    }
+  ]
+}

@@ -14,10 +14,13 @@ import { BadRequestException, ForbiddenException, HttpException, Injectable, Log
 import { prisma } from '@aula/database'
 import type { AuthenticatedUser } from '../auth/types/authenticated-user'
 import { evaluationCatalogCurrent } from './catalog-current'
+import { catalogFingerprint } from './catalog-fingerprint'
 import { academicContext, resolveScope, reviewedTechnicalSubject, isReviewedTechnicalContext, type AcademicContext } from './curriculum-context'
 import { assertValidRecommendation, detectActivityType, detectSecondaryLanguageActivity, firstSecondaryLanguageSelections, suggestedSelections, rankCurriculum, recommend } from './recommendation-engine'
 import type { InterpretActivityDto, RecommendInstrumentDto } from './recommend-instrument.dto'
 import {resolveCommonEnglishTask,commonEnglishSelections,InstrumentCapacityError,TaskRequirementError,deliveryConditions,resolveOptativeEnglishTask} from '@aula/shared'
+
+const reviewedCatalogFingerprint = catalogFingerprint(evaluationCatalogCurrent)
 
 /** Deterministic, read-only recommendation boundary. All tenancy checks precede curricular reads. */
 @Injectable()
@@ -150,9 +153,9 @@ export class EvaluationInstrumentsService {
     const context = academicContext(assignment.grade, assignment.subject, assignment.curriculumContext?.optativeExitName ?? null)
     let releases: Array<{ identical: boolean }>
     try {
-      // Compare the entire reviewed release in PostgreSQL; return one boolean, not its large payload.
+      // Validate every request, including cold starts, against the complete reviewed content.
       releases = await prisma.$queryRaw<Array<{ identical: boolean }>>`
-        SELECT payload = ${JSON.stringify(evaluationCatalogCurrent)}::jsonb AS identical
+        SELECT encode(sha256(convert_to(payload::text, 'UTF8')), 'hex') = ${reviewedCatalogFingerprint} AS identical
         FROM public.evaluation_catalog_releases WHERE version = ${evaluationCatalogCurrent.version}`
     } catch (error) {
       const code = typeof error === 'object' && error && 'code' in error ? String(error.code) : ''

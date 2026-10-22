@@ -1,0 +1,292 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.150",
+  "readOnlyProbes": true,
+  "connectivity": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "at": "2026-10-22T22:02:43.623Z",
+    "endpoint": {
+      "host": "aws-0-us-east-1.pooler.supabase.com",
+      "port": "5432",
+      "role": "app_backend_local"
+    },
+    "measurements": [
+      {
+        "name": "dns",
+        "ms": 71,
+        "ok": true,
+        "value": [
+          {
+            "family": 4
+          },
+          {
+            "family": 4
+          },
+          {
+            "family": 4
+          }
+        ]
+      },
+      {
+        "name": "tcp",
+        "ms": 51,
+        "ok": true,
+        "value": true
+      },
+      {
+        "name": "auth",
+        "ms": 668,
+        "ok": true,
+        "value": {
+          "status": 200
+        }
+      },
+      {
+        "name": "storage",
+        "ms": 206,
+        "ok": true,
+        "value": {
+          "status": 200
+        }
+      },
+      {
+        "name": "postgres-connect-authenticate",
+        "ms": 458,
+        "ok": true,
+        "value": true
+      },
+      {
+        "name": "postgres-role-and-ping",
+        "ms": 61,
+        "ok": true,
+        "value": {
+          "role": "app_backend_local",
+          "bypass": false
+        }
+      },
+      {
+        "name": "server-connections-aggregate",
+        "ms": 67,
+        "ok": true,
+        "value": [
+          {
+            "state": "active",
+            "wait_event_type": null,
+            "count": 1
+          },
+          {
+            "state": null,
+            "wait_event_type": null,
+            "count": 8
+          }
+        ]
+      },
+      {
+        "name": "catalog-size-and-server-explain",
+        "ms": 233,
+        "ok": true,
+        "value": {
+          "version": "evaluation-2026.150",
+          "stored_bytes": 951904,
+          "text_bytes": 2606019,
+          "plan": [
+            {
+              "Plan": {
+                "Node Type": "Seq Scan",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Relation Name": "evaluation_catalog_releases",
+                "Alias": "evaluation_catalog_releases",
+                "Startup Cost": 0,
+                "Total Cost": 1.64,
+                "Plan Rows": 1,
+                "Plan Width": 19,
+                "Actual Startup Time": 0.024,
+                "Actual Total Time": 0.024,
+                "Actual Rows": 1,
+                "Actual Loops": 1,
+                "Filter": "(version = 'evaluation-2026.150'::text)",
+                "Rows Removed by Filter": 82
+              },
+              "Planning Time": 0.072,
+              "Triggers": [],
+              "Execution Time": 0.052
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "catalogComparison": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "requestPayloadBytes": 2519005,
+    "results": [
+      {
+        "name": "small-roundtrip-before",
+        "ms": 44
+      },
+      {
+        "name": "full-payload-equality",
+        "ms": 3060
+      },
+      {
+        "name": "small-fingerprint-equality",
+        "ms": 87
+      },
+      {
+        "name": "server-explain-full-equality",
+        "ms": 2135
+      },
+      {
+        "name": "small-roundtrip-after",
+        "ms": 52
+      }
+    ],
+    "server": {
+      "Plan": {
+        "Node Type": "Seq Scan",
+        "Parallel Aware": false,
+        "Async Capable": false,
+        "Relation Name": "evaluation_catalog_releases",
+        "Alias": "evaluation_catalog_releases",
+        "Startup Cost": 0,
+        "Total Cost": 1.64,
+        "Plan Rows": 1,
+        "Plan Width": 1,
+        "Actual Startup Time": 15.636,
+        "Actual Total Time": 15.64,
+        "Actual Rows": 1,
+        "Actual Loops": 1,
+        "Filter": "(version = 'evaluation-2026.150'::text)",
+        "Rows Removed by Filter": 82
+      },
+      "Planning Time": 2.105,
+      "Triggers": [],
+      "Execution Time": 17.773
+    }
+  },
+  "postgresOracle": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "catalog": "evaluation-2026.150",
+    "comparisons": [
+      {
+        "matchesPostgres17": true
+      },
+      {
+        "matchesPostgres17": true
+      },
+      {
+        "matchesPostgres17": true
+      }
+    ],
+    "currentCatalog": {
+      "identical": true,
+      "expectedFingerprint": "5d1cb38fcfc472fbeca75efc8fe0492bd09aa0da2f32b40695c7c970128ef13a",
+      "requestBytes": 83,
+      "ms": 429
+    }
+  },
+  "http": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.150",
+    "timeoutMs": 30000,
+    "activityWrites": false,
+    "requests": [
+      {
+        "path": "/auth/login",
+        "status": 201,
+        "ms": 5849
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 7214
+      },
+      {
+        "path": "/evaluation-instruments/interpret",
+        "status": 200,
+        "ms": 13525
+      },
+      {
+        "path": "/evaluation-instruments/recommend",
+        "status": 200,
+        "ms": 10061
+      }
+    ],
+    "sameInterpretation": true,
+    "recommendationReturned": true
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.150",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CBNy98H1.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CBNy98H1.js",
+        "sha256": "f8e765b992523b64115fdc67edce25a0efba0826bc9788a57f13aff20aa2a646",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-3sXCc5Gj.js",
+        "sha256": "1eb5f39525c6f8bc66f31753777c3252aecc9d4f4d3acdb071a4ef794868b177",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-B_jfCjiY.js",
+        "sha256": "58d99fea3d84c0fef35ea1b9c97466cf7af3a8a8e2cb64a944da7c549e3109d9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-BnsVe8qu.js",
+        "sha256": "ff9edefd787c072a0eaf0a30e8f5951199b5a8ccabf47ed479e6e1068d3fb2a3",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DXPRRy0f.js",
+        "sha256": "7bea872112da4240fac52a5dd4b2c2c674eaf59a4009f838f3e7722c92b78737",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "a3ace365e7feb7e7f04e9c469b90b3e118a95f5051790ee2649e57fdf81f675b",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "gates": {
+    "backendTests": 97174,
+    "backendFiles": 214,
+    "backendBuild": "PASS",
+    "frontendBuild": "PASS",
+    "cloudflareBuild": "PASS_DRY_RUN_ONLY",
+    "lint": "PASS_AFTER_TEST_ESCAPE_CORRECTION",
+    "focusedFingerprintTests": 7
+  },
+  "limits": [
+    "Variable HTTP latency remains",
+    "Personal browser authentication pending",
+    "Historical preservation in these probes preceded resumed MF060 QA"
+  ]
+}
