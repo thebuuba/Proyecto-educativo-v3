@@ -2473,12 +2473,13 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.146",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "installation": "technical-mf059-4-instalacion.json"
   },
   "limits": [
     "Usar datos ficticios y recursos dados, sin publicación real, cuentas, visitas a empresas ni despliegues automáticos.",
@@ -2502,7 +2503,9 @@
       "evidence": "technical-mf059-4-revision.json"
     },
     "automated": "BACKEND_93499_FRONTEND_ACTIVITIES_91612_BUILDS_GREEN",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "httpEvidence": "technical-mf059-4-verificacion-http.json",
+    "browserEvidence": "technical-mf059-4-navegador-personal.json"
   }
 }

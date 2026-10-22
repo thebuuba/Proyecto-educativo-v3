@@ -5,9 +5,10 @@ import {createHash} from 'node:crypto'
 const root='docs/curriculum/cobertura-secundaria/',read=p=>{assert(existsSync(p),'Falta revisión real MF059');return JSON.parse(readFileSync(p,'utf8'))}
 test('MF059 registra instrumentos completos leídos y distingue fuente de verificación remota',()=>{
  const r=read(root+'technical-mf059-4-revision.json'),f=read('data/evaluation-instruments/technical-mf059-four-contracts.json')
- assert.equal(r.catalog,'evaluation-2026.146');assert.equal(r.runtimeInstalled,false);assert.equal(r.reviewer,'SELF_REVIEW_NO_SUBAGENTS')
+ assert.equal(r.catalog,'evaluation-2026.146');assert.equal(r.runtimeInstalled,true);assert.equal(r.reviewer,'SELF_REVIEW_NO_SUBAGENTS')
  assert.equal(r.topics,85);assert.equal(r.cases,100);assert.equal(r.fullInstruments,400);assert.equal(r.uniqueCompleteCriteria,99);assert.equal(r.pendingInstrumentReading,0)
- assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA');assert.equal(r.httpDb,'NOT_RUN');assert.equal(r.browser,'NOT_RUN')
+ const installed=read(root+'technical-mf059-4-instalacion.json'),personal=read(root+'technical-mf059-4-navegador-personal.json')
+ assert.equal(installed.catalogInstallation.second,'UNCHANGED');assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA');assert.equal(r.httpDb,'IN_PROGRESS');assert.equal(r.browser,'AUTHENTICATION_REQUIRED');assert.equal(personal.creatorVerified,false)
 })
 test('las400definicionesMF059 conservan las huellas y cuatroformatos completos',()=>{
  const all=read(root+'technical-mf059-4-instrumentos.json'),review=read(root+'technical-mf059-4-revision.json');assert.equal(all.length,400)

@@ -11,7 +11,7 @@ test('MF059 enlaza consignas propias de cuarto técnico a instrumentos revisados
  assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA');assert.equal(new Set(f.cases.map(c=>c.id)).size,f.cases.length)
  for(const c of f.cases){assert(c.description.trim());assert(c.topics.length);assert(c.sourceRecordIds.length);for(const id of c.sourceRecordIds){assert(records.has(id),id);assert(!['ATTITUDE','TEACHING_STRATEGY'].includes(records.get(id).type),id)}}
  const review=JSON.parse(readFileSync('docs/curriculum/cobertura-secundaria/technical-mf059-4-revision.json','utf8'))
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,85);assert.equal(review.fullInstruments,400);assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,85);assert.equal(review.fullInstruments,400);assert.equal(m.implementation.httpDb,review.httpDb);assert.equal(m.implementation.browser,review.browser)
 })
 test('todoslosCE yprocedimientosMF059 tienen almenos uncontrato esperado con referencia explícita',()=>{
  const f=fixture(),m=matrix(),refs=new Set(f.cases.flatMap(c=>c.sourceRecordIds))

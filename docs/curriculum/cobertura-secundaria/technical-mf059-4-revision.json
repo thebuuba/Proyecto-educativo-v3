@@ -3,8 +3,8 @@
   "programCode": "IFC006_3",
   "grade": 4,
   "catalog": "evaluation-2026.146",
-  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "status": "REVIEWED_INSTALLED_PENDING_RUNTIME_QA",
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "method": "Lectura completa de90textos y94ensamblajes v1. Tras14regresiones de pertinencia RED→GREEN, lectura completa de20textos modificados/nuevos y nueveensamblajes cambiados/adicionales v2;79textos permanecen exactos. Lectura completa del paquete de acciones independientes en cuatroformatos y comprobación exacta de todas400definiciones contra textos, ensamblajes, niveles y reglas leídos. Una regresión adicional de referencias corrigió dosatribuciones cruzadas; v3 conserva las400definiciones y99textos exactos, y se releyeron lasdosatribuciones corregidas. No se infiere pertinencia del conteo ni de los resultados automáticos.",
   "sourcePages": [
@@ -63,11 +63,11 @@
       ]
     ]
   },
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "IN_PROGRESS",
+  "browser": "AUTHENTICATION_REQUIRED",
   "automated": "BACKEND_93499_FRONTEND_ACTIVITIES_91612_BUILDS_GREEN",
   "limits": [
-    "Catálogo146 candidato en fuente, todavía no instalado enDevelopment.",
+    "Catálogo146 yfuenteMF059 instalados idempotentemente soloenDevelopment.",
     "MF059HTTP/DB y navegador personal pendientes; no sustituirlos por pruebas locales.",
     "No acredita cobertura integral de secundaria ni todaslasvariantes posibles.",
     "Adaptaciones deAulaBase; no rúbricas literales oficiales."

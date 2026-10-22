@@ -1,0 +1,75 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_059_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.146",
+  "status": "INSTALLED_IDEMPOTENT_DEVELOPMENT",
+  "source": {
+    "code": "MINERD_IFC006_MF059_4_NORM_2017_V1",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "versionId": "171ca600-9dde-5fb6-89a3-50e0c8365fab",
+    "scopeId": "6ee66a51-ca01-5f9c-b084-2e3af732e076",
+    "elements": 37,
+    "spans": 39,
+    "documentaryRecords": 8,
+    "literalRecords": 45,
+    "literalParts": 47,
+    "excludedFromAssessment": 7
+  },
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.146",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 78,
+    "preservedSnapshots": 1103,
+    "finalReleases": 79,
+    "finalSnapshots": 1103,
+    "sourceEqualsCompiled": true,
+    "frozen145Exact": true,
+    "previousPayloadsUnchanged": true,
+    "payloadEquality": "POSTGRESQL_JSONB_EQUALITY_PARAMETERIZED",
+    "newAccounts": 0,
+    "newActivities": 0,
+    "deploy": false,
+    "push": false
+  },
+  "contexts": {
+    "executions": 4,
+    "modes": [
+      {
+        "mode": "qa",
+        "sectionSubjectId": "d00a20e2-cd15-4e47-a929-bd14d7572584",
+        "grade": 4,
+        "moduleCode": "MF_059_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      },
+      {
+        "mode": "personal",
+        "sectionSubjectId": "d8360fe0-c556-42f2-ba15-bc007f8979ad",
+        "grade": 4,
+        "moduleCode": "MF_059_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      }
+    ],
+    "originalDataUnchanged": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "deploy": false,
+  "push": false
+}

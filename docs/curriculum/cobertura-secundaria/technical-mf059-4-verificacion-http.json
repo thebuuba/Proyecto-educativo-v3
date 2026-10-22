@@ -1,0 +1,50 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_059_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.146",
+  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
+  "planned": 100,
+  "preparedIds": 3,
+  "knownSavedAndInitiallyReopened": 3,
+  "verified": 3,
+  "responses": 22,
+  "http500": 0,
+  "http429": 0,
+  "authoritativeProgress": "technical-mf059-4-evaluation-2026.146-source-171ca600-9dde-5fb6-89a3-50e0c8365fab-products-sample-e97c9239a299-http-progress.json",
+  "verifiedSamples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "e6456cdd-d022-401e-94be-b8010d3d0135",
+      "snapshotId": "191605b0-0158-4948-a0e0-2d6e2726bf2f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "31c5992d900768f430f45963f0a9ef48bc37c0584493084f95485f4b59bde5fe"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "02727c50-945d-409d-a00b-7c2ca923a036",
+      "snapshotId": "da40ab4d-0e57-423a-9841-719f34574fcb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b9168851d649bd27d1b5a92fde64467c0a1656abaecc73d538afd27a32d2a6dc"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "1f375d15-133f-45d0-8cfb-ef7fd5d79b18",
+      "snapshotId": "47a6e6e6-24de-4d48-94b3-8053b65f0fcc",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ec2b61ba8219dc93e886c42b289b460be871b02659dddb17570a1041022f333f"
+    }
+  ],
+  "personalEvidence": "technical-mf059-4-navegador-personal.json",
+  "limits": [
+    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
+  ]
+}
