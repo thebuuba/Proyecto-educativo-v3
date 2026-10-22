@@ -9,6 +9,7 @@ import {technicalMf054Five} from './secondary-technical-mf054-5'
 import {technicalMf056Four} from './secondary-technical-mf056-4'
 import {technicalMf059Four} from './secondary-technical-mf059-4'
 import {technicalMf057Five} from './secondary-technical-mf057-5'
+import {technicalMf055Six} from './secondary-technical-mf055-6'
 
 export type TechnicalTopic=CommonScienceTopic&{
  sourceRecordIds:string[];requires?:string;fallbackGroup?:string;application?:string;suppresses?:string[];relationsByMode?:Record<string,string>
@@ -22,7 +23,7 @@ type TechnicalAction={text:string;topics:TechnicalTopic[]}
 export type TechnicalTask={
  module:TechnicalModule;grade:number;actions:TechnicalAction[];activityType:string;technique:string;alternatives?:TechnicalTask[]
 }
-export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five]
+export const technicalModules:TechnicalModule[]=[technicalMf053Four,technicalMf002Four,technicalMf054Five,technicalMf056Four,technicalMf059Four,technicalMf057Five,technicalMf055Six]
 const technicalVerbs='disen\\w*|seleccion\\w*|aplic\\w*|apliqu\\w*|tabul\\w*|depur\\w*|gener\\w*|diagram\\w*|jerarqui\\w*|enumer\\w*|distingu\\w*|reconoc\\w*|utiliz\\w*|program\\w*|desplieg\\w*|implement\\w*|organiz\\w*|justific\\w*|propon\\w*|propong\\w*'
 const alternativeVerbs=`${technicalVerbs}|elabor\\w*|dibuj\\w*|represent\\w*|analiz\\w*|describ\\w*|explic\\w*|compar\\w*|identific\\w*`
 const affirmative=(value:string,additionalVerbs='')=>scienceRequirementText(value)
@@ -74,10 +75,12 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
    ||module.moduleCode==='MF_054_3'&&modes.includes('execution')
    ||module.moduleCode==='MF_059_3'&&modes.includes('verification')
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['verification','observation'].includes(mode))
+   ||module.moduleCode==='MF_055_3'&&modes.includes('verification')
   const officePractice=module.moduleCode==='MF_002_3'&&modes.some(mode=>['application','configuration','correction','sequence'].includes(mode))
    ||['MF_054_3','MF_056_3'].includes(module.moduleCode)&&modes.includes('application')
    ||module.moduleCode==='MF_059_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
    ||module.moduleCode==='MF_057_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
+   ||module.moduleCode==='MF_055_3'&&modes.some(mode=>['application','configuration','correction'].includes(mode))
   const activityType=report?'REPORT':oral?'ORAL_PRESENTATION':design?'PROJECT':application||officeObservation?'OBSERVATION':modes.includes('calculation')||officePractice?'EXERCISE_SET':modes.includes('comparison')?'COMPARISON':'ANALYSIS'
   const technique=activityType==='PROJECT'?'proyecto':activityType==='OBSERVATION'?'observacion-sistematica':activityType==='ORAL_PRESENTATION'?'presentacion':'analisis-producciones'
   return{...parsed,actions:parsed.actions as TechnicalAction[],activityType,technique,module}
@@ -87,7 +90,7 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  const branches=requirement.split(/\s+(?:o bien|o)\s+/)
  if(branches.length>1){
   // Product nouns such as «programa» and «diseño» must not replace an inherited action.
-  const verbs=['MF_054_3','MF_056_3','MF_059_3','MF_057_3'].includes(module.moduleCode)?`${module.additionalVerbs}|elabor(?:a|an|ar|e|en|ando)|represent(?:a|an|ar|e|en|ando)|dibuj(?:a|an|ar|e|en|ando)`:`${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''}`
+  const verbs=['MF_054_3','MF_056_3','MF_059_3','MF_057_3','MF_055_3'].includes(module.moduleCode)?`${module.additionalVerbs}|elabor(?:a|an|ar|e|en|ando)|represent(?:a|an|ar|e|en|ando)|dibuj(?:a|an|ar|e|en|ando)`:`${alternativeVerbs}${module.additionalVerbs?'|'+module.additionalVerbs:''}`
   const verb=new RegExp(`\\b(?:${verbs})\\b`)
   const inheritedVerb=branches[0].match(verb)?.[0]
   const alternatives=branches.map(branch=>parse(!verb.test(branch)&&inheritedVerb?`${inheritedVerb} ${branch}`:branch))
@@ -155,7 +158,13 @@ const administrationModeRules:[Mode,RegExp][]=[
  ['correction',/\brealiza(?=[^.;]*\bcorrecciones\b)/],
  ['application',/\b(?:administr|implement|ejecut|restaur|reestructur|elimin|recuper|automatiz|establec|actualiz)(?:a|an|ar|e|en|er|ando|iendo)\b/],
 ]
-const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:module?.moduleCode==='MF_057_3'?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
+const maintenanceModeRules:[Mode,RegExp][]=[
+ ['creation',/\belabor(?:a|an|ar|e|en|ando)\b/],
+ ['recording',/\bcit(?:a|an|ar|e|en|ando)\b/],
+ ['application',/\b(?:instal|implement|ejecut)(?:a|an|ar|e|en|ando)\b/],
+ ['application',/\brecib(?:e|en|ir|a|an|iendo)\b/],
+]
+const modeFor=(text:string,module?:TechnicalModule):Mode=>[...(module?.moduleCode==='MF_057_3'?administrationModeRules:module?.moduleCode==='MF_055_3'?maintenanceModeRules:[]),...modeRules,...(module?.moduleCode==='MF_002_3'?officeModeRules:module?.moduleCode==='MF_054_3'?[...developmentModeRules,...officeModeRules]:module?.moduleCode==='MF_056_3'?[...databaseModeRules,...officeModeRules]:module?.moduleCode==='MF_059_3'?[...webModeRules,...officeModeRules]:['MF_057_3','MF_055_3'].includes(module?.moduleCode??'')?officeModeRules:[])].map(([mode,pattern])=>({mode,index:text.search(pattern)}))
  .filter(r=>r.index>=0).sort((a,b)=>a.index-b.index)[0]?.mode??'evidence'
 const modeWords:Record<Mode,[string,string]>={
  identification:['Identificación','Identifica'],description:['Descripción','Describe'],explanation:['Explicación','Explica'],

@@ -5,7 +5,7 @@
   "grade": 6,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "cases": [
     {
       "id": "quality-parameters",
@@ -216,7 +216,8 @@
       "id": "deliverables-explanation",
       "description": "Explica la función de los entregables y de la documentación de la aplicación según los ejemplos proporcionados.",
       "topics": [
-        "deliverables-explanation"
+        "deliverables-explanation",
+        "documentation-explanation"
       ],
       "sourceRecordIds": [
         "ifc006-mf055-p-deliverables-explanation"
@@ -477,18 +478,85 @@
         "ifc006-mf055-CE3.1.1"
       ],
       "maxScore": null
+    },
+    {
+      "id": "deliverables-explanation-only",
+      "description": "Explica los entregables de la aplicación según la ficha proporcionada.",
+      "topics": [
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-explanation"
+      ]
+    },
+    {
+      "id": "reception-code-only",
+      "description": "Realiza la recepción de los entregables de codificación según las condiciones dadas.",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ]
+    },
+    {
+      "id": "test-system-plural",
+      "description": "Aplica las pruebas de sistemas a la aplicación de práctica según los casos dados.",
+      "topics": [
+        "test-system"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-system-test"
+      ]
+    },
+    {
+      "id": "error-syntax-identification",
+      "description": "Identifica el error de sintaxis en el código de práctica proporcionado.",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2",
+        "ifc006-mf055-p-errors-identification"
+      ]
+    },
+    {
+      "id": "reception-brief",
+      "description": "Recibe los entregables de codificación según las condiciones de aceptación dadas.",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ]
+    },
+    {
+      "id": "installation-parallel-brief",
+      "description": "Instala en paralelo la aplicación de práctica según las condiciones dadas.",
+      "topics": [
+        "installation-parallel"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ]
     }
   ],
   "negativeDescriptions": [
     "Realiza una entrevista de trabajo simulada en inglés.",
     "Diseña un diagrama entidad-relación para una base de datos ficticia, sin probar ni instalar aplicaciones.",
-    "Explica los movimientos artísticos del siglo XX a partir de las imágenes dadas."
+    "Explica los movimientos artísticos del siglo XX a partir de las imágenes dadas.",
+    "Analiza la integración cultural de los personajes del relato."
   ],
   "limits": [
     "Consignas esperadas con datos ficticios; todavía no existe proveedor MF055 ni instrumentos completos.",
     "Instalación e implementación curriculares no autorizan despliegue real ni cambios en producción o servicios externos.",
     "Aplicar un tipo de prueba o instalación no obliga a ejecutar todos los tipos enumerados en la fuente.",
     "Las copias usan solo la aplicación de práctica y datos ficticios; no se copian datos ni cuentas reales.",
-    "Las seisactitudes y cincoorientaciones docentes siguen documentales; no se califican disposiciones privadas ni se impone un proyecto, video o laboratorio como producto por defecto."
+    "Las seisactitudes y cincoorientaciones docentes siguen documentales; no se califican disposiciones privadas ni se impone un proyecto, video o laboratorio como producto por defecto.",
+    "Proveedor y200instrumentos revisados en fuente; instalación y pruebasMF055HTTP/DB/navegador todavía pendientes."
   ]
 }

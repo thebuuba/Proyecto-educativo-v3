@@ -1,5 +1,7 @@
 # Implementación y Mantenimiento de sexto: contratos esperados
 
+Este informe conserva el checkpoint inicial de contratos. El estado posterior está en [implementación y revisión de MF055](2026-10-22-tecnico-ifc-mf055-6.md): 50 consignas/35 grupos y 200 instrumentos completos revisados en fuente, todavía sin instalación ni recorrido remoto de MF055 en este punto.
+
 MF_055_3, sexto Técnico Profesional del programa IFC006_3: **44 consignas leídas, 34 grupos temáticos esperados**, con referencias a los 11 criterios de evaluación y los 17 procedimientos de la fuente previamente revisada. Se conserva la asignación de 135 horas anuales y tres semanales; el nivel de cualificación 3 no es el grado.
 
 Las consignas distinguen seleccionar y aplicar una prueba, siete tipos de prueba, cuatro instalaciones elegidas, análisis de implementación, explicación/creación/recepción de entregables, diagnóstico y sus resultados, cita de errores, cinco errores particulares, selección de protección y tres copias de seguridad. Incluyen comparación, acciones independientes, alternativa y conjunción, negaciones, video opcional, crédito parcial y puntuación inicialmente pendiente. No exigen todos los tipos porque aparezcan enumerados en la fuente.

@@ -2,21 +2,21 @@
   "moduleCode": "MF_055_3",
   "programCode": "IFC006_3",
   "grade": 6,
-  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
   "literalRecordsSha256": "27725b18ff36e2a185af3993106917917831e01f40ada409536de39375cd4e9a",
-  "cases": 44,
-  "expectedTopicGroups": 34,
+  "cases": 50,
+  "expectedTopicGroups": 35,
   "sourceEvaluationCriteriaReferenced": 11,
   "sourceProceduresReferenced": 17,
-  "fixtureSha256": "8614590fb217456cfed319eed289bdf00b3322f2f9aa07cb27284d74d7f7dedd",
+  "fixtureSha256": "335fd3085bd937fbe050734754311c1f6def0ada994f5b4fced033d19f544087",
   "red": {
     "missingFixture": 2,
     "missingEvidence": 1
   },
   "green": 3,
-  "method": "Lectura completa de las 44 consignas y sus referencias en bloques 0–22 y 23–43, frente a la fuente ya revisada. Las pruebas e instalaciones elegidas no imponen todos los tipos; diagnóstico, identificación, cita y corrección de errores conservan acciones diferentes. No se encontraron hallazgos importantes adicionales en esta revisión de contratos, sin afirmar calidad de instrumentos aún ausentes.",
+  "method": "Lectura completa de las 44 consignas y sus referencias en bloques 0–22 y 23–43, frente a la fuente ya revisada. Las pruebas e instalaciones elegidas no imponen todos los tipos; diagnóstico, identificación, cita y corrección de errores conservan acciones diferentes. No se encontraron hallazgos importantes adicionales en esta revisión de contratos, sin afirmar calidad de instrumentos aún ausentes. Revisión de proveedor posterior: documentación separada, seisconsignas nuevas leídas con sus referencias y los instrumentos completos;50consignas/35grupos vigentes.",
   "casesReviewed": [
     {
       "id": "quality-parameters",
@@ -28,7 +28,7 @@
         "ifc006-mf055-CE3.1.1",
         "ifc006-mf055-p-quality-parameters"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "quality-measurement",
@@ -39,7 +39,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-c-tests"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-techniques",
@@ -50,7 +50,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-p-test-techniques"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-selection",
@@ -61,7 +61,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.1.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-code",
@@ -73,7 +73,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-code-test"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-unit",
@@ -85,7 +85,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-unit-test"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-integration",
@@ -97,7 +97,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-integration-test"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-system",
@@ -109,7 +109,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-system-test"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-acceptance",
@@ -121,7 +121,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-acceptance-test"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-white-box",
@@ -133,7 +133,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-white-box"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-black-box",
@@ -145,7 +145,7 @@
         "ifc006-mf055-CE3.1.3",
         "ifc006-mf055-p-black-box"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "test-comparison",
@@ -158,7 +158,7 @@
         "ifc006-mf055-CE3.1.2",
         "ifc006-mf055-p-test-techniques"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-types",
@@ -169,7 +169,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-p-installation-types"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-selection",
@@ -180,7 +180,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.2.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-direct",
@@ -192,7 +192,7 @@
         "ifc006-mf055-CE3.2.2",
         "ifc006-mf055-p-implementation-phase"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-parallel",
@@ -204,7 +204,7 @@
         "ifc006-mf055-CE3.2.2",
         "ifc006-mf055-p-implementation-phase"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-sites",
@@ -216,7 +216,7 @@
         "ifc006-mf055-CE3.2.2",
         "ifc006-mf055-p-implementation-phase"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "installation-phased",
@@ -228,7 +228,7 @@
         "ifc006-mf055-CE3.2.2",
         "ifc006-mf055-p-implementation-phase"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "implementation-analysis",
@@ -240,18 +240,19 @@
         "ifc006-mf055-RA3.2",
         "ifc006-mf055-c-implementation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "deliverables-explanation",
       "descriptionSha256": "51e350a1265e0a8bb7db5ff2716446192c8c0d1f3a0e181cbb9dd1cea491eb11",
       "topics": [
-        "deliverables-explanation"
+        "deliverables-explanation",
+        "documentation-explanation"
       ],
       "sourceRecordIds": [
         "ifc006-mf055-p-deliverables-explanation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "deliverables-creation",
@@ -262,7 +263,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-p-deliverables-creation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "deliverables-reception",
@@ -274,7 +275,7 @@
         "ifc006-mf055-CE3.2.3",
         "ifc006-mf055-p-deliverables-reception"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "diagnostic-test",
@@ -285,7 +286,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "diagnostic-results",
@@ -297,7 +298,7 @@
         "ifc006-mf055-CE3.3.2",
         "ifc006-mf055-p-errors-identification"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "errors-citation",
@@ -308,7 +309,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-syntax",
@@ -320,7 +321,7 @@
         "ifc006-mf055-CE3.3.4",
         "ifc006-mf055-p-errors-correction"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-field-size",
@@ -332,7 +333,7 @@
         "ifc006-mf055-CE3.3.4",
         "ifc006-mf055-p-errors-correction"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-variable-type",
@@ -344,7 +345,7 @@
         "ifc006-mf055-CE3.3.4",
         "ifc006-mf055-p-errors-correction"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-overflow",
@@ -356,7 +357,7 @@
         "ifc006-mf055-CE3.3.4",
         "ifc006-mf055-p-errors-correction"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-reference",
@@ -368,7 +369,7 @@
         "ifc006-mf055-CE3.3.4",
         "ifc006-mf055-p-errors-correction"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "error-analysis",
@@ -380,7 +381,7 @@
         "ifc006-mf055-RA3.3",
         "ifc006-mf055-p-errors-identification"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "protection-selection",
@@ -391,7 +392,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-p-protection-selection"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "backup-full",
@@ -402,7 +403,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.5"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "backup-incremental",
@@ -413,7 +414,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.5"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "backup-differential",
@@ -424,7 +425,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.5"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "backup-comparison",
@@ -437,7 +438,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-c-errors-backup"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "independent-actions",
@@ -450,7 +451,7 @@
         "ifc006-mf055-p-unit-test",
         "ifc006-mf055-p-deliverables-explanation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "alternative-tests",
@@ -462,7 +463,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "conjunction-tests",
@@ -474,7 +475,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.1.3"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-installation",
@@ -485,7 +486,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-RA3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "negated-backup",
@@ -496,7 +497,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.2"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "optional-resource",
@@ -507,7 +508,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.3.4"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "weighted-components",
@@ -518,7 +519,7 @@
       "sourceRecordIds": [
         "ifc006-mf055-p-deliverables-creation"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     },
     {
       "id": "score-pending",
@@ -529,11 +530,82 @@
       "sourceRecordIds": [
         "ifc006-mf055-CE3.1.1"
       ],
-      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "deliverables-explanation-only",
+      "descriptionSha256": "8c702dce3ce4dee2b841f5af8b25dd75d28f2bb10bbba940f83bdd9f0a86cfe4",
+      "topics": [
+        "deliverables-explanation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-p-deliverables-explanation"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "reception-code-only",
+      "descriptionSha256": "70af04eb26e90c7eccbdc7d92f8a728151df9636a32b9118e6df5c8bdba55083",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "test-system-plural",
+      "descriptionSha256": "64570c705743a42f23cb6e6a242fa253ab6bcd13c719dcfcf6d5c6dfc928d0b7",
+      "topics": [
+        "test-system"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.1.3",
+        "ifc006-mf055-p-system-test"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "error-syntax-identification",
+      "descriptionSha256": "d99cfcb70566ec8f2337c4f12bd575fed6ba37d31b33dbb5da0842cfd66e736e",
+      "topics": [
+        "error-syntax"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.3.2",
+        "ifc006-mf055-p-errors-identification"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "reception-brief",
+      "descriptionSha256": "8c7062a82ac75f9101652bbf2673bc0ad027d909c8eab3055b70d9a7d1acce52",
+      "topics": [
+        "deliverables-reception"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.3",
+        "ifc006-mf055-p-deliverables-reception"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
+    },
+    {
+      "id": "installation-parallel-brief",
+      "descriptionSha256": "2e9b2e99f005c1a72060cd0f3c662a8911fb3e53b3b310ebb442ff4f80a40a8e",
+      "topics": [
+        "installation-parallel"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf055-CE3.2.2",
+        "ifc006-mf055-p-implementation-phase"
+      ],
+      "status": "DESCRIPTION_AND_GENERATED_INSTRUMENT_REVIEWED"
     }
   ],
-  "provider": null,
-  "fullInstrumentsReviewed": 0,
+  "provider": "packages/shared/src/secondary-technical.ts",
+  "fullInstrumentsReviewed": 200,
   "httpDb": "NOT_RUN",
   "browser": "NOT_RUN",
   "remoteWrites": false,
@@ -543,5 +615,8 @@
     "Aplicar un tipo de prueba o instalación no obliga a ejecutar todos los tipos enumerados en la fuente.",
     "Las copias usan solo la aplicación de práctica y datos ficticios; no se copian datos ni cuentas reales.",
     "Las seisactitudes y cincoorientaciones docentes siguen documentales; no se califican disposiciones privadas ni se impone un proyecto, video o laboratorio como producto por defecto."
-  ]
+  ],
+  "initialFixtureSha256": "8614590fb217456cfed319eed289bdf00b3322f2f9aa07cb27284d74d7f7dedd",
+  "initialCases": 44,
+  "additionalCases": 6
 }

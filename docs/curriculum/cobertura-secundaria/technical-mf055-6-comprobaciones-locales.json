@@ -1,0 +1,69 @@
+{
+  "catalog": "evaluation-2026.148",
+  "project": "eolgunypmtgrsyrjzcld",
+  "backendTests": 95291,
+  "frontendActivityTests": 93102,
+  "nodeTechnicalTests": 138,
+  "commands": [
+    {
+      "name": "mf055-provider-verified-backend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-frontend-final",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-shared-build",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-backend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-frontend-build",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-cloudflare-build",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-backend-lint",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-frontend-lint",
+      "exit": 0
+    },
+    {
+      "name": "mf055-provider-verified-shared-lint",
+      "exit": 0
+    }
+  ],
+  "priorTechnicalDefinitionsExact": 2248,
+  "newDefinitionsReviewedExact": 200,
+  "frozen147Exact": true,
+  "commonPreservation": {
+    "english": 15176,
+    "math": 2888,
+    "optatives": 14488,
+    "unchangedHistoricalArtifactDifferences": 36
+  },
+  "assets": {
+    "count": 76,
+    "maxBytes": 1909015,
+    "allPrecached": true
+  },
+  "sourceInstalledAtThisCheckpoint": false,
+  "catalogInstalledAtThisCheckpoint": false,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "deploy": false,
+  "push": false,
+  "limits": [
+    "Checkpoint anterior a instalaciónMF055: no acredita fuente/catálogo remoto ni entorno148 servido.",
+    "Los138Nodepreceden a la prueba positiva de este documento; su ejecución posterior se registra aparte."
+  ]
+}

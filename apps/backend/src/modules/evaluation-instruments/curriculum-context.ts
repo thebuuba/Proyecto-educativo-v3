@@ -42,6 +42,7 @@ const reviewedTechnicalSubjects = [
   {code:'MF_056_3',programCode:'IFC006_3',programCodes:['IFC006_3'],name:'Diseño y Desarrollo de Base de Datos',grade:4,cycle:2,modalityCode:'technical_professional'},
   {code:'MF_059_3',programCode:'IFC006_3',programCodes:['IFC006_3'],name:'Diseño de Portales Web y Recursos Multimedia',grade:4,cycle:2,modalityCode:'technical_professional'},
   {code:'MF_057_3',programCode:'IFC006_3',programCodes:['IFC006_3'],name:'Administración de Base de Datos',grade:5,cycle:2,modalityCode:'technical_professional'},
+  {code:'MF_055_3',programCode:'IFC006_3',programCodes:['IFC006_3'],name:'Implementación y Mantenimiento de Aplicaciones y Sistemas Informáticos',grade:6,cycle:2,modalityCode:'technical_professional'},
 ] as const
 export function reviewedTechnicalSubject(code:string) {
   return reviewedTechnicalSubjects.find(subject=>subject.code===code.trim().toUpperCase())

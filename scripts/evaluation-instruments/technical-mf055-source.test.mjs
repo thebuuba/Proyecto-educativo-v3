@@ -22,11 +22,11 @@ test('no inventa fragmento conceptual en la celda vacía24 y preserva las errata
  const m=r.find(x=>x.id==='ifc006-mf055-m-project');assert(m.literal.includes('puerta en marcha'));assert(m.literal.includes('desarollado'))
  assert(r.find(x=>x.id==='ifc006-mf055-m-feedback').literal.includes('sección de clase'))
 })
-test('separa seisactitudes y cincoorientaciones sin afirmar cobertura implementada',()=>{
+test('separa seisactitudes y cincoorientaciones de las adaptaciones revisadas en fuente',()=>{
  const m=source(),r=m.officialRecords
  assert.equal(r.filter(x=>x.type==='ATTITUDE').length,6);assert.equal(r.filter(x=>x.type==='TEACHING_STRATEGY').length,5)
  assert(r.filter(x=>x.type==='ATTITUDE').every(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'&&x.adaptationIds.length===0))
  assert(r.filter(x=>x.type==='TEACHING_STRATEGY').every(x=>x.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'&&x.adaptationIds.length===0))
- assert.equal(m.implementation.provider,null);assert.equal(m.adaptations.length,0);assert.equal(m.implementation.instrumentReview,'NOT_STARTED');assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,35);assert.equal(m.implementation.instrumentReview,'REVIEWED');assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
  assert(m.limits.some(s=>s.includes('datos ficticios')))
 })

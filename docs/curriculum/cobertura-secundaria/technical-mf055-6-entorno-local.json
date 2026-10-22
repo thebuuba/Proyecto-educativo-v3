@@ -1,0 +1,68 @@
+{
+  "catalogBuild": "evaluation-2026.148",
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "postgres": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "role": "app_backend_local",
+    "bypassRls": false
+  },
+  "auth": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "storage": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "frontend": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "entry": "/assets/index-CMio6WV1.js",
+    "matchesBuild": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-CMio6WV1.js",
+      "sha256": "6ad780b248bf4b0898e85244e88e8ced44d534437351940bfeb5f59bb83d881f",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityEditorWorkspace-DhvBS-tj.js",
+      "sha256": "70a106012b9356996dd0429880fbb97e8a3a3e0c5d05c810726f987204ecdf3a",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityInfoModal-Cnu6A-2L.js",
+      "sha256": "7dac644ac1fb983ef2bd3ca5c58d7d2bb8306b33af9ddb96a52e96e667ede403",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/instrumentos-tecnicos-BJljUOQb.js",
+      "sha256": "4ab02b4d3668ae1b53e5202641267da66401f89652727919257b96ce499e1fe6",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/PlanningPage-DAhs8k38.js",
+      "sha256": "87518aa4173e6e232748e651e4b6aadafbe2aab4d4af90a1c7150c7dad6b90db",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/sw.js",
+      "sha256": "66abd10fdf16c23ed98923489cd7f77aec7d0ac9e4804dbb822c84171b0d41b1",
+      "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+    }
+  ],
+  "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP",
+  "sourceAndCatalogInstallation": "NOT_INSTALLED_AT_THIS_CHECKPOINT",
+  "readOnlyPreinstallState": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "sourceRows": [],
+    "catalogs": [
+      "evaluation-2026.147"
+    ],
+    "remoteWrites": false
+  },
+  "deploy": false,
+  "push": false
+}
