@@ -3,7 +3,7 @@
   "programCode": "IFC006_3",
   "grade": 5,
   "catalog": "evaluation-2026.147",
-  "status": "REVIEWED_INSTALLED_PENDING_RUNTIME_QA",
+  "status": "REVIEWED_INSTALLED_REPRESENTATIVE_QA_VERIFIED_PERSONAL_AUTH_REQUIRED",
   "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "method": "Lectura completa de130textos y136ensamblajesv1. Tras13regresiones de pertinenciaRED→GREEN, lectura de13textos modificados/nuevos y sieteensamblajes modificadosv2;120textos exactos. Paquete completo independent-actions leído en cuatroformatos. Todas544definiciones contrastadas exactamente con textos, ensamblajes, niveles y reglas leídos; no se infiere pertinencia del conteo.",
@@ -59,12 +59,12 @@
       ]
     ]
   },
-  "httpDb": "IN_PROGRESS",
+  "httpDb": "REPRESENTATIVE_QA_PASSED",
   "browser": "AUTHENTICATION_REQUIRED",
   "automated": "LOCAL_GATES_PASSED",
   "limits": [
     "Catálogo147 yfuenteMF057 instalados idempotentemente soloenDevelopment.",
-    "MF057HTTP/DB y navegador personal no ejecutados; no sustituirlos con pruebas locales.",
+    "Dieciséis muestras HTTP/DB completas con QA; recorrido visual personal bloqueado por autenticación. No acredita todas las variantes porHTTP.",
     "Las115adaptaciones y136consignas no representan todas las variantes posibles de las amplias bandas conceptuales.",
     "Adaptaciones deAulaBase, no rúbricas literales oficiales; sin acciones sobre cuentas o bases reales por el contenido curricular."
   ],

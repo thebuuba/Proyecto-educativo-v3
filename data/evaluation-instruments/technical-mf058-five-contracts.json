@@ -1,0 +1,682 @@
+{
+  "subjectCode": "MF_058_3",
+  "subjectName": "Análisis y Diseño de Reporte",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "status": "SOURCE_REVIEWED_EXPECTED_CONTRACTS_NOT_IMPLEMENTED",
+  "cases": [
+    {
+      "id": "report-needs",
+      "description": "Analiza las necesidades de información de los usuarios, el período y el ámbito territorial de los reportes de la empresa ficticia.",
+      "topics": [
+        "report-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.1"
+      ]
+    },
+    {
+      "id": "report-type",
+      "description": "Determina si el reporte del caso ficticio debe ser interno o externo y justifica su adecuación al destinatario.",
+      "topics": [
+        "report-type"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ]
+    },
+    {
+      "id": "report-medium",
+      "description": "Selecciona el medio apropiado del reporte entre impresión, pantalla, audio, microformas o almacenamiento, según los recursos y necesidades del caso; no debes producir todas las opciones.",
+      "topics": [
+        "report-medium"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ]
+    },
+    {
+      "id": "report-order",
+      "description": "Determina si las informaciones del reporte deben ordenarse cronológicamente o por costos según los requerimientos proporcionados.",
+      "topics": [
+        "report-order"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ]
+    },
+    {
+      "id": "report-structure",
+      "description": "Diseña la estructura general del reporte con títulos, detalles repetitivos, grupos de totales y subtotales y pie de página según el caso ficticio.",
+      "topics": [
+        "report-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ]
+    },
+    {
+      "id": "tools-classification",
+      "description": "Clasifica las herramientas de diseño de reportes de las fichas dadas y selecciona la más adecuada para los requerimientos; no instales ni compres programas.",
+      "topics": [
+        "tools-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.3"
+      ]
+    },
+    {
+      "id": "report-views",
+      "description": "Compara las vistas del reporte y explica cómo cambia la presentación de los mismos datos ficticios en las vistas proporcionadas.",
+      "topics": [
+        "report-views"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ]
+    },
+    {
+      "id": "report-execution",
+      "description": "Ejecuta el reporte de práctica existente con los parámetros dados y comprueba la salida obtenida, sin crear otro proyecto.",
+      "topics": [
+        "report-execution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ]
+    },
+    {
+      "id": "manager-installation",
+      "description": "Realiza la instalación del gestor de reportes proporcionado en la máquina de práctica autorizada, sin cuentas, compras ni servicios externos.",
+      "topics": [
+        "manager-installation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-manager-installation"
+      ]
+    },
+    {
+      "id": "project-creation",
+      "description": "Crea y estructura un proyecto de reportes de práctica según los requisitos dados para la organización ficticia.",
+      "topics": [
+        "project-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.1",
+        "ifc006-mf058-p-project-creation"
+      ]
+    },
+    {
+      "id": "connection-ado",
+      "description": "Especifica el mecanismo de conexión ActiveX Data Objects (ADO) y las informaciones de conexión ficticias necesarias para el reporte; no abras conexiones reales.",
+      "topics": [
+        "connection-ado"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ]
+    },
+    {
+      "id": "connection-dao",
+      "description": "Especifica el mecanismo de conexión Data Access Object (DAO) y las informaciones de conexión ficticias necesarias para el reporte; no abras conexiones reales.",
+      "topics": [
+        "connection-dao"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ]
+    },
+    {
+      "id": "connection-oledb",
+      "description": "Especifica el mecanismo de conexión Object Linking and Embedding for Databases (OLE/DB) y las informaciones de conexión ficticias necesarias para el reporte; no abras conexiones reales.",
+      "topics": [
+        "connection-oledb"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ]
+    },
+    {
+      "id": "connection-selection",
+      "description": "Selecciona entre ADO, DAO u OLE/DB el mecanismo de conexión más adecuado al caso de práctica y justifica la elección; no implementes los tres.",
+      "topics": [
+        "connection-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2"
+      ]
+    },
+    {
+      "id": "dataset-creation",
+      "description": "Crea el conjunto de datos solicitado para el informe a partir de las tablas ficticias proporcionadas.",
+      "topics": [
+        "dataset-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ]
+    },
+    {
+      "id": "query-creation",
+      "description": "Crea la consulta solicitada para el informe con los campos y condiciones indicados sobre la base de práctica.",
+      "topics": [
+        "query-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ]
+    },
+    {
+      "id": "alternative-dataset-query",
+      "description": "Crea un conjunto de datos o una consulta para alimentar el informe de práctica; elige una de las dos alternativas.",
+      "topics": [
+        "dataset-creation",
+        "query-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "tables-addition",
+      "description": "Agrega al proyecto de reporte únicamente las tablas necesarias para distribuir los datos ficticios solicitados.",
+      "topics": [
+        "tables-addition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-tables-addition"
+      ]
+    },
+    {
+      "id": "table-relations",
+      "description": "Define las relaciones entre las tablas del reporte según las claves y los datos ficticios proporcionados.",
+      "topics": [
+        "table-relations"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ]
+    },
+    {
+      "id": "section-report-header",
+      "description": "Crea únicamente el encabezado del reporte de práctica y distribuye en esa sección los datos solicitados.",
+      "topics": [
+        "section-report-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-page-header",
+      "description": "Crea únicamente la sección de encabezado de página del reporte de práctica y distribuye en ella los datos solicitados.",
+      "topics": [
+        "section-page-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-details",
+      "description": "Crea únicamente la sección de línea de detalles del reporte de práctica y distribuye en ella los datos solicitados.",
+      "topics": [
+        "section-details"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-page-footer",
+      "description": "Crea únicamente la sección de pie de página del reporte de práctica y distribuye en ella los datos solicitados.",
+      "topics": [
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-report-footer",
+      "description": "Crea únicamente el pie del reporte de práctica y distribuye en esa sección los datos solicitados.",
+      "topics": [
+        "section-report-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-group-header",
+      "description": "Crea únicamente la sección de encabezado de grupo del reporte de práctica y distribuye en ella los datos solicitados.",
+      "topics": [
+        "section-group-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "section-group-footer",
+      "description": "Crea únicamente la sección de pie de grupo del reporte de práctica y distribuye en ella los datos solicitados.",
+      "topics": [
+        "section-group-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "format-dates",
+      "description": "Aplica el formato de fechas a los campos indicados del reporte, conforme al estilo de la organización ficticia; conserva los valores de origen.",
+      "topics": [
+        "format-dates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ]
+    },
+    {
+      "id": "format-numbers",
+      "description": "Aplica el formato de números a los campos indicados del reporte, conforme al estilo de la organización ficticia; conserva los valores de origen.",
+      "topics": [
+        "format-numbers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ]
+    },
+    {
+      "id": "format-currency",
+      "description": "Aplica el formato de monedas a los campos indicados del reporte, conforme al estilo de la organización ficticia; conserva los valores de origen.",
+      "topics": [
+        "format-currency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ]
+    },
+    {
+      "id": "format-thousands",
+      "description": "Aplica el formato de separación de millares a los campos indicados del reporte, conforme al estilo de la organización ficticia; conserva los valores de origen.",
+      "topics": [
+        "format-thousands"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ]
+    },
+    {
+      "id": "format-percentages",
+      "description": "Aplica el formato de porcentajes a los campos indicados del reporte, conforme al estilo de la organización ficticia; conserva los valores de origen.",
+      "topics": [
+        "format-percentages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ]
+    },
+    {
+      "id": "text-style",
+      "description": "Diseña el estilo y formato de los textos del reporte según la guía visual proporcionada.",
+      "topics": [
+        "text-style"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-text-style"
+      ]
+    },
+    {
+      "id": "column-width",
+      "description": "Ajusta el ancho de las columnas del reporte para mostrar los datos solicitados conforme al diseño dado.",
+      "topics": [
+        "column-width"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-text-style"
+      ]
+    },
+    {
+      "id": "groups",
+      "description": "Genera los grupos de datos solicitados en el reporte de práctica según el campo de agrupación indicado.",
+      "topics": [
+        "groups"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-groups"
+      ]
+    },
+    {
+      "id": "totals",
+      "description": "Crea los grupos de totales y subtotales solicitados y comprueba sus valores con los datos ficticios del reporte.",
+      "topics": [
+        "totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.5"
+      ]
+    },
+    {
+      "id": "daily-totals",
+      "description": "Crea los totales diarios del reporte según las fechas y cantidades proporcionadas; no se pide un total general.",
+      "topics": [
+        "daily-totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-totals"
+      ]
+    },
+    {
+      "id": "general-total",
+      "description": "Crea el total general del reporte a partir de los datos ficticios proporcionados; no se pide un desglose diario.",
+      "topics": [
+        "general-total"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-totals"
+      ]
+    },
+    {
+      "id": "filters",
+      "description": "Aplica el filtro indicado al reporte y comprueba que la salida contiene únicamente los registros que cumplen la condición.",
+      "topics": [
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters"
+      ]
+    },
+    {
+      "id": "data-order",
+      "description": "Ordena los datos del reporte por el campo y sentido indicados, conservando los registros ficticios proporcionados.",
+      "topics": [
+        "data-order"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "data-manipulation",
+      "description": "Modifica los datos de práctica del reporte según las instrucciones y comprueba su efecto en los valores mostrados.",
+      "topics": [
+        "data-manipulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-data-manipulation"
+      ]
+    },
+    {
+      "id": "charts",
+      "description": "Crea el reporte gráfico solicitado a partir de los datos ficticios, con las categorías y valores indicados.",
+      "topics": [
+        "charts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-charts"
+      ]
+    },
+    {
+      "id": "formulas",
+      "description": "Opera la fórmula indicada en el reporte de práctica y comprueba el resultado con los datos de entrada proporcionados.",
+      "topics": [
+        "formulas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-formulas"
+      ]
+    },
+    {
+      "id": "functions",
+      "description": "Utiliza la función solicitada en el reporte de práctica y comprueba sus argumentos y resultado; no se pide inventar otras funciones.",
+      "topics": [
+        "functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-functions"
+      ]
+    },
+    {
+      "id": "messages",
+      "description": "Configura el mensaje solicitado como respuesta al evento indicado del reporte y comprueba esa relación en el entorno de práctica.",
+      "topics": [
+        "messages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-messages"
+      ]
+    },
+    {
+      "id": "function-types",
+      "description": "Clasifica los tipos de funciones del reporte que aparecen en las fichas y explica cuándo corresponde cada uno.",
+      "topics": [
+        "function-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "hierarchies",
+      "description": "Analiza la jerarquía proporcionada del reporte e identifica la relación entre sus niveles de información.",
+      "topics": [
+        "hierarchies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "recursion",
+      "description": "Explica la recursividad del ejemplo de reporte proporcionado y sigue sus pasos hasta la condición de terminación.",
+      "topics": [
+        "recursion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "procedures",
+      "description": "Analiza el procedimiento proporcionado del reporte y explica su secuencia y resultado con los datos ficticios.",
+      "topics": [
+        "procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "matrices-lists",
+      "description": "Compara la representación de los mismos datos ficticios del reporte en matriz y en lista.",
+      "topics": [
+        "matrices-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "access-mechanism",
+      "description": "Crea en el proyecto de práctica el mecanismo de acceso al reporte solicitado por la organización ficticia, sin habilitar acceso público.",
+      "topics": [
+        "access-mechanism"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.1",
+        "ifc006-mf058-p-access"
+      ]
+    },
+    {
+      "id": "output-print",
+      "description": "Prepara la salida de impresión del reporte según el tamaño y orientación indicados; usa vista previa y no se requiere impresora física.",
+      "topics": [
+        "output-print"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ]
+    },
+    {
+      "id": "output-screen",
+      "description": "Muestra en pantalla el reporte de práctica y comprueba que presenta las informaciones requeridas por el usuario ficticio.",
+      "topics": [
+        "output-screen"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-c-sections-functions"
+      ]
+    },
+    {
+      "id": "output-web-simulation",
+      "description": "Prepara en la simulación local la salida web del reporte con los datos ficticios solicitados; no publiques en internet ni uses cuentas o servidores externos.",
+      "topics": [
+        "output-web-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ]
+    },
+    {
+      "id": "output-storage",
+      "description": "Almacena el reporte de práctica en el archivo y la ubicación local indicados y comprueba que puede abrirse.",
+      "topics": [
+        "output-storage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ]
+    },
+    {
+      "id": "output-cd-simulation",
+      "description": "Diseña el acceso y la grabación simulada del reporte en un disco compacto según el caso; no se requiere dispositivo físico.",
+      "topics": [
+        "output-cd-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.1"
+      ]
+    },
+    {
+      "id": "independent-actions",
+      "description": "Analiza las necesidades de información del usuario ficticio. Después crea el filtro solicitado del reporte de práctica y comprueba los registros obtenidos.",
+      "topics": [
+        "report-needs",
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.1",
+        "ifc006-mf058-p-filters"
+      ]
+    },
+    {
+      "id": "alternative-sections",
+      "description": "Crea un encabezado de página o un pie de página del reporte de práctica; elige una sola sección según el caso.",
+      "topics": [
+        "section-page-header",
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "alternative": true
+    },
+    {
+      "id": "conjunction-sections",
+      "description": "Crea el encabezado de página y el pie de página del reporte de práctica con los datos indicados para cada sección.",
+      "topics": [
+        "section-page-header",
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ]
+    },
+    {
+      "id": "negated-publication",
+      "description": "Almacena el reporte en el archivo local solicitado. No publiques el reporte en la web ni configures otros mecanismos de salida.",
+      "topics": [
+        "output-storage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ],
+      "excludedTopics": [
+        "output-web-simulation"
+      ]
+    },
+    {
+      "id": "optional-resource",
+      "description": "Aplica el filtro solicitado al reporte. Puedes consultar la guía de la herramienta si lo necesitas; la guía no es un producto de entrega.",
+      "topics": [
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters"
+      ]
+    },
+    {
+      "id": "weighted-components",
+      "description": "Crea el filtro solicitado y la fórmula indicada del reporte. Evalúa ambos componentes por separado con pesos y crédito parcial, conservando un total de 17.35 puntos.",
+      "topics": [
+        "filters",
+        "formulas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters",
+        "ifc006-mf058-p-formulas"
+      ],
+      "maxScore": 17.35
+    },
+    {
+      "id": "score-pending",
+      "description": "Muestra en pantalla el reporte de práctica con los datos solicitados; deja la puntuación pendiente hasta que el docente indique el total.",
+      "topics": [
+        "output-screen"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2"
+      ],
+      "maxScore": null
+    }
+  ],
+  "negativeDescriptions": [
+    "Lee un cuento sobre una empresa.",
+    "Resuelve la ecuación dada sin elaborar reportes.",
+    "Diseña un portal web de práctica sin reportes ni consultas de datos."
+  ],
+  "limits": [
+    "Usar datos ficticios y conexiones de práctica sin credenciales reales.",
+    "La publicación web se limita a una simulación local; no se requieren servicios externos ni cuentas.",
+    "Cada consigna exige únicamente las acciones y variantes elegidas, sin imponer todas las tecnologías, secciones, formatos o salidas del currículo.",
+    "Inventario y contratos esperados no acreditan proveedor, instrumentos completos, instalación ni pruebas de usuario."
+  ]
+}

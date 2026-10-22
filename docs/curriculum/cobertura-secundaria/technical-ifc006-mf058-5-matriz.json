@@ -794,5 +794,12 @@
     "No exigir todos los tipos, secciones, funciones, matrices y salidas en cada tarea; describir y seleccionar no exige crearlos todos.",
     "Cuatroactitudes privadas quedan documentales; la medida de integridad solo se adapta como acción si se pide expresamente, no como personalidad.",
     "Conservar seguiendo, requrimientos, informacion y Conecta a la bases de datos en los literales, distinguiéndolos de la adaptación pedagógica."
-  ]
+  ],
+  "expectedContracts": {
+    "file": "data/evaluation-instruments/technical-mf058-five-contracts.json",
+    "cases": 62,
+    "topicGroups": 54,
+    "review": "technical-mf058-5-contratos-esperados.json",
+    "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
+  }
 }

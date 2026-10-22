@@ -1,0 +1,748 @@
+{
+  "moduleCode": "MF_058_3",
+  "programCode": "IFC006_3",
+  "grade": 5,
+  "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "literalRecordsSha256": "36417e95df354371769d434d7d3c02551a99ad54ca852ab39423a7e76d18991e",
+  "cases": 62,
+  "expectedTopicGroups": 54,
+  "sourceEvaluationCriteriaReferenced": 10,
+  "sourceProceduresReferenced": 17,
+  "fixtureSha256": "bb74716ea46841eb5c9d5b8618eebd3ea01c042e43ca7b4b63a263c589754778",
+  "red": {
+    "missingFixture": 2,
+    "missingEvidence": 1
+  },
+  "green": 3,
+  "method": "Lectura completa de las62 consignas y referencias en bloques0–30 y31–61 frente a la fuente42registros/45partes ya revisada. Separadas selección y ejecución, conexiones individuales, siete secciones, cinco formatos, totales diarios/generales, datos/filtros/orden, fórmulas/funciones/eventos y salida elegida. Corregidas dos repeticiones de redacción en encabezado y pie del reporte; referencias intactas. No se acreditan instrumentos completos todavía ausentes.",
+  "casesReviewed": [
+    {
+      "id": "report-needs",
+      "descriptionSha256": "534edcbec92985b4a5634a22354e1178c94251e65958d269b4e75c172d320779",
+      "topics": [
+        "report-needs"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-type",
+      "descriptionSha256": "259dcc6465b6ab0f2a3b9d19100dc9d8ce7ac19a17cda7c23ba4abc9440357fe",
+      "topics": [
+        "report-type"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-medium",
+      "descriptionSha256": "9cc9f4f94a81c509f3a8e4b379da6c31ceaa1d7cd7d409a363c04612a7474bb4",
+      "topics": [
+        "report-medium"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-order",
+      "descriptionSha256": "e96c4ed56cbcde35457eb6aa814646a5f1573167eec4e98dbf3d78227c260535",
+      "topics": [
+        "report-order"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-structure",
+      "descriptionSha256": "ea4795599befea9497b2b254042d80f5bbfef6d3e37628e5faaac45d524891f7",
+      "topics": [
+        "report-structure"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tools-classification",
+      "descriptionSha256": "25a9c617c59a7833a987800d7c0191716ae5f2dec1484c37fea2afe9ffb5b3af",
+      "topics": [
+        "tools-classification"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.3"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-views",
+      "descriptionSha256": "b0bb2589c93c9ddadce1c322f1e49ac8bf27d48388c824f6ae55bd96243c773c",
+      "topics": [
+        "report-views"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "report-execution",
+      "descriptionSha256": "92208958f20f65eea0a966b43609ae9f2176210ec95ceb26cc8169212b5a4e17",
+      "topics": [
+        "report-execution"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "manager-installation",
+      "descriptionSha256": "9ffaecb6fac860b3d67b3a23f32c07d5c7cd951f65588dfabc0a23f047f39cf3",
+      "topics": [
+        "manager-installation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-manager-installation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "project-creation",
+      "descriptionSha256": "48672f11d7b3ac27889e45e8b25f0c68e3db5bf0fcebf302c23eaf19670cd11e",
+      "topics": [
+        "project-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.1",
+        "ifc006-mf058-p-project-creation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "connection-ado",
+      "descriptionSha256": "8f5c91f39ef246adc240526cfc0cef8342c24de7086b8ed62edd0c2dadade673",
+      "topics": [
+        "connection-ado"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "connection-dao",
+      "descriptionSha256": "cf34e560c5397e2524de04817eae12454418a09b45681726b3a6663e4e3e0dda",
+      "topics": [
+        "connection-dao"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "connection-oledb",
+      "descriptionSha256": "5974827626939a4b9fb1d7a9b81986341e7c74f33dcd2de4541eef69efbbe5a0",
+      "topics": [
+        "connection-oledb"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2",
+        "ifc006-mf058-p-connection-specification"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "connection-selection",
+      "descriptionSha256": "4c4728f0ddc89b64285f5fac90f92c24c7973c1ce6ba5e95eb957b58e68a6cbb",
+      "topics": [
+        "connection-selection"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "dataset-creation",
+      "descriptionSha256": "bb0e9a5b515183d4236c0feb0bce0e4bf4db957c5a0482cfe9e74cb3d14ef460",
+      "topics": [
+        "dataset-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "query-creation",
+      "descriptionSha256": "7792ac5b0f4b8e6e8738b00e8db4bdc17f3873ef99a4daf4ce2f35905befd7da",
+      "topics": [
+        "query-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-dataset-query",
+      "descriptionSha256": "a2a7bb7ce2ae3ddefebd8ee48b33eb4ae9e03a8b4d1bb7a0b4b010ae6e96e087",
+      "topics": [
+        "dataset-creation",
+        "query-creation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-datasets-queries"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "tables-addition",
+      "descriptionSha256": "5e56e8ac5a77e95df55eaae0e3d07e23df5df96b08ef37e72ad4b8b14d241912",
+      "topics": [
+        "tables-addition"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-tables-addition"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "table-relations",
+      "descriptionSha256": "9c8386c3f136b1f7d6ed6f68ee05cc94b3e73bf174d3f1dfc74a9743f5a829ab",
+      "topics": [
+        "table-relations"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-reports-tools"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-report-header",
+      "descriptionSha256": "85df5d37da8f5b037934cf65cc3612624eb82a7bd42b65607444dc1eea901781",
+      "topics": [
+        "section-report-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-page-header",
+      "descriptionSha256": "afc5545fa051bf560e58f9f29a0ba81c750c3c427fac1638eb34ad2f62e3b6a4",
+      "topics": [
+        "section-page-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-details",
+      "descriptionSha256": "a7bf337e838934a3619a48325e50463eb96506641c656ac78cb5650d696be51b",
+      "topics": [
+        "section-details"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-page-footer",
+      "descriptionSha256": "893719fe515a322c86ef5e17a0c93cb706ddc192a637a31699fd9d66840e6346",
+      "topics": [
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-report-footer",
+      "descriptionSha256": "c61d34d52735dc6231121956fbdaab51df2d2210fae7f5db8d7522cd8f56f781",
+      "topics": [
+        "section-report-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-group-header",
+      "descriptionSha256": "85a8d982f4bdb98f49baac2456c16fdf3834e8e75466c4ae7b88939e527c8894",
+      "topics": [
+        "section-group-header"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "section-group-footer",
+      "descriptionSha256": "906c6b3736ad224a2bbb0d964a1e8df44b340b7cbd971afa5a3ec5993225c7ab",
+      "topics": [
+        "section-group-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "format-dates",
+      "descriptionSha256": "01d3c848942bc2de395fa337fef610121ee3196966000b01ee95f72ce7cd0494",
+      "topics": [
+        "format-dates"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "format-numbers",
+      "descriptionSha256": "b64c637945b82f7838d9fb1b94fc89ec380b6d461b7eb592fe167abc1957216f",
+      "topics": [
+        "format-numbers"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "format-currency",
+      "descriptionSha256": "9d4c9166ef7ee4bbacaabb22185f6073b109984e6b2f60a3dc80a9dfaa43648c",
+      "topics": [
+        "format-currency"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "format-thousands",
+      "descriptionSha256": "f9b35a66b1adcb4572ba2bb6491e87e966109b87a18e8e4f40c7bee208827f69",
+      "topics": [
+        "format-thousands"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "format-percentages",
+      "descriptionSha256": "53ccf9743ed6a5f2e3a3fa6023720d399f1d467db6700f006a8480ffa2a1c55a",
+      "topics": [
+        "format-percentages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-data-format"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "text-style",
+      "descriptionSha256": "8348a3a71db79171c70851cc6cb8fbd3d783c705d366e20ae3dcd2f720b261ea",
+      "topics": [
+        "text-style"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.4",
+        "ifc006-mf058-p-text-style"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "column-width",
+      "descriptionSha256": "88d1477c6293534ebd4f6dc663b13de45a70d409f22099a8fdf788a078adc51f",
+      "topics": [
+        "column-width"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-text-style"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "groups",
+      "descriptionSha256": "df65f7cbd9e22a99a1ebaf83936701d6a6b3c97c0bdf11655468257efbc9c71b",
+      "topics": [
+        "groups"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-groups"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "totals",
+      "descriptionSha256": "6bcb2c27630131f87a425ba53c6ec93c96cbac62f691af9cce75475f9520d10a",
+      "topics": [
+        "totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.5"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "daily-totals",
+      "descriptionSha256": "b5444e4160124dab53d370b02d45cec111785123397f7411122542813ed0a502",
+      "topics": [
+        "daily-totals"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-totals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "general-total",
+      "descriptionSha256": "a6c37571ab2cf1885dd5cd8d5ab2aaf45c3f407a5574960f188eb15ee10615e8",
+      "topics": [
+        "general-total"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-totals"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "filters",
+      "descriptionSha256": "e654cce88a79a91d0c005e6d7c4ced802b15827e5a31d50c8d14581db3c01bc7",
+      "topics": [
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "data-order",
+      "descriptionSha256": "6a57cefc5f9e6d3bbfe16316a99a29aeaad8dc706abcb9a9754f8195a767ad8d",
+      "topics": [
+        "data-order"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "data-manipulation",
+      "descriptionSha256": "0cfc63859d658c550e6a2f28e6c48077a7621ac0e86f4243abceb5c3f204bb2d",
+      "topics": [
+        "data-manipulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-data-manipulation"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "charts",
+      "descriptionSha256": "fe3e53bd693569669823f82dd4c3c8e5a95e23d695485b18b5443ae5fc1b4104",
+      "topics": [
+        "charts"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-charts"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "formulas",
+      "descriptionSha256": "afcd284618d8f489393f0612c8544934b67c53326914b627c107b0621b14171a",
+      "topics": [
+        "formulas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-formulas"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "functions",
+      "descriptionSha256": "edb56e90bda4b5f3fa757ee834b8f7bfd6358f70f3384933b3fbcf0291d0629e",
+      "topics": [
+        "functions"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "messages",
+      "descriptionSha256": "1bfe7fed3bc93e85fcfb418d3e8ee2ed1b100434e5978c2506f1580007d338ea",
+      "topics": [
+        "messages"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-messages"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "function-types",
+      "descriptionSha256": "b052658e2f644d3d83c403d2707bcb59f2de2a6b0bf89a132041bab72ce85d7e",
+      "topics": [
+        "function-types"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "hierarchies",
+      "descriptionSha256": "147921de1425d8273b6ff5944a5cf78a33ce417d049f8d10f18619bc66519f55",
+      "topics": [
+        "hierarchies"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "recursion",
+      "descriptionSha256": "4f116d7ce92f84fa3470af122cbad1e203d1b477088e7bf53de5df72bbe7189e",
+      "topics": [
+        "recursion"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "procedures",
+      "descriptionSha256": "53efa4c9f8114e7b53b0606d71ca9e7becdd2dc1af49710c2e6bc279a459ba21",
+      "topics": [
+        "procedures"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "matrices-lists",
+      "descriptionSha256": "73d198c913df6f745277f1771773cf5c13ad3f5e9da16cae05999755d206cb49",
+      "topics": [
+        "matrices-lists"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "access-mechanism",
+      "descriptionSha256": "eb0bf20f74c3c5e67b96bf1fe37d20711c661f6b4e266acf6b9c80a5b49e194b",
+      "topics": [
+        "access-mechanism"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.1",
+        "ifc006-mf058-p-access"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "output-print",
+      "descriptionSha256": "fa9221652c0e6e24b09b5ba1a0c29ce56c158c983fb902e0be0c1204e5e4c02f",
+      "topics": [
+        "output-print"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "output-screen",
+      "descriptionSha256": "6e535e9c30fad95e5475ac6cfcb0b186000b8186bccc6e71bd270e427d446999",
+      "topics": [
+        "output-screen"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-c-sections-functions"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "output-web-simulation",
+      "descriptionSha256": "d3976503c9549b4b27a95f06eba7bda072918a643efe5e9c0569bd28832bd7df",
+      "topics": [
+        "output-web-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "output-storage",
+      "descriptionSha256": "227177ab3d774e9ac0e35ed66cbf0077b0822899fdf3fe356985ed967c1e57b3",
+      "topics": [
+        "output-storage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "output-cd-simulation",
+      "descriptionSha256": "6f2dd3c4dafb7487da88f92e615b7de16a30574400fc72fc6e441e4e890fdd9c",
+      "topics": [
+        "output-cd-simulation"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.1"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "independent-actions",
+      "descriptionSha256": "349357cdc68a26bb394ec9eeb20abcc1fda2e5f04cff7a73e125ae8857029b39",
+      "topics": [
+        "report-needs",
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.1.1",
+        "ifc006-mf058-p-filters"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "alternative-sections",
+      "descriptionSha256": "e0ab81b878ed0d044f5904c84a41958b6b18c550c269c6b4159db5e06c066eaf",
+      "topics": [
+        "section-page-header",
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "conjunction-sections",
+      "descriptionSha256": "5484c9931944a34e6bc7a84bbf07b48f782be7c918e127663ea0d35d6d673288",
+      "topics": [
+        "section-page-header",
+        "section-page-footer"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.2.3",
+        "ifc006-mf058-p-sections"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "negated-publication",
+      "descriptionSha256": "4e66f5679cce0bf10aa04860b571890182d7e9f82f7cb2bbb2e3035d9ae5fb91",
+      "topics": [
+        "output-storage"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2",
+        "ifc006-mf058-p-access"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "optional-resource",
+      "descriptionSha256": "2a76a9f7a91510aed5529f786bd3a6f676bd2563a96c720be80e67337f96c67a",
+      "topics": [
+        "filters"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "weighted-components",
+      "descriptionSha256": "c86f56e2e96b0126ba1c5c025301838f5906a3bb4d7701183fab94a5829e453a",
+      "topics": [
+        "filters",
+        "formulas"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-p-filters",
+        "ifc006-mf058-p-formulas"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    },
+    {
+      "id": "score-pending",
+      "descriptionSha256": "442de539526a09daad1bbbcdbbf6a03df56bdfc4bd27b2d942ddd402ddbf9fcb",
+      "topics": [
+        "output-screen"
+      ],
+      "sourceRecordIds": [
+        "ifc006-mf058-CE6.3.2"
+      ],
+      "status": "EXPECTED_DESCRIPTION_REVIEWED"
+    }
+  ],
+  "provider": null,
+  "fullInstrumentsReviewed": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "limits": [
+    "Usar datos ficticios y conexiones de práctica sin credenciales reales.",
+    "La publicación web se limita a una simulación local; no se requieren servicios externos ni cuentas.",
+    "Cada consigna exige únicamente las acciones y variantes elegidas, sin imponer todas las tecnologías, secciones, formatos o salidas del currículo.",
+    "Inventario y contratos esperados no acreditan proveedor, instrumentos completos, instalación ni pruebas de usuario."
+  ]
+}

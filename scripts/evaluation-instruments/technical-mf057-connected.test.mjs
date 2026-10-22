@@ -11,3 +11,12 @@ test('el navegador personal MF057 bloqueado por autenticación no se sustituye p
  const p=read('technical-mf057-5-navegador-personal.json');assert.equal(p.project,'eolgunypmtgrsyrjzcld');assert.equal(p.accountKind,'PERSONAL_DEVELOPMENT');assert.equal(p.status,'AUTHENTICATION_REQUIRED_CREATOR_NOT_VERIFIED');assert.equal(p.browserAvailable,true);assert.equal(p.creatorVerified,false);assert.equal(p.savedAndReopened,false);assert.equal(p.browserEntry,'/assets/index-TeCjzgjh.js')
  assert.equal(p.newPassword,false);assert.equal(p.emailSent,false);assert.equal(p.storageCleared,false);assert.equal(p.newBaselines,0)
 })
+test('MF057 completa dieciséis muestras HTTP y preserva historia sin acreditar navegador personal',()=>{
+ const p=read('technical-mf057-5-verificacion-http.json')
+ assert.equal(p.status,'REPRESENTATIVE_QA_COMPLETE_PERSONAL_AUTHENTICATION_PENDING');assert.equal(p.planned,16);assert.equal(p.verified,16);assert.equal(p.responses,99);assert.equal(p.http500,0);assert.equal(p.http429,0)
+ assert.equal(p.coverage.availableContracts,136);assert.equal(p.coverage.selectedCaseIds.length,16);assert.equal(p.verifiedSamples.length,16)
+ assert(p.verifiedSamples.every(s=>s.strategyOnlyInstrumentUnchanged&&s.manualTextPreserved))
+ for(const format of ['rubrica','lista-cotejo','escala','lista-ponderada'])assert.equal(p.verifiedSamples.filter(s=>s.format===format).length,4)
+ assert.equal(p.preservation.exactActivities,16);assert.equal(p.preservation.preservedReleases,79);assert.equal(p.preservation.preservedSnapshots,1137);assert.equal(p.preservation.currentReleases,80);assert.equal(p.preservation.currentSnapshots,1153);assert.equal(p.preservation.duplicates,0)
+ assert.equal(p.priorPersonalBaselines.count,15);assert.equal(p.priorPersonalBaselines.exact,true);assert.equal(p.priorPersonalBaselines.newBaselines,0);assert.equal(p.personalCreatorVerified,false)
+})

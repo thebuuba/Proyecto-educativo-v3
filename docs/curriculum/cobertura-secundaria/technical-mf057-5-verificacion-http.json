@@ -3,13 +3,13 @@
   "moduleCode": "MF_057_3",
   "grade": 5,
   "catalog": "evaluation-2026.147",
-  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "status": "REPRESENTATIVE_QA_COMPLETE_PERSONAL_AUTHENTICATION_PENDING",
   "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
   "planned": 16,
-  "preparedIds": 1,
-  "knownSavedAndInitiallyReopened": 1,
-  "verified": 1,
-  "responses": 10,
+  "preparedIds": 16,
+  "knownSavedAndInitiallyReopened": 16,
+  "verified": 16,
+  "responses": 99,
   "http500": 0,
   "http429": 0,
   "authoritativeProgress": "technical-mf057-5-evaluation-2026.147-source-ac3b7b05-d160-56f5-b176-0531e03b53a0-products-sample-c4384a05d1c1-http-progress.json",
@@ -22,11 +22,197 @@
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
       "hash": "4d22a04e6d4347723a7519424cdfdefb78f405357ccad20b1b5aa7a849421443"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "13310dec-5ed6-44ca-acc0-0c93dab209e0",
+      "snapshotId": "a69483f2-265a-460c-8bf3-84c79d0408e5",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a5d7cb7221ed2dfca9a0f03db70e41a48e6a2ca27f153832e82dd2772840336e"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "2a60b3dd-0155-4059-b250-7e2ee3eee129",
+      "snapshotId": "54311151-d529-4653-9777-1e1cd964dfe6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4f74e0f76de2ba59d84ed48b264bbe6d9aa1706d7a38b873dd01d6ae848a6518"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "606335ef-68f8-4337-b7ca-10338fb9ead3",
+      "snapshotId": "6939eced-bafd-4b26-9c45-21a7ed90042a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7bd4328eef727fc97d8bc165cf62d516e9019bd43bc9130edcde2adbc60a1887"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "18c03277-d7d7-426a-bc51-41b439a7f194",
+      "snapshotId": "aeddc2cb-2369-4076-9498-eac657b47d40",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "2c79ac53cedfb211d218ada238af570ec3b4bd797461a5c6ac8e723b2d31c871"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "48769a45-1dc8-498b-8f6c-4b4d023161c1",
+      "snapshotId": "05474823-f927-4af5-b2aa-d87a60ede435",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "768fe8662ec8caa21981d4c13d6b9908487819afe325f3cfafb1f97e34c4c8d1"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "7ce6f70c-2004-494b-a493-466d2240838b",
+      "snapshotId": "704ac2ac-b096-4a7e-b668-dd13ef34a453",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0f98c651a4e36bc478fee1c8b55cb3f0e7c3b7773336b11b7d86745acc193595"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "1b062956-9f0b-4edb-a1f5-d9697b48bd91",
+      "snapshotId": "9d667d88-dd38-4da8-bf46-b47d2b3aad7a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "952ed6966b786511fb7852127ab9b7f25a07f8bd29063e988ed71e99af69dfb6"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "caddd978-eef2-4360-9904-1811cf5d9aeb",
+      "snapshotId": "3fa02e2e-b744-4f78-abab-1f5c9e21def2",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7a22ab43e6253db76dd0ca0258f9164e3f37fe5f2c11ea1e3fa79a336f10eab1"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "7ff603b2-02d6-4793-b62f-83f4ef765c9e",
+      "snapshotId": "29b4feaa-c935-4705-a9db-216122037d2d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "34f0d6595585f10d40289b02c09369d06a383fb4df2134acb4b4a34750e2cafb"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "b31b3d53-267b-4f5a-9513-00fc26c75e10",
+      "snapshotId": "dc725a84-190b-4ba7-a80a-e1997f8f0425",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "51198a62f6e78537cd9f96e6dc6de81911309cf65c0294f11033c2fc57e499ac"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "2ec6c1ef-8c13-4cc7-ad68-ac41966cf94b",
+      "snapshotId": "d27e78d8-edfe-4abf-aa32-ae56dfe56182",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "e479f5d70fc40c5f1742985d4cda168af52c500926e70cfcfc0f725720a3e1fd"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "1edd4acb-e054-422c-9008-e37fa4782007",
+      "snapshotId": "0022e6a9-78e3-4777-b563-f939de76c72f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d3b1f64d708fd58590a75b84bb385e924e4d7f4c5c1275941e118c3c93806fbd"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "b3d0243e-7a4e-4a83-bf4e-f02ecd32e31d",
+      "snapshotId": "b40ea904-3519-43fb-be82-eeefb6f350a0",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ada389e1b9b10cdd9d6a1a6cda583ba1e463b2cd22debf3edb01a356edde5eec"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "f417a8ff-9ead-4bfa-8032-7c3a8abfb800",
+      "snapshotId": "80af6e0c-ac73-4235-8f62-39d422a83c2f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ffec2f5a773677048eaa39386ee2ea40b166b96dd301b40303c648560879305e"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "79ed95e7-9bf9-45b8-87f4-57705a188f27",
+      "snapshotId": "57f02404-e78d-47dc-8cb2-79e57656d6ab",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d31ae2f0ae172fd0844570b029357f7695a9627a5706f36bb80153ad953658eb"
     }
   ],
   "personalEvidence": "technical-mf057-5-navegador-personal.json",
   "limits": [
-    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
-    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
-  ]
+    "Dieciséis muestras representativas autenticadasQA; no todas las136consignas ni sus combinaciones porHTTP.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación.",
+    "Las pruebas locales de136consignas/cuatroformatos y su lectura completa se documentan aparte.",
+    "No se repitieron ejecutores ni se recrearonIDs; preservación posterior en lotes de4 y quincebaselines existentes por solo lectura."
+  ],
+  "executorStopped": true,
+  "coverage": {
+    "availableContracts": 136,
+    "selectedCaseIds": [
+      "dba-functions",
+      "dictionary-creation",
+      "access-odbc",
+      "database-modification",
+      "roles-creation",
+      "backup-schema",
+      "backup-creation",
+      "backup-restoration",
+      "disk-layout",
+      "monitor-alert-creation",
+      "monitoring",
+      "updates-need",
+      "maintenance-plan",
+      "server-tests",
+      "point-in-time-recovery",
+      "independent-actions"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "latency": {
+    "responses": 99,
+    "minMs": 2015,
+    "medianMs": 5543,
+    "p95Ms": 9767,
+    "maxMs": 11735,
+    "timeoutsObserved": 0,
+    "limits": "Medición de esta ejecución de16muestras; no demuestra resolución de la latencia observada enMF056/MF059 ni caracteriza todas las condiciones de red."
+  },
+  "preservation": {
+    "readOnly": true,
+    "exactActivities": 16,
+    "preservedReleases": 79,
+    "preservedSnapshots": 1137,
+    "currentReleases": 80,
+    "currentSnapshots": 1153,
+    "duplicates": 0,
+    "strategyOnlyInstrumentUnchanged": true
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0,
+    "readOnly": true
+  },
+  "personalCreatorVerified": false
 }

@@ -1,5 +1,23 @@
 # Continuación del encargo integral de secundaria
 
+## Estado vigente 22 de octubre: MF057 con QA representativo completo; contratos MF058 revisados
+
+Rama `ampliacion-de-instrumentos-2`, HEAD de entrada `1fac5696`. NO PUSH vigente; no modificar integraciones, producción, main, cuentas ni datos anteriores. Sin subagentes. No desplegar. Los nuevos cambios son únicamente Node, consignas y documentación; la aplicación sigue exactamente en el build147 aprobado por99084 (backend94.786/FE92.701, cuatro builds y tres lints con salida0). No repetir suites/builds de aplicación sin otro cambio o fallo pertinente.
+
+**QA54141 terminó con salida0:16/16 muestras representativas,99respuestas, cero500/429/timeouts.** Cuatro muestras por formato y puntuaciones20/17.35, texto manual y cambio exclusivo de estrategia conservando exactamente el instrumento. No son136consignas porHTTP ni prueba visual personal. `technical-mf057-5-http.json` y el progreso de samplec4384a05d1c1 son autoridad; no volver a ejecutar, recrearIDs ni modificar resultados/baselines.
+
+Preservación posterior **33547 terminó0**, `mf057-completed-preservation.json`:16actividades/instrumentos/snapshots exactos, estrategiaCASE_STUDY/MANUAL;79releases y1.137snapshots anteriores exactos →80/1.153, cero duplicados. Cuatro lotes de4 en PostgreSQLREADONLY con el límite20s intacto. Quincebaselines posteriores **1044 terminó0**, `personal-baselines-preserved-after-mf057.json`; sin `--baseline`, nuevas capturas ni cambios de actividades personales. Los dos preparadores y ambos verificadores ya se ejecutaron una vez; no repetirlos como cierre.
+
+`record-mf057-completed-evidence.mjs` YA ejecutado una vez: resultadoHTTP público, matriz, revisión e inventario actualizados a QA representativo completo/personalAUTH_REQUIRED. Prueba positiva de cierre RED ante checkpoint1/16 →GREEN tras evidencia real. Una expectativa antigua `IN_PROGRESS` causó125/126 en la suite Node; se actualizó al estado final y se añadió una comprobación positiva16/personalfalse. Resultado final **54906 terminó0:126/126**, `.wrangler/secondary-completion/mf057-closure-mf058-contracts-node-final.log`.
+
+Runtime147 **68439/launcher29408**, listener8787 observadoPID17908 al retomar. No se reinició ni recompiló duranteQA. Verificación efectiva PG/Auth/Storage/frontend/assets/SW exclusivaDevelopment sigue documentada; no inspección/borrado de caché personal. Chrome1: pestaña personal1796703442 enlogin; no ingresarQA, enviar correo, cambiar contraseña ni tocar la pestañaMF0561796703424. Recorrido personalMF057 pendiente de autenticación; no actividad ni baseline personalMF057 nuevos.
+
+**MF058 contratos:62consignas/54grupos esperados**, fuente42registros/45partes ya revisada, diezCE y diecisieteprocedimientos referenciados. Fixture y recorder YA ejecutados una vez. Lectura completa0–30 y31–61; corregidas dos repeticiones en encabezado/pie del reporte. DosREDfixture→GREEN y unREDevidencia→GREEN; fuente+contratos6/6. Huellas en `technical-mf058-5-contratos-esperados.json`, matriz/inventario/informe `2026-10-22-tecnico-ifc-mf058-5-contratos.md`. Sin proveedorMF058, instrumentos completos, instalación o QA; no confundir contratos con cobertura terminada.
+
+Siguiente: auditar diff/secretos y guardar este bloque documental en commitLOCAL español. Continuar con proveedor pendiente MF055/sexto según su plan, solo después de congelar147 individualmente con80releases/1.153snapshots y comprobar runtime/contexto efectivos antes de cualquier escritura. MF055 tiene44consignas/34grupos leídos; MF058 tiene62/54; no recrear sus fixtures. Mantener parciales anterioresMF05933/100,MF05615/92,MF00236/95 yMF0533/49 sin reintentos ciegos; diagnósticos y preservaciones ya documentados. Catálogo148 todavía NO creado ni aplicado.
+
+### Checkpoint anterior, superado por el estado vigente
+
 ## Estado vigente 22 de octubre: MF057147 conectado, QA16 activo, personal sin autenticar
 
 Proveedor147/manifiesto confirmado en **5da88300de8f5d55ccd625f4604b225045af52f9**,84commits locales delante de refguardada. Treequedólimpio, nuevosNode/docsdeconexiónpendientescommit. Gates99084terminó0(94.786backend/92.701FE/4builds/3lints);preservación1.704previas+544nuevasexacta y146frozenexacto, comparadorescomunes0. Ningúncambio deaplicación posterior; no repetir builds.

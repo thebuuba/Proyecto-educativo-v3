@@ -3,12 +3,13 @@ import assert from 'node:assert/strict'
 import {readFileSync,existsSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 const root='docs/curriculum/cobertura-secundaria/',read=p=>{assert(existsSync(p),'Falta revisión completa MF057');return JSON.parse(readFileSync(p,'utf8'))}
-test('MF057 registra instrumentos leídos sin afirmar instalación o pruebas remotas',()=>{
+test('MF057 registra instrumentos leídos y QA representativo sin acreditar navegador personal',()=>{
  const r=read(root+'technical-mf057-5-revision.json'),f=read('data/evaluation-instruments/technical-mf057-five-contracts.json'),m=read(root+'technical-ifc006-mf057-5-matriz.json')
  assert.equal(r.catalog,'evaluation-2026.147');assert.equal(r.runtimeInstalled,true);assert.equal(r.reviewer,'SELF_REVIEW_NO_SUBAGENTS')
  assert.equal(r.topics,115);assert.equal(r.cases,136);assert.equal(r.fullInstruments,544);assert.equal(r.uniqueCompleteCriteria,133);assert.equal(r.pendingInstrumentReading,0)
  const installed=read(root+'technical-mf057-5-instalacion.json'),personal=read(root+'technical-mf057-5-navegador-personal.json')
- assert.equal(installed.catalogInstallation.second,'UNCHANGED');assert.equal(r.httpDb,'IN_PROGRESS');assert.equal(r.browser,'AUTHENTICATION_REQUIRED');assert.equal(personal.creatorVerified,false);assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA')
+ assert.equal(installed.catalogInstallation.second,'UNCHANGED');assert.equal(r.httpDb,'REPRESENTATIVE_QA_PASSED');assert.equal(r.browser,'AUTHENTICATION_REQUIRED');assert.equal(personal.creatorVerified,false);assert.equal(f.status,'IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA')
+ const http=read(root+'technical-mf057-5-verificacion-http.json');assert.equal(http.verified,16);assert.equal(http.personalCreatorVerified,false);assert.equal(r.status,'REVIEWED_INSTALLED_REPRESENTATIVE_QA_VERIFIED_PERSONAL_AUTH_REQUIRED')
  assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,115)
 })
 test('las544definiciones MF057 conservan textos completos, niveles y puntuación17.35',()=>{
