@@ -1,0 +1,72 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_056_3",
+  "grade": 4,
+  "status": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+  "accountKind": "PERSONAL_DEVELOPMENT",
+  "title": "QA Development · Tabla y decisión · MF056 · 21oct",
+  "description": "Analiza la tabla de la base de datos del caso concreto y justifica tu decisión con los datos dados.",
+  "creatorLoadedWithoutError": true,
+  "strategyInitially": "CASE_STUDY_AUTO",
+  "strategyFinally": "PROBLEM_BASED_MANUAL",
+  "formatsVisuallyVerified": [
+    "rubrica",
+    "lista-cotejo",
+    "escala",
+    "lista-ponderada"
+  ],
+  "initialPointsEmpty": true,
+  "scoreSequence": [
+    17.35,
+    20,
+    17.35
+  ],
+  "allocation": [
+    8.68,
+    8.67
+  ],
+  "manualTextPreserved": true,
+  "dom": {
+    "fieldsCompared": 13,
+    "transitions": [
+      "AUTO_TO_MANUAL",
+      "MANUAL_TO_AUTO",
+      "SAVE_AND_REOPEN",
+      "SAVED_STRATEGY_ONLY",
+      "FINAL_RELOAD"
+    ],
+    "allFieldValuesExact": true
+  },
+  "database": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "activityId": "c7fb57f5-6dd3-4e28-8f85-92d399d203d9",
+    "instrumentId": "b0c6cb5c-dca2-448d-8601-61b16067e5e2",
+    "snapshotId": "6caf1165-138c-4089-afa6-ed27c946a303",
+    "instrumentHash": "f19f0bbffaeb71be3d214192a99cdb40",
+    "type": "rubrica",
+    "score": "17.35",
+    "catalog": "evaluation-2026.145",
+    "strategy": "PROBLEM_BASED",
+    "origin": "MANUAL",
+    "manualTextPreserved": true,
+    "strategyOnlyInstrumentExactlyUnchanged": true
+  },
+  "previousBaselinesVerified": 14,
+  "baselineCreatedOnceAfterSaveAndReopen": true,
+  "automationSelectorWaitTimedOutOnce": true,
+  "reopenEventuallyCompleted": true,
+  "screenshotSha256": "702043941a852058d9cbfeeea4daa6b09662d6fd0f64723ab5a7d5c3c795562f",
+  "screenshotPrivate": true,
+  "screenshotCommitted": false,
+  "browserEntry": "/assets/index-Dgk2uIil.js",
+  "browserEntryMatchesBuild": true,
+  "serviceWorkerServedMatchesBuild": true,
+  "cacheAndServiceWorkerRegistrationInspected": false,
+  "cacheStorageCleared": false,
+  "limits": [
+    "Solo una rúbrica personal guardada; los cuatroformatos se comprobaron visualmente sin afirmar cuatroactividades personales persistidas.",
+    "El registro de serviceworker y almacenamiento de caché del navegador no se inspeccionaron ni borraron.",
+    "Una espera de selector venció antes de acabar la carga; después se observó la reapertura completa con13campos exactos."
+  ]
+}

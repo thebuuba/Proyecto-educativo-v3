@@ -1,0 +1,139 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_056_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.145",
+  "status": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
+  "verification": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "planned": 92,
+  "preparedIds": 9,
+  "knownSavedAndInitiallyReopened": 9,
+  "verified": 9,
+  "responses": 61,
+  "http500": 0,
+  "http429": 0,
+  "knownTransportTimeouts": 1,
+  "lateServerInterpret": {
+    "status": 200,
+    "ms": 42762,
+    "clientTimeoutMs": 30000
+  },
+  "firstInterruptionPreservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "readOnly": true,
+    "verified": 1,
+    "saved": 1,
+    "activities": [
+      {
+        "id": "d4277194-c005-4d4d-baa9-9918adcd831e",
+        "snapshotId": "87e93e13-48ee-4212-83b2-9b7baef4bb3b",
+        "httpVerified": true,
+        "exact": true
+      }
+    ],
+    "preservedReleases": 77,
+    "preservedSnapshots": 1087,
+    "currentReleases": 78,
+    "currentSnapshots": 1089,
+    "duplicates": 0,
+    "http429": 0,
+    "http500": 0,
+    "lastCaseStrategySaved": true,
+    "lastCaseHttpReopenPending": false,
+    "transportTimeout": true,
+    "lateServerInterpretStatus": 200,
+    "lateServerInterpretMs": 42762,
+    "planned": 92,
+    "remoteWrites": false
+  },
+  "sameProgressResumedOnce": true,
+  "authoritativeProgress": "technical-mf056-4-evaluation-2026.145-source-03da7245-9fa9-595b-b9fb-1c32c4b14273-products-sample-3f17696d825c-http-progress.json",
+  "verifiedSamples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "d4277194-c005-4d4d-baa9-9918adcd831e",
+      "snapshotId": "87e93e13-48ee-4212-83b2-9b7baef4bb3b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9a98bf5309717640d039b66c646e71c53ba801107962e3b7b146910de79a825c"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "011d3484-28e2-46de-b1f3-d0ad84a5a982",
+      "snapshotId": "48ae9f2a-589b-4223-a45c-9a0e4f4078ad",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "105387d4810d3b3529cee72d00820a2574f4d25991bd57afba357cb388f8d88d"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "ba34f0a0-c15d-4be9-aec9-0cb826ebf0fe",
+      "snapshotId": "bce7aaf1-5867-4fd8-9229-e8c58dd7cd28",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "5ddac56dfae1fecdf97bbec9632815a94363dc5e3e04c4a18d443a0399246ba5"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "e7e3d358-7022-43eb-8ddf-143b5863498c",
+      "snapshotId": "71b549ca-f31b-4108-ba10-8a878ba3f1de",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "6d3bb74928697d7cfc8e8a69e1a2474eb59859acbb61e260580c8256fef1fbc0"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "fedbe8ec-f928-4d9e-a58c-4de254ffe11b",
+      "snapshotId": "11c024ef-6ba0-45c6-a161-1af01aa9958c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "1d6d693f253364a9ed3622bdf815341b0e56d82d04df105fa0927ad2c3c74cb2"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "c83b8cce-8c51-45ad-b732-8dd9fc125292",
+      "snapshotId": "a7b77d15-2ee2-4320-8c6e-0b913f6e99d1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b5aebe4e737a55a393a6cef1120d1551788a93b627ba1600824493a9875dfb93"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "d776b258-ecd2-49a6-a68e-88d09561f421",
+      "snapshotId": "5466214b-3904-4d5f-98fc-c70cdc8adb3f",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "628dd1eb332167cc814b7827f7486ceed645b448429ff69367408e7233dc5e45"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "d81689a0-4503-46cf-9ca6-c8aec5268c8b",
+      "snapshotId": "ee7517f1-a80b-4649-ad6a-f9ec71130720",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "a998604bfe686633801266ba849a4728fda979847585548f63cbb1128f1ae3ac"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "4a501503-fd17-487d-9a09-f03285ecfd9f",
+      "snapshotId": "10ddaaa3-b214-4858-a77f-5358364ebb5c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7b8bff4e09826d8c37d39f9f0ac749d9c30ced5e8ee6db1ff7c20320992009e1"
+    }
+  ],
+  "personalEvidence": "technical-mf056-4-navegador-personal.json",
+  "limits": [
+    "Muestreo incompleto; no acredita92recorridos ni todas las combinaciones de propósito/formato/puntuación.",
+    "La causa de la latencia no está establecida; no se alteraron timeouts, red, límites o protecciones."
+  ]
+}

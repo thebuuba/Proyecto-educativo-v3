@@ -2680,12 +2680,13 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "CONNECTED_PERSONAL_VERIFIED_HTTP_IN_PROGRESS",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.145",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
+    "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "installation": "technical-mf056-4-instalacion.json"
   },
   "limits": [
     "Operaciones de datos y acceso solo con datos ficticios y bases de práctica expresamente indicadas; no operaciones destructivas en producción ni cuentas personales.",
@@ -2710,8 +2711,10 @@
       "evidence": "technical-mf056-4-revision.json"
     },
     "automated": "BACKEND_92531_FRONTEND_ACTIVITIES_90811_BUILDS_GREEN",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "IN_PROGRESS_WITH_PRIOR_TRANSPORT_TIMEOUT",
+    "browser": "PERSONAL_RUBRIC_SAVED_REOPENED_STRATEGY_ONLY_EXACT",
+    "httpEvidence": "technical-mf056-4-verificacion-http.json",
+    "browserEvidence": "technical-mf056-4-navegador-personal.json"
   },
   "localVerification": "technical-mf056-4-comprobaciones-locales.json"
 }

@@ -1,0 +1,78 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_056_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.145",
+  "status": "INSTALLED_IDEMPOTENT_DEVELOPMENT",
+  "source": {
+    "code": "MINERD_IFC006_MF056_4_NORM_2017_V1",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "versionId": "03da7245-9fa9-595b-b9fb-1c32c4b14273",
+    "scopeId": "3b3563ab-9e06-5170-9b71-322b0a213ad7",
+    "elements": 72,
+    "spans": 73,
+    "documentaryRecords": 10,
+    "literalRecords": 82,
+    "literalParts": 83,
+    "excludedFromAssessment": 10
+  },
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.145",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 77,
+    "preservedSnapshots": 1087,
+    "finalReleases": 78,
+    "finalSnapshots": 1087,
+    "sourceEqualsCompiled": true,
+    "previousPayloadsUnchanged": true,
+    "payloadEquality": "POSTGRESQL_JSONB_EQUALITY_PARAMETERIZED",
+    "historicalProof": "FROZEN144_AND_ALL_SAVED_FINGERPRINTS_AND_UNCHANGED_HISTORICAL_FILES",
+    "historicalFilesUnchangedSince": "eb878ce0",
+    "originalAttempt": "CONNECTION_TERMINATED",
+    "boundedRetry": "INTENTIONALLY_STOPPED_OWN_PID64656_AFTER_NO_RELEASE_AND_NO_ACTIVE_SQL",
+    "newAccounts": 0,
+    "newActivities": 0,
+    "deploy": false
+  },
+  "contexts": {
+    "executions": 4,
+    "modes": [
+      {
+        "mode": "qa",
+        "grade": 4,
+        "moduleCode": "MF_056_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      },
+      {
+        "mode": "personal",
+        "grade": 4,
+        "moduleCode": "MF_056_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      }
+    ],
+    "originalDataUnchanged": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "priorPersonalBaselines": {
+    "count": 14,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "originalConnectionFailure": "Connection terminated unexpectedly",
+  "secondAttempt": "OWN_PROCESS_INTENTIONALLY_STOPPED_NO_RELEASE_AND_NO_ACTIVE_SQL",
+  "serverComparisonTests": 5,
+  "deploy": false,
+  "push": false
+}

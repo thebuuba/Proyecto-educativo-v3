@@ -3,8 +3,8 @@
   "programCode": "IFC006_3",
   "grade": 4,
   "catalog": "evaluation-2026.145",
-  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "status": "REVIEWED_INSTALLED_PERSONAL_VERIFIED_HTTP_IN_PROGRESS",
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "independence": "Revisión propia; no se utilizaron subagentes por instrucción del usuario.",
   "method": "Lectura completa de los 78 textos y 82 ensamblajes de v1. Tras 17 regresiones RED→GREEN, lectura de los 22 textos cambiados o nuevos y seis ensamblajes de propiedades del diccionario en v2; 69 textos permanecen exactos. Lectura del paquete completo de cuatro formatos de acciones independientes y comprobación exacta de los 368 instrumentos frente a los textos, ensamblajes, niveles y reglas de formato leídos. En v3 se leyeron las tres alternativas completas y cuatro ensamblajes adicionales tras dos fallos RED→GREEN; las conjunciones conservan ambas entregas. No se deduce pertinencia del conteo ni de HTTP200.",
@@ -77,8 +77,8 @@
     "sourceParityVerifiedByContracts": "BACKEND_92531_FRONTEND_ACTIVITIES_90811_FOCAL_737_GREEN"
   },
   "limits": [
-    "Catálogo145 candidato en fuente; todavía no instalado en Development.",
-    "MF056 HTTP/DB y navegador personal pendientes; no se sustituyen por contratos locales.",
+    "HTTP/DB incompleto y con un timeout del cliente; avance en la evidenciaHTTP.",
+    "Navegador personal verificado: cuatroformatos visibles y una rúbrica guardada/reabierta con estrategia sola exacta.",
     "No acredita cobertura integral de secundaria.",
     "Adaptaciones pedagógicas de AulaBase; no rúbricas literales del currículo."
   ],
