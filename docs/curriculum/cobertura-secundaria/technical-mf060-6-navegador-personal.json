@@ -1,0 +1,30 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_060_3",
+  "grade": 6,
+  "accountKind": "PERSONAL_DEVELOPMENT",
+  "status": "AUTHENTICATION_REQUIRED_CREATOR_NOT_VERIFIED",
+  "browserAvailable": true,
+  "creatorVerified": false,
+  "savedAndReopened": false,
+  "observation": "Las pestañas antiguas no pudieron vincularse; una pestaña nueva de Chrome2 cargó/login. Continuar como Alexauris mostró contraseña vacía. El DOM confirmó el entry de150. Sin correo nuevo, contraseña nueva, QA en el navegador o borrado de almacenamiento.",
+  "browserEntry": "/assets/index-CBNy98H1.js",
+  "browserEntryMatchesBuild": true,
+  "newPassword": false,
+  "emailSent": false,
+  "storageCleared": false,
+  "oldPersonalTabsReloaded": false,
+  "previousPersonalBaselinesExact": 15,
+  "newBaselines": 0,
+  "manualSteps": [
+    "Iniciar sesión personalmente en localhost:8787 con la cuenta propia de Development.",
+    "Abrir Soluciones Web y Multimedia de sexto técnico; completar título y descripción y comprobar estrategia automática y selección manual.",
+    "Comprobar el instrumento completo en los cuatro formatos, con puntos inicialmente vacíos y después17.35; conservar las ediciones manuales.",
+    "Guardar, reabrir y cambiar únicamente la estrategia; guardar y reabrir para comprobar instrumento, puntuación y texto exactos."
+  ],
+  "limits": [
+    "El recorrido personal del creador no se completó por autenticación.",
+    "QA HTTP/DB no sustituye la prueba visual personal.",
+    "La caché y el registro de service worker del navegador no se inspeccionaron ni borraron."
+  ]
+}

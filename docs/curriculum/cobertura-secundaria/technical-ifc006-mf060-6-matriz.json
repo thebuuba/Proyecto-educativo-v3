@@ -2710,12 +2710,13 @@
     }
   ],
   "implementation": {
-    "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+    "status": "INSTALLED_QA_BLOCKED_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.150",
     "instrumentReview": "REVIEWED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "CONNECTION_TIMEOUT_BLOCKED",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "installation": "technical-mf060-6-instalacion.json"
   },
   "limits": [
     "Usar recursos y datos ficticios; no ejecutar despliegues, publicaciones reales, compras, visitas ni instalaciones en producción.",
@@ -2740,7 +2741,9 @@
       "evidence": "technical-mf060-6-revision.json"
     },
     "automated": "FINAL_LOCAL_GATES_PASSED",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "httpDb": "CONNECTION_TIMEOUT_BLOCKED",
+    "browser": "AUTHENTICATION_REQUIRED",
+    "httpEvidence": "technical-mf060-6-verificacion-http.json",
+    "browserEvidence": "technical-mf060-6-navegador-personal.json"
   }
 }

@@ -1,0 +1,95 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_060_3",
+  "grade": 6,
+  "catalog": "evaluation-2026.150",
+  "status": "QA_BLOCKED_CONNECTION_TIMEOUT_PERSONAL_AUTH_REQUIRED",
+  "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
+  "planned": 16,
+  "preparedIds": 0,
+  "knownSavedAndInitiallyReopened": 0,
+  "verified": 0,
+  "responses": 2,
+  "http500": 0,
+  "http429": 0,
+  "authoritativeProgress": "technical-mf060-6-evaluation-2026.150-source-103a7b19-ad89-5df9-95b6-a3faef8e1a7f-products-sample-d04925d5effd-http-progress.json",
+  "verifiedSamples": [],
+  "personalEvidence": "technical-mf060-6-navegador-personal.json",
+  "limits": [
+    "0de16 recorridos completos; no se acredita preparación, guardado, reapertura ni estrategia-only deMF060 mediante HTTP.",
+    "El primer ejecutor solo completó login/center; el rechazo esperado400 llegó después de su timeout.",
+    "El sondeo positivo independiente devolvió500 por timeout de conexión PostgreSQL; otra consulta de preservación readonly también falló antes de escribir.",
+    "La última preservación83/1185/0actividades se confirmó antes del sondeo positivo; la comprobación posterior y15baselines posteriores siguen pendientes.",
+    "El coste medido de catálogo enNode no aísla toda la demora delWorker ni demuestra una causa única. No se subieron timeouts ni se cambió producción.",
+    "QA y navegador personal están pendientes por bloqueos distintos."
+  ],
+  "initialClientTimeouts": 1,
+  "serverExcludedReference": {
+    "status": 400,
+    "ms": 34083,
+    "completedByClient": false,
+    "expectedErrorObservedInWorker": true
+  },
+  "independentPositiveProbe": {
+    "status": 500,
+    "headersMs": 20047.4546,
+    "bodyCompleteMs": 20049.2032,
+    "error": "Connection terminated due to connection timeout",
+    "dataWrites": false,
+    "notPartOfMainExecutor": true
+  },
+  "readOnlyDbDiagnostic": {
+    "stages": [
+      {
+        "name": "cold-role-read",
+        "ms": 1025.5228,
+        "ok": true
+      },
+      {
+        "name": "authorized-assignment-with-relations",
+        "ms": 1378.1928,
+        "ok": true
+      },
+      {
+        "name": "catalog-equality",
+        "ms": 13854.188799999998,
+        "ok": true
+      },
+      {
+        "name": "source-version",
+        "ms": 290.15899999999965,
+        "ok": true
+      },
+      {
+        "name": "parallel-scopes-and-mappings",
+        "ms": 1106.2016000000003,
+        "ok": true
+      },
+      {
+        "name": "elements-and-source-spans",
+        "ms": 582.2763999999988,
+        "ok": true
+      }
+    ],
+    "totalMeasuredDbMs": 18236.5414,
+    "causalLimit": "Node/Prisma measurements are separate from Worker HTTP and do not isolate transfer, network or request teardown."
+  },
+  "preservation": {
+    "previousReleases": 82,
+    "previousSnapshots": 1185,
+    "lastConfirmedReleases": 83,
+    "lastConfirmedSnapshots": 1185,
+    "lastConfirmedQaActivities": 0,
+    "confirmedBeforePositiveProbe": true,
+    "latestCheck": "CONNECTION_TIMEOUT",
+    "latestAttemptReadOnly": true,
+    "latestAttemptDataWrites": false
+  },
+  "personalBaselinesBefore": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "personalBaselinesAfter": "BLOCKED_NOT_VERIFIED",
+  "executorStopped": true
+}

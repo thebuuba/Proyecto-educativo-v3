@@ -3,8 +3,8 @@
   "programCode": "IFC006_3",
   "grade": 6,
   "catalog": "evaluation-2026.150",
-  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "status": "REVIEWED_INSTALLED_QA_BLOCKED_PERSONAL_AUTH_REQUIRED",
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "method": "Lectura completa de98textos/97ensamblajesv1; después23textos y22ensamblajes nuevos/modificadosv2 (82textos exactos). Leído el paquete independent-actions completo en cuatroformatos;472definiciones contrastadas exactamente contra textos, ensamblajes, niveles y reglas de formato leídos. Pertinencia contrastada con fuente y consigna, sin inferirla del conteo.",
   "sourcePages": [
@@ -47,14 +47,15 @@
       5.78
     ]
   },
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "CONNECTION_TIMEOUT_BLOCKED",
+  "browser": "AUTHENTICATION_REQUIRED",
   "automated": "FINAL_LOCAL_GATES_PASSED",
   "limits": [
-    "Catálogo150 candidato en fuente, no instalado ni servido. localhost no tiene un proceso escuchando en8787;149 fue la última versión verificada.",
+    "Fuente MF060,catálogo150 y contextos instalados idempotentemente solo en Development.",
     "Pruebas autenticadasMF060HTTP/DB y navegador personal pendientes; la QA anterior no las sustituye.",
     "Adaptaciones deAulaBase, no rúbricas oficiales; datos ficticios y conexión de práctica, sin publicación real o credenciales.",
-    "Las90adaptaciones/118consignas no agotan todas las combinaciones curriculares."
+    "Las90adaptaciones/118consignas no agotan todas las combinaciones curriculares.",
+    "QA0/16 por timeout de cliente y conexión PostgreSQL; conservación posterior pendiente por el mismo acceso."
   ],
   "instruments": [
     {

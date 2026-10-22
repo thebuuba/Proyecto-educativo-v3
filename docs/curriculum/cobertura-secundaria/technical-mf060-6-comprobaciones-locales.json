@@ -1,0 +1,74 @@
+{
+  "catalog": "evaluation-2026.150",
+  "gates": 9,
+  "backendTests": 97163,
+  "frontendActivityTests": 94624,
+  "nodeTechnicalTests": 167,
+  "frozen149Exact": true,
+  "priorTechnicalDefinitions": 2736,
+  "newTechnicalDefinitions": 472,
+  "englishDefinitions": 15176,
+  "mathDefinitions": 2888,
+  "optativeDefinitions": 14488,
+  "jsAssets": 76,
+  "allJsPrecached": true,
+  "maximumAssetBytes": 1909161,
+  "deploy": false,
+  "push": false,
+  "remoteWrites": false,
+  "catalogBuild": "evaluation-2026.150",
+  "project": "eolgunypmtgrsyrjzcld",
+  "base": "http://localhost:8787",
+  "postgres": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "role": "app_backend_local",
+    "bypassRls": false
+  },
+  "auth": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "storage": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "status": 200
+  },
+  "frontend": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "entry": "/assets/index-CBNy98H1.js",
+    "matchesBuild": true
+  },
+  "assets": [
+    {
+      "path": "/assets/index-CBNy98H1.js",
+      "sha256": "f8e765b992523b64115fdc67edce25a0efba0826bc9788a57f13aff20aa2a646",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityEditorWorkspace-3sXCc5Gj.js",
+      "sha256": "1eb5f39525c6f8bc66f31753777c3252aecc9d4f4d3acdb071a4ef794868b177",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/ActivityInfoModal-B_jfCjiY.js",
+      "sha256": "58d99fea3d84c0fef35ea1b9c97466cf7af3a8a8e2cb64a944da7c549e3109d9",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/instrumentos-tecnicos-BnsVe8qu.js",
+      "sha256": "ff9edefd787c072a0eaf0a30e8f5951199b5a8ccabf47ed479e6e1068d3fb2a3",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/PlanningPage-DXPRRy0f.js",
+      "sha256": "7bea872112da4240fac52a5dd4b2c2c674eaf59a4009f838f3e7722c92b78737",
+      "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/sw.js",
+      "sha256": "a3ace365e7feb7e7f04e9c469b90b3e118a95f5051790ee2649e57fdf81f675b",
+      "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+    }
+  ],
+  "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP",
+  "serving": true
+}

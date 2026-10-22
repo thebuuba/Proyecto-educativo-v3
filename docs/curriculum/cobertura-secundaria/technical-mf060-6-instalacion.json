@@ -1,0 +1,82 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_060_3",
+  "grade": 6,
+  "catalog": "evaluation-2026.150",
+  "status": "INSTALLED_IDEMPOTENT_DEVELOPMENT",
+  "source": {
+    "code": "MINERD_IFC006_MF060_6_NORM_2017_V1",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "versionId": "103a7b19-ad89-5df9-95b6-a3faef8e1a7f",
+    "scopeId": "e31f5250-20cb-5977-8c2a-be54ab511607",
+    "elements": 60,
+    "spans": 64,
+    "documentaryRecords": 10,
+    "literalRecords": 70,
+    "literalParts": 75,
+    "excludedFromAssessment": 9
+  },
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.150",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 82,
+    "preservedSnapshots": 1185,
+    "finalReleases": 83,
+    "finalSnapshots": 1185,
+    "sourceEqualsCompiled": true,
+    "frozen149Exact": true,
+    "previousPayloadsUnchanged": true,
+    "payloadEquality": "POSTGRESQL_JSONB_EQUALITY_PARAMETERIZED",
+    "newAccounts": 0,
+    "newActivities": 0,
+    "deploy": false,
+    "push": false
+  },
+  "contexts": {
+    "executions": 4,
+    "modes": [
+      {
+        "mode": "qa",
+        "sectionSubjectId": "fd29bfa1-ea32-42f9-9730-2dba7c8750ca",
+        "grade": 6,
+        "moduleCode": "MF_060_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      },
+      {
+        "mode": "personal",
+        "sectionSubjectId": "275c07fa-f8a9-4f9c-b678-e84dcab312a9",
+        "grade": 6,
+        "moduleCode": "MF_060_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      }
+    ],
+    "originalDataUnchanged": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "incidents": [
+    {
+      "phase": "context-preparation",
+      "reason": "Nombre de archivo con grado5 en el primer preparador; falló antes de entorno, DB o fingerprint. Ruta corregida, primera ejecución conservada; cuatro ejecuciones posteriores idempotentes.",
+      "remoteWritesBeforeFailure": false
+    }
+  ],
+  "deploy": false,
+  "push": false
+}

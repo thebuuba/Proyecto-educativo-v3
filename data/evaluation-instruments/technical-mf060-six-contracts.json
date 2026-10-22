@@ -5,7 +5,7 @@
   "grade": 6,
   "cycle": 2,
   "modalityCode": "technical_professional",
-  "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+  "status": "INSTALLED_QA_BLOCKED_PERSONAL_AUTH_REQUIRED",
   "cases": [
     {
       "id": "language-selection",
@@ -1255,6 +1255,7 @@
     "Actitudes privadas y orientaciones docentes no generan criterios automáticos. No evaluar compromiso personal con plazos.",
     "Los20CE/26P/5bandas conceptuales tienen referencias; esto no acredita agotar todos sus subtemas, variantes o instrumentos.",
     "Puntuación inicialmente pendiente, cuatroformatos posteriores, selección manual y contexto propio; sin cambiar UI, currículo instalado ni snapshots.",
-    "Proveedor y472instrumentos revisados en fuente; instalación y pruebasMF060HTTP/DB/navegador pendientes."
+    "Proveedor y472instrumentos revisados en fuente; instalación y pruebasMF060HTTP/DB/navegador pendientes.",
+    "QAHTTP/DB0/16; catálogo150 instalado, pero timeout de conexión bloqueó las pruebas antes de crear actividades."
   ]
 }

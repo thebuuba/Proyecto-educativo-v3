@@ -1,6 +1,24 @@
 # Continuación del encargo integral de secundaria
 
-## Estado vigente 22 de octubre: MF060150 verificado localmente; commit e instalación pendientes
+## Estado vigente 22 de octubre: MF060150 instalado; HTTP detenido antes de crear actividades
+
+Proveedor **32de51079f981c49dc7e7a9107c284a1054897c5**, ramaampliacion-de-instrumentos-2,93commits locales adelante de refguardada; NO PUSH/producción/main/despliegue/reset/cuentas/subagentes. Gates1509/9 ypreservación2736previas+472nuevas exactas completadas; detalles abajo. Apps/packages no cambiaron despuésdelcommit; no repetirbuilds. Cambios nuevos:allowlistHTTP9módulos con1RED→GREEN ydocumentación/pruebas deconexión.
+
+**Runtime150session76041/launcher45920 ACTIVO**,listener61224. `verify-runtime-150-mf060.mjs` session93870 terminó0: PGapp_backend_local/noBYPASS,Auth200,Storage200 yfrontendsoloDevelopment; entryindex-CBNy98H1.js/chunkinstrumentos-tecnicos-BnsVe8qu.js/assetsSWexactos. Chrome ahoraID2; tabsantiguas dieron debuggerunattached. Pestaña nueva **1796703483/mf060LoginTab** cargó/login,continuarAlexauris mostrócontraseñavacía yDOMentry150confirmado. Handoffmarcado. Preservar tabMF0561796703445; sincorreos/password/cachéborrada. PersonalAUTH_REQUIRED.
+
+Preflight58711terminó0, fuenteMF060/catalog150ausentes,historia82/1185exacta. **Instalación14728terminó0**,journal`mf060-install-commands.json`active:null:fuenteCREATED/UNCHANGED,catálogo150CREATED/UNCHANGED; previos82/1185preservados→83/1185. Fuente **103a7b19-ad89-5df9-95b6-a3faef8e1a7f**,scope **e31f5250-20cb-5977-8c2a-be54ab511607**,codeMINERD_IFC006_MF060_6_NORM_2017_V1;60elementos64spans+10doc11partes=70/75,9actitudesexcluidas. Sinmigracionesremotas.
+
+Primercontexto fallóENOENT(MF060_5)antesdeentorno/DB/fingerprint; no writes. Incidente preservado; `recover-mf060-context-preparation.mjs` YAejecutadoUNAvez, **19490terminó0**:cuatroejecucionesQA/personalidempotentes,datospreviosexactos,0cuentas/estudiantes. Journalautoridad`mf060-context-recovered-install-commands.json`; no repetiroriginalni corregido. Quincebaselinesbefore-MF060 **63424terminó0**,readonly,sinnuevascapturas. `record-mf060-connected-evidence.mjs` YAejecutadoUNAvez, no repetir.
+
+**QA43159 TERMINÓ1** por clienteTimeout30000ms enla primera peticiónreferenteexcluido; login201/4659ms ycenter200/5295ms. Workerregistródespués recommend400esperado/34083ms, no error500. **0preparadas/0guardadas/2respuestascompletas**. Progreso `technical-mf060-6-evaluation-2026.150-source-103a7b19-ad89-5df9-95b6-a3faef8e1a7f-products-sample-d04925d5effd-http-progress.json`; logUTF16`mf060-http-150.log`. NOrepetirejecutor/cambiar timeout/recapturarbaselines/reiniciar. `mf060-progress-summary.mjs` readonly. Selección16en`mf060-http-selection.json` preservada. Las3pruebasconnected seobservaronREDporfaltadeevidencia; primerasyatienenarchivos,tercerapendiente,noclaimQAverde.
+
+**Diagnóstico readonly64543 terminó0**:0actividades e historia83/1185exacta; role1026/context1378/catalog13854/version290/scopes1106/elements582ms. `mf060-readonly-latency.json`; fronteraNode distinta delWorker, causaúnicanoaislada. **Sondeopositivoindependiente70830terminó1**: login19907ms,interpretHTTP500/20049ms,Worker`Connection terminated due to connection timeout`,0writes. **Preservaciónposterior57701terminó1** por mismoerroralprimerconteo antesdewrites; no hayarchivoresultado. Últimaconfirmación83/1185/0QAesdiagnósticoANTESdelsondeopositivo. Helper15baselinesafter preparado pero NOejecutado por acceso caído; before15exacto noacreditaafter. NOseguirreintentando/nosubirtimeout/noconectarproducción.
+
+`record-mf060-blocked-evidence.mjs` YAejecutadoUNAvez: documentos/matriz/inventario/fixture/contratosactualizadosaCONNECTION_TIMEOUT_BLOCKED ypersonalAUTH_REQUIRED. Laspruebasconnected validan explícitamente0/16ynoacreditanrecorridoscompletos; esteverdeesdetratamientodeevidencia,noQAapp. **Node19597terminó0,170/170**. InformeMF060actualizado. Apps/packages siguenexactos32de5107, no repetirbuilds. Pendienteauditoría/diffycommitlocaldeconexión/bloqueo,sinpush. DespuéscontratosMF06142grupos/49casos propuestos sobre29registrosya releídosporcompleto eneste turno; aúnNOcreados. No nuevaimplementación151/freeze150 mientrasDBbloqueada. Continuartrabajoindependienteautorizado sin pararporconfirmación.
+
+### Checkpoint anterior, superado por el estado vigente
+
+## Estado anterior 22 de octubre: MF060150 verificado localmente; commit e instalación pendientes
 
 Continúa el encargo integral, sin push, despliegue, merge/main, producción, resets, nuevas cuentas ni subagentes. HEAD sigue en **6a742071**; los cambios del proveedor MF060 están sin commit. La comprobación actual del puerto8787 no encontró ningún listener: el Worker149 anterior ya no está activo. No arrancar otro proceso durante las compilaciones.
 

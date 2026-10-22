@@ -2,7 +2,7 @@
   "moduleCode": "MF_060_3",
   "programCode": "IFC006_3",
   "grade": 6,
-  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
+  "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_RUNTIME_QA_BLOCKED",
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
   "literalRecordsSha256": "39c65f467e9418ccadc552fd422570dfa423da3cbfd32c5b587480f63e2daae4",
@@ -11,7 +11,7 @@
   "sourceEvaluationCriteriaReferenced": 20,
   "sourceProceduresReferenced": 26,
   "sourceConceptBandsReferenced": 5,
-  "fixtureSha256": "25e4dacf540f5347fa067a038f9a3524478aa648c0afdb4cfcc2be1141ea7de6",
+  "fixtureSha256": "2dca379ab59e0a3582adb0bcfb9d0f13e169b900b58002d57a0aaebe6b38de50",
   "red": {
     "missingFixture": 2,
     "missingEvidence": 1
@@ -1370,8 +1370,8 @@
   ],
   "provider": "packages/shared/src/secondary-technical.ts",
   "fullInstrumentsReviewed": 472,
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "CONNECTION_TIMEOUT_BLOCKED",
+  "browser": "AUTHENTICATION_REQUIRED",
   "remoteWrites": false,
   "limits": [
     "Contratos esperados con datos y recursos ficticios; no equivalen a proveedor conectado ni instrumentos completos revisados.",
