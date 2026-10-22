@@ -3,13 +3,13 @@
   "moduleCode": "MF_055_3",
   "grade": 6,
   "catalog": "evaluation-2026.148",
-  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "status": "REPRESENTATIVE_QA_COMPLETE_PERSONAL_AUTHENTICATION_PENDING",
   "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
   "planned": 16,
-  "preparedIds": 3,
-  "knownSavedAndInitiallyReopened": 3,
-  "verified": 2,
-  "responses": 19,
+  "preparedIds": 16,
+  "knownSavedAndInitiallyReopened": 16,
+  "verified": 16,
+  "responses": 99,
   "http500": 0,
   "http429": 0,
   "authoritativeProgress": "technical-mf055-6-evaluation-2026.148-source-e8385936-5e49-5942-8714-52e2099a005a-products-sample-17c1bbe7bfc0-http-progress.json",
@@ -31,11 +31,188 @@
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
       "hash": "515f9ca163220df93b1546d3164e2bc30b507c99b1a12533b770ba02a79350d3"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "27202f5b-1c1d-4852-bdb8-f225ff801e50",
+      "snapshotId": "d58af676-6f87-4b38-bf1e-a408fff17831",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f1971dfa381c7487adb8d840f525b6e5a0c4dadd0ea047eba3fd387f3a47bc1b"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "50beeecc-7980-407c-aaa6-1f59abaae812",
+      "snapshotId": "a82949ae-a3e4-4276-9fa3-891616c9b46c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "02796562afc380ae3a4b35da802699aaed075d79bc092226f867a3e28676996b"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "153fa434-15d8-48aa-9a46-37e873fbed75",
+      "snapshotId": "9af96bc1-d266-4640-922e-ffeeac0af1c6",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "545fe0d15f840784844b4a70c7bc4fcfd9e3961f7b18cff919e95640884e33bd"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "d55e3dfe-8ef5-4457-b6a7-0e6c15f526d8",
+      "snapshotId": "456a58c9-9d64-405f-8c30-fe5402c262be",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "71787590d42ff33eb72269122662fcfe5ee794631fb340b91d56dbef1ac4b7c6"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "fb4ec204-2779-431e-afaf-78ec1a3cb608",
+      "snapshotId": "daf2edc5-98dc-4f76-8422-41452102cbef",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9b419ac6aab1fe83b31e7b0c1677a236b4b98f92d2d62656e5298521e06951ea"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "2a697032-1516-4754-a855-8b4db791b6bd",
+      "snapshotId": "4c509e1c-9e8c-47f8-b4ad-7759b85353be",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "50e035cd2d6c0cc2c866682e07ff587227dfdb4b290b6abea55f12f58dc362ef"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "2647f852-dcb9-4334-a596-c5b811290098",
+      "snapshotId": "ba85c4a9-b66a-43dc-b8d9-cbf837b7db59",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4592f1a852f60a311c7e692854996d8d77c74a3c67831a96c26296aece4dd352"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "65a8227b-0c7c-42b1-ae98-19ca51ac1477",
+      "snapshotId": "ec14df36-b2ae-49b3-86d5-ba1dba243e4e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "97fcc60e80668b2ca31d4062c2eee90bbaa2ef9b50f1fc5e2651cc9dfcc1b394"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "4af1bac1-e236-4e87-86d1-fb5950325127",
+      "snapshotId": "d9e49eca-e5d3-43ad-909e-50e020a25900",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "56b02f7191e94f0acd7a1053a99ccbc4389d0075808abfd80d5d465656f0c117"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "9fd8d227-6bbd-4e1e-bfc2-e1f7b769cedc",
+      "snapshotId": "fe726d6e-b417-4271-98d5-ec0fd7c9cca9",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "7c1f9bb923fd14f2d0b8f245f5a35dbe59392cb86193926200ed02aaf318714b"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "5e66f961-1de4-4401-96fa-77363ce2909c",
+      "snapshotId": "7a98cf36-8cc1-4fe2-b86b-ef41f242560b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "bb83d4d9a68bb5b7ddbae8ae6c21404dbce5a66270698d749ab056a820d56674"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "fc8c99b6-2916-4f77-8526-75848d905ee3",
+      "snapshotId": "11920954-f226-40a9-8ce3-763abfe38f4c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "697290637bda7a8d72d8634713a3cba8cd81cd76fd8ae09d487d0aeead7727ce"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "829dd393-819c-4fbd-9093-a8b66a439a77",
+      "snapshotId": "822ee273-ed9d-48fb-9222-52665f490c3d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "058a1953235cd09a27a717aa9eae7187e5019acfdd0be95ed8da8ebd1e7db81a"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "98c29dcd-63e0-4fe7-b3ed-bdba4a4cb46f",
+      "snapshotId": "a4333d68-dfda-42c3-a293-cd8942689e3c",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c096128f69ab98b13b747a02b3fa0b626aaef98ec4cd4e648d490161710c1203"
     }
   ],
   "personalEvidence": "technical-mf055-6-navegador-personal.json",
   "limits": [
-    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
-    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
-  ]
+    "Dieciséis muestras representativas autenticadasQA; no todas las50consignas ni sus combinaciones porHTTP.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación.",
+    "Las pruebas locales de50consignas/cuatroformatos y su lectura completa se documentan aparte.",
+    "No se repitieron ejecutores ni se recrearonIDs; preservación posterior en lotes de4 y quincebaselines existentes por solo lectura."
+  ],
+  "executorStopped": true,
+  "coverage": {
+    "availableContracts": 50,
+    "selectedCaseIds": [
+      "quality-parameters",
+      "test-selection",
+      "test-white-box",
+      "test-black-box",
+      "installation-selection",
+      "installation-parallel-brief",
+      "deliverables-explanation",
+      "deliverables-creation",
+      "reception-code-only",
+      "diagnostic-results",
+      "errors-citation",
+      "error-syntax-identification",
+      "error-overflow",
+      "protection-selection",
+      "backup-differential",
+      "independent-actions"
+    ],
+    "limits": "Muestras autenticadas del contexto y cuatro formatos; no todas las combinaciones de tema, propósito, formato y puntuación."
+  },
+  "latency": {
+    "responses": 99,
+    "minMs": 2044,
+    "medianMs": 4716,
+    "p95Ms": 8282,
+    "maxMs": 8983,
+    "timeoutsObserved": 0,
+    "limits": "Medición de esta ejecución de16muestras; no demuestra resolución de la latencia observada enMF056/MF059 ni caracteriza todas las condiciones de red."
+  },
+  "preservation": {
+    "readOnly": true,
+    "exactActivities": 16,
+    "preservedReleases": 80,
+    "preservedSnapshots": 1153,
+    "currentReleases": 81,
+    "currentSnapshots": 1169,
+    "duplicates": 0,
+    "strategyOnlyInstrumentUnchanged": true
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0,
+    "readOnly": true
+  },
+  "personalCreatorVerified": false
 }

@@ -1469,11 +1469,11 @@
     }
   ],
   "implementation": {
-    "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
+    "status": "REPRESENTATIVE_HTTP_DB_VERIFIED_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.148",
     "instrumentReview": "REVIEWED",
-    "httpDb": "IN_PROGRESS",
+    "httpDb": "REPRESENTATIVE_QA_PASSED",
     "browser": "AUTHENTICATION_REQUIRED",
     "installation": "technical-mf055-6-instalacion.json"
   },
@@ -1499,7 +1499,7 @@
       "evidence": "technical-mf055-6-revision.json"
     },
     "automated": "LOCAL_GATES_PASSED",
-    "httpDb": "IN_PROGRESS",
+    "httpDb": "REPRESENTATIVE_QA_PASSED",
     "browser": "AUTHENTICATION_REQUIRED",
     "httpEvidence": "technical-mf055-6-verificacion-http.json",
     "browserEvidence": "technical-mf055-6-navegador-personal.json"

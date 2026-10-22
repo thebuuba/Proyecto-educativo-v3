@@ -11,7 +11,7 @@ test('MF055 mantiene sexto técnico y referencias observables con proveedor revi
  assert.equal(new Set(f.cases.map(c=>c.id)).size,f.cases.length)
  for(const c of f.cases){assert(c.description.trim());assert(c.topics.length);assert(c.sourceRecordIds.length);for(const id of c.sourceRecordIds){assert(r.has(id),id);assert(!['ATTITUDE','TEACHING_STRATEGY'].includes(r.get(id).type),id)}}
  const refs=new Set(f.cases.flatMap(c=>c.sourceRecordIds));assert.deepEqual(m.officialRecords.filter(x=>['EVALUATION_CRITERION','PROCEDURE'].includes(x.type)&&!refs.has(x.id)).map(x=>x.id),[])
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,35);assert.equal(m.implementation.httpDb,'IN_PROGRESS');assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,35);assert.equal(m.implementation.httpDb,'REPRESENTATIVE_QA_PASSED');assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED')
 })
 test('MF055 separa el tipo de prueba e instalación seleccionado y los errores particulares',()=>{
  const f=fixture(),map=new Map(f.cases.map(c=>[c.id,c]))
