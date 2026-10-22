@@ -1,0 +1,1290 @@
+{
+  "moduleCode": "MF_060_3",
+  "subjectCode": "MF_060_3",
+  "programCode": "IFC006_3",
+  "subjectName": "Desarrollo e Implementación de Soluciones Web y Multimedia",
+  "level": "SECONDARY",
+  "grade": 6,
+  "cycle": 2,
+  "modalityCode": "technical_professional",
+  "optativeExitName": null,
+  "qualificationLevel": 3,
+  "annualHours": 360,
+  "weeklyHours": 8,
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-de-educacion-tecnico-profesional/lR2c-ifc006-3-bt-desarrollo-y-administracion-de-aplicaciones-informaticaspdf.pdf",
+    "sha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+    "pageCount": 74,
+    "editionYear": null,
+    "editionYearStatus": "NOT_PRINTED_ON_REVIEWED_PROGRAM_IDENTIFICATION",
+    "assignmentPdfPage": 14
+  },
+  "normativeValidation": {
+    "code": "06-2017",
+    "year": 2017,
+    "url": "https://ministeriodeeducacion.gob.do/transparencia/file/descarga?category=base-legal-de-la-institucion&fileExt=pdf&fileName=HWY-ordenanza-no-06-2017-por-la-que-se-validan-los-titulos-de-tecnico-basico-y-bachiller-tecnico-de-la-familia-profesional-informaticapdf.pdf&fileNombre=Ordenanza+No.+06-2017%2C+por+la+que+se+validan+los+T%C3%ADtulos+de+T%C3%A9cnico+B%C3%A1sico+y+Bachiller+T%C3%A9cnico+de+la+Familia+Profesional+Inform%C3%A1tica.pdf&subcategory=otras-normativas",
+    "sha256": "70494c664dc9e1b82ef80f8c042e5064c1a5a58f5a23084d6a89088d1a06e754",
+    "pageCount": 15,
+    "visuallyReviewedPdfPages": [
+      1,
+      3,
+      4,
+      5,
+      9,
+      10
+    ],
+    "moduleAssignmentPdfPage": 10,
+    "distinction": "Año de validación de la ordenanza; no se atribuye como fecha editorial impresa del PDF del programa."
+  },
+  "sourceVisualReview": {
+    "status": "REVIEWED",
+    "pages": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "boundary": "DesdeMÓDULO8 MF_060_3 enPDF42 hasta la cuarta orientación antes deMÓDULO9 MF_061_3 en47.",
+    "continuations": [
+      "RA8.1 yCE8.1.3 entre42/43.",
+      "CE8.3.1 entre43/44.",
+      "Banda conceptual de recursos/componentes y política de desarrollo entre44/45.",
+      "Celda actitudinal46 vacía; el procedimiento de relación de herramientas con entorno real en47 es otro registro."
+    ]
+  },
+  "officialRecords": [
+    {
+      "id": "ifc006-mf060-RA8.1",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.1",
+      "literal": "RA8.1: Seleccionar e instalar herramientas de desarrollo web para facilitar el funcionamiento de la aplicación, según requerimientos.",
+      "pdfPages": [
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "RA8.1: Seleccionar e instalar herramientas de desarrollo web para facilitar el funcionamiento de la"
+        },
+        {
+          "pdfPage": 43,
+          "text": "aplicación, según requerimientos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.1.1",
+      "literal": "CE8.1.1 Seleccionar el lenguaje de programación web, de acuerdo a las especificaciones del diseño.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "CE8.1.1 Seleccionar el lenguaje de programación web, de acuerdo a las especificaciones del diseño."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.1.2",
+      "literal": "CE8.1.2 Realizar pruebas de compatibilidad entre el sistema y el software, según las indicaciones del desarrollador.",
+      "pdfPages": [
+        42
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "CE8.1.2 Realizar pruebas de compatibilidad entre el sistema y el software, según las indicaciones del desarrollador."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.1.3",
+      "literal": "CE8.1.3 Instalar las aplicaciones necesarias ( java, adds, plugins ) para el correcto funcionamiento de la aplicación, según las prescripciones del autor. - Seleccionar varios navegadores. - Definir los entornos de prueba. - Identificar los parámetros a verificar. - Documentar los procesos realizados.",
+      "pdfPages": [
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 42,
+          "text": "CE8.1.3 Instalar las aplicaciones necesarias ( java, adds, plugins ) para el correcto funcionamiento de la aplicación, según las prescripciones del autor."
+        },
+        {
+          "pdfPage": 43,
+          "text": "- Seleccionar varios navegadores. - Definir los entornos de prueba. - Identificar los parámetros a verificar. - Documentar los procesos realizados."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-RA8.2",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.2",
+      "literal": "RA8.2: Desarrollar aplicaciones web y multimedia para satisfacer las necesidades del cliente, según requerimientos establecidos.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "RA8.2: Desarrollar aplicaciones web y multimedia para satisfacer las necesidades del cliente, según requerimientos establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.2.1",
+      "literal": "CE8.2.1 Integra los elementos del diseño Web, consultas, búsquedas y base de datos, de acuerdo al diseño propuesto.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "CE8.2.1 Integra los elementos del diseño Web, consultas, búsquedas y base de datos, de acuerdo al diseño propuesto."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.2.2",
+      "literal": "CE8.2.2 En un caso práctico, debidamente caracterizado, confirmar la compatibilidad del diseño utilizando navegadores (Mozilla, Chrome, Explorer) según requerimientos de los usuarios. Además, de: - Seleccionar los buscadores. - Incluir los descriptores en las páginas realizadas utilizando las etiquetas apropiadas. - Usar una aplicación de publicación automática para publicar las páginas realizadas. - Publicar manualmente las páginas que no puedan publicarse con un procedimiento automático. - Verificar periódicamente la funcionalidad de la página publicada.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "CE8.2.2 En un caso práctico, debidamente caracterizado, confirmar la compatibilidad del diseño utilizando navegadores (Mozilla, Chrome, Explorer) según requerimientos de los usuarios. Además, de: - Seleccionar los buscadores. - Incluir los descriptores en las páginas realizadas utilizando las etiquetas apropiadas. - Usar una aplicación de publicación automática para publicar las páginas realizadas. - Publicar manualmente las páginas que no puedan publicarse con un procedimiento automático. - Verificar periódicamente la funcionalidad de la página publicada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.2.3",
+      "literal": "CE8.2.3 Programar o configurar los elementos del sitio web, enlazando cada uno según el diseño propuesto y los requerimientos del cliente.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "CE8.2.3 Programar o configurar los elementos del sitio web, enlazando cada uno según el diseño propuesto y los requerimientos del cliente."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.2.4",
+      "literal": "CE8.2.4 En un caso práctico, verificar el funcionamiento de los componentes añadidos al diseño, de acuerdo con las especificaciones del diseño y el software utilizado. - Técnicas de verificación. - Verificar con base en criterios de calidad. - Verificar con base en criterios de usabilidad. - Herramientas de depuración para distintos navegadores. - Herramientas para Mozilla, Chrome, Internet Explorer, Opera y otros. - Creación y utilización de funciones de depuración. - Otras herramientas. - Navegadores: tipos y «plug-ins». - Descripción de complementos. - Complementos para imágenes. - Complementos para música. - Complementos para video. - Complementos para contenidos. - Máquinas virtuales.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "CE8.2.4 En un caso práctico, verificar el funcionamiento de los componentes añadidos al diseño, de acuerdo con las especificaciones del diseño y el software utilizado. - Técnicas de verificación. - Verificar con base en criterios de calidad. - Verificar con base en criterios de usabilidad. - Herramientas de depuración para distintos navegadores. - Herramientas para Mozilla, Chrome, Internet Explorer, Opera y otros. - Creación y utilización de funciones de depuración. - Otras herramientas. - Navegadores: tipos y «plug-ins». - Descripción de complementos. - Complementos para imágenes. - Complementos para música. - Complementos para video. - Complementos para contenidos. - Máquinas virtuales."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-RA8.3",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.3",
+      "literal": "RA8.3: Ejecutar las soluciones web propuestas según los procedimientos técnicos y de la institución, para cumplir con la etapa final del desarrollo.",
+      "pdfPages": [
+        43
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "RA8.3: Ejecutar las soluciones web propuestas según los procedimientos técnicos y de la institución, para cumplir con la etapa final del desarrollo."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.3.1",
+      "literal": "CE8.3.1 En un caso práctico, debidamente caracterizado, instalar en el servidor el diseño web, según los criterios y determinaciones acordados entre el cliente y el diseñador. - Establecer los requisitos de instalación y distribución de la aplicación. - Definir la estructura de directorios en el entorno servidor para ubicar los documentos y componentes de software desarrollado en la aplicación web. - Identificar los recursos afectados por el desarrollo realizado. - Indicar los servicios necesarios en el entorno servidor para poder ejecutar la aplicación web. - Especificar los parámetros de configuración adecuados en el entorno del servidor y cliente. - Establecer los parámetros de seguridad de la aplicación web. - Crear y configurar los paquetes de instalación de manera adecuada. - Verificar el buen funcionamiento del proceso de instalación y distribución.",
+      "pdfPages": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 43,
+          "text": "CE8.3.1 En un caso práctico, debidamente caracterizado, instalar en el servidor el diseño web, según los criterios y determinaciones acordados entre el cliente y el diseñador. - Establecer los requisitos de instalación y distribución de la aplicación. - Definir la estructura de directorios en el entorno servidor para ubicar los documentos y componentes de software desarrollado en la aplicación web. - Identificar los recursos afectados por el desarrollo realizado. - Indicar los servicios necesarios en el entorno servidor para poder ejecutar la aplicación web. - Especificar los parámetros de configuración adecuados en el entorno del servidor y cliente."
+        },
+        {
+          "pdfPage": 44,
+          "text": "- Establecer los parámetros de seguridad de la aplicación web. - Crear y configurar los paquetes de instalación de manera adecuada. - Verificar el buen funcionamiento del proceso de instalación y distribución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.3.2",
+      "literal": "CE8.3.2 Ejecutar el diseño web y realizar las pruebas de funcionamiento y almacenamiento de la información en la base de datos, según los parámetros establecidos.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.3.2 Ejecutar el diseño web y realizar las pruebas de funcionamiento y almacenamiento de la información en la base de datos, según los parámetros establecidos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.3.3",
+      "literal": "CE8.3.3 Realizar entrenamiento o dar las instrucciones al personal competente o usuario final del diseño para los fines de ejecución, de acuerdo con los requerimientos de la institución.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.3.3 Realizar entrenamiento o dar las instrucciones al personal competente o usuario final del diseño para los fines de ejecución, de acuerdo con los requerimientos de la institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-RA8.4",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.4",
+      "literal": "RA8.4: Proponer soluciones basadas en las nuevas tecnologías dentro del área de desarrollo de aplicaciones y sistemas de información.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "RA8.4: Proponer soluciones basadas en las nuevas tecnologías dentro del área de desarrollo de aplicaciones y sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.4.1",
+      "literal": "CE8.4.1 Identificar las características en la gestión empresarial (meta, visión y objetivos institucionales), así como las del área que requiere de una solución informática para automatizar sus procesos.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.4.1 Identificar las características en la gestión empresarial (meta, visión y objetivos institucionales), así como las del área que requiere de una solución informática para automatizar sus procesos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.4.2",
+      "literal": "CE8.4.2 Examinar los distintos medios de actualización tecnológica en el área de desarrollo de aplicaciones y sistemas de información. En un caso práctico, estos medios o fuentes pueden ser: - Manuales. - Búsquedas en Internet. - Participación en conferencia, charlas o talleres. - Entrevistas a otras organizaciones con experiencia. - Consultas a expertos.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.4.2 Examinar los distintos medios de actualización tecnológica en el área de desarrollo de aplicaciones y sistemas de información. En un caso práctico, estos medios o fuentes pueden ser: - Manuales. - Búsquedas en Internet. - Participación en conferencia, charlas o talleres. - Entrevistas a otras organizaciones con experiencia. - Consultas a expertos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.4.3",
+      "literal": "CE8.4.3 Identificar o reconocer debilidades y amenazas en la implementación tecnológica que requieren de la solución informática.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.4.3 Identificar o reconocer debilidades y amenazas en la implementación tecnológica que requieren de la solución informática."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.4",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.4.4",
+      "literal": "CE8.4.4 Definir nuevas tecnologías en función del tiempo dentro del área de desarrollo de aplicaciones y sistemas de información aplicadas a la gestión empresarial.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.4.4 Definir nuevas tecnologías en función del tiempo dentro del área de desarrollo de aplicaciones y sistemas de información aplicadas a la gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-RA8.5",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.5",
+      "literal": "RA8.5: Proponer mejoras o nuevas soluciones basadas en tendencias de usos de la innovación tecnológica, adecuadas a la gestión empresarial.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "RA8.5: Proponer mejoras o nuevas soluciones basadas en tendencias de usos de la innovación tecnológica, adecuadas a la gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.5.1",
+      "literal": "CE8.5.1 Demostrar conocimiento de participación en foros de intercambio de temas sobre nuevas tecnologías, en el área de desarrollo de aplicaciones y sistemas de información.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.5.1 Demostrar conocimiento de participación en foros de intercambio de temas sobre nuevas tecnologías, en el área de desarrollo de aplicaciones y sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.5.2",
+      "literal": "CE8.5.2 En un caso práctico, reproducir escenarios donde las nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información ofrezcan mejora de los procesos de gestión empresarial.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.5.2 En un caso práctico, reproducir escenarios donde las nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información ofrezcan mejora de los procesos de gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.5.3",
+      "literal": "CE8.5.3 Organizar la implementación de nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.5.3 Organizar la implementación de nuevas tecnologías en el área de desarrollo de aplicaciones y sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-RA8.6",
+      "type": "LEARNING_OUTCOME",
+      "sourceCode": "RA8.6",
+      "literal": "RA8.6: Planear la implementación de la solución tecnológica seleccionada para mejorar la gestión empresarial.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "RA8.6: Planear la implementación de la solución tecnológica seleccionada para mejorar la gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.1",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.6.1",
+      "literal": "CE8.6.1 Expresar en las reuniones de planificación la implementación de nuevas soluciones tecnológicas seleccionadas.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.6.1 Expresar en las reuniones de planificación la implementación de nuevas soluciones tecnológicas seleccionadas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.2",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.6.2",
+      "literal": "CE8.6.2 Aplicar la tarea asignada en el cronograma de implementación de la solución tecnológica seleccionada.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.6.2 Aplicar la tarea asignada en el cronograma de implementación de la solución tecnológica seleccionada."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.3",
+      "type": "EVALUATION_CRITERION",
+      "sourceCode": "CE8.6.3",
+      "literal": "CE8.6.3 Preparar reportes y minutas para informar a sus superiores del avance de la implementación de la nueva solución tecnológica.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "CE8.6.3 Preparar reportes y minutas para informar a sus superiores del avance de la implementación de la nueva solución tecnológica."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-c-resources-components",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Recursos de aplicación - Hojas de estilos. - Ficheros de configuración. - Imágenes. - Documentos. - Bibliotecas. Componentes - Librerías. - Seguridad web. - Niveles de seguridad.",
+      "pdfPages": [
+        44,
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "Recursos de aplicación - Hojas de estilos. - Ficheros de configuración. - Imágenes. - Documentos."
+        },
+        {
+          "pdfPage": 45,
+          "text": "- Bibliotecas. Componentes - Librerías. - Seguridad web. - Niveles de seguridad."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-c-domains",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Dominios. - Jerarquía de dominios. - Servicios de identificación de dominios: DNS. - Ámbitos: Intranet, Internet y Extranet. Consideraciones de seguridad. - Cortafuegos.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Dominios. - Jerarquía de dominios. - Servicios de identificación de dominios: DNS. - Ámbitos: Intranet, Internet y Extranet. Consideraciones de seguridad. - Cortafuegos."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-c-history-business",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Contexto histórico - Evolución de las TIC en las últimas décadas. - Investigación para innovar. - Relación entre estrategia empresarial y las TIC. Gestión empresarial - Características y tipos. - Meta, visión, misión y objetivos institucionales - Procesos. Institucionales.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Contexto histórico - Evolución de las TIC en las últimas décadas. - Investigación para innovar. - Relación entre estrategia empresarial y las TIC. Gestión empresarial - Características y tipos. - Meta, visión, misión y objetivos institucionales - Procesos. Institucionales."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-c-updates-proposals",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Medios de actualización tecnológica - Tipos. - Implementación de tecnología de la solución informática. Propuesta de Nuevas Tecnologías - Proceso innovador en la empresa actual. - Formulación de propuestas.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Medios de actualización tecnológica - Tipos. - Implementación de tecnología de la solución informática. Propuesta de Nuevas Tecnologías - Proceso innovador en la empresa actual. - Formulación de propuestas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-c-management-applications",
+      "type": "CONCEPT",
+      "sourceCode": null,
+      "literal": "Aplicaciones de gestión administrativa - Procesos institucionales. - Sistemas de gestión administrativa. - Portales de internet (CMS). - - Cloud Computing . - SaaS: Software como Servicio. - Aplicaciones Inteligencia de Negocio.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Aplicaciones de gestión administrativa - Procesos institucionales. - Sistemas de gestión administrativa. - Portales de internet (CMS). - - Cloud Computing . - SaaS: Software como Servicio. - Aplicaciones Inteligencia de Negocio."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-development-policies",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de políticas de desarrollo y pruebas de aplicaciones web (entorno de desarrollo, entorno de pre- producción o pruebas y entorno de producción).",
+      "pdfPages": [
+        44,
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "Realización de políticas de desarrollo y pruebas de aplicaciones web (entorno de desarrollo, entorno de pre-"
+        },
+        {
+          "pdfPage": 45,
+          "text": "producción o pruebas y entorno de producción)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-resources",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Organización de recursos en una aplicación web y programas (hojas de estilos, ficheros de configuración, imágenes, documentos, bibliotecas de componentes (librerías), otros archivos, seguridad en una aplicación web y niveles de seguridad).",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Organización de recursos en una aplicación web y programas (hojas de estilos, ficheros de configuración, imágenes, documentos, bibliotecas de componentes (librerías), otros archivos, seguridad en una aplicación web y niveles de seguridad)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-standards",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de estándares de programación web.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Aplicación de estándares de programación web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-access-techniques",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de técnicas de identificación, autenticación y autorización o control de acceso.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Aplicación de técnicas de identificación, autenticación y autorización o control de acceso."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-certificates",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación y autenticación avanzada. Certificados digitales.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Identificación y autenticación avanzada. Certificados digitales."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-deployment",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de despliegue de aplicaciones web.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Realización de despliegue de aplicaciones web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-deployment-characteristics",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Características del proceso de despliegue.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Características del proceso de despliegue."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-publication-procedures",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Procedimientos empresariales y de seguridad en la publicación de páginas web.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Procedimientos empresariales y de seguridad en la publicación de páginas web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-publication-tools",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de herramientas de transferencia y software específico utilizado por la empresa para la publicación de páginas web.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Aplicación de herramientas de transferencia y software específico utilizado por la empresa para la publicación de páginas web."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-process-documentation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Documentación de los procesos de acuerdo con los procedimientos de la empresa.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Documentación de los procesos de acuerdo con los procedimientos de la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-ict-cases",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de casos donde las Tecnologías de la Información y la Comunicación (TIC) fortalecieron los servicios del negocio o institución.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Identificación de casos donde las Tecnologías de la Información y la Comunicación (TIC) fortalecieron los servicios del negocio o institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-research-innovation",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Innovación en un proceso producto de la investigación.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Innovación en un proceso producto de la investigación."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-business-management",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de características y tipos de gestión empresarial.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Identificación de características y tipos de gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-institutional-objectives",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Diferencia entre meta, visión, misión y objetivos institucionales.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Diferencia entre meta, visión, misión y objetivos institucionales."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-institutional-processes",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Manipulación de los procesos institucionales y sus requerimientos de automatización.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Manipulación de los procesos institucionales y sus requerimientos de automatización."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-technology-updates",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de distintos medios de actualización tecnológica en el área de desarrollo de aplicaciones y sistemas de información.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Aplicación de distintos medios de actualización tecnológica en el área de desarrollo de aplicaciones y sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-weaknesses-threats",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Distintos casos prácticos mostrando las debilidades y amenazas identificadas en la implementación de nuevas tecnologías en la informática.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Distintos casos prácticos mostrando las debilidades y amenazas identificadas en la implementación de nuevas tecnologías en la informática."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-innovation-processes",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Construcción y adaptación de los procesos de innovación en la empresa.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Construcción y adaptación de los procesos de innovación en la empresa."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-innovation-importance",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Establecimiento de la importancia de la innovación para competir y evolucionar.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Establecimiento de la importancia de la innovación para competir y evolucionar."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-proposals",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Construcción y presentación de métodos y procedimientos para la formulación de propuestas.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Construcción y presentación de métodos y procedimientos para la formulación de propuestas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-information-systems",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación y diferenciación de los diferentes tipos de sistemas de información para las empresas.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Identificación y diferenciación de los diferentes tipos de sistemas de información para las empresas."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-management-applications",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Realización de las aplicaciones de gestión empresarial, entre ellos: - Procesos institucionales. - Sistemas de planificación de recursos empresariales (ERP). - Sistemas de relación administrativa del consumidor o servicio al consumidor (CRM). - Gestión de las relaciones con los proveedores (SRM). - Portales de internet (CMS). - Aplicaciones Inteligencia de Negocio.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Realización de las aplicaciones de gestión empresarial, entre ellos: - Procesos institucionales. - Sistemas de planificación de recursos empresariales (ERP). - Sistemas de relación administrativa del consumidor o servicio al consumidor (CRM). - Gestión de las relaciones con los proveedores (SRM). - Portales de internet (CMS). - Aplicaciones Inteligencia de Negocio."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-open-cloud-saas",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Identificación de las ventajas y desventajas del Open Source , Cloud Computing y SaaS (Software Como Servicio).",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Identificación de las ventajas y desventajas del Open Source , Cloud Computing y SaaS (Software Como Servicio)."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-application-configuration",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Configuración de distintas aplicaciones de gestión empresarial y de apoyo a las TIC usadas para fortalecer los servicios del negocio o institución.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Configuración de distintas aplicaciones de gestión empresarial y de apoyo a las TIC usadas para fortalecer los servicios del negocio o institución."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-use-scenarios",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de los distintos escenarios de uso de las aplicaciones de gestión empresarial.",
+      "pdfPages": [
+        46
+      ],
+      "parts": [
+        {
+          "pdfPage": 46,
+          "text": "Aplicación de los distintos escenarios de uso de las aplicaciones de gestión empresarial."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-p-tools-context",
+      "type": "PROCEDURE",
+      "sourceCode": null,
+      "literal": "Aplicación de la relación de las herramientas con su entorno real en forma concreta.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "Aplicación de la relación de las herramientas con su entorno real en forma concreta."
+        }
+      ],
+      "assessmentPolicy": "OBSERVABLE_CONTENT_TO_ADAPT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-free-software",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración de la importancia social del software libre.",
+      "pdfPages": [
+        44
+      ],
+      "parts": [
+        {
+          "pdfPage": 44,
+          "text": "Valoración de la importancia social del software libre."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-licenses",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Toma de conciencia de las implicaciones de licencias y derechos de autor en el uso de herramientas de programación.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Toma de conciencia de las implicaciones de licencias y derechos de autor en el uso de herramientas de programación."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-text-errors",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Valoración del efecto negativo de un texto con errores.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Valoración del efecto negativo de un texto con errores."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-cleanliness",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Higiene y limpieza en la entrega de los trabajos.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Higiene y limpieza en la entrega de los trabajos."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-innovation",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Disposición e iniciativa para la innovación y aportación de ideas.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Disposición e iniciativa para la innovación y aportación de ideas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-creativity",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Creatividad en las aportaciones a la solución.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Creatividad en las aportaciones a la solución."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-exploration",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Interés por la producción (exploración) de soluciones técnicas ante problemas que se presenten y, también, como elemento de mejora del proceso.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Interés por la producción (exploración) de soluciones técnicas ante problemas que se presenten y, también, como elemento de mejora del proceso."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-deadlines",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Compromiso con los plazos establecidos (previstos) en la ejecución de una tarea.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Compromiso con los plazos establecidos (previstos) en la ejecución de una tarea."
+        }
+      ],
+      "assessmentPolicy": "CONDITIONAL_OBSERVABLE_WHEN_EXPLICIT",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-a-problem-solving",
+      "type": "ATTITUDE",
+      "sourceCode": null,
+      "literal": "Resolución de problemas.",
+      "pdfPages": [
+        45
+      ],
+      "parts": [
+        {
+          "pdfPage": 45,
+          "text": "Resolución de problemas."
+        }
+      ],
+      "assessmentPolicy": "EXCLUDED_PRIVATE_DISPOSITION",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-m-prior",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Detección de conocimientos, capacidades y competencias en relación con el desarrolla e implementación de soluciones web.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "Detección de conocimientos, capacidades y competencias en relación con el desarrolla e implementación de soluciones web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-m-practice",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Realización de prácticas en grupos reducidos, en la implementación de multimedias en aplicaciones web.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "Realización de prácticas en grupos reducidos, en la implementación de multimedias en aplicaciones web."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-m-visits",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Visitas a empresa con la finalidad de plantear e implementar soluciones basadas en las nuevas tecnologías dentro del área de desarrollo de aplicaciones y sistemas de información.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "Visitas a empresa con la finalidad de plantear e implementar soluciones basadas en las nuevas tecnologías dentro del área de desarrollo de aplicaciones y sistemas de información."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    },
+    {
+      "id": "ifc006-mf060-m-feedback",
+      "type": "TEACHING_STRATEGY",
+      "sourceCode": null,
+      "literal": "Retroalimentación positiva en cada sección de clase.",
+      "pdfPages": [
+        47
+      ],
+      "parts": [
+        {
+          "pdfPage": 47,
+          "text": "Retroalimentación positiva en cada sección de clase."
+        }
+      ],
+      "assessmentPolicy": "TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE",
+      "adaptationIds": []
+    }
+  ],
+  "adaptations": [],
+  "implementation": {
+    "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+    "provider": null,
+    "instrumentReview": "NOT_STARTED",
+    "httpDb": "NOT_RUN",
+    "browser": "NOT_RUN"
+  },
+  "limits": [
+    "Usar recursos y datos ficticios; no ejecutar despliegues, publicaciones reales, compras, visitas ni instalaciones en producción.",
+    "Preservar literales históricos java, adds, plugins, Explorer y plug-ins sin exigir componentes obsoletos ni debilitar seguridad.",
+    "Las adaptaciones deberán diferenciar seleccionar, instalar en laboratorio, integrar, configurar, comprobar, documentar, proponer y planear, sin imponer todas las operaciones a cada consigna.",
+    "Nueve actitudes conservadas documentalmente: ocho privadas; plazos solo observable si la consigna y un registro proporcionado lo hacen explícito, sin inferir compromiso personal.",
+    "Cuatro orientaciones docentes no son entregables automáticos.",
+    "Conservar desarrolla, la viñeta -Cloud Computing y demás formulaciones impresas sin atribuirles precisión técnica automática."
+  ]
+}

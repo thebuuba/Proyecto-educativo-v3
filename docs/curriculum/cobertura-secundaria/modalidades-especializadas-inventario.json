@@ -5532,8 +5532,24 @@
             "weeklyHours": 8,
             "annualHours": 360,
             "sourcePdfPage": 14,
-            "status": "INVENTORIED_NOT_IMPLEMENTED",
-            "provider": null
+            "status": "SOURCE_REVIEWED_NOT_IMPLEMENTED",
+            "provider": null,
+            "contentReview": {
+              "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
+              "pdfPages": [
+                42,
+                43,
+                44,
+                45,
+                46,
+                47
+              ],
+              "matrix": "docs/curriculum/cobertura-secundaria/technical-ifc006-mf060-6-matriz.json",
+              "records": 70,
+              "literalParts": 75,
+              "provider": null,
+              "instrumentReview": "NOT_STARTED"
+            }
           },
           {
             "id": "IFC006_3-g6-MF_061_3",

@@ -1,0 +1,774 @@
+{
+  "moduleCode": "MF_060_3",
+  "programCode": "IFC006_3",
+  "grade": 6,
+  "status": "LITERAL_SOURCE_REVIEWED_NOT_IMPLEMENTED",
+  "reviewer": "PRIMARY_AGENT_SELF_REVIEW_NO_SUBAGENTS",
+  "method": "Lectura visual completa de PDF42–47 renderizado con fuentes WASM a1800px, desde el encabezadoMÓDULO8 hasta la cuarta orientación. Después lectura completa de los70registros/75partes de la transcripción, cotejada con las páginas; comprobación literal de cada parte contra la extracción, sin deducir integridad de esa comprobación automática.",
+  "sourceSha256": "70e6f9b44322610fadb7da3dc733e49d32d1abada73267da36f7e115e39817e9",
+  "pdfPages": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "assignmentPdfPage": 14,
+  "sourceEditionYear": null,
+  "normativeValidationYear": 2017,
+  "records": 70,
+  "parts": 75,
+  "counts": {
+    "learningOutcomes": 6,
+    "evaluationCriteria": 20,
+    "conceptBands": 5,
+    "procedures": 26,
+    "attitudes": 9,
+    "teachingOrientations": 4
+  },
+  "continuations": [
+    "RA8.1 yCE8.1.3 entre42/43.",
+    "CE8.3.1 entre43/44.",
+    "Banda conceptual de recursos/componentes y política de desarrollo entre44/45.",
+    "Celda actitudinal46 vacía; el procedimiento de relación de herramientas con entorno real en47 es otro registro."
+  ],
+  "attitudes": {
+    "privateExcluded": 8,
+    "conditionalOnlyWhenExplicit": [
+      "ifc006-mf060-a-deadlines"
+    ],
+    "defaultCriteria": 0
+  },
+  "boundaries": {
+    "previousModuleExcluded": "MF_059_3",
+    "nextModuleExcluded": "MF_061_3"
+  },
+  "provider": null,
+  "instruments": 0,
+  "httpDb": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "remoteWrites": false,
+  "recordHashes": [
+    {
+      "id": "ifc006-mf060-RA8.1",
+      "sha256": "b52733f64aac5ae2373f2b6c917bbf91d10980ddf24494c5e18ebcffee593544",
+      "parts": [
+        {
+          "pdfPage": 42,
+          "sha256": "ee6bdc58c8d381fff549a9c789b187076c802233ada1cfd15c3af324de50497d"
+        },
+        {
+          "pdfPage": 43,
+          "sha256": "47fc14d53655d73ee3e8fc60ec117ec66d239838a693f6d629692c43cd8d784e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.1",
+      "sha256": "070c308f26f7c991696cef68a46fcac576c326e4f864103e42577e58c073c374",
+      "parts": [
+        {
+          "pdfPage": 42,
+          "sha256": "070c308f26f7c991696cef68a46fcac576c326e4f864103e42577e58c073c374"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.2",
+      "sha256": "421167903cf515e0d2ca20456179d62dd3d43bda430049c4ff6923d511e75437",
+      "parts": [
+        {
+          "pdfPage": 42,
+          "sha256": "421167903cf515e0d2ca20456179d62dd3d43bda430049c4ff6923d511e75437"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.1.3",
+      "sha256": "929878d3e87916aa9085b56a4fe8747ca7c146265ef95a939e10dcf11a4408db",
+      "parts": [
+        {
+          "pdfPage": 42,
+          "sha256": "0f4b05af20eb7b6f8b839ca25f1dc7b951e92bd802fb997a5f9ad04d3b87e14a"
+        },
+        {
+          "pdfPage": 43,
+          "sha256": "03740ff4494a06f5c1a3814bda0df0c431b086486d26a1bed3f0d8b997c4b3f1"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-RA8.2",
+      "sha256": "a8272ffe767e3fb04db1434c53a60d041859ea3614b23a7d53f29c158964ed26",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "a8272ffe767e3fb04db1434c53a60d041859ea3614b23a7d53f29c158964ed26"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.1",
+      "sha256": "880ce2ffc0d64ca9c7a576a2f07cd85fca2c37dbfa90c0c285e1d88cd4a72e64",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "880ce2ffc0d64ca9c7a576a2f07cd85fca2c37dbfa90c0c285e1d88cd4a72e64"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.2",
+      "sha256": "2ade946000a6d3acb9263ace9c890dce0ee20618782c22557769220c29681d98",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "2ade946000a6d3acb9263ace9c890dce0ee20618782c22557769220c29681d98"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.3",
+      "sha256": "6af61a116cfccf41693ce69617528996ded5ecb915440002deb27ed524b2dacf",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "6af61a116cfccf41693ce69617528996ded5ecb915440002deb27ed524b2dacf"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.2.4",
+      "sha256": "fb645d5e12f998c83f42812b3ee49c7f02db149a284d3caf3f9a3701093ed748",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "fb645d5e12f998c83f42812b3ee49c7f02db149a284d3caf3f9a3701093ed748"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-RA8.3",
+      "sha256": "15abf4031abffea9f3809c7fcae0476aefcc037c38839981e4782a38b37afe46",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "15abf4031abffea9f3809c7fcae0476aefcc037c38839981e4782a38b37afe46"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.1",
+      "sha256": "96e64ac3364219cf9cc5c4014f3b36eca37a64d75e418432bf618c2e4b6fe312",
+      "parts": [
+        {
+          "pdfPage": 43,
+          "sha256": "44b183208c359137833da1080f99aa3a2d97659bbdc5e7725c57751278552454"
+        },
+        {
+          "pdfPage": 44,
+          "sha256": "076f2ed8df03788a7a7d36803a0d989f7cd158c6598ba7372a3eac915aea361a"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.2",
+      "sha256": "a82d415b799cfe5aa5ab61e65934383433be621ea87dccc6b5d18bfa48934268",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "a82d415b799cfe5aa5ab61e65934383433be621ea87dccc6b5d18bfa48934268"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.3.3",
+      "sha256": "43ad2fd94ffd9ae8e0d3905da89429fcc46de10f4c94dc1c60e21cec321a6400",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "43ad2fd94ffd9ae8e0d3905da89429fcc46de10f4c94dc1c60e21cec321a6400"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-RA8.4",
+      "sha256": "2bac6004bdb7f00980810987433c782b8352889b3f4c7b8c7ddfdbe2f0af2807",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "2bac6004bdb7f00980810987433c782b8352889b3f4c7b8c7ddfdbe2f0af2807"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.1",
+      "sha256": "d075929859b77d190e73abea0559aa63a1c2d44d2079e11db03461b204075364",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "d075929859b77d190e73abea0559aa63a1c2d44d2079e11db03461b204075364"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.2",
+      "sha256": "49e4f630aca7608f0b2b3fa9416f051b176bbec95123927261cee84fd85b3c15",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "49e4f630aca7608f0b2b3fa9416f051b176bbec95123927261cee84fd85b3c15"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.3",
+      "sha256": "b8bda499b439a369a0461ebfdcb308fc0542a049663bd31eafe1d75d79b7a41e",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "b8bda499b439a369a0461ebfdcb308fc0542a049663bd31eafe1d75d79b7a41e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.4.4",
+      "sha256": "48e20d6bac9addd6923d78dec1cdbc09de3add38d2285daf123216b5aa2c645c",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "48e20d6bac9addd6923d78dec1cdbc09de3add38d2285daf123216b5aa2c645c"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-RA8.5",
+      "sha256": "c4c875393986b8e0e3a61e4798a5ff43b0a62f43381ed2c4209ec30528456a47",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "c4c875393986b8e0e3a61e4798a5ff43b0a62f43381ed2c4209ec30528456a47"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.1",
+      "sha256": "2415374319f065c21b7f18af7a818c9c6f2040647d56efba164f59e2ffb09047",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "2415374319f065c21b7f18af7a818c9c6f2040647d56efba164f59e2ffb09047"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.2",
+      "sha256": "cf06b5d8aecc7080c47ab0c643cb06794e03ef0a67fb0e73bbb847894f9ccefd",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "cf06b5d8aecc7080c47ab0c643cb06794e03ef0a67fb0e73bbb847894f9ccefd"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.5.3",
+      "sha256": "57f985e4de362c9e10c87767aef88175120c548a57ab734a9a8af80a2b8acf53",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "57f985e4de362c9e10c87767aef88175120c548a57ab734a9a8af80a2b8acf53"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-RA8.6",
+      "sha256": "ea65802431573cbde2afbc635ff5f856afca71a7fdc2445bbabc3d4e0cde7c5e",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "ea65802431573cbde2afbc635ff5f856afca71a7fdc2445bbabc3d4e0cde7c5e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.1",
+      "sha256": "705b764e41496d24559d24c94561c1d1a9f135a739b5fe0ab9334d5be265854d",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "705b764e41496d24559d24c94561c1d1a9f135a739b5fe0ab9334d5be265854d"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.2",
+      "sha256": "2ef1ee6bd2f1b983c23fa779081791de5972aa92c66ddd6825f8de134b848b33",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "2ef1ee6bd2f1b983c23fa779081791de5972aa92c66ddd6825f8de134b848b33"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-CE8.6.3",
+      "sha256": "228cb4000f7c9c77b476da5e40c4b0c9fb1c2b7136d6adbfb2652d886f78bfbc",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "228cb4000f7c9c77b476da5e40c4b0c9fb1c2b7136d6adbfb2652d886f78bfbc"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-c-resources-components",
+      "sha256": "821d63c8395ea12cf1c9030d17432005a0a47ca3aad49f691040aa6d481e0147",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "cf2577caae1ad68a2bb068acf9bcdd7f6d18fe71f1ff85e6a692c73619ffbfa4"
+        },
+        {
+          "pdfPage": 45,
+          "sha256": "21b7c6971d2fc54e360c05ca23e8c33574a5e238493717bc4bba74b27649acf0"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-c-domains",
+      "sha256": "ea1d825993b58005d9f53ffb88c5c8cb95fbbc1c6bf0accc7659854d6f817051",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "ea1d825993b58005d9f53ffb88c5c8cb95fbbc1c6bf0accc7659854d6f817051"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-c-history-business",
+      "sha256": "2f146ad2efcfa52480b3347cd032644d522048d7e652b4047819d888156595ee",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "2f146ad2efcfa52480b3347cd032644d522048d7e652b4047819d888156595ee"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-c-updates-proposals",
+      "sha256": "ca266a81c2ed08aea0c3c9e2a485d83ee5006a9dcd5b6e7a2d5977e704127b8c",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "ca266a81c2ed08aea0c3c9e2a485d83ee5006a9dcd5b6e7a2d5977e704127b8c"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-c-management-applications",
+      "sha256": "ba744ee6a5da0c0e4b691f6bd7da163c868e36e92e3026595975962aec2b613e",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "ba744ee6a5da0c0e4b691f6bd7da163c868e36e92e3026595975962aec2b613e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-development-policies",
+      "sha256": "faf55d898eca2b5989623fe46e0a355fae8d6aeafa073aa51f7e31b1a32b61fc",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "96bf01b2b1cb5e6c49c15a2d69d834ef3b543c89138ce9a19f8dbaa3d135737a"
+        },
+        {
+          "pdfPage": 45,
+          "sha256": "4e929406718ff4efa797adc395209e32a780f4bc06ba3b55b329e3ce1027ef4c"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-resources",
+      "sha256": "5373062dc81de4b24639d1c14dae4f78d9414160106bed56034f0dbcd34ce4d4",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "5373062dc81de4b24639d1c14dae4f78d9414160106bed56034f0dbcd34ce4d4"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-standards",
+      "sha256": "954731bc26f2bb7d3dca97f6874434b81c2df1953c5f0388c1d6a83a057d95d2",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "954731bc26f2bb7d3dca97f6874434b81c2df1953c5f0388c1d6a83a057d95d2"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-access-techniques",
+      "sha256": "f27a2b32a5fd8d6c13bed2b66776ad70682dbd9f78f0c3f969207d1ee226df7a",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "f27a2b32a5fd8d6c13bed2b66776ad70682dbd9f78f0c3f969207d1ee226df7a"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-certificates",
+      "sha256": "5748cb9a5760b97160edc7470fc710e32b7a41202df50ba20df29d05a450178d",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "5748cb9a5760b97160edc7470fc710e32b7a41202df50ba20df29d05a450178d"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-deployment",
+      "sha256": "7c9a3a46e023173304fb3d6939dfacea03592be1323cc09b6b7f093cdba5b6fe",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "7c9a3a46e023173304fb3d6939dfacea03592be1323cc09b6b7f093cdba5b6fe"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-deployment-characteristics",
+      "sha256": "4fafd8aec1b4949d50c95d83c4c24c91a60db6171248f61e06ae640a0be7ccc8",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "4fafd8aec1b4949d50c95d83c4c24c91a60db6171248f61e06ae640a0be7ccc8"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-publication-procedures",
+      "sha256": "bf272f9f5a8f2f68bd8eb2b92fdf1f812b0ca33dfea1ce2a47109911987d4ebc",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "bf272f9f5a8f2f68bd8eb2b92fdf1f812b0ca33dfea1ce2a47109911987d4ebc"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-publication-tools",
+      "sha256": "13e6329da80026b25121dc0d89d061f0930ff8309d21e371f56b5d8ae7aa60b2",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "13e6329da80026b25121dc0d89d061f0930ff8309d21e371f56b5d8ae7aa60b2"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-process-documentation",
+      "sha256": "028794f63d14b0e731fc871de23b370a78fe19a9cd210f4038819f5a02652df8",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "028794f63d14b0e731fc871de23b370a78fe19a9cd210f4038819f5a02652df8"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-ict-cases",
+      "sha256": "d57f3ee3247ce21f05709980272cb8a265ff4db6d53f4b4ee381896f2af19f38",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "d57f3ee3247ce21f05709980272cb8a265ff4db6d53f4b4ee381896f2af19f38"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-research-innovation",
+      "sha256": "8f74d8f0cb68ea9d1e953f02d184ceb1740fd93deaf8acd4d216e1c2c14fb65e",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "8f74d8f0cb68ea9d1e953f02d184ceb1740fd93deaf8acd4d216e1c2c14fb65e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-business-management",
+      "sha256": "06a2f1bc0d51b34951fce3ebbcd619a2f4aea73b0ffe05d343c52b4667e2a63b",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "06a2f1bc0d51b34951fce3ebbcd619a2f4aea73b0ffe05d343c52b4667e2a63b"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-institutional-objectives",
+      "sha256": "056666d0053f4a14cbf1c9de93d710d544fcfb4b9f52c7b0e3bfa98e6f5f87fe",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "056666d0053f4a14cbf1c9de93d710d544fcfb4b9f52c7b0e3bfa98e6f5f87fe"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-institutional-processes",
+      "sha256": "db2932d3268b25d9181f509fd8b0a1827f4dd1ab2424f2a035f6334170110500",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "db2932d3268b25d9181f509fd8b0a1827f4dd1ab2424f2a035f6334170110500"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-technology-updates",
+      "sha256": "f0916bf691b08bff97e6c1e49abdd16391f9a8be3b94ab6a26d53fc19bdf0f6e",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "f0916bf691b08bff97e6c1e49abdd16391f9a8be3b94ab6a26d53fc19bdf0f6e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-weaknesses-threats",
+      "sha256": "b1a625a71cafdc43be115e9a65b55876e6501b17a57dca207b4ac143f7def758",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "b1a625a71cafdc43be115e9a65b55876e6501b17a57dca207b4ac143f7def758"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-innovation-processes",
+      "sha256": "eec20208fcd34ab23763e278017f0a9375cd0bf4a638ca123a905dec0c0abb08",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "eec20208fcd34ab23763e278017f0a9375cd0bf4a638ca123a905dec0c0abb08"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-innovation-importance",
+      "sha256": "d8cf7c9300d7d8dfa411c025c18fbb2407c32c5d52e3acbd6cc5084f74687e77",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "d8cf7c9300d7d8dfa411c025c18fbb2407c32c5d52e3acbd6cc5084f74687e77"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-proposals",
+      "sha256": "ac1b68a30b90eb4018ec9f335e76d48e1a7c4f13a4362e130a9dc8198a16ad56",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "ac1b68a30b90eb4018ec9f335e76d48e1a7c4f13a4362e130a9dc8198a16ad56"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-information-systems",
+      "sha256": "02f6ac3656ab01cc4339fa0f6fe463a28f417bf02787107f9ae3e07de363bb94",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "02f6ac3656ab01cc4339fa0f6fe463a28f417bf02787107f9ae3e07de363bb94"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-management-applications",
+      "sha256": "d6c6e1b08edf9a6996d8ab2a956561061c165516c270319649c774a6aaf81efd",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "d6c6e1b08edf9a6996d8ab2a956561061c165516c270319649c774a6aaf81efd"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-open-cloud-saas",
+      "sha256": "33f30010f201e57f7c7b0a674618ffbe4e83b1e8a62253fac0386168ec5afa95",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "33f30010f201e57f7c7b0a674618ffbe4e83b1e8a62253fac0386168ec5afa95"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-application-configuration",
+      "sha256": "ce625e12ce7ee1a10d5677eeae2ccf2d7d46afe29be9978a2228a1c961995f2f",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "ce625e12ce7ee1a10d5677eeae2ccf2d7d46afe29be9978a2228a1c961995f2f"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-use-scenarios",
+      "sha256": "3cd66d4e5568cd50f0c7acf798dd22e2aada01e3eb62630a8fe7982d43276f3f",
+      "parts": [
+        {
+          "pdfPage": 46,
+          "sha256": "3cd66d4e5568cd50f0c7acf798dd22e2aada01e3eb62630a8fe7982d43276f3f"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-p-tools-context",
+      "sha256": "667186485c9cedb35c1689e4b2e21163a73b4132e8b5b1fa95307579a1a40110",
+      "parts": [
+        {
+          "pdfPage": 47,
+          "sha256": "667186485c9cedb35c1689e4b2e21163a73b4132e8b5b1fa95307579a1a40110"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-free-software",
+      "sha256": "73e0e09faf85fe3962ea95e838d2d2ade0ec99e0ec3359c820e7eedf6b6a06bb",
+      "parts": [
+        {
+          "pdfPage": 44,
+          "sha256": "73e0e09faf85fe3962ea95e838d2d2ade0ec99e0ec3359c820e7eedf6b6a06bb"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-licenses",
+      "sha256": "bcdca24ddf9a9a39f9796c0f93f2d14bbbc66e5cb63ed4eea5f94bc57c70ae6c",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "bcdca24ddf9a9a39f9796c0f93f2d14bbbc66e5cb63ed4eea5f94bc57c70ae6c"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-text-errors",
+      "sha256": "bbf2cd4dcaf15524ade84269f184a5514d8c62bbdf32c7a4dff9ec391a610660",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "bbf2cd4dcaf15524ade84269f184a5514d8c62bbdf32c7a4dff9ec391a610660"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-cleanliness",
+      "sha256": "8b8f4ccc68dffd415ab3aa61719bc41f63d359f3a7ee168f51049aa2815d0851",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "8b8f4ccc68dffd415ab3aa61719bc41f63d359f3a7ee168f51049aa2815d0851"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-innovation",
+      "sha256": "497d60a1b3ac41d643e62def0e813693e95353aac646e37585d4bbbf021a1076",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "497d60a1b3ac41d643e62def0e813693e95353aac646e37585d4bbbf021a1076"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-creativity",
+      "sha256": "f0657cf0d729d0f980beabcdaa72bb035df4779dff3902a7bc404ab2c0ffacfb",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "f0657cf0d729d0f980beabcdaa72bb035df4779dff3902a7bc404ab2c0ffacfb"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-exploration",
+      "sha256": "62531a0dcc8be09044012573476481bf9e0e880b1f49fa00f95db9491eac656e",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "62531a0dcc8be09044012573476481bf9e0e880b1f49fa00f95db9491eac656e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-deadlines",
+      "sha256": "e237671515315837747986d24c0ca4b50b3237fa3b7b847321e7527c8f7b994e",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "e237671515315837747986d24c0ca4b50b3237fa3b7b847321e7527c8f7b994e"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-a-problem-solving",
+      "sha256": "931f730f6623c9faa00a5db86bd21e8413e7909ca31c0903d8f1e4913f6cc1d0",
+      "parts": [
+        {
+          "pdfPage": 45,
+          "sha256": "931f730f6623c9faa00a5db86bd21e8413e7909ca31c0903d8f1e4913f6cc1d0"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-m-prior",
+      "sha256": "eb1242e04d493cb7e13265916174bf1a8b9df18c27384b8a548de865fbf170f6",
+      "parts": [
+        {
+          "pdfPage": 47,
+          "sha256": "eb1242e04d493cb7e13265916174bf1a8b9df18c27384b8a548de865fbf170f6"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-m-practice",
+      "sha256": "708e943e111a1e5a50cc2f605f24bd40240794d361ee59c2401eefebe4fe3a8c",
+      "parts": [
+        {
+          "pdfPage": 47,
+          "sha256": "708e943e111a1e5a50cc2f605f24bd40240794d361ee59c2401eefebe4fe3a8c"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-m-visits",
+      "sha256": "857b8416ddb30b098face49f05aeeec146c1352864cdc30359e516f1553a4da3",
+      "parts": [
+        {
+          "pdfPage": 47,
+          "sha256": "857b8416ddb30b098face49f05aeeec146c1352864cdc30359e516f1553a4da3"
+        }
+      ]
+    },
+    {
+      "id": "ifc006-mf060-m-feedback",
+      "sha256": "e6b9fcf0104d67274978bc6bd5611a2f605b4738b8116d42bd6f3c9017327bac",
+      "parts": [
+        {
+          "pdfPage": 47,
+          "sha256": "e6b9fcf0104d67274978bc6bd5611a2f605b4738b8116d42bd6f3c9017327bac"
+        }
+      ]
+    }
+  ]
+}
