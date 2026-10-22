@@ -3,13 +3,13 @@
   "moduleCode": "MF_059_3",
   "grade": 4,
   "catalog": "evaluation-2026.146",
-  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "status": "PARTIAL_TRANSPORT_TIMEOUT_PERSONAL_AUTHENTICATION_PENDING",
   "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
   "planned": 100,
-  "preparedIds": 3,
-  "knownSavedAndInitiallyReopened": 3,
-  "verified": 3,
-  "responses": 22,
+  "preparedIds": 34,
+  "knownSavedAndInitiallyReopened": 34,
+  "verified": 33,
+  "responses": 206,
   "http500": 0,
   "http429": 0,
   "authoritativeProgress": "technical-mf059-4-evaluation-2026.146-source-171ca600-9dde-5fb6-89a3-50e0c8365fab-products-sample-e97c9239a299-http-progress.json",
@@ -40,11 +40,551 @@
       "strategyOnlyInstrumentUnchanged": true,
       "manualTextPreserved": true,
       "hash": "ec2b61ba8219dc93e886c42b289b460be871b02659dddb17570a1041022f333f"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "07a8695f-bf21-4881-b6aa-a5bbef1a9f17",
+      "snapshotId": "fa1685d4-0d4d-4459-830a-be8ba334733e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "ee0267033e09c1ad0998abdd2ec096cb29c10c251fc94feb64138bed579d33c0"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "383c143b-6795-40b9-9d53-0cd1bf3a0f08",
+      "snapshotId": "2f153a4b-d466-4e33-af4d-424e4874a827",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "3133f6231f2f901c4657720c6e9dde563f7ebc99166ec5fe4ede19f7bd7ed878"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "9b9af040-4b4f-4d4d-a570-116b5a11ae6a",
+      "snapshotId": "359f4268-f13c-4821-87b0-d5ab2c89c06e",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "61a62f659b2b64d03bf9e5f9fb161d369bbb4b4cde3eb3956659ad4247c9f37d"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "6952a5a8-6175-4234-bf56-644bb30e1215",
+      "snapshotId": "73487e31-162e-480d-bb98-aacbbb12f6eb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "4db492092a59e72f2f53e8d62eb46022b792fec6c7b453a4f5771a88a7c49373"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "6482d8d1-f0ab-49af-867d-12d9f45c8208",
+      "snapshotId": "28f526a8-f27b-42ce-865e-9276b26acbdb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d722ad3d92a29baf326c37d2359222b3eec449179074841b06033958d39cc406"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "79f66d9b-2f67-4c94-9bc4-79e13ed4d709",
+      "snapshotId": "138ca457-4680-4f5a-8990-47d4713885ab",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "8556eb8a307e832d5b7635bbcc8a441646ea2ea012d90c79b0f95b0201dfda5e"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "70c68dc3-4a17-48ec-938a-73a3840942fe",
+      "snapshotId": "d42ebadd-4fd7-49c7-a63e-4b8f8063ac45",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "16548278909a283557ffa71277a867041c40f3894bffdb882c08d7738bc11970"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "1549ea3c-ba8c-4768-8be9-9785e06111b7",
+      "snapshotId": "cf975af8-236e-4cfa-b512-476d9ae35f67",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "e1241f58ef7c2ead9cb305c54ea1b76012967ffd901151a155a317baa0ef9453"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "5105c6a4-6a3f-4531-9634-72e8615786ac",
+      "snapshotId": "c9e2a18c-93ac-4758-9416-2b09a06d0717",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "813afc3153149c1f34864bdf19013a38eeb879c833a653a1fb289c2f174835bb"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "73c527e7-0804-4a13-bd4b-93cc9e1ac858",
+      "snapshotId": "99f3abff-1b69-43f3-97fe-bee7ee3c7fcb",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c21e3e0029a5eb597ef8957b797ffeff7031348cbcb553490313735f9298023f"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "52c8cd9e-859e-4bed-a84a-a745b7397e76",
+      "snapshotId": "73123246-142b-44a9-a6cf-77c89d24b198",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "92381962f3383b7679e0e85b1b6dc67c03a447fb1d0463f1bb07c2a6e3f7fbef"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "dbe09e01-aabd-439d-9319-ad86e1bda6df",
+      "snapshotId": "c3c629f5-246b-40b8-ac11-e9781b648da8",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b0e604f472456864e06cdbe1adfd5046730abff84125c85934a834bc51af8870"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "10f0d117-8838-4956-82ee-fa02f5c6d9de",
+      "snapshotId": "13493f8f-daf3-4cdb-869f-92c2f700c5aa",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "c85e54069863bbfba0e5f9566602f1fdb5935b0a0b6f864de056c3ce36ef00d9"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "c626cfae-b642-4321-9eb4-f2b42eb23e54",
+      "snapshotId": "861ddd15-8d17-44f0-8cc9-b442df4e7d3d",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "cd3d8c14bff31c605746a4438fa0f2dcca82ff2a29a3b31fa256c5e0ec3ec850"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "4404abcc-e534-4af7-a693-ea182ff51685",
+      "snapshotId": "61b9af54-4caf-4259-b61b-f8d96eeeb3d7",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "9a6a059f53bfa0b038a96cd3ca349f1ac6620bf5afc73bcf435ee562788867dc"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "e97456a6-7171-4374-8197-4ffbc30e153a",
+      "snapshotId": "73ec3c33-66ce-4ab4-9c3b-9c6ce7d43496",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "3f35bb536b1b0111906342c3649d1cfa76ed469a9e452bfaa2634684eb236a1d"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "b185bace-603a-4a43-b917-c2d0f4033e83",
+      "snapshotId": "482301b7-0736-4640-a920-34a304a1f41b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "32dd17ae5a037da0b4b83c3d5e8e4210646566a9bf8ee63e0215327c1cc66c1e"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "927bdf3d-f541-44ab-a239-b9bcb1c32e5c",
+      "snapshotId": "3365704d-d4c6-4032-8198-f65c90c76c04",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "46f30e88f3c067cc0a57dac0a89300432194149e8918279600ec7eeb55be7060"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "be802595-099c-4e54-a1d5-b081b254a075",
+      "snapshotId": "2cfff8ab-e685-41c6-b666-12a16a1e3793",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "005761babfa539cae50fef1b31be1db0d1ded832c04abf3e54f3f6815ecedcb7"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "ea57e477-f89c-4369-b540-3d6342106274",
+      "snapshotId": "748a2133-8703-4006-a441-13c2a339a1df",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "94f814bfd4d5e000d7698286a4448e7ce4166907aa00c9a1971c6640a3ac589e"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "f786bb01-f987-4080-a7e4-5c1798c7b9af",
+      "snapshotId": "26db47a8-c54e-44b2-9823-3fff8b0709c1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "d2a0d008793fdaa366a27b08a4a9dc0697904e626d922deb8fcf55264a7f9da5"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "f915d0f8-f28a-4863-936b-e7a422ff84a9",
+      "snapshotId": "d14cfa93-2f02-46b8-859f-b35d22df1717",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "50512e6b227c7648764afdce28d325f7b07bc357156ea1465ea6ff28e650845d"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "20a68d5c-91f2-463d-abf6-29630d0217b8",
+      "snapshotId": "5557a15f-a953-4e78-85f5-1576dc1df45a",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "f3f1db5fc06a0f7d8e1de5fa72ce454a5926e3bd5e353617a5da985fad71a206"
+    },
+    {
+      "format": "escala",
+      "score": 20,
+      "activityId": "a33171d8-00fe-4b20-8b92-e8587120436d",
+      "snapshotId": "ec67fb4a-15ff-48b2-8d09-091a79523132",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "88e1fbea8ba07b39f129f8f15782790902f3386e20eb94c01fd1f8bcdc7e7d0e"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityId": "35cdf4b4-8361-4d9a-975e-8f02e69cbc4f",
+      "snapshotId": "30467cd2-4632-49bd-9a9b-c649fad269f1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "af7c6179a50a79b03f8797f96070d1a3e4aa93b322a00014ca926d0b7717af16"
+    },
+    {
+      "format": "rubrica",
+      "score": 17.35,
+      "activityId": "bf8e92aa-622f-4751-8274-c46812143e98",
+      "snapshotId": "f96d4d2b-5cee-4b71-a22b-0f51494ad9e0",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "db016918942ee45c5ddbb37e4befc1fae462b62b288e27c015091f18e1410786"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityId": "747f93b2-5492-437d-a0e7-c63a4cdf0bbb",
+      "snapshotId": "1fab1828-6214-4504-8beb-02b931136825",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "514308afc8530893d68ebbd702a5641ad94257886bb03d58f1ae7f971729abab"
+    },
+    {
+      "format": "escala",
+      "score": 17.35,
+      "activityId": "170fa28a-4914-4f6a-b683-6a241cc69f64",
+      "snapshotId": "dad050cf-fd0c-4c62-879b-74db0bfce8e9",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "b30a3137850e304740b9f2b6cc4455ab3a2758c2643f18fef2404d5f874d4db9"
+    },
+    {
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityId": "8c2f05f7-b182-4f93-ab33-0ab9a1db5428",
+      "snapshotId": "97b99e7e-71ab-44c0-92d6-377d16534192",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "84372d5870e21f4bdd246c98336ad4a15241a198388ec5f3da46f6acf4425598"
+    },
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "b13d8fbb-dace-473d-a45c-aae6d3841dd6",
+      "snapshotId": "0c6c8aca-d877-46e0-9cb0-9b24560581c1",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "53b53211b6c7feb687052c0836a051be453061e4ff8ce1ccf67dfc8aab50693a"
     }
   ],
   "personalEvidence": "technical-mf059-4-navegador-personal.json",
   "limits": [
-    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
-    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
-  ]
+    "33 de100 recorridos completos; la actividad34 está guardada, con instrumento y estrategia exactos comprobados porDB, pero su última reaperturaHTTP no fue verificada por el cliente.",
+    "No se atribuye la causa de la latencia alSQL, alWorker o a la red sin medición suficiente. EXPLAIN sinANALYZE solo mostró el plan por índices.",
+    "No se reintentó el ejecutor ni se recrearon IDs o baselines.",
+    "Las pruebas QA no sustituyen el recorrido personal pendiente de autenticación."
+  ],
+  "executorStopped": true,
+  "timeout": {
+    "endpoint": "/activities?sectionSubjectId=d00a20e2-cd15-4e47-a929-bd14d7572584",
+    "clientLimitMs": 30000,
+    "lateWorkerStatus": 200,
+    "lateWorkerMs": 30605
+  },
+  "preservation": {
+    "method": "PostgreSQL READ ONLY, lotes de cuatro sin aumentar el límite de 20 segundos; huellas originales y comparación de historia previa.",
+    "savedExact": 34,
+    "previousReleasesExact": 78,
+    "previousSnapshotsExact": 1103,
+    "currentReleases": 79,
+    "currentSnapshots": 1137,
+    "duplicates": 0,
+    "lastStrategySaved": true,
+    "lastHttpReopenPending": true,
+    "personalBaselinesExact": 15,
+    "newBaselines": 0,
+    "activities": [
+      {
+        "id": "e6456cdd-d022-401e-94be-b8010d3d0135",
+        "instrumentId": "4a807970-64a8-4d04-b53a-b6b09ace23f8",
+        "snapshotId": "191605b0-0158-4948-a0e0-2d6e2726bf2f",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "02727c50-945d-409d-a00b-7c2ca923a036",
+        "instrumentId": "5917f24b-bd4b-457b-85ca-0a94f7d0c455",
+        "snapshotId": "da40ab4d-0e57-423a-9841-719f34574fcb",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "1f375d15-133f-45d0-8cfb-ef7fd5d79b18",
+        "instrumentId": "abbe43ba-0ba3-4e30-9293-eeac3c9c3539",
+        "snapshotId": "47a6e6e6-24de-4d48-94b3-8053b65f0fcc",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "07a8695f-bf21-4881-b6aa-a5bbef1a9f17",
+        "instrumentId": "343cddd3-9bef-49c4-9e07-f04f0df55c7c",
+        "snapshotId": "fa1685d4-0d4d-4459-830a-be8ba334733e",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "383c143b-6795-40b9-9d53-0cd1bf3a0f08",
+        "instrumentId": "40575e29-1888-4e6c-b47a-2bd84dfd6d0b",
+        "snapshotId": "2f153a4b-d466-4e33-af4d-424e4874a827",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "9b9af040-4b4f-4d4d-a570-116b5a11ae6a",
+        "instrumentId": "42c44e8c-6a08-4d24-b521-4ae9ce5cfe34",
+        "snapshotId": "359f4268-f13c-4821-87b0-d5ab2c89c06e",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "6952a5a8-6175-4234-bf56-644bb30e1215",
+        "instrumentId": "998e7108-41a6-46cd-babc-650bff606eaf",
+        "snapshotId": "73487e31-162e-480d-bb98-aacbbb12f6eb",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "6482d8d1-f0ab-49af-867d-12d9f45c8208",
+        "instrumentId": "615fbce2-7fa8-4005-b1c3-4f63ac751821",
+        "snapshotId": "28f526a8-f27b-42ce-865e-9276b26acbdb",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "79f66d9b-2f67-4c94-9bc4-79e13ed4d709",
+        "instrumentId": "2297fb62-f8c8-4211-95b7-d0e75c635a01",
+        "snapshotId": "138ca457-4680-4f5a-8990-47d4713885ab",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "70c68dc3-4a17-48ec-938a-73a3840942fe",
+        "instrumentId": "d1a15a87-b476-4a5c-984e-ab81630c8fe6",
+        "snapshotId": "d42ebadd-4fd7-49c7-a63e-4b8f8063ac45",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "1549ea3c-ba8c-4768-8be9-9785e06111b7",
+        "instrumentId": "281e0612-9382-421a-a8e4-ba3728b0d29e",
+        "snapshotId": "cf975af8-236e-4cfa-b512-476d9ae35f67",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "5105c6a4-6a3f-4531-9634-72e8615786ac",
+        "instrumentId": "2cd8e0ce-5089-4eb8-a118-4efeebb6bb0e",
+        "snapshotId": "c9e2a18c-93ac-4758-9416-2b09a06d0717",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "73c527e7-0804-4a13-bd4b-93cc9e1ac858",
+        "instrumentId": "7128efbe-5255-4384-8aa0-87e29cbf1d2a",
+        "snapshotId": "99f3abff-1b69-43f3-97fe-bee7ee3c7fcb",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "52c8cd9e-859e-4bed-a84a-a745b7397e76",
+        "instrumentId": "6ed1256b-6b8f-4e26-bc92-47034f15ae32",
+        "snapshotId": "73123246-142b-44a9-a6cf-77c89d24b198",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "dbe09e01-aabd-439d-9319-ad86e1bda6df",
+        "instrumentId": "3473d44d-bee6-4b81-9f80-bed75dcfa3b6",
+        "snapshotId": "c3c629f5-246b-40b8-ac11-e9781b648da8",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "10f0d117-8838-4956-82ee-fa02f5c6d9de",
+        "instrumentId": "2fb29603-ee4a-440a-9129-172f9c394e67",
+        "snapshotId": "13493f8f-daf3-4cdb-869f-92c2f700c5aa",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "c626cfae-b642-4321-9eb4-f2b42eb23e54",
+        "instrumentId": "fe20a2e0-4e41-458f-b4cb-e4b30c39ebb5",
+        "snapshotId": "861ddd15-8d17-44f0-8cc9-b442df4e7d3d",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "4404abcc-e534-4af7-a693-ea182ff51685",
+        "instrumentId": "1a5950c7-c03b-48eb-8477-4eb46193776f",
+        "snapshotId": "61b9af54-4caf-4259-b61b-f8d96eeeb3d7",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "e97456a6-7171-4374-8197-4ffbc30e153a",
+        "instrumentId": "16f8e8ba-6d38-4330-9232-83cdf3ef5236",
+        "snapshotId": "73ec3c33-66ce-4ab4-9c3b-9c6ce7d43496",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "b185bace-603a-4a43-b917-c2d0f4033e83",
+        "instrumentId": "d2612025-e781-4998-93fd-3381585761ff",
+        "snapshotId": "482301b7-0736-4640-a920-34a304a1f41b",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "927bdf3d-f541-44ab-a239-b9bcb1c32e5c",
+        "instrumentId": "7b969d94-e1fe-4b57-b8d5-c4a1770ba24a",
+        "snapshotId": "3365704d-d4c6-4032-8198-f65c90c76c04",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "be802595-099c-4e54-a1d5-b081b254a075",
+        "instrumentId": "5d2a6d22-5105-4300-9a42-f4a5cb50aa96",
+        "snapshotId": "2cfff8ab-e685-41c6-b666-12a16a1e3793",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "ea57e477-f89c-4369-b540-3d6342106274",
+        "instrumentId": "8f73ba34-19d9-4d5a-9632-89f5c95dea66",
+        "snapshotId": "748a2133-8703-4006-a441-13c2a339a1df",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "f786bb01-f987-4080-a7e4-5c1798c7b9af",
+        "instrumentId": "56296f79-d93f-4214-a999-1cc11107ac0d",
+        "snapshotId": "26db47a8-c54e-44b2-9823-3fff8b0709c1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "f915d0f8-f28a-4863-936b-e7a422ff84a9",
+        "instrumentId": "318e35d3-09b7-461c-a548-e257ba75370a",
+        "snapshotId": "d14cfa93-2f02-46b8-859f-b35d22df1717",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "20a68d5c-91f2-463d-abf6-29630d0217b8",
+        "instrumentId": "745a2a4b-4081-4133-8eb1-9e8c31412f7b",
+        "snapshotId": "5557a15f-a953-4e78-85f5-1576dc1df45a",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "a33171d8-00fe-4b20-8b92-e8587120436d",
+        "instrumentId": "67910ebe-0d1f-4dff-bb18-7112e9dbe589",
+        "snapshotId": "ec67fb4a-15ff-48b2-8d09-091a79523132",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "35cdf4b4-8361-4d9a-975e-8f02e69cbc4f",
+        "instrumentId": "0eca7103-8cb6-47e2-8477-ef08485179b0",
+        "snapshotId": "30467cd2-4632-49bd-9a9b-c649fad269f1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "bf8e92aa-622f-4751-8274-c46812143e98",
+        "instrumentId": "606d1671-08be-4ed4-a5b8-9190e44c7597",
+        "snapshotId": "f96d4d2b-5cee-4b71-a22b-0f51494ad9e0",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "747f93b2-5492-437d-a0e7-c63a4cdf0bbb",
+        "instrumentId": "2527fc31-95e9-4af2-b151-ca5926f25f7d",
+        "snapshotId": "1fab1828-6214-4504-8beb-02b931136825",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "170fa28a-4914-4f6a-b683-6a241cc69f64",
+        "instrumentId": "4d878eff-8493-4ff3-b1e2-30dd6ed13fca",
+        "snapshotId": "dad050cf-fd0c-4c62-879b-74db0bfce8e9",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "8c2f05f7-b182-4f93-ab33-0ab9a1db5428",
+        "instrumentId": "61c1d546-3b62-4274-8b2b-8fcff7f98d8c",
+        "snapshotId": "97b99e7e-71ab-44c0-92d6-377d16534192",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "b13d8fbb-dace-473d-a45c-aae6d3841dd6",
+        "instrumentId": "089e667f-1067-49bc-9d9b-f102635dac0e",
+        "snapshotId": "0c6c8aca-d877-46e0-9cb0-9b24560581c1",
+        "httpVerified": true,
+        "exact": true
+      },
+      {
+        "id": "3dca4ec8-34f6-4774-9300-99c44a5f0811",
+        "instrumentId": "432797cb-e8b5-4854-a43f-3b89cd571a02",
+        "snapshotId": "3d8ffcc4-12b9-44d8-9844-330686320ae6",
+        "httpVerified": false,
+        "exact": true
+      }
+    ]
+  },
+  "initialAudit": {
+    "method": "Consulta conjunta de 34 instrumentos/snapshots",
+    "result": "Query read timeout",
+    "limitMs": 20000
+  },
+  "increasedTimeouts": false,
+  "restartedExecutor": false,
+  "remoteWritesAfterTimeout": false
 }

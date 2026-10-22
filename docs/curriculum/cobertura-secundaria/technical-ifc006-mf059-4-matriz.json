@@ -2473,11 +2473,11 @@
     }
   ],
   "implementation": {
-    "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
+    "status": "CONNECTED_PARTIAL_HTTP_TRANSPORT_TIMEOUT_PERSONAL_AUTH_REQUIRED",
     "provider": "packages/shared/src/secondary-technical.ts",
     "catalog": "evaluation-2026.146",
     "instrumentReview": "REVIEWED",
-    "httpDb": "IN_PROGRESS",
+    "httpDb": "PARTIAL_TRANSPORT_TIMEOUT",
     "browser": "AUTHENTICATION_REQUIRED",
     "installation": "technical-mf059-4-instalacion.json"
   },
@@ -2503,7 +2503,7 @@
       "evidence": "technical-mf059-4-revision.json"
     },
     "automated": "BACKEND_93499_FRONTEND_ACTIVITIES_91612_BUILDS_GREEN",
-    "httpDb": "IN_PROGRESS",
+    "httpDb": "PARTIAL_TRANSPORT_TIMEOUT",
     "browser": "AUTHENTICATION_REQUIRED",
     "httpEvidence": "technical-mf059-4-verificacion-http.json",
     "browserEvidence": "technical-mf059-4-navegador-personal.json"

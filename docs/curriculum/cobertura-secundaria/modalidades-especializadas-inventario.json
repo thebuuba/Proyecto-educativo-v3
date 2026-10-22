@@ -5350,7 +5350,7 @@
             "weeklyHours": 6,
             "annualHours": 270,
             "sourcePdfPage": 14,
-            "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
+            "status": "CONNECTED_PARTIAL_HTTP_TRANSPORT_TIMEOUT_PERSONAL_AUTH_REQUIRED",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "LITERAL_SOURCE_VISUALLY_REVIEWED_NOT_IMPLEMENTED",
@@ -5366,7 +5366,7 @@
               "provider": "packages/shared/src/secondary-technical.ts",
               "instrumentReview": "technical-mf059-4-revision.json",
               "fullInstrumentsReviewed": 400,
-              "httpDb": "IN_PROGRESS",
+              "httpDb": "PARTIAL_TRANSPORT_TIMEOUT",
               "browser": "AUTHENTICATION_REQUIRED"
             },
             "expectedContracts": {
@@ -5377,7 +5377,7 @@
               "status": "EXPECTED_CONTRACTS_REVIEWED_NOT_IMPLEMENTED"
             },
             "catalog": "evaluation-2026.146",
-            "httpDb": "IN_PROGRESS",
+            "httpDb": "PARTIAL_TRANSPORT_TIMEOUT",
             "browser": "AUTHENTICATION_REQUIRED"
           },
           {

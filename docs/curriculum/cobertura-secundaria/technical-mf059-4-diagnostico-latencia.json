@@ -1,0 +1,120 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_059_3",
+  "grade": 4,
+  "catalog": "evaluation-2026.146",
+  "readOnly": true,
+  "nodeService": {
+    "environment": "Node with same compiled GradingService and Development database; excludes Worker/auth middleware",
+    "activities": 34,
+    "jsonBytes": 263845,
+    "rounds": [
+      {
+        "round": 1,
+        "ms": 24893,
+        "activities": 34,
+        "jsonBytes": 263845
+      },
+      {
+        "round": 2,
+        "ms": 21664,
+        "activities": 34,
+        "jsonBytes": 263845
+      },
+      {
+        "round": 3,
+        "ms": 13715,
+        "activities": 34,
+        "jsonBytes": 263845
+      }
+    ],
+    "operations": [
+      {
+        "round": 1,
+        "model": "SectionSubject",
+        "operation": "findFirst",
+        "ms": 437
+      },
+      {
+        "round": 1,
+        "model": "EvaluationActivity",
+        "operation": "findMany",
+        "ms": 24452
+      },
+      {
+        "round": 2,
+        "model": "SectionSubject",
+        "operation": "findFirst",
+        "ms": 156
+      },
+      {
+        "round": 2,
+        "model": "EvaluationActivity",
+        "operation": "findMany",
+        "ms": 21505
+      },
+      {
+        "round": 3,
+        "model": "SectionSubject",
+        "operation": "findFirst",
+        "ms": 147
+      },
+      {
+        "round": 3,
+        "model": "EvaluationActivity",
+        "operation": "findMany",
+        "ms": 13565
+      }
+    ]
+  },
+  "payloadBoundary": {
+    "queryTimeoutMs": 20000,
+    "serverHashes": {
+      "step": "server-hashes-bytes",
+      "ms": 147.45629999999994,
+      "rows": 34,
+      "criteriaBytes": 88985,
+      "snapshotBytes": 159569
+    },
+    "constantTransfer": {
+      "step": "constant-transfer",
+      "ms": 18286.5708,
+      "rows": 1,
+      "payloadBytes": 263845
+    },
+    "lightReads": [
+      {
+        "step": "connect",
+        "ms": 482.716
+      },
+      {
+        "step": "role",
+        "ms": 48.19079999999997,
+        "rows": 1
+      },
+      {
+        "step": "activity-ids",
+        "ms": 831.8434,
+        "rows": 34
+      },
+      {
+        "step": "plan-only",
+        "ms": 156.90999999999985,
+        "rows": 1
+      }
+    ]
+  },
+  "observation": "El mismo servicio compilado demora 13.715–24.893ms sin Worker ni middleware deAuth. Calcular enPostgreSQL las huellas y tamaños de34payloads devuelve34filas pequeñas en147ms; transferir una cadena constante de263.845bytes por el mismo cliente tarda18.287ms, sin consultar tablas de aplicación.",
+  "inference": "La transferencia o el procesamiento del cliente contribuyen a la latencia observada; el episodio no se explica exclusivamente porWorker ni por la búsqueda de filas. Esta muestra no identifica la capa exacta de red/TLS/pooler/cliente ni prueba un defecto del proveedor.",
+  "rootCauseFullyIsolated": false,
+  "applicationChanged": false,
+  "timeoutsIncreased": false,
+  "executorRestarted": false,
+  "remoteWrites": false,
+  "limits": [
+    "Las tres muestras Node excluyenAuth/Worker y no constituyen reaperturaHTTP final del último caso.",
+    "El cálculo de huellas materializaJSONB en servidor, pero no devuelve lospayloads completos; no equivale a la misma transferencia.",
+    "El planEXPLAIN previo era sinANALYZE; no se usa como tiempo real de ejecución.",
+    "No se cambió configuración de red, base de datos, pooler, permisos ni integraciones. No hay corrección de aplicación justificada por este diagnóstico todavía."
+  ]
+}
