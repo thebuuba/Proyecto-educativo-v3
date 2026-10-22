@@ -1,0 +1,30 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_055_3",
+  "grade": 6,
+  "accountKind": "PERSONAL_DEVELOPMENT",
+  "status": "AUTHENTICATION_REQUIRED_CREATOR_NOT_VERIFIED",
+  "browserAvailable": true,
+  "creatorVerified": false,
+  "savedAndReopened": false,
+  "observation": "La pestaña nueva redirigió a/login. Continuar como Alexauris mostró el campo de contraseña vacío. No se enviaron credenciales ni se usóQA como prueba personal.",
+  "browserEntry": "/assets/index-CMio6WV1.js",
+  "browserEntryMatchesBuild": true,
+  "newPassword": false,
+  "emailSent": false,
+  "storageCleared": false,
+  "oldPersonalTabsReloaded": false,
+  "previousPersonalBaselinesExact": 15,
+  "newBaselines": 0,
+  "manualSteps": [
+    "Iniciar sesión personalmente enlocalhost:8787 con la cuenta propia deDevelopment, sin conectar producción.",
+    "Abrir el contextoMF055/sexto/técnico y completar título ydescripción. Comprobar estrategia visible y selección automática/manual.",
+    "Comprobar el instrumento completo en loscuatroformatos y dejar puntuación vacía inicialmente; probar17.35.",
+    "Guardar una actividad, reabrirla y cambiar soloestrategia. Guardar/reabrir de nuevo y comprobar instrumento, edición manual y puntuación exactos."
+  ],
+  "limits": [
+    "No se completó el recorrido personal del creadorMF055 por falta de autenticación.",
+    "La sesión visual deMF056 guardada anteriormente no acredita una sesión de servidor vigente ni el nuevo módulo.",
+    "El registro y almacenamiento de caché del navegador no se inspeccionaron ni borraron."
+  ]
+}

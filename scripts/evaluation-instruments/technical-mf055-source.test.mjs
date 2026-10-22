@@ -27,6 +27,6 @@ test('separa seisactitudes y cincoorientaciones de las adaptaciones revisadas en
  assert.equal(r.filter(x=>x.type==='ATTITUDE').length,6);assert.equal(r.filter(x=>x.type==='TEACHING_STRATEGY').length,5)
  assert(r.filter(x=>x.type==='ATTITUDE').every(x=>x.assessmentPolicy==='EXCLUDED_PRIVATE_DISPOSITION'&&x.adaptationIds.length===0))
  assert(r.filter(x=>x.type==='TEACHING_STRATEGY').every(x=>x.assessmentPolicy==='TEACHER_ORIENTATION_NOT_DEFAULT_DELIVERABLE'&&x.adaptationIds.length===0))
- assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,35);assert.equal(m.implementation.instrumentReview,'REVIEWED');assert.equal(m.implementation.httpDb,'NOT_RUN');assert.equal(m.implementation.browser,'NOT_RUN')
+ assert.equal(m.implementation.provider,'packages/shared/src/secondary-technical.ts');assert.equal(m.adaptations.length,35);assert.equal(m.implementation.instrumentReview,'REVIEWED');assert.equal(m.implementation.httpDb,'IN_PROGRESS');assert.equal(m.implementation.browser,'AUTHENTICATION_REQUIRED')
  assert(m.limits.some(s=>s.includes('datos ficticios')))
 })

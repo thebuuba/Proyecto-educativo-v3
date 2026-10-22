@@ -6,6 +6,7 @@ const scopes={
  MF_056_3:{grade:4,family:'technical-mf056',fileStem:'technical-ifc006-mf056',label:'Técnico MF056',name:'Diseño y Desarrollo de Base de Datos',contract:'technical-mf056-four-contracts.json',source:'MINERD_IFC006_MF056_4_NORM_2017_V1'},
  MF_059_3:{grade:4,family:'technical-mf059',fileStem:'technical-ifc006-mf059',label:'Técnico MF059',name:'Diseño de Portales Web y Recursos Multimedia',contract:'technical-mf059-four-contracts.json',source:'MINERD_IFC006_MF059_4_NORM_2017_V1'},
  MF_057_3:{grade:5,family:'technical-mf057',fileStem:'technical-ifc006-mf057',label:'Técnico MF057',name:'Administración de Base de Datos',contract:'technical-mf057-five-contracts.json',source:'MINERD_IFC006_MF057_5_NORM_2017_V1'},
+ MF_055_3:{grade:6,family:'technical-mf055',fileStem:'technical-ifc006-mf055',label:'Técnico MF055',name:'Implementación y Mantenimiento de Aplicaciones y Sistemas Informáticos',contract:'technical-mf055-six-contracts.json',source:'MINERD_IFC006_MF055_6_NORM_2017_V1'},
 }
 /** Pure allowlist; never infer a technical grade from the qualification suffix. */
 export function reviewedTechnicalHttpScope(code,grade){

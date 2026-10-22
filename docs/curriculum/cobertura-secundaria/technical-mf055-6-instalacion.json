@@ -1,0 +1,86 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_055_3",
+  "grade": 6,
+  "catalog": "evaluation-2026.148",
+  "status": "INSTALLED_IDEMPOTENT_DEVELOPMENT",
+  "source": {
+    "code": "MINERD_IFC006_MF055_6_NORM_2017_V1",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "versionId": "e8385936-5e49-5942-8714-52e2099a005a",
+    "scopeId": "bb67f34f-51de-52a8-bb88-7623434c044b",
+    "elements": 37,
+    "spans": 37,
+    "documentaryRecords": 8,
+    "literalRecords": 45,
+    "literalParts": 45,
+    "excludedFromAssessment": 6
+  },
+  "catalogInstallation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.148",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "preservedReleases": 80,
+    "preservedSnapshots": 1153,
+    "finalReleases": 81,
+    "finalSnapshots": 1153,
+    "sourceEqualsCompiled": true,
+    "frozen147Exact": true,
+    "previousPayloadsUnchanged": true,
+    "payloadEquality": "POSTGRESQL_JSONB_EQUALITY_PARAMETERIZED",
+    "newAccounts": 0,
+    "newActivities": 0,
+    "deploy": false,
+    "push": false
+  },
+  "contexts": {
+    "executions": 4,
+    "modes": [
+      {
+        "mode": "qa",
+        "sectionSubjectId": "a22c9efb-2bda-4969-936f-8476e47e5b5f",
+        "grade": 6,
+        "moduleCode": "MF_055_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      },
+      {
+        "mode": "personal",
+        "sectionSubjectId": "feae75b5-758e-45d2-8843-322b42f87cb6",
+        "grade": 6,
+        "moduleCode": "MF_055_3",
+        "modalityCode": "technical_professional",
+        "optativeExitName": null,
+        "originalDataUnchanged": true,
+        "newAccounts": 0,
+        "newStudents": 0
+      }
+    ],
+    "originalDataUnchanged": true,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "priorPersonalBaselines": {
+    "count": 15,
+    "exact": true,
+    "newBaselines": 0
+  },
+  "deploy": false,
+  "push": false,
+  "accessRecovery": {
+    "originalFailureCode": "P1001",
+    "firstFailureBeforeWrites": true,
+    "originalFailurePreserved": true,
+    "readOnlyPreservationVerified": true,
+    "readOnlyPreservedReleases": 80,
+    "readOnlyPreservedSnapshots": 1153,
+    "boundedRecoveryAfterAccessConfirmed": true,
+    "recoveryExecutions": 4,
+    "exactConnectionFailureCause": "NOT_ISOLATED"
+  }
+}

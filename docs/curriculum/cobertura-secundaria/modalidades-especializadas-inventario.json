@@ -5544,7 +5544,7 @@
             "weeklyHours": 3,
             "annualHours": 135,
             "sourcePdfPage": 14,
-            "status": "IMPLEMENTED_PENDING_RUNTIME_QA",
+            "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
             "provider": "packages/shared/src/secondary-technical.ts",
             "contentReview": {
               "status": "LITERAL_SOURCE_AND_INSTRUMENTS_REVIEWED_PENDING_RUNTIME_QA",
@@ -5559,8 +5559,8 @@
               "provider": "packages/shared/src/secondary-technical.ts",
               "instrumentReview": "technical-mf055-6-revision.json",
               "fullInstrumentsReviewed": 200,
-              "httpDb": "NOT_RUN",
-              "browser": "NOT_RUN"
+              "httpDb": "IN_PROGRESS",
+              "browser": "AUTHENTICATION_REQUIRED"
             },
             "expectedContracts": {
               "file": "data/evaluation-instruments/technical-mf055-six-contracts.json",
@@ -5570,8 +5570,8 @@
               "status": "EXPECTED_CONTRACTS_IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA"
             },
             "catalog": "evaluation-2026.148",
-            "httpDb": "NOT_RUN",
-            "browser": "NOT_RUN"
+            "httpDb": "IN_PROGRESS",
+            "browser": "AUTHENTICATION_REQUIRED"
           },
           {
             "id": "IFC006_3-g6-MF_060_3",
@@ -5979,35 +5979,37 @@
     "Continuar los72documentos técnicos aún sin revisar y los módulos aún no leídos deIFC006_3/IFC007_3. Resolver equivalenciaTB sin inferir grados.",
     "MF056/cuarto: catálogo145 instalado y personal completo. HTTP15/92,15actividades exactas, dos timeouts previos y un500por cierre de conexión después de corregir/medir la consulta amplia. Ejecutor detenido, sin más reintentos hasta investigar acceso.78releases/1103snapshots y15baselines personales preservados; continuar trabajo independiente autorizado, sin recrear IDs.",
     "MF059/cuarto:33/100muestras HTTP completas;34actividades/instrumentos/snapshots exactos tras timeout de reapertura final. Ejecutor detenido y preservación completada; no repetirQA ni recrearIDs. Diagnóstico de latencia documentado, causa exacta de transporte no aislada; navegador personal pendiente de autenticación.",
-    "MF057/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,79releases/1.137snapshots previos conservados→80/1.153;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs."
+    "MF057/quinto:16/16muestras HTTP/DB QA completas;16IDs/instrumentos/snapshots exactos,79releases/1.137snapshots previos conservados→80/1.153;15baselines personales exactos. Recorrido visual personal pendiente de autenticación; no repetirQA ni reconstruirIDs.",
+    "MF055/sexto: catálogo148/fuente/contextosQA-personal instalados; QA16 en curso, personal bloqueado por autenticación. Consultar progreso antes de actuar; conservarIDs, snapshots y15baselines. No otroejecutor, compilar o reiniciar mientras esté activo."
   ],
   "push": false,
   "deploy": false,
   "currentApplication": {
-    "catalog": "evaluation-2026.147",
-    "specializedProvidersAdded": 6,
-    "status": "CATALOG147_INSTALLED_RUNTIME148_BUILT_MF055_NOT_INSTALLED",
+    "catalog": "evaluation-2026.148",
+    "specializedProvidersAdded": 7,
+    "status": "MF055_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED_PRIOR_PARTIALS_PRESERVED",
     "developmentOnly": true,
-    "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf057-5.md"
+    "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf055-6.md"
   },
   "currentSourceCandidate": {
     "catalog": "evaluation-2026.148",
     "specializedProvidersAdded": 7,
     "newModule": "MF_055_3",
-    "status": "IMPLEMENTED_REVIEWED_PENDING_RUNTIME_QA",
-    "runtimeInstalled": false,
+    "status": "CONNECTED_QA_IN_PROGRESS_PERSONAL_AUTH_REQUIRED",
+    "runtimeInstalled": true,
     "developmentOnly": true,
     "report": "docs/superpowers/reports/2026-10-22-tecnico-ifc-mf055-6.md"
   },
   "localRuntimeBuild": {
     "catalogBuild": "evaluation-2026.148",
-    "catalogInstalled": false,
-    "sourceInstalled": false,
+    "catalogInstalled": true,
+    "sourceInstalled": true,
     "serving": true,
     "project": "eolgunypmtgrsyrjzcld",
     "evidence": "technical-mf055-6-comprobaciones-locales.json",
     "runtimeEvidence": "technical-mf055-6-entorno-local.json",
-    "httpDb": "NOT_RUN",
-    "browser": "NOT_RUN"
+    "installation": "technical-mf055-6-instalacion.json",
+    "httpDb": "IN_PROGRESS",
+    "browser": "AUTHENTICATION_REQUIRED"
   }
 }

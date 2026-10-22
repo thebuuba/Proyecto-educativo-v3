@@ -3,8 +3,8 @@
   "programCode": "IFC006_3",
   "grade": 6,
   "catalog": "evaluation-2026.148",
-  "status": "REVIEWED_IN_SOURCE_PENDING_RUNTIME_QA",
-  "runtimeInstalled": false,
+  "status": "REVIEWED_INSTALLED_PENDING_RUNTIME_QA",
+  "runtimeInstalled": true,
   "reviewer": "SELF_REVIEW_NO_SUBAGENTS",
   "method": "Lectura completa de40textos y44ensamblajesv1; tras9regresiones de pertinenciaRED→GREEN, lectura de6textos modificados/nuevos y13ensamblajes modificados/nuevosv2, incluidos los cambios de referencias.36textos permanecen exactos. Paquete independent-actions completo leído en cuatroformatos;200definiciones contrastadas exactamente con los textos, ensamblajes, niveles, puntos y reglas leídos, sin inferir pertinencia por conteos.",
   "sourcePages": [
@@ -53,12 +53,12 @@
       ]
     ]
   },
-  "httpDb": "NOT_RUN",
-  "browser": "NOT_RUN",
+  "httpDb": "IN_PROGRESS",
+  "browser": "AUTHENTICATION_REQUIRED",
   "automated": "LOCAL_GATES_PASSED",
   "limits": [
-    "Catálogo148 candidato en fuente; aún no instalado ni servido enDevelopment.",
-    "MF055HTTP/DB y navegador personal no ejecutados; los datosQA anteriores y las pruebas locales no los sustituyen.",
+    "Catálogo148 yfuenteMF055 instalados idempotentemente soloenDevelopment.",
+    "QAHTTP/DB16en curso; navegador personal pendiente de autenticación. No sustituirlos con pruebas locales.",
     "Las35adaptaciones/50consignas no representan todas las variantes de las bandas conceptuales amplias.",
     "Adaptaciones deAulaBase, no rúbricas oficiales literales; datos ficticios y sin despliegues, cuentas o sistemas reales."
   ],

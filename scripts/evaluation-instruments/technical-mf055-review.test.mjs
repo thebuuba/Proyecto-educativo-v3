@@ -3,10 +3,11 @@ import assert from 'node:assert/strict'
 import {readFileSync,existsSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 const root='docs/curriculum/cobertura-secundaria/',read=p=>{assert(existsSync(p),'Falta revisión completa MF055');return JSON.parse(readFileSync(p,'utf8'))}
-test('MF055 registra instrumentos completos leídos sin afirmar instalación ni QA remotos',()=>{
+test('MF055 registra instrumentos leídos e instalación sin acreditar QA aún activo o navegador personal',()=>{
  const r=read(root+'technical-mf055-6-revision.json'),m=read(root+'technical-ifc006-mf055-6-matriz.json')
- assert.equal(r.catalog,'evaluation-2026.148');assert.equal(r.runtimeInstalled,false);assert.equal(r.reviewer,'SELF_REVIEW_NO_SUBAGENTS');assert.equal(r.topics,35);assert.equal(r.cases,50);assert.equal(r.fullInstruments,200);assert.equal(r.uniqueCompleteCriteria,42);assert.equal(r.pendingInstrumentReading,0)
- assert.equal(r.httpDb,'NOT_RUN');assert.equal(r.browser,'NOT_RUN');assert.equal(m.adaptations.length,35)
+ assert.equal(r.catalog,'evaluation-2026.148');assert.equal(r.runtimeInstalled,true);assert.equal(r.reviewer,'SELF_REVIEW_NO_SUBAGENTS');assert.equal(r.topics,35);assert.equal(r.cases,50);assert.equal(r.fullInstruments,200);assert.equal(r.uniqueCompleteCriteria,42);assert.equal(r.pendingInstrumentReading,0)
+ assert.equal(r.httpDb,'IN_PROGRESS');assert.equal(r.browser,'AUTHENTICATION_REQUIRED');assert.equal(m.adaptations.length,35)
+ const installed=read(root+'technical-mf055-6-instalacion.json'),personal=read(root+'technical-mf055-6-navegador-personal.json');assert.equal(installed.catalogInstallation.second,'UNCHANGED');assert.equal(personal.creatorVerified,false)
 })
 test('las200definiciones MF055 conservan textos leídos, cuatroformatos, niveles y17.35exactos',()=>{
  const all=read(root+'technical-mf055-6-instrumentos.json'),review=read(root+'technical-mf055-6-revision.json');assert.equal(all.length,200)

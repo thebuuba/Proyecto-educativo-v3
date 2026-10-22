@@ -1,0 +1,41 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "moduleCode": "MF_055_3",
+  "grade": 6,
+  "catalog": "evaluation-2026.148",
+  "status": "IN_PROGRESS_PERSONAL_AUTHENTICATION_PENDING",
+  "verification": "AUTHENTICATED_QA_HTTP_DB_NOT_PERSONAL_BROWSER",
+  "planned": 16,
+  "preparedIds": 3,
+  "knownSavedAndInitiallyReopened": 3,
+  "verified": 2,
+  "responses": 19,
+  "http500": 0,
+  "http429": 0,
+  "authoritativeProgress": "technical-mf055-6-evaluation-2026.148-source-e8385936-5e49-5942-8714-52e2099a005a-products-sample-17c1bbe7bfc0-http-progress.json",
+  "verifiedSamples": [
+    {
+      "format": "rubrica",
+      "score": 20,
+      "activityId": "82361f89-6c3d-4da5-9281-29f13fe20fc8",
+      "snapshotId": "04a31193-f9b1-4f35-b706-ae272f4f9802",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "0763c349129cbfa06cb8461171a7ebce4a89e121642bfc63670c7bd15c36d85d"
+    },
+    {
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityId": "aaa799f4-7124-47df-9127-7a39efddcc1d",
+      "snapshotId": "be995e4c-e890-4725-8c88-2766f854394b",
+      "strategyOnlyInstrumentUnchanged": true,
+      "manualTextPreserved": true,
+      "hash": "515f9ca163220df93b1546d3164e2bc30b507c99b1a12533b770ba02a79350d3"
+    }
+  ],
+  "personalEvidence": "technical-mf055-6-navegador-personal.json",
+  "limits": [
+    "Checkpoint incompleto: el progreso posterior prevalece sobre este conteo.",
+    "Las pruebasQA no sustituyen el recorrido personal pendiente de autenticación."
+  ]
+}
