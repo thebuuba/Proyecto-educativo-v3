@@ -1,0 +1,361 @@
+{
+  "version": "curricular-len1-transversales-v1",
+  "provenance": "SINTÉTICO del mismo autor, no banco independiente ni revisión ciega; expectativas fijadas desde competencias69, indicadores75 y actitudes72–73 antes de generar. No datos reales ni nuevas asignaturas. Materiales, fichas y casos son insumos docentes previstos; los registros científicos se describen como simulaciones para no afirmar hallazgos inexistentes.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      68,
+      69,
+      72,
+      73,
+      74,
+      75
+    ],
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "specificCompetencyIds": [
+      "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+      "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+      "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+      "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+      "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+      "1e434089-d202-529a-80ad-734c3a723254",
+      "d1943462-4b97-5758-a498-30fa4eaef720"
+    ],
+    "sourceLimit": "Estas actividades completan requisitos transversales del mismo ámbito de Lengua1; no convierten los siete rótulos fundamentales en temas nuevos ni evalúan emociones o valores internos. Preparar una publicación no acredita haberla publicado; las muestrasQA solo prueban el instrumento y su persistencia."
+  },
+  "cases": [
+    {
+      "id": "LEN1-TRA-SCI01",
+      "family": "Noticia científica escrita con TIC responsable",
+      "title": "Lo que averiguamos sobre el patio",
+      "description": "Escriban una noticia para divulgar en el espacio comunitario escolar los hallazgos del registro de investigación entregado. Presenten la pregunta investigada, cómo se hicieron las observaciones, los resultados y una conclusión limitada por esos datos. Diferencien los resultados de las interpretaciones y reconozcan la fuente del registro. Preparen la edición digital con datos anónimos y referencias de los materiales utilizados. El registro es una simulación de aula: no hagan nuevas mediciones ni publiquen datos de personas reales.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "expected": {
+        "explicit": [
+          "Noticia de divulgación: pregunta/procedimiento/observaciones/resultados/conclusión proporcionados, sin afirmar más que los datos",
+          "Resultados diferenciados de interpretación y límites de conclusión",
+          "Edición digital para espacio comunitario escolar; fuentes reconocidas y datos anónimos"
+        ],
+        "excluded": [
+          "Nuevo experimento, mediciones, datos inventados, fotos o personas reales",
+          "Tratar formato digital como publicación real ya ejecutada o exigir grabación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-SCI02",
+      "family": "Divulgación oral de hallazgos",
+      "title": "Contamos lo que muestran los datos",
+      "description": "En equipos presenten un noticiero oral sobre los hallazgos de la investigación escolar simulada que está en las fichas. Expliquen qué se preguntó, cómo se observó y qué resultados se obtuvieron; distingan lo que muestran los datos de una interpretación posible y señalen un límite de la conclusión. Digan de qué ficha procede la información. Hablen para que el curso entienda el hallazgo sin exagerarlo. No investiguen en Internet ni hagan otra investigación ni graben un video.",
+      "participationMode": "GROUP",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15"
+      ],
+      "expected": {
+        "explicit": [
+          "Noticiero oral fiel a fichas: pregunta, procedimiento, resultados y conclusión limitada",
+          "Distinción de evidencia/interpretación; fuente oral reconocible",
+          "Claridad para audiencia del curso, sin exigir apoyos no pedidos ni nueva investigación"
+        ],
+        "excluded": [
+          "Experimento nuevo, diapositivas, video, entrevistas o mediciones",
+          "Premiar conclusión espectacular, exceso de certeza o talento de locución"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-SCI03",
+      "family": "Paráfrasis científica y social",
+      "title": "Lo que entendimos de los hallazgos",
+      "description": "Con sus propias palabras escriban una explicación breve de los hallazgos científicos y sociales de las dos fichas entregadas. Conserven el sentido y los datos, distingan un hallazgo de una opinión y expliquen la relación entre el procedimiento descrito y la conclusión. Identifiquen de cuál ficha procede cada idea. No copien párrafos ni añadan información que no está en las fichas.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "46959358-472f-52cd-9887-5555e78db510"
+      ],
+      "expected": {
+        "explicit": [
+          "Paráfrasis expositivo-explicativa de hallazgos científicos y sociales, fiel a ambas fichas",
+          "Relación procedimiento/conclusión y distinción hallazgo/opinión",
+          "Procedencia identificada, sin copia literal o datos añadidos"
+        ],
+        "excluded": [
+          "Nueva investigación, exposición oral, publicación o afirmaciones ajenas",
+          "Resumen que borra relaciones explicativas y solo enumera palabras"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-SCI04",
+      "family": "Comprensión del proceso investigativo y sus límites",
+      "title": "Cómo se hizo esta investigación",
+      "description": "Lean el informe de la investigación escolar simulada entregado y expliquen por escrito su pregunta, el procedimiento de observación, los datos registrados y la conclusión. Comprueben qué afirmaciones de la conclusión se sostienen en esos datos y cuál va más allá de ellos. Usen fragmentos del informe como evidencia. No ejecuten el procedimiento ni inventen resultados ni redacten otro informe completo.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "46959358-472f-52cd-9887-5555e78db510",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ],
+      "expected": {
+        "explicit": [
+          "Comprensión de pregunta/procedimiento/datos/conclusión, según informe dado",
+          "Contraste entre afirmaciones sostenidas y sobreinterpretaciones, con fragmentos",
+          "Explicación acotada del proceso, sin producir otra investigación ni informe completo"
+        ],
+        "excluded": [
+          "Experimento, ejecución, nueva recogida de datos, plan de investigación o presentación no pedidos",
+          "Confundir informe científico con informe de lectura de obra narrativa"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CIV01",
+      "family": "Proyecto ciudadano colaborativo escrito",
+      "title": "Un acuerdo para compartir el patio",
+      "description": "En equipos redacten un proyecto para resolver el problema de uso desigual del patio que aparece en el caso ficticio entregado. Describan el problema con los datos del caso, expliquen cómo su propuesta respeta la dignidad y la igualdad de quienes lo usan y definan un objetivo, acciones, responsables y un calendario coherente. Registren un acuerdo del equipo y una opinión diferente, indicando cómo la consideraron sin descalificarla. Terminen con una recomendación viable según el caso. No investiguen a estudiantes reales ni inventen presupuesto.",
+      "participationMode": "GROUP",
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "expected": {
+        "explicit": [
+          "Proyecto colaborativo: problema sustentado, propuesta vinculada con dignidad/igualdad y objetivo/acciones/responsables/calendario coherentes",
+          "Consideración observable de acuerdo y opinión diferente sin descalificar ni exigir acuerdo",
+          "Recomendación viable según caso; datos y personajes ficticios"
+        ],
+        "excluded": [
+          "Encuestas reales, investigación de personas, presupuesto, ejecución del proyecto o unanimidad",
+          "Calificar adhesión ideológica, simpatía interna o cantidad de palabras habladas por miembro"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CIV02",
+      "family": "Plan individual de proyecto ciudadano",
+      "title": "Antes de proponer el cambio",
+      "description": "Cada estudiante preparará solo el plan escrito de un proyecto de ciudadanía para el problema de acceso a los espacios de lectura del caso ficticio. El plan relacionará el problema y sus datos con un objetivo, las acciones previstas, sus responsables y su secuencia temporal. Explicará cómo las acciones toman en cuenta la igualdad de acceso. No ejecuten el proyecto ni redacten un informe final ni inventen resultados.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "expected": {
+        "explicit": [
+          "Plan individual: problema/datos, objetivo y acciones/responsables/secuencia previstos",
+          "Relación de propuesta con igualdad de acceso; planificación, sin producto ejecutado",
+          "Sin resultados o conclusiones de una ejecución que no ocurrió"
+        ],
+        "excluded": [
+          "Proyecto ejecutado, informe final, presupuesto o nuevas mediciones",
+          "Colaboración de equipo impuesta a un plan individual"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CIV03",
+      "family": "Comparación de proyectos ciudadanos",
+      "title": "Dos maneras de atender el mismo problema",
+      "description": "Comparen los dos proyectos de ciudadanía entregados para resolver el mismo problema del caso. Contrasten si sus objetivos, acciones, responsables y tiempos son coherentes con los datos, y expliquen cómo cada propuesta toma en cuenta la dignidad y la igualdad. Justifiquen qué recomendación es más viable con la información disponible. No elaboren un proyecto nuevo ni juzguen a las personas que escribieron los proyectos.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "expected": {
+        "explicit": [
+          "Contraste de relación datos/objetivo/acciones/responsables/tiempos en ambos proyectos",
+          "Análisis sustentado de dignidad/igualdad en propuestas, no juicio personal de autores",
+          "Viabilidad de recomendaciones justificada con datos existentes"
+        ],
+        "excluded": [
+          "Nuevo proyecto, presupuesto, encuestas, votación por simpatía o calificación de creencias",
+          "Comparación genérica sin las relaciones pedidas"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CIV04",
+      "family": "Revisión de recomendación de proyecto",
+      "title": "Una recomendación que sí se pueda sostener",
+      "description": "Revisen solamente la recomendación final del proyecto de ciudadanía entregado para que responda al problema y sea viable según los datos y las acciones ya previstos. Conserven el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto. No añadan un presupuesto ni acciones nuevas ni vuelvan a escribir todo el proyecto.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "expected": {
+        "explicit": [
+          "Recomendación acotada, pertinente al problema y viable según datos/acciones previstas",
+          "Problema/objetivo/acciones/responsables/tiempos conservados",
+          "Sin nuevo proyecto, presupuesto ni ejecución"
+        ],
+        "excluded": [
+          "Evaluar todo el proyecto como producto nuevo o exigir cambiar sus acciones",
+          "Nuevos datos, informe completo, presupuesto o ejecución"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-ARG01",
+      "family": "Argumentación oral y escucha de opiniones",
+      "title": "Razones para compartir nuestros espacios",
+      "description": "Realicen un debate sobre la propuesta del caso ficticio para compartir los espacios del curso. Cada intervención presentará una postura, un hecho del caso, un ejemplo y una analogía pertinente, explicando la razón que los relaciona con la postura. Escuchen un contraargumento y respóndanlo con razones sin descalificar a quien lo expresó. La conclusión debe corresponder a lo discutido. No redacten un ensayo ni inventen cifras ni califiquen quién piensa igual que el docente.",
+      "participationMode": "GROUP",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8"
+      ],
+      "expected": {
+        "explicit": [
+          "Debate oral con postura y funciones distintas de hecho/ejemplo/analogía/argumento/contraargumento",
+          "Respuesta razonada y fiel a opinión contraria; escucha observable mediante respuesta, no acuerdo obligatorio",
+          "Conclusión coherente con intercambio y caso"
+        ],
+        "excluded": [
+          "Ensayo escrito, datos nuevos, acuerdo ideológico, talante personal o respeto inferido por silencio",
+          "Nombrar componentes sin explicar cómo sostienen la postura"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-VAL01",
+      "family": "Lectura de valores y acciones del cuento",
+      "title": "Lo que muestran las decisiones del personaje",
+      "description": "Lean el cuento policíaco entregado y expliquen qué actitudes y valores muestran las decisiones de sus personajes. Apoyen cada interpretación en las acciones, el diálogo y sus consecuencias en la trama. Contrasten dos interpretaciones posibles sin atribuir al autor lo que no está en el texto. No se pide escribir otro cuento ni contar experiencias propias ni estar de acuerdo con las decisiones del personaje.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "expected": {
+        "explicit": [
+          "Interpretación de actitudes/valores desde decisiones, acciones/diálogo/consecuencias en la trama",
+          "Contraste sustentado de interpretaciones posibles, sin atribuciones sin indicios",
+          "Lectura del texto dado, no moral obligatoria ni juicio sobre creencias del estudiante"
+        ],
+        "excluded": [
+          "Cuento nuevo, vivencia íntima, moraleja obligatoria o final cambiado",
+          "Identificar solo personajes sin relacionar decisiones y valores"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-VAL02",
+      "family": "Creación de cuento con decisiones y convivencia",
+      "title": "Un misterio sin acusar a nadie de verdad",
+      "description": "Escriban un cuento policíaco ficticio en el que los personajes deban decidir entre acusar sin pruebas o buscar indicios antes de resolver el misterio. Muestren en acciones y diálogos cómo esas decisiones afectan la convivencia y la dignidad de los personajes. Organicen inicio, nudo y desenlace coherentes con las pistas. Pueden elegir distintas soluciones si se sostienen en la trama; no se pide una moraleja aparte ni usar nombres de personas reales.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "expected": {
+        "explicit": [
+          "Cuento ficticio con misterio/pistas y estructura coherente",
+          "Decisiones y consecuencias para convivencia/dignidad mostradas en acciones y diálogo",
+          "Soluciones diversas sostenidas en trama, sin moral única, vivencias privadas ni nombres reales"
+        ],
+        "excluded": [
+          "Comentario moral adicional, moraleja forzada, solución única, investigación sobre personas reales",
+          "Calificar la creencia del estudiante en lugar de lo comunicado por personajes y trama"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CAL01",
+      "family": "Revisión de borrador con rima y sugerencias",
+      "title": "Las palabras vuelven con otro sonido",
+      "description": "Revisen el borrador de caligrama con rima entregado usando las sugerencias de la docente y de un compañero. Ajusten la rima, el vocabulario y la relación entre palabras e imagen para comunicar la intención y la emoción ficticia ya dadas. Muestren el borrador y la versión revisada para reconocer los cambios. Conserven la intención y la imagen previstas; no se pide recitar, medir versos ni publicar todavía.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "expected": {
+        "explicit": [
+          "Revisión de borrador con docente y par, cambios reconocibles en rima/vocabulario/texto-imagen",
+          "Rima por coincidencias sonoras con función en sentido; no métrica fija ni recitación",
+          "Intención/emoción ficticia e imagen dadas conservadas, sin obligar nueva elección o publicación"
+        ],
+        "excluded": [
+          "Poema nuevo desde cero, emoción íntima, metro, otras figuras, publicación o recitación",
+          "Revisión que ignora rima aunque la consigna la pide explícitamente"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRA-CAL02",
+      "family": "Lectura y comentario respetuoso de otra interpretación",
+      "title": "Otra forma de entender el poema",
+      "description": "Lean el caligrama y la interpretación de una compañera que están en la ficha. Escriban un comentario que explique, con palabras y con la figura del poema, cómo se representa una emoción ficticia. Consideren la interpretación de la compañera: indiquen una coincidencia o una diferencia con razones y sin insultos ni burlas. No tienen que estar de acuerdo ni contar lo que sienten de verdad ni crear otro caligrama.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "expected": {
+        "explicit": [
+          "Comentario escrito: emoción representada sustentada en palabras y figura del caligrama dado",
+          "Consideración de interpretación ajena, coincidencia O diferencia razonada sin insulto; no exige acuerdo",
+          "Sin emoción privada, nueva creación o emoción del evaluador"
+        ],
+        "excluded": [
+          "Obligar coincidencia Y diferencia, aceptación de opinión ajena o demostrar empatía interna",
+          "Recitación, poema nuevo, figuras o rima no pedidos"
+        ]
+      }
+    }
+  ]
+}

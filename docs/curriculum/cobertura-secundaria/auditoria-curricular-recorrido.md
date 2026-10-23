@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | Seis géneros conceptuales:98actividades/392instrumentos; géneros del indicador de salud:23/92 y1controlafiche/4. Total local122/488 leído. Cinco géneros con muestras HTTP anteriores; HTTP163 bloqueado por latencia;164 aún local. Visual e indicadores transversales pendientes |
+| 1 | COMMON | Lengua Española | Seis géneros conceptuales:98actividades/392instrumentos; géneros del indicador de salud:23/92 y1controlafiche/4. Total local122/488 leído. Seis géneros conceptuales y cuatro del indicador de salud con muestras HTTP.164 instalado y servido soloDevelopment; ocho muestras guardadas/reabiertas. Visual personal e indicadores transversales pendientes |
 | 1 | COMMON | Inglés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |

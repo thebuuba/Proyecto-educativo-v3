@@ -4277,7 +4277,7 @@
             "LEN1-CAL-03",
             "LEN1-CAL-04"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4337,7 +4337,7 @@
             "LEN1-CAL-14",
             "LEN1-CAL-R08"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4430,7 +4430,7 @@
             "LEN1-CAL-04",
             "LEN1-CAL-09"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4512,7 +4512,7 @@
             "LEN1-CAL-03",
             "LEN1-CAL-09"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4581,7 +4581,7 @@
             "LEN1-CAL-02",
             "LEN1-CAL-12"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4631,7 +4631,7 @@
             "LEN1-CAL-06",
             "LEN1-CAL-08"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4778,7 +4778,7 @@
             "LEN1-CAL-02",
             "LEN1-CAL-07"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4826,7 +4826,7 @@
             "LEN1-CAL-07",
             "LEN1-CAL-13"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4885,7 +4885,7 @@
             "LEN1-CAL-07",
             "LEN1-CAL-13"
           ],
-          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+          "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4923,8 +4923,8 @@
           ]
         }
       ],
-      "status": "REVISADO_LOCAL_HTTP_BLOQUEADO_POR_LATENCIA_VISUAL_PENDIENTE",
-      "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "nextAction": "Visual personal pendiente;88instrumentos y cuatro muestrasHTTP164 acreditados. Completar requisitos transversales restantes de todaLengua1",
       "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json",
       "curricularComponentAudit": [
         {
@@ -5226,6 +5226,15 @@
         "personalPreservation": "auditoria-curricular-len1-personales-163-instalacion.json",
         "personalBrowser": "LOGIN_SIN_SESION_NO_MODIFICADO",
         "fullSubjectAchievementIndicators": "ABIERTOS"
+      },
+      "verification164": {
+        "activities": 22,
+        "instrumentsRead": 88,
+        "samples": 4,
+        "httpEvidence": "auditoria-curricular-caligrama-http-164.json",
+        "personalPreservation": "auditoria-curricular-len1-personales-164-caligrama.json",
+        "supersedesBlockedFlow163WithoutOverwriting": true,
+        "personalBrowser": "NO_DISPONIBLE"
       }
     }
   ],
@@ -10249,12 +10258,12 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Seis géneros conceptuales98actividades/392instrumentos; cuatro géneros del indicador75 con23actividades/92instrumentos y1controlafiche/4; total122casos/488instrumentos locales",
+    "otherTopics": "Seis géneros conceptuales con98actividades/392instrumentos y muestras HTTP; cuatro géneros del indicador75 con23actividades/92instrumentos y1controlafiche/4. Total122casos/488instrumentos locales; faltan componentes transversales.",
     "remaining": [
-      "Instalación/servido164 y HTTP representativo; latencia48–53s observada en163",
-      "Visual personal sin sesión, registroSW/caché no accesibles al sandboxDOM",
-      "Restantes requisitos de siete competencias específicas y21indicadores: TIC responsable, argumentación oral, proyectos de ciudadanía, divulgación/investigación científica, valores en trama y revisión de caligrama con rima, entre otros que resulte del contraste completo",
-      "81contextos restantes según orden oficial"
+      "Visual personal sin sesión y herramienta de navegador desconectada; registroSW/caché no inspeccionables",
+      "Completar siete competencias específicas y21indicadores: banco transversal13casos/52salidas YA fijado, sin generar",
+      "Observar latencia de interpretación:164 completó ocho muestras, causa de antiguos53/48s no demostrada",
+      "81contextos restantes por orden oficial"
     ]
   },
   "specificCompetencies": [
@@ -10799,7 +10808,13 @@
       "sourceIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
       "sourcePage": 75,
       "notAConceptHeader": true,
-      "status": "REVISADO_LOCALMENTE_HTTP_VISUAL_PENDIENTE"
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "verification164": {
+        "httpEvidence": "auditoria-curricular-http-164.json",
+        "samples": 1,
+        "localEvidence": "auditoria-curricular-len1-salud-164-lectura96.json",
+        "personalBrowser": "NO_DISPONIBLE"
+      }
     },
     {
       "id": "receta",
@@ -10897,7 +10912,13 @@
       "sourceIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
       "sourcePage": 75,
       "notAConceptHeader": true,
-      "status": "REVISADO_LOCALMENTE_HTTP_VISUAL_PENDIENTE"
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "verification164": {
+        "httpEvidence": "auditoria-curricular-http-164.json",
+        "samples": 1,
+        "localEvidence": "auditoria-curricular-len1-salud-164-lectura96.json",
+        "personalBrowser": "NO_DISPONIBLE"
+      }
     },
     {
       "id": "articulo-opinion",
@@ -10995,7 +11016,13 @@
       "sourceIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
       "sourcePage": 75,
       "notAConceptHeader": true,
-      "status": "REVISADO_LOCALMENTE_HTTP_VISUAL_PENDIENTE"
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "verification164": {
+        "httpEvidence": "auditoria-curricular-http-164.json",
+        "samples": 1,
+        "localEvidence": "auditoria-curricular-len1-salud-164-lectura96.json",
+        "personalBrowser": "NO_DISPONIBLE"
+      }
     },
     {
       "id": "instructivo",
@@ -11082,7 +11109,13 @@
       "sourceIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
       "sourcePage": 75,
       "notAConceptHeader": true,
-      "status": "REVISADO_LOCALMENTE_HTTP_VISUAL_PENDIENTE"
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "verification164": {
+        "httpEvidence": "auditoria-curricular-http-164.json",
+        "samples": 1,
+        "localEvidence": "auditoria-curricular-len1-salud-164-lectura96.json",
+        "personalBrowser": "NO_DISPONIBLE"
+      }
     }
   ]
 }
