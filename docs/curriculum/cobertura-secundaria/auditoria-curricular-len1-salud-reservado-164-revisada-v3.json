@@ -1,0 +1,3793 @@
+{
+  "catalog": "evaluation-2026.164",
+  "bankSha256": "5d67d1408cf89d65d2adc7e4c8f9b4526cafcdbbb7dd4a90dcdb2f134fc119e9",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "69938c02654abb9ffdff7ed573b2e2216a9f18ae",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.565900000000056,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Datos de la entrada señalada",
+            "description": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+              "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia el nombre, los rasgos, la fuente y las demás entradas que debía conservar.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección comprobable de los datos señalados en la entrada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.7030999999999494,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+            "description": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+              "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia el nombre, los rasgos, la fuente y las demás entradas que debía conservar.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.088899999999967,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+            "description": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+              "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia el nombre, los rasgos, la fuente y las demás entradas que debía conservar.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección comprobable de los datos señalados en la entrada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.7063999999999169,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Datos de la entrada señalada",
+            "description": "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas. Parcial (50%): Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el hábitat de la entrada señalada según la ficha; conserva el nombre, los rasgos, la fuente y las demás entradas.",
+              "Los datos corregidos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige el hábitat parcialmente, pero conserva una imprecisión respecto de la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia el nombre, los rasgos, la fuente y las demás entradas que debía conservar.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.692100000000096,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.4602000000000999,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.6557000000000244,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.092899999999986,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo. Parcial (50%): Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido. Parcial (50%): Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas. Parcial (50%): El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas del catálogo manuscrito en el cuaderno y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.062599999999975,
+      "automatic": {
+        "activityType": "COMPARISON",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Cantidades de las versiones",
+            "description": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+              "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+              "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+              "Atribuye a una versión cantidades de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica cambios comprobables de cantidades respecto de la receta de referencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8155000000000427,
+      "automatic": {
+        "activityType": "COMPARISON",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+            "description": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+              "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+              "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+              "Atribuye a una versión cantidades de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0534000000000106,
+      "automatic": {
+        "activityType": "COMPARISON",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+            "description": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+              "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+              "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+              "Atribuye a una versión cantidades de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica cambios comprobables de cantidades respecto de la receta de referencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7320999999999458,
+      "automatic": {
+        "activityType": "COMPARISON",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "COMPARISON",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Cantidades de las versiones",
+            "description": "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia. Parcial (50%): Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades de ingredientes de ambas versiones con la ficha original y explica cuáles cambiaron respecto de la referencia.",
+              "El contraste explica las cantidades cambiadas; una correspondencia con la ficha necesita precisión.",
+              "Identifica parte de las cantidades cambiadas, pero no explica suficientemente su diferencia respecto de la ficha.",
+              "Atribuye a una versión cantidades de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.950800000000072,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:0",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Procedimiento comprensible y ordenado",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una secuencia reconocible para seguir el procedimiento de la receta.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8087000000000444,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:0",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8892999999999347,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:0",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una secuencia reconocible para seguir el procedimiento de la receta.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7925000000000182,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:0",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Procedimiento comprensible y ordenado",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza. Parcial (50%): Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0291999999999462,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analogy:0",
+            "templateId": "len1-health-opinion-analogy",
+            "title": "Función de la analogía presente",
+            "description": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+              "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+              "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+              "Atribuye a los referentes una semejanza que no sostiene la postura o contradice el fragmento.",
+              "No explica una analogía reconocible mediante la expresión presente del artículo."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica una analogía reconocible mediante la expresión presente del artículo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0158999999999878,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analogy:0",
+            "templateId": "len1-health-opinion-analogy",
+            "title": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+            "description": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+              "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+              "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+              "Atribuye a los referentes una semejanza que no sostiene la postura o contradice el fragmento.",
+              "No explica una analogía reconocible mediante la expresión presente del artículo."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1317999999999984,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analogy:0",
+            "templateId": "len1-health-opinion-analogy",
+            "title": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+            "description": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+              "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+              "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+              "Atribuye a los referentes una semejanza que no sostiene la postura o contradice el fragmento.",
+              "No explica una analogía reconocible mediante la expresión presente del artículo."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica una analogía reconocible mediante la expresión presente del artículo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9056000000000495,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analogy:0",
+            "templateId": "len1-health-opinion-analogy",
+            "title": "Función de la analogía presente",
+            "description": "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura. Parcial (50%): Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la analogía presente mediante su expresión en el artículo y la semejanza pertinente que permite apoyar la postura.",
+              "La semejanza y su apoyo a la postura se explican; una relación necesita precisión.",
+              "Cita la expresión, pero no explica suficientemente cómo la semejanza apoya la postura.",
+              "Atribuye a los referentes una semejanza que no sostiene la postura o contradice el fragmento.",
+              "No explica una analogía reconocible mediante la expresión presente del artículo."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.876700000000028,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion-revision:0",
+            "templateId": "len1-health-opinion-conclusion-revision",
+            "title": "Conclusión según las razones ya escritas",
+            "description": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+              "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+              "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+              "La conclusión contradice las razones o el cambio altera postura, datos o desarrollo que debía conservar.",
+              "No presenta una revisión reconocible de la conclusión según las razones disponibles."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una revisión reconocible de la conclusión según las razones disponibles.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9185999999999694,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion-revision:0",
+            "templateId": "len1-health-opinion-conclusion-revision",
+            "title": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+            "description": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+              "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+              "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+              "La conclusión contradice las razones o el cambio altera postura, datos o desarrollo que debía conservar.",
+              "No presenta una revisión reconocible de la conclusión según las razones disponibles."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.028099999999995,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion-revision:0",
+            "templateId": "len1-health-opinion-conclusion-revision",
+            "title": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+            "description": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+              "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+              "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+              "La conclusión contradice las razones o el cambio altera postura, datos o desarrollo que debía conservar.",
+              "No presenta una revisión reconocible de la conclusión según las razones disponibles."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una revisión reconocible de la conclusión según las razones disponibles.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8072999999999411,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion-revision:0",
+            "templateId": "len1-health-opinion-conclusion-revision",
+            "title": "Conclusión según las razones ya escritas",
+            "description": "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado. Parcial (50%): Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la conclusión para que se derive de las razones ya escritas; conserva postura, datos y desarrollo del artículo entregado.",
+              "La conclusión se sostiene en las razones dadas; una relación necesita precisión.",
+              "Cambia el cierre, pero parte de su conclusión queda sin apoyo en las razones ya escritas.",
+              "La conclusión contradice las razones o el cambio altera postura, datos o desarrollo que debía conservar.",
+              "No presenta una revisión reconocible de la conclusión según las razones disponibles."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.5527999999999338,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones para consultar el catálogo",
+            "description": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+              "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+              "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+              "Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.",
+              "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.4917999999998983,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+            "description": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+              "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+              "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+              "Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.",
+              "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.889699999999948,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+            "description": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+              "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+              "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+              "Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.",
+              "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9225999999999885,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones para consultar el catálogo",
+            "description": "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado. Parcial (50%): Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.",
+              "Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.",
+              "Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.",
+              "Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.",
+              "No presenta acciones reconocibles para consultar el catálogo según el recorrido dado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas. Parcial (50%): Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 5.180300000000102,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-purpose:0",
+            "templateId": "poster-purpose",
+            "title": "Propósito y destinatarios del afiche",
+            "description": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+              "Reconoce la intención; una relación con el destinatario necesita precisión.",
+              "Identifica parte de la intención, pero la confunde con un dato secundario.",
+              "Atribuye al afiche una intención incompatible con su contenido.",
+              "No identifica el propósito comunicativo del afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Reconoce la intención; una relación con el destinatario necesita precisión.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica parte de la intención, pero la confunde con un dato secundario.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el propósito comunicativo del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-message:1",
+            "templateId": "poster-message",
+            "title": "Interpretación del mensaje",
+            "description": "Explica la idea central y el sentido del mensaje del afiche leído.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la idea central y el sentido del mensaje del afiche leído.",
+              "Explica la idea central; una relación con el contenido necesita precisión.",
+              "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+              "La explicación atribuye al afiche un mensaje incompatible con su contenido.",
+              "No ofrece una interpretación reconocible del mensaje del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la idea central y el sentido del mensaje del afiche leído.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica la idea central; una relación con el contenido necesita precisión.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una interpretación reconocible del mensaje del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Recursos para convencer",
+            "description": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+              "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+              "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+              "Confunde los recursos persuasivos o les atribuye una función incompatible con el mensaje.",
+              "No identifica ni explica recursos persuasivos del afiche leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+                "scoreUnits": 510
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+                "scoreUnits": 340
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica ni explica recursos persuasivos del afiche leído.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-visuals:3",
+            "templateId": "poster-visuals",
+            "title": "Función de texto y elementos gráficos",
+            "description": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.9142000000000507,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-purpose:0",
+            "templateId": "poster-purpose",
+            "title": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+            "description": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+              "Reconoce la intención; una relación con el destinatario necesita precisión.",
+              "Identifica parte de la intención, pero la confunde con un dato secundario.",
+              "Atribuye al afiche una intención incompatible con su contenido.",
+              "No identifica el propósito comunicativo del afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-message:1",
+            "templateId": "poster-message",
+            "title": "Explica la idea central y el sentido del mensaje del afiche leído.",
+            "description": "Explica la idea central y el sentido del mensaje del afiche leído.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la idea central y el sentido del mensaje del afiche leído.",
+              "Explica la idea central; una relación con el contenido necesita precisión.",
+              "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+              "La explicación atribuye al afiche un mensaje incompatible con su contenido.",
+              "No ofrece una interpretación reconocible del mensaje del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+            "description": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+              "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+              "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+              "Confunde los recursos persuasivos o les atribuye una función incompatible con el mensaje.",
+              "No identifica ni explica recursos persuasivos del afiche leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-visuals:3",
+            "templateId": "poster-visuals",
+            "title": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+            "description": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.6204999999999927,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-purpose:0",
+            "templateId": "poster-purpose",
+            "title": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+            "description": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+              "Reconoce la intención; una relación con el destinatario necesita precisión.",
+              "Identifica parte de la intención, pero la confunde con un dato secundario.",
+              "Atribuye al afiche una intención incompatible con su contenido.",
+              "No identifica el propósito comunicativo del afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Reconoce la intención; una relación con el destinatario necesita precisión.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica parte de la intención, pero la confunde con un dato secundario.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el propósito comunicativo del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-message:1",
+            "templateId": "poster-message",
+            "title": "Explica la idea central y el sentido del mensaje del afiche leído.",
+            "description": "Explica la idea central y el sentido del mensaje del afiche leído.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la idea central y el sentido del mensaje del afiche leído.",
+              "Explica la idea central; una relación con el contenido necesita precisión.",
+              "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+              "La explicación atribuye al afiche un mensaje incompatible con su contenido.",
+              "No ofrece una interpretación reconocible del mensaje del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la idea central y el sentido del mensaje del afiche leído.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica la idea central; una relación con el contenido necesita precisión.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una interpretación reconocible del mensaje del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+            "description": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+              "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+              "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+              "Confunde los recursos persuasivos o les atribuye una función incompatible con el mensaje.",
+              "No identifica ni explica recursos persuasivos del afiche leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+                "scoreUnits": 510
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+                "scoreUnits": 340
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica ni explica recursos persuasivos del afiche leído.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-visuals:3",
+            "templateId": "poster-visuals",
+            "title": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+            "description": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.5594999999999573,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-purpose:0",
+            "templateId": "poster-purpose",
+            "title": "Propósito y destinatarios del afiche",
+            "description": "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige. Parcial (50%): Identifica parte de la intención, pero la confunde con un dato secundario.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Interpreta la intención comunicativa del afiche sobre el tema del afiche e identifica a quién se dirige.",
+              "Reconoce la intención; una relación con el destinatario necesita precisión.",
+              "Identifica parte de la intención, pero la confunde con un dato secundario.",
+              "Atribuye al afiche una intención incompatible con su contenido.",
+              "No identifica el propósito comunicativo del afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-message:1",
+            "templateId": "poster-message",
+            "title": "Interpretación del mensaje",
+            "description": "Explica la idea central y el sentido del mensaje del afiche leído. Parcial (50%): Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la idea central y el sentido del mensaje del afiche leído.",
+              "Explica la idea central; una relación con el contenido necesita precisión.",
+              "Reconoce parte del mensaje, pero confunde una idea relevante con información secundaria.",
+              "La explicación atribuye al afiche un mensaje incompatible con su contenido.",
+              "No ofrece una interpretación reconocible del mensaje del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Recursos para convencer",
+            "description": "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer. Parcial (50%): Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica cómo las palabras clave, los argumentos y los recursos persuasivos buscan atraer, motivar o convencer.",
+              "Identifica los recursos persuasivos y explica su función; una relación necesita precisión.",
+              "Reconoce algunos recursos, pero explica parcialmente cómo buscan convencer.",
+              "Confunde los recursos persuasivos o les atribuye una función incompatible con el mensaje.",
+              "No identifica ni explica recursos persuasivos del afiche leído."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:poster-visuals:3",
+            "templateId": "poster-visuals",
+            "title": "Función de texto y elementos gráficos",
+            "description": "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje. Parcial (50%): Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo se relacionan imágenes con el texto y la intención del afiche para que el público localice y comprenda el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Describe elementos gráficos, pero no explica cómo se vinculan con el mensaje y su lectura.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

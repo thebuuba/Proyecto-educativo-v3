@@ -1,0 +1,286 @@
+{
+  "version": "curricular-len1-salud-generos-v1",
+  "provenance": "SINTÉTICO del mismo autor; expectativas previas a ejecución. Cuatro familias distintas por género mencionado literalmente en indicador75, sin convertirlo en cuatro encabezados conceptuales de69–74. No fuente externa ni revisión independiente.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      69,
+      75
+    ],
+    "specificCompetencyId": "1e434089-d202-529a-80ad-734c3a723254",
+    "achievementIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+    "argumentationIndicatorId": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "sourceLimit": "La malla conceptual enumera seis géneros; el indicador menciona catálogo/receta/artículo de opinión/instructivo. Se conservan ambos niveles. Las estructuras concretas proceden de consignas, sin atribuir a la fuente una nueva lista conceptual. Fichas y registros son insumos docentes previstos, no datos reales copiados ni hechos científicos inventados."
+  },
+  "cases": [
+    {
+      "id": "LEN1-SAL-CAT01",
+      "family": "Catálogo: producción breve",
+      "title": "Flora y fauna en fichas",
+      "description": "Hagan un catálogo sobre la flora y la fauna dominicanas con las fichas entregadas.",
+      "expected": {
+        "explicit": [
+          "Catálogo organizado para consultar flora y fauna; contenido fiel a las fichas disponibles",
+          "Entradas reconocibles y clasificación comprensible sin número de especies impuesto"
+        ],
+        "excluded": [
+          "Investigación adicional, nombres científicos o especies no pedidos",
+          "Ilustraciones, publicación, exposición, cantidad fija de entradas o material obligatorio"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-CAT02",
+      "family": "Catálogo: producción desarrollada",
+      "title": "Nuestro catálogo para consultar y cuidar",
+      "description": "En parejas preparen un catálogo de flora y fauna dominicanas usando las fichas de la docente. Agrupen las entradas en flora y fauna; en cada una incluyan el nombre, los rasgos, el hábitat y la fuente que figuran en la ficha. Añadan la orientación de conservación indicada en ese material, sin inventar datos. Organicen un índice que ayude a encontrar las entradas y presenten la versión digital para una revisión en el aula. No se pide subirla a Internet ni dibujar especies ni añadir nombres científicos.",
+      "expected": {
+        "explicit": [
+          "Entradas de flora/fauna, nombre/rasgos/hábitat/fuente fieles a material entregado",
+          "Orientación de conservación sustentada, no promesa de efectos de salud",
+          "Índice y organización permiten localizar entradas; versión digital para revisión, no publicación externa"
+        ],
+        "excluded": [
+          "Nuevas especies, taxonomía científica, dibujos, investigación o datos inventados",
+          "Subida a Internet, exposición oral o informe de investigación adicional"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-CAT03",
+      "family": "Catálogo: lectura comparada",
+      "title": "Cuál catálogo permite encontrar la información",
+      "description": "Comparen los dos catálogos de flora y fauna dominicanas entregados con sus fichas de referencia. Expliquen cuál facilita localizar las entradas y comprueben si la clasificación, los nombres y los hábitats son fieles a las fichas. Señalen las diferencias que cambian la consulta o la información. No redacten otro catálogo ni valoren cuál es más bonito.",
+      "expected": {
+        "explicit": [
+          "Comparación de organización/localización y clasificación de ambos catálogos",
+          "Fidelidad de nombres y hábitats contrastada con fichas; diferencias por su efecto, no gusto estético"
+        ],
+        "excluded": [
+          "Catálogo nuevo, nuevas especies, fuentes adicionales o preferencia por belleza",
+          "Exigir rasgos/fuentes/conservación que no fueron objeto de esta revisión"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-CAT04",
+      "family": "Catálogo: corrección limitada",
+      "title": "Una entrada con un dato equivocado",
+      "description": "Corrijan únicamente el nombre, el hábitat y la fuente de la entrada señalada del catálogo de flora y fauna, usando la ficha entregada. Conserven las demás entradas, su orden y las ilustraciones. No rehagan el catálogo ni agreguen especies.",
+      "expected": {
+        "explicit": [
+          "Corrección solo de tres datos de la entrada señalada según referencia",
+          "Demás entradas/orden/ilustraciones conservados exactamente"
+        ],
+        "excluded": [
+          "Nuevo catálogo, índice nuevo, nuevas especies, nuevos dibujos o publicación",
+          "Cambiar otros datos o evaluar todo el catálogo como producto nuevo"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-REC01",
+      "family": "Receta: producción breve",
+      "title": "La receta de la ficha",
+      "description": "Escriban una receta con los ingredientes y el procedimiento de la ficha entregada para el folleto de alimentación del curso.",
+      "expected": {
+        "explicit": [
+          "Receta escrita con ingredientes y secuencia comprensible del procedimiento",
+          "Fidelidad al material entregado, sin agregar ingredientes, cantidades o pasos inexistentes"
+        ],
+        "excluded": [
+          "Cocinar, degustar, calcular calorías, fotografiar o investigar nutrición",
+          "Número fijo de pasos, ingrediente obligatorio o beneficio médico inventado"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-REC02",
+      "family": "Receta: producción desarrollada",
+      "title": "Una receta que otra persona pueda seguir",
+      "description": "Redacten la receta para el folleto del curso a partir de la ficha entregada: título, ingredientes con sus cantidades exactas y procedimiento en orden. Expresen las acciones con verbos claros y relacionen cada ingrediente con el paso donde se utiliza. Mantengan las indicaciones de higiene que aparecen en la ficha sin añadir recomendaciones nuevas. La actividad consiste en escribir; no vamos a cocinar, calcular nutrientes ni prometer efectos para la salud.",
+      "expected": {
+        "explicit": [
+          "Título, ingredientes/cantidades exactas y pasos ordenados",
+          "Acciones claras y correspondencia ingrediente/paso; higiene fiel a ficha",
+          "Escritura de receta, sin ejecución culinaria ni evaluación de nutrientes"
+        ],
+        "excluded": [
+          "Cocinar/degustar, investigación nutricional, promesas de salud",
+          "Utensilios, tiempos, ingredientes o cantidades no entregados; publicación no pedida"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-REC03",
+      "family": "Receta: análisis comparado",
+      "title": "La cantidad que cambió la receta",
+      "description": "Comparen las dos versiones de la receta entregada con la ficha original. Identifiquen qué cantidades y qué orden de acciones cambiaron y expliquen cómo esos cambios impiden seguir el procedimiento original. No cocinen ni redacten una tercera versión ni juzguen el sabor.",
+      "expected": {
+        "explicit": [
+          "Contraste de cantidades y orden de acciones respecto de referencia",
+          "Explicación funcional del efecto en la posibilidad de seguir la receta, no gusto ni receta nueva"
+        ],
+        "excluded": [
+          "Elaborar alimentos, degustación, receta nueva, calorías o salud",
+          "Añadir cantidades, ingredientes o pasos que no consten en la referencia"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-REC04",
+      "family": "Receta: revisión gramatical limitada",
+      "title": "Las acciones se entienden mejor",
+      "description": "Revisen solo los verbos del procedimiento de la receta entregada para que las acciones queden claras en imperativo. Conserven exactamente los ingredientes, sus cantidades y el orden de los pasos. No añadan pasos ni publiquen la receta.",
+      "expected": {
+        "explicit": [
+          "Imperativos claros para acciones ya dadas",
+          "Ingredientes, cantidades, orden y contenido de pasos conservados"
+        ],
+        "excluded": [
+          "Crear receta completa, cambiar cantidades, investigar nutrición o cocinar",
+          "Añadir materiales, pasos, publicación o comentario oral"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-OPI01",
+      "family": "Opinión: escritura breve",
+      "title": "Lo que pensamos del cuidado del patio",
+      "description": "Escriban un artículo de opinión sobre el cuidado del patio escolar.",
+      "expected": {
+        "explicit": [
+          "Postura reconocible sobre el cuidado del patio y razones pertinentes",
+          "Organización del texto de opinión que permita comprender el punto de vista"
+        ],
+        "excluded": [
+          "Cantidad fija de argumentos, analogía o contraargumento obligatorio si no se pidió",
+          "Encuesta, experimento, publicación, fotografías o denuncia de personas reales"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-OPI02",
+      "family": "Opinión: escritura argumentativa desarrollada",
+      "title": "Una propuesta para cuidar el patio",
+      "description": "Escriban un artículo de opinión sobre cómo mejorar el cuidado del patio. Presenten su postura y sosténganla con un hecho del registro entregado, un ejemplo y una analogía que tenga relación con el problema; expliquen la razón que une esas evidencias con su postura. Incluyan un contraargumento y respóndanlo sin descalificar a quienes piensan distinto. Terminen con una conclusión y una recomendación coherentes con lo argumentado. Distingan hechos de opiniones y reconozcan la fuente del registro. No necesitan buscar datos en Internet ni inventar encuestas.",
+      "expected": {
+        "explicit": [
+          "Postura, hecho comprobable, ejemplo y analogía pertinente; argumento explica vínculo con postura",
+          "Contraargumento representado con fidelidad y respuesta razonada sin descalificación",
+          "Conclusión/recomendación coherentes; hechos/opiniones diferenciados y fuente reconocida"
+        ],
+        "excluded": [
+          "Nuevas fuentes, encuestas, número fijo de párrafos, publicación o exposición",
+          "Calificar acuerdo ideológico, valores íntimos o inventar datos"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-OPI03",
+      "family": "Opinión: comprensión argumentativa",
+      "title": "Cómo se sostiene esta opinión",
+      "description": "Lean el artículo de opinión entregado sobre un problema ambiental de la comunidad. Identifiquen su postura y distingan el hecho, el ejemplo, la analogía, el argumento y el contraargumento que aparecen. Expliquen qué relación sostiene cada uno y si la conclusión se sigue de esas razones. Usen fragmentos del artículo para apoyar el análisis; no inventen elementos ausentes ni escriban otro artículo.",
+      "expected": {
+        "explicit": [
+          "Comprensión de postura, cinco componentes y sus funciones diferentes en texto dado",
+          "Vínculo lógico de razones/conclusión apoyado en fragmentos presentes, sin inventar recursos ausentes"
+        ],
+        "excluded": [
+          "Artículo nuevo, investigación o postura personal obligatoria",
+          "Contar recursos sin explicar su función o exigir un recurso no presente"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-OPI04",
+      "family": "Opinión: revisión de fragmento",
+      "title": "Responder sin descalificar",
+      "description": "En el fragmento del artículo de opinión entregado, reescriban únicamente el contraargumento y la respuesta para representar con fidelidad la opinión contraria y responder con una razón pertinente, sin insultos ni burlas. Conserven la postura, los datos y la conclusión del artículo. No hay que aceptar la opinión contraria ni escribir un artículo nuevo.",
+      "expected": {
+        "explicit": [
+          "Contraargumento fiel a postura contraria y respuesta con razón pertinente",
+          "Formulación sin insultos/burlas; no exige acuerdo con opinión ajena",
+          "Postura/datos/conclusión conservados, solo dos segmentos revisados"
+        ],
+        "excluded": [
+          "Texto completo nuevo, postura cambiada, nuevas fuentes, publicación",
+          "Puntuar obediencia, acuerdo ideológico, simpatía o empatía interna"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-INS01",
+      "family": "Instructivo: producción breve",
+      "title": "Cómo separar los materiales",
+      "description": "Hagan un instructivo para separar los materiales del aula según la ficha entregada.",
+      "expected": {
+        "explicit": [
+          "Instrucciones comprensibles y ordenadas para separar materiales según ficha",
+          "Acciones y clasificación fieles al material dado"
+        ],
+        "excluded": [
+          "Ejecutar limpieza, manipular residuos reales, fotografiar o investigar",
+          "Cantidad fija de pasos, materiales, tiempos o protocolos no dados"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-INS02",
+      "family": "Instructivo: producción desarrollada",
+      "title": "Unas instrucciones que permitan actuar",
+      "description": "Escriban un instructivo para que otro grupo organice los materiales del aula según la ficha entregada. Indiquen el propósito, los materiales que la ficha menciona y los pasos en el orden necesario; usen acciones claras y la clasificación de la ficha. Comprueben por lectura si el grupo destinatario podría seguirlo y corrijan una ambigüedad detectada. No ejecuten la tarea, no manipulen residuos y no añadan advertencias ni materiales que no están en la ficha.",
+      "expected": {
+        "explicit": [
+          "Propósito/destinatario, materiales dados, acciones claras y orden necesario",
+          "Clasificación fiel y lectura para detectar/corregir ambigüedad",
+          "Sin ejecución física ni materiales/advertencias inventados"
+        ],
+        "excluded": [
+          "Limpieza real, manipular residuos, fotos, materiales nuevos o publicación",
+          "Investigación de protocolos de seguridad o puntuación de destreza física"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-INS03",
+      "family": "Instructivo: comprensión y orden",
+      "title": "El paso que no se puede seguir",
+      "description": "Lean el instructivo entregado para organizar los materiales del aula. Localicen la acción ambigua y los pasos que están fuera de orden; expliquen qué impide seguirlos y propongan el orden que respeta las acciones y condiciones de la ficha de referencia. No realicen la tarea ni agreguen acciones o materiales.",
+      "expected": {
+        "explicit": [
+          "Identificación y explicación de ambigüedad y orden incompatible",
+          "Reordenación sustentada en ficha, conservando acciones/condiciones"
+        ],
+        "excluded": [
+          "Instructivo nuevo completo, nuevas acciones, materiales o advertencias",
+          "Ejecución de tarea, investigación, fotos o calificación física"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-INS04",
+      "family": "Instructivo: edición limitada",
+      "title": "La numeración ayuda a seguir los pasos",
+      "description": "Corrijan solamente la puntuación y la numeración de los pasos del instructivo entregado para que se distingan las acciones. Mantengan exactamente las acciones, las condiciones, los materiales y el orden de los pasos. No cambien verbos ni agreguen recomendaciones.",
+      "expected": {
+        "explicit": [
+          "Puntuación y numeración permiten delimitar pasos/acciones",
+          "Acciones, condiciones, materiales, orden y verbos conservados"
+        ],
+        "excluded": [
+          "Nuevo instructivo, nuevas acciones, cambios verbales, recomendaciones o investigación",
+          "Ejecutar tarea, dibujar, fotografiar o publicar"
+        ]
+      }
+    }
+  ]
+}

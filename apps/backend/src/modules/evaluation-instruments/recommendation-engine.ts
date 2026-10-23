@@ -12,6 +12,7 @@ import {resolveOptativeMathTask,optativeMathCriteria,optativeMathSelections} fro
 import { resolveCommonMathTask,commonMathCriteria,commonMathSelections,adaptMathScale } from '@aula/shared'
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity,withDeliveryCriteria,deliveryConditions} from '@aula/shared'
+import {resolveFirstGradeHealthGenre,firstGradeHealthGenreCriteria} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { adaptLanguageScale, formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -384,10 +385,12 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const readingReportModule = firstGenre === 'READING_REPORT'
   const detectiveModule = firstGenre === 'DETECTIVE_STORY' && isFirstGradeDetectiveActivity(activity.id)
   const calligramModule = firstGenre === 'CALLIGRAM' && isFirstGradeCalligramActivity(activity.id)
+  const healthGenre=resolveFirstGradeHealthGenre(input.activityTitle,input.description??'',context)
   const novelCriteria=contextualTopic?[]:secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',context,activity.id,input.includeAdditionalCandidates)
   const selectedAuthored: AuthoredCriterion[] = technical ? technicalCriteria(technical,input.description) : optativeScience ? optativeScienceCriteria(optativeScience) : optativeMath ? optativeMathCriteria(optativeMath) : socialOptative ? optativeSocialCriteria(socialOptative) : optativeTask ? optativeLanguageCriteria(optativeTask) : fhrTask ? commonFhrCriteria(fhrTask) : physicalTask ? commonPhysicalCriteria(physicalTask) : artTask ? commonArtCriteria(artTask) : socialTask ? commonSocialCriteria(socialTask) : commonScience ? commonScienceCriteria(commonScience) : mathTask ? commonMathCriteria(mathTask) : frenchTask ? commonFrenchCriteria(frenchTask) : englishTask ? commonEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '',input.includeAdditionalCandidates)
+    : healthGenre&&healthGenre.activityType===activity.id ? firstGradeHealthGenreCriteria(healthGenre)
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
       : posterModule ? posterCriteria(activity.id, input.activityTitle, input.description ?? '')

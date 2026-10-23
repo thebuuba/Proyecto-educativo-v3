@@ -30,6 +30,8 @@ export * from './secondary-novel-analysis'
 export * from './action-content-criteria'
 export * from './language-instrument-intent'
 export * from './language-procedure-criteria'
+export * from './secondary-language-grade-one-health-genres'
+import {resolveFirstGradeHealthGenre} from './secondary-language-grade-one-health-genres'
 export const ACTIVITY_DESCRIPTION_MAX_LENGTH = 10_000
 export type FirstSecondaryLanguageContext = { level: 'PRIMARY' | 'SECONDARY'; grade: number; subjectCode: string; optativeExitName?:string|null }
 
@@ -47,6 +49,8 @@ export function firstSecondaryLanguageGenre(title: string, description: string) 
 export function detectSecondaryLanguageActivity(title: string, description: string, context: FirstSecondaryLanguageContext | null): string | null {
   const contextualTopic = findSecondaryLanguageTopic(title, description, context)
   if (contextualTopic) return detectTopicActivity(title, description, contextualTopic)
+  const healthGenre=resolveFirstGradeHealthGenre(title,description,context)
+  if(healthGenre)return healthGenre.activityType
   if (!context || !commonSecondaryLanguageGrade(context) || ![1, 2].includes(context.grade)) return null
   const normalize = (value: string) => value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
   const titleText = normalize(title)

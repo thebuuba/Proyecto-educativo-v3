@@ -21,6 +21,7 @@ import { firstGradePosterCriteria, isFirstGradePosterActivity } from '@aula/shar
 import { firstGradeDetectiveCriteria, isFirstGradeDetectiveActivity } from '@aula/shared'
 import { firstGradeCalligramCriteria, isFirstGradeCalligramActivity } from '@aula/shared'
 import { firstGradeReadingReportCriteria } from '@aula/shared'
+import {resolveFirstGradeHealthGenre,firstGradeHealthGenreCriteria} from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
@@ -63,6 +64,8 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   if (input.evidenceInstructions?.trim()) input = { ...input, description: [input.description, input.evidenceInstructions].filter(Boolean).join('\n') }
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
+  const healthGenre=resolveFirstGradeHealthGenre(input.activityTitle,input.description??'',input.academicContext)
+  if(healthGenre&&(!input.activityType||input.activityType===healthGenre.activityType))return editableAuthoredRecommendation(firstGradeHealthGenreCriteria(healthGenre),input,input.activityType??healthGenre.activityType,'lengua-secundaria-1-generos-indicador-salud')
   const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(socialOptative)return adaptSocialScale(editableAuthoredRecommendation(optativeSocialCriteria(socialOptative),input,input.activityType??socialOptative.activityType,socialOptative.module.id))
   const optative=resolveOptativeLanguageTask(input.activityTitle,input.description??'',input.academicContext)

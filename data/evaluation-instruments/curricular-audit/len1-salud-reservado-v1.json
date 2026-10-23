@@ -1,0 +1,145 @@
+{
+  "version": "curricular-len1-salud-reservado-v1",
+  "provenance": "SINTÉTICO reservado del mismo autor, no ciego ni independiente. Expectativas fijadas tras leer64salidas intermedias, antes de estas32salidas; pone a prueba campos/fases limitados, medio, objeto/producto y título antiguo.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      69,
+      75
+    ],
+    "specificCompetencyId": "1e434089-d202-529a-80ad-734c3a723254",
+    "achievementIndicatorId": "025c2825-9150-573b-b9cb-a73d22632bf3",
+    "argumentationIndicatorId": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "sourceLimit": "La malla conceptual enumera seis géneros; el indicador menciona catálogo/receta/artículo de opinión/instructivo. Se conservan ambos niveles. Las estructuras concretas proceden de consignas, sin atribuir a la fuente una nueva lista conceptual. Fichas y registros son insumos docentes previstos, no datos reales copiados ni hechos científicos inventados."
+  },
+  "cases": [
+    {
+      "id": "LEN1-SAL-R01",
+      "title": "Solo el hábitat equivocado",
+      "description": "Corrijan únicamente el hábitat de la entrada señalada del catálogo de flora y fauna, contrastándolo con la ficha entregada. Mantengan sin cambios el nombre, los rasgos, la fuente y las demás entradas.",
+      "expected": {
+        "explicit": [
+          "Corrección solo de hábitat contra ficha; otros datos y entradas conservados",
+          "Una dimensión acotada, sin exigir corregir nombres o fuentes ya correctos"
+        ],
+        "excluded": [
+          "Evaluar todo el catálogo o corregir nombre/fuente/rasgos",
+          "Nueva clasificación, índice, dibujos o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "title": "Un índice en papel",
+      "description": "Preparen un catálogo manuscrito de flora y fauna con las fichas entregadas. Organicen las entradas e incluyan un índice que permita encontrarlas en el cuaderno. No lo pasen a formato digital ni agreguen datos a las fichas.",
+      "expected": {
+        "explicit": [
+          "Organización y fidelidad de entradas de flora/fauna; índice localiza entradas en soporte manuscrito",
+          "Ningún requisito de versión digital o publicación"
+        ],
+        "excluded": [
+          "Digitalizar, subir archivos o crear ilustraciones",
+          "Exigir los cuatro campos de otra consigna no pedidos aquí"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "title": "Comparamos solo las cantidades",
+      "description": "Comparen únicamente las cantidades de ingredientes de las dos versiones de la receta con la ficha original y expliquen qué cambió. El orden de acciones ya fue revisado; no lo analicen ni preparen otra receta.",
+      "expected": {
+        "explicit": [
+          "Contraste de cantidades según ficha y explicación de los cambios",
+          "Sin evaluar orden de acciones ya revisado ni producir receta nueva"
+        ],
+        "excluded": [
+          "Orden de acciones como criterio adicional, higiene o nuevos ingredientes",
+          "Preparación de alimentos, calorías o sabor"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "title": "Solo el procedimiento de la receta",
+      "description": "Escriban solamente el procedimiento de la receta usando los pasos de la ficha. La lista de ingredientes con cantidades ya está dada: no la copien ni la cambien. Expresen las acciones con claridad y mantengan el orden indicado.",
+      "expected": {
+        "explicit": [
+          "Redacción de acciones claras y orden de pasos según ficha",
+          "Ingredientes/cantidades dados se conservan como referencia; no se vuelve a exigir su lista"
+        ],
+        "excluded": [
+          "Presentar otra lista de ingredientes, título, higiene, publicación o receta completa",
+          "Añadir acciones, cantidades o materiales"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "title": "Qué hace la analogía",
+      "description": "En el artículo de opinión entregado, analicen únicamente la analogía que está presente: citen su expresión y expliquen la semejanza que permite apoyar la postura. No analicen hechos, ejemplos, contraargumentos ni conclusión; no redacten otro artículo.",
+      "expected": {
+        "explicit": [
+          "Analogía presente, expresión citada y semejanza pertinente que apoya postura",
+          "Solo análisis de analogía, sin los otros componentes de otra consigna"
+        ],
+        "excluded": [
+          "Hechos, ejemplos, contraargumentos o conclusión como exigencias",
+          "Artículo nuevo, nueva analogía o postura personal obligatoria"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "title": "El cierre de una opinión",
+      "description": "Mejoren solo la conclusión del artículo de opinión entregado para que se derive de las razones ya escritas. Conserven postura, datos y desarrollo. No añadan recomendaciones ni un contraargumento nuevo.",
+      "expected": {
+        "explicit": [
+          "Revisión únicamente de conclusión según razones existentes",
+          "Postura, datos y desarrollo conservados, sin recomendación nueva"
+        ],
+        "excluded": [
+          "Artículo completo, contraargumento, nuevas fuentes o recomendación",
+          "Exigir cambiar la postura o estar de acuerdo con ella"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "title": "Cómo consultar el catálogo",
+      "description": "Escriban un instructivo para consultar el catálogo de flora y fauna entregado: expliquen cómo buscar en el índice y localizar la ficha que se necesita, siguiendo el recorrido de consulta de la ficha de trabajo. No organicen materiales del aula ni elaboren otro catálogo.",
+      "expected": {
+        "explicit": [
+          "Instructivo de acciones para búsqueda en índice y localización de ficha, según recorrido dado",
+          "El catálogo es objeto de consulta, no producto nuevo; no clasificación física de materiales"
+        ],
+        "excluded": [
+          "Catálogo nuevo, clasificación de materiales del aula o pasos de limpieza",
+          "Nueva investigación, dibujos o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "title": "La receta de ayer",
+      "description": "Lean el afiche entregado y expliquen cómo su mensaje y sus imágenes buscan convencer al destinatario. No escriban una receta ni un afiche nuevo.",
+      "expected": {
+        "explicit": [
+          "La descripción actual prevalece sobre título antiguo: análisis de afiche",
+          "Mensaje, persuasión y relación visual de afiche dado, sin criterios de receta"
+        ],
+        "excluded": [
+          "Preparar receta o evaluar ingredientes y pasos",
+          "Nuevo afiche, dibujo o publicación"
+        ]
+      }
+    }
+  ]
+}

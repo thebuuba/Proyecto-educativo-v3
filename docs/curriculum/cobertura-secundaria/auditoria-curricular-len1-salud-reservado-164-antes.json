@@ -1,0 +1,3911 @@
+{
+  "catalog": "evaluation-2026.164",
+  "bankSha256": "5d67d1408cf89d65d2adc7e4c8f9b4526cafcdbbb7dd4a90dcdb2f134fc119e9",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "69938c02654abb9ffdff7ed573b2e2216a9f18ae",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.822799999999916,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Datos de la entrada señalada",
+            "description": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+              "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia otras entradas, el orden o las ilustraciones.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección comprobable de los datos señalados en la entrada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.217999999999961,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+            "description": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+              "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia otras entradas, el orden o las ilustraciones.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.723799999999983,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+            "description": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+              "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia otras entradas, el orden o las ilustraciones.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección comprobable de los datos señalados en la entrada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9755000000000109,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-correction:0",
+            "templateId": "len1-health-catalogue-correction",
+            "title": "Datos de la entrada señalada",
+            "description": "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones. Parcial (50%): Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige el nombre, el hábitat y la fuente de la entrada señalada según la ficha; conserva las demás entradas, su orden y las ilustraciones.",
+              "Los tres datos corresponden a la ficha y el resto del catálogo se conserva; queda una precisión de escritura.",
+              "Corrige parte de los datos señalados, pero mantiene otro que no corresponde a la ficha.",
+              "La corrección introduce un dato incompatible con la ficha o cambia otras entradas, el orden o las ilustraciones.",
+              "No presenta una corrección comprobable de los datos señalados en la entrada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.5457999999999856,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8467000000000553,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1490999999999758,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 631
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 210
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6951999999999998,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo. Parcial (50%): Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido. Parcial (50%): Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+            "maxScore": 6.31,
+            "maxScoreUnits": 631,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas. Parcial (50%): El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7083999999999833,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-verbs:0",
+            "templateId": "len1-health-recipe-verbs",
+            "title": "Acciones de la receta en imperativo",
+            "description": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+              "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+              "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+              "La revisión cambia ingredientes, cantidades u orden y altera el procedimiento original.",
+              "No presenta una revisión reconocible de los verbos de las acciones dadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una revisión reconocible de los verbos de las acciones dadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5883000000000038,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-verbs:0",
+            "templateId": "len1-health-recipe-verbs",
+            "title": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+            "description": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+              "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+              "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+              "La revisión cambia ingredientes, cantidades u orden y altera el procedimiento original.",
+              "No presenta una revisión reconocible de los verbos de las acciones dadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8176999999999452,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-verbs:0",
+            "templateId": "len1-health-recipe-verbs",
+            "title": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+            "description": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+              "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+              "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+              "La revisión cambia ingredientes, cantidades u orden y altera el procedimiento original.",
+              "No presenta una revisión reconocible de los verbos de las acciones dadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una revisión reconocible de los verbos de las acciones dadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6240000000000236,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-verbs:0",
+            "templateId": "len1-health-recipe-verbs",
+            "title": "Acciones de la receta en imperativo",
+            "description": "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos. Parcial (50%): Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa los verbos en imperativo para aclarar las acciones de la receta; conserva exactamente ingredientes, cantidades, orden y contenido de los pasos.",
+              "Los imperativos aclaran las acciones y conservan el procedimiento; queda una forma verbal por precisar.",
+              "Parte de los verbos aclara la acción, pero otros no permiten reconocer qué se debe hacer.",
+              "La revisión cambia ingredientes, cantidades u orden y altera el procedimiento original.",
+              "No presenta una revisión reconocible de los verbos de las acciones dadas."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6199000000000296,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-ingredients:0",
+            "templateId": "len1-health-recipe-ingredients",
+            "title": "Ingredientes del material entregado",
+            "description": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+              "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+              "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+              "Añade o sustituye ingredientes o datos que contradicen la ficha de la receta.",
+              "No presenta ingredientes reconocibles de la receta de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta ingredientes reconocibles de la receta de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:1",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Procedimiento comprensible y ordenado",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una secuencia reconocible para seguir el procedimiento de la receta.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.565300000000093,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-ingredients:0",
+            "templateId": "len1-health-recipe-ingredients",
+            "title": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+            "description": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+              "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+              "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+              "Añade o sustituye ingredientes o datos que contradicen la ficha de la receta.",
+              "No presenta ingredientes reconocibles de la receta de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:1",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6166999999999234,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-ingredients:0",
+            "templateId": "len1-health-recipe-ingredients",
+            "title": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+            "description": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+              "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+              "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+              "Añade o sustituye ingredientes o datos que contradicen la ficha de la receta.",
+              "No presenta ingredientes reconocibles de la receta de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta ingredientes reconocibles de la receta de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:1",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una secuencia reconocible para seguir el procedimiento de la receta.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5474000000000387,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-ingredients:0",
+            "templateId": "len1-health-recipe-ingredients",
+            "title": "Ingredientes del material entregado",
+            "description": "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos. Parcial (50%): Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta los ingredientes con las cantidades exactas de la ficha entregada para seguir la receta sin alterar sus datos.",
+              "Los ingredientes corresponden a la ficha; una identificación necesita precisión.",
+              "Recupera parte de los ingredientes, pero omite información de la ficha necesaria para seguir la receta.",
+              "Añade o sustituye ingredientes o datos que contradicen la ficha de la receta.",
+              "No presenta ingredientes reconocibles de la receta de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-steps:1",
+            "templateId": "len1-health-recipe-steps",
+            "title": "Procedimiento comprensible y ordenado",
+            "description": "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza. Parcial (50%): Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa con acciones claras los pasos en el orden del procedimiento de la ficha y relaciona cada ingrediente con el paso donde se utiliza.",
+              "Las acciones y su orden permiten seguir la receta; una relación entre ingrediente y paso necesita precisión.",
+              "Presenta parte de los pasos, pero deja acciones o ingredientes sin relación suficiente en el procedimiento.",
+              "Cambia el orden o una acción y contradice el procedimiento de la ficha.",
+              "No presenta una secuencia reconocible para seguir el procedimiento de la receta."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6550999999999476,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analysis:0",
+            "templateId": "len1-health-opinion-analysis",
+            "title": "Funciones de los componentes argumentativos",
+            "description": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+              "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+              "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+              "Confunde una opinión con un hecho, atribuye al texto un componente ausente o sostiene una conclusión que contradice sus razones.",
+              "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8075000000000045,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analysis:0",
+            "templateId": "len1-health-opinion-analysis",
+            "title": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+            "description": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+              "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+              "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+              "Confunde una opinión con un hecho, atribuye al texto un componente ausente o sostiene una conclusión que contradice sus razones.",
+              "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8391000000000304,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analysis:0",
+            "templateId": "len1-health-opinion-analysis",
+            "title": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+            "description": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+              "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+              "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+              "Confunde una opinión con un hecho, atribuye al texto un componente ausente o sostiene una conclusión que contradice sus razones.",
+              "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7695999999999685,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-analysis:0",
+            "templateId": "len1-health-opinion-analysis",
+            "title": "Funciones de los componentes argumentativos",
+            "description": "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones. Parcial (50%): Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la postura y las funciones del hecho, el ejemplo, la analogía, el argumento y el contraargumento presentes; usa fragmentos para comprobar si la conclusión se sostiene en esas razones.",
+              "Relaciona los componentes con la postura y la conclusión; un vínculo necesita precisión.",
+              "Identifica componentes, pero no explica suficientemente qué relación sostiene cada uno.",
+              "Confunde una opinión con un hecho, atribuye al texto un componente ausente o sostiene una conclusión que contradice sus razones.",
+              "No explica funciones argumentativas comprobables mediante fragmentos del artículo entregado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7826000000000022,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-position:0",
+            "templateId": "len1-health-opinion-position",
+            "title": "Postura y razones sobre el problema",
+            "description": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+              "La postura y sus razones se relacionan; una explicación necesita precisión.",
+              "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+              "Las razones contradicen la postura o no corresponden al problema tratado.",
+              "No presenta una postura reconocible sostenida en razones sobre el problema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "La postura y sus razones se relacionan; una explicación necesita precisión.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una postura reconocible sostenida en razones sobre el problema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-organization:1",
+            "templateId": "len1-health-opinion-organization",
+            "title": "Organización del artículo de opinión",
+            "description": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+              "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+              "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+              "El orden atribuye a la postura una razón que la contradice o cambia el sentido del cierre.",
+              "No organiza un recorrido reconocible del punto de vista en el artículo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "No organiza un recorrido reconocible del punto de vista en el artículo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion:2",
+            "templateId": "len1-health-opinion-conclusion",
+            "title": "Conclusión y recomendación derivadas",
+            "description": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+              "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+              "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+              "La conclusión o recomendación contradice los hechos o razones desarrollados.",
+              "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7830000000000155,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-position:0",
+            "templateId": "len1-health-opinion-position",
+            "title": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+            "description": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+              "La postura y sus razones se relacionan; una explicación necesita precisión.",
+              "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+              "Las razones contradicen la postura o no corresponden al problema tratado.",
+              "No presenta una postura reconocible sostenida en razones sobre el problema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-organization:1",
+            "templateId": "len1-health-opinion-organization",
+            "title": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+            "description": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+              "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+              "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+              "El orden atribuye a la postura una razón que la contradice o cambia el sentido del cierre.",
+              "No organiza un recorrido reconocible del punto de vista en el artículo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion:2",
+            "templateId": "len1-health-opinion-conclusion",
+            "title": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+            "description": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+              "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+              "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+              "La conclusión o recomendación contradice los hechos o razones desarrollados.",
+              "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7990000000000919,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-position:0",
+            "templateId": "len1-health-opinion-position",
+            "title": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+            "description": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+              "La postura y sus razones se relacionan; una explicación necesita precisión.",
+              "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+              "Las razones contradicen la postura o no corresponden al problema tratado.",
+              "No presenta una postura reconocible sostenida en razones sobre el problema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "La postura y sus razones se relacionan; una explicación necesita precisión.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una postura reconocible sostenida en razones sobre el problema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-organization:1",
+            "templateId": "len1-health-opinion-organization",
+            "title": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+            "description": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+              "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+              "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+              "El orden atribuye a la postura una razón que la contradice o cambia el sentido del cierre.",
+              "No organiza un recorrido reconocible del punto de vista en el artículo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "No organiza un recorrido reconocible del punto de vista en el artículo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion:2",
+            "templateId": "len1-health-opinion-conclusion",
+            "title": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+            "description": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+              "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+              "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+              "La conclusión o recomendación contradice los hechos o razones desarrollados.",
+              "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6796999999999116,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-position:0",
+            "templateId": "len1-health-opinion-position",
+            "title": "Postura y razones sobre el problema",
+            "description": "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista. Parcial (50%): Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta una postura reconocible sobre el problema tratado y la sostiene con razones pertinentes que permiten comprender su punto de vista.",
+              "La postura y sus razones se relacionan; una explicación necesita precisión.",
+              "Expresa una postura, pero parte de las razones no muestra cómo la sostiene.",
+              "Las razones contradicen la postura o no corresponden al problema tratado.",
+              "No presenta una postura reconocible sostenida en razones sobre el problema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-organization:1",
+            "templateId": "len1-health-opinion-organization",
+            "title": "Organización del artículo de opinión",
+            "description": "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema. Parcial (50%): Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza el artículo para reconocer la postura, seguir sus razones y comprender el cierre del punto de vista sobre el problema.",
+              "El recorrido del punto de vista se comprende; una transición necesita precisión.",
+              "Se reconocen ideas, pero su orden dificulta relacionar postura y razones.",
+              "El orden atribuye a la postura una razón que la contradice o cambia el sentido del cierre.",
+              "No organiza un recorrido reconocible del punto de vista en el artículo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-opinion-conclusion:2",
+            "templateId": "len1-health-opinion-conclusion",
+            "title": "Conclusión y recomendación derivadas",
+            "description": "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema. Parcial (50%): Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una conclusión y una recomendación que se derivan de la postura y de las razones desarrolladas para atender el problema.",
+              "El cierre se deriva de las razones; una relación con la recomendación necesita precisión.",
+              "Presenta un cierre, pero parte de la conclusión o recomendación no se sostiene en las razones del artículo.",
+              "La conclusión o recomendación contradice los hechos o razones desarrollados.",
+              "No presenta una conclusión y una recomendación reconocibles vinculadas con lo argumentado."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0395999999999503,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+                "scoreUnits": 546
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 364
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 182
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9205000000000609,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9542999999999893,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos comprobables de las fichas en las entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+                "scoreUnits": 546
+              },
+              {
+                "levelId": "L3",
+                "text": "El índice permite localizar las entradas; una remisión necesita precisión.",
+                "scoreUnits": 364
+              },
+              {
+                "levelId": "L2",
+                "text": "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+                "scoreUnits": 182
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un índice que permita localizar entradas del catálogo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R07",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.349299999999971,
+      "automatic": {
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-grouping:0",
+            "templateId": "len1-health-catalogue-grouping",
+            "title": "Entradas de flora y fauna para consultar",
+            "description": "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo. Parcial (50%): Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+            "maxScore": 7.28,
+            "maxScoreUnits": 728,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza las entradas de flora y fauna dominicanas en grupos reconocibles y con identificaciones que permiten consultar las fichas del catálogo.",
+              "Los grupos y las entradas se reconocen; una identificación dificulta localizar una ficha.",
+              "Presenta entradas identificables, pero mezcla parte de los grupos y dificulta su consulta.",
+              "La clasificación atribuye una entrada a un grupo incompatible con su ficha.",
+              "No presenta entradas organizadas que permitan reconocer flora y fauna en el catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-data:1",
+            "templateId": "len1-health-catalogue-data",
+            "title": "Datos fieles a las fichas",
+            "description": "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido. Parcial (50%): Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta datos identificables de cada entrada que corresponden a las fichas entregadas y permiten consultar su contenido.",
+              "Los datos corresponden a las fichas; una relación entre dato y entrada necesita precisión.",
+              "Parte de los datos corresponde a la ficha, pero hay omisiones que dificultan identificar la entrada.",
+              "Atribuye a una entrada datos de otra o información que contradice la ficha.",
+              "No aporta datos comprobables de las fichas en las entradas del catálogo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-catalogue-index:2",
+            "templateId": "len1-health-catalogue-index",
+            "title": "Índice para localizar las entradas",
+            "description": "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas. Parcial (50%): El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+            "maxScore": 5.45,
+            "maxScoreUnits": 545,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un índice cuyas identificaciones remiten a las entradas de la versión digital del catálogo y permiten localizarlas.",
+              "El índice permite localizar las entradas; una remisión necesita precisión.",
+              "El índice identifica parte de las entradas, pero otras no pueden localizarse con sus remisiones.",
+              "Las remisiones del índice conducen a entradas diferentes de las anunciadas.",
+              "No presenta un índice que permita localizar entradas del catálogo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.45450000000005275,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Cantidades y orden del procedimiento",
+            "description": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+              "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+              "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+              "Atribuye a una versión cantidades o acciones de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4574999999999818,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+            "description": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+              "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+              "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+              "Atribuye a una versión cantidades o acciones de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.44909999999993033,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+            "description": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+              "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+              "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+              "Atribuye a una versión cantidades o acciones de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-SAL-R08",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.48469999999997526,
+      "automatic": {
+        "activityType": "ANALYSIS",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.164",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.164:fallback:len1-health-recipe-comparison:0",
+            "templateId": "len1-health-recipe-comparison",
+            "title": "Cantidades y orden del procedimiento",
+            "description": "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta. Parcial (50%): Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Contrasta las cantidades y el orden de las acciones de ambas versiones con la ficha; explica qué cambios impiden seguir el procedimiento original de la receta.",
+              "El contraste explica los cambios principales; una relación entre cambio y procedimiento necesita precisión.",
+              "Identifica cambios de cantidades u orden, pero no explica suficientemente su efecto en el procedimiento.",
+              "Atribuye a una versión cantidades o acciones de otra y contradice la referencia.",
+              "No identifica cambios comprobables de cantidades u orden respecto de la receta de referencia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}
