@@ -15,6 +15,8 @@ export interface RecommendationCriterion {
   relativeWeight?: number
 }
 export interface InstrumentRecommendation {
+  /** Teacher-facing uncertainty, outside student criteria and scores. */
+  teacherReviewNotes?: string[]
   kind: 'RECOMMENDATION'; catalogVersion: string; instrumentType: InstrumentType
   confidence: 'HIGH' | 'MEDIUM' | 'LOW'; activityType: string; evidenceTypes: EvidenceType[]
   participationMode: 'INDIVIDUAL' | 'GROUP'; curriculumVersionId: string | null; curriculumScopeId: string | null

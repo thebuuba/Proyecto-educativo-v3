@@ -1,0 +1,74 @@
+{
+  "catalog": "evaluation-2026.170",
+  "captureRevision": "v6",
+  "mode": "LOCAL_ONLY_NO_DEPLOYMENT",
+  "backendTests": 98202,
+  "backendFiles": 242,
+  "frontendFocalTests": 124,
+  "frontendFiles": 7,
+  "results": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 97337
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 16937
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 10010
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 20072
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 88772
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 3069
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 3215
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2165
+    }
+  ],
+  "cloudflareDryRun": true,
+  "previousFailures": [
+    {
+      "pass": "v1",
+      "stage": "backend-test",
+      "cause": "El cotejo dejó de separar nombre/edad en una presentación oral.",
+      "resolved": "Restituidas partes observables del cotejo."
+    },
+    {
+      "pass": "v2",
+      "stage": "frontend-build",
+      "cause": "El chunk compartido superaba el límite de2MiB de precaché.",
+      "resolved": "Módulo personal puro separado en su propio chunk, sin elevar el límite."
+    }
+  ],
+  "personalAsset": "instrumentos-ingles-1-personal-dYAoBseh.js",
+  "personalAssetBytes": 20571,
+  "sourceAsset": "src-BQz2kbv6.js",
+  "sourceAssetBytes": 2084869,
+  "precachedEntries": 102,
+  "remoteInstalled": false,
+  "httpVerified": false,
+  "browserVerified": false
+}

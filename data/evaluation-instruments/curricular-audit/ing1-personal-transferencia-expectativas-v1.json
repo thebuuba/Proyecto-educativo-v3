@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "kind": "Restitución editorial de expectativas fijadas antes de generar",
+    "bank": "ing1-personal-transferencia-v1",
+    "preserveOriginalBankAndLock": true,
+    "designer": "/root/disenador_pruebas",
+    "implementationExposure": "La lectura de implementación comenzó después de verificar el banco y su lock.",
+    "generatedOutputsRead": false,
+    "note": "Complementa las expectativas resumidas; no es un segundo diseño ciego ni cambia las consignas."
+  },
+  "sharedContract": {
+    "instruments": ["rubrica", "lista-cotejo", "escala", "lista-ponderada"],
+    "expected": [
+      "Conservar las mismas evidencias curriculares y límites de tarea en los cuatro instrumentos.",
+      "Valorar expresiones breves comprensibles; pausas, reformulaciones, apoyos acordados y errores básicos no constituyen por sí solos incumplimiento.",
+      "Selecciones, niveles obtenidos y puntuaciones inicialmente pendientes."
+    ],
+    "forbidden": ["Añadir actuaciones al cambiar de instrumento.", "Convertir modalidades alternativas en entregas acumulativas.", "Acreditar actuaciones futuras o no solicitadas."]
+  },
+  "casesById": {
+    "ING-TR01": {
+      "expected": ["Preparar hoy tres preguntas escritas para averiguar nombre, país y ocupación.", "Hacer reconocible qué dato solicita cada pregunta mediante expresiones básicas comprensibles.", "Evaluar preguntas disponibles; entrevista y respuestas futuras pendientes."],
+      "forbidden": ["Exigir respuestas, entrevista realizada o presentación.", "Inventar respuestas del visitante.", "Evaluar pronunciación, grabación, memorización o desempeño oral.", "Exigir guion completo, saludo, despedida o campos adicionales."]
+    },
+    "ING-TR02": {
+      "expected": ["Solicitar ahora oralmente nombre, país y ocupación y responder a las preguntas recibidas.", "Fidelidad a tarjetas ficticias y correspondencia pregunta/respuesta.", "Intervenciones breves comprensibles.", "Presentación futura al curso pendiente."],
+      "forbidden": ["Clasificar toda la actividad como futura por mencionar viernes.", "Aceptar solo preguntas preparadas como intercambio completo.", "Exigir presentación futura.", "Añadir biografía, rasgos personales, datos privados o fluidez nativa."]
+    },
+    "ING-TR03": {
+      "expected": ["Nombre y ciudad fieles al perfil ficticio.", "Pregunta comprensible sobre país del destinatario.", "Coherencia entre respuesta y solicitud.", "Nota de voz O papel, observación ajustada al medio elegido.", "Producto preparado sin exigir envío ni respuesta posterior."],
+      "forbidden": ["Exigir ambas modalidades.", "Puntuar ortografía en audio o pronunciación en papel.", "Favorecer un medio por sí mismo.", "Exigir envío, respuesta o acreditar intercambio realizado.", "Añadir video, cuentas digitales, diapositivas o datos reales."]
+    },
+    "ING-TR04": {
+      "expected": ["Revisar pregunta y respuesta sobre ciudad de residencia.", "Pregunta pertinente y respuesta fiel a tarjeta.", "Reparación observable por contraste con borrador.", "Preservar nombre, país, ocupación y demás líneas."],
+      "forbidden": ["Trasladar país como foco desde otro caso.", "Reescribir todo o añadir preguntas/campos.", "Exigir oralidad, entrevista, envío o publicación.", "Premiar cambios fuera del fragmento autorizado."]
+    },
+    "ING-TR05": {
+      "expected": ["Identificar Sara y teacher.", "País de origen y nacionalidad no proporcionados.", "Marcar ambas ausencias con guion.", "Distinguir ciudad de residencia de origen/nacionalidad.", "Completar campos sin párrafos."],
+      "forbidden": ["Inferir origen/nacionalidad desde Quito, nombre o búsqueda externa.", "Penalizar guiones correctos.", "Exigir not stated de otra consigna.", "Añadir producción oral, diálogo o datos reales."]
+    },
+    "ING-TR06": {
+      "expected": ["Obtener información por escucha de lectura docente.", "Relacionar Canada/Ben y doctor/May.", "Not given para ocupación de Ben y país de May.", "Separar información entre personajes.", "Permitir repetición sin penalización automática.", "Nombres impresos; completar country/occupation; guiones solo para docente."],
+      "forbidden": ["Completar ausencias con datos del otro personaje.", "Exigir oraciones completas o transcripción.", "Evaluar producción oral o pronunciación del estudiante.", "Mostrar guiones y acreditar lectura como escucha.", "Exigir dispositivo de audio o prohibir repetición.", "Calificar mirada, inmovilidad o nerviosismo."]
+    }
+  }
+}

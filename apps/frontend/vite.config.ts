@@ -20,6 +20,7 @@ export default defineConfig(({ mode }) => {
           // Estas reglas no tienen dependencias de ejecución; se separan sin ciclos
           // y conservan la precaché bajo el límite de 2 MiB por archivo.
           if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-language-grade-one-(?:focused|community)\.ts$/.test(id)) return 'instrumentos-lengua-1-acciones'
+          if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-english-grade-one-personal\.ts$/.test(id)) return 'instrumentos-ingles-1-personal'
           const fhrGrade = /[/\\]packages[/\\]shared[/\\]src[/\\]secondary-fhr-grade-(\d+)\.ts$/.exec(id)
           if (fhrGrade) return 'instrumentos-fhr-' + fhrGrade[1]
           if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-optative-(?:hlm|hcs)-len-[456]\.ts$/.test(id)) return 'instrumentos-optativas-literatura'

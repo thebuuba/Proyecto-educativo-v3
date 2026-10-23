@@ -1,3 +1,4 @@
+import {markEnglishPersonalProvisional} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,adaptPhysicalScale} from '@aula/shared'
 import {resolveCommonFhrTask,commonFhrCriteria,adaptFhrScale} from '@aula/shared'
@@ -96,7 +97,7 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   const optativeEnglish=resolveOptativeEnglishTask(input.activityTitle,input.description??'',input.academicContext)
   if(optativeEnglish)return adaptLanguageScale(editableAuthoredRecommendation(commonEnglishCriteria(optativeEnglish),input,input.activityType??optativeEnglish.activityType,optativeEnglishModules.find(m=>m.grade===englishTaskGrade(optativeEnglish))!.id),input.description??'')
   const english=resolveCommonEnglishTask(input.activityTitle,input.description??'',input.academicContext)
-  if(english)return editableAuthoredRecommendation(commonEnglishCriteria(english),input,input.activityType??english.activityType,`ingles-comunicacion-${englishTaskGrade(english)}`)
+  if(english)return markEnglishPersonalProvisional(editableAuthoredRecommendation(commonEnglishCriteria(english),input,input.activityType??english.activityType,`ingles-comunicacion-${englishTaskGrade(english)}`),'personal' in english?english.personal?.note:undefined)
   const resolvedActivity=input.activityType??resolveEvaluationTask(input.activityTitle,input.description??'').action??'OTHER'
   const novel=secondaryNovelAnalysisCriteria(input.activityTitle,input.description??'',input.academicContext,resolvedActivity,input.includeAdditionalCandidates)
   if(novel.length&&!findSecondaryLanguageTopic(input.activityTitle,input.description??'',input.academicContext??null)) return editableAuthoredRecommendation(novel,input,resolvedActivity,'novela-analisis-fragmento-5')

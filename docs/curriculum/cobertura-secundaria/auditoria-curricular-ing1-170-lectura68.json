@@ -1,0 +1,1114 @@
+{
+  "catalog": "evaluation-2026.170",
+  "revision": "v4",
+  "independentReviewer": "/root/revisor_pedagogico",
+  "designer": "/root/disenador_pruebas",
+  "auditor": "/root/auditor_curricular",
+  "coordinator": "/root",
+  "review": {
+    "v1": "44 complete personal outputs; seven case reservations and trace uncertainty.",
+    "v2": "68 complete outputs and17selections; respect progression, explicit question count and absence wording.",
+    "v3": "40 exact and28 changed complete outputs read; restored interruption alternative required.",
+    "v4": "56 exact and12 changed complete outputs;17selections andweights exact. All reservations resolved."
+  },
+  "observableCases": 15,
+  "provisionalControls": 2,
+  "outputs": 68,
+  "differentFallbacks": 0,
+  "sourceCoverage": "Partial personal-information block only; not whole subject.",
+  "preservesManualChoices": true,
+  "results": [
+    {
+      "caseId": "ING-PER01",
+      "title": "Conozcamos a los visitantes",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER01",
+      "title": "Conozcamos a los visitantes",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER01",
+      "title": "Conozcamos a los visitantes",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER01",
+      "title": "Conozcamos a los visitantes",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER02",
+      "title": "Esta es nuestra visitante",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_PRESENTATION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER02",
+      "title": "Esta es nuestra visitante",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_PRESENTATION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER02",
+      "title": "Esta es nuestra visitante",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_PRESENTATION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER02",
+      "title": "Esta es nuestra visitante",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_PRESENTATION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER03",
+      "title": "¿Quién acaba de presentarse?",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER03",
+      "title": "¿Quién acaba de presentarse?",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER03",
+      "title": "¿Quién acaba de presentarse?",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER03",
+      "title": "¿Quién acaba de presentarse?",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER04",
+      "title": "Lo que dicen las tarjetas",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER04",
+      "title": "Lo que dicen las tarjetas",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER04",
+      "title": "Lo que dicen las tarjetas",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER04",
+      "title": "Lo que dicen las tarjetas",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER05",
+      "title": "Nos conocemos por mensajes",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER05",
+      "title": "Nos conocemos por mensajes",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER05",
+      "title": "Nos conocemos por mensajes",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER05",
+      "title": "Nos conocemos por mensajes",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER06",
+      "title": "Antes de la entrevista",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER06",
+      "title": "Antes de la entrevista",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER06",
+      "title": "Antes de la entrevista",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER06",
+      "title": "Antes de la entrevista",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER07",
+      "title": "Solo cambia esta pregunta",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER07",
+      "title": "Solo cambia esta pregunta",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER07",
+      "title": "Solo cambia esta pregunta",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER07",
+      "title": "Solo cambia esta pregunta",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER08",
+      "title": "Una respuesta de bienvenida",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER08",
+      "title": "Una respuesta de bienvenida",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER08",
+      "title": "Una respuesta de bienvenida",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER08",
+      "title": "Una respuesta de bienvenida",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER09",
+      "title": "¿De dónde vienes y dónde vives?",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-clarification",
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER09",
+      "title": "¿De dónde vienes y dónde vives?",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-clarification",
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER09",
+      "title": "¿De dónde vienes y dónde vives?",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-clarification",
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER09",
+      "title": "¿De dónde vienes y dónde vives?",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-clarification",
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER10",
+      "title": "Presentaciones para el primer encuentro",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER10",
+      "title": "Presentaciones para el primer encuentro",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER10",
+      "title": "Presentaciones para el primer encuentro",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER10",
+      "title": "Presentaciones para el primer encuentro",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER11",
+      "title": "Datos para la bienvenida",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-fields",
+        "ing-1-personal-source"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER11",
+      "title": "Datos para la bienvenida",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-fields",
+        "ing-1-personal-source"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER11",
+      "title": "Datos para la bienvenida",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-fields",
+        "ing-1-personal-source"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-PER11",
+      "title": "Datos para la bienvenida",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-personal-170-despues-revisar-v4.json",
+      "captureSha256": "7184a96f99833db44845d91e398c1caed757e34be5ced91fccbcdf9d612b081f",
+      "templateIds": [
+        "ing-1-personal-fields",
+        "ing-1-personal-source"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": true,
+      "status": "ACCEPTED_PROVISIONAL_CONTROL_NO_CURRICULAR_CREDIT",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR01",
+      "title": "Las preguntas para el viernes",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR01",
+      "title": "Las preguntas para el viernes",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR01",
+      "title": "Las preguntas para el viernes",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR01",
+      "title": "Las preguntas para el viernes",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-questions"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR02",
+      "title": "Primero averiguamos los datos",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR02",
+      "title": "Primero averiguamos los datos",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR02",
+      "title": "Primero averiguamos los datos",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR02",
+      "title": "Primero averiguamos los datos",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-interaction",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "ORAL_INTERACTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR03",
+      "title": "Escoge cómo responder",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR03",
+      "title": "Escoge cómo responder",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR03",
+      "title": "Escoge cómo responder",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR03",
+      "title": "Escoge cómo responder",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-intelligibility"
+      ],
+      "activityType": "OTHER",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR04",
+      "title": "La ciudad quedó mal expresada",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR04",
+      "title": "La ciudad quedó mal expresada",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR04",
+      "title": "La ciudad quedó mal expresada",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR04",
+      "title": "La ciudad quedó mal expresada",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal-revision",
+        "ing-1-personal-preservation"
+      ],
+      "activityType": "WRITTEN_PRODUCTION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR05",
+      "title": "La ficha no lo cuenta todo",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR05",
+      "title": "La ficha no lo cuenta todo",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR05",
+      "title": "La ficha no lo cuenta todo",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR05",
+      "title": "La ficha no lo cuenta todo",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "READING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR06",
+      "title": "Anotamos solo lo que escuchamos",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR06",
+      "title": "Anotamos solo lo que escuchamos",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR06",
+      "title": "Anotamos solo lo que escuchamos",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    },
+    {
+      "caseId": "ING-TR06",
+      "title": "Anotamos solo lo que escuchamos",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-transfer-170-despues-revisar-v4.json",
+      "captureSha256": "7cb7bcfb67cc6434fe3d95fd1374453264158585c6ec0964f1f2afb1901be64d",
+      "templateIds": [
+        "ing-1-personal",
+        "ing-1-personal-missing"
+      ],
+      "activityType": "LISTENING_COMPREHENSION",
+      "provisionalOnly": false,
+      "status": "ACCEPTED_LOCAL_PEDAGOGICAL_REVIEW",
+      "httpVerified": false,
+      "browserVerified": false
+    }
+  ]
+}

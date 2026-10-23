@@ -1,0 +1,55 @@
+{
+  "catalog": "evaluation-2026.169",
+  "project": "eolgunypmtgrsyrjzcld",
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.169",
+    "sourceCommit": "d1106d3681e025d83dfd192c10fe67893c7651e2",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "33746b172ba0448c0f6514df1e9c6d9af02a78b58796062a7abdf32ecd600d3c",
+    "frozen168Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 99,
+    "preservedSnapshots": 1261,
+    "finalReleases": 100,
+    "finalSnapshots": 1261,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "historicalRead": {
+    "method": "READ_ONLY_CONNECTOR",
+    "originalCheckpointReused": true,
+    "releasesPreserved": 99,
+    "snapshotsPreserved": 1261,
+    "currentReleases": 100,
+    "currentSnapshots": 1265
+  },
+  "http": {
+    "created": 4,
+    "verifiedSavedReopenedAndStrategyExact": 3,
+    "pending": "LEN1-NCO-ORAL02/lista-ponderada",
+    "failure": {
+      "endpoint": "/activities",
+      "name": "TimeoutError",
+      "ms": 120010
+    },
+    "noDuplicateCreates": true
+  },
+  "personalReferences": {
+    "count": 15,
+    "allExact": true,
+    "baselineRecaptured": false,
+    "proof": "auditoria-curricular-len1-personales-169.json"
+  },
+  "visual": "BLOCKED_DEBUGGER_UNATTACHED",
+  "worker": "STOPPED_70376",
+  "productionWrites": false,
+  "push": false,
+  "deploy": false
+}

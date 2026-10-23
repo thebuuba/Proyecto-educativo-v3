@@ -12,7 +12,7 @@ export type ContextualTopicCriterion = {
   progressionLevels: [string, string, string, string, string]
   /** Optional authored merge of incompatible and absent evidence for four-level instruments. */
   fourLevelLowest?: string
-  checklistParts?: {key:string;observable:string;progressionLevels: [string,string,string,string,string]}[]
+  checklistParts?: {key:string;observable:string;progressionLevels: [string,string,string,string,string];fourLevelLowest?:string}[]
   coveredDeliveryKeys?: string[]
 }
 

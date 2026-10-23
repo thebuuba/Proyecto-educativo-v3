@@ -57,7 +57,7 @@
         "personal"
       ],
       "codeStatus": "PARTIAL",
-      "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+      "evidenceStatus": "PARTIAL_FUNCTION_REVIEWED_LOCAL",
       "activityRefs": [
         "ING-PER01",
         "ING-PER02",
@@ -71,11 +71,33 @@
       ],
       "acceptedEvidenceRefs": [],
       "limits": [
-        "Solicitud explícita del dato todavía no tiene criterio propio en la ruta general."
+        "Ruta personal especializada conectada para solicitud, ofrecimiento y preparación; aceptación limitada a las actuaciones y versiones documentadas."
       ],
       "ambiguousControlRefs": [
         "ING-PER10",
         "ING-PER11"
+      ],
+      "componentRefs": [
+        "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:0",
+        "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:1"
+      ],
+      "staticUpdate170": "Ruta personal conectada; revisión independiente v6 aceptada para60 instrumentos definidos y8controles provisionales. Asignatura abierta; HTTP170 y navegador no probados.",
+      "reviewedActivityRefs": [
+        "ING-PER01",
+        "ING-PER02",
+        "ING-PER03",
+        "ING-PER04",
+        "ING-PER05",
+        "ING-PER06",
+        "ING-PER07",
+        "ING-PER08",
+        "ING-PER09",
+        "ING-TR01",
+        "ING-TR02",
+        "ING-TR03",
+        "ING-TR04",
+        "ING-TR05",
+        "ING-TR06"
       ]
     },
     {
@@ -88,7 +110,11 @@
       "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
       "activityRefs": [],
       "acceptedEvidenceRefs": [],
-      "limits": []
+      "limits": [],
+      "componentRefs": [
+        "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+        "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1"
+      ]
     },
     {
       "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
@@ -103,6 +129,12 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Pedir instrucciones no explicitado; direcciones puede exigir recorrido al solicitante."
+      ],
+      "componentRefs": [
+        "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:0",
+        "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:1",
+        "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:2",
+        "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:3"
       ]
     },
     {
@@ -117,6 +149,10 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Describir actividades no acredita formular preguntas."
+      ],
+      "componentRefs": [
+        "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:0",
+        "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:1"
       ]
     },
     {
@@ -131,6 +167,10 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Separar físico y personalidad según consigna."
+      ],
+      "componentRefs": [
+        "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:0",
+        "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:1"
       ]
     },
     {
@@ -146,6 +186,12 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Descripción y comparación requieren evidencia propia."
+      ],
+      "componentRefs": [
+        "69d6ef67-56a6-5718-842e-50031049f344:audit170:0",
+        "69d6ef67-56a6-5718-842e-50031049f344:audit170:1",
+        "69d6ef67-56a6-5718-842e-50031049f344:audit170:2",
+        "69d6ef67-56a6-5718-842e-50031049f344:audit170:3"
       ]
     },
     {
@@ -160,6 +206,10 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Comunicar condiciones no acredita preguntar."
+      ],
+      "componentRefs": [
+        "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:0",
+        "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:1"
       ]
     },
     {
@@ -174,6 +224,9 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Razón solo cuando corresponda a la tarea."
+      ],
+      "componentRefs": [
+        "89ba3b86-02f3-5c43-aab4-f10729e89356:audit170:0"
       ]
     },
     {
@@ -188,6 +241,10 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Distinguir propias/ajenas, reales/ficticias."
+      ],
+      "componentRefs": [
+        "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:0",
+        "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:1"
       ]
     },
     {
@@ -202,6 +259,11 @@
       "acceptedEvidenceRefs": [],
       "limits": [
         "Aceptar y rechazar son alternativas."
+      ],
+      "componentRefs": [
+        "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:0",
+        "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:1",
+        "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:2"
       ]
     }
   ],
@@ -1875,15 +1937,69 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "c421df3e-c90e-5e5e-b840-695992240c71:audit170:0",
+            "c421df3e-c90e-5e5e-b840-695992240c71:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "c421df3e-c90e-5e5e-b840-695992240c71:audit170:0",
+          "title": "Celebraciones",
+          "sourceId": "c421df3e-c90e-5e5e-b840-695992240c71",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-celebrations"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "c421df3e-c90e-5e5e-b840-695992240c71:audit170:1",
+          "title": "Ceremonias",
+          "sourceId": "c421df3e-c90e-5e5e-b840-695992240c71",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-lexicon-celebrations"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "c421df3e-c90e-5e5e-b840-695992240c71:audit170:0",
+          "c421df3e-c90e-5e5e-b840-695992240c71:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -1964,7 +2080,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -1973,11 +2089,320 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "Solicitud explícita del dato todavía no tiene criterio propio en la ruta general."
+            "Ruta personal especializada conectada para solicitud, ofrecimiento y preparación; aceptación limitada a las actuaciones y versiones documentadas."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:0",
+            "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:0",
+          "title": "Solicitar información personal",
+          "sourceId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-personal",
+            "ing-1-personal-questions",
+            "ing-1-personal-clarification"
+          ],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "activityRefs": [
+            "ING-PER01",
+            "ING-PER05",
+            "ING-PER06",
+            "ING-PER07",
+            "ING-PER08",
+            "ING-PER09",
+            "ING-TR01",
+            "ING-TR02",
+            "ING-TR03",
+            "ING-TR04"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PER01",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-PER05",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-PER06",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARATION_ONLY"
+            },
+            {
+              "caseId": "ING-PER07",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "providerIds": [
+                "ing-1-personal-revision"
+              ],
+              "component": "Reparar la pregunta y respuesta del dato autorizado",
+              "creditsPerformedExchange": false
+            },
+            {
+              "caseId": "ING-PER08",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE"
+            },
+            {
+              "caseId": "ING-PER09",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-TR01",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARATION_ONLY"
+            },
+            {
+              "caseId": "ING-TR02",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-TR03",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE"
+            },
+            {
+              "caseId": "ING-TR04",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "providerIds": [
+                "ing-1-personal-revision"
+              ],
+              "component": "Reparar la pregunta y respuesta del dato autorizado",
+              "creditsPerformedExchange": false
+            }
+          ],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas.",
+            "Preparación/revisión no acredita intercambio realizado. Comprensión PER03/PER04/TR05/TR06 se conserva aparte y no acredita producción. PER10/PER11 no reciben crédito curricular."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:1",
+          "title": "Ofrecer información personal",
+          "sourceId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-personal"
+          ],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "activityRefs": [
+            "ING-PER01",
+            "ING-PER02",
+            "ING-PER05",
+            "ING-PER07",
+            "ING-PER08",
+            "ING-PER09",
+            "ING-TR02",
+            "ING-TR03",
+            "ING-TR04"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PER01",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-PER02",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-PER05",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-PER07",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "providerIds": [
+                "ing-1-personal-revision"
+              ],
+              "component": "Reparar la pregunta y respuesta del dato autorizado",
+              "creditsPerformedExchange": false
+            },
+            {
+              "caseId": "ING-PER08",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE"
+            },
+            {
+              "caseId": "ING-PER09",
+              "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-TR02",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "TASK_REQUESTED_PERFORMANCE"
+            },
+            {
+              "caseId": "ING-TR03",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE"
+            },
+            {
+              "caseId": "ING-TR04",
+              "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "providerIds": [
+                "ing-1-personal-revision"
+              ],
+              "component": "Reparar la pregunta y respuesta del dato autorizado",
+              "creditsPerformedExchange": false
+            }
+          ],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas.",
+            "Preparación/revisión no acredita intercambio realizado. Comprensión PER03/PER04/TR05/TR06 se conserva aparte y no acredita producción. PER10/PER11 no reciben crédito curricular."
+          ],
+          "mappingOrigin": "STATIC"
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:0",
+          "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2012,7 +2437,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2021,9 +2446,62 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+            "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+          "title": "Expresar gustos",
+          "sourceId": "79ceceef-2ef9-5789-81c7-b2947a33c181",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-preferences"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "title": "Expresar preferencias",
+          "sourceId": "79ceceef-2ef9-5789-81c7-b2947a33c181",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-preferences"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2058,7 +2536,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2069,9 +2547,104 @@
           "limits": [
             "Pedir instrucciones no explicitado; direcciones puede exigir recorrido al solicitante."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:0",
+            "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:1",
+            "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:2",
+            "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:3"
+          ]
+        },
+        {
+          "componentKey": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:0",
+          "title": "Dar indicaciones de dirección",
+          "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-directions"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:1",
+          "title": "Pedir indicaciones de dirección",
+          "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-directions"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:2",
+          "title": "Dar instrucciones",
+          "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-instructions"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:3",
+          "title": "Pedir instrucciones",
+          "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "ABSENT_SPECIFIC",
+          "providerIds": [],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:0",
+          "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:1",
+          "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:2",
+          "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000:audit170:3"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2106,7 +2679,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2117,9 +2690,60 @@
           "limits": [
             "Describir actividades no acredita formular preguntas."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:0",
+            "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:0",
+          "title": "Dar información cotidiana",
+          "sourceId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-routine"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:1",
+          "title": "Pedir información cotidiana",
+          "sourceId": "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "ABSENT_SPECIFIC",
+          "providerIds": [],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:0",
+          "9cee3882-9e2e-5ea7-b46f-ebe79bac84ba:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2154,7 +2778,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2165,9 +2789,62 @@
           "limits": [
             "Separar físico y personalidad según consigna."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:0",
+            "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:0",
+          "title": "Describir apariencia",
+          "sourceId": "36bfb074-b0bd-5bf7-8737-5c20909b121d",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-description"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:1",
+          "title": "Describir forma de ser",
+          "sourceId": "36bfb074-b0bd-5bf7-8737-5c20909b121d",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-description"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:0",
+          "36bfb074-b0bd-5bf7-8737-5c20909b121d:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2202,7 +2879,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2213,9 +2890,106 @@
           "limits": [
             "Descripción y comparación requieren evidencia propia."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "69d6ef67-56a6-5718-842e-50031049f344:audit170:0",
+            "69d6ef67-56a6-5718-842e-50031049f344:audit170:1",
+            "69d6ef67-56a6-5718-842e-50031049f344:audit170:2",
+            "69d6ef67-56a6-5718-842e-50031049f344:audit170:3"
+          ]
+        },
+        {
+          "componentKey": "69d6ef67-56a6-5718-842e-50031049f344:audit170:0",
+          "title": "Describir lugares",
+          "sourceId": "69d6ef67-56a6-5718-842e-50031049f344",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-description"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "69d6ef67-56a6-5718-842e-50031049f344:audit170:1",
+          "title": "Describir objetos",
+          "sourceId": "69d6ef67-56a6-5718-842e-50031049f344",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-description"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "69d6ef67-56a6-5718-842e-50031049f344:audit170:2",
+          "title": "Comparar lugares",
+          "sourceId": "69d6ef67-56a6-5718-842e-50031049f344",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-comparison"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "69d6ef67-56a6-5718-842e-50031049f344:audit170:3",
+          "title": "Comparar objetos",
+          "sourceId": "69d6ef67-56a6-5718-842e-50031049f344",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-comparison"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "69d6ef67-56a6-5718-842e-50031049f344:audit170:0",
+          "69d6ef67-56a6-5718-842e-50031049f344:audit170:1",
+          "69d6ef67-56a6-5718-842e-50031049f344:audit170:2",
+          "69d6ef67-56a6-5718-842e-50031049f344:audit170:3"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2250,7 +3024,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2261,9 +3035,60 @@
           "limits": [
             "Comunicar condiciones no acredita preguntar."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:0",
+            "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:0",
+          "title": "Dar información atmosférica",
+          "sourceId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-weather"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:1",
+          "title": "Pedir información atmosférica",
+          "sourceId": "c7956bdd-ddb9-520d-b1a7-300e5b761783",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "ABSENT_SPECIFIC",
+          "providerIds": [],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:0",
+          "c7956bdd-ddb9-520d-b1a7-300e5b761783:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2298,7 +3123,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2309,9 +3134,40 @@
           "limits": [
             "Razón solo cuando corresponda a la tarea."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "89ba3b86-02f3-5c43-aab4-f10729e89356:audit170:0"
+          ]
+        },
+        {
+          "componentKey": "89ba3b86-02f3-5c43-aab4-f10729e89356:audit170:0",
+          "title": "Expresar opinión",
+          "sourceId": "89ba3b86-02f3-5c43-aab4-f10729e89356",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-opinion"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "89ba3b86-02f3-5c43-aab4-f10729e89356:audit170:0"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2346,7 +3202,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2357,9 +3213,62 @@
           "limits": [
             "Distinguir propias/ajenas, reales/ficticias."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:0",
+            "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:0",
+          "title": "Narrar experiencia propia",
+          "sourceId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-experience"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:1",
+          "title": "Narrar experiencia ajena",
+          "sourceId": "9e9f3ba9-ce25-567e-af99-3d12c9443a53",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-experience"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:0",
+          "9e9f3ba9-ce25-567e-af99-3d12c9443a53:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2394,7 +3303,7 @@
           "sourcePages": [
             134
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "CONNECTED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [
@@ -2405,9 +3314,84 @@
           "limits": [
             "Aceptar y rechazar son alternativas."
           ],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:0",
+            "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:1",
+            "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:2"
+          ]
+        },
+        {
+          "componentKey": "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:0",
+          "title": "Invitar",
+          "sourceId": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-invitation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:1",
+          "title": "Aceptar invitación",
+          "sourceId": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-invitation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:2",
+          "title": "Rechazar invitación",
+          "sourceId": "3808952f-b79d-5d6b-ae05-357f8e69a3ff",
+          "sourcePages": [
+            134
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-invitation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:0",
+          "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:1",
+          "3808952f-b79d-5d6b-ae05-357f8e69a3ff:audit170:2"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -2497,7 +3481,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:0:reading",
@@ -2515,7 +3501,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:1:listening",
@@ -2533,7 +3521,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:1:reading",
@@ -2551,7 +3541,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:2:listening",
@@ -2569,7 +3561,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:2:reading",
@@ -2587,7 +3581,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:3:listening",
@@ -2605,7 +3601,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:3:reading",
@@ -2623,7 +3621,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:4:listening",
@@ -2641,7 +3641,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:4:reading",
@@ -2659,7 +3661,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:5:listening",
@@ -2677,7 +3681,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:5:reading",
@@ -2695,7 +3701,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:6:listening",
@@ -2713,7 +3721,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:6:reading",
@@ -2731,7 +3741,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:7:listening",
@@ -2749,7 +3761,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:7:reading",
@@ -2767,7 +3781,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:8:listening",
@@ -2785,7 +3801,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:8:reading",
@@ -2803,7 +3821,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:9:listening",
@@ -2821,7 +3841,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:9:reading",
@@ -2839,7 +3861,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:10:listening",
@@ -2857,7 +3881,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:10:reading",
@@ -2875,7 +3901,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:11:listening",
@@ -2893,7 +3921,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:11:reading",
@@ -2911,7 +3941,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:12:listening",
@@ -2929,7 +3961,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:12:reading",
@@ -2947,7 +3981,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:13:listening",
@@ -2965,7 +4001,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:13:reading",
@@ -2983,7 +4021,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:14:listening",
@@ -3001,7 +4041,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:14:reading",
@@ -3019,7 +4061,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:15:listening",
@@ -3037,7 +4081,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:15:reading",
@@ -3055,7 +4101,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:16:listening",
@@ -3073,7 +4121,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:16:reading",
@@ -3091,7 +4141,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:17:listening",
@@ -3109,7 +4161,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:17:reading",
@@ -3127,7 +4181,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:18:listening",
@@ -3145,7 +4201,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:18:reading",
@@ -3163,7 +4221,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:19:listening",
@@ -3181,7 +4241,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:19:reading",
@@ -3199,7 +4261,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:20:listening",
@@ -3217,7 +4281,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:20:reading",
@@ -3235,7 +4301,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:21:listening",
@@ -3253,7 +4321,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:21:reading",
@@ -3271,7 +4341,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:22:listening",
@@ -3289,7 +4361,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:22:reading",
@@ -3307,7 +4381,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:23:listening",
@@ -3325,7 +4401,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:23:reading",
@@ -3343,7 +4421,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:24:listening",
@@ -3361,7 +4441,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:24:reading",
@@ -3379,7 +4461,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:25:listening",
@@ -3397,7 +4481,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:25:reading",
@@ -3415,7 +4501,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:26:listening",
@@ -3433,7 +4521,9 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "listening"
+          "modality": "listening",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:26:reading",
@@ -3451,9 +4541,17 @@
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
-          "modality": "reading"
+          "modality": "reading",
+          "requiredByCartesianProduct": false,
+          "applicabilityReviewRequired": true
         }
-      ]
+      ],
+      "modalityPolicy170": {
+        "possibleSlots": 54,
+        "genres": 27,
+        "mandatoryCartesianProduct": false,
+        "rule": "Justificar pertinencia de cada modalidad por género, fuente y tarea; no fabricar audio de todo género."
+      }
     },
     {
       "official": {
@@ -5552,15 +6650,69 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:0",
+            "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:0",
+          "title": "Ropa",
+          "sourceId": "22515585-556a-5e1f-a327-b63fbe59b27e",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-clothing"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:1",
+          "title": "Accesorios",
+          "sourceId": "22515585-556a-5e1f-a327-b63fbe59b27e",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-lexicon-clothing"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:0",
+          "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -6003,7 +7155,11 @@
           "acceptedEvidenceRefs": [],
           "limits": []
         }
-      ]
+      ],
+      "staticReservation170": {
+        "detail": "Inferencia oral: contexto conectado; conocimientos previos requieren evidencia exteriorizada.",
+        "evidenceAccepted": false
+      }
     },
     {
       "official": {
@@ -6038,15 +7194,69 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:0",
+            "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:0",
+          "title": "Solicitar ayuda",
+          "sourceId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-help"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:1",
+          "title": "Solicitar repetición",
+          "sourceId": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-help"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:0",
+          "97ced1a6-faeb-5054-920f-fccfef1c2189:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -6081,15 +7291,69 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:0",
+            "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:0",
+          "title": "Indicar comprensión",
+          "sourceId": "fbebeebb-8049-5000-8a71-526b6ed7e1c7",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-understanding"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:1",
+          "title": "Indicar incomprensión",
+          "sourceId": "fbebeebb-8049-5000-8a71-526b6ed7e1c7",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-understanding"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:0",
+          "fbebeebb-8049-5000-8a71-526b6ed7e1c7:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -6439,7 +7703,11 @@
           "acceptedEvidenceRefs": [],
           "limits": []
         }
-      ]
+      ],
+      "staticReservation170": {
+        "detail": "Hipótesis: paratexto conectado; relación con conocimientos previos pendiente.",
+        "evidenceAccepted": false
+      }
     },
     {
       "official": {
@@ -6525,7 +7793,11 @@
           "acceptedEvidenceRefs": [],
           "limits": []
         }
-      ]
+      ],
+      "staticReservation170": {
+        "detail": "Inferencia escrita: pistas conectadas; conocimientos previos pendientes.",
+        "evidenceAccepted": false
+      }
     },
     {
       "official": {
@@ -6560,7 +7832,7 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -6568,9 +7840,105 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Otras herramientas de consulta: el criterio actual se limita a acepción de diccionario."
-          ]
+          ],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:0",
+            "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:1",
+            "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:2",
+            "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:3"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:0",
+          "title": "Subrayar",
+          "sourceId": "1d7d9905-4e63-579a-be92-7249fa5d5653",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-annotation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:1",
+          "title": "Anotar",
+          "sourceId": "1d7d9905-4e63-579a-be92-7249fa5d5653",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-annotation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:2",
+          "title": "Consultar diccionario",
+          "sourceId": "1d7d9905-4e63-579a-be92-7249fa5d5653",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-dictionary"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:3",
+          "title": "Otras herramientas de consulta",
+          "sourceId": "1d7d9905-4e63-579a-be92-7249fa5d5653",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "ABSENT_SPECIFIC",
+          "providerIds": [],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:0",
+          "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:1",
+          "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:2",
+          "1d7d9905-4e63-579a-be92-7249fa5d5653:audit170:3"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7088,15 +8456,69 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:0",
+            "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:0",
+          "title": "Tomar turno",
+          "sourceId": "33632ee9-09d8-5495-9dde-255ee0e4ed2d",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-turns"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:1",
+          "title": "Ceder turno",
+          "sourceId": "33632ee9-09d8-5495-9dde-255ee0e4ed2d",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-turns"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:0",
+          "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7131,15 +8553,69 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:0",
+            "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:0",
+          "title": "Solicitar traducción",
+          "sourceId": "e3f38d4d-affa-550d-a0d0-85b15d18d154",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-translation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:1",
+          "title": "Solicitar repetición",
+          "sourceId": "e3f38d4d-affa-550d-a0d0-85b15d18d154",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-translation"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:0",
+          "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7174,15 +8650,69 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:0",
+            "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:0",
+          "title": "Aprobación",
+          "sourceId": "a62c474f-82a7-5534-829f-388e0d2958a4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-agreement"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:1",
+          "title": "Acuerdo",
+          "sourceId": "a62c474f-82a7-5534-829f-388e0d2958a4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-lexicon-agreement"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:0",
+          "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7607,16 +9137,91 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:0",
+            "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:1",
+            "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:2"
+          ]
+        },
+        {
+          "componentKey": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:0",
+          "title": "like",
+          "sourceId": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-preference-verbs"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:1",
+          "title": "prefer",
+          "sourceId": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-preference-verbs"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:2",
+          "title": "enjoy",
+          "sourceId": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-preference-verbs"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:0",
+          "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:1",
+          "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:2"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7651,15 +9256,69 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:0",
+            "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:0",
+          "title": "Presente continuo: condiciones atmosféricas",
+          "sourceId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-present-continuous"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:1",
+          "title": "Presente continuo: rechazar invitaciones",
+          "sourceId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-present-continuous"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:0",
+          "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7740,15 +9399,69 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:0",
+            "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:0",
+          "title": "Establecer propósito",
+          "sourceId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-communicative-purpose"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:1",
+          "title": "Seleccionar tipo de texto",
+          "sourceId": "f6734fb1-5019-58f8-89f8-e8804068e473",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-text-type"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:0",
+          "f6734fb1-5019-58f8-89f8-e8804068e473:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7826,7 +9539,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -7834,9 +9547,61 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Otras herramientas de consulta: el criterio actual se limita a acepción de diccionario."
-          ]
+          ],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:0",
+            "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:0",
+          "title": "Consultar diccionario en producción",
+          "sourceId": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-dictionary"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:1",
+          "title": "Otras herramientas en producción",
+          "sourceId": "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "ABSENT_SPECIFIC",
+          "providerIds": [],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:0",
+          "f6965b0d-0391-5f2f-bf02-2ce2d89f45f0:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -7871,15 +9636,109 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:0",
+            "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:0",
+          "title": "Revisar sentido",
+          "sourceId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-revision"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:1",
+          "title": "Revisar corrección",
+          "sourceId": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-strategy-revision"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:0",
+          "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:1"
+        ],
+        "evidenceInherited": false
+      },
+      "partialEvidence170": {
+        "status": "PARTIAL_ROW_REVIEWED_LOCAL",
+        "acceptedRevision": "v6",
+        "acceptedEvidenceRefs": [
+          {
+            "caseId": "ING-PER07",
+            "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "providerIds": [
+              "ing-1-personal-revision"
+            ],
+            "component": "Reparar la pregunta y respuesta del dato autorizado",
+            "phase": "REVISION_ONLY",
+            "creditsPerformedExchange": false
+          },
+          {
+            "caseId": "ING-TR04",
+            "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "providerIds": [
+              "ing-1-personal-revision"
+            ],
+            "component": "Reparar la pregunta y respuesta del dato autorizado",
+            "phase": "REVISION_ONLY",
+            "creditsPerformedExchange": false
+          }
+        ],
+        "childrenAutomaticallyAccepted": false,
+        "limit": "Revisión focalizada de un fragmento; no acredita toda revisión de sentido y corrección."
+      }
     },
     {
       "official": {
@@ -8014,7 +9873,11 @@
           ],
           "assessable": false
         }
-      ]
+      ],
+      "staticReservation170": {
+        "detail": "Automotivación y ansiedad: apoyos pedagógicos, sin puntuar estados internos.",
+        "evidenceAccepted": false
+      }
     },
     {
       "official": {
@@ -8059,7 +9922,11 @@
             "Buscar oportunidades se convierte en realizar intervención; preservar fase solicitada."
           ]
         }
-      ]
+      ],
+      "staticReservation170": {
+        "detail": "Buscar oportunidades no equivale a realizar una intervención acordada; practice no acredita búsqueda.",
+        "evidenceAccepted": false
+      }
     },
     {
       "official": {
@@ -8183,7 +10050,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8191,7 +10058,9 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "dd19f71a-750f-511f-87ba-e008e0e351e8",
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "08ba2718-53f0-5345-8871-d2caa1751d5f:1",
@@ -8200,7 +10069,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8208,7 +10077,9 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "481df6bf-f165-572a-87ce-9dc5ad845406",
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "08ba2718-53f0-5345-8871-d2caa1751d5f:2",
@@ -8217,7 +10088,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8225,7 +10096,9 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "835011cb-d843-5aec-b44e-270a647f9c88",
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "08ba2718-53f0-5345-8871-d2caa1751d5f:3",
@@ -8234,7 +10107,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8242,7 +10115,9 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "cd5d8160-3d46-505b-a409-913e71f3c0be",
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "08ba2718-53f0-5345-8871-d2caa1751d5f:4",
@@ -8251,7 +10126,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8259,7 +10134,9 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "5fb519fb-6e44-52d2-9335-65a13cd921ab",
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "08ba2718-53f0-5345-8871-d2caa1751d5f:5",
@@ -8268,7 +10145,7 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "CROSS_REFERENCE_TO_SOURCE_CHILD",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
@@ -8276,9 +10153,12 @@
           "acceptedEvidenceRefs": [],
           "limits": [
             "Comparación concreta entre República Dominicana y otros países; sin generalizaciones culturales."
-          ]
+          ],
+          "childSourceId": "50bc85f8-8102-5394-b75c-eeed65610f29",
+          "countAsSeparateCoverageUnit": false
         }
-      ]
+      ],
+      "sourceRole170": "GROUP_WITH_REQUIRED_COMPARISON_CONTEXT"
     },
     {
       "official": {
@@ -8319,7 +10199,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8362,7 +10251,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8405,8 +10303,17 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
-          "disaggregationPending": true
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "disaggregationPending": true,
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8449,7 +10356,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8492,7 +10408,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8535,7 +10460,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Comparación entre República Dominicana y otros contextos mediante ejemplos. Describir, nombrar o emitir pronóstico no acredita comparar el aspecto cultural."
+          ],
+          "parentSourceId": "08ba2718-53f0-5345-8871-d2caa1751d5f",
+          "requiredContextSourceIds": [
+            "08ba2718-53f0-5345-8871-d2caa1751d5f"
+          ],
+          "staticProviderIds": [
+            "ing-1-strategy-cultural-comparison"
+          ]
         }
       ]
     },
@@ -8748,16 +10682,69 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:0",
+            "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:0",
+          "title": "will: previsión atmosférica",
+          "sourceId": "1e4a1a5d-433a-5f7b-932e-24a085dc1846",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-future"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:1",
+          "title": "be going to: previsión atmosférica",
+          "sourceId": "1e4a1a5d-433a-5f7b-932e-24a085dc1846",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-future"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:0",
+          "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -8792,16 +10779,69 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:0",
+            "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:0",
+          "title": "would: invitar",
+          "sourceId": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-would"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:1",
+          "title": "would: aceptar invitación",
+          "sourceId": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-would"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:0",
+          "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -8836,16 +10876,69 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:0",
+            "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:0",
+          "title": "can’t: rechazar",
+          "sourceId": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-declining-forms"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:1",
+          "title": "have to: rechazar",
+          "sourceId": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-declining-forms"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:0",
+          "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -9096,16 +11189,69 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:0",
+            "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:0",
+          "title": "Artículos definidos",
+          "sourceId": "8426b0bc-2090-560a-a7d3-19cc340ea979",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-articles"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:1",
+          "title": "Artículos indefinidos",
+          "sourceId": "8426b0bc-2090-560a-a7d3-19cc340ea979",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-articles"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:0",
+          "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -9183,16 +11329,69 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": false,
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:0",
+            "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:1"
+          ]
+        },
+        {
+          "componentKey": "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:0",
+          "title": "Comparativo, incluida igualdad según ejemplo oficial",
+          "sourceId": "65eecefb-fb45-52f0-bf18-93ad88b2acb8",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-comparative"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
+        },
+        {
+          "componentKey": "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:1",
+          "title": "Superlativo",
+          "sourceId": "65eecefb-fb45-52f0-bf18-93ad88b2acb8",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED",
+          "providerIds": [
+            "ing-1-feature-comparative"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+          ],
+          "staticMappingOnly": true
         }
-      ]
+      ],
+      "decomposition170": {
+        "childKeys": [
+          "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:0",
+          "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:1"
+        ],
+        "evidenceInherited": false
+      }
     },
     {
       "official": {
@@ -9702,7 +11901,75 @@
           "limits": [],
           "disaggregationPending": true
         }
-      ]
+      ],
+      "partialEvidence170": {
+        "status": "PARTIAL_ROW_REVIEWED_LOCAL",
+        "acceptedRevision": "v6",
+        "acceptedEvidenceRefs": [
+          {
+            "caseId": "ING-PER03",
+            "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "component": "Comprender datos personales del mensaje fuente",
+            "modality": "LISTENING",
+            "phase": "COMPREHENSION_ONLY",
+            "creditsProduction": false,
+            "creditsPerformedExchange": false
+          },
+          {
+            "caseId": "ING-PER04",
+            "manifest": "auditoria-curricular-ing1-personal-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "component": "Comprender datos personales del mensaje fuente",
+            "modality": "READING",
+            "phase": "COMPREHENSION_ONLY",
+            "creditsProduction": false,
+            "creditsPerformedExchange": false
+          },
+          {
+            "caseId": "ING-TR05",
+            "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "component": "Comprender datos personales del mensaje fuente",
+            "modality": "READING",
+            "phase": "COMPREHENSION_ONLY",
+            "creditsProduction": false,
+            "creditsPerformedExchange": false
+          },
+          {
+            "caseId": "ING-TR06",
+            "manifest": "auditoria-curricular-ing1-transfer-170-despues-revisar-v6.json",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "component": "Comprender datos personales del mensaje fuente",
+            "modality": "LISTENING",
+            "phase": "COMPREHENSION_ONLY",
+            "creditsProduction": false,
+            "creditsPerformedExchange": false
+          }
+        ],
+        "wholeIndicatorAccepted": false,
+        "limit": "Solo comprensión de información personal en estas tareas; no acredita todos los géneros, temas ni modalidades del indicador."
+      }
     },
     {
       "official": {
@@ -10597,8 +12864,10 @@
   "findings": [
     {
       "sourceId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
-      "status": "STATIC_FINDING_NOT_YET_REPRODUCED",
-      "detail": "Solicitud explícita del dato todavía no tiene criterio propio en la ruta general."
+      "status": "HISTORICAL_RESOLVED_170",
+      "detail": "Ruta personal especializada conectada para solicitud, ofrecimiento y preparación; aceptación limitada a las actuaciones y versiones documentadas.",
+      "originalDetail": "Solicitud explícita del dato todavía no tiene criterio propio en la ruta general.",
+      "acceptedRevision": "v6"
     },
     {
       "sourceId": "1dc39ad1-524b-5fb5-bb3a-b6a5a9099000",
@@ -10636,6 +12905,13 @@
     {
       "status": "HISTORICAL_TRACEABILITY",
       "detail": "Cotejo integral asigna tiempo a place-prepositions y comprime adverbios/conectores/géneros al último ejemplo. No transferir aceptación histórica."
+    },
+    {
+      "sourceId": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+      "status": "STATIC_FINDING_NOT_YET_REPRODUCED",
+      "detail": "La ruta personal especializada se omite al pedir gramática o léxico explícitos. La solicitud personal combinada con esos requisitos requiere reproducción y auditoría propia; no está acreditada por las capturas170.",
+      "reportedBy": "/root/auditor_curricular",
+      "providerRef": "packages/shared/src/secondary-english-grade-one.ts"
     }
   ],
   "closure": {
@@ -10643,7 +12919,7 @@
     "acceptedActivities": 0,
     "acceptedOutputs": 0,
     "remaining": [
-      "Corregir las causas de las11 reservas del banco personal; volver a generar y leer los44 instrumentos y todos los fallback distintos.",
+      "Primer bloque personal y controles de transferencia revisados localmente (60 instrumentos de tareas definidas,8 controles provisionales). Pendiente HTTP170 y continuidad por los demás componentes.",
       "Completar clasificación y vínculos exactos de todos los componentes oficiales sin perder continuaciones.",
       "Auditar las demás funciones, léxico, expresiones, gramática, géneros/modalidades, estrategias, actitudes e indicadores con varias actividades pertinentes.",
       "Verificación operativa final y recorrido visual personal cuando sea accesible."
@@ -10817,5 +13093,33 @@
       "Nueve selecciones nulas; PER06 recomienda interacción oral, improcedente para preparación escrita."
     ],
     "runtimeOrBrowserTested": false
+  },
+  "componentMappingAudit170": {
+    "auditor": "/root/auditor_curricular",
+    "kind": "SELECTIVE_STATIC_INTEGRATION",
+    "officialRowsPreserved": 201,
+    "conceptRowsRead": 96,
+    "procedureRowsRead": 53,
+    "fullConceptMapIntegrated": false,
+    "newEvidenceAccepted": false,
+    "remaining": "Integrar el resto del mapa estático y auditar actividades e instrumentos por componente. No cerrar asignatura por esta clasificación."
+  },
+  "firstBlockReview170": {
+    "status": "LOCAL_PEDAGOGICAL_REVIEW_ACCEPTED_WITH_PROVISIONAL_CONTROLS",
+    "bankOutputs": 44,
+    "transferOutputs": 24,
+    "observableCases": 15,
+    "provisionalControls": 2,
+    "acceptedCurricularOutputs": 60,
+    "acceptedProvisionalOutputs": 8,
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-lectura68-v6.json",
+    "http": "NOT_TESTED_170",
+    "personalBrowser": "BLOCKED_DEBUGGER_UNATTACHED",
+    "wholeSubjectClosed": false,
+    "acceptedRevision": "v6",
+    "currentRevision": "v6",
+    "currentRevisionStatus": "INDEPENDENT_REVIEW_ACCEPTED_NO_CAPTURE_RESERVATIONS",
+    "previousAcceptedManifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-lectura68.json",
+    "gates": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-gates-v3.json"
   }
 }

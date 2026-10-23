@@ -1,0 +1,67 @@
+{
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "ING",
+    "subjectName": "Inglés",
+    "modalityCode": null,
+    "optativeExitName": null
+  },
+  "designer": "/root/disenador_pruebas",
+  "independent": true,
+  "designBeforeOutputReview": true,
+  "materials": {
+    "ING-TR06": {
+      "teacherOnlyScripts": [
+        "Hello, I’m Ben. I’m from Canada.",
+        "My name is May. I’m a doctor."
+      ],
+      "studentSheet": "Ben y May impresos con campos country/occupation; textos no mostrados."
+    }
+  },
+  "cases": [
+    {
+      "id": "ING-TR01",
+      "title": "Las preguntas para el viernes",
+      "description": "El viernes entrevistaremos a visitantes ficticios. Hoy redacta solamente tres preguntas en inglés para averiguar su nombre, su país y su ocupación. Guarda las preguntas para utilizarlas ese día.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Preparar preguntas escritas para tres datos; entrevista y respuestas futuras no exigibles."
+    },
+    {
+      "id": "ING-TR02",
+      "title": "Primero averiguamos los datos",
+      "description": "Usen sus tarjetas de personajes y entrevístense ahora en inglés: averigüen el nombre, el país y la ocupación del otro y respondan a sus preguntas. La presentación de los visitantes al curso será el viernes.",
+      "participationMode": "GROUP",
+      "expected": "Solicitar y responder oralmente ahora según tarjetas; no exigir presentación futura."
+    },
+    {
+      "id": "ING-TR03",
+      "title": "Escoge cómo responder",
+      "description": "Un visitante ficticio quiere saber tu nombre y tu ciudad. Respóndele en inglés usando el perfil entregado y pregúntale de qué país viene. Entrega una sola versión: una nota de voz o un mensaje breve en una hoja. No tienes que enviárselo.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Nombre/ciudad fieles, pregunta sobre país; voz O escrito, sin envío ni respuesta posterior."
+    },
+    {
+      "id": "ING-TR04",
+      "title": "La ciudad quedó mal expresada",
+      "description": "Revisa exclusivamente la pregunta y la respuesta sobre la ciudad donde vive el personaje. Usa su tarjeta para que el fragmento pida y comunique correctamente ese dato en inglés. Mantén el nombre, el país, la ocupación y las demás líneas del borrador.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Revisar pregunta/respuesta ciudad de residencia; conservar exactamente nombre, país, ocupación y demás líneas."
+    },
+    {
+      "id": "ING-TR05",
+      "title": "La ficha no lo cuenta todo",
+      "description": "Lee este mensaje del personaje: My name is Sara. I live in Quito. I’m a teacher. Completa name, country of origin, nationality y occupation usando solo la información del mensaje. Escribe un guion donde falte el dato.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Sara/teacher presentes; país de origen/nacionalidad ausentes, guion y sin inferir desde Quito."
+    },
+    {
+      "id": "ING-TR06",
+      "title": "Anotamos solo lo que escuchamos",
+      "description": "Escucha los dos mensajes que leerá la docente. En la hoja, junto a cada nombre ya impreso, anota country y occupation cuando se mencionen. Si no escuchas ese dato en el mensaje, escribe not given. Puedes pedir que se repita.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Ben/Canada y May/doctor; restantes not given; no mezclar personajes ni penalizar repetición."
+    }
+  ]
+}

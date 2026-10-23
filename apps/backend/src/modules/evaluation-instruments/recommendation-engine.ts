@@ -1,3 +1,4 @@
+import {markEnglishPersonalProvisional} from '@aula/shared'
 import {resolveOptativeSocialTask,optativeSocialCriteria,optativeSocialSelections} from '@aula/shared'
 import {resolveOptativeLanguageTask,optativeLanguageCriteria,optativeLanguageSelections,adaptOptativeLanguageScale} from '@aula/shared'
 import {resolveCommonPhysicalTask,commonPhysicalCriteria,commonPhysicalSelections,adaptPhysicalScale} from '@aula/shared'
@@ -457,7 +458,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const formatted = technical ? adaptTechnicalScale(result,input.description??'',technical) : optativeScience ? adaptOptativeScienceScale(result,input.description??'',optativeScience) : optativeMath ? adaptMathScale(result,input.description??'') : socialOptative ? adaptSocialScale(result) : optativeTask ? adaptOptativeLanguageScale(result) : fhrTask ? adaptFhrScale(result,fhrTask) : physicalTask ? adaptPhysicalScale(result,physicalTask) : artTask ? adaptArtScale(result, artTask) : socialTask ? adaptSocialScale(result) : commonScience ? adaptScienceScale(result,input.description??'') : mathTask ? adaptMathScale(result,input.description??'') : context?.level==='SECONDARY' && area==='language' && authoredCriteria.length && !authored.some(row=>row.templateId.startsWith('task-'))
     ? adaptLanguageScale(result,input.description??'',frenchTask?'fr':undefined) : result
   assertValidRecommendation(formatted, Boolean(input.includeAdditionalCandidates))
-  return markFirstGradeProvisional(formatted,(transversal?.focused?.kind==='PROGRESS'||transversal?.community?.kind==='NEWS_UNCONFIRMED')&&transversal.activityType===activity.id,transversal?.community?.kind==='NEWS_UNCONFIRMED'?'Preparación provisional: confirmar fase y medio de difusión; la consigna no acredita publicación efectiva ni desempeño observado.':undefined)
+  return markFirstGradeProvisional(markEnglishPersonalProvisional(formatted,englishTask&&'personal' in englishTask?englishTask.personal?.note:undefined),(transversal?.focused?.kind==='PROGRESS'||transversal?.community?.kind==='NEWS_UNCONFIRMED')&&transversal.activityType===activity.id,transversal?.community?.kind==='NEWS_UNCONFIRMED'?'Preparación provisional: confirmar fase y medio de difusión; la consigna no acredita publicación efectiva ni desempeño observado.':undefined)
 }
 
 export function assertValidRecommendation(result: InstrumentRecommendation, candidatePool = false) {

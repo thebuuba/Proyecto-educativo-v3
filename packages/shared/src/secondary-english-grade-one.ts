@@ -9,6 +9,7 @@ import {requestedEnglishGenres,englishGenreCriteria} from './secondary-english-g
 import {withoutResources} from './evaluation-task-text'
 import {englishContextCriteria} from './secondary-english-grade-one-context'
 import {englishProfileWithoutNarration} from './secondary-english-task-text'
+import {resolveEnglishPersonalTask,englishPersonalCriteria,type EnglishPersonalTask} from './secondary-english-grade-one-personal'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -18,9 +19,9 @@ export function commonFirstGradeEnglish(context?:InstrumentAcademicContext|null)
  return code==='ING'||(!code&&/^(?:(?:lenguas? extranjeras? )?ingles|english)$/.test(affirmativeLanguageTask(context.subjectName??'')))
 }
 
-type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'
+type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'alternative'|'pending'
 type FunctionId='personal'|'invitation'|'routine'|'comparison'|'instructions'|'preferences'|'clarification'|'weather'|'directions'|'experience'|'opinion'|'description'
-export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; contextText?:string; activityType:string; technique:string; actions?:EnglishTask[]}
+export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; contextText?:string; activityType:string; technique:string; actions?:EnglishTask[];personal?:EnglishPersonalTask}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},
  listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
@@ -28,6 +29,8 @@ const modes:Record<Mode,{activityType:string;technique:string}>={
  oral:{activityType:'ORAL_PRESENTATION',technique:'presentacion'},
  writing:{activityType:'WRITTEN_PRODUCTION',technique:'analisis-producciones'},
  audiovisual:{activityType:'AUDIOVISUAL_PRODUCTION',technique:'analisis-producciones'},
+ alternative:{activityType:'OTHER',technique:'analisis-producciones'},
+ pending:{activityType:'OTHER',technique:'analisis-producciones'},
 }
 
 /** Content and action come from the assignment; a decorative heading cannot change them. */
@@ -36,6 +39,11 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  // Split independent actions before normalization removes sentence boundaries. Infinitives
  // of purpose ("para describir") remain attached to their requested product.
  const raw=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ const personal=!requestedEnglishGrammar(raw).length&&!requestedEnglishLexicon(raw).length?resolveEnglishPersonalTask(raw):null
+ if(personal){
+  const mode:Mode=personal.kind==='listening'?'listening':personal.kind==='reading'?'reading':personal.kind==='interaction'||personal.kind==='clarification'?'interaction':personal.kind==='oral'?'oral':personal.kind==='alternative'?'alternative':personal.kind==='presentation-pending'?'pending':'writing'
+  return {personal,mode,functions:['personal'],text:affirmativeLanguageTask(raw),contextText:raw,...modes[mode]}
+ }
  const action='(?:leer(?:an)?|lean|escuchar(?:an)?|escuchen|redactar(?:an)?|redacten|escribir(?:an)?|escriban|presentar(?:an)?|presenten|expondran|conversar(?:an)?|dialogar(?:an)?|comparar(?:an)?|compar(?:en|an)|crear(?:an)?|elaborar(?:an)?|revisar(?:an)?|planificar(?:an)?|recitar(?:an)?|cantar(?:an)?)'
  const prefix='(?:(?:luego|despues|posteriormente|finalmente),?\\s+)?(?:(?:los estudiantes|el alumnado|cada estudiante|ellos|ellas)\\s+)?(?:(?:lo|la|los|las)\\s+)?'
  const boundary=new RegExp(`(?:[.;]\\s*|\\s+(?:y|luego|despues|posteriormente|finalmente)\\s+)(?=${prefix}${action}\\b)`,'g')
@@ -109,6 +117,7 @@ const row=(id:string,title:string,levels:ContextualTopicCriterion['progressionLe
 const list=(items:string[])=>items.length<2?items[0]:items.slice(0,-1).join(', ')+' y '+items.at(-1)
 
 export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCriterion[]{
+ if(task.personal)return englishPersonalCriteria(task.personal)
  if(task.actions){
   const rows:ContextualTopicCriterion[]=[],seen=new Set<string>()
   for(const [index,action] of task.actions.entries())for(const criterion of firstGradeEnglishCriteria(action)){

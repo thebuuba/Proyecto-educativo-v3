@@ -1,0 +1,3062 @@
+{
+  "catalog": "evaluation-2026.170",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "ING-TR01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-questions:0",
+            "templateId": "ing-1-personal-questions",
+            "title": "Preguntas preparatorias",
+            "description": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+              "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+              "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+              "Las preguntas solicitan información distinta de los datos previstos.",
+              "No aporta preguntas comprensibles sobre los datos previstos."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-questions:0",
+            "templateId": "ing-1-personal-questions",
+            "title": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+            "description": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+              "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+              "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+              "Las preguntas solicitan información distinta de los datos previstos.",
+              "No aporta preguntas comprensibles sobre los datos previstos."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-questions:0",
+            "templateId": "ing-1-personal-questions",
+            "title": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+            "description": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+              "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+              "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+              "Las preguntas solicitan información distinta de los datos previstos.",
+              "No aporta preguntas comprensibles sobre los datos previstos."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-questions:0",
+            "templateId": "ing-1-personal-questions",
+            "title": "Preguntas preparatorias",
+            "description": "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura. Parcial (50%): Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "En la preparación escrita, formula en inglés tres preguntas que solicitan nombre, país y ocupación; se evalúan las preguntas disponibles hoy, sin exigir respuestas de una entrevista futura.",
+              "Las preguntas permiten reconocer todos los datos solicitados y respetan la cantidad pedida; una formulación necesita precisión.",
+              "Las preguntas permiten solicitar algunos datos, pero otras omiten el dato o no dejan claro qué se pregunta, o la cantidad de preguntas no corresponde a la pedida.",
+              "Las preguntas solicitan información distinta de los datos previstos.",
+              "No aporta preguntas comprensibles sobre los datos previstos."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los datos previstos. O bien: No aporta preguntas comprensibles sobre los datos previstos.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información personal solicitada",
+            "description": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+              "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+              "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+              "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "fourLevelLowest": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Correspondencia entre intervenciones",
+            "description": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+              "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+              "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+              "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero.",
+              "No aporta respuestas reconocibles a las preguntas del interlocutor."
+            ],
+            "fourLevelLowest": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+            "description": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+              "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+              "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+              "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "fourLevelLowest": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+            "description": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+              "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+              "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+              "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero.",
+              "No aporta respuestas reconocibles a las preguntas del interlocutor."
+            ],
+            "fourLevelLowest": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+            "description": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+              "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+              "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+              "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "fourLevelLowest": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+            "description": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+              "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+              "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+              "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero.",
+              "No aporta respuestas reconocibles a las preguntas del interlocutor."
+            ],
+            "fourLevelLowest": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información personal solicitada",
+            "description": "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado. Parcial (50%): Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta y responde en inglés sobre nombre, país y ocupación del personaje según la tarjeta del personaje, vinculando cada respuesta con el dato solicitado.",
+              "Se reconocen las preguntas y respuestas sobre los datos solicitados; una referencia puntual queda ambigua o incorrecta.",
+              "Solicita o responde solo parte de los datos, o confunde varios; hay información reconocible, pero no completa ambos actos.",
+              "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar.",
+              "No aporta datos reconocibles de la persona o personaje indicado."
+            ],
+            "fourLevelLowest": "La confusión generalizada entre datos o personas impide reconocer la información que se pretende comunicar. O bien: No aporta datos reconocibles de la persona o personaje indicado.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-interaction:1",
+            "templateId": "ing-1-interaction",
+            "title": "Correspondencia entre intervenciones",
+            "description": "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita. Parcial (50%): Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona cada respuesta con la pregunta recibida y permite intervenir al compañero sin burlas ni descalificaciones en el intercambio oral en inglés, usando aclaraciones o reformulaciones cuando las necesita.",
+              "Las intervenciones se relacionan y ambos pueden participar; una referencia queda ambigua o una interrupción o descalificación puntual se repara.",
+              "Responde a algunas preguntas, pero otras quedan sin respuesta relacionada, o interrumpe reiteradamente sin reparar y recorta las intervenciones del compañero, o mantiene una descalificación sin reparar aunque el compañero aún puede participar.",
+              "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero.",
+              "No aporta respuestas reconocibles a las preguntas del interlocutor."
+            ],
+            "fourLevelLowest": "Las respuestas cambian el sentido de las preguntas de forma generalizada o las descalificaciones impiden participar al compañero. O bien: No aporta respuestas reconocibles a las preguntas del interlocutor.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas. Parcial (50%): Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=interaction",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Respuesta y solicitud de información",
+            "description": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+              "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+              "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+              "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista.",
+              "No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada."
+            ],
+            "fourLevelLowest": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=alternative",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+            "description": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+              "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+              "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+              "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista.",
+              "No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada."
+            ],
+            "fourLevelLowest": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=alternative",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+            "description": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+              "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+              "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+              "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista.",
+              "No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada."
+            ],
+            "fourLevelLowest": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=alternative",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Respuesta y solicitud de información",
+            "description": "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior. Parcial (50%): La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica nombre y ciudad según el perfil ficticio entregado y formula una pregunta sobre país del destinatario, en audio o mensaje escrito en papel, sin exigir envío ni respuesta posterior.",
+              "La respuesta y la pregunta comunican los datos pedidos; una referencia puntual necesita precisión.",
+              "La respuesta comunica parte de lo pedido o la pregunta no permite reconocer el dato solicitado al destinatario.",
+              "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista.",
+              "No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada."
+            ],
+            "fourLevelLowest": "La respuesta cambia los datos del perfil o la pregunta solicita información distinta de la prevista. O bien: No aporta una respuesta ni una pregunta reconocibles sobre la información solicitada.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible",
+            "description": "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados. Parcial (50%): Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite comprender los datos y las preguntas del mensaje oral o escrito, según la única modalidad elegida en inglés mediante expresiones breves; se admiten reformulaciones y apoyos acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se reconocen expresiones aisladas, pero varias referencias impiden relacionar los datos con lo solicitado.",
+              "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar.",
+              "No se aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones elegidas cambian el sentido de los datos o preguntas que se quieren comunicar. O bien: No se aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=alternative",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-revision:0",
+            "templateId": "ing-1-personal-revision",
+            "title": "Revisión del fragmento autorizado",
+            "description": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+              "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+              "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+              "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta.",
+              "No aporta una revisión reconocible del fragmento autorizado frente al borrador."
+            ],
+            "fourLevelLowest": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-preservation:1",
+            "templateId": "ing-1-personal-preservation",
+            "title": "Conservación del resto del borrador",
+            "description": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+              "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+              "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+              "La revisión altera datos o sentido de otras partes del borrador que debían conservarse.",
+              "No ofrece una versión que permita comprobar la conservación del resto del borrador."
+            ],
+            "fourLevelLowest": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-revision:0",
+            "templateId": "ing-1-personal-revision",
+            "title": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+            "description": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+              "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+              "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+              "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta.",
+              "No aporta una revisión reconocible del fragmento autorizado frente al borrador."
+            ],
+            "fourLevelLowest": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-preservation:1",
+            "templateId": "ing-1-personal-preservation",
+            "title": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+            "description": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+              "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+              "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+              "La revisión altera datos o sentido de otras partes del borrador que debían conservarse.",
+              "No ofrece una versión que permita comprobar la conservación del resto del borrador."
+            ],
+            "fourLevelLowest": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-revision:0",
+            "templateId": "ing-1-personal-revision",
+            "title": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+            "description": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+              "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+              "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+              "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta.",
+              "No aporta una revisión reconocible del fragmento autorizado frente al borrador."
+            ],
+            "fourLevelLowest": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-preservation:1",
+            "templateId": "ing-1-personal-preservation",
+            "title": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+            "description": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+              "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+              "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+              "La revisión altera datos o sentido de otras partes del borrador que debían conservarse.",
+              "No ofrece una versión que permita comprobar la conservación del resto del borrador."
+            ],
+            "fourLevelLowest": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-revision:0",
+            "templateId": "ing-1-personal-revision",
+            "title": "Revisión del fragmento autorizado",
+            "description": "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador. Parcial (50%): Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la pregunta y la respuesta sobre ciudad de residencia para que pidan y comuniquen correctamente ese dato en inglés según la tarjeta del personaje; contrasta el cambio con el borrador.",
+              "La pregunta y la respuesta corresponden al dato de la fuente; una expresión del fragmento todavía necesita precisión.",
+              "Corrige solo la pregunta o la respuesta y deja sin resolver su correspondencia con el dato de la fuente.",
+              "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta.",
+              "No aporta una revisión reconocible del fragmento autorizado frente al borrador."
+            ],
+            "fourLevelLowest": "La revisión cambia el dato o hace que la pregunta y la respuesta se refieran a información distinta. O bien: No aporta una revisión reconocible del fragmento autorizado frente al borrador.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-preservation:1",
+            "templateId": "ing-1-personal-preservation",
+            "title": "Conservación del resto del borrador",
+            "description": "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador. Parcial (50%): Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva exactamente nombre, país y ocupación y el resto del mensaje fuera del fragmento autorizado, comparando con el borrador.",
+              "Mantiene los datos y el sentido del resto del mensaje; un cambio formal ajeno al fragmento debe revertirse.",
+              "Introduce cambios formales fuera del fragmento autorizado, sin alterar datos ni sentido, y deja varios sin revertir.",
+              "La revisión altera datos o sentido de otras partes del borrador que debían conservarse.",
+              "No ofrece una versión que permita comprobar la conservación del resto del borrador."
+            ],
+            "fourLevelLowest": "La revisión altera datos o sentido de otras partes del borrador que debían conservarse. O bien: No ofrece una versión que permita comprobar la conservación del resto del borrador.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información de cada persona",
+            "description": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Información no proporcionada",
+            "description": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+            "description": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "description": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+            "description": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "description": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información de cada persona",
+            "description": "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes. Parcial (50%): Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona nombre, país, nacionalidad y ocupación con la persona y los campos correspondientes según el texto leído en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Información no proporcionada",
+            "description": "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad. Parcial (50%): Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el texto leído y marca los campos sin información con un guion, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información de cada persona",
+            "description": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Información no proporcionada",
+            "description": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+            "description": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "description": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+            "description": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "description": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    },
+    {
+      "id": "ING-TR06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.170",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "LISTENING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal:0",
+            "templateId": "ing-1-personal",
+            "title": "Información de cada persona",
+            "description": "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes. Parcial (50%): Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona país y ocupación con la persona y los campos correspondientes según el mensaje escuchado en inglés, sin mezclar datos entre personajes.",
+              "Relaciona los datos con cada persona y campo; una asociación puntual queda ambigua o incorrecta, sin deshacer las demás relaciones.",
+              "Relaciona algunos datos, pero confunde u omite varias asociaciones entre datos y personas.",
+              "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente.",
+              "No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente."
+            ],
+            "fourLevelLowest": "La confusión es generalizada: la mayoría de los datos se atribuye a otra persona o contradice la fuente. O bien: No aporta asociaciones reconocibles entre datos, campos y personas a partir de la fuente.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.170:fallback:ing-1-personal-missing:1",
+            "templateId": "ing-1-personal-missing",
+            "title": "Información no proporcionada",
+            "description": "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad. Parcial (50%): Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue los datos presentes de los ausentes en el mensaje escuchado y marca los campos sin información con not given, sin inferir país o nacionalidad por el nombre o la ciudad.",
+              "Distingue lo presente de lo ausente; la marca de ausencia de un campo necesita corrección.",
+              "Reconoce algunas ausencias, pero deja varios campos sin distinguir entre dato disponible y dato omitido.",
+              "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente.",
+              "No aporta evidencia de distinguir los datos presentes de los ausentes."
+            ],
+            "fourLevelLowest": "Completa de forma generalizada los campos ausentes con datos inventados o incompatibles con la fuente. O bien: No aporta evidencia de distinguir los datos presentes de los ausentes.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=listening",
+            "functions=personal",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "d4d4dff1d5bdd337d184f06babeece47e8d906fc4c20ee8bfb43c547695332da"
+    }
+  ]
+}

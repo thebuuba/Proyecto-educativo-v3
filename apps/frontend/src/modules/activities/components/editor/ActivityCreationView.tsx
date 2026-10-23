@@ -1334,6 +1334,9 @@ export function ActivityCreationView(props: {
               activityDraft.manualInstrumentBlank) &&
             (!activityDraft.autoSelectedInstrumentType || activityDraft.preparedRecommendation) ? (
               <div role="region" aria-label="Instrumento y estado de criterios">
+                {activityDraft.preparedRecommendation?.teacherReviewNotes?.map((note) => (
+                  <p key={note} className="mb-2 text-sm text-muted-foreground">{note}</p>
+                ))}
                 <InstrumentPreview
                   key={`${activityDraft.instrumentType}:${activityDraft.manualInstrumentBlank ? 'blank' : 'prepared'}:${activityDraft.instrumentFields[`${activityDraft.instrumentType}:meta:criteriaCount`] || ''}`}
                   accent={accent}

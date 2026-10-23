@@ -40,6 +40,20 @@ async function advance(ms: number) {
 }
 
 describe('automatic instrument preparation request lifecycle', () => {
+  it('muestra la incertidumbre de una consigna fuera de los criterios y conserva puntuación pendiente', async () => {
+    vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
+    mount({name:'Presentaciones para el primer encuentro',description:'Cada estudiante preparará su presentación personal en inglés para el primer encuentro del grupo.',pedagogicalActivityType:''}, {level:'SECONDARY',grade:1,subjectCode:'ING'})
+    await advance(500)
+    await advance(1000)
+    expect(screen.getByText(/Propuesta provisional: falta precisar modalidad/)).toBeVisible()
+    const draft=readActivityDrafts(context)[0].draft as ActivityDraft
+    expect(draft.preparedRecommendation?.confidence).toBe('LOW')
+    expect(draft.preparedRecommendation?.selectedCurriculumElements).toEqual([])
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toMatch(/falta precisar|preguntas/)
+    expect(draft.maxScore).toBe('')
+    expect(draft.preparedRecommendation?.totalScoreUnits).toBe(0)
+    expect(screen.queryByText('Preparando el instrumento de evaluación…')).not.toBeInTheDocument()
+  })
   for (const physical of [false,true]) for (const targetType of ['escala','lista-cotejo','lista-ponderada'] as const) for (const initialScore of ['', '20']) for (const outcome of ['resolved', 'rejected'] as const) it(`conserva el formato confirmado al escribir puntos durante su preparación (${physical?'EFI':'general'}/${targetType}/${initialScore || 'pendiente'}/${outcome})`, async () => {
     const description=physical?'Analiza las adaptaciones de las reglas de baloncesto del caso concreto dado a partir de los datos sobre recursos y participación. Compara las alternativas proporcionadas y justifica la decisión elegida según las necesidades descritas. No infieras diagnósticos ni solicites datos privados.':'Elaborar un informe con evidencia.'
     const academicContext=physical?{level:'SECONDARY' as const,grade:1,subjectCode:'EFI'}:undefined
