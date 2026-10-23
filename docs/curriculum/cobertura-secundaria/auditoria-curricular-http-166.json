@@ -1,0 +1,311 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.166",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-TRI-R01",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "NEWS_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRI-R05",
+      "format": "escala",
+      "score": 17.35,
+      "activityType": "ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRI-R08",
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRI-R12",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "CALLIGRAM_CREATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 3181
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 14330
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 15075
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 10131
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 10741
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6211
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8803
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7497
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 9728
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 8946
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7278
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7205
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 7605
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4875
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5723
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7606
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11039
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 6077
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6141
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 4463
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 11902
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6352
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7016
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11403
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7506
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 8267
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5024
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4704
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7418
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4569
+    }
+  ],
+  "preservedReleases": 96,
+  "preservedSnapshots": 1249,
+  "finalReleases": 97,
+  "finalSnapshots": 1253,
+  "pedagogicalAcceptance": "INDEPENDENT_TRANSVERSALS_SAMPLE_COMPLEMENTARY_AND_WHOLE_AUDIT_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.166",
+    "sourceCommit": "10faef181eeaf9738801a74ce91e4a19c850ad96",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "22baf31348c0eddf37b54afceb1940505e0ad84f76d42e8fed2e55107f5247d8",
+    "frozen165Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 96,
+    "preservedSnapshots": 1249,
+    "finalReleases": 97,
+    "finalSnapshots": 1249,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.166",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DUXnhls0.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DUXnhls0.js",
+        "sha256": "540c9baa65544dd3909a39e5f375728098bdc922c0ac6c8a5a5c9ce9c7b06221",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Br33JtrP.js",
+        "sha256": "338410cb8cee7eb64dafe3d5861fdcbc96cc64b0f8b9147c53003172f45d108f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BchymK9P.js",
+        "sha256": "999fbfb9d7b1ec4eb399ba429c427d5ab1eaa12485f93d6bf2e055b34372072c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-lengua-1-acciones-D0IbeJv4.js",
+        "sha256": "5ffffc11ef252aaea357b7104be5ef0140a0c49939436ee0f404c33a230215eb",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-CoUvPuQN.js",
+        "sha256": "6cc01bfdafda739113cc201a16d05cb4ac579548f3cefd64d73a3f8850c0a8e6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Et_jZXms.js",
+        "sha256": "57ba0c244af85ee8982935d5be73b697ca12b5d50fcbc06d020e308f6ecbe7cd",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "f6f894c713e43ae2a7b9d3cbabdfdb453bc02af59298e00a747ddba195a29314",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browser": {
+    "verified": false,
+    "latestObservation": "Login personal con error y asset163; no nueva observación en166",
+    "registrationAndCacheInspection": "NOT_VERIFIED",
+    "credentialsChanged": false,
+    "storageCleared": false,
+    "manualSteps": [
+      "Conservar cualquier entrada pendiente y recargar localhost:8787 para cargar el build166.",
+      "Iniciar sesión con la cuenta propia de Development.",
+      "En Lengua de primero, introducir una consigna del banco independiente; revisar estrategia visible y selección manual.",
+      "Revisar instrumento completo, guardar y reabrir. Cambiar solo estrategia y comprobar que instrumento, criterios manuales y puntuación permanecen idénticos."
+    ]
+  },
+  "incidents": [
+    {
+      "request": "Cambio de estrategia R05",
+      "clientTimeoutMs": 30000,
+      "server": "500: conexión PostgreSQL terminada inesperadamente",
+      "resolution": "Conciliación de ID de actividad/snapshot antes de reanudar; actualización posterior verificada."
+    },
+    {
+      "request": "Creación R08",
+      "clientTimeoutMs": 45000,
+      "server": "201 al completar47211ms",
+      "resolution": "La siguiente ejecución encontró el mismo creationId y continuó sin recrear la actividad."
+    }
+  ],
+  "personalPreservation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-personales-166.json"
+}

@@ -1,6 +1,6 @@
 # Auditoría curricular completa: plan de ejecución directa
 
-> Ejecución directa con executing-plans. No utilizar subagentes, por instrucción expresa del docente. Continuar después de cada bloque sin confirmaciones rutinarias.
+> Ejecución coordinada con un máximo de tres subagentes reales de solo lectura, autorizados posteriormente por el docente: auditor curricular, diseñador de pruebas y revisor pedagógico. Solo el coordinador modifica archivos, instala catálogos o reinicia procesos. Continuar después de cada bloque sin confirmaciones rutinarias. El estado operativo vigente está en el archivo de continuación; esta lista conserva la secuencia del plan inicial.
 
 **Objetivo:** agotar los contenidos oficiales de los ámbitos autorizados, completando ausencias y demostrando pertinencia de sus cuatro instrumentos.
 
