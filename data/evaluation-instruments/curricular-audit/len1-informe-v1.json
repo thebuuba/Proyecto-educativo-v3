@@ -1,0 +1,176 @@
+{
+  "version": "curricular-len1-informe-v1",
+  "provenance": "SINTETICO del mismo autor, tras releer visualmente la malla completa71–72 y su continuación. Expectativas fijadas antes de generar estos instrumentos. No validación externa independiente.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      71,
+      72
+    ],
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-INF-01",
+      "family": "Consigna breve de producción",
+      "title": "Lo que leímos esta semana",
+      "description": "Escriban un informe de lectura del cuento que leímos en clase.",
+      "expected": {
+        "explicit": [
+          "Informe sobre cuento leído",
+          "Síntesis fiel, interpretación apoyada en texto y organización comprensible"
+        ],
+        "excluded": [
+          "Plan escrito, borrador, publicación o cantidad de páginas no pedidos",
+          "Diapositivas o exposición oral"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-02",
+      "family": "Producción escrita y proceso completo",
+      "title": "Un cuento para entender nuestras costumbres",
+      "description": "Elijan uno de los cuentos leídos en clase y redacten un informe de lectura para sus compañeros. Consulten el cuento y las notas entregadas, seleccionen la información necesaria y preparen un esquema con título del informe, introducción, desarrollo y conclusión. Resuman sus ideas principales aplicando omisión de detalles secundarios, selección de ideas, generalización y reconstrucción con sus palabras. Analicen costumbres, comportamientos, estilos de vida y pautas culturales presentes en el cuento con ejemplos del texto, sin presentar una costumbre como superior a otra. Usen adjetivos para caracterizar esas prácticas; presente de indicativo para el análisis y pasado de indicativo para los hechos narrados; conectores de adición y de ejemplificación. Cuiden comas, dos puntos y comillas al distinguir ejemplos y citas. Revisen el borrador con un compañero, incorporen correcciones y publiquen el informe final en el mural del aula. Entreguen esquema, borrador revisado e informe final; no necesitan investigar la vida del autor.",
+      "expected": {
+        "explicit": [
+          "Elección de cuento y consulta de notas disponibles",
+          "Esquema y título pertinente; introducción/desarrollo/conclusión",
+          "Resumen: omisión, selección, generalización y reconstrucción",
+          "Análisis sociocultural con ejemplos y trato respetuoso",
+          "Adjetivos/presente y pasado de indicativo/adición y ejemplificación",
+          "Comas/dos puntos/comillas funcionales",
+          "Revisión con compañero y publicación física solicitada"
+        ],
+        "excluded": [
+          "Biografía o bibliografía adicional",
+          "Identidad cultural superior",
+          "Exposición oral",
+          "Emociones o gusto por leer como nota"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-03",
+      "family": "Comprensión oral",
+      "title": "Escuchamos cómo se analiza un cuento",
+      "description": "A partir del título del informe de lectura que escucharás, di qué crees que tratará. Escucha el informe leído por la docente. Comprueba tu predicción, explica para qué se presenta ese análisis y cómo la introducción, el desarrollo y la conclusión ayudan a entender las costumbres que se comentan. Apoya tu respuesta con datos escuchados y exprésala brevemente con tus palabras. No escribas un informe nuevo.",
+      "expected": {
+        "explicit": [
+          "Anticipación desde título y contraste con audio",
+          "Inferencia de intención del análisis",
+          "Función de estructura para comprender análisis sociocultural",
+          "Respuesta breve fiel al audio"
+        ],
+        "excluded": [
+          "Crear informe escrito",
+          "Leer una copia impresa obligatoria",
+          "Fotografías, diapositivas o resumen de otra obra"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-04",
+      "family": "Comprensión escrita y recursos",
+      "title": "Cómo este informe construye su análisis",
+      "description": "Lee el informe de lectura entregado con el propósito de entender cómo interpreta las prácticas culturales de la leyenda. Antes de leer, anticipa su contenido desde el título y el subtítulo; comprueba esas predicciones durante y después de la lectura. Explica una inferencia necesaria para entender su análisis, relaciona título, introducción, desarrollo y conclusión con su función y muestra cómo el presente y el pasado de indicativo, los adjetivos y los conectores de adición y de ejemplificación ayudan a comprenderlo. Parafrasea el análisis de las prácticas culturales sin alterar sus relaciones ni atribuirle ideas ausentes. No redactes otro informe.",
+      "expected": {
+        "explicit": [
+          "Propósito lector y anticipación título/subtítulo",
+          "Evaluación de predicciones durante y después",
+          "Inferencia sustentada",
+          "Función de partes",
+          "Función organizativa de presente/pasado/adjetivos/adición/ejemplificación en análisis leído",
+          "Paráfrasis del análisis sociocultural"
+        ],
+        "excluded": [
+          "Crear informe nuevo",
+          "Inventar prácticas de la leyenda",
+          "Investigación externa"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-05",
+      "family": "Producción oral",
+      "title": "Una fábula vista por nuestro grupo",
+      "description": "Elijan una fábula de las leídas y presenten oralmente su informe de lectura para ayudar a otro grupo a comprender sus comportamientos y valores. Indiquen qué texto eligieron y para qué lo presentan. Resuman las ideas principales omitiendo detalles secundarios, seleccionando lo esencial, generalizando y reconstruyendo con sus palabras. Analicen los patrones socioculturales de la fábula con ejemplos de las acciones narradas. Organicen introducción, desarrollo y conclusión, usen adjetivos, presente y pasado de indicativo y conectores de adición y de ejemplificación para distinguir hechos y análisis. Que se entiendan las ideas y sus relaciones al hablar. No entreguen informe escrito ni diapositivas.",
+      "expected": {
+        "explicit": [
+          "Fábula elegida, intención y destinatario",
+          "Resumen oral y cuatro reglas",
+          "Análisis sociocultural sustentado",
+          "Estructura oral",
+          "Uso oral de adjetivos/presente-pasado/adición-ejemplificación",
+          "Comunicación comprensible"
+        ],
+        "excluded": [
+          "Informe escrito o diapositivas",
+          "Identificación de gramática en hoja en lugar de uso oral",
+          "Calificar disfrute o emoción"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-06",
+      "family": "Resumen acotado y procedimiento",
+      "title": "Un resumen que conserva lo esencial",
+      "description": "Revisen únicamente el resumen del informe de lectura recibido. Señalen qué detalles omitir, qué ideas seleccionar, qué información generalizar y cómo reconstruirla con sus palabras conservando las relaciones del cuento. Entreguen el resumen revisado y expliquen esos cambios con referencias al original. No revisen el análisis, la introducción ni la conclusión y no redacten un informe nuevo.",
+      "expected": {
+        "explicit": [
+          "Omisión/selección/generalización/reconstrucción fiel",
+          "Resumen revisado y explicación contrastada con original"
+        ],
+        "excluded": [
+          "Análisis sociocultural nuevo",
+          "Introducción/conclusión nuevas",
+          "Informe completo o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-07",
+      "family": "Revisión lingüística acotada",
+      "title": "Los tiempos y las palabras aclaran el informe",
+      "description": "Corrijan en el informe de lectura recibido solo los adjetivos que caracterizan las costumbres, el presente de indicativo del análisis, el pasado de indicativo de los hechos narrados y los conectores de adición y de ejemplificación. Revisen comas, dos puntos y comillas para que los ejemplos y las citas no cambien de sentido. Entreguen el fragmento corregido y expliquen los cambios apoyándose en el original. No elaboren un informe nuevo ni cambien el resumen o la interpretación.",
+      "expected": {
+        "explicit": [
+          "Corrección contextual de adjetivos/presente-pasado/adición-ejemplificación",
+          "Puntuación funcional de ejemplos y citas",
+          "Fragmento revisado y explicación de cambios"
+        ],
+        "excluded": [
+          "Crear otro informe",
+          "Sustituir resumen o interpretación",
+          "Publicar o producir versión completa"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-08",
+      "family": "Comparación acotada",
+      "title": "Dos informes, una misma leyenda",
+      "description": "Comparen únicamente los resúmenes y los análisis socioculturales de dos informes de lectura sobre la misma leyenda. Expliquen qué ideas conserva cada resumen y qué costumbres interpreta cada análisis. Sustenten las semejanzas y diferencias con datos de ambos informes y de la leyenda, sin decidir qué cultura es superior. No comparen portada ni presentación y no escriban un tercer informe.",
+      "expected": {
+        "explicit": [
+          "Comparación de síntesis e ideas principales",
+          "Contraste de análisis socioculturales",
+          "Sustento en ambos informes y leyenda",
+          "Respeto a identidades"
+        ],
+        "excluded": [
+          "Nuevo informe",
+          "Apariencia de portada",
+          "Jerarquizar culturas",
+          "Exposición obligatoria"
+        ]
+      }
+    }
+  ]
+}
