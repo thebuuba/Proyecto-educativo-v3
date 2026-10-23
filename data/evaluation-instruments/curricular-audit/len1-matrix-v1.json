@@ -453,7 +453,7 @@
         }
       ],
       "status": "EN_CURSO_CONCEPTOS_LOCALES_REVISADOS_PROCEDIMIENTOS_PENDIENTES",
-      "nextAction": "Muestra HTTP/DB156, contraste final de modalidades y cierre local condicionado por navegador; después guía",
+      "nextAction": "Verificar muestras HTTP/DB157 y registrar condición de navegador personal; continuar guía",
       "supplementaryProceduralCases": [
         {
           "caseId": "LEN1-NOT-P01",
@@ -560,15 +560,17 @@
               ]
             },
             {
-              "name": "Estructura y apoyos paratextuales para comprender",
+              "name": "Estructura y apoyo visual comprendidos al escuchar",
               "cases": [
-                "LEN1-NOT-03"
+                "LEN1-NOT-A02"
               ],
               "criteria": [
                 "news-structure",
+                "news-evidence",
                 "news-feature-paratext"
               ],
-              "status": "LECTURA_MULTIMODAL_REVISADA_NO_IMPONER_FOTO_AL_AUDIO_SIN_APOYO_VISUAL"
+              "status": "REVISADO_LOCALMENTE_EN_CUATRO_FORMATOS",
+              "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json"
             }
           ]
         },
@@ -963,6 +965,11 @@
         ],
         "review": "auditoria-curricular-len1-noticia-156-validacion48.json",
         "status": "REVISADO_LOCALMENTE"
+      },
+      "oralStructureCase": {
+        "caseId": "LEN1-NOT-A02",
+        "status": "REVISADO_LOCALMENTE",
+        "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json"
       }
     },
     {

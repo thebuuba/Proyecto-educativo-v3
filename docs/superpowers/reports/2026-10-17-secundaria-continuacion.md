@@ -6,21 +6,21 @@ Leer especificación 2026-10-23-auditoria-curricular-completa.md y su plan. El n
 
 ## Estado comprobado
 
-- Rama ampliacion-de-instrumentos-2; bloque155 en a1e80c09, doce commits locales sin publicar antes del checkpoint HTTP. Sin push.
+- Rama ampliacion-de-instrumentos-2; bloque156 en83b0d874, catorce commits locales sin publicar antes del bloque157. Sin push.
 - Catálogo155 instalado solo en Development eolgunypmtgrsyrjzcld, CREATED/UNCHANGED. Historia validada88releases/1217snapshots; quince referencias personales exactas tras las cuatro muestras HTTP155. No repetir instaladores ni creadores QA finalizados.
-- Código156 en trabajo, sin commit/instalación todavía. Se conservaron catálogo155 y bundle QA; huella08557af68cb3f874694d9dc2e3a8982db13188012554e851559bab953a06b151. Ver informe2026-10-23-auditoria-curricular-len1.md.
-- Worker155 DETENIDO tras verificar launcher66136/listener18456. No abrir otro hasta catálogo compatible. Gates156: backend97349/220, frontend95196/223 completos aprobados; builds/lints de curricular-156-verified-* y recompilación/lint del test aprobados. Frontend corrigió una espera1s frente a debounce900ms; ver curricular-156-timeout-corrected-frontend-test.log y curricular-156-test-build-checks.json. Pasadas terminadas; no repetir sin cambios.
+- Código157 listo para commit. Catálogo156 conservado como candidato LOCAL NO INSTALADO; huella215b174d865beb44c80df9d40bfe99e58c81b694474c7b7bc5894e7d044354cc. 155 sí permanece instalado.
+- Worker155 DETENIDO tras verificar launcher66136/listener18456. Gates157: backend97354/221 completo, frontend focal123/5 y builds backend/frontend/Cloudflare dry-run/lints aprobados; logs curricular-157-*. La pasada frontend completa95196/223 pertenece a156 (incluyó corrección de espera de prueba); no reclamar completa157. Pasadas terminadas; no repetir sin cambios.
 - Cuenta personal seguía en login. No enviar correos ni cambiar credenciales; continuar trabajo local y QA autorizada independiente.
 
 ## Fila activa
 
 Primero → Lengua Española → La noticia. PDF oficial520páginas descargado a .wrangler/realistic-audit/official-secondary-2023.pdf. SHA256 exacta80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58. Leídas visualmente páginas68–75, incluida malla completa69–75 y continuaciones. Orden: noticia, guía, informe, afiche, cuento, caligrama. La extracción contiene61filas de conceptos:6encabezados y55filas; una repite Estructura de guía. No confundir esos55renglones con55subtemas independientes ni cobertura aprobada. Procedimientos/actitudes/indicadores conservados para mapa específico.
 
-Matriz: data/evaluation-instruments/curricular-audit/len1-matrix-v1.json. Doce casos/48instrumentos aceptados localmente; bancos con huellas previas y replay exacto. Manifiesto156-validacion48 acredita lectura. Caso adicionalA02 y sus4salidas156-antes leídas: FALLO conocido de estructura oral (filtra partes/función y agrega interrogantes no pedidas); aún no corregido. Se mapearon7párrafos procedimentales y5actitudes sin calificar estados internos. Cero temas cerrados; indicadores generales continúan abiertos.
+Matriz: data/evaluation-instruments/curricular-audit/len1-matrix-v1.json. Trece casos/52instrumentos aceptados localmente; bancos con huellas previas. A02 corregido en157: partes/función y datos del audio, sin interrogantes adicionales. Manifiesto157-validacion52 acredita paridad y contenido exacto de48anteriores más4A02 leídos. Se mapearon7párrafos procedimentales y5actitudes sin calificar estados internos. Noticia espera muestra157 y condición visual; indicadores generales siguen abiertos.
 
 ## Siguiente acción inmediata
 
-Esperar gates156, documentar/revisar/commit local. NO ejecutar instalador156 intermedio: conservar el candidato156 local (sin instalación) y corregir A02 en el siguiente bloque157 antes de publicar otro runtime; muestra final P01/P02/A01/A02, reconciliando IDs. Instalador156 solo está preparado y no corrió. No duplicar HTTP155 ni ciencia154. Terminar noticia antes de ejecutar guía; banco len1-guia-v1 y huella fijados SIN generar. Seguir informe, afiche, cuento y caligrama. Matriz maestra:82contextos,17encabezados no evaluables excluidos; totales temáticos restantes no confirmados.
+Guardar commit157 y ejecutar UNA instalación individual .wrangler/realistic-audit/install-curricular-157.mjs (preparado, NO ejecutado aún). Conservar88releases/1217snapshots y155exacto;156 nunca se instaló. Iniciar runtime157 validado y muestra P01/P02/A01/A02 reconciliando IDs. No duplicar HTTP155 ni ciencia154. Tras noticia, ejecutar guía: len1-guia-v1 y huella ya fijados SIN generar. Seguir informe, afiche, cuento y caligrama. Matriz maestra82contextos,17encabezados excluidos; totales temáticos restantes no confirmados.
 
 La selección curricular lenta sigue pendiente: perfil Node154 midió5235ms/59versiones/374496bytes dentro de8015ms. No explica por sí solo anteriores58s ni descarta DNS/TLS intermitente. Puede corregirse como bloqueo compartido; después volver a primera fila curricular pendiente.
 

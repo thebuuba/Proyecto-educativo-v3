@@ -1,0 +1,431 @@
+{
+  "catalog": "evaluation-2026.157",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "reviewer": "Codex, mismo autor; revisión interna",
+  "results": [
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "2fa64482f83b966818122d294c671158c746d5ffca41628096d358a63db59cea",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "1bc7fc5f274fad49e8b56ff9c65a980523efea8a987bdb8544e748365193b08f",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "9aae82593e73a8b3d9acae5fa42613b5a22cc2c3eedc10fdbd040a4b8810c008",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "9e174ffff0dd35eb28ea8db6f19092ea87b86297e543c45e1470fd590fa807cf",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "6c1779f21ef52f5e7e76afd43e495cd747dbf53fabfc3d9bee3d08d9cca5f0f8",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "16fcee5b667e5094cfb4c621cb5606852b682d20671cf5642f0275e3155ac7c4",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "db896a68ad3a826893b7b757f4e870d99e9f6dc23080df973cc7eaba50e443a0",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "a15d48dcc00c0a24726312ea500f7495b3c74ae0a6bc984f0bfcdc028f591e15",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "d0d6b0509ffe7c5691b6085db5cc6a9426246d07e2e948a1cefe4cde9aa61e1a",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "32f6c099b57ff246c7bfece4bb6ed552151189d0f0846051d35951b373549708",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "fbacc050b2116b764c6f1956d84ce12f0dea976eb64ad1a2120a6bdf960ae34d",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "289bcc6eac63c4e15bd1f3f4322ce8f62683e873ccec87489cd10fc0ce78062e",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "4d6f1c3c56a6fb6495b6ba2aac6a0545bc27de2a142e94a78b4387626ed97dcd",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "0d58b08f909978bffb679797ae377c18730e57d1fe42cbbec15b45950212e8cf",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "ca5427f8ed09cfd35f19e480bc281df0f97aaadc573ee9ec344ef960511b0f90",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "307f79c277829c27d30adf857847190e0edcebcdcabf264fff502612c7ef9547",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "b909cedb7606c1fc52f14a650634cd308af5216244fca50360ef4b3f6873231c",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "abfe34dab30325fe586f8f030050423ece298c06c16006c5d0cc1389e58cab2c",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "c6db32b3fc0d51258579909fb635c03de434e9db60a269cba68998d222df681c",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "cdd690af394a02c7304963e84dad3c2ce242fbac12c2c9208a0b3278f3e11ce5",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "23ec83b73faa44fdd8aa4f05ec54eb3915e3be7f619c992e96d414421a196379",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "ec191a060ed49d8bf6c7df2c5545b851ffd11522edd9584d9fe4d0b6fe591ea5",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "a3837b7327e1640166fc1d68ea53f68c1d1ef511f24cd2218d52263150025e78",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "07d5dc9f0adc7c15361ac532b46634c5da4a3c05343880a91c2e04bcd912af86",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "03e6a0d317b8754425b4961ed6db80d295c4a4227bd92ef729eb16f85bd00212",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "ccb776ce33628a460bf1a3deaf88b560b378dc14f29835a0cfcaad534dec55d1",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "731f573441f66c73da1b69710219a29552e7fac7fdcd1a98b963f82d80a581bd",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "23b060ac9e8e14f7e0f2b0e878a8babdae2ad83eba0ad8dd61b86feb49be66b1",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "5a4bc2180f5460dfca0bab4aa731143e255064dcb0050935a3c94b246bf781d8",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "7a4e689cf02a97c3fc538c4c6409d12b040d0d1b6b66c73b111e1caf39a727b4",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "3c071172f2c534a1667a1dfd806b062f127e030bb984c5cc501fd9b3853186bb",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "8d895b0d694e4a9bb853f7c116150ba89fb8fab6e7a9cc12036532ff72d20285",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "26492390fea338270d45229b4e25536af55db08f1d031390f0937b798399f436",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "584e96441eb3748a8985fcb6a19ce97e6ecdd30571c92f5e616db5e526c67d0e",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "12e305d12edaeb6f723730ce7193e0674c00d962e4e95731cac32bf03af91e57",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "29312f013cb2c5bc2fc677065b4b5ffda8dd2feca42aa270e99e18b601f93e58",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "056eb3c93fcf3fe9494b4029de62af90bf9180477735759d3f4678f2acded4b5",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "1a0e8e25b921bb8ac08f0442ec00cdb0b3fd9d8480d51f030bfba7455afc0e98",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "3ceec6f878d37431ac8754ef2a8a7ac625efa8119345f01bb1dfc44477748c8d",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "bbba630febbcd416f7829bf898d4d435f27ac004c55ca06ff2d17eb1b1e4838e",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "3dec57c9fc8eae31779f5a1aa0fb6b70df97c84b033039579f495472b93ff5f5",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "e15e78adea7142510c1dd8ac81757da8c69156b892a23edf7b2fa425204806a8",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "bce7e9994dee70ee4a0ebed1a97964a37bdb1cb4a63c2bbe49e8ad02c5b1d422",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "1a92daeceb427086438cf1cbfa9a4ae1c9bd2e8937b483ee603ad7da3eb474ad",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "59be7845c9b6cb26f5a3d49e48e20875c748803c80560ec593252df2d2e5a84f",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "f6cdce27a4fcdfffbef357465e4237e2e24501c42bb1bb144b5e8193fb5d5789",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "149c6b588681ea108a9141b082da81636a8efe69bc736b5ed9bc004a357b14e6",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "e6430d4b8373c1daf9ea03285eb80c73fe51601efa26027cad19a977d72dca8b",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "5157d152f4023bf2353aca449eaca9aa25cc1b6c14d269146bcacf3e57d4a53e",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "6acfbb906b1c7be3c6442fdd49fc514c4469c12a79956a1d73fae4ecba7b7530",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "fefdf8d7b7b2ae230fda70af240027567e8cc1701849d12ca35808012e87bc42",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "a4c577b5ecab9ef842354791cc835792e399ae9489003d69fce4caaf4b2f04e4",
+      "serviceFallbackExact": true,
+      "previousReviewedContentExact": true
+    }
+  ],
+  "previous48SemanticContentUnchanged": true,
+  "newA02AllFourInstrumentsRead": true,
+  "A02Judgment": "Partes escuchadas y su función; sustento en datos del audio; relación de fotografía y pie. Sin reconstrucción adicional de interrogantes. Progresión de reconocer/relacionar, nombrar sin localizar y ausencia; la ponderada conserva parcial observable.",
+  "topicClosed": false,
+  "pending": [
+    "Muestra HTTP/DB157",
+    "Control visual personal pendiente de autenticación"
+  ]
+}

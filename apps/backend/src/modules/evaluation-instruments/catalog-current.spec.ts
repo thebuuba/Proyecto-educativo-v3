@@ -43,7 +43,11 @@ describe('generic product criteria release', () => {
   })
   it('conserva155 antes de completar los procedimientos de noticia',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.155')!)).toBe('08557af68cb3f874694d9dc2e3a8982db13188012554e851559bab953a06b151')
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.156')
+    expect(evaluationCatalogForVersion('evaluation-2026.156')!.version).toBe('evaluation-2026.156')
+  })
+  it('conserva el candidato156 local antes del ajuste de estructura oral',()=>{
+    expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.156')!)).toBe('215b174d865beb44c80df9d40bfe99e58c81b694474c7b7bc5894e7d044354cc')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.157')
   })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
@@ -90,7 +94,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.156')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.157')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()

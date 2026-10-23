@@ -123,11 +123,14 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
   }
   const listening=analysis&&/\bescuch\w*\b/.test(task)
   if(listening){
+    const structureRequested=/estructura|partes|titular|entrada|cuerpo/.test(task)
+    const evidenceRequested=/datos del audio|informacion del audio|justifi\w*|sustent\w*/.test(task)
     rows=rows.filter(row=>row.templateId.includes('-feature-')
       ||row.templateId.includes('-procedure-')&&row.templateId!=='news-procedure-paraphrase'
-      ||row.templateId==='news-purpose'&&purposeRequested||row.templateId==='news-interpretation'&&inferenceRequested)
+      ||row.templateId==='news-purpose'&&purposeRequested||row.templateId==='news-interpretation'&&inferenceRequested
+      ||row.templateId==='news-structure'&&structureRequested||row.templateId==='news-evidence'&&evidenceRequested)
     const questions=/\bcomo\b/.test(task)?'qué sucedió, quiénes participaron, dónde, cuándo y cómo':'qué sucedió, quiénes participaron, dónde y cuándo'
-    rows.push({templateId:/parafras|(?:sus|propias) palabras/.test(task)?'news-procedure-paraphrase':'news-listening-data',title:'Comprensión de la noticia escuchada',weight:5,
+    if(!rows.length||/parafras|(?:sus|propias) palabras|que sucedio|interrogantes|preguntas/.test(task))rows.push({templateId:/parafras|(?:sus|propias) palabras/.test(task)?'news-procedure-paraphrase':'news-listening-data',title:'Comprensión de la noticia escuchada',weight:5,
       observable:`Reconstruye con sus palabras el sentido de la noticia escuchada: ${questions}.`,
       progressionLevels:[`Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento${/\bcomo\b/.test(task)?' y la forma en que ocurrió':''} sin añadir datos ajenos al audio.`,'El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.','Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.','La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.','No presenta una reconstrucción reconocible del hecho escuchado.'],
     })
@@ -161,6 +164,23 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
       'Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.',
       'La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.',
       'No presenta una inferencia reconocible sustentada en la información de la noticia.',
+    ])
+    if(row.templateId==='news-structure'&&listening){
+      const explain=/para que sirve|funcion.*parte/.test(task)
+      return withLevels('Estructura de la noticia escuchada',[
+        `Identifica el titular, la entrada y el cuerpo de la noticia escuchada${explain?' y explica su función para anunciar, presentar y desarrollar la información del hecho':''}.`,
+        'Reconoce las partes por los datos que se escuchan; deja sin relacionar una parte con su aporte al hecho.',
+        'Nombra partes, pero no identifica dónde se anuncia, presenta o desarrolla la información en lo escuchado.',
+        'Atribuye al titular datos del cuerpo o confunde la entrada con otra parte del audio.',
+        'No identifica las partes de la noticia escuchada.',
+      ])
+    }
+    if(row.templateId==='news-evidence'&&listening)return withLevels('Sustento en el audio disponible',[
+      'Sustenta sus respuestas con datos del audio que permiten comprobar las partes o relaciones que identifica.',
+      'Aporta datos que se escuchan; deja sin explicar la relación de un dato con su respuesta.',
+      'Repite información del audio sin relacionarla con las partes o apoyos que analiza.',
+      'Justifica una respuesta con un dato contrario al audio o inventa información que no se escucha.',
+      'No aporta información reconocible del audio para sustentar sus respuestas.',
     ])
     if(row.templateId==='news-sequence'&&writing)return withLevels(row.title,[
       'Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.',
