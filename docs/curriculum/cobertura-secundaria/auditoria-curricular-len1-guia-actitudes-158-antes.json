@@ -1,0 +1,868 @@
+{
+  "catalog": "evaluation-2026.158",
+  "bankSha256": "b6ef37a27af3c5073f8eb7ebb67dadd9636d2a5a6da24417234961a05cdaf82f",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "7dc7f488+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-GUI-V01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 7.2099999999999795,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+              "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+              "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+              "Sitúa datos bajo lugares distintos y cambia su sentido para el visitante.",
+              "No presenta una organización reconocible de la información de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una organización reconocible de la información de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:3",
+            "templateId": "guide-visual",
+            "title": "Dibujo para orientar al visitante",
+            "description": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+              "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+              "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+              "El dibujo representa ubicaciones o rasgos contrarios a los datos de los lugares.",
+              "No presenta el dibujo solicitado como apoyo a la orientación del visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta el dibujo solicitado como apoyo a la orientación del visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-process-revision:4",
+            "templateId": "guide-process-revision",
+            "title": "Revisión de la información de la guía",
+            "description": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+            "maxScore": 2.11,
+            "maxScoreUnits": 211,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+              "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+              "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+              "La revisión cambia un dato del lugar o introduce una indicación contradictoria.",
+              "No aporta una versión revisada que permita comprobar la información solicitada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L3",
+                "text": "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+                "scoreUnits": 141
+              },
+              {
+                "levelId": "L2",
+                "text": "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+                "scoreUnits": 70
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una versión revisada que permita comprobar la información solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-V01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.0446999999999775,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "description": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.",
+            "description": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+              "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+              "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+              "Sitúa datos bajo lugares distintos y cambia su sentido para el visitante.",
+              "No presenta una organización reconocible de la información de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:3",
+            "templateId": "guide-visual",
+            "title": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+            "description": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+              "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+              "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+              "El dibujo representa ubicaciones o rasgos contrarios a los datos de los lugares.",
+              "No presenta el dibujo solicitado como apoyo a la orientación del visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-process-revision:4",
+            "templateId": "guide-process-revision",
+            "title": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+            "description": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+            "maxScore": 2.11,
+            "maxScoreUnits": 211,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+              "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+              "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+              "La revisión cambia un dato del lugar o introduce una indicación contradictoria.",
+              "No aporta una versión revisada que permita comprobar la información solicitada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-V01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.9909999999999854,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "description": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.",
+            "description": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+              "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+              "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+              "Sitúa datos bajo lugares distintos y cambia su sentido para el visitante.",
+              "No presenta una organización reconocible de la información de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una organización reconocible de la información de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:3",
+            "templateId": "guide-visual",
+            "title": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+            "description": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+              "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+              "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+              "El dibujo representa ubicaciones o rasgos contrarios a los datos de los lugares.",
+              "No presenta el dibujo solicitado como apoyo a la orientación del visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta el dibujo solicitado como apoyo a la orientación del visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-process-revision:4",
+            "templateId": "guide-process-revision",
+            "title": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+            "description": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+            "maxScore": 2.11,
+            "maxScoreUnits": 211,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+              "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+              "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+              "La revisión cambia un dato del lugar o introduce una indicación contradictoria.",
+              "No aporta una versión revisada que permita comprobar la información solicitada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L3",
+                "text": "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+                "scoreUnits": 141
+              },
+              {
+                "levelId": "L2",
+                "text": "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+                "scoreUnits": 70
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una versión revisada que permita comprobar la información solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-V01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.530900000000031,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes según las fichas entregadas, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar. Parcial (50%): Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La organización permite localizar cada lugar y relacionarlo con las indicaciones para el visitante.",
+              "La información de cada lugar se localiza; una indicación queda separada de su referente.",
+              "Presenta datos de lugares, pero su distribución dificulta asociarlos con la visita.",
+              "Sitúa datos bajo lugares distintos y cambia su sentido para el visitante.",
+              "No presenta una organización reconocible de la información de los lugares."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar. Parcial (50%): Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:3",
+            "templateId": "guide-visual",
+            "title": "Dibujo para orientar al visitante",
+            "description": "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos. Parcial (50%): Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.",
+              "El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.",
+              "Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.",
+              "El dibujo representa ubicaciones o rasgos contrarios a los datos de los lugares.",
+              "No presenta el dibujo solicitado como apoyo a la orientación del visitante."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-process-revision:4",
+            "templateId": "guide-process-revision",
+            "title": "Revisión de la información de la guía",
+            "description": "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada. Parcial (50%): La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+            "maxScore": 2.11,
+            "maxScoreUnits": 211,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa que la información y las indicaciones de la guía correspondan a los datos de los lugares antes de entregar la versión revisada.",
+              "La información revisada corresponde a los lugares; queda una indicación secundaria por precisar.",
+              "La versión conserva datos o indicaciones ambiguos que dificultan reconocer los lugares.",
+              "La revisión cambia un dato del lugar o introduce una indicación contradictoria.",
+              "No aporta una versión revisada que permita comprobar la información solicitada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

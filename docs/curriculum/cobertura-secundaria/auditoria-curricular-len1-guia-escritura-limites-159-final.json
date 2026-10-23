@@ -1,0 +1,1880 @@
+{
+  "catalog": "evaluation-2026.159",
+  "bankSha256": "d681b0677da962d2d9c1b9d3e060b12f0963d6d38d4a9b4153253f93fb2269f5",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "7dc7f488+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-GUI-E01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.377399999999966,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+              "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+              "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+              "La organización mezcla datos de lugares distintos o confunde la función de las partes.",
+              "No presenta partes reconocibles para localizar la información de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta partes reconocibles para localizar la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-feature-punctuation:3",
+            "templateId": "guide-feature-punctuation",
+            "title": "Puntuación funcional de la guía",
+            "description": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+              "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+              "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+              "La puntuación cambia qué datos se enumeran, citan o afirman y contradice el sentido de la información disponible.",
+              "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.5348000000000184,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "description": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.",
+            "description": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+              "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+              "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+              "La organización mezcla datos de lugares distintos o confunde la función de las partes.",
+              "No presenta partes reconocibles para localizar la información de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-feature-punctuation:3",
+            "templateId": "guide-feature-punctuation",
+            "title": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+            "description": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+              "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+              "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+              "La puntuación cambia qué datos se enumeran, citan o afirman y contradice el sentido de la información disponible.",
+              "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.438699999999983,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "description": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.",
+            "description": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+              "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+              "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+              "La organización mezcla datos de lugares distintos o confunde la función de las partes.",
+              "No presenta partes reconocibles para localizar la información de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta partes reconocibles para localizar la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No describe características que orienten al visitante sobre los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-feature-punctuation:3",
+            "templateId": "guide-feature-punctuation",
+            "title": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+            "description": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+              "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+              "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+              "La puntuación cambia qué datos se enumeran, citan o afirman y contradice el sentido de la información disponible.",
+              "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1894999999999527,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar. Parcial (50%): Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Incluye datos pertinentes sobre el museo local según la ficha dada, conservando la información que permite reconocer las características y atractivos de cada lugar.",
+              "La información permite reconocer los lugares y sus atractivos; un dato necesita precisión.",
+              "Describe algunos lugares o atractivos, pero omite información necesaria para orientar la visita.",
+              "Atribuye a los lugares características o datos que no les corresponden.",
+              "No aporta información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-structure:1",
+            "templateId": "guide-structure",
+            "title": "Estructura de la guía turística",
+            "description": "Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar. Parcial (50%): Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.",
+              "Las tres partes son reconocibles; una relación entre la información y el cierre necesita precisión.",
+              "Presenta información de los lugares, pero deja la portada o el cierre sin desarrollar.",
+              "La organización mezcla datos de lugares distintos o confunde la función de las partes.",
+              "No presenta partes reconocibles para localizar la información de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-description:2",
+            "templateId": "guide-description",
+            "title": "Descripción y orientación al visitante",
+            "description": "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar. Parcial (50%): Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe las características y la ubicación de los lugares con lenguaje comprensible para quien no conoce el lugar.",
+              "Las descripciones permiten reconocer y situar los lugares; una expresión necesita precisión.",
+              "Nombra lugares y cualidades, pero no explica cómo reconocerlos o ubicarlos en la visita.",
+              "La descripción atribuye a un lugar características o ubicación de otro.",
+              "No describe características que orienten al visitante sobre los lugares."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-feature-punctuation:3",
+            "templateId": "guide-feature-punctuation",
+            "title": "Puntuación funcional de la guía",
+            "description": "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar. Parcial (50%): Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea y revisa las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación al crear la guía para delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos, conservando el sentido de los datos del lugar.",
+              "Los usos de las comas, los dos puntos, las comillas, los signos de interrogación y los signos de exclamación cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.",
+              "Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a delimitar enumeraciones; anunciar información relacionada con el enunciado anterior; distinguir las citas de la voz propia; formular preguntas que inviten a considerar la visita; destacar atractivos sustentados en los datos.",
+              "La puntuación cambia qué datos se enumeran, citan o afirman y contradice el sentido de la información disponible.",
+              "No aporta un uso verificable de los signos solicitados para comunicar la información de la guía."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7896000000000072,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-purpose:0",
+            "templateId": "guide-plan-purpose",
+            "title": "Intención y alcance del plan de guía",
+            "description": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+              "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+              "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+              "El diseño o los lugares elegidos contradicen la intención y el público definidos en el plan.",
+              "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-outline:1",
+            "templateId": "guide-procedure-outline",
+            "title": "Planificación del texto",
+            "description": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+              "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+              "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+              "El orden o las relaciones del esquema contradicen el propósito o el contenido que se pretende desarrollar.",
+              "No aporta evidencia de la planificación solicitada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de la planificación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-visual:2",
+            "templateId": "guide-plan-visual",
+            "title": "Apoyo visual previsto para la ubicación",
+            "description": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+              "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+              "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+              "La representación prevista sitúa lugares en relaciones contrarias a las fichas disponibles.",
+              "No identifica un recurso previsto ni su relación con la ubicación de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica un recurso previsto ni su relación con la ubicación de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6702000000000226,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-purpose:0",
+            "templateId": "guide-plan-purpose",
+            "title": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+            "description": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+              "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+              "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+              "El diseño o los lugares elegidos contradicen la intención y el público definidos en el plan.",
+              "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-outline:1",
+            "templateId": "guide-procedure-outline",
+            "title": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto.",
+            "description": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+              "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+              "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+              "El orden o las relaciones del esquema contradicen el propósito o el contenido que se pretende desarrollar.",
+              "No aporta evidencia de la planificación solicitada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-visual:2",
+            "templateId": "guide-plan-visual",
+            "title": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+            "description": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+              "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+              "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+              "La representación prevista sitúa lugares en relaciones contrarias a las fichas disponibles.",
+              "No identifica un recurso previsto ni su relación con la ubicación de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.857400000000041,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-purpose:0",
+            "templateId": "guide-plan-purpose",
+            "title": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+            "description": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+              "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+              "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+              "El diseño o los lugares elegidos contradicen la intención y el público definidos en el plan.",
+              "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+                "scoreUnits": 694
+              },
+              {
+                "levelId": "L3",
+                "text": "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-outline:1",
+            "templateId": "guide-procedure-outline",
+            "title": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto.",
+            "description": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+              "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+              "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+              "El orden o las relaciones del esquema contradicen el propósito o el contenido que se pretende desarrollar.",
+              "No aporta evidencia de la planificación solicitada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+                "scoreUnits": 521
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+                "scoreUnits": 174
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de la planificación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-visual:2",
+            "templateId": "guide-plan-visual",
+            "title": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+            "description": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+              "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+              "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+              "La representación prevista sitúa lugares en relaciones contrarias a las fichas disponibles.",
+              "No identifica un recurso previsto ni su relación con la ubicación de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+                "scoreUnits": 520
+              },
+              {
+                "levelId": "L3",
+                "text": "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+                "scoreUnits": 173
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica un recurso previsto ni su relación con la ubicación de los lugares.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7019000000000233,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-purpose:0",
+            "templateId": "guide-plan-purpose",
+            "title": "Intención y alcance del plan de guía",
+            "description": "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan. Parcial (50%): Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+            "maxScore": 6.94,
+            "maxScoreUnits": 694,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define la intención comunicativa, el público, el tema y el diseño de la futura guía y explica cómo se relacionan en su plan.",
+              "Los componentes del plan se corresponden; una decisión de diseño requiere justificación.",
+              "Enumera público, tema o diseño, pero no los relaciona con la intención comunicativa.",
+              "El diseño o los lugares elegidos contradicen la intención y el público definidos en el plan.",
+              "No presenta decisiones reconocibles sobre la intención y el alcance de la guía planificada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-outline:1",
+            "templateId": "guide-procedure-outline",
+            "title": "Planificación del texto",
+            "description": "Organiza un esquema que permite reconocer el orden de la información sobre los lugares y sus indicaciones antes de desarrollar el texto. Parcial (50%): Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+            "maxScore": 5.21,
+            "maxScoreUnits": 521,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El esquema hace explícita el orden de la información sobre los lugares y sus indicaciones y permite seguir cómo se desarrollará el texto.",
+              "El esquema permite seguir el desarrollo previsto; una conexión entre sus componentes necesita aclararse.",
+              "Enumera componentes pertinentes, pero no organiza sus relaciones en el esquema.",
+              "El orden o las relaciones del esquema contradicen el propósito o el contenido que se pretende desarrollar.",
+              "No aporta evidencia de la planificación solicitada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-plan-visual:2",
+            "templateId": "guide-plan-visual",
+            "title": "Apoyo visual previsto para la ubicación",
+            "description": "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan. Parcial (50%): Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+            "maxScore": 5.2,
+            "maxScoreUnits": 520,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prevé el uso de un mapa y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.",
+              "El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.",
+              "Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.",
+              "La representación prevista sitúa lugares en relaciones contrarias a las fichas disponibles.",
+              "No identifica un recurso previsto ni su relación con la ubicación de los lugares."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.2539999999999623,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-prediction:0",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipación y comprobación del contenido",
+            "description": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+              "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+              "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+              "Afirma que la guía escuchada confirma un contenido que contradice sus datos.",
+              "No aporta anticipación ni contraste reconocible con la guía escuchada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta anticipación ni contraste reconocible con la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-paraphrase:1",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstrucción del recorrido escuchado",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una reconstrucción reconocible del sentido de la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5240999999999758,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-prediction:0",
+            "templateId": "guide-procedure-prediction",
+            "title": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+            "description": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+              "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+              "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+              "Afirma que la guía escuchada confirma un contenido que contradice sus datos.",
+              "No aporta anticipación ni contraste reconocible con la guía escuchada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-paraphrase:1",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5337999999999852,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-prediction:0",
+            "templateId": "guide-procedure-prediction",
+            "title": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+            "description": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+              "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+              "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+              "Afirma que la guía escuchada confirma un contenido que contradice sus datos.",
+              "No aporta anticipación ni contraste reconocible con la guía escuchada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta anticipación ni contraste reconocible con la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-paraphrase:1",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una reconstrucción reconocible del sentido de la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-E03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5038999999999874,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.159",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-prediction:0",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipación y comprobación del contenido",
+            "description": "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada. Parcial (50%): Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción desde el dibujo y la contrasta con datos de la guía escuchada.",
+              "Relaciona la predicción con un indicio y la comprueba en la guía escuchada; una relación necesita precisión.",
+              "Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.",
+              "Afirma que la guía escuchada confirma un contenido que contradice sus datos.",
+              "No aporta anticipación ni contraste reconocible con la guía escuchada."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.159:fallback:guide-procedure-paraphrase:1",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstrucción del recorrido escuchado",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido. Parcial (50%): Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

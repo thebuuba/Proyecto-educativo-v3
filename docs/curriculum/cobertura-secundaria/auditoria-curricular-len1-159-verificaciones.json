@@ -1,0 +1,52 @@
+{
+  "catalog": "evaluation-2026.159",
+  "backendFull": {
+    "files": 225,
+    "tests": 97448,
+    "passed": true
+  },
+  "backendFocal": {
+    "files": 9,
+    "tests": 425,
+    "passed": true
+  },
+  "frontendFocal": {
+    "files": 5,
+    "tests": 132,
+    "passed": true
+  },
+  "frontendFullThisVersion": false,
+  "buildsAndLints": [
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 9056
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 26108
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 75988
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 5036
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2393
+    }
+  ],
+  "cloudflareMode": "DRY_RUN_NO_DEPLOY",
+  "localValidationOutputs": 124,
+  "guideRead": 72,
+  "newsExact": 52,
+  "remoteInstalled": false,
+  "personalVisualVerified": false
+}

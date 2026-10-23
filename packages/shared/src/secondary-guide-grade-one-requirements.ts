@@ -1,11 +1,28 @@
 import {affirmativeLanguageTask} from './language-feature-criteria'
 import {languagePlaceClassification} from './language-procedure-criteria'
 import {firstGradeGuideCriteria} from './secondary-guide-grade-one'
+import {normalizedTask} from './evaluation-task-text'
 import type {ContextualTopicCriterion as Criterion} from './secondary-topic-criteria'
 
 const criterion=(id:string,title:string,weight:number,levels:Criterion['progressionLevels']):Criterion=>({templateId:`guide-${id}`,title,weight,observable:levels[0],progressionLevels:levels})
 const replace=(rows:Criterion[],id:string,row:Criterion)=>[...rows.filter(r=>r.templateId!==`guide-${id}`),row]
 const grammarIds=['guide-feature-nouns','guide-feature-adjectives','guide-feature-indicative']
+const joined=(words:string[],last='y')=>words.length<2?words[0]??'':words.slice(0,-1).join(', ')+` ${last} `+words.at(-1)
+const visualResources=(task:string)=>([
+ [/mapa/,'mapa'],[/grafico/,'gráfico'],[/collage/,'collage'],[/dibujo/,'dibujo'],[/fotograf/,'fotografías'],
+] as const).filter(([pattern])=>pattern.test(task)).map(([,name])=>name)
+const prediction=(task:string,listening:boolean)=>{
+ const prior=task.split(/\b(?:despues|luego|posteriormente)\b/)[0]
+ const clues=([[/titulo/,'el título'],[/mapa/,'el mapa'],[/fotograf|foto/,'la fotografía'],[/dibujo/,'el dibujo'],[/grafico/,'el gráfico']] as const).filter(([pattern])=>pattern.test(prior)).map(([,name])=>name)
+ const cues=clues.length?joined(clues):'los indicios disponibles',verify=/comprueb|comprob|contrast|verific/.test(task),source=listening?'la guía escuchada':'la guía leída'
+ return criterion('procedure-prediction',verify?'Anticipación y comprobación del contenido':'Anticipación del contenido',3,[
+  `Formula una predicción desde ${cues}${verify?` y la contrasta con datos de ${source}`:' y explica qué indicios la sostienen'}.`,
+  verify?`Relaciona la predicción con un indicio y la comprueba en ${source}; una relación necesita precisión.`:'La predicción responde al indicio; falta precisar cómo permite anticipar el contenido.',
+  verify?'Propone un contenido posible, pero no demuestra qué dato confirma o modifica su predicción.':'Menciona un indicio sin relacionarlo con el contenido que anticipa.',
+  verify?`Afirma que ${source} confirma un contenido que contradice sus datos.`:'La predicción contradice el indicio en que dice apoyarse.',
+  verify?`No aporta anticipación ni contraste reconocible con ${source}.`:'No formula una predicción relacionada con los indicios disponibles.',
+ ])
+}
 const organizationCriterion=(features:Criterion[],listening:boolean)=>criterion('language-organization','Recursos lingüísticos y organización de la información',5,[
  `Explica con ejemplos ${listening?'del audio':'de la guía leída'} cómo ${features.map(r=>r.title.toLowerCase()).join(', ')} organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.`,
  'Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.',
@@ -87,8 +104,9 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
    'Atribuye a una ficha información que corresponde a otro lugar o no está disponible.',
    'No relaciona lugares elegidos y datos disponibles para la guía planificada.',
   ]))
-  if(/mapa|grafico|collage/.test(task))planning.push(criterion('plan-visual','Apoyo visual previsto para la ubicación',3,[
-   'Elige entre mapa, gráfico o collage el recurso previsto y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.',
+  const resources=visualResources(task)
+  if(resources.length)planning.push(criterion('plan-visual','Apoyo visual previsto para la ubicación',3,[
+   `${resources.length===1?`Prevé el uso de ${resources[0]==='fotografías'?'fotografías':`un ${resources[0]}`}`:`Elige entre ${joined(resources,'o')} el recurso previsto`} y explica cómo apoyará la descripción topográfica y la ubicación de los lugares en el plan.`,
    'El recurso elegido corresponde a los lugares; una relación con su ubicación necesita aclaración.',
    'Nombra un recurso visual, pero no explica cómo ayudará a situar los lugares del plan.',
    'La representación prevista sitúa lugares en relaciones contrarias a las fichas disponibles.',
@@ -100,14 +118,8 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
   const grammatical=rows.filter(r=>grammarIds.includes(r.templateId))
   rows=rows.filter(r=>r.templateId.includes('-procedure-')||r.templateId==='guide-feature-adjectives')
   if(/organiza|estructura/.test(task)&&grammatical.length===3)rows.push(organizationCriterion(grammatical,true))
-  const anticipate=/anticip|predicci|que (?:recorrido )?esperan|esperan encontrar/.test(task)
-  if(anticipate)rows=replace(rows,'procedure-prediction',criterion('procedure-prediction','Anticipación y comprobación del recorrido',3,[
-   'Formula una predicción desde el título y el mapa disponibles y la contrasta con los datos de la guía escuchada.',
-   'Relaciona la predicción con un indicio y la comprueba en el audio; una relación necesita precisión.',
-   'Propone un recorrido posible, pero no explica qué dato escuchado lo confirma o modifica.',
-   'Afirma que el audio confirma un recorrido que contradice la guía escuchada.',
-   'No aporta una anticipación ni el contraste solicitado con la guía escuchada.',
-  ]))
+  const anticipate=/anticip|predicci|que (?:recorrido )?esperan|esperan encontrar|que (?:creen|piensan|imaginan)/.test(task)
+  if(anticipate)rows=replace(rows,'procedure-prediction',prediction(task,true))
   if(/parafras|(?:sus|propias) palabras/.test(task))rows=replace(rows,'procedure-paraphrase',criterion('procedure-paraphrase','Reconstrucción del recorrido escuchado',5,[
     `Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido${/hablando.*o.*esquema/.test(task)?' mediante la respuesta oral o el esquema permitido':''}.`,
    'El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.',
@@ -137,13 +149,7 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
    'El propósito elegido requiere información que la guía disponible no ofrece.',
    'No explicita el propósito solicitado para la lectura de la guía.',
   ]))
-  if(/que esperan encontrar|anticip|predicci/.test(task)&&!rows.some(r=>r.templateId==='guide-procedure-prediction'))rows.push(criterion('procedure-prediction','Anticipación y comprobación de la lectura',3,[
-   'Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.',
-   'Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.',
-   'Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.',
-   'Afirma que un dato leído confirma una predicción que contradice la guía.',
-   'No presenta anticipación ni contraste reconocible con la información leída.',
-  ]))
+  if(/que esperan encontrar|anticip|predicci|que (?:creen|piensan|imaginan)/.test(task)&&!rows.some(r=>r.templateId==='guide-procedure-prediction'))rows.push(prediction(task,false))
   if(/grafico.*o.*digital/.test(task))rows=rows.map(r=>r.templateId==='guide-procedure-reconstruction'?{...r,observable:'Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.'}:r)
   if(rows.some(r=>r.templateId==='guide-procedure-reconstruction'||r.templateId==='guide-procedure-paraphrase'))rows=rows.filter(r=>r.templateId!=='guide-interpretation')
   if(/expli\w*.*(?:portada|estructura).*orienta/.test(task))rows=replace(rows,'structure',criterion('structure','Función de las partes de la guía',4,[
@@ -201,13 +207,47 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
  }
  if(production||oral){
   const existingContent=rows.find(r=>r.templateId==='guide-content')
-  const placeTopic=task.match(/\bguias? turisticas? de (.+?)(?= para | con |\. |$)/)?.[1]
-  if(existingContent&&(placeTopic||/barrio|fichas|datos de lugares entregados|informacion que reunimos|informacion (?:disponible|entregada)/.test(task))){
-   const source=/fichas/.test(task)?'según las fichas entregadas':/datos de lugares entregados/.test(task)?'según los datos entregados de los lugares':/barrio/.test(task)?'sobre los lugares del barrio':/informacion que reunimos/.test(task)?'a partir de la información disponible reunida de la comunidad':`sobre ${placeTopic??'los lugares de la información disponible'}`
+  const topicMatch=description.match(/\bgu[ií]as? tur[ií]sticas? (de(?:l)?|sobre) ([^.;,\n]+?)(?=\s+(?:para|con)\b|[.;,\n]|$)/i)
+  const placeTopic=topicMatch&&task.includes(normalizedTask(topicMatch[2]))?`${topicMatch[1].toLowerCase()==='del'?'el ':''}${topicMatch[2]}`:undefined
+  if(existingContent&&(placeTopic||/barrio|fichas?|datos de lugares entregados|informacion que reunimos|informacion (?:disponible|entregada)/.test(task))){
+   const source=/ficha dada/.test(task)?`sobre ${placeTopic??'los lugares'} según la ficha dada`:/fichas/.test(task)?'según las fichas entregadas':/datos de lugares entregados/.test(task)?'según los datos entregados de los lugares':/barrio/.test(task)?'sobre los lugares del barrio':/informacion que reunimos/.test(task)?'a partir de la información disponible reunida de la comunidad':`sobre ${placeTopic??'los lugares de la información disponible'}`
    const observable=`${oral?'Presenta':'Incluye'} datos pertinentes ${source}, conservando la información que permite reconocer las características y atractivos de cada lugar.`
    rows=rows.map(r=>r===existingContent?{...r,observable,progressionLevels:[observable,...r.progressionLevels.slice(1)] as Criterion['progressionLevels']}:r)
   }
+  const aspects=([[/geografic/,'geográfico'],[/cultural/,'cultural'],[/gastronomic/,'gastronómico']] as const).filter(([pattern])=>pattern.test(task)).map(([,name])=>name)
+  if(aspects.length&&/interes|expli\w*/.test(task))rows=replace(rows,'content',criterion('content','Interés de los aspectos de la comunidad',5,[
+   `Explica el interés ${joined(aspects)} de los lugares y prácticas de la comunidad con datos de las fichas disponibles, sin añadir información no comprobada.`,
+   'Los datos sostienen el interés de los aspectos solicitados; una relación necesita mayor precisión.',
+   'Enumera lugares o prácticas, pero no explica qué datos justifican su interés para el visitante.',
+   'Atribuye a las prácticas o lugares características que contradicen las fichas disponibles.',
+   'No comunica información reconocible que explique el interés solicitado de la comunidad.',
+  ]))
+  if(/respeto.*identidad|evit\w* estereotipos/.test(task))rows.push(criterion('cultural-representation','Representación respetuosa de las identidades',3,[
+   'Describe las prácticas y sus significados con fidelidad a sus participantes, sin estereotipos, burlas ni comparaciones que presenten unas identidades como superiores a otras.',
+   'Las expresiones respetan prácticas y significados; una generalización necesita precisar su contexto.',
+   'Describe prácticas, pero incluye generalizaciones sobre sus participantes que las fichas no sostienen.',
+   'Las expresiones ridiculizan una práctica o presentan una identidad como superior a otra.',
+   'La representación no permite reconocer fielmente las prácticas, las ridiculiza o presenta unas identidades como superiores a otras.',
+  ]))
   if(production){
+   if(rows.some(r=>r.templateId==='guide-feature-punctuation')){
+    const signs=([
+     [/comas?/,'las comas','delimitar enumeraciones'],
+     [/dos puntos/,'los dos puntos','anunciar información relacionada con el enunciado anterior'],
+     [/comillas/,'las comillas','distinguir las citas de la voz propia'],
+     [/interrogacion|inclu\w* preguntas|preguntas que inviten/,'los signos de interrogación','formular preguntas que inviten a considerar la visita'],
+     [/exclamacion/,'los signos de exclamación','destacar atractivos sustentados en los datos'],
+    ] as const).filter(([pattern])=>pattern.test(task))
+    if(signs.length){const names=joined(signs.map(([,name])=>name)),functions=signs.map(([, ,purpose])=>purpose).join('; ')
+     rows=replace(rows,'feature-punctuation',criterion('feature-punctuation','Puntuación funcional de la guía',3,[
+      `Emplea${/revis\w* que los signos/.test(task)?' y revisa':''} ${names} al crear la guía para ${functions}, conservando el sentido de los datos del lugar.`,
+      `Los usos de ${names} cumplen sus funciones; un signo aislado deja ambigua una relación secundaria.`,
+      `Utiliza algunos de los signos solicitados, pero otros faltan o no contribuyen a ${functions}.`,
+      'La puntuación cambia qué datos se enumeran, citan o afirman y contradice el sentido de la información disponible.',
+      'No aporta un uso verificable de los signos solicitados para comunicar la información de la guía.',
+     ]))
+    }
+   }
    if(rows.some(r=>r.templateId==='guide-structure'))rows=rows.filter(r=>r.templateId!=='guide-organization')
    rows=rows.map(r=>r.templateId==='guide-structure'?{...r,observable:/portada|cierre/.test(task)?'Organiza la guía con portada, información y cierre para que el visitante localice los datos de cada lugar.':'Organiza la información de los lugares en partes reconocibles que permiten orientarse a quien no conoce el lugar.',progressionLevels:/portada|cierre/.test(task)?[
     'La portada, la información y el cierre permiten localizar y relacionar los datos de cada lugar de la guía.',
@@ -236,7 +276,7 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
     'La descripción promete atractivos que contradicen los datos de los lugares.',
     'No describe características comprensibles y pertinentes para el visitante definido.',
    ]):r)
-   if(/revis\w* que el nucleo/.test(task)&&!/borrador|revis\w* la informacion/.test(task))rows=rows.filter(r=>r.templateId!=='guide-process-revision')
+   if(/revis\w* que (?:el nucleo|los signos)/.test(task)&&!/borrador|revis\w* la informacion/.test(task))rows=rows.filter(r=>r.templateId!=='guide-process-revision')
    if(/registro/.test(task))rows.push(criterion('register','Registro adecuado al público',2,[
     `Mantiene el registro acordado y un vocabulario comprensible para ${/estudiantes nuevos/.test(task)?'los estudiantes nuevos del centro':'el público definido para la guía'}.`,
     'El registro permite comprender las indicaciones; una expresión necesita ajustarse al público.',
@@ -312,7 +352,7 @@ export function refineFirstGradeGuideRequirements(activity:string,description:st
   'No utiliza el mapa dado para apoyar la orientación solicitada.',
  ]):r)
  if((production||oral)&&/dibujo/.test(task)&&!/mapa|collage|fotograf/.test(task))rows=rows.map(r=>r.templateId==='guide-visual'?criterion('visual','Dibujo para orientar al visitante',3,[
-  'Relaciona el dibujo solicitado con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.',
+  `Relaciona ${/dibujo dado/.test(task)?'el dibujo dado':'el dibujo solicitado'} con los lugares y sus indicaciones para ayudar al visitante a reconocerlos o ubicarlos.`,
   'El dibujo corresponde a los lugares; una referencia necesita relacionarse mejor con las indicaciones.',
   'Representa lugares, pero no permite asociar varias referencias con las indicaciones de la guía.',
   'El dibujo representa ubicaciones o rasgos contrarios a los datos de los lugares.',
