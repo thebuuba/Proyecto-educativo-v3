@@ -1,0 +1,300 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.168",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-TRE-E01",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "ORAL_INTERACTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRE-E02",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-EC-V03",
+      "format": "escala",
+      "score": 20,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-EC-V05",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 4688
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 5490
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8366
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9772
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4287
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7707
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6578
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 12276
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10463
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 503,
+      "ms": 9220
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2582
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 3227
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 11961
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 5772
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3743
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 10256
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4533
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7235
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10417
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 10170
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3645
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 14089
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5382
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 22334
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7715
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9123
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4257
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 20480
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7178
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8175
+    }
+  ],
+  "preservedReleases": 98,
+  "preservedSnapshots": 1257,
+  "finalReleases": 99,
+  "finalSnapshots": 1261,
+  "pedagogicalAcceptance": "40_LOCAL_OUTPUTS_ACCEPTED_INDEPENDENTLY_WHOLE_AUDIT_OPEN",
+  "personalBrowser": {
+    "attempt": "CUA inventario muestra pestaña localhost/login; getTab devolvió Debugger unattached.",
+    "visualFlow": "NO_VERIFICADO",
+    "accountOrStorageChanges": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.168",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-DqRTCXP0.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-DqRTCXP0.js",
+        "sha256": "7ebd2f138314233086d86bc0f09a070ddb6aeb86706a2e87cdd0be7ffcdbd326",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-FyXkr1yw.js",
+        "sha256": "4ab3e34dd4d8947e1e11640799915563e82ab8c2f0fcd4947c6b99467361d7f6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CLM0FgaP.js",
+        "sha256": "76f68181f17f7b27c78e633f4da10eb80c21b112d507abcc313e4e137ec0e71c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-lengua-1-acciones-TnYBnKqB.js",
+        "sha256": "8a84d5c07ad5fa7eb9eecd211aa8ff4ae269b0a7cadd9ab397c0e3cb64a75547",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-D_K-XiPK.js",
+        "sha256": "dad51499581a6e3d5e2fd03d317be294c6e4db0efdcf359d73602d3e091e4427",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-D8Y1dGpW.js",
+        "sha256": "227373d8ed09a2e4d42c3c6e6f4dedd77578fccb199d56e99e28d8cab05f9ca8",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "ae5c93aab57b8a72de02301131eb964d1185dd31d8c55c5b2ac75a2fd5928584",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.168",
+    "sourceCommit": "aebcbea9d98c921305407d4b0e28eb9f7a63205f",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "f819506e344a6dd30173c348e25926fbe1e4f48e6bd54a6fcf45f5c3dd08c7bb",
+    "frozen167Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 98,
+    "preservedSnapshots": 1257,
+    "finalReleases": 99,
+    "finalSnapshots": 1257,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "personal": {
+    "references": 15,
+    "allOriginalExact": true,
+    "baselineRecaptured": false
+  },
+  "incidents": [
+    {
+      "status": "RESUELTO",
+      "event": "Recarga automática de Wrangler durante recomendación, HTTP503 en texto plano; una muestra ya verificada.",
+      "resolution": "Proceso anterior terminó. Confirmado backend compilado168 y puerto libre; reinicio único, assets/destinos nuevamente verificados. Reanudación desde bundleQA168 original y diario de IDs, sin duplicar actividades. No se modificó fuente durante peticiones restantes.",
+      "cause": "Recarga observada durante edición de fuente; no quedó registrado el archivo disparador."
+    }
+  ]
+}

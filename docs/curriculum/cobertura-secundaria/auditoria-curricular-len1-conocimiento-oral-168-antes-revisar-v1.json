@@ -1,0 +1,1722 @@
+{
+  "catalog": "evaluation-2026.168",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+                "scoreUnits": 889
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 593
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Relación nueva e inferencia justificada",
+            "description": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 11.11,
+            "maxScoreUnits": 1111,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+                "scoreUnits": 1111
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 741
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 370
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "description": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 11.11,
+            "maxScoreUnits": 1111,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+                "scoreUnits": 889
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 593
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "description": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 11.11,
+            "maxScoreUnits": 1111,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+                "scoreUnits": 1111
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 741
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 370
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Relación nueva e inferencia justificada",
+            "description": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+            "maxScore": 11.11,
+            "maxScoreUnits": 1111,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.02,
+            "maxScoreUnits": 102,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 68
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 34
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 4.33,
+            "maxScoreUnits": 433,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 433
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 144
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.02,
+            "maxScoreUnits": 102,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 4.33,
+            "maxScoreUnits": 433,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.02,
+            "maxScoreUnits": 102,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 68
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 34
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 4.33,
+            "maxScoreUnits": 433,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 433
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 144
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "PROBLEM_SOLVING",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.02,
+            "maxScoreUnits": 102,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "math-process:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Una conclusión que tenemos que explicar.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 4.33,
+            "maxScoreUnits": 433,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    }
+  ]
+}

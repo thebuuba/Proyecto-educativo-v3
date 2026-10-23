@@ -52,10 +52,11 @@
       ],
       "sourceReadThisAudit": true,
       "topicMatrix": "data/evaluation-instruments/curricular-audit/len1-matrix-v1.json",
-      "status": "PARCIAL_752_INSTRUMENTOS_LOCALES_REVISADOS_CONOCIMIENTO_ORAL_PENDIENTE",
+      "status": "COBERTURA_CURRICULAR_LOCAL_REVISADA_OPERACION_FINAL_PENDIENTE",
       "topicsTotalConfirmed": 6,
       "topicsClosed": 0,
-      "nextAction": "Ejecutar gates e instalar/verificar168 individualmente en Development; no cierre por conteo.; Generar,revisar y corregir2actividades de conocimiento nuevo oral antes del cierre completo de malla.; Recorrido visual personal pendiente; HTTP167 acreditado,HTTP168todavía no.; Otros81contextos pendientes de auditoría integral."
+      "nextAction": "Ejecutar gates finales e instalar/verificar169 individualmente en Development conservando99 releases y1261 snapshots. Recorrido visual personal bloqueado por Debugger unattached. HTTP168 acreditado; HTTP169 pendiente.",
+      "topicsCurricularlyClosed": 6
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
@@ -2179,5 +2180,6 @@
   "notes": [
     "MF002 está conectado a IFC006_3 e IFC007_3: se conserva una fila por programa; no se inventa un nuevo módulo.",
     "Las evidencias previas del inventario se conservan; no equivalen a la nueva auditoría por cada tema/subtema."
-  ]
+  ],
+  "topicsCurricularlyClosed": 6
 }

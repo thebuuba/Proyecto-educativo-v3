@@ -19,8 +19,9 @@ export function firstGradeCommunityTask(task:string,description:string):FirstGra
  const environmental=/agua|ambiental|conserv\w*.*arboles|arboles.*conserv\w*/.test(task)
  if(environmental&&/prepar\w*.*explicacion/.test(task)&&/guion/.test(task))return found('ENVIRONMENT_SCRIPT','WRITTEN_PRODUCTION')
  if(/intercambio.*dentro del aula/.test(task)&&environmental&&/pregunta o.*propuesta/.test(task)&&/respond\w*|respuesta/.test(task))return found('ENVIRONMENT_CLASSROOM','ORAL_INTERACTION')
- if(/relacion.*(?:no aparezca|nueva)/.test(raw)&&/ambos|dos textos|ninguno de los dos/.test(task)&&/formula|explica/.test(task))return found('INFERENCE','ANALYSIS')
- if(/sintesis/.test(task)&&/dos explicaciones|dos textos/.test(task)&&/diferencias|discrepancias/.test(task)&&/algo mas|conclusion/.test(task))return found('SYNTHESIS','WRITTEN_PRODUCTION')
+ const oralReasoning=/oralmente|explicacion oral|presentacion oral/.test(task)
+ if(/relacion.*(?:no aparezca|nueva)/.test(raw)&&/ambos|dos textos|ninguno de los dos/.test(task)&&/formula|explica/.test(task))return found('INFERENCE',oralReasoning?'EXPOSITION':'ANALYSIS')
+ if((/sintesis/.test(task)||oralReasoning&&/conclusion propia/.test(task))&&/dos explicaciones|dos textos/.test(task)&&/diferencias?|discrepancias/.test(task)&&/algo mas|conclusion/.test(task))return found('SYNTHESIS',oralReasoning?'EXPOSITION':'WRITTEN_PRODUCTION')
  if(/\bresume\b/.test(task)&&/ideas principales/.test(task)&&/dos textos/.test(task)&&/diferencias/.test(task))return found('SUMMARY','WRITTEN_PRODUCTION')
  if(/fictici|imaginari/.test(task)&&/intercambia/.test(task)&&/nota/.test(task)&&/conservar o modificar|conserva o modifica/.test(task))return found('PERSPECTIVE_EXCHANGE','WRITTEN_PRODUCTION')
  if(/fictici|imaginari/.test(task)&&/que harias|como responderias|tu decision/.test(task)&&/contrasta/.test(task)&&/personaje|respuestas propuestas/.test(task))return found('PERSPECTIVE','ANALYSIS')
@@ -31,7 +32,7 @@ export function firstGradeCommunityTask(task:string,description:string):FirstGra
 const row=(id:string,title:string,weight:number,levels:Criterion['progressionLevels'],coveredDeliveryKeys:string[]=[]):Criterion=>({templateId:'len1-community-'+id,title,weight,observable:levels[0],progressionLevels:levels,fourLevelLowest:`${levels[3]} O bien: ${levels[4]}`,coveredDeliveryKeys})
 export function firstGradeCommunitySelections(spec:FirstGradeCommunityTask){
  const publication=/PUBLISH|DIGITAL|PRINT|DRAFT/.test(spec.kind)
- return{suggestedEvaluationTechnique:spec.kind==='HISTORY_ORAL'?'exposicion':spec.kind==='ENVIRONMENT_CLASSROOM'?'observacion-directa':'analisis-producciones',suggestedInstrumentType:publication?'lista-cotejo' as const:'rubrica' as const}
+ return{suggestedEvaluationTechnique:spec.activityType==='EXPOSITION'?'exposicion':spec.kind==='ENVIRONMENT_CLASSROOM'?'observacion-directa':'analisis-producciones',suggestedInstrumentType:publication?'lista-cotejo' as const:'rubrica' as const}
 }
 export function firstGradeCommunityCriteria(spec:FirstGradeCommunityTask):Criterion[]{
  const {kind,task,raw}=spec
@@ -191,26 +192,32 @@ export function firstGradeCommunityCriteria(spec:FirstGradeCommunityTask):Criter
   rows.push(record);return rows
  }
  if(kind==='INFERENCE'||kind==='SYNTHESIS'){
-  const synthesis=kind==='SYNTHESIS'
+  const synthesis=kind==='SYNTHESIS',oral=spec.activityType==='EXPOSITION'
   return[
    row('reasoning-sources','Información de ambas fuentes',4,[
     synthesis?'Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.':/horarios.*biblioteca/.test(task)?'Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.':'Selecciona información pertinente y fiel de ambos textos para examinar la relación propuesta entre sus ideas.',
-    'La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.',
-    'Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.',
-    'Atribuye a un texto información del otro o cambia el sentido de un dato necesario.',
+    synthesis&&oral?'La información de ambas fuentes y la diferencia identificada son fieles; la explicación de esa diferencia necesita precisión.':'La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.',
+    synthesis&&oral?'Presenta información pertinente, pero integra de manera incompleta la segunda fuente u omite la diferencia entre ambas, aunque sus datos sean fieles.':'Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.',
+    synthesis&&oral?'Cambia el sentido de una fuente, inventa una diferencia o presenta como coincidentes ideas que difieren.':'Atribuye a un texto información del otro o cambia el sentido de un dato necesario.',
     'No presenta información reconocible de ambas fuentes para sostener la explicación.',
    ]),row('reasoning-integration',synthesis?'Síntesis que integra las explicaciones':'Relación nueva e inferencia justificada',5,[
-    synthesis?'Redacta una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.':'Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.',
+    synthesis?`${oral?'Presenta oralmente':'Redacta'} una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.`:`Formula ${oral?'oralmente ':''}una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.`,
     'La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.',
     'Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.',
     'Construye una relación incompatible con las fuentes o inventa información para unirlas.',
     'No presenta una integración o relación nueva identificable entre los aportes de las fuentes.',
    ]),...(synthesis||/no permiten asegurar|limite/.test(task)?[row('reasoning-limits','Conclusión sustentada y límites reconocidos',3,[
-    synthesis?'Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.':'Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo.',
+    synthesis?(oral?'Presenta una conclusión sustentada, integrada o provisional, que explica qué permiten comprender ambas fuentes y qué queda sin resolver; puede mantener una tensión abierta delimitada cuando el respaldo no permite resolverla.':'Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.'):'Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo.',
     'La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.',
     synthesis?'Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.':'Se reconoce una conclusión pertinente, pero queda poco delimitado qué todavía no puede asegurarse.',
     'Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible.',
     'No presenta una conclusión o delimitación reconocible del alcance de la explicación.',
+   ])]:[]),...(oral?[row('reasoning-oral','Explicación oral comprensible del razonamiento',3,[
+    'Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.'+(/parejas|equipos/.test(task)?' Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.':''),
+    'La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.',
+    'Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.',
+    'La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.',
+    'No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.',
    ])]:[]),
   ]
  }

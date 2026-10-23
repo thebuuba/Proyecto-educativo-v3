@@ -1,0 +1,155 @@
+{
+  "catalog": "evaluation-2026.169",
+  "outputs": 8,
+  "activities": 2,
+  "designer": "/root/disenador_pruebas",
+  "reviewer": "/root/revisor_pedagogico",
+  "independentReadAll": true,
+  "coordinatorReadAll": true,
+  "finalAcceptance": true,
+  "prior752Exact": true,
+  "wholeAuditClosed": false,
+  "history": [
+    "168:8 principales y 4 fallback rechazados por omisión oral y criterios genéricos.",
+    "169-v1: ORAL01 aceptado; ORAL02 reserva sobre conclusión y gradación de diferencias.",
+    "169-v2:8 instrumentos y 2 selecciones aceptados por revisor independiente."
+  ],
+  "rows": [
+    {
+      "caseId": "LEN1-NCO-ORAL01",
+      "title": "Lo que juntos permiten entender",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-conocimiento-oral-independiente-v1.json",
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR",
+      "expectations": {
+        "id": "LEN1-NCO-ORAL01",
+        "title": "Lo que juntos permiten entender",
+        "description": "Explica oralmente una relación entre los horarios de la biblioteca y las dificultades de acceso que muestran los dos textos. Propón una idea que no aparezca formulada en ninguno por separado y apóyala con información de ambos.",
+        "participationMode": "INDIVIDUAL",
+        "expected": [
+          "Explicación oral como evidencia principal.",
+          "Información pertinente y fiel de cada texto.",
+          "Relación que integra ambas fuentes y supera presentación sucesiva.",
+          "Razonamiento oral que sostiene la relación.",
+          "Distingue inferencia de afirmaciones expresas; no asegura conclusión sin respaldo.",
+          "Comunicación comprensible; notas permitidas."
+        ],
+        "forbidden": [
+          "Dos resúmenes suficientes.",
+          "Sustituir oral por exclusivamente escrito.",
+          "Originalidad para la sociedad.",
+          "Investigación/encuestas/datos/fuentes/temas científicos nuevos.",
+          "Hechos+ejemplos+analogías+contraargumentos simultáneos.",
+          "Vídeo/diapositivas/memorización/sinnotas/puntuaciónescrita."
+        ],
+        "sourceIds": [
+          "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "637c2904-96b6-576c-bab4-6a0bfdf66944"
+        ]
+      },
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-conocimiento-oral-169-despues-revisar-v2.json",
+      "captureSha256": "68af90b1cacd2742f01aba1e00cb4c3f318a94abee96e1fc982e6a7a7ce007bc",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-conocimiento-oral-169-despues-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-reasoning-sources",
+          "title": "Información de ambas fuentes",
+          "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas."
+        },
+        {
+          "templateId": "len1-community-reasoning-integration",
+          "title": "Relación nueva e inferencia justificada",
+          "requirement": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal."
+        },
+        {
+          "templateId": "len1-community-reasoning-oral",
+          "title": "Explicación oral comprensible del razonamiento",
+          "requirement": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "sourceIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+      ],
+      "evidenceRole": "CONOCIMIENTO_NUEVO_ORAL_SUSTENTADO_EN_DOS_FUENTES",
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE"
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL02",
+      "title": "Una conclusión que tenemos que explicar",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-conocimiento-oral-independiente-v1.json",
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR",
+      "expectations": {
+        "id": "LEN1-NCO-ORAL02",
+        "title": "Una conclusión que tenemos que explicar",
+        "description": "En parejas, lean las dos explicaciones entregadas sobre el mismo problema del curso. Presenten oralmente una conclusión propia que permita comprender algo más que cada texto por separado. Expliquen qué información toman de cada fuente y cómo la relacionan. Consideren una diferencia entre los textos y señalen qué pueden concluir y qué queda sin resolver. Pueden apoyarse en notas; no hace falta entregar otro texto.",
+        "participationMode": "GROUP",
+        "expected": [
+          "Conclusión o síntesis oral propia desde dos fuentes.",
+          "Fidelidad a ambas explicaciones.",
+          "Relación con comprensión adicional, no enumeración/resúmenes.",
+          "Razonamiento que conecta fuentes y conclusión.",
+          "Considera diferencia sin ocultarla ni resolver con invenciones.",
+          "Delimita lo sostenible y lo abierto.",
+          "Conclusión integrada O provisional que explique tensión pendiente, con relación nueva sustentada.",
+          "Producto oral observado; atribución individual requiere evidencia propia."
+        ],
+        "forbidden": [
+          "Dos fuentes mencionadas suficientes.",
+          "Elegir necesariamente texto correcto/eliminar diferencias/solución definitiva.",
+          "Conclusión nueva desconectada.",
+          "Convertir en investigación/proyecto/debateformal/ensayo.",
+          "Grabación/digital/entregaescritaadicional.",
+          "Fluidezescénica/memorizaciónigualarazonamiento.",
+          "Desempeño de uno atribuido a ambos."
+        ],
+        "sourceIds": [
+          "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "637c2904-96b6-576c-bab4-6a0bfdf66944"
+        ]
+      },
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-conocimiento-oral-169-despues-revisar-v2.json",
+      "captureSha256": "68af90b1cacd2742f01aba1e00cb4c3f318a94abee96e1fc982e6a7a7ce007bc",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-conocimiento-oral-169-despues-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-reasoning-sources",
+          "title": "Información de ambas fuentes",
+          "requirement": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas."
+        },
+        {
+          "templateId": "len1-community-reasoning-integration",
+          "title": "Síntesis que integra las explicaciones",
+          "requirement": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados."
+        },
+        {
+          "templateId": "len1-community-reasoning-limits",
+          "title": "Conclusión sustentada y límites reconocidos",
+          "requirement": "Presenta una conclusión sustentada, integrada o provisional, que explica qué permiten comprender ambas fuentes y qué queda sin resolver; puede mantener una tensión abierta delimitada cuando el respaldo no permite resolverla."
+        },
+        {
+          "templateId": "len1-community-reasoning-oral",
+          "title": "Explicación oral comprensible del razonamiento",
+          "requirement": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "sourceIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+      ],
+      "evidenceRole": "CONOCIMIENTO_NUEVO_ORAL_SUSTENTADO_EN_DOS_FUENTES",
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE"
+    }
+  ]
+}

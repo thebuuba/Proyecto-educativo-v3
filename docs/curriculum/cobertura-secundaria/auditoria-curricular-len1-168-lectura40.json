@@ -77,7 +77,8 @@
       "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
       "accreditedSourceIds": [
         "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-TRE-E02",
@@ -137,7 +138,8 @@
       "accreditedSourceIds": [
         "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
         "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-TRE-E03",
@@ -194,7 +196,8 @@
       "accreditedSourceIds": [
         "025c2825-9150-573b-b9cb-a73d22632bf3",
         "1e434089-d202-529a-80ad-734c3a723254"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-TRE-E04",
@@ -252,7 +255,8 @@
       "accreditedSourceIds": [
         "025c2825-9150-573b-b9cb-a73d22632bf3",
         "1e434089-d202-529a-80ad-734c3a723254"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V01",
@@ -295,7 +299,8 @@
       ],
       "evidenceRole": "CONTRASTE_DE_ALCANCE",
       "accreditedSourceIds": [],
-      "limit": "Preparación del guion, no intercambio realizado."
+      "limit": "Preparación del guion, no intercambio realizado.",
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V02",
@@ -351,7 +356,8 @@
       "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
       "accreditedSourceIds": [
         "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V03",
@@ -390,7 +396,8 @@
       ],
       "evidenceRole": "CONTRASTE_DE_ALCANCE",
       "accreditedSourceIds": [],
-      "limit": "Propuesta provisional: confirmar fase y medio; no acredita publicación."
+      "limit": "Propuesta provisional: confirmar fase y medio; no acredita publicación.",
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V04",
@@ -436,7 +443,8 @@
       "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
       "accreditedSourceIds": [
         "025c2825-9150-573b-b9cb-a73d22632bf3"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V05",
@@ -490,7 +498,8 @@
       "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
       "accreditedSourceIds": [
         "025c2825-9150-573b-b9cb-a73d22632bf3"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     },
     {
       "caseId": "LEN1-EC-V06",
@@ -542,7 +551,8 @@
       "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
       "accreditedSourceIds": [
         "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
-      ]
+      ],
+      "caseProvenance": "SINTETICA_DISEÑADA_POR_SUBAGENTE_ANTES_DE_GENERAR"
     }
   ]
 }

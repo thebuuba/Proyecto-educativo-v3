@@ -1,0 +1,1360 @@
+{
+  "catalog": "evaluation-2026.169",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Relación nueva e inferencia justificada",
+            "description": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 8.33,
+            "maxScoreUnits": 833,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 555
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 278
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:2",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Explicación oral comprensible del razonamiento",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "description": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 8.33,
+            "maxScoreUnits": 833,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:2",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "description": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+            "maxScore": 8.33,
+            "maxScoreUnits": 833,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 555
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 278
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:2",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Relación nueva e inferencia justificada",
+            "description": "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+            "maxScore": 8.33,
+            "maxScoreUnits": 833,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula oralmente una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:2",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Explicación oral comprensible del razonamiento",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Parcial (50%): Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+            "maxScore": 4.63,
+            "maxScoreUnits": 463,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 309
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 154
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Síntesis que integra las explicaciones",
+            "description": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 385
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-limits:2",
+            "templateId": "len1-community-reasoning-limits",
+            "title": "Conclusión sustentada y límites reconocidos",
+            "description": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+              "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+              "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible.",
+              "No presenta una conclusión o delimitación reconocible del alcance de la explicación."
+            ],
+            "fourLevelLowest": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L3",
+                "text": "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+                "scoreUnits": 116
+              },
+              {
+                "levelId": "L1",
+                "text": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:3",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Explicación oral comprensible del razonamiento",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+                "scoreUnits": 116
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+            "description": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+            "maxScore": 4.63,
+            "maxScoreUnits": 463,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+            "description": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-limits:2",
+            "templateId": "len1-community-reasoning-limits",
+            "title": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+            "description": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+              "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+              "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible.",
+              "No presenta una conclusión o delimitación reconocible del alcance de la explicación."
+            ],
+            "fourLevelLowest": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:3",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+            "description": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+            "maxScore": 4.63,
+            "maxScoreUnits": 463,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+                "scoreUnits": 463
+              },
+              {
+                "levelId": "L3",
+                "text": "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+                "scoreUnits": 309
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+                "scoreUnits": 154
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+            "description": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L3",
+                "text": "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+                "scoreUnits": 385
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L1",
+                "text": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-limits:2",
+            "templateId": "len1-community-reasoning-limits",
+            "title": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+            "description": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+              "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+              "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible.",
+              "No presenta una conclusión o delimitación reconocible del alcance de la explicación."
+            ],
+            "fourLevelLowest": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L3",
+                "text": "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+                "scoreUnits": 116
+              },
+              {
+                "levelId": "L1",
+                "text": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:3",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+                "scoreUnits": 347
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+                "scoreUnits": 231
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+                "scoreUnits": 116
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.169",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "EXPOSITION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-sources:0",
+            "templateId": "len1-community-reasoning-sources",
+            "title": "Información de ambas fuentes",
+            "description": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+            "maxScore": 4.63,
+            "maxScoreUnits": 463,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "La información de ambas fuentes es fiel y pertinente; una atribución o relación contextual necesita precisión.",
+              "Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "Atribuye a un texto información del otro o cambia el sentido de un dato necesario.",
+              "No presenta información reconocible de ambas fuentes para sostener la explicación."
+            ],
+            "fourLevelLowest": "Atribuye a un texto información del otro o cambia el sentido de un dato necesario. O bien: No presenta información reconocible de ambas fuentes para sostener la explicación.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-integration:1",
+            "templateId": "len1-community-reasoning-integration",
+            "title": "Síntesis que integra las explicaciones",
+            "description": "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta oralmente una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "La integración o relación nueva tiene respaldo en ambas fuentes; un paso del razonamiento necesita precisión.",
+              "Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "Construye una relación incompatible con las fuentes o inventa información para unirlas.",
+              "No presenta una integración o relación nueva identificable entre los aportes de las fuentes."
+            ],
+            "fourLevelLowest": "Construye una relación incompatible con las fuentes o inventa información para unirlas. O bien: No presenta una integración o relación nueva identificable entre los aportes de las fuentes.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-limits:2",
+            "templateId": "len1-community-reasoning-limits",
+            "title": "Conclusión sustentada y límites reconocidos",
+            "description": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla. Parcial (50%): Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "La conclusión conserva los límites de la información; una expresión de certeza necesita precisión.",
+              "Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+              "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible.",
+              "No presenta una conclusión o delimitación reconocible del alcance de la explicación."
+            ],
+            "fourLevelLowest": "Elimina discrepancias con datos inventados o afirma una conclusión más amplia que el respaldo disponible. O bien: No presenta una conclusión o delimitación reconocible del alcance de la explicación.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.169:fallback:len1-community-reasoning-oral:3",
+            "templateId": "len1-community-reasoning-oral",
+            "title": "Explicación oral comprensible del razonamiento",
+            "description": "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante. Parcial (50%): Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+            "maxScore": 3.47,
+            "maxScoreUnits": 347,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica oralmente el recorrido desde la información de las fuentes hasta la relación construida, de forma que los oyentes puedan seguirlo; puede apoyarse en notas. Se valora la explicación conjunta observada; una valoración individual requiere evidencia atribuible a cada participante.",
+              "La explicación oral permite seguir el razonamiento; una transición entre información y conclusión necesita claridad.",
+              "Expresa oralmente partes del razonamiento, pero los oyentes no pueden seguir una conexión necesaria entre ellas.",
+              "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes.",
+              "No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia."
+            ],
+            "fourLevelLowest": "La explicación oral contradice el razonamiento presentado o comunica conexiones distintas de las sustentadas en las fuentes. O bien: No ofrece una explicación oral reconocible del razonamiento; un producto únicamente escrito no sustituye esta evidencia.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f"
+    }
+  ]
+}

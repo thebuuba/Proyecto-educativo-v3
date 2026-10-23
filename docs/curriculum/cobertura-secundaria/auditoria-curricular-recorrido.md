@@ -1,12 +1,12 @@
 # Recorrido curricular vigente
 
-82contextos:54comunes,18optativas y10contextos técnicos de9módulos. MF002 participa en dos programas ya autorizados. Los17encabezados sin grado no son asignaturas. Cero temas cerrados en esta auditoría; la malla de Lengua1 tiene seis temas confirmados. Falta determinar el total de temas/subtemas de los demás ámbitos leyendo las fuentes completas.
+82contextos:54comunes,18optativas y10contextos técnicos de9módulos. MF002 participa en dos programas ya autorizados. Los17encabezados sin grado no son asignaturas. Lengua de 1.º tiene sus seis temas revisados curricularmente en local; sigue abierta su verificación operativa final. Falta determinar el total de temas/subtemas de los demás ámbitos leyendo las fuentes completas.
 
 Los estados anteriores de implementación no sustituyen este recorrido. La matriz [master-v1.json](../../../data/evaluation-instruments/curricular-audit/master-v1.json) conserva identificadores y destinos; [Lengua1](../../../data/evaluation-instruments/curricular-audit/len1-matrix-v1.json) desglosa sus contenidos.
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | 752 instrumentos locales revisados: 712 anteriores exactos y 40 nuevos aceptados independientemente. Gates168 aprobados; instalación/HTTP168 pendientes. Conocimiento nuevo oral: dos actividades fijadas sin generar. HTTP167 y 15 referencias personales originales exactas; UI personal pendiente. |
+| 1 | COMMON | Lengua Española | Cobertura curricular local de seis temas conciliada con todas las filas y continuaciones oficiales. 760 instrumentos revisados; los 752 anteriores siguen exactos. Ocho orales nuevos aceptados independientemente. HTTP168 y conservación personal acreditados; gates/HTTP169 y recorrido visual personal pendientes. |
 | 1 | COMMON | Inglés | Fuente134–139 y competencias/ejes129–133 conciliados por auditor independiente:201registros. Revisión de actividades e instrumentos todavía pendiente; no implementación nueva |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |

@@ -1,0 +1,95 @@
+{
+  "catalog": "evaluation-2026.169",
+  "mode": "LOCAL_SOURCE_NOT_HTTP_NOT_BROWSER",
+  "results": [
+    {
+      "caseId": "LEN1-NCO-ORAL01",
+      "format": "rubrica",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 3
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL01",
+      "format": "lista-cotejo",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 3
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL01",
+      "format": "escala",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 3
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL01",
+      "format": "lista-ponderada",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 3
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL02",
+      "format": "rubrica",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 4
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL02",
+      "format": "lista-cotejo",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 4
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL02",
+      "format": "escala",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 4
+    },
+    {
+      "caseId": "LEN1-NCO-ORAL02",
+      "format": "lista-ponderada",
+      "bankSha256": "cd68620e28bd9b03d3e324b850fb3059d0f4ab2cb4d23ef717e7c8fc804acb8f",
+      "captureExact": true,
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "criteria": 4
+    }
+  ],
+  "wholeSubjectClosed": false
+}

@@ -316,3 +316,7 @@ Fuente167 `4df1f544a56bd9e30d40215a3da637fee39168d8`: 120 salidas finales acepta
 ## Componentes168: cierre local verificado
 
 40instrumentos y10selecciones aceptados por revisor independiente;712anteriores exactos. Ocho gates168 aprobados:98117pruebasbackend,123frontend ybuilds/lints. Auditor concilió malla completa68–75 y encontró componente oral nuevo aún sin acreditar. Dos actividades independientes fijadas; no cierreglobal. Informe:2026-10-23-lengua-1-componentes-168.md. Instalación/HTTP168todavía pendientes.
+
+168 verificada en Development: cuatro muestrasHTTP completas y15referenciaspersonalesoriginales exactas;99releases/1261snapshots. RecargaWorker recuperada conciliandoIDs,sinduplicados. CUA getTab:Debugger unattached; visualpersonal pendiente. Fuenteaebcbea9. Siguiente:candidata169 conocimientooral,8salidas iniciales y4fallback leídos; primera correcciónaceptaORAL01yrequieregradación/alcanceORAL02.
+
+Versión169: ocho instrumentos orales aceptados independientemente,752 anteriores exactos y ocho gates aprobados. La conciliación completa permite cerrar cobertura curricular local de los seis temas; HTTP169 y UI personal se registran separadamente como pendientes operativos. Véase2026-10-23-lengua-1-conocimiento-oral-169.md.

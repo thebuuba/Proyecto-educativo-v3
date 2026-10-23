@@ -1,0 +1,61 @@
+{
+  "catalog": "evaluation-2026.169",
+  "gates": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 123307
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 31124
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 19503
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 43983
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 50713
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 4016
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 2642
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2925
+    }
+  ],
+  "backend": {
+    "tests": 98126,
+    "files": 241
+  },
+  "frontend": {
+    "tests": 123,
+    "files": 7
+  },
+  "largestJavascript": {
+    "name": "src-Ry4qWSCU.js",
+    "bytes": 2084195
+  },
+  "cloudflare": "DRY_RUN_NO_DEPLOY",
+  "prior752Exact": true,
+  "newOutputs": 8,
+  "productionWrites": false
+}

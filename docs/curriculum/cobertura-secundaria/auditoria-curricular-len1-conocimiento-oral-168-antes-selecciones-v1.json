@@ -1,0 +1,36 @@
+{
+  "catalog": "evaluation-2026.168",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "activityType": "PROBLEM_SOLVING",
+      "instrument": "lista-ponderada",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "exposicion",
+        "suggestedInstrumentType": "lista-ponderada"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

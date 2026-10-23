@@ -2,28 +2,28 @@
 
 ## Alcance y límites
 
-Recorrer los82contextos autorizados:54comunes,18optativas y10contextos de9módulos técnicos. Fuente oficial completa, tema/subtema, varias actividades y sus cuatro instrumentos íntegros. Completar ausencias dentro del alcance; no cerrar por inventario, conteos ni HTTP200.
+Recorrer 82 contextos autorizados: 54 comunes, 18 optativas y 10 contextos de nueve módulos técnicos. Fuente oficial completa, temas y subtemas, varias actividades y sus cuatro instrumentos íntegros. Completar ausencias dentro del alcance. No cerrar por inventarios, conteos ni HTTP 200.
 
-Hasta tres subagentes reales de solo lectura: auditor curricular, diseñador y revisor pedagógico. Solo el coordinador modifica archivos, instala catálogos, escribe en Development o reinicia servidor. Sin push, main, despliegue, producción/Hyperdrive/secretos/integraciones, resets/borrados, recapturas de baselines, nuevas migraciones remotas de esquema, IA, dependencias ni servicios de pago. Commits locales en español. No correos, contraseñas ni cuentas nuevas para desbloquear el navegador.
+Tres subagentes reales de solo lectura: auditor curricular, diseñador y revisor pedagógico. Solo el coordinador modifica archivos, instala catálogos, escribe en Development o reinicia el servidor. Sin push, main, despliegue, producción, Hyperdrive, secretos o integraciones; sin resets, borrados, recaptura de referencias, nuevas migraciones remotas de esquema, IA, dependencias ni servicios de pago. Commits locales en español. No correos, contraseñas ni cuentas nuevas para desbloquear el navegador.
 
-## Estado vigente:168 verificada localmente
+## Estado vigente: cierre local de Lengua de 1.º y versión169
 
-Rama ampliacion-de-instrumentos-2; último commit documental167 b8915f36, fuente1674df1f544. Candidata168 lista para commit local:40instrumentos completos y10selecciones aceptados por revisor independiente (E16v2+contrastes24v3). 712anteriores exactos;paridad,puntuaciónpendiente,20/17.35 ytextosmanuales verificados. Auditor concilió toda malla68–75; corrigió referenciasdocumentales y diferenció V01preparación/V03provisional de intercambio/publicación acreditados. Total752salidas locales revisadas; no cierredeasignatura.
+Rama ampliacion-de-instrumentos-2. Fuente168: aebcbea9d98c921305407d4b0e28eb9f7a63205f. Versión168 verificada exclusivamente en Development eolgunypmtgrsyrjzcld: cuatro muestras HTTP y las15 referencias personales originales exactas; 99 releases y1261 snapshots. Sus ocho gates terminaron con éxito. Worker168 detenido de forma controlada tras QA y conservación personal; no repetir las muestras ni reutilizar launcher18224.
 
-Ocho gates168 exit0:backend98117/240,frontend123/7,buildbackend/frontend/Cloudflaredry-run,lintsbackend/frontend/shared. Log .wrangler/realistic-audit/curricular-168-final-gates-progress.json. No repetir sin cambios/fallos. Revisor corrigió error sustantivo desaparecidoenL1,marcasinventadasV04 yambigüedaderror menor/sustantivo; capturas antiguas conservadas.
+API168 congelada antes de cambios: SHA256 935a84916ab96748e5c39d106341bcc8d04da4f8a92751301be10ffd0f990258; catálogo f819506e344a6dd30173c348e25926fbe1e4f48e6bd54a6fcf45f5c3dd08c7bb. No recongelar ni recapturar historia.
 
-## Development y próximo paso
+169-v2: ocho instrumentos orales y dos selecciones aceptados por el revisor independiente. ORAL01 conserva inferencia y oralidad; ORAL02 exige conclusión integrada o provisional que delimite lo comprendido y lo abierto, con gradación de la diferencia entre fuentes. Fallo reproducido: cuatro pruebas; corrección:179 pruebas focales aprobadas. Los752 instrumentos anteriores exactos; ocho nuevos con paridad, puntuación inicial vacía, totales20/17,35 y edición manual conservada. Ocho gates169 terminados con salida0:98.126 pruebas backend/241 archivos,123 frontend/siete archivos, builds y lints. Sesión64297 finalizada.
 
-Último remoto167:98releases/1257snapshots,4muestrasHTTPverificadas y15referenciaspersonalesoriginales exactas. Worker167 (launcher33424) detenido controladamente antes delbuild168;puerto8787liberado. No168instaladaaún. Proyectoexclusivo eolgunypmtgrsyrjzcld,app_backend_local sinbypassRLS;Auth/Storage/frontend mismoDevelopment.
+El auditor concilió las161 filas oficiales y sus continuaciones:55 conceptos, seis encabezados,31 procedimientos,34 actitudes, siete competencias específicas, siete fundamentales y21 indicadores. Sin otro vacío curricular tras el oral. Cobertura curricular local de los seis temas cerrada por evidencias distribuidas; verificación operativa final abierta. No certificar logro de estudiantes ni estados internos.
 
-1. Revisardiff/secretos ycommitlocal168. Ejecutar helper install-curricular-168.mjs: exige8gates,fuentecompiladaigual,fuenteapps/packages comprometida,historia98/1257. Solo release168;nomigración deesquema.
-2. Arrancar unWorker168 yverify-runtime-curricular-168.mjs; comprobarassets/SW ydestinos. run-curricular-http-168.mjs:4casos E01rúbrica20,E02cotejo17.35,V03escala20,V05ponderada17.35,conguardado/reapertura/manuales/estrategiaúnica. DiariodeIDs antesdereintentos. Esperado99releases/1261snapshots; después personal-preservation-168.mjs readonly15referenciasoriginales.
-3. CongelarAPI168 antesdelpróximocambioruntime. API167ya congelada SHA8b4ee211dfdb0d687853b9721e351605a12c2b227a4dd23496eb24c7bbd5edd6. Norecapturarbaselines/sobrescribircapturas.
-4. Pendienteexpreso de fuente:conocimiento nuevoORAL indicador637c2904…/competencia1e3efbc3…. Banco len1-conocimiento-oral-independiente-v1 fijado por diseñador con2casosORAL01/02; sin generar todavía. C09no fija modalidad,C10escrito,C02no asegura novedad; noatribuiralcanceretroactivo.
-5. Conciliar cierre de malla ycontinuarInglés1/resto82contextos. Otros81integralmentependientes;Inglés1fuente201registros preparada,sinaceptación nueva.
+## Siguientes pasos
 
-## Evidencia y límitevisual
+Confirmar gates169, registrar resultados y commit local; instalación individual169 guardada sobre99/1261, cuatro muestras HTTP y comprobación de las15 referencias originales. No editar fuente durante peticiones HTTP: Wrangler puede recargar. El incidente168 se recuperó con diario de IDs sin duplicados.
 
-Informe2026-10-23-lengua-1-componentes-168.md; manifiesto168-lectura40,168-validacion40-final,168-previos592-v3 y168-previos120-v3. Matriz ymaster abiertos. FuenteMINERD520p SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58;extraccióninmutable.
+Auditor y diseñador preparan Inglés común de1.º desde la fuente completa201 registros. No modificar banco para ajustarlo al motor; el revisor deberá leer los cuatro instrumentos completos por actividad. Los otros81 contextos mantienen pendiente su auditoría integral.
 
-Navegadorpersonal:últimaobservaciónloginconerror yasset163. No recargarformulario concontraseña,limpiaralmacenamiento,enviarcorreo/cambiarcuenta. Recorridovisualpersonal yregistroSWpendientes;HTTPQA no sustituyen. Conservardiseñovertical,manuales,AUTO/MANUAL/UNKNOWN,obsoletos/calificadosyborradores.
+## Evidencias y limitaciones
+
+Matriz len1-matrix-v1.json, master-v1.json y manifiesto169-lectura8; informe168 y evidencia168-http-runtime/personales168. Fuente MINERD520 páginas SHA25680b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; extracción inmutable.
+
+CUA identificó la pestaña localhost/login; getTab devolvió Debugger unattached. Recorrido visual personal y registro de service worker pendientes. HTTP QA no sustituye prueba visual. No tocar cuenta ni almacenamiento. Mantener diseño vertical, manuales, puntuación pendiente, AUTO/MANUAL/UNKNOWN, protección de obsoletos/calificados y borradores.
