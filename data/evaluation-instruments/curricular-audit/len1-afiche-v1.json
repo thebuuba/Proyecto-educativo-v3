@@ -1,0 +1,180 @@
+{
+  "version": "curricular-len1-afiche-v1",
+  "provenance": "SINTETICO del mismo autor, desde malla oficial72 y verificación de transición73. Expectativas fijadas antes de generar. No banco externo independiente; contextos de enfermedad/emergencia son ficticios y no añaden instrucciones reales.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      72
+    ],
+    "nextPageChecked": 73,
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-AFI-01",
+      "family": "Producción breve",
+      "title": "Que se animen a leer",
+      "description": "Hagan un afiche para invitar al curso a participar en la feria del libro.",
+      "expected": {
+        "explicit": [
+          "Afiche de invitación a feria para el curso",
+          "Mensaje, razón para participar, organización textual/visual legible"
+        ],
+        "excluded": [
+          "Fecha, lugar o cifras inventados",
+          "Tres dibujos, tamaño, materiales o publicación no pedidos",
+          "Discurso oral"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-02",
+      "family": "Convocatoria argumentada y diseño",
+      "title": "Nuestra feria del libro tiene razones",
+      "description": "Con la ficha de la feria del libro, elaboren un afiche para las familias. La ficha indica día, hora, lugar, público y actividades. Planifiquen cómo organizarán el texto y la imagen, comuniquen esos datos sin cambiarlos y den razones para asistir usando los hechos, las cifras y las ventajas que aparecen en la ficha; no inventen estadísticas. Usen el imperativo para invitar a participar. Incluyan una metáfora y una exageración con sentido expresivo, sin presentarlas como promesas o datos literales. Seleccionen imágenes, formas, colores y tipos de letras que apoyen el mensaje, y decidan su distribución y el tamaño del afiche para que la información se lea con claridad. Entreguen el plan y el afiche final; no necesitan exponerlo ni publicarlo.",
+      "expected": {
+        "explicit": [
+          "Situación: intención/público/día/hora/lugar/acciones desde ficha",
+          "Argumentación con hechos/cifras/ventajas de ficha",
+          "Imperativo para acción",
+          "Metáfora y exageración expresivas, sin falsedad factual",
+          "Plan textual/visual y afiche final",
+          "Imágenes/formas/colores/letras/distribución/tamaño por función comunicativa"
+        ],
+        "excluded": [
+          "Inventar cifras o datos de evento",
+          "Exposición/publicación",
+          "Talento artístico como requisito"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-03",
+      "family": "Lectura, anticipación e inferencia",
+      "title": "Lo que este afiche quiere conseguir",
+      "description": "Lean el afiche de una campaña de convivencia con el propósito de entender a quién intenta convencer y qué acción propone. Antes de leer el texto completo, anticipen el mensaje a partir de la imagen, los tipos de letras, los colores y su distribución; compruébenlo al leer. Expliquen la intención con las palabras clave, qué sentido connotativo tienen y cómo se relacionan el texto y la imagen. Interpreten las razones y los recursos persuasivos; formulen una inferencia apoyada en el afiche y reconstruyan con sus palabras el mensaje global y sus datos importantes. No elaboren otro afiche.",
+      "expected": {
+        "explicit": [
+          "Propósito lector, anticipación gráfica y contraste",
+          "Destinatario/intención/acción desde palabras clave",
+          "Connotación expresiva contextual",
+          "Relación texto-imagen y organización visual",
+          "Argumentos/recursos persuasivos e inferencia sustentada",
+          "Paráfrasis global y datos importantes"
+        ],
+        "excluded": [
+          "Crear nuevo afiche",
+          "Dibujar imágenes propias",
+          "Inventar datos de campaña"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-04",
+      "family": "Análisis poético acotado",
+      "title": "Cuatro maneras de llamar la atención",
+      "description": "En los afiches entregados, analicen únicamente las metáforas, los pleonasmos, las elipsis y las exageraciones. Localicen un ejemplo de cada recurso y expliquen cómo su sentido expresivo ayuda a atraer o convencer a ese destinatario. Distingan lo que sugieren de lo que afirman literalmente, sin considerar una exageración como prueba de un hecho. No hagan un afiche nuevo ni comparen su calidad artística.",
+      "expected": {
+        "explicit": [
+          "Metáfora: asociación contextual",
+          "Pleonasmo: reiteración expresiva",
+          "Elipsis: omisión recuperable por contexto",
+          "Exageración: énfasis no dato factual",
+          "Ejemplo y función de cada recurso en destinatario/argumentación",
+          "Literal frente a connotativo"
+        ],
+        "excluded": [
+          "Nuevo afiche",
+          "Calidad artística",
+          "Exageración como dato científico"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-05",
+      "family": "Prevención y modalidad verbal",
+      "title": "Un mensaje de prevención comprensible",
+      "description": "Con la ficha didáctica de prevención de una enfermedad ficticia, redacten y diseñen un afiche para el grupo. Relacionen el riesgo de la ficha con las acciones preventivas que allí se indican, usando palabras y frases de prevención o alerta sin añadir indicaciones médicas. Empleen el imperativo para las acciones y distingan la obligación con deber o tener que de la posibilidad con poder o podría. Hagan que texto e imagen permitan reconocer qué riesgo se comunica y qué acción se propone. No inventen cifras, síntomas ni medidas distintas de las de la ficha.",
+      "expected": {
+        "explicit": [
+          "Riesgo y acciones de ficha ficticia, sin consejo médico nuevo",
+          "Palabras/frases de prevención o alerta",
+          "Imperativo exhortativo",
+          "Obligación deber/tener que frente a posibilidad poder/podría",
+          "Función comunicativa de imagen/texto y destinatario"
+        ],
+        "excluded": [
+          "Cifras/síntomas/medidas inventadas",
+          "Mayor miedo equivale a mejor afiche",
+          "Publicación o investigación médica"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-06",
+      "family": "Alerta sobre emergencia simulada",
+      "title": "Que la alerta no confunda",
+      "description": "Elaboren un afiche de alerta para el simulacro escolar de emergencia descrito en la ficha. Es un ejercicio ficticio: comuniquen el riesgo y las acciones del protocolo dado, con palabras de alerta y verbos en imperativo claros. Usen perífrasis de obligación para lo que el protocolo establece y de posibilidad para lo que presenta como opción; no conviertan una opción en orden ni una orden en sugerencia. Organicen texto, símbolos y letras de modo que el público escolar localice rápidamente qué debe hacer. No añadan otras emergencias, estadísticas, instrucciones ni un video.",
+      "expected": {
+        "explicit": [
+          "Afiche de simulacro según riesgo/protocolo disponible",
+          "Prevención/alerta, imperativo y obligación/posibilidad diferenciadas",
+          "Símbolos/letras/organización por localización de acciones",
+          "Fidelidad de datos y no inventar instrucciones"
+        ],
+        "excluded": [
+          "Instrucciones de seguridad externas",
+          "Otra emergencia",
+          "Video",
+          "Impacto emocional como nota"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-07",
+      "family": "Comparación de argumentos",
+      "title": "Qué razones sostienen cada invitación",
+      "description": "Comparen únicamente los argumentos de dos afiches de la misma actividad. Expliquen cómo usan hechos, cifras y ventajas para convencer al público, qué datos se corresponden con la ficha del evento y qué asociaciones connotativas añaden sus palabras. Sustenten semejanzas y diferencias con información de ambos afiches; no confundan una frase expresiva con una cifra comprobada. No elaboren un tercer afiche ni comparen adornos.",
+      "expected": {
+        "explicit": [
+          "Contraste de hechos/cifras/ventajas en argumentos",
+          "Sustento en ambos afiches y correspondencia con ficha",
+          "Connotación expresiva frente a información verificable"
+        ],
+        "excluded": [
+          "Tercer afiche",
+          "Decoración como mérito",
+          "Datos nuevos"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-08",
+      "family": "Plan previo y convivencia",
+      "title": "Plan de una campaña que incluya a todos",
+      "description": "Planifiquen un afiche de la campaña de convivencia justa y equitativa del curso. Con los datos entregados, definan la intención, el destinatario, la actividad a la que convocarán, el día, el lugar y las acciones que propondrán. Organicen un esquema del componente textual y del visual: decidan qué palabras, imágenes, formas, colores y letras ayudarán al público a entender el mensaje y cómo se distribuirán. Expliquen cómo el mensaje promueve un trato respetuoso sin burlas ni exclusión. Hoy entreguen solo el plan; todavía no hagan ni publiquen el afiche.",
+      "expected": {
+        "explicit": [
+          "Situación comunicativa y datos de actividad en plan",
+          "Elección y planificación textual/visual",
+          "Decisiones de imágenes/formas/colores/letras/distribución por función",
+          "Mensaje previsto de convivencia equitativa/respetuosa",
+          "Solo plan"
+        ],
+        "excluded": [
+          "Afiche terminado hoy",
+          "Publicación",
+          "Diseño con color/material obligatorio",
+          "Inferir valores internos del estudiante"
+        ]
+      }
+    }
+  ]
+}

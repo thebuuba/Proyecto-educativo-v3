@@ -1850,7 +1850,7 @@
             "LEN1-INF-04",
             "LEN1-INF-05"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-03",
@@ -1910,7 +1910,7 @@
             "LEN1-INF-03",
             "LEN1-INF-R02"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-01",
@@ -1981,7 +1981,7 @@
             "LEN1-INF-05",
             "LEN1-INF-08"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-01",
@@ -2051,7 +2051,7 @@
             "LEN1-INF-05",
             "LEN1-INF-06"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-02",
@@ -2111,7 +2111,7 @@
             "LEN1-INF-05",
             "LEN1-INF-07"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-02",
@@ -2182,7 +2182,7 @@
             "LEN1-INF-05",
             "LEN1-INF-07"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-02",
@@ -2253,7 +2253,7 @@
             "LEN1-INF-05",
             "LEN1-INF-07"
           ],
-          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;48salidas locales y cuatro muestras HTTP160 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-INF-02",
@@ -2302,7 +2302,7 @@
           ]
         }
       ],
-      "status": "REVISADO_LOCAL_48_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
       "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
       "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json",
       "curricularComponentAudit": [
@@ -2486,7 +2486,15 @@
           ],
           "limit": "Organización funcional y legibilidad del medio pedido; no talento, gusto personal ni materiales adicionales"
         }
-      ]
+      ],
+      "verification160": {
+        "activities": 12,
+        "instrumentsRead": 48,
+        "httpEvidence": "auditoria-curricular-http-160.json",
+        "personalPreservation": "auditoria-curricular-personales-160-conector.json",
+        "personalBrowser": "REQUIERE_CONTRASENA_NO_MODIFICADA",
+        "fullSubjectAchievementIndicators": "ABIERTOS"
+      }
     },
     {
       "id": "afiche",
@@ -4642,10 +4650,9 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Informe:12actividades/48salidas revisadas localmente; HTTP160 pendiente. Afiche/cuento/caligrama pendientes",
+    "otherTopics": "Afiche: banco8casos fijado desde72 y transición73, sin generar. Cuento/caligrama pendientes",
     "remaining": [
-      "Visual personal bloqueada por contraseña",
-      "HTTP/DB160 y preservación de15referencias personales después de muestras",
+      "Visual personal bloqueada por contraseña, comprobado nuevamente en160 sin alterar sesión",
       "Afiche/cuento/caligrama; comparación completaLengua1 e indicadores; ámbitos restantes"
     ]
   }

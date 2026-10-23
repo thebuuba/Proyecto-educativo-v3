@@ -1,0 +1,259 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.160",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-INF-02",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "READING_REPORT_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-INF-03",
+      "format": "escala",
+      "score": 17.35,
+      "activityType": "READING_REPORT_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-INF-05",
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityType": "READING_REPORT_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-INF-R03",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "READING_REPORT_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2131
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 3467
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8540
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4462
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3923
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3626
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5652
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 10017
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10894
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 8022
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4636
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6583
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6124
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5818
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 11187
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 12944
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3666
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11744
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5389
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8747
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 12773
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9522
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3625
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11431
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5382
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 12321
+    }
+  ],
+  "preservedReleases": 90,
+  "preservedSnapshots": 1225,
+  "finalReleases": 91,
+  "finalSnapshots": 1229,
+  "pedagogicalAcceptance": "READING_REPORT_SAMPLE_CONFIRMED_LOCAL_FULL_CURRICULAR_AUDIT_REMAINS_OPEN",
+  "personalBrowser": "LOGIN_PASSWORD_REQUIRED_CONFIRMED_AGAIN160_READ_ONLY",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.160",
+    "sourceCommit": "d2cf81e3b48b5a890c9bf38ee5d29d59bd27f63c",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "f8c0fe103ef0683a9504a04fec0fa3fea903dceeb4920f21d75cc26d377ef69b",
+    "frozen159Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 90,
+    "preservedSnapshots": 1225,
+    "finalReleases": 91,
+    "finalSnapshots": 1225,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.160",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-khbtd17X.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-khbtd17X.js",
+        "sha256": "fb8f350c01cdeca2613d82320644fdf8f355bef19713b73d62e16b7d415f9737",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DGYNw87Q.js",
+        "sha256": "f3974a57cbe41f3a1ebe220b6b1081b1b098aa8d9440aa3757e0722316e520f1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-B2aHzZWU.js",
+        "sha256": "43682eeeec7b93160bfbe29952eb5c9ceb3c9605d092fdb528e9ec0616379c03",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-B02T-ohf.js",
+        "sha256": "b60443d479d45d01b74031b0534e0b12d72e5e1c48d9485f68f1af7977af1c57",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Ck_TPdR5.js",
+        "sha256": "79456964195827108fb4d1ccc0e9acba6abfdad5be605824cdcfface14372388",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "05f595f7ca3182f6534e04bdfe27ba191bf4cbc3343c719a1de47967a5f2d406",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browserCacheAndServiceWorkerRegistration": "NOT_INSPECTED_NO_STORAGE_CLEARED"
+}
