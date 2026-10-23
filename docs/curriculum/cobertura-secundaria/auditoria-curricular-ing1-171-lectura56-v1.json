@@ -1,0 +1,584 @@
+{
+  "catalog": "evaluation-2026.171",
+  "mode": "LOCAL_SOURCE_NOT_HTTP_NOT_BROWSER",
+  "reviewer": "/root/revisor_pedagogico",
+  "designer": "/root/disenador_pruebas",
+  "curricularAuditor": "/root/auditor_curricular",
+  "independentReviewActuallyPerformed": true,
+  "readCompleteOriginals": 32,
+  "readCompleteTransfer": 24,
+  "originalsV3ToV4Exact": 32,
+  "selectionsReviewed": 14,
+  "definedTaskOutputs": 48,
+  "provisionalControlOutputs": 8,
+  "status": "ACCEPTED_FOR_THE_RECORDED_CAPTURE_SCOPE",
+  "wholeSubjectClosed": false,
+  "limits": [
+    "PREF08 y TR06 no acreditan actuación antes de precisar tarea o fuente.",
+    "Comprensión, preparación, revisión, intercambio y alternativas se registran por separado.",
+    "Contradicciones de fuente: solo fichas explícitas examinadas; no se afirma comprensión general de cualquier contradicción.",
+    "No se enviaron guiones exclusivos de la docente; no se exigen respuestas literales que dependan de información ausente."
+  ],
+  "cases": [
+    {
+      "caseId": "ING-PREF01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "78a2f239c806cec86aaefb09c77608416599ca38233aa67de710a5921953ff9b",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "1239229b317cab8c18c8748101c1492ed03860f151aee8372e3d4e68b8172fbd",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "2001d92daded655703b36c9f7d5ba1b436b45972b265ed1e9488a523667ecf08",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "ea2aa232878ad54eb0e5f77c0194583d745e0e839bce178decfcf18250aaa391",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "028e571d5947f6658b6c07eaa57a084eb12c1ee340e865ea24ea4dd2e10db051",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "be4490813186a482500d26611d4226323102ddf74663dbffae0c0e79bde60cb8",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "d87f2b7567ecb91019eda1de37856ce781b60a6e3c079e329b58e9848e3cb4ed",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "87b4189e069069c3717150624bd6a9a23085d939961d6d35fce442220f8a57df",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "c2b65006e4cbdf695a3cb67f5d5f1ef9e2539ec973ef16ae5c740ee54a484b68",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "cac2094b9ca374059195f4fbdbe9d1bf4d7dfbc60421b418c2e795ee5340b2ec",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "bdd5605388f76c7a2141df5e86b6b27d742d2627551e3c544aeffe09ba8dcc7c",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "52df5184f4dc6bf2b4b6868ae3a736eaaba2665daea78f00195087f205d2a0f5",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF04",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "43ba1a3b2aab8c19f71083b5b3e5befc643a4d0f9531c02a15498513419b7526",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF04",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "0188569fb51c2c3ed75c7ab80ae742e85292c544549b8a0755d334eb940278bf",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF04",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "65398f94559528b57564ed522482428ea2ef4b1f06a5e971823a83971e3ac3bf",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF04",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "35b5fcc97f6d0816ef0576a03496f6b73e9b9523bce144599e06e5fa83e280f4",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF05",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "ef398ddb0ba1d77a6cb2009c738f17a90cff5b8d773901e441df311c3d650987",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF05",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "a88f2334afd5b93f6fe9f0e7ea6af51a4757a8a32d60a7945a531c4f1b847189",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF05",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "4307e586247c477dca64c7a5a9293ec51f8fa9e37c11f3348419ef0a0db808b3",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF05",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "9c31eebf45eac478280f50e4e9fa6b136139294d77b1f7f0ab58f10792c5105e",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF06",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "eab6d975d939e46f59ace1ef50ab5d538489c4ea0073bdaf8aa40fdc0d4cb5d3",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF06",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "4ae6aa989be8d801793e5d30d21e4f03f94d0fd633086af97701238cb6b0f5fd",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF06",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "d9fe7c435590973afaab786d8289ae29183cc3d0ec80fe7b1719a94b5698625a",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF06",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "a66462da9ba1a92966a6dead83cdec7cc6008b0ff46d7562546e67f2384ac10c",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF07",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "ecd16a7fc58714ad3da3b24599092c5be56a7fb44fa5ab98da3fa4e8ad0404fe",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF07",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "e63477973f94cdaa5ce1ba66212706c1c6a5c940bc38da8afa5fbc471361c7ca",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF07",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "ab3cef2078014bfdb617bea1e797b8d88dad70003a41f4658cf973b01bb526e1",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF07",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "e44c3f3f678674e278e25637bc30ac8f2d7760300ce54fe67f5e34347ed59a29",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF08",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "87e155ae24eb95482a5df0819b5117c23b5432135e5539bedd07f5c7107d1609",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF08",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "1239b7e74967a54ade5858b99de78124935fc9b563230a027d8f48bdc19e5ef0",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF08",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "8129454fd659d6e43e88a11e4b7eb2747ee9c53ce01ec9e6da06c244014c673a",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF08",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+      "instrumentSha256": "9c083ecd4d51e64b3497222ecce16da0dc766979afc49d3a07534ad5f9710a2d",
+      "bankSha256": "1ba56e37e6dd2a6c7e1b1e5760580e0bc8982c74d12e3b2ed047f285d17b3c55",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "fb1d0bd0e1a67e815e0f7495fdcb7efcf52d12b84533fa09d41fff87b92ab4f5",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "b48259361c9dc07aefa4114d7ced5020679a28fbe7b312f29640c8d0be54488e",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "d1e336b895b5af223f6b75dd2d5db76cd8fd1e2b252f8f3e9f94628ee5cdcaca",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "cc861b5fba0dd5195892617ef4418c7b4454d4a185612e2476d000e81dc985ec",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "945190371a916ac86e191c5a3a513675d9c30adff5c4f91a27bd5c97f2bd3b8b",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "e602a8dfecdb1a26df0906faaa14b48c38437767f14bf7dbaeddeddef6955f65",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "c9bf0fb4ecc2ce6aecc2cfc7ac9e845db00ae60a2ca6fe7b16fe74e049b39ea4",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "211d4083f4f7cc72e88d898856a984de8949b76b884695f08061d6d3f0643010",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "fdc7dc552b15b671bc66761a0637909bcbcfbcdeb8598e048f8702b0f29eabd2",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "80b8d58aa92a933e7b0ae3ef95ec16ecc669b10b6be09ff10b31df194517033c",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "02de614c7bb4172c333e1fd7052bd8fb6e425cb0f4ede88ddb6ef7d54c29406a",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "362d864eca0386089414b959b17200d63c2ccd6ffb6257cf59bd055298e08409",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR04",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "56c4cd2433821a31fab2de0dab11878be12d47aceb7b247908ca181d875409a9",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR04",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "f98c987aa21da9ea8f4d42720fab003c9a2027f6e2db811e2d210418729f5198",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR04",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "55b66affbc65e29e7dec17f052cc5ac2c46e838ccba8329b6a04608f9531825c",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR04",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "9ba21e88a257d88e7c1b3ac0aab322194982929c910dcb0f10e2f09d5e94e052",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR05",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "b72365d776866cbdd0f71991ecef0cc790cd4b19b244030b3f2fa576bf7000cd",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR05",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "77224e6b41e88130e00cd661551244fbe771d97fe90d159ca576cdedfe40a34c",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR05",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "abaa7b2780dbefa9c6c00b78455c756703e31d6ddb840c6a9d6fae3fd97773a6",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR05",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "ebe0bad69a2f7a601a8f1b0dcd1c6dbbf13979dd113863d1656789b2cd916828",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": false,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR06",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "0cbee9cd13d4d25fa4d64e061af9bb04b78a0e4273583bbfdc98e0b6c1143426",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR06",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "a565db9c672fb68800e7fcc82e9822914fbd1355d340381b7278dcda9f08cc6c",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR06",
+      "format": "escala",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "25744f9095aa02d2f54bf45ca9db662c41e5b5001b4054c39a53cabdfe473ce1",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    },
+    {
+      "caseId": "ING-PREF-TR06",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+      "instrumentSha256": "623dd637bace64e29fdfec4483b439c52a9324b938e06b9772478821dd25cc06",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045",
+      "reviewedComplete": true,
+      "provisional": true,
+      "accepted": true
+    }
+  ]
+}

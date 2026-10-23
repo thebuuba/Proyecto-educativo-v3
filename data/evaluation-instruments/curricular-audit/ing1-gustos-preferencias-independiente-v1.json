@@ -1,0 +1,146 @@
+{
+  "bankId": "ing1-gustos-preferencias-independiente-v1",
+  "fixedAt": "2026-10-23T22:13:55Z",
+  "context": {"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"ING","subjectName":"Inglés","modalityCode":null,"optativeExitName":null},
+  "scopeKey": "SECONDARY/1/1/lenguas extranjeras/ingles/all/all",
+  "provenance": {
+    "designer": "/root/disenador_pruebas",
+    "designBeforePreferencesOutputReview": true,
+    "preferencesImplementationRead": false,
+    "preferencesOutputsRead": false,
+    "previousImplementationExposure": ["Módulo de información personal packages/shared/src/secondary-english-grade-one-personal.ts","Función affirmativeLanguageTask de language-feature-criteria.ts","Función normalizedTask de evaluation-task-text.ts"],
+    "currentSourcesRead": ["201 registros del ámbito oficial de Inglés común de primero en data/curriculum/secondary-2023.jsonl","Texto de las páginas PDF134,136,139 de official-secondary-2023.pdf","Consulta selectiva de la función79ceceef y sus componentes en ing1-matrix-v1.json","Confirmación de anclajes curriculares del auditor_curricular"],
+    "matrixExposure": "Componentes Expresar gustos y Expresar preferencias, pendientes de revisión independiente; metadatos de conexión, identificador y ruta del proveedor, sin abrir código ni resultados.",
+    "independenceLimit": "Independiente respecto de la implementación y los resultados del bloque de preferencias; no representa desconocimiento de toda la implementación del proyecto.",
+    "filesModifiedByDesigner": false,
+    "testsExecutedByDesigner": false,
+    "databaseAccessedByDesigner": false,
+    "materialsOrigin": "Materiales didácticos creados para este banco; no son citas del currículo.",
+    "coordinatorTranscription": "Títulos, descripciones, materiales, evidencias y exclusiones preservados del dictamen. Metadatos y contrato común compactados; cotejar con diseñador antes de generar."
+  },
+  "curricularScope": {
+    "function": "Expresar gustos y preferencias",
+    "sourceId": "79ceceef-2ef9-5789-81c7-b2947a33c181",
+    "pdfPage": 134,
+    "printedPage": 133,
+    "limits": ["Distinguir gusto de preferencia entre opciones.","Comprender mensajes no acredita producirlos ni intercambiarlos.","Conservar la fuente cuando se expresa sobre otra persona.","Like, prefer y enjoy son recursos posibles, no tres requisitos acumulativos.","Contextos temáticos y clasificaciones metodológicas no son criterios autónomos.","Cada vínculo se limita al componente observable; no acredita automáticamente un indicador o competencia completos.","No añadir comparación cultural, información personal, instrucciones, invitaciones, ciencia, salud o conservación por aparecer en otras entradas curriculares."]
+  },
+  "fourInstrumentContract": {
+    "sharedEvidence": "Las evidencias, exclusiones y alternativas de cada caso se conservan en rúbrica, lista de cotejo, escala de valoración y cotejo ponderado.",
+    "rubric": ["Diferencias observables de fidelidad, suficiencia, claridad o correspondencia según caso.","Cuatro o cinco niveles como decisión de diseño, no exigencia curricular.","Distinguir ambigüedad de referencia, desempeño parcial, alteración del sentido y ausencia cuando corresponda."],
+    "checklist": ["Comprobaciones observables del producto o actuación solicitados.","No calificar estados internos, nerviosismo, personalidad ni coincidencia de gustos.","Conservar alternativas OR."],
+    "ratingScale": ["Graduar las mismas evidencias con descriptores concretos.","No sustituir comprensión, fidelidad o interacción por frecuencia de participación."],
+    "weightedChecklist": ["Ponderar únicamente evidencias solicitadas.","No añadir actuaciones por asignar pesos ni duplicar evidencia."],
+    "initialAssessment": "Selecciones, niveles obtenidos y puntuaciones pendientes.",
+    "criterionLimit": "Máximo20; usar pocos criterios pertinentes, sin rellenar hasta el máximo.",
+    "languageStandard": ["Inglés breve comprensible con apoyos acordados.","Pausas, reformulaciones y posibles errores básicos no son incumplimiento por sí solos.","Aceptar formulaciones equivalentes.","No exigir todos los verbos, conectores, pronombres o estructuras del inventario."],
+    "ambiguousCase": "ING-PREF08 provisional: no calificar al estudiante ni aceptar cobertura antes de precisar la tarea."
+  },
+  "sources": {
+    "F_GUSTOS_PREFERENCIAS":{"id":"79ceceef-2ef9-5789-81c7-b2947a33c181","type":"PROCEDURE","pdfPage":134,"printedPage":133,"component":"Expresar gustos y preferencias"},
+    "CE_COMUNICATIVA":{"id":"e1f175ec-33ae-516d-a475-553ee9e8b677","type":"SPECIFIC_COMPETENCY","pdfPage":134,"printedPage":133,"component":"Comprensión y expresión breve y sencilla sobre temas cotidianos e información propia y de otras personas"},
+    "D_COMPRENSION":{"id":"1bd418ab-727e-544d-b821-73ff8cf83bda","type":"PROCEDURE","pdfPage":134,"printedPage":133,"component":"Comprensión de textos orales y escritos; solo género/modalidad del caso"},
+    "D_ORAL":{"id":"e7d4cbe4-94b0-5825-9163-8fd6db07fb8e","type":"PROCEDURE","pdfPage":134,"printedPage":133,"component":"Producción oral de mensajes, conversaciones o descripciones según tarea"},
+    "D_ESCRITA":{"id":"0dd1f9cd-045e-5e3b-90c4-164ab9a823aa","type":"PROCEDURE","pdfPage":134,"printedPage":133,"component":"Producción escrita de mensajes o descripciones según tarea"},
+    "G_GUSTOS_PREFERENCIAS":{"id":"1ed11d2e-7cca-5cdf-bab4-a7729d0964dc","type":"CONCEPT","pdfPage":136,"printedPage":135,"component":"Like, prefer, enjoy y otros recursos para gustos y preferencias","role":"Apoyo lingüístico; no exigir todos"},
+    "P_REPETICION":{"id":"97ced1a6-faeb-5054-920f-fccfef1c2189","type":"PROCEDURE","pdfPage":135,"printedPage":134,"component":"Solicitud de ayuda y repetición en comprensión oral","role":"Apoyo permitido, no obligación ni falta automática"},
+    "P_REVISION":{"id":"a756d91a-2d03-5366-ad41-115ba70b4ba3","type":"PROCEDURE","pdfPage":136,"printedPage":135,"component":"Revisión del sentido y la corrección del mensaje"},
+    "C_CONECTORES":{"id":"f0cfdfd1-4176-582d-9a5c-fbdec0345ed3","type":"CONCEPT","pdfPage":138,"printedPage":137,"component":"Conectores de coordinación y causa, entre otros","role":"Apoyo para relacionar ideas cuando se solicita, no inventario obligatorio"},
+    "I_COMPRENSION":{"id":"c2582fc9-2313-5b6b-89d6-70fcb85b1d7d","type":"ACHIEVEMENT_INDICATOR","pdfPage":139,"printedPage":138,"component":"Responder desde escucha o lectura de textos claros, breves y sencillos, incluidas preferencias"},
+    "I_EXPRESION":{"id":"cd6f3117-67b8-5af1-a401-3225a01a7aa8","type":"ACHIEVEMENT_INDICATOR","pdfPage":139,"printedPage":138,"component":"Expresión breve sencilla; admite pausas, reformulaciones y posibles errores básicos"},
+    "I_INTERACCION":{"id":"d8e7ad1a-bc6e-5535-94da-188cc53e2257","type":"ACHIEVEMENT_INDICATOR","pdfPage":139,"printedPage":138,"component":"Interacción oral o escrita breve suficientemente clara"},
+    "I_LOGICA_INTERACTIVA":{"id":"165abc91-7e3d-5a97-b67a-4ad8b8f3fa9b","type":"ACHIEVEMENT_INDICATOR","pdfPage":139,"printedPage":138,"component":"Seguir la lógica de la interacción y el contexto inmediato","role":"Solo intercambio realizado y correspondencia observable"},
+    "A_RESPETO":{"id":"05a3eeab-ad50-5da0-bacb-703840a13de8","type":"ATTITUDE_VALUE","pdfPage":134,"printedPage":133,"component":"Cortesía, asertividad y respeto al interactuar"},
+    "I_RESPETO_INTERACCION":{"id":"0fd7efb6-5c1f-569b-a373-bd910b999535","type":"ACHIEVEMENT_INDICATOR","pdfPage":139,"printedPage":138,"component":"Interacción con cortesía, asertividad y respeto"},
+    "T_TIEMPO_LIBRE":{"id":"929ea780-a9e4-5702-b1ab-09fa056194a6","type":"CONCEPT","pdfPage":134,"printedPage":133,"component":"Deporte, tiempo libre y recreación","role":"Contexto, no criterio autónomo"},
+    "V_ARTISTICAS":{"id":"dfd77bcb-12da-58d9-b81c-d7e314537690","type":"CONCEPT","pdfPage":134,"printedPage":133,"component":"Actividades artísticas como sing, paint y dance","role":"Vocabulario de apoyo según tarea"}
+  },
+  "cases": [
+    {
+      "id":"ING-PREF01","title":"Una actividad que disfruto",
+      "description":"Di oralmente en inglés una actividad que te gusta hacer en tu tiempo libre; puedes hablar de ti o de un personaje inventado.",
+      "participationMode":"INDIVIDUAL","form":"Una línea","targetEvidence":"Expresión oral de un gusto",
+      "expected":["Identificar una actividad y comunicar que le gusta a la persona de quien se habla.","Mantener reconocible el referente: el estudiante o un personaje inventado.","Comunicar el gusto mediante una expresión breve comprensible en inglés."],
+      "forbidden":["Exigir una preferencia entre dos opciones, una actividad que no le guste o una razón.","Exigir preguntas, respuestas de un interlocutor o intercambio realizado.","Imponer simultáneamente like, prefer y enjoy.","Exigir gustos reales, una grabación, diapositivas, una extensión adicional o acento nativo.","Valorar positivamente un gusto concreto frente a otro."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Expresión oral breve con apoyo opcional de vocabulario","technique":"Observación de la actuación","instrument":"Lista de cotejo breve; rúbrica o escala si se necesita graduar la claridad y suficiencia"},
+      "sources":["F_GUSTOS_PREFERENCIAS","CE_COMUNICATIVA","D_ORAL","G_GUSTOS_PREFERENCIAS","I_EXPRESION","T_TIEMPO_LIBRE"],
+      "coverageLimit":"Expresa un gusto; no acredita por sí solo preferencia comparativa ni interacción."
+    },
+    {
+      "id":"ING-PREF02","title":"Lo que cuentan Nora y Ben",
+      "description":"Lee los dos mensajes y completa, para cada personaje, qué actividades le gustan, cuál no le gusta y cuál prefiere. Anota not stated cuando un dato no aparezca.",
+      "participationMode":"INDIVIDUAL","form":"Breve con materiales dados","targetEvidence":"Comprensión escrita de gustos, desagrado y preferencia explícitos",
+      "materials":{"studentMessages":[{"character":"Nora","text":"I like painting and dancing, but I prefer painting. I don't like singing."},{"character":"Ben","text":"I like painting and singing."}],"responseSheet":"Nombres impresos y tres campos por personaje: likes, doesn't like, prefers."},
+      "expected":["Relacionar con Nora painting y dancing como gustos, singing como actividad que no le gusta y painting como preferencia.","Relacionar con Ben painting y singing como gustos.","Marcar not stated para el desagrado y la preferencia de Ben, porque esos datos no aparecen.","Mantener separados los datos de cada personaje y distinguir gusto, desagrado y preferencia.","Conservar que Nora también disfruta dancing: preferir painting no convierte dancing en un desagrado."],
+      "forbidden":["Inventar una preferencia de Ben por el orden en que aparecen las actividades.","Convertir toda actividad no preferida en una actividad que no gusta.","Exigir gustos propios, producción oral, pronunciación, diálogo o justificaciones personales.","Exigir oraciones completas cuando los campos se resuelven con palabras o expresiones breves.","Acreditar producción de preferencias únicamente por completar esta comprensión."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Lectura orientada a distinguir información explícita y ausente","technique":"Análisis de las asociaciones y respuestas","instrument":"Lista de cotejo; rúbrica o escala centradas en fidelidad y diferenciación del significado"},
+      "sources":["F_GUSTOS_PREFERENCIAS","D_COMPRENSION","G_GUSTOS_PREFERENCIAS","I_COMPRENSION","V_ARTISTICAS"],
+      "coverageLimit":"La función aporta el contenido comprendido; la actuación evaluada es lectura, no expresión autónoma ni intercambio."
+    },
+    {
+      "id":"ING-PREF03","title":"Escuchamos sus elecciones",
+      "description":"Escucha los dos mensajes que leerá la docente. En la hoja con los nombres ya impresos, anota qué actividades le gustan a cada personaje y cuál dice que prefiere. Si no expresa una preferencia, escribe not stated. Puedes pedir que se repita.",
+      "participationMode":"INDIVIDUAL","form":"Detallada","targetEvidence":"Comprensión oral con identificación de una preferencia ausente",
+      "materials":{"teacherOnlyScripts":[{"character":"Ada","text":"Hello, I'm Ada. I like dancing and painting. I prefer painting."},{"character":"Leo","text":"Hi, I'm Leo. I enjoy singing."}],"studentSheet":"Ada y Leo impresos, con campos likes y prefers; los guiones no se muestran al estudiante."},
+      "expected":["Obtener los datos mediante escucha de los mensajes.","Relacionar dancing y painting con los gustos de Ada y painting con su preferencia.","Relacionar singing con el gusto de Leo y marcar not stated en su preferencia.","Conservar la correspondencia entre cada mensaje y su personaje.","Aceptar la repetición como apoyo disponible, sin penalizarla automáticamente ni exigir que todos la soliciten."],
+      "forbidden":["Inferir que singing es una preferencia comparativa explícita de Leo porque es su único gusto mencionado.","Exigir completar o producir los nombres ya impresos.","Mostrar los guiones y acreditar su lectura como la misma evidencia de escucha.","Evaluar pronunciación, producción oral, transcripción completa o uso obligatorio de un dispositivo.","Calificar mirada, inmovilidad, nerviosismo o ausencia de solicitudes de repetición."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Escucha guiada con repetición disponible","technique":"Análisis de respuestas vinculadas al mensaje escuchado","instrument":"Lista de cotejo o escala de comprensión; conservar los mismos límites en rúbrica y cotejo ponderado"},
+      "sources":["F_GUSTOS_PREFERENCIAS","D_COMPRENSION","G_GUSTOS_PREFERENCIAS","P_REPETICION","I_COMPRENSION","V_ARTISTICAS"],
+      "coverageLimit":"Comprensión auditiva; no acredita producción oral ni interacción por pedir una repetición."
+    },
+    {
+      "id":"ING-PREF04","title":"Elegimos sin tener que coincidir",
+      "description":"En parejas, usen las tarjetas de personajes para conversar en inglés. Pregunten qué actividad prefiere el otro entre dibujar y bailar, respondan según su tarjeta y comenten si sus elecciones coinciden o son distintas. Cada participante preguntará y responderá. No necesitan llegar a un acuerdo.",
+      "participationMode":"GROUP","form":"Detallada","targetEvidence":"Intercambio oral realizado sobre preferencias y correspondencia entre elecciones",
+      "materials":{"roleCards":[{"character":"Alex","likes":["drawing","dancing"],"preference":"drawing"},{"character":"Sam","likes":["drawing","dancing"],"preference":"dancing"}],"arrangement":"Cada participante usa su tarjeta y obtiene la elección del otro mediante el intercambio."},
+      "expected":["Cada participante formula una pregunta y comunica la preferencia de su personaje en inglés.","Las respuestas corresponden a las preguntas recibidas y son fieles a las tarjetas.","Reconocer a partir del intercambio que estas elecciones son distintas.","Mantener una comunicación breve comprensible, con aclaraciones o reformulaciones cuando se necesiten.","Responder a la diferencia sin descalificar al otro ni presentar su gusto como inferior."],
+      "forbidden":["Aceptar dos monólogos independientes o preguntas preparadas como intercambio completo.","Exigir acuerdo, cambio de preferencia o una elección colectiva.","Exigir razones extensas, un debate, una encuesta o un informe escrito.","Atribuir desagrado por la otra actividad cuando las tarjetas indican que ambas gustan.","Calificar la personalidad, la autenticidad de gustos ficticios o la coincidencia con el docente."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Representación de roles con información que se obtiene del interlocutor","technique":"Observación del intercambio y de la correspondencia entre intervenciones","instrument":"Rúbrica breve o escala; cotejos con actuaciones observables de ambos participantes"},
+      "sources":["F_GUSTOS_PREFERENCIAS","D_ORAL","G_GUSTOS_PREFERENCIAS","I_INTERACCION","I_LOGICA_INTERACTIVA","A_RESPETO","I_RESPETO_INTERACCION"],
+      "coverageLimit":"El componente lógico se limita a relacionar lo escuchado con la coincidencia o diferencia de elecciones; no implica comparación cultural ni debate."
+    },
+    {
+      "id":"ING-PREF05","title":"Solo la preferencia de Mara",
+      "description":"En el mensaje sobre Mara, revisa únicamente la oración que dice qué actividad prefiere. Usa su tarjeta para corregir esa información en inglés y conserva las otras dos oraciones. Entrega la versión revisada junto al borrador; no tienes que entrevistar a Mara ni añadir tus gustos.",
+      "participationMode":"INDIVIDUAL","form":"Detallada con revisión limitada","targetEvidence":"Revisión escrita de una preferencia ajena y conservación del resto",
+      "materials":{"fictionalCard":{"name":"Mara","city":"La Vega","likes":["reading","painting"],"preferenceBetweenThoseActivities":"painting"},"draft":["Mara lives in La Vega.","She prefers reading to painting.","She likes reading and painting."]},
+      "expected":["Corregir la segunda oración para comunicar que Mara prefiere painting entre las dos actividades.","Mantener el referente en Mara mediante su nombre o una referencia apropiada.","Conservar la relación de preferencia: indicar únicamente que le gusta painting no basta para expresar la elección solicitada.","Preservar las otras dos oraciones del borrador.","Hacer visible la revisión al presentar borrador y versión corregida."],
+      "forbidden":["Reescribir todo el mensaje o modificar la ciudad, los gustos o las otras oraciones.","Sustituir la preferencia de Mara por la del estudiante.","Exigir entrevista, pronunciación, exposición oral, envío o publicación.","Exigir una fórmula única, un pronombre concreto o todos los verbos del inventario.","Premiar cambios adicionales fuera de la oración autorizada."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Revisión focalizada con contraste de fuente y borrador","technique":"Comparación documental del antes y después","instrument":"Lista de cotejo para fidelidad y preservación; rúbrica o escala para graduar la reparación"},
+      "sources":["F_GUSTOS_PREFERENCIAS","CE_COMUNICATIVA","D_ESCRITA","G_GUSTOS_PREFERENCIAS","P_REVISION","I_EXPRESION"],
+      "coverageLimit":"Expresión revisada de una preferencia de otra persona; los datos de identificación son contenido que se conserva, no una nueva actuación de información personal."
+    },
+    {
+      "id":"ING-PREF06","title":"Mi elección para la biblioteca",
+      "description":"Para la pausa en la biblioteca puedes elegir lectura o dibujo. Las dos actividades deben hacerse en silencio y con los libros, hojas y lápices disponibles allí. Escribe en inglés cuál prefieres y una razón sencilla relacionada con esas condiciones. Entregaremos solo el mensaje; hoy no realizaremos la actividad.",
+      "participationMode":"INDIVIDUAL","form":"Detallada con condiciones explícitas","targetEvidence":"Preferencia escrita con una razón vinculada al contexto dado",
+      "materials":{"availableOptions":["reading","drawing"],"conditions":["Realizarse en silencio","Usar los libros, hojas y lápices disponibles"]},
+      "expected":["Comunicar una preferencia reconocible entre lectura y dibujo.","Expresar una razón sencilla que se relacione de forma coherente con el silencio o los materiales disponibles, sin contradecir las condiciones.","Aceptar cualquiera de las dos opciones cuando la respuesta sea coherente con la consigna.","Relacionar la elección y la razón mediante inglés breve comprensible.","Evaluar el mensaje entregado; la realización de la actividad queda fuera de esta tarea."],
+      "forbidden":["Imponer lectura o dibujo como la única elección correcta.","Exigir realizar, organizar o demostrar la actividad, elaborar un presupuesto o conseguir materiales nuevos.","Exigir una construcción gramatical condicional con if por la presencia de condiciones en español.","Exigir because como única manera de relacionar la razón con la elección.","Añadir investigación, recomendaciones sanitarias o logros ambientales no solicitados."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Elección contextualizada entre opciones dadas","technique":"Análisis del mensaje y de la relación entre elección, razón y condiciones","instrument":"Rúbrica breve o escala; cotejos que separen preferencia reconocible y razón pertinente"},
+      "sources":["F_GUSTOS_PREFERENCIAS","D_ESCRITA","G_GUSTOS_PREFERENCIAS","C_CONECTORES","I_EXPRESION","T_TIEMPO_LIBRE"],
+      "coverageLimit":"La razón se exige porque aparece expresamente en esta consigna; no debe trasladarse automáticamente a otros casos de gustos o preferencias."
+    },
+    {
+      "id":"ING-PREF07","title":"Un mensaje para compartir mañana",
+      "description":"Elige qué quieres contar: una actividad que te gusta o cuál prefieres entre dibujar y leer. Prepara un mensaje breve en inglés, en audio o en papel, para compartirlo mañana. Hoy solo entregaremos el mensaje.",
+      "participationMode":"INDIVIDUAL","form":"Breve con alternativas","targetEvidence":"Producción actual de un mensaje con alternativa de contenido y de modalidad",
+      "expected":["Aceptar una actividad expresada como gusto O una preferencia reconocible entre dibujar y leer.","Evaluar únicamente la alternativa de contenido elegida.","Aceptar audio O papel, con claridad adecuada al medio elegido.","Conservar la coherencia entre la actividad mencionada y el gusto o preferencia que se comunica.","Evaluar el mensaje disponible hoy; compartirlo mañana no se considera realizado."],
+      "forbidden":["Exigir gusto y preferencia simultáneamente.","Exigir audio y papel simultáneamente.","Exigir comparación entre opciones cuando el estudiante eligió expresar un gusto.","Exigir una razón, una actividad que no guste, preguntas o respuestas de un interlocutor.","Calificar pronunciación en el papel o puntuación escrita en el audio.","Exigir envío, publicación, presentación de mañana o intercambio ya realizado.","Favorecer una modalidad o una de las alternativas de contenido por sí misma."],
+      "recommendation":{"assessmentType":"Formativa","strategy":"Producción breve con elección de contenido y medio","technique":"Análisis del producto elegido","instrument":"Lista de cotejo o escala adaptada a la alternativa; los cuatro formatos deben conservar ambas disyunciones"},
+      "sources":["F_GUSTOS_PREFERENCIAS","G_GUSTOS_PREFERENCIAS","I_EXPRESION","T_TIEMPO_LIBRE"],
+      "conditionalSources":{"audio":["D_ORAL"],"papel":["D_ESCRITA"]},
+      "coverageLimit":"Acreditar solo gusto O preferencia y solo la modalidad producida; no acreditar ambos componentes ni interacción por la intención de compartir después."
+    },
+    {
+      "id":"ING-PREF08","title":"Nuestros gustos para el encuentro",
+      "description":"En equipos, preparen algo en inglés sobre sus gustos y preferencias para el próximo encuentro.",
+      "participationMode":"GROUP","form":"Ambigua","targetEvidence":"Control de alcance y recomendación provisional",
+      "expected":["Reconocer que faltan el producto, la modalidad, los datos previstos y la evidencia que se entregará en esta fase.","Solicitar esas precisiones O presentar una recomendación explícitamente provisional y sujeta al acuerdo docente.","Distinguir preparar algo de realizar una exposición o un intercambio.","Vincular cualquier criterio provisional al producto y al alcance que se acuerden.","Mantener pendiente la aceptación de evidencia curricular y la calificación del estudiante."],
+      "forbidden":["Afirmar que la consigna exige video, cartel, encuesta, diálogo, exposición, informe o publicación.","Exigir datos personales reales, entrevistas, razones, comparaciones culturales o consenso grupal.","Convertir trabajo en equipo en prueba automática de interacción lingüística realizada.","Asignar al estudiante una falta por no producir un formato o contenido todavía no definido.","Acreditar por anticipado comprensión, producción e intercambio simultáneos."],
+      "recommendation":{"assessmentType":"Por precisar; orientación formativa provisional","strategy":"Acordar el producto y la fase antes de seleccionar la evidencia","technique":"Por precisar según el producto acordado","instrument":"Proponer provisionalmente una lista breve para el producto que se acuerde, sin presentarla como instrumento definitivo","clarificationFocus":["Qué se entregará hoy","En qué modalidad","Qué gustos o preferencias se comunicarán y de quién","Si el próximo encuentro incluye exposición, intercambio u otra actuación"]},
+      "sources":["F_GUSTOS_PREFERENCIAS","CE_COMUNICATIVA"],
+      "coverageLimit":"Control de ambigüedad sin crédito curricular aceptado; los procedimientos discursivos e indicadores concretos se seleccionan después de precisar la tarea."
+    }
+  ]
+}

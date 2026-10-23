@@ -1,0 +1,283 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.170",
+  "sourceCommit": "0eb6a64d288e773f68cbe1a75e7560a2c80f8246",
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.170",
+    "sourceCommit": "0eb6a64d288e773f68cbe1a75e7560a2c80f8246",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "4f3cfd4e01c94b1f38f6fc2581584f3d77b71ff9421427de0f91fbbc222107cc",
+    "frozen169Exact": true,
+    "versionOnlyPayloadChange": true,
+    "previousReleases": 100,
+    "previousSnapshots": 1265,
+    "afterHistoryCheck": "PASS_READ_ONLY_CONNECTOR",
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.170",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-Bl8QYlBj.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-Bl8QYlBj.js",
+        "sha256": "7cf7a7acec31ab05cd7625446cecedf559ac98d870af9aa0b90fbbe0906598cf",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DLSqQn1q.js",
+        "sha256": "cd2574e08581963ab0278fd959a72df8a91c82e8e07e7f37e39bb90457320b14",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-1h8CdHBG.js",
+        "sha256": "09c0a018b3c64a794dcfb6510a33abcf56e2280ed4c185759b3dabb8485e99d1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-ingles-1-personal-dYAoBseh.js",
+        "sha256": "1735454be639b356e2ea363ac95f45558f066a37eb38b35f85710dc35aa6aea6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-CHYEYOaO.js",
+        "sha256": "598be77203a0207cd3542cf82fc8a6a223263d34721238a9a9603c2d02d56b97",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CO9PjfH6.js",
+        "sha256": "157d63477c1c9083e76d8fd3c3b3191615bcb48d552d399f363f5a4ee3b1c94c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "2637652fc1de353564fc8f1fd98952827f2362ed9258b701e87b37c4a3e135b0",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "samples": [
+    {
+      "caseId": "ING-PER01",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "ORAL_INTERACTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "ING-PER04",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "READING_COMPREHENSION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "ING-PER07",
+      "format": "escala",
+      "score": 20,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "ING-PER08",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "OTHER",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2631
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4198
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4853
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 14157
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3137
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3080
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4294
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2807
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8389
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 11683
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2919
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3806
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5722
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4692
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 18908
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 15527
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5503
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5482
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7271
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3318
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 13115
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 12197
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4477
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4350
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5877
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4193
+    }
+  ],
+  "history": {
+    "originalCheckpointReused": true,
+    "preservedReleases": 100,
+    "preservedSnapshots": 1265,
+    "finalReleases": 101,
+    "finalSnapshots": 1269,
+    "newSnapshotsExactlyJournal": true
+  },
+  "personal": {
+    "originalReferences": 15,
+    "allExact": true,
+    "duplicates": 0,
+    "baselineRecaptured": false
+  },
+  "qaContext": {
+    "newAssignment": true,
+    "newSubject": false,
+    "newAccounts": 0,
+    "newStudents": 0
+  },
+  "browser": "DEBUGGER_UNATTACHED_RECONFIRMED_NO_VISUAL_CLAIM",
+  "performance": "Measurements only; no performance fix claimed. Prior169 timed-out reopening remains pending.",
+  "productionWrites": false,
+  "push": false,
+  "merge": false,
+  "deploy": false,
+  "schemaMigrations": 0
+}

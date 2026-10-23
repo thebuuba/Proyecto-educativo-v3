@@ -1,0 +1,2838 @@
+{
+  "catalog": "evaluation-2026.171",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "ING-PREF-TR01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-claims:0",
+            "templateId": "ing-1-preferences-claims",
+            "title": "Correspondencia entre afirmaciones y mensajes",
+            "description": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+              "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+              "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+              "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene.",
+              "No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones."
+            ],
+            "fourLevelLowest": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-support:1",
+            "templateId": "ing-1-preferences-support",
+            "title": "Sustento de cada decisión",
+            "description": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+              "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+              "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+              "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente.",
+              "No señala evidencia textual que permita contrastar las decisiones."
+            ],
+            "fourLevelLowest": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-claims:0",
+            "templateId": "ing-1-preferences-claims",
+            "title": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+            "description": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+              "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+              "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+              "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene.",
+              "No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones."
+            ],
+            "fourLevelLowest": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-support:1",
+            "templateId": "ing-1-preferences-support",
+            "title": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+            "description": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+              "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+              "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+              "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente.",
+              "No señala evidencia textual que permita contrastar las decisiones."
+            ],
+            "fourLevelLowest": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-claims:0",
+            "templateId": "ing-1-preferences-claims",
+            "title": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+            "description": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+              "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+              "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+              "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene.",
+              "No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones."
+            ],
+            "fourLevelLowest": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+                "scoreUnits": 1143
+              },
+              {
+                "levelId": "L3",
+                "text": "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+                "scoreUnits": 762
+              },
+              {
+                "levelId": "L2",
+                "text": "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L1",
+                "text": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-support:1",
+            "templateId": "ing-1-preferences-support",
+            "title": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+            "description": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+              "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+              "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+              "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente.",
+              "No señala evidencia textual que permita contrastar las decisiones."
+            ],
+            "fourLevelLowest": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+                "scoreUnits": 857
+              },
+              {
+                "levelId": "L3",
+                "text": "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L1",
+                "text": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_COMPREHENSION",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-claims:0",
+            "templateId": "ing-1-preferences-claims",
+            "title": "Correspondencia entre afirmaciones y mensajes",
+            "description": "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado. Parcial (50%): Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+            "maxScore": 11.43,
+            "maxScoreUnits": 1143,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Distingue qué afirmaciones coinciden y cuáles contradicen los mensajes, conservando personaje, gusto, preferencia y ausencia explícita de preferencia; no convierte la opción no preferida en desagrado.",
+              "Decide correctamente la correspondencia en conjunto; una decisión puntual necesita corrección.",
+              "Distingue algunas afirmaciones, pero confunde u omite varias relaciones con los mensajes.",
+              "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene.",
+              "No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones."
+            ],
+            "fourLevelLowest": "La mayoría de las decisiones cambia referente o significado, incluyendo atribuir una preferencia donde la fuente indica que no la tiene. O bien: No aporta decisiones reconocibles sobre la correspondencia de las afirmaciones.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-support:1",
+            "templateId": "ing-1-preferences-support",
+            "title": "Sustento de cada decisión",
+            "description": "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas. Parcial (50%): Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+            "maxScore": 8.57,
+            "maxScoreUnits": 857,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Señala los fragmentos de los mensajes que sustentan cada decisión; utiliza ambos mensajes cuando la afirmación se refiere a las dos personas.",
+              "El sustento corresponde a las decisiones; un fragmento necesita precisarse o completarse.",
+              "Señala fragmentos pertinentes para algunas decisiones, pero deja otras sin sustento suficiente.",
+              "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente.",
+              "No señala evidencia textual que permita contrastar las decisiones."
+            ],
+            "fourLevelLowest": "Los fragmentos señalados no sostienen las decisiones o pertenecen a otro referente. O bien: No señala evidencia textual que permita contrastar las decisiones.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=reading",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-questions:0",
+            "templateId": "ing-1-preferences-questions",
+            "title": "Preguntas preparadas con propósito definido",
+            "description": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+              "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+              "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+              "Las preguntas solicitan información distinta de los gustos y preferencias previstos.",
+              "No aporta preguntas comprensibles que permitan solicitar la información prevista."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-questions:0",
+            "templateId": "ing-1-preferences-questions",
+            "title": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+            "description": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+              "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+              "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+              "Las preguntas solicitan información distinta de los gustos y preferencias previstos.",
+              "No aporta preguntas comprensibles que permitan solicitar la información prevista."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-questions:0",
+            "templateId": "ing-1-preferences-questions",
+            "title": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+            "description": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+              "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+              "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+              "Las preguntas solicitan información distinta de los gustos y preferencias previstos.",
+              "No aporta preguntas comprensibles que permitan solicitar la información prevista."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-questions:0",
+            "templateId": "ing-1-preferences-questions",
+            "title": "Preguntas preparadas con propósito definido",
+            "description": "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras. Parcial (50%): Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara en inglés dos preguntas: una permite saber qué actividades gustan o se disfrutan y otra pregunta por la preferencia entre ajedrez y dibujo; se evalúan las preguntas escritas disponibles hoy, no las respuestas futuras.",
+              "Las preguntas conservan las dos intenciones y las opciones pedidas; una formulación necesita precisión.",
+              "Una pregunta cumple su propósito, pero la otra repite esa intención o deja sin precisar qué información solicita.",
+              "Las preguntas solicitan información distinta de los gustos y preferencias previstos.",
+              "No aporta preguntas comprensibles que permitan solicitar la información prevista."
+            ],
+            "fourLevelLowest": "Las preguntas solicitan información distinta de los gustos y preferencias previstos. O bien: No aporta preguntas comprensibles que permitan solicitar la información prevista.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-exchange:0",
+            "templateId": "ing-1-preferences-exchange",
+            "title": "Preguntar y responder en el intercambio",
+            "description": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+              "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+              "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+              "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta.",
+              "No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio."
+            ],
+            "fourLevelLowest": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+                "scoreUnits": 889
+              },
+              {
+                "levelId": "L3",
+                "text": "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+                "scoreUnits": 593
+              },
+              {
+                "levelId": "L2",
+                "text": "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L1",
+                "text": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-record:1",
+            "templateId": "ing-1-preferences-record",
+            "title": "Notas vinculadas del intercambio",
+            "description": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+              "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+              "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+              "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente.",
+              "No ofrece notas que permitan comprobar el intercambio escrito realizado."
+            ],
+            "fourLevelLowest": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible en inglés",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+                "scoreUnits": 444
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+                "scoreUnits": 148
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-exchange:0",
+            "templateId": "ing-1-preferences-exchange",
+            "title": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+            "description": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+              "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+              "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+              "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta.",
+              "No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio."
+            ],
+            "fourLevelLowest": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-record:1",
+            "templateId": "ing-1-preferences-record",
+            "title": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+            "description": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+              "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+              "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+              "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente.",
+              "No ofrece notas que permitan comprobar el intercambio escrito realizado."
+            ],
+            "fourLevelLowest": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-exchange:0",
+            "templateId": "ing-1-preferences-exchange",
+            "title": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+            "description": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+              "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+              "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+              "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta.",
+              "No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio."
+            ],
+            "fourLevelLowest": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+                "scoreUnits": 889
+              },
+              {
+                "levelId": "L3",
+                "text": "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+                "scoreUnits": 593
+              },
+              {
+                "levelId": "L2",
+                "text": "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L1",
+                "text": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-record:1",
+            "templateId": "ing-1-preferences-record",
+            "title": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+            "description": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+              "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+              "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+              "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente.",
+              "No ofrece notas que permitan comprobar el intercambio escrito realizado."
+            ],
+            "fourLevelLowest": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+                "scoreUnits": 444
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 296
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+                "scoreUnits": 148
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-exchange:0",
+            "templateId": "ing-1-preferences-exchange",
+            "title": "Preguntar y responder en el intercambio",
+            "description": "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado. Parcial (50%): Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+            "maxScore": 8.89,
+            "maxScoreUnits": 889,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada participante pregunta en inglés por la preferencia del otro y responde a la pregunta recibida según su tarjeta, manteniendo la correspondencia entre pregunta, personaje y respuesta; admite la ausencia de preferencia explícita, sin confundirla con desagrado.",
+              "Cada participante pregunta y responde de manera relacionada; una referencia puntual requiere aclaración.",
+              "Solo pregunta o responde, o las intervenciones dejan sin aclarar parte de la preferencia solicitada.",
+              "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta.",
+              "No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio."
+            ],
+            "fourLevelLowest": "Las respuestas no corresponden a las preguntas o cambian la preferencia de la tarjeta. O bien: No aporta intervenciones reconocibles que permitan comprobar pregunta y respuesta en el intercambio.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-record:1",
+            "templateId": "ing-1-preferences-record",
+            "title": "Notas vinculadas del intercambio",
+            "description": "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia. Parcial (50%): Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Devuelve cada respuesta a quien preguntó y conserva las preguntas con sus respuestas escritas, vinculadas al personaje correspondiente; responde sin descalificar una elección distinta o la ausencia de preferencia.",
+              "Conserva la correspondencia de las notas; precisa un vínculo o repara expresamente una descalificación puntual.",
+              "Conserva solo algunos pares de notas o deja incompleta la reparación de una descalificación.",
+              "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente.",
+              "No ofrece notas que permitan comprobar el intercambio escrito realizado."
+            ],
+            "fourLevelLowest": "Las notas no permiten relacionar preguntas y respuestas, o mantiene la descalificación de una elección diferente. O bien: No ofrece notas que permitan comprobar el intercambio escrito realizado.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:2",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible en inglés",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados. Parcial (50%): Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+            "maxScore": 4.44,
+            "maxScoreUnits": 444,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-polarity:0",
+            "templateId": "ing-1-preferences-polarity",
+            "title": "Gusto y desagrado de cada personaje",
+            "description": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+            "maxScore": 11.57,
+            "maxScoreUnits": 1157,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+              "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+              "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+              "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha.",
+              "No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados."
+            ],
+            "fourLevelLowest": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+                "scoreUnits": 771
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L1",
+                "text": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible en inglés",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 385
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-polarity:0",
+            "templateId": "ing-1-preferences-polarity",
+            "title": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+            "description": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+            "maxScore": 11.57,
+            "maxScoreUnits": 1157,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+              "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+              "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+              "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha.",
+              "No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados."
+            ],
+            "fourLevelLowest": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-polarity:0",
+            "templateId": "ing-1-preferences-polarity",
+            "title": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+            "description": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+            "maxScore": 11.57,
+            "maxScoreUnits": 1157,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+              "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+              "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+              "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha.",
+              "No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados."
+            ],
+            "fourLevelLowest": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+                "scoreUnits": 771
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+                "scoreUnits": 386
+              },
+              {
+                "levelId": "L1",
+                "text": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+                "scoreUnits": 385
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L1",
+                "text": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ORAL_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-polarity:0",
+            "templateId": "ing-1-preferences-polarity",
+            "title": "Gusto y desagrado de cada personaje",
+            "description": "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa. Parcial (50%): Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+            "maxScore": 11.57,
+            "maxScoreUnits": 1157,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica en el audio en inglés el gusto y el desagrado de cada personaje de la ficha, conservando todas las asociaciones entre persona, actividad y polaridad afirmativa o negativa.",
+              "Comunica los datos de cada personaje; una asociación o negación puntual queda ambigua o necesita corrección.",
+              "Comunica algunos datos, pero omite o confunde varios gustos, desagrados o referentes.",
+              "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha.",
+              "No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados."
+            ],
+            "fourLevelLowest": "La mayoría de las asociaciones intercambia personajes, actividades o polaridad y contradice la ficha. O bien: No aporta asociaciones reconocibles de gusto y desagrado de los personajes indicados.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-intelligibility:1",
+            "templateId": "ing-1-intelligibility",
+            "title": "Mensaje comprensible en inglés",
+            "description": "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas. Parcial (50%): Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+            "maxScore": 5.78,
+            "maxScoreUnits": 578,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Permite reconocer la persona, la actividad y el sentido de la elección mediante expresiones breves en inglés; admite apoyos y reformulaciones acordados, incluidas pausas.",
+              "El mensaje se comprende en conjunto; una expresión deja una referencia puntual ambigua.",
+              "Se comprenden expresiones aisladas, pero varias referencias impiden relacionar la persona con su elección.",
+              "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección.",
+              "No aporta un mensaje reconocible en inglés con los apoyos acordados."
+            ],
+            "fourLevelLowest": "Las expresiones empleadas cambian la persona, la actividad o el sentido de la elección. O bien: No aporta un mensaje reconocible en inglés con los apoyos acordados.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=oral",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-response:0",
+            "templateId": "ing-1-preferences-response",
+            "title": "Respuesta elegida en su contexto",
+            "description": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+              "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+              "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+              "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones.",
+              "No aporta una respuesta reconocible respecto de la pregunta dada."
+            ],
+            "fourLevelLowest": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-response:0",
+            "templateId": "ing-1-preferences-response",
+            "title": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+            "description": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+              "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+              "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+              "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones.",
+              "No aporta una respuesta reconocible respecto de la pregunta dada."
+            ],
+            "fourLevelLowest": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-response:0",
+            "templateId": "ing-1-preferences-response",
+            "title": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+            "description": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+              "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+              "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+              "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones.",
+              "No aporta una respuesta reconocible respecto de la pregunta dada."
+            ],
+            "fourLevelLowest": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-response:0",
+            "templateId": "ing-1-preferences-response",
+            "title": "Respuesta elegida en su contexto",
+            "description": "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección. Parcial (50%): Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una de las alternativas autorizadas: preferencia por una opción, ausencia de preferencia o desagrado por ambas. La respuesta se comprende junto con la pregunta dada; admite expresiones breves o elípticas equivalentes sin favorecer una elección.",
+              "La alternativa elegida se reconoce en contexto; una expresión puntual necesita precisión.",
+              "Menciona una opción o que ambas gustan, pero deja sin aclarar cuál de los significados autorizados quiere comunicar.",
+              "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones.",
+              "No aporta una respuesta reconocible respecto de la pregunta dada."
+            ],
+            "fourLevelLowest": "La respuesta comunica un significado contrario al pretendido o confunde ausencia de preferencia con desagrado por ambas opciones. O bien: No aporta una respuesta reconocible respecto de la pregunta dada.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES"
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-sources:0",
+            "templateId": "ing-1-preferences-sources",
+            "title": "Fidelidad a fuentes pendientes de aclaración",
+            "description": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+              "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+              "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+              "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia.",
+              "Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes."
+            ],
+            "fourLevelLowest": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES",
+            "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        },
+        "teacherReviewNotes": [
+          "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+        ]
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-sources:0",
+            "templateId": "ing-1-preferences-sources",
+            "title": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+            "description": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+              "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+              "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+              "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia.",
+              "Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes."
+            ],
+            "fourLevelLowest": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES",
+            "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        },
+        "teacherReviewNotes": [
+          "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+        ]
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-sources:0",
+            "templateId": "ing-1-preferences-sources",
+            "title": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+            "description": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+              "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+              "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+              "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia.",
+              "Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes."
+            ],
+            "fourLevelLowest": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES",
+            "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        },
+        "teacherReviewNotes": [
+          "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+        ]
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    },
+    {
+      "id": "ING-PREF-TR06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.171",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.171:fallback:ing-1-preferences-sources:0",
+            "templateId": "ing-1-preferences-sources",
+            "title": "Fidelidad a fuentes pendientes de aclaración",
+            "description": "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente. Parcial (50%): Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Una vez aclarada la referencia, comunica la preferencia correspondiente; si se acuerda un mensaje provisional, atribuye cada preferencia a su ficha y conserva expresamente la discrepancia sin inventar cuál es vigente.",
+              "Con la referencia o el mensaje provisional acordados, conserva la información; una atribución puntual necesita precisión.",
+              "Conserva parte de la información, pero deja incompleta la atribución de cada preferencia a su fuente.",
+              "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia.",
+              "Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes."
+            ],
+            "fourLevelLowest": "Resuelve arbitrariamente la discrepancia, inventa un cambio de opinión o confunde gustos coincidentes con ausencia de preferencia. O bien: Después de aclarar o acordar cómo comunicar la discrepancia, no aporta un mensaje contrastable con las fuentes.",
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular.",
+            "module=ingles-comunicacion-1",
+            "mode=writing",
+            "functions=preferences",
+            "coverage=DEFINED_COMMON_FIRST_GRADE_FAMILIES",
+            "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        },
+        "teacherReviewNotes": [
+          "Propuesta provisional: las fuentes atribuyen preferencias distintas a la misma persona. Aclarar qué referencia corresponde antes de exigir una preferencia única, o acordar un mensaje que atribuya expresamente cada información a su ficha sin resolver la discrepancia."
+        ]
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "07fb59644accfe335f2ecf34daabbf4f86606d4520b40125a05c9a0ba06de045"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "catalog": "evaluation-2026.171",
+  "mode": "LOCAL_ONLY_NO_DEPLOYMENT",
+  "backendTests": 98281,
+  "backendFiles": 244,
+  "frontendFocalTests": 126,
+  "frontendFiles": 7,
+  "postMatrixSourceTests": 40,
+  "results": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 107913
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 15112
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 8996
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 19418
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 28048
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 3503
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 2886
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2331
+    }
+  ],
+  "cloudflareDryRun": true,
+  "precacheEntries": 103,
+  "preferencesAsset": "instrumentos-ingles-1-preferences-YTRofcfP.js",
+  "warnings": [
+    "Informational chunks over700kB; Workbox limit unchanged"
+  ],
+  "previousOutputsExact": 828,
+  "newOutputsVerified": 56,
+  "personalBrowser": "BLOCKED_DEBUGGER_UNATTACHED",
+  "http": "NOT_TESTED_171",
+  "wholeSubjectClosed": false
+}

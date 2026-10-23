@@ -80,6 +80,8 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  const quantities=new Map<string,{unit:string;min:number[];max:number[];exact:number[]}>()
  for(const m of text.matchAll(new RegExp(`\\b(${number})\\s+(ejemplos?|parrafos?|oraciones?|fuentes?|citas?|imagenes?|apartados?|fragmentos?)\\b`,'g'))){
   const clauseBefore=text.slice(0,m.index).split(/[.;]/).at(-1)??'',after=text.slice(m.index!+m[0].length)
+  // Una cantidad conservada pertenece al borrador, no a una nueva extensión de entrega.
+  if(/\b(?:conserv\w*|manten\w*|manteng\w*)\s+(?:(?:las?|los?|otras?|otros?|mismas?|mismos?)\s+)*$/.test(clauseBefore))continue
   if(m[2].startsWith('fragmento')&&!/\b(?:justific|justifiqu|sustent|apoy|argument|inclu|cit|incorpor|anad|seleccion)[a-z]*\b/.test(clauseBefore))continue
   if(options.ignoreSelectedSourceArticle&&m[1]==='una'&&m[2]==='fuente'&&/\bseleccion[a-z]*\b/.test(clauseBefore)&&!/\b(?:inclu|entreg|anad|incorpor)[a-z]*\b/.test(clauseBefore))continue
   // Analizar insumos numerados ya dados no exige producir otra entrega con esa cantidad.

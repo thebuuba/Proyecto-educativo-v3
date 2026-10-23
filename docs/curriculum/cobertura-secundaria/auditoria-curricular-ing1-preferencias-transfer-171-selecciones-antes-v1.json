@@ -1,0 +1,96 @@
+{
+  "catalog": "evaluation-2026.171",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "ING-PREF-TR01",
+      "activityType": "OTHER",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF-TR02",
+      "activityType": "OTHER",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF-TR03",
+      "activityType": "READING_COMPREHENSION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF-TR04",
+      "activityType": "ORAL_PRESENTATION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "presentacion",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF-TR05",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF-TR06",
+      "activityType": "READING_COMPREHENSION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

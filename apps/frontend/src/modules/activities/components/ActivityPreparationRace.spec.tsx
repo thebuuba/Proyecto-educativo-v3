@@ -8,6 +8,8 @@ import { newActivityDraft, type ActivityDraft } from './editor/editorModel'
 import { editableFallbackRecommendation, preparationFingerprint, recommendationToFields } from '../services/instrumentPreparation'
 import { scoreInstrumentFields, scoreRecommendation } from '../services/instrumentScoring'
 import { readActivityDrafts } from '../utils/activityDraftStorage'
+import preferenceBank from '../../../../../../data/evaluation-instruments/curricular-audit/ing1-gustos-preferencias-independiente-v1.json'
+import preferenceTransfer from '../../../../../../data/evaluation-instruments/curricular-audit/ing1-gustos-preferencias-transferencia-reservada-v1.json'
 
 vi.mock('@/modules/grading/components/ActivityDescriptionEditor', () => ({
   ActivityDescriptionEditor: ({ value, onChange }: { value: string; onChange: (value: string) => void }) => (
@@ -40,6 +42,22 @@ async function advance(ms: number) {
 }
 
 describe('automatic instrument preparation request lifecycle', () => {
+  for(const item of [
+    {...preferenceBank.cases.find(c=>c.id==='ING-PREF08')!,message:/Propuesta provisional: acordar producto/},
+    {...preferenceTransfer.effectivePayloads.find(c=>c.caseId==='ING-PREF-TR06')!.payload,message:/las fuentes atribuyen preferencias distintas/},
+  ])it('conserva la incertidumbre de preferencias en la recuperación local: '+item.title,async()=>{
+    vi.spyOn(api,'post').mockRejectedValue(new ApiError(503,'Servicio no disponible'))
+    mount({name:item.title,description:item.description,pedagogicalActivityType:''},{level:'SECONDARY',grade:1,subjectCode:'ING'})
+    await advance(500);await advance(1000)
+    expect(screen.getByText(item.message)).toBeVisible()
+    const draft=readActivityDrafts(context)[0].draft as ActivityDraft
+    expect(draft.preparedRecommendation?.confidence).toBe('LOW')
+    expect(draft.preparedRecommendation?.selectedCurriculumElements).toEqual([])
+    expect(draft.maxScore).toBe('')
+    expect(draft.preparedRecommendation?.totalScoreUnits).toBe(0)
+    expect(JSON.stringify(draft.preparedRecommendation?.criteria)).not.toContain('Propuesta provisional:')
+    expect(screen.queryByText('Preparando el instrumento de evaluación…')).not.toBeInTheDocument()
+  })
   it('muestra la incertidumbre de una consigna fuera de los criterios y conserva puntuación pendiente', async () => {
     vi.spyOn(api, 'post').mockRejectedValue(new ApiError(503, 'Servicio no disponible'))
     mount({name:'Presentaciones para el primer encuentro',description:'Cada estudiante preparará su presentación personal en inglés para el primer encuentro del grupo.',pedagogicalActivityType:''}, {level:'SECONDARY',grade:1,subjectCode:'ING'})

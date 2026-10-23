@@ -81,7 +81,7 @@
         "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:0",
         "167c3938-fc50-53f1-ae5b-a7f2ad704408:audit170:1"
       ],
-      "staticUpdate170": "Ruta personal conectada; revisión independiente v6 aceptada para60 instrumentos definidos y8controles provisionales. Asignatura abierta; HTTP170 y navegador no probados.",
+      "staticUpdate170": "Ruta personal revisada localmente:60 instrumentos definidos y8 controles provisionales. Cuatro muestras HTTP170 verificadas en Development; navegador personal bloqueado. Asignatura abierta.",
       "reviewedActivityRefs": [
         "ING-PER01",
         "ING-PER02",
@@ -107,13 +107,31 @@
         "preferences"
       ],
       "codeStatus": "CONNECTED",
-      "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-      "activityRefs": [],
+      "evidenceStatus": "LOCAL_FUNCTIONAL_SCOPE_REVIEWED",
+      "activityRefs": [
+        "ING-PREF01",
+        "ING-PREF04",
+        "ING-PREF05",
+        "ING-PREF06",
+        "ING-PREF07",
+        "ING-PREF-TR03",
+        "ING-PREF-TR04",
+        "ING-PREF-TR05"
+      ],
       "acceptedEvidenceRefs": [],
-      "limits": [],
+      "limits": [
+        "Preferencias sobre lugares; biblioteca/club como contexto no acredita elegir entre lugares.",
+        "Opciones que favorecen salud y medioambiente; silencio/materiales no acreditan esta relación.",
+        "Recursos lingüísticos explícitos, like/prefer/enjoy y combinaciones gramaticales o léxicas aún por auditar.",
+        "Comparación sociocultural, no acreditada por gustos/preferencias personales."
+      ],
       "componentRefs": [
         "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
         "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1"
+      ],
+      "ambiguousControlRefs": [
+        "ING-PREF08",
+        "ING-PREF-TR06"
       ]
     },
     {
@@ -1680,12 +1698,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-geography"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1723,12 +1750,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-arts"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1766,12 +1802,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-daily"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1809,12 +1854,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-leisure"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1852,12 +1906,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-food"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1895,12 +1958,21 @@
             134
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-address"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -1970,7 +2042,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         },
         {
           "componentKey": "c421df3e-c90e-5e5e-b840-695992240c71:audit170:1",
@@ -1988,9 +2063,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Ceremonias no se selecciona como entrada autónoma del proveedor celebrations."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -2466,13 +2545,119 @@
           "providerIds": [
             "ing-1-preferences"
           ],
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": [
-            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          "evidenceStatus": "LOCAL_FUNCTIONAL_SCOPE_REVIEWED",
+          "activityRefs": [
+            "ING-PREF01",
+            "ING-PREF07",
+            "ING-PREF-TR04",
+            "ING-PREF-TR05"
           ],
-          "staticMappingOnly": true
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF01",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "ORAL_PRODUCTION",
+              "scope": "Expresar oralmente un gusto propio o de un personaje; sin fuente inventada.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF07",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+              "scope": "Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas.",
+              "condition": "Elige expresar un gusto",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR04",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "ORAL_PRODUCTION_NO_EXCHANGE",
+              "scope": "Gusto y desagrado de ambos personajes; fidelidad de referente, actividad y polaridad.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR05",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_WRITTEN_RESPONSE_NO_EXCHANGE",
+              "scope": "Una respuesta contextualizada: preferencia, ausencia de preferencia O desagrado por ambas; elipsis válida.",
+              "condition": "Comunica desagrado por ambas actividades",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas.",
+            "Cierre limitado al acto funcional practicado. Comprensión y preparación de preguntas no acreditan expresión; ramas OR no se acumulan. Contextos y recursos vinculados siguen abiertos."
+          ],
+          "staticMappingOnly": false,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "localFunctionalClosure": {
+            "status": "REVIEWED_WITH_LINKED_OPEN_CURRICULAR_CONTEXTS",
+            "catalog": "evaluation-2026.171",
+            "auditor": "/root/auditor_curricular",
+            "reviewManifest": "auditoria-curricular-ing1-171-lectura56-v1.json",
+            "wholeCurricularPreferenceCoverage": false,
+            "remaining": [
+              {
+                "ids": [
+                  "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+                  "25ee4c2a-c2eb-5aeb-9505-d16c231d0927"
+                ],
+                "scope": "Preferencias sobre lugares; biblioteca/club como contexto no acredita elegir entre lugares."
+              },
+              {
+                "ids": [
+                  "b6a7e120-af0f-539b-99de-d38274077921",
+                  "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81"
+                ],
+                "scope": "Opciones que favorecen salud y medioambiente; silencio/materiales no acreditan esta relación."
+              },
+              {
+                "ids": [
+                  "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc"
+                ],
+                "scope": "Recursos lingüísticos explícitos, like/prefer/enjoy y combinaciones gramaticales o léxicas aún por auditar."
+              },
+              {
+                "ids": [
+                  "835011cb-d843-5aec-b44e-270a647f9c88",
+                  "08ba2718-53f0-5345-8871-d2caa1751d5f"
+                ],
+                "scope": "Comparación sociocultural, no acreditada por gustos/preferencias personales."
+              }
+            ]
+          }
         },
         {
           "componentKey": "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
@@ -2486,13 +2671,149 @@
           "providerIds": [
             "ing-1-preferences"
           ],
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": [
-            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas."
+          "evidenceStatus": "LOCAL_FUNCTIONAL_SCOPE_REVIEWED",
+          "activityRefs": [
+            "ING-PREF04",
+            "ING-PREF05",
+            "ING-PREF06",
+            "ING-PREF07",
+            "ING-PREF-TR03",
+            "ING-PREF-TR05"
           ],
-          "staticMappingOnly": true
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Cada participante pregunta y responde fielmente; compara elecciones y respeta diferencias.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF05",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "scope": "Revisar sentido de la preferencia; conservar otras oraciones. No acredita revisión gramatical automática.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF06",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "WRITTEN_PRODUCTION",
+              "scope": "Preferencia entre lectura/dibujo y razón sobre condiciones dadas; no exige un conector único.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF07",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+              "scope": "Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas.",
+              "condition": "Elige expresar una preferencia",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Intercambio escrito con pregunta/respuesta de cada participante y notas devueltas/vinculadas; ausencia de preferencia válida.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR05",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_WRITTEN_RESPONSE_NO_EXCHANGE",
+              "scope": "Una respuesta contextualizada: preferencia, ausencia de preferencia O desagrado por ambas; elipsis válida.",
+              "condition": "Comunica preferencia o ausencia de preferencia",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [
+            "Acto y modalidad según consigna. Conexión estática no acredita calidad; comprensión, preparación e intercambio realizado mantienen evidencias distintas.",
+            "Cierre limitado al acto funcional practicado. Comprensión y preparación de preguntas no acreditan expresión; ramas OR no se acumulan. Contextos y recursos vinculados siguen abiertos."
+          ],
+          "staticMappingOnly": false,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "localFunctionalClosure": {
+            "status": "REVIEWED_WITH_LINKED_OPEN_CURRICULAR_CONTEXTS",
+            "catalog": "evaluation-2026.171",
+            "auditor": "/root/auditor_curricular",
+            "reviewManifest": "auditoria-curricular-ing1-171-lectura56-v1.json",
+            "wholeCurricularPreferenceCoverage": false,
+            "remaining": [
+              {
+                "ids": [
+                  "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+                  "25ee4c2a-c2eb-5aeb-9505-d16c231d0927"
+                ],
+                "scope": "Preferencias sobre lugares; biblioteca/club como contexto no acredita elegir entre lugares."
+              },
+              {
+                "ids": [
+                  "b6a7e120-af0f-539b-99de-d38274077921",
+                  "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81"
+                ],
+                "scope": "Opciones que favorecen salud y medioambiente; silencio/materiales no acreditan esta relación."
+              },
+              {
+                "ids": [
+                  "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc"
+                ],
+                "scope": "Recursos lingüísticos explícitos, like/prefer/enjoy y combinaciones gramaticales o léxicas aún por auditar."
+              },
+              {
+                "ids": [
+                  "835011cb-d843-5aec-b44e-270a647f9c88",
+                  "08ba2718-53f0-5345-8871-d2caa1751d5f"
+                ],
+                "scope": "Comparación sociocultural, no acreditada por gustos/preferencias personales."
+              }
+            ]
+          }
         }
       ],
       "decomposition170": {
@@ -3794,16 +4115,36 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF03"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF03",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "LISTENING_COMPREHENSION",
+              "scope": "Asociar gusto/preferencia y ausencia según el mensaje escuchado; repetición permitida no exigida.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
           "modality": "listening",
           "requiredByCartesianProduct": false,
-          "applicabilityReviewRequired": true
+          "applicabilityReviewRequired": true,
+          "staticMappingOnly": false
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:8:reading",
@@ -3814,16 +4155,51 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF02",
+            "ING-PREF-TR01"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF02",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "READING_COMPREHENSION",
+              "scope": "Distinguir gusto, desagrado, preferencia y dato ausente por personaje.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR01",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "READING_COMPREHENSION",
+              "scope": "Contrastar afirmaciones y sustento textual; ausencia explícita de preferencia distinta de dato ausente.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [
             "La evidencia de una modalidad no acredita automáticamente la otra."
           ],
           "modality": "reading",
           "requiredByCartesianProduct": false,
-          "applicabilityReviewRequired": true
+          "applicabilityReviewRequired": true,
+          "staticMappingOnly": false
         },
         {
           "componentKey": "1bd418ab-727e-544d-b821-73ff8cf83bda:9:listening",
@@ -4588,12 +4964,32 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF04"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Cada participante pregunta y responde fielmente; compara elecciones y respeta diferencias.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [],
-          "modality": "oral-production"
+          "modality": "oral-production",
+          "staticMappingOnly": false
         },
         {
           "componentKey": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e:1",
@@ -4636,12 +5032,49 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF07",
+            "ING-PREF-TR04"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF07",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+              "scope": "Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas.",
+              "condition": "Entrega audio",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR04",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "ORAL_PRODUCTION_NO_EXCHANGE",
+              "scope": "Gusto y desagrado de ambos personajes; fidelidad de referente, actividad y polaridad.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [],
-          "modality": "oral-production"
+          "modality": "oral-production",
+          "staticMappingOnly": false
         },
         {
           "componentKey": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e:4",
@@ -4728,12 +5161,94 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF05",
+            "ING-PREF06",
+            "ING-PREF07",
+            "ING-PREF-TR03",
+            "ING-PREF-TR05"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF05",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "scope": "Revisar sentido de la preferencia; conservar otras oraciones. No acredita revisión gramatical automática.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF06",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "WRITTEN_PRODUCTION",
+              "scope": "Preferencia entre lectura/dibujo y razón sobre condiciones dadas; no exige un conector único.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF07",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+              "scope": "Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas.",
+              "condition": "Entrega mensaje en papel",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Intercambio escrito con pregunta/respuesta de cada participante y notas devueltas/vinculadas; ausencia de preferencia válida.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR05",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_WRITTEN_RESPONSE_NO_EXCHANGE",
+              "scope": "Una respuesta contextualizada: preferencia, ausencia de preferencia O desagrado por ambas; elipsis válida.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [],
-          "modality": "written-production"
+          "modality": "written-production",
+          "staticMappingOnly": false
         },
         {
           "componentKey": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:1",
@@ -4872,12 +5387,32 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF-TR02"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF-TR02",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARATION_ONLY",
+              "scope": "Preparar dos preguntas; no acredita expresión de gustos/preferencias de visitantes ni intercambio.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [],
-          "modality": "written-production"
+          "modality": "written-production",
+          "staticMappingOnly": false
         },
         {
           "componentKey": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:10",
@@ -5218,13 +5753,48 @@
           ],
           "role": "ATTITUDE_REQUIRES_OBSERVABLE_OR_PEDAGOGICAL_TREATMENT",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF04",
+            "ING-PREF-TR03"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Respeto observable durante el intercambio oral: responder sin descalificar una elección diferente; no exige acuerdo ni acredita todas las dimensiones de cortesía y asertividad.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Respeto observable durante el intercambio escrito: responder sin descalificar una elección diferente o la ausencia de preferencia; no acredita todas las dimensiones de cortesía y asertividad.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [
             "No puntuar estados internos; solo acciones solicitadas observables o tratamiento educativo documentado."
-          ]
+          ],
+          "staticMappingOnly": false
         }
       ]
     },
@@ -5533,12 +6103,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-colors"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5576,12 +6155,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-weather-words"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5618,15 +6206,104 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:0",
+            "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:1",
+            "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:2"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:0",
+          "title": "Continentes",
+          "sourceId": "7fa52114-d85a-593e-8e2a-32305056cf2e",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-lexicon-territories"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Distinguir referente geográfico; no evaluar conocimiento geográfico ni exigir las tres variantes."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:1",
+          "title": "Países",
+          "sourceId": "7fa52114-d85a-593e-8e2a-32305056cf2e",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-lexicon-territories"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Distinguir referente geográfico; no evaluar conocimiento geográfico ni exigir las tres variantes."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:2",
+          "title": "Ciudades",
+          "sourceId": "7fa52114-d85a-593e-8e2a-32305056cf2e",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-lexicon-territories"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Distinguir referente geográfico; no evaluar conocimiento geográfico ni exigir las tres variantes."
+          ],
+          "mappingOrigin": "STATIC"
         }
-      ]
+      ],
+      "decompositionConceptAudit170": {
+        "childKeys": [
+          "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:0",
+          "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:1",
+          "7fa52114-d85a-593e-8e2a-32305056cf2e:concept170:2"
+        ],
+        "evidenceInherited": false,
+        "auditor": "/root/auditor_curricular"
+      }
     },
     {
       "official": {
@@ -5662,12 +6339,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-sports"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5705,12 +6391,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-weekdays"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5748,12 +6443,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-seasons"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5791,12 +6495,22 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas.",
+            "Conservar familia y ejemplos oficiales, incluido earthquake. No crear otro tema obligatorio por reclasificación externa."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-phenomena"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5834,12 +6548,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-shapes"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5877,12 +6600,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-personality"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5920,12 +6652,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-music"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -5963,12 +6704,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-languages"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6006,12 +6756,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-building-places"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6049,12 +6808,22 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "PARTIAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas.",
+            "Selección parcial: reconoce lugares públicos/de la ciudad, no el rótulo genérico lugares."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-public-places"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6092,12 +6861,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-transport"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6135,12 +6913,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-family"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6177,15 +6964,78 @@
           "sourcePages": [
             135
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:0",
+            "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:0",
+          "title": "Mobiliario del hogar",
+          "sourceId": "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-lexicon-furniture"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Variantes de referente/contexto; no dos productos obligatorios ni aceptación heredada."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:1",
+          "title": "Mobiliario de oficina",
+          "sourceId": "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22",
+          "sourcePages": [
+            135
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-lexicon-furniture"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Variantes de referente/contexto; no dos productos obligatorios ni aceptación heredada."
+          ],
+          "mappingOrigin": "STATIC"
         }
-      ]
+      ],
+      "decompositionConceptAudit170": {
+        "childKeys": [
+          "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:0",
+          "c7fabff3-33bb-5bb7-a46a-343b4f2a5c22:concept170:1"
+        ],
+        "evidenceInherited": false,
+        "auditor": "/root/auditor_curricular"
+      }
     },
     {
       "official": {
@@ -6221,12 +7071,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-nationalities"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6264,12 +7123,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-names"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6307,12 +7175,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-cardinal"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6350,12 +7227,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-ordinal"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6393,12 +7279,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-jobs"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6436,12 +7331,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-body"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6479,12 +7383,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-belongings"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6522,12 +7435,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-cooking"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6565,12 +7487,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-compass"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6608,12 +7539,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-appearance"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6683,7 +7623,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         },
         {
           "componentKey": "22515585-556a-5e1f-a327-b63fbe59b27e:audit170:1",
@@ -6701,9 +7644,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Accesorios aparece en descriptor, pero selección exige ropa/clothing u otra expresión reconocida."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -6748,12 +7695,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-sizes"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6791,12 +7747,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-chores"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6834,12 +7799,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-titles"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6877,12 +7851,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-equipment"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -6920,12 +7903,21 @@
             135
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La selección de la familia léxica requiere señal de vocabulario; mencionar el tema no acredita su léxico. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-travel"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "sourceId": "b6043d32-f392-5b3a-aacc-2bfb7508b10a",
@@ -8242,12 +9234,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-greeting"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8285,12 +9286,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-farewell"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8328,12 +9338,22 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas.",
+            "Conservar presentar a otra persona, explícito en fuente; autopresentación no acredita esa variante."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-introduction"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8371,12 +9391,22 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas.",
+            "Expresión usada en el aula; no acredita toda interacción ni respuesta posterior."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-classroom"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8414,12 +9444,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-interruption"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8489,7 +9528,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         },
         {
           "componentKey": "33632ee9-09d8-5495-9dde-255ee0e4ed2d:audit170:1",
@@ -8509,7 +9551,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -8576,7 +9621,7 @@
             136
           ],
           "role": "EVALUABLE_SUBCOMPONENT",
-          "codeStatus": "CONNECTED",
+          "codeStatus": "PARTIAL",
           "providerIds": [
             "ing-1-lexicon-translation"
           ],
@@ -8584,9 +9629,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Pedir cómo expresar una palabra en inglés es variante productiva; el propósito actual se centra en comprender un mensaje."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         },
         {
           "componentKey": "e3f38d4d-affa-550d-a0d0-85b15d18d154:audit170:1",
@@ -8606,7 +9655,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -8683,7 +9735,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         },
         {
           "componentKey": "a62c474f-82a7-5534-829f-388e0d2958a4:audit170:1",
@@ -8703,7 +9758,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -8748,12 +9806,22 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-attention"
+          ],
+          "mappingOrigin": "STATIC",
+          "countCoverageOnce": true
         }
       ]
     },
@@ -8791,12 +9859,22 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-attention"
+          ],
+          "mappingOrigin": "STATIC",
+          "countCoverageOnce": true
         }
       ]
     },
@@ -8834,12 +9912,22 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas.",
+            "Aceptar o rechazar según respuesta elegida; no ambas ni transferencia automática."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-invitation-response"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8877,12 +9965,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-excuse"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8920,12 +10017,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-thanks"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -8963,12 +10069,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-dates"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -9006,12 +10121,21 @@
             136
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-lexicon.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La expresión debe corresponder a la actuación solicitada. Su selección no exige una señal adicional de vocabulario. Comprensión y producción conservan evidencias distintas."
+          ],
+          "providerIds": [
+            "ing-1-lexicon-hours"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -9094,15 +10218,234 @@
           "sourcePages": [
             136
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:0",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:1",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:2",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:3",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:4",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:5",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:6",
+            "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:7"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:0",
+          "title": "Solicitar información personal",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:1",
+          "title": "Ofrecer información personal",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:2",
+          "title": "Referirse a actividades cotidianas",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:3",
+          "title": "Expresar opiniones",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:4",
+          "title": "Describir personas",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:5",
+          "title": "Describir objetos",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:6",
+          "title": "Describir lugares",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:7",
+          "title": "Describir condiciones atmosféricas",
+          "sourceId": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+          "sourcePages": [
+            136
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-present-simple"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "La forma no acredita las ocho funciones. Solicitud personal con requisito gramatical/léxico explícito evita la ruta especializada; reproducción funcional pendiente."
+          ],
+          "mappingOrigin": "STATIC"
         }
-      ]
+      ],
+      "decompositionConceptAudit170": {
+        "childKeys": [
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:0",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:1",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:2",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:3",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:4",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:5",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:6",
+          "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4:concept170:7"
+        ],
+        "evidenceInherited": false,
+        "auditor": "/root/auditor_curricular"
+      }
     },
     {
       "official": {
@@ -9171,7 +10514,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:1",
@@ -9191,7 +10537,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc:audit170:2",
@@ -9211,7 +10560,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -9289,7 +10641,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "fbb73712-1736-5278-ae5b-71cec1a56c5b:audit170:1",
@@ -9299,7 +10654,7 @@
             136
           ],
           "role": "EVALUABLE_SUBCOMPONENT",
-          "codeStatus": "CONNECTED",
+          "codeStatus": "PARTIAL",
           "providerIds": [
             "ing-1-feature-present-continuous"
           ],
@@ -9307,9 +10662,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Acción en desarrollo no acredita rechazo de invitación; requiere evidencia funcional propia."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -9663,13 +11022,33 @@
           "providerIds": [
             "ing-1-strategy-revision"
           ],
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "activityRefs": [
+            "ING-PREF05"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF05",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "scope": "Revisar sentido de la preferencia; conservar otras oraciones. No acredita revisión gramatical automática.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": false,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ]
         },
         {
           "componentKey": "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:1",
@@ -10512,9 +11891,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
+          "limits": [
+            "Continuación de ejemplo de la fuente padre; no constituye tema evaluable independiente."
+          ],
           "continues": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
-          "assessable": false
+          "assessable": false,
+          "parentSourceId": "fbb73712-1736-5278-ae5b-71cec1a56c5b",
+          "inheritedProviderIds": [
+            "ing-1-feature-present-continuous"
+          ],
+          "countAsSeparateCoverageUnit": false
         }
       ]
     },
@@ -10552,12 +11938,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-past-simple"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -10595,12 +11989,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-present-perfect"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -10643,9 +12045,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
+          "limits": [
+            "Continuación de ejemplo de la fuente padre; no constituye tema evaluable independiente."
+          ],
           "continues": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
-          "assessable": false
+          "assessable": false,
+          "parentSourceId": "5f7c0409-c651-5982-9c9d-fc10b3a03fcc",
+          "inheritedProviderIds": [
+            "ing-1-feature-present-perfect"
+          ],
+          "countAsSeparateCoverageUnit": false
         }
       ]
     },
@@ -10688,7 +12097,9 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
+          "limits": [
+            "Petición gramatical efectiva; nombre propio Will o forma en material de referencia no constituye requisito. Conservar alternativa elegida."
+          ],
           "disaggregationPending": false,
           "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
           "countAsSeparateCoverageUnit": false,
@@ -10713,9 +12124,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Petición gramatical efectiva; nombre propio Will o forma en material de referencia no constituye requisito. Conservar alternativa elegida."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "1e4a1a5d-433a-5f7b-932e-24a085dc1846:audit170:1",
@@ -10733,9 +12148,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Petición gramatical efectiva; nombre propio Will o forma en material de referencia no constituye requisito. Conservar alternativa elegida."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -10812,7 +12231,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "f80d9b6e-457d-5c52-bf79-fbcc5bd1518f:audit170:1",
@@ -10832,7 +12254,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -10909,7 +12334,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "631863ec-2df1-50b4-ade9-ca2caf8bfeb9:audit170:1",
@@ -10929,7 +12357,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -10974,12 +12405,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-there-be"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11016,15 +12455,78 @@
           "sourcePages": [
             137
           ],
-          "role": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "role": "AGGREGATE_WITH_CHILDREN",
           "codeStatus": "NOT_YET_MAPPED",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [],
+          "originalRole": "SOURCE_COMPONENT_TO_CLASSIFY",
+          "countAsSeparateCoverageUnit": false,
+          "childComponentKeys": [
+            "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:0",
+            "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:1"
+          ],
+          "disaggregationPending": false
+        },
+        {
+          "componentKey": "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:0",
+          "title": "Dar indicaciones e instrucciones",
+          "sourceId": "b793c8d2-d589-5a6b-a020-627869ffb059",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "CONNECTED_CONDITIONAL",
+          "providerIds": [
+            "ing-1-feature-imperative"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "No crear cuatro obligaciones automáticas. Seguir requiere realizar la acción cuando se pide ejecución: identificar el imperativo o relacionar instrucción/acción no la demuestra. No hay proveedor específico de ejecución."
+          ],
+          "mappingOrigin": "STATIC"
+        },
+        {
+          "componentKey": "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:1",
+          "title": "Seguir indicaciones e instrucciones",
+          "sourceId": "b793c8d2-d589-5a6b-a020-627869ffb059",
+          "sourcePages": [
+            137
+          ],
+          "role": "EVALUABLE_SUBCOMPONENT",
+          "codeStatus": "PARTIAL",
+          "providerIds": [
+            "ing-1-feature-imperative"
+          ],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
+          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
+          "activityRefs": [],
+          "acceptedEvidenceRefs": [],
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "No crear cuatro obligaciones automáticas. Seguir requiere realizar la acción cuando se pide ejecución: identificar el imperativo o relacionar instrucción/acción no la demuestra. No hay proveedor específico de ejecución."
+          ],
+          "mappingOrigin": "STATIC"
         }
-      ]
+      ],
+      "decompositionConceptAudit170": {
+        "childKeys": [
+          "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:0",
+          "b793c8d2-d589-5a6b-a020-627869ffb059:concept170:1"
+        ],
+        "evidenceInherited": false,
+        "auditor": "/root/auditor_curricular"
+      }
     },
     {
       "official": {
@@ -11060,12 +12562,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-lets"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11103,13 +12613,22 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
-          "disaggregationPending": true
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada.",
+            "Una unidad conceptual; sus dos ejemplos no obligan a nuevos hijos. Variantes solo cuando la actividad las solicita."
+          ],
+          "disaggregationPending": false,
+          "providerIds": [
+            "ing-1-feature-question-tags"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11147,12 +12666,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-possessive-s"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11222,7 +12749,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "8426b0bc-2090-560a-a7d3-19cc340ea979:audit170:1",
@@ -11242,7 +12772,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -11287,12 +12820,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-qualifying-adjectives"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11360,9 +12901,13 @@
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
           "limits": [
-            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
+            "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso.",
+            "Igualdad as…as requiere comprobación propia; la familia no la acredita automáticamente."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         },
         {
           "componentKey": "65eecefb-fb45-52f0-bf18-93ad88b2acb8:audit170:1",
@@ -11382,7 +12927,10 @@
           "limits": [
             "No exigir alternativas simultáneamente ni heredar aceptación de una variante a otra. Procedimientos requieren evidencia observable; producto final no acredita proceso."
           ],
-          "staticMappingOnly": true
+          "staticMappingOnly": true,
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ]
         }
       ],
       "decomposition170": {
@@ -11427,12 +12975,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-possessive-adjectives"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11470,12 +13026,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-interrogative-pronouns"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11513,12 +13077,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-object-pronouns"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11556,12 +13128,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-possessive-pronouns"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11599,12 +13179,20 @@
             137
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-time-prepositions"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11647,9 +13235,16 @@
           "providerRefs": [],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": [],
+          "limits": [
+            "Continuación de ejemplo de la fuente padre; no constituye tema evaluable independiente."
+          ],
           "continues": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
-          "assessable": false
+          "assessable": false,
+          "parentSourceId": "d9faf613-fd78-5bc5-ba5b-f65e4ddcc371",
+          "inheritedProviderIds": [
+            "ing-1-feature-time-prepositions"
+          ],
+          "countAsSeparateCoverageUnit": false
         },
         {
           "componentKey": "64fa6c1a-6d2a-56f3-b3c1-82053cfbc060:1",
@@ -11659,12 +13254,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-place-prepositions"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11702,12 +13305,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-time-adverbs"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "c44f35a2-1cf0-5661-b04d-5d1dc9766538:1",
@@ -11717,12 +13328,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-frequency-adverbs"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "c44f35a2-1cf0-5661-b04d-5d1dc9766538:2",
@@ -11732,12 +13351,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-manner-adverbs"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "c44f35a2-1cf0-5661-b04d-5d1dc9766538:3",
@@ -11747,12 +13374,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-degree-adverbs"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "c44f35a2-1cf0-5661-b04d-5d1dc9766538:4",
@@ -11762,12 +13397,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-certainty-adverbs"
+          ],
+          "mappingOrigin": "STATIC"
         }
       ]
     },
@@ -11805,12 +13448,25 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-coordination-connectors"
+          ],
+          "mappingOrigin": "STATIC",
+          "conditionalVariants": [
+            "suma",
+            "alternativa",
+            "contraste"
+          ]
         },
         {
           "componentKey": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3:1",
@@ -11820,12 +13476,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-time-connectors"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3:2",
@@ -11835,12 +13499,20 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-sequence-connectors"
+          ],
+          "mappingOrigin": "STATIC"
         },
         {
           "componentKey": "f0cfdfd1-4176-582d-9a5c-fbdec0345ed3:3",
@@ -11850,12 +13522,24 @@
             138
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
-          "codeStatus": "NOT_YET_MAPPED",
+          "codeStatus": "CONNECTED_CONDITIONAL",
           "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-grammar.ts"
+          ],
           "activityRefs": [],
           "acceptedEvidenceRefs": [],
-          "limits": []
+          "limits": [
+            "Conexión estática condicionada a la consigna. Identificar, emplear y cumplir la función comunicativa son alcances distintos. Los ejemplos no constituyen listas obligatorias ni cobertura aceptada."
+          ],
+          "providerIds": [
+            "ing-1-feature-cause-connectors"
+          ],
+          "mappingOrigin": "STATIC",
+          "conditionalVariants": [
+            "causa",
+            "consecuencia"
+          ]
         }
       ]
     },
@@ -11894,12 +13578,62 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF02",
+            "ING-PREF03",
+            "ING-PREF-TR01"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF02",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "READING_COMPREHENSION",
+              "scope": "Componente acotado: Distinguir gusto, desagrado, preferencia y dato ausente por personaje. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF03",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "LISTENING_COMPREHENSION",
+              "scope": "Componente acotado: Asociar gusto/preferencia y ausencia según el mensaje escuchado; repetición permitida no exigida. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR01",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "READING_COMPREHENSION",
+              "scope": "Componente acotado: Contrastar afirmaciones y sustento textual; ausencia explícita de preferencia distinta de dato ausente. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
           "limits": [],
-          "disaggregationPending": true
+          "disaggregationPending": true,
+          "staticMappingOnly": false
         }
       ],
       "partialEvidence170": {
@@ -12006,11 +13740,110 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": []
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF01",
+            "ING-PREF05",
+            "ING-PREF06",
+            "ING-PREF07",
+            "ING-PREF-TR04",
+            "ING-PREF-TR05"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF01",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "ORAL_PRODUCTION",
+              "scope": "Componente acotado: Expresar oralmente un gusto propio o de un personaje; sin fuente inventada. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF05",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "REVISION_ONLY",
+              "scope": "Componente acotado: Revisar sentido de la preferencia; conservar otras oraciones. No acredita revisión gramatical automática. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF06",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "WRITTEN_PRODUCTION",
+              "scope": "Componente acotado: Preferencia entre lectura/dibujo y razón sobre condiciones dadas; no exige un conector único. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF07",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+              "scope": "Componente acotado: Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas. No acredita la totalidad del indicador o actitud.",
+              "condition": "Solo la alternativa efectivamente realizada",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR04",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "ORAL_PRODUCTION_NO_EXCHANGE",
+              "scope": "Componente acotado: Gusto y desagrado de ambos personajes; fidelidad de referente, actividad y polaridad. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR05",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PREPARED_WRITTEN_RESPONSE_NO_EXCHANGE",
+              "scope": "Componente acotado: Una respuesta contextualizada: preferencia, ausencia de preferencia O desagrado por ambas; elipsis válida. No acredita la totalidad del indicador o actitud.",
+              "condition": "Solo la alternativa efectivamente realizada",
+              "notCumulative": true,
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [],
+          "staticMappingOnly": false
         }
       ]
     },
@@ -12049,11 +13882,46 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": []
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF04",
+            "ING-PREF-TR03"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Componente acotado: Cada participante pregunta y responde fielmente; compara elecciones y respeta diferencias. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Componente acotado: Intercambio escrito con pregunta/respuesta de cada participante y notas devueltas/vinculadas; ausencia de preferencia válida. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [],
+          "staticMappingOnly": false
         }
       ]
     },
@@ -12178,11 +14046,46 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": []
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF04",
+            "ING-PREF-TR03"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Componente acotado: Cada participante pregunta y responde fielmente; compara elecciones y respeta diferencias. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Componente acotado: Intercambio escrito con pregunta/respuesta de cada participante y notas devueltas/vinculadas; ausencia de preferencia válida. No acredita la totalidad del indicador o actitud.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [],
+          "staticMappingOnly": false
         }
       ]
     },
@@ -12828,11 +14731,46 @@
           ],
           "role": "SOURCE_COMPONENT_TO_CLASSIFY",
           "codeStatus": "NOT_YET_MAPPED",
-          "evidenceStatus": "PENDING_INDEPENDENT_REVIEW",
-          "providerRefs": [],
-          "activityRefs": [],
-          "acceptedEvidenceRefs": [],
-          "limits": []
+          "evidenceStatus": "PARTIAL_COMPONENT_REVIEWED_LOCAL",
+          "providerRefs": [
+            "packages/shared/src/secondary-english-grade-one-preferences.ts"
+          ],
+          "activityRefs": [
+            "ING-PREF04",
+            "ING-PREF-TR03"
+          ],
+          "acceptedEvidenceRefs": [
+            {
+              "caseId": "ING-PREF04",
+              "manifest": "auditoria-curricular-ing1-preferencias-171-revisar-v4.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_ORAL_EXCHANGE",
+              "scope": "Respeto observable durante el intercambio oral: responder sin descalificar una elección diferente; no exige acuerdo ni acredita todas las dimensiones de cortesía y asertividad.",
+              "http": false,
+              "personalBrowser": false
+            },
+            {
+              "caseId": "ING-PREF-TR03",
+              "manifest": "auditoria-curricular-ing1-preferencias-transfer-171-revisar-despues-v1.json",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "phase": "PERFORMED_WRITTEN_EXCHANGE",
+              "scope": "Respeto observable durante el intercambio escrito: responder sin descalificar una elección diferente o la ausencia de preferencia; no acredita todas las dimensiones de cortesía y asertividad.",
+              "http": false,
+              "personalBrowser": false
+            }
+          ],
+          "limits": [],
+          "staticMappingOnly": false
         }
       ]
     }
@@ -12919,7 +14857,7 @@
     "acceptedActivities": 0,
     "acceptedOutputs": 0,
     "remaining": [
-      "Primer bloque personal y controles de transferencia revisados localmente (60 instrumentos de tareas definidas,8 controles provisionales). Pendiente HTTP170 y continuidad por los demás componentes.",
+      "HTTP170 verificado mediante cuatro muestras representativas en Development; HTTP171 pendiente; navegador personal pendiente. Continuidad curricular abierta.",
       "Completar clasificación y vínculos exactos de todos los componentes oficiales sin perder continuaciones.",
       "Auditar las demás funciones, léxico, expresiones, gramática, géneros/modalidades, estrategias, actitudes e indicadores con varias actividades pertinentes.",
       "Verificación operativa final y recorrido visual personal cuando sea accesible."
@@ -13096,13 +15034,13 @@
   },
   "componentMappingAudit170": {
     "auditor": "/root/auditor_curricular",
-    "kind": "SELECTIVE_STATIC_INTEGRATION",
+    "kind": "STATIC_CONCEPT_MAP_WITH_OPEN_PEDAGOGICAL_AUDIT",
     "officialRowsPreserved": 201,
     "conceptRowsRead": 96,
     "procedureRowsRead": 53,
-    "fullConceptMapIntegrated": false,
+    "fullConceptMapIntegrated": true,
     "newEvidenceAccepted": false,
-    "remaining": "Integrar el resto del mapa estático y auditar actividades e instrumentos por componente. No cerrar asignatura por esta clasificación."
+    "remaining": "Auditar actividades y cuatro instrumentos por componente. Resolver reservas de selección, gramática/función y ejecución. Conexión estática no acredita cobertura."
   },
   "firstBlockReview170": {
     "status": "LOCAL_PEDAGOGICAL_REVIEW_ACCEPTED_WITH_PROVISIONAL_CONTROLS",
@@ -13113,13 +15051,191 @@
     "acceptedCurricularOutputs": 60,
     "acceptedProvisionalOutputs": 8,
     "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-lectura68-v6.json",
-    "http": "NOT_TESTED_170",
+    "http": "FOUR_REPRESENTATIVE_QA_SAMPLES_VERIFIED_IN_DEVELOPMENT",
     "personalBrowser": "BLOCKED_DEBUGGER_UNATTACHED",
     "wholeSubjectClosed": false,
     "acceptedRevision": "v6",
     "currentRevision": "v6",
     "currentRevisionStatus": "INDEPENDENT_REVIEW_ACCEPTED_NO_CAPTURE_RESERVATIONS",
     "previousAcceptedManifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-lectura68.json",
-    "gates": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-gates-v3.json"
+    "gates": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-gates-v3.json",
+    "runtimeProof": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-170-http-runtime.json"
+  },
+  "preferencesReview171": {
+    "status": "LOCAL_PEDAGOGICAL_REVIEW_ACCEPTED_WITH_PROVISIONAL_CONTROLS",
+    "originalOutputs": 32,
+    "transferOutputs": 24,
+    "definedTaskOutputs": 48,
+    "provisionalControlOutputs": 8,
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-171-lectura56-v1.json",
+    "matrix": [
+      {
+        "caseId": "ING-PREF01",
+        "phase": "ORAL_PRODUCTION",
+        "components": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0"
+        ],
+        "scope": "Expresar oralmente un gusto propio o de un personaje; sin fuente inventada."
+      },
+      {
+        "caseId": "ING-PREF02",
+        "phase": "READING_COMPREHENSION",
+        "components": [
+          "1bd418ab-727e-544d-b821-73ff8cf83bda:8:reading"
+        ],
+        "scope": "Distinguir gusto, desagrado, preferencia y dato ausente por personaje."
+      },
+      {
+        "caseId": "ING-PREF03",
+        "phase": "LISTENING_COMPREHENSION",
+        "components": [
+          "1bd418ab-727e-544d-b821-73ff8cf83bda:8:listening"
+        ],
+        "scope": "Asociar gusto/preferencia y ausencia según el mensaje escuchado; repetición permitida no exigida."
+      },
+      {
+        "caseId": "ING-PREF04",
+        "phase": "PERFORMED_ORAL_EXCHANGE",
+        "components": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e:0"
+        ],
+        "scope": "Cada participante pregunta y responde fielmente; compara elecciones y respeta diferencias."
+      },
+      {
+        "caseId": "ING-PREF05",
+        "phase": "REVISION_ONLY",
+        "components": [
+          "a756d91a-2d03-5366-ad41-115ba70b4ba3:audit170:0",
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:0"
+        ],
+        "scope": "Revisar sentido de la preferencia; conservar otras oraciones. No acredita revisión gramatical automática."
+      },
+      {
+        "caseId": "ING-PREF06",
+        "phase": "WRITTEN_PRODUCTION",
+        "components": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:0"
+        ],
+        "scope": "Preferencia entre lectura/dibujo y razón sobre condiciones dadas; no exige un conector único."
+      },
+      {
+        "caseId": "ING-PREF07",
+        "phase": "PREPARED_MESSAGE_NO_EXCHANGE",
+        "components": [],
+        "scope": "Contenido gusto O preferencia, medio audio O papel; acreditar solo las alternativas realizadas."
+      },
+      {
+        "caseId": "ING-PREF-TR01",
+        "phase": "READING_COMPREHENSION",
+        "components": [
+          "1bd418ab-727e-544d-b821-73ff8cf83bda:8:reading"
+        ],
+        "scope": "Contrastar afirmaciones y sustento textual; ausencia explícita de preferencia distinta de dato ausente."
+      },
+      {
+        "caseId": "ING-PREF-TR02",
+        "phase": "PREPARATION_ONLY",
+        "components": [
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:9"
+        ],
+        "scope": "Preparar dos preguntas; no acredita expresión de gustos/preferencias de visitantes ni intercambio."
+      },
+      {
+        "caseId": "ING-PREF-TR03",
+        "phase": "PERFORMED_WRITTEN_EXCHANGE",
+        "components": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:0"
+        ],
+        "scope": "Intercambio escrito con pregunta/respuesta de cada participante y notas devueltas/vinculadas; ausencia de preferencia válida."
+      },
+      {
+        "caseId": "ING-PREF-TR04",
+        "phase": "ORAL_PRODUCTION_NO_EXCHANGE",
+        "components": [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+          "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e:3"
+        ],
+        "scope": "Gusto y desagrado de ambos personajes; fidelidad de referente, actividad y polaridad."
+      },
+      {
+        "caseId": "ING-PREF-TR05",
+        "phase": "PREPARED_WRITTEN_RESPONSE_NO_EXCHANGE",
+        "components": [
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:0"
+        ],
+        "scope": "Una respuesta contextualizada: preferencia, ausencia de preferencia O desagrado por ambas; elipsis válida."
+      }
+    ],
+    "conditionalComponents": {
+      "ING-PREF07": [
+        [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+          "Elige expresar un gusto"
+        ],
+        [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "Elige expresar una preferencia"
+        ],
+        [
+          "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e:3",
+          "Entrega audio"
+        ],
+        [
+          "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa:0",
+          "Entrega mensaje en papel"
+        ]
+      ],
+      "ING-PREF-TR05": [
+        [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:0",
+          "Comunica desagrado por ambas actividades"
+        ],
+        [
+          "79ceceef-2ef9-5789-81c7-b2947a33c181:audit170:1",
+          "Comunica preferencia o ausencia de preferencia"
+        ]
+      ]
+    },
+    "provisionalControls": [
+      "ING-PREF08",
+      "ING-PREF-TR06"
+    ],
+    "pendingWithinEnglish1": [
+      {
+        "ids": [
+          "ed0f8a8f-8c0a-5efa-8ad6-8f8437b6f2dd",
+          "25ee4c2a-c2eb-5aeb-9505-d16c231d0927"
+        ],
+        "scope": "Preferencias sobre lugares; biblioteca/club como contexto no acredita elegir entre lugares."
+      },
+      {
+        "ids": [
+          "b6a7e120-af0f-539b-99de-d38274077921",
+          "dc9ca4f1-7083-5dd2-a61b-4043e8c3ce81"
+        ],
+        "scope": "Opciones que favorecen salud y medioambiente; silencio/materiales no acreditan esta relación."
+      },
+      {
+        "ids": [
+          "1ed11d2e-7cca-5cdf-bab4-a7729d0964dc"
+        ],
+        "scope": "Recursos lingüísticos explícitos, like/prefer/enjoy y combinaciones gramaticales o léxicas aún por auditar."
+      },
+      {
+        "ids": [
+          "835011cb-d843-5aec-b44e-270a647f9c88",
+          "08ba2718-53f0-5345-8871-d2caa1751d5f"
+        ],
+        "scope": "Comparación sociocultural, no acreditada por gustos/preferencias personales."
+      }
+    ],
+    "http": "NOT_TESTED_171",
+    "personalBrowser": "BLOCKED_DEBUGGER_UNATTACHED",
+    "wholeSubjectClosed": false,
+    "gates": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-171-gates-v1.json"
   }
 }

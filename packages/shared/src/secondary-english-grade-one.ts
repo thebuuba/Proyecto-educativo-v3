@@ -10,6 +10,7 @@ import {withoutResources} from './evaluation-task-text'
 import {englishContextCriteria} from './secondary-english-grade-one-context'
 import {englishProfileWithoutNarration} from './secondary-english-task-text'
 import {resolveEnglishPersonalTask,englishPersonalCriteria,type EnglishPersonalTask} from './secondary-english-grade-one-personal'
+import {resolveEnglishPreferencesTask,englishPreferencesCriteria,type EnglishPreferencesTask} from './secondary-english-grade-one-preferences'
 
 export const englishGradeOneModule={id:'ingles-comunicacion-1',grade:1,subjectCode:'ING',pdfPages:[134,135,136,137,138,139],policy:'COMMUNICATIVE_FUNCTION_MODALITY_V1'}
 
@@ -21,7 +22,7 @@ export function commonFirstGradeEnglish(context?:InstrumentAcademicContext|null)
 
 type Mode='reading'|'listening'|'interaction'|'oral'|'writing'|'audiovisual'|'alternative'|'pending'
 type FunctionId='personal'|'invitation'|'routine'|'comparison'|'instructions'|'preferences'|'clarification'|'weather'|'directions'|'experience'|'opinion'|'description'
-export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; contextText?:string; activityType:string; technique:string; actions?:EnglishTask[];personal?:EnglishPersonalTask}
+export type EnglishTask={mode:Mode; functions:FunctionId[]; text:string; evidenceText?:string; contextText?:string; activityType:string; technique:string; actions?:EnglishTask[];personal?:EnglishPersonalTask;preferences?:EnglishPreferencesTask}
 const modes:Record<Mode,{activityType:string;technique:string}>={
  reading:{activityType:'READING_COMPREHENSION',technique:'analisis-producciones'},
  listening:{activityType:'LISTENING_COMPREHENSION',technique:'observacion-sistematica'},
@@ -39,6 +40,11 @@ export function resolveFirstGradeEnglishTask(title:string,description:string,con
  // Split independent actions before normalization removes sentence boundaries. Infinitives
  // of purpose ("para describir") remain attached to their requested product.
  const raw=withoutResources(description||title).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ const preferences=!requestedEnglishGrammar(raw).length&&!requestedEnglishLexicon(raw).length&&!requestedEnglishStrategies(raw,'reading').some(s=>s.id==='cultural-comparison')?resolveEnglishPreferencesTask(raw):null
+ if(preferences){
+  const mode:Mode=preferences.kind==='claims'?'reading':['revision','questions','written-exchange'].includes(preferences.kind)?'writing':preferences.kind as Mode
+  return {preferences,mode,functions:['preferences'],text:affirmativeLanguageTask(raw),contextText:raw,...modes[mode]}
+ }
  const personal=!requestedEnglishGrammar(raw).length&&!requestedEnglishLexicon(raw).length?resolveEnglishPersonalTask(raw):null
  if(personal){
   const mode:Mode=personal.kind==='listening'?'listening':personal.kind==='reading'?'reading':personal.kind==='interaction'||personal.kind==='clarification'?'interaction':personal.kind==='oral'?'oral':personal.kind==='alternative'?'alternative':personal.kind==='presentation-pending'?'pending':'writing'
@@ -117,6 +123,7 @@ const row=(id:string,title:string,levels:ContextualTopicCriterion['progressionLe
 const list=(items:string[])=>items.length<2?items[0]:items.slice(0,-1).join(', ')+' y '+items.at(-1)
 
 export function firstGradeEnglishCriteria(task:EnglishTask):ContextualTopicCriterion[]{
+ if(task.preferences)return englishPreferencesCriteria(task.preferences)
  if(task.personal)return englishPersonalCriteria(task.personal)
  if(task.actions){
   const rows:ContextualTopicCriterion[]=[],seen=new Set<string>()

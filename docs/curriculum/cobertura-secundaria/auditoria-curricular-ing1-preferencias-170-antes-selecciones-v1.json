@@ -1,0 +1,117 @@
+{
+  "catalog": "evaluation-2026.170",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "ING-PREF01",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF02",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF03",
+      "activityType": "LISTENING_COMPREHENSION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "observacion-sistematica",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF04",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF05",
+      "activityType": "ORAL_INTERACTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF06",
+      "activityType": "READING_COMPREHENSION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF07",
+      "activityType": "READING_COMPREHENSION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PREF08",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

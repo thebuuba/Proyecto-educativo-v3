@@ -2,7 +2,7 @@ import {affirmativeLanguageTask} from './language-feature-criteria'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentRecommendation} from './instrument-recommendation'
 
-export function markEnglishPersonalProvisional(proposal:InstrumentRecommendation,note?:string):InstrumentRecommendation{
+export function markEnglishTaskProvisional(proposal:InstrumentRecommendation,note?:string):InstrumentRecommendation{
  if(!note)return proposal
  return {...proposal,teacherReviewNotes:[note],confidence:'LOW',selectedCurriculumElements:[],internalTrace:{...proposal.internalTrace,lowCurriculumConfidence:true,mappingStatus:'UNMAPPED',reasons:[...proposal.internalTrace.reasons,note]}}
 }

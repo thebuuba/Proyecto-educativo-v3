@@ -11,6 +11,10 @@ const proposal=(id:string,format:typeof formats[number])=>{
  return recommend({activityTitle:c.title,description:c.description,preferredInstrumentType:format,maxScore:17.35,participationMode:'INDIVIDUAL'},{level:'SECONDARY',grade:c.grade,cycle:c.grade<=3?1:2,subjectCode:c.subjectCode,subjectName:c.subjectName,modalityCode:c.modalityCode??null,optativeExitName:null},null,[],'UNMAPPED',null)
 }
 describe('Requisitos realistas: extracción y agrupación de presentación',()=>{
+ it('no convierte las oraciones que deben conservarse en extensión de una entrega nueva',()=>{
+  expect(deliveryConditions('Revisa una oración del mensaje y conserva las otras dos oraciones. Entrega la versión revisada junto al borrador.')).toEqual([])
+  expect(deliveryConditions('Conserva las otras dos oraciones y añade tres ejemplos.')).toEqual([{key:'quantity-ejemplo',label:'3 ejemplos'}])
+ })
  it('extrae las condiciones naturales del documento Word sin inventar medidas',()=>{
   const conditions=deliveryConditions(task('B-MF0024-formato').description)
   expect(conditions).toEqual(expect.arrayContaining([
