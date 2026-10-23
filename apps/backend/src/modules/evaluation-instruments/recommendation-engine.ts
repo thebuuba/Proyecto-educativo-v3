@@ -13,6 +13,7 @@ import { resolveCommonMathTask,commonMathCriteria,commonMathSelections,adaptMath
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity,withDeliveryCriteria,deliveryConditions} from '@aula/shared'
 import {resolveFirstGradeHealthGenre,firstGradeHealthGenreCriteria} from '@aula/shared'
+import {resolveFirstGradeTransversalTask,firstGradeTransversalCriteria,firstGradeTransversalSelections} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { adaptLanguageScale, formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -207,7 +208,9 @@ function contextualDescriptors(observable: string, indexes: number[], title: str
           : `No aporta evidencia suficiente para valorar ${title.toLocaleLowerCase('es-DO')}.`)
 }
 
-export function firstSecondaryLanguageSelections(activityType: string, description = '') {
+export function firstSecondaryLanguageSelections(activityType: string, description = '', context:AcademicContext|null=null) {
+  const transversal=resolveFirstGradeTransversalTask('',description,context)
+  if(transversal&&transversal.activityType===activityType)return{...firstGradeTransversalSelections(transversal),suggestedInstrumentType:languageInstrumentIntent(description)??firstGradeTransversalSelections(transversal).suggestedInstrumentType}
   const activity = evaluationCatalogCurrent.activityTypes.find(entry => entry.id === activityType)
   if (!activity) return null
   const rule = evaluationCatalogCurrent.recommendationRules.filter(entry => (!entry.families.length || entry.families.includes(activity.family))
@@ -331,8 +334,9 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     && (!r.maxScore || input.maxScore <= r.maxScore) && (!r.evidence || r.evidence.every(e => activity.evidence.includes(e))))
     .sort((a, b) => b.priority - a.priority || a.id.localeCompare(b.id))[0]
   const levelCount = input.levelCount ?? 4
+  const transversal=resolveFirstGradeTransversalTask(input.activityTitle,input.description??'',context)
   const instrumentIntent = context?.level === 'SECONDARY' && (context.subjectCode === 'LEN'||commonSecondaryEnglish(context)) ? languageInstrumentIntent(input.description ?? '') : undefined
-  const chosenInstrument = input.preferredInstrumentType ?? (technical?technicalSelections(technical,input.description??'').suggestedInstrumentType:undefined) ?? (optativeScience?optativeScienceSelections(optativeScience,input.description??'').suggestedInstrumentType:undefined) ?? (optativeMath?optativeMathSelections(optativeMath,input.description??'').suggestedInstrumentType:undefined) ?? (socialOptative?optativeSocialSelections(socialOptative).suggestedInstrumentType:undefined) ?? (optativeTask?optativeLanguageSelections(optativeTask).suggestedInstrumentType:undefined) ?? (fhrTask?commonFhrSelections(fhrTask).suggestedInstrumentType:undefined) ?? (physicalTask?commonPhysicalSelections(physicalTask).suggestedInstrumentType:undefined) ?? (artTask ? commonArtSelections(artTask).suggestedInstrumentType : undefined) ?? (socialTask?commonSocialSelections(socialTask,input.description??'').suggestedInstrumentType:undefined) ?? (commonScience?commonScienceSelections(commonScience,input.description??'').suggestedInstrumentType:undefined) ?? (mathTask?commonMathSelections(mathTask,input.description??'').suggestedInstrumentType:undefined) ?? (frenchTask?commonFrenchSelections(frenchTask,input.description??'').suggestedInstrumentType:undefined) ?? instrumentIntent ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
+  const chosenInstrument = input.preferredInstrumentType ?? (technical?technicalSelections(technical,input.description??'').suggestedInstrumentType:undefined) ?? (optativeScience?optativeScienceSelections(optativeScience,input.description??'').suggestedInstrumentType:undefined) ?? (optativeMath?optativeMathSelections(optativeMath,input.description??'').suggestedInstrumentType:undefined) ?? (socialOptative?optativeSocialSelections(socialOptative).suggestedInstrumentType:undefined) ?? (optativeTask?optativeLanguageSelections(optativeTask).suggestedInstrumentType:undefined) ?? (fhrTask?commonFhrSelections(fhrTask).suggestedInstrumentType:undefined) ?? (physicalTask?commonPhysicalSelections(physicalTask).suggestedInstrumentType:undefined) ?? (artTask ? commonArtSelections(artTask).suggestedInstrumentType : undefined) ?? (socialTask?commonSocialSelections(socialTask,input.description??'').suggestedInstrumentType:undefined) ?? (commonScience?commonScienceSelections(commonScience,input.description??'').suggestedInstrumentType:undefined) ?? (mathTask?commonMathSelections(mathTask,input.description??'').suggestedInstrumentType:undefined) ?? (frenchTask?commonFrenchSelections(frenchTask,input.description??'').suggestedInstrumentType:undefined) ?? instrumentIntent ?? (transversal&&transversal.activityType===activity.id?firstGradeTransversalSelections(transversal).suggestedInstrumentType:undefined) ?? (englishTask?commonEnglishSelections(englishTask,input.description??'').suggestedInstrumentType:rule.instrument)
   const scores = distributeScoreUnits(Math.round(input.maxScore * 100), chosenInstrument === 'lista-ponderada'
     ? distributeScoreUnits(10000, candidateWeights) : candidateWeights)
   const template = catalog.instrumentTemplates.find(t => t.id === chosenInstrument)!
@@ -390,6 +394,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const selectedAuthored: AuthoredCriterion[] = technical ? technicalCriteria(technical,input.description) : optativeScience ? optativeScienceCriteria(optativeScience) : optativeMath ? optativeMathCriteria(optativeMath) : socialOptative ? optativeSocialCriteria(socialOptative) : optativeTask ? optativeLanguageCriteria(optativeTask) : fhrTask ? commonFhrCriteria(fhrTask) : physicalTask ? commonPhysicalCriteria(physicalTask) : artTask ? commonArtCriteria(artTask) : socialTask ? commonSocialCriteria(socialTask) : commonScience ? commonScienceCriteria(commonScience) : mathTask ? commonMathCriteria(mathTask) : frenchTask ? commonFrenchCriteria(frenchTask) : englishTask ? commonEnglishCriteria(englishTask) : novelCriteria.length ? novelCriteria : mathTopic ? secondaryMathCriteria(mathTopic, input.description ?? '')
     : scienceTopic ? secondaryScienceCriteria(scienceTopic, input.description ?? '', chosenInstrument)
     : contextualTopic ? secondaryTopicCriteria(contextualTopic, activity.id, input.description ?? '',input.includeAdditionalCandidates)
+    : transversal&&transversal.activityType===activity.id ? firstGradeTransversalCriteria(transversal)
     : healthGenre&&healthGenre.activityType===activity.id ? firstGradeHealthGenreCriteria(healthGenre)
     : newsModule ? context?.grade === 2 ? secondGradeNewsCriteria(activity.id, input.description ?? '') : newsCriteria(activity.id, input.description ?? '')
     : touristGuideModule ? touristGuideCriteria(activity.id, input.description ?? '')
@@ -412,9 +417,10 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
     maxScore: authoredScores[index] / 100, maxScoreUnits: authoredScores[index],
     sourceType: 'CONTEXTUALIZED', sourceReferences: [],
     ...(item.progressionLevels ? {progressionLevels:[...item.progressionLevels]} : {}),
+    ...(item.fourLevelLowest ? {fourLevelLowest:item.fourLevelLowest} : {}),
     relativeWeight: item.weight,
     descriptors: levels.map((level, levelIndex) => ({ levelId: level.id,
-      text: item.progressionLevels ? item.progressionLevels[(levelCount === 4 ? [0, 1, 2, 4] : [0, 1, 2, 3, 4])[levelIndex]]
+      text: levelCount===4&&levelIndex===3&&item.fourLevelLowest ? item.fourLevelLowest : item.progressionLevels ? item.progressionLevels[(levelCount === 4 ? [0, 1, 2, 4] : [0, 1, 2, 3, 4])[levelIndex]]
         : item.progression && levelCount === 4 ? levelIndex === 0 ? item.observable : item.progression[levelIndex - 1]
         : contextualDescriptors(item.observable, authoredPatternIndexes, item.title, item.templateId)[levelIndex],
       scoreUnits: Math.round(authoredScores[index] * level.proportion) })),

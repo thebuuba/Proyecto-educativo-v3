@@ -10,6 +10,8 @@ import {sixthGradeLanguageCriteria} from './secondary-language-grade-six-complet
 export type ContextualTopicCriterion = {
   templateId: string; title: string; observable: string; weight: number
   progressionLevels: [string, string, string, string, string]
+  /** Optional authored merge of incompatible and absent evidence for four-level instruments. */
+  fourLevelLowest?: string
   checklistParts?: {key:string;observable:string;progressionLevels: [string,string,string,string,string]}[]
   coveredDeliveryKeys?: string[]
 }

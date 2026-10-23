@@ -11,6 +11,7 @@ export interface RecommendationCriterion {
   sourceType: CriterionSource; sourceReferences: CurriculumReference[]; templateId: string
   descriptors: { levelId: string; text: string; scoreUnits: number }[]
   progressionLevels?: string[]
+  fourLevelLowest?: string
   relativeWeight?: number
 }
 export interface InstrumentRecommendation {

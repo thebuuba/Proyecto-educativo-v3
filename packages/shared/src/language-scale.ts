@@ -37,7 +37,7 @@ export function adaptLanguageScale(proposal: InstrumentRecommendation, descripti
       const selected=!frequency&&criterion.progressionLevels?.length===5
         ? criterion.progressionLevels:progression
       return {...criterion,progressionLevels:[...selected],
-        descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:selected[indexes[index]]})),
+        descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:!frequency&&proposal.levels.length===4&&index===3&&criterion.fourLevelLowest ? criterion.fourLevelLowest : selected[indexes[index]]})),
       }
     }),
   }

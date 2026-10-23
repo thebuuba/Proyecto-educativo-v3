@@ -1,0 +1,1435 @@
+{
+  "catalog": "evaluation-2026.165",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "scope": "Lengua Española 1.º común",
+  "outputs": 52,
+  "cases": 13,
+  "bankIndependent": false,
+  "independentPedagogicalReviewer": "/root/revisor_pedagogico",
+  "reviewRounds": [
+    "164-antes:52+20fallback",
+    "165-v1:52",
+    "165-v2:52 mediante igualdad y lectura de variantes"
+  ],
+  "artifact": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-transversales-165-revisar-v2.json",
+  "artifactSha256": "ca53aad3f6d32020cf52d0d2131a4759372211e9f48cf55a5f9d5d76143db340",
+  "reviewerScope": "Revisión pedagógica, no ejecución de pruebas/HTTP/UI/DB",
+  "wholeSubjectClosed": false,
+  "independentReservedBankClosed": false,
+  "rows": [
+    {
+      "id": "LEN1-TRA-SCI01",
+      "sourceIndicatorIds": [
+        "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "news-structure",
+              "title": "Titular, entrada y cuerpo",
+              "requirement": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse."
+            },
+            {
+              "id": "len1-transversal-science-digital",
+              "title": "Edición digital responsable para su audiencia",
+              "requirement": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "news-structure",
+              "title": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "requirement": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles.",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse.",
+              "requirement": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse."
+            },
+            {
+              "id": "len1-transversal-science-digital",
+              "title": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo.",
+              "requirement": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "news-structure",
+              "title": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos.",
+              "requirement": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles.",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse.",
+              "requirement": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse."
+            },
+            {
+              "id": "len1-transversal-science-digital",
+              "title": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo.",
+              "requirement": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "news-structure",
+              "title": "Titular, entrada y cuerpo",
+              "requirement": "Organiza la noticia con un titular pertinente, una entrada informativa y un cuerpo que desarrolla los datos. Parcial (50%): Presenta titular y datos, pero la entrada o el desarrollo quedan incompletos."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada. Parcial (50%): Presenta parte del proceso y sus datos, pero no explica suficientemente cómo sostienen la conclusión."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles. Parcial (50%): Reconoce datos relevantes, pero presenta parte de las interpretaciones como si fueran resultados comprobados."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Reconoce la fuente del registro y las referencias de los materiales usados para que la información de la noticia pueda comprobarse. Parcial (50%): Parte de las ideas tiene procedencia reconocible, pero otras no se pueden vincular al material correspondiente."
+            },
+            {
+              "id": "len1-transversal-science-digital",
+              "title": "Edición digital responsable para su audiencia",
+              "requirement": "Prepara la edición digital para el espacio comunitario escolar con información legible, fuentes reconocibles y datos anónimos que evitan identificar personas reales; la edición permite entender el hallazgo sin exagerarlo. Parcial (50%): La edición digital comunica parte del hallazgo, pero dificulta consultar información o referencias necesarias."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-SCI02",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-oral",
+              "title": "Comunicación comprensible del hallazgo",
+              "requirement": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-oral",
+              "title": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance.",
+              "requirement": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles.",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada.",
+              "requirement": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-oral",
+              "title": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance.",
+              "requirement": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles.",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada.",
+              "requirement": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-oral",
+              "title": "Comunicación comprensible del hallazgo",
+              "requirement": "Organiza las intervenciones del noticiero para que el curso siga el hallazgo y la relación entre sus datos; comunica la información de forma comprensible sin exagerar su alcance. Parcial (50%): Se comprenden datos aislados, pero las intervenciones no permiten seguir suficientemente su relación con el hallazgo."
+            },
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Comunica la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada. Parcial (50%): Presenta parte del proceso y sus datos, pero no explica suficientemente cómo sostienen la conclusión."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue los resultados registrados de una interpretación posible y explicita un límite de la conclusión según los datos disponibles. Parcial (50%): Reconoce datos relevantes, pero presenta parte de las interpretaciones como si fueran resultados comprobados."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Reconoce oralmente la ficha de la que proceden los datos, de modo que el curso pueda distinguir la información entregada de la interpretación presentada. Parcial (50%): Parte de las ideas tiene procedencia reconocible, pero otras no se pueden vincular al material correspondiente."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-SCI03",
+      "sourceIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "46959358-472f-52cd-9887-5555e78db510"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia y paráfrasis fiel",
+              "requirement": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada.",
+              "requirement": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas.",
+              "requirement": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea.",
+              "requirement": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada.",
+              "requirement": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas.",
+              "requirement": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea.",
+              "requirement": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Explica con sus propias palabras la relación entre el procedimiento descrito, los datos y la conclusión de los hallazgos científicos y sociales de ambas fichas sin alterar la información entregada. Parcial (50%): Presenta parte del proceso y sus datos, pero no explica suficientemente cómo sostienen la conclusión."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Distingue cada hallazgo de una opinión y explica qué permiten concluir los datos de las fichas, sin añadir afirmaciones ajenas. Parcial (50%): Reconoce datos relevantes, pero presenta parte de las interpretaciones como si fueran resultados comprobados."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia y paráfrasis fiel",
+              "requirement": "Expresa las ideas con sus propias palabras conservando el sentido y los datos científicos y sociales; identifica de cuál de ambas fichas procede cada idea. Parcial (50%): Combina formulaciones propias con fragmentos copiados; se reconoce parte de la explicación, pero otras ideas no se reformulan suficientemente."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-SCI04",
+      "sourceIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "46959358-472f-52cd-9887-5555e78db510",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos.",
+              "requirement": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones.",
+              "requirement": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada.",
+              "requirement": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos.",
+              "requirement": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones.",
+              "requirement": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-science-process",
+              "title": "Relación entre proceso, datos y conclusión",
+              "requirement": "Reconstruye a partir del informe la pregunta, el procedimiento de observación y los resultados del registro dado, relacionando esos datos con la conclusión sin alterar la información entregada. Parcial (50%): Presenta parte del proceso y sus datos, pero no explica suficientemente cómo sostienen la conclusión."
+            },
+            {
+              "id": "len1-transversal-science-evidence",
+              "title": "Alcance de las afirmaciones",
+              "requirement": "Contrasta las afirmaciones de la conclusión con los datos del informe; distingue cuáles se sostienen y cuál va más allá, apoyándose en fragmentos concretos. Parcial (50%): Reconoce datos relevantes, pero presenta parte de las interpretaciones como si fueran resultados comprobados."
+            },
+            {
+              "id": "len1-transversal-science-source",
+              "title": "Procedencia reconocible de la información",
+              "requirement": "Vincula cada explicación con fragmentos identificables del informe que permiten comprobar la correspondencia entre proceso, datos y afirmaciones. Parcial (50%): Parte de las ideas tiene procedencia reconocible, pero otras no se pueden vincular al material correspondiente."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CIV01",
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Problema sustentado en el caso",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Coherencia de objetivo y acciones previstas",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Dignidad e igualdad en las acciones",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso."
+            },
+            {
+              "id": "len1-transversal-civic-dialogue",
+              "title": "Acuerdo y consideración de una opinión diferente",
+              "requirement": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten."
+            },
+            {
+              "id": "len1-transversal-civic-viability",
+              "title": "Recomendación viable para el caso",
+              "requirement": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena.",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían.",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso.",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso."
+            },
+            {
+              "id": "len1-transversal-civic-dialogue",
+              "title": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten.",
+              "requirement": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten."
+            },
+            {
+              "id": "len1-transversal-civic-viability",
+              "title": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto.",
+              "requirement": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena.",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían.",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso.",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso."
+            },
+            {
+              "id": "len1-transversal-civic-dialogue",
+              "title": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten.",
+              "requirement": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten."
+            },
+            {
+              "id": "len1-transversal-civic-viability",
+              "title": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto.",
+              "requirement": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Problema sustentado en el caso",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el proyecto, sin atribuir a personas reales información ajena. Parcial (50%): Describe parte del problema, pero no vincula suficientemente la necesidad con los datos del caso."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Coherencia de objetivo y acciones previstas",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un calendario coherente que permite comprender cómo se realizarían. Parcial (50%): Propone un objetivo y acciones, pero deja responsabilidades o tiempos sin relación suficiente con lo previsto."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Dignidad e igualdad en las acciones",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la dignidad y la igualdad de quienes usan el espacio, con relaciones concretas entre la propuesta y el caso. Parcial (50%): Menciona el trato igualitario, pero no explica suficientemente cómo se refleja en las acciones previstas."
+            },
+            {
+              "id": "len1-transversal-civic-dialogue",
+              "title": "Acuerdo y consideración de una opinión diferente",
+              "requirement": "Registra un acuerdo del equipo y una opinión diferente; explica cómo la consideraron con razones y sin descalificar a quien la expresó, aunque no la adopten. Parcial (50%): Registra el acuerdo y la opinión, pero no explica suficientemente cómo se consideró la diferencia."
+            },
+            {
+              "id": "len1-transversal-civic-viability",
+              "title": "Recomendación viable para el caso",
+              "requirement": "Formula una recomendación viable que responde al problema y se sostiene en los datos, las acciones y los tiempos previstos del proyecto. Parcial (50%): Propone una recomendación relacionada con el problema, pero no sustenta suficientemente su viabilidad."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CIV02",
+      "sourceIndicatorIds": [
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Problema que orienta el plan",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Coherencia de objetivo y acciones previstas",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Igualdad de acceso en el plan",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena.",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían.",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso.",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena.",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían.",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso.",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-problem",
+              "title": "Problema que orienta el plan",
+              "requirement": "Describe el problema con los datos del caso ficticio y explica qué necesidad debe atender el plan, sin atribuir a personas reales información ajena. Parcial (50%): Describe parte del problema, pero no vincula suficientemente la necesidad con los datos del caso."
+            },
+            {
+              "id": "len1-transversal-civic-plan",
+              "title": "Coherencia de objetivo y acciones previstas",
+              "requirement": "Relaciona un objetivo con acciones previstas que responden al problema; identifica responsables y un orden en la secuencia temporal que permite comprender cómo se realizarían. Parcial (50%): Propone un objetivo y acciones, pero deja responsabilidades o tiempos sin relación suficiente con lo previsto."
+            },
+            {
+              "id": "len1-transversal-civic-equality",
+              "title": "Igualdad de acceso en el plan",
+              "requirement": "Explica cómo las acciones previstas toman en cuenta la igualdad de acceso a los espacios de lectura, con relaciones concretas entre la propuesta y el caso. Parcial (50%): Menciona el trato igualitario, pero no explica suficientemente cómo se refleja en las acciones previstas."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CIV03",
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-comparison",
+              "title": "Coherencia de ambos proyectos con el caso",
+              "requirement": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-equality",
+              "title": "Dignidad e igualdad en las propuestas",
+              "requirement": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-viability",
+              "title": "Viabilidad justificada de las recomendaciones",
+              "requirement": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-comparison",
+              "title": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes.",
+              "requirement": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-equality",
+              "title": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores.",
+              "requirement": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-viability",
+              "title": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso.",
+              "requirement": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-comparison",
+              "title": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes.",
+              "requirement": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-equality",
+              "title": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores.",
+              "requirement": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-viability",
+              "title": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso.",
+              "requirement": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-comparison",
+              "title": "Coherencia de ambos proyectos con el caso",
+              "requirement": "Contrasta en ambos proyectos cómo los objetivos, las acciones, los responsables y los tiempos responden al problema y a los datos del caso, explicando sus diferencias relevantes. Parcial (50%): Describe componentes de los proyectos por separado, pero no explica suficientemente su relación con los datos del caso."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-equality",
+              "title": "Dignidad e igualdad en las propuestas",
+              "requirement": "Explica con acciones concretas de ambos proyectos cómo cada propuesta considera la dignidad y la igualdad de las personas del caso; evalúa las propuestas sin juzgar a sus autores. Parcial (50%): Menciona dignidad e igualdad, pero no explica suficientemente cómo se reflejan en las acciones comparadas."
+            },
+            {
+              "id": "len1-transversal-civic-comparison-viability",
+              "title": "Viabilidad justificada de las recomendaciones",
+              "requirement": "Justifica qué recomendación es más viable comparando sus acciones y tiempos con la información disponible para atender el problema del caso. Parcial (50%): Elige una recomendación, pero solo parte de las razones se apoya en las condiciones disponibles."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CIV04",
+      "sourceIndicatorIds": [
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-recommendation",
+              "title": "Recomendación viable y alcance conservado",
+              "requirement": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-recommendation",
+              "title": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto.",
+              "requirement": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-recommendation",
+              "title": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto.",
+              "requirement": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-transversal-civic-recommendation",
+              "title": "Recomendación viable y alcance conservado",
+              "requirement": "Revisa la recomendación para responder al problema de forma viable según los datos y las acciones previstas; conserva el problema, el objetivo, las acciones, los responsables y los tiempos del proyecto. Parcial (50%): La recomendación responde parcialmente al problema, pero no explica suficientemente su viabilidad con los datos disponibles."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-ARG01",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-transversal-argument-position",
+              "title": "Postura y razones del debate",
+              "requirement": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido."
+            },
+            {
+              "id": "len1-transversal-argument-support",
+              "title": "Función de los apoyos argumentativos",
+              "requirement": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables."
+            },
+            {
+              "id": "len1-transversal-argument-response",
+              "title": "Escucha y respuesta razonada al contraargumento",
+              "requirement": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó."
+            },
+            {
+              "id": "len1-transversal-argument-conclusion",
+              "title": "Conclusión vinculada con el intercambio",
+              "requirement": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-transversal-argument-position",
+              "title": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido.",
+              "requirement": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido."
+            },
+            {
+              "id": "len1-transversal-argument-support",
+              "title": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables.",
+              "requirement": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables."
+            },
+            {
+              "id": "len1-transversal-argument-response",
+              "title": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó.",
+              "requirement": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó."
+            },
+            {
+              "id": "len1-transversal-argument-conclusion",
+              "title": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso.",
+              "requirement": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-transversal-argument-position",
+              "title": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido.",
+              "requirement": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido."
+            },
+            {
+              "id": "len1-transversal-argument-support",
+              "title": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables.",
+              "requirement": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables."
+            },
+            {
+              "id": "len1-transversal-argument-response",
+              "title": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó.",
+              "requirement": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó."
+            },
+            {
+              "id": "len1-transversal-argument-conclusion",
+              "title": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso.",
+              "requirement": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-transversal-argument-position",
+              "title": "Postura y razones del debate",
+              "requirement": "Expresa una postura sobre la propuesta del caso y explica razones que la sostienen durante el debate oral, relacionándolas con lo discutido. Parcial (50%): Expresa una postura, pero parte de las razones no explica por qué debe sostenerse."
+            },
+            {
+              "id": "len1-transversal-argument-support",
+              "title": "Función de los apoyos argumentativos",
+              "requirement": "Relaciona los apoyos con la postura: el hecho procede del caso, el ejemplo concreta la situación que sustenta la postura y la analogía explica una semejanza pertinente que ayuda a comprender la razón, sin tratarlos como pruebas intercambiables. Parcial (50%): Nombra los apoyos solicitados, pero no explica suficientemente cómo sostienen la postura."
+            },
+            {
+              "id": "len1-transversal-argument-response",
+              "title": "Escucha y respuesta razonada al contraargumento",
+              "requirement": "Recupera fielmente el contraargumento escuchado y ofrece una respuesta con razones que atienden su contenido, sin descalificar a quien lo expresó. Parcial (50%): Reconoce el contraargumento, pero responde con una afirmación que no explica suficientemente su posición frente a él."
+            },
+            {
+              "id": "len1-transversal-argument-conclusion",
+              "title": "Conclusión vinculada con el intercambio",
+              "requirement": "Formula una conclusión coherente con la postura, las razones y el contraargumento discutidos, sin introducir datos nuevos ajenos al caso. Parcial (50%): Cierra con una postura, pero no relaciona suficientemente la conclusión con lo discutido."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-VAL01",
+      "sourceIndicatorIds": [
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-story-values",
+              "title": "Valores en decisiones y consecuencias narradas",
+              "requirement": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia."
+            },
+            {
+              "id": "len1-transversal-story-interpretations",
+              "title": "Contraste de interpretaciones del mismo cuento",
+              "requirement": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-story-values",
+              "title": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia.",
+              "requirement": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia."
+            },
+            {
+              "id": "len1-transversal-story-interpretations",
+              "title": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo.",
+              "requirement": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-story-values",
+              "title": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia.",
+              "requirement": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia."
+            },
+            {
+              "id": "len1-transversal-story-interpretations",
+              "title": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo.",
+              "requirement": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-story-values",
+              "title": "Valores en decisiones y consecuencias narradas",
+              "requirement": "Interpreta las actitudes y los valores que muestran las decisiones de los personajes del cuento, relacionando acciones, diálogo y consecuencias en la trama como evidencia. Parcial (50%): Nombra actitudes o valores, pero no explica suficientemente cómo se muestran en decisiones, acciones o diálogo."
+            },
+            {
+              "id": "len1-transversal-story-interpretations",
+              "title": "Contraste de interpretaciones del mismo cuento",
+              "requirement": "Contrasta dos interpretaciones posibles del mismo cuento con indicios de sus acciones y diálogos; distingue la inferencia de lo dicho explícitamente sin atribuir al autor ideas sin apoyo. Parcial (50%): Presenta interpretaciones posibles, pero solo parte de sus diferencias tiene apoyo en el cuento."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-VAL02",
+      "sourceIndicatorIds": [
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "DETECTIVE_STORY_WRITING",
+          "criteria": [
+            {
+              "id": "detective-structure",
+              "title": "Inicio, nudo y desenlace",
+              "requirement": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados."
+            },
+            {
+              "id": "detective-mystery",
+              "title": "Misterio, pistas y resolución",
+              "requirement": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio."
+            },
+            {
+              "id": "detective-characters",
+              "title": "Personajes y ambiente",
+              "requirement": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca."
+            },
+            {
+              "id": "detective-narrator",
+              "title": "Consistencia del narrador",
+              "requirement": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento."
+            },
+            {
+              "id": "detective-revision",
+              "title": "Cohesión y convenciones del texto",
+              "requirement": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento."
+            },
+            {
+              "id": "detective-feature-dialogue",
+              "title": "Función de diálogo",
+              "requirement": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes."
+            },
+            {
+              "id": "len1-transversal-story-decisions",
+              "title": "Decisiones, indicios y consecuencias para la convivencia",
+              "requirement": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "DETECTIVE_STORY_WRITING",
+          "criteria": [
+            {
+              "id": "detective-structure",
+              "title": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados.",
+              "requirement": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados."
+            },
+            {
+              "id": "detective-mystery",
+              "title": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio.",
+              "requirement": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio."
+            },
+            {
+              "id": "detective-characters",
+              "title": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca.",
+              "requirement": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca."
+            },
+            {
+              "id": "detective-narrator",
+              "title": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "requirement": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento."
+            },
+            {
+              "id": "detective-revision",
+              "title": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento.",
+              "requirement": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento."
+            },
+            {
+              "id": "detective-feature-dialogue",
+              "title": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "requirement": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes."
+            },
+            {
+              "id": "len1-transversal-story-decisions",
+              "title": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios.",
+              "requirement": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "DETECTIVE_STORY_WRITING",
+          "criteria": [
+            {
+              "id": "detective-structure",
+              "title": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados.",
+              "requirement": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados."
+            },
+            {
+              "id": "detective-mystery",
+              "title": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio.",
+              "requirement": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio."
+            },
+            {
+              "id": "detective-characters",
+              "title": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca.",
+              "requirement": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca."
+            },
+            {
+              "id": "detective-narrator",
+              "title": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "requirement": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento."
+            },
+            {
+              "id": "detective-revision",
+              "title": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento.",
+              "requirement": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento."
+            },
+            {
+              "id": "detective-feature-dialogue",
+              "title": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "requirement": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes."
+            },
+            {
+              "id": "len1-transversal-story-decisions",
+              "title": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios.",
+              "requirement": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "DETECTIVE_STORY_WRITING",
+          "criteria": [
+            {
+              "id": "detective-structure",
+              "title": "Inicio, nudo y desenlace",
+              "requirement": "Organiza el cuento con inicio, nudo y desenlace claramente relacionados. Parcial (50%): Se reconocen los momentos, pero una relación entre acciones queda incompleta."
+            },
+            {
+              "id": "detective-mystery",
+              "title": "Misterio, pistas y resolución",
+              "requirement": "Relaciona las pistas y acciones con un desenlace que explica coherentemente el misterio. Parcial (50%): Parte de las pistas se relaciona con la resolución, pero quedan hechos sin explicar."
+            },
+            {
+              "id": "detective-characters",
+              "title": "Personajes y ambiente",
+              "requirement": "Caracteriza a los personajes y construye un ambiente pertinente para la trama detectivesca. Parcial (50%): Describe personajes y ambiente, pero parte de las acciones no se vincula con ellos."
+            },
+            {
+              "id": "detective-narrator",
+              "title": "Consistencia del narrador",
+              "requirement": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo."
+            },
+            {
+              "id": "detective-revision",
+              "title": "Cohesión y convenciones del texto",
+              "requirement": "Usa vínculos claros entre los hechos, puntuación y ortografía que permiten comprender el cuento. Parcial (50%): Los conectores o varios errores dificultan relacionar partes del relato."
+            },
+            {
+              "id": "detective-feature-dialogue",
+              "title": "Función de diálogo",
+              "requirement": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes. Parcial (50%): Usa los recursos, pero no permiten seguir los intercambios."
+            },
+            {
+              "id": "len1-transversal-story-decisions",
+              "title": "Decisiones, indicios y consecuencias para la convivencia",
+              "requirement": "Muestra mediante acciones y diálogo cómo las decisiones de acusar sin pruebas o buscar indicios afectan la convivencia y la dignidad de los personajes ficticios. Parcial (50%): Menciona decisiones o valores, pero las acciones y el diálogo no muestran suficientemente su efecto en la convivencia."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CAL01",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "calligram-feature-rhyme-rhythm",
+              "title": "Función de la rima",
+              "requirement": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos."
+            },
+            {
+              "id": "calligram-process-revision",
+              "title": "Revisión de borradores con sugerencias",
+              "requirement": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "calligram-feature-rhyme-rhythm",
+              "title": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos.",
+              "requirement": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos."
+            },
+            {
+              "id": "calligram-process-revision",
+              "title": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas.",
+              "requirement": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "calligram-feature-rhyme-rhythm",
+              "title": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos.",
+              "requirement": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos."
+            },
+            {
+              "id": "calligram-process-revision",
+              "title": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas.",
+              "requirement": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "calligram-feature-rhyme-rhythm",
+              "title": "Función de la rima",
+              "requirement": "Emplea la rima en relación con el sentido del poema: la rima relaciona coincidencias sonoras entre versos. Parcial (50%): Usa los elementos sonoros solicitados, pero parte de ellos dificulta relacionar los versos."
+            },
+            {
+              "id": "calligram-process-revision",
+              "title": "Revisión de borradores con sugerencias",
+              "requirement": "Muestra cambios del borrador a la versión revisada según las sugerencias de la docente y de compañeros, ajustando rima, vocabulario y relación palabras-imagen para comunicar la intención y la emoción ficticia ya dadas; conserva la imagen y la intención dadas. Parcial (50%): Presenta cambios, pero mantiene problemas de rima, vocabulario y relación palabras-imagen señalados en las sugerencias."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    },
+    {
+      "id": "LEN1-TRA-CAL02",
+      "sourceIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "sourceContribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Emoción representada mediante palabras y figura",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Consideración razonada de otra interpretación",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación.",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo.",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación.",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo.",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Emoción representada mediante palabras y figura",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación. Parcial (50%): Reconoce palabras y figura, pero explica parcialmente cómo representan la emoción del poema."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Consideración razonada de otra interpretación",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo. Parcial (50%): Indica coincidencia o diferencia, pero no explica suficientemente sus razones con el poema."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ]
+    }
+  ]
+}

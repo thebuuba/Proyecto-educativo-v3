@@ -11117,5 +11117,628 @@
         "personalBrowser": "NO_DISPONIBLE"
       }
     }
-  ]
+  ],
+  "transversalEvidence": {
+    "version": 165,
+    "bank": "len1-transversales-v1.json",
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-transversales-165-lectura52.json",
+    "cases": [
+      {
+        "id": "LEN1-TRA-SCI01",
+        "indicators": [
+          "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
+          "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "9307c046-4d39-5181-a736-3695a6d1d79b",
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+          "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "news-structure",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source",
+              "len1-transversal-science-digital"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "news-structure",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source",
+              "len1-transversal-science-digital"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "news-structure",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source",
+              "len1-transversal-science-digital"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "news-structure",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source",
+              "len1-transversal-science-digital"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-SCI02",
+        "indicators": [
+          "edd5d7f8-172b-5927-a153-73b58a9756a6",
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "9307c046-4d39-5181-a736-3695a6d1d79b",
+          "0ddcbc46-c06e-5fec-bb7b-12664cc18c15"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-science-oral",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-science-oral",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-science-oral",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-science-oral",
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-SCI03",
+        "indicators": [
+          "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "46959358-472f-52cd-9887-5555e78db510"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-SCI04",
+        "indicators": [
+          "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "9307c046-4d39-5181-a736-3695a6d1d79b",
+          "46959358-472f-52cd-9887-5555e78db510",
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-science-process",
+              "len1-transversal-science-evidence",
+              "len1-transversal-science-source"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CIV01",
+        "indicators": [
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "f97deee1-e659-57c1-b27f-5aacded43899"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality",
+              "len1-transversal-civic-dialogue",
+              "len1-transversal-civic-viability"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality",
+              "len1-transversal-civic-dialogue",
+              "len1-transversal-civic-viability"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality",
+              "len1-transversal-civic-dialogue",
+              "len1-transversal-civic-viability"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality",
+              "len1-transversal-civic-dialogue",
+              "len1-transversal-civic-viability"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CIV02",
+        "indicators": [
+          "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "f97deee1-e659-57c1-b27f-5aacded43899"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-civic-problem",
+              "len1-transversal-civic-plan",
+              "len1-transversal-civic-equality"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CIV03",
+        "indicators": [
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "f97deee1-e659-57c1-b27f-5aacded43899"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-civic-comparison",
+              "len1-transversal-civic-comparison-equality",
+              "len1-transversal-civic-comparison-viability"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-civic-comparison",
+              "len1-transversal-civic-comparison-equality",
+              "len1-transversal-civic-comparison-viability"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-civic-comparison",
+              "len1-transversal-civic-comparison-equality",
+              "len1-transversal-civic-comparison-viability"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-civic-comparison",
+              "len1-transversal-civic-comparison-equality",
+              "len1-transversal-civic-comparison-viability"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CIV04",
+        "indicators": [
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "f97deee1-e659-57c1-b27f-5aacded43899"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-civic-recommendation"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-civic-recommendation"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-civic-recommendation"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-civic-recommendation"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-ARG01",
+        "indicators": [
+          "edd5d7f8-172b-5927-a153-73b58a9756a6",
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "03142453-856f-58e8-b3fc-2292030e24d8"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-argument-position",
+              "len1-transversal-argument-support",
+              "len1-transversal-argument-response",
+              "len1-transversal-argument-conclusion"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-argument-position",
+              "len1-transversal-argument-support",
+              "len1-transversal-argument-response",
+              "len1-transversal-argument-conclusion"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-argument-position",
+              "len1-transversal-argument-support",
+              "len1-transversal-argument-response",
+              "len1-transversal-argument-conclusion"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-argument-position",
+              "len1-transversal-argument-support",
+              "len1-transversal-argument-response",
+              "len1-transversal-argument-conclusion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-VAL01",
+        "indicators": [
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "550df0a4-8032-5593-bceb-0916487cd755",
+          "d5418e27-1c19-5b28-b563-c311de6055dc",
+          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-story-values",
+              "len1-transversal-story-interpretations"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-story-values",
+              "len1-transversal-story-interpretations"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-story-values",
+              "len1-transversal-story-interpretations"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-story-values",
+              "len1-transversal-story-interpretations"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-VAL02",
+        "indicators": [
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "550df0a4-8032-5593-bceb-0916487cd755",
+          "d5418e27-1c19-5b28-b563-c311de6055dc",
+          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "detective-structure",
+              "detective-mystery",
+              "detective-characters",
+              "detective-narrator",
+              "detective-revision",
+              "detective-feature-dialogue",
+              "len1-transversal-story-decisions"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "detective-structure",
+              "detective-mystery",
+              "detective-characters",
+              "detective-narrator",
+              "detective-revision",
+              "detective-feature-dialogue",
+              "len1-transversal-story-decisions"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "detective-structure",
+              "detective-mystery",
+              "detective-characters",
+              "detective-narrator",
+              "detective-revision",
+              "detective-feature-dialogue",
+              "len1-transversal-story-decisions"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "detective-structure",
+              "detective-mystery",
+              "detective-characters",
+              "detective-narrator",
+              "detective-revision",
+              "detective-feature-dialogue",
+              "len1-transversal-story-decisions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CAL01",
+        "indicators": [
+          "edd5d7f8-172b-5927-a153-73b58a9756a6",
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "550df0a4-8032-5593-bceb-0916487cd755",
+          "d5418e27-1c19-5b28-b563-c311de6055dc",
+          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "calligram-feature-rhyme-rhythm",
+              "calligram-process-revision"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "calligram-feature-rhyme-rhythm",
+              "calligram-process-revision"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "calligram-feature-rhyme-rhythm",
+              "calligram-process-revision"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "calligram-feature-rhyme-rhythm",
+              "calligram-process-revision"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "LEN1-TRA-CAL02",
+        "indicators": [
+          "edd5d7f8-172b-5927-a153-73b58a9756a6",
+          "4341313f-9526-5f29-97cf-22b96fe40580",
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "550df0a4-8032-5593-bceb-0916487cd755",
+          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+        ],
+        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          }
+        ]
+      }
+    ],
+    "remaining": [
+      "Banco independiente13:52salidas leídas con fallos, no aprobado",
+      "Banco complementario12: fijado,48salidas sin generar",
+      "Publicación científica y literaria frente a preparación",
+      "Patrimonio histórico dominicano y su relación natural/sociocultural",
+      "Intercomunicación ambiental fuera del aula",
+      "Inferencia/síntesis nueva y reflexión ficticia de perspectivas",
+      "Verificación visual personal y contraste final de malla"
+    ],
+    "closed": false
+  }
 }

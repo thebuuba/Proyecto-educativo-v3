@@ -104,7 +104,7 @@ export function refineFirstGradeCalligramRequirements(activity:string,descriptio
    `${reciting?'Permite percibir':creating?'Emplea':'Explica'} ${names}${!creating&&/present/.test(task)?rhyme&&rhythm?' que estén presentes':' que esté presente':''} en relación con el sentido del poema${reciting?' durante la recitación, mediante la expresión o el apoyo acordado':''}: ${functions}.`,
    'Los elementos sonoros se relacionan con el sentido; una relación entre sonido y verso necesita precisión.',
    creating?'Usa los elementos sonoros solicitados, pero parte de ellos dificulta relacionar los versos.':reciting?'Comunica los versos, pero la expresión no hace perceptible parte de su organización sonora.':'Reconoce elementos sonoros, pero no explica suficientemente su relación con el sentido de los versos.',
-   rhyme&&rhythm?'Atribuye coincidencias sonoras inexistentes o pausas y acentos que cambian el sentido de los versos.':rhyme?'Atribuye coincidencias sonoras inexistentes a los versos disponibles.':'Atribuye a pausas y acentos relaciones que contradicen el sentido de los versos.',
+   revising&&rhyme?'La versión revisada rompe las coincidencias sonoras pedidas o las fuerza cambiando el sentido de los versos.':rhyme&&rhythm?'Atribuye coincidencias sonoras inexistentes o pausas y acentos que cambian el sentido de los versos.':rhyme?'Atribuye coincidencias sonoras inexistentes a los versos disponibles.':'Atribuye a pausas y acentos relaciones que contradicen el sentido de los versos.',
    'No aporta evidencia reconocible de la función de los elementos sonoros solicitados.',
   ]))
  }
@@ -187,16 +187,18 @@ export function refineFirstGradeCalligramRequirements(activity:string,descriptio
  }
  if(creating&&/borrador/.test(task)&&/sugerencias/.test(task)){
  const sources=join([/docente/.test(task)?'de la docente':/profesora/.test(task)?'de la profesora':/profesor/.test(task)?'del profesor':'',/compan/.test(task)?'de compañeros':''].filter(Boolean))||'disponibles'
- const targets=join([/vocabulario/.test(task)?'vocabulario':'',/figuras literarias/.test(task)?'figuras presentes':'',/relacion.*(?:palabras|imagen)|figura/.test(task)?'relación palabras-imagen':''].filter(Boolean))||'los aspectos señalados en las sugerencias'
+ const targets=join([/\brima\b/.test(task)?'rima':'',/vocabulario/.test(task)?'vocabulario':'',/figuras literarias/.test(task)?'figuras presentes':'',/relacion.*(?:palabras|imagen)|figura/.test(task)?'relación palabras-imagen':''].filter(Boolean))||'los aspectos señalados en las sugerencias'
  const purpose=join([/intencion/.test(task)?'la intención':'',/emocion|sentimiento/.test(task)?`la emoción representada${/fictici/.test(task)?', que puede ser ficticia':''}`:''].filter(Boolean))
- const preserve=/conserven la imagen y la intencion/.test(task)?'; conserva la imagen y la intención dadas':''
- rows=replace(rows,criterion('calligram-process-revision','Revisión de borradores con sugerencias',3,[
-  `Muestra cambios del borrador a la versión revisada según las sugerencias ${sources}, ajustando ${targets}${purpose?' para comunicar '+purpose:''}${preserve}.`,
-  'Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.',
+ const preserve=/conserven la (?:imagen y la intencion|intencion y la imagen)/.test(task)?'; conserva la imagen y la intención dadas':''
+ const revision=criterion('calligram-process-revision','Revisión de borradores con sugerencias',3,[
+  `Muestra cambios del borrador a la versión revisada según las sugerencias ${sources}, ajustando ${targets}${purpose?' para comunicar '+(/emocion ficticia ya dadas/.test(task)?'la intención y la emoción ficticia ya dadas':purpose):''}${preserve}.`,
+  /\brima\b/.test(task)&&preserve?'Los cambios responden a las sugerencias y conservan la imagen y la intención dadas; queda un detalle secundario por ajustar.':'Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.',
   `Presenta cambios, pero mantiene problemas de ${targets} señalados en las sugerencias.`,
-  'Los cambios contradicen la intención o el mensaje que se buscaba aclarar.',
+  /\brima\b/.test(task)&&preserve?'Los cambios sustituyen la imagen o la intención que debía conservar, o contradicen el mensaje que se buscaba aclarar.':'Los cambios contradicen la intención o el mensaje que se buscaba aclarar.',
   'No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias.',
- ]))}
+ ])
+ if(/\brima\b/.test(task)&&preserve)revision.fourLevelLowest=`${revision.progressionLevels[3]} O bien: ${revision.progressionLevels[4]}`
+ rows=replace(rows,revision)}
  if(creating&&!revising&&/publi/.test(task)&&/mural/.test(task))rows=replace(rows,criterion('calligram-edition','Edición final para el mural',3,[
   'Prepara la edición final legible del caligrama revisado para publicarla en el mural, manteniendo la relación entre palabras, figura e intención.',
   'La edición del mural permite seguir el poema; un detalle de presentación necesita ajuste.',
