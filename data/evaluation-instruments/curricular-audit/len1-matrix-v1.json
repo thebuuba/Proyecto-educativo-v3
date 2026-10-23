@@ -2518,10 +2518,60 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-01",
+            "LEN1-AFI-02",
+            "LEN1-AFI-03"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-01",
+              "criterionId": "poster-message",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-visuals",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-03",
+              "criterionId": "poster-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-03",
+              "criterionId": "poster-visuals",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
@@ -2538,10 +2588,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-02",
+            "LEN1-AFI-07"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-persuasion",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-07",
+              "criterionId": "poster-arguments-comparison",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
@@ -2558,10 +2635,48 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-02",
+            "LEN1-AFI-08"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "len-1-poster-event",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-audience",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-08",
+              "criterionId": "poster-plan-situation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "be5d26d3-0d77-543c-9a87-146c7d275731",
@@ -2578,10 +2693,86 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-02",
+            "LEN1-AFI-04",
+            "LEN1-AFI-R02"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-04",
+              "criterionId": "poster-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-R02",
+              "criterionId": "poster-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Metáfora",
+              "function": "Asociación mediante imagen figurada",
+              "cases": [
+                "LEN1-AFI-02",
+                "LEN1-AFI-04"
+              ],
+              "criterionId": "poster-feature-literary"
+            },
+            {
+              "name": "Pleonasmo",
+              "function": "Reiteración expresiva para énfasis",
+              "cases": [
+                "LEN1-AFI-04"
+              ],
+              "criterionId": "poster-feature-literary"
+            },
+            {
+              "name": "Elipsis",
+              "function": "Omisión recuperable por contexto",
+              "cases": [
+                "LEN1-AFI-04",
+                "LEN1-AFI-R02"
+              ],
+              "criterionId": "poster-feature-literary"
+            },
+            {
+              "name": "Exageración",
+              "function": "Intensificación que no se confunde con dato literal",
+              "cases": [
+                "LEN1-AFI-02",
+                "LEN1-AFI-04"
+              ],
+              "criterionId": "poster-feature-literary"
+            }
+          ]
         },
         {
           "id": "86345894-03da-5e9a-98b0-b01b34c31230",
@@ -2598,10 +2789,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-01",
+            "LEN1-AFI-02",
+            "LEN1-AFI-07"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-01",
+              "criterionId": "poster-persuasion",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-persuasion",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-07",
+              "criterionId": "poster-arguments-comparison",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "816526f4-7335-5287-b520-4e2f732a853d",
@@ -2618,10 +2848,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-02",
+            "LEN1-AFI-05",
+            "LEN1-AFI-06",
+            "LEN1-AFI-R04"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-02",
+              "criterionId": "poster-feature-imperative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-05",
+              "criterionId": "poster-feature-imperative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-06",
+              "criterionId": "poster-feature-imperative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-R04",
+              "criterionId": "poster-feature-imperative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
@@ -2638,10 +2919,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-03",
+            "LEN1-AFI-07"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-03",
+              "criterionId": "poster-feature-connotation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-07",
+              "criterionId": "poster-feature-connotation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
@@ -2658,10 +2966,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-05",
+            "LEN1-AFI-06"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-05",
+              "criterionId": "poster-feature-prevention",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-06",
+              "criterionId": "poster-feature-prevention",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ]
         },
         {
           "id": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
@@ -2678,14 +3013,214 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-AFI-05",
+            "LEN1-AFI-06",
+            "LEN1-AFI-R03"
+          ],
+          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-AFI-05",
+              "criterionId": "poster-feature-periphrasis",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-06",
+              "criterionId": "poster-feature-periphrasis",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-AFI-R03",
+              "criterionId": "poster-feature-periphrasis",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Obligación",
+              "forms": [
+                "deber",
+                "tener que"
+              ],
+              "cases": [
+                "LEN1-AFI-05",
+                "LEN1-AFI-06",
+                "LEN1-AFI-R03"
+              ]
+            },
+            {
+              "name": "Posibilidad",
+              "forms": [
+                "poder",
+                "podría"
+              ],
+              "cases": [
+                "LEN1-AFI-05",
+                "LEN1-AFI-06"
+              ]
+            },
+            {
+              "name": "Modalidad única sin inventar insumos",
+              "evidence": "Regresión adicional curricular-poster-reserved.spec.ts; no se cuenta como actividad curricular formal del banco"
+            }
+          ]
         }
       ],
-      "status": "PENDIENTE_AUDITORIA",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+      "status": "REVISADO_LOCAL_48_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json",
+      "curricularComponentAudit": [
+        {
+          "sourceId": "e391ba43-d01f-56b5-969c-625e7c715d49",
+          "components": [
+            [
+              "Propósito lector, intención/destinatario y palabras clave",
+              "LEN1-AFI-03/poster-purpose"
+            ],
+            [
+              "Anticipación desde imagen/letras/colores/distribución y comprobación",
+              "LEN1-AFI-03/poster-procedure-prediction"
+            ],
+            [
+              "Connotación expresiva",
+              "LEN1-AFI-03/poster-feature-connotation"
+            ],
+            [
+              "Argumentos y recursos persuasivos",
+              "LEN1-AFI-03/poster-persuasion"
+            ],
+            [
+              "Inferencia del sentido global",
+              "LEN1-AFI-03/poster-inference"
+            ],
+            [
+              "Paráfrasis de mensaje y datos importantes",
+              "LEN1-AFI-03/poster-procedure-paraphrase"
+            ],
+            [
+              "Relación de gráfico/texto",
+              "LEN1-AFI-03/poster-visuals"
+            ]
+          ]
+        },
+        {
+          "sourceId": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+          "components": [
+            [
+              "Intención/destinatario/tiempo/lugar/actividad/acciones",
+              "LEN1-AFI-02/poster-message",
+              "LEN1-AFI-02/poster-audience",
+              "LEN1-AFI-02/len-1-poster-event",
+              "LEN1-AFI-08/poster-plan-situation"
+            ],
+            [
+              "Plan textual y visual",
+              "LEN1-AFI-02/poster-procedure-outline",
+              "LEN1-AFI-08/poster-procedure-outline"
+            ],
+            [
+              "Imperativo para mover a acción",
+              "LEN1-AFI-02/poster-feature-imperative",
+              "LEN1-AFI-05/poster-feature-imperative"
+            ],
+            [
+              "Metáfora/pleonasmo/elipsis/exageración con funciones diferentes",
+              "LEN1-AFI-02/poster-feature-literary",
+              "LEN1-AFI-04/poster-feature-literary",
+              "LEN1-AFI-R02/poster-feature-literary"
+            ],
+            [
+              "Hechos/cifras/ventajas sustentados en argumentos",
+              "LEN1-AFI-02/poster-persuasion",
+              "LEN1-AFI-07/poster-arguments-comparison"
+            ]
+          ]
+        },
+        {
+          "sourceId": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+          "components": [
+            [
+              "Imágenes/formas/colores/letras/distribución/tamaño por función",
+              "LEN1-AFI-02/poster-visuals"
+            ],
+            [
+              "Decisiones previstas frente a producto final",
+              "LEN1-AFI-08/poster-procedure-outline",
+              "LEN1-AFI-02/poster-procedure-outline"
+            ],
+            [
+              "Imagen dada no obliga a crear otra",
+              "LEN1-AFI-R01/poster-visuals"
+            ],
+            [
+              "Legibilidad textual distinta de relación visual",
+              "LEN1-AFI-02/poster-legibility"
+            ]
+          ]
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "b54f35d0-4528-5e35-9896-23e407b57835",
+          "name": "Veracidad de datos para convencer",
+          "evidence": [
+            "LEN1-AFI-02/poster-persuasion",
+            "LEN1-AFI-02/len-1-poster-event",
+            "LEN1-AFI-07/poster-arguments-comparison"
+          ],
+          "limit": "Correspondencia con información dada; no inventar fuentes/datos ni evaluar creencias internas"
+        },
+        {
+          "sourceId": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+          "name": "Creatividad de organización visual y contenido",
+          "evidence": [
+            "LEN1-AFI-02/poster-visuals",
+            "LEN1-AFI-03/poster-visuals",
+            "LEN1-AFI-08/poster-procedure-outline"
+          ],
+          "limit": "Relación funcional entre decisiones/mensaje/destinatario; no talento artístico ni emoción"
+        },
+        {
+          "sourceId": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+          "name": "Interés por advertir sobre enfermedad/problemas sociales/emergencias",
+          "evidence": [
+            "LEN1-AFI-05/poster-message",
+            "LEN1-AFI-06/poster-message",
+            "LEN1-AFI-R01/poster-message"
+          ],
+          "limit": "No calificar interés interno ni miedo causado. Los tipos de emergencias citados ilustran contextos de alerta en esta actitud, no son contenidos científicos de esta asignatura; los casos son ficticios y se ciñen a información dada"
+        },
+        {
+          "sourceId": "a789f2f7-2d52-530a-9b35-24635197aafa",
+          "name": "Valores humanos y convivencia justa/equitativa",
+          "evidence": [
+            "LEN1-AFI-R01/poster-message",
+            "LEN1-AFI-08/poster-plan-convivencia"
+          ],
+          "limit": "Acciones/expresiones del afiche producido y de su plan; no inferir valores personales ni dar plan por producto final"
+        }
+      ]
     },
     {
       "id": "cuento",
@@ -4650,10 +5185,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Afiche: banco8casos fijado desde72 y transición73, sin generar. Cuento/caligrama pendientes",
+    "otherTopics": "Afiche12actividades/48salidas revisadas localmente, HTTP161 pendiente; cuento/caligrama pendientes",
     "remaining": [
-      "Visual personal bloqueada por contraseña, comprobado nuevamente en160 sin alterar sesión",
-      "Afiche/cuento/caligrama; comparación completaLengua1 e indicadores; ámbitos restantes"
+      "Visual personal bloqueado por contraseña",
+      "HTTP/DB161 y15referencias personales después de muestras",
+      "Cuento/caligrama; comparación completaLengua1 e indicadores; ámbitos restantes"
     ]
   }
 }

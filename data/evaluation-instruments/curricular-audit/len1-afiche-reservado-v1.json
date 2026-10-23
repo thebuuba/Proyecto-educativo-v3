@@ -1,0 +1,98 @@
+{
+  "version": "curricular-len1-afiche-reservado-v1",
+  "provenance": "SINTETICO del mismo autor. Reservado no ciego tras leer32salidas161 y reglas, fijado antes de generar estos casos. Contrasta actitudes en producción y límites; no independencia externa.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      72
+    ],
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-AFI-R01",
+      "family": "Convivencia en afiche producido",
+      "title": "Un afiche que invite a todos",
+      "description": "Redacten un afiche para que todo el curso participe en una actividad de convivencia justa y equitativa. Propongan acciones concretas de trato respetuoso, sin burlas ni exclusión de compañeros. Usen la imagen dada para apoyar el mensaje y procuren que el texto se lea con claridad. No diseñen otra imagen ni publiquen todavía.",
+      "expected": {
+        "explicit": [
+          "Invitación y acciones concretas de convivencia equitativa",
+          "Respeto observable en mensaje sin burlas/exclusión",
+          "Uso de imagen ya dada, sin crear o seleccionar otra",
+          "Legibilidad textual"
+        ],
+        "excluded": [
+          "Inferir valores o sentimientos internos",
+          "Imagen nueva",
+          "Publicación",
+          "Talento artístico"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "family": "Uso poético acotado en producción",
+      "title": "Lo que podemos omitir sin perder el mensaje",
+      "description": "Escriban un afiche de solo texto para invitar a la lectura. Usen únicamente la elipsis: omitan palabras que el destinatario pueda recuperar por el contexto sin perder el sentido de la invitación. No añadan metáforas, pleonasmos ni exageraciones y no entreguen una explicación aparte.",
+      "expected": {
+        "explicit": [
+          "Invitación escrita legible",
+          "Elipsis usada como omisión recuperable, conservando sentido",
+          "Solo recurso solicitado"
+        ],
+        "excluded": [
+          "Metáfora",
+          "Pleonasmo",
+          "Exageración",
+          "Imagen obligatoria",
+          "Explicación adicional del recurso"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "family": "Modalidad única y exclusión habitual",
+      "title": "Una obligación queda clara",
+      "description": "Elaboren un afiche de solo texto con la norma de convivencia de la ficha. Empleen solo las perífrasis de obligación deber y tener que para expresar las acciones que esa norma establece. No usen perífrasis de posibilidad ni modo imperativo. Conserven el alcance de la norma, sin inventar otras acciones.",
+      "expected": {
+        "explicit": [
+          "Acciones de norma según ficha",
+          "Uso de obligación con deber y tener que",
+          "Conservar alcance de norma",
+          "Texto solo"
+        ],
+        "excluded": [
+          "Posibilidad",
+          "Poder/podría",
+          "Imperativo",
+          "Imagen",
+          "Nueva norma"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "family": "Control de análisis acotado",
+      "title": "Cómo esta frase invita a actuar",
+      "description": "Analicen únicamente el modo imperativo de un afiche de solo texto entregado. Expliquen, con una expresión del afiche, a qué acción invita y a quién se dirige. No escriban otro afiche ni incluyan imágenes.",
+      "expected": {
+        "explicit": [
+          "Identificar imperativo presente y función de llamada a acción/destinatario",
+          "Ejemplo del texto dado"
+        ],
+        "excluded": [
+          "Crear afiche",
+          "Imagen",
+          "Otras formas verbales o datos no solicitados"
+        ]
+      }
+    }
+  ]
+}

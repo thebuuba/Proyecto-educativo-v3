@@ -1,0 +1,2859 @@
+{
+  "catalog": "evaluation-2026.161",
+  "bankSha256": "3bd25362f609a73070ce13112fb44024bfd620816c00c492c7505ace691d2dcb",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "575e4a25db27eca6923d192338beed8b71c90096",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-AFI-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 5.118200000000002,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:1",
+            "templateId": "poster-persuasion",
+            "title": "Argumentos y recursos persuasivos",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:2",
+            "templateId": "poster-legibility",
+            "title": "Legibilidad y convenciones del texto",
+            "description": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+            "maxScore": 2.35,
+            "maxScoreUnits": 235,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+              "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+              "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+              "La escritura altera el sentido de una acción o un dato importante del afiche.",
+              "No presenta texto legible y comprensible para comunicar el mensaje del afiche."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L2",
+                "text": "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+                "scoreUnits": 78
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta texto legible y comprensible para comunicar el mensaje del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Acciones de convivencia en el mensaje",
+            "description": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+              "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+              "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+              "El mensaje contiene burlas o excluye compañeros y contradice la convivencia que anuncia.",
+              "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-visuals:4",
+            "templateId": "poster-visuals",
+            "title": "Decisiones visuales para comunicar",
+            "description": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.586500000000001,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:1",
+            "templateId": "poster-persuasion",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:2",
+            "templateId": "poster-legibility",
+            "title": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+            "description": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+            "maxScore": 2.35,
+            "maxScoreUnits": 235,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+              "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+              "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+              "La escritura altera el sentido de una acción o un dato importante del afiche.",
+              "No presenta texto legible y comprensible para comunicar el mensaje del afiche."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+            "description": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+              "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+              "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+              "El mensaje contiene burlas o excluye compañeros y contradice la convivencia que anuncia.",
+              "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-visuals:4",
+            "templateId": "poster-visuals",
+            "title": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+            "description": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.1808999999999514,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:1",
+            "templateId": "poster-persuasion",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:2",
+            "templateId": "poster-legibility",
+            "title": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+            "description": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+            "maxScore": 2.35,
+            "maxScoreUnits": 235,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+              "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+              "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+              "La escritura altera el sentido de una acción o un dato importante del afiche.",
+              "No presenta texto legible y comprensible para comunicar el mensaje del afiche."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L2",
+                "text": "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+                "scoreUnits": 78
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta texto legible y comprensible para comunicar el mensaje del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+            "description": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+              "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+              "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+              "El mensaje contiene burlas o excluye compañeros y contradice la convivencia que anuncia.",
+              "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-visuals:4",
+            "templateId": "poster-visuals",
+            "title": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+            "description": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.2816000000000258,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:1",
+            "templateId": "poster-persuasion",
+            "title": "Argumentos y recursos persuasivos",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:2",
+            "templateId": "poster-legibility",
+            "title": "Legibilidad y convenciones del texto",
+            "description": "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje. Parcial (50%): Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+            "maxScore": 2.35,
+            "maxScoreUnits": 235,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta palabras legibles y convenciones de escritura que permiten comprender el texto del afiche sin cambiar su mensaje.",
+              "El texto se lee con claridad; un error aislado de escritura necesita ajuste.",
+              "Varios errores de escritura vuelven ambiguas partes importantes del mensaje.",
+              "La escritura altera el sentido de una acción o un dato importante del afiche.",
+              "No presenta texto legible y comprensible para comunicar el mensaje del afiche."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Acciones de convivencia en el mensaje",
+            "description": "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros. Parcial (50%): Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica una invitación a participar y acciones concretas de convivencia justa y equitativa con trato respetuoso, sin burlas ni exclusión de compañeros.",
+              "Las acciones y la invitación sostienen un trato respetuoso; una expresión necesita precisar cómo incluye a los participantes.",
+              "Nombra el respeto, pero no comunica acciones claras para una participación equitativa.",
+              "El mensaje contiene burlas o excluye compañeros y contradice la convivencia que anuncia.",
+              "No comunica una invitación y acciones reconocibles de convivencia respetuosa y equitativa."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-visuals:4",
+            "templateId": "poster-visuals",
+            "title": "Decisiones visuales para comunicar",
+            "description": "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje. Parcial (50%): Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona la imagen dada con el texto y la intención del afiche para ayudar al público a comprender el mensaje.",
+              "Las decisiones gráficas se relacionan con el texto y la intención; una relación necesita precisión.",
+              "Los elementos gráficos están presentes, pero su relación con el texto dificulta reconocer el mensaje o localizar la información.",
+              "La selección o distribución gráfica contradice el mensaje o confunde una información importante.",
+              "No aporta una relación reconocible entre los elementos gráficos solicitados y el texto del afiche."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.7585000000000264,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:0",
+            "templateId": "poster-message",
+            "title": "Mensaje del afiche",
+            "description": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+              "El mensaje comunica la idea central; una expresión necesita precisión.",
+              "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+              "El mensaje contradice o confunde el tema y la acción que pretende comunicar.",
+              "No comunica un mensaje reconocible del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+                "scoreUnits": 457
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje comunica la idea central; una expresión necesita precisión.",
+                "scoreUnits": 305
+              },
+              {
+                "levelId": "L2",
+                "text": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un mensaje reconocible del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:1",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Argumentos y recursos persuasivos",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:3",
+            "templateId": "poster-legibility",
+            "title": "Organización, legibilidad y corrección",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-literary:4",
+            "templateId": "poster-feature-literary",
+            "title": "Sentido y función de los recursos poéticos",
+            "description": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+              "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+              "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+              "Confunde la función de un recurso o presenta una expresión figurada como prueba literal de un hecho.",
+              "No incorpora usos reconocibles de los recursos poéticos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora usos reconocibles de los recursos poéticos solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.088799999999992,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:0",
+            "templateId": "poster-message",
+            "title": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+            "description": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+              "El mensaje comunica la idea central; una expresión necesita precisión.",
+              "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+              "El mensaje contradice o confunde el tema y la acción que pretende comunicar.",
+              "No comunica un mensaje reconocible del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:1",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:3",
+            "templateId": "poster-legibility",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-literary:4",
+            "templateId": "poster-feature-literary",
+            "title": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+            "description": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+              "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+              "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+              "Confunde la función de un recurso o presenta una expresión figurada como prueba literal de un hecho.",
+              "No incorpora usos reconocibles de los recursos poéticos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1768999999999323,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:0",
+            "templateId": "poster-message",
+            "title": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+            "description": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+              "El mensaje comunica la idea central; una expresión necesita precisión.",
+              "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+              "El mensaje contradice o confunde el tema y la acción que pretende comunicar.",
+              "No comunica un mensaje reconocible del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+                "scoreUnits": 457
+              },
+              {
+                "levelId": "L3",
+                "text": "El mensaje comunica la idea central; una expresión necesita precisión.",
+                "scoreUnits": 305
+              },
+              {
+                "levelId": "L2",
+                "text": "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+                "scoreUnits": 152
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un mensaje reconocible del afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:1",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+                "scoreUnits": 365
+              },
+              {
+                "levelId": "L3",
+                "text": "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 243
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+                "scoreUnits": 122
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta argumentos ni recursos persuasivos reconocibles.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:3",
+            "templateId": "poster-legibility",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-literary:4",
+            "templateId": "poster-feature-literary",
+            "title": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+            "description": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+              "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+              "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+              "Confunde la función de un recurso o presenta una expresión figurada como prueba literal de un hecho.",
+              "No incorpora usos reconocibles de los recursos poéticos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+                "scoreUnits": 274
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+                "scoreUnits": 183
+              },
+              {
+                "levelId": "L2",
+                "text": "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+                "scoreUnits": 91
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora usos reconocibles de los recursos poéticos solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.021099999999933,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:0",
+            "templateId": "poster-message",
+            "title": "Mensaje del afiche",
+            "description": "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo. Parcial (50%): El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+            "maxScore": 4.57,
+            "maxScoreUnits": 457,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica acciones o ideas pertinentes sobre el tema del afiche mediante un mensaje breve, claro y persuasivo.",
+              "El mensaje comunica la idea central; una expresión necesita precisión.",
+              "El mensaje es reconocible, pero contiene ideas ambiguas o ajenas al propósito.",
+              "El mensaje contradice o confunde el tema y la acción que pretende comunicar.",
+              "No comunica un mensaje reconocible del afiche."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:1",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-persuasion:2",
+            "templateId": "poster-persuasion",
+            "title": "Argumentos y recursos persuasivos",
+            "description": "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos. Parcial (50%): Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+            "maxScore": 3.65,
+            "maxScoreUnits": 365,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa recomendaciones, argumentos o expresiones persuasivas pertinentes, sin inventar datos.",
+              "Los argumentos o expresiones apoyan el mensaje; una relación necesita precisión.",
+              "Usa expresiones para convencer, pero algunas no sustentan el mensaje.",
+              "Los argumentos contradicen el mensaje o presentan datos inventados como hechos.",
+              "No aporta argumentos ni recursos persuasivos reconocibles."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:3",
+            "templateId": "poster-legibility",
+            "title": "Organización, legibilidad y corrección",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-literary:4",
+            "templateId": "poster-feature-literary",
+            "title": "Sentido y función de los recursos poéticos",
+            "description": "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto. Parcial (50%): Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+            "maxScore": 2.74,
+            "maxScoreUnits": 274,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea la elipsis para atraer al destinatario sin falsear los datos: la elipsis permite omitir palabras recuperables por el contexto.",
+              "Los recursos solicitados se relacionan con su función y el destinatario; una relación entre expresión y efecto necesita precisión.",
+              "Los recursos están presentes, pero sus usos no contribuyen al sentido expresivo del mensaje para el destinatario.",
+              "Confunde la función de un recurso o presenta una expresión figurada como prueba literal de un hecho.",
+              "No incorpora usos reconocibles de los recursos poéticos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.2567999999999984,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 190
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:1",
+            "templateId": "poster-legibility",
+            "title": "Organización, legibilidad y corrección",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "scoreUnits": 429
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L2",
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "scoreUnits": 143
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-periphrasis:2",
+            "templateId": "poster-feature-periphrasis",
+            "title": "Expresión de obligación en el afiche",
+            "description": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+              "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+              "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+              "La forma verbal cambia el alcance de una acción y contradice la norma según la ficha.",
+              "No aporta usos reconocibles de las formas de obligación solicitadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+                "scoreUnits": 429
+              },
+              {
+                "levelId": "L3",
+                "text": "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+                "scoreUnits": 143
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta usos reconocibles de las formas de obligación solicitadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Acciones y alcance de la norma",
+            "description": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+              "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+              "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+              "Cambia una acción de la norma o atribuye a la ficha una acción ausente.",
+              "No comunica acciones reconocibles de la norma de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+                "scoreUnits": 190
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica acciones reconocibles de la norma de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.112600000000043,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:1",
+            "templateId": "poster-legibility",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-periphrasis:2",
+            "templateId": "poster-feature-periphrasis",
+            "title": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+            "description": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+              "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+              "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+              "La forma verbal cambia el alcance de una acción y contradice la norma según la ficha.",
+              "No aporta usos reconocibles de las formas de obligación solicitadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+            "description": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+              "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+              "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+              "Cambia una acción de la norma o atribuye a la ficha una acción ausente.",
+              "No comunica acciones reconocibles de la norma de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.066000000000031,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L2",
+                "text": "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+                "scoreUnits": 190
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer a quién se dirige el afiche.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:1",
+            "templateId": "poster-legibility",
+            "title": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+                "scoreUnits": 429
+              },
+              {
+                "levelId": "L3",
+                "text": "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L2",
+                "text": "La organización o varios errores dificultan comprender partes importantes del afiche.",
+                "scoreUnits": 143
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un texto legible y organizado para comunicar el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-periphrasis:2",
+            "templateId": "poster-feature-periphrasis",
+            "title": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+            "description": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+              "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+              "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+              "La forma verbal cambia el alcance de una acción y contradice la norma según la ficha.",
+              "No aporta usos reconocibles de las formas de obligación solicitadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+                "scoreUnits": 429
+              },
+              {
+                "levelId": "L3",
+                "text": "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+                "scoreUnits": 286
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+                "scoreUnits": 143
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta usos reconocibles de las formas de obligación solicitadas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+            "description": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+              "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+              "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+              "Cambia una acción de la norma o atribuye a la ficha una acción ausente.",
+              "No comunica acciones reconocibles de la norma de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+                "scoreUnits": 571
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+                "scoreUnits": 381
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+                "scoreUnits": 190
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica acciones reconocibles de la norma de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0978000000000065,
+      "automatic": {
+        "activityType": "POSTER_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "POSTER_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-audience:0",
+            "templateId": "poster-audience",
+            "title": "Adecuación al público destinatario",
+            "description": "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado. Parcial (50%): El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Adapta el vocabulario, el tono y el llamado a la acción a la comunidad o público indicado.",
+              "El vocabulario y la acción corresponden al público; una expresión requiere ajuste.",
+              "El público se reconoce, pero parte del lenguaje o la acción no se adecua a él.",
+              "El lenguaje y la acción contradicen las necesidades del público previsto.",
+              "No permite reconocer a quién se dirige el afiche."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-legibility:1",
+            "templateId": "poster-legibility",
+            "title": "Organización, legibilidad y corrección",
+            "description": "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente. Parcial (50%): La organización o varios errores dificultan comprender partes importantes del afiche.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta la información con jerarquía visual, lectura clara, ortografía cuidada y contenido pertinente.",
+              "El texto se lee y se organiza con claridad; un detalle de escritura necesita ajuste.",
+              "La organización o varios errores dificultan comprender partes importantes del afiche.",
+              "La distribución o la escritura impiden seguir el mensaje principal.",
+              "No presenta un texto legible y organizado para comunicar el mensaje."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-periphrasis:2",
+            "templateId": "poster-feature-periphrasis",
+            "title": "Expresión de obligación en el afiche",
+            "description": "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha. Parcial (50%): Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+            "maxScore": 4.29,
+            "maxScoreUnits": 429,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea deber y tener que en el afiche para conservar el alcance de las acciones según la norma según la ficha.",
+              "Las formas de obligación conservan el alcance de las acciones; un uso aislado requiere precisión.",
+              "Usa formas de obligación, pero varios enunciados no conservan el alcance de las acciones dadas.",
+              "La forma verbal cambia el alcance de una acción y contradice la norma según la ficha.",
+              "No aporta usos reconocibles de las formas de obligación solicitadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-message:3",
+            "templateId": "poster-message",
+            "title": "Acciones y alcance de la norma",
+            "description": "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica. Parcial (50%): Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+            "maxScore": 5.71,
+            "maxScoreUnits": 571,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica las acciones y el alcance de la norma de la ficha sin inventar otras acciones ni cambiar a quiénes se aplica.",
+              "Las acciones corresponden a la norma; una expresión necesita precisar su alcance.",
+              "Nombra acciones de la ficha, pero deja ambiguo a quién se aplica la norma o qué pide hacer.",
+              "Cambia una acción de la norma o atribuye a la ficha una acción ausente.",
+              "No comunica acciones reconocibles de la norma de la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1581999999999653,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-imperative:0",
+            "templateId": "poster-feature-imperative",
+            "title": "El modo imperativo",
+            "description": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "La explicación se apoya en una identificación incorrecta: se interpreta una orden o invitación como un hecho ya ocurrido.",
+              "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7609999999999673,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-imperative:0",
+            "templateId": "poster-feature-imperative",
+            "title": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "description": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "La explicación se apoya en una identificación incorrecta: se interpreta una orden o invitación como un hecho ya ocurrido.",
+              "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.2011999999999716,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-imperative:0",
+            "templateId": "poster-feature-imperative",
+            "title": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "description": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "La explicación se apoya en una identificación incorrecta: se interpreta una orden o invitación como un hecho ya ocurrido.",
+              "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9943000000000666,
+      "automatic": {
+        "activityType": "POSTER_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.161",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "POSTER_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.161:fallback:poster-feature-imperative:0",
+            "templateId": "poster-feature-imperative",
+            "title": "El modo imperativo",
+            "description": "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario. Parcial (50%): Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el modo imperativo en el texto de afiche y explica, con ejemplos presentes, su función para dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "Localiza y caracteriza el modo imperativo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del modo imperativo, pero no explica cómo contribuyen a dirigir una invitación, instrucción o llamado a la acción al destinatario.",
+              "La explicación se apoya en una identificación incorrecta: se interpreta una orden o invitación como un hecho ya ocurrido.",
+              "No localiza ejemplos pertinentes ni explica la función del modo imperativo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-el-afiche",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

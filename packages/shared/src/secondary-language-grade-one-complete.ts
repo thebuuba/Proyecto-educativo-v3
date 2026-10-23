@@ -4,6 +4,7 @@ import {refineFirstGradeGuideRequirements} from './secondary-guide-grade-one-req
 import {firstGradeReadingReportCriteria as report} from './secondary-reading-report-grade-one'
 import {refineFirstGradeReadingReportRequirements} from './secondary-reading-report-grade-one-requirements'
 import {firstGradePosterCriteria as poster} from './secondary-poster-grade-one'
+import {refineFirstGradePosterRequirements} from './secondary-poster-grade-one-requirements'
 import {firstGradeDetectiveCriteria as detective} from './secondary-detective-grade-one'
 import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-grade-one'
 import {normalizedTask} from './evaluation-task-text'
@@ -106,7 +107,7 @@ const comparisonFocus: Record<string,LanguageFeature[]>={
 
 function complete(genre:string,activity:string,description:string,base:ContextualTopicCriterion[]) {
   const scope=({noticia:'news','guía turística':'guide','informe de lectura':'report',afiche:'poster','cuento policíaco':'detective',caligrama:'calligram'} as Record<string,string>)[genre]
-  const task=genre==='guía turística'||genre==='informe de lectura'?affirmativeLanguageTask(description):normalizedTask(description)
+  const task=['guía turística','informe de lectura','afiche'].includes(genre)?affirmativeLanguageTask(description):normalizedTask(description)
   const compare=activity.includes('COMPARISON')
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
@@ -247,12 +248,13 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   }
   return genre==='noticia'?refineFirstGradeNewsRequirements(activity,description,rows)
     :genre==='guía turística'?refineFirstGradeGuideRequirements(activity,description,rows)
-      :genre==='informe de lectura'?refineFirstGradeReadingReportRequirements(activity,description,rows):rows
+      :genre==='informe de lectura'?refineFirstGradeReadingReportRequirements(activity,description,rows)
+        :genre==='afiche'?refineFirstGradePosterRequirements(activity,description,rows):rows
 }
 
 export const completeFirstGradeNewsCriteria=(activity:string,description:string)=>complete('noticia',activity,description,news(activity==='RESEARCH'?'NEWS_ANALYSIS':activity,description))
 export const completeFirstGradeGuideCriteria=(activity:string,description:string)=>complete('guía turística',activity,description,guide(activity==='RESEARCH'?'TOURIST_GUIDE_ANALYSIS':activity,description))
 export const completeFirstGradeReadingReportCriteria=(activity:string,description:string)=>complete('informe de lectura',activity,description,report(activity,description))
-export const completeFirstGradePosterCriteria=(activity:string,title:string,description:string)=>complete('afiche',activity,description,poster(activity==='REPORT'?'POSTER_ANALYSIS':activity,title,description))
+export const completeFirstGradePosterCriteria=(activity:string,title:string,description:string)=>complete('afiche',activity,description,poster(activity==='REPORT'?'POSTER_ANALYSIS':activity,title,affirmativeLanguageTask(description)))
 export const completeFirstGradeDetectiveCriteria=(activity:string,description:string)=>complete('cuento policíaco',activity,description,detective(activity==='REPORT'?'DETECTIVE_STORY_ANALYSIS':activity,description))
 export const completeFirstGradeCalligramCriteria=(activity:string,description:string)=>complete('caligrama',activity,description,calligram(activity==='REPORT'?'CALLIGRAM_ANALYSIS':activity,description))

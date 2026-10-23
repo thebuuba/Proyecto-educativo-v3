@@ -1,0 +1,73 @@
+{
+  "catalog": "evaluation-2026.161",
+  "backendFull": {
+    "tests": 97553,
+    "files": 229,
+    "passed": true,
+    "teardownWarning": "Timeout terminating forks worker for optative-mt-four-contract.spec.ts; all229files/97553tests passed, command finished, no Vitest processes remained"
+  },
+  "isolatedTeardownCheck": {
+    "tests": 665,
+    "files": 1,
+    "exitCode": 0,
+    "passed": true,
+    "warningRepeated": false,
+    "environmentCauseNotProven": true
+  },
+  "backendFocal": {
+    "tests": 228,
+    "files": 6,
+    "passed": true,
+    "beforeLastStoredErrorTextAdjustment": true
+  },
+  "lastAdjustmentFocal": {
+    "tests": 53,
+    "files": 2,
+    "passed": true
+  },
+  "frontendFocal": {
+    "tests": 587,
+    "files": 5,
+    "passed": true,
+    "beforeLastStoredErrorTextAdjustment": true
+  },
+  "frontendReviewedLanguage": {
+    "tests": 472,
+    "files": 1,
+    "passed": true
+  },
+  "frontendFullThisVersion": false,
+  "buildsAndLints": [
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 9609
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 27338
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 39666
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 3523
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 3194
+    }
+  ],
+  "cloudflareMode": "DRY_RUN_NO_DEPLOY",
+  "sourceValidationOutputs": 220,
+  "previousOutputsExact": 172,
+  "posterRead": 48,
+  "remoteInstalled": false,
+  "personalVisualVerified": false
+}

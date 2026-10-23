@@ -1,0 +1,528 @@
+{
+  "catalog": "evaluation-2026.161",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "reviewer": "Codex, mismo autor; revisión interna sin independencia externa",
+  "currentProof": "auditoria-curricular-len1-161-validacion220.json",
+  "sourceHashes": [
+    {
+      "path": "apps/backend/src/modules/evaluation-instruments/catalog-current.ts",
+      "sha256": "b545f9122931b1d191b6fdcb644cc5b12a28d5ff297f97b1c63761d03bc92dcb"
+    },
+    {
+      "path": "packages/shared/src/language-feature-criteria.ts",
+      "sha256": "873c978d2813ef17eddfb9917dd1f7152043146780d588e82964a3ebe82f3dda"
+    },
+    {
+      "path": "packages/shared/src/secondary-language-grade-one-complete.ts",
+      "sha256": "ea782e47e5cfb18cea52b521876f1bf954e5b055539a3dc805aae0755d701a2a"
+    },
+    {
+      "path": "packages/shared/src/secondary-poster-grade-one-requirements.ts",
+      "sha256": "522202f5429c4783d1f2a63e37d25b0e017f81d08988ab23a3b72d1bcd59a887"
+    }
+  ],
+  "cases": [
+    {
+      "id": "LEN1-AFI-01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Invitación a feria del libro para el curso; mensaje/público/razón persuasiva/legibilidad, sin fecha, lugar, imágenes, publicación o cantidades añadidas. Contracción al curso corregida.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Ficha de convocatoria conserva día/hora/lugar/público/actividades y familias; argumentos con hechos/cifras/ventajas; imperativo; metáfora/exageración funcionales sin falsa promesa; plan y afiche. Selección de imágenes/formas/colores/letras/distribución/tamaño por función, con legibilidad textual separada. No obliga a explicar recursos que se piden usar.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-literary",
+          "poster-message",
+          "poster-persuasion",
+          "len-1-poster-event",
+          "poster-procedure-outline",
+          "poster-visuals"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-literary",
+          "poster-message",
+          "poster-persuasion",
+          "len-1-poster-event",
+          "poster-procedure-outline",
+          "poster-visuals"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-literary",
+          "poster-message",
+          "poster-persuasion",
+          "len-1-poster-event",
+          "poster-procedure-outline",
+          "poster-visuals"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-literary",
+          "poster-message",
+          "poster-persuasion",
+          "len-1-poster-event",
+          "poster-procedure-outline",
+          "poster-visuals"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Propósito/intención/destinatario/acción desde palabras clave; anticipación gráfica contrastada, connotación, argumentos, inferencia y paráfrasis con datos importantes. No añade creación; no duplica mensaje global con reconstrucción ni inferencia con sustento genérico.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-feature-connotation",
+          "poster-persuasion",
+          "poster-purpose",
+          "poster-procedure-prediction",
+          "poster-inference",
+          "poster-procedure-paraphrase",
+          "poster-visuals"
+        ],
+        "lista-cotejo": [
+          "poster-feature-connotation",
+          "poster-persuasion",
+          "poster-purpose",
+          "poster-procedure-prediction",
+          "poster-inference",
+          "poster-procedure-paraphrase",
+          "poster-visuals"
+        ],
+        "escala": [
+          "poster-feature-connotation",
+          "poster-persuasion",
+          "poster-purpose",
+          "poster-procedure-prediction",
+          "poster-inference",
+          "poster-procedure-paraphrase",
+          "poster-visuals"
+        ],
+        "lista-ponderada": [
+          "poster-feature-connotation",
+          "poster-persuasion",
+          "poster-purpose",
+          "poster-procedure-prediction",
+          "poster-inference",
+          "poster-procedure-paraphrase",
+          "poster-visuals"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Metáfora/asociación, pleonasmo/reiteración, elipsis/omisión recuperable y exageración/énfasis no literal tienen funciones explícitas. Un ejemplo de cada recurso integrado sin convertirlo en un único ejemplo total ni duplicar su cantidad.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-feature-literary"
+        ],
+        "lista-cotejo": [
+          "poster-feature-literary"
+        ],
+        "escala": [
+          "poster-feature-literary"
+        ],
+        "lista-ponderada": [
+          "poster-feature-literary"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-05",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Riesgo/acciones según ficha ficticia; prevención/alerta, imperativo y obligación/posibilidad con deber/tener que frente a poder/podría; imagen por función y texto legible. No añade recomendaciones médicas, estadísticas ni acciones externas.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-06",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Simulacro según ficha/protocolo; riesgo y acciones con alerta/imperativo, modalidad sin convertir opción en orden. Símbolos y letras por localización/comprensión, sin video, otras emergencias ni instrucciones inventadas.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-imperative",
+          "poster-feature-prevention",
+          "poster-feature-periphrasis",
+          "poster-message",
+          "poster-visuals"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-07",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Contraste de hechos/cifras/ventajas en ambos afiches, verificados con ficha, y asociaciones connotativas frente a hechos. No queda reducido a estadísticas ni pide un tercer afiche.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-arguments-comparison",
+          "poster-feature-connotation"
+        ],
+        "lista-cotejo": [
+          "poster-arguments-comparison",
+          "poster-feature-connotation"
+        ],
+        "escala": [
+          "poster-arguments-comparison",
+          "poster-feature-connotation"
+        ],
+        "lista-ponderada": [
+          "poster-arguments-comparison",
+          "poster-feature-connotation"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-08",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Solo plan: intención/destinatario/actividad/día/lugar/acciones y esquema textual/visual; mensaje previsto de convivencia justa, equitativa y respetuosa. No puntúa afiche ejecutado hoy ni publica. El contrato de plan sin esquema mantiene formato libre cuando no se pide esquema.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-plan-situation",
+          "poster-procedure-outline",
+          "poster-plan-convivencia"
+        ],
+        "lista-cotejo": [
+          "poster-plan-situation",
+          "poster-procedure-outline",
+          "poster-plan-convivencia"
+        ],
+        "escala": [
+          "poster-plan-situation",
+          "poster-procedure-outline",
+          "poster-plan-convivencia"
+        ],
+        "lista-ponderada": [
+          "poster-plan-situation",
+          "poster-procedure-outline",
+          "poster-plan-convivencia"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-R01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Afiche producido de convivencia con acciones, invitación y trato respetuoso sin burlas/exclusión. Usa imagen dada sin seleccionar otra y legibilidad del texto sin talento artístico. Este producto complementa la evidencia de planificación08.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message",
+          "poster-visuals"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-message",
+          "poster-visuals"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-R02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Solo elipsis usada como omisión recuperable, sin otros recursos, imagen ni explicación aparte. Los descriptores de producción juzgan uso en producto; progresión almacenada de error específica de elipsis.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-message",
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-feature-literary"
+        ],
+        "lista-cotejo": [
+          "poster-message",
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-feature-literary"
+        ],
+        "escala": [
+          "poster-message",
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-feature-literary"
+        ],
+        "lista-ponderada": [
+          "poster-message",
+          "poster-audience",
+          "poster-persuasion",
+          "poster-legibility",
+          "poster-feature-literary"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-R03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Norma y acciones de ficha conservadas con deber/tener que; sin posibilidad ni imperativo negados con no usen. No trata solo texto como tema. No añade argumentos, otras normas ni insumos externos.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-periphrasis",
+          "poster-message"
+        ],
+        "lista-cotejo": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-periphrasis",
+          "poster-message"
+        ],
+        "escala": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-periphrasis",
+          "poster-message"
+        ],
+        "lista-ponderada": [
+          "poster-audience",
+          "poster-legibility",
+          "poster-feature-periphrasis",
+          "poster-message"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-AFI-R04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Control acotado de análisis: solo imperativo presente y llamada a acción/destinatario; sin creación ni imágenes.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "poster-feature-imperative"
+        ],
+        "lista-cotejo": [
+          "poster-feature-imperative"
+        ],
+        "escala": [
+          "poster-feature-imperative"
+        ],
+        "lista-ponderada": [
+          "poster-feature-imperative"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    }
+  ],
+  "reviewMethod": "32salidas iniciales y16reservadas leídas completas antes de sus ajustes.32salidas161 v2 leídas completas; comparación exacta y lectura de las dimensiones cambiadas cubre las48finales. El último ajuste cambió solo progressionLevels[3] de12criterios poéticos; se leyeron todos, con descriptores renderizados y restantes campos exactos.",
+  "storedErrorProgressionNote": "La configuración estándar de cuatro niveles renderiza índices0/1/2/4; no se presenta el ajuste del índice3 como cambio de un descriptor visible en esa configuración.",
+  "sourceComparison": {
+    "pages": [
+      72
+    ],
+    "nextPageChecked": 73,
+    "conceptRows": 9,
+    "procedureParagraphs": 3,
+    "attitudes": 4,
+    "completeMallaAndContinuationRead": true
+  },
+  "topicClosed": false,
+  "pending": [
+    "Instalación individual y HTTP/DB de161",
+    "Visual personal bloqueado por contraseña",
+    "Contraste final de indicadores de todaLengua1 después de cuento/caligrama"
+  ]
+}

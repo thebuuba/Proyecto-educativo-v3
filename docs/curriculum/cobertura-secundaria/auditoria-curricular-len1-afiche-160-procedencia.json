@@ -1,0 +1,12 @@
+{
+  "catalog": "evaluation-2026.160",
+  "artifact": "auditoria-curricular-len1-afiche-160-antes.json",
+  "artifactSha256": "9e89354e1d4b3863ab91a6ead0e069c0b30b30c6d4488329de89cbe989f56252",
+  "legacyCaptureLabel": "7dc7f488+working-tree",
+  "verifiedSourceCommit": "575e4a25db27eca6923d192338beed8b71c90096",
+  "frozenApiSha256": "e9afacca1756ced377b32bb40ce001da427254d01efce8383c892be331c0673c",
+  "all32FullRecommendationsExact": true,
+  "method": "Comparison against API frozen before161 changes; no recapture or overwrite",
+  "note": "The legacy capture helper retained a base worktree label. This receipt establishes the actual verified source; later captures record HEAD and dirty state dynamically.",
+  "remoteWrites": false
+}
