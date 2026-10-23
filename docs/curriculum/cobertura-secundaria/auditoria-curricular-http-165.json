@@ -1,0 +1,278 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.165",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-TRA-SCI01",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "NEWS_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRA-SCI04",
+      "format": "escala",
+      "score": 17.35,
+      "activityType": "ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRA-CIV04",
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRA-CAL02",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "CALLIGRAM_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 1755
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 2030
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 3179
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 3078
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2290
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2207
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3096
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2101
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 3201
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 3218
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2234
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2087
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2983
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 1899
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 3060
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 3276
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2103
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2077
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3053
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2256
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 3123
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 2788
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 1986
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2186
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2763
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 2080
+    }
+  ],
+  "preservedReleases": 95,
+  "preservedSnapshots": 1245,
+  "finalReleases": 96,
+  "finalSnapshots": 1249,
+  "pedagogicalAcceptance": "INITIAL_TRANSVERSALS_SAMPLE_CONFIRMED_INDEPENDENT_CASES_AND_WHOLE_AUDIT_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.165",
+    "sourceCommit": "dd9257e0a5a23279621f3b01c819079bc5995d12",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "000a88ef6bcfe7d9ef17f78449b6688b31857437a9dd60968af62a18936fd5d5",
+    "frozen164Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 95,
+    "preservedSnapshots": 1245,
+    "finalReleases": 96,
+    "finalSnapshots": 1245,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.165",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-OwENGUZ-.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-OwENGUZ-.js",
+        "sha256": "b9cf5b0d4394430ca7fe988ed798ef1589761bfb28e884f94c0e04a8f65b475c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-BYrC8BjX.js",
+        "sha256": "cf489413491d720f9eb6755203de13ddfe4c4fd36c4398e66855b5295ce454f6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BF8c9DE_.js",
+        "sha256": "3fabea41391aa9eb9b89fe7320d30213e76a3ab2cad8d0819031cf567e526087",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-DaxSaF9J.js",
+        "sha256": "707b9b5224ed829dd3753d78733cbdfaf54376379243c73def3ee5b75322da4c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DzimXX5i.js",
+        "sha256": "c9667aab61d39506c45d940d850cce117e1876b3579f67e1d499e65f97a51f40",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "fbe6306ac83941d7124ba8b96c77dfeeb3cb84859932cedf73d9892a55dcf6df",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browser": {
+    "mode": "PERSONAL_LOGIN_WITH_CREDENTIAL_ERROR_NOT_CREATOR",
+    "observedEntry": "/assets/index-p6OIwtiY.js",
+    "observedCatalogAssets": 163,
+    "servedEntry": "/assets/index-OwENGUZ-.js",
+    "servedCatalog": 165,
+    "reloaded": false,
+    "reason": "La pestaña pudo leerse nuevamente, pero conserva formulario de acceso con contraseña introducida y assets163. No se recargó ni se alteró el formulario para conservar su entrada.",
+    "authenticatedCreatorVerified": false,
+    "storageCleared": false,
+    "credentialsEntered": false,
+    "emailSent": false,
+    "registrationAndCacheInspection": "NOT_VERIFIED",
+    "manualSteps": [
+      "Conservar cualquier dato pendiente del formulario y recargar localhost para cargar165.",
+      "Iniciar sesión con una cuenta propia de Development; no se cambió su contraseña.",
+      "En Lengua de primero, introducir título y descripción de un caso documentado; comprobar estrategia visible, elección automática cuando corresponda y manual.",
+      "Revisar los cuatro instrumentos, guardar y reabrir; cambiar solo estrategia y comprobar que el instrumento y puntuación manual se conservan."
+    ]
+  }
+}
