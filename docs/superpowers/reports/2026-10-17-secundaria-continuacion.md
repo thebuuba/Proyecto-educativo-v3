@@ -1,3 +1,35 @@
+# Checkpoint vigente: HTTP 152 y referencias preservados
+
+## Verificación final HTTP/DB del formato 152
+
+Código local: `7d207e5ab2a751fa310294ce699bb6961c1de0b2`. Cuatro muestras verificadas: Word MF002 4.º en rúbrica/20 y cotejo/17.35; informe desarrollado de Lengua 1.º en escala/20 y ponderada/17.35. En todas: paridad servicio/alternativa, puntuación inicialmente pendiente, edición manual, guardado y reapertura; cambiar solo la estrategia conservó el instrumento completo y su snapshot. Se reanudó el diario original y no se duplicaron actividades.
+
+La reapertura lenta inicial agotó el timeout de 30 segundos; el Worker respondió 200 a los 31.503 ms. Se reconcilió mediante consultas de solo lectura y una reapertura posterior de 16.420 ms. Después ocurrió un 500 por ENOTFOUND al resolver el pooler, antes de crear la siguiente actividad. Las comprobaciones acotadas de DNS de Windows y Node respondieron correctamente. El Worker terminó con código 1; el siguiente intento encontró ECONNREFUSED en login y no escribió datos. No hay evidencia suficiente para atribuir el cierre a una línea concreta del runtime. Se comprobó el puerto libre, se arrancó una sola instancia y se verificó de nuevo el proyecto y los assets antes de reanudar. No se modificaron DNS, pool, timeouts ni configuración remota.
+
+El diario registra 31 respuestas, incluido el 500, además de las excepciones conservadas; no se presenta como una ejecución sin fallos. La latencia sigue variable y el DNS intermitente continúa como limitación real. Evidencia pública: `auditoria-realista-formato-152-http.json`. La recuperación del recorrido no certifica estabilidad total.
+
+Historia final: **85 releases y 1.209 snapshots**, con los 84/1.205 originales exactos y cuatro snapshots QA nuevos. Las quince referencias personales originales pasaron después de las escrituras, sin recapturas. Se congeló el payload 152 completo frente a Development y se guardó una referencia nueva previa a 153; los originales siguen intactos. Solo se añadieron filas QA y el release autorizado, sin migraciones de esquema ni cuentas nuevas.
+
+Runtime recuperado: launcher 41304, logs privados `runtime-delivery-152-recovered-*`. PostgreSQL (app_backend_local, sin bypass RLS), Auth, Storage y frontend apuntan a Development eolgunypmtgrsyrjzcld. Entry `/assets/index-BeJgGiiL.js`, exacto frente al build. Comprobar procesos antes de reiniciar; no asumir que un PID sigue vigente. La cuenta personal permanece en login; la prueba visual del creador sigue pendiente y QA no la sustituye.
+
+Siguiente: corregir los fallos científicos ya reproducidos, con 152 preservado. El helper nuevo aún no está conectado al motor. No se han ejecutado los casos C ni cerrado las limitaciones pedagógicas del informe. Todos los pushes siguen suspendidos.
+
+## Checkpoints anteriores (históricos)
+
+# Checkpoint vigente: 152 instalado; QA reanudada tras reconciliación
+
+Commit de código **7d207e5ab2a751fa310294ce699bb6961c1de0b2** local; rama ampliacion-de-instrumentos-2, cinco commits por delante del remoto guardado, sin push. Catálogo152 instalado únicamente en Development: CREATED/UNCHANGED, fuente=compilado,151histórico exacto,85releases/1205snapshots antes de QA. Runtime152 **sesión15168/launcher45492 activo**; comprobar procesos reales antes de intervenir. PG app_backend_local/no bypass, Auth/Storage/frontendDevelopment; entry index-BeJgGiiL.js y assets/SW exactos. Browserpersonal1796703522 recargado y entry152 confirmado por DOM; continúa exigiendo contraseña. Handoff marcado, sin correos, credenciales ni almacenamiento borrado.
+
+QA primera sesión1497 terminó1 por timeout30.007ms en GET de reapertura posterior al cambio de estrategia. Worker terminó200 a31.503ms. La actividad ya estaba guardada y reabierta antes del cambio; no repetir creación. Reconciliación97606 falló únicamente por enum SQL ACTIVE en vez de active; no escrituras. Corrección73897 terminó0: historia85/1206 y84/1205previos exactos, instrumento completo idéntico, estrategia manual conservada. GET autorizado de solo lectura200 en16.420ms; cuerpo409.854bytes/6ms,39actividades. No atribuir latencia solo al tamaño ni dar conexión por resuelta. Evidencia privada delivery-first-reconciliation-corrected.json; el fallo original se conserva. Se marcó primera muestra verificada en su MISMO diario.
+
+**QA reanudada sesión29839 EN CURSO**; comprobar delivery-http-152-progress.json antes de cualquier acción. Último sondeo:2writes/1verified/14respuestas; no repetir ejecutor mientras siga activo. Meta: cuatro muestras Word rúbrica20/cotejo17.35 e informe desarrollado escala20/ponderada17.35, historia final85/1209. Después ejecutar UNAvez verify-personal-after-delivery-152.mjs (preparado, no ejecutado), registrar prueba pública y freeze152 con historia real antes de cambiar reglas para153. No sobrescribir referencias anteriores ni reejecutar creadores/instaladores.
+
+Nuevo archivo NO VERIFICADO para siguiente bloque: realistic-science.spec.ts,11pruebas,9RED/2aprobadas (sesión59015 terminó1, science-red.log). Solo pruebas, ninguna corrección científica aún. Mantener sin commit de código hasta GREEN. NASA Planets e IUPAC Periodic Table consultados: ocho planetas y grupos/columnas, no nueva fuente curricular importada ni adaptación todavía. No ejecutarC. Calidad de152 sigue parcial según auditoria-realista-formato-152-revision.json; continuar también progresiones de presentación y contenido/autor/fragmentos de informe, y todos los proveedores pendientes.
+
+Gates de7d207e5a:97217backend/216archivos,1041frontend, builds backend/frontend/Cloudflare dry-run y lints aprobados;9tests decongelado después del ajuste de tipo. No repetir suites completas sin cambios nuevos. Sin producción/main/deploy/reset/migraciones remotas/subagentes/nuevos módulos.
+
+## Checkpoints anteriores (históricos)
+
 # Checkpoint vigente: extracción y agrupación152 compiladas; falta instalación/HTTP
 
 Rama ampliacion-de-instrumentos-2; último commit documental c02b3897 y nuevo bloque152 por guardar. **97.217 pruebas backend/216 archivos**, 1.041 de frontend, 1.828 afectadas,23 nuevas de entrega,9 del congelado 151. Builds backend/frontend/Cloudflare dry-run y lints aprobados. Pruebas completas delivery-corrected-backend-test.log; builds delivery-build-gates-progress.json. Primer full run: 16 fallos corregidos; primerbuilderror de tipo corregido sin alterar151. No repetirfullsuite sin cambios nuevos.

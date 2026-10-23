@@ -1,0 +1,316 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.152",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "B-MF0024-formato",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-MF0024-formato",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-LEN1-informe-desarrollado",
+      "format": "escala",
+      "score": 20,
+      "activityType": "READING_REPORT_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-LEN1-informe-desarrollado",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "READING_REPORT_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 6302
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 6227
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10158
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 15557
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 12570
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11290
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8538
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 4149
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4470
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10212
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 12433
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8643
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8834
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8050
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 24222
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 16870
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 500,
+      "ms": 195
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2748
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4478
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 23871
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 8830
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6482
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6004
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 10489
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7238
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 26345
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 23416
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8280
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7330
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7725
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7654
+    }
+  ],
+  "preservedReleases": 84,
+  "preservedSnapshots": 1205,
+  "finalReleases": 85,
+  "finalSnapshots": 1209,
+  "pedagogicalAcceptance": "PARTIAL_EXTRACTION_AND_GROUPING_PROGRESSION_AND_REPORT_CONTENT_REMAIN_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "runtime": {
+    "catalogBuild": "evaluation-2026.152",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-BeJgGiiL.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-BeJgGiiL.js",
+        "sha256": "ff692d83866ce728cb7a1f60c08ee7c8aec4e9ccd34546d1a1d3e5694b4a34f4",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-DoSG6TC4.js",
+        "sha256": "56fb97f60f0b1a9a0e60bbf6e7148b0510504d5771cb6f26d325a05705489a2f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-DWo4blHc.js",
+        "sha256": "c00248c63dbf220dbff9993126b1b3585db90070896d65073e37389883fc4a3d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-DIqNOn87.js",
+        "sha256": "3c7ffd91c05ff0c1188c6236dd4810f0f068a7f5e72852c26b2cc19f0b35bf1f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-09eZdvD7.js",
+        "sha256": "b310ac26afd9c69916f234e1f115d6d65538db8ba97dd34373e89e7ced7a1ec2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "6d2eed0d9db331ba086c7fef8d6dd6dfa11cf73dc5043e1a39102513fe236c1b",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "freeze": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "version": "evaluation-2026.152",
+    "fingerprint": "79cbb7c0b7571617e7d0829cc8b98e193835000c4be8b2c78706c087d9669a71",
+    "payloadEqualsInstalled": true,
+    "newFrozenFile": "apps/backend/src/modules/evaluation-instruments/catalog-v152.ts",
+    "previousFrozenFilesChanged": false,
+    "preservedReleases": 85,
+    "preservedSnapshots": 1209,
+    "remoteWrites": false
+  },
+  "personalBaselines": {
+    "verified": 15,
+    "originalReferences": true,
+    "recaptured": 0
+  },
+  "incidents": [
+    {
+      "kind": "HTTP_TIMEOUT",
+      "operation": "Reapertura después de cambiar estrategia en Word/rúbrica",
+      "clientMs": 30007,
+      "serverStatus": 200,
+      "serverMs": 31503,
+      "reconciledReadOnly": true,
+      "instrumentHashExact": true,
+      "reopenMs": 16420,
+      "bodyMs": 6,
+      "bodyBytes": 409854,
+      "assignmentActivities": 39
+    },
+    {
+      "kind": "DNS",
+      "operation": "Recomendación de informe desarrollado, antes de crear actividad",
+      "status": 500,
+      "ms": 195,
+      "code": "ENOTFOUND",
+      "host": "aws-0-us-east-1.pooler.supabase.com",
+      "boundedOsAndNodeResolution": "OK",
+      "previousHistoryExact": true
+    },
+    {
+      "kind": "LOCAL_RUNTIME_STOPPED",
+      "operation": "Login de reanudación",
+      "code": "ECONNREFUSED",
+      "writes": 0,
+      "previousRuntimeExit": 1,
+      "cause": "DNS precede al cierre; el log no demuestra por sí solo la causa interna de terminación",
+      "recovery": "Un único Worker local reiniciado tras confirmar puerto libre; configuración y assets contrastados nuevamente"
+    }
+  ],
+  "stability": "PARTIAL_VARIABLE_LATENCY_AND_INTERMITTENT_DNS_REMAIN_OPEN",
+  "duplicates": 0,
+  "push": false,
+  "productionModified": false
+}
