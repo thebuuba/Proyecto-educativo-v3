@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "designer": "/root/disenador_pruebas",
+  "expectationsFixedBeforeOutputs": true,
+  "source": "MINERD2023 PDF69,74,75; referencias del bancoE01–E04",
+  "cases": [
+    {
+      "id": "LEN1-EC-V01",
+      "linkedCase": "LEN1-TRE-E01",
+      "title": "Listos para conversar sobre los árboles",
+      "description": "En equipos, preparen una explicación breve sobre cómo conservar los árboles del patio, usando la ficha entregada. Mañana la compartirán con otro equipo; hoy entreguen solamente el guion.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Recomendación de conservación sustentada en ficha.",
+        "Guion comprensible para el equipo destinatario.",
+        "Evaluación solo de preparación; recepción y respuesta permanecen pendientes."
+      ],
+      "forbidden": [
+        "Preguntas recibidas o respuestas/intercambio ya realizado.",
+        "Ejecución ambiental, investigación o impacto.",
+        "Disposiciones internas no observables."
+      ],
+      "sourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ]
+    },
+    {
+      "id": "LEN1-EC-V02",
+      "linkedCase": "LEN1-TRE-E01",
+      "title": "La pregunta del equipo vecino",
+      "description": "En equipos, expliquen al equipo vecino cómo conservar los árboles del patio, apoyándose en la ficha. Quienes escuchan dirán qué entendieron y plantearán una pregunta o propuesta. Respondan a esa intervención y expliquen si mantienen o ajustan su recomendación. Anoten el intercambio realizado dentro del aula.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Recomendación sobre árboles fiel a ficha.",
+        "Qué entendió receptor; pregunta O propuesta.",
+        "Respuesta a intervención concreta; mantener O ajustar con razones.",
+        "Observación y registro del intercambio efectivo."
+      ],
+      "forbidden": [
+        "Guion suficiente como intercambio.",
+        "Pregunta Y propuesta obligatorias.",
+        "Cambio obligatorio o consenso.",
+        "Exterior/publicación/grabación/resultado ambiental exigidos."
+      ],
+      "sourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ]
+    },
+    {
+      "id": "LEN1-EC-V03",
+      "linkedCase": "LEN1-TRE-E02",
+      "title": "Compartamos lo que muestra el suelo",
+      "description": "En equipos, trabajen la noticia ya revisada del estudio simulado sobre humedad del suelo para compartirla con la comunidad. Tienen la noticia y los registros de la investigación en la carpeta.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Fase y medio ambiguos: confirmar O preparación provisional con supuestos explícitos.",
+        "Conservar noticia revisada/procedencia/simulación.",
+        "Limitar instrumento a evidencias disponibles; publicación no confirmada."
+      ],
+      "forbidden": [
+        "Certeza portal/impreso/oral/producto no especificado.",
+        "Enlace, distribución o acceso exigidos antes de confirmar.",
+        "Puntuación de publicación no observada.",
+        "Nueva investigación/mediciones/cuentas/datos/reescritura."
+      ],
+      "sourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ]
+    },
+    {
+      "id": "LEN1-EC-V04",
+      "linkedCase": "LEN1-TRE-E03",
+      "title": "Las mismas instrucciones, mejor escritas",
+      "description": "Corrige solamente las tildes y la puntuación del instructivo entregado para reutilizar cajas limpias como archivadores y prolongar su uso. Conserva las acciones, su orden, los materiales y la explicación de por qué conviene evitar desecharlas.",
+      "participationMode": "INDIVIDUAL",
+      "expected": [
+        "Solo tildes/puntuación; sentido conservado.",
+        "Acciones/orden/materiales/finalidad intactos.",
+        "Relación dada reutilización-prolongar uso-evitar descarte conservada.",
+        "Revisión superficial, no autoría nueva."
+      ],
+      "forbidden": [
+        "Añadir/eliminar/reordenar pasos.",
+        "Nueva explicación ambiental/lema/investigación/cálculo.",
+        "Cambios sustantivos premiados.",
+        "Fabricar/materiales/impacto real/clasificar."
+      ],
+      "sourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ]
+    },
+    {
+      "id": "LEN1-EC-V05",
+      "linkedCase": "LEN1-TRE-E04",
+      "title": "¿Cuántas copias faltan?",
+      "description": "En parejas, trabajen solo con el caso asignado: hay diez lectores y cero, cuatro o diez ejemplares disponibles, todos utilizables. Cada persona necesita uno. Revisen únicamente el paso que ordena imprimir diez copias nuevas y su breve explicación ambiental. Indiquen cómo comprobar cuántas hacen falta sin dejar a nadie sin lectura. Conserven el resto del instructivo.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Comprobar lectores y ejemplares utilizables antes de imprimir.",
+        "Caso asignado:10 adicionales si0 existentes,6 si4,0 si10.",
+        "Alternativas según datos; no exigir trescasos.",
+        "Cada lector con material.",
+        "Evitar impresión innecesaria, no cero absoluto.",
+        "Cambiar solo paso autorizado y explicación."
+      ],
+      "forbidden": [
+        "Premiar menos copias dejando lectores sinmaterial.",
+        "Exigir los3casos.",
+        "Mera ortografía suficiente.",
+        "Modificar otros pasos/digital/recursos inventados.",
+        "Imprimir/medir ahorro/equivalencia árboles."
+      ],
+      "sourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ]
+    },
+    {
+      "id": "LEN1-EC-V06",
+      "linkedCase": "LEN1-TRE-E02",
+      "title": "El estudio del suelo llega al tablón",
+      "description": "En equipos, publiquen en el tablón digital escolar ya habilitado la noticia revisada del estudio simulado sobre humedad del suelo. La noticia comunica qué se investigó, cómo se observó, los resultados y una conclusión limitada por los registros entregados. Conserven el texto, las referencias y la indicación de simulación. Comprueben el acceso de los lectores previstos y dejen constancia de la publicación.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Publicación efectiva y legible en espacio indicado/acceso lectores.",
+        "Pregunta/procedimiento/resultado/conclusión de estudio identificables.",
+        "Resultados/límites/textoaprobado/referencias/simulación conservados.",
+        "Enlace O comprobación docente O equivalente."
+      ],
+      "forbidden": [
+        "Borrador/vista previa suficiente.",
+        "Tema científico suficiente sin investigación.",
+        "Reescribir/ampliar conclusión/datos.",
+        "Investigación/cuentas/datos reales/varias plataformas/visitas.",
+        "Todas las modalidades de constancia obligatorias."
+      ],
+      "sourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ]
+    }
+  ]
+}

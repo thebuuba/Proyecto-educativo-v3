@@ -1,0 +1,548 @@
+{
+  "catalog": "evaluation-2026.168",
+  "outputs": 40,
+  "activities": 10,
+  "reviewer": "/root/revisor_pedagogico",
+  "designer": "/root/disenador_pruebas",
+  "coordinatorReadAll": true,
+  "independentReadAll": true,
+  "finalAcceptance": true,
+  "wholeSubjectClosed": false,
+  "prior712Exact": true,
+  "history": [
+    "167:20salidasE rechazadas(16principales+4fallback).",
+    "168-v1E:contenido corregido,reserva error sustantivo omitido en L1E03/E04.",
+    "168contrastesantes:32rechazadas(24principales+8fallback).",
+    "168v2contrastes:36/40aceptadas,reservaV04error menor frente asustantivo.",
+    "Final:E16v2+contrastes24v3,todas aceptadas;V03provisionalfase/medio."
+  ],
+  "rows": [
+    {
+      "caseId": "LEN1-TRE-E01",
+      "title": "Lo que entendimos sobre el cuidado del agua",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json",
+      "requirements": {
+        "explicit": [
+          "Recomendación ambiental sustentada en ficha",
+          "Receptor expresa qué entendió y pregunta O propuesta relacionada",
+          "Respuesta sustentada a intervención concreta; mantiene O ajusta con razones",
+          "Recepción y respuesta efectivas dentro del aula, observación y registro"
+        ],
+        "excluded": [
+          "Contacto exterior, publicación digital, grabación, investigación nueva",
+          "Consenso, cambio obligatorio de opinión o mejora ambiental conseguida",
+          "Exposición unilateral como intercambio completo"
+        ]
+      },
+      "excluded": [
+        "Contacto exterior, publicación digital, grabación, investigación nueva",
+        "Consenso, cambio obligatorio de opinión o mejora ambiental conseguida",
+        "Exposición unilateral como intercambio completo"
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+      "captureSha256": "7222224eac5bbd5d6a2ea45bd8a638c6ab123c0ad663f5a7dde4858a8d6920a1",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-classroom-recommendation",
+          "title": "Recomendación ambiental sustentada",
+          "requirement": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben."
+        },
+        {
+          "templateId": "len1-community-classroom-reception",
+          "title": "Comprensión e intervención del equipo receptor",
+          "requirement": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido."
+        },
+        {
+          "templateId": "len1-community-classroom-response",
+          "title": "Respuesta sustentada y decisión sobre la recomendación",
+          "requirement": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo."
+        },
+        {
+          "templateId": "len1-community-classroom-record",
+          "title": "Registro del intercambio realizado en el aula",
+          "requirement": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E02",
+      "title": "Los resultados ya están en el tablón",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json",
+      "requirements": {
+        "explicit": [
+          "Publicación efectiva y acceso de destinatarios",
+          "Investigación identificable: pregunta, procedimiento de observación, resultado y conclusión",
+          "Resultados/alcance fieles a registros y noticia aprobada",
+          "Contenido/procedencia/carácter simulado conservados",
+          "Legibilidad y constancia verificable: enlace O comprobación docente O otra evidencia"
+        ],
+        "excluded": [
+          "Investigar o medir de nuevo, crear cuentas/datospersonales",
+          "Rehacer noticia, añadir hipótesis/conclusiones, varias plataformas",
+          "Visitas/comentarios, vista previa o información científica genérica como investigación publicada"
+        ]
+      },
+      "excluded": [
+        "Investigar o medir de nuevo, crear cuentas/datospersonales",
+        "Rehacer noticia, añadir hipótesis/conclusiones, varias plataformas",
+        "Visitas/comentarios, vista previa o información científica genérica como investigación publicada"
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+      "captureSha256": "7222224eac5bbd5d6a2ea45bd8a638c6ab123c0ad663f5a7dde4858a8d6920a1",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-publication-integrity",
+          "title": "Versión revisada conservada",
+          "requirement": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido."
+        },
+        {
+          "templateId": "len1-community-publication-access",
+          "title": "Disponibilidad efectiva para los lectores",
+          "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación."
+        },
+        {
+          "templateId": "len1-community-publication-trace",
+          "title": "Créditos y localización comprobables",
+          "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E03",
+      "title": "Demos otro uso al papel",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json",
+      "requirements": {
+        "explicit": [
+          "Propósito de aprovechamiento y evitar descarte prematuro",
+          "Acciones relacionadas con finalidad, no lema separado",
+          "Pasos comprensibles, ordenados y ejecutables con materiales dados",
+          "Indicaciones precisas y condiciones fieles a ficha"
+        ],
+        "excluded": [
+          "Fabricar papel reciclado, investigar, comprar materiales o ejecutar la actividad",
+          "Medir impacto, cifras inventadas o una única forma verbal obligatoria"
+        ]
+      },
+      "excluded": [
+        "Fabricar papel reciclado, investigar, comprar materiales o ejecutar la actividad",
+        "Medir impacto, cifras inventadas o una única forma verbal obligatoria"
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+      "captureSha256": "7222224eac5bbd5d6a2ea45bd8a638c6ab123c0ad663f5a7dde4858a8d6920a1",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-health-instructions-actions",
+          "title": "Acciones para aprovechar el papel según la ficha",
+          "requirement": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados."
+        },
+        {
+          "templateId": "len1-health-instructions-order",
+          "title": "Orden comprensible de los pasos",
+          "requirement": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas."
+        },
+        {
+          "templateId": "len1-health-instructions-reuse-purpose",
+          "title": "Finalidad ambiental vinculada al aprovechamiento",
+          "requirement": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E04",
+      "title": "Solo las copias que hacen falta",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json",
+      "requirements": {
+        "explicit": [
+          "Comprobación de copias adicionales necesarias antes de imprimir",
+          "Acceso de todas las personas a lectura",
+          "Finalidad de evitar consumo innecesario relacionada con acción",
+          "Revisión clara y limitada a paso y frase; demás instrucciones intactas",
+          "Imprimir algunas O ninguna según datos; cero no es siempre mejor"
+        ],
+        "excluded": [
+          "Lectura digital obligatoria, cuentas, compras",
+          "Rehacer instructivo, ejecutar impresión o ahorro ambiental real"
+        ]
+      },
+      "excluded": [
+        "Lectura digital obligatoria, cuentas, compras",
+        "Rehacer instructivo, ejecutar impresión o ahorro ambiental real"
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+      "captureSha256": "7222224eac5bbd5d6a2ea45bd8a638c6ab123c0ad663f5a7dde4858a8d6920a1",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-selecciones-v2.json",
+      "criteria": [
+        {
+          "templateId": "len1-health-instructions-copy-need",
+          "title": "Copias necesarias y acceso a la lectura",
+          "requirement": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos."
+        },
+        {
+          "templateId": "len1-health-instructions-copy-purpose",
+          "title": "Propósito ambiental vinculado al paso revisado",
+          "requirement": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha."
+        },
+        {
+          "templateId": "len1-health-instructions-copy-preservation",
+          "title": "Revisión acotada y resto del instructivo conservado",
+          "requirement": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ]
+    },
+    {
+      "caseId": "LEN1-EC-V01",
+      "title": "Listos para conversar sobre los árboles",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Recomendación de conservación sustentada en ficha.",
+        "Guion comprensible para el equipo destinatario.",
+        "Evaluación solo de preparación; recepción y respuesta permanecen pendientes."
+      ],
+      "excluded": [
+        "Preguntas recibidas o respuestas/intercambio ya realizado.",
+        "Ejecución ambiental, investigación o impacto.",
+        "Disposiciones internas no observables."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-environment-script-message",
+          "title": "Recomendación sustentada para el guion",
+          "requirement": "Prepara en el guion una recomendación comprensible sobre la conservación de los árboles del patio, apoyada en la ficha y adecuada al equipo que la recibirá."
+        },
+        {
+          "templateId": "len1-community-environment-script-organization",
+          "title": "Guion preparado para compartir después",
+          "requirement": "Organiza el guion para que el equipo destinatario pueda comprender la explicación prevista; la valoración se limita a esta preparación, sin exigir recepción ni respuesta todavía."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "evidenceRole": "CONTRASTE_DE_ALCANCE",
+      "accreditedSourceIds": [],
+      "limit": "Preparación del guion, no intercambio realizado."
+    },
+    {
+      "caseId": "LEN1-EC-V02",
+      "title": "La pregunta del equipo vecino",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Recomendación sobre árboles fiel a ficha.",
+        "Qué entendió receptor; pregunta O propuesta.",
+        "Respuesta a intervención concreta; mantener O ajustar con razones.",
+        "Observación y registro del intercambio efectivo."
+      ],
+      "excluded": [
+        "Guion suficiente como intercambio.",
+        "Pregunta Y propuesta obligatorias.",
+        "Cambio obligatorio o consenso.",
+        "Exterior/publicación/grabación/resultado ambiental exigidos."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-classroom-recommendation",
+          "title": "Recomendación ambiental sustentada",
+          "requirement": "Explica al equipo vecino una recomendación sobre la conservación de los árboles del patio, sustentada en la ficha y comprensible para quienes la reciben."
+        },
+        {
+          "templateId": "len1-community-classroom-reception",
+          "title": "Comprensión e intervención del equipo receptor",
+          "requirement": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido."
+        },
+        {
+          "templateId": "len1-community-classroom-response",
+          "title": "Respuesta sustentada y decisión sobre la recomendación",
+          "requirement": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo."
+        },
+        {
+          "templateId": "len1-community-classroom-record",
+          "title": "Registro del intercambio realizado en el aula",
+          "requirement": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ]
+    },
+    {
+      "caseId": "LEN1-EC-V03",
+      "title": "Compartamos lo que muestra el suelo",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Fase y medio ambiguos: confirmar O preparación provisional con supuestos explícitos.",
+        "Conservar noticia revisada/procedencia/simulación.",
+        "Limitar instrumento a evidencias disponibles; publicación no confirmada."
+      ],
+      "excluded": [
+        "Certeza portal/impreso/oral/producto no especificado.",
+        "Enlace, distribución o acceso exigidos antes de confirmar.",
+        "Puntuación de publicación no observada.",
+        "Nueva investigación/mediciones/cuentas/datos/reescritura."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-news-provisional-integrity",
+          "title": "Preparación provisional de la noticia revisada",
+          "requirement": "Provisional: conserva la noticia revisada y su procedencia, incluidos los registros y el carácter simulado del estudio; no se presupone una reescritura ni una publicación efectuada."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ],
+      "evidenceRole": "CONTRASTE_DE_ALCANCE",
+      "accreditedSourceIds": [],
+      "limit": "Propuesta provisional: confirmar fase y medio; no acredita publicación."
+    },
+    {
+      "caseId": "LEN1-EC-V04",
+      "title": "Las mismas instrucciones, mejor escritas",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Solo tildes/puntuación; sentido conservado.",
+        "Acciones/orden/materiales/finalidad intactos.",
+        "Relación dada reutilización-prolongar uso-evitar descarte conservada.",
+        "Revisión superficial, no autoría nueva."
+      ],
+      "excluded": [
+        "Añadir/eliminar/reordenar pasos.",
+        "Nueva explicación ambiental/lema/investigación/cálculo.",
+        "Cambios sustantivos premiados.",
+        "Fabricar/materiales/impacto real/clasificar."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-health-instructions-surface-edition",
+          "title": "Tildes y puntuación sin cambiar el sentido",
+          "requirement": "Corrige solamente las tildes y la puntuación del instructivo entregado, manteniendo el sentido de sus instrucciones."
+        },
+        {
+          "templateId": "len1-health-instructions-surface-preservation",
+          "title": "Contenido y finalidad conservados",
+          "requirement": "Conserva exactamente las acciones, su orden, los materiales y la explicación dada de la finalidad: reutilizar las cajas para prolongar su uso y evitar desecharlas; no añade cambios sustantivos."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ]
+    },
+    {
+      "caseId": "LEN1-EC-V05",
+      "title": "¿Cuántas copias faltan?",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Comprobar lectores y ejemplares utilizables antes de imprimir.",
+        "Caso asignado:10 adicionales si0 existentes,6 si4,0 si10.",
+        "Alternativas según datos; no exigir trescasos.",
+        "Cada lector con material.",
+        "Evitar impresión innecesaria, no cero absoluto.",
+        "Cambiar solo paso autorizado y explicación."
+      ],
+      "excluded": [
+        "Premiar menos copias dejando lectores sinmaterial.",
+        "Exigir los3casos.",
+        "Mera ortografía suficiente.",
+        "Modificar otros pasos/digital/recursos inventados.",
+        "Imprimir/medir ahorro/equivalencia árboles."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-health-instructions-copy-need",
+          "title": "Copias necesarias y acceso a la lectura",
+          "requirement": "Revisa el paso para comprobar las copias adicionales necesarias en el caso asignado: calcula la diferencia entre lectores y ejemplares utilizables, sin cantidades negativas; permite un ejemplar para cada persona, imprimiendo todas las copias necesarias, algunas o ninguna según los datos, sin exigir resolver los demás casos."
+        },
+        {
+          "templateId": "len1-health-instructions-copy-purpose",
+          "title": "Propósito ambiental vinculado al paso revisado",
+          "requirement": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con los datos del caso asignado."
+        },
+        {
+          "templateId": "len1-health-instructions-copy-preservation",
+          "title": "Revisión acotada y resto del instructivo conservado",
+          "requirement": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3"
+      ]
+    },
+    {
+      "caseId": "LEN1-EC-V06",
+      "title": "El estudio del suelo llega al tablón",
+      "bank": "data/evaluation-instruments/curricular-audit/len1-componentes-contrastes-independiente-v1.json",
+      "requirements": [
+        "Publicación efectiva y legible en espacio indicado/acceso lectores.",
+        "Pregunta/procedimiento/resultado/conclusión de estudio identificables.",
+        "Resultados/límites/textoaprobado/referencias/simulación conservados.",
+        "Enlace O comprobación docente O equivalente."
+      ],
+      "excluded": [
+        "Borrador/vista previa suficiente.",
+        "Tema científico suficiente sin investigación.",
+        "Reescribir/ampliar conclusión/datos.",
+        "Investigación/cuentas/datos reales/varias plataformas/visitas.",
+        "Todas las modalidades de constancia obligatorias."
+      ],
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+      "captureSha256": "71d6e0ae268db2ce93319e0a7fd766c8c4f5b631c97f6c84477a57bf0c73e617",
+      "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-selecciones-v3.json",
+      "criteria": [
+        {
+          "templateId": "len1-community-publication-integrity",
+          "title": "Versión revisada conservada",
+          "requirement": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido."
+        },
+        {
+          "templateId": "len1-community-publication-access",
+          "title": "Disponibilidad efectiva para los lectores",
+          "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación."
+        },
+        {
+          "templateId": "len1-community-publication-trace",
+          "title": "Créditos y localización comprobables",
+          "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos."
+        }
+      ],
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL",
+      "targetSourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ],
+      "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+      "accreditedSourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ]
+    }
+  ]
+}

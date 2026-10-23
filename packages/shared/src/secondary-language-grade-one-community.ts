@@ -1,6 +1,6 @@
 import type {ContextualTopicCriterion as Criterion} from './secondary-topic-criteria'
 
-type Kind='HISTORY'|'HISTORY_ORAL'|'NEWS_PUBLISH'|'NEWS_DRAFT'|'STORY_DIGITAL'|'STORY_PRINT'|'CALLIGRAM_PUBLISH'|'ENVIRONMENT_FORUM'|'ENVIRONMENT_LETTERS'|'INFERENCE'|'SYNTHESIS'|'SUMMARY'|'PERSPECTIVE'|'PERSPECTIVE_EXCHANGE'|'PERSPECTIVE_READING'|'NEWS_RESPONSE'
+type Kind='HISTORY'|'HISTORY_ORAL'|'NEWS_PUBLISH'|'NEWS_DRAFT'|'NEWS_UNCONFIRMED'|'STORY_DIGITAL'|'STORY_PRINT'|'CALLIGRAM_PUBLISH'|'ENVIRONMENT_FORUM'|'ENVIRONMENT_LETTERS'|'ENVIRONMENT_CLASSROOM'|'ENVIRONMENT_SCRIPT'|'INFERENCE'|'SYNTHESIS'|'SUMMARY'|'PERSPECTIVE'|'PERSPECTIVE_EXCHANGE'|'PERSPECTIVE_READING'|'NEWS_RESPONSE'
 export type FirstGradeCommunityTask={kind:Kind;task:string;raw:string;activityType:string}
 /** Product phase and requested evidence take precedence over mentions of a genre. */
 export function firstGradeCommunityTask(task:string,description:string):FirstGradeCommunityTask|null{
@@ -9,12 +9,16 @@ export function firstGradeCommunityTask(task:string,description:string):FirstGra
  const finished=/\brevisad[oa]s?\b|version final|ya revisaron|ya revisamos/.test(task)
  if(finished&&/noticia/.test(task)&&/guard\w*.*borrador/.test(task)&&/plantilla|vista previa/.test(task))return found('NEWS_DRAFT','WRITTEN_PRODUCTION')
  if(finished&&/noticia/.test(task)&&/\bpubli(?:ca|quen|quenla|car)\b/.test(task)&&/digital|portal/.test(task))return found('NEWS_PUBLISH','WRITTEN_PRODUCTION')
+ if(finished&&/noticia/.test(task)&&/para compartir/.test(task)&&!/\bpubli\w*|vista previa|plantilla/.test(task))return found('NEWS_UNCONFIRMED','WRITTEN_PRODUCTION')
  if(finished&&/cuento/.test(task)&&/incorpora\w*|publica\w*/.test(task)&&/antologia.*digital/.test(task))return found('STORY_DIGITAL','WRITTEN_PRODUCTION')
  if(finished&&/cuento/.test(task)&&/incorpora\w*|publica\w*/.test(task)&&/antologia.*impresa|revista.*impresa/.test(task))return found('STORY_PRINT','WRITTEN_PRODUCTION')
  if(/caligrama/.test(task)&&/colo(?:ca|quen)\w*.*mural/.test(task)&&/version final|revisad|revisamos/.test(task))return found('CALLIGRAM_PUBLISH','WRITTEN_PRODUCTION')
  if(/tradicion.*dominicana|practica tradicional dominicana/.test(task)&&(/patrimonio natural|recurso natural/.test(task)&&/historia|historico|cambio|antes.*ahora/.test(task)||/explica.*cambio.*antes.*ahora/.test(task)))return found(/oral/.test(task)?'HISTORY_ORAL':'HISTORY',/oral/.test(task)?'EXPOSITION':'ANALYSIS')
  if(/ambiental/.test(task)&&/foro|comunidad/.test(task)&&/pregunta o propuesta|preguntas|pregunta que/.test(task)&&/respond\w*|respuesta|explicacion/.test(task))return found('ENVIRONMENT_FORUM','WRITTEN_PRODUCTION')
  if(/carta/.test(task)&&/otro centro/.test(task)&&/arboles|ambiental/.test(task)&&/respuesta/.test(task))return found('ENVIRONMENT_LETTERS','WRITTEN_PRODUCTION')
+ const environmental=/agua|ambiental|conserv\w*.*arboles|arboles.*conserv\w*/.test(task)
+ if(environmental&&/prepar\w*.*explicacion/.test(task)&&/guion/.test(task))return found('ENVIRONMENT_SCRIPT','WRITTEN_PRODUCTION')
+ if(/intercambio.*dentro del aula/.test(task)&&environmental&&/pregunta o.*propuesta/.test(task)&&/respond\w*|respuesta/.test(task))return found('ENVIRONMENT_CLASSROOM','ORAL_INTERACTION')
  if(/relacion.*(?:no aparezca|nueva)/.test(raw)&&/ambos|dos textos|ninguno de los dos/.test(task)&&/formula|explica/.test(task))return found('INFERENCE','ANALYSIS')
  if(/sintesis/.test(task)&&/dos explicaciones|dos textos/.test(task)&&/diferencias|discrepancias/.test(task)&&/algo mas|conclusion/.test(task))return found('SYNTHESIS','WRITTEN_PRODUCTION')
  if(/\bresume\b/.test(task)&&/ideas principales/.test(task)&&/dos textos/.test(task)&&/diferencias/.test(task))return found('SUMMARY','WRITTEN_PRODUCTION')
@@ -27,10 +31,35 @@ export function firstGradeCommunityTask(task:string,description:string):FirstGra
 const row=(id:string,title:string,weight:number,levels:Criterion['progressionLevels'],coveredDeliveryKeys:string[]=[]):Criterion=>({templateId:'len1-community-'+id,title,weight,observable:levels[0],progressionLevels:levels,fourLevelLowest:`${levels[3]} O bien: ${levels[4]}`,coveredDeliveryKeys})
 export function firstGradeCommunitySelections(spec:FirstGradeCommunityTask){
  const publication=/PUBLISH|DIGITAL|PRINT|DRAFT/.test(spec.kind)
- return{suggestedEvaluationTechnique:spec.kind==='HISTORY_ORAL'?'exposicion':'analisis-producciones',suggestedInstrumentType:publication?'lista-cotejo' as const:'rubrica' as const}
+ return{suggestedEvaluationTechnique:spec.kind==='HISTORY_ORAL'?'exposicion':spec.kind==='ENVIRONMENT_CLASSROOM'?'observacion-directa':'analisis-producciones',suggestedInstrumentType:publication?'lista-cotejo' as const:'rubrica' as const}
 }
 export function firstGradeCommunityCriteria(spec:FirstGradeCommunityTask):Criterion[]{
  const {kind,task,raw}=spec
+ const environmentalTopic=/arboles/.test(task)?'la conservación de los árboles del patio':/agua/.test(task)?'el uso del agua en la escuela':'la situación ambiental trabajada'
+ if(kind==='ENVIRONMENT_SCRIPT')return[
+  row('environment-script-message','Recomendación sustentada para el guion',5,[
+   `Prepara en el guion una recomendación comprensible sobre ${environmentalTopic}, apoyada en la ficha y adecuada al equipo que la recibirá.`,
+   'La recomendación del guion es fiel a la ficha y comprensible; una relación entre información y acción necesita precisión.',
+   'El guion presenta una recomendación pertinente, pero explica poco su respaldo en la ficha.',
+   'La recomendación del guion contradice la ficha o le atribuye información que no contiene.',
+   'No presenta una recomendación reconocible y sustentada en la ficha en el guion entregado.',
+  ]),row('environment-script-organization','Guion preparado para compartir después',3,[
+   'Organiza el guion para que el equipo destinatario pueda comprender la explicación prevista; la valoración se limita a esta preparación, sin exigir recepción ni respuesta todavía.',
+   'El guion permite seguir la explicación prevista; una transición necesita precisión.',
+   'El guion contiene ideas pertinentes, pero deja incompleta su relación para el destinatario.',
+   'La secuencia del guion contradice la explicación prevista o presenta como observado lo que aún se prepara.',
+   'No hay un guion reconocible que permita seguir la explicación preparada.',
+  ]),
+ ]
+ if(kind==='NEWS_UNCONFIRMED')return[
+  row('news-provisional-integrity','Preparación provisional de la noticia revisada',5,[
+   'Provisional: conserva la noticia revisada y su procedencia, incluidos los registros y el carácter simulado del estudio; no se presupone una reescritura ni una publicación efectuada.',
+   'Provisional: la preparación conserva contenido y procedencia; una identificación necesita precisión.',
+   'Provisional: conserva parte de la noticia, pero omite información necesaria para reconocer su procedencia o carácter simulado.',
+   'Provisional: cambia datos de la noticia revisada o presenta el estudio simulado como un hecho real.',
+   'Provisional: no hay contenido disponible que permita comprobar la conservación de la noticia revisada.',
+  ]),
+ ]
  if(kind==='HISTORY'||kind==='HISTORY_ORAL'){
   const oral=kind==='HISTORY_ORAL',natural=/patrimonio natural|recurso natural/.test(task),temporal=/cambio|antes.*ahora/.test(task),sources=/testimonios/.test(task)?'los testimonios y documentos':'los documentos'
   return[
@@ -63,7 +92,8 @@ export function firstGradeCommunityCriteria(spec:FirstGradeCommunityTask):Criter
  }
  if(['NEWS_PUBLISH','NEWS_DRAFT','STORY_DIGITAL','STORY_PRINT','CALLIGRAM_PUBLISH'].includes(kind)){
   const draft=kind==='NEWS_DRAFT',news=kind.startsWith('NEWS'),print=kind==='STORY_PRINT',calligram=kind==='CALLIGRAM_PUBLISH',indexed=/indice/.test(task)
-  const preserve=news?'Conserva el texto y las referencias de la noticia revisada':calligram?'Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño':kind==='STORY_DIGITAL'&&/pistas.*desenlace/.test(task)?'Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado':'Conserva el texto completo y su orden en la versión revisada del cuento'
+  const simulatedResearch=news&&/(?:investigacion|estudio).*simulad|(?:investigacion|estudio).*simulacion/.test(task)
+  const preserve=simulatedResearch?'Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada':news?'Conserva el texto y las referencias de la noticia revisada':calligram?'Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño':kind==='STORY_DIGITAL'&&/pistas.*desenlace/.test(task)?'Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado':'Conserva el texto completo y su orden en la versión revisada del cuento'
   const rows=[row('publication-integrity','Versión revisada conservada',5,[
    preserve+'; los ajustes de presentación no sustituyen ni omiten contenido.',
    'Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.',
@@ -103,6 +133,33 @@ export function firstGradeCommunityCriteria(spec:FirstGradeCommunityTask):Criter
   ]))
   return rows
  }
+ if(kind==='ENVIRONMENT_CLASSROOM')return[
+  row('classroom-recommendation','Recomendación ambiental sustentada',4,[
+   `Explica al equipo vecino una recomendación sobre ${environmentalTopic}, sustentada en la ficha y comprensible para quienes la reciben.`,
+   'La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.',
+   'La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.',
+   'La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella.',
+   'No comunica una recomendación reconocible y relacionada con la información de la ficha.',
+  ]),row('classroom-reception','Comprensión e intervención del equipo receptor',4,[
+   'El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.',
+   'Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.',
+   'Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.',
+   'Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido.',
+   'Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.',
+  ]),row('classroom-response','Respuesta sustentada y decisión sobre la recomendación',5,[
+   'Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.',
+   'La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.',
+   'Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.',
+   'La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación.',
+   'Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.',
+  ]),row('classroom-record','Registro del intercambio realizado en el aula',2,[
+   'Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.',
+   'El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.',
+   'Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.',
+   'El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió.',
+   'No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.',
+  ]),
+ ]
  if(kind==='ENVIRONMENT_FORUM'||kind==='ENVIRONMENT_LETTERS'){
   const letters=kind==='ENVIRONMENT_LETTERS',waiting=letters||/esperando|todavia/.test(raw),onlyInitial=!letters&&/esperando/.test(raw),responseOnly=!letters&&/^responde/.test(task),hasSources=letters||/fuentes|lecturas/.test(task)
   const rows:Criterion[]=responseOnly?[]:[row('environment-message','Comunicación ambiental sustentada para su destinatario',4,[

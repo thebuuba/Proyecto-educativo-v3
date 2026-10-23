@@ -1,0 +1,64 @@
+{
+  "catalog": "evaluation-2026.168",
+  "gates": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 98754
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 17777
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 11018
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 24178
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 34298
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 3613
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 2299
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2404
+    }
+  ],
+  "backend": {
+    "tests": 98117,
+    "files": 240
+  },
+  "frontendFocal": {
+    "tests": 123,
+    "files": 7
+  },
+  "cloudflareDryRun": true,
+  "deploy": false,
+  "largestJs": {
+    "file": "src-CcMW4n0Q.js",
+    "bytes": 2084195
+  },
+  "focusedChunk": {
+    "file": "instrumentos-lengua-1-acciones-TnYBnKqB.js",
+    "bytes": 53517
+  },
+  "precachingLimitUnchanged": true
+}

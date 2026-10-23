@@ -456,7 +456,7 @@
         }
       ],
       "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
-      "nextAction": "Verificar muestras HTTP/DB157 y registrar condición de navegador personal; continuar guía",
+      "nextAction": "Conservar evidencia revisada de este tema; concluir componente oral transversal, HTTP168 y conciliación final de asignatura. No repetir bancos históricos.",
       "supplementaryProceduralCases": [
         {
           "caseId": "LEN1-NOT-P01",
@@ -1595,7 +1595,7 @@
         }
       ],
       "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "nextAction": "Conservar evidencia revisada de este tema; concluir componente oral transversal, HTTP168 y conciliación final de asignatura. No repetir bancos históricos.",
       "initialEvidence": "auditoria-curricular-len1-guia-157-antes.json",
       "curricularComponentAudit": [
         {
@@ -2306,7 +2306,7 @@
         }
       ],
       "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "nextAction": "Conservar evidencia revisada de este tema; concluir componente oral transversal, HTTP168 y conciliación final de asignatura. No repetir bancos históricos.",
       "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json",
       "curricularComponentAudit": [
         {
@@ -4164,9 +4164,17 @@
           "name": "Respeto y empatía por sentimientos/opiniones de otros",
           "evidence": [
             "LEN1-CUE-10/detective-vocabulary",
-            "LEN1-CUE-10/detective-process-revision"
+            "LEN1-CUE-10/detective-process-revision",
+            "LEN1-TRA-CAL02/len1-transversal-calligram-emotion",
+            "LEN1-TRA-CAL02/len1-transversal-calligram-peer",
+            "LEN1-TRI-R11/len1-transversal-calligram-emotion",
+            "LEN1-TRI-R11/len1-transversal-calligram-peer",
+            "LEN1-TRI-R12/len1-focused-word-choice",
+            "LEN1-TRI-R12/len1-focused-word-feedback",
+            "LEN1-TRI-R12/len1-focused-word-preserve"
           ],
-          "limit": "Se observan expresiones respetuosas e inclusivas y consideración de sugerencias, sin calificar empatía interna ni exigir acuerdo con opiniones"
+          "limit": "Consideración razonada de lectura o sugerencia ajena; aceptar, adaptar o rechazar con respaldo. No mide empatía interna ni exige acuerdo.",
+          "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO"
         },
         {
           "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
@@ -4218,9 +4226,14 @@
           "sourceId": "8841ea63-27d0-555c-b765-fdd960456dba",
           "topic": "cuento",
           "name": "Tema y trama para conocer actitudes y valores humanos",
-          "evidence": [],
-          "status": "REQUIERE_CONSIGNA_ESPECIFICA_SOBRE_VALORES",
-          "limit": "Narrar un misterio o identificar acciones no demuestra por sí solo análisis de valores. Completar en banco transversal; no cerrar por mención de trama."
+          "evidence": [
+            "LEN1-TRA-VAL01/len1-transversal-story-values",
+            "LEN1-TRA-VAL01/len1-transversal-story-interpretations",
+            "LEN1-TRI-R10/len1-focused-story-change",
+            "LEN1-TRI-R10/len1-focused-story-attitude"
+          ],
+          "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO",
+          "limit": "Interpretación de decisiones, consecuencias y valores con evidencia narrativa; no calificación moral del estudiante."
         },
         {
           "sourceId": "456bd1c2-613d-5bf1-acf3-adc5f04c6018",
@@ -5148,9 +5161,17 @@
           "name": "Respeto y empatía por opiniones/sentimientos de otros",
           "evidence": [
             "LEN1-CAL-02/calligram-process-revision",
-            "LEN1-CAL-12/calligram-process-revision"
+            "LEN1-CAL-12/calligram-process-revision",
+            "LEN1-TRA-CAL02/len1-transversal-calligram-emotion",
+            "LEN1-TRA-CAL02/len1-transversal-calligram-peer",
+            "LEN1-TRI-R11/len1-transversal-calligram-emotion",
+            "LEN1-TRI-R11/len1-transversal-calligram-peer",
+            "LEN1-TRI-R12/len1-focused-word-choice",
+            "LEN1-TRI-R12/len1-focused-word-feedback",
+            "LEN1-TRI-R12/len1-focused-word-preserve"
           ],
-          "limit": "Consideración de sugerencias es observable; no equivale a medir empatía interna ni demuestra por sí sola toda la actitud. Criterios de convivencia transversal pendientes del contraste final."
+          "limit": "Consideración razonada de lectura o sugerencia ajena; aceptar, adaptar o rechazar con respaldo. No mide empatía interna ni exige acuerdo.",
+          "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO"
         },
         {
           "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
@@ -5461,14 +5482,24 @@
         "components": [
           {
             "name": "Elección de modalidad de lectura: en voz alta/silencio/individual/compartida",
-            "refs": [],
+            "refs": [
+              {
+                "caseId": "LEN1-TRF-F02",
+                "criterionId": "len1-community-reading-answers"
+              },
+              {
+                "caseId": "LEN1-TRF-F02",
+                "criterionId": "len1-community-reading-two-data"
+              }
+            ],
             "formats": [
               "rubrica",
               "lista-cotejo",
               "escala",
               "lista-ponderada"
             ],
-            "sourceScopeLimit": "Las modalidades son alternativas de acceso, no cuatro entregas que se impongan simultáneamente."
+            "sourceScopeLimit": "Alternativas de acceso no puntuables; comprensión individual conF02, no cuatro entregas simultáneas.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           },
           {
             "name": "Anticipación a partir de titular y fotografía y comprobación",
@@ -5529,6 +5560,27 @@
               "lista-ponderada"
             ],
             "sourceScopeLimit": "REVISADO_LOCALMENTE"
+          },
+          {
+            "name": "Elección de modalidad y comprensión individual",
+            "refs": [
+              {
+                "caseId": "LEN1-TRF-F02",
+                "criterionId": "len1-community-reading-answers"
+              },
+              {
+                "caseId": "LEN1-TRF-F02",
+                "criterionId": "len1-community-reading-two-data"
+              }
+            ],
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "sourceScopeLimit": "Elección no puntuable; los criterios valoran comprensión de la noticia, no modalidad elegida.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           }
         ],
         "validation": "auditoria-curricular-len1-164-validacion488-revisada.json"
@@ -5796,6 +5848,43 @@
               "lista-ponderada"
             ],
             "sourceScopeLimit": "ALTERNATIVAS_NO_DOS_PUBLICACIONES_OBLIGATORIAS"
+          },
+          {
+            "name": "Publicación efectiva digital y preparación separada",
+            "refs": [
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-access"
+              },
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-trace"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-preview"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-draft"
+              }
+            ],
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "sourceScopeLimit": "C03publicación efectiva;C04solo borrador recuperable. No atribuir investigación aC03.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           }
         ],
         "validation": "auditoria-curricular-len1-164-validacion488-revisada.json"
@@ -8094,6 +8183,43 @@
               "escala",
               "lista-ponderada"
             ]
+          },
+          {
+            "name": "Publicación efectiva del cuento digital e impreso",
+            "refs": [
+              {
+                "caseId": "LEN1-TRC-C05",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C05",
+                "criterionId": "len1-community-publication-access"
+              },
+              {
+                "caseId": "LEN1-TRC-C05",
+                "criterionId": "len1-community-publication-trace"
+              },
+              {
+                "caseId": "LEN1-TRF-F01",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRF-F01",
+                "criterionId": "len1-community-publication-access"
+              },
+              {
+                "caseId": "LEN1-TRF-F01",
+                "criterionId": "len1-community-publication-trace"
+              }
+            ],
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "sourceScopeLimit": "Cobertura distribuida entre publicación digital C05 e impresa F01; no exigir ambos soportes en cada consigna.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           }
         ],
         "validation": "auditoria-curricular-len1-164-validacion488-revisada.json"
@@ -8724,6 +8850,31 @@
               "escala",
               "lista-ponderada"
             ]
+          },
+          {
+            "name": "Colocación efectiva de caligrama en mural",
+            "refs": [
+              {
+                "caseId": "LEN1-TRC-C06",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C06",
+                "criterionId": "len1-community-publication-access"
+              },
+              {
+                "caseId": "LEN1-TRC-C06",
+                "criterionId": "len1-community-publication-trace"
+              }
+            ],
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "sourceScopeLimit": "Legibilidad,integridad y constancia; no reevalúa la creación del poema.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           }
         ],
         "validation": "auditoria-curricular-len1-164-validacion488-revisada.json"
@@ -8775,6 +8926,43 @@
               "lista-ponderada"
             ],
             "sourceScopeLimit": "REVISADO_LOCALMENTE"
+          },
+          {
+            "name": "Publicación efectiva digital y preparación separada",
+            "refs": [
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-access"
+              },
+              {
+                "caseId": "LEN1-TRC-C03",
+                "criterionId": "len1-community-publication-trace"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-integrity"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-preview"
+              },
+              {
+                "caseId": "LEN1-TRC-C04",
+                "criterionId": "len1-community-publication-draft"
+              }
+            ],
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "sourceScopeLimit": "C03publicación efectiva;C04solo borrador recuperable. No atribuir investigación aC03.",
+            "validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json"
           }
         ],
         "validation": "auditoria-curricular-len1-164-validacion488-revisada.json"
@@ -9463,9 +9651,14 @@
         "topic": "cuento",
         "sourceId": "8841ea63-27d0-555c-b765-fdd960456dba",
         "name": "Tema y trama para conocer actitudes y valores humanos",
-        "evidence": [],
-        "status": "REQUIERE_CONSIGNA_ESPECIFICA_SOBRE_VALORES",
-        "limit": "Narrar un misterio o identificar acciones no demuestra por sí solo análisis de valores. Completar en banco transversal; no cerrar por mención de trama."
+        "evidence": [
+          "LEN1-TRA-VAL01/len1-transversal-story-values",
+          "LEN1-TRA-VAL01/len1-transversal-story-interpretations",
+          "LEN1-TRI-R10/len1-focused-story-change",
+          "LEN1-TRI-R10/len1-focused-story-attitude"
+        ],
+        "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO",
+        "limit": "Interpretación de decisiones, consecuencias y valores con evidencia narrativa; no calificación moral del estudiante."
       },
       "transversalEvidence": {
         "cases": [
@@ -9582,18 +9775,34 @@
         "name": "Respeto y empatía por sentimientos/opiniones de otros",
         "evidence": [
           "LEN1-CUE-10/detective-vocabulary",
-          "LEN1-CUE-10/detective-process-revision"
+          "LEN1-CUE-10/detective-process-revision",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-emotion",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-peer",
+          "LEN1-TRI-R11/len1-transversal-calligram-emotion",
+          "LEN1-TRI-R11/len1-transversal-calligram-peer",
+          "LEN1-TRI-R12/len1-focused-word-choice",
+          "LEN1-TRI-R12/len1-focused-word-feedback",
+          "LEN1-TRI-R12/len1-focused-word-preserve"
         ],
-        "limit": "Se observan expresiones respetuosas e inclusivas y consideración de sugerencias, sin calificar empatía interna ni exigir acuerdo con opiniones"
+        "limit": "Consideración razonada de lectura o sugerencia ajena; aceptar, adaptar o rechazar con respaldo. No mide empatía interna ni exige acuerdo.",
+        "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO"
       },
       "calligramAuditEvidence": {
         "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
         "name": "Respeto y empatía por opiniones/sentimientos de otros",
         "evidence": [
           "LEN1-CAL-02/calligram-process-revision",
-          "LEN1-CAL-12/calligram-process-revision"
+          "LEN1-CAL-12/calligram-process-revision",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-emotion",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-peer",
+          "LEN1-TRI-R11/len1-transversal-calligram-emotion",
+          "LEN1-TRI-R11/len1-transversal-calligram-peer",
+          "LEN1-TRI-R12/len1-focused-word-choice",
+          "LEN1-TRI-R12/len1-focused-word-feedback",
+          "LEN1-TRI-R12/len1-focused-word-preserve"
         ],
-        "limit": "Consideración de sugerencias es observable; no equivale a medir empatía interna ni demuestra por sí sola toda la actitud. Criterios de convivencia transversal pendientes del contraste final."
+        "limit": "Consideración razonada de lectura o sugerencia ajena; aceptar, adaptar o rechazar con respaldo. No mide empatía interna ni exige acuerdo.",
+        "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO"
       },
       "reconciledEvidence": {
         "topic": "caligrama",
@@ -9601,9 +9810,17 @@
         "name": "Respeto y empatía por opiniones/sentimientos de otros",
         "evidence": [
           "LEN1-CAL-02/calligram-process-revision",
-          "LEN1-CAL-12/calligram-process-revision"
+          "LEN1-CAL-12/calligram-process-revision",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-emotion",
+          "LEN1-TRA-CAL02/len1-transversal-calligram-peer",
+          "LEN1-TRI-R11/len1-transversal-calligram-emotion",
+          "LEN1-TRI-R11/len1-transversal-calligram-peer",
+          "LEN1-TRI-R12/len1-focused-word-choice",
+          "LEN1-TRI-R12/len1-focused-word-feedback",
+          "LEN1-TRI-R12/len1-focused-word-preserve"
         ],
-        "limit": "Consideración de sugerencias es observable; no equivale a medir empatía interna ni demuestra por sí sola toda la actitud. Criterios de convivencia transversal pendientes del contraste final."
+        "limit": "Consideración razonada de lectura o sugerencia ajena; aceptar, adaptar o rechazar con respaldo. No mide empatía interna ni exige acuerdo.",
+        "status": "EVIDENCIA_OBSERVABLE_REVISADA_SIN_MEDIR_ESTADO_INTERNO"
       }
     },
     {
@@ -10278,12 +10495,12 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "592instrumentos previos exactos;120adicionales con aceptación pedagógica independiente final. Trescomponentes fuente pendientes medianteE01–E04.",
+    "otherTopics": "712instrumentos anteriores exactos y40adicionales aceptados localmente; pendiente componente oral y verificación final168.",
     "remaining": [
-      "120salidas167aceptadas localmente; falta completar cierre curricular y visual",
-      "Corregir20salidas E01–E04 leídas y rechazadas;16principales+4fallback distintos",
-      "Verificación HTTP167 y visual personal pendientes; muestra166 acreditada",
-      "Conciliación final completa de Lengua1 y81contextos restantes"
+      "Ejecutar gates e instalar/verificar168 individualmente en Development; no cierre por conteo.",
+      "Generar,revisar y corregir2actividades de conocimiento nuevo oral antes del cierre completo de malla.",
+      "Recorrido visual personal pendiente; HTTP167 acreditado,HTTP168todavía no.",
+      "Otros81contextos pendientes de auditoría integral."
     ]
   },
   "specificCompetencies": [
@@ -11786,8 +12003,8 @@
       }
     ],
     "remaining": [
-      "Corregir14casos complementarios/cierre:92salidas165 leídas y rechazadas;56principales por corregir",
-      "Cierre completo por componente de la malla y visual personal pendientes"
+      "Complementarios167 aceptados; vercomponentEvidence168 para los40 adicionales.",
+      "Conocimiento nuevo oral y cierre visual personal pendientes."
     ],
     "closed": false,
     "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json"
@@ -12679,7 +12896,8 @@
         "contribution": "Elección no puntuable de modalidad lectora y comprensión individual de tres preguntas con dos datos; respuesta sustentada O insuficiencia justificada. No acredita todo el párrafo oficial."
       }
     ],
-    "pendingSourceCasesBank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json"
+    "resolvedSourceCasesBank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json",
+    "sourceCasesResolution": "E01–E04 aceptados localmente en componentEvidence168; HTTP168 pendiente."
   },
   "transversalVerification166": {
     "catalog": "evaluation-2026.166",
@@ -12688,5 +12906,325 @@
     "releases": 97,
     "snapshots": 1253,
     "browser": "PENDIENTE_CUENTA_PERSONAL"
+  },
+  "componentEvidence168": {
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-168-lectura40.json",
+    "status": "ACEPTACION_PEDAGOGICA_LOCAL_40_HTTP_PENDIENTE",
+    "rows": [
+      {
+        "caseId": "LEN1-TRE-E01",
+        "criteria": [
+          {
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Recomendación ambiental sustentada",
+            "requirement": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben."
+          },
+          {
+            "templateId": "len1-community-classroom-reception",
+            "title": "Comprensión e intervención del equipo receptor",
+            "requirement": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido."
+          },
+          {
+            "templateId": "len1-community-classroom-response",
+            "title": "Respuesta sustentada y decisión sobre la recomendación",
+            "requirement": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo."
+          },
+          {
+            "templateId": "len1-community-classroom-record",
+            "title": "Registro del intercambio realizado en el aula",
+            "requirement": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+        "targetSourceIds": [
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ]
+      },
+      {
+        "caseId": "LEN1-TRE-E02",
+        "criteria": [
+          {
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "requirement": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido."
+          },
+          {
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación."
+          },
+          {
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+        "targetSourceIds": [
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+          "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+          "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
+        ]
+      },
+      {
+        "caseId": "LEN1-TRE-E03",
+        "criteria": [
+          {
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones para aprovechar el papel según la ficha",
+            "requirement": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados."
+          },
+          {
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "requirement": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas."
+          },
+          {
+            "templateId": "len1-health-instructions-reuse-purpose",
+            "title": "Finalidad ambiental vinculada al aprovechamiento",
+            "requirement": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+        "targetSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3",
+          "1e434089-d202-529a-80ad-734c3a723254"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3",
+          "1e434089-d202-529a-80ad-734c3a723254"
+        ]
+      },
+      {
+        "caseId": "LEN1-TRE-E04",
+        "criteria": [
+          {
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Copias necesarias y acceso a la lectura",
+            "requirement": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos."
+          },
+          {
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Propósito ambiental vinculado al paso revisado",
+            "requirement": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha."
+          },
+          {
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Revisión acotada y resto del instructivo conservado",
+            "requirement": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-168-revisar-v2.json",
+        "targetSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3",
+          "1e434089-d202-529a-80ad-734c3a723254"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3",
+          "1e434089-d202-529a-80ad-734c3a723254"
+        ]
+      },
+      {
+        "caseId": "LEN1-EC-V01",
+        "criteria": [
+          {
+            "templateId": "len1-community-environment-script-message",
+            "title": "Recomendación sustentada para el guion",
+            "requirement": "Prepara en el guion una recomendación comprensible sobre la conservación de los árboles del patio, apoyada en la ficha y adecuada al equipo que la recibirá."
+          },
+          {
+            "templateId": "len1-community-environment-script-organization",
+            "title": "Guion preparado para compartir después",
+            "requirement": "Organiza el guion para que el equipo destinatario pueda comprender la explicación prevista; la valoración se limita a esta preparación, sin exigir recepción ni respuesta todavía."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ],
+        "evidenceRole": "CONTRASTE_DE_ALCANCE",
+        "accreditedSourceIds": [],
+        "limit": "Preparación del guion, no intercambio realizado."
+      },
+      {
+        "caseId": "LEN1-EC-V02",
+        "criteria": [
+          {
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Recomendación ambiental sustentada",
+            "requirement": "Explica al equipo vecino una recomendación sobre la conservación de los árboles del patio, sustentada en la ficha y comprensible para quienes la reciben."
+          },
+          {
+            "templateId": "len1-community-classroom-reception",
+            "title": "Comprensión e intervención del equipo receptor",
+            "requirement": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido."
+          },
+          {
+            "templateId": "len1-community-classroom-response",
+            "title": "Respuesta sustentada y decisión sobre la recomendación",
+            "requirement": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo."
+          },
+          {
+            "templateId": "len1-community-classroom-record",
+            "title": "Registro del intercambio realizado en el aula",
+            "requirement": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+        ]
+      },
+      {
+        "caseId": "LEN1-EC-V03",
+        "criteria": [
+          {
+            "templateId": "len1-community-news-provisional-integrity",
+            "title": "Preparación provisional de la noticia revisada",
+            "requirement": "Provisional: conserva la noticia revisada y su procedencia, incluidos los registros y el carácter simulado del estudio; no se presupone una reescritura ni una publicación efectuada."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+        ],
+        "evidenceRole": "CONTRASTE_DE_ALCANCE",
+        "accreditedSourceIds": [],
+        "limit": "Propuesta provisional: confirmar fase y medio; no acredita publicación."
+      },
+      {
+        "caseId": "LEN1-EC-V04",
+        "criteria": [
+          {
+            "templateId": "len1-health-instructions-surface-edition",
+            "title": "Tildes y puntuación sin cambiar el sentido",
+            "requirement": "Corrige solamente las tildes y la puntuación del instructivo entregado, manteniendo el sentido de sus instrucciones."
+          },
+          {
+            "templateId": "len1-health-instructions-surface-preservation",
+            "title": "Contenido y finalidad conservados",
+            "requirement": "Conserva exactamente las acciones, su orden, los materiales y la explicación dada de la finalidad: reutilizar las cajas para prolongar su uso y evitar desecharlas; no añade cambios sustantivos."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3"
+        ]
+      },
+      {
+        "caseId": "LEN1-EC-V05",
+        "criteria": [
+          {
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Copias necesarias y acceso a la lectura",
+            "requirement": "Revisa el paso para comprobar las copias adicionales necesarias en el caso asignado: calcula la diferencia entre lectores y ejemplares utilizables, sin cantidades negativas; permite un ejemplar para cada persona, imprimiendo todas las copias necesarias, algunas o ninguna según los datos, sin exigir resolver los demás casos."
+          },
+          {
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Propósito ambiental vinculado al paso revisado",
+            "requirement": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con los datos del caso asignado."
+          },
+          {
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Revisión acotada y resto del instructivo conservado",
+            "requirement": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "025c2825-9150-573b-b9cb-a73d22632bf3"
+        ]
+      },
+      {
+        "caseId": "LEN1-EC-V06",
+        "criteria": [
+          {
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "requirement": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido."
+          },
+          {
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación."
+          },
+          {
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos."
+          }
+        ],
+        "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-componentes-contrastes-168-despues-revisar-v3.json",
+        "targetSourceIds": [
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+        ],
+        "evidenceRole": "EVIDENCIA_ESPECIFICA_DEL_COMPONENTE",
+        "accreditedSourceIds": [
+          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+        ]
+      }
+    ],
+    "documentaryReview": {
+      "auditor": "/root/auditor_curricular",
+      "hashesAndReferencesExact": true,
+      "proceduralReferences25Exist": true,
+      "scopeContrastsSeparated": true,
+      "publicationSupportsDistributed": true
+    }
+  },
+  "fullSourceReconciliation168": {
+    "auditor": "/root/auditor_curricular",
+    "pdfPages": [
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "evaluableConceptRows": 55,
+    "headings": 6,
+    "proceduralRows": 31,
+    "attitudeRows": 34,
+    "specificCompetencies": 7,
+    "fundamentalCompetencies": 7,
+    "achievementIndicators": 21,
+    "noMissingSourceRows": true,
+    "notCoverageByCount": true,
+    "remaining": [
+      {
+        "sourceIds": [
+          "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+        ],
+        "component": "Conocimiento nuevo expresado oralmente",
+        "reason": "C09no fija modalidad;C10escrito;C02no asegura relación nueva;INF05no acreditado automáticamente.",
+        "next": "len1-conocimiento-oral-independiente-v1:2actividades fijadas antes de generar."
+      }
+    ]
   }
 }

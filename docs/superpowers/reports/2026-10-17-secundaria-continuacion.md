@@ -6,25 +6,24 @@ Recorrer los82contextos autorizados:54comunes,18optativas y10contextos de9módul
 
 Hasta tres subagentes reales de solo lectura: auditor curricular, diseñador y revisor pedagógico. Solo el coordinador modifica archivos, instala catálogos, escribe en Development o reinicia servidor. Sin push, main, despliegue, producción/Hyperdrive/secretos/integraciones, resets/borrados, recapturas de baselines, nuevas migraciones remotas de esquema, IA, dependencias ni servicios de pago. Commits locales en español. No correos, contraseñas ni cuentas nuevas para desbloquear el navegador.
 
-## Estado vigente: correcciones168 en curso
+## Estado vigente:168 verificada localmente
 
-Rama ampliacion-de-instrumentos-2. Fuente167 comprometida4df1f544a56bd9e30d40215a3da637fee39168d8. 712 instrumentos locales revisados:592 anteriores exactos y120 finales167 aceptados por revisor independiente. Auditor confirmó32referencias/16IDs oficiales; bloqueo anterior de herramienta resuelto. No hay cierre global.
+Rama ampliacion-de-instrumentos-2; último commit documental167 b8915f36, fuente1674df1f544. Candidata168 lista para commit local:40instrumentos completos y10selecciones aceptados por revisor independiente (E16v2+contrastes24v3). 712anteriores exactos;paridad,puntuaciónpendiente,20/17.35 ytextosmanuales verificados. Auditor concilió toda malla68–75; corrigió referenciasdocumentales y diferenció V01preparación/V03provisional de intercambio/publicación acreditados. Total752salidas locales revisadas; no cierredeasignatura.
 
-167 pasó ocho gates secuenciales: backend98076/239, frontend123/7, builds backend/frontend/Cloudflare dry-run y tres lints. Instalada solo en Development eolgunypmtgrsyrjzcld; HTTP cuatro muestras completas y15referencias personales originales exactas. Estado final98releases/1257snapshots. Configuración PostgreSQL app_backend_local sin bypassRLS, Auth, Storage y frontend del mismo Development; assets y SW exactos. No producción.
+Ocho gates168 exit0:backend98117/240,frontend123/7,buildbackend/frontend/Cloudflaredry-run,lintsbackend/frontend/shared. Log .wrangler/realistic-audit/curricular-168-final-gates-progress.json. No repetir sin cambios/fallos. Revisor corrigió error sustantivo desaparecidoenL1,marcasinventadasV04 yambigüedaderror menor/sustantivo; capturas antiguas conservadas.
 
-Worker167 activo al registrar: launcher33424, sesión85511; comprobar procesos/puerto antes de detener/arrancar. QA sesión30839 ya terminó exit0. No repetir muestras. Fallo DNS y HTTP400 del helper QA resueltos, documentados sin ocultar el rechazo correcto de la aplicación.
+## Development y próximo paso
 
-API167 congelada ANTES del cambio: .wrangler/realistic-audit/frozen-167-api.cjs SHA8b4ee211dfdb0d687853b9721e351605a12c2b227a4dd23496eb24c7bbd5edd6. Catálogo167 d33ecf696fc8c8bc3308500a683ced13884f53c82a81e6c9756181950cc0b861. No repetir congelación ni sobrescribir capturas.
+Último remoto167:98releases/1257snapshots,4muestrasHTTPverificadas y15referenciaspersonalesoriginales exactas. Worker167 (launcher33424) detenido controladamente antes delbuild168;puerto8787liberado. No168instaladaaún. Proyectoexclusivo eolgunypmtgrsyrjzcld,app_backend_local sinbypassRLS;Auth/Storage/frontend mismoDevelopment.
 
-## Próximos pasos
+1. Revisardiff/secretos ycommitlocal168. Ejecutar helper install-curricular-168.mjs: exige8gates,fuentecompiladaigual,fuenteapps/packages comprometida,historia98/1257. Solo release168;nomigración deesquema.
+2. Arrancar unWorker168 yverify-runtime-curricular-168.mjs; comprobarassets/SW ydestinos. run-curricular-http-168.mjs:4casos E01rúbrica20,E02cotejo17.35,V03escala20,V05ponderada17.35,conguardado/reapertura/manuales/estrategiaúnica. DiariodeIDs antesdereintentos. Esperado99releases/1261snapshots; después personal-preservation-168.mjs readonly15referenciasoriginales.
+3. CongelarAPI168 antesdelpróximocambioruntime. API167ya congelada SHA8b4ee211dfdb0d687853b9721e351605a12c2b227a4dd23496eb24c7bbd5edd6. Norecapturarbaselines/sobrescribircapturas.
+4. Pendienteexpreso de fuente:conocimiento nuevoORAL indicador637c2904…/competencia1e3efbc3…. Banco len1-conocimiento-oral-independiente-v1 fijado por diseñador con2casosORAL01/02; sin generar todavía. C09no fija modalidad,C10escrito,C02no asegura novedad; noatribuiralcanceretroactivo.
+5. Conciliar cierre de malla ycontinuarInglés1/resto82contextos. Otros81integralmentependientes;Inglés1fuente201registros preparada,sinaceptación nueva.
 
-1. Guardar evidencia167 en commit documental separado. Cambios168 runtime aún en trabajo: community/health-genres y curricular-source-components.spec.ts. Banco independiente E01–E04 fijado:16principales+4fallback distintos de167 leídos/rechazados. RED16, GREEN147focales. No aceptación final168 todavía.
-2. Versionar168 con copia167 conservada. Capturar16nuevas, revisar instrumentos completos y selecciones con revisor. Diseñador prepara contrastes independientes; auditor concilia malla completa69–75 y68metodología. Mantener como máximo3subagentes solo lectura.
-3. Comprobar712previos exactos y paridad/puntuación/manuales; ejecutar gates secuenciales después de cambios finales. Detener Worker167 controladamente antes del build. Commit local168 tras verificación. Instalación individual Development únicamente, preservando98/1257 y referencias originales; no DB schema ni reset.
-4. Conciliar todos los componentes oficiales para cierre real; continuar Inglés1 y otros contextos autorizados cuando corresponda. Otros81contextos pendientes; Inglés1solo fuente201registros preparada.
+## Evidencia y límitevisual
 
-## Evidencia y límite visual
+Informe2026-10-23-lengua-1-componentes-168.md; manifiesto168-lectura40,168-validacion40-final,168-previos592-v3 y168-previos120-v3. Matriz ymaster abiertos. FuenteMINERD520p SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58;extraccióninmutable.
 
-Informes2026-10-23-lengua-1-complementarios-167.md y2026-10-23-auditoria-curricular-len1.md. Matriz len1-matrix-v1 ymaster-v1 abiertas. FuenteMINERD520p SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; data/curriculum/secondary-2023.* inmutable.
-
-Navegador personal: última observación login con error yasset163. Sin recargar formulario con contraseña, limpiar almacenamiento, enviar correo ni cambiar cuenta. Caché/registroSW y recorrido visual personal pendientes; HTTPQA no los sustituye. Conservar diseñovertical,manuales,AUTO/MANUAL/UNKNOWN,obsoletos/calificados y borradores.
+Navegadorpersonal:últimaobservaciónloginconerror yasset163. No recargarformulario concontraseña,limpiaralmacenamiento,enviarcorreo/cambiarcuenta. Recorridovisualpersonal yregistroSWpendientes;HTTPQA no sustituyen. Conservardiseñovertical,manuales,AUTO/MANUAL/UNKNOWN,obsoletos/calificadosyborradores.

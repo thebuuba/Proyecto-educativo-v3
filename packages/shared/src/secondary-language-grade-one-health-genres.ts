@@ -18,11 +18,12 @@ export function resolveFirstGradeHealthGenre(title:string,description:string,con
  const legacy=task.search(/informe(?:s)? de lectura|cuentos? (?:policiacos?|detectivescos?)|caligramas?|guias? turisticas?|afiches?|noticias?|noticiero/)
  if(legacy>=0&&(!named||legacy<named.index))return null
  const selected=named?.genre??namedGenre(normalizedTask(title))?.genre;if(!selected)return null
- const correction=/\b(?:solo|solamente|unicamente)\b/.test(task)&&/\b(?:corrij\w*|correg\w*|revis(?:en|an|a|e|ar|aran)|reescrib\w*|mejor(?:en|an|a|e|ar|aran))\b/.test(task)
+ const correction=/\b(?:solo|solamente|unicamente)\b/.test(task)&&/\b(?:corrij\w*|corrig\w*|correg\w*|revis(?:en|an|a|e|ar|aran)|reescrib\w*|mejor(?:en|an|a|e|ar|aran))\b/.test(task)
  const mode:Mode=correction?'CORRECTION':/\bcompar\w*\b/.test(task)?'COMPARISON':/\b(?:lean|lee|leer|analic\w*|analiz\w*)\b/.test(task)?'ANALYSIS':'CREATION'
  return{genre:selected,mode,task,originalTask,activityType:mode==='COMPARISON'?'COMPARISON':mode==='ANALYSIS'?'ANALYSIS':'WRITTEN_PRODUCTION'}
 }
 const row=(id:string,title:string,weight:number,levels:Criterion['progressionLevels']):Criterion=>({templateId:'len1-health-'+id,title,weight,observable:levels[0],progressionLevels:levels})
+const withSubstantiveError=(criterion:Criterion):Criterion=>({...criterion,fourLevelLowest:`${criterion.progressionLevels![3]} O bien: ${criterion.progressionLevels![4]}`})
 
 export function firstGradeHealthGenreCriteria({genre:g,mode,task,originalTask}:FirstGradeHealthGenreTask):Criterion[]{
  const correction=mode==='CORRECTION',comparing=mode==='COMPARISON',analyzing=mode==='ANALYSIS'
@@ -189,6 +190,43 @@ export function firstGradeHealthGenreCriteria({genre:g,mode,task,originalTask}:F
   ]))
   return rows
  }
+ const assignedCopies=/caso asignado/.test(task),copySource=/ficha/.test(task)?'la ficha':'los datos del caso asignado'
+ if(correction&&/copias|ejemplares/.test(task)&&/imprimir|impresion/.test(task)&&/paso/.test(task))return[
+  row('instructions-copy-need','Copias necesarias y acceso a la lectura',5,[
+   assignedCopies?'Revisa el paso para comprobar las copias adicionales necesarias en el caso asignado: calcula la diferencia entre lectores y ejemplares utilizables, sin cantidades negativas; permite un ejemplar para cada persona, imprimiendo todas las copias necesarias, algunas o ninguna según los datos, sin exigir resolver los demás casos.':'Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.',
+   'El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.',
+   'Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.',
+   'Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material.',
+   'No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.',
+  ]),row('instructions-copy-purpose','Propósito ambiental vinculado al paso revisado',3,[
+   `Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con ${copySource}.`,
+   `El propósito corresponde al paso y a ${copySource}; una relación entre la comprobación y el aprovechamiento necesita precisión.`,
+   'Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.',
+   `El propósito contradice el paso o promete un ahorro ambiental no sustentado por ${copySource}.`,
+   'No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.',
+  ]),row('instructions-copy-preservation','Revisión acotada y resto del instructivo conservado',3,[
+   'Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.',
+   'Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.',
+   'La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.',
+   'Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse.',
+   'No presenta una modificación reconocible y comparable de los fragmentos autorizados.',
+  ]),
+ ].map(withSubstantiveError)
+ if(correction&&/tildes/.test(correctionFocus))return[
+  row('instructions-surface-edition','Tildes y puntuación sin cambiar el sentido',5,[
+   'Corrige solamente las tildes y la puntuación del instructivo entregado, manteniendo el sentido de sus instrucciones.',
+   'Las correcciones conservan el sentido; queda una tilde o un signo por precisar.',
+   'Corrige parte de las tildes y los signos, pero persisten errores que dificultan comprender una instrucción.',
+   'Las correcciones cambian el sentido de una instrucción o introducen errores que impiden comprender la acción indicada.',
+   'No presenta una revisión reconocible de las tildes y la puntuación indicadas.',
+  ]),row('instructions-surface-preservation','Contenido y finalidad conservados',4,[
+   `Conserva exactamente las acciones, su orden, los materiales y la explicación dada de la finalidad${/cajas/.test(task)?': reutilizar las cajas para prolongar su uso y evitar desecharlas':''}; no añade cambios sustantivos.`,
+   'Presenta una diferencia menor de transcripción que debe restituirse para conservar la versión, sin alterar acciones, orden, materiales ni finalidad.',
+   'Conserva la mayor parte del contenido, pero omite un fragmento de la explicación que debía mantenerse.',
+   'Añade, elimina o cambia acciones, orden, materiales o finalidad que debía conservar.',
+   'No hay una versión comparable que permita comprobar la conservación del contenido.',
+  ]),
+ ].map(withSubstantiveError)
  if(correction)return[row('instructions-edition','Puntuación y numeración conservando las acciones',5,[
   'Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.',
   'Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.',
@@ -203,13 +241,13 @@ export function firstGradeHealthGenreCriteria({genre:g,mode,task,originalTask}:F
   'La secuencia cambia acciones o condiciones y contradice la ficha de referencia.',
   'No identifica problemas comprobables de ambigüedad u orden del instructivo dado.',
  ])]
- const consultation=/consultar|consulta|buscar|localizar/.test(task)&&/catalogo|indice/.test(task)
- const rows=[row('instructions-actions',consultation?'Acciones para consultar el catálogo':'Acciones y clasificación según la ficha',4,[
-  consultation?'Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.':'Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.',
-  consultation?'Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.':'Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.',
-  consultation?'Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.':'Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.',
-  consultation?'Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.':'Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.',
-  consultation?'No presenta acciones reconocibles para consultar el catálogo según el recorrido dado.':'No presenta acciones reconocibles para organizar los materiales según la ficha.',
+ const consultation=/consultar|consulta|buscar|localizar/.test(task)&&/catalogo|indice/.test(task),reuse=/papel/.test(task)&&/aprovech|reutiliz/.test(task)&&/cara/.test(task)
+ const rows=[row('instructions-actions',consultation?'Acciones para consultar el catálogo':reuse?'Acciones para aprovechar el papel según la ficha':'Acciones y clasificación según la ficha',4,[
+  consultation?'Expresa acciones claras para buscar en el índice y localizar la ficha necesaria del catálogo entregado, siguiendo el recorrido de consulta indicado.':reuse?'Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.':'Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.',
+  consultation?'Las acciones permiten consultar el catálogo; una relación entre remisión y búsqueda necesita precisión.':reuse?'Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.':'Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.',
+  consultation?'Expresa parte del recorrido, pero deja sin aclarar cómo localizar la ficha necesaria.':reuse?'Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.':'Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.',
+  consultation?'Una acción dirige hacia una ficha diferente de la solicitada en el recorrido de consulta.':reuse?'Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse.':'Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.',
+  consultation?'No presenta acciones reconocibles para consultar el catálogo según el recorrido dado.':reuse?'No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.':'No presenta acciones reconocibles para organizar los materiales según la ficha.',
  ]),row('instructions-order','Orden comprensible de los pasos',4,[
   'Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.',
   'El orden permite seguir las acciones; una transición necesita precisión.',
@@ -217,6 +255,13 @@ export function firstGradeHealthGenreCriteria({genre:g,mode,task,originalTask}:F
   'La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.',
   'No presenta un orden reconocible para seguir las acciones del instructivo.',
  ])]
+ if(reuse)rows.push(row('instructions-reuse-purpose','Finalidad ambiental vinculada al aprovechamiento',3,[
+  'Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.',
+  'La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.',
+  'Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.',
+  'La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda.',
+  'No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.',
+ ]))
  if(/proposito|destinatario/.test(task))rows.push(row('instructions-purpose','Propósito y materiales disponibles',3,[
   'Indica el propósito del instructivo para el grupo destinatario y los materiales de la ficha que corresponden a las acciones, sin añadir otros.',
   'El propósito y los materiales corresponden a las acciones; una relación necesita precisión.',
@@ -231,5 +276,5 @@ export function firstGradeHealthGenreCriteria({genre:g,mode,task,originalTask}:F
   'El cambio altera una acción o condición de la ficha en lugar de aclarar su formulación.',
   'No muestra una comprobación por lectura ni una corrección reconocible de ambigüedad.',
  ]))
- return rows
+ return reuse?rows.map(withSubstantiveError):rows
 }

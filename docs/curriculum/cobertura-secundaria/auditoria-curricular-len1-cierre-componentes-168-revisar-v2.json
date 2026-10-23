@@ -1,0 +1,2596 @@
+{
+  "catalog": "evaluation-2026.168",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-recommendation:0",
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Recomendación ambiental sustentada",
+            "description": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+              "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+              "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+              "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella.",
+              "No comunica una recomendación reconocible y relacionada con la información de la ficha."
+            ],
+            "fourLevelLowest": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L3",
+                "text": "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+                "scoreUnits": 355
+              },
+              {
+                "levelId": "L2",
+                "text": "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-reception:1",
+            "templateId": "len1-community-classroom-reception",
+            "title": "Comprensión e intervención del equipo receptor",
+            "description": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+              "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+              "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+              "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido.",
+              "Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje."
+            ],
+            "fourLevelLowest": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L3",
+                "text": "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+                "scoreUnits": 355
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-response:2",
+            "templateId": "len1-community-classroom-response",
+            "title": "Respuesta sustentada y decisión sobre la recomendación",
+            "description": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+              "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+              "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+              "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación.",
+              "Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella."
+            ],
+            "fourLevelLowest": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-record:3",
+            "templateId": "len1-community-classroom-record",
+            "title": "Registro del intercambio realizado en el aula",
+            "description": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+              "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+              "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+              "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió.",
+              "No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas."
+            ],
+            "fourLevelLowest": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-recommendation:0",
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+            "description": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+              "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+              "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+              "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella.",
+              "No comunica una recomendación reconocible y relacionada con la información de la ficha."
+            ],
+            "fourLevelLowest": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-reception:1",
+            "templateId": "len1-community-classroom-reception",
+            "title": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+            "description": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+              "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+              "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+              "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido.",
+              "Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje."
+            ],
+            "fourLevelLowest": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-response:2",
+            "templateId": "len1-community-classroom-response",
+            "title": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+            "description": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+              "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+              "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+              "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación.",
+              "Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella."
+            ],
+            "fourLevelLowest": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-record:3",
+            "templateId": "len1-community-classroom-record",
+            "title": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+            "description": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+              "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+              "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+              "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió.",
+              "No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas."
+            ],
+            "fourLevelLowest": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-recommendation:0",
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+            "description": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+              "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+              "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+              "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella.",
+              "No comunica una recomendación reconocible y relacionada con la información de la ficha."
+            ],
+            "fourLevelLowest": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L3",
+                "text": "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+                "scoreUnits": 355
+              },
+              {
+                "levelId": "L2",
+                "text": "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-reception:1",
+            "templateId": "len1-community-classroom-reception",
+            "title": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+            "description": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+              "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+              "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+              "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido.",
+              "Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje."
+            ],
+            "fourLevelLowest": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L3",
+                "text": "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+                "scoreUnits": 355
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L1",
+                "text": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-response:2",
+            "templateId": "len1-community-classroom-response",
+            "title": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+            "description": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+              "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+              "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+              "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación.",
+              "Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella."
+            ],
+            "fourLevelLowest": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L3",
+                "text": "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+                "scoreUnits": 445
+              },
+              {
+                "levelId": "L2",
+                "text": "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+                "scoreUnits": 222
+              },
+              {
+                "levelId": "L1",
+                "text": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-record:3",
+            "templateId": "len1-community-classroom-record",
+            "title": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+            "description": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+              "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+              "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+              "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió.",
+              "No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas."
+            ],
+            "fourLevelLowest": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "ORAL_INTERACTION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-recommendation:0",
+            "templateId": "len1-community-classroom-recommendation",
+            "title": "Recomendación ambiental sustentada",
+            "description": "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben. Parcial (50%): La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica al equipo vecino una recomendación sobre el uso del agua en la escuela, sustentada en la ficha y comprensible para quienes la reciben.",
+              "La recomendación corresponde a la ficha y se entiende; una relación entre información y acción necesita precisión.",
+              "La recomendación es pertinente, pero explica poco cómo se apoya en la ficha.",
+              "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella.",
+              "No comunica una recomendación reconocible y relacionada con la información de la ficha."
+            ],
+            "fourLevelLowest": "La recomendación contradice la ficha o atribuye efectos ambientales no respaldados por ella. O bien: No comunica una recomendación reconocible y relacionada con la información de la ficha.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-reception:1",
+            "templateId": "len1-community-classroom-reception",
+            "title": "Comprensión e intervención del equipo receptor",
+            "description": "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido. Parcial (50%): Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+            "maxScore": 5.33,
+            "maxScoreUnits": 533,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "El equipo receptor expresa qué entendió de la recomendación y plantea una pregunta o una propuesta relacionada, representando fielmente el mensaje recibido.",
+              "Lo comprendido y la intervención corresponden a la recomendación; una relación necesita precisión.",
+              "Recupera parte de la recomendación, pero su pregunta o propuesta se relaciona de forma incompleta con ella.",
+              "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido.",
+              "Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje."
+            ],
+            "fourLevelLowest": "Atribuye al otro equipo una recomendación distinta o formula una intervención ajena al mensaje recibido. O bien: Durante la oportunidad de intercambio observada, no expresa una comprensión ni una intervención reconocible sobre el mensaje.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-response:2",
+            "templateId": "len1-community-classroom-response",
+            "title": "Respuesta sustentada y decisión sobre la recomendación",
+            "description": "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo. Parcial (50%): Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+            "maxScore": 6.67,
+            "maxScoreUnits": 667,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Responde a la intervención concreta recibida usando la ficha y aclara con razones si mantiene o ajusta la recomendación; ambas decisiones son válidas cuando tienen respaldo.",
+              "La respuesta atiende la intervención y fundamenta la decisión; una conexión con la ficha necesita precisión.",
+              "Responde a parte de la intervención, pero explica poco el fundamento de mantener o ajustar la recomendación.",
+              "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación.",
+              "Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella."
+            ],
+            "fourLevelLowest": "La respuesta cambia la intervención recibida, contradice la ficha o sustituye las razones por una descalificación. O bien: Ante la intervención recibida y la oportunidad observada, no ofrece una respuesta reconocible relacionada con ella.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-classroom-record:3",
+            "templateId": "len1-community-classroom-record",
+            "title": "Registro del intercambio realizado en el aula",
+            "description": "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula. Parcial (50%): Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anota fielmente la intervención recibida y su respuesta, de modo que el registro permita reconocer su relación en el intercambio efectivamente realizado dentro del aula.",
+              "El registro conserva la intervención y la respuesta; un detalle de identificación necesita precisión.",
+              "Registra parte del intercambio, pero omite un dato necesario para relacionar la intervención con la respuesta.",
+              "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió.",
+              "No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas."
+            ],
+            "fourLevelLowest": "El registro cambia la intervención recibida o presenta como realizada una respuesta que no ocurrió. O bien: No conserva un registro reconocible de la intervención y la respuesta efectivamente realizadas.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "description": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L3",
+                "text": "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L2",
+                "text": "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L1",
+                "text": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "description": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "description": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L3",
+                "text": "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L2",
+                "text": "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L1",
+                "text": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "description": "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva en la noticia revisada qué se investigó, cómo se hicieron las observaciones, los resultados y la conclusión limitada a esos datos; mantiene la referencia a los registros y la indicación de que es una investigación simulada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones para aprovechar el papel según la ficha",
+            "description": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+              "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+              "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+              "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse.",
+              "No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha."
+            ],
+            "fourLevelLowest": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "fourLevelLowest": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-reuse-purpose:2",
+            "templateId": "len1-health-instructions-reuse-purpose",
+            "title": "Finalidad ambiental vinculada al aprovechamiento",
+            "description": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+              "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+              "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+              "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda.",
+              "No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable."
+            ],
+            "fourLevelLowest": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+                "scoreUnits": 546
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+                "scoreUnits": 364
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+                "scoreUnits": 182
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+            "description": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+              "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+              "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+              "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse.",
+              "No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha."
+            ],
+            "fourLevelLowest": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "fourLevelLowest": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-reuse-purpose:2",
+            "templateId": "len1-health-instructions-reuse-purpose",
+            "title": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+            "description": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+              "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+              "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+              "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda.",
+              "No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable."
+            ],
+            "fourLevelLowest": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+            "description": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+              "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+              "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+              "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse.",
+              "No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha."
+            ],
+            "fourLevelLowest": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "fourLevelLowest": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 727
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 485
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 242
+              },
+              {
+                "levelId": "L1",
+                "text": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-reuse-purpose:2",
+            "templateId": "len1-health-instructions-reuse-purpose",
+            "title": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+            "description": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+            "maxScore": 5.46,
+            "maxScoreUnits": 546,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+              "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+              "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+              "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda.",
+              "No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable."
+            ],
+            "fourLevelLowest": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+                "scoreUnits": 546
+              },
+              {
+                "levelId": "L3",
+                "text": "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+                "scoreUnits": 364
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+                "scoreUnits": 182
+              },
+              {
+                "levelId": "L1",
+                "text": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones para aprovechar el papel según la ficha",
+            "description": "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados. Parcial (50%): Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+            "maxScore": 7.28,
+            "maxScoreUnits": 728,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras y fieles a la ficha para aprovechar la cara disponible de las hojas como papel de borrador, con los materiales dados.",
+              "Las acciones corresponden a la ficha y permiten aprovechar el papel; una indicación necesita precisión.",
+              "Presenta acciones pertinentes, pero deja incompleta una indicación necesaria para aprovechar la cara disponible.",
+              "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse.",
+              "No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha."
+            ],
+            "fourLevelLowest": "Una acción contradice la ficha o impide aprovechar la parte de las hojas que todavía puede utilizarse. O bien: No presenta acciones reconocibles para aprovechar el papel de acuerdo con la ficha.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas. Parcial (50%): Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+            "maxScore": 7.27,
+            "maxScoreUnits": 727,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "fourLevelLowest": "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha. O bien: No presenta un orden reconocible para seguir las acciones del instructivo.",
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-reuse-purpose:2",
+            "templateId": "len1-health-instructions-reuse-purpose",
+            "title": "Finalidad ambiental vinculada al aprovechamiento",
+            "description": "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado. Parcial (50%): Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+            "maxScore": 5.45,
+            "maxScoreUnits": 545,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo las acciones indicadas para reutilizar la cara disponible evitan desechar papel que todavía puede utilizarse, de acuerdo con la ficha y sin atribuir un impacto no comprobado.",
+              "La explicación relaciona las acciones con evitar el descarte prematuro; una conexión necesita precisión.",
+              "Menciona el aprovechamiento del papel, pero explica poco cómo las acciones evitan desecharlo prematuramente.",
+              "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda.",
+              "No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable."
+            ],
+            "fourLevelLowest": "La explicación contradice las acciones o atribuye cifras y efectos que la ficha no respalda. O bien: No explica una relación reconocible entre las acciones indicadas y evitar el descarte de papel utilizable.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-need:0",
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Copias necesarias y acceso a la lectura",
+            "description": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+            "maxScore": 7.89,
+            "maxScoreUnits": 789,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+              "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+              "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+              "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material.",
+              "No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas."
+            ],
+            "fourLevelLowest": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+                "scoreUnits": 789
+              },
+              {
+                "levelId": "L3",
+                "text": "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L2",
+                "text": "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+                "scoreUnits": 263
+              },
+              {
+                "levelId": "L1",
+                "text": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-purpose:1",
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Propósito ambiental vinculado al paso revisado",
+            "description": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+              "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+              "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+              "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha.",
+              "No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel."
+            ],
+            "fourLevelLowest": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-preservation:2",
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Revisión acotada y resto del instructivo conservado",
+            "description": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+              "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+              "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+              "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse.",
+              "No presenta una modificación reconocible y comparable de los fragmentos autorizados."
+            ],
+            "fourLevelLowest": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-need:0",
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+            "description": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+            "maxScore": 7.89,
+            "maxScoreUnits": 789,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+              "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+              "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+              "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material.",
+              "No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas."
+            ],
+            "fourLevelLowest": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-purpose:1",
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+            "description": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+              "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+              "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+              "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha.",
+              "No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel."
+            ],
+            "fourLevelLowest": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-preservation:2",
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+            "description": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+              "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+              "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+              "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse.",
+              "No presenta una modificación reconocible y comparable de los fragmentos autorizados."
+            ],
+            "fourLevelLowest": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-need:0",
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+            "description": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+            "maxScore": 7.89,
+            "maxScoreUnits": 789,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+              "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+              "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+              "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material.",
+              "No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas."
+            ],
+            "fourLevelLowest": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+                "scoreUnits": 789
+              },
+              {
+                "levelId": "L3",
+                "text": "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L2",
+                "text": "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+                "scoreUnits": 263
+              },
+              {
+                "levelId": "L1",
+                "text": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-purpose:1",
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+            "description": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+              "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+              "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+              "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha.",
+              "No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel."
+            ],
+            "fourLevelLowest": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-preservation:2",
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+            "description": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+              "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+              "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+              "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse.",
+              "No presenta una modificación reconocible y comparable de los fragmentos autorizados."
+            ],
+            "fourLevelLowest": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+                "scoreUnits": 473
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+                "scoreUnits": 315
+              },
+              {
+                "levelId": "L2",
+                "text": "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+                "scoreUnits": 158
+              },
+              {
+                "levelId": "L1",
+                "text": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.168",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-need:0",
+            "templateId": "len1-health-instructions-copy-need",
+            "title": "Copias necesarias y acceso a la lectura",
+            "description": "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos. Parcial (50%): Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+            "maxScore": 7.89,
+            "maxScoreUnits": 789,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa el paso para comprobar cuántas copias adicionales son necesarias antes de imprimir, según los ejemplares disponibles y las personas destinatarias; permite que todas las personas tengan acceso a la lectura, imprimiendo algunas o ninguna según los datos.",
+              "El paso permite determinar las copias necesarias y conservar el acceso de todos; una indicación necesita precisión.",
+              "Considera los ejemplares disponibles, pero deja incompleta la comprobación necesaria para que nadie quede sin lectura.",
+              "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material.",
+              "No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas."
+            ],
+            "fourLevelLowest": "Indica imprimir copias innecesarias o ninguna sin comprobar si todas las personas disponen del material. O bien: No propone una comprobación reconocible de las copias adicionales necesarias y el acceso de todas las personas.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-purpose:1",
+            "templateId": "len1-health-instructions-copy-purpose",
+            "title": "Propósito ambiental vinculado al paso revisado",
+            "description": "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha. Parcial (50%): Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ajusta la frase del propósito para explicar cómo comprobar las copias necesarias evita impresiones innecesarias y aprovecha el papel, de acuerdo con la ficha.",
+              "El propósito corresponde al paso y a la ficha; una relación entre la comprobación y el aprovechamiento necesita precisión.",
+              "Menciona el cuidado del papel, pero explica poco cómo se relaciona con el paso revisado.",
+              "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha.",
+              "No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel."
+            ],
+            "fourLevelLowest": "El propósito contradice el paso o promete un ahorro ambiental no sustentado por la ficha. O bien: No explica una relación reconocible entre el paso de impresión y el propósito de aprovechar el papel.",
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.168:fallback:len1-health-instructions-copy-preservation:2",
+            "templateId": "len1-health-instructions-copy-preservation",
+            "title": "Revisión acotada y resto del instructivo conservado",
+            "description": "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original. Parcial (50%): La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+            "maxScore": 4.73,
+            "maxScoreUnits": 473,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Limita los cambios al paso de impresión y la frase de su propósito; conserva exactamente las demás instrucciones y permite comparar los fragmentos modificados con el original.",
+              "Los cambios se limitan a los fragmentos autorizados; una expresión del paso o del propósito necesita claridad.",
+              "La modificación es reconocible, pero deja una indicación ambigua en el paso autorizado o en su propósito.",
+              "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse.",
+              "No presenta una modificación reconocible y comparable de los fragmentos autorizados."
+            ],
+            "fourLevelLowest": "Cambia instrucciones ajenas al paso y la frase autorizados, o altera una condición que debía conservarse. O bien: No presenta una modificación reconocible y comparable de los fragmentos autorizados.",
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    }
+  ]
+}

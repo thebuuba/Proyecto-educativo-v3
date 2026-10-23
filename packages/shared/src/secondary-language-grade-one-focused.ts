@@ -247,7 +247,7 @@ export function firstGradeFocusedCriteria(spec:FirstGradeFocusedTask):Criterion[
  ])].map(criterion=>({...criterion,observable:`Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. ${criterion.observable}`}))
 }
 
-export function markFirstGradeProvisional(proposal:InstrumentRecommendation,provisional:boolean):InstrumentRecommendation{
+export function markFirstGradeProvisional(proposal:InstrumentRecommendation,provisional:boolean,reason='Seguimiento provisional: confirmar producto, evidencia y propósito; no acredita alineación curricular ni desempeño observado.'):InstrumentRecommendation{
  if(!provisional)return proposal
- return {...proposal,confidence:'LOW',selectedCurriculumElements:[],internalTrace:{...proposal.internalTrace,lowCurriculumConfidence:true,mappingStatus:'UNMAPPED',reasons:[...proposal.internalTrace.reasons,'Seguimiento provisional: confirmar producto, evidencia y propósito; no acredita alineación curricular ni desempeño observado.']}}
+ return {...proposal,confidence:'LOW',selectedCurriculumElements:[],internalTrace:{...proposal.internalTrace,lowCurriculumConfidence:true,mappingStatus:'UNMAPPED',reasons:[...proposal.internalTrace.reasons,reason]}}
 }

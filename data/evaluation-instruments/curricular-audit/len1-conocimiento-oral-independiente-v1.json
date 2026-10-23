@@ -1,0 +1,72 @@
+{
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "provenance": {
+    "designer": "/root/disenador_pruebas",
+    "fixedBeforeOutputs": true,
+    "source": "MINERD2023 PDF69 y75; novedad construida en producción oral, no originalidad social"
+  },
+  "cases": [
+    {
+      "id": "LEN1-NCO-ORAL01",
+      "title": "Lo que juntos permiten entender",
+      "description": "Explica oralmente una relación entre los horarios de la biblioteca y las dificultades de acceso que muestran los dos textos. Propón una idea que no aparezca formulada en ninguno por separado y apóyala con información de ambos.",
+      "participationMode": "INDIVIDUAL",
+      "expected": [
+        "Explicación oral como evidencia principal.",
+        "Información pertinente y fiel de cada texto.",
+        "Relación que integra ambas fuentes y supera presentación sucesiva.",
+        "Razonamiento oral que sostiene la relación.",
+        "Distingue inferencia de afirmaciones expresas; no asegura conclusión sin respaldo.",
+        "Comunicación comprensible; notas permitidas."
+      ],
+      "forbidden": [
+        "Dos resúmenes suficientes.",
+        "Sustituir oral por exclusivamente escrito.",
+        "Originalidad para la sociedad.",
+        "Investigación/encuestas/datos/fuentes/temas científicos nuevos.",
+        "Hechos+ejemplos+analogías+contraargumentos simultáneos.",
+        "Vídeo/diapositivas/memorización/sinnotas/puntuaciónescrita."
+      ],
+      "sourceIds": [
+        "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944"
+      ]
+    },
+    {
+      "id": "LEN1-NCO-ORAL02",
+      "title": "Una conclusión que tenemos que explicar",
+      "description": "En parejas, lean las dos explicaciones entregadas sobre el mismo problema del curso. Presenten oralmente una conclusión propia que permita comprender algo más que cada texto por separado. Expliquen qué información toman de cada fuente y cómo la relacionan. Consideren una diferencia entre los textos y señalen qué pueden concluir y qué queda sin resolver. Pueden apoyarse en notas; no hace falta entregar otro texto.",
+      "participationMode": "GROUP",
+      "expected": [
+        "Conclusión o síntesis oral propia desde dos fuentes.",
+        "Fidelidad a ambas explicaciones.",
+        "Relación con comprensión adicional, no enumeración/resúmenes.",
+        "Razonamiento que conecta fuentes y conclusión.",
+        "Considera diferencia sin ocultarla ni resolver con invenciones.",
+        "Delimita lo sostenible y lo abierto.",
+        "Conclusión integrada O provisional que explique tensión pendiente, con relación nueva sustentada.",
+        "Producto oral observado; atribución individual requiere evidencia propia."
+      ],
+      "forbidden": [
+        "Dos fuentes mencionadas suficientes.",
+        "Elegir necesariamente texto correcto/eliminar diferencias/solución definitiva.",
+        "Conclusión nueva desconectada.",
+        "Convertir en investigación/proyecto/debateformal/ensayo.",
+        "Grabación/digital/entregaescritaadicional.",
+        "Fluidezescénica/memorizaciónigualarazonamiento.",
+        "Desempeño de uno atribuido a ambos."
+      ],
+      "sourceIds": [
+        "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944"
+      ]
+    }
+  ]
+}

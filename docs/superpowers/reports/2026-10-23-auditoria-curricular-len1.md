@@ -312,3 +312,7 @@ Catorce actividades complementarias y dieciséis contrastes:120instrumentos fina
 ## Cierre operativo de 167 y continuación168
 
 Fuente167 `4df1f544a56bd9e30d40215a3da637fee39168d8`: 120 salidas finales aceptadas independientemente, 592 anteriores exactas. Instalación individual solo Development, 98 releases/1.257 snapshots tras cuatro muestras HTTP; 15 referencias originales personales exactas por consulta de solo lectura. Assets y configuración efectiva verificados. Las 20 salidas iniciales E01–E04 requieren corrección168; no se cierra la asignatura. Informe: `2026-10-23-lengua-1-complementarios-167.md`.
+
+## Componentes168: cierre local verificado
+
+40instrumentos y10selecciones aceptados por revisor independiente;712anteriores exactos. Ocho gates168 aprobados:98117pruebasbackend,123frontend ybuilds/lints. Auditor concilió malla completa68–75 y encontró componente oral nuevo aún sin acreditar. Dos actividades independientes fijadas; no cierreglobal. Informe:2026-10-23-lengua-1-componentes-168.md. Instalación/HTTP168todavía pendientes.
