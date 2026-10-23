@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | EN_CURSO_CALIGRAMA; noticia/guía/informe/afiche/cuento:76actividades/304instrumentos leídos y muestras HTTP; visual e indicadores pendientes |
+| 1 | COMMON | Lengua Española | SEIS_GÉNEROS_LOCAL:98actividades/392instrumentos leídos; cinco con muestras HTTP anteriores; caligrama163 HTTP bloqueado por latencia; visual e indicadores pendientes |
 | 1 | COMMON | Inglés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |

@@ -1,0 +1,147 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.163",
+  "mode": "HTTP_ATTEMPTS_BLOCKED_BEFORE_ACTIVITY_WRITES",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.163",
+    "sourceCommit": "3954da527070b09f55fd394260184977f6c9a923",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "cbf092090d3ede4666c7064429351019175c4f8543f7187d16bc816faec5689b",
+    "frozen162Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 93,
+    "preservedSnapshots": 1237,
+    "finalReleases": 94,
+    "finalSnapshots": 1237,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.163",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-p6OIwtiY.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-p6OIwtiY.js",
+        "sha256": "bfa467df3b86db71cbb41bdf19fbf271e2a964586fdbd69c37ef2ebdbdd8778b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-IAjhvirv.js",
+        "sha256": "7d574e05a012289f1fb38ef36c21b5d1229c55b87d147c434d15b6274d13c2b0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-CXO-mPKI.js",
+        "sha256": "9c61f8879754f4f27e626dcf8d443e701c1f61df9a88289f8e3403bcc1e42933",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-DaxSaF9J.js",
+        "sha256": "707b9b5224ed829dd3753d78733cbdfaf54376379243c73def3ee5b75322da4c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-Cly-PHw6.js",
+        "sha256": "c704104798aac365d93573c6c4e7f4ed08f24590823316fcc977814afc97a39b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "834c3e507edeb4bc521c9387765cadccc499d6ad3c4e6074891094a226a7d824",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browser": {
+    "mode": "PERSONAL_LOGIN_NO_AUTHENTICATED_CREATOR",
+    "reloadAfterBuild": true,
+    "entry": "/assets/index-p6OIwtiY.js",
+    "entryMatchesHttpBuild": true,
+    "serviceWorkerScriptInDom": "/registerSW.js",
+    "registrationAndCacheInspection": "UNAVAILABLE_IN_READ_ONLY_DOM_SANDBOX_NAVIGATOR_UNDEFINED_CONFIRMED161",
+    "storageCleared": false,
+    "credentialsEntered": false,
+    "emailSent": false
+  },
+  "samplesVerified": 0,
+  "samplesPending": [
+    "LEN1-CAL-02/rubrica20",
+    "LEN1-CAL-04/escala17.35",
+    "LEN1-CAL-06/lista-ponderada20",
+    "LEN1-CAL-R05/lista-cotejo17.35"
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 5170
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 15389
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 12000
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 13803
+    }
+  ],
+  "interpretationAttempts": [
+    {
+      "clientTimeoutMs": 30015,
+      "serverStatus": 200,
+      "serverMs": 53063
+    },
+    {
+      "clientTimeoutMs": 30006,
+      "serverStatus": 200,
+      "serverMs": 48321
+    }
+  ],
+  "noTimeoutIncrease": true,
+  "noConcurrentRetry": true,
+  "priorRequestCompletedBeforeSecond": true,
+  "qaActivitiesCreated": 0,
+  "qaSnapshotsCreated": 0,
+  "readOnlyCountAfterAttempts": {
+    "releases": 94,
+    "snapshots": 1237
+  },
+  "preservedPersonalReferences": 15,
+  "personalPreservationPhase": "AFTER_INSTALL_NOT_AFTER_FOUR_QA",
+  "rootCause": "NOT_ESTABLISHED: two later read-only pg_stat_activity checks showed no active app_backend_local queries; this does not locate the earlier latency",
+  "wholeAuditOpen": true
+}

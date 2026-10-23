@@ -52,10 +52,10 @@
       ],
       "sourceReadThisAudit": true,
       "topicMatrix": "data/evaluation-instruments/curricular-audit/len1-matrix-v1.json",
-      "status": "SEIS_TEMAS_LOCAL_CALIGRAMA_HTTP_PENDIENTE_INDICADORES_ABIERTOS",
+      "status": "SEIS_TEMAS_LOCAL_CALIGRAMA_HTTP_BLOQUEADO_INDICADORES_ABIERTOS",
       "topicsTotalConfirmed": 6,
       "topicsClosed": 0,
-      "nextAction": "HTTP/DB163 y comparación final de competencias/indicadores de Lengua1; continuar Inglés1 y restantes ámbitos, visual personal independiente"
+      "nextAction": "Contraste completo de competencias/indicadores/actitudesLengua1 y tareas independientes; HTTP163 pendiente por latencia, no duplicar instalación ni ampliar timeout"
     },
     {
       "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",

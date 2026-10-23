@@ -4228,7 +4228,7 @@
             "LEN1-CAL-03",
             "LEN1-CAL-04"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4288,7 +4288,7 @@
             "LEN1-CAL-14",
             "LEN1-CAL-R08"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4381,7 +4381,7 @@
             "LEN1-CAL-04",
             "LEN1-CAL-09"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4463,7 +4463,7 @@
             "LEN1-CAL-03",
             "LEN1-CAL-09"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-01",
@@ -4532,7 +4532,7 @@
             "LEN1-CAL-02",
             "LEN1-CAL-12"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4582,7 +4582,7 @@
             "LEN1-CAL-06",
             "LEN1-CAL-08"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4729,7 +4729,7 @@
             "LEN1-CAL-02",
             "LEN1-CAL-07"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4777,7 +4777,7 @@
             "LEN1-CAL-07",
             "LEN1-CAL-13"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4836,7 +4836,7 @@
             "LEN1-CAL-07",
             "LEN1-CAL-13"
           ],
-          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
           "evidence": [
             {
               "caseId": "LEN1-CAL-02",
@@ -4874,8 +4874,8 @@
           ]
         }
       ],
-      "status": "REVISADO_LOCAL_88_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
-      "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+      "status": "REVISADO_LOCAL_HTTP_BLOQUEADO_POR_LATENCIA_VISUAL_PENDIENTE",
+      "nextAction": "Cuatro muestras HTTP163 pendientes por latencia reproducida; continuar contraste finalLengua1/indicadores y tareas locales independientes",
       "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json",
       "curricularComponentAudit": [
         {
@@ -5147,7 +5147,17 @@
           ],
           "limit": "Oportunidad de creación y expresión observable; no calificación del disfrute interno"
         }
-      ]
+      ],
+      "verification163": {
+        "activities": 22,
+        "instrumentsRead": 88,
+        "installedDevelopment": true,
+        "httpEvidence": "auditoria-curricular-http-163-bloqueo.json",
+        "samplesVerified": 0,
+        "personalPreservation": "auditoria-curricular-len1-personales-163-instalacion.json",
+        "personalBrowser": "LOGIN_SIN_SESION_NO_MODIFICADO",
+        "fullSubjectAchievementIndicators": "ABIERTOS"
+      }
     }
   ],
   "procedures": [
@@ -7188,11 +7198,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Seis géneros con98actividades/392instrumentos locales; caligrama HTTP163 pendiente; contraste final de indicadores abierto",
+    "otherTopics": "Seis géneros,98actividades/392instrumentos locales leídos; cinco géneros con muestras HTTP previas; caligrama163 sin muestras completadas",
     "remaining": [
-      "HTTP/DB163 y15referencias personales después de cuatro muestras",
-      "Visual personal bloqueado por acceso; caché/registroSW no expuestos por herramientaDOM",
-      "Contraste totalLengua1 con competencias/indicadores75 y actitudes transversales; restantes81contextos"
+      "HTTP163 bloqueado por interpretación48–53s frente a timeout30s, sin escriturasQA",
+      "Visual personal sin sesión; registroSW/caché no expuestos por herramientaDOM",
+      "Contraste completoLengua1/indicadores75/actitudes transversales y restantes81contextos"
     ]
   }
 }
