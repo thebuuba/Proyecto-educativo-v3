@@ -9458,7 +9458,7 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "REQUIERE_CONSIGNA_ESPECIFICA_SOBRE_VALORES",
+      "status": "COMPONENTE_OBSERVABLE_REVISADO_SIN_ADHESION_MORAL",
       "reconciledEvidence": {
         "topic": "cuento",
         "sourceId": "8841ea63-27d0-555c-b765-fdd960456dba",
@@ -9466,6 +9466,14 @@
         "evidence": [],
         "status": "REQUIERE_CONSIGNA_ESPECIFICA_SOBRE_VALORES",
         "limit": "Narrar un misterio o identificar acciones no demuestra por sí solo análisis de valores. Completar en banco transversal; no cerrar por mención de trama."
+      },
+      "transversalEvidence": {
+        "cases": [
+          "LEN1-TRA-VAL01",
+          "LEN1-TRI-R10"
+        ],
+        "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json",
+        "limit": "Interpreta actitudes y valores mediante decisiones y consecuencias, no creencias personales."
       }
     },
     {
@@ -10258,13 +10266,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Seis géneros conceptuales con98actividades/392instrumentos y muestras HTTP; cuatro géneros del indicador75 con23actividades/92instrumentos y1controlafiche/4. Total122casos/488instrumentos locales; faltan componentes transversales.",
+    "otherTopics": "148actividades/592instrumentos locales revisados. Trazabilidad26casos conciliada por componentes;14casos pendientes de corrección, sin cierre de asignatura.",
     "remaining": [
-      "13casos independientes con fallos reproducidos; corregir y revisar52instrumentos",
-      "12complementarios fijados; generar y revisar48instrumentos",
-      "Añadir publicación impresa efectiva de cuento y oportunidad no calificable de elección lectora",
-      "Visual personal: login con error y assets163, servidor165 verificado",
-      "Conciliar evidencia final con todos los componentes curriculares; otros81contextos pendientes"
+      "Corregir14casos complementarios/cierre:92salidas165 leídas y rechazadas;56principales por corregir",
+      "Cierre completo por componente de la malla y visual personal pendientes",
+      "81contextos restantes por orden oficial"
     ]
   },
   "specificCompetencies": [
@@ -11127,15 +11133,9 @@
       {
         "id": "LEN1-TRA-SCI01",
         "indicators": [
-          "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
-          "637c2904-96b6-576c-bab4-6a0bfdf66944",
-          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
-          "9307c046-4d39-5181-a736-3695a6d1d79b",
-          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
-          "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
-          "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+          "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Comunica proceso, datos y límite de una investigación dada y prepara edición digital responsable. No acredita publicación, intercambio ni conocimiento nuevo.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11177,18 +11177,19 @@
               "len1-transversal-science-digital"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-SCI02",
         "indicators": [
-          "edd5d7f8-172b-5927-a153-73b58a9756a6",
-          "4341313f-9526-5f29-97cf-22b96fe40580",
-          "637c2904-96b6-576c-bab4-6a0bfdf66944",
-          "9307c046-4d39-5181-a736-3695a6d1d79b",
-          "0ddcbc46-c06e-5fec-bb7b-12664cc18c15"
+          "4341313f-9526-5f29-97cf-22b96fe40580"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Comunica oralmente proceso y hallazgos simulados con claridad, procedencia y alcance. No caracteriza géneros ni acredita TIC o temática sanitaria.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11226,15 +11227,21 @@
               "len1-transversal-science-source"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [
+          "1e8cd77f-d712-535e-b108-203a914fb39c"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-SCI03",
         "indicators": [
-          "637c2904-96b6-576c-bab4-6a0bfdf66944",
           "46959358-472f-52cd-9887-5555e78db510"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Paráfrasis de dos fichas científicas y sociales, reformulación y relación entre procedimiento y conclusión. No acredita conocimiento nuevo.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11268,17 +11275,17 @@
               "len1-transversal-science-source"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-SCI04",
-        "indicators": [
-          "637c2904-96b6-576c-bab4-6a0bfdf66944",
-          "9307c046-4d39-5181-a736-3695a6d1d79b",
-          "46959358-472f-52cd-9887-5555e78db510",
-          "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
-        ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "indicators": [],
+        "contribution": "Comprende pregunta, procedimiento, datos y conclusión; contrasta respaldo y sobreinterpretación. No pide paráfrasis ni publicación.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11312,7 +11319,12 @@
               "len1-transversal-science-source"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CIV01",
@@ -11321,11 +11333,10 @@
           "44cca28a-249e-561e-92ac-b98d05b46d18",
           "73953afe-43cf-5b4d-a157-85cfd41ccb84",
           "4430df5a-9fb7-54e0-b000-606c863ae60e",
-          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
           "03142453-856f-58e8-b3fc-2292030e24d8",
           "f97deee1-e659-57c1-b27f-5aacded43899"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Proyecto colaborativo sobre desigualdad en el patio: problema, solución razonada, opinión distinta, dignidad, igualdad, objetivo, acciones, responsables y calendario. No ejecución ni patrimonio dominicano.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11367,7 +11378,12 @@
               "len1-transversal-civic-viability"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CIV02",
@@ -11377,7 +11393,7 @@
           "03142453-856f-58e8-b3fc-2292030e24d8",
           "f97deee1-e659-57c1-b27f-5aacded43899"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Plan individual sobre igualdad de acceso a lectura: problema, objetivo y acciones organizadas. No ejecución ni resultados.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11411,19 +11427,21 @@
               "len1-transversal-civic-equality"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CIV03",
         "indicators": [
           "bf27d10f-59a1-553a-a094-f621207e0234",
-          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
           "4430df5a-9fb7-54e0-b000-606c863ae60e",
-          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
-          "03142453-856f-58e8-b3fc-2292030e24d8",
-          "f97deee1-e659-57c1-b27f-5aacded43899"
+          "03142453-856f-58e8-b3fc-2292030e24d8"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Contrasta viabilidad, dignidad e igualdad de dos propuestas y justifica valoración. No acredita redactar proyecto ni producción escrita no solicitada.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11457,16 +11475,20 @@
               "len1-transversal-civic-comparison-viability"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CIV04",
         "indicators": [
           "73953afe-43cf-5b4d-a157-85cfd41ccb84",
-          "4430df5a-9fb7-54e0-b000-606c863ae60e",
-          "f97deee1-e659-57c1-b27f-5aacded43899"
+          "4430df5a-9fb7-54e0-b000-606c863ae60e"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Reescribe solo una recomendación viable con datos disponibles; no redacta ni ejecuta un nuevo proyecto.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11492,19 +11514,21 @@
               "len1-transversal-civic-recommendation"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-ARG01",
         "indicators": [
-          "edd5d7f8-172b-5927-a153-73b58a9756a6",
           "4341313f-9526-5f29-97cf-22b96fe40580",
           "416efc6a-f3ea-586a-aaac-e38afddce0f9",
-          "bf27d10f-59a1-553a-a094-f621207e0234",
-          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
-          "03142453-856f-58e8-b3fc-2292030e24d8"
+          "bf27d10f-59a1-553a-a094-f621207e0234"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Argumentación oral: hecho, ejemplo y analogía con función justificada, respuesta a contraargumento, conclusión coherente sin descalificación. No patrimonio ni conocimiento nuevo por sí solo.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11542,19 +11566,17 @@
               "len1-transversal-argument-conclusion"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-VAL01",
-        "indicators": [
-          "4341313f-9526-5f29-97cf-22b96fe40580",
-          "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
-          "03142453-856f-58e8-b3fc-2292030e24d8",
-          "550df0a4-8032-5593-bceb-0916487cd755",
-          "d5418e27-1c19-5b28-b563-c311de6055dc",
-          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
-        ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "indicators": [],
+        "contribution": "Interpreta decisiones y consecuencias en cuento mediante acciones y diálogo. No adhesión moral, autoconocimiento ni producción literaria.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11584,19 +11606,22 @@
               "len1-transversal-story-interpretations"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "8841ea63-27d0-555c-b765-fdd960456dba"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-VAL02",
         "indicators": [
           "4341313f-9526-5f29-97cf-22b96fe40580",
-          "44cca28a-249e-561e-92ac-b98d05b46d18",
-          "03142453-856f-58e8-b3fc-2292030e24d8",
-          "550df0a4-8032-5593-bceb-0916487cd755",
-          "d5418e27-1c19-5b28-b563-c311de6055dc",
-          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+          "d5418e27-1c19-5b28-b563-c311de6055dc"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Produce cuento policíaco que representa dignidad y convivencia mediante trama, acciones, diálogos y pistas. No edición/publicación ni certificación de desarrollo espiritual interno.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11646,18 +11671,21 @@
               "len1-transversal-story-decisions"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "28865ef6-91d3-5df9-b417-0a81f880732a"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CAL01",
         "indicators": [
-          "edd5d7f8-172b-5927-a153-73b58a9756a6",
-          "4341313f-9526-5f29-97cf-22b96fe40580",
-          "550df0a4-8032-5593-bceb-0916487cd755",
-          "d5418e27-1c19-5b28-b563-c311de6055dc",
           "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Revisión de rima, vocabulario y relación texto-imagen con retroalimentación para comunicar emoción ficticia. No sentimientos personales ni valoración interna.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11687,18 +11715,23 @@
               "calligram-process-revision"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "6386112a-44b3-5b36-9416-1f31d2540550",
+          "82fbde4d-eceb-526b-8765-1806c38549c7"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       },
       {
         "id": "LEN1-TRA-CAL02",
         "indicators": [
-          "edd5d7f8-172b-5927-a153-73b58a9756a6",
-          "4341313f-9526-5f29-97cf-22b96fe40580",
           "bf27d10f-59a1-553a-a094-f621207e0234",
-          "550df0a4-8032-5593-bceb-0916487cd755",
           "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
         ],
-        "contribution": "PARCIAL: no acredita por sí solo toda la extensión del indicador",
+        "contribution": "Comentario sustentado en palabras y figura; coincidencia O diferencia razonada con otra lectura y trato respetuoso. No empatía interna.",
         "criteriaByFormat": [
           {
             "format": "rubrica",
@@ -11728,19 +11761,23 @@
               "len1-transversal-calligram-peer"
             ]
           }
-        ]
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+          "70d92347-77f0-5e3f-b748-5d458fe5b694"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
       }
     ],
     "remaining": [
-      "Banco independiente13:52salidas leídas con fallos, no aprobado",
-      "Banco complementario12: fijado,48salidas sin generar",
-      "Publicación científica y literaria frente a preparación",
-      "Patrimonio histórico dominicano y su relación natural/sociocultural",
-      "Intercomunicación ambiental fuera del aula",
-      "Inferencia/síntesis nueva y reflexión ficticia de perspectivas",
-      "Verificación visual personal y contraste final de malla"
+      "Corregir14casos complementarios/cierre:92salidas165 leídas y rechazadas;56principales por corregir",
+      "Cierre completo por componente de la malla y visual personal pendientes"
     ],
-    "closed": false
+    "closed": false,
+    "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json"
   },
   "transversalVerification165": {
     "localCases": 13,
@@ -11749,5 +11786,602 @@
     "httpEvidence": "auditoria-curricular-http-165.json",
     "personalPreservation": "auditoria-curricular-len1-personales-165.json",
     "wholeSubjectClosed": false
+  },
+  "independentTransversalEvidence": {
+    "version": "evaluation-2026.166",
+    "bank": "data/evaluation-instruments/curricular-audit/len1-transversales-reservado-independiente-v1.json",
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-transversales-independiente-166-lectura52.json",
+    "cases": [
+      {
+        "id": "LEN1-TRI-R01",
+        "contribution": "Revisión limitada de titular y entrada conservando cuerpo, datos y límite de certeza del hallazgo.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-news-certainty",
+              "len1-focused-news-bounded-revision"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-news-certainty",
+              "len1-focused-news-bounded-revision"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-news-certainty",
+              "len1-focused-news-bounded-revision"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-news-certainty",
+              "len1-focused-news-bounded-revision"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [
+          "52fef8d7-627e-5de8-85ea-95a5ddc97c3d"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R02",
+        "contribution": "Noticia oral breve fiel a ficha, comprensible para otros cursos y con duración solicitada. No todo el proceso investigativo.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-news-oral-fidelity",
+              "len1-focused-news-oral-audience",
+              "len1-focused-news-oral-time"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-news-oral-fidelity",
+              "len1-focused-news-oral-audience",
+              "len1-focused-news-oral-time"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-news-oral-fidelity",
+              "len1-focused-news-oral-audience",
+              "len1-focused-news-oral-time"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-news-oral-fidelity",
+              "len1-focused-news-oral-audience",
+              "len1-focused-news-oral-time"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "1e8cd77f-d712-535e-b108-203a914fb39c"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R03",
+        "contribution": "Paráfrasis escrita breve del hallazgo social de encuesta con palabras propias y fidelidad al contexto.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-length"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-length"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-length"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-length"
+            ]
+          }
+        ],
+        "indicators": [
+          "46959358-472f-52cd-9887-5555e78db510"
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R04",
+        "contribution": "Paráfrasis de hallazgo científico en párrafo O audio; distingue observación de explicación posible y limita generalización.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-limits",
+              "len1-focused-paraphrase-modality"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-limits",
+              "len1-focused-paraphrase-modality"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-limits",
+              "len1-focused-paraphrase-modality"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-paraphrase-fidelity",
+              "len1-focused-paraphrase-own-words",
+              "len1-focused-paraphrase-limits",
+              "len1-focused-paraphrase-modality"
+            ]
+          }
+        ],
+        "indicators": [
+          "46959358-472f-52cd-9887-5555e78db510"
+        ],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R05",
+        "contribution": "Comprende pregunta, dato que respalda conclusión y afirmación todavía no comprobada de informe científico.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-science-question",
+              "len1-focused-science-data-inference",
+              "len1-focused-science-unproven"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-science-question",
+              "len1-focused-science-data-inference",
+              "len1-focused-science-unproven"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-science-question",
+              "len1-focused-science-data-inference",
+              "len1-focused-science-unproven"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-science-question",
+              "len1-focused-science-data-inference",
+              "len1-focused-science-unproven"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [
+          "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R06",
+        "contribution": "Plan colaborativo: participación desigual, dos acciones, responsables, momentos, voces poco representadas y alternativa razonada. No ejecución.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-participation-problem",
+              "len1-focused-participation-actions",
+              "len1-focused-participation-inclusion",
+              "len1-focused-participation-alternative"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-participation-problem",
+              "len1-focused-participation-actions",
+              "len1-focused-participation-inclusion",
+              "len1-focused-participation-alternative"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-participation-problem",
+              "len1-focused-participation-actions",
+              "len1-focused-participation-inclusion",
+              "len1-focused-participation-alternative"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-participation-problem",
+              "len1-focused-participation-actions",
+              "len1-focused-participation-inclusion",
+              "len1-focused-participation-alternative"
+            ]
+          }
+        ],
+        "indicators": [
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "f97deee1-e659-57c1-b27f-5aacded43899"
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R07",
+        "contribution": "Compara participación y recogida de propuestas; recomienda O identifica información insuficiente. El indicador4430df5a solo corresponde a la alternativa que emite recomendación, no al reconocimiento de incertidumbre.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-participation-compare",
+              "len1-focused-participation-choice"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-participation-compare",
+              "len1-focused-participation-choice"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-participation-compare",
+              "len1-focused-participation-choice"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-participation-compare",
+              "len1-focused-participation-choice"
+            ]
+          }
+        ],
+        "indicators": [
+          "bf27d10f-59a1-553a-a094-f621207e0234",
+          "03142453-856f-58e8-b3fc-2292030e24d8",
+          "4430df5a-9fb7-54e0-b000-606c863ae60e"
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R08",
+        "contribution": "Recomendación viable y nota que explica el cambio; conserva problema, objetivo, acciones, responsables y plazos.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-recommendation-fit",
+              "len1-focused-recommendation-preserve"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-recommendation-fit",
+              "len1-focused-recommendation-preserve"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-recommendation-fit",
+              "len1-focused-recommendation-preserve"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-recommendation-fit",
+              "len1-focused-recommendation-preserve"
+            ]
+          }
+        ],
+        "indicators": [
+          "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "4430df5a-9fb7-54e0-b000-606c863ae60e"
+        ],
+        "competencies": [
+          "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R09",
+        "contribution": "Debate con dato O ejemplo, objeción y cierre manteniendo O cambiando postura con razones. No analogía ni recursos acumulativos.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-argument-position",
+              "len1-focused-argument-objection",
+              "len1-focused-argument-close"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-argument-position",
+              "len1-focused-argument-objection",
+              "len1-focused-argument-close"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-argument-position",
+              "len1-focused-argument-objection",
+              "len1-focused-argument-close"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-argument-position",
+              "len1-focused-argument-objection",
+              "len1-focused-argument-close"
+            ]
+          }
+        ],
+        "indicators": [
+          "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+          "bf27d10f-59a1-553a-a094-f621207e0234"
+        ],
+        "competencies": [
+          "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+        ],
+        "otherSourceRows": [],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R10",
+        "contribution": "Explica cambio de decisión del personaje con dos momentos y actitud O valor. No producción literaria ni autoconocimiento.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-story-change",
+              "len1-focused-story-attitude"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-story-change",
+              "len1-focused-story-attitude"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-story-change",
+              "len1-focused-story-attitude"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-story-change",
+              "len1-focused-story-attitude"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "8841ea63-27d0-555c-b765-fdd960456dba"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R11",
+        "contribution": "Interpreta emoción representada con palabras y figura; coincidencia O diferencia entre lecturas sin burlas. No exige acuerdo.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-transversal-calligram-emotion",
+              "len1-transversal-calligram-peer"
+            ]
+          }
+        ],
+        "indicators": [
+          "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+        ],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+          "70d92347-77f0-5e3f-b748-5d458fe5b694"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R12",
+        "contribution": "Revisión léxica con sugerencia aceptada, adaptada O rechazada; puede conservar justificadamente palabras, manteniendo figura, tema y orden.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-word-choice",
+              "len1-focused-word-feedback",
+              "len1-focused-word-preserve"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-word-choice",
+              "len1-focused-word-feedback",
+              "len1-focused-word-preserve"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-word-choice",
+              "len1-focused-word-feedback",
+              "len1-focused-word-preserve"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-word-choice",
+              "len1-focused-word-feedback",
+              "len1-focused-word-preserve"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [
+          "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+        ],
+        "otherSourceRows": [
+          "6386112a-44b3-5b36-9416-1f31d2540550",
+          "70d92347-77f0-5e3f-b748-5d458fe5b694"
+        ],
+        "traceStatus": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+      },
+      {
+        "id": "LEN1-TRI-R13",
+        "contribution": "Producto, propósito y evidencia indeterminados: propuesta provisional sin acreditar alineación curricular específica.",
+        "criteriaByFormat": [
+          {
+            "format": "rubrica",
+            "criteria": [
+              "len1-focused-progress-evidence",
+              "len1-focused-progress-next"
+            ]
+          },
+          {
+            "format": "lista-cotejo",
+            "criteria": [
+              "len1-focused-progress-evidence",
+              "len1-focused-progress-next"
+            ]
+          },
+          {
+            "format": "escala",
+            "criteria": [
+              "len1-focused-progress-evidence",
+              "len1-focused-progress-next"
+            ]
+          },
+          {
+            "format": "lista-ponderada",
+            "criteria": [
+              "len1-focused-progress-evidence",
+              "len1-focused-progress-next"
+            ]
+          }
+        ],
+        "indicators": [],
+        "competencies": [],
+        "otherSourceRows": [],
+        "traceStatus": "PROVISIONAL_SIN_ALINEACION"
+      }
+    ],
+    "closed": false,
+    "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json"
   }
 }

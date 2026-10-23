@@ -83,3 +83,15 @@ El diseñador entregó invariantesR01–R13 sin leer código ni salidas: fidelid
 ## Conciliación final del auditor sobre los pendientes
 
 Relectura visual68–75 y cruce de consignas: los25pendientes cubren potencialmente seis vacíos transversales, pero falta publicación impresa efectiva del cuento (28865ef6-91d3-5df9-b417-0a81f880732a,p73). Preparar edición no es publicar; C05solo digital permanece intacto. Falta asimismo oportunidad de elegir modalidad de lectura (d112b7bd-aa6c-5d0a-9980-83e7c8ef5334,p69), sin criterio calificable. No encontró otro indicador completo sin consigna potencial; no releyó los540instrumentos ni afirma aceptación de los21indicadores. Argumentación escrita ya cubierta porSAL-OPI02/03/04; contexto internacional porNOT-P02. Actualizar enlace8841ea63-27d0-555c-b765-fdd960456dba aTRA-VAL01; no evaluar aprobación moral.
+
+## Reservado166: revisión real y conformidad limitada
+
+El revisor leyó52completos166-v1 y13selecciones; aceptócorreccionesR01–R12con reserva de modalidadR04 y provisionalidadR13. No confundió pendingScore=true con nota automática: el fallo era ofrecer no observado dentro deL1cero. Tras6regresionesRED y corrección, cotejó52en166-v2:44exactos,criteriosR04sin cambios peroANALYSIS/evidenciasneutras; R13instrucciones fuera de niveles y lectura íntegra de variantes. Sin nuevo impedimento sustantivo. Conformidad solo pedagógica local; noHTTP/UI/DB. Los92complementarios iniciales siguen en tarea separada.
+
+## Cierre local166 y corrección de trazabilidad
+
+Los ocho gates finales terminaron con exit0: backend97944/238, frontend focal123/7, build backend/frontend/Cloudflare(dry-run) y tres lints. El chunk mayor queda en2077692bytes; el nuevo bloque ocupa23153bytes y está en la precaché. No se aumentó el límite de2MiB. Evidencia: auditoria-curricular-len1-166-build.json.
+
+El auditor entregó26vínculos mínimos por componente. La errata conserva manifiesto165 original y suSHA, retira asociaciones por mención y distingue preparación de publicación, comparación de redacción y actitud representada de estado interno. Se actualiza solo trazabilidad vigente; no currículo oficial ni históricos. R13no acredita fuente específica. Las52salidas166-v2 sí fueron aceptadas por otro agente real; la conciliación del auditor es una función diferente.
+
+El revisor leyó92salidas complementarias165:48principales+32fallback y8principales+4fallback. Todos14casos tienen fallos; no están corregidos ni aceptados. Corrigió una afirmación propia sobreC08: pendingScore es NOT_TESTED_IN_FROZEN_CAPTURE, no true; no se probó puntuación en esos92. El problema de no penalizar una respuesta externa todavía pendiente sigue siendo válido.

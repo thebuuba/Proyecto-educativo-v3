@@ -1,0 +1,1713 @@
+{
+  "catalog": "evaluation-2026.165",
+  "mode": "IMMUTABLE_FROZEN_API_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "54c842f0d7464baaba071bd454e64cdea4a473bf",
+  "apiBundleSha256": "f4b5014272fe1c35b5afbf09fe0d7d0caa1cc3d09df4e3f31b8c33277ac8e414",
+  "bankSha256": "040e5bde213a2e4a2913b5f4c45f0c7aae26012011c4229786ff5cb5dd8bd2a0",
+  "cases": [
+    {
+      "id": "LEN1-TRF-F01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura narrativa del cuento",
+            "description": "Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-expression:3",
+            "templateId": "language-expression",
+            "title": "Recursos expresivos",
+            "description": "Usa recursos del género literario para expresar su intención.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa recursos del género literario para expresar su intención. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 300
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 100
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura narrativa del cuento",
+            "description": "Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-expression:3",
+            "templateId": "language-expression",
+            "title": "Recursos expresivos",
+            "description": "Usa recursos del género literario para expresar su intención.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura narrativa del cuento",
+            "description": "Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-expression:3",
+            "templateId": "language-expression",
+            "title": "Recursos expresivos",
+            "description": "Usa recursos del género literario para expresar su intención.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa recursos del género literario para expresar su intención. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa recursos del género literario para expresar su intención. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 300
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 100
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en El cuento llega a los lectores. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-structure:1",
+            "templateId": "language-structure",
+            "title": "Estructura narrativa del cuento",
+            "description": "Organiza los acontecimientos del cuento en una secuencia que permite seguir su conflicto y resolución.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-coherence:2",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-expression:3",
+            "templateId": "language-expression",
+            "title": "Recursos expresivos",
+            "description": "Usa recursos del género literario para expresar su intención.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:language-correctness:4",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3,
+            "maxScoreUnits": 300,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en El cuento llega a los lectores.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-questions:0",
+            "templateId": "news-questions",
+            "title": "Interrogantes fundamentales",
+            "description": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+            "maxScore": 12.39,
+            "maxScoreUnits": 1239,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+              "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+              "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+              "Asigna datos a personas, lugares o momentos distintos de los informados.",
+              "No localiza datos que respondan las preguntas de la noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+                "scoreUnits": 1239
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+                "scoreUnits": 826
+              },
+              {
+                "levelId": "L2",
+                "text": "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza datos que respondan las preguntas de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-evidence:1",
+            "templateId": "news-evidence",
+            "title": "Justificación con evidencias",
+            "description": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+            "maxScore": 4.96,
+            "maxScoreUnits": 496,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+              "Los datos citados apoyan las respuestas; una relación queda implícita.",
+              "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+              "Usa un fragmento que contradice su respuesta o inventa datos.",
+              "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos citados apoyan las respuestas; una relación queda implícita.",
+                "scoreUnits": 331
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-questions:0",
+            "templateId": "news-questions",
+            "title": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+            "description": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+            "maxScore": 12.39,
+            "maxScoreUnits": 1239,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+              "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+              "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+              "Asigna datos a personas, lugares o momentos distintos de los informados.",
+              "No localiza datos que respondan las preguntas de la noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-evidence:1",
+            "templateId": "news-evidence",
+            "title": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+            "description": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+            "maxScore": 4.96,
+            "maxScoreUnits": 496,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+              "Los datos citados apoyan las respuestas; una relación queda implícita.",
+              "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+              "Usa un fragmento que contradice su respuesta o inventa datos.",
+              "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-questions:0",
+            "templateId": "news-questions",
+            "title": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+            "description": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+            "maxScore": 12.39,
+            "maxScoreUnits": 1239,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+              "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+              "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+              "Asigna datos a personas, lugares o momentos distintos de los informados.",
+              "No localiza datos que respondan las preguntas de la noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+                "scoreUnits": 1239
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+                "scoreUnits": 826
+              },
+              {
+                "levelId": "L2",
+                "text": "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+                "scoreUnits": 413
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza datos que respondan las preguntas de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-evidence:1",
+            "templateId": "news-evidence",
+            "title": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+            "description": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+            "maxScore": 4.96,
+            "maxScoreUnits": 496,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+              "Los datos citados apoyan las respuestas; una relación queda implícita.",
+              "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+              "Usa un fragmento que contradice su respuesta o inventa datos.",
+              "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L3",
+                "text": "Los datos citados apoyan las respuestas; una relación queda implícita.",
+                "scoreUnits": 331
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    },
+    {
+      "id": "LEN1-TRF-F02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.165",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-questions:0",
+            "templateId": "news-questions",
+            "title": "Interrogantes fundamentales",
+            "description": "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto. Parcial (50%): Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+            "maxScore": 12.39,
+            "maxScoreUnits": 1239,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Localiza qué ocurrió, a quién, dónde, cuándo y cómo ocurrió a partir de la información del texto.",
+              "Localiza la mayoría de los datos disponibles con una atribución imprecisa.",
+              "Localiza algunos datos, pero omite o confunde otros presentes en la noticia.",
+              "Asigna datos a personas, lugares o momentos distintos de los informados.",
+              "No localiza datos que respondan las preguntas de la noticia."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.165:fallback:news-evidence:1",
+            "templateId": "news-evidence",
+            "title": "Justificación con evidencias",
+            "description": "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia. Parcial (50%): Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+            "maxScore": 4.96,
+            "maxScoreUnits": 496,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Sustenta sus respuestas con datos o fragmentos pertinentes de la noticia.",
+              "Los datos citados apoyan las respuestas; una relación queda implícita.",
+              "Señala un dato o fragmento, pero no explica qué respuesta apoya.",
+              "Usa un fragmento que contradice su respuesta o inventa datos.",
+              "No aporta datos ni fragmentos de la noticia para sustentar sus respuestas."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE"
+    }
+  ]
+}

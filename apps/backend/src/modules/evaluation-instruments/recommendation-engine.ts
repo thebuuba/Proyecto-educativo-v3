@@ -13,7 +13,7 @@ import { resolveCommonMathTask,commonMathCriteria,commonMathSelections,adaptMath
 import { secondGradeNewsCriteria } from './authored/language/news-grade-2'
 import {resolveEvaluationTask,secondaryNovelAnalysisCriteria,actionContentCriteria,languageInstrumentIntent,assertInstrumentCapacity,withDeliveryCriteria,deliveryConditions} from '@aula/shared'
 import {resolveFirstGradeHealthGenre,firstGradeHealthGenreCriteria} from '@aula/shared'
-import {resolveFirstGradeTransversalTask,firstGradeTransversalCriteria,firstGradeTransversalSelections} from '@aula/shared'
+import {resolveFirstGradeTransversalTask,firstGradeTransversalCriteria,firstGradeTransversalSelections,markFirstGradeProvisional} from '@aula/shared'
 import { newsCriteria } from './authored/language/news-grade-1'
 import { adaptLanguageScale, formatAuthoredCriteria, isFirstGradeNewsActivity, isFirstGradeGuideActivity, isFirstGradePosterActivity, isFirstGradeDetectiveActivity, isFirstGradeCalligramActivity, firstSecondaryLanguageGenre } from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
@@ -457,7 +457,7 @@ export function recommend(input: RecommendationInput, context: AcademicContext |
   const formatted = technical ? adaptTechnicalScale(result,input.description??'',technical) : optativeScience ? adaptOptativeScienceScale(result,input.description??'',optativeScience) : optativeMath ? adaptMathScale(result,input.description??'') : socialOptative ? adaptSocialScale(result) : optativeTask ? adaptOptativeLanguageScale(result) : fhrTask ? adaptFhrScale(result,fhrTask) : physicalTask ? adaptPhysicalScale(result,physicalTask) : artTask ? adaptArtScale(result, artTask) : socialTask ? adaptSocialScale(result) : commonScience ? adaptScienceScale(result,input.description??'') : mathTask ? adaptMathScale(result,input.description??'') : context?.level==='SECONDARY' && area==='language' && authoredCriteria.length && !authored.some(row=>row.templateId.startsWith('task-'))
     ? adaptLanguageScale(result,input.description??'',frenchTask?'fr':undefined) : result
   assertValidRecommendation(formatted, Boolean(input.includeAdditionalCandidates))
-  return formatted
+  return markFirstGradeProvisional(formatted,transversal?.focused?.kind==='PROGRESS'&&transversal.activityType===activity.id)
 }
 
 export function assertValidRecommendation(result: InstrumentRecommendation, candidatePool = false) {

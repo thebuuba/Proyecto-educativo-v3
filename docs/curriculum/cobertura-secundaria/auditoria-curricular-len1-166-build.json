@@ -1,0 +1,66 @@
+{
+  "catalog": "evaluation-2026.166",
+  "gates": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 117126
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 27727
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 19096
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 35052
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 50575
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 4633
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 3155
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 2318
+    }
+  ],
+  "backend": {
+    "tests": 97944,
+    "files": 238
+  },
+  "frontendFocal": {
+    "tests": 123,
+    "files": 7
+  },
+  "originalFailure": "Workbox: asset compartido excedía2MiB",
+  "fix": "Separación del módulo de reglas sin dependencias de ejecución mediante manualChunks; no se aumenta límite ni desactiva precaché",
+  "largestAsset": {
+    "name": "src-DDrQ6QhU.js",
+    "bytes": 2077692
+  },
+  "focusedChunk": {
+    "name": "instrumentos-lengua-1-acciones-D0IbeJv4.js",
+    "bytes": 23153
+  },
+  "focusedChunkPrecached": true,
+  "cloudflare": "DRY_RUN_NO_DEPLOY",
+  "fullFrontendSuite": false
+}

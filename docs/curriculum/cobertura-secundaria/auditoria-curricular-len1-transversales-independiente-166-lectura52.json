@@ -1,0 +1,1460 @@
+{
+  "catalog": "evaluation-2026.166",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "scope": "Lengua Española1 común",
+  "cases": 13,
+  "outputs": 52,
+  "bankIndependent": true,
+  "independentDesigner": "/root/disenador_pruebas",
+  "independentPedagogicalReviewer": "/root/revisor_pedagogico",
+  "reviewRounds": [
+    "165-antes:52+32fallback distintos",
+    "166-v1:52 completos; dos reservas",
+    "166-v2:44 exactos; R04 clasificación y R13 descriptores releídos"
+  ],
+  "artifact": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-transversales-independiente-166-revisar-v2.json",
+  "artifactSha256": "5a2ef0575e34c621b1af99f4669aa02396b0e6a5cb337064966e2d470096bb7d",
+  "reviewerScope": "Lectura pedagógica y metadata, sin pruebas/HTTP/UI/DB",
+  "wholeSubjectClosed": false,
+  "rows": [
+    {
+      "id": "LEN1-TRI-R01",
+      "expected": {
+        "explicit": [
+          "Titular y entrada fieles al hallazgo y a su incertidumbre; posibilidad no se vuelve certeza",
+          "Modificaciones limitadas a titular/entrada, cuerpo y datos comprobados conservados"
+        ],
+        "excluded": [
+          "Noticia nueva completa, corrección del cuerpo, estudio o hipótesis nuevos",
+          "Fotografía, video o publicación efectiva"
+        ]
+      },
+      "sourcePages": [
+        69,
+        74,
+        75
+      ],
+      "sourceContribution": "Revisión limitada de titular y entrada conservando cuerpo, datos y límite de certeza del hallazgo.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "len1-focused-news-certainty",
+              "title": "Fidelidad y grado de certeza del hallazgo",
+              "requirement": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados."
+            },
+            {
+              "id": "len1-focused-news-bounded-revision",
+              "title": "Revisión limitada y cuerpo conservado",
+              "requirement": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "len1-focused-news-certainty",
+              "title": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados.",
+              "requirement": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados."
+            },
+            {
+              "id": "len1-focused-news-bounded-revision",
+              "title": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial.",
+              "requirement": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "len1-focused-news-certainty",
+              "title": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados.",
+              "requirement": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados."
+            },
+            {
+              "id": "len1-focused-news-bounded-revision",
+              "title": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial.",
+              "requirement": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "NEWS_WRITING",
+          "criteria": [
+            {
+              "id": "len1-focused-news-certainty",
+              "title": "Fidelidad y grado de certeza del hallazgo",
+              "requirement": "Reformula el titular y la entrada de acuerdo con el hallazgo de la ficha; comunica como posibilidad lo que el estudio solo considera posible y conserva los datos comprobados. Parcial (50%): Uno de los fragmentos conserva la incertidumbre, pero el otro todavía exagera parcialmente el alcance del hallazgo."
+            },
+            {
+              "id": "len1-focused-news-bounded-revision",
+              "title": "Revisión limitada y cuerpo conservado",
+              "requirement": "Limita las modificaciones al titular y la entrada y conserva intacto el cuerpo de la noticia; permite comparar esos fragmentos con la versión inicial. Parcial (50%): Conserva el cuerpo, pero deja uno de los dos fragmentos sin una revisión reconocible."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [
+        "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+      ],
+      "otherSourceIds": [
+        "52fef8d7-627e-5de8-85ea-95a5ddc97c3d"
+      ]
+    },
+    {
+      "id": "LEN1-TRI-R02",
+      "expected": {
+        "explicit": [
+          "Hallazgo fiel a la ficha, noticia oral organizada y comprensible para otros cursos",
+          "Sitúa el hecho con información pertinente disponible y procedencia reconocible",
+          "Duración un minuto; producto grupal con portavoz O intervenciones coordinadas"
+        ],
+        "excluded": [
+          "Todos los pasos de investigación como apartados, investigación propia, informe científico o datos ausentes",
+          "Vídeo, diapositivas, publicación o noticia separada obligatoria por integrante"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Noticia oral breve fiel a ficha, comprensible para otros cursos y con duración solicitada. No todo el proceso investigativo.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-focused-news-oral-fidelity",
+              "title": "Hallazgo fiel y procedencia reconocible",
+              "requirement": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos."
+            },
+            {
+              "id": "len1-focused-news-oral-audience",
+              "title": "Organización de la noticia oral para sus destinatarios",
+              "requirement": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo."
+            },
+            {
+              "id": "len1-focused-news-oral-time",
+              "title": "Síntesis en el tiempo indicado",
+              "requirement": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-focused-news-oral-fidelity",
+              "title": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos.",
+              "requirement": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos."
+            },
+            {
+              "id": "len1-focused-news-oral-audience",
+              "title": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo.",
+              "requirement": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo."
+            },
+            {
+              "id": "len1-focused-news-oral-time",
+              "title": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo.",
+              "requirement": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-focused-news-oral-fidelity",
+              "title": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos.",
+              "requirement": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos."
+            },
+            {
+              "id": "len1-focused-news-oral-audience",
+              "title": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo.",
+              "requirement": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo."
+            },
+            {
+              "id": "len1-focused-news-oral-time",
+              "title": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo.",
+              "requirement": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "NEWSCAST",
+          "criteria": [
+            {
+              "id": "len1-focused-news-oral-fidelity",
+              "title": "Hallazgo fiel y procedencia reconocible",
+              "requirement": "Comunica oralmente el hallazgo central de la investigación y lo sitúa con la información disponible en la ficha; reconoce esa ficha como procedencia y mantiene el alcance de sus datos. Parcial (50%): Comunica parte del hallazgo, pero deja poco claro su contexto o la procedencia de la información."
+            },
+            {
+              "id": "len1-focused-news-oral-audience",
+              "title": "Organización de la noticia oral para sus destinatarios",
+              "requirement": "Organiza una noticia oral comprensible para otros cursos, destacando el hecho y conectando sus datos; puede presentarla un portavoz o mediante intervenciones coordinadas del equipo. Parcial (50%): Se reconocen el hecho y algunos datos, pero su orden o conexión dificulta seguir la noticia oral."
+            },
+            {
+              "id": "len1-focused-news-oral-time",
+              "title": "Síntesis en el tiempo indicado",
+              "requirement": "Presenta la noticia oral en el tiempo de un minuto indicado, conservando el hallazgo y los datos esenciales para entenderlo. Parcial (50%): La distribución del tiempo deja incompleto un dato necesario o añade repeticiones que dificultan la síntesis."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [
+        "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+      ],
+      "otherSourceIds": [
+        "1e8cd77f-d712-535e-b108-203a914fb39c"
+      ]
+    },
+    {
+      "id": "LEN1-TRI-R03",
+      "expected": {
+        "explicit": [
+          "Paráfrasis del hallazgo social central con palabras y organización propias",
+          "Datos, comparaciones y contexto fieles, sin conclusiones ajenas",
+          "Extensión aproximada, no penalización por una palabra de diferencia"
+        ],
+        "excluded": [
+          "Otra encuesta, entrevistas, estadísticas nuevas o investigación experimental",
+          "Cambiar términos técnicos/nombres necesarios o incluir todos los resultados secundarios"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Paráfrasis escrita breve del hallazgo social de encuesta con palabras propias y fidelidad al contexto.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Hallazgo y datos conservados",
+              "requirement": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformulación propia y claridad",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-length",
+              "title": "Síntesis con extensión aproximada",
+              "requirement": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas.",
+              "requirement": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información.",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-length",
+              "title": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios.",
+              "requirement": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas.",
+              "requirement": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información.",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-length",
+              "title": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios.",
+              "requirement": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "WRITTEN_PRODUCTION",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Hallazgo y datos conservados",
+              "requirement": "Explica el hallazgo central de la encuesta manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas. Parcial (50%): Conserva parte del hallazgo, pero omite una relación necesaria para comprender sus datos o comparaciones."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformulación propia y claridad",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la encuesta de la que procede la información. Parcial (50%): Combina reformulación propia con fragmentos copiados que no se integran suficientemente en una explicación propia."
+            },
+            {
+              "id": "len1-focused-paraphrase-length",
+              "title": "Síntesis con extensión aproximada",
+              "requirement": "Explica lo esencial en una extensión aproximada de ochenta palabras, sin exigir un conteo exacto ni incluir todos los resultados secundarios. Parcial (50%): La síntesis dedica espacio a repeticiones y deja poco explicado un resultado central."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "46959358-472f-52cd-9887-5555e78db510"
+      ],
+      "sourceCompetencyIds": [
+        "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R04",
+      "expected": {
+        "explicit": [
+          "Paráfrasis fiel con palabras/organización propias, datos y fuente",
+          "Observación distinta de interpretación y alcance sin generalizar a todas las plantas",
+          "Claridad en párrafo O audio de un minuto, sin exigir ambos"
+        ],
+        "excluded": [
+          "Experimento nuevo, causalidad no demostrada, noticia no pedida",
+          "Puntuación escrita para audio, dicción para párrafo"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Paráfrasis de hallazgo científico en párrafo O audio; distingue observación de explicación posible y limita generalización.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Hallazgo y datos conservados",
+              "requirement": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformulación propia y claridad",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-limits",
+              "title": "Observación, explicación posible y alcance",
+              "requirement": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas."
+            },
+            {
+              "id": "len1-focused-paraphrase-modality",
+              "title": "Claridad en la modalidad elegida",
+              "requirement": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas.",
+              "requirement": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información.",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-limits",
+              "title": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas.",
+              "requirement": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas."
+            },
+            {
+              "id": "len1-focused-paraphrase-modality",
+              "title": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos.",
+              "requirement": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas.",
+              "requirement": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información.",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información."
+            },
+            {
+              "id": "len1-focused-paraphrase-limits",
+              "title": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas.",
+              "requirement": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas."
+            },
+            {
+              "id": "len1-focused-paraphrase-modality",
+              "title": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos.",
+              "requirement": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-paraphrase-fidelity",
+              "title": "Hallazgo y datos conservados",
+              "requirement": "Explica el hallazgo central de la ficha manteniendo sus datos, comparaciones y contexto; distingue lo que esa fuente permite afirmar de conclusiones añadidas. Parcial (50%): Conserva parte del hallazgo, pero omite una relación necesaria para comprender sus datos o comparaciones."
+            },
+            {
+              "id": "len1-focused-paraphrase-own-words",
+              "title": "Reformulación propia y claridad",
+              "requirement": "Reformula el hallazgo con sus propias palabras y organización; conserva términos o nombres necesarios y hace reconocible la ficha de la que procede la información. Parcial (50%): Combina reformulación propia con fragmentos copiados que no se integran suficientemente en una explicación propia."
+            },
+            {
+              "id": "len1-focused-paraphrase-limits",
+              "title": "Observación, explicación posible y alcance",
+              "requirement": "Distingue lo observado de una explicación posible; relaciona cada afirmación con la ficha y limita su alcance, sin generalizar el resultado a todas las plantas. Parcial (50%): Reconoce parte de lo observado, pero deja ambiguo si la explicación propuesta está comprobada."
+            },
+            {
+              "id": "len1-focused-paraphrase-modality",
+              "title": "Claridad en la modalidad elegida",
+              "requirement": "Entrega un párrafo o un audio de un minuto: en la modalidad elegida conecta las ideas para comprender el hallazgo; no necesita presentar ambos productos. Parcial (50%): El párrafo o el audio permite reconocer parte del hallazgo, pero su organización dificulta la explicación completa."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "46959358-472f-52cd-9887-5555e78db510"
+      ],
+      "sourceCompetencyIds": [
+        "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R05",
+      "expected": {
+        "explicit": [
+          "Pregunta estudiada, relación dato/conclusión y afirmación aún insuficientemente respaldada",
+          "Justificación de selecciones con texto, anotación al margen acotada"
+        ],
+        "excluded": [
+          "Procedimiento ejecutado, resultados propios, informe nuevo con introducción/desarrollo/conclusión",
+          "Narrador/personajes/patrones culturales o reconstrucción de todos los apartados"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Comprende pregunta, dato que respalda conclusión y afirmación todavía no comprobada de informe científico.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-science-question",
+              "title": "Pregunta estudiada en el informe",
+              "requirement": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance."
+            },
+            {
+              "id": "len1-focused-science-data-inference",
+              "title": "Dato que respalda la conclusión",
+              "requirement": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto."
+            },
+            {
+              "id": "len1-focused-science-unproven",
+              "title": "Afirmación que todavía requiere comprobación",
+              "requirement": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-science-question",
+              "title": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance.",
+              "requirement": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance."
+            },
+            {
+              "id": "len1-focused-science-data-inference",
+              "title": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto.",
+              "requirement": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto."
+            },
+            {
+              "id": "len1-focused-science-unproven",
+              "title": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla.",
+              "requirement": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-science-question",
+              "title": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance.",
+              "requirement": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance."
+            },
+            {
+              "id": "len1-focused-science-data-inference",
+              "title": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto.",
+              "requirement": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto."
+            },
+            {
+              "id": "len1-focused-science-unproven",
+              "title": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla.",
+              "requirement": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-science-question",
+              "title": "Pregunta estudiada en el informe",
+              "requirement": "Identifica la pregunta que estudia el informe científico y la expresa de modo compatible con su objeto y alcance. Parcial (50%): Reconoce el asunto general, pero no delimita suficientemente la pregunta estudiada."
+            },
+            {
+              "id": "len1-focused-science-data-inference",
+              "title": "Dato que respalda la conclusión",
+              "requirement": "Selecciona un dato del informe que respalde su conclusión y explica al margen por qué existe esa relación, con apoyo en el texto. Parcial (50%): Selecciona un dato pertinente, pero no explica suficientemente cómo respalda la conclusión."
+            },
+            {
+              "id": "len1-focused-science-unproven",
+              "title": "Afirmación que todavía requiere comprobación",
+              "requirement": "Señala una afirmación que todavía habría que comprobar y justifica al margen qué apoyo falta en el informe para sostenerla. Parcial (50%): Señala una afirmación por comprobar, pero la razón no distingue suficientemente el respaldo disponible del que falta."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [
+        "b8f0428b-5b07-51f1-9be2-7427ee68f022"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R06",
+      "expected": {
+        "explicit": [
+          "Problema del caso, objetivo y dos acciones coherentes con responsables/momentos",
+          "Participación justa concretada en cómo recoger voces poco representadas",
+          "Alternativa discutida y consideración razonada; aceptar/adaptar/descartar válidos",
+          "Solo plan, mecanismos orales/escritos/accesibles admisibles"
+        ],
+        "excluded": [
+          "Ejecución, resultados de mejora, presupuesto/autorizaciones/recursos inventados",
+          "Unanimidad u obligar misma manera de hablar"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Plan colaborativo: participación desigual, dos acciones, responsables, momentos, voces poco representadas y alternativa razonada. No ejecución.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-problem",
+              "title": "Problema y objetivo del plan",
+              "requirement": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso."
+            },
+            {
+              "id": "len1-focused-participation-actions",
+              "title": "Acciones, responsables y momentos previstos",
+              "requirement": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución."
+            },
+            {
+              "id": "len1-focused-participation-inclusion",
+              "title": "Recogida justa de propuestas",
+              "requirement": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera."
+            },
+            {
+              "id": "len1-focused-participation-alternative",
+              "title": "Consideración de una alternativa",
+              "requirement": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-problem",
+              "title": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso.",
+              "requirement": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso."
+            },
+            {
+              "id": "len1-focused-participation-actions",
+              "title": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución.",
+              "requirement": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución."
+            },
+            {
+              "id": "len1-focused-participation-inclusion",
+              "title": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera.",
+              "requirement": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera."
+            },
+            {
+              "id": "len1-focused-participation-alternative",
+              "title": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan.",
+              "requirement": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-problem",
+              "title": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso.",
+              "requirement": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso."
+            },
+            {
+              "id": "len1-focused-participation-actions",
+              "title": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución.",
+              "requirement": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución."
+            },
+            {
+              "id": "len1-focused-participation-inclusion",
+              "title": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera.",
+              "requirement": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera."
+            },
+            {
+              "id": "len1-focused-participation-alternative",
+              "title": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan.",
+              "requirement": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-problem",
+              "title": "Problema y objetivo del plan",
+              "requirement": "Explica con información del caso el problema de participación y formula un objetivo que responde a esa necesidad del consejo de curso. Parcial (50%): Describe parte del problema, pero el objetivo responde solo parcialmente a la necesidad identificada."
+            },
+            {
+              "id": "len1-focused-participation-actions",
+              "title": "Acciones, responsables y momentos previstos",
+              "requirement": "Organiza dos acciones coherentes con el objetivo, con responsables y momentos de realización que permiten comprender cómo se pondrían en práctica; presenta planificación, no resultados de ejecución. Parcial (50%): Parte de las acciones se relaciona con el objetivo, pero quedan responsabilidades o momentos sin definir suficientemente."
+            },
+            {
+              "id": "len1-focused-participation-inclusion",
+              "title": "Recogida justa de propuestas",
+              "requirement": "Justifica cómo las acciones permiten recoger las propuestas de quienes casi no intervienen; admite mecanismos accesibles distintos sin obligar a participar de la misma manera. Parcial (50%): Menciona participación justa, pero no explica suficientemente cómo recogerá las voces poco representadas."
+            },
+            {
+              "id": "len1-focused-participation-alternative",
+              "title": "Consideración de una alternativa",
+              "requirement": "Registra una alternativa discutida y explica con razones la decisión de aceptar, adaptar o descartar esa opción respecto del problema y del plan. Parcial (50%): Registra una alternativa, pero no explica suficientemente cómo se consideró al decidir."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "sourceCompetencyIds": [
+        "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R07",
+      "expected": {
+        "explicit": [
+          "Cuadro con participantes y mecanismos de recoger propuestas en ambos proyectos",
+          "Relación con participación justa/inclusiva",
+          "Recomendar A O B O falta de información justificada con textos"
+        ],
+        "excluded": [
+          "Proyecto tercero, presupuestos, calendarios o dimensiones excluidas",
+          "Ganador obligatorio o juicio de autores"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Compara participación y recogida de propuestas; recomienda O identifica información insuficiente. El indicador4430df5a solo corresponde a la alternativa que emite recomendación, no al reconocimiento de incertidumbre.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-compare",
+              "title": "Participantes y mecanismos en ambos proyectos",
+              "requirement": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos."
+            },
+            {
+              "id": "len1-focused-participation-choice",
+              "title": "Decisión sustentada o límite de información",
+              "requirement": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-compare",
+              "title": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos.",
+              "requirement": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos."
+            },
+            {
+              "id": "len1-focused-participation-choice",
+              "title": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos.",
+              "requirement": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-compare",
+              "title": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos.",
+              "requirement": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos."
+            },
+            {
+              "id": "len1-focused-participation-choice",
+              "title": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos.",
+              "requirement": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "COMPARISON",
+          "criteria": [
+            {
+              "id": "len1-focused-participation-compare",
+              "title": "Participantes y mecanismos en ambos proyectos",
+              "requirement": "Contrasta en un cuadro a quiénes permiten participar ambos proyectos y cómo recoge cada uno sus propuestas; apoya las diferencias o coincidencias en los textos. Parcial (50%): Describe a los participantes o mecanismos, pero deja incompleta su comparación entre ambos proyectos."
+            },
+            {
+              "id": "len1-focused-participation-choice",
+              "title": "Decisión sustentada o límite de información",
+              "requirement": "Recomienda uno de los proyectos con una razón apoyada en cómo permite participar y recoge propuestas, o explica qué información falta para decidir; ambas opciones son válidas si se sustentan en los textos. Parcial (50%): Elige un proyecto o declara información insuficiente, pero aporta apoyo textual parcial para esa decisión."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "bf27d10f-59a1-553a-a094-f621207e0234",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e"
+      ],
+      "sourceCompetencyIds": [
+        "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R08",
+      "expected": {
+        "explicit": [
+          "Recomendación viable según acciones y explicación del cambio con información del documento",
+          "Conserva problema/objetivo/acciones/responsables/plazos; revisión solo recomendación y nota"
+        ],
+        "excluded": [
+          "Cambiar objetivo, añadir acciones/responsables/plazos/presupuesto",
+          "Proyecto completo o resultados de ejecución"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Recomendación viable y nota que explica el cambio; conserva problema, objetivo, acciones, responsables y plazos.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-recommendation-fit",
+              "title": "Recomendación viable y explicación del cambio",
+              "requirement": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento."
+            },
+            {
+              "id": "len1-focused-recommendation-preserve",
+              "title": "Componentes del proyecto conservados",
+              "requirement": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-recommendation-fit",
+              "title": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento.",
+              "requirement": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento."
+            },
+            {
+              "id": "len1-focused-recommendation-preserve",
+              "title": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa.",
+              "requirement": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-recommendation-fit",
+              "title": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento.",
+              "requirement": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento."
+            },
+            {
+              "id": "len1-focused-recommendation-preserve",
+              "title": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa.",
+              "requirement": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-recommendation-fit",
+              "title": "Recomendación viable y explicación del cambio",
+              "requirement": "Reescribe la recomendación para que sea viable según las acciones previstas y añade una nota que explica el cambio con información del documento. Parcial (50%): La recomendación responde parcialmente a las acciones, pero la nota no explica suficientemente el cambio."
+            },
+            {
+              "id": "len1-focused-recommendation-preserve",
+              "title": "Componentes del proyecto conservados",
+              "requirement": "Conserva el problema, el objetivo, las acciones, las personas responsables y los plazos; limita la revisión a la recomendación y su nota explicativa. Parcial (50%): La revisión respeta parte del límite, pero deja poco clara la continuidad de algún componente que debía conservar."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "4430df5a-9fb7-54e0-b000-606c863ae60e"
+      ],
+      "sourceCompetencyIds": [
+        "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R09",
+      "expected": {
+        "explicit": [
+          "Postura/razón sustentada en dato O ejemplo",
+          "Objeción reconocida y respuesta razonada sin descalificación",
+          "Cierre manteniendo O cambiando postura con razones"
+        ],
+        "excluded": [
+          "Hecho Y ejemplo Y analogía, cambio de postura obligatorio, consenso/ideología docente",
+          "Ensayo o nueva estadística; diez minutos de lectura no es duración del debate"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Debate con dato O ejemplo, objeción y cierre manteniendo O cambiando postura con razones. No analogía ni recursos acumulativos.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-focused-argument-position",
+              "title": "Postura y apoyo pertinente",
+              "requirement": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón."
+            },
+            {
+              "id": "len1-focused-argument-objection",
+              "title": "Respuesta al contenido de la objeción",
+              "requirement": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal."
+            },
+            {
+              "id": "len1-focused-argument-close",
+              "title": "Cierre reflexivo del debate",
+              "requirement": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-focused-argument-position",
+              "title": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón.",
+              "requirement": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón."
+            },
+            {
+              "id": "len1-focused-argument-objection",
+              "title": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal.",
+              "requirement": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal."
+            },
+            {
+              "id": "len1-focused-argument-close",
+              "title": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso.",
+              "requirement": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-focused-argument-position",
+              "title": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón.",
+              "requirement": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón."
+            },
+            {
+              "id": "len1-focused-argument-objection",
+              "title": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal.",
+              "requirement": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal."
+            },
+            {
+              "id": "len1-focused-argument-close",
+              "title": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso.",
+              "requirement": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "DEBATE",
+          "criteria": [
+            {
+              "id": "len1-focused-argument-position",
+              "title": "Postura y apoyo pertinente",
+              "requirement": "Defiende oralmente una postura sobre la propuesta con una razón apoyada en un dato del caso o en un ejemplo pertinente; explica cómo ese apoyo sostiene la razón. Parcial (50%): Expresa postura y apoyo, pero no explica suficientemente cómo el dato o el ejemplo sostiene su razón."
+            },
+            {
+              "id": "len1-focused-argument-objection",
+              "title": "Respuesta al contenido de la objeción",
+              "requirement": "Recupera fielmente la objeción escuchada y responde a su contenido con razones, permitiendo la discrepancia sin descalificación personal. Parcial (50%): Reconoce parte de la objeción, pero responde sin explicar suficientemente su posición frente a ella."
+            },
+            {
+              "id": "len1-focused-argument-close",
+              "title": "Cierre reflexivo del debate",
+              "requirement": "Cierra indicando qué mantiene o qué cambia de su postura y explica la decisión a partir de lo discutido; no necesita cambiar de opinión ni alcanzar consenso. Parcial (50%): Indica si mantiene o cambia la postura, pero no explica suficientemente su relación con lo discutido."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+        "bf27d10f-59a1-553a-a094-f621207e0234"
+      ],
+      "sourceCompetencyIds": [
+        "1e3efbc3-49d2-5444-a4de-a1d825d63e27"
+      ],
+      "otherSourceIds": []
+    },
+    {
+      "id": "LEN1-TRI-R10",
+      "expected": {
+        "explicit": [
+          "Decisión inicial y cambio relacionado con pista",
+          "Actitud O valor interpretado razonadamente con dos momentos pertinentes de un cuento",
+          "Compatibilidad con hechos y consecuencias de trama; interpretaciones diversas admisibles"
+        ],
+        "excluded": [
+          "Cuento nuevo, moraleja, confesión o aprobación moral",
+          "Creencias del autor, lista fija de valores o dos cuentos"
+        ]
+      },
+      "sourcePages": [
+        72,
+        73,
+        75
+      ],
+      "sourceContribution": "Explica cambio de decisión del personaje con dos momentos y actitud O valor. No producción literaria ni autoconocimiento.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-story-change",
+              "title": "Cambio de decisión a partir de la pista",
+              "requirement": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído."
+            },
+            {
+              "id": "len1-focused-story-attitude",
+              "title": "Interpretación de actitud o valor con evidencia",
+              "requirement": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-story-change",
+              "title": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído.",
+              "requirement": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído."
+            },
+            {
+              "id": "len1-focused-story-attitude",
+              "title": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama.",
+              "requirement": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-story-change",
+              "title": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído.",
+              "requirement": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído."
+            },
+            {
+              "id": "len1-focused-story-attitude",
+              "title": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama.",
+              "requirement": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "DETECTIVE_STORY_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-focused-story-change",
+              "title": "Cambio de decisión a partir de la pista",
+              "requirement": "Explica el cambio de decisión del personaje relacionando su decisión inicial y la nueva pista con lo que sucede en el cuento leído. Parcial (50%): Identifica la pista o la decisión, pero explica parcialmente la relación entre ambas."
+            },
+            {
+              "id": "len1-focused-story-attitude",
+              "title": "Interpretación de actitud o valor con evidencia",
+              "requirement": "Interpreta una actitud o un valor observable en ese cambio y lo sustenta en dos momentos pertinentes de la historia; admite interpretaciones distintas compatibles con la trama. Parcial (50%): Propone una interpretación, pero la sustenta solo parcialmente o con un único momento pertinente."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [
+        "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+      ],
+      "otherSourceIds": [
+        "8841ea63-27d0-555c-b765-fdd960456dba"
+      ]
+    },
+    {
+      "id": "LEN1-TRI-R11",
+      "expected": {
+        "explicit": [
+          "Emoción interpretada mediante expresiones y figura relacionadas",
+          "Una coincidencia O diferencia razonada entre lecturas sin burlas",
+          "Interpretaciones distintas compatibles admisibles"
+        ],
+        "excluded": [
+          "Rima inexistente, otro poema, recitación, modificar figura",
+          "Acuerdo obligatorio, emoción real íntima, destreza de dibujo o belleza"
+        ]
+      },
+      "sourcePages": [
+        72,
+        73,
+        74,
+        75
+      ],
+      "sourceContribution": "Interpreta emoción representada con palabras y figura; coincidencia O diferencia entre lecturas sin burlas. No exige acuerdo.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Emoción representada mediante palabras y figura",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Consideración razonada de otra interpretación",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación.",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo.",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación.",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo.",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "CALLIGRAM_ANALYSIS",
+          "criteria": [
+            {
+              "id": "len1-transversal-calligram-emotion",
+              "title": "Emoción representada mediante palabras y figura",
+              "requirement": "Explica la emoción ficticia representada en el caligrama con indicios de sus palabras y de la figura, relacionándolos para sostener su interpretación. Parcial (50%): Reconoce palabras y figura, pero explica parcialmente cómo representan la emoción del poema."
+            },
+            {
+              "id": "len1-transversal-calligram-peer",
+              "title": "Consideración razonada de otra interpretación",
+              "requirement": "Recupera fielmente la interpretación de la compañera e indica una coincidencia o una diferencia con razones apoyadas en el poema, sin insultos ni burlas y sin necesitar acuerdo. Parcial (50%): Indica coincidencia o diferencia, pero no explica suficientemente sus razones con el poema."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "sourceCompetencyIds": [
+        "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+      ],
+      "otherSourceIds": [
+        "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+        "70d92347-77f0-5e3f-b748-5d458fe5b694"
+      ]
+    },
+    {
+      "id": "LEN1-TRI-R12",
+      "expected": {
+        "explicit": [
+          "Decisión justificada sobre dos palabras en relación con tema/intención",
+          "Sustituir una O ambas O conservar con justificación",
+          "Consideración razonada de sugerencia, sin aceptación obligatoria",
+          "Figura/tema/orden de versos conservados, decisiones visibles en borrador"
+        ],
+        "excluded": [
+          "Cambio forzoso, aceptar toda sugerencia, rima/métrica",
+          "Nueva imagen/poema, publicación/recitación o sentimientos autobiográficos"
+        ]
+      },
+      "sourcePages": [
+        73,
+        74
+      ],
+      "sourceContribution": "Revisión léxica con sugerencia aceptada, adaptada O rechazada; puede conservar justificadamente palabras, manteniendo figura, tema y orden.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "len1-focused-word-choice",
+              "title": "Decisiones justificadas sobre las palabras señaladas",
+              "requirement": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema."
+            },
+            {
+              "id": "len1-focused-word-feedback",
+              "title": "Consideración razonada de la sugerencia",
+              "requirement": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema."
+            },
+            {
+              "id": "len1-focused-word-preserve",
+              "title": "Borrador anotado y límites conservados",
+              "requirement": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "len1-focused-word-choice",
+              "title": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema.",
+              "requirement": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema."
+            },
+            {
+              "id": "len1-focused-word-feedback",
+              "title": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema.",
+              "requirement": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema."
+            },
+            {
+              "id": "len1-focused-word-preserve",
+              "title": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas.",
+              "requirement": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "len1-focused-word-choice",
+              "title": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema.",
+              "requirement": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema."
+            },
+            {
+              "id": "len1-focused-word-feedback",
+              "title": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema.",
+              "requirement": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema."
+            },
+            {
+              "id": "len1-focused-word-preserve",
+              "title": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas.",
+              "requirement": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "CALLIGRAM_CREATION",
+          "criteria": [
+            {
+              "id": "len1-focused-word-choice",
+              "title": "Decisiones justificadas sobre las palabras señaladas",
+              "requirement": "Examina las dos palabras señaladas según el tema y la intención del caligrama; justifica sustituir una o ambas o conservarlas por cómo funcionan en el poema. Parcial (50%): Explica la decisión sobre una palabra, pero deja la otra sin una justificación suficiente."
+            },
+            {
+              "id": "len1-focused-word-feedback",
+              "title": "Consideración razonada de la sugerencia",
+              "requirement": "Considera fielmente la sugerencia escrita del compañero y explica si decide aceptar, adaptar o rechazar esa sugerencia según su efecto en el poema. Parcial (50%): Menciona la sugerencia, pero no explica suficientemente cómo la consideró al decidir."
+            },
+            {
+              "id": "len1-focused-word-preserve",
+              "title": "Borrador anotado y límites conservados",
+              "requirement": "Señala sus decisiones en el borrador y mantiene la figura, el tema y el orden de los versos; limita la intervención a las palabras señaladas. Parcial (50%): Las anotaciones permiten seguir parte de la revisión, pero alguna decisión queda sin identificar."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [
+        "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f"
+      ],
+      "otherSourceIds": [
+        "6386112a-44b3-5b36-9416-1f31d2540550",
+        "70d92347-77f0-5e3f-b748-5d458fe5b694"
+      ]
+    },
+    {
+      "id": "LEN1-TRI-R13",
+      "expected": {
+        "explicit": [
+          "Confirmar producto/evidencia y propósito O recomendación provisional explícita de seguimiento",
+          "Solo mostrar avance disponible, explicar parte trabajada y decisión por revisar si se propone provisionalmente",
+          "Conservar incertidumbre y trabajo grupal"
+        ],
+        "excluded": [
+          "Noticia/informe/experimento/proyecto cívico final obligatorios",
+          "Resultados/publicación/presupuesto/hipótesis/impacto inventados",
+          "Puntuar avances no observados o afirmar alineación curricular concluida"
+        ]
+      },
+      "sourcePages": [
+        69,
+        75
+      ],
+      "sourceContribution": "Producto, propósito y evidencia indeterminados: propuesta provisional sin acreditar alineación curricular específica.",
+      "formats": [
+        {
+          "format": "rubrica",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-progress-evidence",
+              "title": "Seguimiento provisional: evidencia disponible",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable."
+            },
+            {
+              "id": "len1-focused-progress-next",
+              "title": "Seguimiento provisional: decisión por revisar",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-cotejo",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-progress-evidence",
+              "title": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable.",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable."
+            },
+            {
+              "id": "len1-focused-progress-next",
+              "title": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado.",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "escala",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-progress-evidence",
+              "title": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable.",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable."
+            },
+            {
+              "id": "len1-focused-progress-next",
+              "title": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado.",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado."
+            }
+          ],
+          "serviceFallbackParity": true
+        },
+        {
+          "format": "lista-ponderada",
+          "activityType": "PROJECT",
+          "criteria": [
+            {
+              "id": "len1-focused-progress-evidence",
+              "title": "Seguimiento provisional: evidencia disponible",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: muestra el avance disponible e identifica qué parte se ha trabajado, explicando su relación de forma comprobable. Parcial (50%): Provisional: se observa parte del avance, pero su relación con lo trabajado requiere aclaración; no se supone un producto final."
+            },
+            {
+              "id": "len1-focused-progress-next",
+              "title": "Seguimiento provisional: decisión por revisar",
+              "requirement": "Propuesta provisional: confirmar el producto, la evidencia y el propósito antes de cerrar criterios; lo aún no observado permanece pendiente y no recibe nivel. Provisional, con evidencia ya acordada y observada: explica una decisión por revisar o una duda sobre el siguiente paso y la relaciona de forma justificada con el avance mostrado. Parcial (50%): Provisional: indica una decisión o duda, pero su relación con el avance requiere aclaración."
+            }
+          ],
+          "serviceFallbackParity": true
+        }
+      ],
+      "sourceIndicatorIds": [],
+      "sourceCompetencyIds": [],
+      "otherSourceIds": []
+    }
+  ],
+  "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json"
+}

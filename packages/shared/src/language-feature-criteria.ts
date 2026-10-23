@@ -11,7 +11,8 @@ export type LanguageFeature = {
 }
 
 export function affirmativeLanguageTask(description:string){
- const text=description.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ // A comma-delimited exclusion is a parenthetical constraint, not the rest of the task.
+ const text=description.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/,\s*sin\s+[^,.;\n]+,/g,', ')
  // Exclusions stop at a new affirmative coordinated action. Otherwise «sin
  // cambiar los hechos y revisen las siglas» loses the requested second action.
  const action='(?:revis\\w*|corrij\\w*|correg\\w*|analic\\w*|analiz\\w*|identifi\\w*|expli\\w*|compar\\w*|contrast\\w*|redact\\w*|escrib\\w*|inclu\\w*|entreg\\w*|manteng\\w*|den|usen|utili\\w*)'

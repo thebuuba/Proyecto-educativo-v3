@@ -1,0 +1,106 @@
+{
+  "reviewer": "/root/revisor_pedagogico",
+  "sourceCatalog": "evaluation-2026.165",
+  "independentBanks": true,
+  "fullOutputsRead": 92,
+  "primary": 56,
+  "differentFallback": 36,
+  "accepted": 0,
+  "pendingScore": "NOT_TESTED_IN_FROZEN_CAPTURE",
+  "scoreStatementCorrectedByReviewer": true,
+  "metadataRecommendationsNotCaptured": true,
+  "rows": [
+    {
+      "caseId": "C01",
+      "severity": "ALTA",
+      "finding": "Omite relación hecho histórico, tradición y patrimonio natural con respaldo en dos textos.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C02",
+      "severity": "ALTA",
+      "finding": "Comparación no evalúa cambio de práctica/recurso, hipótesis delimitada ni oralidad.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C03",
+      "severity": "CRITICA",
+      "finding": "Analiza noticia en vez de publicar versión revisada con acceso y preservación.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C04",
+      "severity": "CRITICA",
+      "finding": "No distingue borrador/vista previa de publicación.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C05",
+      "severity": "CRITICA",
+      "finding": "Puntúa pistas/desenlace en vez de antología digital, índice y conservación.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C06",
+      "severity": "CRITICA",
+      "finding": "Reevalúa creación del caligrama; omite colocación/créditos/verificación alternativa.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C07",
+      "severity": "CRITICA",
+      "finding": "Comparación sustituye intercambio real exterior, pregunta O propuesta y respuesta.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C08",
+      "severity": "ALTA",
+      "finding": "Omite destinatario, idea recibida, respuesta, mantener O revisar y fases pendientes.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C09",
+      "severity": "ALTA",
+      "finding": "No distingue inferencia nueva de dos resúmenes ni exige vínculo/límites.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C10",
+      "severity": "ALTA",
+      "finding": "Omite tensión y síntesis; fallback convierte razones O ejemplos en acumulación.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C11",
+      "severity": "ALTA",
+      "finding": "Comparación exige semejanzas Y diferencias; omite decisión ficticia/razones/consecuencias.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "C12",
+      "severity": "ALTA",
+      "finding": "Omite texto recibido, nota individual y conservación O modificación razonada.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "F01",
+      "severity": "CRITICA",
+      "finding": "Reevalúa escritura; omite publicación impresa, disponibilidad y preservación.",
+      "status": "PENDIENTE_CORRECCION"
+    },
+    {
+      "caseId": "F02",
+      "severity": "ALTA",
+      "finding": "Añade dónde/cuándo; no admite información ausente justificada ni exige dos datos.",
+      "status": "PENDIENTE_CORRECCION"
+    }
+  ],
+  "sharedFindings": [
+    "Niveles genéricos puntúan ayuda/autonomía en vez de desempeños concretos",
+    "Fallback afirma logro completo antes de añadir error/ausencia; progresión contradictoria"
+  ],
+  "limits": [
+    "Sin HTTP/UI/DB/suites por revisor",
+    "No acredita cierre curricular"
+  ]
+}

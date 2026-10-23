@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | Seis géneros98/392; salud23/92+control1/4; transversales iniciales13/52. Total local135actividades/540instrumentos revisados, preservados y comprobados.165Development y cuatro muestrasHTTP/DB verificadas;96releases/1249snapshots conservados.13casos independientes con fallos y12complementarios sin generar; conciliación transversal y visual personal pendientes. NO cierre de malla |
+| 1 | COMMON | Lengua Española | 148 actividades/592 instrumentos locales revisados; trazabilidad de26casos conciliada por componente.14casos/56instrumentos principales pendientes de corrección tras lectura independiente92.166gates completos; HTTP166 pendiente, última evidencia remota165. Visual personal y cierre total de malla pendientes. |
 | 1 | COMMON | Inglés | Fuente134–139 y competencias/ejes129–133 conciliados por auditor independiente:201registros. Revisión de actividades e instrumentos todavía pendiente; no implementación nueva |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |

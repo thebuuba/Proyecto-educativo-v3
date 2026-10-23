@@ -1,0 +1,36 @@
+{
+  "version": "curricular-len1-cierre-fuente-independiente-v1",
+  "provenance": "Dos casos añadidos por el diseñador real después de conciliación del auditor; sin leer código ni salidas. No modifican los bancos previos.",
+  "independence": {"expectationsFixedBefore": "2026-10-23T14:01:20Z", "implementationRead": false, "generatedOutputContentsRead": false},
+  "context": {"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "source": {"sha256":"80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58","pdfPages":[69,73]},
+  "cases": [
+    {
+      "id":"LEN1-TRF-F01",
+      "title":"El cuento llega a los lectores",
+      "description":"Incorpora el cuento ya revisado a una revista o antología impresa. Conserva su texto y los créditos previstos, comprueba que se lea completo y deja un ejemplar disponible para consulta en la biblioteca escolar. Indica dónde pueden encontrarlo los lectores.",
+      "participationMode":"INDIVIDUAL",
+      "sourceIds":["28865ef6-91d3-5df9-b417-0a81f880732a"],
+      "expected": {
+        "explicit":["Cuento incorporado a revista O antología impresa","Texto completo y orden de versión revisada conservados; legibilidad y créditos","Ejemplar disponible para lectores; ubicación identificable y verificable"],
+        "alternatives":["Revista O antología","Verificación directa O registro verificable; fotografía no obligatoria"],
+        "excluded":["Publicación digital adicional, cuento nuevo, revisión de trama/desenlace, ilustración o encuadernación especial","Cantidad de lectores o varias copias","Imprimir y conservar sin disponibilidad no acredita publicación completa"]
+      },
+      "pedagogy":{"evaluation":"Formativa de cierre","technique":"Verificación de ejemplar y disponibilidad, comparación contra versión revisada","instrument":"Cotejo; los cuatro formatos conservan evidencias"}
+    },
+    {
+      "id":"LEN1-TRF-F02",
+      "title":"Una noticia, distintas maneras de leerla",
+      "description":"Puedes leer la noticia en silencio o participar en la lectura compartida disponible. Después, responde individualmente: ¿qué ocurrió?, ¿a quiénes afecta? y ¿cómo sucedió? Apoya tu explicación en dos datos del texto. Si la noticia no permite responder alguna pregunta, señala qué información falta.",
+      "participationMode":"INDIVIDUAL",
+      "sourceIds":["d112b7bd-aa6c-5d0a-9980-83e7c8ef5334"],
+      "expected": {
+        "explicit":["Hecho principal; personas/grupos afectados y cómo ocurrió cuando la fuente permite responder","Dos datos pertinentes del texto relacionados con explicación","Reconoce límites sin inventar; para cada pregunta respuesta sustentada O información insuficiente justificada"],
+        "alternatives":["Lectura silenciosa O compartida, sin jerarquía ni puntuación de modalidad"],
+        "excluded":["Modalidad mejor, justificar preferencia, voz alta, rapidez, dicción, entonación","Otra noticia o invención de información ausente","Usar participación compartida como sustituto de comprensión individual"]
+      },
+      "nonScorableOpportunity":"Elección de modalidad disponible, sin puntos, pesos, niveles de calidad ni penalización.",
+      "pedagogy":{"evaluation":"Formativa de comprensión","technique":"Análisis de respuestas individuales","instrument":"Cotejo, escala o rúbrica breve; cuatro formatos preservan fidelidad, respaldo y límites"}
+    }
+  ]
+}

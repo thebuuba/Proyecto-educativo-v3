@@ -17,6 +17,9 @@ export default defineConfig(({ mode }) => {
       output: {
         manualChunks(id: string) {
           // Los datos puros por grado deben caber en la precaché del service worker.
+          // Estas reglas no tienen dependencias de ejecución; se separan sin ciclos
+          // y conservan la precaché bajo el límite de 2 MiB por archivo.
+          if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-language-grade-one-focused\.ts$/.test(id)) return 'instrumentos-lengua-1-acciones'
           const fhrGrade = /[/\\]packages[/\\]shared[/\\]src[/\\]secondary-fhr-grade-(\d+)\.ts$/.exec(id)
           if (fhrGrade) return 'instrumentos-fhr-' + fhrGrade[1]
           if (/[/\\]packages[/\\]shared[/\\]src[/\\]secondary-optative-(?:hlm|hcs)-len-[456]\.ts$/.test(id)) return 'instrumentos-optativas-literatura'

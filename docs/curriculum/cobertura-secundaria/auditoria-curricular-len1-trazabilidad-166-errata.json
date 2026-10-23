@@ -1,0 +1,830 @@
+{
+  "originalManifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-transversales-165-lectura52.json",
+  "originalSha256": "831d425e5ca58f9fae2f1a69053dc0de8fc66231cf98541a0fe74a3eb8234579",
+  "preservesOriginal": true,
+  "auditor": "/root/auditor_curricular",
+  "pedagogicalReviewer": "/root/revisor_pedagogico",
+  "distinction": "Auditor coteja fuente y componente; revisor acepta instrumentos165-v2 y166-v2. No se atribuye al auditor lectura nueva de104instrumentos.",
+  "wholeSubjectClosed": false,
+  "rows": [
+    {
+      "caseId": "LEN1-TRA-SCI01",
+      "indicators": [
+        {
+          "id": "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Se expresa claramente de forma oral o escrita mediante un tipo de texto conveniente en diferentes situaciones de\ncomunicación, integrando herramientas TIC de manera responsable."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [],
+      "component": "Comunica proceso, datos y límite de una investigación dada y prepara edición digital responsable. No acredita publicación, intercambio ni conocimiento nuevo.",
+      "removedIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-SCI02",
+      "indicators": [
+        {
+          "id": "4341313f-9526-5f29-97cf-22b96fe40580",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Elabora textos orales y escritos sobre situaciones de su realidad y del mundo, comunicando eficazmente sus ideas,\npensamientos y sentimientos de forma crítica."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "1e8cd77f-d712-535e-b108-203a914fb39c",
+          "type": "PROCEDURE",
+          "pdfPage": 69,
+          "originalText": "Producción oral (hablar)\nEscogencia de una noticia de interés mundial sobre la naturaleza y el\nambiente, teniendo en cuenta los elementos que convierten un hecho\nen noticia; establecimiento de la intención comunicativa de la noticia que\nproducirá oralmente.\nRelato de la noticia, tomando en cuenta su función, su estructura (titular,\nentrada y cuerpo) y las interrogantes que debe responder (qué ocurrió, a\nquién le ocurrió, dónde le ocurrió, cuándo le ocurrió y cómo ocurrió); uso\nde marcadores que expresen orden y temporalidad para organizar lógica\ny coherentemente la noticia; vocabulario temático (verbos y sustantivos);\nla entonación, el ritmo, las pausas y silencios, así como el tono (serio) que\ncaracterizan la noticia."
+        }
+      ],
+      "component": "Comunica oralmente proceso y hallazgos simulados con claridad, procedencia y alcance. No caracteriza géneros ni acredita TIC o temática sanitaria.",
+      "removedIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "0ddcbc46-c06e-5fec-bb7b-12664cc18c15"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-SCI03",
+      "indicators": [
+        {
+          "id": "46959358-472f-52cd-9887-5555e78db510",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Parafrasea hallazgos científicos y sociales en diferentes contextos, mediante un tipo de texto de secuencia expositivo-\nexplicativa."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [],
+      "component": "Paráfrasis de dos fichas científicas y sociales, reformulación y relación entre procedimiento y conclusión. No acredita conocimiento nuevo.",
+      "removedIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-SCI04",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [],
+      "component": "Comprende pregunta, procedimiento, datos y conclusión; contrasta respaldo y sobreinterpretación. No pide paráfrasis ni publicación.",
+      "removedIndicatorIds": [
+        "637c2904-96b6-576c-bab4-6a0bfdf66944",
+        "9307c046-4d39-5181-a736-3695a6d1d79b",
+        "46959358-472f-52cd-9887-5555e78db510",
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CIV01",
+      "indicators": [
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        },
+        {
+          "id": "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Describe problemas o conflictos a través de un tipo de texto relacionado con su vida estudiantil, familiar o social en general."
+        },
+        {
+          "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno."
+        },
+        {
+          "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados."
+        },
+        {
+          "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales."
+        },
+        {
+          "id": "f97deee1-e659-57c1-b27f-5aacded43899",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Redacta proyectos individuales y colaborativos sobre ciudadanía, usando textos adecuados con miras a la solución de\nproblemas sociales."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Proyecto colaborativo sobre desigualdad en el patio: problema, solución razonada, opinión distinta, dignidad, igualdad, objetivo, acciones, responsables y calendario. No ejecución ni patrimonio dominicano.",
+      "removedIndicatorIds": [
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CIV02",
+      "indicators": [
+        {
+          "id": "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Describe problemas o conflictos a través de un tipo de texto relacionado con su vida estudiantil, familiar o social en general."
+        },
+        {
+          "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno."
+        },
+        {
+          "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales."
+        },
+        {
+          "id": "f97deee1-e659-57c1-b27f-5aacded43899",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Redacta proyectos individuales y colaborativos sobre ciudadanía, usando textos adecuados con miras a la solución de\nproblemas sociales."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Plan individual sobre igualdad de acceso a lectura: problema, objetivo y acciones organizadas. No ejecución ni resultados.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CIV03",
+      "indicators": [
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        },
+        {
+          "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados."
+        },
+        {
+          "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Contrasta viabilidad, dignidad e igualdad de dos propuestas y justifica valoración. No acredita redactar proyecto ni producción escrita no solicitada.",
+      "removedIndicatorIds": [
+        "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CIV04",
+      "indicators": [
+        {
+          "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno."
+        },
+        {
+          "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Reescribe solo una recomendación viable con datos disponibles; no redacta ni ejecuta un nuevo proyecto.",
+      "removedIndicatorIds": [
+        "f97deee1-e659-57c1-b27f-5aacded43899"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-ARG01",
+      "indicators": [
+        {
+          "id": "4341313f-9526-5f29-97cf-22b96fe40580",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Elabora textos orales y escritos sobre situaciones de su realidad y del mundo, comunicando eficazmente sus ideas,\npensamientos y sentimientos de forma crítica."
+        },
+        {
+          "id": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Conoce las secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contraargumentos) y las usa de manera\nlógica en discursos sobre temas contextuales."
+        },
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+        }
+      ],
+      "otherRows": [],
+      "component": "Argumentación oral: hecho, ejemplo y analogía con función justificada, respuesta a contraargumento, conclusión coherente sin descalificación. No patrimonio ni conocimiento nuevo por sí solo.",
+      "removedIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-VAL01",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "8841ea63-27d0-555c-b765-fdd960456dba",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 72,
+          "originalText": "• Valoración del tema y la\ntrama del cuento que lee\npara conocer actitudes y\nvalores humanos."
+        }
+      ],
+      "component": "Interpreta decisiones y consecuencias en cuento mediante acciones y diálogo. No adhesión moral, autoconocimiento ni producción literaria.",
+      "removedIndicatorIds": [
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-VAL02",
+      "indicators": [
+        {
+          "id": "4341313f-9526-5f29-97cf-22b96fe40580",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Elabora textos orales y escritos sobre situaciones de su realidad y del mundo, comunicando eficazmente sus ideas,\npensamientos y sentimientos de forma crítica."
+        },
+        {
+          "id": "d5418e27-1c19-5b28-b563-c311de6055dc",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos literarios en el cultivo de valores universales y reforzar la dimensión humanista, para el desarrollo físico y espiritual."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+          "type": "PROCEDURE",
+          "pdfPage": 73,
+          "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital."
+        }
+      ],
+      "component": "Produce cuento policíaco que representa dignidad y convivencia mediante trama, acciones, diálogos y pistas. No edición/publicación ni certificación de desarrollo espiritual interno.",
+      "removedIndicatorIds": [
+        "44cca28a-249e-561e-92ac-b98d05b46d18",
+        "03142453-856f-58e8-b3fc-2292030e24d8",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "ee0cfcaa-6207-53d0-91b0-4a41d350d96f"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CAL01",
+      "indicators": [
+        {
+          "id": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Valora y promueve el uso de la lengua para canalizar emociones y sentimientos mediante lecturas y escrituras reflexivas, fortaleciendo las\nrelaciones humanas y el respeto a la dignidad."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar."
+        },
+        {
+          "id": "82fbde4d-eceb-526b-8765-1806c38549c7",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 73,
+          "originalText": "• Valoración de la expresión\nescrita como medio para\ntransmitir emociones."
+        }
+      ],
+      "component": "Revisión de rima, vocabulario y relación texto-imagen con retroalimentación para comunicar emoción ficticia. No sentimientos personales ni valoración interna.",
+      "removedIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "550df0a4-8032-5593-bceb-0916487cd755",
+        "d5418e27-1c19-5b28-b563-c311de6055dc"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRA-CAL02",
+      "indicators": [
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        },
+        {
+          "id": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Valora y promueve el uso de la lengua para canalizar emociones y sentimientos mediante lecturas y escrituras reflexivas, fortaleciendo las\nrelaciones humanas y el respeto a la dignidad."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción oral (hablar)\nSelección de caligramas de autores/as, acordes a la intención comunicativa que\nquiere expresar.\nVerbalización de figuras literarias (epíteto, anáfora, comparación, personificación\ny metáfora) de la rima y los versos del caligrama, usando la entonación y el\nlenguaje gestual, acordes a la intención comunicativa y a los sentimientos que\nse quieren expresar.\nComprensión escrita (leer)\nReconocimiento de la intención comunicativa del autor y de los\nsentimientos que expresa; uso de la estructura del caligrama (texto poético\nque forma una figura alusiva a lo que trata el poema), para comprender su\nsignificado.\nUtilización de la rima y el ritmo y las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados implícitos y disfrutar de las emociones que provoca."
+        },
+        {
+          "id": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 73,
+          "originalText": "• Respeto y empatía por los\nsentimientos y opiniones\nexpresados por otros y\notras."
+        }
+      ],
+      "component": "Comentario sustentado en palabras y figura; coincidencia O diferencia razonada con otra lectura y trato respetuoso. No empatía interna.",
+      "removedIndicatorIds": [
+        "edd5d7f8-172b-5927-a153-73b58a9756a6",
+        "4341313f-9526-5f29-97cf-22b96fe40580",
+        "550df0a4-8032-5593-bceb-0916487cd755"
+      ],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R01",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+          "type": "PROCEDURE",
+          "pdfPage": 70,
+          "originalText": "Producción escrita (escribir)\nSelección del acontecimiento para la noticia; documentación y búsqueda de\nla información necesaria para la noticia; establecimiento del público a quien va\ndirigida la noticia; elección de un titular llamativo para la noticia; presentación\nde la entrada de la noticia con un vocabulario y sintaxis sencillos; organización\nde la información, tomando en cuenta el orden de las interrogantes (qué,\na quién, dónde, cuándo, cómo); utilización del registro de lengua formal y\nestilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporales para lograr la cohesión de la noticia; los\nsignos convencionales de la escritura; revisión y corrección de los borradores\npor parte del/de la docente y los/las demás estudiantes."
+        }
+      ],
+      "component": "Revisión limitada de titular y entrada conservando cuerpo, datos y límite de certeza del hallazgo.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R02",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "1e8cd77f-d712-535e-b108-203a914fb39c",
+          "type": "PROCEDURE",
+          "pdfPage": 69,
+          "originalText": "Producción oral (hablar)\nEscogencia de una noticia de interés mundial sobre la naturaleza y el\nambiente, teniendo en cuenta los elementos que convierten un hecho\nen noticia; establecimiento de la intención comunicativa de la noticia que\nproducirá oralmente.\nRelato de la noticia, tomando en cuenta su función, su estructura (titular,\nentrada y cuerpo) y las interrogantes que debe responder (qué ocurrió, a\nquién le ocurrió, dónde le ocurrió, cuándo le ocurrió y cómo ocurrió); uso\nde marcadores que expresen orden y temporalidad para organizar lógica\ny coherentemente la noticia; vocabulario temático (verbos y sustantivos);\nla entonación, el ritmo, las pausas y silencios, así como el tono (serio) que\ncaracterizan la noticia."
+        }
+      ],
+      "component": "Noticia oral breve fiel a ficha, comprensible para otros cursos y con duración solicitada. No todo el proceso investigativo.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R03",
+      "indicators": [
+        {
+          "id": "46959358-472f-52cd-9887-5555e78db510",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Parafrasea hallazgos científicos y sociales en diferentes contextos, mediante un tipo de texto de secuencia expositivo-\nexplicativa."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [],
+      "component": "Paráfrasis escrita breve del hallazgo social de encuesta con palabras propias y fidelidad al contexto.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R04",
+      "indicators": [
+        {
+          "id": "46959358-472f-52cd-9887-5555e78db510",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Parafrasea hallazgos científicos y sociales en diferentes contextos, mediante un tipo de texto de secuencia expositivo-\nexplicativa."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [],
+      "component": "Paráfrasis de hallazgo científico en párrafo O audio; distingue observación de explicación posible y limita generalización.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R05",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "b8f0428b-5b07-51f1-9be2-7427ee68f022",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento de procesos investigativos científicos sencillos y del uso de tecnología de\nacuerdo con su grado, a través de textos científicos y especialmente los de secuencia expositivo-explicativa."
+        }
+      ],
+      "otherRows": [],
+      "component": "Comprende pregunta, dato que respalda conclusión y afirmación todavía no comprobada de informe científico.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R06",
+      "indicators": [
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        },
+        {
+          "id": "44cca28a-249e-561e-92ac-b98d05b46d18",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Describe problemas o conflictos a través de un tipo de texto relacionado con su vida estudiantil, familiar o social en general."
+        },
+        {
+          "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno."
+        },
+        {
+          "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales."
+        },
+        {
+          "id": "f97deee1-e659-57c1-b27f-5aacded43899",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Redacta proyectos individuales y colaborativos sobre ciudadanía, usando textos adecuados con miras a la solución de\nproblemas sociales."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Plan colaborativo: participación desigual, dos acciones, responsables, momentos, voces poco representadas y alternativa razonada. No ejecución.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R07",
+      "indicators": [
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        },
+        {
+          "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales."
+        },
+        {
+          "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Compara participación y recogida de propuestas; recomienda O identifica información insuficiente. El indicador4430df5a solo corresponde a la alternativa que emite recomendación, no al reconocimiento de incertidumbre.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R08",
+      "indicators": [
+        {
+          "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno."
+        },
+        {
+          "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "0e495432-9923-57ad-b7c1-2c6f3cd2cb3d",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Identifica problemas de su vida estudiantil o cotidiana a través de un tipo de texto específico y apropiado,\ncomo punto de partida para su estudio y solución."
+        }
+      ],
+      "otherRows": [],
+      "component": "Recomendación viable y nota que explica el cambio; conserva problema, objetivo, acciones, responsables y plazos.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R09",
+      "indicators": [
+        {
+          "id": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Conoce las secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contraargumentos) y las usa de manera\nlógica en discursos sobre temas contextuales."
+        },
+        {
+          "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+        }
+      ],
+      "otherRows": [],
+      "component": "Debate con dato O ejemplo, objeción y cierre manteniendo O cambiando postura con razones. No analogía ni recursos acumulativos.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R10",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "8841ea63-27d0-555c-b765-fdd960456dba",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 72,
+          "originalText": "• Valoración del tema y la\ntrama del cuento que lee\npara conocer actitudes y\nvalores humanos."
+        }
+      ],
+      "component": "Explica cambio de decisión del personaje con dos momentos y actitud O valor. No producción literaria ni autoconocimiento.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R11",
+      "indicators": [
+        {
+          "id": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Valora y promueve el uso de la lengua para canalizar emociones y sentimientos mediante lecturas y escrituras reflexivas, fortaleciendo las\nrelaciones humanas y el respeto a la dignidad."
+        }
+      ],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción oral (hablar)\nSelección de caligramas de autores/as, acordes a la intención comunicativa que\nquiere expresar.\nVerbalización de figuras literarias (epíteto, anáfora, comparación, personificación\ny metáfora) de la rima y los versos del caligrama, usando la entonación y el\nlenguaje gestual, acordes a la intención comunicativa y a los sentimientos que\nse quieren expresar.\nComprensión escrita (leer)\nReconocimiento de la intención comunicativa del autor y de los\nsentimientos que expresa; uso de la estructura del caligrama (texto poético\nque forma una figura alusiva a lo que trata el poema), para comprender su\nsignificado.\nUtilización de la rima y el ritmo y las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados implícitos y disfrutar de las emociones que provoca."
+        },
+        {
+          "id": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 73,
+          "originalText": "• Respeto y empatía por los\nsentimientos y opiniones\nexpresados por otros y\notras."
+        }
+      ],
+      "component": "Interpreta emoción representada con palabras y figura; coincidencia O diferencia entre lecturas sin burlas. No exige acuerdo.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R12",
+      "indicators": [],
+      "competencies": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        }
+      ],
+      "otherRows": [
+        {
+          "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar."
+        },
+        {
+          "id": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+          "type": "ATTITUDE_VALUE",
+          "pdfPage": 73,
+          "originalText": "• Respeto y empatía por los\nsentimientos y opiniones\nexpresados por otros y\notras."
+        }
+      ],
+      "component": "Revisión léxica con sugerencia aceptada, adaptada O rechazada; puede conservar justificadamente palabras, manteniendo figura, tema y orden.",
+      "removedIndicatorIds": [],
+      "status": "COMPONENTE_REVISADO_LOCALMENTE_NO_CIERRE_DEL_INDICADOR"
+    },
+    {
+      "caseId": "LEN1-TRI-R13",
+      "indicators": [],
+      "competencies": [],
+      "otherRows": [],
+      "component": "Producto, propósito y evidencia indeterminados: propuesta provisional sin acreditar alineación curricular específica.",
+      "removedIndicatorIds": [],
+      "status": "PROVISIONAL_SIN_ALINEACION"
+    }
+  ]
+}

@@ -77,7 +77,7 @@ function taskText(value: string) {
 export function detectTeachingStrategy(input: TeachingStrategyContext & {title?: string; description?: string; activityType?: string; participationMode?: string}) {
   const transversal=input.level==='SECONDARY'&&input.grade===1&&input.subjectCode?.toUpperCase()==='LEN'
     ?resolveFirstGradeTransversalTask(input.title??'',input.description??'',{level:'SECONDARY',grade:1,subjectCode:'LEN',optativeExitName:input.optativeExitName}):null
-  const text = transversal?.family==='ARGUMENT'?transversal.task:taskText(input.subjectCode?.toUpperCase() === 'FRA' ? frenchRequirementText(input.description ?? '') : input.description ?? '')
+  const text = transversal?.activityType==='DEBATE'?transversal.task:taskText(input.subjectCode?.toUpperCase() === 'FRA' ? frenchRequirementText(input.description ?? '') : input.description ?? '')
   const title = taskText(input.title ?? '')
   const has=(pattern:RegExp)=>pattern.test(text)
   const candidates:{id:string;reason:string;score:number}[]=[]
@@ -91,7 +91,7 @@ export function detectTeachingStrategy(input: TeachingStrategyContext & {title?:
   add('PROJECT_BASED',has(/necesidad|problema.*(?:comunidad|entorno|real)/)&&has(/planific\w*|plane\w*/)&&has(/investig\w*/)&&has(/producto|elabor\w*|implement\w*|intervencion/),'Necesidad, planificación, investigación y resultado.',3)
   add('PROBLEM_BASED',has(/problema.*(?:vida|cotidian\w*|real|comunidad)/)&&has(/hipotesis|preguntas/)&&has(/investig\w*|recopil\w*/)&&has(/soluci\w*|alternativas/),'Problema como punto de partida con investigación de soluciones.',2)
   add('DIALOGIC_INQUIRY',has(/dialog\w*/)&&has(/preguntas.*(?:abiertas|guiadas)|socratic\w*/),'Diálogo reflexivo guiado por preguntas.',2)
-  add('DEBATE',has(/\b(?:debaten|debatiran|debatir|debatimos)\b|(?:organiz\w*|reali[cz]\w*|particip\w*|prepar\w*).*debate|defiend\w*.*posturas/)&&has(/argument\w*|replic\w*|posturas.*opuestas/),'Contraste argumentado de posiciones.',2)
+  add('DEBATE',has(/\b(?:debatan|debaten|debatiran|debatir|debatimos)\b|(?:organiz\w*|reali[cz]\w*|particip\w*|prepar\w*).*debate|defiend\w*.*posturas/)&&has(/argument\w*|replic\w*|posturas.*opuestas|razon.*objecion/),'Contraste argumentado de posiciones.',2)
   add('DRAMATIZATION',has(/dramatiz\w*|sociodrama|represent\w*.*(?:situacion|hecho)/)&&has(/personajes|roles|dialog\w*/),'Representación con personajes o roles.',2)
   add('ENVIRONMENT_IMMERSION',has(/visit\w*|insercion|recorren/)&&has(/comunidad|entorno|habitantes/)&&has(/dialog\w*|intercamb\w*|soluci\w*|propon\w*/),'Contacto e intercambio con el entorno.',2)
   add('PRIOR_EXPERIENCES',has(/recuper\w*|activ\w*|compart\w*|relacion\w*/)&&has(/experiencias previas|saberes previos|conocimientos previos|lo que ya saben/),'Activación explícita de saberes y experiencias.',2)

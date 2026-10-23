@@ -22,7 +22,7 @@ import { firstGradeDetectiveCriteria, isFirstGradeDetectiveActivity } from '@aul
 import { firstGradeCalligramCriteria, isFirstGradeCalligramActivity } from '@aula/shared'
 import { firstGradeReadingReportCriteria } from '@aula/shared'
 import {resolveFirstGradeHealthGenre,firstGradeHealthGenreCriteria} from '@aula/shared'
-import {resolveFirstGradeTransversalTask,firstGradeTransversalCriteria} from '@aula/shared'
+import {resolveFirstGradeTransversalTask,firstGradeTransversalCriteria,markFirstGradeProvisional} from '@aula/shared'
 import { findSecondaryMathTopic, secondaryMathCriteria } from '@aula/shared'
 import { api } from '@/services/apiClient'
 
@@ -66,7 +66,7 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   const authorizedGrade=input.academicContext?commonSecondaryLanguageGrade(input.academicContext):input.secondaryLanguageGrade
   if(authorizedGrade)input={...input,secondaryLanguageGrade:authorizedGrade}
   const transversal=resolveFirstGradeTransversalTask(input.activityTitle,input.description??'',input.academicContext)
-  if(transversal&&(!input.activityType||input.activityType===transversal.activityType))return editableAuthoredRecommendation(firstGradeTransversalCriteria(transversal),input,input.activityType??transversal.activityType,'lengua-secundaria-1-transversal')
+  if(transversal&&(!input.activityType||input.activityType===transversal.activityType))return markFirstGradeProvisional(editableAuthoredRecommendation(firstGradeTransversalCriteria(transversal),input,input.activityType??transversal.activityType,'lengua-secundaria-1-transversal'),transversal.focused?.kind==='PROGRESS')
   const healthGenre=resolveFirstGradeHealthGenre(input.activityTitle,input.description??'',input.academicContext)
   if(healthGenre&&(!input.activityType||input.activityType===healthGenre.activityType))return editableAuthoredRecommendation(firstGradeHealthGenreCriteria(healthGenre),input,input.activityType??healthGenre.activityType,'lengua-secundaria-1-generos-indicador-salud')
   const socialOptative=resolveOptativeSocialTask(input.activityTitle,input.description??'',input.academicContext)
