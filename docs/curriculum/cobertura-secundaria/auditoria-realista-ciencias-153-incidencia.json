@@ -1,0 +1,185 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.153",
+  "status": "HTTP_BLOCKED_INTERMITTENT_CONNECTION_NO_ACTIVITY_WRITES",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.153",
+    "sourceCommit": "a686bbf81241effb0b09d3194ffc6a7e1cb5e159",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "frozen152Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 85,
+    "preservedSnapshots": 1209,
+    "finalReleases": 86,
+    "finalSnapshots": 1209,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.153",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-B7KUBERT.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-B7KUBERT.js",
+        "sha256": "9c2425f6f536a18c757b670f4bd142225f0ac89f090a1d1564d86c5801a312d2",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-C0zvGcpc.js",
+        "sha256": "4e3473a8114566d7babca1ea7e99c239d8b04421ddf2b4c4977610f7e454d2dd",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-lFKY06n7.js",
+        "sha256": "537ac479b5d4c800a0cca6aaecc11a0090a745d844d6fc960dfebbaf29e2794f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-CSCB8k3q.js",
+        "sha256": "2415bd95b09f21e44862590d1e471b2586ab0d4416f5e0c3e7af3d5a6fcee3ba",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BDObiVve.js",
+        "sha256": "721abbaae651d991bd797d15a549f11a6e0dff49d4cd009186835a3925d94973",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "95815e364df07ad9964401e5ca1875f2e84e99a294988be9a6db3c98937a4f80",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "http": {
+    "successfulResponses": [
+      {
+        "endpoint": "/auth/login",
+        "status": 201,
+        "ms": 2682
+      },
+      {
+        "endpoint": "/activities/center",
+        "status": 200,
+        "ms": 4413
+      }
+    ],
+    "clientFailure": {
+      "endpoint": "/evaluation-instruments/interpret",
+      "name": "TimeoutError",
+      "ms": 30009
+    },
+    "workerInterpret": {
+      "status": 200,
+      "ms": 58344
+    },
+    "newActivities": 0
+  },
+  "diagnostics": {
+    "first": "ENOTFOUND antes de leer historia",
+    "second": "ECONNRESET en TLS: evento error no manejado del cliente pg del diagnóstico",
+    "dns": {
+      "host": "aws-0-us-east-1.pooler.supabase.com",
+      "results": [
+        {
+          "method": "os-lookup",
+          "status": "OK",
+          "answers": 3,
+          "ms": 151
+        },
+        {
+          "method": "configured-dns-A",
+          "status": "OK",
+          "answers": 3,
+          "ms": 49
+        },
+        {
+          "method": "independent-resolver-A",
+          "status": "OK",
+          "answers": 3,
+          "ms": 44
+        }
+      ],
+      "systemConfigurationChanged": false,
+      "applicationConfigurationChanged": false,
+      "remoteWrites": false,
+      "previousDiagnostic": {
+        "operation": "readDevelopmentHistory before service tracing",
+        "status": "ENOTFOUND",
+        "serviceTracingExecuted": false
+      },
+      "scope": "Una consulta por método; sin reintentos, cambios de DNS ni direcciones fijadas en la aplicación."
+    },
+    "bounded": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "remoteWrites": false,
+      "phase": "preservation",
+      "stages": [],
+      "queries": [],
+      "failure": {
+        "code": "ENOENT",
+        "message": "getaddrinfo ENOENT aws-0-us-east-1.pooler.supabase.com",
+        "syscall": "getaddrinfo"
+      },
+      "limitations": "Medición Node con DB real, no desglose interno del Worker previo."
+    }
+  },
+  "readerFix": {
+    "connectionTimeoutMs": 20000,
+    "queryTimeoutMs": 20000,
+    "sessionStatementTimeoutMs": 20000,
+    "retries": 0,
+    "applicationTimeoutsChanged": false,
+    "catchesConnectionErrors": true,
+    "rejectsPartialHistory": true,
+    "testsPassed": 10
+  },
+  "preservation": {
+    "lastVerified": "Instalación153: 85 releases/1209 snapshots anteriores exactos; total86/1209",
+    "freshPostIncidentCheck": "PENDING_CONNECTION",
+    "personalPost153Check": "PENDING_CONNECTION",
+    "originalReferencesChanged": false
+  },
+  "browser": {
+    "entryMatchesFinalBuild": true,
+    "personal": "PENDING_LOGIN",
+    "credentialsChanged": false,
+    "storageCleared": false
+  },
+  "nextBlock": {
+    "languageTests": 10,
+    "failed": 4,
+    "passed": 6,
+    "providerChanges": false
+  },
+  "push": false,
+  "productionModified": false,
+  "deploy": false
+}

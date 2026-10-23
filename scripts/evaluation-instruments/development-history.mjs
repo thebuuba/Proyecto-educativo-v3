@@ -21,13 +21,30 @@ export async function readDevelopmentHistory(){
  const environment=developmentEnvironment(parseEnv(readFileSync('.dev.vars.local','utf8')))
  const require=createRequire(new URL('../../packages/database/package.json',import.meta.url))
  const {Client}=require('pg'),{databaseUrlForPg}=require('./dist/index.js')
- const client=new Client({connectionString:databaseUrlForPg(environment.DATABASE_URL),connectionTimeoutMillis:20000})
+ const client=new Client({connectionString:databaseUrlForPg(environment.DATABASE_URL),connectionTimeoutMillis:20000,query_timeout:20000,statement_timeout:20000})
+ return readDevelopmentHistoryFromClient(client)
+}
+
+export async function readDevelopmentHistoryFromClient(client){
+ let connectionError,history
+ const onError=error=>{connectionError??=error}
+ client.on('error',onError)
+ const query=async sql=>{
+  if(connectionError)throw connectionError
+  const result=await client.query(sql)
+  if(connectionError)throw connectionError
+  return result
+ }
  try{
   await client.connect()
-  await client.query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY')
-  const releases=await client.query('SELECT version,md5(payload::text) AS hash FROM evaluation_catalog_releases ORDER BY version')
-  const snapshots=await client.query('SELECT id::text,md5(to_jsonb(s)::text) AS hash FROM evaluation_instrument_snapshots s ORDER BY id')
-  await client.query('COMMIT')
-  return{releases:releases.rows,snapshots:snapshots.rows}
- }finally{await client.end()}
+  await query('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY')
+  const releases=await query('SELECT version,md5(payload::text) AS hash FROM evaluation_catalog_releases ORDER BY version')
+  const snapshots=await query('SELECT id::text,md5(to_jsonb(s)::text) AS hash FROM evaluation_instrument_snapshots s ORDER BY id')
+  await query('COMMIT')
+  history={releases:releases.rows,snapshots:snapshots.rows}
+ }finally{
+  try{await client.end()}finally{client.removeListener('error',onError)}
+ }
+ if(connectionError)throw connectionError
+ return history
 }
