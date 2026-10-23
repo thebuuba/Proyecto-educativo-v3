@@ -1,4 +1,4 @@
-import {firstGradeNewsCriteria as news} from './secondary-news-grade-one'
+import {firstGradeNewsCriteria as news, refineFirstGradeNewsRequirements} from './secondary-news-grade-one'
 import {firstGradeGuideCriteria as guide} from './secondary-guide-grade-one'
 import {firstGradeReadingReportCriteria as report} from './secondary-reading-report-grade-one'
 import {firstGradePosterCriteria as poster} from './secondary-poster-grade-one'
@@ -111,7 +111,10 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   const production=/WRITING|CREATION|WRITTEN_PRODUCTION/.test(activity) || activity==='REPORT' && genre==='informe de lectura'
   const oral=['NEWSCAST','DETECTIVE_STORY_NARRATION','TOURIST_GUIDE_PRESENTATION','READING_REPORT_PRESENTATION','ORAL_PRESENTATION','EXPOSITION'].includes(activity)
   const oralProduction=oral && (['NEWSCAST','DETECTIVE_STORY_NARRATION'].includes(activity)||/emple|utiliz|us(?:ar|aran|ando)/.test(task))
-  let features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre],...firstGradeLanguageCompletionFeatures[genre]??[]],description)
+  // Keep the exported definitions used by historical catalogs immutable.
+  let features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,
+    ...(genre==='noticia'&&feature.id==='paratext'?{match:'paratext|pie de foto|aportan? la fotografia|funcion de la fotografia'}:{}),
+    terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre],...firstGradeLanguageCompletionFeatures[genre]??[]],description)
   if(features.some(f=>f.id==='adjective-degree'))features=features.filter(f=>f.id!=='adjectives')
   if(features.some(f=>f.id==='punctuation'))features=features.filter(f=>f.id!=='signs')
   features=features.map(feature=>specializePunctuation(feature,description))
@@ -138,6 +141,7 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     else rows=rows.filter(row=>!/-resources$|-language$|-revision$/.test(row.templateId))
   }
   if(features.length && (production||oralProduction)) rows=rows.filter(row=>!/-resources$|-language$/.test(row.templateId))
+  if(genre==='noticia'&&production&&features.some(f=>f.id==='connectors'))rows=rows.filter(r=>r.templateId!=='news-sequence')
   if(features.length && production && /solo|unicamente|exclusivamente/.test(task) && /revis|correg/.test(task))rows=[]
   rows=[...rows,...features.map(feature=>languageFeatureCriterion(feature,scope,genre,compare?'comparison':production?'production':oralProduction?'oral-production':recitation?'recitation':'analysis'))]
   if(production) {
@@ -227,7 +231,7 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     if(classification.length && analyze && !/analiz\w*.*(?:estructura|recursos|proposito)/.test(task)) rows=rows.filter(row=>/-feature-|-procedure-/.test(row.templateId))
     rows.push(...classification)
   }
-  return rows
+  return genre==='noticia'?refineFirstGradeNewsRequirements(activity,description,rows):rows
 }
 
 export const completeFirstGradeNewsCriteria=(activity:string,description:string)=>complete('noticia',activity,description,news(activity==='RESEARCH'?'NEWS_ANALYSIS':activity,description))

@@ -383,7 +383,7 @@ describe('Recomendador con currículo literal completo', () => {
   it.each([
     ['La noticia', 'Los estudiantes redactarán una noticia sobre un acontecimiento escolar, con titular, entrada y cuerpo', 'NEWS_WRITING', ['Información esencial de la noticia', 'Titular, entrada y cuerpo']],
     ['La noticia', 'Los estudiantes leerán una noticia e identificarán sus partes y las interrogantes que responde', 'NEWS_ANALYSIS', ['Identificación de sus partes', 'Interrogantes fundamentales']],
-    ['Noticiero escolar', 'Los estudiantes presentarán oralmente en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Dominio individual de la noticia asignada']],
+    ['Noticiero escolar', 'Los estudiantes presentarán oralmente en equipos noticias del centro; se calificará individualmente', 'NEWSCAST', ['Información periodística', 'Aportación individual al noticiero']],
   ])('prepara La noticia según la acción descrita: %s', (activityTitle, description, activityType, expectedTitles) => {
     const context: AcademicContext = { level: 'SECONDARY', cycle: 1, grade: 1, subjectCode: 'LEN', subjectName: 'Lengua Española', optativeExitName: null, modalityCode: 'academic' }
     for (const instrumentType of ['rubrica', 'lista-cotejo', 'escala', 'lista-ponderada'] as const) {

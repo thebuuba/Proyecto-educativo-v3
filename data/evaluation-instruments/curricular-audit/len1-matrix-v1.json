@@ -53,13 +53,41 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
-            "LEN1-NOT-02",
-            "LEN1-NOT-03"
+            "LEN1-NOT-03",
+            "LEN1-NOT-02"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Función informativa",
+            "Titular, entrada y cuerpo"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-03",
+              "criterionId": "news-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            },
+            {
+              "caseId": "LEN1-NOT-02",
+              "criterionId": "news-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "b431e723-effb-567a-925c-593d2467f168",
@@ -76,13 +104,44 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
             "LEN1-NOT-02",
             "LEN1-NOT-03"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Qué ocurrió",
+            "A quién",
+            "Dónde",
+            "Cuándo",
+            "Cómo"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-02",
+              "criterionId": "news-essential",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            },
+            {
+              "caseId": "LEN1-NOT-03",
+              "criterionId": "news-questions",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
@@ -99,12 +158,40 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
-            "LEN1-NOT-03"
+            "LEN1-NOT-03",
+            "LEN1-NOT-R01"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Actualidad o relevancia para el público"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-03",
+              "criterionId": "news-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            },
+            {
+              "caseId": "LEN1-NOT-R01",
+              "criterionId": "news-listening-relevance",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
@@ -121,13 +208,29 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
-            "LEN1-NOT-02",
-            "LEN1-NOT-04"
+            "LEN1-NOT-02"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Conectores de orden",
+            "Conectores temporales"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-02",
+              "criterionId": "news-feature-connectors",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "d6c9f468-36c3-5376-99f9-829c06040af0",
@@ -144,13 +247,29 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
-            "LEN1-NOT-02",
             "LEN1-NOT-06"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Modo verbal",
+            "Tiempos acordes con hechos"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-06",
+              "criterionId": "news-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
@@ -167,12 +286,28 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
             "LEN1-NOT-06"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Sustitución contextual sin alterar referente"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-06",
+              "criterionId": "news-feature-synonyms",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
@@ -189,12 +324,41 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
-            "LEN1-NOT-06"
+            "LEN1-NOT-06",
+            "LEN1-NOT-R03"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Delimitación de enunciados y datos",
+            "Conservación del significado"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-06",
+              "criterionId": "news-feature-punctuation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            },
+            {
+              "caseId": "LEN1-NOT-R03",
+              "criterionId": "news-feature-punctuation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "8b208fc0-808f-5b83-a900-94bcb5196005",
@@ -211,12 +375,30 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
             "LEN1-NOT-06"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Siglas",
+            "Abreviaturas",
+            "Acrónimos"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-06",
+              "criterionId": "news-feature-abbreviations",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         },
         {
           "id": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
@@ -233,13 +415,41 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
           "cases": [
             "LEN1-NOT-03",
             "LEN1-NOT-05"
           ],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "components": [
+            "Función de fotografía y pie",
+            "Correspondencia con hechos y titular"
+          ],
+          "evidence": [
+            {
+              "caseId": "LEN1-NOT-03",
+              "criterionId": "news-feature-paratext",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            },
+            {
+              "caseId": "LEN1-NOT-05",
+              "criterionId": "news-feature-paratext",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-noticia-155-lectura.json"
+            }
+          ]
         }
       ],
       "status": "PENDIENTE_AUDITORIA",
@@ -2799,5 +3009,16 @@
       "decision": "El bloque inferior trata noticias, no caligrama. Comprensión escrita del caligrama está dentro del bloque oral extraído; mantener ambos modos."
     }
   ],
-  "closure": "ABIERTA; ninguna fila aprobada por inventario o por existencia de proveedor"
+  "closure": {
+    "status": "ABIERTA",
+    "newsConceptRowsReviewed": 9,
+    "topicsFullyClosed": 0,
+    "otherTopics": "Pendientes de banco y lectura completa",
+    "remaining": [
+      "Comprobar inferencias, vocabulario contextual y anticipación con actividades específicas de noticia",
+      "Documentación de fuentes y coordinadas/subordinadas de la continuación74 requieren banco y contraste propios",
+      "Comprobar estrategia en cada caso y muestra HTTP/DB/visual sobre la versión155",
+      "Comparar procedimientos, actitudes e indicadores completos de Lengua1; no atribuirles cobertura por mencionar el tema"
+    ]
+  }
 }

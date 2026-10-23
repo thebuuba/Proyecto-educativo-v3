@@ -10,9 +10,14 @@ export type LanguageFeature = {
   terms?: [string, string][]
 }
 
-export const affirmativeLanguageTask = (description: string) => normalizedTask(description
-  .normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
-  .replace(/\b(?:sin|no se (?:pide|requiere)|no es necesario)\b[^.;]*/g, ''))
+export function affirmativeLanguageTask(description:string){
+ const text=description.normalize('NFD').replace(/\p{M}/gu,'').toLowerCase()
+ // Exclusions stop at a new affirmative coordinated action. Otherwise «sin
+ // cambiar los hechos y revisen las siglas» loses the requested second action.
+ const action='(?:revis\\w*|corrij\\w*|correg\\w*|analic\\w*|analiz\\w*|identifi\\w*|expli\\w*|compar\\w*|contrast\\w*|redact\\w*|escrib\\w*|inclu\\w*|entreg\\w*|manteng\\w*|usen|utili\\w*)'
+ const negative='(?:sin|no se (?:pide|requiere)|no es necesario|no (?:(?:deben?|deberan|van a|vamos a) )?(?:escrib\\w*|redact\\w*|anad\\w*|agreg\\w*|inclu\\w*|revis\\w*|hagan|realic\\w*|necesitan?))'
+ return normalizedTask(text.replace(new RegExp(`\\b${negative}\\b.*?(?=[.;\\n]|\\s+y\\s+${action}\\b|$)`,'g'),' '))
+}
 
 /** Explicit linguistic requirements, independent of the title and delivered document's name. */
 export function requestedLanguageFeatures(features: LanguageFeature[], description: string) {

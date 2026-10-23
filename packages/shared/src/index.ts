@@ -70,7 +70,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)
     const presenting = oralAction
-    const analyzing = /\b(?:analiz\w*|identific\w*|interpret\w*|leer\w*|leeran|lectura)\b/.test(value)
+    const analyzing = /\b(?:analiz\w*|analic\w*|identific\w*|identifiqu\w*|interpret\w*|leer\w*|leeran|lean|lee|lectura|escuch\w*)\b/.test(value)
     if (module === 'NEWS' && /\bnoticiero\b/.test(value)) return 'NEWSCAST'
     if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narracion|narraran|contar|contaran)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
     if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
@@ -80,7 +80,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     if (analyzing && !oralAction) return `${module}_ANALYSIS`
     if (presenting) return module === 'NEWS' ? 'NEWSCAST' : module === 'DETECTIVE_STORY' ? 'DETECTIVE_STORY_ANALYSIS_PRESENTATION' : module === 'CALLIGRAM' ? 'CALLIGRAM_EXPLANATION' : `${module}_PRESENTATION`
     if (analyzing) return `${module}_ANALYSIS`
-    if (/\b(?:explic\w*|present\w*)\b/.test(value)) return `${module}_ANALYSIS`
+    if (/\b(?:explic\w*|expliqu\w*|present\w*)\b/.test(value)) return `${module}_ANALYSIS`
     return null
   }
   return action(task) ?? action(titleText)

@@ -6,21 +6,21 @@ Leer especificación 2026-10-23-auditoria-curricular-completa.md y su plan. El n
 
 ## Estado comprobado
 
-- Rama ampliacion-de-instrumentos-2; HEAD previo fcb8fc6c, diez commits locales sin publicar. Sin push.
+- Rama ampliacion-de-instrumentos-2; HEAD de alcance ead009a2, once commits locales sin publicar antes del bloque155. Sin push.
 - Catálogo154 instalado solo en Development eolgunypmtgrsyrjzcld. Última historia validada87releases/1213snapshots; quince referencias personales exactas. No repetir instaladores ni creadores QA finalizados.
-- Últimos gates de código: backend97263/218archivos, builds backend/frontend/Cloudflare dry-run y lints aprobados; frontend13479aprobadas en pasada amplia y contrato restante corregido con2focales aprobados. No es una única pasada frontend verde.
-- Listener8787 observado41640; sus procesos cambiaron respecto a checkpoints antiguos. Verificar árbol antes de actuar; no iniciar otro Worker ni asumir launcher55536 vigente. Ninguna nueva tarea QA/instalación/build iniciada en este bloque.
+- Código155: backend97331/219archivos, builds backend/frontend/Cloudflare dry-run y lints aprobados; frontend55/3archivos focales aprobados. No es una pasada frontend completa. Ver informe2026-10-23-auditoria-curricular-len1.md.
+- Worker154 detenido verificando launcher55536 y su árbol; no reiniciar155 antes de verificar/instalar su catálogo en Development. Gates completados en .wrangler/realistic-audit/curricular-155-build-progress.json; no repetirlos sin cambios.
 - Cuenta personal seguía en login. No enviar correos ni cambiar credenciales; continuar trabajo local y QA autorizada independiente.
 
 ## Fila activa
 
 Primero → Lengua Española → La noticia. PDF oficial520páginas descargado a .wrangler/realistic-audit/official-secondary-2023.pdf. SHA256 exacta80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58. Leídas visualmente páginas68–75, incluida malla completa69–75 y continuaciones. Orden: noticia, guía, informe, afiche, cuento, caligrama. La extracción contiene61filas de conceptos:6encabezados y55filas; una repite Estructura de guía. No confundir esos55renglones con55subtemas independientes ni cobertura aprobada. Procedimientos/actitudes/indicadores conservados para mapa específico.
 
-Matriz inicial: data/evaluation-instruments/curricular-audit/len1-matrix-v1.json. Banco previo inmutable: len1-noticia-v1.json y .lock.json, seis actividades y expectativas fijadas sin consultar salidas. Ninguna fila cerrada todavía. Fuentes/continuaciones en la matriz: noticia también continúa al inicio70 y reaparece al final74. Leer por contenido, no por proximidad a encabezados.
+Matriz: data/evaluation-instruments/curricular-audit/len1-matrix-v1.json. Bancos previos inmutables: len1-noticia-v1.json y reservado-v1, ambos con huella. Nueve casos/36instrumentos leídos y evidencia específica de nueve renglones conceptuales; cero temas cerrados. Se conservaron las24salidas154 anteriores y12salidas reservadas previas, además de intermedias/finales155. Manifiesto de lectura155 en docs/curriculum/cobertura-secundaria. Fuente74 añade coordinadas/subordinadas: no perder esa continuación.
 
 ## Siguiente acción inmediata
 
-Generar24instrumentos locales (6casos×4formatos), capturar también sugerencias automáticas y comparar servicio/alternativa/puntos pendientes20/17.35. Leer todos los criterios y descriptores, relacionarlos con cada expectativa/subtema y registrar discrepancias. No ajustar expectativas para acomodar salidas. Corregir por causas compartidas, preservando154 antes de nuevas reglas/payload; pruebas RED/GREEN y gates por bloque relevante, commits locales y seguir siguiente tema. La matriz de todos los grados debe derivarse de la fuente, no limitarse a los81proveedores.
+Guardar bloque155 y contrastar historia/catálogo de Development antes de instalarlo individualmente; muestra HTTP/DB y navegador si hay acceso. No duplicar los cuatro casos científicos154 ni recapturar referencias. Después completar noticia: banco previo para anticipación/comprobación, vocabulario/inferencias, fuentes y coordinadas/subordinadas74; actitudes mediante evidencia observable. Seguir luego guía, informe, afiche, cuento y caligrama. Los89ámbitos oficiales extraídos no equivalen a89auditados ni sustituyen revisar la fuente; delimitar comunes/optativas y módulos autorizados.
 
 La selección curricular lenta sigue pendiente: perfil Node154 midió5235ms/59versiones/374496bytes dentro de8015ms. No explica por sí solo anteriores58s ni descarta DNS/TLS intermitente. Puede corregirse como bloqueo compartido; después volver a primera fila curricular pendiente.
 

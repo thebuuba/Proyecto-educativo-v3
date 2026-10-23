@@ -1,0 +1,25 @@
+{
+  "version": "curricular-len1-noticia-reservado-v1",
+  "provenance": "SINTETICO; mismo autor, sin independencia externa. Consignas redactadas para procedimientos aún sin evidencia, antes de consultar sus resultados; no se consultaron expresiones del detector para redactarlas.",
+  "context": {"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "cases": [
+    {
+      "id":"LEN1-NOT-R01",
+      "title":"Lo que pasó en el barrio",
+      "description":"Escucharemos una noticia de la radio. Después, cuenten con sus palabras lo sucedido, quiénes participaron y en qué lugar y momento pasó. Digan por qué le puede interesar al barrio. No van a escribir otra noticia ni a grabarse.",
+      "expected":{"explicit":["Comprender noticia escuchada","Reconstruir con palabras propias","Hecho, participantes, lugar y momento","Relevancia para el barrio"],"excluded":["Crear noticia nueva","Grabación","Fragmentos escritos de un texto no entregado","Fotografía"],"grouping":["Información y fidelidad al audio","Reconstrucción con palabras propias","Interés del hecho para el público"]}
+    },
+    {
+      "id":"LEN1-NOT-R02",
+      "title":"Una noticia para el mural",
+      "description":"Primero decidiremos qué hecho del centro vale la pena contar y para quién. Organicen sus datos en un esquema. Con ese plan escriban la noticia; revisen con un compañero si se entiende y corrijan lo necesario. Entreguen el plan y el borrador junto con la versión final, que pondremos en el mural del aula. Puede llevar foto o dibujo, pero no es obligatorio.",
+      "expected":{"explicit":["Seleccionar un hecho pertinente y destinatario","Plan con datos organizados","Redacción a partir del plan","Revisión y corrección de comprensibilidad","Plan, borrador y final","Publicación en mural del aula"],"excluded":["Foto obligatoria","Dibujo obligatorio","Cooperación estructurada por revisar en parejas","Bibliografía","Extensión fija"],"grouping":["Contenido y propósito","Organización periodística","Planificación y revisión con evidencia","Publicación legible en el medio solicitado"]}
+    },
+    {
+      "id":"LEN1-NOT-R03",
+      "title":"Puntos que cambian lo que pasó",
+      "description":"Les doy una noticia con varios signos mal puestos. Arreglen solo la puntuación; conserven los datos y las palabras del original. No revisen abreviaturas y no agreguen imágenes. Dejen el texto corregido debajo del original.",
+      "expected":{"explicit":["Corregir únicamente puntuación de noticia recibida","Conservar palabras y hechos","Original y versión corregida"],"excluded":["Revisar abreviaturas","Cambiar vocabulario","Añadir imágenes","Redactar noticia desde cero","Reorganizar estructura periodística"],"grouping":["Puntuación y significado","Corrección verificable sin alterar el original"]}
+    }
+  ]
+}

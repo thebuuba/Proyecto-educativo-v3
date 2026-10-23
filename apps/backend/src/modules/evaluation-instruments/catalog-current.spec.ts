@@ -35,7 +35,11 @@ describe('generic product criteria release', () => {
   it('conserva el payload153 registrado y versiona el intercambio explícito de roles sin cambiar currículo',()=>{
     const frozen=evaluationCatalogForVersion('evaluation-2026.153')!
     expect(catalogFingerprint(frozen)).toBe('7dc6d9fa0a433a7941d249d672d1dbd223bc4d0056aa12d4ac4448a0fbbae054')
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...frozen,version:'evaluation-2026.154'})))
+    expect(JSON.parse(JSON.stringify(evaluationCatalogForVersion('evaluation-2026.154')))).toEqual(JSON.parse(JSON.stringify({...frozen,version:'evaluation-2026.154'})))
+  })
+  it('conserva154 antes de corregir las acciones y requisitos de noticia de primero',()=>{
+    expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.154')!)).toBe('ded489bce0367360783d51cf1282f2b58d1c08b472a8b1ce2175e198b9c688a2')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.155')
   })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
@@ -82,7 +86,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.154')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.155')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()

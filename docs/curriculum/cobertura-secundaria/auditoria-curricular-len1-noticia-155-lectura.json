@@ -1,0 +1,546 @@
+{
+  "scope": "Lengua Española / primero / noticia",
+  "source": "MINERD Secundaria2023 PDF69–70 y continuación74; malla completa69–75 y entrada68 leídas visualmente",
+  "reviewer": "Codex, mismo autor; revisión interna, no evaluación externa independiente",
+  "catalog": "evaluation-2026.155",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "files": [
+    {
+      "file": "auditoria-curricular-len1-noticia-155-final.json",
+      "sha256": "0b1afe9439122e56aa7edfea7700a98dd56adab13547e9c3d0bebf914eb583ad"
+    },
+    {
+      "file": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "sha256": "851b689e98f05347ba4fcc987eccdf0464eb142b8e86187182ec402b440bf2d1"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "LEN1-NOT-01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve."
+    },
+    {
+      "id": "LEN1-NOT-01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve."
+    },
+    {
+      "id": "LEN1-NOT-01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve."
+    },
+    {
+      "id": "LEN1-NOT-01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve."
+    },
+    {
+      "id": "LEN1-NOT-02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-feature-indicative",
+        "news-feature-connectors",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía."
+    },
+    {
+      "id": "LEN1-NOT-02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-feature-indicative",
+        "news-feature-connectors",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía."
+    },
+    {
+      "id": "LEN1-NOT-02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-feature-indicative",
+        "news-feature-connectors",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía."
+    },
+    {
+      "id": "LEN1-NOT-02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-feature-indicative",
+        "news-feature-connectors",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía."
+    },
+    {
+      "id": "LEN1-NOT-03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-structure",
+        "news-questions",
+        "news-evidence",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido."
+    },
+    {
+      "id": "LEN1-NOT-03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-structure",
+        "news-questions",
+        "news-evidence",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido."
+    },
+    {
+      "id": "LEN1-NOT-03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-structure",
+        "news-questions",
+        "news-evidence",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido."
+    },
+    {
+      "id": "LEN1-NOT-03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-structure",
+        "news-questions",
+        "news-evidence",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido."
+    },
+    {
+      "id": "LEN1-NOT-04",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-content",
+        "news-structure",
+        "news-sequence",
+        "news-oral",
+        "news-individual"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante."
+    },
+    {
+      "id": "LEN1-NOT-04",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-content",
+        "news-structure",
+        "news-sequence",
+        "news-oral",
+        "news-individual"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante."
+    },
+    {
+      "id": "LEN1-NOT-04",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-content",
+        "news-structure",
+        "news-sequence",
+        "news-oral",
+        "news-individual"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante."
+    },
+    {
+      "id": "LEN1-NOT-04",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-content",
+        "news-structure",
+        "news-sequence",
+        "news-oral",
+        "news-individual"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante."
+    },
+    {
+      "id": "LEN1-NOT-05",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-comparison",
+        "news-evidence",
+        "news-conclusion",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo."
+    },
+    {
+      "id": "LEN1-NOT-05",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-comparison",
+        "news-evidence",
+        "news-conclusion",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo."
+    },
+    {
+      "id": "LEN1-NOT-05",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-comparison",
+        "news-evidence",
+        "news-conclusion",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo."
+    },
+    {
+      "id": "LEN1-NOT-05",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-purpose",
+        "news-comparison",
+        "news-evidence",
+        "news-conclusion",
+        "news-feature-paratext"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo."
+    },
+    {
+      "id": "LEN1-NOT-06",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-feature-indicative",
+        "news-feature-synonyms",
+        "news-feature-abbreviations",
+        "news-feature-punctuation",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple."
+    },
+    {
+      "id": "LEN1-NOT-06",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-feature-indicative",
+        "news-feature-synonyms",
+        "news-feature-abbreviations",
+        "news-feature-punctuation",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple."
+    },
+    {
+      "id": "LEN1-NOT-06",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-feature-indicative",
+        "news-feature-synonyms",
+        "news-feature-abbreviations",
+        "news-feature-punctuation",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple."
+    },
+    {
+      "id": "LEN1-NOT-06",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-155-final.json",
+      "criteria": [
+        "news-feature-indicative",
+        "news-feature-synonyms",
+        "news-feature-abbreviations",
+        "news-feature-punctuation",
+        "news-process-revision"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple."
+    },
+    {
+      "id": "LEN1-NOT-R01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-procedure-paraphrase",
+        "news-listening-relevance"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo."
+    },
+    {
+      "id": "LEN1-NOT-R01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-procedure-paraphrase",
+        "news-listening-relevance"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo."
+    },
+    {
+      "id": "LEN1-NOT-R01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-procedure-paraphrase",
+        "news-listening-relevance"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo."
+    },
+    {
+      "id": "LEN1-NOT-R01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-procedure-paraphrase",
+        "news-listening-relevance"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo."
+    },
+    {
+      "id": "LEN1-NOT-R02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-process-revision",
+        "news-procedure-outline",
+        "news-process-publication"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes."
+    },
+    {
+      "id": "LEN1-NOT-R02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-process-revision",
+        "news-procedure-outline",
+        "news-process-publication"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes."
+    },
+    {
+      "id": "LEN1-NOT-R02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-process-revision",
+        "news-procedure-outline",
+        "news-process-publication"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes."
+    },
+    {
+      "id": "LEN1-NOT-R02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-essential",
+        "news-structure",
+        "news-sequence",
+        "news-language",
+        "news-process-revision",
+        "news-procedure-outline",
+        "news-process-publication"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes."
+    },
+    {
+      "id": "LEN1-NOT-R03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-feature-punctuation"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos."
+    },
+    {
+      "id": "LEN1-NOT-R03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-feature-punctuation"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos."
+    },
+    {
+      "id": "LEN1-NOT-R03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-feature-punctuation"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos."
+    },
+    {
+      "id": "LEN1-NOT-R03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-155-final.json",
+      "criteria": [
+        "news-feature-punctuation"
+      ],
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_EN_EL_ALCANCE_DE_ESTE_CASO",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos."
+    }
+  ],
+  "topicClosed": false,
+  "remaining": [
+    "Comprobar inferencias, vocabulario contextual y anticipación con actividades específicas de noticia",
+    "Documentación de fuentes y coordinadas/subordinadas de la continuación74 requieren banco y contraste propios",
+    "Comprobar estrategia en cada caso y muestra HTTP/DB/visual sobre la versión155",
+    "Comparar procedimientos, actitudes e indicadores completos de Lengua1; no atribuirles cobertura por mencionar el tema"
+  ]
+}
