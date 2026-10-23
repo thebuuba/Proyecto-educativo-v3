@@ -57,6 +57,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (!module) return null
   const action = (value: string) => {
     const contract=resolveEvaluationTask('',value)
+    if(module==='CALLIGRAM'&&(/\bcreen\s+(?:(?:un|el)\s+)?caligrama/.test(value)||/\b(?:prepar\w*|edit\w*)\b.*\bedicion final\b/.test(value)))return 'CALLIGRAM_CREATION'
     // A reading report may be presented orally or revised in a bounded fragment.
     // Those actions precede the summary/inference performed inside the task.
     if(module==='READING_REPORT'){

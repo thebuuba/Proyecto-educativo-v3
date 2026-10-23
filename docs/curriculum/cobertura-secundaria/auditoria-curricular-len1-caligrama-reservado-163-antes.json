@@ -1,0 +1,3821 @@
+{
+  "catalog": "evaluation-2026.163",
+  "bankSha256": "e01c2f6d72a685baed794e19b997cf4c4acf33c263d8b2b134ddc3e0168776fe",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "76fd4eb28ed8fdab76c685d718687cdf6ae6f61e",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-CAL-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.960999999999956,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-intention:0",
+            "templateId": "calligram-intention",
+            "title": "Intención y sentimientos expresados",
+            "description": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+              "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+              "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+              "Atribuye al poema una intención o sentimientos contrarios a sus palabras.",
+              "No identifica una intención y sentimientos expresados reconocibles en el audio disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica una intención y sentimientos expresados reconocibles en el audio disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8455999999999904,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-intention:0",
+            "templateId": "calligram-intention",
+            "title": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+            "description": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+              "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+              "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+              "Atribuye al poema una intención o sentimientos contrarios a sus palabras.",
+              "No identifica una intención y sentimientos expresados reconocibles en el audio disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9723999999999933,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-intention:0",
+            "templateId": "calligram-intention",
+            "title": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+            "description": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+              "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+              "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+              "Atribuye al poema una intención o sentimientos contrarios a sus palabras.",
+              "No identifica una intención y sentimientos expresados reconocibles en el audio disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica una intención y sentimientos expresados reconocibles en el audio disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7650999999999613,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-intention:0",
+            "templateId": "calligram-intention",
+            "title": "Intención y sentimientos expresados",
+            "description": "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación. Parcial (50%): Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la intención del autor y los sentimientos expresados por las palabras del audio escuchado, con indicios disponibles que sostienen su interpretación.",
+              "Relaciona intención y sentimientos expresados con indicios; una relación necesita precisión.",
+              "Nombra intención o sentimientos, pero no los relaciona suficientemente con los indicios disponibles.",
+              "Atribuye al poema una intención o sentimientos contrarios a sus palabras.",
+              "No identifica una intención y sentimientos expresados reconocibles en el audio disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0404000000000337,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-process-revision:0",
+            "templateId": "calligram-process-revision",
+            "title": "Revisión de borradores con sugerencias",
+            "description": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+              "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+              "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+              "Los cambios contradicen la intención o alteran el tema y la imagen que debía conservarse.",
+              "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7398000000000025,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-process-revision:0",
+            "templateId": "calligram-process-revision",
+            "title": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+            "description": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+              "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+              "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+              "Los cambios contradicen la intención o alteran el tema y la imagen que debía conservarse.",
+              "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8612999999999715,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-process-revision:0",
+            "templateId": "calligram-process-revision",
+            "title": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+            "description": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+              "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+              "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+              "Los cambios contradicen la intención o alteran el tema y la imagen que debía conservarse.",
+              "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5851999999999862,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-process-revision:0",
+            "templateId": "calligram-process-revision",
+            "title": "Revisión de borradores con sugerencias",
+            "description": "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada. Parcial (50%): Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Muestra cambios del borrador a la versión revisada según las sugerencias de la profesora y de compañeros, ajustando vocabulario, figuras presentes y relación palabras-imagen a la intención y la emoción ficticia representada.",
+              "Los cambios responden a las sugerencias y aclaran el mensaje; queda un detalle secundario por ajustar.",
+              "Presenta cambios, pero mantiene problemas de vocabulario, recursos o figura señalados en las sugerencias.",
+              "Los cambios contradicen la intención o alteran el tema y la imagen que debía conservarse.",
+              "No muestra cambios reconocibles entre borrador y versión revisada a partir de las sugerencias."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5174000000000092,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-edition:0",
+            "templateId": "calligram-edition",
+            "title": "Edición para el medio elegido",
+            "description": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+              "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+              "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+              "La edición modifica palabras, versos, intención o imagen que debía conservar.",
+              "No presenta una edición legible del caligrama para uno de los medios indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una edición legible del caligrama para uno de los medios indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4456000000000131,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-edition:0",
+            "templateId": "calligram-edition",
+            "title": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+            "description": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+              "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+              "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+              "La edición modifica palabras, versos, intención o imagen que debía conservar.",
+              "No presenta una edición legible del caligrama para uno de los medios indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5056000000000154,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-edition:0",
+            "templateId": "calligram-edition",
+            "title": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+            "description": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+              "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+              "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+              "La edición modifica palabras, versos, intención o imagen que debía conservar.",
+              "No presenta una edición legible del caligrama para uno de los medios indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una edición legible del caligrama para uno de los medios indicados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4712999999999852,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-edition:0",
+            "templateId": "calligram-edition",
+            "title": "Edición para el medio elegido",
+            "description": "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado. Parcial (50%): Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición final para revista escolar con legibilidad y presentación adecuadas; conserva exactamente palabras, versos, intención e imagen del caligrama ya revisado.",
+              "La edición conserva el contenido y se lee en el medio elegido; un detalle de presentación necesita ajuste.",
+              "Presenta una edición, pero parte de las palabras no se lee o su distribución dificulta reconocer la imagen.",
+              "La edición modifica palabras, versos, intención o imagen que debía conservar.",
+              "No presenta una edición legible del caligrama para uno de los medios indicados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1772000000000276,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:0",
+            "templateId": "calligram-feature-literary",
+            "title": "Función de las figuras literarias presentes",
+            "description": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+            "maxScore": 13.01,
+            "maxScoreUnits": 1301,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+              "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función.",
+              "No explica funciones reconocibles de las figuras presentes del poema."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+                "scoreUnits": 1301
+              },
+              {
+                "levelId": "L3",
+                "text": "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica funciones reconocibles de las figuras presentes del poema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:delivery-format:1",
+            "templateId": "delivery-format",
+            "title": "Evidencias solicitadas",
+            "description": "Cumple la condición de entrega solicitada: 1 ejemplo.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple la condición de entrega solicitada: 1 ejemplo.",
+              "La condición solicitada se comprueba en la entrega: 1 ejemplo.",
+              "La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+              "La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: 1 ejemplo.",
+              "No cumple las condiciones de entrega solicitadas: 1 ejemplo."
+            ],
+            "relativeWeight": 1,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple la condición de entrega solicitada: 1 ejemplo.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "La condición solicitada se comprueba en la entrega: 1 ejemplo.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "No cumple las condiciones de entrega solicitadas: 1 ejemplo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6893000000000029,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:0",
+            "templateId": "calligram-feature-literary",
+            "title": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+            "description": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+            "maxScore": 13.01,
+            "maxScoreUnits": 1301,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+              "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función.",
+              "No explica funciones reconocibles de las figuras presentes del poema."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:delivery-format:quantity-ejemplo:1",
+            "templateId": "delivery-format:quantity-ejemplo",
+            "title": "La entrega cumple la condición solicitada: 1 ejemplo.",
+            "description": "La entrega cumple la condición solicitada: 1 ejemplo.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La entrega cumple: 1 ejemplo.",
+              "Se comprueba el cumplimiento de: 1 ejemplo.",
+              "La entrega permite comprobar solo parte de: 1 ejemplo.",
+              "No se puede comprobar: 1 ejemplo.",
+              "La entrega no cumple: 1 ejemplo."
+            ],
+            "relativeWeight": 1,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9447000000000116,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:0",
+            "templateId": "calligram-feature-literary",
+            "title": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+            "description": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+            "maxScore": 13.01,
+            "maxScoreUnits": 1301,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+              "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función.",
+              "No explica funciones reconocibles de las figuras presentes del poema."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+                "scoreUnits": 1301
+              },
+              {
+                "levelId": "L3",
+                "text": "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica funciones reconocibles de las figuras presentes del poema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:delivery-format:1",
+            "templateId": "delivery-format",
+            "title": "Cumple la condición de entrega solicitada: 1 ejemplo.",
+            "description": "Cumple la condición de entrega solicitada: 1 ejemplo.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple la condición de entrega solicitada: 1 ejemplo.",
+              "La condición solicitada se comprueba en la entrega: 1 ejemplo.",
+              "La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+              "La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: 1 ejemplo.",
+              "No cumple las condiciones de entrega solicitadas: 1 ejemplo."
+            ],
+            "relativeWeight": 1,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cumple la condición de entrega solicitada: 1 ejemplo.",
+                "scoreUnits": 434
+              },
+              {
+                "levelId": "L3",
+                "text": "La condición solicitada se comprueba en la entrega: 1 ejemplo.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L2",
+                "text": "La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L1",
+                "text": "No cumple las condiciones de entrega solicitadas: 1 ejemplo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.497000000000014,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:0",
+            "templateId": "calligram-feature-literary",
+            "title": "Función de las figuras literarias presentes",
+            "description": "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones. Parcial (50%): Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+            "maxScore": 13.01,
+            "maxScoreUnits": 1301,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica y explica la anáfora con los usos presentes y su efecto en el mensaje: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones.",
+              "Las figuras se relacionan con su función en el poema; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica figuras presentes, pero no explica cómo su función contribuye al mensaje.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función.",
+              "No explica funciones reconocibles de las figuras presentes del poema."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:delivery-format:1",
+            "templateId": "delivery-format",
+            "title": "Evidencias solicitadas",
+            "description": "Cumple la condición de entrega solicitada: 1 ejemplo. Parcial (50%): La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+            "maxScore": 4.34,
+            "maxScoreUnits": 434,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cumple la condición de entrega solicitada: 1 ejemplo.",
+              "La condición solicitada se comprueba en la entrega: 1 ejemplo.",
+              "La entrega permite comprobar solo parte de la condición: 1 ejemplo.",
+              "La entrega no permite comprobar el cumplimiento de las condiciones solicitadas: 1 ejemplo.",
+              "No cumple las condiciones de entrega solicitadas: 1 ejemplo."
+            ],
+            "relativeWeight": 1,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6709000000000174,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-free-verse:0",
+            "templateId": "calligram-feature-free-verse",
+            "title": "El verso libre",
+            "description": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "La explicación se apoya en una identificación incorrecta: los cortes entre versos separan palabras relacionadas y alteran el sentido del poema.",
+              "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-rhyme-rhythm:1",
+            "templateId": "calligram-feature-rhyme-rhythm",
+            "title": "El ritmo",
+            "description": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "La explicación se apoya en una identificación incorrecta: se atribuye una coincidencia sonora inexistente o se corta una expresión cambiando su sentido.",
+              "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5885000000000105,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-free-verse:0",
+            "templateId": "calligram-feature-free-verse",
+            "title": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "description": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "La explicación se apoya en una identificación incorrecta: los cortes entre versos separan palabras relacionadas y alteran el sentido del poema.",
+              "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-rhyme-rhythm:1",
+            "templateId": "calligram-feature-rhyme-rhythm",
+            "title": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "description": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "La explicación se apoya en una identificación incorrecta: se atribuye una coincidencia sonora inexistente o se corta una expresión cambiando su sentido.",
+              "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6358000000000175,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-free-verse:0",
+            "templateId": "calligram-feature-free-verse",
+            "title": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "description": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "La explicación se apoya en una identificación incorrecta: los cortes entre versos separan palabras relacionadas y alteran el sentido del poema.",
+              "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-rhyme-rhythm:1",
+            "templateId": "calligram-feature-rhyme-rhythm",
+            "title": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "description": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "La explicación se apoya en una identificación incorrecta: se atribuye una coincidencia sonora inexistente o se corta una expresión cambiando su sentido.",
+              "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5805000000000291,
+      "automatic": {
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-free-verse:0",
+            "templateId": "calligram-feature-free-verse",
+            "title": "El verso libre",
+            "description": "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija. Parcial (50%): Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el verso libre en el texto de caligrama y explica, con ejemplos presentes, su función para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "Localiza y caracteriza el verso libre con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del verso libre, pero no explica cómo contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "La explicación se apoya en una identificación incorrecta: los cortes entre versos separan palabras relacionadas y alteran el sentido del poema.",
+              "No localiza ejemplos pertinentes ni explica la función del verso libre en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-rhyme-rhythm:1",
+            "templateId": "calligram-feature-rhyme-rhythm",
+            "title": "El ritmo",
+            "description": "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema. Parcial (50%): Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica el ritmo en el texto de caligrama y explica, con ejemplos presentes, su función para relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "Localiza y caracteriza el ritmo con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos del ritmo, pero no explica cómo contribuyen a relacionar las repeticiones sonoras y las pausas de los versos con el sentido del poema.",
+              "La explicación se apoya en una identificación incorrecta: se atribuye una coincidencia sonora inexistente o se corta una expresión cambiando su sentido.",
+              "No localiza ejemplos pertinentes ni explica la función del ritmo en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8099000000000274,
+      "automatic": {
+        "activityType": "CALLIGRAM_RECITATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_RECITATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-clarity:0",
+            "templateId": "calligram-clarity",
+            "title": "Claridad de la recitación",
+            "description": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+              "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+              "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+              "La comunicación confunde palabras o relaciones centrales del poema.",
+              "No comunica un texto reconocible mediante la recitación o el apoyo acordado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un texto reconocible mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-expression:1",
+            "templateId": "calligram-expression",
+            "title": "Entonación y expresión",
+            "description": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+              "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+              "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+              "Las pausas o la expresión confunden el sentido del poema.",
+              "No comunica una relación reconocible entre expresión y mensaje."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 510
+              },
+              {
+                "levelId": "L3",
+                "text": "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 340
+              },
+              {
+                "levelId": "L2",
+                "text": "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una relación reconocible entre expresión y mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-meaning:2",
+            "templateId": "calligram-meaning",
+            "title": "Comprensión del poema",
+            "description": "Comunica el sentido global del caligrama durante la recitación.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el sentido global del caligrama durante la recitación.",
+              "La recitación comunica el sentido del poema; una relación necesita precisión.",
+              "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+              "La interpretación comunicada contradice el mensaje del poema.",
+              "No comunica un sentido reconocible del poema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el sentido global del caligrama durante la recitación.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "La recitación comunica el sentido del poema; una relación necesita precisión.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un sentido reconocible del poema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:3",
+            "templateId": "calligram-feature-literary",
+            "title": "Función de las figuras literarias presentes",
+            "description": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+              "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+              "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función; o se toma como dato literal la atribución de rasgos humanos.",
+              "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6417000000000144,
+      "automatic": {
+        "activityType": "CALLIGRAM_RECITATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_RECITATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-clarity:0",
+            "templateId": "calligram-clarity",
+            "title": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+            "description": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+              "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+              "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+              "La comunicación confunde palabras o relaciones centrales del poema.",
+              "No comunica un texto reconocible mediante la recitación o el apoyo acordado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-expression:1",
+            "templateId": "calligram-expression",
+            "title": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+            "description": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+              "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+              "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+              "Las pausas o la expresión confunden el sentido del poema.",
+              "No comunica una relación reconocible entre expresión y mensaje."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-meaning:2",
+            "templateId": "calligram-meaning",
+            "title": "Comunica el sentido global del caligrama durante la recitación.",
+            "description": "Comunica el sentido global del caligrama durante la recitación.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el sentido global del caligrama durante la recitación.",
+              "La recitación comunica el sentido del poema; una relación necesita precisión.",
+              "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+              "La interpretación comunicada contradice el mensaje del poema.",
+              "No comunica un sentido reconocible del poema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:3",
+            "templateId": "calligram-feature-literary",
+            "title": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+            "description": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+              "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+              "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función; o se toma como dato literal la atribución de rasgos humanos.",
+              "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7645999999999731,
+      "automatic": {
+        "activityType": "CALLIGRAM_RECITATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_RECITATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-clarity:0",
+            "templateId": "calligram-clarity",
+            "title": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+            "description": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+              "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+              "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+              "La comunicación confunde palabras o relaciones centrales del poema.",
+              "No comunica un texto reconocible mediante la recitación o el apoyo acordado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 511
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+                "scoreUnits": 341
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un texto reconocible mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-expression:1",
+            "templateId": "calligram-expression",
+            "title": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+            "description": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+              "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+              "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+              "Las pausas o la expresión confunden el sentido del poema.",
+              "No comunica una relación reconocible entre expresión y mensaje."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+                "scoreUnits": 510
+              },
+              {
+                "levelId": "L3",
+                "text": "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+                "scoreUnits": 340
+              },
+              {
+                "levelId": "L2",
+                "text": "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+                "scoreUnits": 170
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una relación reconocible entre expresión y mensaje.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-meaning:2",
+            "templateId": "calligram-meaning",
+            "title": "Comunica el sentido global del caligrama durante la recitación.",
+            "description": "Comunica el sentido global del caligrama durante la recitación.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el sentido global del caligrama durante la recitación.",
+              "La recitación comunica el sentido del poema; una relación necesita precisión.",
+              "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+              "La interpretación comunicada contradice el mensaje del poema.",
+              "No comunica un sentido reconocible del poema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el sentido global del caligrama durante la recitación.",
+                "scoreUnits": 408
+              },
+              {
+                "levelId": "L3",
+                "text": "La recitación comunica el sentido del poema; una relación necesita precisión.",
+                "scoreUnits": 272
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+                "scoreUnits": 136
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica un sentido reconocible del poema.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:3",
+            "templateId": "calligram-feature-literary",
+            "title": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+            "description": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+              "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+              "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función; o se toma como dato literal la atribución de rasgos humanos.",
+              "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+                "scoreUnits": 306
+              },
+              {
+                "levelId": "L3",
+                "text": "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+                "scoreUnits": 204
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+                "scoreUnits": 102
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.698599999999999,
+      "automatic": {
+        "activityType": "CALLIGRAM_RECITATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_RECITATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-clarity:0",
+            "templateId": "calligram-clarity",
+            "title": "Claridad de la recitación",
+            "description": "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado. Parcial (50%): Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+            "maxScore": 5.11,
+            "maxScoreUnits": 511,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el texto de manera comprensible mediante la recitación o el apoyo acordado.",
+              "Comunica el texto de forma comprensible; una expresión necesita precisión.",
+              "Comunica fragmentos comprensibles, pero algunas partes del texto quedan confusas.",
+              "La comunicación confunde palabras o relaciones centrales del poema.",
+              "No comunica un texto reconocible mediante la recitación o el apoyo acordado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-expression:1",
+            "templateId": "calligram-expression",
+            "title": "Entonación y expresión",
+            "description": "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado. Parcial (50%): La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+            "maxScore": 5.1,
+            "maxScoreUnits": 510,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa pausas y expresión que permiten comunicar el mensaje del poema mediante la recitación o el apoyo acordado.",
+              "Las pausas y la expresión apoyan el mensaje; una relación necesita precisión.",
+              "La expresión comunica parte del mensaje, pero algunas pausas dificultan relacionar las ideas.",
+              "Las pausas o la expresión confunden el sentido del poema.",
+              "No comunica una relación reconocible entre expresión y mensaje."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-meaning:2",
+            "templateId": "calligram-meaning",
+            "title": "Comprensión del poema",
+            "description": "Comunica el sentido global del caligrama durante la recitación. Parcial (50%): Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+            "maxScore": 4.08,
+            "maxScoreUnits": 408,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica el sentido global del caligrama durante la recitación.",
+              "La recitación comunica el sentido del poema; una relación necesita precisión.",
+              "Comunica ideas aisladas, pero pierde parte del sentido global del poema.",
+              "La interpretación comunicada contradice el mensaje del poema.",
+              "No comunica un sentido reconocible del poema."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-literary:3",
+            "templateId": "calligram-feature-literary",
+            "title": "Función de las figuras literarias presentes",
+            "description": "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido. Parcial (50%): Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+            "maxScore": 3.06,
+            "maxScoreUnits": 306,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Hace perceptibles la anáfora y la personificación del caligrama dado mediante entonación, lenguaje gestual o el apoyo acordado: la anáfora permite dar énfasis mediante reiteración al inicio de versos o expresiones; la personificación permite atribuir rasgos humanos a lo no humano para construir el sentido.",
+              "La expresión permite percibir la función de las figuras presentes; un énfasis necesita vincularse con el sentido.",
+              "Comunica las palabras, pero la expresión no permite percibir el efecto de algunas figuras presentes.",
+              "El sentido se altera: se confunde la reiteración inicial con una repetición sin esa función; o se toma como dato literal la atribución de rasgos humanos.",
+              "No permite percibir las figuras presentes mediante los recursos o el apoyo acordados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8020999999999958,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-plan-purpose:0",
+            "templateId": "calligram-plan-purpose",
+            "title": "Intención, tema e imagen previstos",
+            "description": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+              "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+              "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+              "La imagen o las palabras previstas contradicen la intención y el tema del plan.",
+              "No define una relación reconocible entre intención, tema e imagen en el plan."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No define una relación reconocible entre intención, tema e imagen en el plan.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-procedure-outline:1",
+            "templateId": "calligram-procedure-outline",
+            "title": "Esquema de distribución de palabras y versos",
+            "description": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+              "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+              "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+              "La distribución prevista contradice la figura o el mensaje elegido.",
+              "No presenta un esquema reconocible de la distribución prevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un esquema reconocible de la distribución prevista.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7525999999999726,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-plan-purpose:0",
+            "templateId": "calligram-plan-purpose",
+            "title": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+            "description": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+              "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+              "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+              "La imagen o las palabras previstas contradicen la intención y el tema del plan.",
+              "No define una relación reconocible entre intención, tema e imagen en el plan."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-procedure-outline:1",
+            "templateId": "calligram-procedure-outline",
+            "title": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+            "description": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+              "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+              "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+              "La distribución prevista contradice la figura o el mensaje elegido.",
+              "No presenta un esquema reconocible de la distribución prevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7420000000000186,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-plan-purpose:0",
+            "templateId": "calligram-plan-purpose",
+            "title": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+            "description": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+              "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+              "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+              "La imagen o las palabras previstas contradicen la intención y el tema del plan.",
+              "No define una relación reconocible entre intención, tema e imagen en el plan."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No define una relación reconocible entre intención, tema e imagen en el plan.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-procedure-outline:1",
+            "templateId": "calligram-procedure-outline",
+            "title": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+            "description": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+              "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+              "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+              "La distribución prevista contradice la figura o el mensaje elegido.",
+              "No presenta un esquema reconocible de la distribución prevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un esquema reconocible de la distribución prevista.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7702999999999633,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-plan-purpose:0",
+            "templateId": "calligram-plan-purpose",
+            "title": "Intención, tema e imagen previstos",
+            "description": "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama. Parcial (50%): Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define en el plan intención, tema, imagen y emoción representada, que puede ser ficticia, relacionándolos con el mensaje previsto del caligrama.",
+              "Los componentes previstos se relacionan; un vínculo con la intención necesita precisión.",
+              "Nombra componentes, pero no establece cómo se relacionarán con el mensaje previsto.",
+              "La imagen o las palabras previstas contradicen la intención y el tema del plan.",
+              "No define una relación reconocible entre intención, tema e imagen en el plan."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-procedure-outline:1",
+            "templateId": "calligram-procedure-outline",
+            "title": "Esquema de distribución de palabras y versos",
+            "description": "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado. Parcial (50%): Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema que relaciona la distribución prevista de palabras y versos con la figura y el mensaje, sin exigir un poema ya terminado.",
+              "El esquema relaciona palabras y figura; una disposición prevista necesita aclaración.",
+              "Enumera palabras o versos previstos, pero no organiza su relación con la figura.",
+              "La distribución prevista contradice la figura o el mensaje elegido.",
+              "No presenta un esquema reconocible de la distribución prevista."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7889000000000124,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-typography:0",
+            "templateId": "calligram-feature-typography",
+            "title": "Legibilidad de la escritura conservada",
+            "description": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+              "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+              "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+              "La corrección cambia palabras, versos o disposición y altera la figura que debía conservarse.",
+              "No presenta una mejora reconocible de la legibilidad de la escritura solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una mejora reconocible de la legibilidad de la escritura solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6910000000000309,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-typography:0",
+            "templateId": "calligram-feature-typography",
+            "title": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+            "description": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+              "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+              "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+              "La corrección cambia palabras, versos o disposición y altera la figura que debía conservarse.",
+              "No presenta una mejora reconocible de la legibilidad de la escritura solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6852999999999838,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-typography:0",
+            "templateId": "calligram-feature-typography",
+            "title": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+            "description": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+              "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+              "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+              "La corrección cambia palabras, versos o disposición y altera la figura que debía conservarse.",
+              "No presenta una mejora reconocible de la legibilidad de la escritura solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una mejora reconocible de la legibilidad de la escritura solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6662999999999784,
+      "automatic": {
+        "activityType": "CALLIGRAM_CREATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.163",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "CALLIGRAM_CREATION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.163:fallback:calligram-feature-typography:0",
+            "templateId": "calligram-feature-typography",
+            "title": "Legibilidad de la escritura conservada",
+            "description": "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado. Parcial (50%): Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la tipografía para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.",
+              "La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.",
+              "Mejora parte de la escritura, pero varias palabras siguen sin poder leerse.",
+              "La corrección cambia palabras, versos o disposición y altera la figura que debía conservarse.",
+              "No presenta una mejora reconocible de la legibilidad de la escritura solicitada."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-caligrama",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

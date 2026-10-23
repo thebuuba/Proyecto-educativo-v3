@@ -8,6 +8,7 @@ import {refineFirstGradePosterRequirements} from './secondary-poster-grade-one-r
 import {firstGradeDetectiveCriteria as detective} from './secondary-detective-grade-one'
 import {refineFirstGradeDetectiveRequirements} from './secondary-detective-grade-one-requirements'
 import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-grade-one'
+import {refineFirstGradeCalligramRequirements} from './secondary-calligram-grade-one-requirements'
 import {normalizedTask} from './evaluation-task-text'
 import {affirmativeLanguageTask, explicitWritingProcess, languageFeatureCriterion, requestedLanguageFeatures, type LanguageFeature} from './language-feature-criteria'
 import {firstGradeLanguageProcedureFeatures,firstGradeLanguageFeatureTerms,languageReadingProcedures,languageWritingProcedures,languagePlaceClassification} from './language-procedure-criteria'
@@ -108,7 +109,7 @@ const comparisonFocus: Record<string,LanguageFeature[]>={
 
 function complete(genre:string,activity:string,description:string,base:ContextualTopicCriterion[]) {
   const scope=({noticia:'news','guía turística':'guide','informe de lectura':'report',afiche:'poster','cuento policíaco':'detective',caligrama:'calligram'} as Record<string,string>)[genre]
-  const task=['guía turística','informe de lectura','afiche','cuento policíaco'].includes(genre)?affirmativeLanguageTask(description):normalizedTask(description)
+  const task=['guía turística','informe de lectura','afiche','cuento policíaco','caligrama'].includes(genre)?affirmativeLanguageTask(description):normalizedTask(description)
   const compare=activity.includes('COMPARISON')
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
@@ -121,6 +122,7 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     ...(genre==='cuento policíaco'&&feature.id==='actants'?{match:'actan'}:{}),
     ...(genre==='cuento policíaco'&&feature.id==='dialogue'?{match:'dialogo|descri[bp]'}:{}),
     ...(genre==='cuento policíaco'&&feature.id==='literary'?{match:feature.match+'|comparacion literaria|figura de comparacion'}:{}),
+    ...(genre==='caligrama'&&feature.id==='literary'?{match:feature.match+'|comparacion'}:{}),
     ...(genre==='guía turística'&&feature.id==='indicative'&&/presente/.test(task)?{function:'expresar las características actuales o habituales de los lugares',error:'el tiempo verbal cambia una característica actual o habitual del lugar'}:{}),
     ...(genre==='guía turística'&&feature.id==='noun-group'&&/directo/.test(task)?{name:'el núcleo y los modificadores directo e indirecto del sintagma nominal'}:{}),
     ...(genre==='guía turística'&&feature.id==='signs'&&/oraciones interrogativas.*exclamativas/.test(task)?{
@@ -254,7 +256,8 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     :genre==='guía turística'?refineFirstGradeGuideRequirements(activity,description,rows)
       :genre==='informe de lectura'?refineFirstGradeReadingReportRequirements(activity,description,rows)
         :genre==='afiche'?refineFirstGradePosterRequirements(activity,description,rows)
-          :genre==='cuento policíaco'?refineFirstGradeDetectiveRequirements(activity,description,rows):rows
+          :genre==='cuento policíaco'?refineFirstGradeDetectiveRequirements(activity,description,rows)
+            :genre==='caligrama'?refineFirstGradeCalligramRequirements(activity,description,rows):rows
 }
 
 export const completeFirstGradeNewsCriteria=(activity:string,description:string)=>complete('noticia',activity,description,news(activity==='RESEARCH'?'NEWS_ANALYSIS':activity,description))
@@ -262,4 +265,4 @@ export const completeFirstGradeGuideCriteria=(activity:string,description:string
 export const completeFirstGradeReadingReportCriteria=(activity:string,description:string)=>complete('informe de lectura',activity,description,report(activity,description))
 export const completeFirstGradePosterCriteria=(activity:string,title:string,description:string)=>complete('afiche',activity,description,poster(activity==='REPORT'?'POSTER_ANALYSIS':activity,title,affirmativeLanguageTask(description)))
 export const completeFirstGradeDetectiveCriteria=(activity:string,description:string)=>complete('cuento policíaco',activity,description,detective(activity==='REPORT'?'DETECTIVE_STORY_ANALYSIS':activity,affirmativeLanguageTask(description)))
-export const completeFirstGradeCalligramCriteria=(activity:string,description:string)=>complete('caligrama',activity,description,calligram(activity==='REPORT'?'CALLIGRAM_ANALYSIS':activity,description))
+export const completeFirstGradeCalligramCriteria=(activity:string,description:string)=>complete('caligrama',activity,description,calligram(activity==='REPORT'?'CALLIGRAM_ANALYSIS':activity,affirmativeLanguageTask(description)))

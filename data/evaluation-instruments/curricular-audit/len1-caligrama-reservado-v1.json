@@ -1,0 +1,146 @@
+{
+  "version": "curricular-len1-caligrama-reservado-v1",
+  "provenance": "SINTÉTICO reservado del mismo autor, no ciego ni independiente. Fijado tras leer las56salidas intermedias163 y antes de generar estas32salidas. Contrasta límites/medios y figuras realmente presentes; no sustituye revisión externa.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      73,
+      74
+    ],
+    "nextPageChecked": 75,
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-CAL-R01",
+      "family": "Contraste reservado interno",
+      "title": "Solo la intención en el audio",
+      "description": "Escuchen la grabación del caligrama y expliquen únicamente la intención comunicativa del autor apoyándose en palabras escuchadas. No analicen sentimientos, figura, tipografía ni recursos literarios.",
+      "expected": {
+        "explicit": [
+          "Intención comunicativa sustentada en palabras del audio"
+        ],
+        "excluded": [
+          "Sentimientos como exigencia separada",
+          "Figura, letras, cinco figuras o paráfrasis global no pedidas"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "family": "Contraste reservado interno",
+      "title": "Una sugerencia sobre palabras",
+      "description": "Revisen el borrador del caligrama entregado según las sugerencias de un compañero. Ajusten únicamente el vocabulario para aclarar el tema y conserven la imagen y la intención dadas. No añadan figuras literarias ni rima y no tienen que solicitar sugerencias de un docente ni representar otra emoción.",
+      "expected": {
+        "explicit": [
+          "Vocabulario revisado según un compañero y cambios comprobables",
+          "Imagen/intención dadas conservadas"
+        ],
+        "excluded": [
+          "Docente adicional",
+          "Emoción ficticia obligatoria",
+          "Figuras nuevas, rima o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "family": "Contraste reservado interno",
+      "title": "La revista escolar",
+      "description": "Preparen la edición final del caligrama ya revisado solo para la revista escolar. Conserven las palabras, los versos y la imagen y aseguren su legibilidad. No hagan un mural ni un libro artesanal, ni reciten.",
+      "expected": {
+        "explicit": [
+          "Edición legible para revista escolar, contenido conservado"
+        ],
+        "excluded": [
+          "Mural o libro artesanal",
+          "Creación desde cero, recitación o revisión de borradores"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "family": "Contraste reservado interno",
+      "title": "Dónde empieza la repetición",
+      "description": "Analicen únicamente la anáfora del caligrama entregado, con un ejemplo presente y su función de repetir al inicio de versos. No analicen metáforas, epítetos, comparaciones ni personificaciones.",
+      "expected": {
+        "explicit": [
+          "Anáfora: repetición inicial y efecto con ejemplo real"
+        ],
+        "excluded": [
+          "Otras figuras",
+          "Nuevo poema, análisis adicional de tema o estructura"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "family": "Contraste reservado interno",
+      "title": "El ritmo sin rima impuesta",
+      "description": "Lean el caligrama en verso libre entregado y analicen únicamente el ritmo de sus versos: expliquen cómo las pausas y los acentos ayudan a construir el sentido. No analicen ni añadan rima y no reciten.",
+      "expected": {
+        "explicit": [
+          "Análisis solo del ritmo: pausas y acentos vinculados con el sentido"
+        ],
+        "excluded": [
+          "Análisis de rima",
+          "Evaluar la creación de verso libre solo porque identifica al texto dado",
+          "Recitación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "family": "Contraste reservado interno",
+      "title": "Decir las figuras que sí están",
+      "description": "Reciten los versos del caligrama entregado haciendo perceptibles la anáfora y la personificación que estén presentes, mediante pausas o el apoyo acordado. No añadan figuras ausentes y no se exige rima ni memorizar.",
+      "expected": {
+        "explicit": [
+          "Recitación con apoyo posible",
+          "Solo anáfora/personificación que estén presentes, sin inventarlas"
+        ],
+        "excluded": [
+          "Rima, memorización, otras figuras o nueva creación",
+          "Exigir figuras ausentes"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "family": "Contraste reservado interno",
+      "title": "Solo la distribución prevista",
+      "description": "Planifiquen únicamente la distribución de palabras y versos de un caligrama cuya intención, tema e imagen ya vienen dados en la ficha. Hagan un esquema que permita relacionar el texto con esa figura conservando esos datos. No elijan otro tema, imagen o emoción y no escriban el poema final.",
+      "expected": {
+        "explicit": [
+          "Esquema de distribución con intención/tema/imagen dados conservados"
+        ],
+        "excluded": [
+          "Elegir otra emoción o definir de nuevo intención/tema/imagen",
+          "Poema terminado, rima o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "family": "Contraste reservado interno",
+      "title": "Solo la letra digital",
+      "description": "Corrijan únicamente la tipografía del caligrama digital entregado para que las palabras se lean dentro de la figura. Conserven exactamente texto, versos y disposición. No cambien a escritura a mano ni añadan rima o figuras literarias.",
+      "expected": {
+        "explicit": [
+          "Tipografía legible, texto/versos/disposición conservados"
+        ],
+        "excluded": [
+          "Caligrafía manuscrita",
+          "Nuevas figuras literarias, rima, tema o publicación"
+        ]
+      }
+    }
+  ]
+}

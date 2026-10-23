@@ -10,6 +10,7 @@ import {evaluationCatalogV158} from './catalog-v158'
 import {evaluationCatalogV159} from './catalog-v159'
 import {evaluationCatalogV160} from './catalog-v160'
 import {evaluationCatalogV161} from './catalog-v161'
+import {evaluationCatalogV162} from './catalog-v162'
 import {evaluationCatalogV149} from './catalog-v149'
 import {evaluationCatalogV148} from './catalog-v148'
 import {evaluationCatalogV147} from './catalog-v147'
@@ -193,7 +194,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.162',
+  version: 'evaluation-2026.163',
   technicalModules,
   optativeScienceModules,
   optativeMathModules,
@@ -298,6 +299,7 @@ export type EvaluationCatalog = typeof evaluationCatalogV1 & { technicalModules?
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
   if(version===evaluationCatalogV158.version)return evaluationCatalogV158
   if(version===evaluationCatalogV159.version)return evaluationCatalogV159
+  if(version===evaluationCatalogV162.version)return evaluationCatalogV162
   if(version===evaluationCatalogV161.version)return evaluationCatalogV161
   if(version===evaluationCatalogV160.version)return evaluationCatalogV160
   if(version===evaluationCatalogV157.version)return evaluationCatalogV157

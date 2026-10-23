@@ -4221,10 +4221,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-01",
+            "LEN1-CAL-03",
+            "LEN1-CAL-04"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-01",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-03",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-04",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
@@ -4241,10 +4280,82 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-10",
+            "LEN1-CAL-14",
+            "LEN1-CAL-R08"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-typography",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-10",
+              "criterionId": "calligram-feature-typography",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-14",
+              "criterionId": "calligram-feature-typography",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-R08",
+              "criterionId": "calligram-feature-typography",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Tipografía digital y caligrafía manuscrita según medio, sin doble entrega",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-10"
+              ]
+            },
+            {
+              "name": "Solo caligrafía con texto/versos/disposición exactos",
+              "cases": [
+                "LEN1-CAL-14"
+              ]
+            },
+            {
+              "name": "Solo tipografía con texto/versos/disposición exactos",
+              "cases": [
+                "LEN1-CAL-R08"
+              ]
+            }
+          ]
         },
         {
           "id": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
@@ -4261,10 +4372,73 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-01",
+            "LEN1-CAL-02",
+            "LEN1-CAL-03",
+            "LEN1-CAL-04",
+            "LEN1-CAL-09"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-01",
+              "criterionId": "calligram-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-03",
+              "criterionId": "calligram-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-04",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-09",
+              "criterionId": "calligram-procedure-outline",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "6d17c841-b0de-594e-bb70-3501e6519b11",
@@ -4281,10 +4455,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-01",
+            "LEN1-CAL-02",
+            "LEN1-CAL-03",
+            "LEN1-CAL-09"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-01",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-expression",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-03",
+              "criterionId": "calligram-relation",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-09",
+              "criterionId": "calligram-plan-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
@@ -4301,10 +4526,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-12"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-free-verse",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-12",
+              "criterionId": "calligram-feature-free-verse",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
@@ -4321,10 +4573,140 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-03",
+            "LEN1-CAL-04",
+            "LEN1-CAL-06",
+            "LEN1-CAL-08"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-03",
+              "criterionId": "calligram-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-04",
+              "criterionId": "calligram-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-06",
+              "criterionId": "calligram-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-08",
+              "criterionId": "calligram-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Epíteto",
+              "evaluableFunction": "Cualidad expresivamente destacada",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-03",
+                "LEN1-CAL-04",
+                "LEN1-CAL-06",
+                "LEN1-CAL-08"
+              ],
+              "criterionId": "calligram-feature-literary",
+              "limit": "Receptivas y recitación: solo figuras presentes, sin inventar ejemplos ausentes; producción: usos solicitados en poema, no explicación adicional"
+            },
+            {
+              "name": "Anáfora",
+              "evaluableFunction": "Reiteración inicial para énfasis",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-03",
+                "LEN1-CAL-04",
+                "LEN1-CAL-06",
+                "LEN1-CAL-08"
+              ],
+              "criterionId": "calligram-feature-literary",
+              "limit": "Receptivas y recitación: solo figuras presentes, sin inventar ejemplos ausentes; producción: usos solicitados en poema, no explicación adicional"
+            },
+            {
+              "name": "Comparación",
+              "evaluableFunction": "Semejanza explícita entre referentes",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-03",
+                "LEN1-CAL-04",
+                "LEN1-CAL-06",
+                "LEN1-CAL-08"
+              ],
+              "criterionId": "calligram-feature-literary",
+              "limit": "Receptivas y recitación: solo figuras presentes, sin inventar ejemplos ausentes; producción: usos solicitados en poema, no explicación adicional"
+            },
+            {
+              "name": "Personificación",
+              "evaluableFunction": "Rasgos humanos atribuidos a lo no humano",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-03",
+                "LEN1-CAL-04",
+                "LEN1-CAL-06",
+                "LEN1-CAL-08"
+              ],
+              "criterionId": "calligram-feature-literary",
+              "limit": "Receptivas y recitación: solo figuras presentes, sin inventar ejemplos ausentes; producción: usos solicitados en poema, no explicación adicional"
+            },
+            {
+              "name": "Metáfora",
+              "evaluableFunction": "Asociación figurada entre referentes",
+              "cases": [
+                "LEN1-CAL-02",
+                "LEN1-CAL-03",
+                "LEN1-CAL-04",
+                "LEN1-CAL-06",
+                "LEN1-CAL-08"
+              ],
+              "criterionId": "calligram-feature-literary",
+              "limit": "Receptivas y recitación: solo figuras presentes, sin inventar ejemplos ausentes; producción: usos solicitados en poema, no explicación adicional"
+            }
+          ]
         },
         {
           "id": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
@@ -4341,10 +4723,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-07"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-07",
+              "criterionId": "calligram-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "1bd75c21-a659-5124-903b-02925b284b13",
@@ -4361,10 +4770,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-07",
+            "LEN1-CAL-13"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-07",
+              "criterionId": "calligram-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-13",
+              "criterionId": "calligram-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         },
         {
           "id": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
@@ -4381,14 +4829,325 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CAL-02",
+            "LEN1-CAL-07",
+            "LEN1-CAL-13"
+          ],
+          "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+          "evidence": [
+            {
+              "caseId": "LEN1-CAL-02",
+              "criterionId": "calligram-feature-description",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-07",
+              "criterionId": "calligram-feature-description",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            },
+            {
+              "caseId": "LEN1-CAL-13",
+              "criterionId": "calligram-feature-description",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json"
+            }
+          ]
         }
       ],
-      "status": "PENDIENTE_AUDITORIA",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+      "status": "REVISADO_LOCAL_88_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "nextAction": "HTTP/DB163 y visual personal; contraste de indicadores generales pendiente",
+      "reviewArtifact": "auditoria-curricular-len1-caligrama-163-lectura88.json",
+      "curricularComponentAudit": [
+        {
+          "sourceId": "385e0137-005c-5738-a4fb-123f43df0f51",
+          "components": [
+            [
+              "Escucha con láminas y relación texto/figura",
+              [
+                "04",
+                "calligram-relation"
+              ]
+            ],
+            [
+              "Intención comunicativa y sentimientos expresados del autor",
+              [
+                "04",
+                "calligram-intention"
+              ],
+              [
+                "05",
+                "calligram-intention"
+              ],
+              [
+                "R01",
+                "calligram-intention"
+              ]
+            ],
+            [
+              "Rima y cinco figuras presentes para sentido explícito/implícito",
+              [
+                "04",
+                "calligram-feature-rhyme-rhythm"
+              ],
+              [
+                "04",
+                "calligram-feature-literary"
+              ],
+              [
+                "04",
+                "calligram-inference"
+              ]
+            ]
+          ],
+          "sourceLimit": "Procedencia española/latinoamericana/caribeña/dominicana y edad/intereses guían la selección docente de insumos en04; no cuatro temas biográficos ni memorizar autores. Audio sin lámina no evalúa imagen/tipografía/caligrafía."
+        },
+        {
+          "sourceId": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+          "components": [
+            [
+              "Paráfrasis oral global y vocabulario apropiado",
+              [
+                "04",
+                "calligram-procedure-paraphrase"
+              ],
+              [
+                "05",
+                "calligram-procedure-paraphrase"
+              ]
+            ]
+          ]
+        },
+        {
+          "sourceId": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+          "components": [
+            [
+              "Selección de autores según intención que quiere comunicar",
+              [
+                "06",
+                "calligram-selection"
+              ]
+            ],
+            [
+              "Verbalización de versos, rima y cinco figuras presentes",
+              [
+                "06",
+                "calligram-feature-literary"
+              ],
+              [
+                "06",
+                "calligram-feature-rhyme-rhythm"
+              ]
+            ],
+            [
+              "Entonación/gestos o apoyo acordado según consigna",
+              [
+                "06",
+                "calligram-expression"
+              ],
+              [
+                "R06",
+                "calligram-feature-literary"
+              ]
+            ],
+            [
+              "Lectura: intención, sentimientos y estructura texto/figura",
+              [
+                "03",
+                "calligram-intention"
+              ],
+              [
+                "03",
+                "calligram-relation"
+              ]
+            ],
+            [
+              "Lectura: rima, ritmo y cinco figuras para inferencia",
+              [
+                "03",
+                "calligram-feature-rhyme-rhythm"
+              ],
+              [
+                "03",
+                "calligram-feature-literary"
+              ],
+              [
+                "03",
+                "calligram-inference"
+              ],
+              [
+                "R05",
+                "calligram-feature-rhyme-rhythm"
+              ]
+            ]
+          ]
+        },
+        {
+          "sourceId": "6386112a-44b3-5b36-9416-1f31d2540550",
+          "components": [
+            [
+              "Intención, tema, imagen y emoción representada; vocabulario apropiado",
+              [
+                "02",
+                "calligram-expression"
+              ],
+              [
+                "02",
+                "calligram-feature-nouns"
+              ],
+              [
+                "02",
+                "calligram-feature-adjectives"
+              ],
+              [
+                "09",
+                "calligram-plan-purpose"
+              ]
+            ],
+            [
+              "Cinco figuras por sus funciones en producción",
+              [
+                "02",
+                "calligram-feature-literary"
+              ]
+            ],
+            [
+              "Borradores según estructura/verso libre; rima solo donde pedida",
+              [
+                "02",
+                "calligram-relation"
+              ],
+              [
+                "02",
+                "calligram-feature-free-verse"
+              ],
+              [
+                "13",
+                "calligram-feature-rhyme-rhythm"
+              ]
+            ],
+            [
+              "Revisión y corrección con docente/pares; cambios en vocabulario/figuras/imagen",
+              [
+                "02",
+                "calligram-process-revision"
+              ],
+              [
+                "12",
+                "calligram-process-revision"
+              ]
+            ],
+            [
+              "Edición/publicación: mural O libro artesanal O revista escolar",
+              [
+                "02",
+                "calligram-edition"
+              ],
+              [
+                "11",
+                "calligram-edition"
+              ],
+              [
+                "R03",
+                "calligram-edition"
+              ]
+            ],
+            [
+              "Límites: plan solo, revisión de vocabulario con un par y escritura conservada",
+              [
+                "R07",
+                "calligram-procedure-outline"
+              ],
+              [
+                "R02",
+                "calligram-process-revision"
+              ],
+              [
+                "14",
+                "calligram-feature-typography"
+              ],
+              [
+                "R08",
+                "calligram-feature-typography"
+              ]
+            ]
+          ]
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+          "name": "Respeto y empatía por opiniones/sentimientos de otros",
+          "evidence": [
+            "LEN1-CAL-02/calligram-process-revision",
+            "LEN1-CAL-12/calligram-process-revision"
+          ],
+          "limit": "Consideración de sugerencias es observable; no equivale a medir empatía interna ni demuestra por sí sola toda la actitud. Criterios de convivencia transversal pendientes del contraste final."
+        },
+        {
+          "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
+          "name": "Expresión verbal y corporal para transmitir emociones",
+          "evidence": [
+            "LEN1-CAL-06/calligram-expression"
+          ],
+          "limit": "Recursos comunicativos o apoyos acordados, no capacidad física ni afectos internos"
+        },
+        {
+          "sourceId": "82fbde4d-eceb-526b-8765-1806c38549c7",
+          "name": "Expresión escrita para transmitir emociones",
+          "evidence": [
+            "LEN1-CAL-02/calligram-expression",
+            "LEN1-CAL-09/calligram-plan-purpose"
+          ],
+          "limit": "Emoción representada puede ser ficticia; no exigir intimidad ni emoción real"
+        },
+        {
+          "sourceId": "ee44c1d4-16db-5b9d-a473-d2d596261269",
+          "name": "Sensibilidad al declamar caligramas",
+          "evidence": [
+            "LEN1-CAL-06/calligram-expression",
+            "LEN1-CAL-R06/calligram-feature-literary"
+          ],
+          "limit": "Se evalúa comunicación del sentido mediante recursos/apoyos; no sensibilidad como rasgo íntimo"
+        },
+        {
+          "sourceId": "dab4acf7-3e7e-51ec-a792-9715e32330a8",
+          "name": "Disfrute al leer caligramas",
+          "evidence": [
+            "LEN1-CAL-03/calligram-inference",
+            "LEN1-CAL-08/calligram-feature-literary"
+          ],
+          "limit": "Actividades ofrecen lectura e interpretación; no certifican disfrute interno ni se puntúa sonrisa o entusiasmo"
+        },
+        {
+          "sourceId": "97c70a67-2f5a-56bb-9853-f83d23e9371d",
+          "name": "Disfrute al producir caligramas",
+          "evidence": [
+            "LEN1-CAL-02/calligram-expression",
+            "LEN1-CAL-13/calligram-relation"
+          ],
+          "limit": "Oportunidad de creación y expresión observable; no calificación del disfrute interno"
+        }
+      ]
     }
   ],
   "procedures": [
@@ -5033,7 +5792,51 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CALIGRAMA163",
+      "auditEvidence": {
+        "topic": "caligrama",
+        "manifest": "auditoria-curricular-len1-caligrama-163-lectura88.json",
+        "components": [
+          [
+            "Escucha con láminas y relación texto/figura",
+            [
+              "04",
+              "calligram-relation"
+            ]
+          ],
+          [
+            "Intención comunicativa y sentimientos expresados del autor",
+            [
+              "04",
+              "calligram-intention"
+            ],
+            [
+              "05",
+              "calligram-intention"
+            ],
+            [
+              "R01",
+              "calligram-intention"
+            ]
+          ],
+          [
+            "Rima y cinco figuras presentes para sentido explícito/implícito",
+            [
+              "04",
+              "calligram-feature-rhyme-rhythm"
+            ],
+            [
+              "04",
+              "calligram-feature-literary"
+            ],
+            [
+              "04",
+              "calligram-inference"
+            ]
+          ]
+        ],
+        "sourceLimit": "Procedencia española/latinoamericana/caribeña/dominicana y edad/intereses guían la selección docente de insumos en04; no cuatro temas biográficos ni memorizar autores. Audio sin lámina no evalúa imagen/tipografía/caligrafía."
+      }
     },
     {
       "id": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
@@ -5051,7 +5854,24 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CALIGRAMA163",
+      "auditEvidence": {
+        "topic": "caligrama",
+        "manifest": "auditoria-curricular-len1-caligrama-163-lectura88.json",
+        "components": [
+          [
+            "Paráfrasis oral global y vocabulario apropiado",
+            [
+              "04",
+              "calligram-procedure-paraphrase"
+            ],
+            [
+              "05",
+              "calligram-procedure-paraphrase"
+            ]
+          ]
+        ]
+      }
     },
     {
       "id": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
@@ -5069,7 +5889,72 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CALIGRAMA163",
+      "auditEvidence": {
+        "topic": "caligrama",
+        "manifest": "auditoria-curricular-len1-caligrama-163-lectura88.json",
+        "components": [
+          [
+            "Selección de autores según intención que quiere comunicar",
+            [
+              "06",
+              "calligram-selection"
+            ]
+          ],
+          [
+            "Verbalización de versos, rima y cinco figuras presentes",
+            [
+              "06",
+              "calligram-feature-literary"
+            ],
+            [
+              "06",
+              "calligram-feature-rhyme-rhythm"
+            ]
+          ],
+          [
+            "Entonación/gestos o apoyo acordado según consigna",
+            [
+              "06",
+              "calligram-expression"
+            ],
+            [
+              "R06",
+              "calligram-feature-literary"
+            ]
+          ],
+          [
+            "Lectura: intención, sentimientos y estructura texto/figura",
+            [
+              "03",
+              "calligram-intention"
+            ],
+            [
+              "03",
+              "calligram-relation"
+            ]
+          ],
+          [
+            "Lectura: rima, ritmo y cinco figuras para inferencia",
+            [
+              "03",
+              "calligram-feature-rhyme-rhythm"
+            ],
+            [
+              "03",
+              "calligram-feature-literary"
+            ],
+            [
+              "03",
+              "calligram-inference"
+            ],
+            [
+              "R05",
+              "calligram-feature-rhyme-rhythm"
+            ]
+          ]
+        ]
+      }
     },
     {
       "id": "6386112a-44b3-5b36-9416-1f31d2540550",
@@ -5087,7 +5972,99 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CALIGRAMA163",
+      "auditEvidence": {
+        "topic": "caligrama",
+        "manifest": "auditoria-curricular-len1-caligrama-163-lectura88.json",
+        "components": [
+          [
+            "Intención, tema, imagen y emoción representada; vocabulario apropiado",
+            [
+              "02",
+              "calligram-expression"
+            ],
+            [
+              "02",
+              "calligram-feature-nouns"
+            ],
+            [
+              "02",
+              "calligram-feature-adjectives"
+            ],
+            [
+              "09",
+              "calligram-plan-purpose"
+            ]
+          ],
+          [
+            "Cinco figuras por sus funciones en producción",
+            [
+              "02",
+              "calligram-feature-literary"
+            ]
+          ],
+          [
+            "Borradores según estructura/verso libre; rima solo donde pedida",
+            [
+              "02",
+              "calligram-relation"
+            ],
+            [
+              "02",
+              "calligram-feature-free-verse"
+            ],
+            [
+              "13",
+              "calligram-feature-rhyme-rhythm"
+            ]
+          ],
+          [
+            "Revisión y corrección con docente/pares; cambios en vocabulario/figuras/imagen",
+            [
+              "02",
+              "calligram-process-revision"
+            ],
+            [
+              "12",
+              "calligram-process-revision"
+            ]
+          ],
+          [
+            "Edición/publicación: mural O libro artesanal O revista escolar",
+            [
+              "02",
+              "calligram-edition"
+            ],
+            [
+              "11",
+              "calligram-edition"
+            ],
+            [
+              "R03",
+              "calligram-edition"
+            ]
+          ],
+          [
+            "Límites: plan solo, revisión de vocabulario con un par y escritura conservada",
+            [
+              "R07",
+              "calligram-procedure-outline"
+            ],
+            [
+              "R02",
+              "calligram-process-revision"
+            ],
+            [
+              "14",
+              "calligram-feature-typography"
+            ],
+            [
+              "R08",
+              "calligram-feature-typography"
+            ]
+          ]
+        ]
+      }
     },
     {
       "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
@@ -5629,7 +6606,7 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
       "auditEvidence": {
         "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
         "name": "Respeto y empatía por sentimientos/opiniones de otros",
@@ -5638,6 +6615,15 @@
           "LEN1-CUE-10/detective-process-revision"
         ],
         "limit": "Se observan expresiones respetuosas e inclusivas y consideración de sugerencias, sin calificar empatía interna ni exigir acuerdo con opiniones"
+      },
+      "calligramAuditEvidence": {
+        "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+        "name": "Respeto y empatía por opiniones/sentimientos de otros",
+        "evidence": [
+          "LEN1-CAL-02/calligram-process-revision",
+          "LEN1-CAL-12/calligram-process-revision"
+        ],
+        "limit": "Consideración de sugerencias es observable; no equivale a medir empatía interna ni demuestra por sí sola toda la actitud. Criterios de convivencia transversal pendientes del contraste final."
       }
     },
     {
@@ -5656,7 +6642,7 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
       "auditEvidence": {
         "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
         "name": "Expresión verbal y corporal para transmitir emociones",
@@ -5665,6 +6651,14 @@
           "LEN1-CUE-05/detective-feature-literary"
         ],
         "limit": "Recursos comunicativos o apoyos acordados; no capacidad física, afectos internos ni emoción que sienta el evaluador"
+      },
+      "calligramAuditEvidence": {
+        "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
+        "name": "Expresión verbal y corporal para transmitir emociones",
+        "evidence": [
+          "LEN1-CAL-06/calligram-expression"
+        ],
+        "limit": "Recursos comunicativos o apoyos acordados, no capacidad física ni afectos internos"
       }
     },
     {
@@ -5683,8 +6677,17 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
-      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención",
+      "calligramAuditEvidence": {
+        "sourceId": "ee44c1d4-16db-5b9d-a473-d2d596261269",
+        "name": "Sensibilidad al declamar caligramas",
+        "evidence": [
+          "LEN1-CAL-06/calligram-expression",
+          "LEN1-CAL-R06/calligram-feature-literary"
+        ],
+        "limit": "Se evalúa comunicación del sentido mediante recursos/apoyos; no sensibilidad como rasgo íntimo"
+      }
     },
     {
       "id": "dab4acf7-3e7e-51ec-a792-9715e32330a8",
@@ -5702,8 +6705,17 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
-      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención",
+      "calligramAuditEvidence": {
+        "sourceId": "dab4acf7-3e7e-51ec-a792-9715e32330a8",
+        "name": "Disfrute al leer caligramas",
+        "evidence": [
+          "LEN1-CAL-03/calligram-inference",
+          "LEN1-CAL-08/calligram-feature-literary"
+        ],
+        "limit": "Actividades ofrecen lectura e interpretación; no certifican disfrute interno ni se puntúa sonrisa o entusiasmo"
+      }
     },
     {
       "id": "97c70a67-2f5a-56bb-9853-f83d23e9371d",
@@ -5721,8 +6733,17 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
-      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención",
+      "calligramAuditEvidence": {
+        "sourceId": "97c70a67-2f5a-56bb-9853-f83d23e9371d",
+        "name": "Disfrute al producir caligramas",
+        "evidence": [
+          "LEN1-CAL-02/calligram-expression",
+          "LEN1-CAL-13/calligram-relation"
+        ],
+        "limit": "Oportunidad de creación y expresión observable; no calificación del disfrute interno"
+      }
     },
     {
       "id": "82fbde4d-eceb-526b-8765-1806c38549c7",
@@ -5740,7 +6761,7 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "status": "TRATAMIENTO_OBSERVABLE_CALIGRAMA_SIN_CERTIFICAR_ESTADO_INTERNO",
       "auditEvidence": {
         "sourceId": "82fbde4d-eceb-526b-8765-1806c38549c7",
         "name": "Expresión escrita como medio para transmitir emociones",
@@ -5749,6 +6770,15 @@
           "LEN1-CUE-02/detective-feature-dialogue"
         ],
         "limit": "El uso expresivo se observa en el relato; no valorar emoción sentida ni gusto personal. Literal general en columna73, no se declara exclusivo del cuento"
+      },
+      "calligramAuditEvidence": {
+        "sourceId": "82fbde4d-eceb-526b-8765-1806c38549c7",
+        "name": "Expresión escrita para transmitir emociones",
+        "evidence": [
+          "LEN1-CAL-02/calligram-expression",
+          "LEN1-CAL-09/calligram-plan-purpose"
+        ],
+        "limit": "Emoción representada puede ser ficticia; no exigir intimidad ni emoción real"
       }
     }
   ],
@@ -6158,10 +7188,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Caligrama: banco previo14casos desde74 y actitudes explícitas de73, sin generar",
+    "otherTopics": "Seis géneros con98actividades/392instrumentos locales; caligrama HTTP163 pendiente; contraste final de indicadores abierto",
     "remaining": [
-      "Visual personal bloqueada por acceso; caché y registro SW no expuestos por herramientaDOM",
-      "Caligrama74; comparación completaLengua1 e indicadores; ámbitos restantes"
+      "HTTP/DB163 y15referencias personales después de cuatro muestras",
+      "Visual personal bloqueado por acceso; caché/registroSW no expuestos por herramientaDOM",
+      "Contraste totalLengua1 con competencias/indicadores75 y actitudes transversales; restantes81contextos"
     ]
   }
 }

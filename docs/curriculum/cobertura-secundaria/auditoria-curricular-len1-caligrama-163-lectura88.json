@@ -1,0 +1,637 @@
+{
+  "catalog": "evaluation-2026.163",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "reviewer": "Codex, mismo autor; revisión interna no independiente ni ciega",
+  "sourceValidation": "auditoria-curricular-len1-163-validacion392-revisada.json",
+  "sourceHashes": [
+    {
+      "path": "apps/backend/src/modules/evaluation-instruments/catalog-current.ts",
+      "sha256": "6b763742aafeeed0d4f38fecf3bc5ee079686d22add8b5037b5de32e3b334410"
+    },
+    {
+      "path": "packages/shared/src/index.ts",
+      "sha256": "d8829dbc09dd9bab46193cf0ee91992e40945ea19e8172461166c1b9cfcbfa85"
+    },
+    {
+      "path": "packages/shared/src/language-feature-criteria.ts",
+      "sha256": "eedce141c9a40f90e54ce86921e03a062d0a0010360ad5ca0fcc903bb073718b"
+    },
+    {
+      "path": "packages/shared/src/secondary-language-grade-one-complete.ts",
+      "sha256": "b35ca390a668e6d4703c3ed9f2067b34fafb0982c8970ceb27a6c33e67e4d8fb"
+    },
+    {
+      "path": "packages/shared/src/secondary-calligram-grade-one-requirements.ts",
+      "sha256": "84da94692b10747282a5ec6920a79afea2accd18a1a9066157906b734c05a257"
+    }
+  ],
+  "cases": [
+    {
+      "id": "LEN1-CAL-01",
+      "title": "Un poema con forma de lluvia",
+      "description": "Hagan un caligrama sobre la lluvia.",
+      "expectations": {
+        "explicit": [
+          "Texto poético y figura alusivos a lluvia; palabras legibles y mensaje reconocible"
+        ],
+        "excluded": [
+          "Rima, métrica, cantidad de versos, figuras literarias específicas o materiales no pedidos",
+          "Publicación, explicación oral o emociones personales obligatorias"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-02",
+      "title": "Una despedida imaginaria",
+      "description": "Creen un caligrama en verso libre para expresar una despedida imaginaria en el mural del curso. Elijan el tema y la imagen visual alusiva y establezcan la intención y la emoción que representará el poema, que pueden ser ficticias. Organicen palabras y versos en esa figura de modo legible; cuiden la tipografía si lo hacen digital o la caligrafía si lo hacen a mano. Usen sustantivos y adjetivos precisos, descripciones poéticas, epíteto, anáfora, comparación, personificación y metáfora para construir el sentido. Revisen sus borradores con sugerencias de la docente y de compañeros, ajusten vocabulario y figura a la intención y preparen la edición final para publicarla en el mural. No se exige rima, medida fija ni contar experiencias personales.",
+      "expectations": {
+        "explicit": [
+          "Intención/tema/imagen/emoción representada, sin exigir vivencia propia",
+          "Relación texto-figura legible y verso libre sin rima ni medida impuestas",
+          "Tipografía O caligrafía según medio elegido",
+          "Sustantivos/adjetivos/descripciones y cinco figuras por funciones distintas",
+          "Borradores, revisión docente/pares y edición/publicación en mural"
+        ],
+        "excluded": [
+          "Obligación de formato digital Y manuscrito",
+          "Recitar, publicar en otros medios o explicar los recursos aparte de usarlos",
+          "Puntuar la emoción sentida, gusto del evaluador o talento artístico"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-03",
+      "title": "Cómo habla la forma del poema",
+      "description": "Lean el caligrama entregado y expliquen su función y estructura: cómo las palabras forman una figura alusiva al tema. Relacionen el tema, la intención comunicativa del autor y los sentimientos expresados en el texto con esa imagen. Analicen la distribución y la legibilidad, la rima y el ritmo presentes, y el epíteto, la anáfora, la comparación, la personificación y la metáfora. Citen un ejemplo de cada figura presente y expliquen cómo ayudan a inferir un significado que no se dice literalmente. No creen otro poema ni hablen de sus emociones personales.",
+      "expectations": {
+        "explicit": [
+          "Función/estructura visual, tema/intención/sentimientos representados",
+          "Disposición y legibilidad por su función",
+          "Rima/ritmo disponibles e inferencia implícita apoyada en cinco figuras",
+          "Un ejemplo de cada figura presente y función diferente"
+        ],
+        "excluded": [
+          "Poema nuevo",
+          "Inventar una figura o rima que no esté en el texto",
+          "Confundir emoción representada con sentimiento personal del estudiante"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-04",
+      "title": "Escuchamos y miramos caligramas",
+      "description": "Escuchen los caligramas de autores españoles, latinoamericanos, caribeños y dominicanos seleccionados por la docente de acuerdo con la edad del curso. Tendrán las láminas de los poemas. Expliquen la intención del autor y los sentimientos expresados; relacionen lo escuchado con la figura alusiva de cada lámina. Identifiquen la rima y los epítetos, anáforas, comparaciones, personificaciones y metáforas presentes y usen esos indicios para comprender significados explícitos e implícitos. Hagan una paráfrasis oral del sentido global con vocabulario apropiado. No se pide memorizar biografías ni contar lo que ustedes sienten.",
+      "expectations": {
+        "explicit": [
+          "Escucha con apoyo visual explícitamente disponible",
+          "Intención/sentimientos expresados por autor y relación con lámina",
+          "Rima y cinco figuras presentes, sentido explícito/implícito",
+          "Paráfrasis oral global con vocabulario apropiado",
+          "Diversidad de procedencias corresponde a selección docente, no examen biográfico"
+        ],
+        "excluded": [
+          "Nueva creación, lectura obligatoria en voz alta, biografías o emociones íntimas",
+          "Inventar figuras ausentes",
+          "Inferir disfrute del estudiante por gestos o sonrisa"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-05",
+      "title": "Lo que dice el poema escuchado",
+      "description": "Escuchen la grabación de un caligrama. Con sus propias palabras expliquen oralmente el sentido global, la intención comunicativa y los sentimientos que expresa el texto. Relacionen con ese sentido la rima, la anáfora y la personificación que se oyen. Solo tendrán audio: no se pide describir la figura, la tipografía ni la caligrafía y no deben inventar un poema.",
+      "expectations": {
+        "explicit": [
+          "Comprensión de audio y paráfrasis oral global",
+          "Intención/sentimientos del texto, rima/anáfora/personificación presentes"
+        ],
+        "excluded": [
+          "Evaluar figura o letras no disponibles",
+          "Recitar un texto memorizado o escribir poema nuevo",
+          "Metáfora, epíteto o comparación no solicitados"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-06",
+      "title": "Elegimos cómo decirlo",
+      "description": "Seleccionen entre los caligramas de autores entregados uno cuya intención comunicativa y sentimientos representados correspondan al mensaje que quieren transmitir al curso; pueden ser ficticios. Reciten sus versos haciendo perceptibles la rima y las figuras presentes: epíteto, anáfora, comparación, personificación y metáfora. Usen entonación y lenguaje gestual, o el apoyo de comunicación acordado, vinculados con la intención. No es necesario memorizar, crear un poema nuevo ni contar una experiencia personal.",
+      "expectations": {
+        "explicit": [
+          "Selección de un caligrama dado según intención y mensaje",
+          "Recitación de versos y recursos presentes con entonación/gestos o apoyo acordado",
+          "Sentimientos representados, no estado íntimo"
+        ],
+        "excluded": [
+          "Memorización",
+          "Poema propio, biografía, escenario o vestuario",
+          "Fuerza de voz, talento teatral o capacidad física como rasgo personal"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-07",
+      "title": "Palabras que construyen la imagen",
+      "description": "En el caligrama dado, analicen únicamente los sustantivos, los adjetivos y las descripciones poéticas. Localicen un ejemplo de cada recurso y expliquen cómo nombra o caracteriza lo evocado y contribuye a la imagen visual y al sentido del poema. No clasifiquen sustantivos o adjetivos en categorías no trabajadas ni analicen las figuras literarias.",
+      "expectations": {
+        "explicit": [
+          "Sustantivos para nombrar, adjetivos para caracterizar, descripciones para evocar",
+          "Un ejemplo de cada recurso y relación con imagen/sentido"
+        ],
+        "excluded": [
+          "Taxonomías gramaticales específicas no solicitadas",
+          "Cinco figuras literarias",
+          "Crear un nuevo poema o un dibujo"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-08",
+      "title": "Cada figura hace algo distinto",
+      "description": "Analicen solamente las cinco figuras literarias del caligrama entregado: epíteto, anáfora, comparación, personificación y metáfora. Aporten un ejemplo de cada figura presente y expliquen su función en el mensaje. No basta escribir los nombres de las figuras y no se pide crear otro caligrama.",
+      "expectations": {
+        "explicit": [
+          "Cinco figuras diferenciadas por función y por ejemplos reales",
+          "Epíteto cualidad expresiva, anáfora reiteración inicial, comparación semejanza, personificación rasgos humanos y metáfora asociación figurada"
+        ],
+        "excluded": [
+          "Un ejemplo total para las cinco figuras",
+          "Análisis extra de caligrafía, tema o estructura como dimensiones autónomas",
+          "Crear figuras no presentes o escribir poema nuevo"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-09",
+      "title": "Planeamos un poema visual",
+      "description": "Planifiquen un caligrama para el libro artesanal del curso. Definan la intención, el tema, la imagen visual y la emoción ficticia que quieren representar. Hagan un esquema de cómo dispondrán palabras y versos para relacionarlos con la figura y comunicar el mensaje. Entreguen solo el plan, sin redactar todavía el poema ni publicarlo.",
+      "expectations": {
+        "explicit": [
+          "Intención/tema/imagen/emoción representada previstos",
+          "Plan de distribución de palabras/versos relacionado con figura/mensaje"
+        ],
+        "excluded": [
+          "Poema ya terminado o rima aplicada",
+          "Publicación del libro, actuación o experiencia personal",
+          "Evaluar caligrafía final o imponer cinco figuras no pedidas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-10",
+      "title": "A mano y con tipografía",
+      "description": "Comparen la tipografía de la edición digital y la caligrafía de la edición manuscrita del mismo caligrama entregado. Expliquen cómo el tamaño, la forma y la disposición de las letras afectan la legibilidad y la relación entre palabras y figura. Mantengan el mensaje del poema como referencia; no se pide copiarlo, juzgar la belleza de la letra ni redactar una conclusión aparte.",
+      "expectations": {
+        "explicit": [
+          "Tipografía frente a caligrafía en dos versiones dadas",
+          "Tamaño/forma/disposición por legibilidad y relación texto-figura, sin gusto estético"
+        ],
+        "excluded": [
+          "Nueva versión",
+          "Puntuar belleza o habilidad manual",
+          "Conclusión adicional obligatoria"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-11",
+      "title": "El poema encuentra su lugar",
+      "description": "A partir del caligrama ya revisado, preparen su edición final para publicarlo en un mural, en un libro artesanal o en una revista escolar; elijan solo uno de esos medios. Conserven exactamente palabras, versos, intención e imagen, ajustando únicamente la legibilidad y la presentación al medio elegido. No se pide hacer los tres productos ni recitar.",
+      "expectations": {
+        "explicit": [
+          "Edición final para UN medio elegido entre tres alternativas",
+          "Palabras/versos/intención/imagen conservados; presentación legible"
+        ],
+        "excluded": [
+          "Tres entregas obligatorias",
+          "Nuevo poema, cambios de borrador o recitación",
+          "Cambiar contenido o exigir publicación en internet"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-12",
+      "title": "Que el poema se entienda",
+      "description": "Revisen el borrador del caligrama en verso libre entregado usando las sugerencias de la profesora y de compañeros. Ajusten el vocabulario, las figuras literarias y la relación entre palabras e imagen para que comuniquen la intención y la emoción ficticia indicadas. Entreguen el borrador y la versión corregida mostrando los cambios. No añadan rima ni publiquen todavía.",
+      "expectations": {
+        "explicit": [
+          "Revisión con docente/pares y cambios verificables",
+          "Vocabulario/recursos/figura relacionados con intención/emoción representada",
+          "Verso libre conservado"
+        ],
+        "excluded": [
+          "Rima impuesta",
+          "Publicación",
+          "Nuevo tema, emoción íntima o calificar acuerdo con opinión del compañero"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-13",
+      "title": "El juego de las gotas",
+      "description": "Creen un caligrama sobre las gotas de lluvia cuya figura se forme con sus versos. Usen rima y ritmo para reforzar el movimiento que expresa el poema y adjetivos y descripciones que permitan imaginarlo. No se exige una medida fija, cantidad de versos ni recitar.",
+      "expectations": {
+        "explicit": [
+          "Poema visual alusivo y legible",
+          "Rima y ritmo pedidos al servicio del sentido",
+          "Adjetivos/descripciones relacionados con movimiento evocado"
+        ],
+        "excluded": [
+          "Métrica fija o número de versos",
+          "Recitación",
+          "Todas las figuras literarias no solicitadas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-14",
+      "title": "Se puede leer la figura",
+      "description": "Corrijan únicamente la caligrafía del caligrama manuscrito entregado para que se lean las palabras y siga reconociéndose la figura. Conserven exactamente el texto, los versos y su disposición; no cambien el mensaje, no añadan rima ni preparen una versión digital.",
+      "expectations": {
+        "explicit": [
+          "Legibilidad de caligrafía sin alterar texto/versos/disposición/figura"
+        ],
+        "excluded": [
+          "Tipografía digital obligatoria",
+          "Modificar contenido, versos, rima o imagen",
+          "Reevaluar todas las figuras literarias"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-163-revisada-v3.json",
+      "artifactSha256": "c271d0f87de9f10dcf31a98ea58731e8736425ea73962914dfdd9a27ed9efd67",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CAL-R01",
+      "title": "Solo la intención en el audio",
+      "description": "Escuchen la grabación del caligrama y expliquen únicamente la intención comunicativa del autor apoyándose en palabras escuchadas. No analicen sentimientos, figura, tipografía ni recursos literarios.",
+      "expectations": {
+        "explicit": [
+          "Intención comunicativa sustentada en palabras del audio"
+        ],
+        "excluded": [
+          "Sentimientos como exigencia separada",
+          "Figura, letras, cinco figuras o paráfrasis global no pedidas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R02",
+      "title": "Una sugerencia sobre palabras",
+      "description": "Revisen el borrador del caligrama entregado según las sugerencias de un compañero. Ajusten únicamente el vocabulario para aclarar el tema y conserven la imagen y la intención dadas. No añadan figuras literarias ni rima y no tienen que solicitar sugerencias de un docente ni representar otra emoción.",
+      "expectations": {
+        "explicit": [
+          "Vocabulario revisado según un compañero y cambios comprobables",
+          "Imagen/intención dadas conservadas"
+        ],
+        "excluded": [
+          "Docente adicional",
+          "Emoción ficticia obligatoria",
+          "Figuras nuevas, rima o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R03",
+      "title": "La revista escolar",
+      "description": "Preparen la edición final del caligrama ya revisado solo para la revista escolar. Conserven las palabras, los versos y la imagen y aseguren su legibilidad. No hagan un mural ni un libro artesanal, ni reciten.",
+      "expectations": {
+        "explicit": [
+          "Edición legible para revista escolar, contenido conservado"
+        ],
+        "excluded": [
+          "Mural o libro artesanal",
+          "Creación desde cero, recitación o revisión de borradores"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R04",
+      "title": "Dónde empieza la repetición",
+      "description": "Analicen únicamente la anáfora del caligrama entregado, con un ejemplo presente y su función de repetir al inicio de versos. No analicen metáforas, epítetos, comparaciones ni personificaciones.",
+      "expectations": {
+        "explicit": [
+          "Anáfora: repetición inicial y efecto con ejemplo real"
+        ],
+        "excluded": [
+          "Otras figuras",
+          "Nuevo poema, análisis adicional de tema o estructura"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R05",
+      "title": "El ritmo sin rima impuesta",
+      "description": "Lean el caligrama en verso libre entregado y analicen únicamente el ritmo de sus versos: expliquen cómo las pausas y los acentos ayudan a construir el sentido. No analicen ni añadan rima y no reciten.",
+      "expectations": {
+        "explicit": [
+          "Análisis solo del ritmo: pausas y acentos vinculados con el sentido"
+        ],
+        "excluded": [
+          "Análisis de rima",
+          "Evaluar la creación de verso libre solo porque identifica al texto dado",
+          "Recitación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R06",
+      "title": "Decir las figuras que sí están",
+      "description": "Reciten los versos del caligrama entregado haciendo perceptibles la anáfora y la personificación que estén presentes, mediante pausas o el apoyo acordado. No añadan figuras ausentes y no se exige rima ni memorizar.",
+      "expectations": {
+        "explicit": [
+          "Recitación con apoyo posible",
+          "Solo anáfora/personificación que estén presentes, sin inventarlas"
+        ],
+        "excluded": [
+          "Rima, memorización, otras figuras o nueva creación",
+          "Exigir figuras ausentes"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R07",
+      "title": "Solo la distribución prevista",
+      "description": "Planifiquen únicamente la distribución de palabras y versos de un caligrama cuya intención, tema e imagen ya vienen dados en la ficha. Hagan un esquema que permita relacionar el texto con esa figura conservando esos datos. No elijan otro tema, imagen o emoción y no escriban el poema final.",
+      "expectations": {
+        "explicit": [
+          "Esquema de distribución con intención/tema/imagen dados conservados"
+        ],
+        "excluded": [
+          "Elegir otra emoción o definir de nuevo intención/tema/imagen",
+          "Poema terminado, rima o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CAL-R08",
+      "title": "Solo la letra digital",
+      "description": "Corrijan únicamente la tipografía del caligrama digital entregado para que las palabras se lean dentro de la figura. Conserven exactamente texto, versos y disposición. No cambien a escritura a mano ni añadan rima o figuras literarias.",
+      "expectations": {
+        "explicit": [
+          "Tipografía legible, texto/versos/disposición conservados"
+        ],
+        "excluded": [
+          "Caligrafía manuscrita",
+          "Nuevas figuras literarias, rima, tema o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-caligrama-reservado-163-revisada-v3.json",
+      "artifactSha256": "7e78fa6651813f7a3e9b5d55b32cabc8084ed3ea466dc48284150926a5780618",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    }
+  ],
+  "method": "Lectura íntegra de56salidas iniciales162 y de32reservadas antes de corregirlas. Lectura íntegra de las dimensiones cambiadas de las56intermedias y de las88v2, con comparación exacta del resto y de descriptores/variantes de cada formato. Relectura completa de cada dimensión cambiada en88v3; resto exacto. Validación posterior al último ajuste de recitación conserva392salidas exactas a sus capturas revisadas, incluidos304instrumentos anteriores. No se basa solo en conteos ni en presencia de palabras.",
+  "sourceComparison": {
+    "pages": [
+      73,
+      74
+    ],
+    "nextPageChecked": 75,
+    "conceptRows": 9,
+    "procedureParagraphs": 4,
+    "fullMallaAndContinuationRead": true
+  },
+  "topicClosed": false,
+  "pending": [
+    "Instalación individual163 y HTTP/DB",
+    "Visual personal bloqueado por acceso",
+    "Contraste final de indicadores y competencias de Lengua1"
+  ]
+}

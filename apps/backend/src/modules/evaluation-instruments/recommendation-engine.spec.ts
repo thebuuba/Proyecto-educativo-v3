@@ -496,6 +496,7 @@ describe('Recomendador con currículo literal completo', () => {
       else expect(result.criteria.map(item=>item.title)).toEqual(result.criteria.map(item=>item.description))
       expect(result.totalScoreUnits).toBe(1735)
       if (activityType === 'CALLIGRAM_CREATION') expect(JSON.stringify(result.criteria)).toContain('sin exigir rima')
+      if (activityType === 'CALLIGRAM_RECITATION') expect(JSON.stringify(result.criteria)).not.toContain('gestual')
     }
   })
 })
