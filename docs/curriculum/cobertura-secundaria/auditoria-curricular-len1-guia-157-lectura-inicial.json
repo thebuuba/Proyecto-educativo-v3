@@ -1,0 +1,19 @@
+{
+  "catalog": "evaluation-2026.157",
+  "capture": "auditoria-curricular-len1-guia-157-antes.json",
+  "bank": "len1-guia-v1.json",
+  "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+  "review": "Lectura de criterios, descripciones, niveles, puntajes y descriptores completos de los24instrumentos; comparación exacta de textos repetidos entre formatos. Banco sintético del mismo autor, sin validación externa independiente.",
+  "formats": ["rubrica", "lista-cotejo", "escala", "lista-ponderada"],
+  "accepted": false,
+  "cases": [
+    {"id":"LEN1-GUI-01","outputsRead":4,"findings":["Servicio OTHER con lenguaje genérico y progresiones no observables; alternativa local sí reconoce guía: cuatro faltas de paridad","La alternativa reconoce lugares, estructura y visitante; no inventa imágenes, salida de campo, borrador ni publicación","Conviene evitar que portada o gramática específica no pedidas se conviertan en requisitos rígidos de una consigna breve"]},
+    {"id":"LEN1-GUI-02","outputsRead":4,"findings":["Clasificación funcional omitida pese a solicitud expresa","Audiencia concreta de familias no se identifica; vocabulario atractivo genérico","Mapa o collage se respeta como alternativa; se puntúa visual en estructura y en otra dimensión","Topografía implícita; falta ubicación y descripción claramente evaluables","Borrador reconocido pero no se exige conservar ambas versiones ni se recoge publicación en mural","Conectores espaciales y temporales pertinentes, aunque progresión genérica"]},
+    {"id":"LEN1-GUI-03","outputsRead":4,"findings":["Se clasifica creación por negación No diseñen otra guía y se exige producir, escribir y aportar visuales","Se omite propósito/destinatario analizado con evidencia","Apariencia/estímulos se evalúan como uso en producto propio, sin relación explícita con atractivos/contenido","Mapa y vocabulario persuasivo deben analizarse en la guía disponible, no crearse"]},
+    {"id":"LEN1-GUI-04","outputsRead":4,"findings":["Se usa Emplea en vez de corregir el texto recibido conservando lugares/datos","Grados de adjetivos omitidos","Núcleo y modificadores no distingue directo/indirecto ni recoge explicación con ejemplos","Presente indicativo usa función impropia de acciones terminadas frente a desarrollo","Puntuación tiene progresión genérica y redundante sin verificar correcciones","Original y corrección se llaman borrador con problemas de contenido/organización ajenos al foco"]},
+    {"id":"LEN1-GUI-05","outputsRead":4,"findings":["Clasificación y mapa aportan dimensiones pertinentes; comunicación y explicación individual se conservan","Sustantivos/adjetivos/conectores/topografía se convierten en identificación y explicación gramatical pese a pedirse uso oral","No consta fidelidad a fichas ni reparto de intervenciones","Orientación, contenido y dominio individual pueden agruparse evitando puntuar dos veces la misma descripción"]},
+    {"id":"LEN1-GUI-06","outputsRead":4,"findings":["Solo un criterio: identificación de adjetivos; no corresponde al desempeño solicitado de describir cualidades","Se pierden anticipación y comprobación, paráfrasis del audio y clasificación","Debe respetar respuesta oral o esquema y no exigir dos productos ni análisis gramatical adicional"]}
+  ],
+  "nextAction":"Pruebas RED sobre causas de interpretación y composición; completar requisitos oficiales ausentes en este ámbito, conservar157 antes de cambiar el catálogo y volver a leer las24salidas posteriores. Agregar reserva antes de cerrarlo.",
+  "wholeSubjectClosed": false
+}

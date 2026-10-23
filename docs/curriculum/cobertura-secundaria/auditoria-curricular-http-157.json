@@ -1,0 +1,258 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.157",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "NEWS_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "NEWS_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "escala",
+      "score": 20,
+      "activityType": "NEWS_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "NEWS_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 4136
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4750
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 11971
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 6942
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5805
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5422
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8922
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4325
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7341
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 11156
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5487
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5475
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6606
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5625
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7450
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7187
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5591
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4145
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7150
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5324
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7001
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9746
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4786
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5341
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5402
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3524
+    }
+  ],
+  "preservedReleases": 88,
+  "preservedSnapshots": 1217,
+  "finalReleases": 89,
+  "finalSnapshots": 1221,
+  "pedagogicalAcceptance": "NEWS_SAMPLE_CONFIRMED_LOCAL_FULL_CURRICULAR_AUDIT_REMAINS_OPEN",
+  "personalBrowser": "BLOCKED_PASSWORD_REQUIRED_AFTER_REMEMBERED_PROFILE",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.157",
+    "sourceCommit": "c9a5e6e1df3e62420b707d9b67ae42d59ab0d2a5",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "frozen155Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 88,
+    "preservedSnapshots": 1217,
+    "finalReleases": 89,
+    "finalSnapshots": 1217,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.157",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-D8XIrYSQ.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-D8XIrYSQ.js",
+        "sha256": "8bd4af0e809c07180c402ea443f04b567516f323ba65b5d74b93227ecc49297b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-otvkt75R.js",
+        "sha256": "0113c701eae1f3454fc2da486442ee821009ffd36fc74bbe04b4da6429cef512",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bh5rU72v.js",
+        "sha256": "1e798e201ef905cca56048e02700312c11b873625ec5d2729837afe19535c3a5",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-2C_SJ8AS.js",
+        "sha256": "1dacb147a00027acd452889db20a2f9e84d61cc21f311ea327d8de1eaad0a9a7",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-DCKqEWKv.js",
+        "sha256": "57ffb929e9ba4137c13ddfeb37c2605f56eef9aa23ac3768a520df4759b18a9f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "31a91d3e864dd1b7e7e7f175ae129fe44c59996f5baad532aac7988a1b422844",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browserCacheAndServiceWorkerRegistration": "NOT_INSPECTED_NO_STORAGE_CLEARED"
+}

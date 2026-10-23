@@ -59,7 +59,7 @@
             "LEN1-NOT-03",
             "LEN1-NOT-02"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Función informativa",
             "Titular, entrada y cuerpo"
@@ -110,7 +110,7 @@
             "LEN1-NOT-02",
             "LEN1-NOT-03"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Qué ocurrió",
             "A quién",
@@ -164,7 +164,7 @@
             "LEN1-NOT-03",
             "LEN1-NOT-R01"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Actualidad o relevancia para el público"
           ],
@@ -213,7 +213,7 @@
           "cases": [
             "LEN1-NOT-02"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Conectores de orden",
             "Conectores temporales"
@@ -252,7 +252,7 @@
           "cases": [
             "LEN1-NOT-06"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Modo verbal",
             "Tiempos acordes con hechos"
@@ -291,7 +291,7 @@
           "cases": [
             "LEN1-NOT-06"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Sustitución contextual sin alterar referente"
           ],
@@ -330,7 +330,7 @@
             "LEN1-NOT-06",
             "LEN1-NOT-R03"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Delimitación de enunciados y datos",
             "Conservación del significado"
@@ -380,7 +380,7 @@
           "cases": [
             "LEN1-NOT-06"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Siglas",
             "Abreviaturas",
@@ -421,7 +421,7 @@
             "LEN1-NOT-03",
             "LEN1-NOT-05"
           ],
-          "nextAction": "Completar procedimientos y muestra real de noticia; no cerrar por conceptos aislados",
+          "nextAction": "Verificación visual personal cuando exista sesión; evidencia local completa y cuatro muestras HTTP157 acreditadas sin cerrar indicadores de toda la asignatura",
           "components": [
             "Función de fotografía y pie",
             "Correspondencia con hechos y titular"
@@ -452,7 +452,7 @@
           ]
         }
       ],
-      "status": "EN_CURSO_CONCEPTOS_LOCALES_REVISADOS_PROCEDIMIENTOS_PENDIENTES",
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
       "nextAction": "Verificar muestras HTTP/DB157 y registrar condición de navegador personal; continuar guía",
       "supplementaryProceduralCases": [
         {
@@ -970,6 +970,15 @@
         "caseId": "LEN1-NOT-A02",
         "status": "REVISADO_LOCALMENTE",
         "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json"
+      },
+      "verification157": {
+        "activities": 13,
+        "instrumentsRead": 52,
+        "localEvidence": "auditoria-curricular-len1-noticia-157-validacion52.json",
+        "httpEvidence": "auditoria-curricular-http-157.json",
+        "personalPreservation": "auditoria-curricular-personales-157-conector.json",
+        "personalBrowser": "REQUIERE_CONTRASENA_NO_MODIFICADA",
+        "fullSubjectAchievementIndicators": "ABIERTOS"
       }
     },
     {
@@ -1222,8 +1231,9 @@
           "nextAction": "Relacionar evidencia específica de actividades y descriptores"
         }
       ],
-      "status": "PENDIENTE_AUDITORIA",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+      "status": "FALLOS_REPRODUCIDOS_24_INSTRUMENTOS_157_PENDIENTE_CORRECCION",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "initialEvidence": "auditoria-curricular-len1-guia-157-antes.json"
     },
     {
       "id": "informe",
@@ -3530,12 +3540,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Pendientes de banco y lectura completa",
+    "otherTopics": "Guía en corrección; informe, afiche, cuento y caligrama pendientes",
     "remaining": [
-      "Comprobar inferencias, vocabulario contextual y anticipación con actividades específicas de noticia",
-      "Documentación de fuentes y coordinadas/subordinadas de la continuación74 requieren banco y contraste propios",
-      "Comprobar estrategia en cada caso y muestra HTTP/DB/visual sobre la versión155",
-      "Comparar procedimientos, actitudes e indicadores completos de Lengua1; no atribuirles cobertura por mencionar el tema"
+      "Comprobación visual personal bloqueada por contraseña; sin correos ni cambios de credenciales",
+      "Corregir guía turística tras leer sus24instrumentos157 y contrastar sus componentes oficiales70–71",
+      "Auditar informe, afiche, cuento y caligrama; contrastar toda Lengua1 e indicadores generales; continuar ámbitos restantes"
     ]
   }
 }
