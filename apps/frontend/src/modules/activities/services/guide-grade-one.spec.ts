@@ -25,7 +25,7 @@ describe('alternativa contextual de guía turística de primero', () => {
     if (format === 'rubrica') expect(result.criteria[0].descriptors[3].text).toBe('No aporta información reconocible de los lugares de la guía.')
     if (format === 'escala') {
       expect(result.criteria[0].title).toMatch(/lugares/)
-      expect(result.criteria[0].descriptors[3].text).toBe('No demuestra el desempeño descrito en el indicador.')
+      expect(result.criteria[0].descriptors[3].text).toBe('No aporta información reconocible de los lugares de la guía.')
     }
     if (format === 'lista-ponderada') expect(result.criteria[0].description).toContain('Parcial (50%):')
     const pending = scoreInstrumentFields(recommendationToFields(result, 'Actividad'), format, null, result)

@@ -17,12 +17,17 @@ describe('Escala de Lengua: grados compartidos y evidencia contextual',()=>{
     expect(local.levels).toEqual(server.levels)
     expect(local.criteria.map(c=>c.descriptors)).toEqual(server.criteria.map(c=>c.descriptors))
     expect(server.criteria[0].title).toMatch(/significado.*palabras.*contexto/)
-    expect(server.criteria[0].descriptors.every(d=>d.text.length<90)).toBe(true)
+    if(labels[0]==='Siempre')expect(server.criteria[0].descriptors.every(d=>d.text.length<90)).toBe(true)
+    else {
+      expect(server.criteria[0].descriptors[0].text).toMatch(/significado.*(?:pasaje|contexto)/)
+      expect(server.criteria[0].descriptors[2].text).toMatch(/palabras|contexto|significado/)
+    }
     const fields=recommendationToFields(server,'Lecturas')
     const added=appendInstrumentCriterion(fields,'escala',17.35,server,server.criteria[0])
     expect(added.fields['escala:descriptor:1:4']).toBe(server.criteria[0].descriptors[0].text)
     expect(added.fields['escala:descriptor:0:4']).toBe(fields['escala:descriptor:0:4'])
     const rubric=recommend({...input,preferredInstrumentType:'rubrica'},context,null,[],'UNMAPPED',null)
+    if(labels[0]==='Completo')expect(server.criteria[0].descriptors.map(d=>d.text)).toEqual(rubric.criteria[0].descriptors.map(d=>d.text))
     expect(rubric.criteria[0].descriptors[0].text).toMatch(/significado|contexto/)
     expect(rubric.levels[0].label).toBe('Destacado')
   })

@@ -13,7 +13,7 @@ describe('informe de lectura de primero compartido con la alternativa', () => {
     if (format === 'rubrica') expect(result.criteria[0].descriptors[3].text).toBe('No presenta una síntesis reconocible del texto leído.')
     if (format === 'escala') {
       expect(result.criteria[0].title).toMatch(/texto leído/)
-      expect(result.criteria[0].descriptors[3].text).toBe('No demuestra el desempeño descrito en el indicador.')
+      expect(result.criteria[0].descriptors[3].text).toBe('No presenta una síntesis reconocible del texto leído.')
     }
     const pending = scoreInstrumentFields(recommendationToFields(result, 'Actividad'), format, null, result)
     expect(pending[`${format}:points:0`]).toBe('')

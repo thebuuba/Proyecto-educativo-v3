@@ -12,7 +12,7 @@ describe('alternativa contextual de noticia de primero', () => {
       if (format === 'rubrica') expect(result.criteria[0].descriptors[2].text).toBe('Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.')
       if (format === 'escala') {
         expect(result.criteria[0].title).toMatch(/quién|hecho|noticia/)
-        expect(result.criteria[0].descriptors[2].text).toBe('Cumple algunos aspectos del indicador y deja otros sin realizar.')
+        expect(result.criteria[0].descriptors[2].text).toBe('Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.')
       }
       if (format === 'lista-ponderada') expect(result.criteria[0].description).toContain('Parcial (50%): Se reconoce el hecho')
       const fields = recommendationToFields(result, 'Actividad')

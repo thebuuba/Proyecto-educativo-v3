@@ -1,9 +1,11 @@
 import type {UpperEnglishEvidence} from './secondary-english-upper-task'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
+import {languageRoleExchangeCriterion} from './language-role-exchange'
 export const upperEnglishRow=(scope:string,id:string,title:string,levels:NonNullable<ContextualTopicCriterion['progressionLevels']>,weight=4):ContextualTopicCriterion=>({templateId:`${scope}-${id}`,title,observable:levels[0],progressionLevels:levels,weight})
 /** Communicative performance only; grade-owned content must already exist. */
 export function upperEnglishCommunication(task:UpperEnglishEvidence,scope:string){
  const {mode,requirementText:text}=task,rows:ContextualTopicCriterion[]=[]
+ if(mode==='interaction'&&task.roleExchangeRequested)rows.push(languageRoleExchangeCriterion(scope))
  if(mode==='interaction'||mode==='writing'&&/\b(?:responder\w*|respuesta|intercambi\w*)\b/.test(text))rows.push(upperEnglishRow(scope,'interaction','Respuesta que sostiene el intercambio',[
   'Relaciona su respuesta en inglés con lo comunicado por el interlocutor y aporta información pertinente que permite continuar el intercambio solicitado.',
   'La respuesta permite continuar el intercambio; una referencia necesita aclaración.',

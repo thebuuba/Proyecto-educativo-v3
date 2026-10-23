@@ -1,10 +1,11 @@
-import {affirmativeScopedEnglishTask,commonEnglishGrade,englishContextTask,independentEnglishActionParts} from './secondary-english-task-text'
+import {affirmativeScopedEnglishTask,commonEnglishGrade,englishContextTask,englishRequirementSource,independentEnglishActionParts} from './secondary-english-task-text'
+import {requestedRoleExchange} from './language-role-exchange'
 import {languageInstrumentIntent} from './language-instrument-intent'
 import type {InstrumentAcademicContext} from './secondary-science'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 
 export type UpperEnglishMode='reading'|'listening'|'writing'|'oral'|'interaction'|'audiovisual'|'analysis'|'comparison'|'research'
-export type UpperEnglishEvidence={mode:UpperEnglishMode;text:string;contextText:string;requirementText:string;functions:string[]}
+export type UpperEnglishEvidence={mode:UpperEnglishMode;text:string;contextText:string;requirementText:string;functions:string[];roleExchangeRequested?:boolean}
 export type UpperEnglishTask=UpperEnglishEvidence&{grade:4|5|6;activityType:string;technique:string;rows:ContextualTopicCriterion[];actions?:UpperEnglishTask[]}
 type Definition={grade:4|5|6;functions:(text:string)=>string[];criteria:(task:UpperEnglishEvidence)=>ContextualTopicCriterion[];acceptsContext?:(context?:InstrumentAcademicContext|null)=>boolean}
 const modes:Record<UpperEnglishMode,{activityType:string;technique:string}>={
@@ -57,7 +58,7 @@ export function createUpperEnglishProvider(definition:Definition){
    return {...basis,text,contextText:englishContextTask(description),requirementText:text,rows}
   }
   const inherited=previous&&/\b(?:lo|la|los|las|sus trabajos)\s+(?:present\w*|expon\w*)\b/.test(text)
-  const evidence:UpperEnglishEvidence={mode,text:inherited?previous.text:text,contextText,requirementText:text,functions:inherited?previous.functions:definition.functions(text)}
+  const evidence:UpperEnglishEvidence={mode,text:inherited?previous.text:text,contextText,requirementText:text,functions:inherited?previous.functions:definition.functions(text),roleExchangeRequested:requestedRoleExchange(englishRequirementSource(description))}
   const rows=definition.criteria(evidence)
   return rows.length?{...evidence,grade:definition.grade,...modes[mode],rows}:null
  }

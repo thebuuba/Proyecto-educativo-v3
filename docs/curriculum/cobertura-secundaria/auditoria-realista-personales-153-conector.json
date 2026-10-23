@@ -1,0 +1,182 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "recordedAt": "2026-10-23T02:04:15.777Z",
+  "method": "Una consulta SELECT del conector, comparación con quince baselines originales sin reescribirlos.",
+  "reader": "postgres",
+  "readOnly": true,
+  "remoteWrites": false,
+  "newBaselines": 0,
+  "rows": [
+    {
+      "label": "citizenship-six",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "ct-six",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "demography-five",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "fhr-one",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hcs-five",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hcs-four",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hcs-four-server",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hcs-six",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hlm-five",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hlm-four",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "hlm-six",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "mf054-five",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "mf056-four",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "mt-four",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    },
+    {
+      "label": "philosophy-four",
+      "present": true,
+      "instrument_exact": true,
+      "references_exact": true,
+      "settings_exact": true,
+      "manual_strategy_exact": true,
+      "manual_text_preserved": true,
+      "block_exact": true,
+      "same_name_context_count": 1
+    }
+  ],
+  "diagnosticCorrections": [
+    "La primera consulta comparaba NULL mediante igualdad y produjo un resultado indeterminado para HCS4 editable; se usó IS NOT DISTINCT FROM.",
+    "La segunda no contemplaba la versión guardada en los campos del instrumento sin snapshot. Se restauró el coalesce usado por el lector original de HCS4; el hash del instrumento fue exacto en las tres lecturas."
+  ],
+  "localAppConnectionProven": false,
+  "browserProven": false
+}

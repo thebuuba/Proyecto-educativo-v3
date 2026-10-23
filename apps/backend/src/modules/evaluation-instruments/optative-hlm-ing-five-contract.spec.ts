@@ -11,7 +11,8 @@ describe('HLM quinto: literatura anglófona',()=>{
  it('adverbios de frecuencia es contenido gramatical y no pide una escala de frecuencia',()=>{
   const p=recommend({activityTitle:'Actividad',description:'Explicarán en inglés la función de los adverbios de frecuencia con los ejemplos proporcionados.',maxScore:17.35,preferredInstrumentType:'escala',participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)
   expect(p.levels.map(l=>l.label)).toEqual(['Completo','Suficiente','Parcial','Aún no logrado'])
-  expect(p.criteria[0].progressionLevels?.[0]).toBe('Cumple todos los aspectos del indicador.')
+  expect(p.criteria[0].progressionLevels?.[0]).toBe(p.criteria[0].description)
+  expect(p.criteria[0].progressionLevels?.[0]).toContain('adverbios de frecuencia')
  })
  it('conserva la escala de frecuencia cuando se solicita observar la regularidad',()=>{
   const p=recommend({activityTitle:'Actividad',description:'Dialogarán en inglés para comunicar un consejo. Se registrará la regularidad de cada indicador.',maxScore:17.35,preferredInstrumentType:'escala',participationMode:'INDIVIDUAL'},context,null,[],'UNMAPPED',null)

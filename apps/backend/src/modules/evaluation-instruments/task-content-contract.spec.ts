@@ -55,7 +55,7 @@ describe('Contrato entre texto estudiado y producto solicitado',()=>{
     else if(format==='escala') {
       expect(r.criteria[1].title).toMatch(/pistas/)
       expect(r.levels.map(level=>level.label)).toEqual(['Completo','Suficiente','Parcial','Aún no logrado'])
-      expect(r.criteria[1].descriptors.at(-1)?.text).toBe('No demuestra el desempeño descrito en el indicador.')
+      expect(r.criteria[1].descriptors.at(-1)?.text).toBe('Confunde las pistas o no explica su relación con la investigación.')
     } else expect(r.criteria[1].descriptors.at(-1)?.text).toBe('Confunde las pistas o no explica su relación con la investigación.')
   })
   it('ofrece un candidato sobre límites de la interpretación sin duplicar los cinco iniciales',()=>{

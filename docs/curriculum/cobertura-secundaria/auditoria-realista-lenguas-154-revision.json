@@ -1,0 +1,315 @@
+{
+  "catalog": "evaluation-2026.154",
+  "bankSha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817",
+  "compiledEqualsFinalSource": true,
+  "changed": [
+    {
+      "id": "A-ING6-entrevista",
+      "format": "rubrica"
+    },
+    {
+      "id": "A-ING6-entrevista",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "A-ING6-entrevista",
+      "format": "escala"
+    },
+    {
+      "id": "A-ING6-entrevista",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-FRA1-dialogo",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-FRA1-dialogo",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-FRA1-dialogo",
+      "format": "escala"
+    },
+    {
+      "id": "B-FRA1-dialogo",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-informe-breve",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "escala"
+    }
+  ],
+  "unchanged": [
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MAT1-operaciones",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MAT1-operaciones",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MAT1-operaciones",
+      "format": "escala"
+    },
+    {
+      "id": "B-MAT1-operaciones",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MAT1-explicar",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MAT1-explicar",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MAT1-explicar",
+      "format": "escala"
+    },
+    {
+      "id": "B-MAT1-explicar",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-informe-breve",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-breve",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-breve",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-retirado",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "escala"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-NAT1-alternativa",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-NAT1-alternativa",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-NAT1-alternativa",
+      "format": "escala"
+    },
+    {
+      "id": "B-NAT1-alternativa",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-LEN1-contradiccion",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-contradiccion",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-contradiccion",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-contradiccion",
+      "format": "lista-ponderada"
+    }
+  ],
+  "completeChangedOutputsRead": 11,
+  "reservedCasesExecuted": 0,
+  "evidence": "LOCAL_ONLY_NO_HTTP_OR_BROWSER",
+  "requirements": [
+    {
+      "case": "A-ING6-entrevista",
+      "explicit": [
+        "Preguntas sobre experiencia y capacidades ficticias",
+        "Respuestas al perfil",
+        "Ambos roles"
+      ],
+      "mapping": [
+        "ing-6-job-interview-questions",
+        "ing-6-job-interview",
+        "ing-6-roles"
+      ],
+      "pedagogical": [
+        "ing-6-interaction",
+        "ing-6-intelligibility"
+      ],
+      "before": "Cuatro filas sin rotación de roles; escala con grados genéricos.",
+      "after": "Cinco filas; rotación explícita independiente de la calidad de preguntas/respuestas, escala conserva la progresión específica.",
+      "grouping": "Preguntas y respuestas comparten el propósito, pero requieren evidencias distintas. Rotación e interacción son dos evidencias del intercambio.",
+      "limitations": [
+        "El cotejo agrupado no distingue experiencia de capacidades con dos decisiones independientes.",
+        "Los pesos 4/4/2/3/3 y parcial 50% son decisiones editables de AulaBase, no exigencias del docente."
+      ]
+    },
+    {
+      "case": "B-FRA1-dialogo",
+      "explicit": [
+        "Saludo",
+        "Preguntas y respuestas sobre nombre, edad y residencia",
+        "Ambos roles"
+      ],
+      "mapping": [
+        "fra-1-greetings",
+        "fra-1-personal",
+        "fra-1-questions",
+        "fra-1-roles"
+      ],
+      "pedagogical": [
+        "fra-1-interaction",
+        "fra-1-oral"
+      ],
+      "before": "La rotación opcional podía convertirse en obligatoria; enumeración de preguntas sin conjunción y descriptor de el.",
+      "after": "Se excluyen opciones/negaciones y recursos; roles pedidos conservados, enumeración y concordancia corregidas.",
+      "grouping": "Seis dimensiones en rúbrica, escala y ponderada; cotejo separa tres preguntas y tres respuestas verificables, diez filas en total.",
+      "limitations": [
+        "El cotejo verifica cada dato independientemente; no hay subindicadores anidados."
+      ]
+    },
+    {
+      "case": "B-LEN1-informe-breve / desarrollado / retirado",
+      "before": "Escala con grados genéricos.",
+      "after": "Recupera las progresiones propias de cada indicador.",
+      "limitations": [
+        "Identificación de texto/autor pendiente.",
+        "Revisar duplicación del título, fragmentos y progresiones de cantidades."
+      ]
+    }
+  ],
+  "quality": {
+    "roles": "Alternar papeles no vuelve a puntuar la calidad lingüística; esta se evalúa en preguntas, respuestas y comprensibilidad.",
+    "scale": "Grados específicos cuando existen cinco progresiones; frecuencia solo cuando la consigna pide observarla.",
+    "fourOfFiveLevels": "La selección transversal 0/1/2/4 requiere aún revisión; en la fila nueva de roles el parcial incluye el otro papel no realizado.",
+    "provenance": "Adaptaciones originales a partir de los requisitos del docente y del banco sintético; sin citas oficiales nuevas ni independencia externa."
+  },
+  "tests": {
+    "newFocal": 28,
+    "backend": {
+      "passed": 97263,
+      "files": 218
+    },
+    "frontend": "13479 casos aprobados en la pasada amplia; contrato restante actualizado y sus dos casos aprobados en ejecución focal. No se presenta como una única pasada verde.",
+    "builds": "backend, frontend, cloudflare dry-run: 0",
+    "lints": "backend, shared, frontend: 0"
+  },
+  "remoteWrites": false,
+  "installation154": "PENDING",
+  "browser": "PENDING_PERSONAL_LOGIN",
+  "overallAuditComplete": false
+}

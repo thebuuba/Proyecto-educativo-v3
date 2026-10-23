@@ -32,8 +32,9 @@ export function adaptLanguageScale(proposal: InstrumentRecommendation, descripti
   return {...proposal,
     levels:proposal.levels.map((level,index)=>({...level,label:labels[indexes[index]]})),
     criteria:proposal.criteria.map(criterion=>{
-      // Degree of a requested revision needs its authored conditional evidence, not inferred edits.
-      const selected=!frequency&&(authoredFrenchDegree || /^(?:ing-[1-6]|opt-hlm-ing-[456])-strategy-revision(?:$|:)/.test(criterion.templateId))&&criterion.progressionLevels
+      // A degree scale retains the evidence authored for each indicator. Only an
+      // explicitly requested frequency scale substitutes observation frequency.
+      const selected=!frequency&&criterion.progressionLevels?.length===5
         ? criterion.progressionLevels:progression
       return {...criterion,progressionLevels:[...selected],
         descriptors:criterion.descriptors.map((descriptor,index)=>({...descriptor,text:selected[indexes[index]]})),

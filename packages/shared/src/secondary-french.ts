@@ -2,6 +2,7 @@ import type { InstrumentAcademicContext } from './secondary-science'
 import type { ContextualTopicCriterion } from './secondary-topic-criteria'
 import type { InstrumentType } from './instrument-recommendation'
 import { languageInstrumentIntent } from './language-instrument-intent'
+import {languageRoleExchangeCriterion,requestedRoleExchange} from './language-role-exchange'
 import { frenchGradeOneFeatures, frenchGradeOneGrammar, frenchGradeOneStrategies, frenchPersonalFields, frenchRow } from './secondary-french-grade-1'
 import { frenchGradeOneGenres, frenchGradeOneLexicon } from './secondary-french-grade-1-details'
 import { frenchDeliveryCriteria } from './secondary-french-delivery'
@@ -45,21 +46,16 @@ function actionCriteria(action: FrenchAction, features: FrenchFeature[]): Contex
       `Formula en francés preguntas comprensibles para obtener ${target} del interlocutor.`,
       `Las preguntas permiten obtener ${target}; una formulación necesita aclaración.`,
       `Solo parte de las preguntas permite obtener ${target}; las demás quedan incompletas o ambiguas.`,
-      `Las preguntas solicitan información distinta de ${target}.`,
+      `Las preguntas solicitan otros datos, en lugar de obtener ${target}.`,
       `No formula preguntas reconocibles para obtener ${target}.`,
     ]
-    const target = fields.length ? fields.map(([, label]) => label).join(', ') : 'los datos solicitados'
+    const labels=fields.map(([,label])=>label)
+    const target = labels.length > 1 ? `${labels.slice(0,-1).join(', ')} y ${labels.at(-1)}` : labels[0] ?? 'los datos solicitados'
     const question = frenchRow('questions', 'Formulación de preguntas', questionLevels(target), 3)
     if (fields.length > 1 && !/\b(?:o|ou)\b/.test(action.text)) question.checklistParts = fields.map(([key, label]) => ({ key, observable: questionLevels(label)[0], progressionLevels: questionLevels(label) }))
     rows.push(question)
   }
-  if (action.mode.includes('interaction') && /\b(?:intercambi\w*|altern\w*|cambi\w*)\s+(?:(?:los|sus|de|ambos)\s+)?(?:roles|papeles)\b/.test(action.text)) rows.push(frenchRow('roles', 'Desempeño de ambos roles', [
-    'Desempeña ambos roles del diálogo: realiza las acciones correspondientes a cada papel al intercambiarlos con su compañero.',
-    'Desempeña ambos roles; necesita una indicación para completar las acciones de uno de los papeles.',
-    'Completa un rol y solo parte de las acciones del otro papel.',
-    'Mantiene un solo rol aun después del intercambio previsto.',
-    'No aporta evidencia de desempeño de los roles solicitados.',
-  ], 2))
+  if (action.mode.includes('interaction') && requestedRoleExchange(action.text)) rows.push(languageRoleExchangeCriterion('fra-1'))
   if (action.mode.includes('interaction')) rows.push(frenchRow('interaction', 'Vinculación de los turnos', [
     'Relaciona en francés su intervención con la petición o respuesta del interlocutor y permite que el intercambio continúe.',
     'Los turnos mantienen el sentido del intercambio; una respuesta necesita aclaración.',

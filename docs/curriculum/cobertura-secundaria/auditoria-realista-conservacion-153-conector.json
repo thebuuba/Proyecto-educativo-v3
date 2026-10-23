@@ -1,0 +1,39 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "checkedAt": "2026-10-23T01:58:00Z",
+  "method": "Conector Supabase, una sentencia SELECT y agregados ordenados de todas las huellas originales; no recaptura ni reemplazo de referencias.",
+  "reader": "postgres",
+  "projectStatus": "ACTIVE_HEALTHY",
+  "readOnly": true,
+  "originalReference": ".wrangler/realistic-audit/history-before-evaluation-2026.153.json",
+  "priorReleases": 85,
+  "priorReleaseHashesExact": true,
+  "snapshotHashesExact": true,
+  "releases": 86,
+  "snapshots": 1209,
+  "prior_release_digest": "5a9fdb8945c1ef6bbbcebdb851539a0a",
+  "snapshot_digest": "33aa333f4df7a9d895a57f0dbe90fde7",
+  "catalog153_md5": "48e7de139ee6f2b433ea0c0a94787adf",
+  "catalog153_sha256": "7dc6d9fa0a433a7941d249d672d1dbd223bc4d0056aa12d4ac4448a0fbbae054",
+  "localAppConnectionProven": false,
+  "personalDraftReferencesProven": false,
+  "remoteWrites": false,
+  "logs": {
+    "from": "2026-10-23T00:50:00Z",
+    "to": "2026-10-23T01:55:57Z",
+    "postgres": {
+      "events": 4,
+      "severity": "LOG",
+      "sqlState": "00000"
+    },
+    "supavisor": {
+      "events": 31,
+      "level": "info"
+    },
+    "pgbouncer": {
+      "events": 534,
+      "contentNotInspected": true
+    },
+    "limitation": "La ausencia de errores en estas categorías no explica ni descarta el fallo DNS/TLS del cliente local."
+  }
+}
