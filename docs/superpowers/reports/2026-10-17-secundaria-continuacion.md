@@ -1,3 +1,19 @@
+# Checkpoint vigente: Ciencias 153 verificado localmente
+
+## Ciencias: corrección local verificada, candidato 153
+
+El motor cubre ahora todos los planetas y su explicación en dimensiones distintas; añade uso pertinente del material solicitado y diferencia cinco minutos, máximo cinco y aproximadamente cinco, sin tolerancias inventadas. La tabla periódica distingue grupos/columnas, períodos/filas, fundamento de ubicación y comunicación oral; elimina las predicciones no pedidas. La comunicación oral se agrupa una vez por presentación, sin duplicarla por cada faceta científica. No se añadieron asignaturas, recursos obligatorios, IA ni campos de interfaz.
+
+La revisión encontró una regresión en exposiciones breves: separar lo oral dejaba sin contenido científico casos como hidrosfera y biodiversidad. Se reprodujo en una prueba nueva y en la suite existente; se corrigió conservando contenido y comunicación. El contrato antiguo que esperaba una sola fila se actualizó para estas dos evidencias, sin modificar el banco original. Hubo una ejecución completa con un fallo y otra iniciada antes de revisar el fallo focal que se interrumpió; ambas se conservan y no se cuentan como aprobadas. Resultado final: **97.234 pruebas backend/217 archivos**, 1.496 focalizadas y 4.637 de frontend/paridad. Backend, frontend, Cloudflare dry-run y tres lints finalizaron correctamente.
+
+La primera captura de revisión detectó shared/dist desactualizado después del build aislado del backend; no se utilizó como evidencia final. Se compiló shared y después todo el workspace. La evidencia publicada procede del build final: `auditoria-realista-v1-ciencias-153.json`. Se leyeron los dieciséis instrumentos cambiados (tres variantes solares y tabla periódica, cuatro formatos); los otros cuarenta resultados coinciden exactamente normalizando solo la versión. Matriz, fuentes y límites: `auditoria-realista-ciencias-153-revision.json`.
+
+Las adaptaciones se apoyan en [NASA](https://science.nasa.gov/solar-system/planets/), [IUPAC](https://iupac.org/what-we-do/periodic-table-of-elements/) y [OpenStax](https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table); no se presentan como descriptores oficiales ni evaluación externa independiente. La duración comparte dimensión oral: su condición se conserva, aunque el Sí/No agrupado no distingue cada incumplimiento. Los pesos y el parcial del 50% son decisiones editables del formato existente. La selección de cuatro de cinco progresiones todavía requiere revisión transversal; no se declara cerrada la calidad de todos los instrumentos.
+
+152 permanece congelado con hash completo `79cbb7c0b7571617e7d0829cc8b98e193835000c4be8b2c78706c087d9669a71`; referencia nueva previa a 153: 85 releases/1.209 snapshots, originales intactos. El candidato 153 cambia reglas del código y versión, sin cambiar el contenido curricular del payload. El Worker 152 se detuvo para compilar. Siguiente: commit local, instalación individual del release153 en Development, verificar runtime/assets y cuatro recorridos HTTP/DB con diario de IDs; contrastar después las quince referencias personales. Scripts privados preparados pero todavía no ejecutados. Navegador personal pendiente de sesión, no sustituido por QA. Sin push, producción, merge, despliegue ni migraciones de esquema.
+
+## Checkpoints anteriores (históricos)
+
 # Checkpoint vigente: HTTP 152 y referencias preservados
 
 ## Verificación final HTTP/DB del formato 152

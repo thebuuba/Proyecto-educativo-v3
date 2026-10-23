@@ -10,6 +10,7 @@ import {commonScienceGradeFourTopics} from './secondary-science-grade-4'
 import {commonScienceGradeFiveTopics} from './secondary-science-grade-5'
 import {commonScienceGradeSixTopics} from './secondary-science-grade-6'
 import {resolveEvaluationTask} from './evaluation-task-contract'
+import {explicitScienceContent,sciencePresentationCriteria} from './science-presentation-criteria'
 
 export const commonScienceTopicsByGrade:Record<number,CommonScienceTopic[]>={1:commonScienceGradeOneTopics,2:commonScienceGradeTwoTopics,3:commonScienceGradeThreeTopics,4:commonScienceGradeFourTopics,5:commonScienceGradeFiveTopics,6:commonScienceGradeSixTopics}
 export const commonScienceModules=Object.entries(commonScienceTopicsByGrade).map(([grade,topics])=>({id:`ciencias-naturaleza-comun-${grade}`,grade:Number(grade),topics,policy:'REQUESTED_SCIENTIFIC_ACTIONS_V1'}))
@@ -56,6 +57,7 @@ function focusedTopic(t:CommonScienceTopic,text:string):CommonScienceTopic{
   if(t.id==='fluid-flow'&&/bernoulli/.test(text)&&!/continuidad/.test(text))return{...t,label:'principio de Bernoulli',relation:'el balance de presión, energía cinética y energía potencial por unidad de volumen a lo largo de la línea de corriente bajo las hipótesis del modelo solicitado'}
  }
  if(t.grade===5){
+  if(t.id==='periodic-position'&&!/predic\w*|tendenci\w*/.test(text))return{...t,relation:'la ubicación de los elementos según el orden creciente del número atómico y la organización periódica de sus propiedades'}
   if(t.id==='element-families'){
    const names=['no metales','metaloides','gases nobles','hidrogeno','oxigeno','nitrogeno','carbono','fosforo','plomo','mercurio','hierro','calcio','magnesio','zinc','cobre','galio','silicio','germanio','arsenico','helio','neon','argon'].filter(name=>new RegExp(`\\b${name}\\b`).test(text))
    if(/\bmetales\b/.test(text.replace(/no metales/g,'')))names.unshift('metales')
@@ -199,8 +201,8 @@ function actionCriteria({text,topics}:Action):ContextualTopicCriterion[]{
   if(investigates(text)&&!/^\s*(?:explic\w*|describ\w*)\b/.test(text))add('research',`Investigación de ${label}`,`Selecciona información verificable que responde a la investigación solicitada sobre ${label}, identifica su procedencia y distingue afirmaciones respaldadas de información insuficiente.`,`Reúne información de ${label}, pero una afirmación relevante carece de procedencia o respaldo verificable.`,`La información presentada sobre ${label} no responde a la investigación o contradice las fuentes examinadas.`,4)
   if(report)add('report',`Informe sobre ${label}`,`Organiza el informe solicitado de ${label} enlazando propósito, evidencia disponible e interpretación, distinguiendo procedimientos propios de datos o experiencias proporcionados.`,`El informe de ${label} presenta evidencia, pero no permite relacionar una interpretación con su procedencia.`,`El informe de ${label} atribuye procedimientos o resultados no realizados ni proporcionados.`,4)
   if(/\b(?:debat\w*|argument\w*)\b/.test(text))add('argument',`Argumentación sobre ${label}`,`Sustenta la postura solicitada sobre ${label} con evidencias pertinentes y distingue sus alcances de afirmaciones que la información disponible no permite sostener.`,`Presenta una postura sobre ${label}, pero parte de sus razones carece de respaldo pertinente.`,`La postura sobre ${label} se apoya en afirmaciones incompatibles con las evidencias examinadas.`,4)
-  if(oralRequested(text))add('oral',`Comunicación científica de ${label}`,`Comunica oralmente ${relation} en una secuencia comprensible y utiliza los términos científicos necesarios o los apoyos de acceso acordados.`,`Comunica ideas sobre ${label}, pero una relación queda ambigua por su organización o por el uso de términos.`,`La comunicación de ${label} no permite reconocer la relación científica solicitada.`)
   if(!rows.some(r=>r.templateId.startsWith(`nat-${t.grade}-${t.id}-`)))add('content',`Relaciones de ${label}`,`Presenta evidencia de ${relation} pertinente al producto solicitado y científicamente compatible con la información disponible.`,`Presenta parte de ${label}, pero omite una relación necesaria para entender la evidencia.`,`La evidencia de ${label} contradice la relación científica estudiada.`)
+  if(oralRequested(text))add('oral',`Comunicación científica de ${label}`,`Comunica oralmente ${relation} en una secuencia comprensible y utiliza los términos científicos necesarios o los apoyos de acceso acordados.`,`Comunica ideas sobre ${label}, pero una relación queda ambigua por su organización o por el uso de términos.`,`La comunicación de ${label} no permite reconocer la relación científica solicitada.`)
  }
  return rows
 }
@@ -216,7 +218,21 @@ export function commonScienceCriteria(task:CommonScienceTask){
   const facets=t.facets?.filter(f=>new RegExp(f.match).test(a.text))
   return facets?.length?facets.map(f=>({...t,id:`${t.id}-${f.id}`,label:f.label,relation:f.relation,facets:undefined})):[t]
  })}))
- const rows=actions.flatMap(actionCriteria)
+ let rows=actions.flatMap(actionCriteria)
+ // Una solicitud explícita sustituye las filas amplias que valoraban dos veces el mismo contenido.
+ const topics=[...new Map(task.actions.flatMap(a=>a.topics).map(t=>[t.id,t])).values()]
+ for(const topic of topics){
+  const explicit=explicitScienceContent(topic,text)
+  if(!explicit||rows.some(r=>r.templateId.endsWith('-alternative')))continue
+  const prefix=`nat-${topic.grade}-${topic.id}-`
+  rows=rows.filter(r=>!['content','explanation','identification'].some(key=>r.templateId===prefix+key))
+  rows.push(...explicit)
+ }
+ // El desempeño oral se evalúa una vez, separado de las facetas de contenido.
+ if(rows.some(r=>r.templateId.endsWith('-oral'))&&!rows.some(r=>r.templateId.endsWith('-alternative'))){
+  rows=rows.filter(r=>!r.templateId.endsWith('-oral'))
+  rows.push(...sciencePresentationCriteria(topics[0],text))
+ }
  return rows.filter((r,i)=>rows.findIndex(o=>o.templateId===r.templateId)===i)
   .filter(r=>!r.templateId.endsWith('-observation')||!rows.some(o=>o.templateId===r.templateId.replace(/-observation$/,'-experiment-record')))
 }

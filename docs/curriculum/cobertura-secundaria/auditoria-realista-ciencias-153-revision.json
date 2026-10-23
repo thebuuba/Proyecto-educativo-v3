@@ -1,0 +1,229 @@
+{
+  "catalog": "evaluation-2026.153",
+  "status": "PRIORITY_SCIENCE_REQUIREMENTS_COVERED_BROADER_AUDIT_OPEN",
+  "bankSha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817",
+  "changed": [
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "rubrica",
+      "ms": 16.04559999999998
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "lista-cotejo",
+      "ms": 3.582400000000007
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "escala",
+      "ms": 1.0378000000000043
+    },
+    {
+      "id": "B-NAT1-solar-exacta",
+      "format": "lista-ponderada",
+      "ms": 0.8880000000000337
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "rubrica",
+      "ms": 0.8759000000000015
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "lista-cotejo",
+      "ms": 0.6654000000000337
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "escala",
+      "ms": 0.6484000000000378
+    },
+    {
+      "id": "B-NAT1-solar-maxima",
+      "format": "lista-ponderada",
+      "ms": 0.5357000000000198
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "rubrica",
+      "ms": 1.3344000000000165
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "lista-cotejo",
+      "ms": 0.5350999999999999
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "escala",
+      "ms": 0.473199999999963
+    },
+    {
+      "id": "B-NAT1-solar-aproximada",
+      "format": "lista-ponderada",
+      "ms": 0.4480000000000359
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "rubrica",
+      "ms": 4.817799999999977
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-cotejo",
+      "ms": 0.6334999999999695
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "escala",
+      "ms": 0.5090999999999894
+    },
+    {
+      "id": "B-NAT5-tabla-reconstruida",
+      "format": "lista-ponderada",
+      "ms": 0.7654999999999745
+    }
+  ],
+  "unchanged": 40,
+  "completeInstrumentsRead": 16,
+  "reservedCasesExecuted": 0,
+  "externalIndependence": false,
+  "requirements": [
+    {
+      "cases": [
+        "B-NAT1-solar-exacta",
+        "B-NAT1-solar-maxima",
+        "B-NAT1-solar-aproximada"
+      ],
+      "mapping": [
+        {
+          "requirement": "Presentar todos los planetas",
+          "criterion": "nat-1-solar-system-coverage",
+          "evidence": "Los ocho planetas en una dimensión de alcance e identificación, sin una fila por planeta."
+        },
+        {
+          "requirement": "Explicar qué es cada planeta",
+          "criterion": "nat-1-solar-system-explanation",
+          "evidence": "Naturaleza planetaria y explicación de características pertinentes; sin cifras memorizadas ni producto nuevo."
+        },
+        {
+          "requirement": "Exponer oralmente",
+          "criterion": "nat-1-solar-system-oral",
+          "evidence": "Secuencia y expresión comprensible; no vuelve a valorar precisión científica."
+        },
+        {
+          "requirement": "Duración exacta, máxima o aproximada",
+          "criterion": "nat-1-solar-system-oral",
+          "evidence": "Condición literal distinguida sin tolerancia inventada. El banco conserva duración como requisito separado; se combina en la dimensión de ejecución oral, decisión editable de AulaBase."
+        },
+        {
+          "requirement": "Utilizar material de apoyo",
+          "criterion": "nat-1-solar-system-support",
+          "evidence": "Se valora la conexión y utilidad del apoyo; no se impone maqueta, diapositivas ni material específico."
+        }
+      ],
+      "before": "Tres filas amplias repetían la relación del sistema solar; omitían cobertura completa, tiempo y apoyo.",
+      "after": "Cuatro dimensiones, con condiciones explícitas y progresiones propias."
+    },
+    {
+      "cases": [
+        "B-NAT5-tabla-reconstruida"
+      ],
+      "mapping": [
+        {
+          "requirement": "Explicar grupos y períodos",
+          "criterion": "nat-5-periodic-position-organization",
+          "evidence": "Columnas, filas y cruce; ambas evidencias identificables en una dimensión de organización."
+        },
+        {
+          "requirement": "Explicar por qué ocupan su posición",
+          "criterion": "nat-5-periodic-position-explanation",
+          "evidence": "Número atómico creciente y periodicidad de propiedades. No se añaden predicciones ni configuraciones electrónicas a desarrollar."
+        },
+        {
+          "requirement": "Exposición oral",
+          "criterion": "nat-5-periodic-position-oral",
+          "evidence": "Comunicación separada del contenido; no se inventa duración o apoyo obligatorio."
+        }
+      ],
+      "before": "Dos filas repetían posición y exigían predicciones no solicitadas.",
+      "after": "Organización, fundamento y comunicación diferenciados."
+    }
+  ],
+  "decisions": [
+    "Rúbrica y escala conservan progresiones específicas; cotejo usa indicadores conjuntivos y ponderada el parcial existente de 50%.",
+    "Los pesos relativos y el parcial de ponderada son decisiones editables de AulaBase, no requisitos originales del docente.",
+    "Comunicación y tiempo comparten fila: un Sí/No no identifica por sí solo cuál falló. La consigna y las dos condiciones están visibles; el modelo no ofrece subindicadores independientes.",
+    "La escala utiliza calidad para una exposición aislada, sin fingir frecuencia observada.",
+    "El formato de cuatro niveles omite la cuarta de cinco progresiones internas; aún requiere revisión transversal para abarcar todos los desempeños inferiores sin huecos."
+  ],
+  "sources": [
+    {
+      "url": "https://science.nasa.gov/solar-system/planets/",
+      "scope": "Sistema solar 1.º: los ocho planetas y distinción respecto de otros cuerpos; adaptación redactada por AulaBase."
+    },
+    {
+      "url": "https://iupac.org/what-we-do/periodic-table-of-elements/",
+      "scope": "Química 5.º: organización por grupos; no se impone un diseño particular de tabla."
+    },
+    {
+      "url": "https://openstax.org/books/chemistry-2e/pages/2-5-the-periodic-table",
+      "scope": "Química 5.º: filas/períodos, columnas/grupos y orden por número atómico. La redacción evaluativa no es una cita oficial del currículo."
+    }
+  ],
+  "tests": {
+    "newScientificCases": 16,
+    "initialExpandedRed": {
+      "failed": 11,
+      "passed": 4
+    },
+    "additionalBriefOralRegression": true,
+    "focalPassed": 1496,
+    "frontendParityPassed": 4637,
+    "backendPassed": 97234,
+    "gates": [
+      {
+        "name": "backend-test",
+        "exit": 0,
+        "ms": 147297
+      },
+      {
+        "name": "backend-build",
+        "exit": 0,
+        "ms": 17256
+      },
+      {
+        "name": "frontend-build",
+        "exit": 0,
+        "ms": 44002
+      },
+      {
+        "name": "cloudflare-build",
+        "exit": 0,
+        "ms": 55371
+      },
+      {
+        "name": "backend-lint",
+        "exit": 0,
+        "ms": 6079
+      },
+      {
+        "name": "shared-lint",
+        "exit": 0,
+        "ms": 3509
+      },
+      {
+        "name": "frontend-lint",
+        "exit": 0,
+        "ms": 3586
+      }
+    ]
+  },
+  "limitations": [
+    "No es auditoría de todos los temas de Ciencias ni de los 81 ámbitos inventariados.",
+    "Los instrumentos genéricos de otros temas aún conservan progresiones pendientes de revisar.",
+    "C continúa reservado.",
+    "HTTP/DB del 153 y visual personal pendientes al registrar este bloque.",
+    "Informe desarrollado, francés, entrevista inglesa, alternativas y restantes proveedores siguen abiertos."
+  ]
+}

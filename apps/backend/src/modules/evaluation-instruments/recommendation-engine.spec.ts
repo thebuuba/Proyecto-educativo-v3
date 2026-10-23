@@ -300,8 +300,8 @@ describe('Recomendador con currículo literal completo', () => {
     const result = recommend({ activityTitle, description: '', maxScore: 20, participationMode: 'INDIVIDUAL' }, context, null, [], 'UNMAPPED', null)
     expect(result.activityType).toBe(activityType)
     expect(result.instrumentType).toBe(instrumentType)
-    // The scoped science provider does not pad a brief oral task to four rows.
-    if(subjectCode==='NAT'&&activityType==='ORAL_PRESENTATION')expect(result.criteria.map(c=>c.templateId)).toEqual(['nat-2-biodiversity-oral'])
+    // Contenido disciplinar y comunicación son evidencias distintas; no se añaden filas de relleno.
+    if(subjectCode==='NAT'&&activityType==='ORAL_PRESENTATION')expect(result.criteria.map(c=>c.templateId)).toEqual(['nat-2-biodiversity-content','nat-2-biodiversity-oral'])
     else if(subjectCode==='SOC')expect(result.criteria.map(c=>c.templateId)).toEqual(['soc-2-migration-research-content','soc-2-migration-sources'])
     else expect(result.criteria.length).toBeGreaterThanOrEqual(4)
     expect(JSON.stringify(result.criteria)).toMatch(topic)
