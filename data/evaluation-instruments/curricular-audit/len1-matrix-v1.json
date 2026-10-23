@@ -3260,7 +3260,7 @@
             "LEN1-CUE-05",
             "LEN1-CUE-09"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-01",
@@ -3343,7 +3343,7 @@
             "LEN1-CUE-04",
             "LEN1-CUE-08"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-01",
@@ -3426,7 +3426,7 @@
             "LEN1-CUE-08",
             "LEN1-CUE-09"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-01",
@@ -3508,7 +3508,7 @@
             "LEN1-CUE-07",
             "LEN1-CUE-R06"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-02",
@@ -3639,7 +3639,7 @@
             "LEN1-CUE-12",
             "LEN1-CUE-R01"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-03",
@@ -3742,7 +3742,7 @@
             "LEN1-CUE-04",
             "LEN1-CUE-06"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-02",
@@ -3806,7 +3806,7 @@
             "LEN1-CUE-05",
             "LEN1-CUE-06"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-02",
@@ -3880,7 +3880,7 @@
             "LEN1-CUE-05",
             "LEN1-CUE-06"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-02",
@@ -3944,7 +3944,7 @@
             "LEN1-CUE-05",
             "LEN1-CUE-06"
           ],
-          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
           "evidence": [
             {
               "caseId": "LEN1-CUE-02",
@@ -3997,8 +3997,8 @@
           ]
         }
       ],
-      "status": "REVISADO_LOCAL_84_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
-      "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
+      "nextAction": "Visual personal pendiente;84salidas y HTTP162 acreditados, indicadores generales abiertos",
       "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json",
       "curricularComponentAudit": [
         {
@@ -4189,7 +4189,15 @@
         "dab4acf7-3e7e-51ec-a792-9715e32330a8",
         "97c70a67-2f5a-56bb-9853-f83d23e9371d"
       ],
-      "attitudeSourceNote": "La columna73 nombra explícitamente declamar/leer/producir caligramas. Esos tres literales se reservan para caligrama, sin forzar declamación de caligrama al cuento ni modificar la extracción original."
+      "attitudeSourceNote": "La columna73 nombra explícitamente declamar/leer/producir caligramas. Esos tres literales se reservan para caligrama, sin forzar declamación de caligrama al cuento ni modificar la extracción original.",
+      "verification162": {
+        "activities": 21,
+        "instrumentsRead": 84,
+        "httpEvidence": "auditoria-curricular-http-162.json",
+        "personalPreservation": "auditoria-curricular-len1-personales-162.json",
+        "personalBrowser": "LOGIN_SIN_SESION_NO_MODIFICADO",
+        "fullSubjectAchievementIndicators": "ABIERTOS"
+      }
     },
     {
       "id": "caligrama",
@@ -6150,11 +6158,10 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Cuento21actividades/84instrumentos revisados localmente, HTTP162 pendiente; caligrama74 pendiente",
+    "otherTopics": "Caligrama: banco previo14casos desde74 y actitudes explícitas de73, sin generar",
     "remaining": [
-      "HTTP/DB162 y15referencias personales después de cuatro muestras",
-      "Visual personal bloqueado por acceso; registroSW/caché no accesibles a herramientaDOM",
-      "Caligrama74, contraste totalLengua1 e indicadores; restantes ámbitos"
+      "Visual personal bloqueada por acceso; caché y registro SW no expuestos por herramientaDOM",
+      "Caligrama74; comparación completaLengua1 e indicadores; ámbitos restantes"
     ]
   }
 }

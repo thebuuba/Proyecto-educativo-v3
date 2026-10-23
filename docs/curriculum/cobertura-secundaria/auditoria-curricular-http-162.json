@@ -1,0 +1,269 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.162",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-CUE-02",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "DETECTIVE_STORY_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-CUE-04",
+      "format": "escala",
+      "score": 17.35,
+      "activityType": "DETECTIVE_STORY_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-CUE-05",
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityType": "DETECTIVE_STORY_NARRATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-CUE-P01",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "DETECTIVE_STORY_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2533
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 2425
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 12131
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9885
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3994
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11722
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3411
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5160
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10933
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7438
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3047
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 7245
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4580
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 14883
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10380
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 11415
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4441
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 16625
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3986
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 21226
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 12572
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9842
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2665
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 15586
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4970
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 12934
+    }
+  ],
+  "preservedReleases": 92,
+  "preservedSnapshots": 1233,
+  "finalReleases": 93,
+  "finalSnapshots": 1237,
+  "pedagogicalAcceptance": "DETECTIVE_SAMPLE_CONFIRMED_LOCAL_FULL_CURRICULAR_AUDIT_REMAINS_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.162",
+    "sourceCommit": "823811cdcdea90ed2cebec6ae513437e1ee1e2c9",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "b819c805b1e11811522d0a349c62fd270a82aa4c42360b8ab9ba970dd97add32",
+    "frozen161Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 92,
+    "preservedSnapshots": 1233,
+    "finalReleases": 93,
+    "finalSnapshots": 1233,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.162",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CVdka6ty.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CVdka6ty.js",
+        "sha256": "edf20d5b9f4bf54ed3088a9a8c520770246f4dc41c31a0f2256d837f37180e31",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-8BbdeUjD.js",
+        "sha256": "0e2ccb98dc5f2b66af16f9d87eaee6d54208a86e1db64f6b1896a5912a70d217",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BPGMClHj.js",
+        "sha256": "bd7d76f1396f406cd23f7cf0ca07ad5eaafa9308677745263fa1013be1c64b1b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-1MC9sYjv.js",
+        "sha256": "221d31f340bd9573c85989b5f93eeea0e4297dcdadcf42cc2ed2d9190059c531",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-o7v5xLmJ.js",
+        "sha256": "d8cee50618d0d06b9f493796a09c5f7cf59516102ca0d72942bc55aefa8ae5b8",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "3798e60b8cbfed0430d958cc05c65428019beb07c897b090acfcd427f95f67ad",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browser": {
+    "mode": "PERSONAL_LOGIN_NO_AUTHENTICATED_CREATOR",
+    "reloadAfterBuild": true,
+    "entry": "/assets/index-CVdka6ty.js",
+    "entryMatchesHttpBuild": true,
+    "serviceWorkerScriptInDom": "/registerSW.js",
+    "registrationAndCacheInspection": "UNAVAILABLE_IN_READ_ONLY_DOM_SANDBOX_NAVIGATOR_UNDEFINED_CONFIRMED161",
+    "storageCleared": false,
+    "credentialsEntered": false,
+    "emailSent": false
+  }
+}
