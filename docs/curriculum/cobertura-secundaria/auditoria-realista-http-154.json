@@ -1,0 +1,360 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.154",
+  "sourceCommit": "b524e23a10db9755a192131d798064ab804deaef",
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.154",
+    "sourceCommit": "b524e23a10db9755a192131d798064ab804deaef",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "frozen153Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 86,
+    "preservedSnapshots": 1209,
+    "finalReleases": 87,
+    "finalSnapshots": 1209,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.154",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-D-tnsmbQ.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-D-tnsmbQ.js",
+        "sha256": "cea7cd82a300a63dba32337d249b63a31cf262a3a2a754d30e64c555962f2fe6",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-o2Sj2Uvz.js",
+        "sha256": "837f126c0bb1ede228c3064fbddb515e8ce485b697b21e5a0c22a1bad3e19975",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BRbABFYK.js",
+        "sha256": "b0b3aa76517bc2c8787673765e1a6ce8317bf3440b02e9a43d0e05e95bb52e31",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-CSCB8k3q.js",
+        "sha256": "2415bd95b09f21e44862590d1e471b2586ab0d4416f5e0c3e7af3d5a6fcee3ba",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BDvn858a.js",
+        "sha256": "a6450343e10003adf145eff07efe826e327cb9f617a8f5017d5736b0e07d25bc",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "5171365cc3049a5cc911f749c63e2646b0a5c195c0cf7f18fdee01ffc71066eb",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "B-NAT1-solar-exacta",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "ORAL_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-NAT1-solar-maxima",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "ORAL_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-NAT5-tabla-reconstruida",
+      "format": "escala",
+      "score": 20,
+      "activityType": "ORAL_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-NAT5-tabla-reconstruida",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "ORAL_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 3494
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4710
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 23499
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 25334
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 10508
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4082
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6794
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5493
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 13564
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 12709
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7679
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4737
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8294
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5080
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 16453
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 19038
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 9943
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5559
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7081
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6266
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8650
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 11048
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8849
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6125
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6281
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4618
+    }
+  ],
+  "preservation": {
+    "priorReleases": 86,
+    "priorSnapshots": 1209,
+    "finalReleases": 87,
+    "finalSnapshots": 1213,
+    "originalHashesExact": true,
+    "newQaSnapshots": 4
+  },
+  "serviceProfile": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "remoteWrites": false,
+    "phase": "complete",
+    "stages": [
+      {
+        "name": "preservation",
+        "ms": 4277
+      },
+      {
+        "name": "prisma-cold-connect",
+        "ms": 15
+      },
+      {
+        "name": "qa-user-and-roles",
+        "ms": 1248
+      },
+      {
+        "name": "service-interpret",
+        "ms": 8015
+      }
+    ],
+    "queries": [
+      {
+        "model": "SectionSubject",
+        "operation": "findFirst",
+        "ms": 1025,
+        "rows": 1,
+        "responseBytes": 2816
+      },
+      {
+        "model": "raw",
+        "operation": "$queryRaw",
+        "ms": 179,
+        "rows": 1,
+        "responseBytes": 20
+      },
+      {
+        "model": "CurriculumVersion",
+        "operation": "findFirst",
+        "ms": 154,
+        "rows": 1,
+        "responseBytes": 2316,
+        "metadataBytes": 1989
+      },
+      {
+        "model": "CurriculumVersion",
+        "operation": "findMany",
+        "ms": 5235,
+        "rows": 59,
+        "responseBytes": 374496
+      },
+      {
+        "model": "CurriculumScope",
+        "operation": "findMany",
+        "ms": 87,
+        "rows": 1,
+        "responseBytes": 486
+      },
+      {
+        "model": "CurriculumSubjectMapping",
+        "operation": "findMany",
+        "ms": 704,
+        "rows": 0,
+        "responseBytes": 2
+      },
+      {
+        "model": "CurriculumElement",
+        "operation": "findMany",
+        "ms": 700,
+        "rows": 112,
+        "responseBytes": 52864
+      }
+    ],
+    "history": {
+      "releases": 87,
+      "snapshots": 1213,
+      "original86And1209Exact": true
+    },
+    "result": {
+      "activityType": "ORAL_PRESENTATION",
+      "candidates": 5,
+      "responseBytes": 4148
+    },
+    "limitations": "Medición Node con DB real, no desglose interno del Worker previo."
+  },
+  "browser": {
+    "entry": "/assets/index-D-tnsmbQ.js",
+    "domVerified": true,
+    "personalCreator": "PENDING_LOGIN",
+    "cacheOrStorageCleared": false
+  },
+  "limitations": [
+    "Muestras científicas HTTP/DB con cuenta QA; no recorrido visual personal.",
+    "La latencia observada sigue variable; no se certifica estabilidad sostenida.",
+    "Inglés/Francés154 todavía requieren recorrido HTTP; su corrección local no sustituye esa prueba."
+  ],
+  "push": false,
+  "deploy": false,
+  "overallAuditComplete": false
+}
