@@ -1,0 +1,157 @@
+{
+  "catalog": "evaluation-2026.169",
+  "bank": "data/evaluation-instruments/curricular-audit/ing1-informacion-personal-independiente-v1.json",
+  "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-personal-169-antes-revisar-v1.json",
+  "metadata": "docs/curriculum/cobertura-secundaria/auditoria-curricular-ing1-personal-169-antes-selecciones-v1.json",
+  "designer": "/root/disenador_pruebas",
+  "reviewer": "/root/revisor_pedagogico",
+  "reviewed": {
+    "main": 44,
+    "differentFallbacks": 36,
+    "selections": 11,
+    "uniqueTextVariants": 52,
+    "allMappedToCompleteOutputs": true
+  },
+  "acceptedActivities": 0,
+  "coordinatorRead": "Descripciones principales y fallback de11casos; revisión independiente íntegra de80salidas.",
+  "rows": [
+    {
+      "id": "ING-PER01",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Pregunta/respuesta de nombre, país y ciudad; fidelidad a tarjeta y respeto observable ausentes.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER02",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Tres datos y referente ajeno sin especificar; modalidad oral ausente.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER03",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Escucha y asociación sustituidas por desarrollo/organización de texto; omite confusiones entre personajes.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER04",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Lectura y campos sustituidos por producción; faltan país/nacionalidad, correspondencia y not stated.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER05",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Reconoce intercambio escrito, pero omite dos datos desconocidos, fidelidad y registro enlazado; aclaración puntual rebaja nivel sin atender su efecto.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": false
+    },
+    {
+      "id": "ING-PER06",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "Preparar preguntas se convierte en intercambio realizado:744/1735 unidades valoran respuesta no prevista hoy.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": false
+    },
+    {
+      "id": "ING-PER07",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "No limita reparación al país ni conserva otros fragmentos; reescritura completa podría aceptarse.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER08",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "No preserva datos, audio O papel ni fase sin envío/respuesta posterior.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER09",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "No evalúa resolver origen frente a residencia mediante escucha, aclaración, respuesta, confirmación y registro.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER10",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "No explicita incertidumbres de modalidad/producto/datos ni supuestos provisionales.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    },
+    {
+      "id": "ING-PER11",
+      "status": "RESERVA_PEDAGOGICA",
+      "issue": "No precisa campos/fuente; criterios de conectores/género ajenos al formulario y fidelidad sin referencia.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "differentFallbacks": true
+    }
+  ],
+  "sharedIssues": [
+    "Descriptores genéricos de autonomía/apoyo no gradúan errores comunicativos.",
+    "En PER05/PER06 L1 pierde errores sustantivos presentes en progresiones.",
+    "Nueve selecciones nulas; PER06 recomienda interacción oral, improcedente para preparación escrita."
+  ],
+  "runtimeOrBrowserTested": false
+}

@@ -1,0 +1,535 @@
+{
+  "bankId": "ing1-informacion-personal-independiente-v1",
+  "scopeKey": "SECONDARY/1/1/lenguas extranjeras/ingles/all/all",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "ING",
+    "subjectName": "Inglés",
+    "modalityCode": null,
+    "optativeExitName": null
+  },
+  "expectationsFixedAt": "2026-10-23T21:28:54Z",
+  "designer": "/root/disenador_pruebas",
+  "independence": {
+    "implementationRead": false,
+    "triggersRead": false,
+    "generatedOutputsRead": false,
+    "filesModifiedByDesigner": false,
+    "sourceScopeRecordsRead": 201,
+    "sourceScopePdfPages": [
+      134,
+      135,
+      136,
+      137,
+      138,
+      139
+    ],
+    "pdfPagesTextCheckedDirectly": [
+      134,
+      139
+    ],
+    "pdfPagesVisuallyChecked": [
+      134
+    ]
+  },
+  "editorialNote": "Títulos y consignas conservados literalmente. Expectativas organizadas por el coordinador a partir del dictamen del diseñador, sin consultar resultados del motor. Todos los casos son sintéticos.",
+  "fourInstrumentContract": {
+    "sharedEvidence": "Los cuatro formatos conservan evidencias, alternativas y límites. Rúbrica y escala gradúan pertinencia, fidelidad, correspondencia y comprensibilidad con desempeños distinguibles. Cotejos comprueban acciones observables; ponderación no añade tareas. Rúbrica y escala utilizan cuatro o cinco niveles con desempeños distinguibles.",
+    "initialAssessment": "Selecciones, niveles obtenidos y puntuaciones del estudiante permanecen pendientes.",
+    "curricularTolerance": "Comunicación breve y sencilla; pausas, reformulaciones y posibles errores básicos no implican fallo automático. Aclaración, repetición y apoyos pueden resolver la comunicación, sin exigirse cuando no existe necesidad observable.",
+    "recommendations": "Son justificables, no etiquetas únicas obligatorias. Una clasificación adecuada no compensa criterios ajenos.",
+    "globalForbidden": [
+      "Acento nativo, fluidez sin pausas, memorización o corrección absoluta.",
+      "Todos los contenidos gramaticales, temas, géneros o estrategias del curso en cada tarea.",
+      "Añadir gustos, rutinas, descripción física, experiencias, clima o invitaciones automáticamente.",
+      "Exigir datos personales reales privados.",
+      "Confundir presentación, comprensión o preparación con intercambio realizado.",
+      "Exigir fórmula verbal exacta cuando otra expresión básica cumple la función.",
+      "Convertir apoyos o modalidades alternativas en obligaciones acumulativas.",
+      "Puntuar motivación, seguridad o ausencia de ansiedad."
+    ]
+  },
+  "sources": {
+    "F1": {
+      "pdfPage": 134,
+      "id": "167c3938-fc50-53f1-ae5b-a7f2ad704408",
+      "component": "Solicitar y ofrecer información personal",
+      "printedPage": 133
+    },
+    "T1": {
+      "pdfPage": 134,
+      "id": "f2761aa8-223b-522a-8a30-7d88961a7421",
+      "component": "Identificación personal: contexto temático, no criterio autónomo",
+      "printedPage": 133
+    },
+    "CE1": {
+      "pdfPage": 134,
+      "id": "e1f175ec-33ae-516d-a475-553ee9e8b677",
+      "component": "Comprensión y expresión breve y sencilla de información propia y ajena",
+      "printedPage": 133
+    },
+    "D_COMP": {
+      "pdfPage": 134,
+      "id": "1bd418ab-727e-544d-b821-73ff8cf83bda",
+      "component": "Comprensión de textos orales y escritos",
+      "printedPage": 133
+    },
+    "D_ORAL": {
+      "pdfPage": 134,
+      "id": "e7d4cbe4-94b0-5825-9163-8fd6db07fb8e",
+      "component": "Producción oral",
+      "printedPage": 133
+    },
+    "D_ESCRITA": {
+      "pdfPage": 134,
+      "id": "0dd1f9cd-045e-5e3b-90c4-164ab9a823aa",
+      "component": "Producción escrita",
+      "printedPage": 133
+    },
+    "AYUDA_ORAL": {
+      "pdfPage": 135,
+      "id": "97ced1a6-faeb-5054-920f-fccfef1c2189",
+      "component": "Solicitud de ayuda y repetición en comprensión oral",
+      "printedPage": 134
+    },
+    "REVISION": {
+      "pdfPage": 136,
+      "id": "a756d91a-2d03-5366-ad41-115ba70b4ba3",
+      "component": "Revisión del sentido y corrección del mensaje escrito",
+      "printedPage": 135
+    },
+    "PRESENTACIONES": {
+      "pdfPage": 136,
+      "id": "f43d5a13-cf74-593b-bf82-51c1e6fb046c",
+      "component": "Expresiones de presentación, incluida la presentación de otra persona.",
+      "printedPage": 135
+    },
+    "PRESENTE": {
+      "pdfPage": 136,
+      "id": "c7cfe9b2-3b15-50bb-b2e3-6756c700b8b4",
+      "component": "Presente simple según función solicitada",
+      "printedPage": 135
+    },
+    "INTERROGATIVOS": {
+      "pdfPage": 137,
+      "id": "09fb915f-18a1-512d-b0e0-177a7d36e74f",
+      "component": "Pronombres interrogativos",
+      "printedPage": 136
+    },
+    "CORTESIA": {
+      "pdfPage": 134,
+      "id": "05a3eeab-ad50-5da0-bacb-703840a13de8",
+      "component": "Cortesía, asertividad y respeto",
+      "printedPage": 133
+    },
+    "I_COMP": {
+      "pdfPage": 139,
+      "id": "c2582fc9-2313-5b6b-89d6-70fcb85b1d7d",
+      "component": "Respuesta a preguntas desde escucha o lectura",
+      "printedPage": 138
+    },
+    "I_EXP": {
+      "pdfPage": 139,
+      "id": "cd6f3117-67b8-5af1-a401-3225a01a7aa8",
+      "component": "Expresión sencilla con pausas/reformulaciones y posibles errores básicos",
+      "printedPage": 138
+    },
+    "I_INTERACCION": {
+      "pdfPage": 139,
+      "id": "d8e7ad1a-bc6e-5535-94da-188cc53e2257",
+      "component": "Interacción oral y escrita",
+      "printedPage": 138
+    },
+    "I_LOGICA": {
+      "pdfPage": 139,
+      "id": "165abc91-7e3d-5a97-b67a-4ad8b8f3fa9b",
+      "component": "Lógica del intercambio y contexto inmediato",
+      "printedPage": 138
+    },
+    "I_RESPETO": {
+      "pdfPage": 139,
+      "id": "0fd7efb6-5c1f-569b-a373-bd910b999535",
+      "component": "Intercambios con cortesía, asertividad y respeto",
+      "printedPage": 138
+    }
+  },
+  "vocabularySupport": {
+    "pdfPage": 135,
+    "use": "Solo según los datos solicitados; inventario no obligatorio.",
+    "ids": [
+      "f39ac01d-c024-5571-86d1-45acb82691b6",
+      "7fa52114-d85a-593e-8e2a-32305056cf2e",
+      "b63a9985-b412-5d6b-b2a8-391d147ec026",
+      "b5d39bfc-a943-5ae0-bd3e-b2968d390aa7",
+      "08667c75-3188-57d7-98a4-43ec8811963b"
+    ],
+    "printedPage": 134
+  },
+  "cases": [
+    {
+      "id": "ING-PER01",
+      "title": "Conozcamos a los visitantes",
+      "description": "En parejas, pregunten y respondan en inglés el nombre, el país y la ciudad de los personajes de sus tarjetas.",
+      "participationMode": "GROUP",
+      "promptType": "breve",
+      "materials": "Tarjetas ficticias con nombre, país y ciudad.",
+      "expected": [
+        "Cada participante solicita los datos previstos mediante preguntas comprensibles.",
+        "Responde según su personaje y mantiene correspondencia entre dato preguntado y ofrecido.",
+        "Los datos se entienden aunque haya pausas o reformulaciones; interacción sin burlas ni descalificaciones."
+      ],
+      "forbidden": [
+        "Dos presentaciones independientes como intercambio completo.",
+        "Datos adicionales, gustos, rutinas, biografía o físico.",
+        "Número artificial de turnos, saludos/despedidas específicos o memorización."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; heteroevaluación y retroalimentación entre pares",
+        "strategy": "Intercambio de información mediante roles ficticios",
+        "technique": "Observación directa de preguntas y respuestas",
+        "instrument": "Rúbrica breve o escala; cotejos para funciones"
+      },
+      "sources": [
+        "F1",
+        "CE1",
+        "D_ORAL",
+        "I_INTERACCION",
+        "CORTESIA"
+      ]
+    },
+    {
+      "id": "ING-PER02",
+      "title": "Esta es nuestra visitante",
+      "description": "Presenta oralmente en inglés al personaje de la tarjeta: di su nombre, su país y su ocupación.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "breve",
+      "materials": "Tarjeta ficticia con los tres datos.",
+      "expected": [
+        "Ofrece los tres datos fielmente.",
+        "Se reconoce que presenta a otra persona, con referente claro mediante nombre u otras formas apropiadas.",
+        "Presentación oral breve, organizada y comprensible."
+      ],
+      "forbidden": [
+        "Exigir preguntas al público o respuestas de un interlocutor; acreditar solicitar información por el solo hecho de presentar a alguien.",
+        "Físico, carácter, gustos, experiencias; inferir género o nacionalidad por nombre.",
+        "Presentación digital, grabación o exposición extensa."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; heteroevaluación",
+        "strategy": "Presentación breve apoyada en tarjeta",
+        "technique": "Observación oral y contraste de datos",
+        "instrument": "Rúbrica breve o escala"
+      },
+      "sources": [
+        "F1",
+        "D_ORAL",
+        "PRESENTACIONES",
+        "CE1",
+        "I_EXP"
+      ],
+      "coverageLimit": "Ofrecer información ajena; no solicitar ni interactuar."
+    },
+    {
+      "id": "ING-PER03",
+      "title": "¿Quién acaba de presentarse?",
+      "description": "Escucha las dos presentaciones en inglés y relaciona cada nombre con el país y la ocupación que se mencionan.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "breve",
+      "materials": "Dos presentaciones orales claras, incluso leídas por docente, y opciones para relacionar.",
+      "expected": [
+        "Reconoce nombres y datos escuchados.",
+        "Relaciona cada país y ocupación con la persona correspondiente, sin mezclar datos entre personajes.",
+        "Repetición o aclaración permitidas como apoyo, sin fallo automático."
+      ],
+      "forbidden": [
+        "Producción oral, pronunciación, diálogo, oraciones completas o transcripción íntegra.",
+        "Sustituir escucha por lectura y acreditar misma destreza.",
+        "Puntuar contacto visual, inmovilidad o nervios; exigir equipo audiovisual."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa o diagnóstica según uso",
+        "strategy": "Escucha e identificación/asociación",
+        "technique": "Análisis de respuestas de comprensión",
+        "instrument": "Cotejo; escala/rúbrica con confusiones concretas"
+      },
+      "sources": [
+        "F1",
+        "D_COMP",
+        "I_COMP",
+        "AYUDA_ORAL"
+      ],
+      "coverageLimit": "Comprensión oral; no producción ni interacción."
+    },
+    {
+      "id": "ING-PER04",
+      "title": "Lo que dicen las tarjetas",
+      "description": "Lee las dos tarjetas en inglés y completa name, country, nationality y occupation con sus datos. Si un dato no aparece, escribe not stated.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "breve",
+      "materials": "Dos tarjetas ficticias; al menos un dato ausente.",
+      "expected": [
+        "Localiza información explícita y la coloca en campo/personaje correspondiente.",
+        "Distingue país, nacionalidad y ocupación cuando están presentes.",
+        "Indica dato ausente mediante not stated, sin inventarlo."
+      ],
+      "forbidden": [
+        "Preguntas orales, pronunciación o conversación.",
+        "Presentación, párrafos u otros géneros.",
+        "Inferir nacionalidad de nombre/residencia; penalizar reconocer ausencia."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; heteroevaluación",
+        "strategy": "Lectura para localizar datos",
+        "technique": "Análisis de campos y contraste con tarjetas",
+        "instrument": "Cotejo con dato ausente explícito"
+      },
+      "sources": [
+        "F1",
+        "D_COMP",
+        "I_COMP"
+      ],
+      "coverageLimit": "Comprensión escrita, no interacción ni producción extensa."
+    },
+    {
+      "id": "ING-PER05",
+      "title": "Nos conocemos por mensajes",
+      "description": "En parejas, representen a los personajes de sus tarjetas. Escribe en inglés un mensaje para pedir dos datos personales que todavía no conoces de tu compañero. Intercambien los mensajes en papel y respondan según sus tarjetas. Conserven las preguntas y las respuestas.",
+      "participationMode": "GROUP",
+      "promptType": "detallada",
+      "materials": "Tarjetas ficticias desconocidas por el interlocutor y hojas.",
+      "expected": [
+        "Solicita dos datos pertinentes todavía desconocidos.",
+        "Respuesta vinculada a lo solicitado y fiel a tarjeta.",
+        "Inglés escrito claro para intercambiar.",
+        "Registro de preguntas y respuestas acredita intercambio efectivo."
+      ],
+      "forbidden": [
+        "Cuestionario sin respuestas como interacción completa.",
+        "Correo, cuentas, envío externo/publicación.",
+        "Carta formal, extensión elevada, varios tiempos, actuación o pronunciación.",
+        "Datos reales o tratar ficción como deshonestidad."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; heteroevaluación y revisión entre pares",
+        "strategy": "Intercambio escrito con roles",
+        "technique": "Análisis de mensajes enlazados y tarjetas",
+        "instrument": "Rúbrica/escala o cotejo de pertinencia y correspondencia"
+      },
+      "sources": [
+        "F1",
+        "D_ESCRITA",
+        "I_INTERACCION",
+        "I_RESPETO"
+      ]
+    },
+    {
+      "id": "ING-PER06",
+      "title": "Antes de la entrevista",
+      "description": "Prepara en inglés un pequeño cuestionario para preguntar a un visitante su nombre, su país y su ocupación. Hoy entregaremos solo las preguntas; la entrevista será otro día.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "breve",
+      "materials": "Recepción ficticia, todavía sin respuestas.",
+      "expected": [
+        "Preguntas reconocibles para cada dato solicitado.",
+        "Se distingue qué información pide en inglés básico comprensible y tratamiento adecuado.",
+        "Solo fase preparatoria."
+      ],
+      "forbidden": [
+        "Respuestas, diálogo realizado o presentación del visitante.",
+        "Acreditar interacción efectuada o inventar datos.",
+        "Guion completo con saludos/despedidas/preguntas adicionales o todas las estructuras interrogativas."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa de preparación",
+        "strategy": "Planificación de cuestionario comunicativo",
+        "technique": "Análisis de preguntas redactadas",
+        "instrument": "Cotejo o rúbrica breve"
+      },
+      "sources": [
+        "F1",
+        "D_ESCRITA",
+        "PRESENTE",
+        "INTERROGATIVOS"
+      ],
+      "coverageLimit": "Preparación escrita para solicitar; no entrevista ni respuestas."
+    },
+    {
+      "id": "ING-PER07",
+      "title": "Solo cambia esta pregunta",
+      "description": "Revisa únicamente la pregunta y la respuesta sobre el país del visitante para que pidan y comuniquen correctamente ese dato según su tarjeta. Conserva el nombre, la ciudad, la ocupación y el resto del mensaje.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "detallada",
+      "materials": "Tarjeta y borrador con pregunta/respuesta del país que necesitan revisión.",
+      "expected": [
+        "Pregunta revisada solicita país; respuesta correcta y correspondiente según tarjeta.",
+        "Cambios mejoran sentido/corrección necesaria del fragmento en inglés.",
+        "Datos y fragmentos excluidos quedan intactos.",
+        "Comparación con borrador permite reconocer cambios."
+      ],
+      "forbidden": [
+        "Reescritura total, otros datos o cambios innecesarios fuera del fragmento.",
+        "Añadir preguntas, preferencias/descripciones/información.",
+        "Actuación, entrevista, publicación/envío; usar ayuda oral como evidencia escrita."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; autoevaluación y revisión docente",
+        "strategy": "Revisión focalizada",
+        "technique": "Comparación borrador/tarjeta/fragmento revisado",
+        "instrument": "Cotejo o rúbrica de calidad de reparación"
+      },
+      "sources": [
+        "F1",
+        "D_ESCRITA",
+        "REVISION",
+        "PRESENTE",
+        "INTERROGATIVOS"
+      ]
+    },
+    {
+      "id": "ING-PER08",
+      "title": "Una respuesta de bienvenida",
+      "description": "Un nuevo integrante pide tu nombre y tu ciudad. Usa el perfil ficticio entregado para preparar una respuesta breve en inglés y pregúntale de qué país viene. Puedes entregar un audio o un mensaje en papel. No hace falta enviarlo ni esperar una respuesta.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "detallada",
+      "materials": "Mensaje inicial y perfil ficticio con nombre/ciudad.",
+      "expected": [
+        "Responde nombre/ciudad fieles y pregunta comprensible sobre país.",
+        "Conecta respuesta y pregunta con bienvenida.",
+        "Contenido breve y comprensible en inglés.",
+        "Audio O mensaje escrito; criterios compatibles con modalidad elegida."
+      ],
+      "forbidden": [
+        "Audio y escrito simultáneamente.",
+        "Puntuación escrita en audio o pronunciación en papel.",
+        "Envío, respuesta posterior/intercambio completo.",
+        "Datos reales, cuentas, video/presentación digital; una modalidad superior."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa de producción",
+        "strategy": "Respuesta comunicativa con soporte a elección",
+        "technique": "Análisis del producto elegido",
+        "instrument": "Rúbrica/escala con evidencias comunes y modalidades compatibles"
+      },
+      "sources": [
+        "F1",
+        "D_ORAL",
+        "D_ESCRITA",
+        "CE1",
+        "I_EXP"
+      ],
+      "coverageLimit": "Solicitud/ofrecimiento preparados; no acredita recepción de respuesta posterior."
+    },
+    {
+      "id": "ING-PER09",
+      "title": "¿De dónde vienes y dónde vives?",
+      "description": "En parejas, representen una recepción. El visitante mencionará en inglés la ciudad de donde viene y la ciudad donde vive ahora, según su tarjeta. Quien recibe necesita registrar la ciudad de residencia: escuchará, hará una pregunta para aclarar cuál es y confirmará el dato. Después cambien de papel.",
+      "participationMode": "GROUP",
+      "promptType": "detallada",
+      "materials": "Tarjetas ficticias distinguen origen/residencia y campo de registro.",
+      "expected": [
+        "Visitante comunica datos previstos; oyente distingue dato necesario.",
+        "Pregunta/aclaración pertinente a escucha, respuesta resuelve origen frente a residencia.",
+        "Confirma y registra residencia correspondiente.",
+        "Intercambio suficientemente claro, admite repetición y reformulación."
+      ],
+      "forbidden": [
+        "Frase única de aclaración o fórmulas avanzadas.",
+        "Penalizar repetición/reformulación; repetir pregunta sin resolver confusión como suficiente.",
+        "Domicilios reales, narración migratoria, pasado o motivos personales.",
+        "Copiar tarjeta ajena en vez de escuchar y acreditar comprensión oral."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa; heteroevaluación y retroalimentación",
+        "strategy": "Roles con necesidad concreta de aclaración",
+        "technique": "Observación de escucha/aclaración/respuesta/confirmación",
+        "instrument": "Rúbrica/escala o cotejo de resolución del dato"
+      },
+      "sources": [
+        "F1",
+        "AYUDA_ORAL",
+        "I_COMP",
+        "I_INTERACCION",
+        "I_LOGICA",
+        "CORTESIA"
+      ]
+    },
+    {
+      "id": "ING-PER10",
+      "title": "Presentaciones para el primer encuentro",
+      "description": "Cada estudiante preparará su presentación personal en inglés para el primer encuentro del grupo.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "ambigua",
+      "expected": [
+        "Reconocer modalidad/producto/datos sin especificar.",
+        "Confirmar esos aspectos O propuesta breve provisional con supuestos explícitos.",
+        "Datos ficticios o seleccionados; sin revelar datos reales obligatoriamente.",
+        "Instrumento limitado a función/modalidad supuesta; crédito curricular concreto pendiente."
+      ],
+      "forbidden": [
+        "Suponer con certeza oral/video/biografía/formulario/perfil digital.",
+        "Edad, domicilio, teléfono, familia, gustos/rutinas/experiencias obligatorios.",
+        "Preguntas/respuestas sin intercambio definido.",
+        "Puntuar producto desconocido o presentar alineación curricular ya demostrada."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa provisional",
+        "strategy": "Precisar situación comunicativa",
+        "technique": "Pendiente de producto: observación oral o análisis escrito",
+        "instrument": "Rúbrica/escala/cotejo con supuestos explícitos y límites visibles"
+      },
+      "possibleSources": [
+        "F1",
+        "CE1",
+        "D_ORAL",
+        "D_ESCRITA"
+      ],
+      "coverageLimit": "Control de ambigüedad; sin crédito curricular anticipado."
+    },
+    {
+      "id": "ING-PER11",
+      "title": "Datos para la bienvenida",
+      "description": "Completa en inglés los datos que faltan en la ficha de inscripción de los visitantes.",
+      "participationMode": "INDIVIDUAL",
+      "promptType": "ambigua",
+      "expected": [
+        "Producto escrito indicado; origen de datos/campos pendientes.",
+        "Confirmar fuente (tarjeta, escucha o intercambio) y campos O cotejo provisional de correspondencia sin suponer fuente existente.",
+        "Completar no equivale a solicitar por interacción; fidelidad pendiente sin referencia."
+      ],
+      "forbidden": [
+        "Inventar datos; entrevista/pronunciación/escucha no definidas.",
+        "Párrafos en vez de campos, datos privados reales.",
+        "Acreditar comprensión oral/escrita/interacción simultáneas por formulario completado."
+      ],
+      "recommendation": {
+        "evaluation": "Formativa provisional",
+        "strategy": "Precisar fuente y propósito",
+        "technique": "Análisis del formulario definido; observación solo con intercambio real",
+        "instrument": "Cotejo provisional hasta precisar obtención de información"
+      },
+      "possibleSources": [
+        "F1",
+        "D_COMP",
+        "D_ESCRITA",
+        "I_COMP"
+      ],
+      "coverageLimit": "Control de ambigüedad; no atribuye destrezas de obtención no especificadas."
+    }
+  ],
+  "editorialReview": {
+    "designer": "/root/disenador_pruebas",
+    "literalTitlesDescriptionsParticipationVerified": true,
+    "sourceIdsVerified": true,
+    "correctionsApplied": [
+      "Número de niveles",
+      "Selecciones pendientes",
+      "Interlocutor no prohibido en PER02",
+      "No mezclar datos entre personajes en PER03",
+      "Alcance de presentaciones",
+      "Páginas impresas"
+    ],
+    "generatedOutputsRead": false
+  }
+}

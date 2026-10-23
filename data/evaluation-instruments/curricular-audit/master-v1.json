@@ -78,12 +78,12 @@
       "providerIds": [
         "ingles-comunicacion-1"
       ],
-      "sourceReadThisAudit": false,
-      "topicMatrix": null,
-      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "sourceReadThisAudit": true,
+      "topicMatrix": "data/evaluation-instruments/curricular-audit/ing1-matrix-v1.json",
+      "status": "FUENTE_COMPLETA_LEIDA_PRIMER_BANCO_INDEPENDIENTE_PENDIENTE",
       "topicsTotalConfirmed": null,
       "topicsClosed": 0,
-      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+      "nextAction": "Leer y evaluar44 instrumentos del banco independiente de información personal; mantener abierta la matriz de201 registros y todos sus componentes."
     },
     {
       "id": "ce0c7661-2119-5679-8fed-8e4507b92e17",

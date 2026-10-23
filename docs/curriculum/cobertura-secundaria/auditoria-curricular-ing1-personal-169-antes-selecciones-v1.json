@@ -1,0 +1,144 @@
+{
+  "catalog": "evaluation-2026.169",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "ING-PER01",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER02",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER03",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER04",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER05",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER06",
+      "activityType": "ORAL_INTERACTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "observacion-directa",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER07",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER08",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER09",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER10",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "ING-PER11",
+      "activityType": "OTHER",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": null,
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

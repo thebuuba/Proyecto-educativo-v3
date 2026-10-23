@@ -27,3 +27,9 @@ Auditor y diseñador preparan Inglés común de1.º desde la fuente completa201 
 Matriz len1-matrix-v1.json, master-v1.json y manifiesto169-lectura8; informe168 y evidencia168-http-runtime/personales168. Fuente MINERD520 páginas SHA25680b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; extracción inmutable.
 
 CUA identificó la pestaña localhost/login; getTab devolvió Debugger unattached. Recorrido visual personal y registro de service worker pendientes. HTTP QA no sustituye prueba visual. No tocar cuenta ni almacenamiento. Mantener diseño vertical, manuales, puntuación pendiente, AUTO/MANUAL/UNKNOWN, protección de obsoletos/calificados y borradores.
+
+## Preparación de Inglés1 ya realizada
+
+Matriz ing1-matrix-v1.json:201 filas oficiales, clasificación abierta y componentes separados. Banco ing1-informacion-personal-independiente-v1 fijado y lock verificado antes de generar. Captura169:44 principales+36fallback distintos; revisor leyó80 salidas y11selecciones, todas las actividades con reservas. Informe2026-10-23-ingles-1-informacion-personal-170.md y169-lectura-inicial.json. No hay código170 todavía.
+
+QA169:primeras tres muestras verificadas; cuarta guardada pero consultaHTTP agotó55s. Reanudación original falló en lectura histórica a20s. Conectorreadonly confirmó100releases/1265snapshots. Reanudación única con límites del clienteQA ampliados (historia60s/HTTP120s), sin cambiar aplicación/configuración:sesión53972. Consultar diario antes de repetir. Worker169 launcher70376, sesión51825. No editar fuente hasta terminar HTTP y detener árbol verificado.
