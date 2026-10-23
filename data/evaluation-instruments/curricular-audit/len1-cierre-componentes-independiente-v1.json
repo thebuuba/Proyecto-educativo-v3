@@ -1,0 +1,111 @@
+{
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "provenance": {
+    "designer": "/root/disenador_pruebas",
+    "fixedBeforeOutputs": true,
+    "existingBanksUnchanged": true,
+    "source": "Conciliación final independiente de componentes PDF69/75; no contenidos ajenos al ámbito autorizado"
+  },
+  "cases": [
+    {
+      "id": "LEN1-TRE-E01",
+      "title": "Lo que entendimos sobre el cuidado del agua",
+      "description": "En equipos, lean la ficha sobre el uso del agua en la escuela y expliquen al equipo vecino una recomendación que se apoye en ella. El equipo que escucha dirá qué entendió y planteará una pregunta o una propuesta. Respondan a esa intervención usando la ficha y aclaren si mantienen o ajustan su recomendación. Realicen el intercambio dentro del aula y anoten brevemente la intervención recibida y su respuesta.",
+      "participationMode": "GROUP",
+      "sourceIds": [
+        "7683b87f-f7c4-5ea2-830c-7126662ea5e7"
+      ],
+      "expected": {
+        "explicit": [
+          "Recomendación ambiental sustentada en ficha",
+          "Receptor expresa qué entendió y pregunta O propuesta relacionada",
+          "Respuesta sustentada a intervención concreta; mantiene O ajusta con razones",
+          "Recepción y respuesta efectivas dentro del aula, observación y registro"
+        ],
+        "excluded": [
+          "Contacto exterior, publicación digital, grabación, investigación nueva",
+          "Consenso, cambio obligatorio de opinión o mejora ambiental conseguida",
+          "Exposición unilateral como intercambio completo"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "title": "Los resultados ya están en el tablón",
+      "description": "La carpeta contiene los registros de una investigación escolar simulada sobre el crecimiento de plantas y una noticia ya revisada que comunica qué se investigó, cómo se hicieron las observaciones, los resultados y una conclusión limitada a esos datos. Publiquen esa versión en el tablón digital de la comunidad escolar, habilitado previamente por la docente. Conserven su contenido, la referencia a los registros y la indicación de que es una simulación. Comprueben que los lectores previstos pueden abrirla y dejen una constancia verificable de la publicación. No necesitan crear cuentas ni recoger información nueva.",
+      "participationMode": "GROUP",
+      "sourceIds": [
+        "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "746e4fe5-7817-5e72-a03d-c1eebd7f482d"
+      ],
+      "expected": {
+        "explicit": [
+          "Publicación efectiva y acceso de destinatarios",
+          "Investigación identificable: pregunta, procedimiento de observación, resultado y conclusión",
+          "Resultados/alcance fieles a registros y noticia aprobada",
+          "Contenido/procedencia/carácter simulado conservados",
+          "Legibilidad y constancia verificable: enlace O comprobación docente O otra evidencia"
+        ],
+        "excluded": [
+          "Investigar o medir de nuevo, crear cuentas/datospersonales",
+          "Rehacer noticia, añadir hipótesis/conclusiones, varias plataformas",
+          "Visitas/comentarios, vista previa o información científica genérica como investigación publicada"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "title": "Demos otro uso al papel",
+      "description": "Escribe un instructivo para que el curso aproveche las hojas utilizadas por una sola cara como papel de borrador. Usa los materiales y las acciones de la ficha entregada. Organiza las indicaciones para que otra persona pueda seguirlas y explica brevemente cómo esta práctica evita desechar papel que todavía puede utilizarse.",
+      "participationMode": "INDIVIDUAL",
+      "sourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ],
+      "materials": "Ficha con acciones permitidas y explicación ambiental; hojas sin información personal utilizadas por una sola cara; carpeta reutilizable.",
+      "expected": {
+        "explicit": [
+          "Propósito de aprovechamiento y evitar descarte prematuro",
+          "Acciones relacionadas con finalidad, no lema separado",
+          "Pasos comprensibles, ordenados y ejecutables con materiales dados",
+          "Indicaciones precisas y condiciones fieles a ficha"
+        ],
+        "excluded": [
+          "Fabricar papel reciclado, investigar, comprar materiales o ejecutar la actividad",
+          "Medir impacto, cifras inventadas o una única forma verbal obligatoria"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "title": "Solo las copias que hacen falta",
+      "description": "El instructivo del curso propone imprimir una copia nueva para cada participante, aunque ya hay ejemplares disponibles. Revisa únicamente ese paso y la frase que explica su propósito, usando la ficha entregada sobre aprovechamiento del papel. Indica cómo comprobar cuántas copias adicionales hacen falta sin dejar a nadie sin lectura. Conserva las demás instrucciones.",
+      "participationMode": "GROUP",
+      "sourceIds": [
+        "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "1e434089-d202-529a-80ad-734c3a723254"
+      ],
+      "materials": "Instructivo completo, registro ficticio de participantes/ejemplares y ficha sobre evitar impresiones innecesarias.",
+      "expected": {
+        "explicit": [
+          "Comprobación de copias adicionales necesarias antes de imprimir",
+          "Acceso de todas las personas a lectura",
+          "Finalidad de evitar consumo innecesario relacionada con acción",
+          "Revisión clara y limitada a paso y frase; demás instrucciones intactas",
+          "Imprimir algunas O ninguna según datos; cero no es siempre mejor"
+        ],
+        "excluded": [
+          "Lectura digital obligatoria, cuentas, compras",
+          "Rehacer instructivo, ejecutar impresión o ahorro ambiental real"
+        ]
+      }
+    }
+  ]
+}

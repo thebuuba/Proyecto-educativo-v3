@@ -1,0 +1,246 @@
+{
+  "catalog": "evaluation-2026.167",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "LEN1-CTR-P01A",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P01B",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P02A",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P02B",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P03A",
+      "activityType": "CALLIGRAM_CREATION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P03B",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P04A",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P04B",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P05A",
+      "activityType": "NEWS_ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P05B",
+      "activityType": "NEWS_ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P06A",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P06B",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P07A",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P07B",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P08A",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-CTR-P08B",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

@@ -23,6 +23,8 @@ export function refineFirstGradeCalligramRequirements(activity:string,descriptio
  const focusMatch=analyzing?task.match(/\b(?:analic\w*|analiz\w*|expli[cq]\w*|identifi[cq]\w*)\s+(?:\w+\s+){0,2}?(?:solo|solamente|unicamente|exclusivamente)\s+(.+)$/):null
  const focused=Boolean(focusMatch),focusTask=focusMatch?.[1].split(/\b(?:con un|con ejemplos|localicen|aporten|para|y expliquen)\b/)[0]??task
  let rows=initial
+ // A first draft is a product, not evidence of changes to a previous version.
+ if(creating&&/\bborrador\b/.test(task)&&!rows.some(r=>r.templateId==='calligram-process-revision'))rows=rows.filter(r=>r.templateId!=='calligram-revision')
  if(correcting)return[criterion('calligram-feature-typography','Legibilidad de la escritura conservada',4,[
   `Corrige la ${/caligrafia/.test(task)?'caligrafía':'tipografía'} para hacer legibles las palabras y reconocer la figura; conserva exactamente texto, versos y disposición del caligrama entregado.`,
   'La escritura es legible y conserva texto y figura; queda una palabra que requiere precisión gráfica.',
@@ -128,6 +130,14 @@ export function refineFirstGradeCalligramRequirements(activity:string,descriptio
   'Presenta expresiones evocadoras, pero solo parte de ellas se relaciona con intención y tema.',
   'Las expresiones contradicen la intención o la emoción que representa el poema.',
   'No comunica una intención o emoción representada reconocible en el poema.',
+ ]))
+ const requestedTheme=description.match(/que represente ([\p{L}\p{M} ]{1,60}?) mediante/iu)?.[1]?.trim()
+ if(creating&&!revising&&requestedTheme)rows=replace(rows,criterion('calligram-expression','Expresión del tema solicitado',3,[
+  `Comunica ${requestedTheme} mediante palabras y una figura relacionadas entre sí, de acuerdo con el tema solicitado para el caligrama.`,
+  `Las palabras y la figura comunican ${requestedTheme}; una relación expresiva necesita precisión.`,
+  `Parte de las palabras o de la figura se relaciona con ${requestedTheme}, pero su expresión queda incompleta.`,
+  `Las palabras o la figura contradicen ${requestedTheme}, el tema que debía representar.`,
+  `No comunica de forma reconocible ${requestedTheme} mediante las palabras y la figura del caligrama.`,
  ]))
  if(analyzing&&rows.some(r=>r.templateId==='calligram-intention')){
   const scope=focused?focusTask:task,wantIntention=/intencion/.test(scope),wantFeelings=/sentimientos|emocion/.test(scope)

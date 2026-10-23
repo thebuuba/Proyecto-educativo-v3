@@ -9884,7 +9884,7 @@
       },
       "status": "CONTRASTE_DE_COMPONENTES_TRANSVERSALES_EN_CURSO",
       "instrumentCoverage": {
-        "status": "APORTE_ESCRITO_Y_ANALISIS_CON_FUNCIONES_DISTINTAS_ORAL_PENDIENTE",
+        "status": "APORTES_ESCRITOS_Y_ORALES_REVISADOS_SIN_CIERRE_DEL_INDICADOR",
         "evidence": [
           {
             "caseId": "LEN1-SAL-OPI02",
@@ -9918,6 +9918,18 @@
               "lista-ponderada"
             ],
             "manifest": "auditoria-curricular-len1-salud-164-lectura96.json"
+          },
+          {
+            "caseId": "LEN1-TRA-ARG01",
+            "formats": [
+              "rubrica",
+              "lista-cotejo",
+              "escala",
+              "lista-ponderada"
+            ],
+            "manifest": "auditoria-curricular-len1-transversales-165-lectura52.json",
+            "traceErratum": "auditoria-curricular-len1-trazabilidad-166-errata.json",
+            "component": "Secuencias argumentativas en debate oral; no inferir cierre global del indicador."
           }
         ]
       }
@@ -10266,11 +10278,12 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "148actividades/592instrumentos locales revisados. Trazabilidad26casos conciliada por componentes;14casos pendientes de corrección, sin cierre de asignatura.",
+    "otherTopics": "148actividades/592instrumentos previos preservados;30actividades/120instrumentos adicionales leídos por coordinador; última relectura independiente pendiente.",
     "remaining": [
-      "Corregir14casos complementarios/cierre:92salidas165 leídas y rechazadas;56principales por corregir",
-      "Cierre completo por componente de la malla y visual personal pendientes",
-      "81contextos restantes por orden oficial"
+      "Relectura independiente final167 bloqueada por límite de herramienta",
+      "Generar, leer y corregir E01–E04 de los tres componentes fuente pendientes",
+      "Verificación HTTP167 y visual personal pendientes; muestra166 acreditada",
+      "Conciliación final completa de Lengua1 y81contextos restantes"
     ]
   },
   "specificCompetencies": [
@@ -12383,5 +12396,297 @@
     ],
     "closed": false,
     "traceErratum": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-trazabilidad-166-errata.json"
+  },
+  "complementaryEvidence167": {
+    "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json",
+    "status": "CORREGIDO_Y_LEIDO_LOCALMENTE_ULTIMA_RELECTURA_INDEPENDIENTE_PENDIENTE",
+    "wholeSubjectClosed": false,
+    "rows": [
+      {
+        "caseId": "LEN1-TRC-C01",
+        "sourceComponents": [
+          {
+            "id": "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Argumenta relaciones sociales, reconociendo y valorando lo natural y sociocultural de su contexto local y nacional."
+          },
+          {
+            "id": "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Analiza textos variados de manera oral o escrita que ponen de relieve hechos y trdiciones históricas\nrelevantes, identificando nuevas relaciones sociales al reconocer y valorar el patrimonio natural y\nsociocultural dominicano."
+          }
+        ],
+        "contribution": "Relación historia, tradición y patrimonio natural sustentada en ambos textos; no exige declarar incertidumbres adicionales."
+      },
+      {
+        "caseId": "LEN1-TRC-C02",
+        "sourceComponents": [
+          {
+            "id": "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Argumenta relaciones sociales, reconociendo y valorando lo natural y sociocultural de su contexto local y nacional."
+          },
+          {
+            "id": "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Analiza textos variados de manera oral o escrita que ponen de relieve hechos y trdiciones históricas\nrelevantes, identificando nuevas relaciones sociales al reconocer y valorar el patrimonio natural y\nsociocultural dominicano."
+          }
+        ],
+        "contribution": "Comparación oral antes/ahora y recurso natural, distinguiendo lo documentado de lo no asegurado; no equivale automáticamente a producción de conocimiento nuevo."
+      },
+      {
+        "caseId": "LEN1-TRC-C03",
+        "sourceComponents": [
+          {
+            "id": "9307c046-4d39-5181-a736-3695a6d1d79b",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Divulga conocimientos científicos mediante un tipo de texto y el uso de medios y herramientas proporcionadas por las TIC."
+          },
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+            "type": "PROCEDURE",
+            "pdfPage": 70,
+            "originalText": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales."
+          },
+          {
+            "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+            "type": "PROCEDURE",
+            "pdfPage": 74,
+            "originalText": "Producción escrita (escribir)\nSelección del acontecimiento adecuado para la noticia; documentación y\nbúsqueda de la información necesaria para la noticia; establecimiento del\npúblico al que va dirigida la noticia; elección de un titular llamativo para la\nnoticia; presentación de la entrada o copete con un vocabulario y sintaxis\nsencilla; organización de la información, tomando en cuenta el orden de las\ninterrogantes (qué, a quién, dónde, cuándo, cómo); utilización del registro formal\ny de un estilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporalidad, oraciones coordinadas y subordinadas\npara lograr la cohesión y para ampliar el sentido de la idea principal de la noticia;\nlos signos convencionales de la escritura.\nRedacción del borrador o los borradores de la noticia; revisión y corrección del\nborrador o los borradores de la noticia por parte del/de la maestro/a y los/las\ndemás estudiantes; edición y publicación (impresa o digital) de la versión final\nde la noticia que escribe."
+          }
+        ],
+        "contribution": "Publicación digital efectiva de noticia científica conservada. No acredita investigación sencilla identificable: falta material que lo establezca."
+      },
+      {
+        "caseId": "LEN1-TRC-C04",
+        "sourceComponents": [
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+            "type": "PROCEDURE",
+            "pdfPage": 70,
+            "originalText": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales."
+          },
+          {
+            "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+            "type": "PROCEDURE",
+            "pdfPage": 74,
+            "originalText": "Producción escrita (escribir)\nSelección del acontecimiento adecuado para la noticia; documentación y\nbúsqueda de la información necesaria para la noticia; establecimiento del\npúblico al que va dirigida la noticia; elección de un titular llamativo para la\nnoticia; presentación de la entrada o copete con un vocabulario y sintaxis\nsencilla; organización de la información, tomando en cuenta el orden de las\ninterrogantes (qué, a quién, dónde, cuándo, cómo); utilización del registro formal\ny de un estilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporalidad, oraciones coordinadas y subordinadas\npara lograr la cohesión y para ampliar el sentido de la idea principal de la noticia;\nlos signos convencionales de la escritura.\nRedacción del borrador o los borradores de la noticia; revisión y corrección del\nborrador o los borradores de la noticia por parte del/de la maestro/a y los/las\ndemás estudiantes; edición y publicación (impresa o digital) de la versión final\nde la noticia que escribe."
+          }
+        ],
+        "contribution": "Preparación digital, vista previa y borrador guardado: no acredita publicación efectiva."
+      },
+      {
+        "caseId": "LEN1-TRC-C05",
+        "sourceComponents": [
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+            "type": "PROCEDURE",
+            "pdfPage": 73,
+            "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital."
+          }
+        ],
+        "contribution": "Publicación digital efectiva de cuento, conservación, índice y créditos previstos. No acredita publicación impresa."
+      },
+      {
+        "caseId": "LEN1-TRC-C06",
+        "sourceComponents": [
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+            "type": "PROCEDURE",
+            "pdfPage": 74,
+            "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar."
+          }
+        ],
+        "contribution": "Colocación efectiva de caligrama en mural conservando palabras/figura; fotografía O verificación docente. No exige todos los medios alternativos."
+      },
+      {
+        "caseId": "LEN1-TRC-C07",
+        "sourceComponents": [
+          {
+            "id": "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Identifica temáticas o problemas sobre salud, medioambiente que afectan la comunidad, mediante textos variados, herramientas\ntecnológicas y otros medios y recursos."
+          },
+          {
+            "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula."
+          },
+          {
+            "id": "1e434089-d202-529a-80ad-734c3a723254",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Explica con claridad situaciones sobre salud, medioambiente y la comunidad, mediante textos de diferente\nsecuencias y géneros, a través de herramientas tecnológicas y otros medios y recursos."
+          }
+        ],
+        "contribution": "Intercambio ambiental externo con recepción y respuesta; guardar registro para clase no acredita intercambio dentro del aula."
+      },
+      {
+        "caseId": "LEN1-TRC-C08",
+        "sourceComponents": [
+          {
+            "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula."
+          },
+          {
+            "id": "1e434089-d202-529a-80ad-734c3a723254",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Explica con claridad situaciones sobre salud, medioambiente y la comunidad, mediante textos de diferente\nsecuencias y géneros, a través de herramientas tecnológicas y otros medios y recursos."
+          }
+        ],
+        "contribution": "Carta externa y respuesta pertinente cuando se reciba intervención. Solo primera carta si falta respuesta externa; sin penalizar fases no observadas."
+      },
+      {
+        "caseId": "LEN1-TRC-C09",
+        "sourceComponents": [
+          {
+            "id": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Evidencia nuevos conocimientos derivados de la comprensión y producción oral y escrita de textos, relacionados con el\nentorno familiar, escolar, comunitario, nacional y del mundo."
+          },
+          {
+            "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+          }
+        ],
+        "contribution": "Inferencia nueva con ambos textos y límite explícito. Modalidad del producto no fijada; no acredita por sí sola producción oral."
+      },
+      {
+        "caseId": "LEN1-TRC-C10",
+        "sourceComponents": [
+          {
+            "id": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Evidencia nuevos conocimientos derivados de la comprensión y producción oral y escrita de textos, relacionados con el\nentorno familiar, escolar, comunitario, nacional y del mundo."
+          },
+          {
+            "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+          }
+        ],
+        "contribution": "Síntesis escrita que integra diferencias: conclusión sustentada O cuestión abierta delimitada."
+      },
+      {
+        "caseId": "LEN1-TRC-C11",
+        "sourceComponents": [
+          {
+            "id": "550df0a4-8032-5593-bceb-0916487cd755",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en un\ncontexto social determinado."
+          },
+          {
+            "id": "d1943462-4b97-5758-a498-30fa4eaef720",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Demuestra conocimiento y comprensión de sí mismo y de los demás al expresar su percepción del mundo,\na partir de un tipo de texto favorable a las situaciones y a las personas."
+          }
+        ],
+        "contribution": "Decisión propia ficticia y contraste razonado con perspectiva ajena, considerando consecuencias una sola vez. No valores internos ni confesión."
+      },
+      {
+        "caseId": "LEN1-TRC-C12",
+        "sourceComponents": [
+          {
+            "id": "550df0a4-8032-5593-bceb-0916487cd755",
+            "type": "ACHIEVEMENT_INDICATOR",
+            "pdfPage": 75,
+            "originalText": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en un\ncontexto social determinado."
+          },
+          {
+            "id": "d1943462-4b97-5758-a498-30fa4eaef720",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Demuestra conocimiento y comprensión de sí mismo y de los demás al expresar su percepción del mundo,\na partir de un tipo de texto favorable a las situaciones y a las personas."
+          }
+        ],
+        "contribution": "Respuesta ficticia, mirada recibida y nota individual; conservar O modificar con razones."
+      },
+      {
+        "caseId": "LEN1-TRF-F01",
+        "sourceComponents": [
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+            "type": "PROCEDURE",
+            "pdfPage": 73,
+            "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital."
+          }
+        ],
+        "contribution": "Publicación impresa con ejemplar disponible en biblioteca, integridad y créditos/localización. No recreación ni soporte digital adicional."
+      },
+      {
+        "caseId": "LEN1-TRF-F02",
+        "sourceComponents": [
+          {
+            "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+            "type": "SPECIFIC_COMPETENCY",
+            "pdfPage": 69,
+            "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+          },
+          {
+            "id": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+            "type": "PROCEDURE",
+            "pdfPage": 69,
+            "originalText": "Comprensión escrita (leer)\nSelección de la modalidad de lectura (en voz alta, en silencio, individual,\ncompartida); anticipación del contenido del texto a partir de marcas\ntextuales y paratextuales; establecimiento del propósito para leer la noticia;\nidentificación de la intención comunicativa de la noticia que lee.\nLectura de la noticia para dar respuesta a las interrogantes propias del texto\n(qué ocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo\nocurrió); realización de inferencias mientras lee"
+          }
+        ],
+        "contribution": "Elección no puntuable de modalidad lectora y comprensión individual de tres preguntas con dos datos; respuesta sustentada O insuficiencia justificada. No acredita todo el párrafo oficial."
+      }
+    ],
+    "pendingSourceCasesBank": "data/evaluation-instruments/curricular-audit/len1-cierre-componentes-independiente-v1.json"
+  },
+  "transversalVerification166": {
+    "catalog": "evaluation-2026.166",
+    "httpEvidence": "auditoria-curricular-http-166.json",
+    "personalPreservation": "auditoria-curricular-len1-personales-166.json",
+    "releases": 97,
+    "snapshots": 1253,
+    "browser": "PENDIENTE_CUENTA_PERSONAL"
   }
 }

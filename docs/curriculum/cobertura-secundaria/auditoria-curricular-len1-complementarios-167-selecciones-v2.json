@@ -1,0 +1,216 @@
+{
+  "catalog": "evaluation-2026.167",
+  "mode": "LOCAL_SOURCE_FUNCTIONS_NOT_HTTP",
+  "cases": [
+    {
+      "id": "LEN1-TRC-C01",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C02",
+      "activityType": "EXPOSITION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "exposicion",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C03",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C04",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C05",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C06",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C07",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C08",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C09",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C10",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C11",
+      "activityType": "ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRC-C12",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRF-F01",
+      "activityType": "WRITTEN_PRODUCTION",
+      "instrument": "lista-cotejo",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "lista-cotejo"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    },
+    {
+      "id": "LEN1-TRF-F02",
+      "activityType": "NEWS_ANALYSIS",
+      "instrument": "rubrica",
+      "interpretationSelections": {
+        "suggestedEvaluationTechnique": "analisis-producciones",
+        "suggestedInstrumentType": "rubrica"
+      },
+      "strategy": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      }
+    }
+  ]
+}

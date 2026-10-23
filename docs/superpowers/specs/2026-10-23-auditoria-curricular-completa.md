@@ -16,7 +16,7 @@ La fuente común y académica es MINERD, Adecuación Curricular Secundaria 2023,
 
 ## Restricciones que continúan
 
-Development exclusivamente. Sin push, producción, despliegue, merge, reset, borrado, recaptura de referencias, nuevas migraciones remotas de esquema, IA, dependencias, servicios de pago ni subagentes. Conservar borradores, instrumentos, snapshots y releases. No enviar correos ni cambiar credenciales por falta de sesión personal. Continuar trabajos independientes cuando una prueba quede bloqueada.
+Development exclusivamente. Sin push, producción, despliegue, merge, reset, borrado, recaptura de referencias, nuevas migraciones remotas de esquema, IA, dependencias ni servicios de pago. La autorización posterior permite hasta tres subagentes reales de solo lectura; solo el coordinador modifica archivos, base y procesos. Conservar borradores, instrumentos, snapshots y releases. No enviar correos ni cambiar credenciales por falta de sesión personal. Continuar trabajos independientes cuando una prueba quede bloqueada.
 
 Conservar diseño vertical compacto, selección manual, puntuación inicialmente vacía, 20/17.35 exactos, estrategia AUTO/MANUAL/UNKNOWN, descarte de respuestas obsoletas, protección de instrumentos calificados y máximo20criterios. Verificar añadir/completar y salida manual al agotarse candidatos.
 

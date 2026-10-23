@@ -67,7 +67,7 @@ export function explicitWritingProcess(description: string, scope: string, genre
   const task = affirmativeLanguageTask(description)
   const rows: ContextualTopicCriterion[] = []
   const revisedVersion=/\bversion final\b/.test(task)?'final':'revisada'
-  if (revisionRequested || /\bborrador(?:es)?\b|\brevis(?:ar|aran|en|ion)\b|\bcorreg\w*/.test(task)) rows.push({
+  if (revisionRequested || /\brevis(?:a|an|ar|aran|aremos|en|ion|ad[oa]s?)\b|\bcorreg\w*|\bcorrij\w*/.test(task)) rows.push({
     templateId:`${scope}-process-revision`,title:'Revisión del borrador',weight:2,
     observable:`Muestra cambios entre el borrador y la versión ${revisedVersion} de ${genre} que resuelven problemas de contenido, organización o escritura encontrados.`,
     progressionLevels:[

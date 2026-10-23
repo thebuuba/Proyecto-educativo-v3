@@ -1,0 +1,130 @@
+{
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "provenance": {
+    "designer": "/root/disenador_pruebas",
+    "fixedBeforeOutputs": true,
+    "origin": "Ocho pares entregados independientemente antes de conocer implementación/salidas167; transcripción posterior sin adaptar las consignas.",
+    "originalBanksUnchanged": true
+  },
+  "cases": [
+    {
+      "id": "LEN1-CTR-P01A",
+      "title": "Publicar o guardar borrador",
+      "description": "Coloca la noticia científica revisada en la plantilla del portal. Comprueba la vista previa y guárdala como borrador; todavía no la publiques.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: preparación y borrador recuperable; B: publicación efectiva y acceso. Conservar versión y legibilidad, sin investigación nueva."
+    },
+    {
+      "id": "LEN1-CTR-P01B",
+      "title": "Publicar o guardar borrador",
+      "description": "Publica la noticia científica revisada en el portal comunitario y comprueba que sus destinatarios pueden abrirla.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: preparación y borrador recuperable; B: publicación efectiva y acceso. Conservar versión y legibilidad, sin investigación nueva."
+    },
+    {
+      "id": "LEN1-CTR-P02A",
+      "title": "Soporte digital o impreso",
+      "description": "Incorpora el cuento revisado a la antología digital y déjalo disponible para sus lectores.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Disponibilidad digital O física según consigna; conservación del texto/orden y créditos previstos, sin recrear ni imponer ambos soportes."
+    },
+    {
+      "id": "LEN1-CTR-P02B",
+      "title": "Soporte digital o impreso",
+      "description": "Incorpora el cuento revisado a la antología impresa y deja un ejemplar disponible para sus lectores en la biblioteca.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Disponibilidad digital O física según consigna; conservación del texto/orden y créditos previstos, sin recrear ni imponer ambos soportes."
+    },
+    {
+      "id": "LEN1-CTR-P03A",
+      "title": "Crear o publicar caligrama",
+      "description": "Escribe un borrador de caligrama en verso libre que represente calma mediante sus palabras y su figura.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: elaboración y expresión; B: publicación efectiva y preservación. No exigir rima, revisión/publicación enA ni nueva creación enB."
+    },
+    {
+      "id": "LEN1-CTR-P03B",
+      "title": "Crear o publicar caligrama",
+      "description": "Coloca en el mural el caligrama sobre la calma que ya revisamos. Conserva sus palabras y su figura.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: elaboración y expresión; B: publicación efectiva y preservación. No exigir rima, revisión/publicación enA ni nueva creación enB."
+    },
+    {
+      "id": "LEN1-CTR-P04A",
+      "title": "Intercambio pendiente o respondido",
+      "description": "Envía a la comunidad la explicación ambiental y conserva constancia del envío. Todavía estamos esperando sus preguntas.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comunicación inicial observada, recepción pendiente no penalizada. B: pregunta efectivamente recibida, respuesta pertinente y registro. No inventar fuentes o foro no indicados."
+    },
+    {
+      "id": "LEN1-CTR-P04B",
+      "title": "Intercambio pendiente o respondido",
+      "description": "Responde a una pregunta que la comunidad envió sobre la explicación ambiental. Conserva la pregunta y tu respuesta.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comunicación inicial observada, recepción pendiente no penalizada. B: pregunta efectivamente recibida, respuesta pertinente y registro. No inventar fuentes o foro no indicados."
+    },
+    {
+      "id": "LEN1-CTR-P05A",
+      "title": "Modalidad elegida u organizada",
+      "description": "Puedes leer la noticia en silencio o participar en la lectura compartida. Después explica individualmente qué ocurrió y apóyate en dos datos.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Mismas evidencias individuales y pesos; modalidadlectura no puntuable, sin oralidad/rapidez ni preguntas extra."
+    },
+    {
+      "id": "LEN1-CTR-P05B",
+      "title": "Modalidad elegida u organizada",
+      "description": "Después de la lectura compartida de la noticia, explica individualmente qué ocurrió y apóyate en dos datos.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "Mismas evidencias individuales y pesos; modalidadlectura no puntuable, sin oralidad/rapidez ni preguntas extra."
+    },
+    {
+      "id": "LEN1-CTR-P06A",
+      "title": "Resumen o inferencia",
+      "description": "Resume las ideas principales de los dos textos y conserva sus diferencias.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: reconstrucción fiel sin inferencia nueva obligatoria. B: conexión inferida justificada con ambasfuentes. Sin tema inventado ni investigación adicional."
+    },
+    {
+      "id": "LEN1-CTR-P06B",
+      "title": "Resumen o inferencia",
+      "description": "Formula una relación nueva entre las ideas de los dos textos y explica qué información de ambos la sostiene.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: reconstrucción fiel sin inferencia nueva obligatoria. B: conexión inferida justificada con ambasfuentes. Sin tema inventado ni investigación adicional."
+    },
+    {
+      "id": "LEN1-CTR-P07A",
+      "title": "Cambio histórico o relación patrimonial",
+      "description": "Con los documentos entregados, explica qué cambió en esta tradición dominicana entre antes y ahora.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comparación temporal sustentada. B: además relación cambio/recurso. Sin imponer patrimonio natural aA, investigación nueva, elogio ni progreso automático."
+    },
+    {
+      "id": "LEN1-CTR-P07B",
+      "title": "Cambio histórico o relación patrimonial",
+      "description": "Con los mismos documentos, explica cómo ese cambio en la tradición dominicana se relaciona con el uso de un recurso natural del lugar.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comparación temporal sustentada. B: además relación cambio/recurso. Sin imponer patrimonio natural aA, investigación nueva, elogio ni progreso automático."
+    },
+    {
+      "id": "LEN1-CTR-P08A",
+      "title": "Perspectiva ajena o propia contrastada",
+      "description": "Explica las razones de una de las respuestas al conflicto ficticio, usando información del caso.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comprensión fiel de otra perspectiva; B: decisión propia ficticia y contraste razonado. Sin confesiones, acuerdo moral ni cambio obligado."
+    },
+    {
+      "id": "LEN1-CTR-P08B",
+      "title": "Perspectiva ajena o propia contrastada",
+      "description": "Explica cómo responderías dentro de ese conflicto ficticio y contrasta tu decisión con una de las respuestas propuestas.",
+      "participationMode": "INDIVIDUAL",
+      "expected": "A: comprensión fiel de otra perspectiva; B: decisión propia ficticia y contraste razonado. Sin confesiones, acuerdo moral ni cambio obligado."
+    }
+  ]
+}

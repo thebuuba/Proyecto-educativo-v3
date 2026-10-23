@@ -1,0 +1,62 @@
+{
+  "catalog": "evaluation-2026.167",
+  "results": [
+    {
+      "name": "backend-test",
+      "exit": 0,
+      "ms": 149623
+    },
+    {
+      "name": "frontend-focal",
+      "exit": 0,
+      "ms": 21196
+    },
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 11904
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 25597
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 51874
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 4038
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 2991
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 3576
+    }
+  ],
+  "backendTests": 98076,
+  "backendFiles": 239,
+  "frontendTests": 123,
+  "frontendFiles": 7,
+  "cloudflareDryRun": true,
+  "deployed": false,
+  "largestJsAsset": {
+    "name": "src-Bme4QLHp.js",
+    "bytes": 2078618
+  },
+  "languageChunk": {
+    "name": "instrumentos-lengua-1-acciones-Dw96HF6F.js",
+    "bytes": 47727
+  },
+  "chunkPrecached": true,
+  "interruptedRun": "Primera ejecución sin resultado final; proceso ausente comprobado antes de repetir.",
+  "sourceAfterBuildChange": "Solo fortalecimiento de aserción de pesos en prueba focal;131/131 aprobadas después, código runtime sin cambios."
+}

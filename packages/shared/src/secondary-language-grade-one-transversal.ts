@@ -3,17 +3,20 @@ import {commonSecondaryLanguageGrade,type SecondaryTopicContext} from './seconda
 import {completeFirstGradeNewsCriteria,completeFirstGradeDetectiveCriteria} from './secondary-language-grade-one-complete'
 import type {ContextualTopicCriterion as Criterion} from './secondary-topic-criteria'
 import {firstGradeFocusedTask,firstGradeFocusedCriteria,type FirstGradeFocusedTask} from './secondary-language-grade-one-focused'
+import {firstGradeCommunityTask,firstGradeCommunityCriteria,firstGradeCommunitySelections,type FirstGradeCommunityTask} from './secondary-language-grade-one-community'
 export {markFirstGradeProvisional} from './secondary-language-grade-one-focused'
 
-type Family='SCIENCE_NEWS'|'SCIENCE_PARAPHRASE'|'SCIENCE_READING'|'CIVIC_PROJECT'|'ARGUMENT'|'STORY_VALUES'|'CALLIGRAM_COMMENT'|'FOCUSED'
+type Family='SCIENCE_NEWS'|'SCIENCE_PARAPHRASE'|'SCIENCE_READING'|'CIVIC_PROJECT'|'ARGUMENT'|'STORY_VALUES'|'CALLIGRAM_COMMENT'|'FOCUSED'|'COMMUNITY'
 type Mode='PRODUCTION'|'PLAN'|'COMPARISON'|'REVISION'|'READING'
-export type FirstGradeTransversalTask={family:Family;mode:Mode;task:string;description:string;activityType:string;focused?:FirstGradeFocusedTask}
+export type FirstGradeTransversalTask={family:Family;mode:Mode;task:string;description:string;activityType:string;focused?:FirstGradeFocusedTask;community?:FirstGradeCommunityTask}
 
 /** Scope comes from the official first-grade competencies, not the subject of a title. */
 export function resolveFirstGradeTransversalTask(title:string,description:string,context:SecondaryTopicContext|null|undefined):FirstGradeTransversalTask|null{
  if(commonSecondaryLanguageGrade(context)!==1)return null
  const task=affirmativeLanguageTask(description||title)
  const result=(family:Family,mode:Mode,activityType:string):FirstGradeTransversalTask=>({family,mode,task,description,activityType})
+ const community=firstGradeCommunityTask(task,description||title)
+ if(community)return {...result('COMMUNITY','PRODUCTION',community.activityType),community}
  const focused=firstGradeFocusedTask(task)
  if(focused)return {...result('FOCUSED','PRODUCTION',focused.activityType),focused}
  if(/caligrama/.test(task)&&/interpretacion de (?:una? )?compan|interpretacion.*companera|coincidencia o (?:una )?diferencia.*lecturas/.test(task)&&/comentario/.test(task))return result('CALLIGRAM_COMMENT','READING','CALLIGRAM_ANALYSIS')
@@ -37,10 +40,12 @@ export function resolveFirstGradeTransversalTask(title:string,description:string
 const row=(id:string,title:string,weight:number,levels:Criterion['progressionLevels']):Criterion=>({templateId:'len1-transversal-'+id,title,weight,observable:levels[0],progressionLevels:levels,fourLevelLowest:`${levels[3]} O bien: ${levels[4]}`})
 const join=(parts:string[])=>parts.length<2?parts[0]??'':parts.slice(0,-1).join(', ')+' y '+parts.at(-1)
 export function firstGradeTransversalSelections(spec:FirstGradeTransversalTask){
+ if(spec.community)return firstGradeCommunitySelections(spec.community)
  return{suggestedEvaluationTechnique:spec.focused?.kind==='PROGRESS'?'observacion':spec.activityType==='DEBATE'?'debate':spec.activityType==='NEWSCAST'?'exposicion':'analisis-producciones',suggestedInstrumentType:'rubrica' as const}
 }
 
 export function firstGradeTransversalCriteria(spec:FirstGradeTransversalTask):Criterion[]{
+ if(spec.community)return firstGradeCommunityCriteria(spec.community)
  if(spec.focused)return firstGradeFocusedCriteria(spec.focused)
  const {family,mode,task,description,activityType}=spec
  if(family==='SCIENCE_NEWS'||family==='SCIENCE_PARAPHRASE'||family==='SCIENCE_READING'){

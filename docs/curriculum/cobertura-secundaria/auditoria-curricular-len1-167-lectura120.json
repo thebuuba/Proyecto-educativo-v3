@@ -1,0 +1,3766 @@
+{
+  "catalog": "evaluation-2026.167",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "activities": 30,
+  "outputs": 120,
+  "coordinatorReadAllFinalFormats": true,
+  "coordinatorMethod": "Lectura de todos los textos, títulos, descriptores y variantes completos de120salidas; textos idénticos agrupados conservando su formato. Metadata30 leída.",
+  "independentDesigner": "/root/disenador_pruebas",
+  "curriculumAuditor": "/root/auditor_curricular",
+  "pedagogicalReviewer": "/root/revisor_pedagogico",
+  "independentReview": {
+    "completed": [
+      "56complementarios-v3 y64contrastes-v1 completos; metadata30",
+      "Contraste de exigencias explícitas C01/C02/C09/C10/C11/C12 frente a P06–P08",
+      "Revisión parcial v4/v2: detectó segunda fila de revisión final P03A"
+    ],
+    "remaining": "No aceptación independiente de todas las variantes finales v4/v3: herramienta bloqueada por límite de uso. No confundir lectura final del coordinador con segunda lectura independiente.",
+    "correctedReservations": [
+      "revisión docente no pedida",
+      "antología fija frente a alternativa revista",
+      "primer borrador sin revisión ni versión final",
+      "calma fijada frente a tema elegido",
+      "fuentes y fases recibidas no inventadas",
+      "inferencia sin declaración adicional de límites salvo petición expresa",
+      "comparación histórica sin incertidumbre adicional salvo petición expresa",
+      "conclusión sustentada O tensión abierta",
+      "consecuencias solo expresas y sin doble valoración"
+    ]
+  },
+  "prior592Exact": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-previos592-v4.json",
+  "new120Validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-validacion120.json",
+  "wholeSubjectClosed": false,
+  "sourceGaps": [
+    {
+      "source": {
+        "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "pdfPage": 75,
+        "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula."
+      },
+      "pendingCases": [
+        "LEN1-TRE-E01"
+      ],
+      "gap": "Intercambio ambiental dentro del aula, con recepción y respuesta."
+    },
+    {
+      "source": {
+        "id": "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "pdfPage": 75,
+        "originalText": "• Publicación de investigaciones científicas sencillas en espacios comunitarios, utilizando dispositivos tecnológicos disponibles."
+      },
+      "pendingCases": [
+        "LEN1-TRE-E02"
+      ],
+      "gap": "Publicación de investigación sencilla identificable; no enlazar SCI01 y C03 sin evidencia material."
+    },
+    {
+      "source": {
+        "id": "025c2825-9150-573b-b9cb-a73d22632bf3",
+        "type": "ACHIEVEMENT_INDICATOR",
+        "pdfPage": 75,
+        "originalText": "• Promueve situaciones de salud y ambiente, a través de un catálogo sobre la flora y la fauna dominicanas, una receta, artículos\nde opinión, instructivos."
+      },
+      "pendingCases": [
+        "LEN1-TRE-E03",
+        "LEN1-TRE-E04"
+      ],
+      "gap": "Instructivos cuya finalidad ambiental se relaciona explícitamente con las acciones."
+    }
+  ],
+  "rows": [
+    {
+      "caseId": "LEN1-TRC-C01",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Argumenta relaciones sociales, reconociendo y valorando lo natural y sociocultural de su contexto local y nacional."
+        },
+        {
+          "id": "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Analiza textos variados de manera oral o escrita que ponen de relieve hechos y trdiciones históricas\nrelevantes, identificando nuevas relaciones sociales al reconocer y valorar el patrimonio natural y\nsociocultural dominicano."
+        }
+      ],
+      "sourceContribution": "Relación historia, tradición y patrimonio natural sustentada en ambos textos; no exige declarar incertidumbres adicionales.",
+      "selection": {
+        "id": "LEN1-TRC-C01",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Identifica el hecho histórico, la tradición dominicana y el patrimonio natural del lugar con información fiel de ambos textos.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 889
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el hecho histórico, la tradición y el patrimonio natural de la comunidad; muestra cómo la historia ayuda a comprender esa relación actual con apoyo en ambos textos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1111
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Identifica el hecho histórico, la tradición dominicana y el patrimonio natural del lugar con información fiel de ambos textos.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 889
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el hecho histórico, la tradición y el patrimonio natural de la comunidad; muestra cómo la historia ayuda a comprender esa relación actual con apoyo en ambos textos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1111
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Identifica el hecho histórico, la tradición dominicana y el patrimonio natural del lugar con información fiel de ambos textos.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 889
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el hecho histórico, la tradición y el patrimonio natural de la comunidad; muestra cómo la historia ayuda a comprender esa relación actual con apoyo en ambos textos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1111
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Identifica el hecho histórico, la tradición dominicana y el patrimonio natural del lugar con información fiel de ambos textos. Parcial (50%): Reconoce la práctica y parte de su contexto, pero deja incompleta información necesaria para situar el cambio o hecho histórico.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 889
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el hecho histórico, la tradición y el patrimonio natural de la comunidad; muestra cómo la historia ayuda a comprender esa relación actual con apoyo en ambos textos. Parcial (50%): Describe por separado la práctica y el entorno natural, pero deja poco explicado cómo se relacionan.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1111
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C02",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Argumenta relaciones sociales, reconociendo y valorando lo natural y sociocultural de su contexto local y nacional."
+        },
+        {
+          "id": "889d943e-1338-5e3b-9c9d-5580fb9ae6a0",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Analiza textos variados de manera oral o escrita que ponen de relieve hechos y trdiciones históricas\nrelevantes, identificando nuevas relaciones sociales al reconocer y valorar el patrimonio natural y\nsociocultural dominicano."
+        }
+      ],
+      "sourceContribution": "Comparación oral antes/ahora y recurso natural, distinguiendo lo documentado de lo no asegurado; no equivale automáticamente a producción de conocimiento nuevo.",
+      "selection": {
+        "id": "LEN1-TRC-C02",
+        "activityType": "EXPOSITION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "exposicion",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Compara cómo era antes y cómo es ahora la práctica tradicional dominicana, conservando la información de testimonios y documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 496
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los testimonios y documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 619
+            },
+            {
+              "id": "len1-community-history-limits",
+              "requirement": "Distingue lo documentado de una interpretación o hipótesis plausible y delimita qué todavía no puede asegurarse; admite una lectura crítica razonada sin inventar datos ni una causa única.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 372
+            },
+            {
+              "id": "len1-community-history-oral",
+              "requirement": "Organiza la explicación oral breve del equipo para que se siga el antes, el ahora y la relación con el recurso natural; se valora la presentación observada sin atribuir desempeños individuales no observados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 248
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Compara cómo era antes y cómo es ahora la práctica tradicional dominicana, conservando la información de testimonios y documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 496
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los testimonios y documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 619
+            },
+            {
+              "id": "len1-community-history-limits",
+              "requirement": "Distingue lo documentado de una interpretación o hipótesis plausible y delimita qué todavía no puede asegurarse; admite una lectura crítica razonada sin inventar datos ni una causa única.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 372
+            },
+            {
+              "id": "len1-community-history-oral",
+              "requirement": "Organiza la explicación oral breve del equipo para que se siga el antes, el ahora y la relación con el recurso natural; se valora la presentación observada sin atribuir desempeños individuales no observados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 248
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Compara cómo era antes y cómo es ahora la práctica tradicional dominicana, conservando la información de testimonios y documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 496
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los testimonios y documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 619
+            },
+            {
+              "id": "len1-community-history-limits",
+              "requirement": "Distingue lo documentado de una interpretación o hipótesis plausible y delimita qué todavía no puede asegurarse; admite una lectura crítica razonada sin inventar datos ni una causa única.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 372
+            },
+            {
+              "id": "len1-community-history-oral",
+              "requirement": "Organiza la explicación oral breve del equipo para que se siga el antes, el ahora y la relación con el recurso natural; se valora la presentación observada sin atribuir desempeños individuales no observados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 248
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Compara cómo era antes y cómo es ahora la práctica tradicional dominicana, conservando la información de testimonios y documentos entregados. Parcial (50%): Reconoce la práctica y parte de su contexto, pero deja incompleta información necesaria para situar el cambio o hecho histórico.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 496
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los testimonios y documentos. Parcial (50%): Describe por separado la práctica y el entorno natural, pero deja poco explicado cómo se relacionan.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 619
+            },
+            {
+              "id": "len1-community-history-limits",
+              "requirement": "Distingue lo documentado de una interpretación o hipótesis plausible y delimita qué todavía no puede asegurarse; admite una lectura crítica razonada sin inventar datos ni una causa única. Parcial (50%): Combina información documentada e interpretación sin delimitar suficientemente el apoyo de alguna afirmación.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 372
+            },
+            {
+              "id": "len1-community-history-oral",
+              "requirement": "Organiza la explicación oral breve del equipo para que se siga el antes, el ahora y la relación con el recurso natural; se valora la presentación observada sin atribuir desempeños individuales no observados. Parcial (50%): Se comprenden datos aislados, pero su organización oral dificulta relacionar los momentos y el recurso.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 248
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C03",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "9307c046-4d39-5181-a736-3695a6d1d79b",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Divulga conocimientos científicos mediante un tipo de texto y el uso de medios y herramientas proporcionadas por las TIC."
+        },
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+          "type": "PROCEDURE",
+          "pdfPage": 70,
+          "originalText": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales."
+        },
+        {
+          "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción escrita (escribir)\nSelección del acontecimiento adecuado para la noticia; documentación y\nbúsqueda de la información necesaria para la noticia; establecimiento del\npúblico al que va dirigida la noticia; elección de un titular llamativo para la\nnoticia; presentación de la entrada o copete con un vocabulario y sintaxis\nsencilla; organización de la información, tomando en cuenta el orden de las\ninterrogantes (qué, a quién, dónde, cuándo, cómo); utilización del registro formal\ny de un estilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporalidad, oraciones coordinadas y subordinadas\npara lograr la cohesión y para ampliar el sentido de la idea principal de la noticia;\nlos signos convencionales de la escritura.\nRedacción del borrador o los borradores de la noticia; revisión y corrección del\nborrador o los borradores de la noticia por parte del/de la maestro/a y los/las\ndemás estudiantes; edición y publicación (impresa o digital) de la versión final\nde la noticia que escribe."
+        }
+      ],
+      "sourceContribution": "Publicación digital efectiva de noticia científica conservada. No acredita investigación sencilla identificable: falta material que lo establezca.",
+      "selection": {
+        "id": "LEN1-TRC-C03",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C04",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+          "type": "PROCEDURE",
+          "pdfPage": 70,
+          "originalText": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales."
+        },
+        {
+          "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción escrita (escribir)\nSelección del acontecimiento adecuado para la noticia; documentación y\nbúsqueda de la información necesaria para la noticia; establecimiento del\npúblico al que va dirigida la noticia; elección de un titular llamativo para la\nnoticia; presentación de la entrada o copete con un vocabulario y sintaxis\nsencilla; organización de la información, tomando en cuenta el orden de las\ninterrogantes (qué, a quién, dónde, cuándo, cómo); utilización del registro formal\ny de un estilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporalidad, oraciones coordinadas y subordinadas\npara lograr la cohesión y para ampliar el sentido de la idea principal de la noticia;\nlos signos convencionales de la escritura.\nRedacción del borrador o los borradores de la noticia; revisión y corrección del\nborrador o los borradores de la noticia por parte del/de la maestro/a y los/las\ndemás estudiantes; edición y publicación (impresa o digital) de la versión final\nde la noticia que escribe."
+        }
+      ],
+      "sourceContribution": "Preparación digital, vista previa y borrador guardado: no acredita publicación efectiva.",
+      "selection": {
+        "id": "LEN1-TRC-C04",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar, disponible para la revisión docente prevista.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar, disponible para la revisión docente prevista.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar, disponible para la revisión docente prevista.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible. Parcial (50%): La vista previa permite leer parte del contenido, pero un campo previsto queda incompleto o dificulta localizar información.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar, disponible para la revisión docente prevista. Parcial (50%): Se conserva parte de la preparación, pero el borrador recuperado no contiene todos los ajustes visibles.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C05",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+          "type": "PROCEDURE",
+          "pdfPage": 73,
+          "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital."
+        }
+      ],
+      "sourceContribution": "Publicación digital efectiva de cuento, conservación, índice y créditos previstos. No acredita publicación impresa.",
+      "selection": {
+        "id": "LEN1-TRC-C05",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que el índice conduce al cuento correcto, completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica una ubicación verificable del cuento dentro de la antología digital; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que el índice conduce al cuento correcto, completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica una ubicación verificable del cuento dentro de la antología digital; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que el índice conduce al cuento correcto, completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica una ubicación verificable del cuento dentro de la antología digital; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras, las pistas, el desenlace y el orden del cuento revisado; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que el índice conduce al cuento correcto, completo y legible; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica una ubicación verificable del cuento dentro de la antología digital; mantiene los créditos previstos y acordados. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C06",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+          "type": "PROCEDURE",
+          "pdfPage": 74,
+          "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar."
+        }
+      ],
+      "sourceContribution": "Colocación efectiva de caligrama en mural conservando palabras/figura; fotografía O verificación docente. No exige todos los medios alternativos.",
+      "selection": {
+        "id": "LEN1-TRC-C06",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Deja constancia de la colocación mediante una fotografía o la verificación docente; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 289
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Deja constancia de la colocación mediante una fotografía o la verificación docente; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 289
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Deja constancia de la colocación mediante una fotografía o la verificación docente; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 289
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Deja constancia de la colocación mediante una fotografía o la verificación docente; mantiene los créditos previstos y acordados. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 289
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C07",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Identifica temáticas o problemas sobre salud, medioambiente que afectan la comunidad, mediante textos variados, herramientas\ntecnológicas y otros medios y recursos."
+        },
+        {
+          "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula."
+        },
+        {
+          "id": "1e434089-d202-529a-80ad-734c3a723254",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Explica con claridad situaciones sobre salud, medioambiente y la comunidad, mediante textos de diferente\nsecuencias y géneros, a través de herramientas tecnológicas y otros medios y recursos."
+        }
+      ],
+      "sourceContribution": "Intercambio ambiental externo con recepción y respuesta; guardar registro para clase no acredita intercambio dentro del aula.",
+      "selection": {
+        "id": "LEN1-TRC-C07",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Comparte una explicación breve del problema ambiental con la comunidad, fiel a las lecturas y comprensible para los destinatarios del foro.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 727
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde a una pregunta o propuesta efectivamente recibida de los participantes, usando las fuentes; puede aceptar, matizar o discrepar con razones y trato respetuoso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Guarda un registro del intercambio que relaciona explicación, pregunta o propuesta recibida y respuesta, para revisarlo en clase.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 364
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Comparte una explicación breve del problema ambiental con la comunidad, fiel a las lecturas y comprensible para los destinatarios del foro.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 727
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde a una pregunta o propuesta efectivamente recibida de los participantes, usando las fuentes; puede aceptar, matizar o discrepar con razones y trato respetuoso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Guarda un registro del intercambio que relaciona explicación, pregunta o propuesta recibida y respuesta, para revisarlo en clase.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 364
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Comparte una explicación breve del problema ambiental con la comunidad, fiel a las lecturas y comprensible para los destinatarios del foro.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 727
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde a una pregunta o propuesta efectivamente recibida de los participantes, usando las fuentes; puede aceptar, matizar o discrepar con razones y trato respetuoso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Guarda un registro del intercambio que relaciona explicación, pregunta o propuesta recibida y respuesta, para revisarlo en clase.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 364
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Comparte una explicación breve del problema ambiental con la comunidad, fiel a las lecturas y comprensible para los destinatarios del foro. Parcial (50%): Comunica información ambiental pertinente, pero explica poco su respaldo o su relación con el destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 727
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde a una pregunta o propuesta efectivamente recibida de los participantes, usando las fuentes; puede aceptar, matizar o discrepar con razones y trato respetuoso. Parcial (50%): La respuesta observada retoma parte de la intervención, pero explica poco cómo las fuentes sostienen su posición.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Guarda un registro del intercambio que relaciona explicación, pregunta o propuesta recibida y respuesta, para revisarlo en clase. Parcial (50%): El registro de las fases realizadas omite un elemento necesario para comprender la relación entre mensajes.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 364
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C08",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula."
+        },
+        {
+          "id": "1e434089-d202-529a-80ad-734c3a723254",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Explica con claridad situaciones sobre salud, medioambiente y la comunidad, mediante textos de diferente\nsecuencias y géneros, a través de herramientas tecnológicas y otros medios y recursos."
+        }
+      ],
+      "sourceContribution": "Carta externa y respuesta pertinente cuando se reciba intervención. Solo primera carta si falta respuesta externa; sin penalizar fases no observadas.",
+      "selection": {
+        "id": "LEN1-TRC-C08",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Escribe una carta breve adecuada a un curso de otro centro sobre el cuidado de los árboles; formula una recomendación sustentada en el texto trabajado.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Representa fielmente una idea recibida del otro centro y responde con razones apoyadas en el texto; explica si mantiene o revisa la recomendación, sin obligación de cambiarla. Si la respuesta externa aún no llega, esta evidencia queda pendiente; puede valorarse la primera carta sin inventar el intercambio.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva las cartas del intercambio, distinguiendo la enviada, la recibida y la respuesta propia cuando estas fases hayan ocurrido, en soporte físico o digital. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 315
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Escribe una carta breve adecuada a un curso de otro centro sobre el cuidado de los árboles; formula una recomendación sustentada en el texto trabajado.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Representa fielmente una idea recibida del otro centro y responde con razones apoyadas en el texto; explica si mantiene o revisa la recomendación, sin obligación de cambiarla. Si la respuesta externa aún no llega, esta evidencia queda pendiente; puede valorarse la primera carta sin inventar el intercambio.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva las cartas del intercambio, distinguiendo la enviada, la recibida y la respuesta propia cuando estas fases hayan ocurrido, en soporte físico o digital. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 315
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Escribe una carta breve adecuada a un curso de otro centro sobre el cuidado de los árboles; formula una recomendación sustentada en el texto trabajado.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Representa fielmente una idea recibida del otro centro y responde con razones apoyadas en el texto; explica si mantiene o revisa la recomendación, sin obligación de cambiarla. Si la respuesta externa aún no llega, esta evidencia queda pendiente; puede valorarse la primera carta sin inventar el intercambio.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva las cartas del intercambio, distinguiendo la enviada, la recibida y la respuesta propia cuando estas fases hayan ocurrido, en soporte físico o digital. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 315
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Escribe una carta breve adecuada a un curso de otro centro sobre el cuidado de los árboles; formula una recomendación sustentada en el texto trabajado. Parcial (50%): Comunica información ambiental pertinente, pero explica poco su respaldo o su relación con el destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Representa fielmente una idea recibida del otro centro y responde con razones apoyadas en el texto; explica si mantiene o revisa la recomendación, sin obligación de cambiarla. Si la respuesta externa aún no llega, esta evidencia queda pendiente; puede valorarse la primera carta sin inventar el intercambio. Parcial (50%): La respuesta observada retoma parte de la intervención, pero explica poco cómo las fuentes sostienen su posición.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 789
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva las cartas del intercambio, distinguiendo la enviada, la recibida y la respuesta propia cuando estas fases hayan ocurrido, en soporte físico o digital. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen. Parcial (50%): El registro de las fases realizadas omite un elemento necesario para comprender la relación entre mensajes.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 315
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C09",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Evidencia nuevos conocimientos derivados de la comprensión y producción oral y escrita de textos, relacionados con el\nentorno familiar, escolar, comunitario, nacional y del mundo."
+        },
+        {
+          "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+        }
+      ],
+      "sourceContribution": "Inferencia nueva con ambos textos y límite explícito. Modalidad del producto no fijada; no acredita por sí sola producción oral.",
+      "selection": {
+        "id": "LEN1-TRC-C09",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 500
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 500
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 500
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación entre horarios y dificultades de acceso descritas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Explica el alcance y el límite de la relación inferida, señalando qué no permiten asegurar ambos textos; no convierte una asociación en una causa demostrada sin respaldo. Parcial (50%): Se reconoce una conclusión pertinente, pero queda poco delimitado qué todavía no puede asegurarse.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 500
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C10",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Evidencia nuevos conocimientos derivados de la comprensión y producción oral y escrita de textos, relacionados con el\nentorno familiar, escolar, comunitario, nacional y del mundo."
+        },
+        {
+          "id": "1e3efbc3-49d2-5444-a4de-a1d825d63e27",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Utiliza secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contra argumentos),\nen discursos orales y escritos, creando nuevos conocimientos a partir de procesos de comprensión y\nproducción de textos orales y escritos abordados con temas y problemas sociales de su realidad."
+        }
+      ],
+      "sourceContribution": "Síntesis escrita que integra diferencias: conclusión sustentada O cuestión abierta delimitada.",
+      "selection": {
+        "id": "LEN1-TRC-C10",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 578
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Redacta una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 434
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 578
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Redacta una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 434
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 578
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Redacta una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 434
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Reconstruye fielmente las ideas pertinentes de ambas explicaciones e identifica una diferencia o tensión significativa entre ellas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 578
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Redacta una síntesis que integra información de ambas explicaciones y permite comprender una relación adicional; explica cómo se conectan sus aportes sin reducirlos a dos resúmenes separados. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 723
+            },
+            {
+              "id": "len1-community-reasoning-limits",
+              "requirement": "Cierra con una conclusión sustentada que explica qué permiten comprender ambas fuentes, o una cuestión o tensión abierta delimitada cuando el respaldo disponible no permite resolverla. Parcial (50%): Presenta una conclusión con respaldo incompleto, o deja una cuestión abierta sin delimitarla suficientemente.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 434
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C11",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "550df0a4-8032-5593-bceb-0916487cd755",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en un\ncontexto social determinado."
+        },
+        {
+          "id": "d1943462-4b97-5758-a498-30fa4eaef720",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento y comprensión de sí mismo y de los demás al expresar su percepción del mundo,\na partir de un tipo de texto favorable a las situaciones y a las personas."
+        }
+      ],
+      "sourceContribution": "Decisión propia ficticia y contraste razonado con perspectiva ajena, considerando consecuencias una sola vez. No valores internos ni confesión.",
+      "selection": {
+        "id": "LEN1-TRC-C11",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, considerando posibles consecuencias, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, considerando posibles consecuencias, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, considerando posibles consecuencias, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso. Parcial (50%): La respuesta es compatible con parte del caso, pero sus razones quedan poco explicadas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, considerando posibles consecuencias, sin descalificar a las personas. Parcial (50%): Describe la otra perspectiva, pero explica poco su coincidencia o diferencia con la propia.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRC-C12",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "550df0a4-8032-5593-bceb-0916487cd755",
+          "type": "ACHIEVEMENT_INDICATOR",
+          "pdfPage": 75,
+          "originalText": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en un\ncontexto social determinado."
+        },
+        {
+          "id": "d1943462-4b97-5758-a498-30fa4eaef720",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Demuestra conocimiento y comprensión de sí mismo y de los demás al expresar su percepción del mundo,\na partir de un tipo de texto favorable a las situaciones y a las personas."
+        }
+      ],
+      "sourceContribution": "Respuesta ficticia, mirada recibida y nota individual; conservar O modificar con razones.",
+      "selection": {
+        "id": "LEN1-TRC-C12",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Escribe una respuesta propia al malentendido ficticio y explica sus razones de acuerdo con la información del diálogo, sin requerir experiencias personales.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente una idea del texto recibido de su compañero o compañera y explica una coincidencia o diferencia concreta con su respuesta.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-note",
+              "requirement": "Añade una nota de autoría individual que compara ambas miradas; conserva o modifica su respuesta y explica la decisión con razones relacionadas con el caso y el texto recibido.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Escribe una respuesta propia al malentendido ficticio y explica sus razones de acuerdo con la información del diálogo, sin requerir experiencias personales.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente una idea del texto recibido de su compañero o compañera y explica una coincidencia o diferencia concreta con su respuesta.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-note",
+              "requirement": "Añade una nota de autoría individual que compara ambas miradas; conserva o modifica su respuesta y explica la decisión con razones relacionadas con el caso y el texto recibido.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Escribe una respuesta propia al malentendido ficticio y explica sus razones de acuerdo con la información del diálogo, sin requerir experiencias personales.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente una idea del texto recibido de su compañero o compañera y explica una coincidencia o diferencia concreta con su respuesta.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-note",
+              "requirement": "Añade una nota de autoría individual que compara ambas miradas; conserva o modifica su respuesta y explica la decisión con razones relacionadas con el caso y el texto recibido.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Escribe una respuesta propia al malentendido ficticio y explica sus razones de acuerdo con la información del diálogo, sin requerir experiencias personales. Parcial (50%): La respuesta es compatible con parte del caso, pero sus razones quedan poco explicadas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente una idea del texto recibido de su compañero o compañera y explica una coincidencia o diferencia concreta con su respuesta. Parcial (50%): Describe la otra perspectiva, pero explica poco su coincidencia o diferencia con la propia.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 631
+            },
+            {
+              "id": "len1-community-perspective-note",
+              "requirement": "Añade una nota de autoría individual que compara ambas miradas; conserva o modifica su respuesta y explica la decisión con razones relacionadas con el caso y el texto recibido. Parcial (50%): La nota indica una decisión, pero explica poco cómo se relaciona con la otra mirada y el caso.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 473
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRF-F01",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+          "type": "PROCEDURE",
+          "pdfPage": 73,
+          "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital."
+        }
+      ],
+      "sourceContribution": "Publicación impresa con ejemplar disponible en biblioteca, integridad y créditos/localización. No recreación ni soporte digital adicional.",
+      "selection": {
+        "id": "LEN1-TRF-F01",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a una revista o antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica dónde pueden encontrar el ejemplar los lectores, mediante ubicación comprobable directamente o un registro verificable; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a una revista o antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica dónde pueden encontrar el ejemplar los lectores, mediante ubicación comprobable directamente o un registro verificable; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a una revista o antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica dónde pueden encontrar el ejemplar los lectores, mediante ubicación comprobable directamente o un registro verificable; mantiene los créditos previstos y acordados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 834
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a una revista o antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 833
+            },
+            {
+              "id": "len1-community-publication-trace",
+              "requirement": "Indica dónde pueden encontrar el ejemplar los lectores, mediante ubicación comprobable directamente o un registro verificable; mantiene los créditos previstos y acordados. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 333
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-TRF-F02",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-complementarios-167-revisar-v4.json",
+      "captureSha256": "3ca79ee580df023e57a5c5fba7ef02ae8ac0867b8404915e4cb969f42b405d40",
+      "sourceComponents": [
+        {
+          "id": "7c05dbb1-1a83-5a8a-b145-8d5a9c46830f",
+          "type": "SPECIFIC_COMPETENCY",
+          "pdfPage": 69,
+          "originalText": "Se comunica con claridad en diferentes contextos, siguiendo los procesos de compresión y producción\noral y escrita, con creatividad, al emplear adecuadamente un tipo de texto (funcional o literario), las TIC, así\ncomo otros recursos y medios."
+        },
+        {
+          "id": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+          "type": "PROCEDURE",
+          "pdfPage": 69,
+          "originalText": "Comprensión escrita (leer)\nSelección de la modalidad de lectura (en voz alta, en silencio, individual,\ncompartida); anticipación del contenido del texto a partir de marcas\ntextuales y paratextuales; establecimiento del propósito para leer la noticia;\nidentificación de la intención comunicativa de la noticia que lee.\nLectura de la noticia para dar respuesta a las interrogantes propias del texto\n(qué ocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo\nocurrió); realización de inferencias mientras lee"
+        }
+      ],
+      "sourceContribution": "Elección no puntuable de modalidad lectora y comprensión individual de tres preguntas con dos datos; respuesta sustentada O insuficiencia justificada. No acredita todo el párrafo oficial.",
+      "selection": {
+        "id": "LEN1-TRF-F02",
+        "activityType": "NEWS_ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, a quiénes afecta, cómo sucedió, de acuerdo con la noticia; para cada pregunta ofrece una respuesta sustentada o identifica justificadamente información insuficiente, sin inventarla.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, a quiénes afecta, cómo sucedió, de acuerdo con la noticia; para cada pregunta ofrece una respuesta sustentada o identifica justificadamente información insuficiente, sin inventarla.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, a quiénes afecta, cómo sucedió, de acuerdo con la noticia; para cada pregunta ofrece una respuesta sustentada o identifica justificadamente información insuficiente, sin inventarla.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, a quiénes afecta, cómo sucedió, de acuerdo con la noticia; para cada pregunta ofrece una respuesta sustentada o identifica justificadamente información insuficiente, sin inventarla. Parcial (50%): Comprende parte de lo solicitado, pero deja una respuesta poco explicada o no justifica suficientemente la información que falta.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato. Parcial (50%): Utiliza un dato pertinente o menciona dos sin explicar suficientemente su relación con la respuesta.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P01A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P01A",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 546
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 545
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 546
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 545
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 546
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 545
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 909
+            },
+            {
+              "id": "len1-community-publication-preview",
+              "requirement": "Coloca texto, referencias y datos de presentación previstos en la plantilla digital; comprueba una vista previa organizada y legible. Parcial (50%): La vista previa permite leer parte del contenido, pero un campo previsto queda incompleto o dificulta localizar información.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 546
+            },
+            {
+              "id": "len1-community-publication-draft",
+              "requirement": "Deja el contenido guardado como borrador recuperable y sin publicar. Parcial (50%): Se conserva parte de la preparación, pero el borrador recuperado no contiene todos los ajustes visibles.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 545
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P01B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P01B",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P02A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P02A",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que sus lectores pueden acceder al cuento completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que sus lectores pueden acceder al cuento completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que sus lectores pueden acceder al cuento completo y legible; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Integra el cuento en la antología digital y comprueba que sus lectores pueden acceder al cuento completo y legible; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P02B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P02B",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a la antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a la antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a la antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva el texto completo y su orden en la versión revisada del cuento; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Incorpora el cuento a la antología impresa y deja un ejemplar completo y legible disponible para consulta en la biblioteca escolar; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P03A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P03A",
+        "activityType": "CALLIGRAM_CREATION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "calligram-relation",
+              "requirement": "Dispone los versos formando una figura relacionada con el tema del poema.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "calligram-visual",
+              "requirement": "Organiza las palabras para construir la figura sin dificultar innecesariamente la lectura.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 533
+            },
+            {
+              "id": "calligram-feature-free-verse",
+              "requirement": "Emplea el verso libre en el texto de caligrama para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija, sin alterar el sentido de las ideas.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            },
+            {
+              "id": "calligram-expression",
+              "requirement": "Comunica calma mediante palabras y una figura relacionadas entre sí, de acuerdo con el tema solicitado para el caligrama.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "calligram-relation",
+              "requirement": "Dispone los versos formando una figura relacionada con el tema del poema.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "calligram-visual",
+              "requirement": "Organiza las palabras para construir la figura sin dificultar innecesariamente la lectura.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 533
+            },
+            {
+              "id": "calligram-feature-free-verse",
+              "requirement": "Emplea el verso libre en el texto de caligrama para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija, sin alterar el sentido de las ideas.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            },
+            {
+              "id": "calligram-expression",
+              "requirement": "Comunica calma mediante palabras y una figura relacionadas entre sí, de acuerdo con el tema solicitado para el caligrama.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "calligram-relation",
+              "requirement": "Dispone los versos formando una figura relacionada con el tema del poema.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "calligram-visual",
+              "requirement": "Organiza las palabras para construir la figura sin dificultar innecesariamente la lectura.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 533
+            },
+            {
+              "id": "calligram-feature-free-verse",
+              "requirement": "Emplea el verso libre en el texto de caligrama para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija, sin alterar el sentido de las ideas.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            },
+            {
+              "id": "calligram-expression",
+              "requirement": "Comunica calma mediante palabras y una figura relacionadas entre sí, de acuerdo con el tema solicitado para el caligrama.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "calligram-relation",
+              "requirement": "Dispone los versos formando una figura relacionada con el tema del poema. Parcial (50%): La figura es reconocible, pero solo parte de las palabras se vincula con el mensaje.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 667
+            },
+            {
+              "id": "calligram-visual",
+              "requirement": "Organiza las palabras para construir la figura sin dificultar innecesariamente la lectura. Parcial (50%): La figura se reconoce, pero la distribución dificulta leer partes del poema.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 533
+            },
+            {
+              "id": "calligram-feature-free-verse",
+              "requirement": "Emplea el verso libre en el texto de caligrama para organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija, sin alterar el sentido de las ideas. Parcial (50%): Incluye el verso libre, pero varios usos no contribuyen a organizar el sentido y el ritmo de los versos sin exigir rima ni una medida fija.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            },
+            {
+              "id": "calligram-expression",
+              "requirement": "Comunica calma mediante palabras y una figura relacionadas entre sí, de acuerdo con el tema solicitado para el caligrama. Parcial (50%): Parte de las palabras o de la figura se relaciona con calma, pero su expresión queda incompleta.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 400
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P03B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P03B",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "lista-cotejo",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "lista-cotejo"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-publication-integrity",
+              "requirement": "Conserva las palabras y la figura del caligrama revisado, incluida su relación al mantener o ampliar el tamaño; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-publication-access",
+              "requirement": "Comprueba la colocación efectiva del caligrama en el mural escolar, donde sus palabras y su figura resultan legibles; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P04A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P04A",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Envía a la comunidad una explicación ambiental comprensible y fiel a la información disponible, de acuerdo con su destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1333
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva constancia de la explicación enviada a la comunidad; distingue el envío realizado del intercambio todavía pendiente. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 667
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Envía a la comunidad una explicación ambiental comprensible y fiel a la información disponible, de acuerdo con su destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1333
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva constancia de la explicación enviada a la comunidad; distingue el envío realizado del intercambio todavía pendiente. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 667
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Envía a la comunidad una explicación ambiental comprensible y fiel a la información disponible, de acuerdo con su destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1333
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva constancia de la explicación enviada a la comunidad; distingue el envío realizado del intercambio todavía pendiente. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 667
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-environment-message",
+              "requirement": "Envía a la comunidad una explicación ambiental comprensible y fiel a la información disponible, de acuerdo con su destinatario. Parcial (50%): Comunica información ambiental pertinente, pero explica poco su respaldo o su relación con el destinatario.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 1333
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva constancia de la explicación enviada a la comunidad; distingue el envío realizado del intercambio todavía pendiente. Las fases dependientes de una respuesta externa pendiente permanecen sin valorar hasta que se observen. Parcial (50%): La constancia omite información necesaria para identificar la explicación enviada o su destinatario.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 667
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P04B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P04B",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde de forma pertinente y respetuosa a la pregunta efectivamente recibida de la comunidad, relacionándola con la explicación ambiental disponible sin inventar información.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1239
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva la pregunta recibida y su respuesta propia, de manera que se pueda comprobar la relación entre ambas.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 496
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde de forma pertinente y respetuosa a la pregunta efectivamente recibida de la comunidad, relacionándola con la explicación ambiental disponible sin inventar información.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1239
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva la pregunta recibida y su respuesta propia, de manera que se pueda comprobar la relación entre ambas.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 496
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde de forma pertinente y respetuosa a la pregunta efectivamente recibida de la comunidad, relacionándola con la explicación ambiental disponible sin inventar información.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1239
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva la pregunta recibida y su respuesta propia, de manera que se pueda comprobar la relación entre ambas.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 496
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-environment-response",
+              "requirement": "Responde de forma pertinente y respetuosa a la pregunta efectivamente recibida de la comunidad, relacionándola con la explicación ambiental disponible sin inventar información. Parcial (50%): La respuesta observada retoma parte de la pregunta, pero explica poco su relación con la explicación ambiental disponible.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1239
+            },
+            {
+              "id": "len1-community-environment-record",
+              "requirement": "Conserva la pregunta recibida y su respuesta propia, de manera que se pueda comprobar la relación entre ambas. Parcial (50%): El registro de las fases realizadas omite un elemento necesario para comprender la relación entre mensajes.",
+              "relativeWeight": 2,
+              "maxScoreUnits": 496
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P05A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P05A",
+        "activityType": "NEWS_ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia. Parcial (50%): Comprende parte de lo solicitado, pero deja una respuesta poco explicada o no justifica suficientemente la información que falta.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato. Parcial (50%): Utiliza un dato pertinente o menciona dos sin explicar suficientemente su relación con la respuesta.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P05B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P05B",
+        "activityType": "NEWS_ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reading-answers",
+              "requirement": "Explica individualmente qué ocurrió, de acuerdo con la noticia. Parcial (50%): Comprende parte de lo solicitado, pero deja una respuesta poco explicada o no justifica suficientemente la información que falta.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1084
+            },
+            {
+              "id": "len1-community-reading-two-data",
+              "requirement": "Relaciona dos datos pertinentes de la noticia con su explicación individual; conserva su sentido y hace comprensible qué afirmación o límite apoya cada dato. Parcial (50%): Utiliza un dato pertinente o menciona dos sin explicar suficientemente su relación con la respuesta.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 651
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P06A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P06A",
+        "activityType": "WRITTEN_PRODUCTION",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-summary-main",
+              "requirement": "Resume las ideas principales de los dos textos con fidelidad y claridad, distinguiendo sus aportes sin inventar información ni exigir una relación nueva.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-summary-differences",
+              "requirement": "Conserva las diferencias relevantes entre las ideas de los textos, sin borrar sus discrepancias ni atribuirles una posición común inexistente.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-summary-main",
+              "requirement": "Resume las ideas principales de los dos textos con fidelidad y claridad, distinguiendo sus aportes sin inventar información ni exigir una relación nueva.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-summary-differences",
+              "requirement": "Conserva las diferencias relevantes entre las ideas de los textos, sin borrar sus discrepancias ni atribuirles una posición común inexistente.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-summary-main",
+              "requirement": "Resume las ideas principales de los dos textos con fidelidad y claridad, distinguiendo sus aportes sin inventar información ni exigir una relación nueva.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-summary-differences",
+              "requirement": "Conserva las diferencias relevantes entre las ideas de los textos, sin borrar sus discrepancias ni atribuirles una posición común inexistente.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-summary-main",
+              "requirement": "Resume las ideas principales de los dos textos con fidelidad y claridad, distinguiendo sus aportes sin inventar información ni exigir una relación nueva. Parcial (50%): Resume las ideas de un texto, pero omite una idea principal necesaria del otro.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-summary-differences",
+              "requirement": "Conserva las diferencias relevantes entre las ideas de los textos, sin borrar sus discrepancias ni atribuirles una posición común inexistente. Parcial (50%): Menciona una diferencia, pero omite otra necesaria para comprender los aportes.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P06B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P06B",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación propuesta entre sus ideas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación propuesta entre sus ideas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación propuesta entre sus ideas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-reasoning-sources",
+              "requirement": "Selecciona información pertinente y fiel de ambos textos para examinar la relación propuesta entre sus ideas. Parcial (50%): Usa información pertinente de una fuente, pero integra de manera incompleta la segunda.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-reasoning-integration",
+              "requirement": "Formula una relación nueva que no aparece literalmente en los textos y explica cómo la sostiene con información de ambos; distingue la inferencia del dato literal. Parcial (50%): Presenta los aportes por separado o insinúa una relación, pero no explica suficientemente el vínculo entre ellos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P07A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P07A",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 2000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 2000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 2000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados. Parcial (50%): Reconoce la práctica y parte de su contexto, pero deja incompleta información necesaria para situar el cambio o hecho histórico.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 2000
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P07B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P07B",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los documentos.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-history-sources",
+              "requirement": "Explica qué cambió en la tradición dominicana entre antes y ahora, usando información fiel de los documentos entregados. Parcial (50%): Reconoce la práctica y parte de su contexto, pero deja incompleta información necesaria para situar el cambio o hecho histórico.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 771
+            },
+            {
+              "id": "len1-community-history-relation",
+              "requirement": "Explica la relación entre el cambio de la práctica tradicional y el uso de un recurso natural del lugar, sustentándola en los documentos. Parcial (50%): Describe por separado la práctica y el entorno natural, pero deja poco explicado cómo se relacionan.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 964
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P08A",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P08A",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-read-reasons",
+              "requirement": "Explica las razones de una de las respuestas al conflicto ficticio, representando fielmente esa perspectiva con información del caso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-perspective-read-support",
+              "requirement": "Relaciona información pertinente del caso con las razones explicadas, sin inventar motivos ni exigir que se comparta la perspectiva.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-read-reasons",
+              "requirement": "Explica las razones de una de las respuestas al conflicto ficticio, representando fielmente esa perspectiva con información del caso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-perspective-read-support",
+              "requirement": "Relaciona información pertinente del caso con las razones explicadas, sin inventar motivos ni exigir que se comparta la perspectiva.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-read-reasons",
+              "requirement": "Explica las razones de una de las respuestas al conflicto ficticio, representando fielmente esa perspectiva con información del caso.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-perspective-read-support",
+              "requirement": "Relaciona información pertinente del caso con las razones explicadas, sin inventar motivos ni exigir que se comparta la perspectiva.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 20,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-read-reasons",
+              "requirement": "Explica las razones de una de las respuestas al conflicto ficticio, representando fielmente esa perspectiva con información del caso. Parcial (50%): Describe la respuesta, pero explica de manera incompleta por qué se propone.",
+              "relativeWeight": 5,
+              "maxScoreUnits": 1250
+            },
+            {
+              "id": "len1-community-perspective-read-support",
+              "requirement": "Relaciona información pertinente del caso con las razones explicadas, sin inventar motivos ni exigir que se comparta la perspectiva. Parcial (50%): Menciona información del caso, pero explica poco cómo apoya las razones.",
+              "relativeWeight": 3,
+              "maxScoreUnits": 750
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    },
+    {
+      "caseId": "LEN1-CTR-P08B",
+      "capture": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-contrastes-167-revisar-v3.json",
+      "captureSha256": "9c5a23381f9a21a029e7f4da709aef8032a489e34a9dc43538542dfb4454cd57",
+      "sourceComponents": [],
+      "sourceContribution": "Contraste de alcance entre consignas; evidencia de discriminación, sin añadir acreditación curricular por sí solo.",
+      "selection": {
+        "id": "LEN1-CTR-P08B",
+        "activityType": "ANALYSIS",
+        "instrument": "rubrica",
+        "interpretationSelections": {
+          "suggestedEvaluationTechnique": "analisis-producciones",
+          "suggestedInstrumentType": "rubrica"
+        },
+        "strategy": {
+          "id": null,
+          "confidence": "NONE",
+          "reasons": [],
+          "catalogVersion": "teaching-strategies-2026.1"
+        }
+      },
+      "formats": [
+        {
+          "format": "rubrica",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-cotejo",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "escala",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, sin descalificar a las personas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        },
+        {
+          "format": "lista-ponderada",
+          "maxScore": 17.35,
+          "criteria": [
+            {
+              "id": "len1-community-perspective-own",
+              "requirement": "Explica una decisión propia dentro de la situación imaginaria y sus razones, considerando las condiciones del caso. Parcial (50%): La respuesta es compatible con parte del caso, pero sus razones quedan poco explicadas.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 868
+            },
+            {
+              "id": "len1-community-perspective-other",
+              "requirement": "Representa fielmente la decisión del personaje y sus razones; explica una coincidencia o diferencia con la decisión propia, sin descalificar a las personas. Parcial (50%): Describe la otra perspectiva, pero explica poco su coincidencia o diferencia con la propia.",
+              "relativeWeight": 4,
+              "maxScoreUnits": 867
+            }
+          ],
+          "serviceFallbackExact": true,
+          "pendingScore": true
+        }
+      ],
+      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+    }
+  ]
+}

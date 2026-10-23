@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | 148 actividades/592 instrumentos locales revisados; trazabilidad de26casos conciliada por componente.14casos/56instrumentos principales pendientes de corrección tras lectura independiente92.166gates completos; HTTP166 pendiente, última evidencia remota165. Visual personal y cierre total de malla pendientes. |
+| 1 | COMMON | Lengua Española | 592instrumentos previos exactos;120adicionales leídos por coordinador. Relectura independiente final167 pendiente por límite de herramienta. Cuatro casos E01–E04 fijados para tres componentes fuente aún sin acreditar. HTTP166 y15referencias personales verificados; HTTP167/UI personal/cierre de malla pendientes. |
 | 1 | COMMON | Inglés | Fuente134–139 y competencias/ejes129–133 conciliados por auditor independiente:201registros. Revisión de actividades e instrumentos todavía pendiente; no implementación nueva |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
