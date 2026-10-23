@@ -1,0 +1,2486 @@
+{
+  "catalog": "evaluation-2026.158",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "newsReviewedContentExact": 52,
+  "guideOutputs": 56,
+  "results": [
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "2fa64482f83b966818122d294c671158c746d5ffca41628096d358a63db59cea",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "1bc7fc5f274fad49e8b56ff9c65a980523efea8a987bdb8544e748365193b08f",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "9aae82593e73a8b3d9acae5fa42613b5a22cc2c3eedc10fdbd040a4b8810c008",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "9e174ffff0dd35eb28ea8db6f19092ea87b86297e543c45e1470fd590fa807cf",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "6c1779f21ef52f5e7e76afd43e495cd747dbf53fabfc3d9bee3d08d9cca5f0f8",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "16fcee5b667e5094cfb4c621cb5606852b682d20671cf5642f0275e3155ac7c4",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "db896a68ad3a826893b7b757f4e870d99e9f6dc23080df973cc7eaba50e443a0",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "a15d48dcc00c0a24726312ea500f7495b3c74ae0a6bc984f0bfcdc028f591e15",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "d0d6b0509ffe7c5691b6085db5cc6a9426246d07e2e948a1cefe4cde9aa61e1a",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "32f6c099b57ff246c7bfece4bb6ed552151189d0f0846051d35951b373549708",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "fbacc050b2116b764c6f1956d84ce12f0dea976eb64ad1a2120a6bdf960ae34d",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "289bcc6eac63c4e15bd1f3f4322ce8f62683e873ccec87489cd10fc0ce78062e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "4d6f1c3c56a6fb6495b6ba2aac6a0545bc27de2a142e94a78b4387626ed97dcd",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "0d58b08f909978bffb679797ae377c18730e57d1fe42cbbec15b45950212e8cf",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "ca5427f8ed09cfd35f19e480bc281df0f97aaadc573ee9ec344ef960511b0f90",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "307f79c277829c27d30adf857847190e0edcebcdcabf264fff502612c7ef9547",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "b909cedb7606c1fc52f14a650634cd308af5216244fca50360ef4b3f6873231c",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "abfe34dab30325fe586f8f030050423ece298c06c16006c5d0cc1389e58cab2c",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "c6db32b3fc0d51258579909fb635c03de434e9db60a269cba68998d222df681c",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "cdd690af394a02c7304963e84dad3c2ce242fbac12c2c9208a0b3278f3e11ce5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "rubrica",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "23ec83b73faa44fdd8aa4f05ec54eb3915e3be7f619c992e96d414421a196379",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-cotejo",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "ec191a060ed49d8bf6c7df2c5545b851ffd11522edd9584d9fe4d0b6fe591ea5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "escala",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "a3837b7327e1640166fc1d68ea53f68c1d1ef511f24cd2218d52263150025e78",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-ponderada",
+      "bankSha256": "087495645186eb07636ef2b802f2926ea46a3d7265d9727f0b5a0efbf902fa4d",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "semanticHash": "07d5dc9f0adc7c15361ac532b46634c5da4a3c05343880a91c2e04bcd912af86",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "rubrica",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "03e6a0d317b8754425b4961ed6db80d295c4a4227bd92ef729eb16f85bd00212",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-cotejo",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "ccb776ce33628a460bf1a3deaf88b560b378dc14f29835a0cfcaad534dec55d1",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "escala",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "731f573441f66c73da1b69710219a29552e7fac7fdcd1a98b963f82d80a581bd",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-ponderada",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "23b060ac9e8e14f7e0f2b0e878a8babdae2ad83eba0ad8dd61b86feb49be66b1",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "rubrica",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "5a4bc2180f5460dfca0bab4aa731143e255064dcb0050935a3c94b246bf781d8",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-cotejo",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "7a4e689cf02a97c3fc538c4c6409d12b040d0d1b6b66c73b111e1caf39a727b4",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "escala",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "3c071172f2c534a1667a1dfd806b062f127e030bb984c5cc501fd9b3853186bb",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-ponderada",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "8d895b0d694e4a9bb853f7c116150ba89fb8fab6e7a9cc12036532ff72d20285",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "rubrica",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "26492390fea338270d45229b4e25536af55db08f1d031390f0937b798399f436",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-cotejo",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "584e96441eb3748a8985fcb6a19ce97e6ecdd30571c92f5e616db5e526c67d0e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "escala",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "12e305d12edaeb6f723730ce7193e0674c00d962e4e95731cac32bf03af91e57",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-ponderada",
+      "bankSha256": "c959a911c879eeccbdecf48507777927ec4fa0140060d3df3ed1ff6dbb03a1e6",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "semanticHash": "29312f013cb2c5bc2fc677065b4b5ffda8dd2feca42aa270e99e18b601f93e58",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "rubrica",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "056eb3c93fcf3fe9494b4029de62af90bf9180477735759d3f4678f2acded4b5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-cotejo",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "1a0e8e25b921bb8ac08f0442ec00cdb0b3fd9d8480d51f030bfba7455afc0e98",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "escala",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "3ceec6f878d37431ac8754ef2a8a7ac625efa8119345f01bb1dfc44477748c8d",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-ponderada",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "bbba630febbcd416f7829bf898d4d435f27ac004c55ca06ff2d17eb1b1e4838e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "rubrica",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "3dec57c9fc8eae31779f5a1aa0fb6b70df97c84b033039579f495472b93ff5f5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-cotejo",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "e15e78adea7142510c1dd8ac81757da8c69156b892a23edf7b2fa425204806a8",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "escala",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "bce7e9994dee70ee4a0ebed1a97964a37bdb1cb4a63c2bbe49e8ad02c5b1d422",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-ponderada",
+      "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "semanticHash": "1a92daeceb427086438cf1cbfa9a4ae1c9bd2e8937b483ee603ad7da3eb474ad",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "rubrica",
+      "bankSha256": "f5ca5832cba962891caf2f9df7612b3743d001212b21acd3a481f09f3da417ee",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "59be7845c9b6cb26f5a3d49e48e20875c748803c80560ec593252df2d2e5a84f",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-cotejo",
+      "bankSha256": "f5ca5832cba962891caf2f9df7612b3743d001212b21acd3a481f09f3da417ee",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "f6cdce27a4fcdfffbef357465e4237e2e24501c42bb1bb144b5e8193fb5d5789",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "escala",
+      "bankSha256": "f5ca5832cba962891caf2f9df7612b3743d001212b21acd3a481f09f3da417ee",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "149c6b588681ea108a9141b082da81636a8efe69bc736b5ed9bc004a357b14e6",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-ponderada",
+      "bankSha256": "f5ca5832cba962891caf2f9df7612b3743d001212b21acd3a481f09f3da417ee",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "semanticHash": "e6430d4b8373c1daf9ea03285eb80c73fe51601efa26027cad19a977d72dca8b",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "rubrica",
+      "bankSha256": "6b80b6ee053751dbe2fc0ba6d1f86c40e0a1666d356ed0cf62cd32feba0295e6",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "5157d152f4023bf2353aca449eaca9aa25cc1b6c14d269146bcacf3e57d4a53e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "lista-cotejo",
+      "bankSha256": "6b80b6ee053751dbe2fc0ba6d1f86c40e0a1666d356ed0cf62cd32feba0295e6",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "6acfbb906b1c7be3c6442fdd49fc514c4469c12a79956a1d73fae4ecba7b7530",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "escala",
+      "bankSha256": "6b80b6ee053751dbe2fc0ba6d1f86c40e0a1666d356ed0cf62cd32feba0295e6",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "fefdf8d7b7b2ae230fda70af240027567e8cc1701849d12ca35808012e87bc42",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-NOT-A02",
+      "format": "lista-ponderada",
+      "bankSha256": "6b80b6ee053751dbe2fc0ba6d1f86c40e0a1666d356ed0cf62cd32feba0295e6",
+      "artifact": "auditoria-curricular-len1-noticia-estructura-oral-157-despues.json",
+      "semanticHash": "a4c577b5ecab9ef842354791cc835792e399ae9489003d69fce4caaf4b2f04e4",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-01",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "d39d72d6151b19cc0908c62517c01e9e9a6f40d0d97bfb61f3b0779c1acbee7e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-01",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "d2de67264aed26d205f423bd5e006ff618eecec02a7f10b57e37b78fa0f08c80",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-01",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "3c336871dc3910353edaceaef1ccf0352aa531f3bd2102a64ff9faaddb1a46db",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-01",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "1b93c01e8de048166a37e752f567028045c3114ff5797465b10f414c5ed6b4b8",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-02",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "ac886918830b11b9572b93031a6b05fb0686cd724401da37b5103b4f53fd7fa6",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-02",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "d67e5bc5ba42293694328faee2119b5766506ea74e494c849791a41ec4f34594",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-02",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "f073316ffbd417790ba7ed859c2adfa6ac5817f5603de236652c526d227c421f",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-02",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "4af754c7813ee251d481b0af6e4aa667605deac4943f5238773fca646452f853",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-03",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "fa4267ee778abdc8931e33eb96f8fbef62a24eb22120bdf58c56405b28ba7dfd",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-03",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "857fa467c0335a350f162ce79e8c7ab8e6dd28595052fd55fc9be4c2c07a9a5f",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-03",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "160f311f244e7dae2bd4a289f51b65e8f33b5f828bf592c09827d2a605d4fbff",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-03",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "581f6c152a91918348a0ff21134261c660c66621d8837ed22e6299578deebaba",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-04",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "74a566295f768dc9337172cb171060f2a02b9bdceac5aacf597b19f3b53bedfd",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-04",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "93cdfc0ea0fccb87096025f6585cd97fc8ada98733cd491dc394362358a76178",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-04",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "b8ae9bad96fbb572e710ba7799e32b5c6d5a0cf0a9ab82d76b4fdbcefa01585f",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-04",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "5383d5e75134f164f3f6743eb46a91c0e03c0b0e9a4e65b54270ef296c1c4f9d",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-05",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "2639f07338cb9f9397a3990d14d5edd239c0190ab2b8770dc66956f1046c7eb1",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-05",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "841713b29eb6effef5472cd08799f4bdd3aeabc311fd689d91a2b66b643916c7",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-05",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "e650a50bc0affac362984ff00322fb4d0b5472e15779303249502fb3bb0fc2f5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-05",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "0fdfe3060ad3a4295885153de06a3475ce8aa9e96bbe246cbc33636f01d548be",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-06",
+      "format": "rubrica",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "5199d4d6110618de388db8a89998134c604192badb8dd2e9c9a9c75cf66bc64a",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-06",
+      "format": "lista-cotejo",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "811ad8d2f073086da6c7378328b24adb3904f4b75797b8c97c4026cb25716c50",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-06",
+      "format": "escala",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "a843de0cb1ff8b12b6fc3365195ba19d1e312ab848936e214282978b7bb032a1",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-06",
+      "format": "lista-ponderada",
+      "bankSha256": "828fb49f8a727ec3bf817b39d18ebdaef96e1933d35ae6cc65d4176da8703908",
+      "artifact": "auditoria-curricular-len1-guia-158-leida-v2.json",
+      "semanticHash": "19a29cb58c7b0880183e116313851fd37e3ec63aba91a471954ca56e3a0f6467",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R01",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "18990dc6dabc554d635c0e9cb168c5d6f906ac8ab7d1b38d4cf7ef2607d32ba9",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R01",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "16c3bb100f77cb3fd7e85115cce7821a800f720b3732406743a54df5184d4feb",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R01",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "dd0da6b7dc58f4a8eb42e383188bc24f24467857860b98c3d50fe5b38a5d18e6",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R01",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "04ae8f106c75738c275fda5109a0c5666a48bb878ce3bab513aa79c8d74dd3f3",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R02",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "22b31f642f1a4f7dc88a76624abf9927bbf111afdb2f54381c252807de950f1d",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R02",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "fc2094d4d2733bda9a256f660e81b7116f55263950c67cdbaa1d1fe294b7de8e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R02",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "e62070d0fec90379ea336b7f960a5968ad9477b880fa6893797b10ebd857d111",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R02",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "54d260472eeb759aac83f42c026773f66a6a0c911b3b055ac32ac3ae30b98c81",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R03",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "cc368913dd0f9f9dc37c9e71dcc295e828a3548adbb189a70c6948f5dbd5581b",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R03",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "9d4bc0d5208662e38b84b6b6b2072c7d615af11c45665718ae69b76bc792138a",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R03",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "bde3be5f17d744a9b5450aee7cc498d6e2d5882e07de711ead22531554891197",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R03",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "20fe0187767eacb8f15cbd9e6a2dfe90285a894a8c498a2fb08ed2fefaeed8ec",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "ce15919ac057b5b5adf5e38df0051ba3fa1d4d66594d8e7b04d4062f312367ec",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": false
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "5e6c3d567948b39442d9c8d1d0c1657c428ee8304caed3f89b2e40603768e797",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": false
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "81e12567b69b8f8f126ddb67b4b91bad2a8fa91c7a3bd0783f376e9363566401",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": false
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "7c39ec3bf6bab73f76f9273f795bbcd0c483dfe3974755a6b72a173a0a38b462",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": false
+    },
+    {
+      "caseId": "LEN1-GUI-R05",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "c1b3ebd3c3d7983defbc04b7c912ba62b68d6c8df9e15ca376ed2093fee82965",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R05",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "c0abd5ed490c0880c5ba94c2c3297be45b99eb7c050b1c5ea49c12541fe5391d",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R05",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "aa2b7ba5de7ce0a66e41cdbc8bce1f33f6407f358ea81ff05ffeb3066a4fe577",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R05",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "879743be30753380a36e1fd2b260bf2ff82c8334ecfe609953a56df0804ce33a",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R06",
+      "format": "rubrica",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "0d71b9555fbc2cea48a1fb022c2744b0e467ca207df5239ffb22eafa808c86c1",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R06",
+      "format": "lista-cotejo",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "364721460b910a2a3cf64e0123b49e6f42712f86353c012169db2585c4f2fb83",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R06",
+      "format": "escala",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "01b20223f9579e874293887d598b17b5386f9ac05be88d6917c9dacf6a313ad5",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-R06",
+      "format": "lista-ponderada",
+      "bankSha256": "14362a7625754ceffb27da6d0bae26b1ad6431656a69797411d1897a59f75b1e",
+      "artifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "semanticHash": "e89e71d3f253c4d4c44d9e068d5224b7ff279f0bf643cc0664b86b43e57aed5a",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A01",
+      "format": "rubrica",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "e956ec4ef9a1f549afd20905a9ffb0c2a6dcaf3715b507d7fb3175e697f2a4b4",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A01",
+      "format": "lista-cotejo",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "dd1533f267a48166e838cd0cd1154665b0e8306f514f9f5089eb21fc6119918b",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A01",
+      "format": "escala",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "de0f427f3394dc1f323f3b32a291b62f9cca2503adc825c5b72db1e6b2ee8e10",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A01",
+      "format": "lista-ponderada",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "238772089f546d6e55a88ad516e59700ad0bc74fff89ace446d0f881e777da5e",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A02",
+      "format": "rubrica",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "5a69154623afa5f5043c4504332a8a4b012e3471fe56134e3bb16c7edb5850c6",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A02",
+      "format": "lista-cotejo",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "07da8982b953ec0309f12094a777ab6f8271f0c075d120115b08e3abf95094d4",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A02",
+      "format": "escala",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "853ba56d07e3acae70924cef74d814b61fdada1cc4f70253bc07d44c04ed6880",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    },
+    {
+      "caseId": "LEN1-GUI-A02",
+      "format": "lista-ponderada",
+      "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+      "artifact": "auditoria-curricular-len1-guia-oral-158-despues.json",
+      "semanticHash": "1b34860130841ede94e6ea95d6defcbe92681b0d551de9c340edf118572a4591",
+      "serviceFallbackExact": true,
+      "scorePending": true,
+      "exact20and17_35": true,
+      "manualPreserved": true,
+      "previousReviewedContentExact": true
+    }
+  ],
+  "changes": [
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "rubrica",
+      "previousArtifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "updatedInstrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:0",
+            "templateId": "guide-purpose",
+            "title": "Propósito y destinatario de la guía",
+            "description": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+              "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+              "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+              "Confunde el propósito de la guía con una intención ajena a su información.",
+              "No identifica el propósito de orientación de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el propósito de orientación de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-signs:1",
+            "templateId": "guide-feature-signs",
+            "title": "Las oraciones interrogativas y exclamativas",
+            "description": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "La explicación se apoya en una identificación incorrecta: la pregunta o el énfasis atribuye al lugar cualidades contrarias a la información disponible.",
+              "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reconstruction:2",
+            "templateId": "guide-procedure-reconstruction",
+            "title": "Reconstrucción del sentido de la guía",
+            "description": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+              "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+              "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+              "La representación atribuye a un lugar indicaciones de otro o cambia una relación descrita en la guía.",
+              "No presenta una reconstrucción reconocible de la información de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible de la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-classification:3",
+            "templateId": "guide-procedure-classification",
+            "title": "Clasificación de los lugares",
+            "description": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+              "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+              "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+              "Asigna lugares a categorías que contradicen la información de la guía.",
+              "No presenta una clasificación reconocible de los lugares descritos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una clasificación reconocible de los lugares descritos.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reading-purpose:4",
+            "templateId": "guide-procedure-reading-purpose",
+            "title": "Propósito de la lectura",
+            "description": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+            "maxScore": 1.24,
+            "maxScoreUnits": 124,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+              "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+              "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+              "El propósito elegido requiere información que la guía disponible no ofrece.",
+              "No explicita el propósito solicitado para la lectura de la guía."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L3",
+                "text": "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+                "scoreUnits": 41
+              },
+              {
+                "levelId": "L1",
+                "text": "No explicita el propósito solicitado para la lectura de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-prediction:5",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipación y comprobación de la lectura",
+            "description": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+              "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+              "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+              "Afirma que un dato leído confirma una predicción que contradice la guía.",
+              "No presenta anticipación ni contraste reconocible con la información leída."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta anticipación ni contraste reconocible con la información leída.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:6",
+            "templateId": "guide-structure",
+            "title": "Función de las partes de la guía",
+            "description": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+              "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+              "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+              "Atribuye a una parte información o una función que corresponde a otra.",
+              "No identifica partes ni funciones reconocibles en la guía disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica partes ni funciones reconocibles en la guía disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-language-organization:7",
+            "templateId": "guide-language-organization",
+            "title": "Recursos lingüísticos y organización de la información",
+            "description": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+            "maxScore": 3.09,
+            "maxScoreUnits": 309,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+              "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+              "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+              "Atribuye una cualidad, un nombre o una forma verbal a un lugar distinto y cambia la información organizada.",
+              "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+                "scoreUnits": 309
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+                "scoreUnits": 206
+              },
+              {
+                "levelId": "L2",
+                "text": "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+                "scoreUnits": 103
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "lista-cotejo",
+      "previousArtifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "updatedInstrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:0",
+            "templateId": "guide-purpose",
+            "title": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante.",
+            "description": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+              "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+              "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+              "Confunde el propósito de la guía con una intención ajena a su información.",
+              "No identifica el propósito de orientación de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-signs:1",
+            "templateId": "guide-feature-signs",
+            "title": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "description": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "La explicación se apoya en una identificación incorrecta: la pregunta o el énfasis atribuye al lugar cualidades contrarias a la información disponible.",
+              "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reconstruction:2",
+            "templateId": "guide-procedure-reconstruction",
+            "title": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.",
+            "description": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+              "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+              "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+              "La representación atribuye a un lugar indicaciones de otro o cambia una relación descrita en la guía.",
+              "No presenta una reconstrucción reconocible de la información de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-classification:3",
+            "templateId": "guide-procedure-classification",
+            "title": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible.",
+            "description": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+              "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+              "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+              "Asigna lugares a categorías que contradicen la información de la guía.",
+              "No presenta una clasificación reconocible de los lugares descritos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reading-purpose:4",
+            "templateId": "guide-procedure-reading-purpose",
+            "title": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+            "description": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+            "maxScore": 1.24,
+            "maxScoreUnits": 124,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+              "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+              "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+              "El propósito elegido requiere información que la guía disponible no ofrece.",
+              "No explicita el propósito solicitado para la lectura de la guía."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-prediction:5",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+            "description": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+              "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+              "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+              "Afirma que un dato leído confirma una predicción que contradice la guía.",
+              "No presenta anticipación ni contraste reconocible con la información leída."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:6",
+            "templateId": "guide-structure",
+            "title": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+            "description": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+              "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+              "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+              "Atribuye a una parte información o una función que corresponde a otra.",
+              "No identifica partes ni funciones reconocibles en la guía disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-language-organization:7",
+            "templateId": "guide-language-organization",
+            "title": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+            "description": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+            "maxScore": 3.09,
+            "maxScoreUnits": 309,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+              "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+              "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+              "Atribuye una cualidad, un nombre o una forma verbal a un lugar distinto y cambia la información organizada.",
+              "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "escala",
+      "previousArtifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "updatedInstrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:0",
+            "templateId": "guide-purpose",
+            "title": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante.",
+            "description": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+              "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+              "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+              "Confunde el propósito de la guía con una intención ajena a su información.",
+              "No identifica el propósito de orientación de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el propósito de orientación de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-signs:1",
+            "templateId": "guide-feature-signs",
+            "title": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "description": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "La explicación se apoya en una identificación incorrecta: la pregunta o el énfasis atribuye al lugar cualidades contrarias a la información disponible.",
+              "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reconstruction:2",
+            "templateId": "guide-procedure-reconstruction",
+            "title": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.",
+            "description": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+              "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+              "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+              "La representación atribuye a un lugar indicaciones de otro o cambia una relación descrita en la guía.",
+              "No presenta una reconstrucción reconocible de la información de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible de la información de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-classification:3",
+            "templateId": "guide-procedure-classification",
+            "title": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible.",
+            "description": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+              "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+              "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+              "Asigna lugares a categorías que contradicen la información de la guía.",
+              "No presenta una clasificación reconocible de los lugares descritos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una clasificación reconocible de los lugares descritos.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reading-purpose:4",
+            "templateId": "guide-procedure-reading-purpose",
+            "title": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+            "description": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+            "maxScore": 1.24,
+            "maxScoreUnits": 124,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+              "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+              "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+              "El propósito elegido requiere información que la guía disponible no ofrece.",
+              "No explicita el propósito solicitado para la lectura de la guía."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L3",
+                "text": "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+                "scoreUnits": 41
+              },
+              {
+                "levelId": "L1",
+                "text": "No explicita el propósito solicitado para la lectura de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-prediction:5",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+            "description": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+              "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+              "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+              "Afirma que un dato leído confirma una predicción que contradice la guía.",
+              "No presenta anticipación ni contraste reconocible con la información leída."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+                "scoreUnits": 186
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+                "scoreUnits": 124
+              },
+              {
+                "levelId": "L2",
+                "text": "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+                "scoreUnits": 62
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta anticipación ni contraste reconocible con la información leída.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:6",
+            "templateId": "guide-structure",
+            "title": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+            "description": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+              "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+              "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+              "Atribuye a una parte información o una función que corresponde a otra.",
+              "No identifica partes ni funciones reconocibles en la guía disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L3",
+                "text": "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+                "scoreUnits": 165
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+                "scoreUnits": 83
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica partes ni funciones reconocibles en la guía disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-language-organization:7",
+            "templateId": "guide-language-organization",
+            "title": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+            "description": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+            "maxScore": 3.09,
+            "maxScoreUnits": 309,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+              "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+              "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+              "Atribuye una cualidad, un nombre o una forma verbal a un lugar distinto y cambia la información organizada.",
+              "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+                "scoreUnits": 309
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+                "scoreUnits": 206
+              },
+              {
+                "levelId": "L2",
+                "text": "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+                "scoreUnits": 103
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "LEN1-GUI-R04",
+      "format": "lista-ponderada",
+      "previousArtifact": "auditoria-curricular-len1-guia-reservado-158-leida-v2.json",
+      "updatedInstrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:0",
+            "templateId": "guide-purpose",
+            "title": "Propósito y destinatario de la guía",
+            "description": "Explica la intención comunicativa de la guía disponible relacionando sus datos y recursos con la orientación del visitante. Parcial (50%): Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la guía orienta e informa a sus posibles visitantes.",
+              "Explica la intención de orientar al visitante; una relación con los datos necesita precisión.",
+              "Reconoce que la guía informa sobre lugares, pero no explica cómo orienta la visita.",
+              "Confunde el propósito de la guía con una intención ajena a su información.",
+              "No identifica el propósito de orientación de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-signs:1",
+            "templateId": "guide-feature-signs",
+            "title": "Las oraciones interrogativas y exclamativas",
+            "description": "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen. Parcial (50%): Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica las oraciones interrogativas y exclamativas en el texto de guía turística y explica, con ejemplos presentes, su función para invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "Localiza y caracteriza las oraciones interrogativas y exclamativas con ejemplos del texto; deja sin explicar una relación con su función.",
+              "Señala ejemplos de las oraciones interrogativas y exclamativas, pero no explica cómo contribuyen a invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen.",
+              "La explicación se apoya en una identificación incorrecta: la pregunta o el énfasis atribuye al lugar cualidades contrarias a la información disponible.",
+              "No localiza ejemplos pertinentes ni explica la función de las oraciones interrogativas y exclamativas en el texto disponible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reconstruction:2",
+            "templateId": "guide-procedure-reconstruction",
+            "title": "Reconstrucción del sentido de la guía",
+            "description": "Reconstruye el sentido global y las relaciones entre los lugares de la guía leída mediante un gráfico sencillo o una herramienta digital, sin cambiar sus datos. Parcial (50%): Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La representación permite reconocer los lugares y sus relaciones con las indicaciones, sin añadir datos ajenos a la guía leída.",
+              "Los lugares y las indicaciones corresponden a la guía; una relación necesita identificarse con mayor claridad.",
+              "Representa lugares o datos aislados sin establecer las relaciones que permiten comprender la guía.",
+              "La representación atribuye a un lugar indicaciones de otro o cambia una relación descrita en la guía.",
+              "No presenta una reconstrucción reconocible de la información de la guía."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-classification:3",
+            "templateId": "guide-procedure-classification",
+            "title": "Clasificación de los lugares",
+            "description": "Agrupa los lugares de la guía en categorías coherentes con la función o característica elegida y justifica la ubicación de cada lugar con información disponible. Parcial (50%): Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+            "maxScore": 1.86,
+            "maxScoreUnits": 186,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Las categorías responden al criterio elegido y la información de cada lugar justifica su inclusión en la categoría asignada.",
+              "Mantiene el criterio de clasificación; la asignación de un lugar necesita una justificación más clara.",
+              "Agrupa lugares, pero mezcla criterios que impiden comprender por qué pertenecen a cada categoría.",
+              "Asigna lugares a categorías que contradicen la información de la guía.",
+              "No presenta una clasificación reconocible de los lugares descritos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-reading-purpose:4",
+            "templateId": "guide-procedure-reading-purpose",
+            "title": "Propósito de la lectura",
+            "description": "Define para qué leerá la guía y qué información necesita obtener para orientar la visita. Parcial (50%): Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+            "maxScore": 1.24,
+            "maxScoreUnits": 124,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Define para qué leerá la guía y qué información necesita obtener para orientar la visita.",
+              "El propósito corresponde a la guía; una necesidad de información queda poco precisa.",
+              "Propone leer para conocer lugares, pero no identifica qué información necesita obtener.",
+              "El propósito elegido requiere información que la guía disponible no ofrece.",
+              "No explicita el propósito solicitado para la lectura de la guía."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-prediction:5",
+            "templateId": "guide-procedure-prediction",
+            "title": "Anticipación y comprobación de la lectura",
+            "description": "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía. Parcial (50%): Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+            "maxScore": 1.85,
+            "maxScoreUnits": 185,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Anticipa el contenido desde el título y la fotografía disponibles y contrasta su predicción con datos de la lectura de la guía.",
+              "Relaciona indicios y predicción y la comprueba; una relación con lo leído necesita precisión.",
+              "Anticipa contenido posible, pero no demuestra qué dato de la lectura lo confirma o modifica.",
+              "Afirma que un dato leído confirma una predicción que contradice la guía.",
+              "No presenta anticipación ni contraste reconocible con la información leída."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-structure:6",
+            "templateId": "guide-structure",
+            "title": "Función de las partes de la guía",
+            "description": "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible. Parcial (50%): Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+            "maxScore": 2.48,
+            "maxScoreUnits": 248,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica cómo la portada, la información, las imágenes y el cierre presentes orientan al visitante, con ejemplos de las partes de la guía disponible.",
+              "Distingue las partes y su función; un ejemplo necesita relacionarse con la orientación del visitante.",
+              "Nombra partes de la guía, pero no explica qué información aportan a la visita.",
+              "Atribuye a una parte información o una función que corresponde a otra.",
+              "No identifica partes ni funciones reconocibles en la guía disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-language-organization:7",
+            "templateId": "guide-language-organization",
+            "title": "Recursos lingüísticos y organización de la información",
+            "description": "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales. Parcial (50%): Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+            "maxScore": 3.1,
+            "maxScoreUnits": 310,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con ejemplos de la guía leída cómo los sustantivos propios, los sustantivos comunes y los sustantivos abstractos, los adjetivos, el presente del indicativo organizan la información: nombran lugares e ideas y relacionan sus cualidades actuales o habituales.",
+              "Relaciona los recursos solicitados y el presente con la organización de la guía; un ejemplo necesita precisar qué lugar o cualidad retoma.",
+              "Localiza verbos, nombres y adjetivos, pero no explica cómo sus relaciones organizan los datos de los lugares.",
+              "Atribuye una cualidad, un nombre o una forma verbal a un lugar distinto y cambia la información organizada.",
+              "No aporta ejemplos de la lectura que relacionen los recursos lingüísticos solicitados con la organización de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      }
+    }
+  ],
+  "reviewPendingForChanges": true,
+  "wholeSubjectClosed": false
+}

@@ -1,0 +1,666 @@
+{
+  "catalog": "evaluation-2026.158",
+  "reviewer": "Codex, mismo autor; revisión interna sin independencia externa",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "currentProof": "auditoria-curricular-len1-158-comprobacion-final108.json",
+  "sourceHashes": [
+    {
+      "path": "packages/shared/src/index.ts",
+      "sha256": "37be49db93a980b302dee1bd1314845ea083f6e5648d605d764d1567a42f7910"
+    },
+    {
+      "path": "packages/shared/src/language-feature-criteria.ts",
+      "sha256": "c6c9136effad0185a0d88936d36c4ec5722c215768bf5725b6ebe5e69fe2d524"
+    },
+    {
+      "path": "packages/shared/src/secondary-language-grade-one-complete.ts",
+      "sha256": "dccead9d55e609d9771b951ba1f883b7b9bca48cd6e782a4a8b97b159dfda39e"
+    },
+    {
+      "path": "packages/shared/src/secondary-guide-grade-one-requirements.ts",
+      "sha256": "4fb7664a19c5d0f407feca0762c47adcc8d1ffbd0d0ad445d449d80b1e5c6f8c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "LEN1-GUI-01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Breve: datos de lugares del barrio, organización, descripción para quien no conoce y convenciones legibles; sin materiales, portada ni proceso impuesto. Cuatro dimensiones después de agrupar organización y estructura.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-revision"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-revision"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-revision"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-revision"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Datos disponibles, familias, partes, clasificación y ubicación; conectores espaciales/temporales, borrador/final, mural. El recurso elegido entre mapa o collage se puntúa una sola vez, incluso en descriptor superior. Progresiones revisadas tras detectar la duplicación oculta.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-spatial-connectors",
+          "guide-process-revision",
+          "guide-procedure-classification",
+          "guide-process-publication",
+          "guide-visual"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-spatial-connectors",
+          "guide-process-revision",
+          "guide-procedure-classification",
+          "guide-process-publication",
+          "guide-visual"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-spatial-connectors",
+          "guide-process-revision",
+          "guide-procedure-classification",
+          "guide-process-publication",
+          "guide-visual"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-spatial-connectors",
+          "guide-process-revision",
+          "guide-procedure-classification",
+          "guide-process-publication",
+          "guide-visual"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Análisis de destinatario/propósito, función de partes, apariencia/estímulos frente a contenido, mapa y vocabulario persuasivo sustentado. Sin nueva guía ni fotografías propias.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-feature-appearance",
+          "guide-purpose",
+          "guide-structure",
+          "guide-visual",
+          "guide-feature-persuasion"
+        ],
+        "lista-cotejo": [
+          "guide-feature-appearance",
+          "guide-purpose",
+          "guide-structure",
+          "guide-visual",
+          "guide-feature-persuasion"
+        ],
+        "escala": [
+          "guide-feature-appearance",
+          "guide-purpose",
+          "guide-structure",
+          "guide-visual",
+          "guide-feature-persuasion"
+        ],
+        "lista-ponderada": [
+          "guide-feature-appearance",
+          "guide-purpose",
+          "guide-structure",
+          "guide-visual",
+          "guide-feature-persuasion"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Corrección de nombres, clases/grados de adjetivos, presente descriptivo, núcleo/modificadores, signos pedidos y explicación contrastada con original; no borrador ni reorganización inventados.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-punctuation",
+          "guide-feature-adjective-degree",
+          "guide-revision-evidence"
+        ],
+        "lista-cotejo": [
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-punctuation",
+          "guide-feature-adjective-degree",
+          "guide-revision-evidence"
+        ],
+        "escala": [
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-punctuation",
+          "guide-feature-adjective-degree",
+          "guide-revision-evidence"
+        ],
+        "lista-ponderada": [
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-punctuation",
+          "guide-feature-adjective-degree",
+          "guide-revision-evidence"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-05",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Presentación desde fichas, cualidades, secuencia, comunicación, uso oral de nombres/adjetivos/conectores/topografía, mapa dado, clasificación y aportación individual. Descriptores orales sin exigir escritura.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-purpose",
+          "guide-organization",
+          "guide-oral",
+          "guide-feature-nouns",
+          "guide-feature-adjectives",
+          "guide-feature-spatial-connectors",
+          "guide-feature-topography",
+          "guide-visual",
+          "guide-procedure-classification",
+          "guide-individual"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-purpose",
+          "guide-organization",
+          "guide-oral",
+          "guide-feature-nouns",
+          "guide-feature-adjectives",
+          "guide-feature-spatial-connectors",
+          "guide-feature-topography",
+          "guide-visual",
+          "guide-procedure-classification",
+          "guide-individual"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-purpose",
+          "guide-organization",
+          "guide-oral",
+          "guide-feature-nouns",
+          "guide-feature-adjectives",
+          "guide-feature-spatial-connectors",
+          "guide-feature-topography",
+          "guide-visual",
+          "guide-procedure-classification",
+          "guide-individual"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-purpose",
+          "guide-organization",
+          "guide-oral",
+          "guide-feature-nouns",
+          "guide-feature-adjectives",
+          "guide-feature-spatial-connectors",
+          "guide-feature-topography",
+          "guide-visual",
+          "guide-procedure-classification",
+          "guide-individual"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-06",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Anticipación título/mapa contrastada con audio, paráfrasis y cualidades, clasificación coherente. Admite respuesta oral o esquema, sin imponer ambos.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-procedure-classification",
+          "guide-procedure-prediction",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-cotejo": [
+          "guide-procedure-classification",
+          "guide-procedure-prediction",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "escala": [
+          "guide-procedure-classification",
+          "guide-procedure-prediction",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-ponderada": [
+          "guide-procedure-classification",
+          "guide-procedure-prediction",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Solo calificativos y explicación de un cambio; sin grados, determinativos, original ni proceso adicionales. La fidelidad se refiere al texto recibido, sin exigir entregarlo.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-feature-adjectives",
+          "guide-revision-evidence"
+        ],
+        "lista-cotejo": [
+          "guide-feature-adjectives",
+          "guide-revision-evidence"
+        ],
+        "escala": [
+          "guide-feature-adjectives",
+          "guide-revision-evidence"
+        ],
+        "lista-ponderada": [
+          "guide-feature-adjectives",
+          "guide-revision-evidence"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Estudiantes nuevos, registro acordado, dibujo, información revisada y publicación digital en plataforma. Las exclusiones no aportan familia ni mural; no exige dos versiones.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-visual",
+          "guide-process-revision",
+          "guide-process-publication",
+          "guide-register"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-visual",
+          "guide-process-revision",
+          "guide-process-publication",
+          "guide-register"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-visual",
+          "guide-process-revision",
+          "guide-process-publication",
+          "guide-register"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-visual",
+          "guide-process-revision",
+          "guide-process-publication",
+          "guide-register"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Paráfrasis fiel del audio y cualidades con calificativos; sin mapa, predicción, clasificación ni formato de respuesta añadido.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-cotejo": [
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "escala": [
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-ponderada": [
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Propósito lector, intención comunicativa, anticipación/comprobación, partes/funciones, oraciones funcionales, clasificación y representación gráfica o digital del sentido. La función organizacional de nombres/adjetivos/presente se agrupa; no duplica reconstrucción global. Ocho salidas actualizadas R04/A02 de la comprobación final se leyeron, no se aceptaron por paridad sola.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-purpose",
+          "guide-feature-signs",
+          "guide-procedure-reconstruction",
+          "guide-procedure-classification",
+          "guide-procedure-reading-purpose",
+          "guide-procedure-prediction",
+          "guide-structure",
+          "guide-language-organization"
+        ],
+        "lista-cotejo": [
+          "guide-purpose",
+          "guide-feature-signs",
+          "guide-procedure-reconstruction",
+          "guide-procedure-classification",
+          "guide-procedure-reading-purpose",
+          "guide-procedure-prediction",
+          "guide-structure",
+          "guide-language-organization"
+        ],
+        "escala": [
+          "guide-purpose",
+          "guide-feature-signs",
+          "guide-procedure-reconstruction",
+          "guide-procedure-classification",
+          "guide-procedure-reading-purpose",
+          "guide-procedure-prediction",
+          "guide-structure",
+          "guide-language-organization"
+        ],
+        "lista-ponderada": [
+          "guide-purpose",
+          "guide-feature-signs",
+          "guide-procedure-reconstruction",
+          "guide-procedure-classification",
+          "guide-procedure-reading-purpose",
+          "guide-procedure-prediction",
+          "guide-structure",
+          "guide-language-organization"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R05",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Plan previo: intención, público, tema/diseño, datos de fichas, clasificación, esquema y elección de apoyo para topografía. No puntúa ejecución futura, volumen ni dicción.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-plan-purpose",
+          "guide-procedure-outline",
+          "guide-procedure-classification",
+          "guide-plan-information",
+          "guide-plan-visual"
+        ],
+        "lista-cotejo": [
+          "guide-plan-purpose",
+          "guide-procedure-outline",
+          "guide-procedure-classification",
+          "guide-plan-information",
+          "guide-plan-visual"
+        ],
+        "escala": [
+          "guide-plan-purpose",
+          "guide-procedure-outline",
+          "guide-procedure-classification",
+          "guide-plan-information",
+          "guide-plan-visual"
+        ],
+        "lista-ponderada": [
+          "guide-plan-purpose",
+          "guide-procedure-outline",
+          "guide-procedure-classification",
+          "guide-plan-information",
+          "guide-plan-visual"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-R06",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Guía de parques para visitantes jóvenes; nombres, grados pertinentes, presente actual/habitual, sintagma nominal y preguntas/exclamaciones funcionales sin promesas falsas. La revisión nominal queda en esa dimensión; sin revisión general, mapa, publicación ni versiones no pedidas.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-signs",
+          "guide-feature-adjective-degree"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-signs",
+          "guide-feature-adjective-degree"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-signs",
+          "guide-feature-adjective-degree"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-structure",
+          "guide-description",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-feature-noun-group",
+          "guide-feature-signs",
+          "guide-feature-adjective-degree"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-A01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Organización comprendida por escucha mediante nombres, calificativos y presente; paráfrasis/cualidades del audio. No sustituye comprensión por identificación en texto impreso.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-language-organization",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-cotejo": [
+          "guide-language-organization",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "escala": [
+          "guide-language-organization",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ],
+        "lista-ponderada": [
+          "guide-language-organization",
+          "guide-procedure-paraphrase",
+          "guide-feature-adjectives"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-GUI-A02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Guía oral según datos entregados, intención para visitantes jóvenes y grados sustentados por los datos, presente descriptivo. Sin mapa. El contrato anterior de solo comparativo detectó y corrigió la ampliación a otros grados, manteniendo su expectativa.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "guide-content",
+          "guide-organization",
+          "guide-oral",
+          "guide-individual",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-purpose",
+          "guide-feature-adjective-degree"
+        ],
+        "lista-cotejo": [
+          "guide-content",
+          "guide-organization",
+          "guide-oral",
+          "guide-individual",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-purpose",
+          "guide-feature-adjective-degree"
+        ],
+        "escala": [
+          "guide-content",
+          "guide-organization",
+          "guide-oral",
+          "guide-individual",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-purpose",
+          "guide-feature-adjective-degree"
+        ],
+        "lista-ponderada": [
+          "guide-content",
+          "guide-organization",
+          "guide-oral",
+          "guide-individual",
+          "guide-feature-nouns",
+          "guide-feature-indicative",
+          "guide-purpose",
+          "guide-feature-adjective-degree"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    }
+  ],
+  "comparisonWithOfficialSource": "Conceptos y ocho párrafos procedimentales70–71 relacionados en matriz; estados internos excluidos. Falta actividad propia de representación cultural respetuosa y uso de puntuación en nueva producción escrita.",
+  "topicClosed": false,
+  "pending": [
+    "Caso de actitudes observables V01: banco fijado, todavía no generado",
+    "Uso de comas/dos puntos/comillas en producción de guía; corrección ya revisada pero no equivale al desempeño de creación",
+    "HTTP/DB de versión que cierre esos casos; no instalar todavía candidato158",
+    "Visual personal bloqueado por contraseña"
+  ]
+}

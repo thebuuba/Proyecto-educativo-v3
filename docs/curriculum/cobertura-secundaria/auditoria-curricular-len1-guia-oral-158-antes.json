@@ -1,0 +1,1846 @@
+{
+  "catalog": "evaluation-2026.158",
+  "bankSha256": "4c029647a75b7a55240345593f548fc3cf27ca48bc466b60febb9389b1be4c78",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "7dc7f488+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-GUI-A01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 7.3174999999999955,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-paraphrase:0",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstrucción del recorrido escuchado",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una reconstrucción reconocible del sentido de la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjectives:1",
+            "templateId": "guide-feature-adjectives",
+            "title": "Cualidades de los lugares escuchados",
+            "description": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+              "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+              "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+              "Atribuye a un lugar cualidades contrarias a los datos del audio.",
+              "No comunica cualidades reconocibles de los lugares escuchados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica cualidades reconocibles de los lugares escuchados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.5615000000000236,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-paraphrase:0",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjectives:1",
+            "templateId": "guide-feature-adjectives",
+            "title": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+            "description": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+              "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+              "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+              "Atribuye a un lugar cualidades contrarias a los datos del audio.",
+              "No comunica cualidades reconocibles de los lugares escuchados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.4962000000000444,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-paraphrase:0",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una reconstrucción reconocible del sentido de la guía escuchada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjectives:1",
+            "templateId": "guide-feature-adjectives",
+            "title": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+            "description": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+              "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+              "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+              "Atribuye a un lugar cualidades contrarias a los datos del audio.",
+              "No comunica cualidades reconocibles de los lugares escuchados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica cualidades reconocibles de los lugares escuchados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.9032000000000266,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-procedure-paraphrase:0",
+            "templateId": "guide-procedure-paraphrase",
+            "title": "Reconstrucción del recorrido escuchado",
+            "description": "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido. Parcial (50%): Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus propias palabras los lugares y las indicaciones de la guía escuchada, conservando su sentido.",
+              "El recorrido y sus indicaciones corresponden al audio; una relación requiere aclaración.",
+              "Recupera lugares aislados, pero no explica las relaciones que permiten seguir el recorrido.",
+              "La respuesta cambia el recorrido o atribuye al audio datos de lugares que no se escucharon.",
+              "No ofrece una reconstrucción reconocible del sentido de la guía escuchada."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjectives:1",
+            "templateId": "guide-feature-adjectives",
+            "title": "Cualidades de los lugares escuchados",
+            "description": "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada. Parcial (50%): Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica las cualidades de los lugares mediante adjetivos calificativos que corresponden a los datos de la guía escuchada.",
+              "Las cualidades corresponden a los lugares; un adjetivo necesita mayor precisión.",
+              "Menciona cualidades, pero varias quedan sin relacionarse con los lugares escuchados.",
+              "Atribuye a un lugar cualidades contrarias a los datos del audio.",
+              "No comunica cualidades reconocibles de los lugares escuchados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.23150000000004,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "maxScore": 2.71,
+            "maxScoreUnits": 271,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+              "Comunica información de los lugares y atractivos con una imprecisión menor.",
+              "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+              "Presenta datos que contradicen las características de los lugares.",
+              "No comunica información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+                "scoreUnits": 271
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica información de los lugares y atractivos con una imprecisión menor.",
+                "scoreUnits": 181
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+                "scoreUnits": 90
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:1",
+            "templateId": "guide-purpose",
+            "title": "Orientación al visitante",
+            "description": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+              "Las descripciones orientan al visitante; una expresión necesita precisión.",
+              "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+              "Las expresiones atribuyen atractivos que no corresponden a los lugares.",
+              "No comunica características que orienten al visitante."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones orientan al visitante; una expresión necesita precisión.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica características que orienten al visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-organization:2",
+            "templateId": "guide-organization",
+            "title": "Organización de la presentación",
+            "description": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+              "La secuencia permite seguir la presentación; una transición necesita precisión.",
+              "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+              "El orden mezcla datos de lugares distintos y cambia su sentido.",
+              "No se reconoce una secuencia entre los datos presentados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "La secuencia permite seguir la presentación; una transición necesita precisión.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia entre los datos presentados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-oral:3",
+            "templateId": "guide-oral",
+            "title": "Claridad de la comunicación oral",
+            "description": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+              "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+              "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+              "La forma de comunicar altera las relaciones entre los datos de los lugares.",
+              "No comunica información comprensible mediante la presentación o el apoyo acordado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-individual:4",
+            "templateId": "guide-individual",
+            "title": "Dominio individual",
+            "description": "Explica con sus palabras la información de los lugares que presenta.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con sus palabras la información de los lugares que presenta.",
+              "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+              "Repite datos de los lugares sin explicar su significado para la visita.",
+              "Su explicación confunde características o información de los lugares.",
+              "No ofrece una explicación reconocible de los lugares que presenta."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con sus palabras la información de los lugares que presenta.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos de los lugares sin explicar su significado para la visita.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una explicación reconocible de los lugares que presenta.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-nouns:5",
+            "templateId": "guide-feature-nouns",
+            "title": "Los sustantivos propios y los sustantivos comunes",
+            "description": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+              "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+              "El uso de los sustantivos propios y los sustantivos comunes altera el sentido de la presentación: se confunde el referente nombrado o la clase de sustantivo.",
+              "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-indicative:6",
+            "templateId": "guide-feature-indicative",
+            "title": "El presente del indicativo",
+            "description": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+              "El uso del presente del indicativo altera el sentido de la presentación: el tiempo verbal cambia una característica actual o habitual del lugar.",
+              "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjective-degree:7",
+            "templateId": "guide-feature-adjective-degree",
+            "title": "Los adjetivos y sus grados",
+            "description": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+              "El uso de los adjetivos y sus grados altera el sentido de la presentación: se invierte qué lugar posee una cualidad en mayor grado o se atribuye una intensidad distinta de la expresada.",
+              "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+                "scoreUnits": 162
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 108
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:8",
+            "templateId": "guide-visual",
+            "title": "Información visual de los lugares",
+            "description": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+              "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+              "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+              "El recurso visual corresponde a lugares distintos o contradice la información de la guía.",
+              "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+                "scoreUnits": 162
+              },
+              {
+                "levelId": "L3",
+                "text": "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+                "scoreUnits": 108
+              },
+              {
+                "levelId": "L2",
+                "text": "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.038400000000024,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "description": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "maxScore": 2.71,
+            "maxScoreUnits": 271,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+              "Comunica información de los lugares y atractivos con una imprecisión menor.",
+              "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+              "Presenta datos que contradicen las características de los lugares.",
+              "No comunica información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:1",
+            "templateId": "guide-purpose",
+            "title": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "description": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+              "Las descripciones orientan al visitante; una expresión necesita precisión.",
+              "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+              "Las expresiones atribuyen atractivos que no corresponden a los lugares.",
+              "No comunica características que orienten al visitante."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-organization:2",
+            "templateId": "guide-organization",
+            "title": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "description": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+              "La secuencia permite seguir la presentación; una transición necesita precisión.",
+              "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+              "El orden mezcla datos de lugares distintos y cambia su sentido.",
+              "No se reconoce una secuencia entre los datos presentados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-oral:3",
+            "templateId": "guide-oral",
+            "title": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "description": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+              "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+              "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+              "La forma de comunicar altera las relaciones entre los datos de los lugares.",
+              "No comunica información comprensible mediante la presentación o el apoyo acordado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-individual:4",
+            "templateId": "guide-individual",
+            "title": "Explica con sus palabras la información de los lugares que presenta.",
+            "description": "Explica con sus palabras la información de los lugares que presenta.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con sus palabras la información de los lugares que presenta.",
+              "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+              "Repite datos de los lugares sin explicar su significado para la visita.",
+              "Su explicación confunde características o información de los lugares.",
+              "No ofrece una explicación reconocible de los lugares que presenta."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-nouns:5",
+            "templateId": "guide-feature-nouns",
+            "title": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+            "description": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+              "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+              "El uso de los sustantivos propios y los sustantivos comunes altera el sentido de la presentación: se confunde el referente nombrado o la clase de sustantivo.",
+              "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-indicative:6",
+            "templateId": "guide-feature-indicative",
+            "title": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+            "description": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+              "El uso del presente del indicativo altera el sentido de la presentación: el tiempo verbal cambia una característica actual o habitual del lugar.",
+              "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjective-degree:7",
+            "templateId": "guide-feature-adjective-degree",
+            "title": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+            "description": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+              "El uso de los adjetivos y sus grados altera el sentido de la presentación: se invierte qué lugar posee una cualidad en mayor grado o se atribuye una intensidad distinta de la expresada.",
+              "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:8",
+            "templateId": "guide-visual",
+            "title": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+            "description": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+              "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+              "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+              "El recurso visual corresponde a lugares distintos o contradice la información de la guía.",
+              "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.313600000000008,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "description": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+            "maxScore": 2.71,
+            "maxScoreUnits": 271,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+              "Comunica información de los lugares y atractivos con una imprecisión menor.",
+              "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+              "Presenta datos que contradicen las características de los lugares.",
+              "No comunica información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+                "scoreUnits": 271
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica información de los lugares y atractivos con una imprecisión menor.",
+                "scoreUnits": 181
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+                "scoreUnits": 90
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica información reconocible de los lugares de la guía.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:1",
+            "templateId": "guide-purpose",
+            "title": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "description": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+              "Las descripciones orientan al visitante; una expresión necesita precisión.",
+              "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+              "Las expresiones atribuyen atractivos que no corresponden a los lugares.",
+              "No comunica características que orienten al visitante."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "Las descripciones orientan al visitante; una expresión necesita precisión.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica características que orienten al visitante.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-organization:2",
+            "templateId": "guide-organization",
+            "title": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "description": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+              "La secuencia permite seguir la presentación; una transición necesita precisión.",
+              "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+              "El orden mezcla datos de lugares distintos y cambia su sentido.",
+              "No se reconoce una secuencia entre los datos presentados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "La secuencia permite seguir la presentación; una transición necesita precisión.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia entre los datos presentados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-oral:3",
+            "templateId": "guide-oral",
+            "title": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "description": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+              "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+              "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+              "La forma de comunicar altera las relaciones entre los datos de los lugares.",
+              "No comunica información comprensible mediante la presentación o el apoyo acordado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+                "scoreUnits": 217
+              },
+              {
+                "levelId": "L3",
+                "text": "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+                "scoreUnits": 145
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+                "scoreUnits": 72
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica información comprensible mediante la presentación o el apoyo acordado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-individual:4",
+            "templateId": "guide-individual",
+            "title": "Explica con sus palabras la información de los lugares que presenta.",
+            "description": "Explica con sus palabras la información de los lugares que presenta.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con sus palabras la información de los lugares que presenta.",
+              "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+              "Repite datos de los lugares sin explicar su significado para la visita.",
+              "Su explicación confunde características o información de los lugares.",
+              "No ofrece una explicación reconocible de los lugares que presenta."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con sus palabras la información de los lugares que presenta.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos de los lugares sin explicar su significado para la visita.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No ofrece una explicación reconocible de los lugares que presenta.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-nouns:5",
+            "templateId": "guide-feature-nouns",
+            "title": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+            "description": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+              "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+              "El uso de los sustantivos propios y los sustantivos comunes altera el sentido de la presentación: se confunde el referente nombrado o la clase de sustantivo.",
+              "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-indicative:6",
+            "templateId": "guide-feature-indicative",
+            "title": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+            "description": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+              "El uso del presente del indicativo altera el sentido de la presentación: el tiempo verbal cambia una característica actual o habitual del lugar.",
+              "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+                "scoreUnits": 163
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 109
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjective-degree:7",
+            "templateId": "guide-feature-adjective-degree",
+            "title": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+            "description": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+              "El uso de los adjetivos y sus grados altera el sentido de la presentación: se invierte qué lugar posee una cualidad en mayor grado o se atribuye una intensidad distinta de la expresada.",
+              "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+                "scoreUnits": 162
+              },
+              {
+                "levelId": "L3",
+                "text": "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+                "scoreUnits": 108
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:8",
+            "templateId": "guide-visual",
+            "title": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+            "description": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+              "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+              "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+              "El recurso visual corresponde a lugares distintos o contradice la información de la guía.",
+              "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+                "scoreUnits": 162
+              },
+              {
+                "levelId": "L3",
+                "text": "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+                "scoreUnits": 108
+              },
+              {
+                "levelId": "L2",
+                "text": "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+                "scoreUnits": 54
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-GUI-A02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.92410000000001,
+      "automatic": {
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.158",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "TOURIST_GUIDE_PRESENTATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-content:0",
+            "templateId": "guide-content",
+            "title": "Información de los lugares seleccionados",
+            "description": "Presenta información pertinente y veraz sobre los lugares seleccionados. Parcial (50%): Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+            "maxScore": 2.71,
+            "maxScoreUnits": 271,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Presenta información pertinente y veraz sobre los lugares seleccionados.",
+              "Comunica información de los lugares y atractivos con una imprecisión menor.",
+              "Comunica algunos datos, pero omite información necesaria para reconocer los lugares.",
+              "Presenta datos que contradicen las características de los lugares.",
+              "No comunica información reconocible de los lugares de la guía."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-purpose:1",
+            "templateId": "guide-purpose",
+            "title": "Orientación al visitante",
+            "description": "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público. Parcial (50%): Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Describe los atractivos y cualidades de los lugares con vocabulario adecuado al público.",
+              "Las descripciones orientan al visitante; una expresión necesita precisión.",
+              "Menciona atractivos sin explicar por qué son pertinentes para el público de la guía.",
+              "Las expresiones atribuyen atractivos que no corresponden a los lugares.",
+              "No comunica características que orienten al visitante."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-organization:2",
+            "templateId": "guide-organization",
+            "title": "Organización de la presentación",
+            "description": "Ordena la información de la guía en una secuencia clara y fácil de seguir. Parcial (50%): La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena la información de la guía en una secuencia clara y fácil de seguir.",
+              "La secuencia permite seguir la presentación; una transición necesita precisión.",
+              "La presentación contiene datos aislados y cuesta asociarlos con cada lugar.",
+              "El orden mezcla datos de lugares distintos y cambia su sentido.",
+              "No se reconoce una secuencia entre los datos presentados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-oral:3",
+            "templateId": "guide-oral",
+            "title": "Claridad de la comunicación oral",
+            "description": "Expone con dicción, volumen, ritmo y entonación comprensibles. Parcial (50%): Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+            "maxScore": 2.17,
+            "maxScoreUnits": 217,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expone con dicción, volumen, ritmo y entonación comprensibles.",
+              "La comunicación o el apoyo acordado permite comprender los datos; una pausa necesita ajuste.",
+              "Se comprenden algunos datos, pero el ritmo o las pausas dificultan otros importantes.",
+              "La forma de comunicar altera las relaciones entre los datos de los lugares.",
+              "No comunica información comprensible mediante la presentación o el apoyo acordado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-individual:4",
+            "templateId": "guide-individual",
+            "title": "Dominio individual",
+            "description": "Explica con sus palabras la información de los lugares que presenta. Parcial (50%): Repite datos de los lugares sin explicar su significado para la visita.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica con sus palabras la información de los lugares que presenta.",
+              "Explica con sus palabras los lugares presentados; un dato necesita precisión.",
+              "Repite datos de los lugares sin explicar su significado para la visita.",
+              "Su explicación confunde características o información de los lugares.",
+              "No ofrece una explicación reconocible de los lugares que presenta."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-nouns:5",
+            "templateId": "guide-feature-nouns",
+            "title": "Los sustantivos propios y los sustantivos comunes",
+            "description": "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas. Parcial (50%): Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los sustantivos propios y los sustantivos comunes en la producción oral de guía turística para nombrar e identificar personas, lugares, objetos o ideas, sin alterar el sentido de las ideas.",
+              "Emplea los sustantivos propios y los sustantivos comunes con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los sustantivos propios y los sustantivos comunes, pero varios usos no contribuyen a nombrar e identificar personas, lugares, objetos o ideas.",
+              "El uso de los sustantivos propios y los sustantivos comunes altera el sentido de la presentación: se confunde el referente nombrado o la clase de sustantivo.",
+              "No incorpora evidencia del uso solicitado de los sustantivos propios y los sustantivos comunes en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-indicative:6",
+            "templateId": "guide-feature-indicative",
+            "title": "El presente del indicativo",
+            "description": "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas. Parcial (50%): Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+            "maxScore": 1.63,
+            "maxScoreUnits": 163,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea el presente del indicativo en la producción oral de guía turística para expresar las características actuales o habituales de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea el presente del indicativo con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye el presente del indicativo, pero varios usos no contribuyen a expresar las características actuales o habituales de los lugares.",
+              "El uso del presente del indicativo altera el sentido de la presentación: el tiempo verbal cambia una característica actual o habitual del lugar.",
+              "No incorpora evidencia del uso solicitado del presente del indicativo en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-feature-adjective-degree:7",
+            "templateId": "guide-feature-adjective-degree",
+            "title": "Los adjetivos y sus grados",
+            "description": "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas. Parcial (50%): Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los adjetivos y sus grados en la producción oral de guía turística para expresar la intensidad de una cualidad o la relación entre cualidades de los lugares, sin alterar el sentido de las ideas.",
+              "Emplea los adjetivos y sus grados con la función solicitada; un uso aislado deja ambigua una relación entre ideas.",
+              "Incluye los adjetivos y sus grados, pero varios usos no contribuyen a expresar la intensidad de una cualidad o la relación entre cualidades de los lugares.",
+              "El uso de los adjetivos y sus grados altera el sentido de la presentación: se invierte qué lugar posee una cualidad en mayor grado o se atribuye una intensidad distinta de la expresada.",
+              "No incorpora evidencia del uso solicitado de los adjetivos y sus grados en su presentación."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.158:fallback:guide-visual:8",
+            "templateId": "guide-visual",
+            "title": "Información visual de los lugares",
+            "description": "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante. Parcial (50%): El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+            "maxScore": 1.62,
+            "maxScoreUnits": 162,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona el mapa solicitado con los lugares de la guía para apoyar la información al visitante.",
+              "El recurso visual corresponde a los lugares; una relación con su descripción necesita precisión.",
+              "El recurso visual representa algunos lugares, pero no permite relacionar todos con la información de la guía.",
+              "El recurso visual corresponde a lugares distintos o contradice la información de la guía.",
+              "No presenta información visual que corresponda al recurso solicitado o a la alternativa elegida."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-guia-turistica",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

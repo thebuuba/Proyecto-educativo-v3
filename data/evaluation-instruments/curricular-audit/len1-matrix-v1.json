@@ -1003,12 +1003,40 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores",
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-02",
+            "LEN1-GUI-R04"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
           "duplicateOf": "f52138d8-da5b-5980-aad8-dde3b57be185",
-          "note": "La fuente repite Estructura; se conserva la fila literal, sin contar dos contenidos distintos."
+          "note": "La fuente repite Estructura; se conserva la fila literal, sin contar dos contenidos distintos.",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-02",
+              "criterionId": "guide-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ],
+          "duplicatesContentId": "f52138d8-da5b-5980-aad8-dde3b57be185"
         },
         {
           "id": "f52138d8-da5b-5980-aad8-dde3b57be185",
@@ -1025,10 +1053,48 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-02",
+            "LEN1-GUI-R04"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-02",
+              "criterionId": "guide-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-02",
+              "criterionId": "guide-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
@@ -1045,10 +1111,25 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-03"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-03",
+              "criterionId": "guide-feature-appearance",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
@@ -1065,10 +1146,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-04",
+            "LEN1-GUI-R04",
+            "LEN1-GUI-R06"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-04",
+              "criterionId": "guide-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-language-organization",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R06",
+              "criterionId": "guide-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "789d33c7-a01b-531d-a640-52806b8cbc1f",
@@ -1085,10 +1205,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-05",
+            "LEN1-GUI-A02"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-05",
+              "criterionId": "guide-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-A02",
+              "criterionId": "guide-feature-nouns",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
@@ -1105,10 +1252,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-04",
+            "LEN1-GUI-R06"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-04",
+              "criterionId": "guide-feature-adjective-degree",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R06",
+              "criterionId": "guide-feature-adjective-degree",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
@@ -1125,10 +1299,25 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-03"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-03",
+              "criterionId": "guide-feature-persuasion",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
@@ -1145,10 +1334,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-04",
+            "LEN1-GUI-A01",
+            "LEN1-GUI-A02"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-04",
+              "criterionId": "guide-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-A01",
+              "criterionId": "guide-language-organization",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-A02",
+              "criterionId": "guide-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "544ec67d-8607-5a66-b32a-51d8243c26bf",
@@ -1165,10 +1393,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-R04",
+            "LEN1-GUI-R06"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-feature-signs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R06",
+              "criterionId": "guide-feature-signs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "1033a541-12ff-52de-82a1-8b3a9af5b936",
@@ -1185,10 +1440,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-R04",
+            "LEN1-GUI-R06"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-feature-signs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R06",
+              "criterionId": "guide-feature-signs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "10254927-6924-5c89-bd70-e9104fcd5f8b",
@@ -1205,10 +1487,37 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-04",
+            "LEN1-GUI-R06"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-04",
+              "criterionId": "guide-feature-noun-group",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R06",
+              "criterionId": "guide-feature-noun-group",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         },
         {
           "id": "3857d3c9-4854-5405-a086-a63bc8b0c375",
@@ -1225,15 +1534,266 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-GUI-02",
+            "LEN1-GUI-05",
+            "LEN1-GUI-R02",
+            "LEN1-GUI-R04"
+          ],
+          "nextAction": "Completar V01 y puntuación en producción; muestra real y visual personal pendientes",
+          "evidence": [
+            {
+              "caseId": "LEN1-GUI-02",
+              "criterionId": "guide-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-05",
+              "criterionId": "guide-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R02",
+              "criterionId": "guide-visual",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            },
+            {
+              "caseId": "LEN1-GUI-R04",
+              "criterionId": "guide-procedure-reconstruction",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-guia-158-lectura56.json"
+            }
+          ]
         }
       ],
-      "status": "FALLOS_REPRODUCIDOS_24_INSTRUMENTOS_157_PENDIENTE_CORRECCION",
+      "status": "REVISADO_LOCAL_56_PENDIENTE_ACTITUDES_PUNTUACION_ESCRITA_Y_HTTP",
       "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
-      "initialEvidence": "auditoria-curricular-len1-guia-157-antes.json"
+      "initialEvidence": "auditoria-curricular-len1-guia-157-antes.json",
+      "curricularComponentAudit": [
+        {
+          "sourceId": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+          "components": [
+            [
+              "Anticipación desde información gráfica",
+              "LEN1-GUI-06/guide-procedure-prediction"
+            ]
+          ],
+          "limit": "Escucha atenta no se convierte en inferencia automática de estado interno"
+        },
+        {
+          "sourceId": "6d928034-270a-5523-a99d-11285a2fa97f",
+          "components": [
+            [
+              "Presente para cualidades",
+              "LEN1-GUI-A02/guide-feature-indicative"
+            ],
+            [
+              "Organización con presente/nombres/adjetivos escuchados",
+              "LEN1-GUI-A01/guide-language-organization"
+            ],
+            [
+              "Paráfrasis y calificativos",
+              "LEN1-GUI-A01/guide-procedure-paraphrase",
+              "LEN1-GUI-A01/guide-feature-adjectives"
+            ]
+          ]
+        },
+        {
+          "sourceId": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+          "components": [
+            [
+              "Intención, público, tema y diseño",
+              "LEN1-GUI-R05/guide-plan-purpose",
+              "LEN1-GUI-A02/guide-purpose"
+            ],
+            [
+              "Elección, clasificación y recopilación",
+              "LEN1-GUI-R05/guide-plan-information",
+              "LEN1-GUI-05/guide-procedure-classification"
+            ],
+            [
+              "Mapas/gráficos/collage previstos y uso de mapa dado",
+              "LEN1-GUI-R05/guide-plan-visual",
+              "LEN1-GUI-05/guide-visual"
+            ],
+            [
+              "Topografía",
+              "LEN1-GUI-05/guide-feature-topography"
+            ]
+          ]
+        },
+        {
+          "sourceId": "8279a299-b455-5cde-a067-e4b6318a57ce",
+          "components": [
+            [
+              "Nombres y grados del adjetivo en oral",
+              "LEN1-GUI-A02/guide-feature-nouns",
+              "LEN1-GUI-A02/guide-feature-adjective-degree"
+            ],
+            [
+              "Presente actual/habitual",
+              "LEN1-GUI-A02/guide-feature-indicative"
+            ],
+            [
+              "Conectores espaciales/temporales",
+              "LEN1-GUI-05/guide-feature-spatial-connectors"
+            ]
+          ]
+        },
+        {
+          "sourceId": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+          "components": [
+            [
+              "Propósito lector",
+              "LEN1-GUI-R04/guide-procedure-reading-purpose"
+            ],
+            [
+              "Anticipación y contraste desde título/foto",
+              "LEN1-GUI-R04/guide-procedure-prediction"
+            ],
+            [
+              "Intención y partes",
+              "LEN1-GUI-R04/guide-purpose",
+              "LEN1-GUI-R04/guide-structure"
+            ],
+            [
+              "Presente, tres clases de nombres y adjetivos organizan información",
+              "LEN1-GUI-R04/guide-language-organization"
+            ],
+            [
+              "Interrogativas/exclamativas funcionales",
+              "LEN1-GUI-R04/guide-feature-signs"
+            ]
+          ]
+        },
+        {
+          "sourceId": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+          "components": [
+            [
+              "Clasificación de lectura",
+              "LEN1-GUI-R04/guide-procedure-classification"
+            ],
+            [
+              "Organización mediante gramática",
+              "LEN1-GUI-R04/guide-language-organization"
+            ],
+            [
+              "Reconstrucción gráfica o tecnológica",
+              "LEN1-GUI-R04/guide-procedure-reconstruction"
+            ]
+          ]
+        },
+        {
+          "sourceId": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+          "components": [
+            [
+              "Intención, selección/clasificación y recursos",
+              "LEN1-GUI-02/guide-content",
+              "LEN1-GUI-02/guide-procedure-classification"
+            ],
+            [
+              "Estructura, registro y soporte",
+              "LEN1-GUI-02/guide-structure",
+              "LEN1-GUI-R02/guide-register",
+              "LEN1-GUI-R02/guide-process-publication"
+            ],
+            [
+              "Material gráfico elegido",
+              "LEN1-GUI-02/guide-visual",
+              "LEN1-GUI-R02/guide-visual"
+            ],
+            [
+              "Nombres/adjetivos/presente en escritura",
+              "LEN1-GUI-R06/guide-feature-nouns",
+              "LEN1-GUI-R06/guide-feature-adjective-degree",
+              "LEN1-GUI-R06/guide-feature-indicative"
+            ],
+            [
+              "Signos en revisión; uso en creación sigue pendiente",
+              "LEN1-GUI-04/guide-feature-punctuation",
+              "LEN1-GUI-R06/guide-feature-signs"
+            ]
+          ],
+          "status": "PARCIAL_PUNTUACION_DE_CREACION_PENDIENTE"
+        },
+        {
+          "sourceId": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+          "components": [
+            [
+              "Borrador/final y revisión con compañero",
+              "LEN1-GUI-02/guide-process-revision"
+            ],
+            [
+              "Publicación convencional o tecnológica",
+              "LEN1-GUI-02/guide-process-publication",
+              "LEN1-GUI-R02/guide-process-publication"
+            ]
+          ]
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "d964061f-7b05-5fab-a36e-1caff318f964",
+          "name": "Veracidad",
+          "evidence": [
+            "LEN1-GUI-02/guide-content",
+            "LEN1-GUI-05/guide-content"
+          ],
+          "limit": "Fidelidad de datos, no calificación de creencias"
+        },
+        {
+          "sourceIds": [
+            "a69551f7-a2be-5f32-9e2a-117aaa53a6bc",
+            "3c6f7b86-e7bd-5839-8185-7f20dce8b3aa"
+          ],
+          "name": "Respeto a valores identitarios",
+          "status": "V01_FIJADO_NO_GENERADO; unir continuación literal de página, no dos actitudes"
+        },
+        {
+          "sourceId": "c51d455e-ed5f-55bf-b0cf-2da4eda1641a",
+          "name": "Aspectos geográficos, culturales y gastronómicos",
+          "status": "V01_FIJADO_NO_GENERADO; evaluar información y tratamiento observable, no orgullo"
+        },
+        {
+          "sourceId": "7a7122a9-f966-5c96-87e1-884d9f585a13",
+          "name": "Interés por escribir",
+          "limit": "No inferir disposición interna del producto ni puntuar entusiasmo"
+        },
+        {
+          "sourceId": "0e2786ff-4105-5808-9883-caeb477d2fcd",
+          "name": "Creatividad para comunicar",
+          "evidence": [
+            "LEN1-GUI-03/guide-feature-appearance",
+            "LEN1-GUI-R02/guide-visual"
+          ],
+          "limit": "Función de organización/recursos, no destreza artística; V01 contrastará explícitamente ese límite"
+        }
+      ]
     },
     {
       "id": "informe",
@@ -3540,11 +4100,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Guía en corrección; informe, afiche, cuento y caligrama pendientes",
+    "otherTopics": "Guía activa con56salidas revisadas; V01/puntuación escrita y muestra real pendientes. Informe/afiche/cuento/caligrama pendientes.",
     "remaining": [
-      "Comprobación visual personal bloqueada por contraseña; sin correos ni cambios de credenciales",
-      "Corregir guía turística tras leer sus24instrumentos157 y contrastar sus componentes oficiales70–71",
-      "Auditar informe, afiche, cuento y caligrama; contrastar toda Lengua1 e indicadores generales; continuar ámbitos restantes"
+      "Verificación visual personal bloqueada por contraseña",
+      "Guía: representación cultural respetuosa y uso de puntuación en creación; después HTTP/DB de versión revisada",
+      "Informe, afiche, cuento y caligrama; comparación de toda Lengua1 e indicadores generales; ámbitos restantes"
     ]
   }
 }

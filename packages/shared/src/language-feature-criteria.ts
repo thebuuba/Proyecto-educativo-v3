@@ -15,7 +15,7 @@ export function affirmativeLanguageTask(description:string){
  // Exclusions stop at a new affirmative coordinated action. Otherwise «sin
  // cambiar los hechos y revisen las siglas» loses the requested second action.
  const action='(?:revis\\w*|corrij\\w*|correg\\w*|analic\\w*|analiz\\w*|identifi\\w*|expli\\w*|compar\\w*|contrast\\w*|redact\\w*|escrib\\w*|inclu\\w*|entreg\\w*|manteng\\w*|usen|utili\\w*)'
- const negative='(?:sin|no se (?:pide|requiere)|no es necesario|no (?:(?:deben?|deberan|van a|vamos a) )?(?:escrib\\w*|redact\\w*|anad\\w*|agreg\\w*|invent\\w*|inclu\\w*|revis\\w*|hagan|realic\\w*|necesitan?))'
+ const negative='(?:sin|no se (?:pide|requiere|necesitan?)|no es necesario|no (?:(?:lo|la|los|las) )?(?:(?:deben?|deberan|van a|vamos a) )?(?:escrib\\w*|redact\\w*|disen\\w*|anad\\w*|agreg\\w*|invent\\w*|inclu\\w*|revis\\w*|entreg\\w*|publi\\w*|pond\\w*|pong\\w*|expon\\w*|memor\\w*|tomen|hagan|realic\\w*|necesitan?))'
  return normalizedTask(text.replace(new RegExp(`\\b${negative}\\b.*?(?=[.;\\n]|\\s+y\\s+${action}\\b|$)`,'g'),' '))
 }
 
@@ -77,7 +77,7 @@ export function explicitWritingProcess(description: string, scope: string, genre
       'No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.',
     ],
   })
-  if (/\b(?:public(?:ar|aran|acion|an|a)|publiqu(?:e|en|emos))\b|\bdifund\w*/.test(task)) rows.push({
+  if (/\b(?:public(?:ar|aran|aremos|acion|an|a)|publiqu(?:e|en|emos))\b|\bdifund\w*/.test(task)) rows.push({
     templateId:`${scope}-process-publication`,title:'Publicación para el destinatario',weight:2,
     observable:`Dispone la versión final de ${genre} en el medio solicitado, con texto legible y una organización accesible al destinatario.`,
     progressionLevels:[

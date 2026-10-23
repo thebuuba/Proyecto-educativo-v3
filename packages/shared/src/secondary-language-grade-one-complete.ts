@@ -1,11 +1,12 @@
 import {firstGradeNewsCriteria as news, refineFirstGradeNewsRequirements} from './secondary-news-grade-one'
 import {firstGradeGuideCriteria as guide} from './secondary-guide-grade-one'
+import {refineFirstGradeGuideRequirements} from './secondary-guide-grade-one-requirements'
 import {firstGradeReadingReportCriteria as report} from './secondary-reading-report-grade-one'
 import {firstGradePosterCriteria as poster} from './secondary-poster-grade-one'
 import {firstGradeDetectiveCriteria as detective} from './secondary-detective-grade-one'
 import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-grade-one'
 import {normalizedTask} from './evaluation-task-text'
-import {explicitWritingProcess, languageFeatureCriterion, requestedLanguageFeatures, type LanguageFeature} from './language-feature-criteria'
+import {affirmativeLanguageTask, explicitWritingProcess, languageFeatureCriterion, requestedLanguageFeatures, type LanguageFeature} from './language-feature-criteria'
 import {firstGradeLanguageProcedureFeatures,firstGradeLanguageFeatureTerms,languageReadingProcedures,languageWritingProcedures,languagePlaceClassification} from './language-procedure-criteria'
 import {firstGradeLanguageCompletionFeatures,specializePunctuation} from './language-procedure-completion'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
@@ -104,18 +105,29 @@ const comparisonFocus: Record<string,LanguageFeature[]>={
 
 function complete(genre:string,activity:string,description:string,base:ContextualTopicCriterion[]) {
   const scope=({noticia:'news','guía turística':'guide','informe de lectura':'report',afiche:'poster','cuento policíaco':'detective',caligrama:'calligram'} as Record<string,string>)[genre]
-  const task=normalizedTask(description)
+  const task=genre==='guía turística'?affirmativeLanguageTask(description):normalizedTask(description)
   const compare=activity.includes('COMPARISON')
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
   const production=/WRITING|CREATION|WRITTEN_PRODUCTION/.test(activity) || activity==='REPORT' && genre==='informe de lectura'
   const oral=['NEWSCAST','DETECTIVE_STORY_NARRATION','TOURIST_GUIDE_PRESENTATION','READING_REPORT_PRESENTATION','ORAL_PRESENTATION','EXPOSITION'].includes(activity)
-  const oralProduction=oral && (['NEWSCAST','DETECTIVE_STORY_NARRATION'].includes(activity)||/emple|utiliz|us(?:ar|aran|ando)/.test(task))
+  const oralProduction=oral && (genre==='guía turística'||['NEWSCAST','DETECTIVE_STORY_NARRATION'].includes(activity)||/emple|utiliz|us(?:ar|aran|ando)/.test(task))
   // Keep the exported definitions used by historical catalogs immutable.
   let features=requestedLanguageFeatures([...firstGradeLanguageFeatures[genre].map(feature=>({...feature,
     ...(genre==='noticia'&&feature.id==='paratext'?{match:'paratext|pie de foto|aportan? la fotografia|funcion de la fotografia'}:{}),
+    ...(genre==='guía turística'&&feature.id==='indicative'&&/presente/.test(task)?{function:'expresar las características actuales o habituales de los lugares',error:'el tiempo verbal cambia una característica actual o habitual del lugar'}:{}),
+    ...(genre==='guía turística'&&feature.id==='noun-group'&&/directo/.test(task)?{name:'el núcleo y los modificadores directo e indirecto del sintagma nominal'}:{}),
+    ...(genre==='guía turística'&&feature.id==='signs'&&/oraciones interrogativas.*exclamativas/.test(task)?{
+      name:'las oraciones interrogativas y exclamativas',function:'invitar a considerar la visita y destacar atractivos que los datos del lugar sostienen',error:'la pregunta o el énfasis atribuye al lugar cualidades contrarias a la información disponible'}:{}),
     terms:firstGradeLanguageFeatureTerms[genre]?.[feature.id]??feature.terms})),...firstGradeLanguageProcedureFeatures[genre],...firstGradeLanguageCompletionFeatures[genre]??[]],description)
-  if(features.some(f=>f.id==='adjective-degree'))features=features.filter(f=>f.id!=='adjectives')
+  if(genre==='guía turística'&&/adjetiv.*(?:sus|los) grados/.test(task)&&!features.some(f=>f.id==='adjective-degree')){
+    const degrees=firstGradeLanguageCompletionFeatures[genre].find(f=>f.id==='adjective-degree')!
+    features.push(degrees)
+  }
+  if(features.some(f=>f.id==='adjective-degree')){
+    const adjective=features.find(f=>f.id==='adjectives')
+    features=features.filter(f=>f.id!=='adjectives').map(f=>f.id==='adjective-degree'&&adjective?{...f,name:`${adjective.name} y sus grados`}:f)
+  }
   if(features.some(f=>f.id==='punctuation'))features=features.filter(f=>f.id!=='signs')
   features=features.map(feature=>specializePunctuation(feature,description))
   let rows=base
@@ -217,7 +229,8 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   if(analyze) {
     const reading=languageReadingProcedures(description,scope,genre)
     if(reading.length) {
-      if(!/analiz\w*.*(?:estructura|narrador|personajes|recursos)|identific\w*.*(?:estructura|narrador|personajes|recursos)/.test(task)) rows=rows.filter(row=>row.templateId.includes('-feature-'))
+      if(!/analiz\w*.*(?:estructura|narrador|personajes|recursos)|identific\w*.*(?:estructura|narrador|personajes|recursos)/.test(task)) rows=rows.filter(row=>row.templateId.includes('-feature-')
+        ||genre==='guía turística'&&Boolean(focus[genre][row.templateId.replace('guide-','')]?.test(task)))
       rows.push(...reading)
     }
   }
@@ -228,10 +241,11 @@ function complete(genre:string,activity:string,description:string,base:Contextua
   }
   if(genre==='guía turística') {
     const classification=languagePlaceClassification(description)
-    if(classification.length && analyze && !/analiz\w*.*(?:estructura|recursos|proposito)/.test(task)) rows=rows.filter(row=>/-feature-|-procedure-/.test(row.templateId))
+    if(classification.length && analyze && !/analiz\w*.*(?:estructura|recursos|proposito)/.test(task)) rows=rows.filter(row=>/-feature-|-procedure-/.test(row.templateId)||Boolean(focus[genre][row.templateId.replace('guide-','')]?.test(task)))
     rows.push(...classification)
   }
-  return genre==='noticia'?refineFirstGradeNewsRequirements(activity,description,rows):rows
+  return genre==='noticia'?refineFirstGradeNewsRequirements(activity,description,rows)
+    :genre==='guía turística'?refineFirstGradeGuideRequirements(activity,description,rows):rows
 }
 
 export const completeFirstGradeNewsCriteria=(activity:string,description:string)=>complete('noticia',activity,description,news(activity==='RESEARCH'?'NEWS_ANALYSIS':activity,description))

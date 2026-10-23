@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | EN_CURSO_NOTICIA |
+| 1 | COMMON | Lengua Española | EN_CURSO_GUIA; noticia local/HTTP revisada, visual pendiente |
 | 1 | COMMON | Inglés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
