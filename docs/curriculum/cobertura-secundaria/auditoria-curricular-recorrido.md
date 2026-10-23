@@ -6,7 +6,7 @@ Los estados anteriores de implementación no sustituyen este recorrido. La matri
 
 | Grado | Componente / salida | Asignatura / módulo | Estado |
 |---|---|---|---|
-| 1 | COMMON | Lengua Española | 592instrumentos previos exactos;120adicionales leídos por coordinador. Relectura independiente final167 pendiente por límite de herramienta. Cuatro casos E01–E04 fijados para tres componentes fuente aún sin acreditar. HTTP166 y15referencias personales verificados; HTTP167/UI personal/cierre de malla pendientes. |
+| 1 | COMMON | Lengua Española | 712 instrumentos locales aceptados; 120 finales de 167 con revisión independiente. HTTP167: cuatro muestras verificadas y 15 referencias personales originales exactas. E01–E04: 20 salidas iniciales rechazadas, corrección168 en curso. UI personal y conciliación final de malla pendientes. |
 | 1 | COMMON | Inglés | Fuente134–139 y competencias/ejes129–133 conciliados por auditor independiente:201registros. Revisión de actividades e instrumentos todavía pendiente; no implementación nueva |
 | 1 | COMMON | Francés | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |
 | 1 | COMMON | Matemática | PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES |

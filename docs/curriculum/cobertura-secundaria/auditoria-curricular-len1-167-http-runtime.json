@@ -1,0 +1,282 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.167",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-TRC-C03",
+      "format": "lista-cotejo",
+      "score": 20,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-TRC-C08",
+      "format": "rubrica",
+      "score": 17.35,
+      "activityType": "WRITTEN_PRODUCTION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-CTR-P03A",
+      "format": "escala",
+      "score": 20,
+      "activityType": "CALLIGRAM_CREATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-CTR-P06B",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2844
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 3019
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8102
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 13937
+    },
+    {
+      "endpoint": "/activities",
+      "status": 400,
+      "ms": 2469
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 1938
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 3356
+    },
+    {
+      "endpoint": "/activities",
+      "status": 400,
+      "ms": 2229
+    },
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 1662
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 2520
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3439
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 12879
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4891
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 13765
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10330
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9809
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3511
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 14986
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4571
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 10018
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4562
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9056
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3001
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 15120
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4792
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 15335
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 9120
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4813
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2621
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6434
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4446
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5461
+    }
+  ],
+  "preservedReleases": 97,
+  "preservedSnapshots": 1253,
+  "finalReleases": 98,
+  "finalSnapshots": 1257,
+  "pedagogicalAcceptance": "120_LOCAL_OUTPUTS_ACCEPTED_BY_INDEPENDENT_REVIEWER_NOT_WHOLE_SUBJECT",
+  "personalBrowser": "PENDING_LOGIN",
+  "runtime": {
+    "catalogBuild": "evaluation-2026.167",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-5_HSvCj6.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-5_HSvCj6.js",
+        "sha256": "4c4b21d08355b33dbd931e9a5d8329abfdacf30210d44b5e1a736c78c0f386e0",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-D8cDcVVM.js",
+        "sha256": "d7c36f9296fd94087424a2996ea7c4a6eba46221a7e8edbaf304fa219716c40b",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-D900QHqo.js",
+        "sha256": "95b223735f11619b03853d4fa0ebccdd05fb54b0da0bb561083d96937998d78f",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-lengua-1-acciones-Dw96HF6F.js",
+        "sha256": "1e9dae8f2b71f2f6e8d278fcdb7d6d44e2208694064b18d5ab5b437110ea8036",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-D_K-XiPK.js",
+        "sha256": "dad51499581a6e3d5e2fd03d317be294c6e4db0efdcf359d73602d3e091e4427",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BOLnsA6w.js",
+        "sha256": "817dfac029ba4d93e58947b5d9d2edc73b2ad3ebcd9e29d7ed8bf46c63d3755c",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "906d9e828babdd41c4d84be3f0089f76313c4831eb2f0561731bb137a0235e31",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "sourceCommit": "4df1f544a56bd9e30d40215a3da637fee39168d8",
+  "incidents": [
+    "DNS ENOTFOUND antes de escrituras; reintento posterior con diario de IDs.",
+    "Solicitud QA de C03 enviada por error como individual para instrumento grupal: HTTP400 correcto. Confirmada ausencia antes de reintentar; corregido solo el helper QA para usar participación del instrumento. Sin relajar validación de aplicación."
+  ],
+  "personalReferences": {
+    "count": 15,
+    "allOriginalExact": true,
+    "baselineRecaptured": false
+  }
+}

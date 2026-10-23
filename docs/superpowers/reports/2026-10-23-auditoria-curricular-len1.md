@@ -308,3 +308,7 @@ Después de esas escrituras se comprobaron15referencias personales originales me
 ## Bloque167: complementarios y contrastes revisados localmente
 
 Catorce actividades complementarias y dieciséis contrastes:120instrumentos finales leídos por coordinador;592previos exactos. Revisión independiente real de rondas anteriores y parcial final; última aceptación completa pendiente por límite de herramienta. Ver2026-10-23-lengua-1-complementarios-167.md y manifiesto167-lectura120. Ocho gates finales exit0: backend98076/239,frontend123/7,buildsbackend/frontend/Cloudflare dry-run y treslints. Sin despliegue. Development16697releases/1253snapshots al cierre local;167todavía pendiente de instalación y HTTP. Tres componentes fuente pendientes con E01–E04 fijados, no generados. No cerrar Lengua1 ni los81contextos restantes.
+
+## Cierre operativo de 167 y continuación168
+
+Fuente167 `4df1f544a56bd9e30d40215a3da637fee39168d8`: 120 salidas finales aceptadas independientemente, 592 anteriores exactas. Instalación individual solo Development, 98 releases/1.257 snapshots tras cuatro muestras HTTP; 15 referencias originales personales exactas por consulta de solo lectura. Assets y configuración efectiva verificados. Las 20 salidas iniciales E01–E04 requieren corrección168; no se cierra la asignatura. Informe: `2026-10-23-lengua-1-complementarios-167.md`.

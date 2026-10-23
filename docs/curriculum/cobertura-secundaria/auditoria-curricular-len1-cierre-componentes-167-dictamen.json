@@ -1,0 +1,63 @@
+{
+  "catalog": "evaluation-2026.167",
+  "reviewer": "/root/revisor_pedagogico",
+  "designer": "/root/disenador_pruebas",
+  "source": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-cierre-componentes-167-antes-revisar-v1.json",
+  "sha256": "8ae3f7e530a4cba2f4645b5d43ec8aa34fdbb7a302bdf728c01532a0fafbc6ed",
+  "mainOutputs": 16,
+  "additionalFallbacks": 4,
+  "all20Read": true,
+  "metadata4Read": true,
+  "accepted": false,
+  "wholeSubjectClosed": false,
+  "rows": [
+    {
+      "caseId": "LEN1-TRE-E01",
+      "severity": "ALTA",
+      "finding": "Principal y fallback genéricos: no receptor/qué entendió/preguntaOpropuesta/respuesta sustentada/mantenerOajustar/registro. Niveles valoran apoyo/autonomía; exposición insuficiente para reciprocidad.",
+      "required": "Concretar emisión, recepción y respuesta dentro del aula; observar reciprocidad y registro.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E02",
+      "severity": "MEDIA",
+      "finding": "Integridad genérica no identifica componentes protegidos de investigación dada ni referencia a registros/carácter simulado.",
+      "required": "Preservar explícitamente qué se investigó, procedimiento, resultados y conclusión limitada, registros y simulación; no reevaluar ni ejecutar investigación.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E03",
+      "severity": "ALTA",
+      "finding": "Clasificación no solicitada; falta relación entre aprovechar cara disponible y evitar descarte prematuro.",
+      "required": "Acciones/orden/condiciones fieles a ficha y finalidad ambiental vinculada al aprovechamiento.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    },
+    {
+      "caseId": "LEN1-TRE-E04",
+      "severity": "CRITICA",
+      "finding": "Único criterio100% exige puntuación/numeración y conservar todas las acciones; contradice modificación autorizada del paso de impresión.",
+      "required": "Necesidad de copias adicionales/acceso de todos; algunasOninguna según datos; propósito ambiental y preservación de instrucciones no modificadas.",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ]
+    }
+  ]
+}

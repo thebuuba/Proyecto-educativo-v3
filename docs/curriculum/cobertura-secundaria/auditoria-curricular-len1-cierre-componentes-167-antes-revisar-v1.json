@@ -1,0 +1,2698 @@
+{
+  "catalog": "evaluation-2026.167",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "cases": [
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.18,
+            "maxScoreUnits": 118,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 79
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 39
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.18,
+            "maxScoreUnits": 118,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 588
+              },
+              {
+                "levelId": "L3",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 392
+              },
+              {
+                "levelId": "L2",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 196
+              },
+              {
+                "levelId": "L1",
+                "text": "Desarrolla contenido pertinente al propósito y al género solicitado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 471
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 314
+              },
+              {
+                "levelId": "L2",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "Relaciona las ideas con una progresión coherente y conectores adecuados. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.7,
+            "maxScoreUnits": 470,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 470
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 313
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza el texto según las convenciones del género trabajado. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 157
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza el texto según las convenciones del género trabajado. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 353
+              },
+              {
+                "levelId": "L3",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 235
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L1",
+                "text": "Usa vocabulario apropiado y revisa la corrección lingüística. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.18,
+            "maxScoreUnits": 118,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza con precisión, autonomía y consistencia.",
+                "scoreUnits": 118
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza adecuadamente, con detalles menores por mejorar.",
+                "scoreUnits": 79
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Lo realiza parcialmente y requiere apoyo frecuente.",
+                "scoreUnits": 39
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza los pasos y entrega la evidencia solicitada. Aún no lo evidencia; necesita acompañamiento paso a paso.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Realiza la tarea principal solicitada y presenta evidencia observable. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza la información o el producto en una secuencia comprensible.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Organiza la información o el producto en una secuencia comprensible. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye la evidencia principal, con detalles por precisar.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Incluye solo parte de la evidencia o presenta errores que afectan su sentido.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "Comunica el resultado con claridad y vocabulario adecuado. Aún no aporta evidencia suficiente de este criterio.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "PERFORMANCE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-content:0",
+            "templateId": "language-content",
+            "title": "Contenido y adecuación",
+            "description": "Desarrolla contenido pertinente al propósito y al género solicitado.",
+            "maxScore": 5.88,
+            "maxScoreUnits": 588,
+            "relativeWeight": 5,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-coherence:1",
+            "templateId": "language-coherence",
+            "title": "Coherencia y cohesión",
+            "description": "Relaciona las ideas con una progresión coherente y conectores adecuados.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-structure:2",
+            "templateId": "language-structure",
+            "title": "Estructura",
+            "description": "Organiza el texto según las convenciones del género trabajado.",
+            "maxScore": 4.71,
+            "maxScoreUnits": 471,
+            "relativeWeight": 4,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:language-correctness:3",
+            "templateId": "language-correctness",
+            "title": "Vocabulario y corrección",
+            "description": "Usa vocabulario apropiado y revisa la corrección lingüística.",
+            "maxScore": 3.53,
+            "maxScoreUnits": 353,
+            "relativeWeight": 3,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:instructions:4",
+            "templateId": "instructions",
+            "title": "Seguimiento de instrucciones",
+            "description": "Realiza los pasos y entrega la evidencia solicitada.",
+            "maxScore": 1.17,
+            "maxScoreUnits": 117,
+            "relativeWeight": 1,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "default:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": false,
+      "fallback": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "editable-fallback-v1",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "OTHER",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PERFORMANCE",
+          "PRODUCT"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "fallback:0",
+            "templateId": "editable-fallback",
+            "title": "Dominio del contenido",
+            "description": "Explica con precisión el contenido trabajado en Lo que entendimos sobre el cuidado del agua.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:1",
+            "templateId": "editable-fallback",
+            "title": "Desarrollo de la actividad",
+            "description": "Realiza la tarea principal solicitada y presenta evidencia observable.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:2",
+            "templateId": "editable-fallback",
+            "title": "Organización",
+            "description": "Organiza la información o el producto en una secuencia comprensible.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          },
+          {
+            "id": "fallback:3",
+            "templateId": "editable-fallback",
+            "title": "Comunicación",
+            "description": "Comunica el resultado con claridad y vocabulario adecuado.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "ACTIVITY_TEMPLATE",
+            "sourceReferences": [],
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "FALLBACK",
+          "reasons": [
+            "Plantilla editable local basada en la actividad; requiere revisión docente."
+          ],
+          "ruleId": "editable-fallback",
+          "activityTypeOrigin": "DEFAULT",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": []
+        }
+      },
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "description": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L3",
+                "text": "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L2",
+                "text": "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L1",
+                "text": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "description": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "description": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+                "scoreUnits": 723
+              },
+              {
+                "levelId": "L3",
+                "text": "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+                "scoreUnits": 482
+              },
+              {
+                "levelId": "L2",
+                "text": "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+                "scoreUnits": 241
+              },
+              {
+                "levelId": "L1",
+                "text": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L3",
+                "text": "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+                "scoreUnits": 193
+              },
+              {
+                "levelId": "L2",
+                "text": "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+                "scoreUnits": 96
+              },
+              {
+                "levelId": "L1",
+                "text": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-integrity:0",
+            "templateId": "len1-community-publication-integrity",
+            "title": "Versión revisada conservada",
+            "description": "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido. Parcial (50%): Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el texto y las referencias de la noticia revisada; los ajustes de presentación no sustituyen ni omiten contenido.",
+              "Presenta una diferencia menor de transcripción que debe restituirse para conservar exactamente la versión revisada, sin alterar información central ni su orden.",
+              "Conserva la mayor parte de la versión, pero omite un fragmento o componente que debía mantenerse.",
+              "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación.",
+              "No se dispone de una versión comparable que permita comprobar la conservación del contenido."
+            ],
+            "fourLevelLowest": "Sustituye o altera contenido de la versión revisada, en lugar de limitarse a su presentación. O bien: No se dispone de una versión comparable que permita comprobar la conservación del contenido.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-access:1",
+            "templateId": "len1-community-publication-access",
+            "title": "Disponibilidad efectiva para los lectores",
+            "description": "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación. Parcial (50%): El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+            "maxScore": 7.23,
+            "maxScoreUnits": 723,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comprueba la publicación efectiva de la noticia en el espacio digital indicado y que sus destinatarios pueden abrirla y leerla; una versión guardada privadamente no completa esta publicación.",
+              "El producto está disponible y completo, pero presenta un obstáculo menor de acceso o una disposición que dificulta la lectura de un fragmento.",
+              "El producto está incorporado al medio, pero parte del contenido o su acceso resulta difícil para los lectores.",
+              "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado.",
+              "El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado."
+            ],
+            "fourLevelLowest": "El acceso conduce a otro contenido o la presentación impide leer el producto solicitado. O bien: El producto solo permanece guardado o preparado, sin disponibilidad efectiva en el medio indicado.",
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-community-publication-trace:2",
+            "templateId": "len1-community-publication-trace",
+            "title": "Créditos y localización comprobables",
+            "description": "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos. Parcial (50%): La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+            "maxScore": 2.89,
+            "maxScoreUnits": 289,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Identifica la publicación mediante un enlace o una constancia verificable; conserva los datos de presentación previstos.",
+              "La constancia permite localizar el producto correcto; un dato de identificación previsto necesita precisión.",
+              "La identificación está incompleta y dificulta comprobar la ubicación o los créditos solicitados.",
+              "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos.",
+              "No hay identificación comprobable del producto y de su ubicación solicitada."
+            ],
+            "fourLevelLowest": "La constancia corresponde a otro producto o atribuye créditos diferentes de los previstos. O bien: No hay identificación comprobable del producto y de su ubicación solicitada.",
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones y clasificación según la ficha",
+            "description": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+              "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+              "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+              "Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.",
+              "No presenta acciones reconocibles para organizar los materiales según la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta acciones reconocibles para organizar los materiales según la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+            "description": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+              "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+              "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+              "Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.",
+              "No presenta acciones reconocibles para organizar los materiales según la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+            "description": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+              "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+              "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+              "Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.",
+              "No presenta acciones reconocibles para organizar los materiales según la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta acciones reconocibles para organizar los materiales según la ficha.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+                "scoreUnits": 1000
+              },
+              {
+                "levelId": "L3",
+                "text": "El orden permite seguir las acciones; una transición necesita precisión.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un orden reconocible para seguir las acciones del instructivo.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-actions:0",
+            "templateId": "len1-health-instructions-actions",
+            "title": "Acciones y clasificación según la ficha",
+            "description": "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer. Parcial (50%): Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Expresa acciones claras para organizar o separar los materiales según la clasificación de la ficha entregada, de modo que se comprenda qué hacer.",
+              "Las acciones permiten reconocer qué hacer; una relación con la clasificación necesita precisión.",
+              "Expresa parte de las acciones, pero otras no permiten identificar cómo clasificar los materiales.",
+              "Una acción o clasificación contradice la ficha y cambia el procedimiento solicitado.",
+              "No presenta acciones reconocibles para organizar los materiales según la ficha."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-order:1",
+            "templateId": "len1-health-instructions-order",
+            "title": "Orden comprensible de los pasos",
+            "description": "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas. Parcial (50%): Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+            "maxScore": 10,
+            "maxScoreUnits": 1000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza los pasos en el orden necesario para seguir las acciones de la ficha y mantiene las condiciones dadas para realizarlas.",
+              "El orden permite seguir las acciones; una transición necesita precisión.",
+              "Presenta pasos reconocibles, pero el orden deja acciones sin una condición previa necesaria.",
+              "La secuencia invierte acciones que dependen de otras y contradice el procedimiento de la ficha.",
+              "No presenta un orden reconocible para seguir las acciones del instructivo."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-edition:0",
+            "templateId": "len1-health-instructions-edition",
+            "title": "Puntuación y numeración conservando las acciones",
+            "description": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+              "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+              "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+              "La edición cambia acciones, condiciones, materiales, orden o verbos que debían conservarse.",
+              "No presenta una mejora reconocible de puntuación y numeración de los pasos."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una mejora reconocible de puntuación y numeración de los pasos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-edition:0",
+            "templateId": "len1-health-instructions-edition",
+            "title": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+            "description": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+              "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+              "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+              "La edición cambia acciones, condiciones, materiales, orden o verbos que debían conservarse.",
+              "No presenta una mejora reconocible de puntuación y numeración de los pasos."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-edition:0",
+            "templateId": "len1-health-instructions-edition",
+            "title": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+            "description": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+              "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+              "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+              "La edición cambia acciones, condiciones, materiales, orden o verbos que debían conservarse.",
+              "No presenta una mejora reconocible de puntuación y numeración de los pasos."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una mejora reconocible de puntuación y numeración de los pasos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    },
+    {
+      "id": "LEN1-TRE-E04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "GROUP",
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.167",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "WRITTEN_PRODUCTION",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "GROUP",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.167:fallback:len1-health-instructions-edition:0",
+            "templateId": "len1-health-instructions-edition",
+            "title": "Puntuación y numeración conservando las acciones",
+            "description": "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado. Parcial (50%): Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige puntuación y numeración para distinguir los pasos; conserva exactamente acciones, condiciones, materiales, orden y verbos del instructivo entregado.",
+              "Los pasos se distinguen y el contenido se conserva; queda una delimitación por precisar.",
+              "Mejora parte de la delimitación, pero otros pasos siguen confundiendo las acciones.",
+              "La edición cambia acciones, condiciones, materiales, orden o verbos que debían conservarse.",
+              "No presenta una mejora reconocible de puntuación y numeración de los pasos."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA",
+      "bankSha256": "7111b58f78f85489a2d34d1360694cd9ece0405b3a85429f9b13d7b8c43b5133"
+    }
+  ]
+}

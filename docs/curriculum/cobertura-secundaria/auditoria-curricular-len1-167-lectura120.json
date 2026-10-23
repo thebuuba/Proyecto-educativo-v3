@@ -12,9 +12,10 @@
     "completed": [
       "56complementarios-v3 y64contrastes-v1 completos; metadata30",
       "Contraste de exigencias explícitas C01/C02/C09/C10/C11/C12 frente a P06–P08",
-      "Revisión parcial v4/v2: detectó segunda fila de revisión final P03A"
+      "Revisión parcial v4/v2: detectó segunda fila de revisión final P03A",
+      "Tras reanudación: aceptación pedagógica local de56complementarios167-v4 y64contrastes167-v3; cuatroformatos deP03A sin segunda revisión y60restantes/16seleccionesexactas. Sin HTTP ni cierre global."
     ],
-    "remaining": "No aceptación independiente de todas las variantes finales v4/v3: herramienta bloqueada por límite de uso. No confundir lectura final del coordinador con segunda lectura independiente.",
+    "remaining": "Sin reserva pedagógica pendiente en estas120salidas; HTTP167 y cierre curricular/visual se registran aparte.",
     "correctedReservations": [
       "revisión docente no pedida",
       "antología fija frente a alternativa revista",
@@ -25,7 +26,9 @@
       "comparación histórica sin incertidumbre adicional salvo petición expresa",
       "conclusión sustentada O tensión abierta",
       "consecuencias solo expresas y sin doble valoración"
-    ]
+    ],
+    "finalAcceptance": true,
+    "previousToolBlockResolved": true
   },
   "prior592Exact": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-previos592-v4.json",
   "new120Validation": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-validacion120.json",
@@ -186,7 +189,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C02",
@@ -352,7 +355,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C03",
@@ -506,7 +509,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C04",
@@ -654,7 +657,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C05",
@@ -796,7 +799,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C06",
@@ -938,7 +941,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C07",
@@ -1086,7 +1089,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C08",
@@ -1228,7 +1231,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C09",
@@ -1370,7 +1373,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C10",
@@ -1512,7 +1515,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C11",
@@ -1630,7 +1633,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRC-C12",
@@ -1772,7 +1775,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRF-F01",
@@ -1914,7 +1917,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-TRF-F02",
@@ -2032,7 +2035,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P01A",
@@ -2161,7 +2164,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P01B",
@@ -2266,7 +2269,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P02A",
@@ -2371,7 +2374,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P02B",
@@ -2476,7 +2479,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P03A",
@@ -2629,7 +2632,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P03B",
@@ -2734,7 +2737,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P04A",
@@ -2839,7 +2842,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P04B",
@@ -2944,7 +2947,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P05A",
@@ -3049,7 +3052,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P05B",
@@ -3154,7 +3157,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P06A",
@@ -3259,7 +3262,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P06B",
@@ -3364,7 +3367,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P07A",
@@ -3445,7 +3448,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P07B",
@@ -3550,7 +3553,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P08A",
@@ -3655,7 +3658,7 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     },
     {
       "caseId": "LEN1-CTR-P08B",
@@ -3760,7 +3763,14 @@
           "pendingScore": true
         }
       ],
-      "status": "LEIDO_POR_COORDINADOR_ULTIMA_VARIANTE_INDEPENDIENTE_PENDIENTE"
+      "status": "ACEPTADO_PEDAGOGICAMENTE_LOCALMENTE_POR_REVISOR_INDEPENDIENTE_SIN_CIERRE_GLOBAL"
     }
-  ]
+  ],
+  "curriculumTraceVerification": {
+    "auditor": "/root/auditor_curricular",
+    "references": 32,
+    "uniqueOfficialIds": 16,
+    "allExact": true,
+    "scope": "IDs,tipo,página,texto y alcance de14componentes; no lectura de instrumentos atribuida al auditor."
+  }
 }

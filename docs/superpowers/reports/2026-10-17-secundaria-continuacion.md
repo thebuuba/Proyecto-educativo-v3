@@ -6,28 +6,25 @@ Recorrer los82contextos autorizados:54comunes,18optativas y10contextos de9módul
 
 Hasta tres subagentes reales de solo lectura: auditor curricular, diseñador y revisor pedagógico. Solo el coordinador modifica archivos, instala catálogos, escribe en Development o reinicia servidor. Sin push, main, despliegue, producción/Hyperdrive/secretos/integraciones, resets/borrados, recapturas de baselines, nuevas migraciones remotas de esquema, IA, dependencias ni servicios de pago. Commits locales en español. No correos, contraseñas ni cuentas nuevas para desbloquear el navegador.
 
-## Estado167 local
+## Estado vigente: correcciones168 en curso
 
-Rama ampliacion-de-instrumentos-2; HEAD previo8e991e69, fuente16610faef181eeaf9738801a74ce91e4a19c850ad96. Código167 listo para commit local. API166 congelada ANTES de modificar:SHA1ff0b23642bddede06a53d3f41e449d5d444b243d17e9d117293a53183da6d1b; catálogo16622baf31348c0eddf37b54afceb1940505e0ad84f76d42e8fed2e55107f5247d8. No repetir congelación ni sobrescribir capturas.
+Rama ampliacion-de-instrumentos-2. Fuente167 comprometida4df1f544a56bd9e30d40215a3da637fee39168d8. 712 instrumentos locales revisados:592 anteriores exactos y120 finales167 aceptados por revisor independiente. Auditor confirmó32referencias/16IDs oficiales; bloqueo anterior de herramienta resuelto. No hay cierre global.
 
-592instrumentos previos exactos. Nuevos120:56complementarios-v4 y64contrastes-v3, leídos íntegramente por coordinador con30selecciones; validación120 local exit0, puntos inicialmente vacíos,paridad,20/17.35,textos manuales,máximo20criterios. Revisor independiente leyó120rondas anteriores, detectó reservas y segunda fila de revisiónP03A; última aceptación independiente pendiente por límite de uso. Auditor confirmó vacíos curriculares y referencias mínimas; nueva actualización documental encargada no pudo terminar por el mismo límite. Diseñador fijó bancos antes de generar. No atribuir al subagente lectura final que hizo el coordinador.
+167 pasó ocho gates secuenciales: backend98076/239, frontend123/7, builds backend/frontend/Cloudflare dry-run y tres lints. Instalada solo en Development eolgunypmtgrsyrjzcld; HTTP cuatro muestras completas y15referencias personales originales exactas. Estado final98releases/1257snapshots. Configuración PostgreSQL app_backend_local sin bypassRLS, Auth, Storage y frontend del mismo Development; assets y SW exactos. No producción.
 
-Ocho gates167 secuenciales exit0: backend98076/239,frontendfocal123/7,buildbackend/frontend/Cloudflare(dry-run),lintsbackend/frontend/shared. Primera ejecución interrumpida sin resultado; no procesos duplicados. Fortalecimiento posterior solo de aserción de pesos:131focales aprobadas. Recibo curricular-167-final-gates-progress.json; evidencia pública167-build.json. Sin más cambios runtime; no repetir suites sin causa.
+Worker167 activo al registrar: launcher33424, sesión85511; comprobar procesos/puerto antes de detener/arrancar. QA sesión30839 ya terminó exit0. No repetir muestras. Fallo DNS y HTTP400 del helper QA resueltos, documentados sin ocultar el rechazo correcto de la aplicación.
 
-## Development y siguiente ejecución
+API167 congelada ANTES del cambio: .wrangler/realistic-audit/frozen-167-api.cjs SHA8b4ee211dfdb0d687853b9721e351605a12c2b227a4dd23496eb24c7bbd5edd6. Catálogo167 d33ecf696fc8c8bc3308500a683ced13884f53c82a81e6c9756181950cc0b861. No repetir congelación ni sobrescribir capturas.
 
-Última evidencia166:97releases/1253snapshots, cuatro muestrasQAHTTP/DB verificadas y15referencias personales originales exactas DESPUÉS. Worker166 detenido antes de compilar167; comprobar puerto8787 y procesos antes de otro arranque. No catálogo167 instalado aún. PostgreSQLapp_backend_local sin bypassRLS,Auth/Storage/frontend eolgunypmtgrsyrjzcld; producción intacta.
+## Próximos pasos
 
-1. Revisar diff/secretos y guardar commit local167. Instalar solo release167 tras cotejar fuente compilada e historia97/1253; conservar todos los releases/snapshots. No migraciones de esquema.
-2. Iniciar un Worker167, verificar configuración efectiva y assets/SW frente al build. Cuatro muestrasHTTP representativas con QA, puntuación20/17.35,manuales,guardado/reapertura y estrategia únicamente sin cambiar instrumento. Conciliar IDs del diario antes de reintentar una petición interrumpida. Volver a verificar15referencias personales originales, sin recapturar.
-3. Generar/leer/corregir E01–E04 del banco len1-cierre-componentes-independiente-v1: intercambio ambiental INTERNO, publicación de investigación sencilla identificable e instructivos con finalidad ambiental. Bancos/locks fijados; no salidas todavía. Congelar implementación167 antes del siguiente cambio una vez instalada/verificada.
-4. Completar segunda lectura independiente cuando vuelva a funcionar la herramienta, y conciliar nuevamente TODA la malla69–75. C03no acredita automáticamente investigación, C07/08no intercambio interno, C09no producciónoral por sí solo.
-5. Continuar Inglés1 y resto por orden oficial cuando se cierre el bloque. Otros81contextos aún pendientes de auditoría integral; Inglés1solo fuente201registros preparada.
+1. Guardar evidencia167 en commit documental separado. Cambios168 runtime aún en trabajo: community/health-genres y curricular-source-components.spec.ts. Banco independiente E01–E04 fijado:16principales+4fallback distintos de167 leídos/rechazados. RED16, GREEN147focales. No aceptación final168 todavía.
+2. Versionar168 con copia167 conservada. Capturar16nuevas, revisar instrumentos completos y selecciones con revisor. Diseñador prepara contrastes independientes; auditor concilia malla completa69–75 y68metodología. Mantener como máximo3subagentes solo lectura.
+3. Comprobar712previos exactos y paridad/puntuación/manuales; ejecutar gates secuenciales después de cambios finales. Detener Worker167 controladamente antes del build. Commit local168 tras verificación. Instalación individual Development únicamente, preservando98/1257 y referencias originales; no DB schema ni reset.
+4. Conciliar todos los componentes oficiales para cierre real; continuar Inglés1 y otros contextos autorizados cuando corresponda. Otros81contextos pendientes; Inglés1solo fuente201registros preparada.
 
 ## Evidencia y límite visual
 
-Informe2026-10-23-lengua-1-complementarios-167.md; manifiesto167-lectura120 enlaza fuente y capturas completas. Matriz len1-matrix-v1 y master-v1 actualizadas sin cerrar temas. Se corrigió ORAL_PENDIENTE del indicador argumentativo conTRA-ARG01 y errata166, sin cerrar indicador completo.
+Informes2026-10-23-lengua-1-complementarios-167.md y2026-10-23-auditoria-curricular-len1.md. Matriz len1-matrix-v1 ymaster-v1 abiertas. FuenteMINERD520p SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; data/curriculum/secondary-2023.* inmutable.
 
-FuenteMINERD520p SHA80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58; data/curriculum/secondary-2023.* inmutable. Historia en2026-10-23-auditoria-curricular-len1.md.
-
-Navegador personal: última observación login con error yasset163. No se recargó formulario con contraseña introducida, limpiaron datos, enviaron correos ni cambió cuenta. Caché/registroSW y recorrido visual personal siguen pendientes; HTTPQA no los sustituye. Conservar diseñovertical,manuales,AUTO/MANUAL/UNKNOWN, protección obsoletos/calificados y todos los borradores.
+Navegador personal: última observación login con error yasset163. Sin recargar formulario con contraseña, limpiar almacenamiento, enviar correo ni cambiar cuenta. Caché/registroSW y recorrido visual personal pendientes; HTTPQA no los sustituye. Conservar diseñovertical,manuales,AUTO/MANUAL/UNKNOWN,obsoletos/calificados y borradores.

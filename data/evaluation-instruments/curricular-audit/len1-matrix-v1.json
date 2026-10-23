@@ -10278,10 +10278,10 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "148actividades/592instrumentos previos preservados;30actividades/120instrumentos adicionales leídos por coordinador; última relectura independiente pendiente.",
+    "otherTopics": "592instrumentos previos exactos;120adicionales con aceptación pedagógica independiente final. Trescomponentes fuente pendientes medianteE01–E04.",
     "remaining": [
-      "Relectura independiente final167 bloqueada por límite de herramienta",
-      "Generar, leer y corregir E01–E04 de los tres componentes fuente pendientes",
+      "120salidas167aceptadas localmente; falta completar cierre curricular y visual",
+      "Corregir20salidas E01–E04 leídas y rechazadas;16principales+4fallback distintos",
       "Verificación HTTP167 y visual personal pendientes; muestra166 acreditada",
       "Conciliación final completa de Lengua1 y81contextos restantes"
     ]
@@ -12399,7 +12399,7 @@
   },
   "complementaryEvidence167": {
     "manifest": "docs/curriculum/cobertura-secundaria/auditoria-curricular-len1-167-lectura120.json",
-    "status": "CORREGIDO_Y_LEIDO_LOCALMENTE_ULTIMA_RELECTURA_INDEPENDIENTE_PENDIENTE",
+    "status": "ACEPTACION_PEDAGOGICA_INDEPENDIENTE_LOCAL_120_SIN_CIERRE_GLOBAL",
     "wholeSubjectClosed": false,
     "rows": [
       {
