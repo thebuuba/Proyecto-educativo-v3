@@ -6,20 +6,26 @@ import {catalogFingerprint} from './catalog-fingerprint'
 describe('generic product criteria release', () => {
   it('conserva el payload150 instalado y limita151 a los tres reconocedores revisados',()=>{
     const frozen=evaluationCatalogForVersion('evaluation-2026.150')!
+    const current151=evaluationCatalogForVersion('evaluation-2026.151')!
     expect(catalogFingerprint(frozen)).toBe('5d1cb38fcfc472fbeca75efc8fe0492bd09aa0da2f32b40695c7c970128ef13a')
     const expected=structuredClone(frozen)
     expected.version='evaluation-2026.151'
     const priorScience=expected.scienceCommonModules.find(m=>m.grade===5)!.topics.find(t=>t.id==='periodic-position')!
-    const currentScience=evaluationCatalogCurrent.scienceCommonModules.find(m=>m.grade===5)!.topics.find(t=>t.id==='periodic-position')!
+    const currentScience=current151.scienceCommonModules.find(m=>m.grade===5)!.topics.find(t=>t.id==='periodic-position')!
     expect(priorScience.match).not.toBe(currentScience.match)
     priorScience.match=currentScience.match
     for(const id of ['document','text-format']){
       const previous=expected.technicalModules.find(m=>m.moduleCode==='MF_002_3')!.topics.find(t=>t.id===id)!
-      const current=evaluationCatalogCurrent.technicalModules.find(m=>m.moduleCode==='MF_002_3')!.topics.find(t=>t.id===id)!
+      const current=current151.technicalModules.find(m=>m.moduleCode==='MF_002_3')!.topics.find(t=>t.id===id)!
       expect(previous.match).not.toBe(current.match)
       previous.match=current.match
     }
-    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify(expected)))
+    expect(JSON.parse(JSON.stringify(current151))).toEqual(JSON.parse(JSON.stringify(expected)))
+  })
+  it('conserva151 instalado y versiona las reglas de presentación sin alterar el contenido curricular',()=>{
+    const frozen=evaluationCatalogForVersion('evaluation-2026.151')!
+    expect(catalogFingerprint(frozen)).toBe('31871f590cc8f41167bd73679fc93db2bca17b80f199f50caeda8c5d50c9d6eb')
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...frozen,version:'evaluation-2026.152'})))
   })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
@@ -66,7 +72,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.151')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.152')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()

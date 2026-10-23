@@ -54,7 +54,8 @@ describe('Consignas naturales y condiciones explícitas',()=>{
  for(const format of formats)it(`condiciones independientes de entrega ${format}`,()=>{
   const p=propose('Hacen un informe de lectura de una noticia. Entre una y tres páginas, interlineado 1,5, fuente Arial, tamaño 12 y con portada.',1,'LEN',format)
   const rows=p.criteria.filter(c=>c.templateId.startsWith('delivery-'))
-  expect(rows).toHaveLength(format==='lista-cotejo'?5:1)
+  // Separa extensión y presentación; fuente/tamaño comparten una comprobación explícita.
+  expect(rows).toHaveLength(format==='lista-cotejo'?4:2)
   const text=JSON.stringify(rows);expect(text).toMatch(/1.*3.*páginas/);expect(text).toContain('1.5');expect(text).toContain('Arial');expect(text).toContain('12');expect(text).toContain('portada')
   expect(p.criteria.filter(c=>!c.templateId.startsWith('delivery-')).length).toBeGreaterThan(0)
  })

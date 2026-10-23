@@ -76,7 +76,7 @@ export function editableFallbackRecommendation(input: InstrumentPreparationConte
   const social=resolveCommonSocialTask(input.activityTitle,input.description??'',input.academicContext)
   if(social)return adaptSocialScale(editableAuthoredRecommendation(commonSocialCriteria(social),input,input.activityType??social.activityType,`ciencias-sociales-comun-${social.grade}`))
   const technical=resolveTechnicalTask(input.activityTitle,input.description??'',input.academicContext)
-  if(technical)return adaptTechnicalScale(editableAuthoredRecommendation(technicalCriteria(technical),input,input.activityType??technical.activityType,technical.module.id,{includeFileFormats:true,requestedOnly:true,ignoreSelectedSourceArticle:technical.module.moduleCode==='MF_060_3'}),input.description??'',technical)
+  if(technical)return adaptTechnicalScale(editableAuthoredRecommendation(technicalCriteria(technical,input.description),input,input.activityType??technical.activityType,technical.module.id,{includeFileFormats:true,requestedOnly:true,ignoreSelectedSourceArticle:technical.module.moduleCode==='MF_060_3'}),input.description??'',technical)
   const optativeScience=resolveOptativeScienceTask(input.activityTitle,input.description??'',input.academicContext)
   if(optativeScience)return adaptOptativeScienceScale(editableAuthoredRecommendation(optativeScienceCriteria(optativeScience),input,input.activityType??optativeScience.activityType,optativeScience.module.id,optativeScience.grade===6?{includeFileFormats:true,requestedOnly:true}:undefined),input.description??'',optativeScience)
   const commonScience=resolveCommonScienceTask(input.activityTitle,input.description??'',input.academicContext)

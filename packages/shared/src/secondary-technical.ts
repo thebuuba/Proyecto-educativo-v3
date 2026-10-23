@@ -3,6 +3,7 @@ import type {CommonScienceTopic} from './secondary-science-common-types'
 import {resolveScienceTaskForTopics,scienceRequirementText,adaptScienceScale} from './secondary-science-common'
 import type {ContextualTopicCriterion} from './secondary-topic-criteria'
 import type {InstrumentRecommendation,InstrumentType} from './instrument-recommendation'
+import {deliveryConditions} from './task-delivery-requirements'
 import {technicalMf053Four} from './secondary-technical-mf053-4'
 import {technicalMf002Four} from './secondary-technical-mf002-4'
 import {technicalMf054Five} from './secondary-technical-mf054-5'
@@ -42,9 +43,11 @@ const fallbackMembers:Record<string,(topic:TechnicalTopic)=>boolean>={
  record:t=>t.id==='debug-records',array:t=>t.id==='array-types',
  'system-detail':t=>!['systems','requirements'].includes(t.id),
 }
-function selectTopics(text:string,topics:TechnicalTopic[]) {
+function selectTopics(text:string,topics:TechnicalTopic[],moduleCode?:string) {
  const selected=topics.filter(t=>new RegExp(`\\b(?:${t.match})\\b`).test(text)&&(!t.requires||new RegExp(t.requires).test(text))&&(!t.exclude||!new RegExp(t.exclude).test(text)))
  const suppressed=new Set(selected.flatMap(t=>t.suppresses??[]))
+ if(moduleCode==='MF_002_3'&&selected.filter(t=>t.suppresses?.includes('document')).every(t=>t.id==='text-format')
+  &&text.split(/\s+o\s+|[.;]/).some(clause=>/\bdocumento\b/.test(clause)&&/\b(?:datos|contenido|informacion)\b/.test(clause)))suppressed.delete('document')
  return selected.filter(t=>!suppressed.has(t.id)&&(!t.fallbackGroup||!selected.some(fallbackMembers[t.fallbackGroup])))
 }
 export function resolveTechnicalTask(title:string,description:string,context?:InstrumentAcademicContext|null,modules:TechnicalModule[]=technicalModules):TechnicalTask|null{
@@ -63,7 +66,7 @@ export function resolveTechnicalTask(title:string,description:string,context?:In
  if(!requirement)return null
  const parse=(text:string):TechnicalTask|null=>{
   const parsed=resolveScienceTaskForTopics('',text,module.grade,module.topics,{
-   additionalVerbs:module.additionalVerbs??technicalVerbs,selectTopics:(part,topics)=>selectTopics(part,topics as TechnicalTopic[]),
+   additionalVerbs:module.additionalVerbs??technicalVerbs,selectTopics:(part,topics)=>selectTopics(part,topics as TechnicalTopic[],module.moduleCode),
   })
   if(!parsed)return null
   // Reuse the action parser, not its science-specific purpose heuristics.
@@ -285,12 +288,20 @@ function alternativeCriterion(branches:ContextualTopicCriterion[][],templateId:s
  const progressionLevels=[0,1,2,3,4].map(index=>`En la alternativa elegida: ${branches.map(rows=>rows.map(r=>r.progressionLevels[index]).join(' ')).join(' O BIEN: ')}`) as ContextualTopicCriterion['progressionLevels']
  return{templateId,title:'Alternativa técnica solicitada',observable:progressionLevels[0],progressionLevels,weight:3}
 }
-export function technicalCriteria(task:TechnicalTask):ContextualTopicCriterion[]{
+export function technicalCriteria(task:TechnicalTask,description?:string):ContextualTopicCriterion[]{
  if(task.alternatives){
-  const branches=task.alternatives.map(technicalCriteria)
+  const branches=task.alternatives.map(branch=>technicalCriteria(branch))
   return[alternativeCriterion(branches,`${task.module.templatePrefix??'technical-mf053'}-alternative`)]
  }
- return [...new Map(task.actions.flatMap(action=>actionCriteria(action,task.module)).map(row=>[row.templateId,row])).values()]
+ const rows=[...new Map(task.actions.flatMap(action=>actionCriteria(action,task.module)).map(row=>[row.templateId,row])).values()]
+ if(task.module.moduleCode!=='MF_002_3')return rows
+ const text=description??task.actions.map(a=>a.text).join('. ')
+ const conditions=deliveryConditions(text,{includeFileFormats:true,requestedOnly:true})
+ const explicitAppearance=conditions.some(c=>['font','size','spacing','indent','color','title','cover'].includes(c.key))
+ if(!explicitAppearance)return rows
+ const formatOnlyDocument=conditions.some(c=>c.key==='file-format'&&c.label==='documento de Word')
+  &&!/(?:datos|contenido|informaci[oó]n|redact|explic|describ|analiz|analic)/i.test(text)
+ return rows.filter(row=>row.templateId!=='technical-mf002-text-format-creation'&&!(formatOnlyDocument&&row.templateId==='technical-mf002-document-creation'))
 }
 export function technicalSelections(task:TechnicalTask,description:string){
  const text=affirmative(description,task.module.additionalVerbs)

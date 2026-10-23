@@ -39,7 +39,8 @@ describe('Intención natural: producción frente a objeto estudiado',()=>{
  it.each(formats)('entregar un documento de Word activa el proveedor de Ofimática: %s',format=>{
   const p=prepare('B-MF0024-formato',format)
   expect(p.activityType).toBe('PROJECT')
-  expect(p.criteria.some(c=>c.templateId.startsWith('technical-mf002-'))).toBe(true)
+  expect(p.internalTrace.reasons).toContain('module=mf002-4')
+  expect(p.criteria.some(c=>c.templateId.startsWith('delivery-format'))).toBe(true)
   expect(p.criteria.every(c=>c.sourceType==='CONTEXTUALIZED')).toBe(true)
  })
  it('examinar un documento Word no se convierte en creación por el nombre del recurso',()=>{

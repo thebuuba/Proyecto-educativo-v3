@@ -1,0 +1,181 @@
+{
+  "catalog": "evaluation-2026.152",
+  "status": "EXTRACTION_AND_GROUPING_VERIFIED_PEDAGOGICAL_REVIEW_INCOMPLETE",
+  "bankSha256": "f4530dedd26e1d12f4f4c92998491d784a87e257b113a163f71fa6feeae2f817",
+  "changed": [
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "escala"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-ponderada"
+    }
+  ],
+  "unchangedOutputs": 48,
+  "reservedCasesExecuted": 0,
+  "readCompletely": [
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "escala"
+    },
+    {
+      "id": "B-LEN1-informe-desarrollado",
+      "format": "lista-ponderada"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "rubrica"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-cotejo"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "escala"
+    },
+    {
+      "id": "B-MF0024-formato",
+      "format": "lista-ponderada"
+    }
+  ],
+  "requirementMap": [
+    {
+      "caseId": "B-MF0024-formato",
+      "requirements": [
+        "Word",
+        "Título",
+        "Arial 12",
+        "Interlineado 1.5",
+        "Sangría",
+        "Color indicado"
+      ],
+      "rubricScaleWeighted": [
+        "delivery-format"
+      ],
+      "checklist": [
+        "delivery-format:document",
+        "delivery-format:typography",
+        "delivery-format:paragraph",
+        "delivery-submission:file-format"
+      ],
+      "missing": [],
+      "unrequested": [],
+      "duplicates": [],
+      "ambiguitiesPreserved": [
+        "Color indicado sin concretar el color",
+        "Sangría solicitada sin medida inventada"
+      ]
+    },
+    {
+      "caseId": "B-LEN1-informe-desarrollado",
+      "format": [
+        "delivery-format"
+      ],
+      "maxPages": [
+        "delivery-submission"
+      ],
+      "twoFragments": [
+        "delivery-evidence"
+      ],
+      "organization": [
+        "report-structure"
+      ],
+      "interpretation": [
+        "report-analysis"
+      ],
+      "remaining": [
+        "Identificar texto y autor no queda explícito",
+        "Integrar dos fragmentos con su función de justificación; no basta con contarlos",
+        "Título repetido entre estructura y presentación",
+        "Revisar niveles binarios de páginas/cantidades y escala genérica de Lengua"
+      ]
+    }
+  ],
+  "groupingDecision": "En rúbrica, escala y ponderada, el archivo Word acompaña al formato para no inventar grados de un requisito binario. En cotejo conserva su indicador. Tipografía y párrafo usan grupos explícitos, sin subindicadores ficticios.",
+  "limitations": [
+    "Un Sí/No agrupado exige todas las condiciones de su grupo; no identifica cuál falló",
+    "Los pesos editables y el parcial del 50% de ponderada son decisiones existentes de AulaBase, no requisitos del docente",
+    "Revisar el tramo parcial de presentación cuando ninguna condición llega a cumplirse completamente; la selección de cuatro niveles omite una progresión intermedia",
+    "Las reglas son deterministas y no constituyen comprensión exhaustiva de cualquier redacción",
+    "La auditoría global, HTTP152 y navegador siguen pendientes"
+  ],
+  "tests": {
+    "initialRed": 13,
+    "additionalExclusionsRed": 4,
+    "binaryRowRed": 3,
+    "greenDelivery": 23,
+    "backendRegressions": 1828,
+    "frontendParity": 1041,
+    "backendFull": 97217,
+    "backendFiles": 216,
+    "frozenCatalogFinal": 9,
+    "builds": [
+      {
+        "name": "backend-build",
+        "exit": 0,
+        "ms": 8290
+      },
+      {
+        "name": "frontend-build",
+        "exit": 0,
+        "ms": 20733
+      },
+      {
+        "name": "cloudflare-build",
+        "exit": 0,
+        "ms": 89630
+      },
+      {
+        "name": "backend-lint",
+        "exit": 0,
+        "ms": 3105
+      },
+      {
+        "name": "frontend-lint",
+        "exit": 0,
+        "ms": 2300
+      }
+    ]
+  },
+  "regressions": "El primer full run detectó12 regresiones ajenas y4 aserciones de intención que exigían el criterio genérico retirado. Se acotó color a documento y la recuperación de contenido a la supresión tipográfica; las4 aserciones ahora verifican el proveedor activado y el formato explícito. Contratos originales no cambiados.",
+  "frozen151Sha256": "31871f590cc8f41167bd73679fc93db2bca17b80f199f50caeda8c5d50c9d6eb",
+  "newCurricularProviders": 0,
+  "remoteSchemaMigrations": 0,
+  "http": "PENDING_CATALOG_INSTALLATION",
+  "browser": "PERSONAL_AUTH_REQUIRED",
+  "push": false
+}

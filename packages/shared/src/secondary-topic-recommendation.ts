@@ -19,7 +19,7 @@ export function editableSecondaryTopicRecommendation(topic: SecondaryLanguageTop
 export function editableAuthoredRecommendation(authored: ContextualTopicCriterion[], input: {
   activityTitle: string; description?: string; maxScore: number; instrumentType: InstrumentType; participationMode: 'INDIVIDUAL' | 'GROUP'; activityType?: string; includeAdditionalCandidates?: boolean
 }, activity: string, moduleName: string, deliveryOptions:DeliveryOptions={}): InstrumentRecommendation {
-  authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??'',deliveryOptions), input.instrumentType)
+  authored = formatAuthoredCriteria(withDeliveryCriteria(authored,input.description??'',{...deliveryOptions,instrumentType:input.instrumentType}), input.instrumentType)
   if (!input.includeAdditionalCandidates) assertInstrumentCapacity(authored.length)
   const levels = input.instrumentType === 'rubrica' || input.instrumentType === 'escala'
     ? ['Destacado', 'Logrado', 'En proceso', 'Inicial'].map((label, index) => ({ id: `L${4 - index}`, label, proportion: (3 - index) / 3 })) : []

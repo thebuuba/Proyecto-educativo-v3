@@ -1,3 +1,13 @@
+# Checkpoint vigente: extracción y agrupación152 compiladas; falta instalación/HTTP
+
+Rama ampliacion-de-instrumentos-2; último commit documental c02b3897 y nuevo bloque152 por guardar. **97.217 pruebas backend/216 archivos**, 1.041 de frontend, 1.828 afectadas,23 nuevas de entrega,9 del congelado 151. Builds backend/frontend/Cloudflare dry-run y lints aprobados. Pruebas completas delivery-corrected-backend-test.log; builds delivery-build-gates-progress.json. Primer full run: 16 fallos corregidos; primerbuilderror de tipo corregido sin alterar151. No repetirfullsuite sin cambios nuevos.
+
+Frozen151 exacto; catálogo152 solo cambia versión del payload, reglas compartidas nuevas. Historia antes152:84releases/1205snapshots en .wrangler/realistic-audit/history-before-evaluation-2026.152.json. No recapturar. Runtime151 sesión84818/launcher37484 DETENIDO mediante árbol propio confirmado; puerto libre. Instalador install-delivery-152.mjs preparado pero NO EJECUTADO, requiere commit limpio de apps/packages y gates. Siguiente: commit local del bloque, instalar152 SOLODevelopment, arrancar/verificar runtime152 y HTTP de Word/rúbrica-cotejo e informe desarrollado/escala-ponderada. Reconciliar IDs antes de cualquier repetición; historia y 15 baselines originales después.
+
+Leídos 8instrumentos cambiados;48 salidas iguales, originalesA/B/Cintactos. Wordextrae todas las condiciones y elimina duplicados genéricos; calidad aún parcial en límites binarios, tramo parcial de presentación y contenido del informe (autor/fragmentos/duplicados). Detalles en informe y auditoria-realista-formato-152-revision.json. No declarar aceptación completa ni81ámbitos auditados. Browserpersonal1796703522login/handoff; sin correo/password/cachéborrada. Pushes siguen suspendidos; no producción/main/deploy/migraciones remotas/subagentes/MF061.
+
+## Checkpoints anteriores (históricos)
+
 # Checkpoint vigente: 151 instalado y cuatro recorridos HTTP/DB verificados
 
 Rama `ampliacion-de-instrumentos-2`; commits locales 841c620d, cc650a41 y 00576381. Sin push. Catálogo 151 instalado individualmente en Development, CREATED/UNCHANGED; fuente=compilado, congelado150 exacto. Runtime sesión 84818/launcher37484 arrancado una sola vez; comprobar procesos reales antes de intervenir. PostgreSQL app_backend_local sin bypass RLS, Auth, Storage y frontend exclusivamente eolgunypmtgrsyrjzcld; entry index-MT0qUmlD.js y assets/SW exactos frente al build.
