@@ -14,7 +14,7 @@
 - [x] Verificar configuración efectiva PG/Auth/Storage/frontend y build servido; reiniciar únicamente el servidor local ausente.
 - [x] Diagnóstico acotado DNS/TCP/conexión/pool/consulta/validación del catálogo/HTTP. Corrección de transferencia completa verificada; latencia HTTP aún variable.
 - [x] Comparar historia contra `history-before-evaluation-2026.150.json` y quince baselines personales existentes antes de escrituras, sin recapturarlos.
-- [ ] Reconciliar IDs y estados de recorridos incompletos antes de crear actividades.
+- [x] Reconciliar MF060 antes de reanudar su diario original: 16/16 sin duplicados. Cuatro nuevas muestras 151 también reconciliadas; no repetir sus creadores.
 - [x] Reproducir coste de validación del catálogo, añadir regresiones fallidas, corregir transferencia y verificar PostgreSQL real, HTTP y gates. No equivale a resolver toda incidencia de conexión.
 
 Archivos iniciales: `scripts/evaluation-instruments/development-history.mjs`, `packages/database/src/index.ts`, `apps/backend/src/modules/evaluation-instruments/evaluation-instruments.service.ts`; diagnóstico privado y sanitizado en `.wrangler/realistic-audit/`. No modificar configuración remota.
@@ -59,3 +59,4 @@ Archivos iniciales: `scripts/evaluation-instruments/development-history.mjs`, `p
 - 22/10: mantener la rama existente y los históricos; no crear una rama desde main que descarte el avance. La autorización de trabajo autónomo elimina confirmaciones rutinarias de los flujos de skills.
 - 22/10: no declarar recuperación por ACTIVE_HEALTHY ni por ausencia de proceso; la conexión anterior todavía requiere diagnóstico y preservación.
 - 22/10: corrección de validación contrastada con todo el catálogo 150 instalado; 97.174 pruebas backend y builds aprobados. MF060 reanuda su diario original solo después de preservar 82 releases/1185 snapshots y quince referencias personales; el recorrido continúa, sin reinicios ni builds simultáneos.
+- 22/10: reconocimiento 151 verificado con 97.193 pruebas backend y builds; instalado solo en Development. Cuatro muestras HTTP/DB conservan instrumento, edición manual e historia; quince referencias personales exactas. Es evidencia parcial, no cierre del banco ni de todos los proveedores. Siguiente: extracción y agrupación de presentación, con 13 regresiones RED de 18 nuevas pruebas.

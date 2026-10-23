@@ -1,0 +1,349 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.151",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "B-LEN1-informe-retirado",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "READING_REPORT_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-NAT5-tabla-reconstruida",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "ORAL_PRESENTATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-MF0024-formato",
+      "format": "escala",
+      "score": 20,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "B-MF0024-formato",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "PROJECT",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2839
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 7128
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 12324
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7950
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4822
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3907
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4156
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5174
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 11476
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 12449
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7085
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 3260
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5324
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5036
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8330
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 10363
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 11862
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8601
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7306
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 9955
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7751
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 14071
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 11145
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 6554
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 9513
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5774
+    }
+  ],
+  "preservedReleases": 83,
+  "preservedSnapshots": 1201,
+  "finalReleases": 84,
+  "finalSnapshots": 1205,
+  "pedagogicalAcceptance": "PARTIAL_INTENT_ONLY_WORD_AND_PERIODIC_REMAIN_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "personalPreservation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "results": [
+      {
+        "baseline": "ct-six",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "mt-four",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "citizenship-six",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "fhr-one",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hlm-four",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hlm-five",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hlm-six",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hcs-four",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hcs-four-server",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hcs-five",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "hcs-six",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "philosophy-four",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "demography-five",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "mf054-five",
+        "readOnly": true,
+        "exit": 0
+      },
+      {
+        "baseline": "mf056-four",
+        "readOnly": true,
+        "exit": 0
+      }
+    ],
+    "newBaselines": 0,
+    "remoteWrites": false
+  },
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.151",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "frozen150Exact": true,
+    "allowedChangesOnly": true,
+    "preservedReleases": 83,
+    "preservedSnapshots": 1201,
+    "finalReleases": 84,
+    "finalSnapshots": 1201,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.151",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-MT0qUmlD.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-MT0qUmlD.js",
+        "sha256": "f78cb5d0958a0a10b7b06dd854200242938425ed496f81923b7718922d5ba110",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-Do3LDyJR.js",
+        "sha256": "c255a34cb3750a0433a6f23960de4f6fa6372d093452beb200cffa43bf4ebf39",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-BkXNJxVW.js",
+        "sha256": "e7382f338f43af51c624e0620dc01fd096eb0bd7a4eeec03fab6d505d4820357",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-D5z_K-Gu.js",
+        "sha256": "b146cdf6c6e46a1da4bbed994abc6e8176bb814a95e96ae5c8e1f985741fcc70",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CeyAUy9Q.js",
+        "sha256": "860dedb2c1f98e6168bce16b87f7849d64abf8a5d797ef4fffdab9fe80589aa1",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "9a5494b619d9aae0f8162ab9e03b1f030ce3bb31679113b882847bdcf457c728",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "frozen": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "version": "evaluation-2026.151",
+    "fingerprint": "31871f590cc8f41167bd73679fc93db2bca17b80f199f50caeda8c5d50c9d6eb",
+    "payloadEqualsInstalled": true,
+    "newFrozenFile": "apps/backend/src/modules/evaluation-instruments/catalog-v151.ts",
+    "previousFrozenFilesChanged": false,
+    "preservedReleases": 84,
+    "preservedSnapshots": 1205,
+    "remoteWrites": false
+  }
+}

@@ -98,4 +98,16 @@ Una ampliación inicial de «fuentes» activó incorrectamente formato en una co
 
 La cuenta QA no tenía asignación de Lengua común en primero. Se reutilizó su centro, curso, sección, año y docente ficticios existentes para añadir únicamente la materia/asignación LEN; las filas previas permanecen exactas, sin cuentas ni estudiantes nuevos. Diagnóstico previo y diario de creación privados conservados. No se tocó el contexto personal.
 
-El catálogo 151 está compilado y pendiente de instalación individual en Development y de su prueba HTTP. El Worker 150 se detuvo tras finalizar QA para evitar servir una combinación de versiones durante las compilaciones; debe arrancarse una sola instancia tras instalar/verificar 151.
+El catálogo 151 se instaló individualmente en Development: primera ejecución `CREATED`, comprobación idempotente `UNCHANGED`. Fuente y compilado coinciden; el payload 150 congelado sigue exacto. Se conservaron 83 releases y 1.201 snapshots, añadiendo únicamente el release 151; ninguna migración de esquema, cuenta ni actividad durante la instalación.
+
+## Verificación HTTP/DB del reconocimiento 151
+
+Commit local del código: `00576381674c915399a1b40912e9fd2cab6d8e49`. Un único Worker local sirve 151. PostgreSQL (`app_backend_local`, sin bypass RLS), Auth, Storage y variables públicas apuntan a AulaBase Development `eolgunypmtgrsyrjzcld`. Entry `/assets/index-MT0qUmlD.js`, editor, modal, módulo técnico, planificación y service worker coinciden byte por byte con el build. Esta comprobación HTTP no inspecciona el registro ni la caché interna del navegador.
+
+Cuatro muestras con QA autenticada, sin producto cartesiano: informe retirado de Lengua 1.º/rúbrica/20; tabla periódica de Naturales 5.º/cotejo/17.35; documento Word MF002 4.º/escala/20 y ponderada/17.35. Interpretación y recomendación devolvieron el tipo esperado y paridad exacta con la alternativa local. Las cuatro conservaron puntuación inicialmente vacía, texto manual, guardado, reapertura y el instrumento completo al cambiar únicamente la estrategia. Se registraron los IDs antes de crear y se reconciliaron, sin duplicados.
+
+Las 26 respuestas fueron 200/201. Interpretación: 7.751–12.324 ms; recomendación: 7.950–14.071 ms. La latencia continúa variable; estos resultados no certifican la desaparición de incidencias intermitentes. Historia posterior: **84 releases/1.205 snapshots**, con los 83/1.201 anteriores exactos y cuatro nuevas muestras QA. Las quince referencias personales originales pasaron nuevamente en consultas de solo lectura, sin recapturas. Evidencia pública: `auditoria-realista-intencion-151-http.json`.
+
+Se congeló 151 en un archivo nuevo y se contrastó con el payload instalado completo: SHA-256 JSONB `31871f590cc8f41167bd73679fc93db2bca17b80f199f50caeda8c5d50c9d6eb`. Se registró una referencia nueva previa a 152 (84/1.205), conservando todos los originales. Los scripts de instalación, creación QA y congelado ya finalizaron; no se deben volver a ejecutar.
+
+La aceptación pedagógica sigue parcial: Word y tabla periódica conservan los defectos descritos. El siguiente bloque reproduce extracción/agrupación de formato: 18 pruebas nuevas, 13 fallidas antes de corregir y cinco aprobadas. El navegador personal sigue en login; no se cambió contraseña, se envió correo ni se borró almacenamiento. Sin push, producción, despliegue, merge ni migraciones remotas.

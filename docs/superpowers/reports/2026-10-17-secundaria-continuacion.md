@@ -1,3 +1,15 @@
+# Checkpoint vigente: 151 instalado y cuatro recorridos HTTP/DB verificados
+
+Rama `ampliacion-de-instrumentos-2`; commits locales 841c620d, cc650a41 y 00576381. Sin push. Catálogo 151 instalado individualmente en Development, CREATED/UNCHANGED; fuente=compilado, congelado150 exacto. Runtime sesión 84818/launcher37484 arrancado una sola vez; comprobar procesos reales antes de intervenir. PostgreSQL app_backend_local sin bypass RLS, Auth, Storage y frontend exclusivamente eolgunypmtgrsyrjzcld; entry index-MT0qUmlD.js y assets/SW exactos frente al build.
+
+QA 56195 terminó0: cuatro muestras Lengua1/rúbrica20, Naturales5/cotejo17.35 y MF0024/escala20/ponderada17.35. 26 respuestas200/201; tipos/paridad/puntos vacíos/texto manual/guardado/reapertura/estrategia sin alterar instrumento verificados. Historia84/1205; anteriores83/1201 exactos. Quince referencias personales originales verificadas otra vez (95635 terminó0), sin recapturas. Scripts privados intent-http-151, install-intent-151, freeze-151 YA TERMINADOS: no repetir escrituras ni congelados. Nueva referencia history-before-evaluation-2026.152.json y catalog-v151.ts exactos; registrar151 y subirversión152 solo cuando finalice el siguiente bloque.
+
+Siguiente bloque EN CURSO: realistic-delivery.spec.ts, 18 pruebas, 13 RED iniciales y5 aprobadas; extractor pierde Word/título/Arial12/sangría/color, mezcla contenido y presentación y duplica formato técnico. Solo dos líneas de filtrado opcional añadidas al extractor al guardar este checkpoint; aún no verificadas. No dar este bloque por terminado. C reservados sin ejecutar; 81 ámbitos inventariados no son81 auditados. Navegador personal1796703522 en login/handoff; no borrar almacenamiento ni enviar otro correo. Continuar extracción/agrupación/progresiones y restantes proveedores, sin MF061, subagentes ni nuevas especialidades.
+
+Gates de 00576381:97193 backend, builds backend/frontend/Cloudflare dry-run y lints aprobados. Cambios nuevos de código requieren comprobaciones afectadas. Evidencia HTTP pública auditoria-realista-intencion-151-http.json; Word/tabla periódica aún con calidad parcial. Latencia variable hasta14.071ms de recomendación; no declarar estabilidad total.
+
+## Checkpoints anteriores (históricos)
+
 # Checkpoint vigente: reconocimiento natural 151 compilado; instalación pendiente
 
 Rama ampliacion-de-instrumentos-2; commits locales 841c620d y cc650a41; pushes suspendidos. Nuevo bloque sin publicar: shared reconoce imperativos de informe, tabla periódica enumerada y documento Word/formato singular; el selector frontend usa el detector específico de Lengua. Originales A/B/C sin cambios. Dieciséis regresiones iniciales fallaron y las 18 pruebas finales pasaron; 1.886 pruebas de backend afectadas, 1.037 de paridad frontend y 8.720 de Lengua/estrategia. **Backend completo: 97.193 pruebas en 215 archivos, aprobado**. Builds backend/frontend/Cloudflare dry-run y dos lints pasaron después de añadir una aserción de tipo en frozen150, sin alterar el payload. La sesión 49271 terminó por ese error de tipo; 77049 terminó con código 0 tras corregirlo. No repetir la suite completa sin cambios nuevos.
