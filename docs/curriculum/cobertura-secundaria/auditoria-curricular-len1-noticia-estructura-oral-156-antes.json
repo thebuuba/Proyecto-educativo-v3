@@ -1,0 +1,534 @@
+{
+  "catalog": "evaluation-2026.156",
+  "bankSha256": "6b80b6ee053751dbe2fc0ba6d1f86c40e0a1666d356ed0cf62cd32feba0295e6",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "321245c6+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-NOT-A02",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.0797000000000025,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-paratext:0",
+            "templateId": "news-feature-paratext",
+            "title": "Los paratextos",
+            "description": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+              "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+              "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+              "Atribuye a la fotografía, al pie u otro paratexto información contraria al hecho del texto.",
+              "No explica una relación entre los paratextos presentes y la información de la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica una relación entre los paratextos presentes y la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-listening-data:1",
+            "templateId": "news-listening-data",
+            "title": "Comprensión de la noticia escuchada",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible del hecho escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A02",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1259999999999764,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-paratext:0",
+            "templateId": "news-feature-paratext",
+            "title": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+            "description": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+              "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+              "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+              "Atribuye a la fotografía, al pie u otro paratexto información contraria al hecho del texto.",
+              "No explica una relación entre los paratextos presentes y la información de la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-listening-data:1",
+            "templateId": "news-listening-data",
+            "title": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A02",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.0855999999999995,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-paratext:0",
+            "templateId": "news-feature-paratext",
+            "title": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+            "description": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+              "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+              "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+              "Atribuye a la fotografía, al pie u otro paratexto información contraria al hecho del texto.",
+              "No explica una relación entre los paratextos presentes y la información de la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No explica una relación entre los paratextos presentes y la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-listening-data:1",
+            "templateId": "news-listening-data",
+            "title": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible del hecho escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A02",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8331000000000017,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-paratext:0",
+            "templateId": "news-feature-paratext",
+            "title": "Los paratextos",
+            "description": "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados. Parcial (50%): Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica qué aportan el titular, la fotografía y su pie de foto al sentido del texto y cómo se relacionan con los hechos informados.",
+              "Relaciona los elementos presentes con el hecho; deja sin explicar el aporte de uno de ellos.",
+              "Describe lo que muestran los paratextos sin relacionarlo con el sentido de la noticia.",
+              "Atribuye a la fotografía, al pie u otro paratexto información contraria al hecho del texto.",
+              "No explica una relación entre los paratextos presentes y la información de la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-listening-data:1",
+            "templateId": "news-listening-data",
+            "title": "Comprensión de la noticia escuchada",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo. Parcial (50%): Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

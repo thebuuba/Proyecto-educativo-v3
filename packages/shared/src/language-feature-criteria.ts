@@ -15,7 +15,7 @@ export function affirmativeLanguageTask(description:string){
  // Exclusions stop at a new affirmative coordinated action. Otherwise «sin
  // cambiar los hechos y revisen las siglas» loses the requested second action.
  const action='(?:revis\\w*|corrij\\w*|correg\\w*|analic\\w*|analiz\\w*|identifi\\w*|expli\\w*|compar\\w*|contrast\\w*|redact\\w*|escrib\\w*|inclu\\w*|entreg\\w*|manteng\\w*|usen|utili\\w*)'
- const negative='(?:sin|no se (?:pide|requiere)|no es necesario|no (?:(?:deben?|deberan|van a|vamos a) )?(?:escrib\\w*|redact\\w*|anad\\w*|agreg\\w*|inclu\\w*|revis\\w*|hagan|realic\\w*|necesitan?))'
+ const negative='(?:sin|no se (?:pide|requiere)|no es necesario|no (?:(?:deben?|deberan|van a|vamos a) )?(?:escrib\\w*|redact\\w*|anad\\w*|agreg\\w*|invent\\w*|inclu\\w*|revis\\w*|hagan|realic\\w*|necesitan?))'
  return normalizedTask(text.replace(new RegExp(`\\b${negative}\\b.*?(?=[.;\\n]|\\s+y\\s+${action}\\b|$)`,'g'),' '))
 }
 
@@ -65,9 +65,10 @@ export function languageFeatureCriterion(feature: LanguageFeature, scope: string
 export function explicitWritingProcess(description: string, scope: string, genre: string, revisionRequested=false): ContextualTopicCriterion[] {
   const task = affirmativeLanguageTask(description)
   const rows: ContextualTopicCriterion[] = []
-  if (revisionRequested || /\bborradores?\b|\brevis(?:ar|aran|en|ion)\b|\bcorreg\w*/.test(task)) rows.push({
+  const revisedVersion=/\bversion final\b/.test(task)?'final':'revisada'
+  if (revisionRequested || /\bborrador(?:es)?\b|\brevis(?:ar|aran|en|ion)\b|\bcorreg\w*/.test(task)) rows.push({
     templateId:`${scope}-process-revision`,title:'Revisión del borrador',weight:2,
-    observable:`Muestra cambios entre el borrador y la versión revisada de ${genre} que resuelven problemas de contenido, organización o escritura encontrados.`,
+    observable:`Muestra cambios entre el borrador y la versión ${revisedVersion} de ${genre} que resuelven problemas de contenido, organización o escritura encontrados.`,
     progressionLevels:[
       `Los cambios del borrador de ${genre} resuelven los problemas identificados y conservan el sentido que se desea comunicar.`,
       'Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.',

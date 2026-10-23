@@ -74,16 +74,23 @@ export function firstGradeNewsCriteria(activityType: string, description: string
 /** Adaptación evaluativa: evalúa la acción solicitada, sin convertir revisión en creación. */
 export function refineFirstGradeNewsRequirements(activity:string,description:string,criteria:ContextualTopicCriterion[]):ContextualTopicCriterion[]{
   const task=affirmativeLanguageTask(description)
+  const topicClause=description.split(/[.;\n]/).find(clause=>/\bsobre\s/i.test(clause)&&!/^\s*no\b/i.test(clause))
+  const requestedContent=topicClause?.match(/\bsobre\s+([^.;\n]+?)(?=\s+en las fuentes|\s+sin\s|[,;.]|$)/i)?.[1].trim()
   const writing=/WRITING|WRITTEN_PRODUCTION/.test(activity)
   const editing=writing&&/\b(?:revis\w*|correg\w*|corrij\w*)\b/.test(task)
     &&/\b(?:borrador|recib\w*|entregad\w*|proporcionad\w*)\b/.test(task)
     &&!/\b(?:redact\w*|escrib\w*|cre\w*|elabor\w*)\s+(?:(?:un|una|el|la)\s+)?noticia\b/.test(task)
     ||writing&&/\b(?:arregl\w*|corrij\w*|correg\w*)\b.*\b(?:solo|unicamente)\b.*puntuacion/.test(task)
   const comparison=activity==='NEWS_COMPARISON'||activity==='COMPARISON'
+  const analysis=/ANALYSIS/.test(activity)
+  const purposeRequested=/proposito|intencion|para que informa/.test(task)
+  const inferenceRequested=/inferencia|deduc\w*.*(?:leido|texto|hecho|razon|datos|escuch)/.test(task)
   let rows=editing?criteria.filter(row=>/-feature-|-process-/.test(row.templateId)):criteria
+  if(analysis&&purposeRequested&&!rows.some(row=>row.templateId==='news-purpose'))rows=[...rows,...firstGradeNewsCriteria('NEWS_ANALYSIS','Identifica el propósito').filter(row=>row.templateId==='news-purpose')]
+  if(analysis&&inferenceRequested&&!rows.some(row=>row.templateId==='news-interpretation'))rows=[...rows,...firstGradeNewsCriteria('NEWS_ANALYSIS','Explica las inferencias').filter(row=>row.templateId==='news-interpretation')]
   const newsworthiness=rows.some(row=>row.templateId==='news-feature-newsworthiness')
   if(newsworthiness&&rows.some(row=>row.templateId==='news-purpose'))rows=rows.filter(row=>row.templateId!=='news-feature-newsworthiness')
-  if(rows.some(row=>row.templateId==='news-feature-paratext')&&!/inferen|interpreta|sentido global/.test(task))rows=rows.filter(row=>row.templateId!=='news-interpretation')
+  if(rows.some(row=>row.templateId==='news-feature-paratext')&&!/inferen|interpreta|deduc|sentido global/.test(task))rows=rows.filter(row=>row.templateId!=='news-interpretation')
   if(comparison&&/titular|paratext/.test(task)&&!/estructura|entrada|cuerpo/.test(task)){
     rows=rows.filter(row=>row.templateId!=='news-structure')
   }
@@ -92,11 +99,37 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
     observable:'Dispone la versión final de la noticia en el mural del aula, legible y accesible para su destinatario.',
     progressionLevels:['La versión final se puede leer en el mural del aula y sus partes permiten reconocer el hecho comunicado.','La noticia se consulta en el mural; un rótulo o fragmento dificulta leer un dato secundario.','La noticia está en el mural, pero faltan partes de la versión final que permiten comprender el hecho.','El contenido del mural difiere de la versión final y cambia el hecho informado.','No hay evidencia de la publicación solicitada en el mural.'],
   }]
-  if(/ANALYSIS/.test(activity)&&/\bescuch\w*\b/.test(task)){
-    rows=rows.filter(row=>row.templateId.includes('-feature-'))
+  if(writing&&/\bfuentes\b/.test(task)&&/busqu\w*|document\w*|investig\w*|consult\w*/.test(task))rows=[...rows,{
+    templateId:'news-research-sources',title:'Documentación y comprobación de los datos',weight:4,
+    observable:'Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.',
+    progressionLevels:['Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.','Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.','Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.','Atribuye a una fuente un dato que no contiene o presenta como confirmado un hecho pendiente.','No identifica el origen de los datos ni su estado de comprobación.'],
+  }]
+  const sentenceKinds=['coordinadas','subordinadas'].filter(kind=>task.includes(kind))
+  if(sentenceKinds.length&&(writing||analysis)){
+    const kinds=sentenceKinds.join(' y '),explain=/expli\w*.*(?:relacion|funcion)/.test(task)
+    const eachExample=explain&&/\b(?:un|1) ejemplo de cada (?:clase|tipo)/.test(task)
+    rows=[...rows,{
+      templateId:'news-feature-sentence-relations',title:'Relaciones entre las oraciones de la noticia',weight:3,
+      observable:`${writing?'Emplea':'Identifica'} oraciones ${kinds} para relacionar las ideas de la noticia${explain?'; explica la relación que expresa '+(eachExample?'un ejemplo de cada clase de oración':'cada recurso solicitado'):''}.`,
+      ...(eachExample?{coveredDeliveryKeys:['quantity-ejemplo']}:{}),
+      progressionLevels:[
+        `${writing?'Construye':'Reconoce'} oraciones ${kinds} que relacionan ideas sin cambiar los hechos${explain?'; explica con ejemplos la función de cada clase solicitada':''}.`,
+        `Las relaciones entre oraciones se comprenden; ${explain?'un ejemplo queda sin explicar por qué expresa esa relación':'un enlace deja ambigua una relación secundaria'}.`,
+        `Presenta oraciones ${kinds}, pero ${explain?'describe su contenido sin explicar la relación que expresa cada clase':'varios enlaces no permiten reconocer cómo se relacionan sus ideas'}.`,
+        'La relación atribuida o construida entre las oraciones invierte la causa, el tiempo o el vínculo entre los hechos.',
+        `No aporta evidencia pertinente de las oraciones ${kinds} solicitadas${explain?' ni de su función en la noticia':''}.`,
+      ],
+    }]
+  }
+  const listening=analysis&&/\bescuch\w*\b/.test(task)
+  if(listening){
+    rows=rows.filter(row=>row.templateId.includes('-feature-')
+      ||row.templateId.includes('-procedure-')&&row.templateId!=='news-procedure-paraphrase'
+      ||row.templateId==='news-purpose'&&purposeRequested||row.templateId==='news-interpretation'&&inferenceRequested)
+    const questions=/\bcomo\b/.test(task)?'qué sucedió, quiénes participaron, dónde, cuándo y cómo':'qué sucedió, quiénes participaron, dónde y cuándo'
     rows.push({templateId:/parafras|(?:sus|propias) palabras/.test(task)?'news-procedure-paraphrase':'news-listening-data',title:'Comprensión de la noticia escuchada',weight:5,
-      observable:'Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde y cuándo.',
-      progressionLevels:['Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento sin añadir datos ajenos al audio.','El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.','Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.','La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.','No presenta una reconstrucción reconocible del hecho escuchado.'],
+      observable:`Reconstruye con sus palabras el sentido de la noticia escuchada: ${questions}.`,
+      progressionLevels:[`Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento${/\bcomo\b/.test(task)?' y la forma en que ocurrió':''} sin añadir datos ajenos al audio.`,'El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.','Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.','La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.','No presenta una reconstrucción reconocible del hecho escuchado.'],
     })
     if(/interes|relevancia|noticioso/.test(task))rows.push({templateId:'news-listening-relevance',title:'Interés del hecho escuchado para el público',weight:3,
       observable:'Explica por qué el hecho de la noticia escuchada puede interesar al público, apoyándose en datos del audio.',
@@ -104,13 +137,30 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
     })
   }
   return rows.map(row=>{
-    const withLevels=(title:string,levels:ContextualTopicCriterion['progressionLevels'])=>({...row,title,observable:levels[0],progressionLevels:levels})
+    const withLevels=(title:string,levels:ContextualTopicCriterion['progressionLevels'])=>{
+      const observable=requestedContent&&['news-essential','news-content'].includes(row.templateId)?`${levels[0]} El contenido corresponde a ${requestedContent}.`:levels[0]
+      return {...row,title,observable,progressionLevels:[observable,...levels.slice(1)] as ContextualTopicCriterion['progressionLevels']}
+    }
     if(row.templateId==='news-purpose'&&newsworthiness)return withLevels('Propósito y relevancia del hecho noticioso',[
       'Explica el propósito informativo y justifica qué hace noticioso el hecho por su actualidad o relevancia para el público, con datos de la noticia.',
       'Reconoce el propósito y un dato relevante; deja implícita su relación con el interés del público.',
       'Reconoce de qué trata la noticia, pero justifica su relevancia solo por una preferencia personal.',
       'Atribuye actualidad o relevancia al hecho mediante datos que contradicen la noticia.',
       'No identifica el propósito informativo ni justifica la relevancia del hecho.',
+    ])
+    if(row.templateId==='news-purpose'&&analysis)return withLevels(row.title,[
+      `Reconoce el propósito informativo y el hecho que comunica la noticia ${listening?'escuchada':'leída'}.`,
+      'Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.',
+      'Identifica el tema sin explicar qué se informa sobre el hecho.',
+      'Atribuye al texto una intención contraria a la información de la noticia.',
+      'No identifica el hecho ni el propósito informativo de la noticia.',
+    ])
+    if(row.templateId==='news-interpretation'&&analysis)return withLevels(row.title,[
+      'Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.',
+      'Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.',
+      'Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.',
+      'La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.',
+      'No presenta una inferencia reconocible sustentada en la información de la noticia.',
     ])
     if(row.templateId==='news-sequence'&&writing)return withLevels(row.title,[
       'Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.',
@@ -146,6 +196,13 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
       'Incluye titular y datos, pero falta una entrada que permita al destinatario reconocer el hecho principal.',
       'El titular anuncia un hecho distinto del que desarrolla el cuerpo o el vocabulario impide comprenderlo.',
       'No presenta una organización que permita a la comunidad escolar reconocer la noticia.',
+    ])
+    if(row.templateId==='news-structure'&&writing&&/estudiantes del centro/.test(task))return withLevels('Organización y destinatario de la noticia',[
+      `Titular, entrada y cuerpo organizan el hecho para estudiantes del centro${/formal/.test(task)?', con un registro formal pero sencillo':''}.`,
+      'Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.',
+      'Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.',
+      'El titular contradice el cuerpo o las formulaciones cambian el sentido del hecho para el público.',
+      'No presenta una organización comprensible de la noticia para estudiantes del centro.',
     ])
     if(row.templateId==='news-content'&&/\bfichas?\b/.test(task))return withLevels(row.title,[
       'Comunica los hechos de las fichas suministradas, distinguiendo los datos principales de los detalles sin inventar información.',
@@ -188,6 +245,13 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
       'Alterna tiempos sin una referencia que permita relacionar varias acciones del hecho.',
       'Una forma verbal presenta como ocurrido un hecho pendiente o cambia el momento informado.',
       'Las formas verbales no permiten reconocer cuándo ocurren los hechos de la noticia.',
+    ])
+    if(row.templateId==='news-feature-thematic-vocabulary'&&writing)return withLevels(row.title,[
+      'Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.',
+      'Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.',
+      'Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.',
+      'Atribuye una acción a otro participante o usa un término que cambia el hecho informado.',
+      'El vocabulario no permite reconocer las acciones ni los referentes del hecho.',
     ])
     if(row.templateId==='news-feature-connectors'&&writing)return withLevels(row.title,[
       'Los conectores de orden y temporales permiten seguir la secuencia de los hechos informados.',
@@ -238,7 +302,7 @@ export function refineFirstGradeNewsRequirements(activity:string,description:str
         'No explica una relación entre los paratextos presentes y la información de la noticia.',
       ])
     }
-    return row
+    return requestedContent&&['news-essential','news-content'].includes(row.templateId)?withLevels(row.title,row.progressionLevels):row
   })
 }
 

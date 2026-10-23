@@ -1,0 +1,770 @@
+{
+  "catalog": "evaluation-2026.156",
+  "bankSha256": "f5ca5832cba962891caf2f9df7612b3743d001212b21acd3a481f09f3da417ee",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "321245c6+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-NOT-A01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 4.77049999999997,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:0",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Inferencia del vocabulario en contexto",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No propone un significado relacionado con el contexto ni señala indicios para inferirlo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:1",
+            "templateId": "news-purpose",
+            "title": "Identificación de la función de la noticia",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica el tema sin explicar qué se informa sobre el hecho.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el hecho ni el propósito informativo de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:2",
+            "templateId": "news-interpretation",
+            "title": "Interpretación de la información",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una inferencia reconocible sustentada en la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:3",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Comprensión de la noticia escuchada",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible del hecho escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.7975000000000136,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:0",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:1",
+            "templateId": "news-purpose",
+            "title": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:2",
+            "templateId": "news-interpretation",
+            "title": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:3",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo.",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.501199999999983,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:0",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No propone un significado relacionado con el contexto ni señala indicios para inferirlo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:1",
+            "templateId": "news-purpose",
+            "title": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica el tema sin explicar qué se informa sobre el hecho.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el hecho ni el propósito informativo de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:2",
+            "templateId": "news-interpretation",
+            "title": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+                "scoreUnits": 333
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+                "scoreUnits": 167
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una inferencia reconocible sustentada en la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:3",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo.",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una reconstrucción reconocible del hecho escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-A01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1509000000000356,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:0",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Inferencia del vocabulario en contexto",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje. Parcial (50%): Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:1",
+            "templateId": "news-purpose",
+            "title": "Identificación de la función de la noticia",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada. Parcial (50%): Identifica el tema sin explicar qué se informa sobre el hecho.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia escuchada.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:2",
+            "templateId": "news-interpretation",
+            "title": "Interpretación de la información",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido. Parcial (50%): Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+            "maxScore": 5,
+            "maxScoreUnits": 500,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:3",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Comprensión de la noticia escuchada",
+            "description": "Reconstruye con sus palabras el sentido de la noticia escuchada: qué sucedió, quiénes participaron, dónde, cuándo y cómo. Parcial (50%): Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye con sus palabras el hecho escuchado y relaciona participantes, lugar y momento y la forma en que ocurrió sin añadir datos ajenos al audio.",
+              "El relato conserva el hecho del audio; una referencia secundaria queda sin precisar.",
+              "Repite datos aislados del audio, pero omite una relación necesaria entre lo ocurrido, sus participantes o su contexto.",
+              "La reconstrucción atribuye al audio un participante, lugar, momento o hecho distinto del informado.",
+              "No presenta una reconstrucción reconocible del hecho escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

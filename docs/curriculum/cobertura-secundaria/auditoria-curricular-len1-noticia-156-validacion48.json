@@ -1,0 +1,463 @@
+{
+  "catalog": "evaluation-2026.156",
+  "reviewer": "Codex, mismo autor; revisión interna, sin evaluación externa independiente",
+  "sourceHead": "321245c6b361d363698efc5cbb64293de2c752ed",
+  "workingTree": true,
+  "sourceHashes": {
+    "apps/backend/src/modules/evaluation-instruments/catalog-current.spec.ts": "09c56ab1c8be0c705609e60b8e4189d4486803b081ed059618b8dfbeb9ef4a55",
+    "apps/backend/src/modules/evaluation-instruments/catalog-current.ts": "19f941ac6f0deb9444f0773bc748fbfbead8c7df36e203b66dddd707104b5835",
+    "apps/backend/src/modules/evaluation-instruments/catalog-v155.ts": "764b6efd4c900e5b7bba69207ce86b72c3f62a81b54c13f8b2a9c03de404e33b",
+    "apps/backend/src/modules/evaluation-instruments/curricular-news-procedures.spec.ts": "8cdaa046538e89a831c3d59182d7ed4fcd9670f21f4dd0976c2f9f1bd1bff824",
+    "apps/backend/src/modules/evaluation-instruments/social-common-contract.spec.ts": "0473ff7acab8cb6134ce963cfa9a569eed1b10a58bb7d29791cb07cd4aa81458",
+    "apps/backend/src/modules/evaluation-instruments/social-grade-four-contract.spec.ts": "0261f81b0b36707a3b6b641daca499c3d36705485f0d3cc4399522851dff682f",
+    "apps/backend/src/modules/evaluation-instruments/social-grade-six-contract.spec.ts": "c56bb5918d1d39b5757ffc74bb450c4c4fcff1fb7522444ed9598156598f12c6",
+    "packages/shared/src/language-feature-criteria.ts": "b383187e95a1d0a387e5a58dff03f19268019f791a0407d1e049e1d4f3bed30c",
+    "packages/shared/src/language-procedure-criteria.ts": "69aaf228ff0b346e58257d4feda75de05f9cbcb32801ca9f8192c97ab6df1de4",
+    "packages/shared/src/secondary-news-grade-one.ts": "8e5a90d8c713990069ba689958c7b1512b8a3519f22e455b41aa0726bf911426",
+    "packages/shared/src/secondary-topic-criteria.ts": "f73e1f722b74326cda360ee520f3d1454a3b135d0623e74cd2331d0d198e9efe",
+    "packages/shared/src/task-delivery-requirements.ts": "3f916655f2b7644bef5dd3031de019cdb05ef0380ac2c63bd0b8cb407efb282c"
+  },
+  "currentReplay": {
+    "command": "node .wrangler/realistic-audit/verify-48-current-source.mjs",
+    "outputs": 48,
+    "allExact": true,
+    "originalArtifactsUnchanged": true
+  },
+  "outputs": [
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Leídos los cinco criterios de cada formato y sus descriptores: hecho e interrogantes, estructura periodística, secuencia, lenguaje y convenciones. No exige proceso de revisión, registro formal ni dos clases de conectores como requisito añadido a la consigna breve.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Ficha e interrogantes en contenido; estructura con destinatario escolar; temporalidad sin duplicación; consistencia verbal; borrador/final. Los niveles intermedios describen omisión, referencia ambigua o pérdida de relación, sin inventar foto ni bibliografía.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y relevancia agrupados, partes e interrogantes, evidencia del texto y función de titular/foto/pie. No crea noticia ni exige una inferencia adicional separada por la palabra sentido.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hechos de las fichas, estructura e interrogantes, turnos y temporalidad, comunicación oral y aportación de cada integrante. No impone grabación, diapositivas ni cooperación estructurada. El cotejo agrupado no identifica por separado cada dato faltante.",
+      "changesSince155": "Se explicita el asunto pedido dentro de la evidencia de contenido, sin tomar su mención como cobertura curricular."
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Propósito y hecho, contraste de contenidos, apoyo en ambas noticias, síntesis del contraste y correspondencia entre paratextos y hechos. La conclusión es síntesis del propio contraste; no exige documento o sección adicional. Se retiró la comparación obligatoria de entrada y cuerpo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Revisión del texto recibido: tiempos, sinónimos, tres clases de abreviación con explicación, puntuación y versión corregida. No exige crear hechos ni reorganizar estructura. Las tres abreviaciones permanecen agrupadas; un Sí/No no diagnostica cuál incumple.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Comprensión del audio mediante reconstrucción con palabras propias y datos, más relevancia para el público. No impone escrito, fotografía ni citas de un texto no entregado. Dos criterios pertinentes al desempeño, sin fijar un número mínimo.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes.",
+      "changesSince155": "La descripción distingue la versión final solicitada."
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes.",
+      "changesSince155": "La descripción distingue la versión final solicitada."
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes.",
+      "changesSince155": "La descripción distingue la versión final solicitada."
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Noticia, plan/destinatario, borrador/revisión y publicación legible en mural. Foto o dibujo opcionales no se convierten en criterio obligatorio. El plan se relaciona con su propósito, no solo con una lista de partes.",
+      "changesSince155": "La descripción distingue la versión final solicitada."
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-reservado-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Una dimensión focal de puntuación, cotejada con original y corrección. Conserva datos y palabras; excluye revisión de abreviaturas e imágenes. El criterio único agrupa el alcance solicitado y sus diferencias de legibilidad y significado, sin añadir otros productos.",
+      "changesSince155": "Contenido y descriptores contrastados sin cambios semánticos respecto a155."
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Anticipación con indicios y comprobación; paráfrasis fiel; vocabulario contextual; propósito informativo y relación inferida sustentada. Son cinco dimensiones distintas, no creación ni experimento.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Anticipación con indicios y comprobación; paráfrasis fiel; vocabulario contextual; propósito informativo y relación inferida sustentada. Son cinco dimensiones distintas, no creación ni experimento.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Anticipación con indicios y comprobación; paráfrasis fiel; vocabulario contextual; propósito informativo y relación inferida sustentada. Son cinco dimensiones distintas, no creación ni experimento.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Anticipación con indicios y comprobación; paráfrasis fiel; vocabulario contextual; propósito informativo y relación inferida sustentada. Son cinco dimensiones distintas, no creación ni experimento.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hecho ambiental internacional, organización para destinatario escolar y registro solicitado; documentación/comprobación; verbos y sustantivos; coordinación y subordinación con ejemplo explicado de cada clase; borrador y final. La cantidad queda en la dimensión sintáctica, sin duplicación en formato.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hecho ambiental internacional, organización para destinatario escolar y registro solicitado; documentación/comprobación; verbos y sustantivos; coordinación y subordinación con ejemplo explicado de cada clase; borrador y final. La cantidad queda en la dimensión sintáctica, sin duplicación en formato.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hecho ambiental internacional, organización para destinatario escolar y registro solicitado; documentación/comprobación; verbos y sustantivos; coordinación y subordinación con ejemplo explicado de cada clase; borrador y final. La cantidad queda en la dimensión sintáctica, sin duplicación en formato.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-P02",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Hecho ambiental internacional, organización para destinatario escolar y registro solicitado; documentación/comprobación; verbos y sustantivos; coordinación y subordinación con ejemplo explicado de cada clase; borrador y final. La cantidad queda en la dimensión sintáctica, sin duplicación en formato.",
+      "changesSince155": "Caso nuevo de procedimientos, con salida anterior155 conservada."
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "rubrica",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Escucha: reconstrucción fiel con las cinco interrogantes, propósito informativo, inferencias justificadas y vocabulario contextual. La descripción y el descriptor superior incluyen cómo ocurrió; no exige creación, escritura, fotografía ni experimentos. La escucha breveR01 conserva su alcance sin inferencias ni propósito añadidos."
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-cotejo",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Escucha: reconstrucción fiel con las cinco interrogantes, propósito informativo, inferencias justificadas y vocabulario contextual. La descripción y el descriptor superior incluyen cómo ocurrió; no exige creación, escritura, fotografía ni experimentos. La escucha breveR01 conserva su alcance sin inferencias ni propósito añadidos."
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "escala",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Escucha: reconstrucción fiel con las cinco interrogantes, propósito informativo, inferencias justificadas y vocabulario contextual. La descripción y el descriptor superior incluyen cómo ocurrió; no exige creación, escritura, fotografía ni experimentos. La escucha breveR01 conserva su alcance sin inferencias ni propósito añadidos."
+    },
+    {
+      "caseId": "LEN1-NOT-A01",
+      "format": "lista-ponderada",
+      "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+      "allCriteriaAndDescriptorsRead": true,
+      "judgment": "ACEPTADO_LOCALMENTE_EN_SU_CONSIGNA",
+      "rationale": "Escucha: reconstrucción fiel con las cinco interrogantes, propósito informativo, inferencias justificadas y vocabulario contextual. La descripción y el descriptor superior incluyen cómo ocurrió; no exige creación, escritura, fotografía ni experimentos. La escucha breveR01 conserva su alcance sin inferencias ni propósito añadidos."
+    }
+  ],
+  "topicClosed": false,
+  "pending": [
+    "Instalar/verificar156 y sus nuevas causas mediante muestra HTTP/DB",
+    "Navegador personal bloqueado en login; no cierre visual personal",
+    "Concluir contraste de límites de modalidades de comprensión antes del cierre del tema; indicadores de asignatura siguen abiertos",
+    "Continuar guía y los demás temas y grados"
+  ]
+}

@@ -98,8 +98,8 @@ export function deliveryConditions(description:string,options:DeliveryOptions={}
  return conditions
 }
 const distinctStrings=(values:string[])=>[...new Set(values)]
-export function deliveryCriteria(description:string,options:DeliveryOptions={}):ContextualTopicCriterion[]{
- const conditions=deliveryConditions(description,options)
+export function deliveryCriteria(description:string,options:DeliveryOptions={},coveredKeys:ReadonlySet<string>=new Set()):ContextualTopicCriterion[]{
+ const conditions=deliveryConditions(description,options).filter(condition=>!coveredKeys.has(condition.key))
  if(!conditions.length)return []
  const appearance=conditions.filter(c=>['font','size','spacing','indent','color','title','cover'].includes(c.key))
  // Un formato de archivo es binario; dentro de una rúbrica forma parte de la entrega presentada.
@@ -155,6 +155,7 @@ function conditionCriterion(templateId:string,title:string,conditions:Condition[
   ]})),
  }
 }
-export function withDeliveryCriteria<T extends {templateId:string}>(criteria:T[],description:string,options:DeliveryOptions={}):(T|ContextualTopicCriterion)[]{
- return [...criteria,...deliveryCriteria(description,options).filter(c=>!criteria.some(row=>row.templateId===c.templateId))]
+export function withDeliveryCriteria<T extends {templateId:string;coveredDeliveryKeys?:string[]}>(criteria:T[],description:string,options:DeliveryOptions={}):(T|ContextualTopicCriterion)[]{
+ const coveredKeys=new Set(criteria.flatMap(row=>row.coveredDeliveryKeys??[]))
+ return [...criteria,...deliveryCriteria(description,options,coveredKeys).filter(c=>!criteria.some(row=>row.templateId===c.templateId))]
 }

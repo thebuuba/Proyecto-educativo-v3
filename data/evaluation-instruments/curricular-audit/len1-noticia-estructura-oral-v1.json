@@ -1,0 +1,12 @@
+{
+  "version":"curricular-len1-noticia-estructura-oral-v1",
+  "provenance":"SINTETICO; reserva del mismo autor con expectativas anteriores a su salida. No se usa la identificación de partes por lectura para acreditar automáticamente su comprensión al escuchar.",
+  "context":{"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "source":{"pdfPage":69,"procedureElementId":"d60a8e8d-d000-5b43-897d-e0eb48136a1c"},
+  "cases":[{
+    "id":"LEN1-NOT-A02",
+    "title":"Cómo se organiza la noticia que escuchamos",
+    "description":"Con la noticia que leeré y la fotografía con su pie que tienen delante, identifiquen el titular, la entrada y el cuerpo a medida que escuchan. Expliquen para qué sirve cada parte y qué información aportan la fotografía y el pie de foto para comprender el hecho. Respondan con datos del audio, sin redactar una noticia propia.",
+    "expected":{"content":["Noticia escuchada y apoyo visual entregado"],"actions":["Reconocer partes durante escucha","Explicar función de cada parte","Relacionar fotografía/pie con hecho escuchado","Sustentar respuestas con audio"],"product":"Respuestas de comprensión multimodal","explicit":["Titular, entrada y cuerpo identificados en lo escuchado","Función de esas tres partes","Aporte de fotografía y pie dados a comprender el hecho","Apoyo en datos del audio"],"excluded":["Redactar noticia nueva","Producir fotografías","Transcribir noticia","Exigir responder las cinco interrogantes como entrega adicional no solicitada"],"grouping":["Estructura y función de las partes","Relación de apoyo visual y hecho","Sustento de la comprensión en audio"]}
+  }]
+}

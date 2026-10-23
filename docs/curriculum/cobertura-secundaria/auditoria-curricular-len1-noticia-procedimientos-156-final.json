@@ -1,0 +1,2004 @@
+{
+  "catalog": "evaluation-2026.156",
+  "bankSha256": "216d34cc85aa742651301af432bb091fbed11b69483c9c0c25d31b10f7badc68",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "321245c6+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-NOT-P01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.89530000000002,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:0",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Paráfrasis del contenido disponible",
+            "description": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+              "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+              "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+              "La paráfrasis cambia el sentido de la información o añade hechos que no aparecen en el texto disponible.",
+              "No presenta una paráfrasis reconocible del texto leído o escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una paráfrasis reconocible del texto leído o escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-prediction:1",
+            "templateId": "news-procedure-prediction",
+            "title": "Anticipación y comprobación del contenido",
+            "description": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+              "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+              "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+              "Afirma que la lectura confirma una predicción contradicha por el texto.",
+              "No presenta una predicción ni evidencia del contraste solicitado con la lectura."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción ni evidencia del contraste solicitado con la lectura.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:2",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Inferencia del vocabulario en contexto",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No propone un significado relacionado con el contexto ni señala indicios para inferirlo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:3",
+            "templateId": "news-purpose",
+            "title": "Identificación de la función de la noticia",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica el tema sin explicar qué se informa sobre el hecho.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el hecho ni el propósito informativo de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:4",
+            "templateId": "news-interpretation",
+            "title": "Interpretación de la información",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una inferencia reconocible sustentada en la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.439300000000003,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:0",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible.",
+            "description": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+              "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+              "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+              "La paráfrasis cambia el sentido de la información o añade hechos que no aparecen en el texto disponible.",
+              "No presenta una paráfrasis reconocible del texto leído o escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-prediction:1",
+            "templateId": "news-procedure-prediction",
+            "title": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.",
+            "description": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+              "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+              "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+              "Afirma que la lectura confirma una predicción contradicha por el texto.",
+              "No presenta una predicción ni evidencia del contraste solicitado con la lectura."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:2",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:3",
+            "templateId": "news-purpose",
+            "title": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:4",
+            "templateId": "news-interpretation",
+            "title": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.4589999999999463,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:0",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible.",
+            "description": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+              "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+              "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+              "La paráfrasis cambia el sentido de la información o añade hechos que no aparecen en el texto disponible.",
+              "No presenta una paráfrasis reconocible del texto leído o escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+                "scoreUnits": 526
+              },
+              {
+                "levelId": "L3",
+                "text": "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+                "scoreUnits": 351
+              },
+              {
+                "levelId": "L2",
+                "text": "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+                "scoreUnits": 175
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una paráfrasis reconocible del texto leído o escuchado.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-prediction:1",
+            "templateId": "news-procedure-prediction",
+            "title": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.",
+            "description": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+              "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+              "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+              "Afirma que la lectura confirma una predicción contradicha por el texto.",
+              "No presenta una predicción ni evidencia del contraste solicitado con la lectura."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción ni evidencia del contraste solicitado con la lectura.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:2",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+                "scoreUnits": 316
+              },
+              {
+                "levelId": "L3",
+                "text": "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+                "scoreUnits": 211
+              },
+              {
+                "levelId": "L2",
+                "text": "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+                "scoreUnits": 105
+              },
+              {
+                "levelId": "L1",
+                "text": "No propone un significado relacionado con el contexto ni señala indicios para inferirlo.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:3",
+            "templateId": "news-purpose",
+            "title": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica el tema sin explicar qué se informa sobre el hecho.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el hecho ni el propósito informativo de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:4",
+            "templateId": "news-interpretation",
+            "title": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+                "scoreUnits": 421
+              },
+              {
+                "levelId": "L3",
+                "text": "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+                "scoreUnits": 281
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+                "scoreUnits": 140
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una inferencia reconocible sustentada en la información de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0960999999999785,
+      "automatic": {
+        "activityType": "NEWS_ANALYSIS",
+        "instrumentType": "lista-cotejo",
+        "defaults": {
+          "activityType": "NEWS_ANALYSIS",
+          "technique": "observacion-sistematica",
+          "instrument": "lista-cotejo"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-paraphrase:0",
+            "templateId": "news-procedure-paraphrase",
+            "title": "Paráfrasis del contenido disponible",
+            "description": "Reconstruye con sus propias palabras el hecho y los datos principales de la noticia, conservando su sentido sin añadir información ajena al texto disponible. Parcial (50%): Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+            "maxScore": 5.26,
+            "maxScoreUnits": 526,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "La paráfrasis conserva el hecho y los datos principales de la noticia y sus relaciones, con formulaciones propias que mantienen el sentido del texto disponible.",
+              "Recupera el hecho y los datos principales de la noticia; una formulación requiere aclaración, pero conserva el sentido central.",
+              "Recupera información aislada sin reconstruir las relaciones necesarias para comprender el texto.",
+              "La paráfrasis cambia el sentido de la información o añade hechos que no aparecen en el texto disponible.",
+              "No presenta una paráfrasis reconocible del texto leído o escuchado."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-prediction:1",
+            "templateId": "news-procedure-prediction",
+            "title": "Anticipación y comprobación del contenido",
+            "description": "Formula una predicción sobre el hecho y los datos principales de la noticia a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior. Parcial (50%): Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona su predicción con un indicio identificable y explica qué información de la lectura la confirma o modifica.",
+              "Identifica el indicio y contrasta la predicción; deja implícita una relación con la información leída.",
+              "Propone una predicción, pero no relaciona su confirmación o cambio con información del texto.",
+              "Afirma que la lectura confirma una predicción contradicha por el texto.",
+              "No presenta una predicción ni evidencia del contraste solicitado con la lectura."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-procedure-vocabulary:2",
+            "templateId": "news-procedure-vocabulary",
+            "title": "Inferencia del vocabulario en contexto",
+            "description": "Deduce el significado de las palabras desconocidas de noticia mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje. Parcial (50%): Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+            "maxScore": 3.16,
+            "maxScoreUnits": 316,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Propone un significado compatible con el pasaje y señala las palabras o relaciones del contexto que sustentan la inferencia.",
+              "El significado propuesto conserva el sentido del pasaje; un indicio necesita explicarse.",
+              "Propone un significado posible de la palabra, pero no demuestra que corresponda al contexto del pasaje.",
+              "El significado atribuido contradice las relaciones del contexto y cambia el sentido del pasaje.",
+              "No propone un significado relacionado con el contexto ni señala indicios para inferirlo."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-purpose:3",
+            "templateId": "news-purpose",
+            "title": "Identificación de la función de la noticia",
+            "description": "Reconoce el propósito informativo y el hecho que comunica la noticia leída. Parcial (50%): Identifica el tema sin explicar qué se informa sobre el hecho.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconoce el propósito informativo y el hecho que comunica la noticia leída.",
+              "Señala la finalidad de informar, pero deja sin precisar qué dato del hecho se comunica.",
+              "Identifica el tema sin explicar qué se informa sobre el hecho.",
+              "Atribuye al texto una intención contraria a la información de la noticia.",
+              "No identifica el hecho ni el propósito informativo de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-interpretation:4",
+            "templateId": "news-interpretation",
+            "title": "Interpretación de la información",
+            "description": "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido. Parcial (50%): Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+            "maxScore": 4.21,
+            "maxScoreUnits": 421,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Establece inferencias sobre las relaciones del hecho y explica qué datos de la noticia sustentan lo deducido.",
+              "Identifica la relación inferida y sus datos, pero deja sin explicar cómo un dato apoya lo deducido.",
+              "Repite datos del hecho sin establecer la relación que permitiría sostener su inferencia.",
+              "La inferencia contradice un dato disponible o se sustenta en un hecho ajeno a la noticia.",
+              "No presenta una inferencia reconocible sustentada en la información de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.5059999999999718,
+      "automatic": {
+        "activityType": "NEWS_WRITING",
+        "instrumentType": "rubrica",
+        "defaults": {
+          "activityType": "NEWS_WRITING",
+          "technique": "analisis-producciones",
+          "instrument": "rubrica"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Información esencial de la noticia",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+                "scoreUnits": 334
+              },
+              {
+                "levelId": "L3",
+                "text": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+                "scoreUnits": 223
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+                "scoreUnits": 111
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un hecho noticioso reconocible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Organización y destinatario de la noticia",
+            "description": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+              "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+              "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+              "El titular contradice el cuerpo o las formulaciones cambian el sentido del hecho para el público.",
+              "No presenta una organización comprensible de la noticia para estudiantes del centro."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+                "scoreUnits": 334
+              },
+              {
+                "levelId": "L3",
+                "text": "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+                "scoreUnits": 223
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+                "scoreUnits": 111
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una organización comprensible de la noticia para estudiantes del centro.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Secuencia y cohesión",
+            "description": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+              "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+              "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+              "El orden del escrito invierte una relación temporal o causal entre los hechos.",
+              "No se reconoce una secuencia comprensible entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia comprensible entre los datos de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-thematic-vocabulary:3",
+            "templateId": "news-feature-thematic-vocabulary",
+            "title": "Los verbos y sustantivos del vocabulario temático",
+            "description": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+              "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+              "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+              "Atribuye una acción a otro participante o usa un término que cambia el hecho informado.",
+              "El vocabulario no permite reconocer las acciones ni los referentes del hecho."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L3",
+                "text": "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+                "scoreUnits": 67
+              },
+              {
+                "levelId": "L1",
+                "text": "El vocabulario no permite reconocer las acciones ni los referentes del hecho.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Revisión del borrador",
+            "description": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.33,
+            "maxScoreUnits": 133,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+                "scoreUnits": 44
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-research-sources:5",
+            "templateId": "news-research-sources",
+            "title": "Documentación y comprobación de los datos",
+            "description": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+              "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+              "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+              "Atribuye a una fuente un dato que no contiene o presenta como confirmado un hecho pendiente.",
+              "No identifica el origen de los datos ni su estado de comprobación."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el origen de los datos ni su estado de comprobación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-sentence-relations:6",
+            "templateId": "news-feature-sentence-relations",
+            "title": "Relaciones entre las oraciones de la noticia",
+            "description": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+              "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+              "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+              "La relación atribuida o construida entre las oraciones invierte la causa, el tiempo o el vínculo entre los hechos.",
+              "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L3",
+                "text": "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+                "scoreUnits": 67
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1107999999999265,
+      "automatic": {
+        "activityType": "NEWS_WRITING",
+        "instrumentType": "rubrica",
+        "defaults": {
+          "activityType": "NEWS_WRITING",
+          "technique": "analisis-producciones",
+          "instrument": "rubrica"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+            "description": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+              "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+              "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+              "El titular contradice el cuerpo o las formulaciones cambian el sentido del hecho para el público.",
+              "No presenta una organización comprensible de la noticia para estudiantes del centro."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+            "description": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+              "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+              "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+              "El orden del escrito invierte una relación temporal o causal entre los hechos.",
+              "No se reconoce una secuencia comprensible entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-thematic-vocabulary:3",
+            "templateId": "news-feature-thematic-vocabulary",
+            "title": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+            "description": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+              "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+              "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+              "Atribuye una acción a otro participante o usa un término que cambia el hecho informado.",
+              "El vocabulario no permite reconocer las acciones ni los referentes del hecho."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "description": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.33,
+            "maxScoreUnits": 133,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-research-sources:5",
+            "templateId": "news-research-sources",
+            "title": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.",
+            "description": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+              "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+              "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+              "Atribuye a una fuente un dato que no contiene o presenta como confirmado un hecho pendiente.",
+              "No identifica el origen de los datos ni su estado de comprobación."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-sentence-relations:6",
+            "templateId": "news-feature-sentence-relations",
+            "title": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración.",
+            "description": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+              "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+              "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+              "La relación atribuida o construida entre las oraciones invierte la causa, el tiempo o el vínculo entre los hechos.",
+              "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.403099999999995,
+      "automatic": {
+        "activityType": "NEWS_WRITING",
+        "instrumentType": "rubrica",
+        "defaults": {
+          "activityType": "NEWS_WRITING",
+          "technique": "analisis-producciones",
+          "instrument": "rubrica"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+                "scoreUnits": 334
+              },
+              {
+                "levelId": "L3",
+                "text": "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+                "scoreUnits": 223
+              },
+              {
+                "levelId": "L2",
+                "text": "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+                "scoreUnits": 111
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta un hecho noticioso reconocible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+            "description": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+              "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+              "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+              "El titular contradice el cuerpo o las formulaciones cambian el sentido del hecho para el público.",
+              "No presenta una organización comprensible de la noticia para estudiantes del centro."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+                "scoreUnits": 334
+              },
+              {
+                "levelId": "L3",
+                "text": "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+                "scoreUnits": 223
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+                "scoreUnits": 111
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una organización comprensible de la noticia para estudiantes del centro.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+            "description": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+              "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+              "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+              "El orden del escrito invierte una relación temporal o causal entre los hechos.",
+              "No se reconoce una secuencia comprensible entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "No se reconoce una secuencia comprensible entre los datos de la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-thematic-vocabulary:3",
+            "templateId": "news-feature-thematic-vocabulary",
+            "title": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+            "description": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+              "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+              "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+              "Atribuye una acción a otro participante o usa un término que cambia el hecho informado.",
+              "El vocabulario no permite reconocer las acciones ni los referentes del hecho."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L3",
+                "text": "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+                "scoreUnits": 67
+              },
+              {
+                "levelId": "L1",
+                "text": "El vocabulario no permite reconocer las acciones ni los referentes del hecho.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "description": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados.",
+            "maxScore": 1.33,
+            "maxScoreUnits": 133,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+                "scoreUnits": 44
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-research-sources:5",
+            "templateId": "news-research-sources",
+            "title": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.",
+            "description": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+              "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+              "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+              "Atribuye a una fuente un dato que no contiene o presenta como confirmado un hecho pendiente.",
+              "No identifica el origen de los datos ni su estado de comprobación."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L3",
+                "text": "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+                "scoreUnits": 178
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+                "scoreUnits": 89
+              },
+              {
+                "levelId": "L1",
+                "text": "No identifica el origen de los datos ni su estado de comprobación.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-sentence-relations:6",
+            "templateId": "news-feature-sentence-relations",
+            "title": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración.",
+            "description": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+              "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+              "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+              "La relación atribuida o construida entre las oraciones invierte la causa, el tiempo o el vínculo entre los hechos.",
+              "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+                "scoreUnits": 200
+              },
+              {
+                "levelId": "L3",
+                "text": "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L2",
+                "text": "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+                "scoreUnits": 67
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-NOT-P02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.250099999999975,
+      "automatic": {
+        "activityType": "NEWS_WRITING",
+        "instrumentType": "rubrica",
+        "defaults": {
+          "activityType": "NEWS_WRITING",
+          "technique": "analisis-producciones",
+          "instrument": "rubrica"
+        }
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.156",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "NEWS_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-essential:0",
+            "templateId": "news-essential",
+            "title": "Información esencial de la noticia",
+            "description": "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional. Parcial (50%): Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Redacta un hecho noticioso claro y responde qué ocurrió, a quién, dónde, cuándo y cómo ocurrió. El contenido corresponde a un hecho ambiental de interés internacional.",
+              "El hecho y sus datos principales se comprenden; falta precisar un dato secundario.",
+              "Se reconoce el hecho, pero faltan datos de quién, dónde, cuándo o cómo.",
+              "Los datos se contradicen y alteran el hecho que se pretende informar.",
+              "No presenta un hecho noticioso reconocible."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-structure:1",
+            "templateId": "news-structure",
+            "title": "Organización y destinatario de la noticia",
+            "description": "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo. Parcial (50%): Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+            "maxScore": 3.34,
+            "maxScoreUnits": 334,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Titular, entrada y cuerpo organizan el hecho para estudiantes del centro, con un registro formal pero sencillo.",
+              "Las partes permiten al público escolar reconocer el hecho; una formulación dificulta un dato secundario.",
+              "Incluye partes de noticia, pero el orden o el vocabulario impiden al destinatario relacionar varios datos.",
+              "El titular contradice el cuerpo o las formulaciones cambian el sentido del hecho para el público.",
+              "No presenta una organización comprensible de la noticia para estudiantes del centro."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-sequence:2",
+            "templateId": "news-sequence",
+            "title": "Secuencia y cohesión",
+            "description": "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados. Parcial (50%): Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Ordena los datos de manera que se reconoce la secuencia y la relación entre los hechos informados.",
+              "Se sigue el hecho; una transición deja momentáneamente sin precisar el orden de dos datos.",
+              "Presenta datos aislados y omite relaciones necesarias para seguir la secuencia del hecho.",
+              "El orden del escrito invierte una relación temporal o causal entre los hechos.",
+              "No se reconoce una secuencia comprensible entre los datos de la noticia."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-thematic-vocabulary:3",
+            "templateId": "news-feature-thematic-vocabulary",
+            "title": "Los verbos y sustantivos del vocabulario temático",
+            "description": "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado. Parcial (50%): Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea verbos y sustantivos del tema que permiten reconocer las acciones y sus participantes en el hecho informado.",
+              "Los términos identifican acciones y referentes; una palabra deja impreciso un dato secundario.",
+              "Usa términos del tema, pero varios verbos o sustantivos dejan ambiguo quién realiza una acción.",
+              "Atribuye una acción a otro participante o usa un término que cambia el hecho informado.",
+              "El vocabulario no permite reconocer las acciones ni los referentes del hecho."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-process-revision:4",
+            "templateId": "news-process-revision",
+            "title": "Revisión del borrador",
+            "description": "Muestra cambios entre el borrador y la versión final de noticia que resuelven problemas de contenido, organización o escritura encontrados. Parcial (50%): Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+            "maxScore": 1.33,
+            "maxScoreUnits": 133,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Los cambios del borrador de noticia resuelven los problemas identificados y conservan el sentido que se desea comunicar.",
+              "Los cambios resuelven los problemas principales; queda una relación entre ideas sin corregir.",
+              "Presenta cambios de forma, pero conserva problemas de contenido u organización identificados en el borrador.",
+              "Los cambios introducen contradicciones o eliminan información necesaria para comprender el texto.",
+              "No aporta evidencia de los cambios solicitados entre el borrador y la versión revisada."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-research-sources:5",
+            "templateId": "news-research-sources",
+            "title": "Documentación y comprobación de los datos",
+            "description": "Relaciona los datos del hecho con las fuentes acordadas y distingue lo comprobado de la información pendiente de confirmar. Parcial (50%): Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+            "maxScore": 2.67,
+            "maxScoreUnits": 267,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Cada dato principal se relaciona con su fuente; se diferencia lo comprobado de lo pendiente sin presentarlo como cierto.",
+              "Se reconocen fuentes y comprobación de los datos principales; una referencia secundaria queda incompleta.",
+              "Enumera fuentes, pero algunos datos no pueden relacionarse con su origen o no distingue si están comprobados.",
+              "Atribuye a una fuente un dato que no contiene o presenta como confirmado un hecho pendiente.",
+              "No identifica el origen de los datos ni su estado de comprobación."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.156:fallback:news-feature-sentence-relations:6",
+            "templateId": "news-feature-sentence-relations",
+            "title": "Relaciones entre las oraciones de la noticia",
+            "description": "Emplea oraciones coordinadas y subordinadas para relacionar las ideas de la noticia; explica la relación que expresa un ejemplo de cada clase de oración. Parcial (50%): Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+            "maxScore": 2,
+            "maxScoreUnits": 200,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Construye oraciones coordinadas y subordinadas que relacionan ideas sin cambiar los hechos; explica con ejemplos la función de cada clase solicitada.",
+              "Las relaciones entre oraciones se comprenden; un ejemplo queda sin explicar por qué expresa esa relación.",
+              "Presenta oraciones coordinadas y subordinadas, pero describe su contenido sin explicar la relación que expresa cada clase.",
+              "La relación atribuida o construida entre las oraciones invierte la causa, el tiempo o el vínculo entre los hechos.",
+              "No aporta evidencia pertinente de las oraciones coordinadas y subordinadas solicitadas ni de su función en la noticia."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-la-noticia",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

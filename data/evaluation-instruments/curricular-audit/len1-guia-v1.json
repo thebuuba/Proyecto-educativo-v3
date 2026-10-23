@@ -1,0 +1,38 @@
+{
+  "version":"curricular-len1-guia-v1",
+  "provenance":"SINTETICO; expectativas del mismo autor, sin independencia externa, redactadas desde la malla oficial antes de consultar salidas o reglas específicas de guía de este bloque. Banco previo; ejecutar después de noticia.",
+  "context":{"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "source":{"pdfPages":[70,71],"sha256":"80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"},
+  "cases":[
+    {
+      "id":"LEN1-GUI-01","family":"Producción breve","title":"Conozcamos el barrio",
+      "description":"Hagan una guía turística de los lugares interesantes del barrio para alguien que no lo conoce.",
+      "expected":{"explicit":["Guía de lugares del barrio","Destinatario que no conoce el lugar"],"pedagogical":["Información pertinente y reconocible de los lugares","Organización que oriente al visitante","Descripción comprensible"],"excluded":["Visita de campo obligatoria","Fotos o mapa obligatorios","Impresión","Número fijo de lugares","Demostrar borrador o publicación no pedidos"],"grouping":["Lugares e información","Organización y destinatario","Descripción clara"]}
+    },
+    {
+      "id":"LEN1-GUI-02","family":"Producción con condiciones y publicación","title":"Una guía para las familias que nos visitan",
+      "description":"Con la información que reunimos de la comunidad, elaboren una guía turística para las familias visitantes. Elijan lugares de interés y clasifíquenlos según su función. Preparen portada, información de cada lugar y un cierre; incorporen un mapa o un collage de fotografías que ayude a ubicarlos. Describan cómo son y cómo se sitúan usando conectores de espacio y tiempo. Revisen el borrador con un compañero y entreguen ambas versiones. Publicaremos la final en el mural. No hay que usar los dos tipos de imágenes ni hacer una excursión.",
+      "expected":{"explicit":["Información disponible de la comunidad","Selección y clasificación funcional de lugares","Audiencia familias visitantes","Portada, información y cierre","Mapa o collage de fotos como alternativa","Ubicación y descripción topográfica","Conectores espaciales y temporales","Revisión con borrador y final","Publicación en mural"],"excluded":["Mapa y collage simultáneamente obligatorios","Excursión","Cantidad fija de lugares","Cooperación estructurada por trabajar con compañero"],"grouping":["Lugares, clasificación e información","Estructura y público","Ubicación, recorrido y apoyo visual elegido","Revisión y publicación"]}
+    },
+    {
+      "id":"LEN1-GUI-03","family":"Lectura y análisis funcional","title":"¿Esta guía ayuda a elegir una visita?",
+      "description":"Lean la guía turística entregada. Expliquen a quién invita y cómo la portada, la información y el cierre ayudan al visitante. Distingan los atractivos que describe del simple adorno: valoren su apariencia y los estímulos que usa, apoyándose en el contenido. Expliquen cómo se relaciona el mapa con los lugares y qué palabras hacen atractiva la invitación. No diseñen otra guía ni tomen fotografías.",
+      "expected":{"explicit":["Propósito y destinatario","Función de estructura","Apariencia, estímulos, atractivos y contenido","Relación mapa y lugares","Vocabulario atractivo y persuasivo con sustento"],"excluded":["Producir guía nueva","Crear mapas","Tomar fotos","Calificar gusto personal o habilidad artística"],"grouping":["Propósito y organización","Atractivos y apariencia al servicio de información","Función del mapa","Persuasión del vocabulario"]}
+    },
+    {
+      "id":"LEN1-GUI-04","family":"Revisión lingüística focal","title":"Palabras que orientan a quien visita",
+      "description":"Corrijan solo el lenguaje de la guía turística recibida, manteniendo sus lugares y datos. Revisen sustantivos propios, comunes y abstractos, adjetivos calificativos y determinativos y sus grados, y verbos en presente de indicativo. Expliquen con ejemplos el núcleo y los modificadores directo e indirecto de los sintagmas nominales. Corrijan comas, dos puntos, comillas e interrogación y exclamación donde corresponda. Entreguen el original y la corrección, con una explicación breve de los cambios. No añadan mapas ni cambien el recorrido.",
+      "expected":{"explicit":["Corrección de lenguaje sin cambiar lugares/datos","Sustantivos propios, comunes y abstractos","Adjetivos calificativos/determinativos y grados","Presente de indicativo","Núcleo, modificador directo e indirecto","Comas, dos puntos, comillas, preguntas y exclamaciones","Original, corrección y explicación"],"excluded":["Crear otra guía","Añadir mapas","Cambiar recorrido","Reorganizar contenido no solicitado"],"grouping":["Referencia nominal y cualidades","Relaciones del sintagma nominal y explicación","Consistencia verbal","Puntuación y función de preguntas/exclamaciones","Correcciones verificables"]}
+    },
+    {
+      "id":"LEN1-GUI-05","family":"Presentación oral de guía","title":"Les mostramos los lugares de nuestra comunidad",
+      "description":"En equipos presenten oralmente una guía turística a partir de las fichas de lugares entregadas. Expliquen su clasificación y destaquen sus características con sustantivos propios y comunes y adjetivos; sitúen los lugares con una descripción topográfica y conectores espaciales y temporales. Apóyense en el mapa dado y distribuyan las intervenciones para que se escuche el aporte de cada integrante. No memoricen un guion ni graben un video.",
+      "expected":{"explicit":["Presentación oral de guía desde fichas","Clasificación justificada","Nombres propios/comunes y descripción con adjetivos","Ubicación topográfica","Conectores espaciales y temporales","Mapa dado como apoyo","Aporte reconocible de cada integrante"],"excluded":["Crear mapa nuevo","Memorizar","Grabar","Cooperación estructurada inferida de equipos"],"grouping":["Lugares y clasificación","Descripción y ubicación","Mapa como apoyo a orientación","Comunicación y aportación individual"]}
+    },
+    {
+      "id":"LEN1-GUI-06","family":"Comprensión oral con anticipación","title":"Adivinamos y escuchamos el recorrido",
+      "description":"Miren el título y el mapa de la guía turística que voy a leer y digan qué recorrido esperan encontrar. Escuchen la guía, comprueben qué acertaron y cuenten con sus palabras lo que propone. Clasifiquen los lugares que oyeron y expliquen sus cualidades con adjetivos. Pueden responder hablando o mediante un esquema sencillo. No redacten una guía nueva ni investiguen lugares adicionales.",
+      "expected":{"explicit":["Anticipación desde título/mapa disponibles","Comprobación con guía escuchada","Paráfrasis del recorrido escuchado","Clasificación de lugares oídos","Cualidades expresadas con adjetivos","Respuesta oral o esquema como alternativa"],"excluded":["Crear guía","Investigar otros lugares","Dos productos obligatorios","Exigir lenguaje escrito a quien responde oralmente","Habilidad artística del esquema"],"grouping":["Anticipación y contraste","Reconstrucción fiel del recorrido","Clasificación y cualidades"]}
+    }
+  ]
+}

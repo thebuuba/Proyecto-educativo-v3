@@ -66,8 +66,8 @@ export function languageReadingProcedures(description:string,scope:string,genre:
       'No presenta una paráfrasis reconocible del texto leído o escuchado.',
     ],
   })
-  if(/anticip|predicci/.test(task)) {
-    const verify=verifyPrediction||/comprob|contrast|verific|evalu\w*.*predicci/.test(task)
+  if(/anticip|predicci|antes de leer.*(?:piensan|creen|imagin\w*)/.test(task)) {
+    const verify=verifyPrediction||/comprob|comprueb|contrast|verific|evalu\w*.*predicci/.test(task)
     rows.push({
     templateId:`${scope}-procedure-prediction`,title:verify?'Anticipación y comprobación del contenido':'Anticipación del contenido',weight:3,
     observable:verify?`Formula una predicción sobre ${target} a partir de indicios textuales o paratextuales y la contrasta con la lectura posterior.`:`Formula una predicción sobre ${target} y explica qué indicios textuales o paratextuales permiten anticiparla.`,
@@ -85,7 +85,7 @@ export function languageReadingProcedures(description:string,scope:string,genre:
       'No formula una predicción relacionada con los indicios disponibles.',
     ],
   })}
-  if(/(?:significado|vocabulario|palabras desconocidas).*contexto|contexto.*(?:significado|palabras)/.test(task)) rows.push({
+  if(/(?:significado|vocabulario|palabras desconocidas).*contexto|contexto.*(?:significado|palabras)|palabras? (?:dificil(?:es)?|desconocid[ao]s?).*contexto/.test(task)) rows.push({
     templateId:`${scope}-procedure-vocabulary`,title:'Inferencia del vocabulario en contexto',weight:3,
     observable:`Deduce el significado de las palabras desconocidas de ${genre} mediante indicios del contexto y comprueba que la interpretación mantiene el sentido del pasaje.`,
     progressionLevels:[

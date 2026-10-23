@@ -16,9 +16,9 @@
 - [x] Recuperar PDF oficial; exigir identidad SHA256 con la fuente existente.
 - [x] Leer malla completa de Lengua1, páginas69–75, y límite de entrada68; verificar continuaciones por contenido.
 - [ ] Registrar temas/subtemas, procedimientos, actitudes e indicadores de Lengua1 con referencias; distinguir duplicados y taxonomía.
-- [ ] Fijar banco de noticia y huella antes de llamar al motor; vincular cada requisito/subtema.
-- [ ] Generar seis casos × cuatro formatos; leer instrumentos completos y registrar omisiones, añadidos, duplicados, agrupaciones y progresiones. No aprobar por generación o suma.
-- [ ] Reproducir fallos en pruebas; corregir componente compartido o completar contenido faltante. Conservar catálogo154 antes de alterar reglas/payload.
+- [x] Fijar banco de noticia y huella antes de llamar al motor; vincular requisitos conceptuales y añadir bancos de reserva/procedimientos/escucha con expectativas previas.
+- [x] Generar seis casos × cuatro formatos y reservas:48salidas; leer instrumentos completos y registrar omisiones, añadidos, duplicados, agrupaciones y progresiones. No aprobar el tema por generación o suma.
+- [x] Reproducir los fallos de esos casos; corregir interpretación/composición y completar coordinadas/subordinadas74. Conservar catálogos154/155 antes de nuevas reglas. El cierre del tema y del grado continúa pendiente.
 - [ ] Verificar paridad/ediciones/puntuación, pruebas focales, builds y gates requeridos al cerrar código. No repetir suites completas sin causa.
 - [ ] Medir HTTP/DB y navegador representativos; reconciliar IDs y comparar referencias antes/después de nuevas escrituras. Sesión personal pendiente no bloquea la auditoría local.
 - [ ] Guardar commit local y continuar guía, informe, afiche, cuento y caligrama, incluyendo cada subtema y los reservados.

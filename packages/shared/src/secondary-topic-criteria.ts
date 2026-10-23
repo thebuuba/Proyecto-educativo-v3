@@ -11,6 +11,7 @@ export type ContextualTopicCriterion = {
   templateId: string; title: string; observable: string; weight: number
   progressionLevels: [string, string, string, string, string]
   checklistParts?: {key:string;observable:string;progressionLevels: [string,string,string,string,string]}[]
+  coveredDeliveryKeys?: string[]
 }
 
 // A scoped topic plus a requested action/element narrows evidence; resources alone never do.

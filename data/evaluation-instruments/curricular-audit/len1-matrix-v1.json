@@ -453,7 +453,517 @@
         }
       ],
       "status": "EN_CURSO_CONCEPTOS_LOCALES_REVISADOS_PROCEDIMIENTOS_PENDIENTES",
-      "nextAction": "Ejecutar banco procedimientos-v1 con expectativas previas, corregir y contrastar toda la fuente de noticia"
+      "nextAction": "Muestra HTTP/DB156, contraste final de modalidades y cierre local condicionado por navegador; después guía",
+      "supplementaryProceduralCases": [
+        {
+          "caseId": "LEN1-NOT-P01",
+          "pages": [
+            69,
+            70
+          ],
+          "components": [
+            "anticipación desde marcas textuales/paratextuales",
+            "comprobación tras lectura",
+            "propósito",
+            "paráfrasis",
+            "inferencia del sentido y del vocabulario"
+          ],
+          "criteria": [
+            "news-procedure-paraphrase",
+            "news-procedure-prediction",
+            "news-procedure-vocabulary",
+            "news-purpose",
+            "news-interpretation"
+          ],
+          "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+          "status": "REVISADO_LOCALMENTE"
+        },
+        {
+          "caseId": "LEN1-NOT-P02",
+          "pages": [
+            70,
+            74
+          ],
+          "components": [
+            "documentación y comprobación de fuentes",
+            "destinatario y registro formal sencillo",
+            "coordinación",
+            "subordinación",
+            "explicación funcional de cada clase",
+            "vocabulario temático",
+            "borrador y final"
+          ],
+          "criteria": [
+            "news-essential",
+            "news-structure",
+            "news-feature-thematic-vocabulary",
+            "news-process-revision",
+            "news-research-sources",
+            "news-feature-sentence-relations"
+          ],
+          "artifact": "auditoria-curricular-len1-noticia-procedimientos-156-final.json",
+          "status": "REVISADO_LOCALMENTE"
+        }
+      ],
+      "proceduralComponentAudit": [
+        {
+          "id": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+          "components": [
+            {
+              "name": "Reconstrucción del hecho escuchado e interrogantes",
+              "cases": [
+                "LEN1-NOT-R01",
+                "LEN1-NOT-A01"
+              ],
+              "criteria": [
+                "news-procedure-paraphrase"
+              ],
+              "status": "REVISADO_LOCALMENTE_CON_A01_EN_CUATRO_FORMATOS",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Intención comunicativa al escuchar",
+              "cases": [
+                "LEN1-NOT-A01"
+              ],
+              "criteria": [
+                "news-purpose"
+              ],
+              "status": "REVISADO_LOCALMENTE_CON_A01_EN_CUATRO_FORMATOS",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Inferencias del sentido y del vocabulario del audio",
+              "cases": [
+                "LEN1-NOT-A01"
+              ],
+              "criteria": [
+                "news-interpretation",
+                "news-procedure-vocabulary"
+              ],
+              "status": "REVISADO_LOCALMENTE_CON_A01_EN_CUATRO_FORMATOS",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Estructura y apoyos paratextuales para comprender",
+              "cases": [
+                "LEN1-NOT-03"
+              ],
+              "criteria": [
+                "news-structure",
+                "news-feature-paratext"
+              ],
+              "status": "LECTURA_MULTIMODAL_REVISADA_NO_IMPONER_FOTO_AL_AUDIO_SIN_APOYO_VISUAL"
+            }
+          ]
+        },
+        {
+          "id": "1e8cd77f-d712-535e-b108-203a914fb39c",
+          "components": [
+            {
+              "name": "Hecho ambiental e información veraz",
+              "cases": [
+                "LEN1-NOT-04"
+              ],
+              "criteria": [
+                "news-content"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Función, titular e interrogantes",
+              "cases": [
+                "LEN1-NOT-04"
+              ],
+              "criteria": [
+                "news-structure"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Orden, temporalidad, ritmo, entonación y pausas",
+              "cases": [
+                "LEN1-NOT-04"
+              ],
+              "criteria": [
+                "news-sequence",
+                "news-oral"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Selección e intención del hecho; vocabulario temático",
+              "cases": [
+                "LEN1-NOT-P02",
+                "LEN1-NOT-04"
+              ],
+              "criteria": [
+                "news-procedure-outline",
+                "news-feature-thematic-vocabulary",
+                "news-content"
+              ],
+              "status": "EVIDENCIAS_DISTRIBUIDAS_ENTRE_PRODUCCION_ESCRITA_Y_ORAL_NO_UN_SOLO_PRODUCTO"
+            }
+          ]
+        },
+        {
+          "id": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+          "components": [
+            {
+              "name": "Elección de modalidad de lectura: en voz alta/silencio/individual/compartida",
+              "status": "OPCION_DIDACTICA_NO_REQUISITO_AUTOMATICO_DEL_INSTRUMENTO",
+              "rationale": "Las modalidades son alternativas de acceso, no cuatro entregas que se impongan simultáneamente."
+            },
+            {
+              "name": "Anticipación a partir de titular y fotografía y comprobación",
+              "cases": [
+                "LEN1-NOT-P01"
+              ],
+              "criteria": [
+                "news-procedure-prediction"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Propósito informativo, estructura e interrogantes",
+              "cases": [
+                "LEN1-NOT-03",
+                "LEN1-NOT-P01"
+              ],
+              "criteria": [
+                "news-purpose",
+                "news-structure",
+                "news-questions"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Inferencias mientras lee",
+              "cases": [
+                "LEN1-NOT-P01"
+              ],
+              "criteria": [
+                "news-interpretation"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+          "components": [
+            {
+              "name": "Vocabulario inferido desde el contexto",
+              "cases": [
+                "LEN1-NOT-P01"
+              ],
+              "criteria": [
+                "news-procedure-vocabulary"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Paráfrasis de la información leída",
+              "cases": [
+                "LEN1-NOT-P01"
+              ],
+              "criteria": [
+                "news-procedure-paraphrase"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+          "components": [
+            {
+              "name": "Seleccionar hecho, documentarlo y distinguir certeza",
+              "cases": [
+                "LEN1-NOT-P02",
+                "LEN1-NOT-R02"
+              ],
+              "criteria": [
+                "news-essential",
+                "news-research-sources",
+                "news-procedure-outline"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Público, titular, entrada/cuerpo y lenguaje accesible",
+              "cases": [
+                "LEN1-NOT-02",
+                "LEN1-NOT-P02"
+              ],
+              "criteria": [
+                "news-structure"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Registro formal cuando se solicita",
+              "cases": [
+                "LEN1-NOT-P02"
+              ],
+              "criteria": [
+                "news-structure"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Interrogantes y organización de la información",
+              "cases": [
+                "LEN1-NOT-02"
+              ],
+              "criteria": [
+                "news-essential",
+                "news-structure"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Conectores de orden/tiempo y convenciones de escritura",
+              "cases": [
+                "LEN1-NOT-02",
+                "LEN1-NOT-06",
+                "LEN1-NOT-R03"
+              ],
+              "criteria": [
+                "news-feature-connectors",
+                "news-feature-punctuation"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Borrador, revisión y corrección",
+              "cases": [
+                "LEN1-NOT-02",
+                "LEN1-NOT-R02",
+                "LEN1-NOT-P02"
+              ],
+              "criteria": [
+                "news-process-revision"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+          "components": [
+            {
+              "name": "Edición y publicación por medio convencional",
+              "cases": [
+                "LEN1-NOT-R02"
+              ],
+              "criteria": [
+                "news-process-revision",
+                "news-process-publication"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            },
+            {
+              "name": "Medio tecnológico o convencional",
+              "status": "ALTERNATIVAS_NO_DOS_PUBLICACIONES_OBLIGATORIAS",
+              "cases": [
+                "LEN1-NOT-R02"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+          "components": [
+            {
+              "name": "Repite selección/documentación/destinatario/estructura/registro/conectores/borradores y publicación",
+              "status": "MISMAS_EVIDENCIAS_DE_70_SIN_INVENTAR_UN_NUEVO_TEMA",
+              "cases": [
+                "LEN1-NOT-02",
+                "LEN1-NOT-P02",
+                "LEN1-NOT-R02"
+              ]
+            },
+            {
+              "name": "Oraciones coordinadas y subordinadas: relaciones de sentido",
+              "cases": [
+                "LEN1-NOT-P02"
+              ],
+              "criteria": [
+                "news-feature-sentence-relations"
+              ],
+              "status": "REVISADO_LOCALMENTE",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ]
+            }
+          ]
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "8716598b-c940-5369-a46c-7be539ae80f9",
+          "name": "Objetividad",
+          "evidence": [
+            "LEN1-NOT-P02/news-research-sources",
+            "LEN1-NOT-05/news-feature-paratext"
+          ],
+          "judgment": "SE_VALORAN_DATOS_Y_CORRESPONDENCIA_NO_CREENCIAS_PERSONALES"
+        },
+        {
+          "sourceId": "2bad0524-cdf5-5952-aec6-d13b24794458",
+          "name": "Curiosidad",
+          "judgment": "DISPOSICION_INTERNA_NO_INFERIBLE_DEL_PRODUCTO_NO_CONVERTIR_EN_CALIFICACION_AUTOMATICA"
+        },
+        {
+          "sourceId": "9f48a703-91d9-5aa9-866e-4b4696b9c956",
+          "name": "Sensibilidad y solidaridad",
+          "judgment": "NO_EXIGIR_EMOCION_O_EXPERIENCIA_PRIVADA; VALORAR_SOLO_ACCIONES_EXPLICITAMENTE_SOLICITADAS_Y_OBSERVABLES"
+        },
+        {
+          "sourceId": "6e01c925-afec-521f-be04-3362e23c9e03",
+          "name": "Criticidad ante naturaleza y ambiente",
+          "evidence": [
+            "LEN1-NOT-P02/news-research-sources",
+            "LEN1-NOT-04/news-content"
+          ],
+          "judgment": "NO_AFIRMAR_MEDICION_INTEGRAL_DE_ACTITUD_POR_MENCION_AMBIENTAL"
+        },
+        {
+          "sourceId": "10d05982-7384-5616-b187-a61e8011be3f",
+          "name": "Escritura como proceso",
+          "evidence": [
+            "LEN1-NOT-R02/news-procedure-outline",
+            "LEN1-NOT-R02/news-process-revision",
+            "LEN1-NOT-R02/news-process-publication"
+          ],
+          "judgment": "EVIDENCIA_OBSERVABLE_DE_PROCESO_SIN_IMPONERLO_A_CADA_CONSIGNA_BREVE"
+        }
+      ],
+      "achievementContribution": {
+        "status": "APORTE_PARCIAL_NO_CIERRE_DE_INDICADORES_GENERALES_DE_ASIGNATURA",
+        "note": "Los21indicadores de página75 atraviesan varios géneros, textos y contextos. No atribuir cumplimiento integral a noticia ni imponer TIC a la publicación convencional."
+      },
+      "audioCase": {
+        "caseId": "LEN1-NOT-A01",
+        "artifact": "auditoria-curricular-len1-noticia-escucha-156-final.json",
+        "criteria": [
+          "news-purpose",
+          "news-interpretation",
+          "news-procedure-paraphrase",
+          "news-procedure-vocabulary"
+        ],
+        "review": "auditoria-curricular-len1-noticia-156-validacion48.json",
+        "status": "REVISADO_LOCALMENTE"
+      }
     },
     {
       "id": "guia",

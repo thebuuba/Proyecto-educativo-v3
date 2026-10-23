@@ -448,7 +448,8 @@ describe('GradingBook', () => {
     const view = renderBook({ secondSecondaryLanguage: true, sectionSubjectId: 'second-language-1', initialActivityAction: 'create',
       initialActivityBlockId: 'b1', initialActivityDraftId: 'second-news-draft', onAddActivity })
     await waitFor(() => expect(screen.getByRole('button', { name: 'Tipo de actividad' })).toHaveTextContent(activitySelectionName('NEWS_WRITING')))
-    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'))
+    // La preparación espera900ms; el límite predeterminado de1s deja100ms para renderizar.
+    await waitFor(() => expect(screen.getByRole('textbox', { name: 'Criterio 1' })).toHaveValue('Información esencial de la noticia'), { timeout: 8000 })
     const user = userEvent.setup()
     await user.click(screen.getByRole('button', { name: 'Guardar' }))
     const summary = screen.getByRole('dialog', { name: 'Resumen de la actividad' })

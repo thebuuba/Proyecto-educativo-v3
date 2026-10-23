@@ -1,0 +1,12 @@
+{
+  "version":"curricular-len1-noticia-escucha-reservado-v1",
+  "provenance":"SINTETICO; reserva nueva del mismo autor, sin independencia externa. Expectativas anteriores a consultar su salida; la comprensión escrita no acredita automáticamente estos desempeños de escucha.",
+  "context":{"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "source":{"pdfPage":69,"procedureElementId":"d60a8e8d-d000-5b43-897d-e0eb48136a1c"},
+  "cases":[{
+    "id":"LEN1-NOT-A01",
+    "title":"Lo que entendimos de la noticia escuchada",
+    "description":"Escuchen la noticia sobre un derrame de petróleo. Después, expliquen con sus palabras qué sucedió, a quién, dónde, cuándo y cómo. Digan para qué informa y qué consecuencias pueden deducir de los datos escuchados. Busquen qué quiere decir una palabra difícil guiándose por el contexto de la noticia; señalen qué parte del audio les ayudó. No inventen otro hecho ni escriban una noticia nueva.",
+    "expected":{"content":["Hecho y datos del audio sobre el derrame, sin imponer conocimientos científicos externos"],"actions":["Escuchar y reconstruir","Identificar propósito","Inferir consecuencias desde datos disponibles","Inferir y justificar vocabulario contextual"],"product":"Respuestas de comprensión de noticia escuchada","explicit":["Qué, a quién, dónde, cuándo y cómo","Paráfrasis fiel con palabras propias","Propósito informativo","Consecuencias deducidas y sustentadas en datos escuchados","Significado de una palabra difícil por el contexto y apoyo en audio"],"excluded":["Crear otra noticia","Inventar hechos","Transcripción escrita obligatoria","Fotografía obligatoria","Experimento o conocimientos externos para explicar el derrame"],"grouping":["Reconstrucción e interrogantes del audio","Propósito","Relaciones inferidas y su sustento","Vocabulario contextual"]}
+  }]
+}
