@@ -81,7 +81,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
     const presenting = oralAction
     const analyzing = /\b(?:analiz\w*|analic\w*|identific\w*|identifiqu\w*|interpret\w*|leer\w*|leeran|lean|lee|lectura|escuch\w*)\b/.test(value)
     if (module === 'NEWS' && /\bnoticiero\b/.test(value)) return 'NEWSCAST'
-    if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narracion|narraran|contar|contaran)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
+    if (module === 'DETECTIVE_STORY' && /\b(?:narrar\w*|narren|narra|narracion|narraran|contar|contaran|cuenten)\b/.test(value)) return 'DETECTIVE_STORY_NARRATION'
     if (module === 'CALLIGRAM' && /\b(?:recit\w*|declam\w*)\b/.test(value)) return 'CALLIGRAM_RECITATION'
     if (comparing) return `${module}_COMPARISON`
     if (writing) return module === 'NEWS' ? 'NEWS_WRITING' : `${module}_CREATION`.replace('READING_REPORT_CREATION', 'READING_REPORT_WRITING').replace('DETECTIVE_STORY_CREATION', 'DETECTIVE_STORY_WRITING')

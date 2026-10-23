@@ -1,0 +1,117 @@
+{
+  "version": "curricular-len1-cuento-reservado-v1",
+  "provenance": "SINTÉTICO reservado del mismo autor, no ciego ni independiente. Fijado después del primer ajuste162 y antes de generar estas24salidas; contrasta límites y consignas habituales, no sustituye una revisión externa.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      73
+    ],
+    "nextPageChecked": 74,
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-CUE-R01",
+      "family": "Contraste reservado interno",
+      "title": "Ayuda y oposición en el misterio",
+      "description": "Analicen únicamente ayudantes y oponentes como actantes del cuento policíaco entregado. Expliquen quién ayuda y quién se opone con hechos del relato. No analicen los otros papeles actanciales ni escriban otro cuento.",
+      "expected": {
+        "explicit": [
+          "Ayudante y oponente sustentados en hechos",
+          "Funciones distintas de nombres de personajes"
+        ],
+        "excluded": [
+          "Sujeto, objeto, destinador o destinatario obligatorios",
+          "Nuevo cuento o análisis general de trama"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "family": "Contraste reservado interno",
+      "title": "El cuento en la revista digital",
+      "description": "A partir del cuento policíaco ya corregido, preparen su edición final para la revista escolar digital. Mantengan el contenido y revisen su legibilidad. No se pide versión impresa, ilustración ni otra revisión de borradores.",
+      "expected": {
+        "explicit": [
+          "Edición digital de texto corregido; contenido y legibilidad conservados"
+        ],
+        "excluded": [
+          "Edición impresa",
+          "Ilustración, nueva trama o cambios entre borradores"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "family": "Contraste reservado interno",
+      "title": "Ortografía del diálogo",
+      "description": "Corrijan únicamente la ortografía del diálogo del cuento policíaco dado. Mantengan exactamente su contenido, personajes, puntuación y orden de los hechos. No analicen otros aspectos ni reescriban el relato.",
+      "expected": {
+        "explicit": [
+          "Ortografía de texto dado",
+          "Contenido, puntuación, personajes y orden conservados"
+        ],
+        "excluded": [
+          "Cambiar o reevaluar la puntuación",
+          "Análisis de trama, creación, ilustración o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "family": "Contraste reservado interno",
+      "title": "El diálogo después de un comentario",
+      "description": "Revisen el borrador del cuento policíaco entregado según las sugerencias de un compañero. Ajusten únicamente la claridad del diálogo y conserven la trama y el narrador. Entreguen la versión revisada; no hace falta justificar aparte las decisiones, añadir descripción del ambiente ni pedir sugerencias al profesor.",
+      "expected": {
+        "explicit": [
+          "Claridad del diálogo existente y revisión según un compañero",
+          "Trama y narrador conservados"
+        ],
+        "excluded": [
+          "Sugerencias de profesor",
+          "Justificación aparte",
+          "Añadir descripciones, nueva trama o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "family": "Contraste reservado interno",
+      "title": "Un misterio contado",
+      "description": "Cuenten oralmente un cuento policíaco al grupo.",
+      "expected": {
+        "explicit": [
+          "Narración oral comprensible de misterio y solución",
+          "Hechos en secuencia; narrador reconocible"
+        ],
+        "excluded": [
+          "Análisis textual",
+          "Texto escrito, voces diferenciadas, gestos o grabación obligatorios"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "family": "Contraste reservado interno",
+      "title": "La comparación como figura",
+      "description": "Analicen únicamente la comparación literaria en el fragmento del cuento policíaco dado. Citen el ejemplo presente y expliquen qué semejanza establece entre los referentes y cómo caracteriza el ambiente. No comparen cuentos entre sí ni analicen metáforas o epítetos.",
+      "expected": {
+        "explicit": [
+          "Una comparación literaria y la semejanza entre sus referentes",
+          "Ejemplo real y efecto en ambiente"
+        ],
+        "excluded": [
+          "Comparación entre dos cuentos",
+          "Metáfora, epíteto o análisis adicional del ambiente como criterio independiente"
+        ]
+      }
+    }
+  ]
+}

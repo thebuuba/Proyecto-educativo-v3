@@ -3088,7 +3088,7 @@
         }
       ],
       "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "nextAction": "Visual personal pendiente;48salidas y HTTP161 acreditados, indicadores generales abiertos",
       "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json",
       "curricularComponentAudit": [
         {
@@ -3252,10 +3252,72 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-01",
+            "LEN1-CUE-03",
+            "LEN1-CUE-05",
+            "LEN1-CUE-09"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-01",
+              "criterionId": "detective-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-03",
+              "criterionId": "detective-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-03",
+              "criterionId": "detective-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-sequence",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-09",
+              "criterionId": "detective-procedure-outline",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ]
         },
         {
           "id": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
@@ -3272,10 +3334,73 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-01",
+            "LEN1-CUE-02",
+            "LEN1-CUE-03",
+            "LEN1-CUE-04",
+            "LEN1-CUE-08"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-01",
+              "criterionId": "detective-characters",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-characters",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-03",
+              "criterionId": "detective-setting",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-04",
+              "criterionId": "detective-setting",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-08",
+              "criterionId": "detective-characters",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ]
         },
         {
           "id": "9bd89592-7605-5046-8265-d6890433ef33",
@@ -3292,10 +3417,73 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-01",
+            "LEN1-CUE-03",
+            "LEN1-CUE-05",
+            "LEN1-CUE-08",
+            "LEN1-CUE-09"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-01",
+              "criterionId": "detective-narrator",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-03",
+              "criterionId": "detective-narrator",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-narrator",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-08",
+              "criterionId": "detective-narrator",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-09",
+              "criterionId": "detective-plan-characters",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ]
         },
         {
           "id": "9f64310c-c947-5136-b052-391410785bb2",
@@ -3312,10 +3500,120 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-02",
+            "LEN1-CUE-05",
+            "LEN1-CUE-07",
+            "LEN1-CUE-R06"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-dialogue",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-feature-dialogue",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-07",
+              "criterionId": "detective-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-07",
+              "criterionId": "detective-feature-dialogue",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-R06",
+              "criterionId": "detective-feature-literary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Descripción y diálogo: caracterización frente a intercambios",
+              "cases": [
+                "LEN1-CUE-02",
+                "LEN1-CUE-05",
+                "LEN1-CUE-07",
+                "LEN1-CUE-10",
+                "LEN1-CUE-R04"
+              ]
+            },
+            {
+              "name": "Comparación: semejanza explícita",
+              "cases": [
+                "LEN1-CUE-02",
+                "LEN1-CUE-05",
+                "LEN1-CUE-07",
+                "LEN1-CUE-R06"
+              ]
+            },
+            {
+              "name": "Metáfora: asociación figurada",
+              "cases": [
+                "LEN1-CUE-02",
+                "LEN1-CUE-05",
+                "LEN1-CUE-07"
+              ]
+            },
+            {
+              "name": "Epíteto: cualidad destacada expresivamente",
+              "cases": [
+                "LEN1-CUE-02",
+                "LEN1-CUE-05",
+                "LEN1-CUE-07"
+              ]
+            }
+          ]
         },
         {
           "id": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
@@ -3332,10 +3630,95 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-03",
+            "LEN1-CUE-08",
+            "LEN1-CUE-09",
+            "LEN1-CUE-12",
+            "LEN1-CUE-R01"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-03",
+              "criterionId": "detective-feature-actants",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-08",
+              "criterionId": "detective-feature-actants",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-09",
+              "criterionId": "detective-plan-characters",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-12",
+              "criterionId": "detective-feature-actants",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-R01",
+              "criterionId": "detective-feature-actants",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "subcomponents": [
+            {
+              "name": "Sujeto/objeto/destinador/destinatario/ayudante/oponente",
+              "cases": [
+                "LEN1-CUE-03",
+                "LEN1-CUE-12"
+              ],
+              "sourceLimit": "Concreción de «Los actantes» en fichas y consignas; no seis renglones literales nuevos ni seis personajes forzosos"
+            },
+            {
+              "name": "Comparación de funciones, no de nombres",
+              "cases": [
+                "LEN1-CUE-08"
+              ]
+            },
+            {
+              "name": "Solo ayuda/oposición, sin imponer otros papeles",
+              "cases": [
+                "LEN1-CUE-R01"
+              ]
+            }
+          ]
         },
         {
           "id": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
@@ -3352,10 +3735,53 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-02",
+            "LEN1-CUE-04",
+            "LEN1-CUE-06"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-04",
+              "criterionId": "detective-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-06",
+              "criterionId": "detective-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "components": [
+            "Indefinido para acciones terminadas",
+            "Imperfecto para fondo y hábitos"
+          ]
         },
         {
           "id": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
@@ -3372,10 +3798,65 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-02",
+            "LEN1-CUE-04",
+            "LEN1-CUE-05",
+            "LEN1-CUE-06"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-adverbs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-04",
+              "criterionId": "detective-feature-adverbs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-feature-adverbs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-06",
+              "criterionId": "detective-feature-adverbs",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "components": [
+            "Adverbios de tiempo",
+            "Adverbios de espacio"
+          ]
         },
         {
           "id": "50810071-d964-5722-ae8b-296148af63c6",
@@ -3392,10 +3873,53 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-02",
+            "LEN1-CUE-05",
+            "LEN1-CUE-06"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-06",
+              "criterionId": "detective-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "components": [
+            "Caracterización de personajes",
+            "Caracterización de ambiente"
+          ]
         },
         {
           "id": "550e059b-4981-56f9-8869-97ffa30fc185",
@@ -3412,14 +3936,260 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-CUE-02",
+            "LEN1-CUE-04",
+            "LEN1-CUE-05",
+            "LEN1-CUE-06"
+          ],
+          "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-CUE-02",
+              "criterionId": "detective-feature-connectors",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-04",
+              "criterionId": "detective-feature-connectors",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-05",
+              "criterionId": "detective-feature-connectors",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            },
+            {
+              "caseId": "LEN1-CUE-06",
+              "criterionId": "detective-feature-connectors",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json"
+            }
+          ],
+          "components": [
+            "Coordinación de acciones",
+            "Consecuencia y su relación lógica"
+          ]
         }
       ],
-      "status": "PENDIENTE_AUDITORIA",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+      "status": "REVISADO_LOCAL_84_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "nextAction": "HTTP/DB162 y visual personal; indicadores generales abiertos",
+      "reviewArtifact": "auditoria-curricular-len1-cuento-162-lectura84.json",
+      "curricularComponentAudit": [
+        {
+          "sourceId": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+          "components": [
+            [
+              "Escucha de audio, tres momentos y sentido global",
+              "LEN1-CUE-04/detective-structure",
+              "LEN1-CUE-04/detective-procedure-paraphrase"
+            ],
+            [
+              "Centrales/secundarios, motivaciones y acciones",
+              "LEN1-CUE-04/detective-characters"
+            ],
+            [
+              "Cerrado/abierto/campo/ciudad y su influencia",
+              "LEN1-CUE-04/detective-setting"
+            ],
+            [
+              "Dos pretéritos/adverbios/dos conexiones para comprensión",
+              "LEN1-CUE-04/detective-feature-indicative",
+              "LEN1-CUE-04/detective-feature-adverbs",
+              "LEN1-CUE-04/detective-feature-connectors"
+            ],
+            [
+              "Vocabulario apropiado e inclusivo",
+              "LEN1-CUE-04/detective-vocabulary"
+            ],
+            [
+              "Selección de trama e intención lúdica oral",
+              "LEN1-CUE-05/detective-purpose",
+              "LEN1-CUE-05/detective-mystery"
+            ],
+            [
+              "Coordinantes/consecuencia en narración",
+              "LEN1-CUE-05/detective-feature-connectors"
+            ],
+            [
+              "Lenguaje corporal, tono/volumen o apoyo acordado",
+              "LEN1-CUE-05/detective-voice"
+            ]
+          ]
+        },
+        {
+          "sourceId": "caeca724-f16b-5730-be70-d3e671ae7840",
+          "components": [
+            [
+              "Descripción de ambiente/personajes mediante adjetivos",
+              "LEN1-CUE-05/detective-feature-adjectives",
+              "LEN1-CUE-05/detective-feature-dialogue"
+            ],
+            [
+              "Vocabulario apropiado e inclusivo oral",
+              "LEN1-CUE-05/detective-vocabulary"
+            ],
+            [
+              "Descripción/diálogo y comparación/metáfora/epíteto expresivos",
+              "LEN1-CUE-05/detective-feature-dialogue",
+              "LEN1-CUE-05/detective-feature-literary",
+              "LEN1-CUE-07/detective-feature-literary"
+            ]
+          ]
+        },
+        {
+          "sourceId": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+          "components": [
+            [
+              "Anticipación desde título y cubierta",
+              "LEN1-CUE-03/detective-procedure-prediction"
+            ],
+            [
+              "Imagen/color/gráficos/cubierta/título y contraste con hechos",
+              "LEN1-CUE-P01/detective-procedure-prediction"
+            ],
+            [
+              "Imagen/color/gráficos sin título ni cubierta ausente",
+              "LEN1-CUE-P02/detective-procedure-prediction"
+            ],
+            [
+              "Estructura para comprensión del relato",
+              "LEN1-CUE-03/detective-structure"
+            ],
+            [
+              "Centrales/secundarios, acciones y motivaciones",
+              "LEN1-CUE-03/detective-characters"
+            ],
+            [
+              "Personajes/ambiente y su influencia",
+              "LEN1-CUE-03/detective-setting"
+            ],
+            [
+              "Coordinación y consecuencia en fragmento leído",
+              "LEN1-CUE-06/detective-feature-connectors"
+            ],
+            [
+              "Paráfrasis global y vocabulario apropiado",
+              "LEN1-CUE-03/detective-procedure-paraphrase",
+              "LEN1-CUE-03/detective-vocabulary"
+            ]
+          ]
+        },
+        {
+          "sourceId": "28865ef6-91d3-5df9-b417-0a81f880732a",
+          "components": [
+            [
+              "Elección trama, esquema secuencial y guion",
+              "LEN1-CUE-02/detective-procedure-outline",
+              "LEN1-CUE-09/detective-procedure-outline"
+            ],
+            [
+              "Conectores lógicos",
+              "LEN1-CUE-02/detective-feature-connectors"
+            ],
+            [
+              "Perfil/motivaciones de personajes y ambiente",
+              "LEN1-CUE-02/detective-characters",
+              "LEN1-CUE-09/detective-plan-characters"
+            ],
+            [
+              "Intención/destinatarios y vocabulario apropiado",
+              "LEN1-CUE-02/detective-purpose",
+              "LEN1-CUE-02/detective-vocabulary"
+            ],
+            [
+              "Descripción/diálogo y comparación/metáfora/epíteto",
+              "LEN1-CUE-02/detective-feature-dialogue",
+              "LEN1-CUE-02/detective-feature-literary"
+            ],
+            [
+              "Borradores según interlocutores/estructura, revisión y sugerencias",
+              "LEN1-CUE-02/detective-process-revision",
+              "LEN1-CUE-10/detective-process-revision",
+              "LEN1-CUE-R04/detective-process-revision"
+            ],
+            [
+              "Convenciones de escritura delimitadas y conservación de contenido",
+              "LEN1-CUE-11/detective-correction",
+              "LEN1-CUE-R03/detective-correction"
+            ],
+            [
+              "Ilustración para comprensión, no talento de dibujo",
+              "LEN1-CUE-02/detective-procedure-illustration",
+              "LEN1-CUE-13/detective-procedure-illustration"
+            ],
+            [
+              "Edición/publicación impresa y digital",
+              "LEN1-CUE-02/detective-edition",
+              "LEN1-CUE-13/detective-edition"
+            ],
+            [
+              "Medio digital único y contenido conservado",
+              "LEN1-CUE-R02/detective-edition"
+            ]
+          ]
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+          "name": "Respeto y empatía por sentimientos/opiniones de otros",
+          "evidence": [
+            "LEN1-CUE-10/detective-vocabulary",
+            "LEN1-CUE-10/detective-process-revision"
+          ],
+          "limit": "Se observan expresiones respetuosas e inclusivas y consideración de sugerencias, sin calificar empatía interna ni exigir acuerdo con opiniones"
+        },
+        {
+          "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
+          "name": "Expresión verbal y corporal para transmitir emociones",
+          "evidence": [
+            "LEN1-CUE-05/detective-voice",
+            "LEN1-CUE-05/detective-feature-literary"
+          ],
+          "limit": "Recursos comunicativos o apoyos acordados; no capacidad física, afectos internos ni emoción que sienta el evaluador"
+        },
+        {
+          "sourceId": "82fbde4d-eceb-526b-8765-1806c38549c7",
+          "name": "Expresión escrita como medio para transmitir emociones",
+          "evidence": [
+            "LEN1-CUE-02/detective-feature-literary",
+            "LEN1-CUE-02/detective-feature-dialogue"
+          ],
+          "limit": "El uso expresivo se observa en el relato; no valorar emoción sentida ni gusto personal. Literal general en columna73, no se declara exclusivo del cuento"
+        }
+      ],
+      "explicitCalligramAttitudesOnPage73": [
+        "ee44c1d4-16db-5b9d-a473-d2d596261269",
+        "dab4acf7-3e7e-51ec-a792-9715e32330a8",
+        "97c70a67-2f5a-56bb-9853-f83d23e9371d"
+      ],
+      "attitudeSourceNote": "La columna73 nombra explícitamente declamar/leer/producir caligramas. Esos tres literales se reservan para caligrama, sin forzar declamación de caligrama al cuento ni modificar la extracción original."
     },
     {
       "id": "caligrama",
@@ -4026,7 +4796,49 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CUENTO162",
+      "auditEvidence": {
+        "topic": "cuento",
+        "manifest": "auditoria-curricular-len1-cuento-162-lectura84.json",
+        "components": [
+          [
+            "Escucha de audio, tres momentos y sentido global",
+            "LEN1-CUE-04/detective-structure",
+            "LEN1-CUE-04/detective-procedure-paraphrase"
+          ],
+          [
+            "Centrales/secundarios, motivaciones y acciones",
+            "LEN1-CUE-04/detective-characters"
+          ],
+          [
+            "Cerrado/abierto/campo/ciudad y su influencia",
+            "LEN1-CUE-04/detective-setting"
+          ],
+          [
+            "Dos pretéritos/adverbios/dos conexiones para comprensión",
+            "LEN1-CUE-04/detective-feature-indicative",
+            "LEN1-CUE-04/detective-feature-adverbs",
+            "LEN1-CUE-04/detective-feature-connectors"
+          ],
+          [
+            "Vocabulario apropiado e inclusivo",
+            "LEN1-CUE-04/detective-vocabulary"
+          ],
+          [
+            "Selección de trama e intención lúdica oral",
+            "LEN1-CUE-05/detective-purpose",
+            "LEN1-CUE-05/detective-mystery"
+          ],
+          [
+            "Coordinantes/consecuencia en narración",
+            "LEN1-CUE-05/detective-feature-connectors"
+          ],
+          [
+            "Lenguaje corporal, tono/volumen o apoyo acordado",
+            "LEN1-CUE-05/detective-voice"
+          ]
+        ]
+      }
     },
     {
       "id": "caeca724-f16b-5730-be70-d3e671ae7840",
@@ -4044,7 +4856,28 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CUENTO162",
+      "auditEvidence": {
+        "topic": "cuento",
+        "manifest": "auditoria-curricular-len1-cuento-162-lectura84.json",
+        "components": [
+          [
+            "Descripción de ambiente/personajes mediante adjetivos",
+            "LEN1-CUE-05/detective-feature-adjectives",
+            "LEN1-CUE-05/detective-feature-dialogue"
+          ],
+          [
+            "Vocabulario apropiado e inclusivo oral",
+            "LEN1-CUE-05/detective-vocabulary"
+          ],
+          [
+            "Descripción/diálogo y comparación/metáfora/epíteto expresivos",
+            "LEN1-CUE-05/detective-feature-dialogue",
+            "LEN1-CUE-05/detective-feature-literary",
+            "LEN1-CUE-07/detective-feature-literary"
+          ]
+        ]
+      }
     },
     {
       "id": "caaa246b-f525-5292-8ed0-0fd2e8309566",
@@ -4062,7 +4895,46 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CUENTO162",
+      "auditEvidence": {
+        "topic": "cuento",
+        "manifest": "auditoria-curricular-len1-cuento-162-lectura84.json",
+        "components": [
+          [
+            "Anticipación desde título y cubierta",
+            "LEN1-CUE-03/detective-procedure-prediction"
+          ],
+          [
+            "Imagen/color/gráficos/cubierta/título y contraste con hechos",
+            "LEN1-CUE-P01/detective-procedure-prediction"
+          ],
+          [
+            "Imagen/color/gráficos sin título ni cubierta ausente",
+            "LEN1-CUE-P02/detective-procedure-prediction"
+          ],
+          [
+            "Estructura para comprensión del relato",
+            "LEN1-CUE-03/detective-structure"
+          ],
+          [
+            "Centrales/secundarios, acciones y motivaciones",
+            "LEN1-CUE-03/detective-characters"
+          ],
+          [
+            "Personajes/ambiente y su influencia",
+            "LEN1-CUE-03/detective-setting"
+          ],
+          [
+            "Coordinación y consecuencia en fragmento leído",
+            "LEN1-CUE-06/detective-feature-connectors"
+          ],
+          [
+            "Paráfrasis global y vocabulario apropiado",
+            "LEN1-CUE-03/detective-procedure-paraphrase",
+            "LEN1-CUE-03/detective-vocabulary"
+          ]
+        ]
+      }
     },
     {
       "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
@@ -4080,7 +4952,62 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "COMPONENTES_RELACIONADOS_CON_INSTRUMENTOS_CUENTO162",
+      "auditEvidence": {
+        "topic": "cuento",
+        "manifest": "auditoria-curricular-len1-cuento-162-lectura84.json",
+        "components": [
+          [
+            "Elección trama, esquema secuencial y guion",
+            "LEN1-CUE-02/detective-procedure-outline",
+            "LEN1-CUE-09/detective-procedure-outline"
+          ],
+          [
+            "Conectores lógicos",
+            "LEN1-CUE-02/detective-feature-connectors"
+          ],
+          [
+            "Perfil/motivaciones de personajes y ambiente",
+            "LEN1-CUE-02/detective-characters",
+            "LEN1-CUE-09/detective-plan-characters"
+          ],
+          [
+            "Intención/destinatarios y vocabulario apropiado",
+            "LEN1-CUE-02/detective-purpose",
+            "LEN1-CUE-02/detective-vocabulary"
+          ],
+          [
+            "Descripción/diálogo y comparación/metáfora/epíteto",
+            "LEN1-CUE-02/detective-feature-dialogue",
+            "LEN1-CUE-02/detective-feature-literary"
+          ],
+          [
+            "Borradores según interlocutores/estructura, revisión y sugerencias",
+            "LEN1-CUE-02/detective-process-revision",
+            "LEN1-CUE-10/detective-process-revision",
+            "LEN1-CUE-R04/detective-process-revision"
+          ],
+          [
+            "Convenciones de escritura delimitadas y conservación de contenido",
+            "LEN1-CUE-11/detective-correction",
+            "LEN1-CUE-R03/detective-correction"
+          ],
+          [
+            "Ilustración para comprensión, no talento de dibujo",
+            "LEN1-CUE-02/detective-procedure-illustration",
+            "LEN1-CUE-13/detective-procedure-illustration"
+          ],
+          [
+            "Edición/publicación impresa y digital",
+            "LEN1-CUE-02/detective-edition",
+            "LEN1-CUE-13/detective-edition"
+          ],
+          [
+            "Medio digital único y contenido conservado",
+            "LEN1-CUE-R02/detective-edition"
+          ]
+        ]
+      }
     },
     {
       "id": "385e0137-005c-5738-a4fb-123f43df0f51",
@@ -4694,7 +5621,16 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "auditEvidence": {
+        "sourceId": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+        "name": "Respeto y empatía por sentimientos/opiniones de otros",
+        "evidence": [
+          "LEN1-CUE-10/detective-vocabulary",
+          "LEN1-CUE-10/detective-process-revision"
+        ],
+        "limit": "Se observan expresiones respetuosas e inclusivas y consideración de sugerencias, sin calificar empatía interna ni exigir acuerdo con opiniones"
+      }
     },
     {
       "id": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
@@ -4712,7 +5648,16 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "auditEvidence": {
+        "sourceId": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
+        "name": "Expresión verbal y corporal para transmitir emociones",
+        "evidence": [
+          "LEN1-CUE-05/detective-voice",
+          "LEN1-CUE-05/detective-feature-literary"
+        ],
+        "limit": "Recursos comunicativos o apoyos acordados; no capacidad física, afectos internos ni emoción que sienta el evaluador"
+      }
     },
     {
       "id": "ee44c1d4-16db-5b9d-a473-d2d596261269",
@@ -4730,7 +5675,8 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
     },
     {
       "id": "dab4acf7-3e7e-51ec-a792-9715e32330a8",
@@ -4748,7 +5694,8 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
     },
     {
       "id": "97c70a67-2f5a-56bb-9853-f83d23e9371d",
@@ -4766,7 +5713,8 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "RESERVADO_A_CALIGRAMA_POR_LITERAL",
+      "nextAction": "Contraste explícito al trabajar caligrama74; no se marca ausente de cuento ni cumplido por mención"
     },
     {
       "id": "82fbde4d-eceb-526b-8765-1806c38549c7",
@@ -4784,7 +5732,16 @@
         },
         "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
       },
-      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+      "status": "TRATAMIENTO_OBSERVABLE_CUENTO_SIN_CALIFICAR_ESTADO_INTERNO",
+      "auditEvidence": {
+        "sourceId": "82fbde4d-eceb-526b-8765-1806c38549c7",
+        "name": "Expresión escrita como medio para transmitir emociones",
+        "evidence": [
+          "LEN1-CUE-02/detective-feature-literary",
+          "LEN1-CUE-02/detective-feature-dialogue"
+        ],
+        "limit": "El uso expresivo se observa en el relato; no valorar emoción sentida ni gusto personal. Literal general en columna73, no se declara exclusivo del cuento"
+      }
     }
   ],
   "achievementIndicators": [
@@ -5193,10 +6150,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Cuento: banco previo 13 casos desde73 y transición74, sin generar. Caligrama pendiente",
+    "otherTopics": "Cuento21actividades/84instrumentos revisados localmente, HTTP162 pendiente; caligrama74 pendiente",
     "remaining": [
-      "Visual personal bloqueada por acceso; caché y registro SW no expuestos por herramienta DOM",
-      "Cuento y caligrama; comparación completa de Lengua1 e indicadores; ámbitos restantes"
+      "HTTP/DB162 y15referencias personales después de cuatro muestras",
+      "Visual personal bloqueado por acceso; registroSW/caché no accesibles a herramientaDOM",
+      "Caligrama74, contraste totalLengua1 e indicadores; restantes ámbitos"
     ]
   }
 }

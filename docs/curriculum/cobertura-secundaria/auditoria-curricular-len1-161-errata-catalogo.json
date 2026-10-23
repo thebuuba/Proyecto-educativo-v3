@@ -1,0 +1,17 @@
+{
+  "artifact": "auditoria-curricular-len1-161-validacion220.json",
+  "originalArtifactSha256": "82bc2b955644d3f8aef9035d5d115f7a9f3f09bcc2801b03c5d38fb2ef5bd753",
+  "field": "catalog",
+  "recordedValue": "evaluation-2026.160",
+  "correctValue": "evaluation-2026.161",
+  "reason": "Etiqueta superior del auxiliar de validación no actualizada. Se conserva el archivo original sin sobrescribirlo.",
+  "verifiedAgainst": {
+    "frozenApiSha256": "18d444f3669202eb7d760094a15bba9c98593deac22e42fc905c5a18abee09b2",
+    "frozenSourceCommit": "f7cf4b824910d665d2ba53c611c5ba7e61c6cee6",
+    "frozenCatalogFingerprint": "b477d9f4a03e3ead1dd47790fb43721b4c62d8f025061f7109a4cfd97e623739",
+    "outputsExact": 220,
+    "comparison": "Recomendaciones completas sin IDs/referencias de fuente, equivalentes a los hashes semánticos comprobados en304; catalogVersion de cada respuesta congelada161 comprobada"
+  },
+  "baselineRecapture": false,
+  "remoteCalls": false
+}

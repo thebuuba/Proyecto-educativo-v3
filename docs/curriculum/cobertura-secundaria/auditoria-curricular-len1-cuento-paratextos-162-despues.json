@@ -1,0 +1,785 @@
+{
+  "catalog": "evaluation-2026.162",
+  "bankSha256": "6fd02feddd984bcebf03fc876e93b82288e2e4dad44f8bca2a55cf2d25fe0333",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "f7cf4b824910d665d2ba53c611c5ba7e61c6cee6",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-CUE-P01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 5.614100000000008,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Predicción desde los recursos disponibles y comprobación",
+            "description": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.850500000000011,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "description": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.5598999999999705,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "description": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.1096000000000004,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Predicción desde los recursos disponibles y comprobación",
+            "description": "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican. Parcial (50%): Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde título, imagen, colores, gráficos y cubierta, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8378999999999905,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Predicción desde los recursos disponibles y comprobación",
+            "description": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8403999999999883,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "description": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8836000000000013,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "description": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8984999999999559,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-procedure-prediction:0",
+            "templateId": "detective-procedure-prediction",
+            "title": "Predicción desde los recursos disponibles y comprobación",
+            "description": "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican. Parcial (50%): Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Formula una predicción del contenido desde imagen, colores y gráficos, relaciona los indicios disponibles con lo anticipado y la comprueba con hechos de la lectura que la confirman o modifican.",
+              "La predicción se apoya en indicios disponibles y se comprueba; una relación entre indicio y hecho leído necesita precisión.",
+              "Describe indicios o propone una predicción, pero no relaciona su comprobación con hechos de la lectura.",
+              "Atribuye a los recursos información ausente o da por confirmada una predicción que los hechos contradicen.",
+              "No presenta una predicción sustentada ni una comprobación reconocible con los hechos leídos."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

@@ -1,0 +1,2809 @@
+{
+  "catalog": "evaluation-2026.162",
+  "bankSha256": "5e263c4f05062d1ef3fd809a85d5c871610bcdaf00104122f75b013e3803b1c1",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "f7cf4b824910d665d2ba53c611c5ba7e61c6cee6",
+  "sourceDirty": true,
+  "cases": [
+    {
+      "id": "LEN1-CUE-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.957400000000007,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-actants:0",
+            "templateId": "detective-feature-actants",
+            "title": "Funciones actanciales del conflicto",
+            "description": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+              "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+              "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+              "Atribuye a una función hechos contrarios a las acciones del personaje o invierte los papeles solicitados.",
+              "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0148000000000366,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-actants:0",
+            "templateId": "detective-feature-actants",
+            "title": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+            "description": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+              "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+              "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+              "Atribuye a una función hechos contrarios a las acciones del personaje o invierte los papeles solicitados.",
+              "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-actants:0",
+            "templateId": "detective-feature-actants",
+            "title": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+            "description": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+              "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+              "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+              "Atribuye a una función hechos contrarios a las acciones del personaje o invierte los papeles solicitados.",
+              "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.0511000000000195,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-actants:0",
+            "templateId": "detective-feature-actants",
+            "title": "Funciones actanciales del conflicto",
+            "description": "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel. Parcial (50%): Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona en el cuento las funciones de los actantes (quién ayuda y quién se opone) con hechos del relato; distingue cada función del nombre del personaje sin exigir un personaje diferente para cada papel.",
+              "Los papeles se sustentan en hechos; una relación entre función y acción necesita precisión.",
+              "Nombra personajes y algunas funciones, pero no relaciona todos los papeles solicitados con hechos.",
+              "Atribuye a una función hechos contrarios a las acciones del personaje o invierte los papeles solicitados.",
+              "No establece relaciones reconocibles entre las funciones actanciales solicitadas y los hechos."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8096000000000458,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-edition:0",
+            "templateId": "detective-edition",
+            "title": "Edición para los medios solicitados",
+            "description": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+              "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+              "La presentación permite leer solo parte del relato en los medios solicitados.",
+              "La edición cambia contenido del cuento corregido o su presentación impide seguir hechos centrales.",
+              "No presenta una edición legible del cuento para los medios solicitados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "La presentación permite leer solo parte del relato en los medios solicitados.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una edición legible del cuento para los medios solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5784999999999627,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-edition:0",
+            "templateId": "detective-edition",
+            "title": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+            "description": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+              "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+              "La presentación permite leer solo parte del relato en los medios solicitados.",
+              "La edición cambia contenido del cuento corregido o su presentación impide seguir hechos centrales.",
+              "No presenta una edición legible del cuento para los medios solicitados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.73599999999999,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-edition:0",
+            "templateId": "detective-edition",
+            "title": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+            "description": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+              "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+              "La presentación permite leer solo parte del relato en los medios solicitados.",
+              "La edición cambia contenido del cuento corregido o su presentación impide seguir hechos centrales.",
+              "No presenta una edición legible del cuento para los medios solicitados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "La presentación permite leer solo parte del relato en los medios solicitados.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una edición legible del cuento para los medios solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5587000000000444,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-edition:0",
+            "templateId": "detective-edition",
+            "title": "Edición para los medios solicitados",
+            "description": "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido. Parcial (50%): La presentación permite leer solo parte del relato en los medios solicitados.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Prepara la edición digital para la revista escolar con legibilidad y presentación que permiten seguir el relato; conserva el contenido del cuento ya corregido.",
+              "Las ediciones solicitadas conservan el contenido y se leen; un detalle de presentación dificulta localizar un pasaje.",
+              "La presentación permite leer solo parte del relato en los medios solicitados.",
+              "La edición cambia contenido del cuento corregido o su presentación impide seguir hechos centrales.",
+              "No presenta una edición legible del cuento para los medios solicitados."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.574799999999982,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-correction:0",
+            "templateId": "detective-correction",
+            "title": "Convenciones del diálogo conservado",
+            "description": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+              "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+              "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+              "La corrección atribuye una intervención a otro personaje o altera contenido u orden de los hechos.",
+              "No presenta una corrección reconocible de las convenciones del diálogo entregado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección reconocible de las convenciones del diálogo entregado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4815999999999576,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-correction:0",
+            "templateId": "detective-correction",
+            "title": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+            "description": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+              "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+              "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+              "La corrección atribuye una intervención a otro personaje o altera contenido u orden de los hechos.",
+              "No presenta una corrección reconocible de las convenciones del diálogo entregado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5166000000000395,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-correction:0",
+            "templateId": "detective-correction",
+            "title": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+            "description": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+              "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+              "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+              "La corrección atribuye una intervención a otro personaje o altera contenido u orden de los hechos.",
+              "No presenta una corrección reconocible de las convenciones del diálogo entregado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+                "scoreUnits": 2000
+              },
+              {
+                "levelId": "L3",
+                "text": "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+                "scoreUnits": 1333
+              },
+              {
+                "levelId": "L2",
+                "text": "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+                "scoreUnits": 667
+              },
+              {
+                "levelId": "L1",
+                "text": "No presenta una corrección reconocible de las convenciones del diálogo entregado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4936000000000149,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-correction:0",
+            "templateId": "detective-correction",
+            "title": "Convenciones del diálogo conservado",
+            "description": "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos. Parcial (50%): Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+            "maxScore": 20,
+            "maxScoreUnits": 2000,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Corrige la ortografía del diálogo para reconocer quién habla, conservando exactamente contenido, personajes, puntuación y orden de los hechos.",
+              "Las convenciones corregidas permiten comprender el diálogo; queda un error aislado sin cambio del contenido.",
+              "Corrige parte de las convenciones solicitadas, pero varios errores dificultan comprender las intervenciones.",
+              "La corrección atribuye una intervención a otro personaje o altera contenido u orden de los hechos.",
+              "No presenta una corrección reconocible de las convenciones del diálogo entregado."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.80499999999995,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-dialogue:0",
+            "templateId": "detective-feature-dialogue",
+            "title": "Función de diálogo",
+            "description": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+              "Usa los recursos, pero no permiten seguir los intercambios.",
+              "Atribuye una intervención a otro personaje y altera el sentido del pasaje.",
+              "No emplea de manera reconocible los recursos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa los recursos, pero no permiten seguir los intercambios.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No emplea de manera reconocible los recursos solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-process-revision:1",
+            "templateId": "detective-process-revision",
+            "title": "Revisión con las observaciones disponibles",
+            "description": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+              "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+              "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+              "Los cambios contradicen las observaciones atendidas o alteran el contenido que debía conservarse.",
+              "No aporta una revisión reconocible a partir de las observaciones disponibles."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una revisión reconocible a partir de las observaciones disponibles.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6929999999999836,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-dialogue:0",
+            "templateId": "detective-feature-dialogue",
+            "title": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+            "description": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+              "Usa los recursos, pero no permiten seguir los intercambios.",
+              "Atribuye una intervención a otro personaje y altera el sentido del pasaje.",
+              "No emplea de manera reconocible los recursos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-process-revision:1",
+            "templateId": "detective-process-revision",
+            "title": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+            "description": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+              "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+              "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+              "Los cambios contradicen las observaciones atendidas o alteran el contenido que debía conservarse.",
+              "No aporta una revisión reconocible a partir de las observaciones disponibles."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9112999999999829,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-dialogue:0",
+            "templateId": "detective-feature-dialogue",
+            "title": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+            "description": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+              "Usa los recursos, pero no permiten seguir los intercambios.",
+              "Atribuye una intervención a otro personaje y altera el sentido del pasaje.",
+              "No emplea de manera reconocible los recursos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+                "scoreUnits": 868
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+                "scoreUnits": 579
+              },
+              {
+                "levelId": "L2",
+                "text": "Usa los recursos, pero no permiten seguir los intercambios.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No emplea de manera reconocible los recursos solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-process-revision:1",
+            "templateId": "detective-process-revision",
+            "title": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+            "description": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+              "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+              "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+              "Los cambios contradicen las observaciones atendidas o alteran el contenido que debía conservarse.",
+              "No aporta una revisión reconocible a partir de las observaciones disponibles."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+                "scoreUnits": 867
+              },
+              {
+                "levelId": "L3",
+                "text": "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L2",
+                "text": "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+                "scoreUnits": 289
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una revisión reconocible a partir de las observaciones disponibles.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7455999999999676,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-dialogue:0",
+            "templateId": "detective-feature-dialogue",
+            "title": "Función de diálogo",
+            "description": "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes. Parcial (50%): Usa los recursos, pero no permiten seguir los intercambios.",
+            "maxScore": 8.68,
+            "maxScoreUnits": 868,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Emplea los recursos solicitados en el relato: el diálogo permite reconocer intervenciones e intercambios de los personajes.",
+              "Los recursos cumplen su función; una relación con el sentido del pasaje necesita precisión.",
+              "Usa los recursos, pero no permiten seguir los intercambios.",
+              "Atribuye una intervención a otro personaje y altera el sentido del pasaje.",
+              "No emplea de manera reconocible los recursos solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-process-revision:1",
+            "templateId": "detective-process-revision",
+            "title": "Revisión con las observaciones disponibles",
+            "description": "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador. Parcial (50%): Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+            "maxScore": 8.67,
+            "maxScoreUnits": 867,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Revisa la claridad de diálogos en el borrador según las sugerencias de compañeros; conserva la trama y el narrador.",
+              "Los cambios atienden las observaciones y aclaran el relato; queda un problema secundario sin resolver.",
+              "Realiza cambios de forma, pero mantiene problemas de escritura o claridad señalados en las observaciones.",
+              "Los cambios contradicen las observaciones atendidas o alteran el contenido que debía conservarse.",
+              "No aporta una revisión reconocible a partir de las observaciones disponibles."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.49729999999999563,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-sequence:0",
+            "templateId": "detective-sequence",
+            "title": "Secuencia de la narración",
+            "description": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra inicio, nudo y desenlace en un orden comprensible.",
+              "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+              "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+              "El orden narrado confunde los hechos y la resolución del conflicto.",
+              "No comunica una secuencia reconocible del cuento."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Narra inicio, nudo y desenlace en un orden comprensible.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una secuencia reconocible del cuento.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-language:1",
+            "templateId": "detective-language",
+            "title": "Claridad y recursos expresivos",
+            "description": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+              "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+              "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+              "Las expresiones confunden hechos centrales de la narración.",
+              "No comunica los hechos del cuento de manera comprensible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica los hechos del cuento de manera comprensible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-narrator:2",
+            "templateId": "detective-narrator",
+            "title": "Consistencia del narrador",
+            "description": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+              "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+              "Los cambios de perspectiva contradicen la información que el narrador puede conocer.",
+              "No permite reconocer quién narra ni una perspectiva consistente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer quién narra ni una perspectiva consistente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-mystery:3",
+            "templateId": "detective-mystery",
+            "title": "Misterio narrado y resolución",
+            "description": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+              "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+              "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+              "La solución narrada contradice las pistas o atribuye acciones a otro personaje.",
+              "No comunica una relación reconocible entre misterio, pistas y solución."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una relación reconocible entre misterio, pistas y solución.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.3813999999999851,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-sequence:0",
+            "templateId": "detective-sequence",
+            "title": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "description": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra inicio, nudo y desenlace en un orden comprensible.",
+              "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+              "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+              "El orden narrado confunde los hechos y la resolución del conflicto.",
+              "No comunica una secuencia reconocible del cuento."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-language:1",
+            "templateId": "detective-language",
+            "title": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "description": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+              "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+              "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+              "Las expresiones confunden hechos centrales de la narración.",
+              "No comunica los hechos del cuento de manera comprensible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-narrator:2",
+            "templateId": "detective-narrator",
+            "title": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+            "description": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+              "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+              "Los cambios de perspectiva contradicen la información que el narrador puede conocer.",
+              "No permite reconocer quién narra ni una perspectiva consistente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-mystery:3",
+            "templateId": "detective-mystery",
+            "title": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+            "description": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+              "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+              "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+              "La solución narrada contradice las pistas o atribuye acciones a otro personaje.",
+              "No comunica una relación reconocible entre misterio, pistas y solución."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.4137999999999238,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-sequence:0",
+            "templateId": "detective-sequence",
+            "title": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "description": "Narra inicio, nudo y desenlace en un orden comprensible.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra inicio, nudo y desenlace en un orden comprensible.",
+              "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+              "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+              "El orden narrado confunde los hechos y la resolución del conflicto.",
+              "No comunica una secuencia reconocible del cuento."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Narra inicio, nudo y desenlace en un orden comprensible.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una secuencia reconocible del cuento.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-language:1",
+            "templateId": "detective-language",
+            "title": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "description": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+              "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+              "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+              "Las expresiones confunden hechos centrales de la narración.",
+              "No comunica los hechos del cuento de manera comprensible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica los hechos del cuento de manera comprensible.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-narrator:2",
+            "templateId": "detective-narrator",
+            "title": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+            "description": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+              "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+              "Los cambios de perspectiva contradicen la información que el narrador puede conocer.",
+              "No permite reconocer quién narra ni una perspectiva consistente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+                "scoreUnits": 375
+              },
+              {
+                "levelId": "L3",
+                "text": "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L2",
+                "text": "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+                "scoreUnits": 125
+              },
+              {
+                "levelId": "L1",
+                "text": "No permite reconocer quién narra ni una perspectiva consistente.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-mystery:3",
+            "templateId": "detective-mystery",
+            "title": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+            "description": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+              "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+              "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+              "La solución narrada contradice las pistas o atribuye acciones a otro personaje.",
+              "No comunica una relación reconocible entre misterio, pistas y solución."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+                "scoreUnits": 625
+              },
+              {
+                "levelId": "L3",
+                "text": "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L2",
+                "text": "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+                "scoreUnits": 208
+              },
+              {
+                "levelId": "L1",
+                "text": "No comunica una relación reconocible entre misterio, pistas y solución.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7733999999999241,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_NARRATION",
+        "evidenceTypes": [
+          "PERFORMANCE",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-sequence:0",
+            "templateId": "detective-sequence",
+            "title": "Secuencia de la narración",
+            "description": "Narra inicio, nudo y desenlace en un orden comprensible. Parcial (50%): Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra inicio, nudo y desenlace en un orden comprensible.",
+              "La narración permite seguir los tres momentos; una transición requiere ajuste.",
+              "Se comprenden hechos aislados, pero algunos vínculos temporales quedan incompletos.",
+              "El orden narrado confunde los hechos y la resolución del conflicto.",
+              "No comunica una secuencia reconocible del cuento."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-language:1",
+            "templateId": "detective-language",
+            "title": "Claridad y recursos expresivos",
+            "description": "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas. Parcial (50%): El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Comunica los hechos del cuento con vocabulario comprensible y vínculos claros entre las ideas.",
+              "El vocabulario y los vínculos entre hechos permiten comprender el relato; un detalle necesita precisión.",
+              "El vocabulario o los vínculos entre hechos dificultan comprender partes del relato.",
+              "Las expresiones confunden hechos centrales de la narración.",
+              "No comunica los hechos del cuento de manera comprensible."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-narrator:2",
+            "templateId": "detective-narrator",
+            "title": "Consistencia del narrador",
+            "description": "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento. Parcial (50%): El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+            "maxScore": 3.75,
+            "maxScoreUnits": 375,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Mantiene un narrador reconocible y una perspectiva consistente durante el cuento.",
+              "La perspectiva del narrador se mantiene; una expresión necesita ajuste.",
+              "El narrador se reconoce, pero cambia de perspectiva sin aclararlo.",
+              "Los cambios de perspectiva contradicen la información que el narrador puede conocer.",
+              "No permite reconocer quién narra ni una perspectiva consistente."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-mystery:3",
+            "templateId": "detective-mystery",
+            "title": "Misterio narrado y resolución",
+            "description": "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato. Parcial (50%): Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+            "maxScore": 6.25,
+            "maxScoreUnits": 625,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Narra el misterio relacionando acciones y pistas con una solución que no contradice los hechos del relato.",
+              "El relato relaciona pistas y solución; una relación causal necesita precisión.",
+              "Comunica pistas y solución, pero deja sin relacionar parte de los hechos narrados.",
+              "La solución narrada contradice las pistas o atribuye acciones a otro personaje.",
+              "No comunica una relación reconocible entre misterio, pistas y solución."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.7105999999999995,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-literary:0",
+            "templateId": "detective-feature-literary",
+            "title": "Función de los recursos literarios",
+            "description": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+              "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+              "El sentido se altera: la semejanza contradice los referentes comparados.",
+              "No aporta explicaciones reconocibles de los recursos literarios solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta explicaciones reconocibles de los recursos literarios solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5880999999999403,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-literary:0",
+            "templateId": "detective-feature-literary",
+            "title": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+            "description": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+              "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+              "El sentido se altera: la semejanza contradice los referentes comparados.",
+              "No aporta explicaciones reconocibles de los recursos literarios solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5538000000000238,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-literary:0",
+            "templateId": "detective-feature-literary",
+            "title": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+            "description": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+              "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+              "El sentido se altera: la semejanza contradice los referentes comparados.",
+              "No aporta explicaciones reconocibles de los recursos literarios solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta explicaciones reconocibles de los recursos literarios solicitados.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5019999999999527,
+      "automatic": {
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.162",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "DETECTIVE_STORY_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.162:fallback:detective-feature-literary:0",
+            "templateId": "detective-feature-literary",
+            "title": "Función de los recursos literarios",
+            "description": "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento. Parcial (50%): Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica la comparación con el ejemplo presente y su efecto: la comparación permite establecer una semejanza explícita. Explica cómo caracteriza el ambiente del fragmento.",
+              "Los recursos se relacionan con su función en el pasaje; un vínculo entre expresión y efecto necesita precisión.",
+              "Identifica los recursos, pero no explica cómo su función contribuye al sentido del pasaje.",
+              "El sentido se altera: la semejanza contradice los referentes comparados.",
+              "No aporta explicaciones reconocibles de los recursos literarios solicitados."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-cuento-policiaco",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

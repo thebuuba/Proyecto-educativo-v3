@@ -1,0 +1,55 @@
+{
+  "version": "curricular-len1-cuento-paratextos-v1",
+  "provenance": "SINTÉTICO del mismo autor. Fijado antes de generar al contrastar el párrafo lector completo de73: imagen/color/gráficos aún sin evidencia específica. No banco externo independiente.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      73
+    ],
+    "nextPageChecked": 74,
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-CUE-P01",
+      "family": "Anticipación y comprobación delimitadas",
+      "title": "Lo que anticipan los paratextos",
+      "description": "Antes de leer el cuento policíaco dado, trabajen únicamente la anticipación desde sus paratextos: título, imagen, colores, gráficos y cubierta. Formulen una predicción sobre el contenido y expliquen qué indicios de esos recursos la sustentan. Luego lean el cuento y comprueben qué hechos confirman o modifican la predicción. No analicen narrador, personajes ni gramática y no creen otro cuento.",
+      "expected": {
+        "explicit": [
+          "Predicción sustentada en título/imagen/colores/gráficos/cubierta dados",
+          "Comprobación con hechos posteriores que confirman o modifican"
+        ],
+        "excluded": [
+          "Crear imágenes o nuevas cubiertas",
+          "Análisis adicional de narrador, personajes, trama o gramática",
+          "Dar por confirmada una predicción solo por describir colores"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "family": "Anticipación visual sin título",
+      "title": "Antes de ver el título",
+      "description": "Anticipen únicamente el contenido del cuento policíaco desde la imagen, los colores y los gráficos entregados. Expliquen en qué indicio visual se apoya su predicción; después lean el fragmento y comprueben qué hechos la confirman o modifican. No usen el título ni una cubierta que no se entregó y no hagan un análisis general del cuento.",
+      "expected": {
+        "explicit": [
+          "Inferencia anticipada desde imagen/colores/gráficos disponibles",
+          "Vínculo entre indicio y predicción; comprobación con fragmento"
+        ],
+        "excluded": [
+          "Título o cubierta no entregados",
+          "Dibujo, análisis general de personajes/narrador/gramática",
+          "Confirmación sin evidencia posterior"
+        ]
+      }
+    }
+  ]
+}

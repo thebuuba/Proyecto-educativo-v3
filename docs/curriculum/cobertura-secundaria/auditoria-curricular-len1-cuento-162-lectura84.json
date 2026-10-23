@@ -1,0 +1,635 @@
+{
+  "catalog": "evaluation-2026.162",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "reviewer": "Codex, mismo autor; revisión interna, no independiente ni ciega",
+  "currentProof": "auditoria-curricular-len1-162-validacion304.json",
+  "sourceHashes": [
+    {
+      "path": "apps/backend/src/modules/evaluation-instruments/catalog-current.ts",
+      "sha256": "36473e394aade5acd49e8c04f78591e99e7d690cc533fc99fb2dcbe881aad1da"
+    },
+    {
+      "path": "packages/shared/src/index.ts",
+      "sha256": "50469b5dd06f97c5d8d3ea93f08bcca1a3abe55d7b10623f258a41aa083357f8"
+    },
+    {
+      "path": "packages/shared/src/language-feature-criteria.ts",
+      "sha256": "8c34560ef4f3a58021d5ae55436e8d77499439ba90265bf03cfc5955929335eb"
+    },
+    {
+      "path": "packages/shared/src/secondary-language-grade-one-complete.ts",
+      "sha256": "3eee6fd25c063ded371e23a7841de9a0a59447da969b76d19fecd80484e86ef8"
+    },
+    {
+      "path": "packages/shared/src/secondary-detective-grade-one-requirements.ts",
+      "sha256": "288d8fce4f9e7076538aec84ba49a976985d33ed47a67b55b67c9d8a460e65f2"
+    }
+  ],
+  "cases": [
+    {
+      "id": "LEN1-CUE-01",
+      "title": "El misterio de la biblioteca",
+      "description": "Escriban un cuento policíaco sobre un objeto que desaparece en la biblioteca de la escuela.",
+      "expectations": {
+        "explicit": [
+          "Relato propio con inicio, desarrollo del misterio y desenlace coherente con las pistas",
+          "Personajes, ambiente y narrador reconocibles"
+        ],
+        "excluded": [
+          "Número fijo de personajes o pistas",
+          "Entrevistas, denuncia real, ilustraciones, publicación o exposición no pedidas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-02",
+      "title": "Un misterio para nuestra revista",
+      "description": "Escriban un cuento policíaco para entretener a los lectores de la revista escolar. Elijan la trama y planifíquenla en un esquema secuencial; definan el perfil de los personajes centrales y secundarios y sus motivaciones. Relacionen el ambiente con las acciones, mantengan la perspectiva del narrador y resuelvan el misterio con las pistas planteadas. Usen descripciones y diálogos, comparación, metáfora y epíteto, adjetivos para caracterizar personajes y ambiente, pretérito indefinido para las acciones terminadas e imperfecto para el fondo y las acciones habituales, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia. Revisen los borradores según las sugerencias de compañeros y profesora, corrijan escritura y vocabulario excluyente, añadan una ilustración que ayude a comprender el cuento y preparen la versión impresa y la digital para publicarlas en la revista.",
+      "expectations": {
+        "explicit": [
+          "Intención lúdica y lectores escolares",
+          "Plan secuencial y perfiles/motivaciones de centrales y secundarios",
+          "Trama, narrador, pistas y resolución; ambiente relacionado con acciones",
+          "Descripción y diálogo, comparación/metáfora/epíteto por funciones diferentes",
+          "Dos pretéritos y sus funciones; adverbios de tiempo/espacio; coordinación/consecuencia",
+          "Revisión de borradores con sugerencias; vocabulario apropiado e inclusivo",
+          "Ilustración para comprensión y versión impresa y digital"
+        ],
+        "excluded": [
+          "Vídeo, actuación, estadísticas o investigación policial real",
+          "Explicación metalingüística aparte del cuento",
+          "Cantidad de borradores, personajes, recursos o palabras no establecida"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-03",
+      "title": "Tras las pistas del cuento",
+      "description": "Antes de leer el cuento policíaco entregado, anticipen su contenido a partir del título y la cubierta; después contrasten sus predicciones con lo leído. Expliquen la función del cuento y cómo inicio, nudo y desenlace organizan el misterio. Identifiquen al narrador y qué puede saber, relacionen acciones y motivaciones de personajes centrales y secundarios con la trama y expliquen cómo influye el ambiente. Usen la ficha de actantes para distinguir sujeto, objeto, destinador, destinatario, ayudante y oponente, justificando cada papel con hechos del cuento. Relacionen las pistas con la solución y hagan una paráfrasis de su sentido global con vocabulario apropiado e inclusivo.",
+      "expectations": {
+        "explicit": [
+          "Anticipación título/cubierta y comprobación posterior",
+          "Función/estructura, narrador y límites de conocimiento",
+          "Centrales/secundarios, acciones/motivaciones/ambiente",
+          "Seis papeles actanciales según ficha y hechos; no equivalen a lista de personajes",
+          "Pistas y resolución; paráfrasis global propia"
+        ],
+        "excluded": [
+          "Cuento nuevo",
+          "Actuación, ilustración propia o publicación",
+          "Lectura de imágenes inexistentes distintas de la cubierta dada"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-04",
+      "title": "El cuento que escuchamos",
+      "description": "Escuchen el cuento policíaco grabado. Reconstruyan oralmente inicio, nudo y desenlace, relacionen las motivaciones de personajes centrales y secundarios con sus acciones y expliquen con hechos escuchados cómo el paso de una habitación cerrada de la ciudad a un espacio abierto del campo influye en la búsqueda. Identifiquen en el audio pretérito indefinido e imperfecto, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia, explicando cómo ayudan a seguir los hechos. Terminen con un resumen o paráfrasis global, con vocabulario apropiado e inclusivo. No tienen que leer ni entregar un texto escrito.",
+      "expectations": {
+        "explicit": [
+          "Comprensión de audio, no producción de otro cuento",
+          "Tres momentos y relaciones causales",
+          "Centrales/secundarios; motivaciones/acciones",
+          "Ambiente cerrado/abierto y ciudad/campo según audio, influencia sobre búsqueda",
+          "Identificación y función de ambos pretéritos, adverbios y dos relaciones de conexión",
+          "Resumen O paráfrasis oral global"
+        ],
+        "excluded": [
+          "Texto escrito, marcas visuales, lectura de cubierta",
+          "Narración inventada, publicación",
+          "Obligación de entregar resumen Y paráfrasis"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-05",
+      "title": "Contamos un misterio al curso",
+      "description": "Inventen y narren oralmente un cuento policíaco para entretener al curso. Elijan la trama, organicen inicio, nudo y desenlace y relacionen pistas con solución. Describan ambiente y personajes con adjetivos y vocabulario apropiado e inclusivo; incorporen diálogo, comparación, metáfora y epíteto, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia. Mantengan el narrador elegido. Usen tono y volumen de voz y lenguaje corporal, o el apoyo de comunicación acordado, para diferenciar las intervenciones y transmitir la intención del relato. No se pide texto escrito, disfraz ni grabación.",
+      "expectations": {
+        "explicit": [
+          "Relato nuevo oral con intención lúdica, secuencia, misterio/pistas/solución y narrador",
+          "Descripción, diálogo y tres figuras en uso narrativo",
+          "Adjetivos/adverbios y coordinación/consecuencia",
+          "Tono, volumen y lenguaje corporal o apoyo acordado, sin exigir capacidad física concreta"
+        ],
+        "excluded": [
+          "Texto escrito, disfraz, grabación o escenografía",
+          "Explicación escrita del uso de recursos",
+          "Resumen de un cuento ya dado"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-06",
+      "title": "Cómo se enlazan los hechos",
+      "description": "Analicen únicamente los recursos lingüísticos del fragmento del cuento policíaco dado: pretérito indefinido para acciones terminadas e imperfecto para el fondo o los hábitos, adverbios de tiempo y espacio, adjetivos que caracterizan personajes y ambiente y conectores coordinantes y de consecuencia. Citen un ejemplo de cada tipo y expliquen su función en los hechos narrados. No analicen la trama, el narrador ni las figuras literarias y no escriban otro cuento.",
+      "expectations": {
+        "explicit": [
+          "Ambos pretéritos diferenciados por función",
+          "Adverbios temporales y espaciales",
+          "Adjetivos para caracterización",
+          "Coordinación frente a consecuencia",
+          "Ejemplo de cada tipo y efecto en narración"
+        ],
+        "excluded": [
+          "Trama, narrador, pistas o figuras literarias como dimensiones",
+          "Nuevo relato, exposición o conclusión no pedida"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-07",
+      "title": "Descripción, diálogo e imágenes literarias",
+      "description": "En el cuento policíaco leído, analicen solamente la descripción y el diálogo como recursos lingüísticos y la comparación, la metáfora y el epíteto como recursos literarios. Seleccionen un ejemplo de cada recurso y expliquen cómo contribuye a describir el ambiente o a expresar lo que hacen y dicen los personajes. No inventen ejemplos ni otro cuento.",
+      "expectations": {
+        "explicit": [
+          "Descripción vs diálogo",
+          "Comparación vs metáfora vs epíteto con funciones distintas",
+          "Un ejemplo real de cada uno y vínculo con ambiente/acciones/intervenciones"
+        ],
+        "excluded": [
+          "Figuras no pedidas",
+          "Escritura de nuevo cuento",
+          "Calificación de gusto, creatividad innata o emociones personales"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-08",
+      "title": "Dos formas de resolver el misterio",
+      "description": "Comparen los dos cuentos policíacos entregados: narrador y límites de su información, personajes y papeles actanciales según la ficha, ambiente y su influencia, organización de la trama, pistas y resolución. Apoyen cada semejanza o diferencia en hechos de ambos cuentos. No se pide crear un tercer cuento ni añadir una conclusión aparte.",
+      "expectations": {
+        "explicit": [
+          "Contraste de dos textos, no dos análisis separados",
+          "Narrador, papeles actanciales, ambiente/acciones, trama y resolución",
+          "Evidencia de ambos cuentos en semejanzas/diferencias"
+        ],
+        "excluded": [
+          "Tercer cuento",
+          "Conclusión adicional obligatoria",
+          "Escenografía, ilustraciones o exposición oral"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-09",
+      "title": "Plan de un misterio",
+      "description": "Planifiquen un cuento policíaco para lectores del curso. Elijan la trama y la intención de entretener, hagan un esquema secuencial de inicio, nudo y desenlace con pistas y posible solución, definan perfiles y motivaciones de personajes y su papel actancial según la ficha, el narrador y el ambiente relacionado con sus acciones. Entreguen únicamente el plan; no redacten el cuento, no dibujen ni publiquen.",
+      "expectations": {
+        "explicit": [
+          "Plan de relato con intención/destinatarios, secuencia y solución prevista",
+          "Perfiles/motivaciones, actantes, narrador, ambiente/acciones previstos"
+        ],
+        "excluded": [
+          "Cuento terminado",
+          "Uso efectivo de diálogos o figuras que no se pidió planificar",
+          "Borradores, dibujos o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-10",
+      "title": "Del borrador a una versión más clara",
+      "description": "Revisen el borrador del cuento policíaco entregado a partir de las observaciones de un compañero y de la profesora. Conserven la trama y el narrador; ajusten solo la claridad de las descripciones del ambiente y los personajes, los diálogos y las expresiones que excluyen o ridiculizan. Entreguen la versión corregida y señalen qué sugerencias atendieron y por qué. No publiquen ni añadan ilustraciones.",
+      "expectations": {
+        "explicit": [
+          "Revisión de borrador existente según dos fuentes de observaciones",
+          "Descripciones y diálogo con claridad",
+          "Vocabulario respetuoso e inclusivo observable",
+          "Versión corregida y decisiones justificadas; trama/narrador conservados"
+        ],
+        "excluded": [
+          "Nueva trama o nuevo narrador",
+          "Cuento creado desde cero",
+          "Publicación o ilustraciones"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-11",
+      "title": "Puntuación para entender quién habla",
+      "description": "Corrijan únicamente la puntuación y la ortografía del diálogo del cuento policíaco dado para que se entienda quién habla. Mantengan exactamente el contenido, los personajes y el orden de los hechos. No añadan figuras literarias ni analicen otros aspectos del cuento.",
+      "expectations": {
+        "explicit": [
+          "Convenciones de escritura del diálogo y claridad de turnos",
+          "Contenido/personajes/orden conservados"
+        ],
+        "excluded": [
+          "Creación de cuento",
+          "Trama, narrador, misterio o figuras como criterios adicionales",
+          "Explicaciones o publicación no pedidas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-12",
+      "title": "Quién ayuda y quién se opone",
+      "description": "Lean el cuento policíaco y expliquen los papeles de los actantes con la ficha trabajada en clase: quién busca, qué busca, quién impulsa la búsqueda, quién se beneficia, quién ayuda y quién se opone. Justifiquen cada relación con hechos del cuento. No basta enumerar nombres de personajes; no reescriban el relato.",
+      "expectations": {
+        "explicit": [
+          "Seis funciones actanciales relacionadas con la búsqueda y con hechos",
+          "Distinción entre personaje y función actancial"
+        ],
+        "excluded": [
+          "Cuento nuevo",
+          "Análisis gramatical, resumen global o publicación no pedidos",
+          "Un personaje distinto obligatorio para cada función"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-13",
+      "title": "Preparamos el cuento para publicarlo",
+      "description": "A partir del cuento policíaco ya corregido, preparen su edición final para publicarlo en la revista escolar impresa y digital. Conserven el contenido y añadan una ilustración que ayude a comprender un hecho o el ambiente del relato. Revisen legibilidad y presentación en ambos formatos. No escriban otro cuento ni hagan una exposición oral.",
+      "expectations": {
+        "explicit": [
+          "Edición de texto dado, no producción inicial",
+          "Versiones impresa Y digital",
+          "Ilustración al servicio de comprensión y legibilidad",
+          "Contenido conservado"
+        ],
+        "excluded": [
+          "Plan, nuevos borradores, nueva trama o análisis de todos los recursos",
+          "Exposición oral",
+          "Talento de dibujo o emociones internas"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-162-revisada.json",
+      "artifactSha256": "f592d633bf4ca97f23bd116f0b12b2fddab316db58beefac9646ebe754596f09",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-R01",
+      "title": "Ayuda y oposición en el misterio",
+      "description": "Analicen únicamente ayudantes y oponentes como actantes del cuento policíaco entregado. Expliquen quién ayuda y quién se opone con hechos del relato. No analicen los otros papeles actanciales ni escriban otro cuento.",
+      "expectations": {
+        "explicit": [
+          "Ayudante y oponente sustentados en hechos",
+          "Funciones distintas de nombres de personajes"
+        ],
+        "excluded": [
+          "Sujeto, objeto, destinador o destinatario obligatorios",
+          "Nuevo cuento o análisis general de trama"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-R02",
+      "title": "El cuento en la revista digital",
+      "description": "A partir del cuento policíaco ya corregido, preparen su edición final para la revista escolar digital. Mantengan el contenido y revisen su legibilidad. No se pide versión impresa, ilustración ni otra revisión de borradores.",
+      "expectations": {
+        "explicit": [
+          "Edición digital de texto corregido; contenido y legibilidad conservados"
+        ],
+        "excluded": [
+          "Edición impresa",
+          "Ilustración, nueva trama o cambios entre borradores"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-R03",
+      "title": "Ortografía del diálogo",
+      "description": "Corrijan únicamente la ortografía del diálogo del cuento policíaco dado. Mantengan exactamente su contenido, personajes, puntuación y orden de los hechos. No analicen otros aspectos ni reescriban el relato.",
+      "expectations": {
+        "explicit": [
+          "Ortografía de texto dado",
+          "Contenido, puntuación, personajes y orden conservados"
+        ],
+        "excluded": [
+          "Cambiar o reevaluar la puntuación",
+          "Análisis de trama, creación, ilustración o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-R04",
+      "title": "El diálogo después de un comentario",
+      "description": "Revisen el borrador del cuento policíaco entregado según las sugerencias de un compañero. Ajusten únicamente la claridad del diálogo y conserven la trama y el narrador. Entreguen la versión revisada; no hace falta justificar aparte las decisiones, añadir descripción del ambiente ni pedir sugerencias al profesor.",
+      "expectations": {
+        "explicit": [
+          "Claridad del diálogo existente y revisión según un compañero",
+          "Trama y narrador conservados"
+        ],
+        "excluded": [
+          "Sugerencias de profesor",
+          "Justificación aparte",
+          "Añadir descripciones, nueva trama o publicación"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-R05",
+      "title": "Un misterio contado",
+      "description": "Cuenten oralmente un cuento policíaco al grupo.",
+      "expectations": {
+        "explicit": [
+          "Narración oral comprensible de misterio y solución",
+          "Hechos en secuencia; narrador reconocible"
+        ],
+        "excluded": [
+          "Análisis textual",
+          "Texto escrito, voces diferenciadas, gestos o grabación obligatorios"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-R06",
+      "title": "La comparación como figura",
+      "description": "Analicen únicamente la comparación literaria en el fragmento del cuento policíaco dado. Citen el ejemplo presente y expliquen qué semejanza establece entre los referentes y cómo caracteriza el ambiente. No comparen cuentos entre sí ni analicen metáforas o epítetos.",
+      "expectations": {
+        "explicit": [
+          "Una comparación literaria y la semejanza entre sus referentes",
+          "Ejemplo real y efecto en ambiente"
+        ],
+        "excluded": [
+          "Comparación entre dos cuentos",
+          "Metáfora, epíteto o análisis adicional del ambiente como criterio independiente"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-reservado-162-revisada.json",
+      "artifactSha256": "1426deacf6e0ca3732cae723c7ecce13f1436a3aafbb0090cc5f4342a3ce36ae",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": true
+    },
+    {
+      "id": "LEN1-CUE-P01",
+      "title": "Lo que anticipan los paratextos",
+      "description": "Antes de leer el cuento policíaco dado, trabajen únicamente la anticipación desde sus paratextos: título, imagen, colores, gráficos y cubierta. Formulen una predicción sobre el contenido y expliquen qué indicios de esos recursos la sustentan. Luego lean el cuento y comprueben qué hechos confirman o modifican la predicción. No analicen narrador, personajes ni gramática y no creen otro cuento.",
+      "expectations": {
+        "explicit": [
+          "Predicción sustentada en título/imagen/colores/gráficos/cubierta dados",
+          "Comprobación con hechos posteriores que confirman o modifican"
+        ],
+        "excluded": [
+          "Crear imágenes o nuevas cubiertas",
+          "Análisis adicional de narrador, personajes, trama o gramática",
+          "Dar por confirmada una predicción solo por describir colores"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-paratextos-162-despues.json",
+      "artifactSha256": "1fcc392c94d254a6f7d81ff6e0b4515a8e14414abbaded84ae9b64ea3cb380b2",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    },
+    {
+      "id": "LEN1-CUE-P02",
+      "title": "Antes de ver el título",
+      "description": "Anticipen únicamente el contenido del cuento policíaco desde la imagen, los colores y los gráficos entregados. Expliquen en qué indicio visual se apoya su predicción; después lean el fragmento y comprueben qué hechos la confirman o modifican. No usen el título ni una cubierta que no se entregó y no hagan un análisis general del cuento.",
+      "expectations": {
+        "explicit": [
+          "Inferencia anticipada desde imagen/colores/gráficos disponibles",
+          "Vínculo entre indicio y predicción; comprobación con fragmento"
+        ],
+        "excluded": [
+          "Título o cubierta no entregados",
+          "Dibujo, análisis general de personajes/narrador/gramática",
+          "Confirmación sin evidencia posterior"
+        ]
+      },
+      "artifact": "auditoria-curricular-len1-cuento-paratextos-162-despues.json",
+      "artifactSha256": "1fcc392c94d254a6f7d81ff6e0b4515a8e14414abbaded84ae9b64ea3cb380b2",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "read": true,
+      "conclusion": "PERTINENTE_PARA_LA_CONSIGNA_SIN_CIERRE_VISUAL",
+      "reservedSameAuthorNotBlind": false
+    }
+  ],
+  "method": "52instrumentos iniciales161 leídos completos.24reservados162 leídos antes de su ajuste. Lectura completa de las dimensiones de escritura/lectura/escucha/narración/gramática y de comparación/plan/revisión/corrección/edición mediante capturas intermedias; comparación exacta y lectura íntegra de cada dimensión cambiada hasta las76revisadas. Las últimas16salidas cambiaron solo una dimensión cada una, leída completa; resto exacto. Ocho salidas paratextuales previas mostraron genéricos o alcance ajeno, con cuatro diferencias servicio/alternativa; las ocho corregidas se leyeron completas y conservan paridad.",
+  "sourceComparison": {
+    "pages": [
+      73
+    ],
+    "nextPageChecked": 74,
+    "conceptRows": 9,
+    "procedureParagraphs": 4,
+    "fullMallaAndContinuationRead": true,
+    "paratextsSeparatelyEvidenced": [
+      "título",
+      "imagen",
+      "color",
+      "gráficos",
+      "cubierta"
+    ]
+  },
+  "topicClosed": false,
+  "pending": [
+    "Instalación individual y HTTP/DB162",
+    "Visual personal bloqueado por acceso",
+    "Caligrama y contraste completo de indicadores de toda Lengua1"
+  ]
+}

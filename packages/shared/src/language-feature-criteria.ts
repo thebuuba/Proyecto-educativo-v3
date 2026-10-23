@@ -15,7 +15,7 @@ export function affirmativeLanguageTask(description:string){
  // Exclusions stop at a new affirmative coordinated action. Otherwise «sin
  // cambiar los hechos y revisen las siglas» loses the requested second action.
  const action='(?:revis\\w*|corrij\\w*|correg\\w*|analic\\w*|analiz\\w*|identifi\\w*|expli\\w*|compar\\w*|contrast\\w*|redact\\w*|escrib\\w*|inclu\\w*|entreg\\w*|manteng\\w*|den|usen|utili\\w*)'
- const negative='(?:sin|no se (?:pide|requiere|necesitan?)|no es necesario|no (?:(?:lo|la|los|las) )?(?:(?:deben?|deberan|van a|vamos a) )?(?:usen|us(?:ar|aran|a|e|an)|utili\\w*|escrib\\w*|redact\\w*|elabor\\w*|analic\\w*|analiz\\w*|disen\\w*|anad\\w*|agreg\\w*|invent\\w*|inclu\\w*|revis\\w*|entreg\\w*|prepar\\w*|publi\\w*|pond\\w*|pong\\w*|expon\\w*|memor\\w*|tomen|hagan|realic\\w*|necesitan?))'
+ const negative='(?:sin|no se (?:pide|requiere|necesitan?)|no es necesario|no hace falta|no tienen que|no (?:(?:lo|la|los|las) )?(?:(?:deben?|deberan|van a|vamos a) )?(?:usen|us(?:ar|aran|a|e|an)|utili\\w*|escrib\\w*|redact\\w*|elabor\\w*|analic\\w*|analiz\\w*|compar\\w*|contrast\\w*|disen\\w*|anad\\w*|agreg\\w*|invent\\w*|inclu\\w*|revis\\w*|entreg\\w*|prepar\\w*|publi\\w*|pond\\w*|pong\\w*|expon\\w*|memor\\w*|tomen|hagan|realic\\w*|necesitan?))'
  return normalizedTask(text.replace(new RegExp(`\\b${negative}\\b.*?(?=[.;\\n]|\\s+y\\s+${action}\\b|$)`,'g'),' '))
 }
 
