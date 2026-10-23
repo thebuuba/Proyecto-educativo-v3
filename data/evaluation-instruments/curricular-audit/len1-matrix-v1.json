@@ -2525,7 +2525,7 @@
             "LEN1-AFI-02",
             "LEN1-AFI-03"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-01",
@@ -2594,7 +2594,7 @@
             "LEN1-AFI-02",
             "LEN1-AFI-07"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-02",
@@ -2641,7 +2641,7 @@
             "LEN1-AFI-02",
             "LEN1-AFI-08"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-02",
@@ -2700,7 +2700,7 @@
             "LEN1-AFI-04",
             "LEN1-AFI-R02"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-02",
@@ -2796,7 +2796,7 @@
             "LEN1-AFI-02",
             "LEN1-AFI-07"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-01",
@@ -2856,7 +2856,7 @@
             "LEN1-AFI-06",
             "LEN1-AFI-R04"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-02",
@@ -2925,7 +2925,7 @@
             "LEN1-AFI-03",
             "LEN1-AFI-07"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-03",
@@ -2972,7 +2972,7 @@
             "LEN1-AFI-05",
             "LEN1-AFI-06"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-05",
@@ -3020,7 +3020,7 @@
             "LEN1-AFI-06",
             "LEN1-AFI-R03"
           ],
-          "nextAction": "HTTP/DB161 y visual personal pendientes; indicadores generales de asignatura abiertos",
+          "nextAction": "Visual personal pendiente; 48 salidas locales y cuatro muestras HTTP161 acreditadas. No cierre de indicadores generales de toda Lengua1",
           "evidence": [
             {
               "caseId": "LEN1-AFI-05",
@@ -3087,7 +3087,7 @@
           ]
         }
       ],
-      "status": "REVISADO_LOCAL_48_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "status": "REVISADO_LOCAL_HTTP_DB_VISUAL_PERSONAL_PENDIENTE",
       "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
       "reviewArtifact": "auditoria-curricular-len1-afiche-161-lectura48.json",
       "curricularComponentAudit": [
@@ -3220,7 +3220,15 @@
           ],
           "limit": "Acciones/expresiones del afiche producido y de su plan; no inferir valores personales ni dar plan por producto final"
         }
-      ]
+      ],
+      "verification161": {
+        "activities": 12,
+        "instrumentsRead": 48,
+        "httpEvidence": "auditoria-curricular-http-161.json",
+        "personalPreservation": "auditoria-curricular-len1-personales-161.json",
+        "personalBrowser": "LOGIN_SIN_SESION_NO_MODIFICADO",
+        "fullSubjectAchievementIndicators": "ABIERTOS"
+      }
     },
     {
       "id": "cuento",
@@ -5185,11 +5193,10 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Afiche12actividades/48salidas revisadas localmente, HTTP161 pendiente; cuento/caligrama pendientes",
+    "otherTopics": "Cuento: banco previo 13 casos desde73 y transición74, sin generar. Caligrama pendiente",
     "remaining": [
-      "Visual personal bloqueado por contraseña",
-      "HTTP/DB161 y15referencias personales después de muestras",
-      "Cuento/caligrama; comparación completaLengua1 e indicadores; ámbitos restantes"
+      "Visual personal bloqueada por acceso; caché y registro SW no expuestos por herramienta DOM",
+      "Cuento y caligrama; comparación completa de Lengua1 e indicadores; ámbitos restantes"
     ]
   }
 }

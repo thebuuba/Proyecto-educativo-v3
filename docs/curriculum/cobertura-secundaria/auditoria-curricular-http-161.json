@@ -1,0 +1,269 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.161",
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-AFI-02",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "POSTER_CREATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-AFI-03",
+      "format": "escala",
+      "score": 17.35,
+      "activityType": "POSTER_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-AFI-06",
+      "format": "lista-ponderada",
+      "score": 20,
+      "activityType": "POSTER_CREATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    },
+    {
+      "caseId": "LEN1-AFI-R03",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "POSTER_CREATION",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 2260
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 3735
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4504
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 4690
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3235
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 9924
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4477
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8643
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4382
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 3870
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3939
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 9614
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4713
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 11053
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 9984
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7982
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4710
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4260
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 4183
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 10209
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 4181
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9889
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 2714
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 8770
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 3875
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 9625
+    }
+  ],
+  "preservedReleases": 91,
+  "preservedSnapshots": 1229,
+  "finalReleases": 92,
+  "finalSnapshots": 1233,
+  "pedagogicalAcceptance": "POSTER_SAMPLE_CONFIRMED_LOCAL_FULL_CURRICULAR_AUDIT_REMAINS_OPEN",
+  "personalBrowser": "PENDING_LOGIN",
+  "install": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.161",
+    "sourceCommit": "0f5f1ae18966ee1a533beb59a56ac80ca75e11df",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "catalogFingerprint": "b477d9f4a03e3ead1dd47790fb43721b4c62d8f025061f7109a4cfd97e623739",
+    "frozen160Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 91,
+    "preservedSnapshots": 1229,
+    "finalReleases": 92,
+    "finalSnapshots": 1229,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.161",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-_27asNiP.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-_27asNiP.js",
+        "sha256": "406bb952e2cbe4f029a1f603e3359abb60583d124ed10effebb966a0fcb9e980",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-BopDMb5C.js",
+        "sha256": "f724db4b35f8c870c523325bc8810fdecf299746f2ed1fd3939e43179af9cbc8",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-Bj_CWayS.js",
+        "sha256": "54a1cd5c52f7ad2ee8d55a9fbaa488d4a4d5842b7f9f40f45d7453469ee218fa",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-D-sG-FHg.js",
+        "sha256": "14b7b6901530d371f596f4dcff44c3f49c0028f61c554b62eb91545716df21cb",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-BcxziulP.js",
+        "sha256": "5aa94a87bfd8703ace1ca7f40ae7549d896274bba08e18cf73b06a5ab6d1d9ed",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "019018911e1b454c4d5370d9d2b588f93aa76ab6d362cd93e0a801c159538107",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "browser": {
+    "mode": "PERSONAL_LOGIN_NO_AUTHENTICATED_CREATOR",
+    "reloadAfterBuild": true,
+    "entry": "/assets/index-_27asNiP.js",
+    "entryMatchesHttpBuild": true,
+    "serviceWorkerScriptInDom": "/registerSW.js",
+    "registrationAndCacheInspection": "UNAVAILABLE_IN_READ_ONLY_DOM_SANDBOX_NAVIGATOR_UNDEFINED",
+    "storageCleared": false,
+    "credentialsEntered": false,
+    "emailSent": false
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "version": "curricular-len1-cuento-v1",
+  "provenance": "SINTÉTICO del mismo autor desde malla oficial73 y transición74 releídas visualmente. Expectativas fijadas antes de generar; no banco externo independiente. Las seis funciones actanciales concretan el contenido «Los actantes» mediante la ficha de cada consigna; sus nombres no se presentan como seis renglones literales adicionales del currículo.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      73
+    ],
+    "nextPageChecked": 74,
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-CUE-01",
+      "family": "Escritura breve",
+      "title": "El misterio de la biblioteca",
+      "description": "Escriban un cuento policíaco sobre un objeto que desaparece en la biblioteca de la escuela.",
+      "expected": {
+        "explicit": [
+          "Relato propio con inicio, desarrollo del misterio y desenlace coherente con las pistas",
+          "Personajes, ambiente y narrador reconocibles"
+        ],
+        "excluded": [
+          "Número fijo de personajes o pistas",
+          "Entrevistas, denuncia real, ilustraciones, publicación o exposición no pedidas"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-02",
+      "family": "Escritura completa con proceso",
+      "title": "Un misterio para nuestra revista",
+      "description": "Escriban un cuento policíaco para entretener a los lectores de la revista escolar. Elijan la trama y planifíquenla en un esquema secuencial; definan el perfil de los personajes centrales y secundarios y sus motivaciones. Relacionen el ambiente con las acciones, mantengan la perspectiva del narrador y resuelvan el misterio con las pistas planteadas. Usen descripciones y diálogos, comparación, metáfora y epíteto, adjetivos para caracterizar personajes y ambiente, pretérito indefinido para las acciones terminadas e imperfecto para el fondo y las acciones habituales, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia. Revisen los borradores según las sugerencias de compañeros y profesora, corrijan escritura y vocabulario excluyente, añadan una ilustración que ayude a comprender el cuento y preparen la versión impresa y la digital para publicarlas en la revista.",
+      "expected": {
+        "explicit": [
+          "Intención lúdica y lectores escolares",
+          "Plan secuencial y perfiles/motivaciones de centrales y secundarios",
+          "Trama, narrador, pistas y resolución; ambiente relacionado con acciones",
+          "Descripción y diálogo, comparación/metáfora/epíteto por funciones diferentes",
+          "Dos pretéritos y sus funciones; adverbios de tiempo/espacio; coordinación/consecuencia",
+          "Revisión de borradores con sugerencias; vocabulario apropiado e inclusivo",
+          "Ilustración para comprensión y versión impresa y digital"
+        ],
+        "excluded": [
+          "Vídeo, actuación, estadísticas o investigación policial real",
+          "Explicación metalingüística aparte del cuento",
+          "Cantidad de borradores, personajes, recursos o palabras no establecida"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-03",
+      "family": "Comprensión lectora",
+      "title": "Tras las pistas del cuento",
+      "description": "Antes de leer el cuento policíaco entregado, anticipen su contenido a partir del título y la cubierta; después contrasten sus predicciones con lo leído. Expliquen la función del cuento y cómo inicio, nudo y desenlace organizan el misterio. Identifiquen al narrador y qué puede saber, relacionen acciones y motivaciones de personajes centrales y secundarios con la trama y expliquen cómo influye el ambiente. Usen la ficha de actantes para distinguir sujeto, objeto, destinador, destinatario, ayudante y oponente, justificando cada papel con hechos del cuento. Relacionen las pistas con la solución y hagan una paráfrasis de su sentido global con vocabulario apropiado e inclusivo.",
+      "expected": {
+        "explicit": [
+          "Anticipación título/cubierta y comprobación posterior",
+          "Función/estructura, narrador y límites de conocimiento",
+          "Centrales/secundarios, acciones/motivaciones/ambiente",
+          "Seis papeles actanciales según ficha y hechos; no equivalen a lista de personajes",
+          "Pistas y resolución; paráfrasis global propia"
+        ],
+        "excluded": [
+          "Cuento nuevo",
+          "Actuación, ilustración propia o publicación",
+          "Lectura de imágenes inexistentes distintas de la cubierta dada"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-04",
+      "family": "Comprensión oral",
+      "title": "El cuento que escuchamos",
+      "description": "Escuchen el cuento policíaco grabado. Reconstruyan oralmente inicio, nudo y desenlace, relacionen las motivaciones de personajes centrales y secundarios con sus acciones y expliquen con hechos escuchados cómo el paso de una habitación cerrada de la ciudad a un espacio abierto del campo influye en la búsqueda. Identifiquen en el audio pretérito indefinido e imperfecto, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia, explicando cómo ayudan a seguir los hechos. Terminen con un resumen o paráfrasis global, con vocabulario apropiado e inclusivo. No tienen que leer ni entregar un texto escrito.",
+      "expected": {
+        "explicit": [
+          "Comprensión de audio, no producción de otro cuento",
+          "Tres momentos y relaciones causales",
+          "Centrales/secundarios; motivaciones/acciones",
+          "Ambiente cerrado/abierto y ciudad/campo según audio, influencia sobre búsqueda",
+          "Identificación y función de ambos pretéritos, adverbios y dos relaciones de conexión",
+          "Resumen O paráfrasis oral global"
+        ],
+        "excluded": [
+          "Texto escrito, marcas visuales, lectura de cubierta",
+          "Narración inventada, publicación",
+          "Obligación de entregar resumen Y paráfrasis"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-05",
+      "family": "Producción oral",
+      "title": "Contamos un misterio al curso",
+      "description": "Inventen y narren oralmente un cuento policíaco para entretener al curso. Elijan la trama, organicen inicio, nudo y desenlace y relacionen pistas con solución. Describan ambiente y personajes con adjetivos y vocabulario apropiado e inclusivo; incorporen diálogo, comparación, metáfora y epíteto, adverbios de tiempo y espacio y conectores coordinantes y de consecuencia. Mantengan el narrador elegido. Usen tono y volumen de voz y lenguaje corporal, o el apoyo de comunicación acordado, para diferenciar las intervenciones y transmitir la intención del relato. No se pide texto escrito, disfraz ni grabación.",
+      "expected": {
+        "explicit": [
+          "Relato nuevo oral con intención lúdica, secuencia, misterio/pistas/solución y narrador",
+          "Descripción, diálogo y tres figuras en uso narrativo",
+          "Adjetivos/adverbios y coordinación/consecuencia",
+          "Tono, volumen y lenguaje corporal o apoyo acordado, sin exigir capacidad física concreta"
+        ],
+        "excluded": [
+          "Texto escrito, disfraz, grabación o escenografía",
+          "Explicación escrita del uso de recursos",
+          "Resumen de un cuento ya dado"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-06",
+      "family": "Análisis lingüístico delimitado",
+      "title": "Cómo se enlazan los hechos",
+      "description": "Analicen únicamente los recursos lingüísticos del fragmento del cuento policíaco dado: pretérito indefinido para acciones terminadas e imperfecto para el fondo o los hábitos, adverbios de tiempo y espacio, adjetivos que caracterizan personajes y ambiente y conectores coordinantes y de consecuencia. Citen un ejemplo de cada tipo y expliquen su función en los hechos narrados. No analicen la trama, el narrador ni las figuras literarias y no escriban otro cuento.",
+      "expected": {
+        "explicit": [
+          "Ambos pretéritos diferenciados por función",
+          "Adverbios temporales y espaciales",
+          "Adjetivos para caracterización",
+          "Coordinación frente a consecuencia",
+          "Ejemplo de cada tipo y efecto en narración"
+        ],
+        "excluded": [
+          "Trama, narrador, pistas o figuras literarias como dimensiones",
+          "Nuevo relato, exposición o conclusión no pedida"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-07",
+      "family": "Análisis expresivo delimitado",
+      "title": "Descripción, diálogo e imágenes literarias",
+      "description": "En el cuento policíaco leído, analicen solamente la descripción y el diálogo como recursos lingüísticos y la comparación, la metáfora y el epíteto como recursos literarios. Seleccionen un ejemplo de cada recurso y expliquen cómo contribuye a describir el ambiente o a expresar lo que hacen y dicen los personajes. No inventen ejemplos ni otro cuento.",
+      "expected": {
+        "explicit": [
+          "Descripción vs diálogo",
+          "Comparación vs metáfora vs epíteto con funciones distintas",
+          "Un ejemplo real de cada uno y vínculo con ambiente/acciones/intervenciones"
+        ],
+        "excluded": [
+          "Figuras no pedidas",
+          "Escritura de nuevo cuento",
+          "Calificación de gusto, creatividad innata o emociones personales"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-08",
+      "family": "Comparación",
+      "title": "Dos formas de resolver el misterio",
+      "description": "Comparen los dos cuentos policíacos entregados: narrador y límites de su información, personajes y papeles actanciales según la ficha, ambiente y su influencia, organización de la trama, pistas y resolución. Apoyen cada semejanza o diferencia en hechos de ambos cuentos. No se pide crear un tercer cuento ni añadir una conclusión aparte.",
+      "expected": {
+        "explicit": [
+          "Contraste de dos textos, no dos análisis separados",
+          "Narrador, papeles actanciales, ambiente/acciones, trama y resolución",
+          "Evidencia de ambos cuentos en semejanzas/diferencias"
+        ],
+        "excluded": [
+          "Tercer cuento",
+          "Conclusión adicional obligatoria",
+          "Escenografía, ilustraciones o exposición oral"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-09",
+      "family": "Plan sin producto final",
+      "title": "Plan de un misterio",
+      "description": "Planifiquen un cuento policíaco para lectores del curso. Elijan la trama y la intención de entretener, hagan un esquema secuencial de inicio, nudo y desenlace con pistas y posible solución, definan perfiles y motivaciones de personajes y su papel actancial según la ficha, el narrador y el ambiente relacionado con sus acciones. Entreguen únicamente el plan; no redacten el cuento, no dibujen ni publiquen.",
+      "expected": {
+        "explicit": [
+          "Plan de relato con intención/destinatarios, secuencia y solución prevista",
+          "Perfiles/motivaciones, actantes, narrador, ambiente/acciones previstos"
+        ],
+        "excluded": [
+          "Cuento terminado",
+          "Uso efectivo de diálogos o figuras que no se pidió planificar",
+          "Borradores, dibujos o publicación"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-10",
+      "family": "Revisión de borradores",
+      "title": "Del borrador a una versión más clara",
+      "description": "Revisen el borrador del cuento policíaco entregado a partir de las observaciones de un compañero y de la profesora. Conserven la trama y el narrador; ajusten solo la claridad de las descripciones del ambiente y los personajes, los diálogos y las expresiones que excluyen o ridiculizan. Entreguen la versión corregida y señalen qué sugerencias atendieron y por qué. No publiquen ni añadan ilustraciones.",
+      "expected": {
+        "explicit": [
+          "Revisión de borrador existente según dos fuentes de observaciones",
+          "Descripciones y diálogo con claridad",
+          "Vocabulario respetuoso e inclusivo observable",
+          "Versión corregida y decisiones justificadas; trama/narrador conservados"
+        ],
+        "excluded": [
+          "Nueva trama o nuevo narrador",
+          "Cuento creado desde cero",
+          "Publicación o ilustraciones"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-11",
+      "family": "Corrección delimitada",
+      "title": "Puntuación para entender quién habla",
+      "description": "Corrijan únicamente la puntuación y la ortografía del diálogo del cuento policíaco dado para que se entienda quién habla. Mantengan exactamente el contenido, los personajes y el orden de los hechos. No añadan figuras literarias ni analicen otros aspectos del cuento.",
+      "expected": {
+        "explicit": [
+          "Convenciones de escritura del diálogo y claridad de turnos",
+          "Contenido/personajes/orden conservados"
+        ],
+        "excluded": [
+          "Creación de cuento",
+          "Trama, narrador, misterio o figuras como criterios adicionales",
+          "Explicaciones o publicación no pedidas"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-12",
+      "family": "Comprensión breve de actantes",
+      "title": "Quién ayuda y quién se opone",
+      "description": "Lean el cuento policíaco y expliquen los papeles de los actantes con la ficha trabajada en clase: quién busca, qué busca, quién impulsa la búsqueda, quién se beneficia, quién ayuda y quién se opone. Justifiquen cada relación con hechos del cuento. No basta enumerar nombres de personajes; no reescriban el relato.",
+      "expected": {
+        "explicit": [
+          "Seis funciones actanciales relacionadas con la búsqueda y con hechos",
+          "Distinción entre personaje y función actancial"
+        ],
+        "excluded": [
+          "Cuento nuevo",
+          "Análisis gramatical, resumen global o publicación no pedidos",
+          "Un personaje distinto obligatorio para cada función"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-CUE-13",
+      "family": "Edición e ilustración",
+      "title": "Preparamos el cuento para publicarlo",
+      "description": "A partir del cuento policíaco ya corregido, preparen su edición final para publicarlo en la revista escolar impresa y digital. Conserven el contenido y añadan una ilustración que ayude a comprender un hecho o el ambiente del relato. Revisen legibilidad y presentación en ambos formatos. No escriban otro cuento ni hagan una exposición oral.",
+      "expected": {
+        "explicit": [
+          "Edición de texto dado, no producción inicial",
+          "Versiones impresa Y digital",
+          "Ilustración al servicio de comprensión y legibilidad",
+          "Contenido conservado"
+        ],
+        "excluded": [
+          "Plan, nuevos borradores, nueva trama o análisis de todos los recursos",
+          "Exposición oral",
+          "Talento de dibujo o emociones internas"
+        ]
+      }
+    }
+  ]
+}
