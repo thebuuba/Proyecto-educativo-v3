@@ -1,0 +1,188 @@
+{
+  "version": "curricular-len1-noticia-v1",
+  "provenance": "SINTETICO; redactado por Codex tras leer la fuente oficial, antes de ejecutar; mismo autor, sin independencia externa ni subagentes",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pages": [
+      69,
+      70,
+      74
+    ]
+  },
+  "cases": [
+    {
+      "id": "LEN1-NOT-01",
+      "family": "Producción breve",
+      "title": "Una noticia del curso",
+      "description": "Escriban una noticia sobre algo que pasó en el curso.",
+      "expected": {
+        "explicit": [
+          "Producir una noticia sobre un hecho del curso"
+        ],
+        "pedagogical": [
+          "Hecho reconocible",
+          "Información principal y organización periodística comprensible",
+          "Claridad escrita"
+        ],
+        "excluded": [
+          "Fotos obligatorias",
+          "Fuentes bibliográficas obligatorias",
+          "Cantidad de páginas",
+          "Exposición oral",
+          "Revisión demostrada si no se pide"
+        ],
+        "grouping": [
+          "Contenido y contexto del hecho",
+          "Organización periodística",
+          "Claridad del escrito"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    },
+    {
+      "id": "LEN1-NOT-02",
+      "family": "Producción desarrollada y revisión",
+      "title": "El patio vuelve a abrir",
+      "description": "Con la ficha de hechos que les daré, redactarán una noticia para la comunidad escolar sobre la reapertura del patio. Incluyan titular, entrada y cuerpo; respondan qué pasó, a quiénes, dónde, cuándo y cómo. Ordenen los hechos con conectores de orden y de tiempo y mantengan los tiempos verbales adecuados. Revisen un borrador y entreguen ambas versiones. No hace falta foto ni bibliografía.",
+      "expected": {
+        "explicit": [
+          "Usar los hechos de la ficha sin inventarlos",
+          "Adecuación a comunidad escolar",
+          "Titular, entrada y cuerpo",
+          "Qué, a quiénes, dónde, cuándo y cómo",
+          "Conectores de orden y temporales",
+          "Tiempos verbales adecuados",
+          "Cambios entre borrador y final"
+        ],
+        "excluded": [
+          "Foto",
+          "Bibliografía",
+          "Extensión fija",
+          "Publicación no solicitada"
+        ],
+        "grouping": [
+          "Contenido e interrogantes",
+          "Estructura y destinatarios",
+          "Secuencia y formas verbales",
+          "Proceso de revisión"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    },
+    {
+      "id": "LEN1-NOT-03",
+      "family": "Lectura y análisis",
+      "title": "¿Por qué esto es noticia?",
+      "description": "Lean la noticia entregada. Expliquen su propósito y qué hace que el hecho sea noticia. Identifiquen titular, entrada y cuerpo y las respuestas a las preguntas de la noticia. Expliquen qué aportan la fotografía y su pie al sentido del texto. No escriban una noticia nueva.",
+      "expected": {
+        "explicit": [
+          "Propósito",
+          "Interés o relevancia del hecho noticioso",
+          "Estructura",
+          "Interrogantes",
+          "Función de fotografía y pie de foto"
+        ],
+        "excluded": [
+          "Creación de noticia",
+          "Tomar fotografías",
+          "Publicar",
+          "Memorizar"
+        ],
+        "grouping": [
+          "Propósito y selección noticiosa",
+          "Estructura e información",
+          "Relación de paratexto y contenido"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    },
+    {
+      "id": "LEN1-NOT-04",
+      "family": "Producción oral grupal",
+      "title": "Noticias del ambiente",
+      "description": "En equipos harán un noticiero sobre los hechos ambientales de las fichas entregadas. Cada integrante comunicará su noticia. Organicen las intervenciones y empleen voz, ritmo y pausas que permitan comprender los hechos; mantengan su orden temporal. No necesitan grabar un video ni usar diapositivas.",
+      "expected": {
+        "explicit": [
+          "Hechos ambientales suministrados",
+          "Aporte de cada integrante",
+          "Secuencia de intervenciones",
+          "Voz, ritmo y pausas comprensibles",
+          "Orden temporal"
+        ],
+        "excluded": [
+          "Grabación",
+          "Diapositivas",
+          "Disfraces",
+          "Duración fija",
+          "Equipo equivale a cooperación estructurada"
+        ],
+        "grouping": [
+          "Información periodística",
+          "Organización del noticiero",
+          "Comunicación oral y temporalidad",
+          "Aporte individual"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    },
+    {
+      "id": "LEN1-NOT-05",
+      "family": "Comparación",
+      "title": "Dos formas de contar un hecho",
+      "description": "Comparen dos noticias sobre el mismo hecho. Expliquen qué información destaca cada una y si sus titulares y elementos paratextuales se corresponden con los hechos narrados. Justifiquen su comparación con información de ambas noticias, sin redactar otra noticia.",
+      "expected": {
+        "explicit": [
+          "Contraste de información destacada",
+          "Correspondencia de titulares y paratextos con hechos",
+          "Sustento con ambas noticias"
+        ],
+        "excluded": [
+          "Redactar una noticia",
+          "Exposición oral obligatoria",
+          "Imágenes creadas por estudiantes"
+        ],
+        "grouping": [
+          "Contraste de contenidos y enfoque",
+          "Función del titular y paratextos",
+          "Sustento del contraste"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    },
+    {
+      "id": "LEN1-NOT-06",
+      "family": "Revisión lingüística y explicación",
+      "title": "Mejoramos la noticia del borrador",
+      "description": "Revisen la noticia del borrador que recibirán: corrijan la puntuación, sustituyan repeticiones por sinónimos sin cambiar los hechos y revisen las siglas, abreviaturas y acrónimos que aparecen. Entreguen la versión corregida y expliquen los cambios en esos tres tipos de formas abreviadas. Mantengan el modo y los tiempos verbales acordes con lo narrado. No añadan una foto ni una entrevista.",
+      "expected": {
+        "explicit": [
+          "Correcciones de puntuación",
+          "Sinónimos sin cambiar hechos",
+          "Uso pertinente y explicación de siglas, abreviaturas y acrónimos",
+          "Modo y tiempos verbales",
+          "Versión corregida"
+        ],
+        "excluded": [
+          "Añadir fotografía",
+          "Realizar entrevista",
+          "Reescribir otros contenidos sin fundamento"
+        ],
+        "grouping": [
+          "Revisión del significado y hechos",
+          "Puntuación y cohesión léxica",
+          "Formas abreviadas y su explicación",
+          "Consistencia verbal"
+        ]
+      },
+      "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR"
+    }
+  ]
+}

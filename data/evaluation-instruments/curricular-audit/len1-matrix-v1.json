@@ -1,0 +1,2803 @@
+{
+  "scope": {
+    "kind": "scope",
+    "id": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "level": "SECONDARY",
+    "cycle": 1,
+    "grade": 1,
+    "areaName": "Lengua Española",
+    "versionCode": "MINERD_SECUNDARIA_2023",
+    "subjectName": "Lengua Española",
+    "modalityName": null,
+    "optativeExitName": null,
+    "assignmentSourcePdfPage": null,
+    "stableKey": "SECONDARY/1/1/lengua espanola/lengua espanola/all/all"
+  },
+  "source": {
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pagesVisuallyRead": [
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75
+    ],
+    "printedPages": "67–74",
+    "fullSubjectMallaRead": true
+  },
+  "topics": [
+    {
+      "id": "noticia",
+      "name": "La noticia",
+      "headerId": "55a6ecd4-e9db-5e12-9e15-50f0f179f1b4",
+      "headerIsAssessable": false,
+      "sourcePage": 69,
+      "contents": [
+        {
+          "id": "7dca01fd-d231-553b-9761-d0f5b787e0ec",
+          "literal": "• Función y estructura",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12969999999996,
+              "y0": 414.825,
+              "x1": 128.30270000000002,
+              "y1": 423.82500000000005
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-02",
+            "LEN1-NOT-03"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "b431e723-effb-567a-925c-593d2467f168",
+          "literal": "• Interrogantes",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 402.92699999999996,
+              "x1": 103.39880000000002,
+              "y1": 411.927
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-02",
+            "LEN1-NOT-03"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "847b6732-13cd-5ec5-92fc-be8fa951d2d7",
+          "literal": "• Elementos que hacen que un\nhecho sea noticia",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 380.031,
+              "x1": 160.64870000000002,
+              "y1": 400.029
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-03"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "fe273448-e4f5-57a6-9e45-de66a5fb0a0e",
+          "literal": "• Conectores de orden y\ntemporales",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 357.135,
+              "x1": 136.65380000000002,
+              "y1": 377.133
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-02",
+            "LEN1-NOT-04"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "d6c9f468-36c3-5376-99f9-829c06040af0",
+          "literal": "• Modo y tiempos verbales",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12969999999999,
+              "y0": 345.23699999999997,
+              "x1": 145.8437,
+              "y1": 354.237
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-02",
+            "LEN1-NOT-06"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "bb6e1a76-f79b-5b08-bea4-035e754cb7fa",
+          "literal": "• Sinónimos",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 333.339,
+              "x1": 93.0227,
+              "y1": 342.339
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-06"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "f0d32dc5-b1ff-56fa-bbda-82c765783714",
+          "literal": "• La puntuación",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 321.441,
+              "x1": 106.94569999999999,
+              "y1": 330.441
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-06"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "8b208fc0-808f-5b83-a900-94bcb5196005",
+          "literal": "• Siglas, abreviaturas y acrónimos",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 309.54299999999995,
+              "x1": 168.14569999999998,
+              "y1": 318.543
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-06"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "1efbd6db-f7f9-5d1c-9fd4-e28addf19e76",
+          "literal": "• Elementos paratextuales",
+          "source": {
+            "pdfPage": 69,
+            "printedPage": "68",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 297.645,
+              "x1": 143.1167,
+              "y1": 306.645
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "EXPECTATIVAS_FIJADAS_SIN_GENERAR",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [
+            "LEN1-NOT-03",
+            "LEN1-NOT-05"
+          ],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    },
+    {
+      "id": "guia",
+      "name": "La guía turística",
+      "headerId": "56301465-88e2-54cc-a5db-627c7266844c",
+      "headerIsAssessable": false,
+      "sourcePage": 70,
+      "contents": [
+        {
+          "id": "36833dd9-a703-5c75-9d1b-706e3ae74446",
+          "literal": "• Estructura",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12969999999996,
+              "y0": 695.625,
+              "x1": 91.3127,
+              "y1": 704.625
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores",
+          "duplicateOf": "f52138d8-da5b-5980-aad8-dde3b57be185",
+          "note": "La fuente repite Estructura; se conserva la fila literal, sin contar dos contenidos distintos."
+        },
+        {
+          "id": "f52138d8-da5b-5980-aad8-dde3b57be185",
+          "literal": "• Estructura (portada, información,\nimágenes y cierre)",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 672.7289999999999,
+              "x1": 172.6637,
+              "y1": 692.727
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "0995dbc7-bf72-5a4f-ab32-482ac40adc51",
+          "literal": "• Características: apariencia,\nestímulos, atractivos y contenido",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 649.833,
+              "x1": 172.6979,
+              "y1": 669.831
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "9ecafda4-b9de-5d4d-a97c-9fbb79c085ea",
+          "literal": "• Sustantivos abstractos (alegría,\nlaboriosidad, servicio, etc.)",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 626.9369999999999,
+              "x1": 164.62669999999997,
+              "y1": 646.935
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "789d33c7-a01b-531d-a640-52806b8cbc1f",
+          "literal": "• Sustantivos propios y comunes\nde lugares",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 604.0409999999999,
+              "x1": 166.62470000000002,
+              "y1": 624.039
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "d61bd6e7-998d-53a8-8e8f-fb6fc21060d3",
+          "literal": "• Adjetivos calificativos y\ndeterminativos",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 581.145,
+              "x1": 137.36569999999998,
+              "y1": 601.143
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "be5cac83-7c27-5e9d-af9e-21df20bd2e8a",
+          "literal": "• Vocabulario atractivo y persuasivo",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12970000000003,
+              "y0": 569.247,
+              "x1": 176.7848,
+              "y1": 578.247
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "4eedf9ad-ecbe-5d02-8855-2a02851693a0",
+          "literal": "• Verbos en presente de indicativo",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 557.3489999999999,
+              "x1": 172.58180000000002,
+              "y1": 566.349
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "544ec67d-8607-5a66-b32a-51d8243c26bf",
+          "literal": "• Oraciones exclamativas",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 545.4509999999999,
+              "x1": 138.8777,
+              "y1": 554.451
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "1033a541-12ff-52de-82a1-8b3a9af5b936",
+          "literal": "• Oraciones interrogativas",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 533.553,
+              "x1": 142.1267,
+              "y1": 542.553
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "10254927-6924-5c89-bd70-e9104fcd5f8b",
+          "literal": "• Sintagma nominal (núcleo,\nmodificador directo y\nmodificador indirecto)",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 499.65900000000005,
+              "x1": 151.25269999999998,
+              "y1": 530.655
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "3857d3c9-4854-5405-a086-a63bc8b0c375",
+          "literal": "• Información gráfica (mapas,\ngráficos, dibujos, fotografías)",
+          "source": {
+            "pdfPage": 70,
+            "printedPage": "69",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 476.763,
+              "x1": 156.8408,
+              "y1": 496.761
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    },
+    {
+      "id": "informe",
+      "name": "El informe de lectura",
+      "headerId": "1d01bb28-c0b4-51ff-8123-dd7c7cd6f694",
+      "headerIsAssessable": false,
+      "sourcePage": 71,
+      "contents": [
+        {
+          "id": "63c90584-6581-502e-90b9-3cb0240adcfc",
+          "literal": "• Función",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 371.41799999999984,
+              "x1": 84.0497,
+              "y1": 380.418
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
+          "literal": "• Estructura (título del informe,\nintroducción, desarrollo,\nconclusión)",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 337.524,
+              "x1": 159.34369999999996,
+              "y1": 368.52
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
+          "literal": "• El resumen como estrategia",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 325.626,
+              "x1": 154.82569999999998,
+              "y1": 334.626
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
+          "literal": "• Pasos para realizar un resumen",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 313.728,
+              "x1": 167.0027,
+              "y1": 322.728
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
+          "literal": "• Adjetivos",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 301.83,
+              "x1": 88.3067,
+              "y1": 310.83
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "d314711b-b756-57de-9263-b023ff12f4bd",
+          "literal": "• Verbos en presente y en pasado\nde indicativo",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 278.934,
+              "x1": 169.58570000000003,
+              "y1": 298.932
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
+          "literal": "• Conectores de ejemplificación",
+          "source": {
+            "pdfPage": 71,
+            "printedPage": "70",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 267.036,
+              "x1": 164.0417,
+              "y1": 276.036
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    },
+    {
+      "id": "afiche",
+      "name": "El afiche",
+      "headerId": "74b33fad-b618-5157-9517-8e0165a2a333",
+      "headerIsAssessable": false,
+      "sourcePage": 72,
+      "contents": [
+        {
+          "id": "7c083d99-b9e8-57b0-900e-b90436495f69",
+          "literal": "• Función y estructura",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12970000000007,
+              "y0": 405.969,
+              "x1": 128.30270000000002,
+              "y1": 414.969
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "bb66c94b-689f-5b4a-af38-59acd0ca74ff",
+          "literal": "• El afiche como texto\nargumentativo",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 383.07300000000004,
+              "x1": 128.31170000000003,
+              "y1": 403.071
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "be45d0d1-666b-5016-8d34-1a0ee7ac83d8",
+          "literal": "• Situación comunicativa",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 371.175,
+              "x1": 138.8867,
+              "y1": 380.175
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "be5d26d3-0d77-543c-9a87-146c7d275731",
+          "literal": "• Recursos poéticos: metáforas,\npleonasmos, elipsis, exageración",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 348.279,
+              "x1": 171.35870000000006,
+              "y1": 368.277
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "86345894-03da-5e9a-98b0-b01b34c31230",
+          "literal": "• Argumentos para convencer",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12970000000002,
+              "y0": 336.381,
+              "x1": 157.5797,
+              "y1": 345.381
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "816526f4-7335-5287-b520-4e2f732a853d",
+          "literal": "• El imperativo",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129700000000014,
+              "y0": 324.483,
+              "x1": 101.9597,
+              "y1": 333.483
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "cab080c8-d150-5a3f-8ffe-5e2dcb7549c2",
+          "literal": "• Lo connotativo expresivo",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 312.585,
+              "x1": 145.4477,
+              "y1": 321.585
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "c1a153a4-c3c1-55c6-bdbc-0305a189a73d",
+          "literal": "• Palabras y frases de prevención\no alerta",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.129699999999985,
+              "y0": 289.689,
+              "x1": 166.43569999999997,
+              "y1": 309.687
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "9cd28a86-f862-58f7-a043-ce0cbab94c9f",
+          "literal": "• Verbos y perífrasis de obligación\no posibilidad",
+          "source": {
+            "pdfPage": 72,
+            "printedPage": "71",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 266.793,
+              "x1": 170.4497,
+              "y1": 286.791
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    },
+    {
+      "id": "cuento",
+      "name": "El cuento policíaco y detectivesco",
+      "headerId": "cdad4fbc-2d0f-532b-9f57-dfaa4fcd3fc7",
+      "headerIsAssessable": false,
+      "sourcePage": 73,
+      "contents": [
+        {
+          "id": "96838d33-443f-5312-a5dd-9bca788d97c2",
+          "literal": "• Función y estructura",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12969999999996,
+              "y0": 695.625,
+              "x1": 128.30270000000002,
+              "y1": 704.625
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "f229145b-f27a-52ef-857c-5dc2edb2cf69",
+          "literal": "• Características: el ambiente, la\ntrama y los personajes",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 672.7289999999999,
+              "x1": 162.1418,
+              "y1": 692.727
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "9bd89592-7605-5046-8265-d6890433ef33",
+          "literal": "• El narrador",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 660.8309999999999,
+              "x1": 93.8867,
+              "y1": 669.831
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "9f64310c-c947-5136-b052-391410785bb2",
+          "literal": "• Recursos lingüísticos y literarios",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 648.933,
+              "x1": 167.62369999999999,
+              "y1": 657.933
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "a655b161-ab61-595f-bffe-c55d0d2e5c85",
+          "literal": "• Los actantes",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 637.035,
+              "x1": 99.46670000000002,
+              "y1": 646.035
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "36e9c144-6d5f-57a3-94e2-3a4c96773976",
+          "literal": "• Verbo en pretérito indefinido\ny en pretérito imperfecto del\nindicativo",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 603.1409999999998,
+              "x1": 159.2357,
+              "y1": 634.137
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "79ca1110-b6a6-5cae-9e66-eec9e8fe18b2",
+          "literal": "• Adverbios de tiempo y espacio",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.12970000000001,
+              "y0": 591.2429999999998,
+              "x1": 166.01270000000002,
+              "y1": 600.243
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "50810071-d964-5722-ae8b-296148af63c6",
+          "literal": "• Adjetivos",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 579.345,
+              "x1": 88.3067,
+              "y1": 588.345
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "550e059b-4981-56f9-8869-97ffa30fc185",
+          "literal": "• Conectores, coordinantes y de\nconsecuencia",
+          "source": {
+            "pdfPage": 73,
+            "printedPage": "72",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.1297,
+              "y0": 556.449,
+              "x1": 163.7978,
+              "y1": 576.447
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    },
+    {
+      "id": "caligrama",
+      "name": "El caligrama",
+      "headerId": "ee8c2ca0-e609-5954-b3b5-48140b9079a9",
+      "headerIsAssessable": false,
+      "sourcePage": 74,
+      "contents": [
+        {
+          "id": "ec9ca380-06c8-5b66-92cf-8f24eb0f6225",
+          "literal": "• Función y estructura",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 695.85,
+              "x1": 128.2971,
+              "y1": 704.85
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "5149b76d-b17d-5c9d-a0ec-80ed97965303",
+          "literal": "• La tipografía, caligrafía",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 683.952,
+              "x1": 134.841,
+              "y1": 692.952
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "2fb5fb3a-4bd1-5b47-a4cf-a43f348646c2",
+          "literal": "• Imagen visual",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 672.054,
+              "x1": 104.75399999999999,
+              "y1": 681.054
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "6d17c841-b0de-594e-bb70-3501e6519b11",
+          "literal": "• El tema del poema",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 660.156,
+              "x1": 122.412,
+              "y1": 669.156
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "bad379b8-8d00-56ec-b5e1-f436557d29fc",
+          "literal": "• El verso libre",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 648.2579999999999,
+              "x1": 99.99300000000001,
+              "y1": 657.258
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "e6b7ec90-65cb-5c4a-b217-36cd77a2c671",
+          "literal": "• Figuras literarias: epíteto, anáfora,\ncomparación, personificación y\nmetáfora",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 614.3639999999999,
+              "x1": 173.352,
+              "y1": 645.36
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "b70e0e8e-1735-57d1-b621-9a25d73de62c",
+          "literal": "• Sustantivos",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125000000000014,
+              "y0": 602.4659999999999,
+              "x1": 95.94300000000001,
+              "y1": 611.466
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "1bd75c21-a659-5124-903b-02925b284b13",
+          "literal": "• Adjetivos",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 590.568,
+              "x1": 88.30199999999999,
+              "y1": 599.568
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        },
+        {
+          "id": "2a40f2dc-1306-5bc9-ae93-cf353fc3283c",
+          "literal": "• Descripciones",
+          "source": {
+            "pdfPage": 74,
+            "printedPage": "73",
+            "sectionName": "Lengua Española / Lengua Española",
+            "boundingBox": {
+              "x0": 49.125,
+              "y0": 578.67,
+              "x1": 104.8928,
+              "y1": 587.67
+            },
+            "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+          },
+          "status": "PENDIENTE_CONTRASTE",
+          "implementation": "NO_ACREDITADA_POR_MENCION",
+          "cases": [],
+          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+        }
+      ],
+      "status": "PENDIENTE_AUDITORIA",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+    }
+  ],
+  "procedures": [
+    {
+      "id": "d60a8e8d-d000-5b43-897d-e0eb48136a1c",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión oral (escuchar)\nEscucha atenta de noticias de interés mundial relacionadas con la naturaleza\ny el ambiente e identificación de su intención comunicativa.\nUtilización de la estructura de la noticia (titular, entrada o copete, cuerpo, foto\ny pie de foto) para comprender su contenido; uso de las interrogantes (qué\nocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo ocurrió)\npara comprenderla; realización de inferencias necesarias para comprender el\nsentido global del texto y del significado de las palabras que desconoce, a\npartir del contexto.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 337.8570000000001,
+          "x1": 460.7789000000003,
+          "y1": 434.841
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "1e8cd77f-d712-535e-b108-203a914fb39c",
+      "type": "PROCEDURE",
+      "originalText": "Producción oral (hablar)\nEscogencia de una noticia de interés mundial sobre la naturaleza y el\nambiente, teniendo en cuenta los elementos que convierten un hecho\nen noticia; establecimiento de la intención comunicativa de la noticia que\nproducirá oralmente.\nRelato de la noticia, tomando en cuenta su función, su estructura (titular,\nentrada y cuerpo) y las interrogantes que debe responder (qué ocurrió, a\nquién le ocurrió, dónde le ocurrió, cuándo le ocurrió y cómo ocurrió); uso\nde marcadores que expresen orden y temporalidad para organizar lógica\ny coherentemente la noticia; vocabulario temático (verbos y sustantivos);\nla entonación, el ritmo, las pausas y silencios, así como el tono (serio) que\ncaracterizan la noticia.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 194.8830000000002,
+          "x1": 460.76990000000006,
+          "y1": 324.8610000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "d112b7bd-aa6c-5d0a-9980-83e7c8ef5334",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión escrita (leer)\nSelección de la modalidad de lectura (en voz alta, en silencio, individual,\ncompartida); anticipación del contenido del texto a partir de marcas\ntextuales y paratextuales; establecimiento del propósito para leer la noticia;\nidentificación de la intención comunicativa de la noticia que lee.\nLectura de la noticia para dar respuesta a las interrogantes propias del texto\n(qué ocurrió, a quién le ocurrió, dónde ocurrió, cuándo ocurrió y cómo\nocurrió); realización de inferencias mientras lee",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 95.90100000000022,
+          "x1": 460.77080000000007,
+          "y1": 181.8870000000002
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "bfbe299c-6c2d-599b-88d3-d70b46524187",
+      "type": "PROCEDURE",
+      "originalText": "para comprender la información fundamental de la noticia, así como el\nsignificado de palabras que desconoce a partir del contexto; paráfrasis de las\ninformaciones contenidas en las noticias leídas.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 684.6629999999999,
+          "x1": 460.7797999999998,
+          "y1": 715.659
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "52fef8d7-627e-5de8-85ea-95a5ddc97c3d",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nSelección del acontecimiento para la noticia; documentación y búsqueda de\nla información necesaria para la noticia; establecimiento del público a quien va\ndirigida la noticia; elección de un titular llamativo para la noticia; presentación\nde la entrada de la noticia con un vocabulario y sintaxis sencillos; organización\nde la información, tomando en cuenta el orden de las interrogantes (qué,\na quién, dónde, cuándo, cómo); utilización del registro de lengua formal y\nestilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporales para lograr la cohesión de la noticia; los\nsignos convencionales de la escritura; revisión y corrección de los borradores\npor parte del/de la docente y los/las demás estudiantes.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 552.6869999999994,
+          "x1": 460.7807,
+          "y1": 671.6669999999999
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "71c8091f-c16b-5568-a567-fefeeb6ab5a6",
+      "type": "PROCEDURE",
+      "originalText": "Edición y publicación de la versión final de la noticia, a través de medios y\nrecursos tecnológicos o convencionales.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 519.6929999999994,
+          "x1": 460.75009999999975,
+          "y1": 539.6909999999995
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "833e9c25-f412-5ae4-97b0-ad42b238df99",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión oral (escuchar)\nEscucha atenta de guías turísticas leídas por los/las compañeros/as;\nanticipación del sentido global del texto, a partir de la información gráfica\n(mapas, gráficos, dibujos o fotografías).",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 464.70299999999946,
+          "x1": 460.7528000000004,
+          "y1": 506.69699999999943
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "6d928034-270a-5523-a99d-11285a2fa97f",
+      "type": "PROCEDURE",
+      "originalText": "Utilización de los verbos en presente de indicativo, para expresar cualidades\nde los lugares de interés de la comunidad; reconocimiento de la estructura\norganizacional del texto mediante la identificación de verbos en presente\nde indicativo, sustantivos y adjetivos; paráfrasis del sentido global de la guía\nturística utilizando adjetivos calificativos.\nProducción oral (hablar)",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 387.71699999999953,
+          "x1": 460.7609000000005,
+          "y1": 451.7069999999995
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "22c218f1-fd39-5932-bcb6-2ac8dbb8ab38",
+      "type": "PROCEDURE",
+      "originalText": "Establecimiento de la intención comunicativa del texto que va a producir\noralmente; elección de los lugares de mayor interés de la comunidad y su\nclasificación en: museos, plazas, bibliotecas, exposiciones, restaurantes,\nhoteles, salas de conciertos, cines, teatros y parques; recopilación de la\ninformación necesaria del lugar; delimitación del alcance de su guía: público,\ntema y diseño de presentación; empleo de mapas, gráficos o collage\nde fotografías para explicitar gráficamente el tema de la guía turística;\ndescripción topográfica para destacar aspectos sobresalientes de los lugares\nde su comunidad.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 277.7369999999996,
+          "x1": 460.7879,
+          "y1": 374.72099999999955
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "8279a299-b455-5cde-a067-e4b6318a57ce",
+      "type": "PROCEDURE",
+      "originalText": "Utilización de sustantivos propios y comunes para nombrar lugares turísticos\nde la comunidad, y de los grados del adjetivo para describirlos; vocabulario\ny la intención comunicativa; utilización de verbos en presente del indicativo\npara expresar las cualidades de los lugares de interés de la comunidad;\nconectores espaciales y temporales.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 211.74899999999965,
+          "x1": 460.7618000000003,
+          "y1": 264.74099999999964
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "e6cd5a0e-b4b9-5d20-8aa4-a329c4650b9e",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión escrita (leer)\nEstablecimiento del propósito para la lectura de la guía turística; inferencia del\ncontenido de la guía turística a partir del título y otras marcas paratextuales\n(fotografías, mapas o gráficos); identificación de la intención comunicativa de\nla guía turística que lee en silencio y/o en voz alta; utilización de la estructura\nde la guía turística (portada, información, imágenes y cierre), los verbos\nen presente de indicativo, sustantivos propios, comunes y abstractos, los\nadjetivos, oraciones interrogativas y exclamativas, para comprender la guía\nturística que lee.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 618.6389999999997,
+          "x1": 460.78700000000026,
+          "y1": 715.623
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "ca82323b-bfd6-5d20-a808-8056a89e048b",
+      "type": "PROCEDURE",
+      "originalText": "Clasificación de los lugares que aparecen en la guía leída; reconocimiento\nde la estructura organizacional del texto, mediante la identificación de los\nverbos en presente de indicativo, los sustantivos y adjetivos; reconstrucción\ndel sentido global del texto, utilizando recursos gráficos o tecnológicos.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 563.6489999999995,
+          "x1": 460.77890000000025,
+          "y1": 605.6429999999997
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "1c750991-a5d0-57b3-ab7d-987ff7696cd9",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del texto que va a producir;\nselección de los lugares de mayor interés de la comunidad; clasificación de\nlos lugares seleccionados; definición de la estructura, registro y recursos de\nla guía turística; selección del soporte de la guía: físico (libro) o digital y la\ntecnología que va a utilizar para su elaboración; elaboración de los materiales\ngráficos que va a emplear en la guía (mapas, gráficos o collage de fotografías);\nutilización de la estructura (portada, información e imágenes y cierre), los\nverbos en presente de indicativo, sustantivos propios, comunes y abstractos,\nlos adjetivos, para producir la guía turística; vocabulario para producir la guía\nturística de acuerdo a la intención comunicativa; los signos convencionales\nde la escritura (comas, dos puntos, comillas, signos de interrogación y de\nexclamación).",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.5697,
+          "y0": 409.67699999999957,
+          "x1": 460.77170000000024,
+          "y1": 550.6529999999996
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "c48372c9-5df0-5a1d-b905-7de155ae1af8",
+      "type": "PROCEDURE",
+      "originalText": "Escritura de los primeros borradores tomando en cuenta las características\npreviamente establecidas; revisión con ayuda del/de la profesor/a y de\nsus compañeros/as, teniendo en cuenta el uso de los recursos del texto\ndescriptivo; edición y publicación de la guía turística en formato físico o digital\ny a través de medios convencionales y tecnológicos",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 349.44000000000005,
+          "x1": 460.7708000000003,
+          "y1": 402.432
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión oral (escuchar)\nEscucha atenta de informes de lectura leídos por el/la docente o por sus\ncompañeros/as; anticipación del contenido a partir del título u otras marcas\ntextuales; inferencia de la intención comunicativa del análisis del informe de\nlectura que escucha; utilización de la estructura del informe de lectura para\ncomprender el análisis de los patrones socioculturales presentes en él.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 272.4540000000001,
+          "x1": 460.79779999999977,
+          "y1": 336.4440000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+      "type": "PROCEDURE",
+      "originalText": "Producción oral (hablar)\nSelección de un texto narrativo del ámbito literario (cuento, leyenda, fábula o\nnovela), sobre el cual hará la exposición del informe de lectura; establecimiento\nde la intención comunicativa que producirá oralmente; resumen del\ncontenido del texto seleccionado, presentando sus ideas principales a partir\nde las reglas de omisión, selección, generalización y reconstrucción; análisis\noral de los patrones socioculturales presentes en el texto seleccionado para\nproducir oralmente el informe de lectura.\nExposición oral del informe de lectura, presentando el análisis de los patrones\nsocioculturales observados en él.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 151.4760000000002,
+          "x1": 460.7807000000002,
+          "y1": 259.4580000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "f539e8fd-f625-5294-96fb-285546e10b49",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura; anticipación del contenido del\ninforme de lectura a partir del título y otras marcas textuales y paratextuales.\nRealización de las inferencias necesarias para comprender el sentido global\ndel análisis que lee; utilización de la estructura de los verbos en presente y\npasado, los adjetivos, y los conectores para comprender el análisis presente en\nel informe que lee; evaluación de las predicciones realizadas antes y durante\nla lectura; paráfrasis del contenido del informe de lectura para comprender el\nanálisis de los patrones socioculturales presentes en él.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.06569999999994,
+          "y0": 618.6389999999997,
+          "x1": 460.75189999999986,
+          "y1": 715.623
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nSelección de un texto narrativo del ámbito literario (cuento, fábula, leyenda,\nnovela), sobre el cual producirá el informe de lectura; búsqueda de la\ninformación necesaria para la elaboración de un esquema de escritura\ndonde se organice de manera lógica la estructura del texto que producirá;\nelaboración del resumen del contenido del texto seleccionado, presentando\nlas ideas principales a partir de las reglas de omisión, selección, generalización\ny reconstrucción; análisis sociocultural del texto seleccionado; utilización del\nvocabulario de acuerdo a la intención comunicativa y al público receptor;\nutilización de los signos convencionales de la escritura (comas, dos puntos,\ncomillas, signos de interrogación y de exclamación); uso de adjetivos para\ndescribir y caracterizar los patrones socioculturales de los textos analizados,\nde verbos en presente y en pasado de indicativo y de conectores de adición\n(y, además, también) y de ejemplificación (por ejemplo, tal como); asignación\nde un título en función de su contenido.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.06569999999994,
+          "y0": 442.6709999999994,
+          "x1": 460.77890000000014,
+          "y1": 605.6429999999997
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+      "type": "PROCEDURE",
+      "originalText": "Redacción de borradores, manuscritos y/o digitales, tomando en cuenta\nsu organización, la coherencia y la cohesión textual; revisión y corrección\nde los borradores con ayuda del/de la docente y de los compañeros y las\ncompañeras; edición y publicación del informe de lectura en soporte físico\no electrónico.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.07469999999998,
+          "y0": 373.002,
+          "x1": 460.78880000000004,
+          "y1": 425.994
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "e391ba43-d01f-56b5-969c-625e7c715d49",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión escrita (leer)\nEstablecimiento de un propósito para la lectura del afiche; anticipación del\ncontenido del afiche a partir de los elementos gráficos que lo conforman:\nimágenes, tipos de letras, colores, distribución espacial de los componentes.\nComprensión de la intención a partir de las palabras claves para sugerir, atraer,\nmotivar o convencer; interpretación de los mensajes y recursos persuasivos\ndel afiche; realización de las inferencias necesarias para comprender el sentido\nglobal del afiche; paráfrasis del contenido global del afiche y recuerdo de la\ninformación importante que contiene.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.07469999999998,
+          "y0": 263.0220000000001,
+          "x1": 460.7798,
+          "y1": 360.00600000000003
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "156d82cc-d619-56fa-8bb9-3563fb155b3f",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nEstablecimiento de la situación comunicativa del afiche: intención,\ndestinatarios/as, tiempo y lugar de acciones comunicativas; elección del tipo\nde actividad cuya participación motiva el afiche y de los datos de la misma\n(día y lugar de realización, público que asistirá, acciones que se van a realizar);\nplanificación de los componentes textual y visual, a partir de la actividad y\nlos datos seleccionados; uso del imperativo para mover a la acción como\nparte del componente textual del afiche; utilización de recursos poéticos\ny/o argumentativos para atraer al/ a la destinatario/a: exageración, metáfora,\nelipsis, pleonasmo, hechos, cifras estadísticas, ventajas.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.07469999999998,
+          "y0": 142.04400000000018,
+          "x1": 460.79870000000005,
+          "y1": 250.0260000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "75ccb373-3eb0-5d30-af1f-714caffce54d",
+      "type": "PROCEDURE",
+      "originalText": "Selección de los elementos gráficos que completarán el afiche: imágenes,\nformas, colores, tipos de letras, organización espacial de los elementos\nlingüísticos, gráficos y tamaño del afiche.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.07469999999998,
+          "y0": 98.05200000000018,
+          "x1": 460.77080000000024,
+          "y1": 129.04800000000017
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "07dcf12a-5015-52c7-996d-61a5b9a6244b",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión oral (escuchar)\nEscucha atenta de cuentos leídos por el/la profesor/a o grabados de la radio\no la televisión; reconocimiento de los personajes centrales y secundarios para\ncomprender las motivaciones que desencadenan las acciones; identificación\ndel ambiente en sus aspectos fundamentales: cerrado, abierto, campo, ciudad\npara establecer la relación e influencia respecto a los personajes; comprensión\ndel texto de manera global a partir de los tres momentos: inicio, nudo y\ndesenlace; reconocimiento de los elementos y la estructura propios de este\ntipo de texto; identificación de verbos en pretérito indefinido y pretérito\nimperfecto, adverbios de tiempo y espacio y conectores coordinantes y de\nconsecuencia para comprender con mayor claridad el texto narrado.\nResumen o paráfrasis de la historia contada, utilizando un vocabulario\napropiado e inclusivo.\nProducción oral (hablar)\nSelección de una trama con características policíacas para producir oralmente\nun cuento; establecimiento de la intención comunicativa (lúdica, despertar\ninterés) del cuento que producirá oralmente; utilización de conectores\ncoordinantes y de consecuencia para dar cohesión y sentido lógico al texto\nnarrado; adecuación del lenguaje corporal como soporte a la expresión oral;\nmatización del tono y volumen de voz, según la intervención de los distintos\npersonajes del cuento.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 486.6899999999992,
+          "x1": 460.7843000000001,
+          "y1": 715.65
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "caeca724-f16b-5730-be70-d3e671ae7840",
+      "type": "PROCEDURE",
+      "originalText": "Descripción del ambiente y de los personajes, utilizando adjetivos y\nun vocabulario apropiado e inclusivo; empleo de recursos lingüísticos\n(descripción, diálogo) y literarios (comparación, metáfora, epíteto…) para dar\nmayor expresividad a los sucesos que ocurren en la narración.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 431.69999999999925,
+          "x1": 460.7798000000002,
+          "y1": 473.6939999999992
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "caaa246b-f525-5292-8ed0-0fd2e8309566",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión escrita (leer)\nInferencia del contenido del cuento a partir del título y otras marcas\nparatextuales (imagen, color, gráficos, cubierta; utilización de la estructura\nnarrativa (inicio, nudo y desenlace) para comprender la narración;\nreconocimiento de los personajes (centrales y secundarios) a partir de sus\nacciones y apariciones; relación entre los personajes y el ambiente en el que\nse desenvuelven.\nIdentificación de los conectores coordinantes y de consecuencia para\nestablecer la coherencia y orden lógico entre las ideas; paráfrasis del sentido\nglobal del cuento policíaco, utilizando un vocabulario adecuado a este tipo\nde texto",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.0747,
+          "y0": 299.72399999999936,
+          "x1": 460.7933000000002,
+          "y1": 418.70399999999927
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "28865ef6-91d3-5df9-b417-0a81f880732a",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nElección del tema o trama que abordará en el cuento; elaboración de un\nesquema secuencial que servirá de guion; utilización de conectores lógicos\nen la producción escrita; delimitación del perfil de cada personaje del cuento\nutilización de un vocabulario apropiado según la intención comunicativa,\nlos personajes que intervienen y el tema tratado; recreación del escenario o\nambiente en el que actuarán los personajes de la historia; empleo de recursos\nlingüísticos (descripción, diálogo) y literarios (comparación, metáfora,\nepíteto…), para dar mayor expresividad a los sucesos que ocurren en la\nnarración.\nEscritura de los borradores del cuento policíaco, tomando en cuenta la\nintención, los/las interlocutores/as, la estructura y el modo de organización;\nrevisión y corrección del cuento policíaco, tomando en cuenta las\nconvenciones de la escritura y las sugerencias de los/las compañeras/as y\ndel/de la profesor/a; ilustración del cuento para una mejor comprensión del\nmismo; edición final y publicación del cuento policíaco en forma impresa y\ndigital.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.065,
+          "y0": 86.9070000000001,
+          "x1": 460.771,
+          "y1": 271.875
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "385e0137-005c-5738-a4fb-123f43df0f51",
+      "type": "PROCEDURE",
+      "originalText": "Comprensión oral (escuchar)\nEscucha atenta de caligramas de poetas españoles/as, latinoamericanos/as\ncaribeños/as y dominicanos/as, acordes con la edad e intereses; reconocimiento\nde la intención comunicativa del autor y de los sentimientos que expresa;\nuso de la estructura del caligrama (texto poético que forma una figura alusiva\na lo que trata el poema), de la rima y de las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados explícitos e implícitos y disfrutar de las emociones que provoca el\npoema.",
+      "source": {
+        "pdfPage": 74,
+        "printedPage": "73",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.06329999999997,
+          "y0": 622.846,
+          "x1": 460.77586999999966,
+          "y1": 715.5532000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "6c34dfd7-f46b-53bd-bcc5-fbb783867a0e",
+      "type": "PROCEDURE",
+      "originalText": "Paráfrasis oral del sentido global del caligrama, utilizando el vocabulario\nadecuado a este tipo de texto",
+      "source": {
+        "pdfPage": 74,
+        "printedPage": "73",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.06329999999997,
+          "y0": 591.3433,
+          "x1": 460.7488999999999,
+          "y1": 610.5442
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "b09eae34-ec2a-579a-a86f-e0c2e7e020ea",
+      "type": "PROCEDURE",
+      "originalText": "Producción oral (hablar)\nSelección de caligramas de autores/as, acordes a la intención comunicativa que\nquiere expresar.\nVerbalización de figuras literarias (epíteto, anáfora, comparación, personificación\ny metáfora) de la rima y los versos del caligrama, usando la entonación y el\nlenguaje gestual, acordes a la intención comunicativa y a los sentimientos que\nse quieren expresar.\nComprensión escrita (leer)\nReconocimiento de la intención comunicativa del autor y de los\nsentimientos que expresa; uso de la estructura del caligrama (texto poético\nque forma una figura alusiva a lo que trata el poema), para comprender su\nsignificado.\nUtilización de la rima y el ritmo y las figuras literarias (epíteto, anáfora,\ncomparación, personificación y metáfora) presentes para comprender sus\nsignificados implícitos y disfrutar de las emociones que provoca.",
+      "source": {
+        "pdfPage": 74,
+        "printedPage": "73",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.06329999999997,
+          "y0": 423.3455,
+          "x1": 460.7671300000001,
+          "y1": 579.0415
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "6386112a-44b3-5b36-9416-1f31d2540550",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nEstablecimiento de la intención comunicativa del caligrama que va a Producir;\nselección del tema e imagen del caligrama; utilización de vocabulario\napropiado a su intención comunicativa y al tipo de sentimiento o emoción que\nquiere expresar; así como las figuras literarias: epíteto, anáfora, comparación,\npersonificación y metáfora.\nEscritura de borradores del caligrama atendiendo a su estructura, rima, figuras\nliterarias y vocabulario apropiado, para la intención comunicativa y el tipo de\nsentimiento o emoción que quiere expresar; revisión y corrección de borradores\ndel caligrama con ayuda del/de la docente y los compañeros y compañeras.\nEdición y publicación de caligramas en un mural, en un libro artesanal o en una\nrevista escolar.",
+      "source": {
+        "pdfPage": 74,
+        "printedPage": "73",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.065,
+          "y0": 286.8338,
+          "x1": 460.7766999999999,
+          "y1": 411.0437
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "746e4fe5-7817-5e72-a03d-c1eebd7f482d",
+      "type": "PROCEDURE",
+      "originalText": "Producción escrita (escribir)\nSelección del acontecimiento adecuado para la noticia; documentación y\nbúsqueda de la información necesaria para la noticia; establecimiento del\npúblico al que va dirigida la noticia; elección de un titular llamativo para la\nnoticia; presentación de la entrada o copete con un vocabulario y sintaxis\nsencilla; organización de la información, tomando en cuenta el orden de las\ninterrogantes (qué, a quién, dónde, cuándo, cómo); utilización del registro formal\ny de un estilo a la intención comunicativa y al público al que va dirigida la noticia;\nconectores de orden y temporalidad, oraciones coordinadas y subordinadas\npara lograr la cohesión y para ampliar el sentido de la idea principal de la noticia;\nlos signos convencionales de la escritura.\nRedacción del borrador o los borradores de la noticia; revisión y corrección del\nborrador o los borradores de la noticia por parte del/de la maestro/a y los/las\ndemás estudiantes; edición y publicación (impresa o digital) de la versión final\nde la noticia que escribe.",
+      "source": {
+        "pdfPage": 74,
+        "printedPage": "73",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 185.065,
+          "y0": 94.06789999999998,
+          "x1": 460.78540000000015,
+          "y1": 249.7805
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    }
+  ],
+  "attitudes": [
+    {
+      "id": "8716598b-c940-5369-a46c-7be539ae80f9",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\nobjetividad de las\nnoticias que escucha.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 403.908,
+          "x1": 551.3297,
+          "y1": 434.9040000000003
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "2bad0524-cdf5-5952-aec6-d13b24794458",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Curiosidad por conocer\nlo que sucede a su\nalrededor y en el\nmundo.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 359.016,
+          "x1": 558.8987,
+          "y1": 401.01
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "9f48a703-91d9-5aa9-866e-4b4696b9c956",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Sensibilidad y\nsolidaridad con lo\nsucedido y reportado\nen las noticias.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74569999999994,
+          "y0": 314.12399999999997,
+          "x1": 551.7437000000001,
+          "y1": 356.118
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "6e01c925-afec-521f-be04-3362e23c9e03",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Criticidad frente a las\ncuestiones relacionadas\ncon la naturaleza y el\nmedioambiente.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74570000000006,
+          "y0": 269.23199999999997,
+          "x1": 560.0776999999999,
+          "y1": 311.226
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "10d05982-7384-5616-b187-a61e8011be3f",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\nescritura de la noticia\ncomo un proceso.",
+      "source": {
+        "pdfPage": 69,
+        "printedPage": "68",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 235.33800000000002,
+          "x1": 550.8077,
+          "y1": 266.334
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "d964061f-7b05-5fab-a36e-1caff318f964",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Veracidad de los\ncontenidos de la\nguía respecto a los\nconocimientos de la\ncomunidad.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 662.757,
+          "x1": 547.5677000000001,
+          "y1": 715.749
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "a69551f7-a2be-5f32-9e2a-117aaa53a6bc",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Respeto por los valores\nidentitarios de los\nelementos que le\nrodean",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 617.8649999999999,
+          "x1": 557.4137,
+          "y1": 659.859
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "3c6f7b86-e7bd-5839-8185-7f20dce8b3aa",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• y conforman su\ncontexto sociocultural.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 594.9689999999999,
+          "x1": 556.1347999999999,
+          "y1": 614.967
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "c51d455e-ed5f-55bf-b0cf-2da4eda1641a",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de aspectos\ngeográficos, culturales,\ngastronómicos de la\npropia población.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 550.0769999999999,
+          "x1": 557.0717000000001,
+          "y1": 592.071
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "7a7122a9-f966-5c96-87e1-884d9f585a13",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Interés por escribir\nguías turísticas sobre\nla comunidad a la que\npertenece.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74570000000006,
+          "y0": 505.1849999999999,
+          "x1": 554.2637,
+          "y1": 547.179
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "0e2786ff-4105-5808-9883-caeb477d2fcd",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Creatividad como\nmedio para hacer más\neficiente el proceso de\ncomunicación.",
+      "source": {
+        "pdfPage": 70,
+        "printedPage": "69",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74569999999994,
+          "y0": 460.293,
+          "x1": 555.9286999999999,
+          "y1": 502.287
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "60909d45-3497-5099-ac5d-be5ed014eb35",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Curiosidad e interés al\nescuchar los informes\nde lectura leídos\npor el/la docente\no compañeros y\ncompañeras o grabados\nen audio.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 640.6889999999997,
+          "x1": 561.6518,
+          "y1": 715.677
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "52c50c2a-8846-5e34-9920-501885cb9f05",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración del informe\nde lectura como medio\npara comprender y\nreconstruir textos.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 595.7969999999999,
+          "x1": 558.8716999999999,
+          "y1": 637.791
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "5876b734-04ea-55a7-9540-e3e27b30268c",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Respeto y valoración\nde la riqueza cultural\nal analizar las\ncostumbres, formas de\ncomportamiento, estilos\nde vida, hábitos, pautas\nculturales observados\nen los textos narrativos\ndel ámbito literario.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74570000000006,
+          "y0": 495.91499999999985,
+          "x1": 562.1288,
+          "y1": 592.899
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "174f3a8d-0fa1-571c-a838-0ea244089eb1",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Disfrute y entusiasmo\nal leer el informe de\nlectura.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7547,
+          "y0": 371.481,
+          "x1": 552.1937,
+          "y1": 402.4770000000002
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "635ed539-30b0-547a-bc85-c04b9fc95282",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Actitud reflexiva y\nanalítica al examinar\npatrones culturales\npresentes en textos\nnarrativos del ámbito\nliterario.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7547,
+          "y0": 304.5930000000001,
+          "x1": 550.8698,
+          "y1": 368.583
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "6b6cfe4d-36f1-5156-8cdd-a16738cd6886",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\ncreatividad, la\norganización y la\nestética al presentar por\nescrito el informe de\nlectura.",
+      "source": {
+        "pdfPage": 71,
+        "printedPage": "70",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7547,
+          "y0": 237.70500000000004,
+          "x1": 560.6078,
+          "y1": 301.69500000000005
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "b54f35d0-4528-5e35-9896-23e407b57835",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\nveracidad de los datos\nofrecidos en el afiche\npara convencer al y a la\ndestinatario/a.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.74569999999994,
+          "y0": 662.6759999999999,
+          "x1": 558.1967000000001,
+          "y1": 715.668
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "58de88aa-c45b-5b70-b2d4-bdb6e39f5bdb",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\ncreatividad en el afiche\ntanto en la organización\nvisual como en el\ncontenido de los textos\nescritos.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 595.7879999999999,
+          "x1": 561.3196999999999,
+          "y1": 659.778
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "e1dbeb12-2f97-5fc6-8b0f-f0f277a1e7ff",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Interés por advertir\nal público en general\nsobre una enfermedad,\nproblemas sociales\no alertar en casos\nde emergencia\n(terremotos, incendios,\nciclones).",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457,
+          "y0": 506.9039999999997,
+          "x1": 557.9879000000001,
+          "y1": 592.89
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "a789f2f7-2d52-530a-9b35-24635197aafa",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Promoción de valores\nhumanos y de\nconvivencia justa y\nequitativa en los afiches\nproducidos.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.7457000000001,
+          "y0": 451.014,
+          "x1": 560.4917,
+          "y1": 504.006
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "ca4feb9e-e3f4-545d-8eb4-99e2748750e8",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Apreciación de los\nestímulos y emociones\nque provoca la escucha\nde textos narrativos.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 387.10800000000006,
+          "x1": 553.64124,
+          "y1": 425.8
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "ce4e6387-55b0-5ae1-a7bd-619c55e1188f",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Interés por narrar\nde forma lúdica y\nentretenida cuentos de\nnaturaleza policíaca y\ndetectivesca.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75000000000006,
+          "y0": 336.2208000000001,
+          "x1": 552.89196,
+          "y1": 384.6048
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "1e356857-742d-527a-8c7c-7f0d7b0f037e",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Curiosidad por conocer el\ndesarrollo y desenlace de\nlos hechos narrados.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75,
+          "y0": 305.3256,
+          "x1": 560.982,
+          "y1": 333.71760000000006
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "8841ea63-27d0-555c-b765-fdd960456dba",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración del tema y la\ntrama del cuento que lee\npara conocer actitudes y\nvalores humanos.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75,
+          "y0": 264.43440000000004,
+          "x1": 558.9240000000001,
+          "y1": 302.82239999999996
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "456bd1c2-613d-5bf1-acf3-adc5f04c6018",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la\nimportancia de escribir\ncuentos policíacos\npara desarrollar el\npensamiento y orden\nlógico en la narración de\nun suceso.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75000000000006,
+          "y0": 193.55519999999999,
+          "x1": 557.2608000000001,
+          "y1": 261.93120000000005
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "14a63d56-0af7-535a-8961-0ee346c5f780",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Disfrute al escuchar\ncaligramas.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75000000000006,
+          "y0": 172.65599999999998,
+          "x1": 540.0576,
+          "y1": 191.052
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "c4623068-b5fc-57b8-92f0-08c3f8b9a48f",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la función\nlúdica y estética de la\npoesía gráfica.",
+      "source": {
+        "pdfPage": 72,
+        "printedPage": "71",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.75,
+          "y0": 141.7608,
+          "x1": 555.0096,
+          "y1": 170.1528
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "70d92347-77f0-5e3f-b748-5d458fe5b694",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Respeto y empatía por los\nsentimientos y opiniones\nexpresados por otros y\notras.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 677.0870000000001,
+          "x1": 561.5482,
+          "y1": 715.475
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "317bd72c-4af6-5989-9e70-6bb01a420e2e",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Reconocimiento y\nvaloración de la expresión\nverbal y corporal como\nmedio para transmitir\nemociones.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 626.1998000000001,
+          "x1": 561.7582,
+          "y1": 674.5838000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "ee44c1d4-16db-5b9d-a473-d2d596261269",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Sensibilidad al declamar\ncaligrama.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 605.3006,
+          "x1": 555.4582,
+          "y1": 623.6966000000001
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "dab4acf7-3e7e-51ec-a792-9715e32330a8",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Disfrute al leer caligramas.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 594.3974,
+          "x1": 561.4306000000001,
+          "y1": 602.7974
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "97c70a67-2f5a-56bb-9853-f83d23e9371d",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Disfrute al producir\ncaligramas.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 573.4982,
+          "x1": 538.5994,
+          "y1": 591.8942
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "82fbde4d-eceb-526b-8765-1806c38549c7",
+      "type": "ATTITUDE_VALUE",
+      "originalText": "• Valoración de la expresión\nescrita como medio para\ntransmitir emociones.",
+      "source": {
+        "pdfPage": 73,
+        "printedPage": "72",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 468.745,
+          "y0": 542.6030000000001,
+          "x1": 562.0018,
+          "y1": 570.995
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    }
+  ],
+  "achievementIndicators": [
+    {
+      "id": "edd5d7f8-172b-5927-a153-73b58a9756a6",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Caracteriza los textos funcionales y literarios a utilizar en su desenvolvimiento comunicativo oral o escrito de su vida social,\ncon efectividad y creatividad.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 701,
+          "x1": 562.1940000000004,
+          "y1": 723
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "dbc525a2-36e3-5abd-98b6-6f2a2d6770c6",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Se expresa claramente de forma oral o escrita mediante un tipo de texto conveniente en diferentes situaciones de\ncomunicación, integrando herramientas TIC de manera responsable.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 677,
+          "x1": 562.2779999999998,
+          "y1": 699
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "4341313f-9526-5f29-97cf-22b96fe40580",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Elabora textos orales y escritos sobre situaciones de su realidad y del mundo, comunicando eficazmente sus ideas,\npensamientos y sentimientos de forma crítica.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.239999999999995,
+          "y0": 653,
+          "x1": 562.2579999999996,
+          "y1": 675
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "416efc6a-f3ea-586a-aaac-e38afddce0f9",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Conoce las secuencias argumentativas (hechos, ejemplos, analogías, argumentos y contraargumentos) y las usa de manera\nlógica en discursos sobre temas contextuales.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 629,
+          "x1": 562.2580000000003,
+          "y1": 651
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "637c2904-96b6-576c-bab4-6a0bfdf66944",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Evidencia nuevos conocimientos derivados de la comprensión y producción oral y escrita de textos, relacionados con el\nentorno familiar, escolar, comunitario, nacional y del mundo.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 605,
+          "x1": 562.2579999999999,
+          "y1": 627
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "bf27d10f-59a1-553a-a094-f621207e0234",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Produce textos en contextos variados, con juicios válidos, puntos de vista claro, conclusiones lógicas, con disposición a la acción, respetando\nlas diversas opiniones de los demás.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 581,
+          "x1": 562.2022999999999,
+          "y1": 603
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "44cca28a-249e-561e-92ac-b98d05b46d18",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Describe problemas o conflictos a través de un tipo de texto relacionado con su vida estudiantil, familiar o social en general.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 569,
+          "x1": 558.4340000000007,
+          "y1": 579
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "73953afe-43cf-5b4d-a157-85cfd41ccb84",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Escribe textos variados con información relevantes y confiables que apoyan la solución de problemas o conflictos del entorno.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 557,
+          "x1": 562.2670000000003,
+          "y1": 567
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "4430df5a-9fb7-54e0-b000-606c863ae60e",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Expone, a través de ensayos, informes u otros tipos de textos con conclusiones y recomendaciones que orientan la solución a problemas\nanalizados.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 533,
+          "x1": 562.2203000000002,
+          "y1": 555
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "8337ef0a-8cde-5cc0-8028-c179527f7b6c",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Argumenta relaciones sociales, reconociendo y valorando lo natural y sociocultural de su contexto local y nacional.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 521,
+          "x1": 522.4650000000004,
+          "y1": 531
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "03142453-856f-58e8-b3fc-2292030e24d8",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Emplea textos variados con los q u e cuestiona prácticas sociales de ciudadanía en el entorno local, confrontándolos con los\nvalores universales.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.24999999999997,
+          "y0": 497,
+          "x1": 562.1900000000003,
+          "y1": 519
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "f97deee1-e659-57c1-b27f-5aacded43899",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Redacta proyectos individuales y colaborativos sobre ciudadanía, usando textos adecuados con miras a la solución de\nproblemas sociales.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 473,
+          "x1": 562.2300000000002,
+          "y1": 495
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "9307c046-4d39-5181-a736-3695a6d1d79b",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Divulga conocimientos científicos mediante un tipo de texto y el uso de medios y herramientas proporcionadas por las TIC.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.24999999999994,
+          "y0": 461,
+          "x1": 556.4160000000003,
+          "y1": 471
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "46959358-472f-52cd-9887-5555e78db510",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Parafrasea hallazgos científicos y sociales en diferentes contextos, mediante un tipo de texto de secuencia expositivo-\nexplicativa.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 437,
+          "x1": 562.2679999999999,
+          "y1": 459
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "0fb0533f-3bb8-5211-8fae-f1f3c941c8e2",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Publicación de investigaciones científicas sencillas en espacios comunitarios, utilizando dispositivos tecnológicos disponibles.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 425,
+          "x1": 562.259,
+          "y1": 435
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "0ddcbc46-c06e-5fec-bb7b-12664cc18c15",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Identifica temáticas o problemas sobre salud, medioambiente que afectan la comunidad, mediante textos variados, herramientas\ntecnológicas y otros medios y recursos.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 401,
+          "x1": 562.2715999999999,
+          "y1": 423
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "025c2825-9150-573b-b9cb-a73d22632bf3",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Promueve situaciones de salud y ambiente, a través de un catálogo sobre la flora y la fauna dominicanas, una receta, artículos\nde opinión, instructivos.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.253600000000006,
+          "y0": 377,
+          "x1": 562.2625999999997,
+          "y1": 399
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "7683b87f-f7c4-5ea2-830c-7126662ea5e7",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Valora la conservación de la salud, la naturaleza y sus ecosistemas, haciendo uso de textos variados y desarrollando actividades de\nintercomunicación dentro y fuera del aula.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 353,
+          "x1": 562.3022,
+          "y1": 375
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "550df0a4-8032-5593-bceb-0916487cd755",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Se comprende a sí mismo/a y a los demás y se expresa a través de un género textual, acorde con las situaciones que se presentan en un\ncontexto social determinado.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 329,
+          "x1": 562.2932,
+          "y1": 351
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "d5418e27-1c19-5b28-b563-c311de6055dc",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Produce textos literarios en el cultivo de valores universales y reforzar la dimensión humanista, para el desarrollo físico y espiritual.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25000000000003,
+          "y0": 317,
+          "x1": 528.9284000000005,
+          "y1": 327
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    },
+    {
+      "id": "ee0cfcaa-6207-53d0-91b0-4a41d350d96f",
+      "type": "ACHIEVEMENT_INDICATOR",
+      "originalText": "• Valora y promueve el uso de la lengua para canalizar emociones y sentimientos mediante lecturas y escrituras reflexivas, fortaleciendo las\nrelaciones humanas y el respeto a la dignidad.",
+      "source": {
+        "pdfPage": 75,
+        "printedPage": "74",
+        "sectionName": "Lengua Española / Lengua Española",
+        "boundingBox": {
+          "x0": 58.25,
+          "y0": 293,
+          "x1": 562.268,
+          "y1": 315
+        },
+        "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
+      },
+      "status": "PENDIENTE_MAPA_DE_EVIDENCIA"
+    }
+  ],
+  "transitions": [
+    {
+      "page": 70,
+      "decision": "Inicio continúa lectura de noticias; producción escrita y edición/publicación de noticias preceden a comprensión oral de guías."
+    },
+    {
+      "page": 71,
+      "decision": "Comprensión/producción escrita y primeros borradores de guía continúan aunque otro encabezado ya mencione informe."
+    },
+    {
+      "page": 72,
+      "decision": "Borradores/revisión/publicación cierran informe antes de comprensión de afiche; actitudes tienen transiciones desalineadas respecto a conceptos."
+    },
+    {
+      "page": 73,
+      "decision": "Procedimiento de producción oral del cuento continúa dentro de un bloque extraído; no contar solo subtítulos detectados."
+    },
+    {
+      "page": 74,
+      "decision": "El bloque inferior trata noticias, no caligrama. Comprensión escrita del caligrama está dentro del bloque oral extraído; mantener ambos modos."
+    }
+  ],
+  "closure": "ABIERTA; ninguna fila aprobada por inventario o por existencia de proveedor"
+}

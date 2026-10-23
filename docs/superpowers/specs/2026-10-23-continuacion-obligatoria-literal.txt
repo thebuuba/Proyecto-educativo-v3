@@ -1,0 +1,272 @@
+CONTINUACIÓN OBLIGATORIA: AUDITORÍA COMPLETA POR GRADO, ASIGNATURA Y TEMA
+
+El encargo anterior NO está terminado. Continúa desde el estado real del repositorio y completa la auditoría de instrumentos con actividades docentes realistas.
+
+No entregues otro cierre general basado solamente en los casos prioritarios. Esos casos son el comienzo, no el alcance completo.
+
+OBJETIVO
+
+Recorrer secundaria desde 1.º hasta 6.º. Dentro de cada grado, revisar individualmente cada asignatura implementada y sus temas mediante actividades con título y descripción.
+
+Para cada actividad debes generar y leer sus instrumentos, comprobar su pertinencia, corregir los fallos y volver a verificar.
+
+No incorpores IA a AulaBase. Utiliza tu capacidad para redactar las actividades de prueba; la aplicación debe seguir produciendo los instrumentos mediante su motor actual.
+
+1. ESTADO INICIAL Y LISTA DE TRABAJO
+
+Lee instrucciones, informes y continuación vigentes. Identifica rama, commit, catálogo, cambios y procesos realmente activos.
+
+Conserva las correcciones y evidencias anteriores. No repitas instalaciones, creaciones o pruebas ya válidas sin una razón concreta.
+
+Construye una lista maestra derivada del currículo y los proveedores existentes:
+
+Grado → modalidad/salida → asignatura → tema → familias de actividad → casos → formatos → revisión → corrección → verificación.
+
+Incluye:
+- Las asignaturas comunes de 1.º a 6.º.
+- Las optativas en sus grados y salidas correspondientes.
+- Los módulos técnicos o especializados ya implementados.
+
+Los ámbitos solo inventariados, sin proveedor, deben quedar explícitamente como NO IMPLEMENTADOS. No los declares auditados ni amplíes nuevos módulos durante este encargo.
+
+Cada fila debe tener estado y siguiente acción. No uses un único estado «completo» para toda la asignatura si quedan temas pendientes.
+
+2. ORDEN ESTRICTO DE RECORRIDO
+
+Trabaja en este orden:
+- Primero de secundaria: todas sus asignaturas y temas.
+- Segundo: todas sus asignaturas y temas.
+- Tercero.
+- Cuarto, incluyendo las optativas y módulos implementados aplicables.
+- Quinto.
+- Sexto.
+
+Dentro de cada grado, sigue el orden curricular y separa modalidades/salidas.
+
+Puedes resolver primero un defecto compartido que bloquee varios contextos. Después retoma la primera fila pendiente.
+
+No te detengas para preguntarme si debes pasar a otra asignatura, tema o grado.
+
+3. ACTIVIDADES QUE DEBES CREAR
+
+Cada caso debe contener:
+- Contexto académico.
+- Título natural.
+- Descripción de lo que harán los estudiantes.
+- Requisitos esperados fijados antes de ejecutar.
+- Tipo de procedencia: real literal, reconstruido o sintético.
+
+Por tema, crea normalmente entre cuatro y seis actividades realmente diferentes cuando el contenido lo permita. Justifica excepciones. No cuentes pequeñas variaciones de redacción como familias distintas.
+
+Incluye al menos:
+- Una consigna breve de una línea.
+- Una actividad desarrollada con condiciones concretas.
+- Varias acciones o productos pertinentes al tema.
+- Una variante que permita detectar requisitos inventados, alternativas o negaciones.
+
+No obligues a usar debate, exposición, experimento o cualquier otra familia donde no corresponda.
+
+Utiliza lenguaje de docente habitual: frases breves, imperativos, futuro, enumeraciones y pequeños errores de escritura. No redactes únicamente consignas perfectas que coincidan con las expresiones reconocidas por el código.
+
+4. EXPECTATIVAS ANTES DE GENERAR
+
+Antes de consultar el motor, identifica para cada actividad:
+- Contenido solicitado.
+- Acciones.
+- Producto.
+- Requisitos explícitos.
+- Dimensiones propias del producto.
+- Alternativas.
+- Exclusiones.
+- Condiciones ambiguas o contradictorias.
+- Agrupación pedagógica razonable.
+
+No escribas las expectativas mirando primero la salida del motor.
+
+Conserva los originales y registra cualquier corrección justificada de un caso. No adaptes las expectativas para hacer aprobar una salida incorrecta.
+
+Mantén un conjunto reservado de actividades redactadas sin consultar las reglas de detección. Ejecútalo después de las correcciones iniciales y añade nuevos casos reservados para comprobar generalización.
+
+No presentes esta revisión como evaluación externa independiente: eres el mismo autor, sin subagentes.
+
+5. EJEMPLOS DEL TIPO DE REVISIÓN ESPERADA
+
+EJEMPLO A: TEXTO EXPOSITIVO
+
+Título:
+Creamos un texto expositivo sobre el tema trabajado.
+
+Descripción:
+Los estudiantes escribirán un texto expositivo sobre [contenido correspondiente al grado]. Debe tener un título, introducción, desarrollo y conclusión. Explicarán las ideas principales con claridad y revisarán el texto antes de entregarlo.
+
+Comprueba que el instrumento evalúe:
+- Contenido específico.
+- Organización expositiva.
+- Claridad y relaciones entre ideas.
+- Revisión solicitada.
+
+No impongas bibliografía, exposición oral, cantidad de páginas o recursos gráficos si no se pidieron.
+
+EJEMPLO B: OBSERVACIÓN DE CÉLULAS
+
+Título:
+Observamos células de cebolla con el microscopio.
+
+Descripción:
+Los estudiantes realizarán una práctica para observar células de epidermis de cebolla con el microscopio. Seguirán el procedimiento proporcionado, utilizarán los materiales indicados, identificarán las estructuras observables y registrarán sus observaciones mediante un dibujo rotulado.
+
+Ubica el caso en el contexto curricular correspondiente, sin inventar una atribución de grado.
+
+Comprueba:
+- Manejo pertinente de materiales y microscopio.
+- Seguimiento del procedimiento proporcionado.
+- Observación e identificación científicamente posibles.
+- Registro y rotulación.
+- Seguridad pertinente a la práctica.
+
+No exijas identificar estructuras que no pueden distinguirse con las condiciones descritas. No añadas tinciones, aumentos, materiales o procedimientos específicos que no fueron indicados. No evalúes habilidad artística.
+
+Estos ejemplos explican el método. No sustituyen el recorrido por todos los temas.
+
+6. GENERACIÓN Y LECTURA DE INSTRUMENTOS
+
+Para cada actividad:
+- Comprueba la recomendación automática de tipo, técnica e instrumento.
+- Comprueba la estrategia automática cuando exista fundamento.
+- Genera rúbrica, cotejo, escala estimativa y ponderada mediante las rutas reales compartidas.
+- Lee criterios, indicadores y todos los descriptores.
+- Relaciona cada requisito esperado con la evidencia donde se evalúa.
+- Detecta omisiones, añadidos, duplicados y progresiones débiles.
+- Registra el resultado pedagógico, además del técnico.
+
+No apruebes por HTTP 200, número de filas, cantidad de pruebas o suma correcta.
+
+No impongas un número fijo de criterios. Evita tanto una fila demasiado amplia como una fila por detalle menor.
+
+7. AGRUPACIÓN COHERENTE
+
+Agrupa detalles relacionados sin ocultarlos.
+
+Ejemplo:
+Arial 12, interlineado 1.5, sangría y color indicado pueden estar en «Formato del documento», con sus condiciones detalladas.
+
+Contenido, organización, presentación y evidencias deben distinguirse cuando evalúen desempeños diferentes.
+
+No crees un criterio independiente por planeta, estructura o detalle tipográfico de manera automática.
+
+En cotejo, no afirmes que un Sí/No agrupado distingue cada incumplimiento. Si es necesario verificar condiciones por separado, utiliza la estructura disponible de forma coherente y documenta sus límites.
+
+Los descriptores deben indicar diferencias observables propias del criterio, no repetir la evidencia superior añadiendo «con imprecisiones» o «parcialmente».
+
+8. ESTRATEGIA Y ELECCIONES MANUALES
+
+Comprueba todo el recorrido:
+detección → resultado → borrador → control visible → guardado → reapertura.
+
+La estrategia debe seleccionarse automáticamente cuando corresponda y el docente podrá cambiarla.
+
+No confundas exposición estudiantil con explicación expositiva del docente, trabajo grupal con cooperación estructurada o problema con ABP.
+
+Ante falta de información, registra la ambigüedad. No inventes acciones para justificar una estrategia.
+
+Conserva prioridad manual y regreso a automático. Cambiar solo estrategia debe mantener exactamente el instrumento.
+
+9. AÑADIR Y COMPLETAR CRITERIOS
+
+Comprueba visualmente, además de pruebas automáticas:
+- Añadir candidato pertinente.
+- Agotar candidatos.
+- Agregar una fila manual editable después del agotamiento.
+- Completar una fila vacía o parcial.
+- Conservar nombres, textos, pesos y puntuaciones manuales.
+- Evitar duplicados aunque se renombre un criterio.
+
+El botón no puede quedarse sin acción ni limitarse a un aviso sin salida. Respeta el máximo de veinte criterios y las restricciones de instrumentos con calificaciones.
+
+10. CORREGIR CAUSAS COMPARTIDAS
+
+Antes de añadir contenido, determina si el problema está en:
+- Reconocimiento de la consigna.
+- Selección de contexto o proveedor.
+- Recuperación de candidatos.
+- Composición o agrupación.
+- Conversión de formato.
+- Interfaz o persistencia.
+- Carencia pedagógica real.
+
+Corrige el componente compartido cuando corresponda. No añadas parches por títulos exactos.
+
+Si hacen falta adaptaciones pedagógicas, utiliza fuentes fiables, documenta procedencia y distingue las adaptaciones del texto oficial.
+
+Conserva los cuatro formatos, paridad servicio/alternativa, puntuación pendiente, 20/17.35 exactos, protecciones manuales y descarte de respuestas obsoletas.
+
+11. ESTABILIDAD Y RECORRIDOS REALES
+
+Continúa la investigación de la selección curricular lenta y las incidencias de conexión. No declares resuelto el rendimiento por una petición exitosa.
+
+Mide condiciones comparables antes/después. Evita recuperar versiones, relaciones o payloads innecesarios sin eliminar validaciones de contexto o integridad.
+
+Las pruebas locales permiten avanzar con todos los temas. HTTP/DB y navegador deben cubrir muestras representativas por asignatura y grado, los cuatro formatos, las familias relevantes y cada causa de fallo corregida.
+
+No ejecutes toda la matriz por navegador si no aporta cobertura adicional; tampoco presentes pruebas locales como recorridos reales.
+
+Si falta autenticación personal:
+- Registra el bloqueo una vez.
+- Utiliza una sesión QA autorizada si está disponible.
+- No envíes correos ni cambies credenciales.
+- Continúa lo que no depende de esa sesión.
+- Mantén pendiente la comprobación personal correspondiente.
+
+Reconcilia IDs antes de reanudar cualquier escritura interrumpida. No dupliques actividades.
+
+12. CRITERIOS DE CIERRE
+
+Una actividad queda revisada cuando:
+- Sus requisitos evaluables están cubiertos.
+- No impone obligaciones ajenas.
+- Las agrupaciones son comprensibles.
+- Los descriptores tienen progresión pertinente.
+- Los cuatro formatos funcionan y respetan la selección manual.
+- Las correcciones tienen regresiones apropiadas.
+
+Un tema queda revisado cuando se completaron sus actividades y variantes previstas.
+
+Una asignatura/grado queda cerrada cuando:
+- Se agotó su lista de temas implementados.
+- No quedan defectos importantes conocidos sin resolver.
+- Tiene evidencia HTTP/DB y visual representativa, o se marca expresamente como cierre condicionado por un bloqueo concreto.
+
+No denomines «cierre final completo» a un cierre condicionado.
+
+El encargo termina únicamente cuando todas las filas del alcance están cerradas o cuando un límite externo impide continuar. En este último caso, informa exactamente qué sigue pendiente; no declares el objetivo cumplido.
+
+13. CONTINUIDAD Y RESTRICCIONES
+
+Trabaja autónomamente. Un informe intermedio no es una orden para detenerte: después de registrar un bloque, continúa con la siguiente fila pendiente.
+
+Mantén un archivo de continuación breve y vigente al inicio del documento; mueve el historial extenso a otro archivo para evitar instrucciones contradictorias.
+
+Guarda commits locales por bloques verificados. Los pushes continúan suspendidos.
+
+No modifiques producción, integraciones, Hyperdrive o secretos.
+No despliegues ni mezcles con main.
+No hagas reset, force push ni borres datos anteriores.
+No recaptures referencias históricas para ocultar diferencias.
+No añadas IA, dependencias, servicios de pago o subagentes.
+No ejecutes nuevas migraciones remotas de esquema ni amplíes nuevas especialidades.
+
+Ejecuta pruebas focalizadas durante el trabajo y las comprobaciones requeridas al cerrar bloques relevantes. No repitas suites enormes sin cambios que lo justifiquen.
+
+ENTREGA
+
+Mantén una matriz legible que permita ver:
+- Grados/asignaturas/temas totales del alcance.
+- Revisados.
+- Corregidos.
+- Pendientes.
+- Bloqueados.
+- No implementados y fuera de esta auditoría.
+
+Entrega instrumentos completos antes/después de hallazgos importantes, fuentes, mediciones, pruebas separadas por tipo y estado de Git.
+
+Prioriza terminar la lista real de trabajo. No sustituyas la auditoría por más inventarios, documentación repetida o conteos de pruebas.
