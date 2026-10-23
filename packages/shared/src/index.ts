@@ -57,6 +57,14 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
   if (!module) return null
   const action = (value: string) => {
     const contract=resolveEvaluationTask('',value)
+    // A reading report may be presented orally or revised in a bounded fragment.
+    // Those actions precede the summary/inference performed inside the task.
+    if(module==='READING_REPORT'){
+      const listeningOnly=/\bescuch\w*\b/.test(value)&&!/\b(?:presenten|presentaran|presentaremos|expongan|expondran|expondremos)\b/.test(value)
+      if(listeningOnly)return 'READING_REPORT_ANALYSIS'
+      if(contract.oral&&/\b(?:present\w*|expon\w*|exposicion)\b/.test(value))return 'READING_REPORT_PRESENTATION'
+      if(/\b(?:revis\w*|corrij\w*|correg\w*)\b/.test(value)&&/solo|unicamente|fragmento|resumen revisado/.test(value))return 'READING_REPORT_WRITING'
+    }
     if(module==='READING_REPORT'&&contract.product==='REPORT')return 'READING_REPORT_WRITING'
     if(contract.product==='ANALYTICAL_TEXT'&&!contract.oral) return `${module}_ANALYSIS`
     if (module !== 'READING_REPORT' && contract.product === 'REPORT') return 'REPORT'
@@ -66,7 +74,7 @@ export function detectSecondaryLanguageActivity(title: string, description: stri
       if (/\binformes?\b/.test(value) && /\b(?:redact\w*|escrib\w*|elabor\w*|prepar\w*|produc\w*)\b/.test(value)) return 'REPORT'
       if (/\b(?:debat\w*|debates?)\b/.test(value)) return 'DEBATE'
     }
-    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planific\w*|revis(?:ar|aran|a|en)|corrij\w*|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(value)
+    const writing = /\b(?:redact\w*|escrib\w*|elabor\w*|planifi[cq]\w*|revis(?:ar|aran|a|en)|corrij\w*|correg\w*|cre(?:ar\w*|an|a|acion)|disen\w*|produc(?:ir\w*|iran|en|cion)|compon(?:er|dr\w*|en|e|gan|iendo))\b/.test(value)
       || /\b(?:hagan|haz|hacer)\s+(?:una?\s+)?(?:guia|noticia|afiche|cuento|caligrama)\b/.test(value)
     const comparing = /\b(?:compar(?:ar\w*|an|a|en|ando)|contrast\w*|comparacion entre)\b/.test(value)
     const oralAction = contract.oral || /\bexposicion\b/.test(value)

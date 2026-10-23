@@ -2,6 +2,7 @@ import {firstGradeNewsCriteria as news, refineFirstGradeNewsRequirements} from '
 import {firstGradeGuideCriteria as guide} from './secondary-guide-grade-one'
 import {refineFirstGradeGuideRequirements} from './secondary-guide-grade-one-requirements'
 import {firstGradeReadingReportCriteria as report} from './secondary-reading-report-grade-one'
+import {refineFirstGradeReadingReportRequirements} from './secondary-reading-report-grade-one-requirements'
 import {firstGradePosterCriteria as poster} from './secondary-poster-grade-one'
 import {firstGradeDetectiveCriteria as detective} from './secondary-detective-grade-one'
 import {firstGradeCalligramCriteria as calligram} from './secondary-calligram-grade-one'
@@ -105,7 +106,7 @@ const comparisonFocus: Record<string,LanguageFeature[]>={
 
 function complete(genre:string,activity:string,description:string,base:ContextualTopicCriterion[]) {
   const scope=({noticia:'news','guía turística':'guide','informe de lectura':'report',afiche:'poster','cuento policíaco':'detective',caligrama:'calligram'} as Record<string,string>)[genre]
-  const task=genre==='guía turística'?affirmativeLanguageTask(description):normalizedTask(description)
+  const task=genre==='guía turística'||genre==='informe de lectura'?affirmativeLanguageTask(description):normalizedTask(description)
   const compare=activity.includes('COMPARISON')
   const analyze=activity.includes('ANALYSIS') || ['ANALYSIS','OBSERVATION','REPORT'].includes(activity) && genre!=='informe de lectura'
   const recitation=activity.includes('RECITATION')
@@ -245,7 +246,8 @@ function complete(genre:string,activity:string,description:string,base:Contextua
     rows.push(...classification)
   }
   return genre==='noticia'?refineFirstGradeNewsRequirements(activity,description,rows)
-    :genre==='guía turística'?refineFirstGradeGuideRequirements(activity,description,rows):rows
+    :genre==='guía turística'?refineFirstGradeGuideRequirements(activity,description,rows)
+      :genre==='informe de lectura'?refineFirstGradeReadingReportRequirements(activity,description,rows):rows
 }
 
 export const completeFirstGradeNewsCriteria=(activity:string,description:string)=>complete('noticia',activity,description,news(activity==='RESEARCH'?'NEWS_ANALYSIS':activity,description))

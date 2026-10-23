@@ -55,7 +55,11 @@ describe('generic product criteria release', () => {
   })
   it('conserva158 como candidato local previo a completar actitudes y puntuación de guía',()=>{
     expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.158')!)).toBe('d930f78dcf94c17d98c8963a40ce6d027d67d11d20f4d6a204efd038b501c2f3')
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.159')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.160')
+  })
+  it('conserva159 instalado antes de corregir informe de lectura',()=>{
+    expect(catalogFingerprint(evaluationCatalogForVersion('evaluation-2026.159')!)).toBe('99f46e348a162a9a2c8a8216774c7e107ffe474e1d61a812eba13ddf31419507')
+    expect(JSON.parse(JSON.stringify(evaluationCatalogCurrent))).toEqual(JSON.parse(JSON.stringify({...evaluationCatalogForVersion('evaluation-2026.159'),version:'evaluation-2026.160'})))
   })
   it.each([
     ['evaluation-2026.46','main','00d4a2d9d0586159392675cb1f59d35ff21411a3b644d384bbced1cb159d8ac0'],
@@ -102,7 +106,7 @@ describe('generic product criteria release', () => {
     expect(curricular.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
     expect(previous.version).toBe('evaluation-2026.92')
     expect(previous.criterionTemplates.some(item => item.id === 'oral-mastery')).toBe(false)
-    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.159')
+    expect(evaluationCatalogCurrent.version).toBe('evaluation-2026.160')
     const frozen138=evaluationCatalogForVersion('evaluation-2026.138')!
     expect(frozen138.version).toBe('evaluation-2026.138')
     expect(frozen138.optativeScienceModules).toBeUndefined()

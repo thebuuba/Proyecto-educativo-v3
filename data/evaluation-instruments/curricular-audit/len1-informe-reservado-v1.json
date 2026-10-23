@@ -1,0 +1,98 @@
+{
+  "version": "curricular-len1-informe-reservado-v1",
+  "provenance": "SINTETICO del mismo autor. Reservado no ciego: expectativas después de leer banco inicial y reglas160, antes de generar estos casos. Contrasta límites y componentes pendientes de71–72, sin independencia externa.",
+  "context": {
+    "level": "SECONDARY",
+    "grade": 1,
+    "cycle": 1,
+    "subjectCode": "LEN",
+    "subjectName": "Lengua Española",
+    "optativeExitName": null
+  },
+  "source": {
+    "pdfPages": [
+      71,
+      72
+    ],
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"
+  },
+  "cases": [
+    {
+      "id": "LEN1-INF-R01",
+      "family": "Producción acotada y signos en uso",
+      "title": "Las voces de los personajes en el análisis",
+      "description": "Redacten solo un párrafo del informe de lectura sobre la leyenda entregada. Expliquen una costumbre con un ejemplo del relato. Usen comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduzcan una pregunta y una exclamación de los personajes, conservando sus signos y su sentido. No escriban introducción, conclusión ni un informe completo.",
+      "expected": {
+        "explicit": [
+          "Un párrafo de análisis de una costumbre sustentado en leyenda",
+          "Comas/dos puntos/comillas/pregunta/exclamación de voces citadas",
+          "Sentido y atribución de ejemplos/citas"
+        ],
+        "excluded": [
+          "Introducción/conclusión/informe completo",
+          "Resumen nuevo",
+          "Revisión o publicación no pedidas"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "family": "Plan de escritura",
+      "title": "Antes del informe de la novela",
+      "description": "Planifiquen el informe de lectura de la novela que ya eligieron. Consulten la novela y sus notas para seleccionar la información necesaria y organicen un esquema de escritura con título previsto, introducción, desarrollo y conclusión. El esquema debe mostrar dónde incluirán el resumen y el análisis de los comportamientos culturales para sus compañeros. Hoy entreguen solo el esquema; todavía no redacten ni publiquen el informe.",
+      "expected": {
+        "explicit": [
+          "Plan de novela ya elegida, sin pedir otra elección",
+          "Consulta novela/notas y selección de información",
+          "Título previsto y organización de esquema con partes/resumen/análisis/público"
+        ],
+        "excluded": [
+          "Informe final",
+          "Resumen o análisis desarrollados hoy",
+          "Publicación",
+          "Cuento en lugar de novela"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "family": "Revisión y publicación electrónica",
+      "title": "Compartimos el informe de la leyenda",
+      "description": "Con el borrador del informe de lectura de la leyenda que ya escribieron, revisen la organización, la coherencia y la cohesión con las observaciones de la docente. Conserven el análisis de los hábitos y las pautas culturales y sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad. Corrijan el borrador y publiquen la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis. Entreguen el borrador con las observaciones y la versión publicada. No hagan otro resumen ni una exposición.",
+      "expected": {
+        "explicit": [
+          "Revisión y corrección de borrador existente desde comentarios docentes",
+          "Organización/coherencia/cohesión y sentido del análisis conservados",
+          "Prácticas culturales fieles sin burla o generalización",
+          "Publicación en plataforma digital para otro grupo",
+          "Dos evidencias pedidas"
+        ],
+        "excluded": [
+          "Resumen nuevo",
+          "Exposición",
+          "Mural físico obligatorio",
+          "Sentimientos como nota"
+        ]
+      }
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "family": "Escucha breve con otro foco",
+      "title": "El personaje según el informe",
+      "description": "Escuchen el informe de lectura que la docente presentará oralmente. Respondan brevemente con sus palabras cómo explica las acciones del personaje y qué dato del audio sostiene esa explicación. No elaboren otro informe ni analicen costumbres.",
+      "expected": {
+        "explicit": [
+          "Comprensión y paráfrasis breve del análisis de acciones del personaje",
+          "Sustento con dato del audio"
+        ],
+        "excluded": [
+          "Exposición del alumno",
+          "Análisis sociocultural no solicitado",
+          "Título o predicción",
+          "Estructura completa por nombrar",
+          "Texto impreso obligatorio"
+        ]
+      }
+    }
+  ]
+}

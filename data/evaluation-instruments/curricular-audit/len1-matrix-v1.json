@@ -1843,10 +1843,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-03",
+            "LEN1-INF-04",
+            "LEN1-INF-05"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-03",
+              "criterionId": "report-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-04",
+              "criterionId": "report-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-purpose",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "e2df26d3-a5d2-5ad6-bb93-4671206ad13f",
@@ -1863,10 +1902,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-01",
+            "LEN1-INF-02",
+            "LEN1-INF-03",
+            "LEN1-INF-R02"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-01",
+              "criterionId": "report-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-03",
+              "criterionId": "report-structure",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-R02",
+              "criterionId": "report-procedure-outline",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "7c94e4cb-8eac-582a-b2e1-9a65c18fb00e",
@@ -1883,10 +1973,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-01",
+            "LEN1-INF-02",
+            "LEN1-INF-05",
+            "LEN1-INF-08"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-01",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-08",
+              "criterionId": "report-feature-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "a9c9954d-d575-5ce8-92a4-df1f518ead70",
@@ -1903,10 +2044,49 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-02",
+            "LEN1-INF-05",
+            "LEN1-INF-06"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-06",
+              "criterionId": "report-summary",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "6a1b5246-0a6d-563c-9a02-3176de6f7503",
@@ -1923,10 +2103,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-02",
+            "LEN1-INF-04",
+            "LEN1-INF-05",
+            "LEN1-INF-07"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-04",
+              "criterionId": "report-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-07",
+              "criterionId": "report-feature-adjectives",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "d314711b-b756-57de-9263-b023ff12f4bd",
@@ -1943,10 +2174,61 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-02",
+            "LEN1-INF-04",
+            "LEN1-INF-05",
+            "LEN1-INF-07"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-04",
+              "criterionId": "report-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-07",
+              "criterionId": "report-feature-indicative",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         },
         {
           "id": "5a0d128b-afc1-50e0-8e42-804d94f60d56",
@@ -1963,14 +2245,248 @@
             },
             "documentId": "4569a9c9-077b-5146-91a4-fa9ac267f633"
           },
-          "status": "PENDIENTE_CONTRASTE",
-          "implementation": "NO_ACREDITADA_POR_MENCION",
-          "cases": [],
-          "nextAction": "Relacionar evidencia específica de actividades y descriptores"
+          "status": "REVISADO_LOCALMENTE_SIN_CIERRE_DE_TEMA",
+          "implementation": "EVIDENCIA_ESPECIFICA_EN_CUATRO_FORMATOS",
+          "cases": [
+            "LEN1-INF-02",
+            "LEN1-INF-04",
+            "LEN1-INF-05",
+            "LEN1-INF-07"
+          ],
+          "nextAction": "Muestra HTTP/DB160 y visual personal pendientes; indicadores generales abiertos",
+          "evidence": [
+            {
+              "caseId": "LEN1-INF-02",
+              "criterionId": "report-feature-exemplification",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-04",
+              "criterionId": "report-feature-exemplification",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-05",
+              "criterionId": "report-feature-exemplification",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            },
+            {
+              "caseId": "LEN1-INF-07",
+              "criterionId": "report-feature-exemplification",
+              "formats": [
+                "rubrica",
+                "lista-cotejo",
+                "escala",
+                "lista-ponderada"
+              ],
+              "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json"
+            }
+          ]
         }
       ],
-      "status": "PENDIENTE_AUDITORIA",
-      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad"
+      "status": "REVISADO_LOCAL_48_PENDIENTE_HTTP_Y_VISUAL_PERSONAL",
+      "nextAction": "Redactar banco previo, generar y leer cuatro formatos por actividad",
+      "reviewArtifact": "auditoria-curricular-len1-informe-160-lectura48.json",
+      "curricularComponentAudit": [
+        {
+          "sourceId": "92a9d148-7590-5e13-a3f6-28094453c2a8",
+          "components": [
+            [
+              "Anticipación desde título y comprobación en audio",
+              "LEN1-INF-03/report-procedure-prediction"
+            ],
+            [
+              "Intención del análisis escuchado",
+              "LEN1-INF-03/report-purpose"
+            ],
+            [
+              "Estructura para comprender patrones culturales",
+              "LEN1-INF-03/report-structure"
+            ],
+            [
+              "Respuesta fiel a datos escuchados",
+              "LEN1-INF-03/report-procedure-paraphrase",
+              "LEN1-INF-R04/report-procedure-paraphrase"
+            ]
+          ],
+          "limit": "Escucha atenta no se convierte en calificación automática de curiosidad o estado interno"
+        },
+        {
+          "sourceId": "fb146520-8892-5a1d-a107-7c3ca7de00d4",
+          "components": [
+            [
+              "Elección de texto narrativo e intención oral",
+              "LEN1-INF-05/report-purpose"
+            ],
+            [
+              "Omisión, selección, generalización y reconstrucción oral",
+              "LEN1-INF-05/report-summary"
+            ],
+            [
+              "Análisis y exposición de patrones socioculturales",
+              "LEN1-INF-05/report-analysis",
+              "LEN1-INF-05/report-structure",
+              "LEN1-INF-05/report-oral"
+            ]
+          ],
+          "limit": "Cuento/leyenda/fábula/novela son alternativas de texto; las actividades no exigen cuatro obras a la vez"
+        },
+        {
+          "sourceId": "f539e8fd-f625-5294-96fb-285546e10b49",
+          "components": [
+            [
+              "Propósito de lectura",
+              "LEN1-INF-04/report-purpose"
+            ],
+            [
+              "Anticipación desde título/subtítulo y evaluación durante/después",
+              "LEN1-INF-04/report-procedure-prediction"
+            ],
+            [
+              "Inferencia del sentido del análisis",
+              "LEN1-INF-04/report-inference"
+            ],
+            [
+              "Partes y recursos: presente/pasado, adjetivos y conectores",
+              "LEN1-INF-04/report-structure",
+              "LEN1-INF-04/report-feature-indicative",
+              "LEN1-INF-04/report-feature-adjectives",
+              "LEN1-INF-04/report-feature-additive-connectors",
+              "LEN1-INF-04/report-feature-exemplification"
+            ],
+            [
+              "Paráfrasis de patrones culturales",
+              "LEN1-INF-04/report-procedure-paraphrase"
+            ]
+          ]
+        },
+        {
+          "sourceId": "5b1e7ea8-a3e7-589a-9701-792813138f20",
+          "components": [
+            [
+              "Texto seleccionado, consulta/selección de información y esquema",
+              "LEN1-INF-02/report-procedure-outline",
+              "LEN1-INF-R02/report-plan-information",
+              "LEN1-INF-R02/report-procedure-outline"
+            ],
+            [
+              "Cuatro reglas del resumen",
+              "LEN1-INF-02/report-summary",
+              "LEN1-INF-06/report-summary"
+            ],
+            [
+              "Análisis de costumbres/comportamientos/estilos de vida/hábitos/pautas culturales",
+              "LEN1-INF-02/report-analysis",
+              "LEN1-INF-R03/report-analysis-fidelity"
+            ],
+            [
+              "Intención y léxico para público",
+              "LEN1-INF-02/report-analysis",
+              "LEN1-INF-02/report-procedure-outline"
+            ],
+            [
+              "Comas, dos puntos, comillas, interrogación y exclamación funcionales",
+              "LEN1-INF-02/report-feature-punctuation",
+              "LEN1-INF-R01/report-feature-punctuation"
+            ],
+            [
+              "Adjetivos, presente/pasado y adición/ejemplificación",
+              "LEN1-INF-02/report-feature-adjectives",
+              "LEN1-INF-02/report-feature-indicative",
+              "LEN1-INF-02/report-feature-additive-connectors",
+              "LEN1-INF-02/report-feature-exemplification"
+            ],
+            [
+              "Título según contenido",
+              "LEN1-INF-02/report-procedure-outline",
+              "LEN1-INF-02/report-structure"
+            ]
+          ]
+        },
+        {
+          "sourceId": "f44cf502-e335-5fcd-b2c1-d58e5c21b85c",
+          "components": [
+            [
+              "Borrador, organización, coherencia y cohesión; revisión con compañero/docente",
+              "LEN1-INF-02/report-process-revision",
+              "LEN1-INF-R03/report-process-revision"
+            ],
+            [
+              "Edición/publicación física o electrónica",
+              "LEN1-INF-02/report-process-publication",
+              "LEN1-INF-R03/report-process-publication"
+            ]
+          ],
+          "limit": "Manuscrito/digital y soportes físicos/electrónicos son alternativas. No se exigen simultáneamente ni se puntúa talento artístico"
+        }
+      ],
+      "attitudeTreatment": [
+        {
+          "sourceId": "60909d45-3497-5099-ac5d-be5ed014eb35",
+          "name": "Curiosidad e interés al escuchar",
+          "limit": "No se infieren ni califican estados internos desde el producto; se evalúa comprensión con datos de audio en03/R04"
+        },
+        {
+          "sourceId": "52c50c2a-8846-5e34-9920-501885cb9f05",
+          "name": "Informe como medio para comprender/reconstruir",
+          "evidence": [
+            "LEN1-INF-02/report-summary",
+            "LEN1-INF-04/report-procedure-paraphrase"
+          ],
+          "limit": "Comprensión demostrada; no medir sentimiento de valoración"
+        },
+        {
+          "sourceId": "5876b734-04ea-55a7-9540-e3e27b30268c",
+          "name": "Respeto a riqueza cultural",
+          "evidence": [
+            "LEN1-INF-02/report-analysis",
+            "LEN1-INF-R03/report-analysis-fidelity"
+          ],
+          "limit": "Costumbres/comportamientos/estilos de vida/hábitos/pautas identificados en ejemplos; no jerarquización ni atribución de emociones"
+        },
+        {
+          "sourceId": "174f3a8d-0fa1-571c-a838-0ea244089eb1",
+          "name": "Disfrute y entusiasmo al leer",
+          "limit": "No se califican automáticamente ni se confunden con calidad de respuesta"
+        },
+        {
+          "sourceId": "635ed539-30b0-547a-bc85-c04b9fc95282",
+          "name": "Actitud reflexiva y analítica",
+          "evidence": [
+            "LEN1-INF-02/report-analysis",
+            "LEN1-INF-08/report-analysis"
+          ],
+          "limit": "Relaciones/ejemplos/contraste observables; no personalidad"
+        },
+        {
+          "sourceId": "6b6cfe4d-36f1-5156-8cdd-a16738cd6886",
+          "name": "Creatividad, organización y estética al presentar",
+          "evidence": [
+            "LEN1-INF-02/report-structure",
+            "LEN1-INF-02/report-process-publication",
+            "LEN1-INF-R03/report-process-publication"
+          ],
+          "limit": "Organización funcional y legibilidad del medio pedido; no talento, gusto personal ni materiales adicionales"
+        }
+      ]
     },
     {
       "id": "afiche",
@@ -4126,10 +4642,11 @@
     "status": "ABIERTA",
     "newsConceptRowsReviewed": 9,
     "topicsFullyClosed": 0,
-    "otherTopics": "Informe: banco fijado de8actividades antes de generar. Afiche/cuento/caligrama pendientes",
+    "otherTopics": "Informe:12actividades/48salidas revisadas localmente; HTTP160 pendiente. Afiche/cuento/caligrama pendientes",
     "remaining": [
-      "Comprobación visual personal bloqueada por contraseña; sin correos ni cambios de credenciales",
-      "Informe, afiche, cuento y caligrama; contraste de toda Lengua1 e indicadores generales; ámbitos restantes"
+      "Visual personal bloqueada por contraseña",
+      "HTTP/DB160 y preservación de15referencias personales después de muestras",
+      "Afiche/cuento/caligrama; comparación completaLengua1 e indicadores; ámbitos restantes"
     ]
   }
 }

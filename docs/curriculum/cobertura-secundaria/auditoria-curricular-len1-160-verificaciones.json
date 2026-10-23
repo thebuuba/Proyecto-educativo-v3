@@ -1,0 +1,68 @@
+{
+  "catalog": "evaluation-2026.160",
+  "backendFull": {
+    "tests": 97499,
+    "files": 227,
+    "passed": true
+  },
+  "backendFocal": {
+    "tests": 295,
+    "files": 6,
+    "passed": true,
+    "beforeFinalRegisterAdjustment": true
+  },
+  "finalRegisterFocal": {
+    "tests": 94,
+    "files": 3,
+    "passed": true
+  },
+  "frontendFocal": {
+    "tests": 111,
+    "files": 5,
+    "passed": true
+  },
+  "frontendReserved": {
+    "tests": 8,
+    "files": 2,
+    "passed": true
+  },
+  "frontendFullThisVersion": false,
+  "buildsAndLints": [
+    {
+      "name": "backend-build",
+      "exit": 0,
+      "ms": 9903
+    },
+    {
+      "name": "frontend-build",
+      "exit": 0,
+      "ms": 26773
+    },
+    {
+      "name": "cloudflare-build",
+      "exit": 0,
+      "ms": 41347
+    },
+    {
+      "name": "backend-lint",
+      "exit": 0,
+      "ms": 5692
+    },
+    {
+      "name": "frontend-lint",
+      "exit": 0,
+      "ms": 4786
+    },
+    {
+      "name": "shared-lint",
+      "exit": 0,
+      "ms": 3217
+    }
+  ],
+  "cloudflareMode": "DRY_RUN_NO_DEPLOY",
+  "sourceValidationOutputs": 172,
+  "previousNewsAndGuideOutputsExact": 124,
+  "reportRead": 48,
+  "remoteInstalled": false,
+  "personalVisualVerified": false
+}

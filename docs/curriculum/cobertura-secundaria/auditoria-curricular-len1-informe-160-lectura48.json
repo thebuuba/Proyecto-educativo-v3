@@ -1,0 +1,534 @@
+{
+  "catalog": "evaluation-2026.160",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "reviewer": "Codex, mismo autor; revisión interna sin independencia externa",
+  "currentProof": "auditoria-curricular-len1-160-comprobacion-final172.json",
+  "sourceHashes": [
+    {
+      "path": "packages/shared/src/index.ts",
+      "sha256": "9cdec611bb2a502b1726459ce25faccee14d64097299467933ebe4df0dacb13d"
+    },
+    {
+      "path": "packages/shared/src/language-feature-criteria.ts",
+      "sha256": "ca583d19ee73320c0cd0585acb352acb08892f8cad8d747d29a5532f21e56315"
+    },
+    {
+      "path": "packages/shared/src/secondary-language-grade-one-complete.ts",
+      "sha256": "18c1709ce8f1a4aa8ddf1a7799f25f35df1e24c200c12ef042dcff7ef9c6b574"
+    },
+    {
+      "path": "packages/shared/src/secondary-reading-report-grade-one-requirements.ts",
+      "sha256": "a47ab1dc462346b8fd6c2b775ab083275d798efd303aa1533af02df9e3404d0d"
+    }
+  ],
+  "cases": [
+    {
+      "id": "LEN1-INF-01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Consigna breve: síntesis, interpretación, partes, relación entre resumen/análisis y claridad escrita. No revisión demostrada ni conectores específicos añadidos.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-coherence",
+          "report-revision"
+        ],
+        "lista-cotejo": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-coherence",
+          "report-revision"
+        ],
+        "escala": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-coherence",
+          "report-revision"
+        ],
+        "lista-ponderada": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-coherence",
+          "report-revision"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Elección de cuento y datos de notas, esquema, título/partes, cuatro reglas de resumen, análisis de costumbres/comportamientos/estilos de vida/pautas culturales sustentado y respetuoso, vocabulario para compañeros, gramática funcional, borrador con compañero y mural. Título integrado sin doble puntuación. Se releen las cuatro variantes del análisis que explicitan vocabulario en el overlay final.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-conclusion",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-process-revision",
+          "report-process-publication",
+          "report-procedure-outline"
+        ],
+        "lista-cotejo": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-conclusion",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-process-revision",
+          "report-process-publication",
+          "report-procedure-outline"
+        ],
+        "escala": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-conclusion",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-process-revision",
+          "report-process-publication",
+          "report-procedure-outline"
+        ],
+        "lista-ponderada": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-conclusion",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-process-revision",
+          "report-process-publication",
+          "report-procedure-outline"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Anticipación desde título, contraste con audio, intención, función de partes y reconstrucción de análisis cultural escuchado. No impone texto impreso ni otro informe.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-procedure-paraphrase"
+        ],
+        "lista-cotejo": [
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-procedure-paraphrase"
+        ],
+        "escala": [
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-procedure-paraphrase"
+        ],
+        "lista-ponderada": [
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-procedure-paraphrase"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Propósito lector, predicciones desde título/subtítulo durante/después, inferencia sustentada, partes, función de adjetivos/presente-pasado/adición/ejemplificación y paráfrasis de análisis cultural. No duplica paráfrasis con identificar estrategias de resumen.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-inference",
+          "report-procedure-paraphrase"
+        ],
+        "lista-cotejo": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-inference",
+          "report-procedure-paraphrase"
+        ],
+        "escala": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-inference",
+          "report-procedure-paraphrase"
+        ],
+        "lista-ponderada": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose",
+          "report-structure",
+          "report-procedure-prediction",
+          "report-inference",
+          "report-procedure-paraphrase"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-05",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Presentación oral de fábula, selección/intención para otro grupo, cuatro reglas de síntesis, análisis cultural, partes, voz comprensible y recursos lingüísticos usados al hablar. Descriptores ya no exigen identificación por escrito; se retira explicación global duplicada.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-oral",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose"
+        ],
+        "lista-cotejo": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-oral",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose"
+        ],
+        "escala": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-oral",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose"
+        ],
+        "lista-ponderada": [
+          "report-summary",
+          "report-analysis",
+          "report-structure",
+          "report-oral",
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-purpose"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-06",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Resumen corregido aplicando cuatro reglas y explicación contrastada con original. No añade estructura completa ni interpretación nueva.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-summary",
+          "report-correction-evidence"
+        ],
+        "lista-cotejo": [
+          "report-summary",
+          "report-correction-evidence"
+        ],
+        "escala": [
+          "report-summary",
+          "report-correction-evidence"
+        ],
+        "lista-ponderada": [
+          "report-summary",
+          "report-correction-evidence"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-07",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Corrige solo gramática y signos pedidos en fragmento recibido y explica cambios frente al original. No exige otro borrador ni publicación. Contracción «del presente» corregida también en descriptores.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-correction-evidence"
+        ],
+        "lista-cotejo": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-correction-evidence"
+        ],
+        "escala": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-correction-evidence"
+        ],
+        "lista-ponderada": [
+          "report-feature-adjectives",
+          "report-feature-indicative",
+          "report-feature-exemplification",
+          "report-feature-additive-connectors",
+          "report-feature-punctuation",
+          "report-correction-evidence"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-08",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Dos dimensiones distintas: contraste de resúmenes y análisis culturales, con sustento en ambos informes y leyenda, sin jerarquizar culturas ni comparar portadas.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-feature-summary",
+          "report-analysis"
+        ],
+        "lista-cotejo": [
+          "report-feature-summary",
+          "report-analysis"
+        ],
+        "escala": [
+          "report-feature-summary",
+          "report-analysis"
+        ],
+        "lista-ponderada": [
+          "report-feature-summary",
+          "report-analysis"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-R01",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Un párrafo sobre costumbre de leyenda con ejemplo; comas/dos puntos/comillas y pregunta/exclamación de personajes fieles a su voz. Cantidades ya evaluadas en contenido se agrupan, sin puntuarlas de nuevo. No exige resumen, introducción ni conclusión.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-analysis",
+          "report-feature-punctuation"
+        ],
+        "lista-cotejo": [
+          "report-analysis",
+          "report-feature-punctuation"
+        ],
+        "escala": [
+          "report-analysis",
+          "report-feature-punctuation"
+        ],
+        "lista-ponderada": [
+          "report-analysis",
+          "report-feature-punctuation"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Solo plan de novela ya elegida: selección de información de novela/notas y esquema con título/partes y lugar previsto para resumen/análisis. No pide un cuento, otra elección ni informe final.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-plan-information",
+          "report-procedure-outline"
+        ],
+        "lista-cotejo": [
+          "report-plan-information",
+          "report-procedure-outline"
+        ],
+        "escala": [
+          "report-plan-information",
+          "report-procedure-outline"
+        ],
+        "lista-ponderada": [
+          "report-plan-information",
+          "report-procedure-outline"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Borrador existente: cambios desde observaciones docentes en organización/coherencia/cohesión; hábitos y pautas culturales fieles y sin burla/generalización; versión final en plataforma digital para otro grupo. Tres dimensiones completas. La alternativa local ya no tiene cero criterios ni el backend cae en descriptores genéricos.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-process-revision",
+          "report-analysis-fidelity",
+          "report-process-publication"
+        ],
+        "lista-cotejo": [
+          "report-process-revision",
+          "report-analysis-fidelity",
+          "report-process-publication"
+        ],
+        "escala": [
+          "report-process-revision",
+          "report-analysis-fidelity",
+          "report-process-publication"
+        ],
+        "lista-ponderada": [
+          "report-process-revision",
+          "report-analysis-fidelity",
+          "report-process-publication"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "formats": [
+        "rubrica",
+        "lista-cotejo",
+        "escala",
+        "lista-ponderada"
+      ],
+      "outputsRead": 4,
+      "judgment": "Escucha breve del análisis de acciones del personaje, paráfrasis y datos del audio. No convierte presentación de la docente en producción del alumno ni incorpora las costumbres negadas.",
+      "criteriaByFormat": {
+        "rubrica": [
+          "report-procedure-paraphrase"
+        ],
+        "lista-cotejo": [
+          "report-procedure-paraphrase"
+        ],
+        "escala": [
+          "report-procedure-paraphrase"
+        ],
+        "lista-ponderada": [
+          "report-procedure-paraphrase"
+        ]
+      },
+      "status": "REVISADO_LOCALMENTE_NO_CIERRE_DE_TEMA"
+    }
+  ],
+  "sourceComparison": {
+    "pages": [
+      71,
+      72
+    ],
+    "conceptRows": 7,
+    "procedureParagraphs": 5,
+    "attitudes": 6,
+    "completeMallaAndContinuationRead": true
+  },
+  "topicClosed": false,
+  "pending": [
+    "Instalación individual y HTTP/DB de160",
+    "Prueba visual personal bloqueada por contraseña",
+    "Indicadores generales de toda Lengua1 siguen abiertos a afiche/cuento/caligrama"
+  ]
+}

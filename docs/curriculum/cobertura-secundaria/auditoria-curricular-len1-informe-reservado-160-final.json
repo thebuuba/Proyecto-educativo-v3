@@ -1,0 +1,2032 @@
+{
+  "catalog": "evaluation-2026.160",
+  "bankSha256": "26c67c898c077280f4aeea4e57b8bc2275f8eed1be273e40252a42588b4c0a1b",
+  "mode": "LOCAL_SOURCE_NO_HTTP_NO_BROWSER",
+  "sourceCommit": "7dc7f488+working-tree",
+  "cases": [
+    {
+      "id": "LEN1-INF-R01",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 3.6462999999999965,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis:0",
+            "templateId": "report-analysis",
+            "title": "Párrafo de análisis sustentado",
+            "description": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+              "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+              "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+              "El párrafo atribuye al texto un dato o un ejemplo que sus hechos contradicen.",
+              "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-feature-punctuation:1",
+            "templateId": "report-feature-punctuation",
+            "title": "Puntuación de ejemplos y voces citadas",
+            "description": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+              "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+              "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+              "La puntuación altera el sentido de una pregunta o exclamación o atribuye a un personaje palabras de otro.",
+              "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R01",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 2.484100000000012,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis:0",
+            "templateId": "report-analysis",
+            "title": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+            "description": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+              "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+              "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+              "El párrafo atribuye al texto un dato o un ejemplo que sus hechos contradicen.",
+              "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-feature-punctuation:1",
+            "templateId": "report-feature-punctuation",
+            "title": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+            "description": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+              "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+              "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+              "La puntuación altera el sentido de una pregunta o exclamación o atribuye a un personaje palabras de otro.",
+              "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R01",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.4081999999999653,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis:0",
+            "templateId": "report-analysis",
+            "title": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+            "description": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+              "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+              "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+              "El párrafo atribuye al texto un dato o un ejemplo que sus hechos contradicen.",
+              "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato."
+            ],
+            "relativeWeight": 5,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+                "scoreUnits": 1250
+              },
+              {
+                "levelId": "L3",
+                "text": "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+                "scoreUnits": 833
+              },
+              {
+                "levelId": "L2",
+                "text": "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+                "scoreUnits": 417
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-feature-punctuation:1",
+            "templateId": "report-feature-punctuation",
+            "title": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+            "description": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+              "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+              "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+              "La puntuación altera el sentido de una pregunta o exclamación o atribuye a un personaje palabras de otro.",
+              "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+                "scoreUnits": 750
+              },
+              {
+                "levelId": "L3",
+                "text": "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+                "scoreUnits": 500
+              },
+              {
+                "levelId": "L2",
+                "text": "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+                "scoreUnits": 250
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R01",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9717000000000553,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis:0",
+            "templateId": "report-analysis",
+            "title": "Párrafo de análisis sustentado",
+            "description": "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar. Parcial (50%): Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+            "maxScore": 12.5,
+            "maxScoreUnits": 1250,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Explica en un párrafo una costumbre de la leyenda con un ejemplo del relato, relacionándolo con lo que permite interpretar.",
+              "La interpretación y el ejemplo se relacionan; falta precisar una parte de su explicación.",
+              "Menciona el aspecto solicitado y un ejemplo, pero no explica la relación entre ambos.",
+              "El párrafo atribuye al texto un dato o un ejemplo que sus hechos contradicen.",
+              "No aporta un párrafo de análisis con el aspecto solicitado y un ejemplo reconocibles del relato."
+            ],
+            "relativeWeight": 5,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-feature-punctuation:1",
+            "templateId": "report-feature-punctuation",
+            "title": "Puntuación de ejemplos y voces citadas",
+            "description": "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido. Parcial (50%): Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+            "maxScore": 7.5,
+            "maxScoreUnits": 750,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Usa comas para separar ejemplos y dos puntos para presentar una cita; entre comillas reproduce una pregunta y una exclamación de los personajes conservando sus signos, su atribución y su sentido.",
+              "Los signos distinguen ejemplos y voces citadas; un signo aislado deja ambigua una relación secundaria.",
+              "Incluye signos solicitados, pero no diferencia claramente los ejemplos, las citas y las voces de los personajes.",
+              "La puntuación altera el sentido de una pregunta o exclamación o atribuye a un personaje palabras de otro.",
+              "No aporta un uso verificable de los signos solicitados en los ejemplos y las voces citadas."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.953899999999976,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-plan-information:0",
+            "templateId": "report-plan-information",
+            "title": "Información para el informe previsto",
+            "description": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+              "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+              "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+              "Atribuye al texto o las notas información ausente y cambia el sentido del informe previsto.",
+              "No relaciona información disponible con el contenido previsto del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "No relaciona información disponible con el contenido previsto del informe.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-outline:1",
+            "templateId": "report-procedure-outline",
+            "title": "Esquema del informe previsto",
+            "description": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+              "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+              "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+              "El orden del esquema confunde el resumen con el análisis o contradice el contenido seleccionado.",
+              "No aporta un esquema reconocible del informe previsto."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un esquema reconocible del informe previsto.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8050000000000637,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-plan-information:0",
+            "templateId": "report-plan-information",
+            "title": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+            "description": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+              "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+              "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+              "Atribuye al texto o las notas información ausente y cambia el sentido del informe previsto.",
+              "No relaciona información disponible con el contenido previsto del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-outline:1",
+            "templateId": "report-procedure-outline",
+            "title": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+            "description": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+              "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+              "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+              "El orden del esquema confunde el resumen con el análisis o contradice el contenido seleccionado.",
+              "No aporta un esquema reconocible del informe previsto."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9929999999999382,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-plan-information:0",
+            "templateId": "report-plan-information",
+            "title": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+            "description": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+              "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+              "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+              "Atribuye al texto o las notas información ausente y cambia el sentido del informe previsto.",
+              "No relaciona información disponible con el contenido previsto del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+                "scoreUnits": 744
+              },
+              {
+                "levelId": "L3",
+                "text": "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+                "scoreUnits": 496
+              },
+              {
+                "levelId": "L2",
+                "text": "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+                "scoreUnits": 248
+              },
+              {
+                "levelId": "L1",
+                "text": "No relaciona información disponible con el contenido previsto del informe.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-outline:1",
+            "templateId": "report-procedure-outline",
+            "title": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+            "description": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+              "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+              "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+              "El orden del esquema confunde el resumen con el análisis o contradice el contenido seleccionado.",
+              "No aporta un esquema reconocible del informe previsto."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+                "scoreUnits": 991
+              },
+              {
+                "levelId": "L3",
+                "text": "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+                "scoreUnits": 661
+              },
+              {
+                "levelId": "L2",
+                "text": "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+                "scoreUnits": 330
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta un esquema reconocible del informe previsto.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R02",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.8643999999999323,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-plan-information:0",
+            "templateId": "report-plan-information",
+            "title": "Información para el informe previsto",
+            "description": "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros. Parcial (50%): Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+            "maxScore": 7.44,
+            "maxScoreUnits": 744,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Selecciona información de la novela y sus notas para relacionar el resumen y el análisis de los comportamientos culturales previstos para sus compañeros.",
+              "La selección corresponde al texto y las notas; falta precisar qué información sostendrá una parte del informe.",
+              "Reúne datos pertinentes, pero no explica su relación con el resumen o el análisis previsto.",
+              "Atribuye al texto o las notas información ausente y cambia el sentido del informe previsto.",
+              "No relaciona información disponible con el contenido previsto del informe."
+            ],
+            "relativeWeight": 3,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-outline:1",
+            "templateId": "report-procedure-outline",
+            "title": "Esquema del informe previsto",
+            "description": "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis. Parcial (50%): Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+            "maxScore": 9.91,
+            "maxScoreUnits": 991,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Organiza un esquema para el informe de la novela con título previsto, introducción, desarrollo y conclusión, mostrando dónde se relacionarán resumen y análisis.",
+              "El esquema relaciona las partes previstas; una conexión entre resumen y análisis necesita precisión.",
+              "Enumera partes, pero no organiza las relaciones necesarias para desarrollar el informe.",
+              "El orden del esquema confunde el resumen con el análisis o contradice el contenido seleccionado.",
+              "No aporta un esquema reconocible del informe previsto."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "format": "rubrica",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.2423000000000002,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-revision:0",
+            "templateId": "report-process-revision",
+            "title": "Correcciones desde las observaciones de la docente",
+            "description": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+              "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+              "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+              "Los cambios introducen contradicciones o eliminan apoyos necesarios para comprender el análisis.",
+              "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis-fidelity:1",
+            "templateId": "report-analysis-fidelity",
+            "title": "Fidelidad y respeto en el análisis revisado",
+            "description": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+              "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+              "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+              "La revisión atribuye al relato prácticas ausentes o introduce burlas y generalizaciones sobre una comunidad.",
+              "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-publication:2",
+            "templateId": "report-process-publication",
+            "title": "Publicación del informe revisado",
+            "description": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+              "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+              "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+              "La versión publicada cambia relaciones o ejemplos respecto del informe revisado.",
+              "No aporta la versión final publicada en el medio solicitado."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta la versión final publicada en el medio solicitado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "format": "lista-cotejo",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.0330999999999904,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-revision:0",
+            "templateId": "report-process-revision",
+            "title": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+            "description": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+              "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+              "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+              "Los cambios introducen contradicciones o eliminan apoyos necesarios para comprender el análisis.",
+              "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis-fidelity:1",
+            "templateId": "report-analysis-fidelity",
+            "title": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+            "description": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+              "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+              "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+              "La revisión atribuye al relato prácticas ausentes o introduce burlas y generalizaciones sobre una comunidad.",
+              "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-publication:2",
+            "templateId": "report-process-publication",
+            "title": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+            "description": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+              "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+              "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+              "La versión publicada cambia relaciones o ejemplos respecto del informe revisado.",
+              "No aporta la versión final publicada en el medio solicitado."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "format": "escala",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 1.4103999999999814,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-revision:0",
+            "templateId": "report-process-revision",
+            "title": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+            "description": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+              "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+              "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+              "Los cambios introducen contradicciones o eliminan apoyos necesarios para comprender el análisis.",
+              "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis-fidelity:1",
+            "templateId": "report-analysis-fidelity",
+            "title": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+            "description": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+              "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+              "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+              "La revisión atribuye al relato prácticas ausentes o introduce burlas y generalizaciones sobre una comunidad.",
+              "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+                "scoreUnits": 800
+              },
+              {
+                "levelId": "L3",
+                "text": "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+                "scoreUnits": 533
+              },
+              {
+                "levelId": "L2",
+                "text": "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L1",
+                "text": "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales.",
+                "scoreUnits": 0
+              }
+            ]
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-publication:2",
+            "templateId": "report-process-publication",
+            "title": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+            "description": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+              "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+              "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+              "La versión publicada cambia relaciones o ejemplos respecto del informe revisado.",
+              "No aporta la versión final publicada en el medio solicitado."
+            ],
+            "relativeWeight": 2,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+                "scoreUnits": 400
+              },
+              {
+                "levelId": "L3",
+                "text": "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+                "scoreUnits": 267
+              },
+              {
+                "levelId": "L2",
+                "text": "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+                "scoreUnits": 133
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta la versión final publicada en el medio solicitado.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R03",
+      "format": "lista-ponderada",
+      "maxScore": 20,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.9290000000000873,
+      "automatic": {
+        "activityType": "READING_REPORT_WRITING",
+        "instrumentType": "rubrica"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_WRITING",
+        "evidenceTypes": [
+          "PRODUCT",
+          "KNOWLEDGE"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-revision:0",
+            "templateId": "report-process-revision",
+            "title": "Correcciones desde las observaciones de la docente",
+            "description": "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis. Parcial (50%): Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Relaciona las observaciones de la docente con cambios entre borrador y versión final que mejoran organización, coherencia y cohesión del informe sin alterar el sentido del análisis.",
+              "Las correcciones resuelven las observaciones principales; una relación entre ideas necesita precisión.",
+              "Cambia aspectos de forma, pero conserva problemas de organización o relaciones entre ideas señalados por la docente.",
+              "Los cambios introducen contradicciones o eliminan apoyos necesarios para comprender el análisis.",
+              "No aporta borrador con observaciones y versión revisada que permitan comprobar las correcciones."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-analysis-fidelity:1",
+            "templateId": "report-analysis-fidelity",
+            "title": "Fidelidad y respeto en el análisis revisado",
+            "description": "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta. Parcial (50%): Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+            "maxScore": 8,
+            "maxScoreUnits": 800,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Conserva el análisis de los hábitos y las pautas culturales con sus ejemplos del relato, sin burlas ni generalizaciones sobre una comunidad que el texto no sustenta.",
+              "El análisis revisado conserva sus ejemplos y trata respetuosamente las prácticas; una expresión necesita precisar su contexto.",
+              "Conserva algunas prácticas culturales, pero pierde la relación de sus ejemplos con el análisis.",
+              "La revisión atribuye al relato prácticas ausentes o introduce burlas y generalizaciones sobre una comunidad.",
+              "No conserva un análisis reconocible y sustentado de los hábitos y las pautas culturales."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          },
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-process-publication:2",
+            "templateId": "report-process-publication",
+            "title": "Publicación del informe revisado",
+            "description": "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados. Parcial (50%): La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+            "maxScore": 4,
+            "maxScoreUnits": 400,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Publica la versión final legible en la plataforma digital del curso para que otro grupo comprenda el análisis, conservando la organización y el contenido revisados.",
+              "El informe puede consultarse en el medio solicitado; un enlace entre sus partes necesita mejorar su presentación.",
+              "La versión está publicada, pero faltan partes necesarias para comprender el análisis revisado.",
+              "La versión publicada cambia relaciones o ejemplos respecto del informe revisado.",
+              "No aporta la versión final publicada en el medio solicitado."
+            ],
+            "relativeWeight": 2,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 20,
+        "totalScoreUnits": 2000,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "oral-written-art-project:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "format": "rubrica",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.6837999999999056,
+      "automatic": {
+        "activityType": "READING_REPORT_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "rubrica",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-paraphrase:0",
+            "templateId": "report-procedure-paraphrase",
+            "title": "Paráfrasis fiel del análisis",
+            "description": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+              "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+              "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+              "La paráfrasis cambia una relación del análisis o atribuye al informe información ausente.",
+              "No aporta una reconstrucción reconocible del análisis disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una reconstrucción reconocible del análisis disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Destacado",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Logrado",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "En proceso",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Inicial",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "format": "lista-cotejo",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5394000000000005,
+      "automatic": {
+        "activityType": "READING_REPORT_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-cotejo",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-paraphrase:0",
+            "templateId": "report-procedure-paraphrase",
+            "title": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+            "description": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+              "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+              "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+              "La paráfrasis cambia una relación del análisis o atribuye al informe información ausente.",
+              "No aporta una reconstrucción reconocible del análisis disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "format": "escala",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.5884999999999536,
+      "automatic": {
+        "activityType": "READING_REPORT_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "escala",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-paraphrase:0",
+            "templateId": "report-procedure-paraphrase",
+            "title": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+            "description": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+              "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+              "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+              "La paráfrasis cambia una relación del análisis o atribuye al informe información ausente.",
+              "No aporta una reconstrucción reconocible del análisis disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": [
+              {
+                "levelId": "L4",
+                "text": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+                "scoreUnits": 1735
+              },
+              {
+                "levelId": "L3",
+                "text": "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+                "scoreUnits": 1157
+              },
+              {
+                "levelId": "L2",
+                "text": "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+                "scoreUnits": 578
+              },
+              {
+                "levelId": "L1",
+                "text": "No aporta una reconstrucción reconocible del análisis disponible.",
+                "scoreUnits": 0
+              }
+            ]
+          }
+        ],
+        "levels": [
+          {
+            "id": "L4",
+            "label": "Completo",
+            "proportion": 1
+          },
+          {
+            "id": "L3",
+            "label": "Suficiente",
+            "proportion": 0.6666666666666666
+          },
+          {
+            "id": "L2",
+            "label": "Parcial",
+            "proportion": 0.3333333333333333
+          },
+          {
+            "id": "L1",
+            "label": "Aún no logrado",
+            "proportion": 0
+          }
+        ],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    },
+    {
+      "id": "LEN1-INF-R04",
+      "format": "lista-ponderada",
+      "maxScore": 17.35,
+      "participationMode": "INDIVIDUAL",
+      "ms": 0.514699999999948,
+      "automatic": {
+        "activityType": "READING_REPORT_ANALYSIS",
+        "instrumentType": "lista-cotejo"
+      },
+      "serviceFallbackParity": true,
+      "pendingScore": true,
+      "instrument": {
+        "kind": "RECOMMENDATION",
+        "catalogVersion": "evaluation-2026.160",
+        "instrumentType": "lista-ponderada",
+        "confidence": "LOW",
+        "activityType": "READING_REPORT_ANALYSIS",
+        "evidenceTypes": [
+          "KNOWLEDGE",
+          "PRODUCT"
+        ],
+        "participationMode": "INDIVIDUAL",
+        "curriculumVersionId": null,
+        "curriculumScopeId": null,
+        "selectedCurriculumElements": [],
+        "criteria": [
+          {
+            "id": "proposal:evaluation-2026.160:fallback:report-procedure-paraphrase:0",
+            "templateId": "report-procedure-paraphrase",
+            "title": "Paráfrasis fiel del análisis",
+            "description": "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen. Parcial (50%): Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+            "maxScore": 17.35,
+            "maxScoreUnits": 1735,
+            "sourceType": "CONTEXTUALIZED",
+            "sourceReferences": [],
+            "progressionLevels": [
+              "Reconstruye brevemente con sus palabras el análisis del informe escuchado sobre las acciones del personaje, conservando sus relaciones y los datos que lo sostienen.",
+              "La paráfrasis conserva el análisis y sus apoyos; una formulación requiere precisión.",
+              "Repite datos aislados sin reconstruir las relaciones que explica el análisis.",
+              "La paráfrasis cambia una relación del análisis o atribuye al informe información ausente.",
+              "No aporta una reconstrucción reconocible del análisis disponible."
+            ],
+            "relativeWeight": 4,
+            "descriptors": []
+          }
+        ],
+        "levels": [],
+        "totalScore": 17.35,
+        "totalScoreUnits": 1735,
+        "scoreUnit": 0.01,
+        "internalTrace": {
+          "mappingStatus": "UNMAPPED",
+          "reasons": [
+            "band=SECONDARY",
+            "discipline=language",
+            "module=lengua-secundaria-1-informe-de-lectura",
+            "No se consultan otros ámbitos; coincidencia temática no equivale a aprobación curricular."
+          ],
+          "ruleId": "observation:TEACHER_OVERRIDE",
+          "activityTypeOrigin": "DETECTED",
+          "ranking": [],
+          "curriculumStatus": null,
+          "lowCurriculumConfidence": true,
+          "consideredTypes": [
+            "SPECIFIC_COMPETENCY",
+            "EVALUATION_CRITERION",
+            "ACHIEVEMENT_INDICATOR",
+            "CONCEPT",
+            "PROCEDURE",
+            "ATTITUDE_VALUE"
+          ]
+        }
+      },
+      "status": "PENDIENTE_LECTURA_PEDAGOGICA"
+    }
+  ]
+}

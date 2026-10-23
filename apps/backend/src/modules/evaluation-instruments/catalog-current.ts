@@ -7,6 +7,7 @@ import {evaluationCatalogV155} from './catalog-v155'
 import {evaluationCatalogV156} from './catalog-v156'
 import {evaluationCatalogV157} from './catalog-v157'
 import {evaluationCatalogV158} from './catalog-v158'
+import {evaluationCatalogV159} from './catalog-v159'
 import {evaluationCatalogV149} from './catalog-v149'
 import {evaluationCatalogV148} from './catalog-v148'
 import {evaluationCatalogV147} from './catalog-v147'
@@ -190,7 +191,7 @@ import {secondaryLanguageGradeFiveTopics,fifthGradeLanguageFeatures} from '@aula
 /** New release; previous releases remain unchanged for existing snapshots. */
 export const evaluationCatalogCurrent = {
   ...evaluationCatalogV68,
-  version: 'evaluation-2026.159',
+  version: 'evaluation-2026.160',
   technicalModules,
   optativeScienceModules,
   optativeMathModules,
@@ -294,6 +295,7 @@ export const evaluationCatalogCurrent = {
 export type EvaluationCatalog = typeof evaluationCatalogV1 & { technicalModules?:typeof technicalModules; optativeScienceModules?:typeof optativeScienceModules; optativeMathModules?:typeof optativeMathModules; optativeSocialModules?:typeof optativeSocialModules; optativeEnglishModules?:typeof optativeEnglishModules; optativeLanguageModules?:typeof optativeLanguageModules; fhrCommonModules?:typeof commonFhrModules; physicalCommonModules?:typeof commonPhysicalModules; artCommonModules?:typeof commonArtModules; socialCommonModules?:typeof commonSocialModules; scienceCommonModules?:typeof commonScienceModules; mathCommonModules?: typeof commonMathModules; frenchModules?: typeof frenchGradeOneModule[]; englishGradeOneModule?:typeof englishGradeOneModule; englishGradeTwoModule?:typeof englishGradeTwoModule; englishGradeThreeModule?:typeof englishGradeThreeModule; englishGradeFourModule?:typeof englishGradeFourModule; englishGradeFiveModule?:typeof englishGradeFiveModule; englishGradeSixModule?:typeof englishGradeSixModule; contextualModules?: typeof secondaryLanguageGradeTwoTopics; authoredModules?: typeof secondGradeNewsModule[]; scienceModules?: typeof secondaryScienceModules; mathModules?: typeof secondaryMathModules }
 export function evaluationCatalogForVersion(version: string, lineage?: 'main') {
   if(version===evaluationCatalogV158.version)return evaluationCatalogV158
+  if(version===evaluationCatalogV159.version)return evaluationCatalogV159
   if(version===evaluationCatalogV157.version)return evaluationCatalogV157
   if(version===evaluationCatalogV156.version)return evaluationCatalogV156
   if(version===evaluationCatalogV155.version)return evaluationCatalogV155
