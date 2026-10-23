@@ -1,0 +1,116 @@
+{
+  "catalog": "evaluation-2026.155",
+  "mode": "LOCAL_COMPILED_NO_BROWSER",
+  "expectation": "No inferir estrategia por producto, preguntas aisladas o agrupación",
+  "manualPersistence": "Muestra HTTP155 separada; UI personal pendiente de sesión",
+  "rows": [
+    {
+      "caseId": "LEN1-NOT-01",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-02",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-03",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-04",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-05",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    },
+    {
+      "caseId": "LEN1-NOT-R03",
+      "expected": null,
+      "actual": {
+        "id": null,
+        "confidence": "NONE",
+        "reasons": [],
+        "catalogVersion": "teaching-strategies-2026.1"
+      },
+      "judgment": "AMBIGUEDAD_CORRECTA_NO_INVENTAR_ESTRATEGIA",
+      "rationale": "No hay una secuencia metodológica suficiente para atribuir una estrategia; presentar noticias, contestar preguntas o trabajar en equipo no basta."
+    }
+  ]
+}

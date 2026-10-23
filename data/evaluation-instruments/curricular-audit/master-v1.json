@@ -1,0 +1,2183 @@
+{
+  "version": "curricular-master-v1",
+  "source": {
+    "kind": "document",
+    "id": "4569a9c9-077b-5146-91a4-fa9ac267f633",
+    "versionId": "d98f8201-3cac-5da6-b855-38f7bb8c8011",
+    "title": "Adecuación Curricular del Nivel Secundario",
+    "originalFilename": "Ht7X-adecuacion-secundaria-2023pdf.pdf",
+    "sha256": "80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58",
+    "pageCount": 520,
+    "issuingBody": "MINERD",
+    "url": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf"
+  },
+  "policy": "La lista oficial delimita temas; el proveedor solo acredita conexión. No cerrar por inventario ni por pruebas verdes.",
+  "scopeCounts": {
+    "common": 54,
+    "optative": 18,
+    "technicalModules": 9,
+    "technicalProgramContexts": 10,
+    "totalContexts": 82,
+    "sourceNonGradeHeadersExcluded": 17
+  },
+  "topicsTotalConfirmed": 6,
+  "topicsTotalUnresolvedBeyondFirstSubject": true,
+  "topicsClosed": 0,
+  "scopes": [
+    {
+      "id": "26e3c2e5-8b54-5786-ae1e-a792fc287ecd",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "lengua-secundaria-1-la-noticia",
+        "lengua-secundaria-1-guia-turistica",
+        "lengua-secundaria-1-informe-de-lectura",
+        "el-afiche",
+        "cuento-policiaco",
+        "caligrama"
+      ],
+      "sourceReadThisAudit": true,
+      "topicMatrix": "data/evaluation-instruments/curricular-audit/len1-matrix-v1.json",
+      "status": "EN_CURSO_NOTICIA",
+      "topicsTotalConfirmed": 6,
+      "topicsClosed": 0,
+      "nextAction": "Completar procedimientos de noticia y muestra real; después guía"
+    },
+    {
+      "id": "7e7fbeb7-c16c-526c-9b7f-ff20ef44d44f",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "ce0c7661-2119-5679-8fed-8e4507b92e17",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        181,
+        182,
+        183,
+        184
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "38011b52-24a1-5f08-bd39-b69fc1bbff1a",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        217,
+        218,
+        219
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "be0adcd8-e2a0-5f4a-b169-b33213257c85",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        244,
+        245,
+        246,
+        247,
+        248
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "c5a4c8f1-9f67-5710-9998-1a631b7be48a",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        293,
+        294,
+        295
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "5f147c31-c4c6-528b-ad69-9d88945fd21e",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        330,
+        331
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "d9cd49aa-e120-5c87-a84d-44e41e31f826",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        359,
+        360,
+        361
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "5839ecc8-d722-53c6-82d7-f7f4f8106faf",
+      "grade": 1,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        392,
+        393,
+        394,
+        395,
+        396
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-1"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "30cb5974-6192-5f2e-8bd5-d98c091b1858",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "guia-turistica",
+        "articulo-expositivo",
+        "informe-de-lectura",
+        "cuento-amor-amistad",
+        "decima-espinela",
+        "lengua-secundaria-2-la-noticia"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "7e4c1236-8f04-5817-b017-a9ace9edff5e",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        140,
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "d61f0959-332f-5a0e-8f5e-b1c05dcadae9",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        185,
+        186,
+        187,
+        188
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "0f31b0b9-8970-5928-9c81-4299e0e9d4d9",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        220,
+        221
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "e0ac8a6e-812c-50c6-b9eb-109b83d28dda",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "82830d4e-4eb9-5c2c-9120-3c3036c54ac8",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        296,
+        297,
+        298,
+        299
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "1622c505-b860-50d1-9551-996b04e5c7ae",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        332,
+        333
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "bea155fb-1eef-52dd-80a2-e86992f1f72b",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        362,
+        363,
+        364
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "7046d495-351c-52ab-a193-fde308e0000f",
+      "grade": 2,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        397,
+        398,
+        399,
+        400
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-2"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "39d21319-20c5-54de-90f4-0aebdc7338c4",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "entrevista",
+        "cronica",
+        "catalogo",
+        "informe-experimento",
+        "articulo-opinion",
+        "cuento-social",
+        "madrigal"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "cc482480-0f08-5657-98aa-1afd28ecfa1a",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        146,
+        147,
+        148,
+        149,
+        150,
+        151
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "06576745-46a4-56a3-9dc8-cff915975251",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        189,
+        190,
+        191,
+        192
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "835fd983-ce0a-5475-a868-3bca14b2b853",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        222,
+        223
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "a20024b4-dbfb-5d69-8a4c-40c94deb4889",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        254,
+        255,
+        256,
+        257
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "f014e137-2f00-54b0-a405-86a04a4af403",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        300,
+        301,
+        302,
+        303,
+        304
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "ffa7fc07-03ae-596b-ab57-9e262c80bacb",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        334,
+        335
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "37d383d7-b45c-56e0-af9b-497cf043b27c",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        365,
+        366,
+        367
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "e115e5c8-e553-5613-bf39-2caea0bbbb7d",
+      "grade": 3,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        401,
+        402,
+        403,
+        404
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-3"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "49f16425-4d1d-5798-9af5-c69ba22b8020",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "cronica",
+        "instructivo",
+        "informe-investigacion",
+        "articulo-opinion",
+        "discurso-agradecimiento",
+        "novela",
+        "soneto"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "011167a1-54f7-5915-9d75-5168ec1b0a97",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        158,
+        159,
+        160,
+        161,
+        162
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "507fac2f-7254-5a1f-8374-a707c672a0bf",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        199,
+        200,
+        201,
+        202
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "45886074-0e84-53aa-855c-dda46bec80cd",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        229,
+        230
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "76b12132-2d05-56b0-94a4-0519de84651a",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        264,
+        265,
+        266,
+        267,
+        268
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "2126f8f2-d70a-5c37-8542-f8d00957a51a",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        312,
+        313,
+        314,
+        315
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "47d743d6-a842-5f05-843e-2855bf4bd5bb",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        341,
+        342,
+        343
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "9a5674ad-6a36-5273-bbd6-01b461f1e651",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        374,
+        375,
+        376
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "3431ca5e-6382-512c-92de-ffbe18460796",
+      "grade": 4,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        413,
+        414,
+        415,
+        416
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "d619d96a-6e30-5201-8264-3bc09502e53e",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Apreciación y Producción Literarias",
+      "subjectCode": "OPT-HLM-LEN-4",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        427,
+        428,
+        429,
+        430,
+        431
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-len-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "b2d7a388-b852-52a5-adf5-d78642f21f96",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Manejo de la información en inglés",
+      "subjectCode": "OPT-HLM-ING-4",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        445,
+        446,
+        447,
+        448,
+        449
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-ingles-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "e05229b2-4f79-5cf9-a57e-b0be79bb0cb7",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Apreciación y Producción Literarias",
+      "subjectCode": "OPT-HCS-LEN-4",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        462,
+        463,
+        464,
+        465,
+        466
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-len-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "817c41b1-f690-5afe-bbf5-b438791bf45c",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Filosofía social y Pensamiento Dominicano",
+      "subjectCode": "OPT-HCS-SOC-4",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        482,
+        483,
+        484
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-soc-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "834bd0b4-6611-5ff2-b31d-11d663152e0f",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Matemática Financiera y Tecnología",
+      "subjectCode": "OPT-MT-4",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        491,
+        492,
+        493
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-tecnologia-optativa-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "5961a313-fc4c-5985-99bd-3e3bf539d5c1",
+      "grade": 4,
+      "kind": "OPTATIVE",
+      "subject": "Biología y Computación",
+      "subjectCode": "OPT-CT-4",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        499,
+        500,
+        501,
+        502,
+        503,
+        504,
+        505
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "biologia-computacion-optativa-4"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "MF_053_3/IFC006_3",
+      "grade": 4,
+      "kind": "TECHNICAL",
+      "subject": "Análisis y Diseño de Sistemas Informáticos",
+      "subjectCode": "MF_053_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "ifc006-mf053-4"
+      ],
+      "pdfPages": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf053-4",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_056_3/IFC006_3",
+      "grade": 4,
+      "kind": "TECHNICAL",
+      "subject": "Diseño y Desarrollo de Base de Datos",
+      "subjectCode": "MF_056_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf056-4"
+      ],
+      "pdfPages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf056-4",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_059_3/IFC006_3",
+      "grade": 4,
+      "kind": "TECHNICAL",
+      "subject": "Diseño de Portales Web y Recursos Multimedia",
+      "subjectCode": "MF_059_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf059-4"
+      ],
+      "pdfPages": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf059-4",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_002_3/IFC006_3",
+      "grade": 4,
+      "kind": "TECHNICAL",
+      "subject": "Ofimática",
+      "subjectCode": "MF_002_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf002-4"
+      ],
+      "pdfPages": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "mf002-4",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_002_3/IFC007_3",
+      "grade": 4,
+      "kind": "TECHNICAL",
+      "subject": "Ofimática",
+      "subjectCode": "MF_002_3",
+      "modality": "technical_professional",
+      "exit": "IFC007_3",
+      "providerIds": [
+        "mf002-4"
+      ],
+      "pdfPages": [
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "mf002-4",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "1ef1e94e-5976-5272-af8b-6b2d6e093b2b",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "carta-autopresentacion",
+        "resena",
+        "ensayo-argumentativo",
+        "discurso-recibimiento-despedida",
+        "novela",
+        "poesia-satirica",
+        "entremes-teatral",
+        "novela-analisis-fragmento"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "73fa64a1-0c71-58a0-90c2-7df2f33b7a62",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "405bf920-4398-57c8-abb1-dbe48adb1b9a",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        203,
+        204,
+        205,
+        206
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "392f46f2-fbc7-5931-a290-c45a88a4f206",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        231,
+        232
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "95643626-0072-5fc0-a2c9-a729ed720dea",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "259be83a-7b0a-5eb0-9d42-f4976fde6041",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        316,
+        317,
+        318
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "73dc04d6-0e4f-58a4-bfd3-1fd75c8b98f3",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        344,
+        345,
+        346
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "a6108366-713c-572d-8ca4-96753f395e6b",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        377,
+        378,
+        379
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "4afe978a-b3d6-547d-a4fe-588ff505ff5e",
+      "grade": 5,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        417,
+        418,
+        419,
+        420
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "a4ba08bf-efdf-5ede-9710-5d1d7ea0c559",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Apreciación y Producción Literarias",
+      "subjectCode": "OPT-HLM-LEN-5",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        432,
+        433,
+        434,
+        435,
+        436
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-len-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "95d4757b-5e0a-5821-af62-37d031ccf922",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Apreciación de la Literatura Anglófona",
+      "subjectCode": "OPT-HLM-ING-5",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        450,
+        451,
+        452,
+        453,
+        454,
+        455
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-ingles-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "b1f1b6c5-3136-5287-8d68-e6171cd86a5f",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Apreciación y Producción Literarias",
+      "subjectCode": "OPT-HCS-LEN-5",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-len-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "3cfc3564-ea06-53a7-9906-2e7287fdbb44",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Geografía Humana y Demografía",
+      "subjectCode": "OPT-HCS-SOC-5",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        485,
+        486,
+        487
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-soc-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "87268d19-5d32-5426-9396-21ae21fc5bbd",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Estadística Probabilidad y Tecnología",
+      "subjectCode": "OPT-MT-5",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        494,
+        495
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "estadistica-probabilidad-tecnologia-optativa-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "f39c0cd4-85d9-5aeb-a1d2-74763bf455a9",
+      "grade": 5,
+      "kind": "OPTATIVE",
+      "subject": "Química y Computación",
+      "subjectCode": "OPT-CT-5",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        506,
+        507,
+        508,
+        509,
+        510
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "quimica-computacion-optativa-5"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "MF_054_3/IFC006_3",
+      "grade": 5,
+      "kind": "TECHNICAL",
+      "subject": "Desarrollo de Aplicaciones y Sistemas de Información",
+      "subjectCode": "MF_054_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf054-5"
+      ],
+      "pdfPages": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf054-5",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_057_3/IFC006_3",
+      "grade": 5,
+      "kind": "TECHNICAL",
+      "subject": "Administración de Base de Datos",
+      "subjectCode": "MF_057_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf057-5"
+      ],
+      "pdfPages": [
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf057-5",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_058_3/IFC006_3",
+      "grade": 5,
+      "kind": "TECHNICAL",
+      "subject": "Análisis y Diseño de Reporte",
+      "subjectCode": "MF_058_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf058-5"
+      ],
+      "pdfPages": [
+        37,
+        38,
+        39
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf058-5",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "6ad1b787-5408-5d4b-aa28-0895bebb30e8",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Lengua Española",
+      "subjectCode": "LEN",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "informe-investigacion",
+        "reportaje",
+        "ensayo-argumentativo",
+        "discurso-graduacion",
+        "novela",
+        "poesia-social",
+        "monologo"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "ae0c8305-150c-5996-ab4a-deb379827ea9",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Inglés",
+      "subjectCode": "ING",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        169,
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ingles-comunicacion-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "d0978ec6-aa60-5592-b034-6f042269dba9",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Francés",
+      "subjectCode": "FRA",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        207,
+        208,
+        209
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "frances-comunicacion-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "f1d980b5-b339-5fdd-b5a9-4f34a037359f",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Matemática",
+      "subjectCode": "MAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        233,
+        234,
+        235
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "matematica-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "53a654b4-d709-5c0d-9faa-9586c1ee2f60",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Ciencias Sociales",
+      "subjectCode": "SOC",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        276,
+        277,
+        278,
+        279,
+        280
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-sociales-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "01b2fa59-0542-551c-95df-8e3ffc4873ed",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Ciencias de la Naturaleza",
+      "subjectCode": "NAT",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        319,
+        320,
+        321,
+        322
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "ciencias-naturaleza-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "c7ec8e2e-ae1c-5996-99e0-d249fdd6d649",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Educación Artística",
+      "subjectCode": "ART",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        347,
+        348,
+        349
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-artistica-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "0ed53f73-90ab-5bc7-8db8-0294b348f5be",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Educación Física",
+      "subjectCode": "EFI",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        380,
+        381,
+        382
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "educacion-fisica-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "2ed4e58c-1691-5efa-9d04-46b3a95c2834",
+      "grade": 6,
+      "kind": "COMMON",
+      "subject": "Formación Integral Humana y Religiosa",
+      "subjectCode": "FHR",
+      "modality": "COMMON_COMPONENT",
+      "exit": null,
+      "pdfPages": [
+        421,
+        422,
+        423,
+        424
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "formacion-humana-religiosa-comun-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "6ebb8ac8-f9d0-5530-9c53-366f87055eee",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Análisis y Producción de Textos Periodísticos y Publicitarios",
+      "subjectCode": "OPT-HLM-LEN-6",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        437,
+        438,
+        439,
+        440,
+        441,
+        442,
+        443,
+        444
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-len-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "7e02a1ba-12f8-5862-81ff-0ad9bb34f8cc",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Análisis Crítico y Evaluación de Textos en Inglés",
+      "subjectCode": "OPT-HLM-ING-6",
+      "modality": "Académica",
+      "exit": "Humanidades y Lenguas Modernas",
+      "pdfPages": [
+        456,
+        457,
+        458,
+        459,
+        460
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hlm-ingles-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "bd48332d-4af6-5d2d-a5cf-e3be5591436d",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Análisis y Producción de Textos Científicos y Profesionales",
+      "subjectCode": "OPT-HCS-LEN-6",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        472,
+        473,
+        474,
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-len-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "ec62cee2-b76d-5582-8cf1-7762b9e5b4fd",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Ciudadanía y Democracia Participativa",
+      "subjectCode": "OPT-HCS-SOC-6",
+      "modality": "Académica",
+      "exit": "Humanidades y Ciencias Sociales",
+      "pdfPages": [
+        488,
+        489
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "optativa-hcs-soc-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "09e061a8-e3e7-55d8-a7ce-c24364f19401",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Tigonometría, Cálculo Diferencial y Tecnología",
+      "subjectCode": "OPT-MT-6",
+      "modality": "Académica",
+      "exit": "Matemática y Tecnología",
+      "pdfPages": [
+        496,
+        497
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "trigonometria-calculo-diferencial-tecnologia-optativa-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "1941d633-9878-579b-9cc3-ae913a00dfda",
+      "grade": 6,
+      "kind": "OPTATIVE",
+      "subject": "Física y Computación",
+      "subjectCode": "OPT-CT-6",
+      "modality": "Académica",
+      "exit": "Ciencias y Tecnología",
+      "pdfPages": [
+        511,
+        512,
+        513,
+        514,
+        515,
+        516,
+        517
+      ],
+      "source": "https://ministeriodeeducacion.gob.do/docs/direccion-general-de-curriculo/Ht7X-adecuacion-secundaria-2023pdf.pdf",
+      "providerIds": [
+        "fisica-computacion-optativa-6"
+      ],
+      "sourceReadThisAudit": false,
+      "topicMatrix": null,
+      "status": "PENDIENTE_MALLA_COMPLETA_Y_ACTIVIDADES",
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "nextAction": "Leer malla y continuaciones oficiales; extraer contenidos, contrastar y completar ausencias dentro del ámbito"
+    },
+    {
+      "id": "MF_055_3/IFC006_3",
+      "grade": 6,
+      "kind": "TECHNICAL",
+      "subject": "Implementación y Mantenimiento de Aplicaciones y Sistemas Informáticos",
+      "subjectCode": "MF_055_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf055-6"
+      ],
+      "pdfPages": [
+        22,
+        23,
+        24
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf055-6",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    },
+    {
+      "id": "MF_060_3/IFC006_3",
+      "grade": 6,
+      "kind": "TECHNICAL",
+      "subject": "Desarrollo e Implementación de Soluciones Web y Multimedia",
+      "subjectCode": "MF_060_3",
+      "modality": "technical_professional",
+      "exit": "IFC006_3",
+      "providerIds": [
+        "mf060-6"
+      ],
+      "pdfPages": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "source": "Diseño oficial específico del programa; no sustituir por PDF académico2023",
+      "sourceScopeId": "ifc006-mf060-6",
+      "sourceReadThisAudit": false,
+      "topicsTotalConfirmed": null,
+      "topicsClosed": 0,
+      "status": "PENDIENTE_FUENTE_COMPLETA_Y_ACTIVIDADES",
+      "nextAction": "Releer diseño oficial del programa, malla y continuaciones; contrastar contenidos sin reducirlos a topics del proveedor"
+    }
+  ],
+  "outsideScope": [
+    {
+      "name": "17encabezados sin grado de la extracción",
+      "status": "TAXONOMIA_NO_EVALUABLE_NO_CONTAR_COMO_ASIGNATURAS"
+    },
+    {
+      "name": "Especialidades artísticas sin proveedor y módulos/programas nuevos, incluidoMF061",
+      "status": "FUERA_DE_AMBITOS_AUTORIZADOS_NO_AMPLIAR"
+    }
+  ],
+  "notes": [
+    "MF002 está conectado a IFC006_3 e IFC007_3: se conserva una fila por programa; no se inventa un nuevo módulo.",
+    "Las evidencias previas del inventario se conservan; no equivalen a la nueva auditoría por cada tema/subtema."
+  ]
+}

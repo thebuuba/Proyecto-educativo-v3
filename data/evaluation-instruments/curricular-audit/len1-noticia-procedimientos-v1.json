@@ -1,0 +1,20 @@
+{
+  "version":"curricular-len1-noticia-procedimientos-v1",
+  "provenance":"SINTETICO; mismo autor, no independiente. Expectativas fijadas antes de ejecutar estos casos. Ampliación necesaria por los procedimientos oficiales69–70 y la continuación74; no reemplaza los bancos originales.",
+  "context":{"level":"SECONDARY","grade":1,"cycle":1,"subjectCode":"LEN","subjectName":"Lengua Española","optativeExitName":null},
+  "source":{"pages":[69,70,74],"sha256":"80b22b3adb3290bd251bde65c98b78b60f24845ab43b70c1f4e3294e0b6f6c58"},
+  "cases":[
+    {
+      "id":"LEN1-NOT-P01",
+      "title":"El agua de la comunidad en las noticias",
+      "description":"Antes de leer la noticia sobre la contaminación del agua, miren el titular y la foto y anoten qué piensan que pasó. Lean el texto, comprueben esa idea con sus datos e identifiquen para qué informa. Expliquen el significado de las palabras que no conocían usando el contexto. Cierren contando con sus propias palabras el hecho y las razones que deducen de lo leído. No redacten otra noticia.",
+      "expected":{"content":["Hecho de la noticia disponible, no conocimientos científicos añadidos"],"actions":["Anticipar desde titular/foto","Comprobar con lectura","Inferir vocabulario y relaciones","Reconstruir contenido"],"product":"Respuestas y reconstrucción de comprensión de noticia","explicit":["Predicción sustentada en titular/foto","Contraste de predicción con datos leídos","Propósito informativo","Vocabulario desconocido inferido por contexto","Paráfrasis fiel del hecho","Inferencias justificadas con información del texto"],"excluded":["Crear noticia","Producir fotografías","Demostrar experimentos sobre contaminación","Memorizar vocabulario sin contexto"],"grouping":["Anticipación y comprobación","Propósito y sentido de la noticia","Vocabulario contextual","Reconstrucción e inferencias sustentadas"]}
+    },
+    {
+      "id":"LEN1-NOT-P02",
+      "title":"Del dato a la noticia ambiental",
+      "description":"Busquen información sobre un hecho ambiental de interés internacional en las fuentes que acordemos. Distingan lo comprobado de lo que falta confirmar y anoten de dónde sale cada dato. Escriban una noticia dirigida a estudiantes del centro, con lenguaje formal pero sencillo. Incluyan oraciones coordinadas y subordinadas para relacionar ideas, empleando verbos y sustantivos propios del tema; expliquen qué relación expresa un ejemplo de cada clase de oración. Entreguen el borrador revisado y la versión final.",
+      "expected":{"content":["Hecho ambiental de interés internacional"],"actions":["Documentar y comprobar datos","Redactar para público escolar","Relacionar ideas con coordinación/subordinación","Explicar función de ambas clases de oración","Revisar"],"product":"Noticia, rastreo de datos y explicación de recursos solicitados","explicit":["Datos vinculados con fuentes acordadas","Diferenciar comprobado y pendiente","Audiencia estudiantes del centro","Registro formal sencillo","Oraciones coordinadas y subordinadas con relación pertinente","Explicación de un ejemplo de cada clase","Verbos y sustantivos temáticos","Borrador revisado y final"],"excluded":["Cantidad fija de fuentes","Norma bibliográfica no indicada","Entrevistas obligatorias","Visita de campo","Publicación no solicitada","Experimento científico"],"grouping":["Hecho y documentación verificable","Estructura y destinatario","Relaciones sintácticas y su explicación","Vocabulario temático","Revisión"]}
+    }
+  ]
+}

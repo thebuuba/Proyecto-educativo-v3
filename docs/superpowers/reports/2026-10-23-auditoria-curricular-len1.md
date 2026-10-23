@@ -32,7 +32,9 @@ Las causas se corrigieron en interpretación de acciones/negaciones (`index.ts`,
 
 Catálogo155 preparado en código. Se conservó154 antes de editar y se registró `catalog-v154.ts`; la huella es `ded489bce0367360783d51cf1282f2b58d1c08b472a8b1ce2175e198b9c688a2`. Las pruebas detectaron que modificar las definiciones exportadas alteraba cuatro catálogos históricos; las adaptaciones nuevas se aislaron en la composición y las huellas históricas volvieron a aprobar sin cambiar sus referencias.
 
-No se ha instalado155 en Development en este corte. La última historia remota comprobada sigue siendo87releases/1213snapshots, con quince referencias personales exactas. El Worker154 fue detenido verificando su árbol de procesos antes de editar; no se sirve una combinación de código155 con catálogo154. No hubo escrituras remotas en este bloque.
+Después del commit local `a1e80c09d8bd2f572868003489b3a2ab81fbcc80`, se instaló155 individualmente en Development: CREATED/UNCHANGED. Se conservaron exactamente87releases y1213snapshots. Las cuatro actividades QA añadieron cuatro snapshots: estado final88releases/1217snapshots. Quince referencias personales se contrastaron nuevamente después, todas exactas y sin duplicados; no se recapturaron baselines.
+
+El Worker155 recompilado quedó sirviendo8787 con PostgreSQL app_backend_local sin bypassRLS, Auth, Storage y frontend exclusivamente eolgunypmtgrsyrjzcld. Assets y sw.js coincidieron byte a byte con el build; el DOM personal cargó `/assets/index-CQwlFSLK.js`. La pestaña sigue en login, por lo que no se atribuye verificación visual del creador personal. No se borró caché/almacenamiento ni se inspeccionó la inscripción del service worker desde el navegador.
 
 ## Verificación
 
@@ -41,11 +43,13 @@ No se ha instalado155 en Development en este corte. La última historia remota c
 - Frontend focal:55pruebas en3archivos aprobadas, incluyendo preparación y estrategia. No equivale a una pasada frontend completa.
 - Capturas locales:36salidas con paridad servicio/alternativa, selección de los cuatro formatos, puntuación inicialmente vacía y totales20/17.35exactos. Lectura pedagógica separada del resultado técnico.
 - Builds backend/frontend/Cloudflare aprobados (11,77s/26,59s/73,53s); Cloudflare exclusivamente dry-run con variables Development validadas. Lints backend y compartido aprobados. Ningún despliegue.
+- Muestras HTTP/DB155: NOT03/rúbrica20, NOT06/cotejo17.35, R01/escala20 y R02/ponderada17.35. Interpretación/recomendación, paridad local, puntos pendientes, edición manual, guardado/reapertura y cambio solo de estrategia con instrumento/snapshot exactos aprobados. Máximo HTTP observado13272ms; no se declara resuelto el rendimiento.
+- Estrategia de los nueve casos: ambigüedad correcta, sin selección automática injustificada. Noticiero o trabajo grupal por sí solos no acreditan una metodología. Las selecciones manuales persistieron en las cuatro muestras HTTP; no equivalen a verificar su control visual personal.
 
 ## Pendientes reales
 
-La noticia aún requiere actividades propias para anticipación/comprobación, inferencias, vocabulario contextual, documentación de fuentes y coordinadas/subordinadas de la continuación74; revisión de actitudes mediante evidencias observables, sin calificar estados internos. También falta muestra HTTP/DB/visual de155 y estrategia por caso. La sesión personal permanecía en login; no se enviaron correos ni se alteraron credenciales. Rendimiento sigue abierto: el perfil154 recuperó59versiones/374.496bytes en5235ms; no prueba la causa única de las incidencias anteriores.
+La noticia aún requiere actividades propias para anticipación/comprobación, inferencias, vocabulario contextual, documentación de fuentes y coordinadas/subordinadas de la continuación74; revisión de actitudes mediante evidencias observables, sin calificar estados internos. El banco `len1-noticia-procedimientos-v1.json` y su huella quedaron fijados antes de generar. Falta comprobación visual personal. La sesión permanecía en login; no se enviaron correos ni se alteraron credenciales. Rendimiento sigue abierto: el perfil154 recuperó59versiones/374.496bytes en5235ms; no prueba la causa única de las incidencias anteriores.
 
-Después se recorren guía turística, informe, afiche, cuento policíaco y caligrama, se compara toda Lengua1 con la fuente y se continúa por las asignaturas oficiales y grados restantes. Los89ámbitos detectados en la extracción incluyen54comunes y optativas; aún requieren delimitación curricular completa, contraste con proveedores y separación de ámbitos fuera del alcance. No son89ámbitos auditados.
+Después se recorren guía turística, informe, afiche, cuento policíaco y caligrama, se compara toda Lengua1 con la fuente y se continúa por las asignaturas oficiales y grados restantes. La extracción contiene89ámbitos:72con grado y17encabezados sin grado. La matriz maestra vigente separa54comunes,18optativas y10contextos de9módulos técnicos (MF002 participa en IFC006 e IFC007):82contextos, sin ampliar programas. Cero temas cerrados. Los totales de temas restantes aún requieren lectura completa de sus fuentes, no conteo de proveedores.
 
 Rama `ampliacion-de-instrumentos-2`, commits locales. Sin push, main, despliegue, producción, cambio de entorno, borrados, migraciones remotas, IA ni subagentes.

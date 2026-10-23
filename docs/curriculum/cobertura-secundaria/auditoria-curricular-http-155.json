@@ -1,0 +1,282 @@
+{
+  "project": "eolgunypmtgrsyrjzcld",
+  "catalog": "evaluation-2026.155",
+  "sourceCommit": "a1e80c09d8bd2f572868003489b3a2ab81fbcc80",
+  "installation": {
+    "project": "eolgunypmtgrsyrjzcld",
+    "catalog": "evaluation-2026.155",
+    "sourceCommit": "a1e80c09d8bd2f572868003489b3a2ab81fbcc80",
+    "first": "CREATED",
+    "second": "UNCHANGED",
+    "sourceEqualsCompiled": true,
+    "frozen154Exact": true,
+    "versionOnlyPayloadChange": true,
+    "preservedReleases": 87,
+    "preservedSnapshots": 1213,
+    "finalReleases": 88,
+    "finalSnapshots": 1213,
+    "newActivities": 0,
+    "newAccounts": 0,
+    "schemaMigrations": 0,
+    "productionWrites": false,
+    "push": false,
+    "deploy": false
+  },
+  "runtime": {
+    "catalogBuild": "evaluation-2026.155",
+    "project": "eolgunypmtgrsyrjzcld",
+    "base": "http://localhost:8787",
+    "postgres": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "role": "app_backend_local",
+      "bypassRls": false
+    },
+    "auth": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "storage": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "status": 200
+    },
+    "frontend": {
+      "project": "eolgunypmtgrsyrjzcld",
+      "entry": "/assets/index-CQwlFSLK.js",
+      "matchesBuild": true
+    },
+    "assets": [
+      {
+        "path": "/assets/index-CQwlFSLK.js",
+        "sha256": "28d56a40e7be611b91bd2ea7be709dec360b2ee0520a934a486b635d8c5a1d43",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityEditorWorkspace-D3xFc1Ub.js",
+        "sha256": "22afffaef6d050e419b1776d46b33db4dcfd9f687982d71f7270cb7baa4d20ca",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/ActivityInfoModal-NxUf_2M8.js",
+        "sha256": "9d4e8be5c5d704f230a994bb861ee4dfecb2ddfcde4b6a754b9e4c6b9c1d48a9",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/instrumentos-tecnicos-C1Qu4O8l.js",
+        "sha256": "ea27fb035bfabb9eff7a3769669ff8ddc149af29007561b6c6b501159f6ef88d",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/assets/PlanningPage-CI2Wo3g3.js",
+        "sha256": "30a42a8518a52c8d7591dc9bcee07e4e7382cb7542ffbbc0090940051051dc40",
+        "cacheControl": "no-cache, no-store, must-revalidate, public, max-age=31536000, immutable"
+      },
+      {
+        "path": "/sw.js",
+        "sha256": "7cf29a35d7c9cd9a05d43f9b7c31679c243946e6dcc0c321b1a1afc5a016e0ee",
+        "cacheControl": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate"
+      }
+    ],
+    "browserCacheAndRegistration": "NOT_INSPECTED_BY_HTTP"
+  },
+  "mode": "AUTHENTICATED_HTTP_DB_NOT_BROWSER",
+  "samples": [
+    {
+      "caseId": "LEN1-NOT-03",
+      "format": "rubrica",
+      "score": 20,
+      "activityType": "NEWS_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true,
+      "snapshotId": "def8f54e-f66c-4b3e-b8a3-ba62d38fc603"
+    },
+    {
+      "caseId": "LEN1-NOT-06",
+      "format": "lista-cotejo",
+      "score": 17.35,
+      "activityType": "NEWS_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true,
+      "snapshotId": "f45ff5d2-1e14-4ea3-8760-85d011dededd"
+    },
+    {
+      "caseId": "LEN1-NOT-R01",
+      "format": "escala",
+      "score": 20,
+      "activityType": "NEWS_ANALYSIS",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true,
+      "snapshotId": "5bc20d10-166e-491b-b0a5-ff1f8f46cadf"
+    },
+    {
+      "caseId": "LEN1-NOT-R02",
+      "format": "lista-ponderada",
+      "score": 17.35,
+      "activityType": "NEWS_WRITING",
+      "savedReopened": true,
+      "manualTextPreserved": true,
+      "strategyOnlyInstrumentExact": true,
+      "snapshotId": "87aec52e-cf64-41fc-b3b9-12c656c14748"
+    }
+  ],
+  "timings": [
+    {
+      "endpoint": "/auth/login",
+      "status": 201,
+      "ms": 3274
+    },
+    {
+      "endpoint": "/activities/center",
+      "status": 200,
+      "ms": 4560
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 10456
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 8055
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5740
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5059
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7515
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5398
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 11985
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 7255
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5923
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4849
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 7907
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5117
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 7017
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 9997
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 5960
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 4455
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8102
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5180
+    },
+    {
+      "endpoint": "/evaluation-instruments/interpret",
+      "status": 200,
+      "ms": 8630
+    },
+    {
+      "endpoint": "/evaluation-instruments/recommend",
+      "status": 200,
+      "ms": 13272
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 6886
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5448
+    },
+    {
+      "endpoint": "/activities",
+      "status": 201,
+      "ms": 8342
+    },
+    {
+      "endpoint": "/activities",
+      "status": 200,
+      "ms": 5376
+    }
+  ],
+  "preservation": {
+    "priorReleases": 87,
+    "priorSnapshots": 1213,
+    "finalReleases": 88,
+    "finalSnapshots": 1217,
+    "allPriorHashesExact": true,
+    "qaActivitiesAdded": 4,
+    "personalAccountsCopied": 0
+  },
+  "browser": {
+    "entry": "/assets/index-CQwlFSLK.js",
+    "domMatchesCompiledEntry": true,
+    "personal": "LOGIN_NO_ACTIVE_SESSION",
+    "creatorVisual": "PENDING_PERSONAL_LOGIN",
+    "cacheCleared": false,
+    "storageDeleted": false,
+    "serviceWorker": "HTTP_BYTES_MATCH_BUILD; REGISTRATION_NOT_INSPECTED"
+  },
+  "limitations": [
+    "HTTP/DB con QA no sustituye la sesión personal",
+    "No se ha cerrado noticia ni Lengua1",
+    "Máximo HTTP observado13.272ms; no se declara resuelto el rendimiento"
+  ],
+  "push": false,
+  "deploy": false,
+  "overallAuditComplete": false
+}

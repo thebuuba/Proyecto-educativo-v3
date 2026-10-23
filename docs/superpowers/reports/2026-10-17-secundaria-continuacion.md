@@ -6,10 +6,10 @@ Leer especificación 2026-10-23-auditoria-curricular-completa.md y su plan. El n
 
 ## Estado comprobado
 
-- Rama ampliacion-de-instrumentos-2; HEAD de alcance ead009a2, once commits locales sin publicar antes del bloque155. Sin push.
-- Catálogo154 instalado solo en Development eolgunypmtgrsyrjzcld. Última historia validada87releases/1213snapshots; quince referencias personales exactas. No repetir instaladores ni creadores QA finalizados.
+- Rama ampliacion-de-instrumentos-2; bloque155 en a1e80c09, doce commits locales sin publicar antes del checkpoint HTTP. Sin push.
+- Catálogo155 instalado solo en Development eolgunypmtgrsyrjzcld, CREATED/UNCHANGED. Historia validada88releases/1217snapshots; quince referencias personales exactas tras las cuatro muestras HTTP155. No repetir instaladores ni creadores QA finalizados.
 - Código155: backend97331/219archivos, builds backend/frontend/Cloudflare dry-run y lints aprobados; frontend55/3archivos focales aprobados. No es una pasada frontend completa. Ver informe2026-10-23-auditoria-curricular-len1.md.
-- Worker154 detenido verificando launcher55536 y su árbol; no reiniciar155 antes de verificar/instalar su catálogo en Development. Gates completados en .wrangler/realistic-audit/curricular-155-build-progress.json; no repetirlos sin cambios.
+- Worker155 activo: launcher66136, listener18456 observados. Verificar árbol antes de detenerlo para cambiar reglas156. Runtime/QA en .wrangler/realistic-audit/*155*.json. Gates completados en curricular-155-build-progress.json; no repetirlos sin cambios.
 - Cuenta personal seguía en login. No enviar correos ni cambiar credenciales; continuar trabajo local y QA autorizada independiente.
 
 ## Fila activa
@@ -20,7 +20,7 @@ Matriz: data/evaluation-instruments/curricular-audit/len1-matrix-v1.json. Bancos
 
 ## Siguiente acción inmediata
 
-Guardar bloque155 y contrastar historia/catálogo de Development antes de instalarlo individualmente; muestra HTTP/DB y navegador si hay acceso. No duplicar los cuatro casos científicos154 ni recapturar referencias. Después completar noticia: banco previo para anticipación/comprobación, vocabulario/inferencias, fuentes y coordinadas/subordinadas74; actitudes mediante evidencia observable. Seguir luego guía, informe, afiche, cuento y caligrama. Los89ámbitos oficiales extraídos no equivalen a89auditados ni sustituyen revisar la fuente; delimitar comunes/optativas y módulos autorizados.
+Completar noticia: ejecutar banco procedimientos-v1, ya fijado con huella, para anticipación/comprobación, vocabulario/inferencias, fuentes y coordinadas/subordinadas74. Capturar antes155; conservar155 y detener Worker antes de reglas156. Actitudes mediante evidencia observable. No duplicar las cuatro muestras HTTP155 ya guardadas/reabiertas ni las científicas154; no recapturar referencias. Seguir luego guía, informe, afiche, cuento y caligrama. Matriz maestra master-v1:82contextos (54comunes+18optativas+10contextos de9módulos),17encabezados no evaluables excluidos. Cero temas cerrados; los totales temáticos restantes no están confirmados.
 
 La selección curricular lenta sigue pendiente: perfil Node154 midió5235ms/59versiones/374496bytes dentro de8015ms. No explica por sí solo anteriores58s ni descarta DNS/TLS intermitente. Puede corregirse como bloqueo compartido; después volver a primera fila curricular pendiente.
 
